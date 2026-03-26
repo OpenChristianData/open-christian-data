@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/commentary.schema.json",
+  "title": "Commentary Resource File",
+  "description": "A structured commentary resource: metadata envelope + array of verse-keyed commentary entries.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "id", "title", "author", "author_death_year", "original_publication_year",
+        "language", "tradition", "license", "schema_type", "schema_version",
+        "verse_text_source", "verse_reference_standard", "completeness", "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Stable resource identifier, kebab-case." },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "author_birth_year": { "type": ["integer", "null"] },
+        "author_death_year": { "type": ["integer", "null"] },
+        "contributors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "original_publication_year": { "type": ["integer", "null"] },
+        "language": { "type": "string", "pattern": "^[a-z]{2,3}$" },
+        "tradition": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "reformed", "lutheran", "anglican", "baptist", "methodist",
+              "catholic", "orthodox", "ecumenical", "non-denominational",
+              "puritan", "nonconformist", "patristic", "wesleyan"
+            ]
+          },
+          "minItems": 1
+        },
+        "tradition_notes": { "type": ["string", "null"] },
+        "license": {
+          "type": "string",
+          "enum": ["cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0", "public-domain"]
+        },
+        "schema_type": { "type": "string", "const": "commentary" },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "verse_text_source": { "type": "string" },
+        "verse_reference_standard": { "type": "string", "const": "OSIS" },
+        "completeness": {
+          "type": "string",
+          "enum": ["full", "partial", "in-progress"]
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "source_url", "source_format", "source_edition",
+            "download_date", "source_hash", "processing_method",
+            "processing_script_version", "processing_date"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "source_url": { "type": "string" },
+            "source_format": { "type": "string" },
+            "source_edition": { "type": "string" },
+            "download_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "source_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "processing_method": {
+              "type": "string",
+              "enum": ["manual", "automated", "automated-with-review", "ocr", "ocr-with-review"]
+            },
+            "processing_script_version": { "type": "string" },
+            "processing_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "notes": { "type": ["string", "null"] }
+          }
+        },
+        "summary_metadata": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["generation_model", "generation_date", "prompt_version"],
+              "properties": {
+                "generation_model": { "type": "string" },
+                "generation_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+                "prompt_version": { "type": "string" }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "entry_id", "book", "book_osis", "book_number", "chapter",
+          "verse_range", "verse_range_osis", "verse_text", "commentary_text",
+          "summary", "summary_review_status", "cross_references", "word_count"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "entry_id": {
+            "type": "string",
+            "description": "Stable unique identifier: {resource-id}.{book_osis}.{chapter}.{verse_range}"
+          },
+          "book": { "type": "string", "description": "Full English book name." },
+          "book_osis": { "type": "string", "description": "OSIS book code, e.g. Ezek." },
+          "book_number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 66,
+            "description": "Canonical Bible book order (1=Genesis, 66=Revelation)."
+          },
+          "chapter": { "type": "integer", "minimum": 1 },
+          "verse_range": {
+            "type": "string",
+            "pattern": "^\\d+(-\\d+)?$",
+            "description": "e.g. '1', '1-3', '26-28'"
+          },
+          "verse_range_osis": {
+            "type": "string",
+            "description": "e.g. 'Ezek.1.1', 'Ezek.1.1-Ezek.1.3'"
+          },
+          "verse_text": {
+            "type": ["string", "null"],
+            "description": "BSB verse text for the range, concatenated."
+          },
+          "commentary_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": { "type": ["string", "null"] },
+          "summary_review_status": {
+            "type": "string",
+            "enum": [
+              "withheld",
+              "ai-generated-unreviewed",
+              "ai-generated-spot-checked",
+              "ai-generated-seminary-reviewed",
+              "human-written"
+            ]
+          },
+          "summary_source_span": { "type": ["string", "null"] },
+          "summary_reviewer": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "required": ["reviewer_id", "credentials", "review_date"],
+                "properties": {
+                  "reviewer_id": { "type": "string" },
+                  "credentials": { "type": "string" },
+                  "review_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+                  "review_notes": { "type": ["string", "null"] }
+                }
+              }
+            ]
+          },
+          "key_quote": { "type": ["string", "null"] },
+          "key_quote_source_span": { "type": ["string", "null"] },
+          "key_quote_selection_criteria": { "type": ["string", "null"] },
+          "cross_references": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "OSIS format: e.g. 'Jer.29.1', 'Dan.1.1-Dan.1.6'"
+          },
+          "word_count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

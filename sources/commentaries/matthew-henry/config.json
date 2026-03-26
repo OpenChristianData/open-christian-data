@@ -1,0 +1,26 @@
+{
+  "resource_id": "matthew-henry-complete",
+  "commentary_id": "matthew-henry",
+  "source": "HelloAO Bible API",
+  "source_base_url": "https://bible.helloao.org/api/c/matthew-henry",
+  "verse_text_source": "BSB",
+  "verse_text_url": "https://bible.helloao.org/api/BSB",
+  "license": "PDM 1.0 (https://creativecommons.org/publicdomain/mark/1.0/)",
+  "notes": "HelloAO marks this content PDM 1.0 — acknowledging it is already in the public domain. Equivalent to CC0 for our purposes. MH died 1714; commentary published 1706-1714.",
+  "books": [
+    {
+      "usfm_code": "EZK",
+      "osis_code": "Ezek",
+      "name": "Ezekiel",
+      "chapter_count": 48,
+      "status": "complete",
+      "notes": "Phase 1a starting book."
+    }
+  ],
+  "known_coverage_gaps": [
+    "Lamentations (LAM) — not available in HelloAO MH commentary",
+    "Revelation (REV) — not available in HelloAO MH commentary",
+    "Some minor prophets — verify before claiming completeness"
+  ],
+  "fallback_source": "CCEL ThML — https://www.ccel.org/ccel/henry"
+}

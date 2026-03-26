@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+.env
+venv/
+.venv/
+
+# Build outputs (generated — not committed)
+dist/
+
+# Large source cache files (download fresh via scripts)
+sources/*/raw/*.xml
+sources/*/raw/*.thml
+sources/*/raw/*.zip
+sources/*/raw/*.gz
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (for future TypeScript tooling)
+node_modules/
