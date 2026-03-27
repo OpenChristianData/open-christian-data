@@ -323,7 +323,7 @@ VALID_TRADITIONS = {
     "reformed", "lutheran", "anglican", "baptist", "methodist",
     "catholic", "orthodox", "ecumenical", "non-denominational",
     "puritan", "nonconformist", "patristic", "wesleyan",
-    "presbyterian", "continental-reformed",
+    "presbyterian", "particular-baptist", "continental-reformed",
 }
 
 VALID_DOCUMENT_KINDS = {"confession", "canon", "creed", "declaration"}

@@ -18,7 +18,7 @@
       "properties": {
         "id": { "type": "string", "description": "Stable resource identifier, kebab-case." },
         "title": { "type": "string" },
-        "author": { "type": "string" },
+        "author": { "type": ["string", "null"], "description": "Primary author or authoring body. Null when authorship is unknown or collective." },
         "author_birth_year": { "type": ["integer", "null"] },
         "author_death_year": { "type": ["integer", "null"] },
         "contributors": {
