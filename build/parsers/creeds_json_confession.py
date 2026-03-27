@@ -306,6 +306,16 @@ DOCUMENT_CONFIGS = {
             "Rule of faith from Tertullian's The Prescription of Heretics (c. 200 AD)."
         ),
     },
+    "shema_yisrael": {
+        "document_id": "shema-yisrael",
+        "document_kind": "creed",
+        "tradition": ["ecumenical"],
+        "tradition_notes": (
+            "Deuteronomy 6:4-5, the foundational declaration of monotheistic faith. "
+            "Quoted by Jesus as the greatest commandment (Mark 12:29). "
+            "Jewish in origin, foundational to Christian theology."
+        ),
+    },
 }
 
 # Valid tradition values (must match doctrinal_document.schema.json enum)

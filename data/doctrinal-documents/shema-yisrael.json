@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "id": "shema-yisrael",
+    "title": "Shema Yisrael",
+    "author": "Moses",
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": -1500,
+    "language": "en",
+    "tradition": [
+      "ecumenical"
+    ],
+    "tradition_notes": "Deuteronomy 6:4-5, the foundational declaration of monotheistic faith. Quoted by Jesus as the greatest commandment (Mark 12:29). Jewish in origin, foundational to Christian theology.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://esv.literalword.com/?q=deut+6%3A4-5",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:36b5b5a7994426eef1783a149560df52f0febc7c8fccdcc0faf584f8d47e3f6a",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "shema-yisrael",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "Hear, O Israel: The LORD our God, the LORD is one. You shall love the LORD your God with all your heart and with all your soul and with all your might.",
+        "content_with_proofs": "Hear, O Israel: The LORD our God, the LORD is one. You shall love the LORD your God with all your heart and with all your soul and with all your might.[1]",
+        "proofs": [
+          {
+            "id": 1,
+            "references": [
+              {
+                "raw": "Deut.6.4-Deut.6.5",
+                "osis": [
+                  "Deut.6.4-Deut.6.5"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
