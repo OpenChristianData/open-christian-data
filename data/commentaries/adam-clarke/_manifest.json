@@ -1,0 +1,584 @@
+{
+  "resource_id": "adam-clarke",
+  "title": "Clarke's Commentary on the Bible",
+  "schema_type": "commentary",
+  "schema_version": "2.1.0",
+  "books": [
+    {
+      "usfm_code": "GEN",
+      "osis_code": "Gen",
+      "name": "Genesis",
+      "file": "genesis.json",
+      "chapter_count": 50,
+      "entry_count": 880,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "EXO",
+      "osis_code": "Exod",
+      "name": "Exodus",
+      "file": "exodus.json",
+      "chapter_count": 40,
+      "entry_count": 710,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "LEV",
+      "osis_code": "Lev",
+      "name": "Leviticus",
+      "file": "leviticus.json",
+      "chapter_count": 27,
+      "entry_count": 342,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "NUM",
+      "osis_code": "Num",
+      "name": "Numbers",
+      "file": "numbers.json",
+      "chapter_count": 36,
+      "entry_count": 51,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JOS",
+      "osis_code": "Josh",
+      "name": "Joshua",
+      "file": "joshua.json",
+      "chapter_count": 24,
+      "entry_count": 407,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "RUT",
+      "osis_code": "Ruth",
+      "name": "Ruth",
+      "file": "ruth.json",
+      "chapter_count": 4,
+      "entry_count": 62,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1SA",
+      "osis_code": "1Sam",
+      "name": "1 Samuel",
+      "file": "1-samuel.json",
+      "chapter_count": 31,
+      "entry_count": 536,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2SA",
+      "osis_code": "2Sam",
+      "name": "2 Samuel",
+      "file": "2-samuel.json",
+      "chapter_count": 24,
+      "entry_count": 341,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1KI",
+      "osis_code": "1Kgs",
+      "name": "1 Kings",
+      "file": "1-kings.json",
+      "chapter_count": 22,
+      "entry_count": 426,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2KI",
+      "osis_code": "2Kgs",
+      "name": "2 Kings",
+      "file": "2-kings.json",
+      "chapter_count": 25,
+      "entry_count": 446,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1CH",
+      "osis_code": "1Chr",
+      "name": "1 Chronicles",
+      "file": "1-chronicles.json",
+      "chapter_count": 29,
+      "entry_count": 302,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2CH",
+      "osis_code": "2Chr",
+      "name": "2 Chronicles",
+      "file": "2-chronicles.json",
+      "chapter_count": 36,
+      "entry_count": 382,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "EZR",
+      "osis_code": "Ezra",
+      "name": "Ezra",
+      "file": "ezra.json",
+      "chapter_count": 10,
+      "entry_count": 116,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "NEH",
+      "osis_code": "Neh",
+      "name": "Nehemiah",
+      "file": "nehemiah.json",
+      "chapter_count": 13,
+      "entry_count": 195,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "EST",
+      "osis_code": "Esth",
+      "name": "Esther",
+      "file": "esther.json",
+      "chapter_count": 10,
+      "entry_count": 107,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JOB",
+      "osis_code": "Job",
+      "name": "Job",
+      "file": "job.json",
+      "chapter_count": 42,
+      "entry_count": 306,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "SNG",
+      "osis_code": "Song",
+      "name": "Song of Solomon",
+      "file": "song-of-solomon.json",
+      "chapter_count": 8,
+      "entry_count": 8,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "ISA",
+      "osis_code": "Isa",
+      "name": "Isaiah",
+      "file": "isaiah.json",
+      "chapter_count": 66,
+      "entry_count": 225,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "LAM",
+      "osis_code": "Lam",
+      "name": "Lamentations",
+      "file": "lamentations.json",
+      "chapter_count": 5,
+      "entry_count": 108,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "EZK",
+      "osis_code": "Ezek",
+      "name": "Ezekiel",
+      "file": "ezekiel.json",
+      "chapter_count": 48,
+      "entry_count": 731,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "DAN",
+      "osis_code": "Dan",
+      "name": "Daniel",
+      "file": "daniel.json",
+      "chapter_count": 12,
+      "entry_count": 258,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "HOS",
+      "osis_code": "Hos",
+      "name": "Hosea",
+      "file": "hosea.json",
+      "chapter_count": 14,
+      "entry_count": 154,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "AMO",
+      "osis_code": "Amos",
+      "name": "Amos",
+      "file": "amos.json",
+      "chapter_count": 9,
+      "entry_count": 133,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "OBA",
+      "osis_code": "Obad",
+      "name": "Obadiah",
+      "file": "obadiah.json",
+      "chapter_count": 1,
+      "entry_count": 19,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JON",
+      "osis_code": "Jonah",
+      "name": "Jonah",
+      "file": "jonah.json",
+      "chapter_count": 4,
+      "entry_count": 45,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "MIC",
+      "osis_code": "Mic",
+      "name": "Micah",
+      "file": "micah.json",
+      "chapter_count": 7,
+      "entry_count": 96,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "NAM",
+      "osis_code": "Nah",
+      "name": "Nahum",
+      "file": "nahum.json",
+      "chapter_count": 3,
+      "entry_count": 42,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "HAB",
+      "osis_code": "Hab",
+      "name": "Habakkuk",
+      "file": "habakkuk.json",
+      "chapter_count": 3,
+      "entry_count": 54,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "ZEP",
+      "osis_code": "Zeph",
+      "name": "Zephaniah",
+      "file": "zephaniah.json",
+      "chapter_count": 3,
+      "entry_count": 51,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "HAG",
+      "osis_code": "Hag",
+      "name": "Haggai",
+      "file": "haggai.json",
+      "chapter_count": 2,
+      "entry_count": 25,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "ZEC",
+      "osis_code": "Zech",
+      "name": "Zechariah",
+      "file": "zechariah.json",
+      "chapter_count": 14,
+      "entry_count": 180,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "MRK",
+      "osis_code": "Mark",
+      "name": "Mark",
+      "file": "mark.json",
+      "chapter_count": 16,
+      "entry_count": 334,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "LUK",
+      "osis_code": "Luke",
+      "name": "Luke",
+      "file": "luke.json",
+      "chapter_count": 24,
+      "entry_count": 746,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JHN",
+      "osis_code": "John",
+      "name": "John",
+      "file": "john.json",
+      "chapter_count": 21,
+      "entry_count": 746,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "ACT",
+      "osis_code": "Acts",
+      "name": "Acts",
+      "file": "acts.json",
+      "chapter_count": 28,
+      "entry_count": 880,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "ROM",
+      "osis_code": "Rom",
+      "name": "Romans",
+      "file": "romans.json",
+      "chapter_count": 16,
+      "entry_count": 418,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1CO",
+      "osis_code": "1Cor",
+      "name": "1 Corinthians",
+      "file": "1-corinthians.json",
+      "chapter_count": 16,
+      "entry_count": 416,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2CO",
+      "osis_code": "2Cor",
+      "name": "2 Corinthians",
+      "file": "2-corinthians.json",
+      "chapter_count": 13,
+      "entry_count": 253,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "GAL",
+      "osis_code": "Gal",
+      "name": "Galatians",
+      "file": "galatians.json",
+      "chapter_count": 6,
+      "entry_count": 147,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "EPH",
+      "osis_code": "Eph",
+      "name": "Ephesians",
+      "file": "ephesians.json",
+      "chapter_count": 6,
+      "entry_count": 153,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "PHP",
+      "osis_code": "Phil",
+      "name": "Philippians",
+      "file": "philippians.json",
+      "chapter_count": 4,
+      "entry_count": 103,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "COL",
+      "osis_code": "Col",
+      "name": "Colossians",
+      "file": "colossians.json",
+      "chapter_count": 4,
+      "entry_count": 91,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1TH",
+      "osis_code": "1Thess",
+      "name": "1 Thessalonians",
+      "file": "1-thessalonians.json",
+      "chapter_count": 5,
+      "entry_count": 86,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2TH",
+      "osis_code": "2Thess",
+      "name": "2 Thessalonians",
+      "file": "2-thessalonians.json",
+      "chapter_count": 3,
+      "entry_count": 45,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1TI",
+      "osis_code": "1Tim",
+      "name": "1 Timothy",
+      "file": "1-timothy.json",
+      "chapter_count": 6,
+      "entry_count": 112,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2TI",
+      "osis_code": "2Tim",
+      "name": "2 Timothy",
+      "file": "2-timothy.json",
+      "chapter_count": 4,
+      "entry_count": 83,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "TIT",
+      "osis_code": "Titus",
+      "name": "Titus",
+      "file": "titus.json",
+      "chapter_count": 3,
+      "entry_count": 46,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "PHM",
+      "osis_code": "Phlm",
+      "name": "Philemon",
+      "file": "philemon.json",
+      "chapter_count": 1,
+      "entry_count": 24,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "HEB",
+      "osis_code": "Heb",
+      "name": "Hebrews",
+      "file": "hebrews.json",
+      "chapter_count": 13,
+      "entry_count": 290,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JAS",
+      "osis_code": "Jas",
+      "name": "James",
+      "file": "james.json",
+      "chapter_count": 5,
+      "entry_count": 106,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1PE",
+      "osis_code": "1Pet",
+      "name": "1 Peter",
+      "file": "1-peter.json",
+      "chapter_count": 5,
+      "entry_count": 102,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2PE",
+      "osis_code": "2Pet",
+      "name": "2 Peter",
+      "file": "2-peter.json",
+      "chapter_count": 3,
+      "entry_count": 59,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "1JN",
+      "osis_code": "1John",
+      "name": "1 John",
+      "file": "1-john.json",
+      "chapter_count": 5,
+      "entry_count": 103,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "2JN",
+      "osis_code": "2John",
+      "name": "2 John",
+      "file": "2-john.json",
+      "chapter_count": 1,
+      "entry_count": 13,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "3JN",
+      "osis_code": "3John",
+      "name": "3 John",
+      "file": "3-john.json",
+      "chapter_count": 1,
+      "entry_count": 14,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "JUD",
+      "osis_code": "Jude",
+      "name": "Jude",
+      "file": "jude.json",
+      "chapter_count": 1,
+      "entry_count": 25,
+      "status": "complete",
+      "summary_status": "withheld"
+    },
+    {
+      "usfm_code": "REV",
+      "osis_code": "Rev",
+      "name": "Revelation",
+      "file": "revelation.json",
+      "chapter_count": 22,
+      "entry_count": 392,
+      "status": "complete",
+      "summary_status": "withheld"
+    }
+  ],
+  "stats": {
+    "total_books": 57,
+    "total_entries": 13525,
+    "books_with_summaries": 0
+  },
+  "last_updated": "2026-03-27"
+}
