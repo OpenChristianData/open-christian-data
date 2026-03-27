@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "id": "irenaeus-rule-of-faith",
+    "title": "Irenaeus' Rule of Faith",
+    "author": "Irenaeus",
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": 180,
+    "language": "en",
+    "tradition": [
+      "patristic"
+    ],
+    "tradition_notes": "Rule of faith from Irenaeus of Lyon's Against Heresies (c. 180 AD). Early summary of the apostolic teaching.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://ccel.org/ccel/irenaeus/against_heresies_i/anf01.ix.ii.xi.html",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:4422692b464a604ed7ea8de08796c5eea70a412f9b2cb40dda5b7a9e8d39823a",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "irenaeus-rule-of-faith",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "This faith: in one God, the Father Almighty, who made the heaven and the earth and the seas and all the things that are in them; and in one Christ Jesus, the Son of God, who was made flesh for our salvation; and in the Holy Spirit, who made known through the prophets the plan of salvation, and the coming, and the birth from a virgin, and the passion, and the resurrection from the dead, and the bodily ascension into heaven of the beloved Christ Jesus, our Lord, and his future appearing from heaven in the glory of the Father to sum up all things and to raise anew all flesh of the whole human race."
+      }
+    ]
+  }
+}

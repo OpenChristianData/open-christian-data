@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": "confession-of-peter",
+    "title": "Confession of Peter",
+    "author": null,
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": 30,
+    "language": "en",
+    "tradition": [
+      "ecumenical",
+      "patristic"
+    ],
+    "tradition_notes": "Peter's confession of Christ as found in Matthew 16:16.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://esv.literalword.com/?q=Matthew+16%3A16",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:948151532de91090d4d1d5440e4d891e2bf919eb4f87d6ac159a2e562af01516",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "confession-of-peter",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "Simon Peter replied, \"You are the Christ, the Son of the living God.\"",
+        "content_with_proofs": "Simon Peter replied, \"You are the Christ, the Son of the living God.\"[1]",
+        "proofs": [
+          {
+            "id": 1,
+            "references": [
+              {
+                "raw": "Matt.16.16",
+                "osis": [
+                  "Matt.16.16"
+                ]
+              },
+              {
+                "raw": "Mark.8.29",
+                "osis": [
+                  "Mark.8.29"
+                ]
+              },
+              {
+                "raw": "Luke.9.20",
+                "osis": [
+                  "Luke.9.20"
+                ]
+              },
+              {
+                "raw": "John.20.31",
+                "osis": [
+                  "John.20.31"
+                ]
+              },
+              {
+                "raw": "1John.5.1",
+                "osis": [
+                  "1John.5.1"
+                ]
+              },
+              {
+                "raw": "John.9.22",
+                "osis": [
+                  "John.9.22"
+                ]
+              },
+              {
+                "raw": "John.11.27",
+                "osis": [
+                  "John.11.27"
+                ]
+              },
+              {
+                "raw": "Mark.14.61",
+                "osis": [
+                  "Mark.14.61"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "westminster-confession-of-faith",
+  "title": "Westminster Confession of Faith",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1647,
+  "source": {
+    "name": "Creeds.json",
+    "repository": "https://github.com/NonlinearFruit/Creeds.json",
+    "file": "creeds/westminster_confession_of_faith.json",
+    "format": "JSON",
+    "license": "Public Domain",
+    "license_notes": "Source data states SourceAttribution: Public Domain. No LICENSE file in repo. Issue #59 filed with maintainer to confirm.",
+    "download_date": "2026-03-27",
+    "source_hash": "sha256:90f793e3444f9a6a834c29fc7b6ba21250b33e92979525b5d5158bed16c24f06"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "confession",
+  "output_file": "data/doctrinal-documents/westminster-confession-of-faith.json",
+  "parser": "build/parsers/creeds_json_confession.py",
+  "stats": {
+    "chapter_count": 33,
+    "section_count": 172,
+    "proof_count": 582
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Proof texts in Creeds.json are already OSIS format -- raw and osis fields are identical.",
+    "Some proof texts are chapter-level refs (e.g. Gen.1, Lev.18) rather than verse-level.",
+    "ContentWithProofs preserved as content_with_proofs on each section unit.",
+    "All 33 chapters present; full document."
+  ]
+}

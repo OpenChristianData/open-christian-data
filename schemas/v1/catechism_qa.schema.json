@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/catechism_qa.schema.json",
+  "title": "Catechism Q&A Resource File",
+  "description": "A structured catechism resource: metadata envelope + array of question-and-answer entries.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "id", "title", "author", "original_publication_year",
+        "language", "tradition", "license", "schema_type", "schema_version",
+        "completeness", "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Stable resource identifier, kebab-case." },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "author_birth_year": { "type": ["integer", "null"] },
+        "author_death_year": { "type": ["integer", "null"] },
+        "contributors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "original_publication_year": { "type": ["integer", "null"] },
+        "language": { "type": "string", "pattern": "^[a-z]{2,3}$" },
+        "original_language": { "type": ["string", "null"] },
+        "tradition": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "reformed", "lutheran", "anglican", "baptist", "methodist",
+              "catholic", "orthodox", "ecumenical", "non-denominational",
+              "puritan", "nonconformist", "patristic", "wesleyan",
+              "presbyterian", "particular-baptist", "continental-reformed"
+            ]
+          },
+          "minItems": 1
+        },
+        "tradition_notes": { "type": ["string", "null"] },
+        "era": { "type": ["string", "null"] },
+        "audience": { "type": ["string", "null"] },
+        "license": {
+          "type": "string",
+          "enum": ["cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0", "public-domain"]
+        },
+        "schema_type": { "type": "string", "const": "catechism_qa" },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "completeness": {
+          "type": "string",
+          "enum": ["full", "partial", "in-progress"]
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "source_url", "source_format", "source_edition",
+            "download_date", "source_hash", "processing_method",
+            "processing_script_version", "processing_date"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "source_url": { "type": "string" },
+            "source_format": { "type": "string" },
+            "source_edition": { "type": "string" },
+            "download_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "source_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "processing_method": {
+              "type": "string",
+              "enum": ["manual", "automated", "automated-with-review", "ocr", "ocr-with-review"]
+            },
+            "processing_script_version": { "type": "string" },
+            "processing_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "notes": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["document_id", "item_id", "sort_key", "question", "answer", "proofs"],
+        "additionalProperties": false,
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "description": "Kebab-case identifier matching meta.id."
+          },
+          "item_id": {
+            "type": "string",
+            "description": "String to handle '1', '1a', '1b' patterns."
+          },
+          "sort_key": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Numeric ordering key."
+          },
+          "question": { "type": "string", "minLength": 1 },
+          "answer": {
+            "oneOf": [
+              { "type": "null", "description": "Null when source data has no answer (source gap)." },
+              { "type": "string", "minLength": 1 }
+            ]
+          },
+          "answer_with_proofs": { "type": ["string", "null"] },
+          "proofs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "references"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "integer" },
+                "references": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["raw", "osis"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "raw": { "type": "string" },
+                      "osis": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "group": { "type": ["string", "null"] },
+          "sub_questions": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["item_id", "question", "answer"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "item_id": { "type": "string" },
+                    "question": { "type": "string" },
+                    "answer": { "type": "string" }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

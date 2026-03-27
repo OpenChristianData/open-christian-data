@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "id": "christ-hymn-of-colossians",
+    "title": "Christ Hymn of Colossians",
+    "author": "Paul",
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": 60,
+    "language": "en",
+    "tradition": [
+      "ecumenical",
+      "patristic"
+    ],
+    "tradition_notes": "Early Christian hymn from Colossians 1:15-20. One of the New Testament Christological hymns.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://esv.literalword.com/?q=colossians+1%3A15-19",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:b29f8640db86a6ab85ddf9bcccd021c6c175c8155bd325d531dda1975a11df79",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "christ-hymn-of-colossians",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "He is the image of the invisible God, the firstborn of all creation. For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities-all things were created through him and for him. And he is before all things, and in him all things hold together. And he is the head of the body, the church. He is the beginning, the firstborn from the dead, that in everything he might be preeminent. For in him all the fullness of God was pleased to dwell, and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross.",
+        "content_with_proofs": "He is the image of the invisible God, the firstborn of all creation. For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities-all things were created through him and for him. And he is before all things, and in him all things hold together. And he is the head of the body, the church. He is the beginning, the firstborn from the dead, that in everything he might be preeminent. For in him all the fullness of God was pleased to dwell, and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross.[1]",
+        "proofs": [
+          {
+            "id": 1,
+            "references": [
+              {
+                "raw": "Col.1.15-Col.1.19",
+                "osis": [
+                  "Col.1.15-Col.1.19"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

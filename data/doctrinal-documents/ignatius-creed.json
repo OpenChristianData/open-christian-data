@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "id": "ignatius-creed",
+    "title": "Ignatius' Creed",
+    "author": "Ignatius of Antioch",
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": 110,
+    "language": "en",
+    "tradition": [
+      "patristic"
+    ],
+    "tradition_notes": "Creedal statement from the letters of Ignatius of Antioch (c. 107 AD). One of the earliest post-apostolic confessions of Christ.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://www.ccel.org/ccel/richardson/fathers.vi.ii.iii.iii.html",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:710d4460935bf685b06fcadd06215b2332eff9981307367854d743caea004db3",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "ignatius-creed",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "Jesus Christ, of David's lineage, of Mary; who was really born, ate; and drank; was really persecuted under Pontius Pilate; was really crucified and died, in the sight of heaven and earth and the underworld. He was really raised from the dead, for his Father raised him, just as his Father will raise us, who believe on him, through Christ Jesus, apart from whom we have no genuine life."
+      }
+    ]
+  }
+}

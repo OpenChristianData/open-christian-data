@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "id": "christ-hymn-of-philippians",
+    "title": "Christ Hymn of Philippians",
+    "author": "Paul",
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [],
+    "original_publication_year": 60,
+    "language": "en",
+    "tradition": [
+      "ecumenical",
+      "patristic"
+    ],
+    "tradition_notes": "Early Christian hymn from Philippians 2:6-11 (Carmen Christi). One of the New Testament Christological hymns.",
+    "license": "cc0-1.0",
+    "schema_type": "doctrinal_document",
+    "schema_version": "2.1.0",
+    "completeness": "full",
+    "provenance": {
+      "source_url": "https://esv.literalword.com/?q=Philippians+2%3A6-10",
+      "source_format": "JSON",
+      "source_edition": "Creeds.json (github.com/NonlinearFruit/Creeds.json)",
+      "download_date": "2026-03-27",
+      "source_hash": "sha256:1179055916761e1a6d48024bc60cdd251cf7b308acaf68d472952e9ea903c272",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+      "processing_date": "2026-03-27",
+      "notes": "Proof texts from Creeds.json are already in OSIS format -- raw and osis fields are identical. Content used as canonical text; ContentWithProofs preserved as content_with_proofs."
+    }
+  },
+  "data": {
+    "document_id": "christ-hymn-of-philippians",
+    "document_kind": "creed",
+    "revision_history": [],
+    "units": [
+      {
+        "unit_type": "text",
+        "content": "Who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross. Therefore God has highly exalted him and bestowed on him the name that is above every name, so that at the name of Jesus every knee should bow, in heaven and on earth and under the earth, and every tongue confess that Jesus Christ is Lord, to the glory of God the Father.",
+        "content_with_proofs": "Who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross. Therefore God has highly exalted him and bestowed on him the name that is above every name, so that at the name of Jesus every knee should bow, in heaven and on earth and under the earth, and every tongue confess that Jesus Christ is Lord, to the glory of God the Father.[1]",
+        "proofs": [
+          {
+            "id": 1,
+            "references": [
+              {
+                "raw": "Phil.2.6-Phil.2.10",
+                "osis": [
+                  "Phil.2.6-Phil.2.10"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

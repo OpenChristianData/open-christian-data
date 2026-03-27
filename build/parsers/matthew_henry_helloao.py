@@ -6,6 +6,8 @@ Usage:
     py -3 build/parsers/matthew_henry_helloao.py --book EZK
     py -3 build/parsers/matthew_henry_helloao.py --book EZK --dry-run
     py -3 build/parsers/matthew_henry_helloao.py --all-books
+    py -3 build/parsers/matthew_henry_helloao.py --all-books --local
+    py -3 build/parsers/matthew_henry_helloao.py --book EZK --local
 """
 
 import argparse
@@ -25,6 +27,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data" / "commentaries" / "matthew-henry"
 SOURCES_DIR = REPO_ROOT / "sources" / "commentaries" / "matthew-henry"
 CONFIG_FILE = SOURCES_DIR / "config.json"
+LOCAL_RAW_DIR = REPO_ROOT / "raw" / "helloao_local" / "api"
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -34,8 +37,8 @@ HELLOAO_BASE = "https://bible.helloao.org/api"
 COMMENTARY_ID = "matthew-henry"
 BSB_ID = "BSB"
 RESOURCE_ID = "matthew-henry-complete"
-SCHEMA_VERSION = "1.0.0"
-SCRIPT_VERSION = "v1.0.0"
+SCHEMA_VERSION = "2.1.0"
+SCRIPT_VERSION = "v1.1.0"
 USER_AGENT = "open-christian-data/1.0 (+https://github.com/openchristiandata)"
 REQUEST_DELAY = 0.4  # seconds between API calls
 
@@ -57,7 +60,7 @@ USFM_TO_OSIS = {
     "PHP": "Phil", "COL": "Col", "1TH": "1Thess", "2TH": "2Thess",
     "1TI": "1Tim", "2TI": "2Tim", "TIT": "Titus", "PHM": "Phlm",
     "HEB": "Heb", "JAS": "Jas", "1PE": "1Pet", "2PE": "2Pet",
-    "1JN": "1John", "2JN": "2John", "3JN": "3John", "JDE": "Jude", "REV": "Rev",
+    "1JN": "1John", "2JN": "2John", "3JN": "3John", "JUD": "Jude", "REV": "Rev",
 }
 
 OSIS_TO_NAME = {
@@ -112,6 +115,33 @@ def fetch_json(url: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Local file helpers
+# ---------------------------------------------------------------------------
+
+
+def load_local_json(path: Path) -> dict:
+    """Load a JSON file from the local raw data cache."""
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def get_local_chapter_numbers(usfm_code: str) -> list:
+    """Return sorted list of available chapter numbers from local commentary files."""
+    commentary_dir = LOCAL_RAW_DIR / "c" / COMMENTARY_ID / usfm_code
+    if not commentary_dir.exists():
+        return []
+    # Filenames are "{chapter}.json" — extract the numeric part
+    chapters = []
+    for p in commentary_dir.iterdir():
+        if p.suffix == ".json":
+            try:
+                chapters.append(int(p.stem))
+            except ValueError:
+                pass
+    return sorted(chapters)
+
+
+# ---------------------------------------------------------------------------
 # BSB verse text helpers
 # ---------------------------------------------------------------------------
 
@@ -119,16 +149,24 @@ def fetch_json(url: str) -> dict:
 def extract_bsb_verses(bsb_data: dict) -> dict:
     """Return {verse_number: text} from a BSB chapter response.
 
-    BSB content items can be strings or objects (e.g. {'lineBreak': True},
-    {'footnote': '...'}). Only string items are included in verse text.
+    BSB content items can be:
+      - plain strings (most prose books)
+      - {"text": "...", "poem": N} objects (poetic books like Psalms, Proverbs)
+      - formatting objects like {"lineBreak": True}, {"footnote": "..."} (skipped)
     """
     verses = {}
     for item in bsb_data["chapter"].get("content", []):
         if item.get("type") == "verse" and item.get("number") is not None:
             parts = item.get("content", [])
             if isinstance(parts, list):
-                # Keep only plain string parts; skip formatting objects
-                text = " ".join(p for p in parts if isinstance(p, str)).strip()
+                text_parts = []
+                for p in parts:
+                    if isinstance(p, str):
+                        text_parts.append(p)
+                    elif isinstance(p, dict) and "text" in p:
+                        text_parts.append(p["text"])
+                    # Skip formatting objects (lineBreak, footnote, etc.)
+                text = " ".join(p.strip() for p in text_parts if p.strip())
             else:
                 text = str(parts).strip() if isinstance(parts, str) else ""
             verses[item["number"]] = text
@@ -198,17 +236,39 @@ def make_entry(
 # ---------------------------------------------------------------------------
 
 
-def process_chapter(usfm_code: str, book_osis: str, chapter_num: int) -> list:
-    """Fetch one chapter from HelloAO and return commentary entries."""
-    commentary_url = (
-        f"{HELLOAO_BASE}/c/{COMMENTARY_ID}/{usfm_code}/{chapter_num}.json"
-    )
-    bsb_url = f"{HELLOAO_BASE}/{BSB_ID}/{usfm_code}/{chapter_num}.json"
+def process_chapter(
+    usfm_code: str,
+    book_osis: str,
+    chapter_num: int,
+    local: bool = False,
+) -> list:
+    """Fetch/load one chapter and return commentary entries."""
+    if local:
+        commentary_path = (
+            LOCAL_RAW_DIR / "c" / COMMENTARY_ID / usfm_code / f"{chapter_num}.json"
+        )
+        bsb_path = LOCAL_RAW_DIR / "BSB" / usfm_code / f"{chapter_num}.json"
 
-    commentary_data = fetch_json(commentary_url)
-    time.sleep(REQUEST_DELAY)
-    bsb_data = fetch_json(bsb_url)
-    time.sleep(REQUEST_DELAY)
+        commentary_data = load_local_json(commentary_path)
+
+        if bsb_path.exists():
+            bsb_data = load_local_json(bsb_path)
+        else:
+            print(
+                f"    WARNING: no BSB file for {usfm_code} ch{chapter_num} "
+                f"-- verse text will be empty"
+            )
+            bsb_data = {"chapter": {"content": []}, "numberOfVerses": 0}
+    else:
+        commentary_url = (
+            f"{HELLOAO_BASE}/c/{COMMENTARY_ID}/{usfm_code}/{chapter_num}.json"
+        )
+        bsb_url = f"{HELLOAO_BASE}/{BSB_ID}/{usfm_code}/{chapter_num}.json"
+
+        commentary_data = fetch_json(commentary_url)
+        time.sleep(REQUEST_DELAY)
+        bsb_data = fetch_json(bsb_url)
+        time.sleep(REQUEST_DELAY)
 
     verse_map = extract_bsb_verses(bsb_data)
     total_verses = bsb_data.get("numberOfVerses", 0)
@@ -261,14 +321,21 @@ def process_chapter(usfm_code: str, book_osis: str, chapter_num: int) -> list:
             else:
                 sections[0]["content"] = [introduction, existing]
     elif introduction and not sections:
-        # Entire chapter commentary is in the intro.
-        entries.append(
-            make_entry(
-                book_osis, chapter_num,
-                1, total_verses,
-                introduction, verse_map,
+        # Entire chapter commentary is in the intro — only emit if we know the verse count.
+        # Guard against data artifacts where total_verses = 0 (e.g. ISA ch68 in HelloAO).
+        if total_verses > 0:
+            entries.append(
+                make_entry(
+                    book_osis, chapter_num,
+                    1, total_verses,
+                    introduction, verse_map,
+                )
             )
-        )
+        else:
+            print(
+                f"    WARNING: ch{chapter_num} has intro text but total_verses=0 "
+                f"-- skipping (data artifact)"
+            )
 
     # Verse sections
     for i, section in enumerate(sections):
@@ -304,9 +371,40 @@ def process_chapter(usfm_code: str, book_osis: str, chapter_num: int) -> list:
 
 
 def build_meta(
-    book_osis: str, usfm_code: str, fetch_date: str, data_hash: str, chapter_count: int
+    book_osis: str,
+    usfm_code: str,
+    fetch_date: str,
+    data_hash: str,
+    chapter_count: int,
+    local: bool = False,
 ) -> dict:
     book_name = OSIS_TO_NAME.get(book_osis, book_osis)
+    # Always use the canonical HelloAO URL as source_url — the data is the same
+    # regardless of whether it was fetched live or read from a local copy.
+    source_url = f"{HELLOAO_BASE}/c/{COMMENTARY_ID}/{usfm_code}"
+    if local:
+        source_format = "JSON (local copy of HelloAO API)"
+        source_edition = (
+            "HelloAO Bible API local download - Matthew Henry Bible Commentary "
+            "(Public Domain Mark 1.0)"
+        )
+        notes = (
+            f"Sourced from local copy of HelloAO Bible API data. Commentary licensed "
+            f"PDM 1.0 (public domain -- Henry died 1714). BSB verse text from HelloAO "
+            f"BSB translation (CC0). Processed {chapter_count} chapters of {book_name}."
+        )
+    else:
+        source_format = "JSON"
+        source_edition = (
+            "HelloAO Bible API - Matthew Henry Bible Commentary "
+            "(Public Domain Mark 1.0)"
+        )
+        notes = (
+            f"Sourced from HelloAO Bible API. Commentary licensed PDM 1.0 "
+            f"(public domain -- Henry died 1714). BSB verse text from HelloAO "
+            f"BSB translation API (CC0). "
+            f"Processed {chapter_count} chapters of {book_name}."
+        )
     return {
         "id": RESOURCE_ID,
         "title": "Matthew Henry's Complete Commentary on the Whole Bible",
@@ -332,12 +430,9 @@ def build_meta(
         "verse_reference_standard": "OSIS",
         "completeness": "partial",
         "provenance": {
-            "source_url": f"{HELLOAO_BASE}/c/{COMMENTARY_ID}/{usfm_code}",
-            "source_format": "JSON",
-            "source_edition": (
-                "HelloAO Bible API - Matthew Henry Bible Commentary "
-                "(Public Domain Mark 1.0)"
-            ),
+            "source_url": source_url,
+            "source_format": source_format,
+            "source_edition": source_edition,
             "download_date": fetch_date,
             "source_hash": f"sha256:{data_hash}",
             "processing_method": "automated",
@@ -345,12 +440,7 @@ def build_meta(
                 f"build/parsers/matthew_henry_helloao.py@{SCRIPT_VERSION}"
             ),
             "processing_date": fetch_date,
-            "notes": (
-                f"Sourced from HelloAO Bible API. Commentary licensed PDM 1.0 "
-                f"(public domain — Henry died 1714). BSB verse text from HelloAO "
-                f"BSB translation API (CC0). "
-                f"Processed {chapter_count} chapters of {book_name}."
-            ),
+            "notes": notes,
         },
         "summary_metadata": None,
     }
@@ -361,42 +451,70 @@ def build_meta(
 # ---------------------------------------------------------------------------
 
 
-def process_book(usfm_code: str, chapter_count: int, dry_run: bool = False) -> None:
+def process_book(
+    usfm_code: str,
+    chapter_count: int,
+    dry_run: bool = False,
+    local: bool = False,
+) -> dict:
+    """Process one book. Returns a stats dict for manifest building."""
     if usfm_code not in USFM_TO_OSIS:
         print(f"ERROR: Unknown USFM code '{usfm_code}'")
-        return
+        return {}
 
     book_osis = USFM_TO_OSIS[usfm_code]
     book_name = OSIS_TO_NAME.get(book_osis, book_osis)
     file_stem = book_name.lower().replace(" ", "-")
     out_file = DATA_DIR / f"{file_stem}.json"
 
-    print(f"Processing {book_name} ({usfm_code} -> {book_osis}), {chapter_count} chapters")
+    mode_label = "local" if local else "API"
+    print(
+        f"Processing {book_name} ({usfm_code} -> {book_osis}), "
+        f"{chapter_count} chapters [{mode_label}]"
+    )
 
     if dry_run:
-        # Fetch just chapter 1 to verify connectivity
-        print("  [dry-run] Fetching chapter 1 to verify API connectivity...")
+        if local:
+            # In local dry-run, load chapter 1 from disk
+            chapters = get_local_chapter_numbers(usfm_code)
+            ch1 = chapters[0] if chapters else 1
+            print(f"  [dry-run] Loading local chapter {ch1}...")
+        else:
+            ch1 = 1
+            print(f"  [dry-run] Fetching chapter {ch1} to verify API connectivity...")
         try:
-            entries = process_chapter(usfm_code, book_osis, 1)
-            print(f"  [dry-run] Chapter 1: {len(entries)} entries. API OK.")
+            entries = process_chapter(usfm_code, book_osis, ch1, local=local)
+            print(f"  [dry-run] Chapter {ch1}: {len(entries)} entries. OK.")
             if entries:
                 print(f"  [dry-run] First entry_id: {entries[0]['entry_id']}")
-                print(f"  [dry-run] First entry verse_range: {entries[0]['verse_range']}")
-                print(
-                    f"  [dry-run] First entry word_count: {entries[0]['word_count']} words"
-                )
+                print(f"  [dry-run] verse_range: {entries[0]['verse_range']}")
+                print(f"  [dry-run] word_count: {entries[0]['word_count']} words")
         except Exception as exc:
-            print(f"  [dry-run] ERROR on chapter 1: {exc}")
+            print(f"  [dry-run] ERROR on chapter {ch1}: {exc}")
         print(f"  [dry-run] Would write to: {out_file}")
-        return
+        return {}
 
     all_entries = []
     failed_chapters = []
 
-    for ch_num in range(1, chapter_count + 1):
-        print(f"  Chapter {ch_num}/{chapter_count}", end="", flush=True)
+    # In local mode, enumerate actual files on disk to handle gaps and partial books.
+    # In API mode, iterate sequentially using the configured chapter count.
+    if local:
+        chapters_to_process = get_local_chapter_numbers(usfm_code)
+        if not chapters_to_process:
+            print(f"  ERROR: no local files found for {usfm_code}")
+            return {}
+        actual_chapter_count = len(chapters_to_process)
+    else:
+        chapters_to_process = list(range(1, chapter_count + 1))
+        actual_chapter_count = chapter_count
+
+    for idx, ch_num in enumerate(chapters_to_process, 1):
+        print(
+            f"  Chapter {ch_num} ({idx}/{actual_chapter_count})", end="", flush=True
+        )
         try:
-            entries = process_chapter(usfm_code, book_osis, ch_num)
+            entries = process_chapter(usfm_code, book_osis, ch_num, local=local)
             all_entries.extend(entries)
             print(f" -> {len(entries)} entries")
         except Exception as exc:
@@ -407,25 +525,115 @@ def process_book(usfm_code: str, chapter_count: int, dry_run: bool = False) -> N
         print(f"WARNING: {len(failed_chapters)} chapters failed: {failed_chapters}")
 
     fetch_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    # Hash the data array (stable for provenance — rerun gives same hash for same data)
     data_bytes = json.dumps(all_entries, ensure_ascii=False, sort_keys=True).encode("utf-8")
     data_hash = hashlib.sha256(data_bytes).hexdigest()
 
     output = {
-        "meta": build_meta(book_osis, usfm_code, fetch_date, data_hash, chapter_count),
+        "meta": build_meta(
+            book_osis, usfm_code, fetch_date, data_hash,
+            actual_chapter_count, local=local,
+        ),
         "data": all_entries,
     }
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with open(out_file, "w", encoding="utf-8", newline="\n") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-        f.write("\n")  # trailing newline
+        f.write("\n")
 
     size_kb = out_file.stat().st_size / 1024
-    print(f"Wrote {len(all_entries)} entries -> {out_file}")
+    print(f"Wrote {len(all_entries)} entries -> {out_file.name}")
     print(f"File size: {size_kb:.0f} KB")
+
+    # Quality stats -- always printed so data issues surface during processing,
+    # not later during a separate review step.
+    if all_entries:
+        words = [e["word_count"] for e in all_entries]
+        null_vt = sum(1 for e in all_entries if not e.get("verse_text"))
+        null_ct = sum(1 for e in all_entries if not (e.get("commentary_text") or "").strip())
+        short = sum(1 for e in all_entries if e["word_count"] < 20)
+        total = len(all_entries)
+        print(
+            f"  Quality: words min={min(words)} med={sorted(words)[total//2]} "
+            f"max={max(words)}"
+        )
+        if null_vt:
+            pct = null_vt * 100 / total
+            print(f"  WARNING: {null_vt}/{total} entries ({pct:.1f}%) missing verse_text")
+        if null_ct:
+            print(f"  WARNING: {null_ct}/{total} entries missing commentary_text")
+        if short:
+            print(f"  WARNING: {short}/{total} entries under 20 words")
+
     if failed_chapters:
-        print(f"WARNING: Missing chapters: {failed_chapters} — re-run or check API coverage")
+        print(
+            f"WARNING: Missing chapters: {failed_chapters} -- re-run or check coverage"
+        )
+
+    return {
+        "usfm_code": usfm_code,
+        "osis_code": book_osis,
+        "name": book_name,
+        "file": f"{file_stem}.json",
+        "chapter_count": actual_chapter_count,
+        "entry_count": len(all_entries),
+        "status": "complete" if not failed_chapters else "partial",
+        "summary_status": "withheld",
+    }
+
+
+# ---------------------------------------------------------------------------
+# Manifest update
+# ---------------------------------------------------------------------------
+
+
+def update_manifest(book_stats: list) -> None:
+    """Write _manifest.json from a list of book stats dicts."""
+    manifest_path = DATA_DIR / "_manifest.json"
+
+    # Load existing manifest to preserve entries not in this run
+    existing_by_usfm = {}
+    if manifest_path.exists():
+        with open(manifest_path, encoding="utf-8") as f:
+            existing = json.load(f)
+        for b in existing.get("books", []):
+            existing_by_usfm[b["usfm_code"]] = b
+
+    # Merge: new stats override existing entries
+    for stats in book_stats:
+        if stats:
+            existing_by_usfm[stats["usfm_code"]] = stats
+
+    # Sort by OSIS book number
+    all_books = sorted(
+        existing_by_usfm.values(),
+        key=lambda b: OSIS_BOOK_NUMBER.get(USFM_TO_OSIS.get(b["usfm_code"], ""), 999),
+    )
+
+    total_entries = sum(b.get("entry_count", 0) for b in all_books)
+    books_with_summaries = sum(
+        1 for b in all_books if b.get("summary_status") not in ("withheld", None)
+    )
+
+    manifest = {
+        "resource_id": RESOURCE_ID,
+        "title": "Matthew Henry's Complete Commentary on the Whole Bible",
+        "schema_type": "commentary",
+        "schema_version": SCHEMA_VERSION,
+        "books": all_books,
+        "stats": {
+            "total_books": len(all_books),
+            "total_entries": total_entries,
+            "books_with_summaries": books_with_summaries,
+        },
+        "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+    }
+
+    with open(manifest_path, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    print(f"Manifest updated: {len(all_books)} books, {total_entries} total entries")
 
 
 # ---------------------------------------------------------------------------
@@ -441,7 +649,12 @@ def main() -> None:
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Fetch chapter 1 only to verify API; do not write output files",
+        help="Load/fetch chapter 1 only to verify; do not write output files",
+    )
+    parser.add_argument(
+        "--local",
+        action="store_true",
+        help="Read from local raw files instead of HelloAO API",
     )
     args = parser.parse_args()
 
@@ -451,15 +664,41 @@ def main() -> None:
     books = {b["usfm_code"]: b for b in config["books"]}
 
     if args.all_books:
+        book_stats = []
+        start_time = time.time()
         for usfm_code, book_cfg in books.items():
-            process_book(usfm_code, book_cfg["chapter_count"], dry_run=args.dry_run)
+            stats = process_book(
+                usfm_code,
+                book_cfg["chapter_count"],
+                dry_run=args.dry_run,
+                local=args.local,
+            )
+            book_stats.append(stats)
+        if not args.dry_run:
+            update_manifest(book_stats)
+        # Grand summary (CODING_DEFAULTS Rule 7)
+        elapsed = time.time() - start_time
+        valid_stats = [s for s in book_stats if s]
+        total_entries = sum(s.get("entry_count", 0) for s in valid_stats)
+        failed = [s["usfm_code"] for s in valid_stats if s.get("status") == "partial"]
+        print()
+        print(f"=== DONE: {len(valid_stats)} books, {total_entries} entries, {elapsed:.1f}s ===")
+        if failed:
+            print(f"  Partial books (had chapter failures): {failed}")
     else:
         usfm_code = args.book.upper()
         if usfm_code not in books:
             print(f"ERROR: '{usfm_code}' not in config. Available: {list(books.keys())}")
             return
         book_cfg = books[usfm_code]
-        process_book(usfm_code, book_cfg["chapter_count"], dry_run=args.dry_run)
+        stats = process_book(
+            usfm_code,
+            book_cfg["chapter_count"],
+            dry_run=args.dry_run,
+            local=args.local,
+        )
+        if not args.dry_run and stats:
+            update_manifest([stats])
 
 
 if __name__ == "__main__":

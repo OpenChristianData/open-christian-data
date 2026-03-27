@@ -1,7 +1,12 @@
 """validate.py
-Validate commentary JSON files against the schema and run structural checks.
+Validate data JSON files against schemas and run structural checks.
 
-Checks:
+Dispatches on meta.schema_type:
+  - commentary: verse-keyed commentary entries
+  - catechism_qa: question-and-answer catechism entries
+  - doctrinal_document: hierarchical confession/creed/canon
+
+Commentary checks:
   1. JSON Schema conformance
   2. Entry ID uniqueness within a file
   3. OSIS verse reference format (basic pattern check)
@@ -9,8 +14,17 @@ Checks:
   5. verse_range parses correctly (start <= end)
   6. book_number matches book_osis
 
+Catechism Q&A checks:
+  1. JSON Schema conformance
+  2. item_id uniqueness within a file
+  3. sort_key uniqueness and ascending order
+  4. question and answer non-empty
+  5. Proof reference OSIS format (if any proofs present)
+
 Usage:
     py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
+    py -3 build/validate.py data/catechisms/westminster-shorter-catechism.json
+    py -3 build/validate.py data/doctrinal-documents/westminster-confession-of-faith.json
     py -3 build/validate.py --all
 """
 
@@ -24,9 +38,17 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 SCHEMA_DIR = REPO_ROOT / "schemas" / "v1"
 
-# OSIS reference pattern: Book.Chapter.Verse[-Book.Chapter.Verse]
+# Strict OSIS: Book.Chapter.Verse[-Book.Chapter.Verse]
+# Used for commentary verse_range_osis and cross_references (verse-level required).
+# Book codes may have a leading digit (e.g. 1Chr, 2Sam, 1John, 1Pet).
 OSIS_REF_PATTERN = re.compile(
-    r"^[A-Z][a-zA-Z0-9]+\.\d+\.\d+(-[A-Z][a-zA-Z0-9]+\.\d+\.\d+)?$"
+    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+(-[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+)?$"
+)
+
+# Permissive OSIS: allows numbered book prefixes (1Cor, 2Pet) and chapter-level refs (Gen.1, Rev.2-Rev.3).
+# Used for proof text osis arrays in doctrinal_document and catechism_qa files.
+OSIS_PROOF_REF_PATTERN = re.compile(
+    r"^(\d?[A-Z][a-zA-Z0-9]*)(\.\d+(\.\d+)?)?(-\d?[A-Z][a-zA-Z0-9]*(\.\d+(\.\d+)?)?)?$"
 )
 
 KNOWN_BOOK_NUMBERS = {
@@ -64,73 +86,77 @@ def parse_verse_range(verse_range: str) -> tuple:
     return int(verse_range), int(verse_range)
 
 
-def validate_file(path: Path) -> tuple:
-    """Validate a single commentary JSON file. Returns (errors, warnings)."""
-    errors = []
-    warnings = []
-
-    # Try JSON Schema validation if jsonschema is available
-    schema_path = SCHEMA_DIR / "commentary.schema.json"
-    jsonschema_available = False
-    try:
-        import jsonschema  # type: ignore
-        jsonschema_available = True
-    except ImportError:
-        warnings.append("jsonschema not installed — skipping schema validation. Run: pip install jsonschema")
-
+def _load_json(path: Path) -> tuple:
+    """Load a JSON file. Returns (data, errors)."""
     try:
         with open(path, encoding="utf-8") as f:
-            data = json.load(f)
+            return json.load(f), []
     except json.JSONDecodeError as exc:
-        errors.append(f"Invalid JSON: {exc}")
-        return errors, warnings
+        return None, [f"Invalid JSON: {exc}"]
     except OSError as exc:
-        errors.append(f"Cannot read file: {exc}")
-        return errors, warnings
+        return None, [f"Cannot read file: {exc}"]
 
-    # JSON Schema check
-    if jsonschema_available and schema_path.exists():
-        with open(schema_path, encoding="utf-8") as f:
-            schema = json.load(f)
-        try:
-            validator = jsonschema.Draft202012Validator(schema)
-            for error in validator.iter_errors(data):
-                errors.append(f"Schema: {error.json_path} — {error.message}")
-        except Exception as exc:
-            warnings.append(f"Schema validation error: {exc}")
 
-    # Structural checks (run even without jsonschema)
+def _run_json_schema(data: dict, schema_path: Path, warnings: list, errors: list) -> None:
+    """Run JSON Schema validation if jsonschema is available."""
+    try:
+        import jsonschema  # type: ignore
+    except ImportError:
+        warnings.append("jsonschema not installed -- skipping schema validation. Run: pip install jsonschema")
+        return
+
+    if not schema_path.exists():
+        warnings.append(f"Schema file not found: {schema_path}")
+        return
+
+    with open(schema_path, encoding="utf-8") as f:
+        schema = json.load(f)
+    try:
+        validator = jsonschema.Draft202012Validator(schema)
+        for error in validator.iter_errors(data):
+            errors.append(f"Schema: {error.json_path} -- {error.message}")
+    except Exception as exc:
+        warnings.append(f"Schema validation error: {exc}")
+
+
+def _check_envelope(data: dict, errors: list) -> list:
+    """Check meta/data envelope. Returns entries list (may be empty)."""
     if not isinstance(data, dict):
         errors.append("Root must be an object")
-        return errors, warnings
-
+        return []
     if "meta" not in data:
         errors.append("Missing 'meta' key")
     if "data" not in data:
         errors.append("Missing 'data' key")
-        return errors, warnings
-
+        return []
     entries = data.get("data", [])
     if not isinstance(entries, list):
         errors.append("'data' must be an array")
-        return errors, warnings
-
+        return []
     if len(entries) == 0:
         errors.append("'data' array is empty")
+    return entries
 
-    # Entry-level checks
+
+def validate_commentary_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=commentary. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "commentary.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
     seen_ids = set()
     for i, entry in enumerate(entries):
         loc = f"data[{i}]"
-
-        # entry_id uniqueness
         eid = entry.get("entry_id")
+
         if eid in seen_ids:
             errors.append(f"{loc}: duplicate entry_id '{eid}'")
         elif eid:
             seen_ids.add(eid)
 
-        # verse_range parse
         vr = entry.get("verse_range", "")
         try:
             start, end = parse_verse_range(vr)
@@ -138,40 +164,30 @@ def validate_file(path: Path) -> tuple:
                 errors.append(f"{loc} ({eid}): verse_range start > end: '{vr}'")
         except ValueError:
             errors.append(f"{loc} ({eid}): unparseable verse_range: '{vr}'")
-            start, end = 0, 0
 
-        # verse_range_osis format
         vro = entry.get("verse_range_osis", "")
         if vro and not OSIS_REF_PATTERN.match(vro):
             errors.append(f"{loc} ({eid}): invalid verse_range_osis format: '{vro}'")
 
-        # cross_references OSIS format
         for ref in entry.get("cross_references", []):
             if not check_osis_ref(ref):
                 errors.append(f"{loc} ({eid}): invalid cross_reference OSIS: '{ref}'")
 
-        # word_count > 0
         wc = entry.get("word_count", 0)
         if not isinstance(wc, int) or wc <= 0:
             errors.append(f"{loc} ({eid}): word_count must be a positive integer, got {wc!r}")
 
-        # commentary_text non-empty
         ct = entry.get("commentary_text", "")
         if not ct or not ct.strip():
             errors.append(f"{loc} ({eid}): commentary_text is empty")
 
-        # summary_review_status valid
         srs = entry.get("summary_review_status", "")
         if srs not in VALID_SUMMARY_STATUSES:
             errors.append(f"{loc} ({eid}): invalid summary_review_status: '{srs}'")
 
-        # If summary is present, status should not be withheld
         if entry.get("summary") and entry.get("summary_review_status") == "withheld":
-            warnings.append(
-                f"{loc} ({eid}): summary is present but status is 'withheld'"
-            )
+            warnings.append(f"{loc} ({eid}): summary is present but status is 'withheld'")
 
-        # book_number matches book_osis
         book_osis = entry.get("book_osis", "")
         book_num = entry.get("book_number", 0)
         expected_num = KNOWN_BOOK_NUMBERS.get(book_osis)
@@ -180,11 +196,218 @@ def validate_file(path: Path) -> tuple:
                 f"{loc} ({eid}): book_number {book_num} does not match {book_osis} (expected {expected_num})"
             )
 
+    # Data completeness checks -- catch issues that structural validation misses.
+    # A file can be structurally valid but still have widespread null fields.
+    if entries:
+        total = len(entries)
+        null_verse_text = sum(1 for e in entries if not e.get("verse_text"))
+        if null_verse_text > 0:
+            pct = null_verse_text * 100 / total
+            # >5% missing verse_text is a warning; >50% is an error (likely a parser bug)
+            msg = f"{null_verse_text}/{total} entries ({pct:.1f}%) missing verse_text"
+            if pct > 50:
+                errors.append(f"Completeness: {msg}")
+            else:
+                warnings.append(f"Completeness: {msg}")
+
+    return errors, warnings
+
+
+def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=catechism_qa. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "catechism_qa.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    seen_item_ids = set()
+    seen_sort_keys = set()
+    prev_sort_key = 0
+    is_partial = data.get("meta", {}).get("completeness") == "partial"
+
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        item_id = entry.get("item_id", "")
+        sort_key = entry.get("sort_key")
+
+        # item_id uniqueness
+        if item_id in seen_item_ids:
+            errors.append(f"{loc}: duplicate item_id '{item_id}'")
+        elif item_id:
+            seen_item_ids.add(item_id)
+
+        # sort_key uniqueness
+        if sort_key in seen_sort_keys:
+            errors.append(f"{loc}: duplicate sort_key {sort_key}")
+        elif sort_key is not None:
+            seen_sort_keys.add(sort_key)
+
+        # sort_key ascending
+        if isinstance(sort_key, int):
+            if sort_key < prev_sort_key:
+                errors.append(f"{loc}: sort_key {sort_key} is not ascending (prev was {prev_sort_key})")
+            prev_sort_key = sort_key
+
+        # question and answer non-empty
+        # empty/null answers are warnings (not errors) for completeness='partial' files
+        if not entry.get("question", "").strip():
+            errors.append(f"{loc} (item_id={item_id!r}): question is empty")
+        if not (entry.get("answer") or "").strip():
+            if is_partial:
+                warnings.append(f"{loc} (item_id={item_id!r}): answer is empty (completeness=partial)")
+            else:
+                errors.append(f"{loc} (item_id={item_id!r}): answer is empty")
+
+        # proof references OSIS format -- use permissive pattern (numbered books + chapter-level refs)
+        for j, proof in enumerate(entry.get("proofs", [])):
+            for k, ref in enumerate(proof.get("references", [])):
+                for osis_str in ref.get("osis", []):
+                    if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
+                        errors.append(
+                            f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
+                        )
+
+    return errors, warnings
+
+
+def _check_units(units: list, path_prefix: str, errors: list) -> None:
+    """Recursively check that all units in a doctrinal_document have required fields."""
+    for i, unit in enumerate(units):
+        loc = f"{path_prefix}[{i}]"
+        if not isinstance(unit, dict):
+            errors.append(f"{loc}: unit must be an object")
+            continue
+        if not unit.get("unit_type"):
+            errors.append(f"{loc}: missing unit_type")
+        # Recurse into children
+        if unit.get("children"):
+            _check_units(unit["children"], f"{loc}.children", errors)
+        # Check OSIS refs in proofs -- use permissive pattern (numbered books + chapter-level refs)
+        for j, proof in enumerate(unit.get("proofs", [])):
+            for k, ref in enumerate(proof.get("references", [])):
+                for osis_str in ref.get("osis", []):
+                    if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
+                        errors.append(
+                            f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
+                        )
+
+
+def validate_doctrinal_document_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=doctrinal_document. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "doctrinal_document.schema.json", warnings, errors)
+
+    if not isinstance(data, dict):
+        errors.append("Root must be an object")
+        return errors, warnings
+    if "meta" not in data:
+        errors.append("Missing 'meta' key")
+    if "data" not in data:
+        errors.append("Missing 'data' key")
+        return errors, warnings
+
+    doc = data["data"]
+    if not isinstance(doc, dict):
+        errors.append("'data' must be an object for doctrinal_document")
+        return errors, warnings
+
+    if not doc.get("document_id"):
+        errors.append("data.document_id is missing or empty")
+    if not doc.get("document_kind"):
+        errors.append("data.document_kind is missing or empty")
+
+    units = doc.get("units")
+    if not units:
+        errors.append("data.units is missing or empty")
+    elif not isinstance(units, list):
+        errors.append("data.units must be an array")
+    else:
+        _check_units(units, "data.units", errors)
+
+    return errors, warnings
+
+
+def validate_file(path: Path) -> tuple:
+    """Load a data file, detect schema_type, and run appropriate validation."""
+    data, load_errors = _load_json(path)
+    if load_errors:
+        return load_errors, []
+
+    schema_type = data.get("meta", {}).get("schema_type", "")
+
+    if schema_type == "commentary":
+        return validate_commentary_file(path, data)
+    elif schema_type == "catechism_qa":
+        return validate_catechism_qa_file(path, data)
+    elif schema_type == "doctrinal_document":
+        return validate_doctrinal_document_file(path, data)
+    else:
+        # Unknown type -- run envelope check only
+        errors = []
+        warnings = [f"Unknown schema_type '{schema_type}' -- only envelope checked"]
+        _check_envelope(data, errors)
+        return errors, warnings
+
+
+def check_schema_consistency() -> tuple:
+    """Check that shared enum values (tradition, license) are identical across all schemas.
+
+    Returns (errors, warnings).
+    """
+    errors = []
+    warnings = []
+
+    schema_files = sorted(SCHEMA_DIR.glob("*.schema.json"))
+    if len(schema_files) < 2:
+        return errors, warnings
+
+    # Extract enum values by field name from each schema's meta.properties
+    enum_sets = {}  # {field_name: {schema_name: set_of_values}}
+
+    for sf in schema_files:
+        with open(sf, encoding="utf-8") as f:
+            schema = json.load(f)
+        name = sf.stem  # e.g. "commentary.schema"
+        meta_props = schema.get("properties", {}).get("meta", {}).get("properties", {})
+
+        for field_name in ("tradition", "license"):
+            field_def = meta_props.get(field_name, {})
+            values = None
+
+            # Direct enum on the field
+            if "enum" in field_def:
+                values = set(field_def["enum"])
+            # Enum on items (for array fields like tradition)
+            items = field_def.get("items", {})
+            if "enum" in items:
+                values = set(items["enum"])
+
+            if values is not None:
+                enum_sets.setdefault(field_name, {})[name] = values
+
+    # Compare: all schemas should have the same enum values for each shared field
+    for field_name, by_schema in enum_sets.items():
+        all_values = set()
+        for vals in by_schema.values():
+            all_values |= vals
+
+        for schema_name, vals in by_schema.items():
+            missing = all_values - vals
+            if missing:
+                errors.append(
+                    f"Schema drift: {schema_name} '{field_name}' is missing: "
+                    f"{sorted(missing)}. Add to match other schemas."
+                )
+
     return errors, warnings
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Validate commentary JSON files")
+    parser = argparse.ArgumentParser(description="Validate data JSON files against schemas")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("files", nargs="*", metavar="FILE", help="Files to validate")
     group.add_argument("--all", action="store_true", help="Validate all files under data/")
@@ -204,10 +427,23 @@ def main() -> None:
     total_errors = 0
     total_warnings = 0
 
+    # Schema consistency check runs automatically with --all
+    if args.all:
+        sc_errors, sc_warnings = check_schema_consistency()
+        if sc_errors or sc_warnings:
+            print("[SCHEMA CONSISTENCY]")
+            for err in sc_errors:
+                print(f"  ERROR: {err}")
+            for warn in sc_warnings:
+                print(f"  WARN:  {warn}")
+            print()
+            total_errors += len(sc_errors)
+            total_warnings += len(sc_warnings)
+
     for path in sorted(files):
         errors, warnings = validate_file(path)
         status = "PASS" if not errors else "FAIL"
-        print(f"[{status}] {path.relative_to(REPO_ROOT)} — {len(errors)} errors, {len(warnings)} warnings")
+        print(f"[{status}] {path.relative_to(REPO_ROOT)} -- {len(errors)} errors, {len(warnings)} warnings")
         for err in errors:
             print(f"  ERROR: {err}")
         for warn in warnings:

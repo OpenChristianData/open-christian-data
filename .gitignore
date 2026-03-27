@@ -25,9 +25,13 @@ sources/*/raw/*.gz
 *.swp
 *.swo
 
+# Logs
+*.log
+
 # OS
 .DS_Store
 Thumbs.db
 
 # Node (for future TypeScript tooling)
 node_modules/
+raw/
