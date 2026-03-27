@@ -200,11 +200,14 @@ def map_proofs(raw_proofs: list) -> list:
 def _parse_sort_key(number) -> int:
     """Parse the Number field to an integer sort key.
 
-    Most catechisms use plain integers. Falls back to 0 on failure.
+    Most catechisms use plain integers. Falls back to 0 on failure (which
+    will fail JSON Schema validation since minimum is 1 -- this is intentional
+    so the problem surfaces at validate time rather than silently).
     """
     try:
         return int(str(number).strip())
     except (ValueError, TypeError):
+        log(f"WARNING: Could not parse Number '{number}' as integer sort key -- setting to 0 (will fail schema validation)")
         return 0
 
 
@@ -433,25 +436,28 @@ def main() -> None:
     log(f"creeds_json_catechism.py {SCRIPT_VERSION}")
 
     if args.all:
-        total_ok = 0
-        total_fail = 0
-        total = len(ALL_CATECHISMS)
-        for idx, stem in enumerate(ALL_CATECHISMS, start=1):
+        try:
+            total_ok = 0
+            total_fail = 0
+            total = len(ALL_CATECHISMS)
+            for idx, stem in enumerate(ALL_CATECHISMS, start=1):
+                log("")
+                log(f"--- [{idx}/{total}] {stem} ---")
+                source_file = CREEDS_DIR / f"{stem}.json"
+                doc_cfg = DOCUMENT_CONFIGS[stem]
+                output_file = OUTPUT_DIR / f"{doc_cfg['document_id']}.json"
+                ok = process_catechism(source_file, output_file, doc_cfg)
+                if ok:
+                    total_ok += 1
+                else:
+                    total_fail += 1
+            elapsed = (datetime.now(timezone.utc) - start).total_seconds()
             log("")
-            log(f"--- [{idx}/{total}] {stem} ---")
-            source_file = CREEDS_DIR / f"{stem}.json"
-            doc_cfg = DOCUMENT_CONFIGS[stem]
-            output_file = OUTPUT_DIR / f"{doc_cfg['document_id']}.json"
-            ok = process_catechism(source_file, output_file, doc_cfg)
-            if ok:
-                total_ok += 1
-            else:
-                total_fail += 1
-        elapsed = (datetime.now(timezone.utc) - start).total_seconds()
-        log("")
-        log(f"All done in {elapsed:.1f}s: {total_ok} ok, {total_fail} failed")
-        if total_fail:
-            log(f"FAILED: check log at {LOG_FILE}")
+            log(f"All done in {elapsed:.1f}s: {total_ok} ok, {total_fail} failed")
+            if total_fail:
+                log(f"FAILED: check log at {LOG_FILE}")
+        finally:
+            flush_log()
     else:
         source_file = Path(args.source)
         if not source_file.is_absolute():
@@ -503,8 +509,6 @@ def main() -> None:
 
         if not success:
             sys.exit(1)
-
-    flush_log()
 
 
 if __name__ == "__main__":
