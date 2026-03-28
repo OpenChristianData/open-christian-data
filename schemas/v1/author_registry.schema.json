@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/author_registry.schema.json",
+  "title": "Author Registry",
+  "description": "Registry of authors and corporate bodies that appear as metadata envelope authors across OCD data files.",
+  "type": "object",
+  "required": ["authors"],
+  "additionalProperties": false,
+  "properties": {
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["author_id", "display_name", "aliases", "birth_year", "death_year", "tradition", "works"],
+        "additionalProperties": false,
+        "properties": {
+          "author_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "Kebab-case canonical identifier. Must be unique across all entries."
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Canonical full name for display."
+          },
+          "aliases": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Alternative name forms found in data files or likely to appear in future sources (abbreviations, alternate spellings, honorifics)."
+          },
+          "birth_year": {
+            "type": ["integer", "null"],
+            "description": "Year of birth (or founding for corporate bodies). Null if unknown."
+          },
+          "death_year": {
+            "type": ["integer", "null"],
+            "description": "Year of death (or dissolution for corporate bodies). Null if unknown."
+          },
+          "tradition": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "reformed", "lutheran", "anglican", "baptist", "methodist",
+                "catholic", "orthodox", "ecumenical", "non-denominational",
+                "puritan", "nonconformist", "patristic", "wesleyan",
+                "presbyterian", "particular-baptist", "continental-reformed",
+                "arminian", "calvinist", "evangelical", "confessional"
+              ]
+            },
+            "description": "Theological tradition(s). Same enum as envelope tradition field."
+          },
+          "nationality": {
+            "type": ["string", "null"],
+            "description": "Country or region of origin. Null for ancient figures or corporate bodies."
+          },
+          "works": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Resource IDs (meta.id values) of works by this author present in the dataset. Empty array if not yet in dataset (forward-compat entry)."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Free-text notes for disambiguation, co-authorship relationships, or historical context."
+          }
+        }
+      }
+    }
+  }
+}
