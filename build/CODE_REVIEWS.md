@@ -31,3 +31,10 @@
 | schemas/v1/devotional.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
 | build/validate.py | 2026-03-28 | Updated (0d): added check_author_registry() + [AUTHOR REGISTRY] block in --all run. Subagent-written; manual spot-check confirmed structure. No python-standards-reviewer run on 0d additions specifically — flag for next Opus pass. |
 | schemas/v1/author_registry.schema.json | 2026-03-28 | New (0d). Tradition enum matches commentary schema. nationality + notes fields added (not in original spec but sensible additions). |
+| build/parsers/church_fathers.py | 2026-03-28 | New (Church Fathers T1-3). Standards-reviewer pass (4 issues fixed: error messages, magic numbers, aggregate stats, try/except). Post-eval fixes: aggregate null_osis + empty_source_title in summary. Dedup bug fixed (set not dict). No Opus review yet — flag for next pass. |
+| schemas/v1/church_fathers.schema.json | 2026-03-28 | New (Church Fathers). Tradition/license enums match commentary schema (consistency check passes). anchor_ref, attribution_note, context fields. |
+| build/scripts/sample_church_fathers.py | 2026-03-28 | New (post-eval). Sanity check script — samples N random authors, prints key fields, checks for non-ASCII filenames. Standards-reviewer pass not run — simple read-only script, low risk. |
+| build/parsers/standard_ebooks.py | 2026-03-28 | New (T1-4). Standards-reviewer pass not run. Post-eval fixes applied: SKIP_PREFIXES filter, --list-files flag, expected_count assertion. No Opus review yet — flag for next pass. |
+| schemas/v1/structured_text.schema.json | 2026-03-28 | New (T1-4). Recursive section tree. Tradition/license enums match other schemas (consistency check passes). |
+| schemas/v1/sermon.schema.json | 2026-03-28 | New (T1-4). Data is array of sermon entries. Tradition/license enums match other schemas. |
+| build/validate.py | 2026-03-28 | Updated (T1-4): added validate_structured_text_file(), validate_sermon_file(), _check_sections(). 0 errors on --all (741 files). |
