@@ -2,10 +2,19 @@
 Validate data JSON files against schemas and run structural checks.
 
 Dispatches on meta.schema_type:
+  - bible_text: verse-level Bible text (one file per book)
   - commentary: verse-keyed commentary entries
   - catechism_qa: question-and-answer catechism entries
   - doctrinal_document: hierarchical confession/creed/canon
   - devotional: date-keyed daily reading entries
+
+Bible text checks:
+  1. JSON Schema conformance
+  2. OSIS uniqueness within a file
+  3. OSIS format (Book.Chapter.Verse)
+  4. chapter/verse consistency with OSIS
+  5. text non-empty
+  6. scope.book_osis matches record OSIS prefixes
 
 Commentary checks:
   1. JSON Schema conformance
@@ -32,6 +41,7 @@ Devotional checks:
   7. primary_reference OSIS format (if present)
 
 Usage:
+    py -3 build/validate.py data/bible-text/bsb/genesis.json
     py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
     py -3 build/validate.py data/catechisms/westminster-shorter-catechism.json
     py -3 build/validate.py data/doctrinal-documents/westminster-confession-of-faith.json
@@ -51,6 +61,29 @@ DEVOTIONAL_ENTRY_ID_PATTERN = re.compile(r"^(\d{2})-(\d{2})(?:-(\w+))?$")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 SCHEMA_DIR = REPO_ROOT / "schemas" / "v1"
+
+# Path to the canonical verse index -- used to check OSIS existence in --all mode
+_VERSE_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "verse_index.json"
+
+# Lazy-loaded reference to validate_osis_array from build.scripts.validate_osis.
+# Loaded once on first call; degrades to None if the module or index is unavailable.
+_osis_validator_fn = None
+_osis_validator_loaded = False
+
+
+def _get_osis_validator():
+    """Return validate_osis_array function, or None if unavailable."""
+    global _osis_validator_fn, _osis_validator_loaded
+    if _osis_validator_loaded:
+        return _osis_validator_fn
+    _osis_validator_loaded = True
+    try:
+        sys.path.insert(0, str(REPO_ROOT))
+        from build.scripts.validate_osis import validate_osis_array  # noqa: E402
+        _osis_validator_fn = validate_osis_array
+    except ImportError as exc:
+        print(f"WARN: Could not import validate_osis -- OSIS existence checks disabled: {exc}", file=sys.stderr)
+    return _osis_validator_fn
 
 # Strict OSIS: Book.Chapter.Verse[-Book.Chapter.Verse]
 # Used for commentary verse_range_osis and cross_references (verse-level required).
@@ -241,6 +274,9 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
     prev_sort_key = 0
     is_partial = data.get("meta", {}).get("completeness") == "partial"
 
+    # Accumulate format-valid OSIS strings for existence check at end
+    osis_to_check = []
+
     for i, entry in enumerate(entries):
         loc = f"data[{i}]"
         item_id = entry.get("item_id", "")
@@ -282,12 +318,36 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
                         errors.append(
                             f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
                         )
+                    elif osis_str:
+                        # Pattern OK -- queue for verse existence check
+                        osis_to_check.append(osis_str)
+
+    # OSIS existence check -- warnings only (source data may have valid edge cases)
+    if osis_to_check:
+        validator = _get_osis_validator()
+        if validator:
+            valid_count, invalid_items = validator(osis_to_check)
+            if invalid_items:
+                detail_parts = [f"{s} ({r})" for s, r in invalid_items[:5]]
+                detail = "; ".join(detail_parts)
+                if len(invalid_items) > 5:
+                    detail += f" ... and {len(invalid_items) - 5} more"
+                warnings.append(
+                    f"OSIS existence: {valid_count}/{len(osis_to_check)} valid, "
+                    f"{len(invalid_items)} invalid: {detail}"
+                )
 
     return errors, warnings
 
 
-def _check_units(units: list, path_prefix: str, errors: list) -> None:
-    """Recursively check that all units in a doctrinal_document have required fields."""
+def _check_units(units: list, path_prefix: str, errors: list, osis_to_check: list = None) -> None:
+    """Recursively check that all units in a doctrinal_document have required fields.
+
+    osis_to_check: if provided, format-valid OSIS strings are appended for
+    downstream existence checking. Pass an empty list from the caller.
+    """
+    if osis_to_check is None:
+        osis_to_check = []
     for i, unit in enumerate(units):
         loc = f"{path_prefix}[{i}]"
         if not isinstance(unit, dict):
@@ -297,7 +357,7 @@ def _check_units(units: list, path_prefix: str, errors: list) -> None:
             errors.append(f"{loc}: missing unit_type")
         # Recurse into children
         if unit.get("children"):
-            _check_units(unit["children"], f"{loc}.children", errors)
+            _check_units(unit["children"], f"{loc}.children", errors, osis_to_check)
         # Check OSIS refs in proofs -- use permissive pattern (numbered books + chapter-level refs)
         for j, proof in enumerate(unit.get("proofs", [])):
             for k, ref in enumerate(proof.get("references", [])):
@@ -306,6 +366,9 @@ def _check_units(units: list, path_prefix: str, errors: list) -> None:
                         errors.append(
                             f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
                         )
+                    elif osis_str:
+                        # Pattern OK -- queue for verse existence check
+                        osis_to_check.append(osis_str)
 
 
 def validate_doctrinal_document_file(path: Path, data: dict) -> tuple:
@@ -334,13 +397,106 @@ def validate_doctrinal_document_file(path: Path, data: dict) -> tuple:
     if not doc.get("document_kind"):
         errors.append("data.document_kind is missing or empty")
 
+    osis_to_check = []
+
     units = doc.get("units")
     if not units:
         errors.append("data.units is missing or empty")
     elif not isinstance(units, list):
         errors.append("data.units must be an array")
     else:
-        _check_units(units, "data.units", errors)
+        _check_units(units, "data.units", errors, osis_to_check)
+
+    # OSIS existence check -- warnings only (source data may have valid edge cases)
+    if osis_to_check:
+        validator = _get_osis_validator()
+        if validator:
+            valid_count, invalid_items = validator(osis_to_check)
+            if invalid_items:
+                detail_parts = [f"{s} ({r})" for s, r in invalid_items[:5]]
+                detail = "; ".join(detail_parts)
+                if len(invalid_items) > 5:
+                    detail += f" ... and {len(invalid_items) - 5} more"
+                warnings.append(
+                    f"OSIS existence: {valid_count}/{len(osis_to_check)} valid, "
+                    f"{len(invalid_items)} invalid: {detail}"
+                )
+
+    return errors, warnings
+
+
+def validate_bible_text_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=bible_text. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "bible_text.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    # Scope consistency: all records must belong to the book declared in meta.scope
+    scope = data.get("meta", {}).get("scope", {})
+    scope_osis = scope.get("book_osis", "")
+
+    seen_osis = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        osis = entry.get("osis", "")
+
+        # OSIS uniqueness
+        if osis in seen_osis:
+            errors.append(f"{loc}: duplicate osis '{osis}'")
+        elif osis:
+            seen_osis.add(osis)
+
+        # OSIS format: Book.Chapter.Verse
+        if not OSIS_REF_PATTERN.match(osis):
+            errors.append(f"{loc}: invalid osis format: '{osis}'")
+        elif scope_osis:
+            # Book prefix must match scope
+            osis_book = osis.split(".")[0] if "." in osis else ""
+            if osis_book != scope_osis:
+                errors.append(
+                    f"{loc}: osis book '{osis_book}' does not match "
+                    f"meta.scope.book_osis '{scope_osis}'"
+                )
+
+        # chapter/verse consistency with osis
+        parts = osis.split(".")
+        if len(parts) == 3:
+            try:
+                osis_chapter = int(parts[1])
+                osis_verse = int(parts[2])
+                if entry.get("chapter") != osis_chapter:
+                    errors.append(
+                        f"{loc} ({osis}): chapter={entry.get('chapter')} "
+                        f"does not match osis chapter {osis_chapter}"
+                    )
+                if entry.get("verse") != osis_verse:
+                    errors.append(
+                        f"{loc} ({osis}): verse={entry.get('verse')} "
+                        f"does not match osis verse {osis_verse}"
+                    )
+            except ValueError:
+                pass  # already caught by OSIS format check above
+
+        # text must be non-empty (BSB omits textual-critical verses -- these
+        # should be skipped by the parser, not stored as empty strings)
+        text = entry.get("text", "")
+        if not text or not text.strip():
+            warnings.append(f"{loc} ({osis}): text is empty")
+
+    # Completeness
+    if entries:
+        total = len(entries)
+        empty_text = sum(1 for e in entries if not (e.get("text") or "").strip())
+        if empty_text > 0:
+            pct = empty_text * 100 / total
+            msg = f"{empty_text}/{total} entries ({pct:.1f}%) have empty text"
+            if pct > 1:
+                errors.append(f"Completeness: {msg}")
+            else:
+                warnings.append(f"Completeness: {msg}")
 
     return errors, warnings
 
@@ -446,6 +602,8 @@ def validate_file(path: Path) -> tuple:
         return validate_doctrinal_document_file(path, data)
     elif schema_type == "devotional":
         return validate_devotional_file(path, data)
+    elif schema_type == "bible_text":
+        return validate_bible_text_file(path, data)
     else:
         # Unknown type -- run envelope check only
         errors = []
@@ -527,6 +685,13 @@ def main() -> None:
 
     total_errors = 0
     total_warnings = 0
+
+    # Verse index availability warning -- shown once at top of --all run
+    if args.all and not _VERSE_INDEX_PATH.exists():
+        print("WARN: build/bible_data/verse_index.json not found -- OSIS existence checks skipped")
+        print("  Run: py -3 build/scripts/build_verse_index.py")
+        print()
+        total_warnings += 1
 
     # Schema consistency check runs automatically with --all
     if args.all:
