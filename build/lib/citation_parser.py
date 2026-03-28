@@ -4,6 +4,8 @@ Utilities for parsing biblical citation strings into OSIS book codes.
 OSIS book codes follow the standard used in build/validate.py KNOWN_BOOK_NUMBERS.
 """
 
+import re
+
 # Maps normalised input (stripped of trailing period, lowercased) -> OSIS code.
 # Covers abbreviations observed in WSC proof texts plus common full names.
 BOOK_ABBREVIATIONS: dict[str, str] = {
@@ -261,8 +263,6 @@ def _extract_book_and_remainder(ref: str) -> tuple[str, str]:
     Raises:
         ValueError: if no valid book can be identified.
     """
-    import re
-
     s = ref.strip()
 
     # Try increasingly longer prefixes to find the longest matching book token.
@@ -315,18 +315,6 @@ def _extract_book_and_remainder(ref: str) -> tuple[str, str]:
     return best_book, remainder
 
 
-def _parse_verse_token(token: str) -> str | None:
-    """Parse a single verse token which may be a range ('25-28') or plain int.
-
-    Returns a range string like '25-28' or a plain string like '25', or None
-    if the token is empty.
-    """
-    token = token.strip()
-    if not token:
-        return None
-    return token  # keep as-is; caller formats with book/chapter
-
-
 def _build_osis_entries(book: str, chapter: str, verse_portion: str) -> list[str]:
     """Convert a chapter + verse portion string into a list of OSIS ref strings.
 
@@ -377,6 +365,9 @@ def parse_single_reference(ref: str) -> dict:
     """
     raw = ref.strip()
     book, remainder = _extract_book_and_remainder(raw)
+
+    if not remainder.strip():
+        raise ValueError(f"No chapter/verse found in reference: {ref!r}")
 
     if ':' in remainder:
         chapter, verse_portion = remainder.split(':', 1)
