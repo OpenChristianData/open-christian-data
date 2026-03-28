@@ -1,0 +1,30 @@
+{
+  "id": "directory-for-family-worship",
+  "title": "The Directory for Family Worship",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1647,
+  "source": {
+    "name": "thewestminsterstandard.org",
+    "url": "https://thewestminsterstandard.org/directory-for-family-worship",
+    "repository": null,
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "17th-century text; no copyrightable original content added by host site.",
+    "download_date": "2026-03-28",
+    "source_hash": "sha256:0ae54b81d865ed2ef71e15d507860685ebbd526214b0ef2ab49844108bdb9166"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "directory",
+  "output_file": "data/doctrinal-documents/directory-for-family-worship.json",
+  "parser": "build/parsers/westminster_standard_parser.py",
+  "stats": {
+    "section_count": 14,
+    "word_count": 2100
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Completeness: full -- all 14 sections present.",
+    "Parsed from thewestminsterstandard.org HTML. Section headings are Roman numerals (I.-XIV.).",
+    "No inline proof texts in this document; none deferred."
+  ]
+}

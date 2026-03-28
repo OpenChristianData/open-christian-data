@@ -1,0 +1,30 @@
+{
+  "id": "directory-for-publick-worship",
+  "title": "The Directory for the Publick Worship of God",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1645,
+  "source": {
+    "name": "thewestminsterstandard.org",
+    "url": "https://thewestminsterstandard.org/directory-for-publick-worship",
+    "repository": null,
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "17th-century text; no copyrightable original content added by host site.",
+    "download_date": "2026-03-28",
+    "source_hash": "sha256:354006b984ea249e06be9c5a4f9f13fcee64a269cc016df2097e929430fc7df3"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "directory",
+  "output_file": "data/doctrinal-documents/directory-for-publick-worship.json",
+  "parser": "build/parsers/westminster_standard_parser.py",
+  "stats": {
+    "section_count": 16,
+    "word_count": 12531
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Completeness: full -- all 16 sections present (Preface + 15 topic sections + Appendix).",
+    "Includes Preface, order of worship sections, sacraments, Lord's Day, marriage, visitation, burial, fasting, thanksgiving, psalms, and appendix.",
+    "Parsed from thewestminsterstandard.org HTML."
+  ]
+}
