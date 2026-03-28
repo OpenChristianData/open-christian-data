@@ -91,13 +91,26 @@ OSIS_BOOK_NUMBER = {
 # ---------------------------------------------------------------------------
 
 
+REQUIRED_CONFIG_KEYS = [
+    "commentary_id", "resource_id", "title", "author",
+    "original_publication_year", "language", "tradition", "tradition_notes",
+    "license", "source_base_url", "helloao_license",
+]
+
+
 def load_config(commentary_id: str) -> dict:
-    """Load sources/commentaries/<id>/config.json."""
+    """Load sources/commentaries/<id>/config.json and validate required keys."""
     config_path = REPO_ROOT / "sources" / "commentaries" / commentary_id / "config.json"
     if not config_path.exists():
         raise FileNotFoundError(f"Config not found: {config_path}")
     with open(config_path, encoding="utf-8") as f:
-        return json.load(f)
+        config = json.load(f)
+    missing = [k for k in REQUIRED_CONFIG_KEYS if k not in config]
+    if missing:
+        raise ValueError(
+            f"Config {config_path} missing required keys: {', '.join(missing)}"
+        )
+    return config
 
 
 def discover_books(commentary_id: str) -> list:
@@ -552,7 +565,9 @@ def update_manifest(config: dict, data_dir: Path, book_stats: list) -> None:
         "stats": {
             "total_books": len(all_books),
             "total_entries": total_entries,
-            "books_with_summaries": 0,
+            "books_with_summaries": sum(
+            1 for b in all_books if b.get("summary_status") not in ("withheld", None)
+        ),
         },
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
     }
@@ -637,6 +652,15 @@ def main() -> None:
             print(f"  Partial books (had chapter failures): {failed}")
     else:
         usfm_code = args.book.upper()
+        try:
+            available = discover_books(commentary_id)
+        except FileNotFoundError as exc:
+            print(f"ERROR: {exc}")
+            return
+        if usfm_code not in available:
+            print(f"ERROR: '{usfm_code}' not available for {commentary_id}.")
+            print(f"Available books: {', '.join(available)}")
+            return
         stats = process_book(config, usfm_code, data_dir, dry_run=args.dry_run)
         if not args.dry_run and stats:
             update_manifest(config, data_dir, [stats])

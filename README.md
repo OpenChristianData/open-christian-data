@@ -68,7 +68,7 @@ schemas/
   types.ts                    # TypeScript types
 build/
   parsers/
-    matthew_henry_helloao.py  # Fetches from HelloAO API, maps to schema
+    helloao_commentary.py     # Generic parser for any HelloAO commentary
   validate.py                 # Schema + structural validation
 sources/
   commentaries/
@@ -97,20 +97,23 @@ valley = [e for e in resource["data"] if "37" in e["verse_range_osis"]]
 # Validate a data file
 py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
 
-# Re-fetch Ezekiel from HelloAO (overwrites existing file)
-py -3 build/parsers/matthew_henry_helloao.py --book EZK
+# Process a single book for any commentary
+py -3 build/parsers/helloao_commentary.py --commentary matthew-henry --book EZK
 
-# Dry run (verify API connectivity, no file writes)
-py -3 build/parsers/matthew_henry_helloao.py --book EZK --dry-run
+# Process all books for a commentary
+py -3 build/parsers/helloao_commentary.py --commentary jamieson-fausset-brown --all-books
+
+# Dry run (load chapter 1 only, no file writes)
+py -3 build/parsers/helloao_commentary.py --commentary john-gill --book GEN --dry-run
 ```
 
 Requires Python 3.9+. No external dependencies for the pipeline. `pip install jsonschema` for schema validation.
 
 ## Sources
 
-- **Commentary text**: [HelloAO Bible API](https://bible.helloao.org) — Matthew Henry Bible Commentary, PDM 1.0 (public domain)
+- **Commentary text**: [HelloAO Bible API](https://bible.helloao.org) — 5 commentaries (Matthew Henry, Jamieson-Fausset-Brown, John Gill, Adam Clarke, Keil-Delitzsch), all PDM 1.0 (public domain)
 - **Verse text**: BSB (Berean Standard Bible) via HelloAO, CC0
-- **Matthew Henry** died 1714; commentary published 1706-1714. Unambiguously public domain.
+- All commentary authors died before 1928; texts are unambiguously public domain.
 
 ## Summaries
 
