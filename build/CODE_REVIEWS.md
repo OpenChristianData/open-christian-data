@@ -20,4 +20,14 @@
 | schemas/v1/doctrinal_document.schema.json | 2026-03-28 | Updated: added "directory" and "covenant" to document_kind enum. Subagent review confirmed alphabetical order and no regressions. |
 | build/parsers/bsb_bible_text.py | 2026-03-28 | New (Prompt 0a). Standards-reviewer pass (6 issues fixed). Logger.info format bug caught in retrospective and fixed. |
 | schemas/v1/bible_text.schema.json | 2026-03-28 | New (Prompt 0a). Opus review: M1 original_language pattern added for consistency with devotional. M6 doctrinal_document minItems:0 noted (pre-existing, not fixed). L3/L4/L8 informational. |
-| build/validate.py | 2026-03-28 | Updated: added validate_bible_text_file() + dispatch. Follows existing validator pattern exactly. |
+| build/validate.py | 2026-03-28 | Updated (Prompt 0b + fixes): added validate_bible_text_file(), OSIS existence checking for commentary/catechism/doctrinal, fixed commentary cross_references to handle Reference objects (was TypeError on dict). Standards-reviewer pass. |
+| build/scripts/build_verse_index.py | 2026-03-28 | New (Prompt 0b). Standards-reviewer pass (4 issues fixed: hardcoded date, elapsed time, 2x silent exception swallows). |
+| build/scripts/validate_osis.py | 2026-03-28 | New (Prompt 0b). Importable utility. Standards-reviewer pass. |
+| build/scripts/test_osis_integration.py | 2026-03-28 | New (Prompt 0b post-session). 23 integration tests — 23/23 pass. No Opus needed. |
+| build/scripts/add_token_counts.py | 2026-03-28 | New (Prompt 0c). Standards-reviewer pass. Idempotent, --dry-run mode. 105,413 records updated across 407 files. |
+| schemas/v1/commentary.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
+| schemas/v1/catechism_qa.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
+| schemas/v1/doctrinal_document.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer in $defs/unit. |
+| schemas/v1/devotional.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
+| build/validate.py | 2026-03-28 | Updated (0d): added check_author_registry() + [AUTHOR REGISTRY] block in --all run. Subagent-written; manual spot-check confirmed structure. No python-standards-reviewer run on 0d additions specifically — flag for next Opus pass. |
+| schemas/v1/author_registry.schema.json | 2026-03-28 | New (0d). Tradition enum matches commentary schema. nationality + notes fields added (not in original spec but sensible additions). |

@@ -156,6 +156,11 @@
                 }
               }
             ]
+          },
+          "token_count": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Token count using cl100k_base (OpenAI tiktoken). Computed at build time."
           }
         }
       }

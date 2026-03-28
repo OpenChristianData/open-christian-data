@@ -173,7 +173,12 @@
             "items": { "type": "string" },
             "description": "OSIS format: e.g. 'Jer.29.1', 'Dan.1.1-Dan.1.6'"
           },
-          "word_count": { "type": "integer", "minimum": 0 }
+          "word_count": { "type": "integer", "minimum": 0 },
+          "token_count": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Token count using cl100k_base (OpenAI tiktoken). Computed at build time."
+          }
         }
       }
     }

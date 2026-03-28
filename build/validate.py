@@ -23,6 +23,7 @@ Commentary checks:
   4. Word count sanity (> 0)
   5. verse_range parses correctly (start <= end)
   6. book_number matches book_osis
+  7. cross_references osis arrays valid (Reference objects: {"raw":..., "osis":[...]})
 
 Catechism Q&A checks:
   1. JSON Schema conformance
@@ -30,6 +31,7 @@ Catechism Q&A checks:
   3. sort_key uniqueness and ascending order
   4. question and answer non-empty
   5. Proof reference OSIS format (if any proofs present)
+  6. Proof reference OSIS existence against verse index (warnings only)
 
 Devotional checks:
   1. JSON Schema conformance
@@ -194,6 +196,9 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
 
     entries = _check_envelope(data, errors)
 
+    # Accumulate format-valid OSIS strings for existence check at end
+    osis_to_check = []
+
     seen_ids = set()
     for i, entry in enumerate(entries):
         loc = f"data[{i}]"
@@ -216,9 +221,20 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
         if vro and not OSIS_REF_PATTERN.match(vro):
             errors.append(f"{loc} ({eid}): invalid verse_range_osis format: '{vro}'")
 
-        for ref in entry.get("cross_references", []):
-            if not check_osis_ref(ref):
-                errors.append(f"{loc} ({eid}): invalid cross_reference OSIS: '{ref}'")
+        # cross_references: schema defines these as Reference objects {"raw": ..., "osis": [...]}.
+        # Plain-string refs are handled defensively for forward compat but are not expected.
+        for j, ref in enumerate(entry.get("cross_references", [])):
+            if isinstance(ref, dict):
+                for osis_str in ref.get("osis", []):
+                    if osis_str and not OSIS_REF_PATTERN.match(osis_str):
+                        errors.append(
+                            f"{loc} ({eid}): cross_references[{j}] invalid OSIS: '{osis_str}'"
+                        )
+                    elif osis_str:
+                        osis_to_check.append(osis_str)
+            elif isinstance(ref, str):
+                if not check_osis_ref(ref):
+                    errors.append(f"{loc} ({eid}): invalid cross_reference OSIS: '{ref}'")
 
         wc = entry.get("word_count", 0)
         if not isinstance(wc, int) or wc <= 0:
@@ -256,6 +272,21 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
                 errors.append(f"Completeness: {msg}")
             else:
                 warnings.append(f"Completeness: {msg}")
+
+    # OSIS existence check -- warnings only (source data may have valid edge cases)
+    if osis_to_check:
+        validator = _get_osis_validator()
+        if validator:
+            valid_count, invalid_items = validator(osis_to_check)
+            if invalid_items:
+                detail_parts = [f"{s} ({r})" for s, r in invalid_items[:5]]
+                detail = "; ".join(detail_parts)
+                if len(invalid_items) > 5:
+                    detail += f" ... and {len(invalid_items) - 5} more"
+                warnings.append(
+                    f"OSIS existence: {valid_count}/{len(osis_to_check)} valid, "
+                    f"{len(invalid_items)} invalid: {detail}"
+                )
 
     return errors, warnings
 
@@ -586,6 +617,76 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
     return errors, warnings
 
 
+def validate_church_fathers_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=church_fathers. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "church_fathers.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        eid = entry.get("entry_id", "")
+
+        # entry_id uniqueness
+        if eid in seen_ids:
+            errors.append(f"{loc}: duplicate entry_id '{eid}'")
+        elif eid:
+            seen_ids.add(eid)
+
+        # quote non-empty
+        quote = entry.get("quote", "")
+        if not quote or not quote.strip():
+            errors.append(f"{loc} ({eid}): quote is empty")
+
+        # word_count positive
+        wc = entry.get("word_count", 0)
+        if not isinstance(wc, int) or wc < 0:
+            errors.append(f"{loc} ({eid}): word_count must be a non-negative integer, got {wc!r}")
+
+        # anchor_ref structure
+        ref = entry.get("anchor_ref", {})
+        if not isinstance(ref, dict):
+            errors.append(f"{loc} ({eid}): anchor_ref must be an object")
+        else:
+            if not ref.get("raw"):
+                errors.append(f"{loc} ({eid}): anchor_ref.raw is empty")
+            osis_list = ref.get("osis", [])
+            if not isinstance(osis_list, list):
+                errors.append(f"{loc} ({eid}): anchor_ref.osis must be an array")
+            else:
+                for osis_str in osis_list:
+                    # Use permissive pattern -- church_fathers refs include ranges
+                    if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
+                        errors.append(
+                            f"{loc} ({eid}): anchor_ref.osis invalid format: '{osis_str}'"
+                        )
+
+    # Completeness checks
+    if entries:
+        total = len(entries)
+        no_osis = sum(1 for e in entries if not e.get("anchor_ref", {}).get("osis"))
+        empty_source = sum(1 for e in entries if not e.get("source_title", "").strip())
+        if no_osis > 0:
+            pct = no_osis * 100 / total
+            msg = f"{no_osis}/{total} entries ({pct:.1f}%) have empty anchor_ref.osis (non-canonical book)"
+            # >50% no-OSIS is unexpected for a standard Church Father
+            if pct > 50:
+                warnings.append(f"Completeness: {msg}")
+            else:
+                warnings.append(f"Completeness: {msg}")
+        if empty_source > 0:
+            pct = empty_source * 100 / total
+            warnings.append(
+                f"Completeness: {empty_source}/{total} entries ({pct:.1f}%) missing source_title"
+            )
+
+    return errors, warnings
+
+
 def validate_file(path: Path) -> tuple:
     """Load a data file, detect schema_type, and run appropriate validation."""
     data, load_errors = _load_json(path)
@@ -604,12 +705,105 @@ def validate_file(path: Path) -> tuple:
         return validate_devotional_file(path, data)
     elif schema_type == "bible_text":
         return validate_bible_text_file(path, data)
+    elif schema_type == "church_fathers":
+        return validate_church_fathers_file(path, data)
     else:
         # Unknown type -- run envelope check only
         errors = []
         warnings = [f"Unknown schema_type '{schema_type}' -- only envelope checked"]
         _check_envelope(data, errors)
         return errors, warnings
+
+
+def check_author_registry() -> tuple:
+    """Check authors in data files against the author registry.
+
+    Loads data/authors/registry.json and collects every author string from
+    metadata envelopes across all data files.  Warns on any author string that
+    does not match a display_name or alias in the registry.
+
+    Returns (errors, warnings).  Author mismatches are warnings, not errors,
+    because the registry is expected to be populated incrementally.
+    """
+    errors = []
+    warnings = []
+
+    registry_path = DATA_DIR / "authors" / "registry.json"
+    if not registry_path.exists():
+        warnings.append(
+            "Author registry not found at data/authors/registry.json -- "
+            "author cross-check skipped"
+        )
+        return errors, warnings
+
+    try:
+        with open(registry_path, encoding="utf-8") as f:
+            registry_data = json.load(f)
+    except (json.JSONDecodeError, OSError) as exc:
+        errors.append(f"Author registry could not be loaded: {exc}")
+        return errors, warnings
+
+    # Validate registry against its own schema
+    registry_schema_path = REPO_ROOT / "schemas" / "v1" / "author_registry.schema.json"
+    if registry_schema_path.exists():
+        _run_json_schema(registry_data, registry_schema_path, warnings, errors)
+        if errors:
+            # Stop early -- a broken registry produces unreliable cross-checks
+            return errors, warnings
+
+    # Build lookup: display_name and every alias -> author_id
+    known_name_forms = {}  # lowercased name form -> author_id
+    author_ids = []
+    for entry in registry_data.get("authors", []):
+        aid = entry.get("author_id", "")
+        author_ids.append(aid)
+        dn = entry.get("display_name", "")
+        if dn:
+            known_name_forms[dn.lower()] = aid
+        for alias in entry.get("aliases", []):
+            if alias:
+                known_name_forms[alias.lower()] = aid
+
+    # Check for duplicate author_ids
+    seen_ids = set()
+    for aid in author_ids:
+        if aid in seen_ids:
+            errors.append(f"Author registry: duplicate author_id '{aid}'")
+        else:
+            seen_ids.add(aid)
+
+    # Scan all data files for author strings in meta envelopes
+    data_files = [
+        f for f in DATA_DIR.rglob("*.json")
+        if not f.name.startswith("_")
+    ]
+
+    unmatched = {}  # author string -> list of file paths
+    for path in sorted(data_files):
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue  # parse errors are caught by validate_file() elsewhere
+
+        author_val = data.get("meta", {}).get("author")
+        if not author_val:
+            continue  # null/missing author is valid (e.g. Apostles' Creed)
+
+        if author_val.lower() not in known_name_forms:
+            rel = str(path.relative_to(REPO_ROOT))
+            unmatched.setdefault(author_val, []).append(rel)
+
+    for author_str, file_list in sorted(unmatched.items()):
+        files_str = ", ".join(file_list[:3])
+        if len(file_list) > 3:
+            files_str += f" ... and {len(file_list) - 3} more"
+        warnings.append(
+            f"Author not in registry: '{author_str}' "
+            f"(appears in: {files_str})"
+        )
+
+    return errors, warnings
 
 
 def check_schema_consistency() -> tuple:
@@ -674,8 +868,11 @@ def main() -> None:
 
     if args.all:
         files = list(DATA_DIR.rglob("*.json"))
-        # Exclude manifest files
-        files = [f for f in files if not f.name.startswith("_")]
+        # Exclude manifest files and the authors registry (validated separately via check_author_registry)
+        files = [
+            f for f in files
+            if not f.name.startswith("_") and f.parent != DATA_DIR / "authors"
+        ]
     else:
         files = [Path(f).resolve() for f in args.files]
 
@@ -705,6 +902,19 @@ def main() -> None:
             print()
             total_errors += len(sc_errors)
             total_warnings += len(sc_warnings)
+
+    # Author registry cross-check runs automatically with --all
+    if args.all:
+        ar_errors, ar_warnings = check_author_registry()
+        if ar_errors or ar_warnings:
+            print("[AUTHOR REGISTRY]")
+            for err in ar_errors:
+                print(f"  ERROR: {err}")
+            for warn in ar_warnings:
+                print(f"  WARN:  {warn}")
+            print()
+            total_errors += len(ar_errors)
+            total_warnings += len(ar_warnings)
 
     for path in sorted(files):
         errors, warnings = validate_file(path)
