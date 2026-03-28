@@ -465,7 +465,7 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
         pct = null_osis * 100 / total
         print(
             f"    INFO: {null_osis}/{total} entries ({pct:.1f}%) have no OSIS ref "
-            f"(non-canonical book names)"
+            f"(unrecognized book names)"
         )
     if empty_source_title:
         print(f"    WARNING: {empty_source_title}/{total} entries missing source_title")
@@ -482,6 +482,8 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
         "files": len(toml_files),
         "entries": total,
         "skipped_files": skipped_files,
+        "null_osis": null_osis,
+        "empty_source_title": empty_source_title,
         "unknown_books": unknown_books,
         "status": "ok",
     }
@@ -549,6 +551,8 @@ def main() -> None:
     total_files_processed = 0
     total_entries = 0
     total_skipped = 0
+    total_null_osis = 0
+    total_empty_source_title = 0
     all_unknown_books: set = set()
     author_exceptions = []
 
@@ -566,6 +570,8 @@ def main() -> None:
         total_files_processed += stats.get("files", 0)
         total_entries += stats.get("entries", 0)
         total_skipped += stats.get("skipped_files", 0)
+        total_null_osis += stats.get("null_osis", 0)
+        total_empty_source_title += stats.get("empty_source_title", 0)
         all_unknown_books |= stats.get("unknown_books", set())
 
     elapsed = time.time() - start_time
@@ -578,6 +584,13 @@ def main() -> None:
     if total_skipped:
         pct = total_skipped * 100 / max(total_files_processed, 1)
         print(f"=== Skipped (parse errors / empty quotes): {total_skipped} ({pct:.1f}%) ===")
+
+    if total_null_osis:
+        pct = total_null_osis * 100 / max(total_entries, 1)
+        print(f"=== Entries with no OSIS ref (unrecognized books): {total_null_osis} ({pct:.1f}%) ===")
+    if total_empty_source_title:
+        pct = total_empty_source_title * 100 / max(total_entries, 1)
+        print(f"=== Entries missing source_title: {total_empty_source_title} ({pct:.1f}%) ===")
 
     if all_unknown_books:
         # Book names are ASCII in this dataset; if not, make them safe
