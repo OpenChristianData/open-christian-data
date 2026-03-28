@@ -7,6 +7,8 @@ Dispatches on meta.schema_type:
   - catechism_qa: question-and-answer catechism entries
   - doctrinal_document: hierarchical confession/creed/canon
   - devotional: date-keyed daily reading entries
+  - structured_text: hierarchical prose works (theological works, devotional classics)
+  - sermon: sermon collections (array of individual sermons)
 
 Bible text checks:
   1. JSON Schema conformance
@@ -687,6 +689,140 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
     return errors, warnings
 
 
+def _check_sections(sections: list, path_prefix: str, errors: list) -> None:
+    """Recursively check that structured_text section nodes are well-formed."""
+    for i, section in enumerate(sections):
+        loc = f"{path_prefix}[{i}]"
+        if not isinstance(section, dict):
+            errors.append(f"{loc}: section must be an object")
+            continue
+
+        blocks = section.get("content_blocks", [])
+        children = section.get("children", [])
+
+        # Leaf nodes must have at least one content block
+        if not children and not blocks:
+            label = section.get("label") or section.get("title") or ""
+            errors.append(f"{loc} ({label!r}): leaf section has no content_blocks")
+
+        # Leaf nodes with content should have a positive word_count
+        if blocks and not children:
+            wc = section.get("word_count", 0)
+            if not isinstance(wc, int) or wc <= 0:
+                label = section.get("label") or section.get("title") or ""
+                errors.append(
+                    f"{loc} ({label!r}): has content_blocks but word_count={wc!r}"
+                )
+
+        # Recurse into children
+        if children:
+            _check_sections(children, f"{loc}.children", errors)
+
+
+def validate_structured_text_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=structured_text. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "structured_text.schema.json", warnings, errors)
+
+    if not isinstance(data, dict):
+        errors.append("Root must be an object")
+        return errors, warnings
+    if "meta" not in data:
+        errors.append("Missing 'meta' key")
+    if "data" not in data:
+        errors.append("Missing 'data' key")
+        return errors, warnings
+
+    doc = data["data"]
+    if not isinstance(doc, dict):
+        errors.append("'data' must be an object for structured_text")
+        return errors, warnings
+
+    if not doc.get("work_id"):
+        errors.append("data.work_id is missing or empty")
+    if not doc.get("work_kind"):
+        errors.append("data.work_kind is missing or empty")
+
+    sections = doc.get("sections")
+    if not sections:
+        errors.append("data.sections is missing or empty")
+    elif not isinstance(sections, list):
+        errors.append("data.sections must be an array")
+    else:
+        _check_sections(sections, "data.sections", errors)
+
+    return errors, warnings
+
+
+def validate_sermon_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=sermon. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "sermon.schema.json", warnings, errors)
+
+    if not isinstance(data, dict):
+        errors.append("Root must be an object")
+        return errors, warnings
+    if "meta" not in data:
+        errors.append("Missing 'meta' key")
+    if "data" not in data:
+        errors.append("Missing 'data' key")
+        return errors, warnings
+
+    entries = data["data"]
+    if not isinstance(entries, list):
+        errors.append("'data' must be an array for sermon")
+        return errors, warnings
+    if len(entries) == 0:
+        errors.append("'data' array is empty")
+        return errors, warnings
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        sid = entry.get("sermon_id", "")
+
+        # sermon_id uniqueness
+        if sid in seen_ids:
+            errors.append(f"{loc}: duplicate sermon_id '{sid}'")
+        elif sid:
+            seen_ids.add(sid)
+        else:
+            errors.append(f"{loc}: sermon_id is missing or empty")
+
+        # title non-empty
+        if not (entry.get("title") or "").strip():
+            errors.append(f"{loc} (sermon_id={sid!r}): title is empty")
+
+        # content_blocks non-empty
+        blocks = entry.get("content_blocks", [])
+        if not blocks:
+            errors.append(f"{loc} (sermon_id={sid!r}): content_blocks is empty")
+
+        # word_count positive
+        wc = entry.get("word_count", 0)
+        if not isinstance(wc, int) or wc <= 0:
+            errors.append(
+                f"{loc} (sermon_id={sid!r}): word_count must be a positive integer, got {wc!r}"
+            )
+
+    # Completeness: warn if many sermons lack a primary_reference
+    total = len(entries)
+    no_ref = sum(1 for e in entries if not e.get("primary_reference"))
+    if no_ref > 0:
+        pct = no_ref * 100 / total
+        msg = f"{no_ref}/{total} sermons ({pct:.1f}%) missing primary_reference"
+        if pct > 50:
+            errors.append(f"Completeness: {msg}")
+        else:
+            warnings.append(f"Completeness: {msg}")
+
+    return errors, warnings
+
+
 def validate_file(path: Path) -> tuple:
     """Load a data file, detect schema_type, and run appropriate validation."""
     data, load_errors = _load_json(path)
@@ -707,6 +843,10 @@ def validate_file(path: Path) -> tuple:
         return validate_bible_text_file(path, data)
     elif schema_type == "church_fathers":
         return validate_church_fathers_file(path, data)
+    elif schema_type == "structured_text":
+        return validate_structured_text_file(path, data)
+    elif schema_type == "sermon":
+        return validate_sermon_file(path, data)
     else:
         # Unknown type -- run envelope check only
         errors = []
