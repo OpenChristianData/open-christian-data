@@ -21,6 +21,8 @@ Usage:
     py -3 build/parsers/standard_ebooks.py --id john-bunyan_the-pilgrims-progress
     py -3 build/parsers/standard_ebooks.py --all
     py -3 build/parsers/standard_ebooks.py --all --dry-run
+    py -3 build/parsers/standard_ebooks.py --id george-macdonald_unspoken-sermons --list-files
+    py -3 build/parsers/standard_ebooks.py --all --list-files
 """
 
 import argparse
@@ -453,7 +455,7 @@ def build_section_hierarchy(parsed_files):
     return sections
 
 
-def process_structured_text(se_id, config, dry_run=False):
+def process_structured_text(se_id, config, dry_run=False, list_files=False):
     """Parse a structured_text title and return (sections, stats) or raise."""
     text_dir = RAW_DIR / se_id / "src" / "epub" / "text"
     if not text_dir.exists():
@@ -467,6 +469,19 @@ def process_structured_text(se_id, config, dry_run=False):
 
     if not xhtml_files:
         raise RuntimeError(f"No XHTML files found in {text_dir}")
+
+    if list_files:
+        print(f"  {len(xhtml_files)} content files:")
+        for xf in xhtml_files:
+            print(f"    {xf.name}")
+        return None, None
+
+    expected = config.get("expected_count")
+    if expected is not None and len(xhtml_files) != expected:
+        print(
+            f"  WARNING: expected {expected} files but found {len(xhtml_files)} "
+            f"-- check SKIP_STEMS/SKIP_PREFIXES filter"
+        )
 
     print(f"  Found {len(xhtml_files)} content files")
 
@@ -549,7 +564,7 @@ def get_series_name(section_id):
     return names.get(series_num, f"Series {series_num}")
 
 
-def process_sermon_collection(se_id, config, dry_run=False):
+def process_sermon_collection(se_id, config, dry_run=False, list_files=False):
     """Parse a sermon collection and return (sermons, stats) or raise."""
     text_dir = RAW_DIR / se_id / "src" / "epub" / "text"
     if not text_dir.exists():
@@ -571,6 +586,19 @@ def process_sermon_collection(se_id, config, dry_run=False):
             series_headers[xf.stem] = get_series_name(xf.stem)
         else:
             sermon_files.append(xf)
+
+    if list_files:
+        print(f"  {len(sermon_files)} sermon files (+ {len(series_headers)} series containers):")
+        for xf in sermon_files:
+            print(f"    {xf.name}")
+        return None, None
+
+    expected = config.get("expected_count")
+    if expected is not None and len(sermon_files) != expected:
+        print(
+            f"  WARNING: expected {expected} sermons but found {len(sermon_files)} "
+            f"-- check SKIP_STEMS/SKIP_PREFIXES filter"
+        )
 
     print(f"  Found {len(sermon_files)} sermon files")
 
@@ -776,7 +804,7 @@ def build_meta(config, data_hash, processing_date):
 # Single-title processing
 # ---------------------------------------------------------------------------
 
-def process_title(se_id, dry_run=False):
+def process_title(se_id, dry_run=False, list_files=False):
     """Load config and process one SE title. Returns True on success."""
     config_path = SOURCES_DIR / se_id / "config.json"
     if not config_path.exists():
@@ -798,7 +826,9 @@ def process_title(se_id, dry_run=False):
         print("Mode:    dry-run (first 3 files, no write)")
 
     if schema_type == "structured_text":
-        sections, stats = process_structured_text(se_id, config, dry_run=dry_run)
+        sections, stats = process_structured_text(se_id, config, dry_run=dry_run, list_files=list_files)
+        if list_files:
+            return True
 
         data_payload = {
             "work_id": config["resource_id"],
@@ -815,7 +845,9 @@ def process_title(se_id, dry_run=False):
         report_structured_text_quality(sections, stats)
 
     elif schema_type == "sermon":
-        sermons, stats = process_sermon_collection(se_id, config, dry_run=dry_run)
+        sermons, stats = process_sermon_collection(se_id, config, dry_run=dry_run, list_files=list_files)
+        if list_files:
+            return True
 
         data_bytes = json.dumps(sermons, ensure_ascii=False, sort_keys=True).encode("utf-8")
         data_hash = hashlib.sha256(data_bytes).hexdigest()
@@ -881,6 +913,11 @@ def main():
         action="store_true",
         help="Parse first 3 files per title and print sample -- do not write",
     )
+    parser.add_argument(
+        "--list-files",
+        action="store_true",
+        help="Print the filtered file list for each title and exit -- do not extract",
+    )
     args = parser.parse_args()
 
     start_time = time.time()
@@ -897,7 +934,7 @@ def main():
         print()
         print(f"=== {se_id} ===")
         try:
-            ok = process_title(se_id, dry_run=args.dry_run)
+            ok = process_title(se_id, dry_run=args.dry_run, list_files=args.list_files)
             if ok:
                 successes += 1
             else:
