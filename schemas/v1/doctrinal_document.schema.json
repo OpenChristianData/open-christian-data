@@ -91,7 +91,7 @@
         },
         "document_kind": {
           "type": "string",
-          "enum": ["confession", "canon", "creed", "declaration"],
+          "enum": ["canon", "confession", "covenant", "creed", "declaration", "directory"],
           "description": "High-level document category."
         },
         "revision_history": {

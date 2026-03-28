@@ -3,17 +3,206 @@
   "schema_version": "2.1.0",
   "documents": [
     {
+      "id": "abstract-of-principles",
+      "title": "Abstract of Principles",
+      "document_kind": "confession",
+      "file": "abstract-of-principles.json"
+    },
+    {
+      "id": "apostles-creed",
+      "title": "Apostles' Creed",
+      "document_kind": "creed",
+      "file": "apostles-creed.json"
+    },
+    {
+      "id": "athanasian-creed",
+      "title": "Athanasian Creed",
+      "document_kind": "creed",
+      "file": "athanasian-creed.json"
+    },
+    {
+      "id": "belgic-confession-of-faith",
+      "title": "Belgic Confession",
+      "document_kind": "confession",
+      "file": "belgic-confession-of-faith.json"
+    },
+    {
+      "id": "canons-of-dort",
+      "title": "Canons of Dort",
+      "document_kind": "canon",
+      "file": "canons-of-dort.json"
+    },
+    {
+      "id": "chalcedonian-definition",
+      "title": "Chalcedonian Definition",
+      "document_kind": "declaration",
+      "file": "chalcedonian-definition.json"
+    },
+    {
+      "id": "chicago-statement-on-biblical-inerrancy",
+      "title": "Chicago Statement on Biblical Inerrancy",
+      "document_kind": "declaration",
+      "file": "chicago-statement-on-biblical-inerrancy.json"
+    },
+    {
+      "id": "christ-hymn-of-colossians",
+      "title": "Christ Hymn of Colossians",
+      "document_kind": "creed",
+      "file": "christ-hymn-of-colossians.json"
+    },
+    {
+      "id": "christ-hymn-of-philippians",
+      "title": "Christ Hymn of Philippians",
+      "document_kind": "creed",
+      "file": "christ-hymn-of-philippians.json"
+    },
+    {
+      "id": "christian-shema",
+      "title": "Christian Shema",
+      "document_kind": "creed",
+      "file": "christian-shema.json"
+    },
+    {
+      "id": "confession-of-peter",
+      "title": "Confession of Peter",
+      "document_kind": "creed",
+      "file": "confession-of-peter.json"
+    },
+    {
+      "id": "consensus-tigurinus",
+      "title": "Consensus Tigurinus",
+      "document_kind": "declaration",
+      "file": "consensus-tigurinus.json"
+    },
+    {
+      "id": "council-of-orange",
+      "title": "Council of Orange",
+      "document_kind": "canon",
+      "file": "council-of-orange.json"
+    },
+    {
+      "id": "first-confession-of-basel",
+      "title": "First Confession of Basel",
+      "document_kind": "confession",
+      "file": "first-confession-of-basel.json"
+    },
+    {
+      "id": "first-helvetic-confession",
+      "title": "First Helvetic Confession",
+      "document_kind": "confession",
+      "file": "first-helvetic-confession.json"
+    },
+    {
+      "id": "french-confession-of-faith",
+      "title": "French Confession of Faith",
+      "document_kind": "confession",
+      "file": "french-confession-of-faith.json"
+    },
+    {
+      "id": "gregorys-declaration-of-faith",
+      "title": "Gregory's Declaration of Faith",
+      "document_kind": "creed",
+      "file": "gregorys-declaration-of-faith.json"
+    },
+    {
+      "id": "helvetic-consensus",
+      "title": "Helvetic Consensus",
+      "document_kind": "declaration",
+      "file": "helvetic-consensus.json"
+    },
+    {
+      "id": "ignatius-creed",
+      "title": "Ignatius' Creed",
+      "document_kind": "creed",
+      "file": "ignatius-creed.json"
+    },
+    {
+      "id": "irenaeus-rule-of-faith",
+      "title": "Irenaeus' Rule of Faith",
+      "document_kind": "creed",
+      "file": "irenaeus-rule-of-faith.json"
+    },
+    {
+      "id": "london-baptist-confession-1689",
+      "title": "1689 London Baptist Confession",
+      "document_kind": "confession",
+      "file": "london-baptist-confession-1689.json"
+    },
+    {
+      "id": "nicene-creed",
+      "title": "Nicene Creed",
+      "document_kind": "creed",
+      "file": "nicene-creed.json"
+    },
+    {
+      "id": "savoy-declaration",
+      "title": "Savoy Declaration of Faith",
+      "document_kind": "confession",
+      "file": "savoy-declaration.json"
+    },
+    {
+      "id": "scots-confession",
+      "title": "Scots Confession",
+      "document_kind": "confession",
+      "file": "scots-confession.json"
+    },
+    {
+      "id": "second-helvetic-confession",
+      "title": "Second Helvetic Confession",
+      "document_kind": "confession",
+      "file": "second-helvetic-confession.json"
+    },
+    {
+      "id": "shema-yisrael",
+      "title": "Shema Yisrael",
+      "document_kind": "creed",
+      "file": "shema-yisrael.json"
+    },
+    {
+      "id": "ten-theses-of-berne",
+      "title": "Ten Theses of Berne",
+      "document_kind": "declaration",
+      "file": "ten-theses-of-berne.json"
+    },
+    {
+      "id": "tertullians-rule-of-faith",
+      "title": "Tertullian's Rule of Faith",
+      "document_kind": "creed",
+      "file": "tertullians-rule-of-faith.json"
+    },
+    {
+      "id": "tetrapolitan-confession",
+      "title": "Tetrapolitan Confession",
+      "document_kind": "confession",
+      "file": "tetrapolitan-confession.json"
+    },
+    {
+      "id": "waldensian-confession",
+      "title": "Waldensian Confession",
+      "document_kind": "confession",
+      "file": "waldensian-confession.json"
+    },
+    {
       "id": "westminster-confession-of-faith",
       "title": "Westminster Confession of Faith",
       "document_kind": "confession",
-      "file": "westminster-confession-of-faith.json",
-      "chapter_count": 33,
-      "section_count": 172,
-      "status": "complete"
+      "file": "westminster-confession-of-faith.json"
+    },
+    {
+      "id": "zwinglis-67-articles",
+      "title": "Zwingli's 67 Articles",
+      "document_kind": "declaration",
+      "file": "zwinglis-67-articles.json"
+    },
+    {
+      "id": "zwinglis-fidei-ratio",
+      "title": "Zwingli's Fidei Ratio",
+      "document_kind": "declaration",
+      "file": "zwinglis-fidei-ratio.json"
     }
   ],
   "stats": {
-    "total_documents": 1
+    "total_documents": 33
   },
-  "last_updated": "2026-03-27"
+  "last_updated": "2026-03-28"
 }
