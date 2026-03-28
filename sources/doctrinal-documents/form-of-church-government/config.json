@@ -1,0 +1,30 @@
+{
+  "id": "form-of-church-government",
+  "title": "The Form of Presbyterial Church-Government",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1645,
+  "source": {
+    "name": "thewestminsterstandard.org",
+    "url": "https://thewestminsterstandard.org/form-of-church-government",
+    "repository": null,
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "17th-century text; no copyrightable original content added by host site.",
+    "download_date": "2026-03-28",
+    "source_hash": "sha256:b6c36708d6d70c057d133a75d6884e9a3574dc869c158441eddb44eccb04c1c9"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "declaration",
+  "output_file": "data/doctrinal-documents/form-of-church-government.json",
+  "parser": "build/parsers/westminster_standard_parser.py",
+  "stats": {
+    "section_count": 19,
+    "word_count": 5257
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Completeness: partial -- inline proof texts deferred to Phase 2.",
+    "19 sections covering Preface, Church, Officers (Pastor, Governors, Deacons), Congregations, Assemblies (Classical, Synodical), and Ordination.",
+    "Parsed from thewestminsterstandard.org HTML."
+  ]
+}
