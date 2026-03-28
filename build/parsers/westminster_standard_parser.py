@@ -82,7 +82,9 @@ def _normalise_citation(citation: str) -> str:
     # Step 1: strip trailing period from whole string
     s = citation.strip().rstrip(".")
 
-    # Step 2: normalise ' with ' to semicolon (same as citation_parser)
+    # Step 2: normalise ' with ' to semicolon (also done inside citation_parser's
+    # parse_citation_string, but _parse_citation_with_continuation bypasses that
+    # function entirely, so we must repeat it here).
     s = s.replace(" with ", "; ")
 
     # Step 3: detect comma-book splits within each semicolon segment
@@ -181,6 +183,7 @@ def _parse_citation_with_continuation(citation: str) -> tuple[list[dict], list[s
             last_book_osis = ref_dict["book"]
         except Exception as exc:
             errors.append(part)
+            last_book_osis = None  # reset so subsequent continuation refs don't silently inherit a stale book
             log.warning("  Could not parse reference %r: %s", part, exc)
 
     return results, errors
@@ -367,7 +370,7 @@ RAW_DIR = REPO_ROOT / "raw" / "westminster-standard-org"
 DOCS_OUT_DIR = REPO_ROOT / "data" / "doctrinal-documents"
 SOURCES_OUT_DIR = REPO_ROOT / "sources" / "doctrinal-documents"
 
-PROCESSING_DATE = "2026-03-28"
+PROCESSING_DATE = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d")
 SCRIPT_VERSION = "build/parsers/westminster_standard_parser.py@v2.0.0"
 
 DOCUMENT_CONFIGS: dict[str, dict] = {
@@ -757,6 +760,24 @@ def _count_words_in_units(units: list[dict]) -> int:
     return total
 
 
+def _find_empty_sections(units: list[dict], _prefix: str = "") -> list[str]:
+    """Recursively collect qualified section numbers with no content and no children.
+
+    Returns dotted paths (e.g. "3.1") so child section numbers are unambiguous
+    in quality stats output.
+    """
+    empty = []
+    for unit in units:
+        num = unit.get("number", "?")
+        qualified = num if not _prefix else f"{_prefix}.{num}"
+        children = unit.get("children", [])
+        if children:
+            empty.extend(_find_empty_sections(children, qualified))
+        elif not unit.get("content", "").strip():
+            empty.append(qualified)
+    return empty
+
+
 def parse_document(slug: str, dry_run: bool = False) -> None:
     """Parse a single Westminster Standards document from HTML and write JSON."""
     if slug not in DOCUMENT_CONFIGS:
@@ -782,11 +803,7 @@ def parse_document(slug: str, dry_run: bool = False) -> None:
     # Quality stats
     section_count = len(units)
     word_count = _count_words_in_units(units)
-    empty_sections = [
-        u.get("number", "?")
-        for u in units
-        if not u.get("content", "").strip() and not u.get("children")
-    ]
+    empty_sections = _find_empty_sections(units)
 
     print("")
     print(f"=== Document Quality Stats: {slug} ===")
@@ -858,15 +875,22 @@ def _sync_manifest(dry_run: bool = False) -> None:
         data = doc.get("data", {})
         doc_id = meta.get("id", jf.stem)
 
+        # Derive core fields from the JSON (source of truth), then overlay any
+        # hand-added fields from the existing manifest entry so they are preserved.
+        json_entry = {
+            "id": doc_id,
+            "title": meta.get("title", ""),
+            "document_kind": data.get("document_kind", ""),
+            "file": jf.name,
+        }
         if doc_id in existing:
-            new_documents.append(existing[doc_id])
+            merged = {**existing[doc_id], **json_entry}
+            if merged != existing[doc_id]:
+                log.info("Manifest entry updated for %r", doc_id)
+            new_documents.append(merged)
         else:
-            new_documents.append({
-                "id": doc_id,
-                "title": meta.get("title", ""),
-                "document_kind": data.get("document_kind", ""),
-                "file": jf.name,
-            })
+            log.info("New manifest entry created for %r", doc_id)
+            new_documents.append(json_entry)
 
     manifest["documents"] = new_documents
     log.info("Manifest: %d entries", len(new_documents))
@@ -919,15 +943,20 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    ran_any = False
     if args.enrich_wsc:
         enrich_wsc(dry_run=args.dry_run)
-    elif args.document:
+        ran_any = True
+    if args.document:
         parse_document(args.document, dry_run=args.dry_run)
-    elif args.all_documents:
+        ran_any = True
+    if args.all_documents:
         parse_all_documents(dry_run=args.dry_run)
-    elif args.sync_manifest:
+        ran_any = True
+    if args.sync_manifest:
         _sync_manifest(dry_run=args.dry_run)
-    else:
+        ran_any = True
+    if not ran_any:
         parser.print_help()
 
 

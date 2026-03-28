@@ -10,7 +10,7 @@
 
 **Spec:** `docs/WESTMINSTER_STANDARDS_SCRAPER_SPEC.md`
 
-**CODING_DEFAULTS:** Load `CODING_DEFAULTS.md` from the operator's Claude Cowork workspace — all scripts must follow these rules (absolute paths, logging, summaries, quality stats, utf-8 encoding, ASCII-only print output).
+**CODING_DEFAULTS:** Load `CODING_DEFAULTS.md` from the operator's workspace -- all scripts must follow these rules (absolute paths, logging, summaries, quality stats, utf-8 encoding, ASCII-only print output).
 
 **Python command:** Use `py -3` (not `python`) on this Windows environment.
 
