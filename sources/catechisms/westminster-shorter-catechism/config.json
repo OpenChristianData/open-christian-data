@@ -15,11 +15,20 @@
   },
   "schema_type": "catechism_qa",
   "output_file": "data/catechisms/westminster-shorter-catechism.json",
-  "parser": "build/parsers/wsc_parser.py",
+  "parser": "build/parsers/westminster_standard_parser.py",
   "entry_count": 107,
+  "secondary_sources": [
+    {
+      "name": "thewestminsterstandard.org",
+      "url": "https://thewestminsterstandard.org/westminster-shorter-catechism/",
+      "contribution": "proof_texts",
+      "download_date": "2026-03-28"
+    }
+  ],
   "notes": [
-    "107 Q&A pairs, no scripture proofs in Creeds.json data.",
-    "proofs arrays are empty -- proof texts could be added from another source in a future enrichment pass.",
+    "107 Q&A pairs. Q&A text from Creeds.json (NonlinearFruit/Creeds.json).",
+    "Scripture proof texts added 2026-03-28 from thewestminsterstandard.org.",
+    "All 107 questions have proofs (400 total references). Parsed by westminster_standard_parser.py.",
     "Tradition: reformed, presbyterian."
   ]
 }
