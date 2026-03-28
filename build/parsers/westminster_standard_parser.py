@@ -55,7 +55,7 @@ log = logging.getLogger(__name__)
 # Add repo root to path so build.lib.citation_parser can be imported
 sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.citation_parser import lookup_book, parse_citation_string  # noqa: E402
+from build.lib.citation_parser import _build_osis_entries, lookup_book, parse_citation_string  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -98,9 +98,10 @@ def _normalise_citation(citation: str) -> str:
         for cp in comma_parts[1:]:
             if _starts_with_book(cp):
                 # Flush accumulated as one ref, start fresh
+                old_accumulated = accumulated
                 fixed_parts.append(accumulated)
                 accumulated = cp
-                log.info("  Comma-book split: %r -> %r + %r", sp, accumulated, cp)
+                log.info("  Comma-book split: %r -> %r + %r", sp, old_accumulated, cp)
             else:
                 accumulated = accumulated + ", " + cp
         fixed_parts.append(accumulated)
@@ -181,21 +182,6 @@ def _parse_citation_with_continuation(citation: str) -> tuple[list[dict], list[s
     return results, errors
 
 
-def _build_osis_entries(book: str, chapter: str, verse_portion: str) -> list[str]:
-    """Build OSIS entry strings from book code, chapter, and verse portion."""
-    if not verse_portion:
-        return [f"{book}.{chapter}"]
-    entries = []
-    for vpart in [p.strip() for p in verse_portion.split(",")]:
-        if not vpart:
-            continue
-        if "-" in vpart:
-            v1, v2 = vpart.split("-", 1)
-            entries.append(f"{book}.{chapter}.{v1.strip()}-{book}.{chapter}.{v2.strip()}")
-        else:
-            entries.append(f"{book}.{chapter}.{vpart}")
-    return entries
-
 
 def _parse_single_with_book_tracking(ref: str) -> dict:
     """Wrap parse_single_reference and extract the book code for continuation tracking.
@@ -215,7 +201,7 @@ def _parse_single_with_book_tracking(ref: str) -> dict:
 # HTML parsing
 # ---------------------------------------------------------------------------
 
-def extract_wsc_proofs_from_html(html_path: Path) -> dict[int, list[dict]]:
+def extract_wsc_proofs_from_html(html_path: Path) -> tuple[dict[int, list[dict]], dict[int, list[str]], list[int]]:
     """Parse WSC HTML and return a mapping of {question_index: references_list}.
 
     question_index is 1-based, matching sort_key in the JSON.
