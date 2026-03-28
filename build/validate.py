@@ -5,6 +5,7 @@ Dispatches on meta.schema_type:
   - commentary: verse-keyed commentary entries
   - catechism_qa: question-and-answer catechism entries
   - doctrinal_document: hierarchical confession/creed/canon
+  - devotional: date-keyed daily reading entries
 
 Commentary checks:
   1. JSON Schema conformance
@@ -21,10 +22,20 @@ Catechism Q&A checks:
   4. question and answer non-empty
   5. Proof reference OSIS format (if any proofs present)
 
+Devotional checks:
+  1. JSON Schema conformance
+  2. entry_id uniqueness within a file
+  3. entry_id format matches MM-DD[-period]
+  4. month/day/period consistency with entry_id
+  5. content_blocks non-empty per entry
+  6. word_count > 0 per entry
+  7. primary_reference OSIS format (if present)
+
 Usage:
     py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
     py -3 build/validate.py data/catechisms/westminster-shorter-catechism.json
     py -3 build/validate.py data/doctrinal-documents/westminster-confession-of-faith.json
+    py -3 build/validate.py data/devotionals/spurgeons-morning-evening/morning-evening.json
     py -3 build/validate.py --all
 """
 
@@ -33,6 +44,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+# Devotional entry_id pattern: MM-DD or MM-DD-period
+DEVOTIONAL_ENTRY_ID_PATTERN = re.compile(r"^(\d{2})-(\d{2})(?:-(\w+))?$")
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
@@ -331,6 +345,91 @@ def validate_doctrinal_document_file(path: Path, data: dict) -> tuple:
     return errors, warnings
 
 
+def validate_devotional_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=devotional. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "devotional.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        eid = entry.get("entry_id", "")
+
+        # entry_id uniqueness
+        if eid in seen_ids:
+            errors.append(f"{loc}: duplicate entry_id '{eid}'")
+        elif eid:
+            seen_ids.add(eid)
+
+        # entry_id format and consistency with month/day/period
+        m = DEVOTIONAL_ENTRY_ID_PATTERN.match(eid)
+        if not m:
+            errors.append(f"{loc} ({eid}): entry_id does not match MM-DD[-period] format")
+        else:
+            id_month = int(m.group(1))
+            id_day = int(m.group(2))
+            id_period = m.group(3)  # None if no period segment
+
+            if entry.get("month") != id_month:
+                errors.append(
+                    f"{loc} ({eid}): month={entry.get('month')} does not match entry_id month {id_month}"
+                )
+            if entry.get("day") != id_day:
+                errors.append(
+                    f"{loc} ({eid}): day={entry.get('day')} does not match entry_id day {id_day}"
+                )
+            period_field = entry.get("period")
+            if id_period and period_field and id_period != period_field:
+                errors.append(
+                    f"{loc} ({eid}): period='{period_field}' does not match entry_id segment '{id_period}'"
+                )
+
+        # content_blocks non-empty
+        blocks = entry.get("content_blocks", [])
+        if not blocks:
+            errors.append(f"{loc} ({eid}): content_blocks is empty")
+        else:
+            empty_blocks = sum(1 for b in blocks if not b.strip())
+            if empty_blocks:
+                warnings.append(f"{loc} ({eid}): {empty_blocks} empty string(s) in content_blocks")
+
+        # word_count > 0
+        wc = entry.get("word_count", 0)
+        if not isinstance(wc, int) or wc <= 0:
+            errors.append(f"{loc} ({eid}): word_count must be a positive integer, got {wc!r}")
+
+        # primary_reference OSIS format (permissive -- devotional refs are not always verse-level)
+        ref = entry.get("primary_reference")
+        if ref and isinstance(ref, dict):
+            for osis_str in ref.get("osis", []):
+                if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
+                    errors.append(f"{loc} ({eid}): invalid primary_reference OSIS: '{osis_str}'")
+
+    # Completeness check
+    if entries:
+        total = len(entries)
+        no_ref = sum(1 for e in entries if not e.get("primary_reference"))
+        if no_ref > 0:
+            pct = no_ref * 100 / total
+            msg = f"{no_ref}/{total} entries ({pct:.1f}%) missing primary_reference"
+            if pct > 20:
+                errors.append(f"Completeness: {msg}")
+            else:
+                warnings.append(f"Completeness: {msg}")
+
+        # 730 = without Feb 29; 732 = with Feb 29 (leap year reading)
+        if total not in (730, 732):
+            warnings.append(
+                f"Completeness: {total} entries (expected 730 or 732 for a full-year devotional)"
+            )
+
+    return errors, warnings
+
+
 def validate_file(path: Path) -> tuple:
     """Load a data file, detect schema_type, and run appropriate validation."""
     data, load_errors = _load_json(path)
@@ -345,6 +444,8 @@ def validate_file(path: Path) -> tuple:
         return validate_catechism_qa_file(path, data)
     elif schema_type == "doctrinal_document":
         return validate_doctrinal_document_file(path, data)
+    elif schema_type == "devotional":
+        return validate_devotional_file(path, data)
     else:
         # Unknown type -- run envelope check only
         errors = []

@@ -10,11 +10,12 @@ This project processes public domain Christian literature — commentaries, conf
 
 ## Status
 
-**Phase 1a — Active.** Matthew Henry's commentary on Ezekiel is complete and ready for use.
+**Phase 1a — Active.**
 
-| Resource | Type | Books | Entries | Summaries | License |
+| Resource | Type | Coverage | Entries | Summaries | License |
 |---|---|---|---|---|---|
-| Matthew Henry's Complete Commentary | Commentary | Ezekiel (48 ch) | 132 | Withheld pending review | CC0 |
+| Matthew Henry's Complete Commentary | Commentary | 65 books | 18,000+ | Withheld pending review | CC0 |
+| Spurgeon's Morning and Evening | Devotional | 366 days | 732 | None (enrichment layer) | Public domain |
 
 ## Data format
 
@@ -59,21 +60,29 @@ All verse references use OSIS format (`Gen.1.1`, `Rom.9.1-Rom.9.5`). Schema defi
 ```
 data/
   commentaries/
-    matthew-henry/
+    matthew-henry/            # and 4 other commentaries
       _manifest.json          # Book index with entry counts and status
       ezekiel.json            # 132 entries, 232k words, BSB verse text
+  devotionals/
+    spurgeons-morning-evening/
+      morning-evening.json    # 732 entries (366 days x morning + evening)
 schemas/
   v1/
     commentary.schema.json    # JSON Schema (source of truth)
+    devotional.schema.json    # JSON Schema for date-keyed devotionals
   types.ts                    # TypeScript types
 build/
   parsers/
     helloao_commentary.py     # Generic parser for any HelloAO commentary
+    ccel_devotional.py        # Parser for Spurgeon's M&E from CCEL ThML XML
   validate.py                 # Schema + structural validation
 sources/
   commentaries/
     matthew-henry/
       config.json             # Source URLs, chapter counts, coverage notes
+  devotionals/
+    spurgeons-morning-evening/
+      config.json             # Source metadata and provenance
 ```
 
 ## Usage
@@ -96,6 +105,10 @@ valley = [e for e in resource["data"] if "37" in e["verse_range_osis"]]
 ```bash
 # Validate a data file
 py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
+py -3 build/validate.py data/devotionals/spurgeons-morning-evening/morning-evening.json
+
+# Validate everything
+py -3 build/validate.py --all
 
 # Process a single book for any commentary
 py -3 build/parsers/helloao_commentary.py --commentary matthew-henry --book EZK
@@ -103,8 +116,9 @@ py -3 build/parsers/helloao_commentary.py --commentary matthew-henry --book EZK
 # Process all books for a commentary
 py -3 build/parsers/helloao_commentary.py --commentary jamieson-fausset-brown --all-books
 
-# Dry run (load chapter 1 only, no file writes)
-py -3 build/parsers/helloao_commentary.py --commentary john-gill --book GEN --dry-run
+# Generate Spurgeon's Morning and Evening (downloads CCEL source on first run)
+py -3 build/parsers/ccel_devotional.py --dry-run
+py -3 build/parsers/ccel_devotional.py
 ```
 
 Requires Python 3.9+. No external dependencies for the pipeline. `pip install jsonschema` for schema validation.
@@ -112,8 +126,9 @@ Requires Python 3.9+. No external dependencies for the pipeline. `pip install js
 ## Sources
 
 - **Commentary text**: [HelloAO Bible API](https://bible.helloao.org) — 5 commentaries (Matthew Henry, Jamieson-Fausset-Brown, John Gill, Adam Clarke, Keil-Delitzsch), all PDM 1.0 (public domain)
+- **Devotional text**: [Christian Classics Ethereal Library](https://www.ccel.org) — Spurgeon's Morning and Evening in ThML XML, public domain
 - **Verse text**: BSB (Berean Standard Bible) via HelloAO, CC0
-- All commentary authors died before 1928; texts are unambiguously public domain.
+- All authors died before 1928; texts are unambiguously public domain.
 
 ## Summaries
 

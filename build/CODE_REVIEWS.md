@@ -10,3 +10,6 @@
 | schemas/v1/commentary.schema.json | never | Phase 1a |
 | schemas/v1/catechism_qa.schema.json | 2026-03-28 | Opus review: H1 author type changed from string to ["string", "null"] to match doctrinal_document pattern and handle empty Authors in source. |
 | schemas/v1/doctrinal_document.schema.json | never | Task 3 |
+| build/parsers/ccel_devotional.py | 2026-03-28 | Standards-reviewer pass + fixes: Rule 8 try/except in parse loop, Rule 43 quality reporting, Rule 44 dry-run coverage, nav link filtering, encoding fallback. |
+| schemas/v1/devotional.schema.json | 2026-03-28 | New schema for Task 7. Tradition/license enums match other schemas (consistency check passes). |
+| build/validate.py | 2026-03-28 | Updated: added validate_devotional_file() + dispatch. Opus review (2nd pass) + standards-reviewer recheck. |
