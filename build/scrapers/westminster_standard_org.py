@@ -13,6 +13,7 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = REPO_ROOT / "raw" / "westminster-standard-org"
@@ -34,7 +35,7 @@ USER_AGENT = "Mozilla/5.0 (compatible; OCD-scraper/1.0)"
 
 def _log(message: str) -> None:
     """Write a timestamped entry to the log file and print to stdout."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d %H:%M:%S")
     entry = f"[{timestamp}] {message}"
     print(entry)
     with open(LOG_FILE, "a", encoding="utf-8") as fh:
