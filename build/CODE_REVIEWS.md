@@ -13,3 +13,8 @@
 | build/parsers/ccel_devotional.py | 2026-03-28 | Standards-reviewer pass + fixes: Rule 8 try/except in parse loop, Rule 43 quality reporting, Rule 44 dry-run coverage, nav link filtering, encoding fallback. |
 | schemas/v1/devotional.schema.json | 2026-03-28 | New schema for Task 7. Tradition/license enums match other schemas (consistency check passes). |
 | build/validate.py | 2026-03-28 | Updated: added validate_devotional_file() + dispatch. Opus review (2nd pass) + standards-reviewer recheck. |
+| build/lib/citation_parser.py | 2026-03-28 | New (Westminster Standards). Standards-reviewer pass + two-stage subagent review. Dead code removed, import placement fixed, degenerate input guard added. |
+| build/scrapers/westminster_standard_org.py | 2026-03-28 | New (Westminster Standards). Standards-reviewer pass + two-stage subagent review. ZoneInfo timezone added, beautifulsoup4 pinned. No retry logic (Rule 21 -- deferred, one-off scraper). |
+| build/parsers/westminster_standard_parser.py | 2026-03-28 | New (Westminster Standards). 935 lines. Standards-reviewer pass + two-stage subagent review. Logging bug fixed, return type annotation fixed, _build_osis_entries deduped, license_notes updated. **Full Opus review recommended before Phase 2.** |
+| tests/test_citation_parser.py | 2026-03-28 | New (Westminster Standards). 17 tests. Standards-reviewer pass. |
+| schemas/v1/doctrinal_document.schema.json | 2026-03-28 | Updated: added "directory" and "covenant" to document_kind enum. Subagent review confirmed alphabetical order and no regressions. |
