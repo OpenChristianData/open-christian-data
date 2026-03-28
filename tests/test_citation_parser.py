@@ -3,6 +3,8 @@
 import sys
 from pathlib import Path
 
+import pytest
+
 # Allow imports from repo root
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -107,3 +109,8 @@ def test_chapter_only_ref():
     result = parse_citation_string("Gen. 1; Heb. 11:3.")
     assert len(result) == 2
     assert result[0]["osis"] == ["Gen.1"]
+
+
+def test_book_only_raises():
+    with pytest.raises(ValueError, match="No chapter/verse found"):
+        parse_single_reference("Gen")
