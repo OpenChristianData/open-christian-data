@@ -14,6 +14,7 @@ This project processes public domain Christian literature — commentaries, conf
 
 | Resource | Type | Coverage | Entries | Summaries | License |
 |---|---|---|---|---|---|
+| Berean Standard Bible | Bible text | 66 books | 31,086 verses | N/A | CC0 |
 | Matthew Henry's Complete Commentary | Commentary | 65 books | 18,000+ | Withheld pending review | CC0 |
 | Spurgeon's Morning and Evening | Devotional | 366 days | 732 | None (enrichment layer) | Public domain |
 
@@ -59,6 +60,11 @@ All verse references use OSIS format (`Gen.1.1`, `Rom.9.1-Rom.9.5`). Schema defi
 
 ```
 data/
+  bible-text/
+    bsb/                      # 66 book files, one per book
+      genesis.json            # 1533 verses
+      psalms.json             # 2461 verses
+      ...                     # 31,086 verses total
   commentaries/
     matthew-henry/            # and 4 other commentaries
       _manifest.json          # Book index with entry counts and status
@@ -68,15 +74,20 @@ data/
       morning-evening.json    # 732 entries (366 days x morning + evening)
 schemas/
   v1/
+    bible_text.schema.json    # JSON Schema for verse-level Bible text
     commentary.schema.json    # JSON Schema (source of truth)
     devotional.schema.json    # JSON Schema for date-keyed devotionals
   types.ts                    # TypeScript types
 build/
   parsers/
+    bsb_bible_text.py         # BSB parser (reads raw/bible_databases/BSB.json)
     helloao_commentary.py     # Generic parser for any HelloAO commentary
     ccel_devotional.py        # Parser for Spurgeon's M&E from CCEL ThML XML
   validate.py                 # Schema + structural validation
 sources/
+  bible-text/
+    bsb/
+      config.json             # Source metadata and provenance
   commentaries/
     matthew-henry/
       config.json             # Source URLs, chapter counts, coverage notes
@@ -104,11 +115,16 @@ valley = [e for e in resource["data"] if "37" in e["verse_range_osis"]]
 
 ```bash
 # Validate a data file
+py -3 build/validate.py data/bible-text/bsb/genesis.json
 py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
 py -3 build/validate.py data/devotionals/spurgeons-morning-evening/morning-evening.json
 
 # Validate everything
 py -3 build/validate.py --all
+
+# Generate BSB bible text (all 66 books from local raw/bible_databases/BSB.json)
+py -3 build/parsers/bsb_bible_text.py --dry-run
+py -3 build/parsers/bsb_bible_text.py
 
 # Process a single book for any commentary
 py -3 build/parsers/helloao_commentary.py --commentary matthew-henry --book EZK
@@ -125,9 +141,9 @@ Requires Python 3.9+. No external dependencies for the pipeline. `pip install js
 
 ## Sources
 
+- **Bible text**: [Berean Standard Bible](https://berean.bible) — CC0 since April 2023. 31,086 verses across 66 books. Sourced from [bible-databases](https://github.com/thiagobodruk/bible).
 - **Commentary text**: [HelloAO Bible API](https://bible.helloao.org) — 5 commentaries (Matthew Henry, Jamieson-Fausset-Brown, John Gill, Adam Clarke, Keil-Delitzsch), all PDM 1.0 (public domain)
 - **Devotional text**: [Christian Classics Ethereal Library](https://www.ccel.org) — Spurgeon's Morning and Evening in ThML XML, public domain
-- **Verse text**: BSB (Berean Standard Bible) via HelloAO, CC0
 - All authors died before 1928; texts are unambiguously public domain.
 
 ## Summaries

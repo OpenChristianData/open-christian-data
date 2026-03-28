@@ -6,3 +6,5 @@ Public dataset repo. Use American English only. All scripts use `py -3`, not `py
 - Validate: `py -3 build/validate.py --all`
 - Pre-commit hook blocks identifying strings — identity protection, do not bypass
 - Non-obvious kind/tradition classification rationale: `build/CLASSIFICATION_LOG.md`
+- After multi-edit sessions on any `.py` file: `py -3 -m py_compile <file>` before declaring done
+- Session history and planning docs: see `.claude/CLAUDE.md` (local, gitignored)

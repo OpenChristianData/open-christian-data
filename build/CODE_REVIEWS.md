@@ -18,3 +18,6 @@
 | build/parsers/westminster_standard_parser.py | 2026-03-28 | New (Westminster Standards). 935 lines. Standards-reviewer pass + two-stage subagent review. Logging bug fixed, return type annotation fixed, _build_osis_entries deduped, license_notes updated. **Full Opus review recommended before Phase 2.** |
 | tests/test_citation_parser.py | 2026-03-28 | New (Westminster Standards). 17 tests. Standards-reviewer pass. |
 | schemas/v1/doctrinal_document.schema.json | 2026-03-28 | Updated: added "directory" and "covenant" to document_kind enum. Subagent review confirmed alphabetical order and no regressions. |
+| build/parsers/bsb_bible_text.py | 2026-03-28 | New (Prompt 0a). Standards-reviewer pass (6 issues fixed). Logger.info format bug caught in retrospective and fixed. |
+| schemas/v1/bible_text.schema.json | 2026-03-28 | New (Prompt 0a). Opus review: M1 original_language pattern added for consistency with devotional. M6 doctrinal_document minItems:0 noted (pre-existing, not fixed). L3/L4/L8 informational. |
+| build/validate.py | 2026-03-28 | Updated: added validate_bible_text_file() + dispatch. Follows existing validator pattern exactly. |
