@@ -142,8 +142,8 @@ def main() -> None:
             skipped += 1
             continue
 
-        # Enforce delay between live requests (skip before first download)
-        if downloaded > 0:
+        # Enforce delay between live requests (skip before first attempt)
+        if downloaded + errors > 0:
             log(f"  Waiting {REQUEST_DELAY}s...", log_lines)
             time.sleep(REQUEST_DELAY)
 
@@ -157,7 +157,7 @@ def main() -> None:
             log(f"  Saved: {out_path}", log_lines)
             downloaded += 1
         except Exception as exc:
-            log(f"  ERROR: {exc}", log_lines)
+            log(f"  ERROR: PG#{pg_id} ({url}) -- {exc}. Retry manually.", log_lines)
             errors += 1
 
         log("", log_lines)

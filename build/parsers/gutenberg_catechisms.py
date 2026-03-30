@@ -654,7 +654,7 @@ def run_catechism(key: str, dry_run: bool, log_lines: list) -> bool:
     log(f"  Output: {output_path}", log_lines)
 
     if not source_path.exists():
-        log(f"  ERROR: Source file not found. Run download_gutenberg.py first.", log_lines)
+        log(f"  ERROR: {source_path} not found. Run download_gutenberg.py first.", log_lines)
         return False
 
     source_hash = sha256_file(source_path)
@@ -670,11 +670,15 @@ def run_catechism(key: str, dry_run: bool, log_lines: list) -> bool:
     log(f"  Body lines (after PG strip): {len(body_lines)}", log_lines)
 
     # Parse
-    if key == "luther_small":
-        entries, parse_errors = parse_luther_small(body_lines, doc_id, log_lines)
-    else:
-        catechism_num = cfg["catechism_num"]
-        entries, parse_errors = parse_baltimore(body_lines, catechism_num, doc_id, log_lines)
+    try:
+        if key == "luther_small":
+            entries, parse_errors = parse_luther_small(body_lines, doc_id, log_lines)
+        else:
+            catechism_num = cfg["catechism_num"]
+            entries, parse_errors = parse_baltimore(body_lines, catechism_num, doc_id, log_lines)
+    except Exception as exc:
+        log(f"  ERROR: Unexpected parse failure for {doc_id} -- {exc}", log_lines)
+        return False
 
     log(f"  Parsed {len(entries)} Q&A entries ({len(parse_errors)} parse errors)", log_lines)
     print_quality_stats(entries, doc_id, log_lines)
