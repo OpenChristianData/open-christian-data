@@ -194,12 +194,14 @@ _LLC_PART_RE = re.compile(
 
 # Sub-section headings within parts
 # "The First Commandment." / "The Second Article." / "The First Petition." etc.
+# Also: bare "Article I." / "Article II." / "Article III." in Part Second (Creed section)
 _LLC_SUBSECTION_RES = [
     re.compile(
         r"^\s*(The\s+(First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)\s+"
         r"(Commandment|Article|Petition|Sacrament)\.?)$",
         re.IGNORECASE,
     ),
+    re.compile(r"^\s*(Article\s+(I{1,3}|IV|V|VI)\.?)$"),  # "Article I." / "Article II." / "Article III."
     re.compile(r"^\s*(The\s+(Introduction|Conclusion|Close of the Commandments))$", re.IGNORECASE),
     re.compile(r"^\s*(The\s+Baptism)\.?$", re.IGNORECASE),
     re.compile(r"^\s*(CONFESSION)\.?$"),
@@ -698,14 +700,18 @@ def run_luther_large(dry_run: bool, log_lines: list) -> bool:
     log(f"  Source: {source_path}", log_lines)
 
     if not source_path.exists():
-        log("  ERROR: Source file not found. Run download_gutenberg.py first.", log_lines)
+        log(f"  ERROR: {source_path} not found. Run download_gutenberg.py first.", log_lines)
         return False
 
     source_hash = sha256_file(source_path)
     log(f"  Hash: {source_hash}", log_lines)
 
     text = source_path.read_text(encoding="utf-8")
-    body_lines = strip_pg_wrapper(text)
+    try:
+        body_lines = strip_pg_wrapper(text)
+    except ValueError as exc:
+        log(f"  ERROR: PG wrapper strip failed -- {exc}", log_lines)
+        return False
     log(f"  Body lines: {len(body_lines)}", log_lines)
 
     data = parse_luther_large(body_lines, log_lines)
@@ -768,7 +774,7 @@ def run_calvin(dry_run: bool, log_lines: list) -> bool:
 
     for path in [path_v1, path_v2]:
         if not path.exists():
-            log(f"  ERROR: {path.name} not found. Run download_gutenberg.py first.", log_lines)
+            log(f"  ERROR: {path} not found. Run download_gutenberg.py first.", log_lines)
             return False
 
     hash_v1 = sha256_file(path_v1)
@@ -781,8 +787,12 @@ def run_calvin(dry_run: bool, log_lines: list) -> bool:
 
     text_v1 = path_v1.read_text(encoding="utf-8")
     text_v2 = path_v2.read_text(encoding="utf-8")
-    body_v1 = strip_pg_wrapper(text_v1)
-    body_v2 = strip_pg_wrapper(text_v2)
+    try:
+        body_v1 = strip_pg_wrapper(text_v1)
+        body_v2 = strip_pg_wrapper(text_v2)
+    except ValueError as exc:
+        log(f"  ERROR: PG wrapper strip failed -- {exc}", log_lines)
+        return False
     log(f"  Body lines v1: {len(body_v1)}, v2: {len(body_v2)}", log_lines)
 
     data = parse_calvin(body_v1, body_v2, log_lines)
@@ -847,14 +857,18 @@ def run_augustine(dry_run: bool, log_lines: list) -> bool:
     log(f"\n--- {work_id} (PG#3296) ---", log_lines)
 
     if not source_path.exists():
-        log("  ERROR: Source file not found. Run download_gutenberg.py first.", log_lines)
+        log(f"  ERROR: {source_path} not found. Run download_gutenberg.py first.", log_lines)
         return False
 
     source_hash = sha256_file(source_path)
     log(f"  Hash: {source_hash}", log_lines)
 
     text = source_path.read_text(encoding="utf-8")
-    body_lines = strip_pg_wrapper(text)
+    try:
+        body_lines = strip_pg_wrapper(text)
+    except ValueError as exc:
+        log(f"  ERROR: PG wrapper strip failed -- {exc}", log_lines)
+        return False
     log(f"  Body lines: {len(body_lines)}", log_lines)
 
     data = parse_augustine(body_lines, log_lines)

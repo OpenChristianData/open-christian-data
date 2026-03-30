@@ -11,6 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from build.parsers.ccel_pdf_commentary import ordinal_to_psalm_number
+from tests.probe_ordinal_parser import psalm_ordinal
 
 
 # ---------------------------------------------------------------------------
@@ -133,6 +134,23 @@ def test_trailing_page_artifacts():
     check("SEVENTY-EIGHTH 123", 78)
 
 
+def test_full_range():
+    """Every psalm 1-150 round-trips through the generator and parser correctly.
+    This is the regression net — if any future parser or OCR-correction change
+    breaks a whole decade, this catches it immediately.
+    """
+    failures = []
+    for psalm in range(1, 151):
+        ordinal = psalm_ordinal(psalm)
+        result = ordinal_to_psalm_number(ordinal)
+        if result != psalm:
+            failures.append((psalm, ordinal, result))
+    assert not failures, (
+        f"{len(failures)} psalm(s) failed: "
+        + ", ".join(f"Ps {p} ({o!r} -> {g})" for p, o, g in failures)
+    )
+
+
 def test_invalid_returns_zero():
     assert ordinal_to_psalm_number("") == 0
     assert ordinal_to_psalm_number("BWEL") == 0
@@ -145,6 +163,7 @@ def test_invalid_returns_zero():
 
 if __name__ == "__main__":
     tests = [
+        test_full_range,
         test_low_ordinals,
         test_simple_compound_ordinals,
         test_standalone_tens,
