@@ -9,6 +9,7 @@ Dispatches on meta.schema_type:
   - devotional: date-keyed daily reading entries
   - structured_text: hierarchical prose works (theological works, devotional classics)
   - sermon: sermon collections (array of individual sermons)
+  - prayer: individual prayers / collect collections
 
 Bible text checks:
   1. JSON Schema conformance
@@ -44,12 +45,32 @@ Devotional checks:
   6. word_count > 0 per entry
   7. primary_reference OSIS format (if present)
 
+Prayer checks:
+  1. JSON Schema conformance
+  2. prayer_id uniqueness within a file
+  3. content_blocks non-empty per entry
+  4. word_count > 0 per entry
+
+Reference entry checks:
+  1. JSON Schema conformance
+  2. entry_id uniqueness within a file
+  3. term non-empty
+  4. definition_blocks non-empty
+  5. word_count > 0
+
+Topical reference checks:
+  1. JSON Schema conformance
+  2. entry_id uniqueness within a file
+  3. topic non-empty
+  4. subtopics array non-empty (redirect-only entries with related_topics emit a warning, not an error)
+
 Usage:
     py -3 build/validate.py data/bible-text/bsb/genesis.json
     py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
     py -3 build/validate.py data/catechisms/westminster-shorter-catechism.json
     py -3 build/validate.py data/doctrinal-documents/westminster-confession-of-faith.json
     py -3 build/validate.py data/devotionals/spurgeons-morning-evening/morning-evening.json
+    py -3 build/validate.py data/prayers/didache/prayers.json
     py -3 build/validate.py --all
 """
 
@@ -265,15 +286,17 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
     # A file can be structurally valid but still have widespread null fields.
     if entries:
         total = len(entries)
-        null_verse_text = sum(1 for e in entries if not e.get("verse_text"))
-        if null_verse_text > 0:
-            pct = null_verse_text * 100 / total
-            # >5% missing verse_text is a warning; >50% is an error (likely a parser bug)
-            msg = f"{null_verse_text}/{total} entries ({pct:.1f}%) missing verse_text"
-            if pct > 50:
-                errors.append(f"Completeness: {msg}")
-            else:
-                warnings.append(f"Completeness: {msg}")
+        verse_text_source = data.get("meta", {}).get("verse_text_source", "")
+        if verse_text_source != "none":
+            null_verse_text = sum(1 for e in entries if not e.get("verse_text"))
+            if null_verse_text > 0:
+                pct = null_verse_text * 100 / total
+                # >5% missing verse_text is a warning; >50% is an error (likely a parser bug)
+                msg = f"{null_verse_text}/{total} entries ({pct:.1f}%) missing verse_text"
+                if pct > 50:
+                    errors.append(f"Completeness: {msg}")
+                else:
+                    warnings.append(f"Completeness: {msg}")
 
     # OSIS existence check -- warnings only (source data may have valid edge cases)
     if osis_to_check:
@@ -599,9 +622,12 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
                     errors.append(f"{loc} ({eid}): invalid primary_reference OSIS: '{osis_str}'")
 
     # Completeness check
+    # Entries with primary_reference explicitly set to null are intentionally absent (not incomplete).
+    # Only count entries where the key is genuinely absent from the record.
+    _ABSENT = object()
     if entries:
         total = len(entries)
-        no_ref = sum(1 for e in entries if not e.get("primary_reference"))
+        no_ref = sum(1 for e in entries if e.get("primary_reference", _ABSENT) is _ABSENT)
         if no_ref > 0:
             pct = no_ref * 100 / total
             msg = f"{no_ref}/{total} entries ({pct:.1f}%) missing primary_reference"
@@ -674,7 +700,7 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
         empty_source = sum(1 for e in entries if not e.get("source_title", "").strip())
         if no_osis > 0:
             pct = no_osis * 100 / total
-            msg = f"{no_osis}/{total} entries ({pct:.1f}%) have empty anchor_ref.osis (non-canonical book)"
+            msg = f"{no_osis}/{total} entries ({pct:.1f}%) have empty anchor_ref.osis (unrecognized book name)"
             # >50% no-OSIS is unexpected for a standard Church Father
             if pct > 50:
                 warnings.append(f"Completeness: {msg}")
@@ -823,6 +849,160 @@ def validate_sermon_file(path: Path, data: dict) -> tuple:
     return errors, warnings
 
 
+def validate_prayer_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=prayer. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "prayer.schema.json", warnings, errors)
+
+    if not isinstance(data, dict):
+        errors.append("Root must be an object")
+        return errors, warnings
+    if "meta" not in data:
+        errors.append("Missing 'meta' key")
+    if "data" not in data:
+        errors.append("Missing 'data' key")
+        return errors, warnings
+
+    entries = data.get("data", [])
+    if not isinstance(entries, list):
+        errors.append("'data' must be an array for prayer")
+        return errors, warnings
+    if len(entries) == 0:
+        errors.append("'data' array is empty")
+        return errors, warnings
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        pid = entry.get("prayer_id", "")
+
+        # prayer_id uniqueness
+        if pid in seen_ids:
+            errors.append(f"{loc}: duplicate prayer_id '{pid}'")
+        elif pid:
+            seen_ids.add(pid)
+        else:
+            errors.append(f"{loc}: prayer_id is missing or empty")
+
+        # content_blocks non-empty
+        blocks = entry.get("content_blocks", [])
+        if not blocks:
+            errors.append(f"{loc} (prayer_id={pid!r}): content_blocks is empty")
+        elif not any(b.strip() for b in blocks):
+            errors.append(f"{loc} (prayer_id={pid!r}): all content_blocks are blank")
+
+        # word_count positive
+        wc = entry.get("word_count", 0)
+        if not isinstance(wc, int) or wc <= 0:
+            errors.append(
+                f"{loc} (prayer_id={pid!r}): word_count must be a positive integer, got {wc!r}"
+            )
+
+        # scripture_references OSIS format (warnings only -- prayer texts rarely cite OSIS)
+        for j, ref in enumerate(entry.get("scripture_references", [])):
+            if isinstance(ref, dict):
+                for osis_str in ref.get("osis", []):
+                    if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
+                        warnings.append(
+                            f"{loc} (prayer_id={pid!r}): scripture_references[{j}] "
+                            f"suspicious OSIS: '{osis_str}'"
+                        )
+
+    # Completeness: warn if many prayers lack a title and incipit
+    total = len(entries)
+    no_title = sum(1 for e in entries if not e.get("title"))
+    no_incipit = sum(1 for e in entries if not e.get("incipit"))
+    if no_title == total:
+        warnings.append(f"Completeness: all {total} prayers lack a title (consider adding incipit)")
+    if no_incipit > 0 and no_title > 0:
+        warnings.append(
+            f"Completeness: {no_title}/{total} prayers have no title "
+            f"and {no_incipit}/{total} have no incipit -- identifiability may be poor"
+        )
+
+    return errors, warnings
+
+
+def validate_reference_entry_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=reference_entry. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "reference_entry.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        eid = entry.get("entry_id", "")
+
+        if eid in seen_ids:
+            errors.append(f"{loc}: duplicate entry_id '{eid}'")
+        elif eid:
+            seen_ids.add(eid)
+        else:
+            errors.append(f"{loc}: entry_id is missing or empty")
+
+        term = entry.get("term", "")
+        if not term or not term.strip():
+            errors.append(f"{loc} (entry_id={eid!r}): term is missing or empty")
+
+        blocks = entry.get("definition_blocks", [])
+        if not blocks:
+            errors.append(f"{loc} (entry_id={eid!r}): definition_blocks is empty")
+
+        wc = entry.get("word_count", 0)
+        if not isinstance(wc, int) or wc < 0:
+            errors.append(
+                f"{loc} (entry_id={eid!r}): word_count must be a non-negative integer, got {wc!r}"
+            )
+
+    return errors, warnings
+
+
+def validate_topical_reference_file(path: Path, data: dict) -> tuple:
+    """Structural checks for schema_type=topical_reference. Returns (errors, warnings)."""
+    errors = []
+    warnings = []
+
+    _run_json_schema(data, SCHEMA_DIR / "topical_reference.schema.json", warnings, errors)
+
+    entries = _check_envelope(data, errors)
+
+    seen_ids = set()
+    for i, entry in enumerate(entries):
+        loc = f"data[{i}]"
+        eid = entry.get("entry_id", "")
+
+        if eid in seen_ids:
+            errors.append(f"{loc}: duplicate entry_id '{eid}'")
+        elif eid:
+            seen_ids.add(eid)
+        else:
+            errors.append(f"{loc}: entry_id is missing or empty")
+
+        topic = entry.get("topic", "")
+        if not topic or not topic.strip():
+            errors.append(f"{loc} (entry_id={eid!r}): topic is missing or empty")
+
+        subtopics = entry.get("subtopics", [])
+        if not subtopics:
+            related = entry.get("related_topics", [])
+            if related:
+                # Redirect-only entry: no content, but valid cross-reference target.
+                warnings.append(
+                    f"{loc} (entry_id={eid!r}): subtopics array is empty "
+                    f"(redirect-only entry; related_topics={related})"
+                )
+            else:
+                errors.append(f"{loc} (entry_id={eid!r}): subtopics array is empty")
+
+    return errors, warnings
+
+
 def validate_file(path: Path) -> tuple:
     """Load a data file, detect schema_type, and run appropriate validation."""
     data, load_errors = _load_json(path)
@@ -847,6 +1027,12 @@ def validate_file(path: Path) -> tuple:
         return validate_structured_text_file(path, data)
     elif schema_type == "sermon":
         return validate_sermon_file(path, data)
+    elif schema_type == "prayer":
+        return validate_prayer_file(path, data)
+    elif schema_type == "reference_entry":
+        return validate_reference_entry_file(path, data)
+    elif schema_type == "topical_reference":
+        return validate_topical_reference_file(path, data)
     else:
         # Unknown type -- run envelope check only
         errors = []
