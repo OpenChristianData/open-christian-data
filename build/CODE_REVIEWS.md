@@ -22,8 +22,8 @@
 | schemas/v1/bible_text.schema.json | 2026-03-28 | New (Prompt 0a). Opus review: M1 original_language pattern added for consistency with devotional. M6 doctrinal_document minItems:0 noted (pre-existing, not fixed). L3/L4/L8 informational. |
 | build/validate.py | 2026-03-28 | Updated (Prompt 0b + fixes): added validate_bible_text_file(), OSIS existence checking for commentary/catechism/doctrinal, fixed commentary cross_references to handle Reference objects (was TypeError on dict). Standards-reviewer pass. |
 | build/scripts/build_verse_index.py | 2026-03-28 | New (Prompt 0b). Standards-reviewer pass (4 issues fixed: hardcoded date, elapsed time, 2x silent exception swallows). |
-| build/scripts/validate_osis.py | 2026-03-28 | New (Prompt 0b). Importable utility. Standards-reviewer pass. |
-| build/scripts/test_osis_integration.py | 2026-03-28 | New (Prompt 0b post-session). 23 integration tests — 23/23 pass. No Opus needed. |
+| build/scripts/validate_osis.py | 2026-03-28 | New (Prompt 0b). Importable utility. Standards-reviewer pass. Updated 2026-03-28: DEUTEROCANONICAL_BOOK_CODES frozenset added; known apocryphal codes return (True, "deuterocanonical - not in verse index") instead of failing. Covered by test_osis_integration.py section 6 (10 tests). |
+| build/scripts/test_osis_integration.py | 2026-03-28 | New (Prompt 0b post-session). Updated 2026-03-28: section 6 added -- 10 deuterocanonical tests. 33/33 pass. |
 | build/scripts/add_token_counts.py | 2026-03-28 | New (Prompt 0c). Standards-reviewer pass. Idempotent, --dry-run mode. 105,413 records updated across 407 files. |
 | schemas/v1/commentary.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
 | schemas/v1/catechism_qa.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
@@ -38,3 +38,16 @@
 | schemas/v1/structured_text.schema.json | 2026-03-28 | New (T1-4). Recursive section tree. Tradition/license enums match other schemas (consistency check passes). |
 | schemas/v1/sermon.schema.json | 2026-03-28 | New (T1-4). Data is array of sermon entries. Tradition/license enums match other schemas. |
 | build/validate.py | 2026-03-28 | Updated (T1-4): added validate_structured_text_file(), validate_sermon_file(), _check_sections(). 0 errors on --all (741 files). |
+| build/extract_pdf.py | never | New (PDF pipeline). pymupdf4llm wrapper, GlyphLessFont OCR detection, batch processing, dry-run. **Opus review pending -- use written prompt.** |
+| build/lib/pdf_quality_gate.py | never | New (PDF pipeline). Post-extraction quality checks. **Opus review pending.** |
+| build/lib/pdf_normalizer.py | never | New (PDF pipeline). 8 Markdown transforms. **Opus review pending.** |
+| build/parsers/ccel_pdf_commentary.py | never | New (Treasury of David). 550+ lines. 3 bugs fixed during end-to-end test. **Opus review pending -- highest priority.** |
+| tests/test_ordinal_parser.py | 2026-03-28 | New (PDF pipeline). 10 unit tests for ordinal converter. Covers regression cases for all 3 parser bugs. No Opus review needed. |
+| build/validate.py | 2026-03-28 | Updated (PDF pipeline): verse_text_source "none" bypass for verse_text completeness check. |
+| build/parsers/bible_dictionaries.py | 2026-03-30 | New (T1-5 JWBickel). Standards-reviewer pass (logging, error messages, N-of-M counter, quality stats, summary). Separator bug fixed (regex not string literal, Rule 46). No Opus review yet — flag for next pass. |
+| schemas/v1/reference_entry.schema.json | 2026-03-30 | New (T1-5). Easton's, Smith's, Hitchcock's. Tradition/license enums match other schemas. |
+| schemas/v1/topical_reference.schema.json | 2026-03-30 | New (T1-5). Torrey's. Subtopics array with label + references. Tradition/license enums match. |
+| build/validate.py | 2026-03-30 | Updated (T1-5): added validate_reference_entry_file() + validate_topical_reference_file() + dispatch cases. 0 errors on --all (891 files). |
+| build/scripts/download_gutenberg.py | never | New (PG pipeline). Respectful downloader: 2s delay, User-Agent, SHA-256, skip-if-cached. **Standards-reviewer pass not run — flag for next session.** |
+| build/parsers/gutenberg_catechisms.py | never | New (PG catechisms). Luther Small (45 Q&A) + Baltimore #1/2/3 (2,070 Q&A). Two parse format variants (_BALT_Q_A_RE + _BALT_Q_B_RE). Post-eval fixes: sort_key counter, None answer handling, completeness:partial. **Standards-reviewer pass not run — flag for next session.** |
+| build/parsers/gutenberg_theology.py | never | New (PG theology). Luther Large (48k words), Calvin 2-vol merge (646k words), Augustine (112k words). Post-context-window session — no standards-reviewer pass. **Standards-reviewer pass not run — flag for next session.** |
