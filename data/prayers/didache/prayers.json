@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "id": "didache-prayers",
+    "title": "Didache -- Prayers (Lake Translation)",
+    "author": null,
+    "author_birth_year": null,
+    "author_death_year": null,
+    "contributors": [
+      "Kirsopp Lake (translator)"
+    ],
+    "original_publication_year": null,
+    "language": "en",
+    "original_language": "grc",
+    "tradition": [
+      "patristic",
+      "ecumenical"
+    ],
+    "tradition_notes": "The Didache (Teaching of the Twelve Apostles) is an early Christian document, dated to approximately 50-120 AD, containing some of the earliest known eucharistic prayers and the Lord's Prayer doxology. The Kirsopp Lake (1912) translation is standard in scholarship and is in the public domain. This dataset covers only the prayer content from chapters 8-10.",
+    "era": "apostolic",
+    "audience": "pastoral",
+    "license": "public-domain",
+    "schema_type": "prayer",
+    "schema_version": "2.1.0",
+    "completeness": "partial",
+    "provenance": {
+      "source_url": "https://en.wikisource.org/wiki/Didache_(Lake_translation)",
+      "source_format": "Wikisource wikitext (JSON API)",
+      "source_edition": "Kirsopp Lake translation, 1912; digitized by Wikisource contributors",
+      "download_date": "2026-03-28",
+      "source_hash": "sha256:9ba0420fc2f1ef3d960335c100e31f8edbe7343b7fc5eab66dcce075744db764",
+      "processing_method": "automated",
+      "processing_script_version": "build/parsers/didache.py@v1.0.0",
+      "processing_date": "2026-03-28",
+      "notes": "Scope limited to chapters 8-10 (prayer content). Chapter 8 v.2 = Lord's Prayer. Chapter 9 vv.2-4 = Eucharistic prayers over cup and bread. Chapter 10 vv.2-6 = Post-Eucharist thanksgiving. Chapters 1-7 and 11-16 contain doctrinal and ecclesiological content outside this dataset's scope."
+    }
+  },
+  "data": [
+    {
+      "collection_id": "didache-prayers",
+      "prayer_id": "8-lords-prayer",
+      "title": "The Lord's Prayer",
+      "incipit": "Our Father, who art in Heaven, hallowed be thy Name,...",
+      "author": null,
+      "year": null,
+      "occasion": "Daily Prayer",
+      "content_blocks": [
+        "Our Father, who art in Heaven, hallowed be thy Name, thy Kingdom come, thy will be done, as in Heaven so also upon earth; give us to-day our daily bread, and forgive us our debt as we forgive our debtors, and lead us not into trial, but deliver us from the Evil One, for thine is the power and the glory for ever."
+      ],
+      "scripture_references": [],
+      "context": {
+        "work": "Didache (Lake translation, 1912)",
+        "location": "Chapter VIII.2"
+      },
+      "word_count": 63
+    },
+    {
+      "collection_id": "didache-prayers",
+      "prayer_id": "9-cup",
+      "title": "Eucharistic Prayer over the Cup",
+      "incipit": "We give thanks to thee, our Father, for the Holy...",
+      "author": null,
+      "year": null,
+      "occasion": "Eucharist",
+      "content_blocks": [
+        "We give thanks to thee, our Father, for the Holy Vine of David thy child, which, thou didst make known to us through Jesus thy child; to thee be glory for ever."
+      ],
+      "scripture_references": [],
+      "context": {
+        "work": "Didache (Lake translation, 1912)",
+        "location": "Chapter IX.2"
+      },
+      "word_count": 32
+    },
+    {
+      "collection_id": "didache-prayers",
+      "prayer_id": "9-bread",
+      "title": "Eucharistic Prayer over the Bread",
+      "incipit": "We give thee thanks, our Father, for the life and...",
+      "author": null,
+      "year": null,
+      "occasion": "Eucharist",
+      "content_blocks": [
+        "We give thee thanks, our Father, for the life and knowledge which thou didst make known to us through Jesus thy Child. To thee be glory for ever. As this broken bread was scattered upon the mountains, but was brought together and became one, so let thy Church be gathered together from the ends of the earth into thy Kingdom, for thine is the glory and the power through Jesus Christ for ever."
+      ],
+      "scripture_references": [],
+      "context": {
+        "work": "Didache (Lake translation, 1912)",
+        "location": "Chapter IX.3-4"
+      },
+      "word_count": 73
+    },
+    {
+      "collection_id": "didache-prayers",
+      "prayer_id": "10-thanksgiving",
+      "title": "Thanksgiving after the Eucharist",
+      "incipit": "We give thanks to thee, O Holy Father, for thy...",
+      "author": null,
+      "year": null,
+      "occasion": "Eucharist",
+      "content_blocks": [
+        "We give thanks to thee, O Holy Father, for thy Holy Name which thou didst make to tabernacle in our hearts, and for the knowledge and faith and immortality which thou didst make known to us through Jesus thy Child. To thee be glory for ever. Thou, Lord Almighty, didst create all things for thy Name's sake, and didst give food and drink to men for their enjoyment, that they might give thanks to thee, but us hast thou blessed with spiritual food and drink and eternal light through thy Child. Above all we give thanks to thee for that thou art mighty. To thee be glory for ever. Remember, Lord, thy Church, to deliver it from all evil and to make it perfect in thy love, and gather it together in its holiness from the four winds to thy kingdom which thou hast prepared for it. For thine is the power and the glory for ever. Let grace come and let this world pass away. Hosannah to the God of David. If any man be holy, let him come! if any man be not, let him repent: Maran atha, Amen."
+      ],
+      "scripture_references": [],
+      "context": {
+        "work": "Didache (Lake translation, 1912)",
+        "location": "Chapter X.2-6"
+      },
+      "word_count": 191
+    }
+  ]
+}
