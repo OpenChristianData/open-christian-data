@@ -1,5 +1,7 @@
 {
   "_comment": "Full English Bible book names to OSIS codes. Used by parsers that process filename-encoded references.",
+  "_comment_deuterocanonical": "Deuterocanonical/apocryphal sections cover Catholic, Eastern Orthodox, and Ethiopian Orthodox canons.",
+
   "Genesis": "Gen",
   "Exodus": "Exod",
   "Leviticus": "Lev",
@@ -70,5 +72,49 @@
   "2 John": "2John",
   "3 John": "3John",
   "Jude": "Jude",
-  "Revelation": "Rev"
+  "Revelation": "Rev",
+
+  "_comment_catholic": "Catholic deuterocanonical books (in the Latin Vulgate and accepted at the Council of Trent)",
+  "Tobit": "Tob",
+  "Tobias": "Tob",
+  "Judith": "Jdt",
+  "1 Maccabees": "1Macc",
+  "2 Maccabees": "2Macc",
+  "Wisdom": "Wis",
+  "Wisdom of Solomon": "Wis",
+  "Sirach": "Sir",
+  "Ecclesiasticus": "Sir",
+  "Baruch": "Bar",
+
+  "_comment_additions": "Additions to canonical books (accepted in Catholic and Orthodox canons)",
+  "Letter of Jeremiah": "EpJer",
+  "Epistle of Jeremiah": "EpJer",
+  "Prayer of Azariah": "PrAzar",
+  "Song of the Three Young Men": "SgThree",
+  "Song of the Three Children": "SgThree",
+  "Song of Three Holy Children": "SgThree",
+  "Susanna": "Sus",
+  "Bel and the Dragon": "Bel",
+  "Additions to Esther": "AddEsth",
+  "Greek Esther": "EsthGr",
+  "Prayer of Manasseh": "PrMan",
+
+  "_comment_orthodox": "Additional books found in Eastern Orthodox and/or Slavonic canons",
+  "1 Esdras": "1Esd",
+  "3 Esdras": "1Esd",
+  "2 Esdras": "2Esd",
+  "4 Esdras": "2Esd",
+  "4 Ezra": "2Esd",
+  "3 Maccabees": "3Macc",
+  "4 Maccabees": "4Macc",
+  "Psalm 151": "Ps151",
+  "Psalms of Solomon": "PsSol",
+  "Odes": "Odes",
+
+  "_comment_ethiopian": "Books found in the Ethiopian Orthodox Tewahedo canon",
+  "1 Enoch": "1En",
+  "Enoch": "1En",
+  "Book of Enoch": "1En",
+  "Jubilees": "Jub",
+  "Book of Jubilees": "Jub"
 }

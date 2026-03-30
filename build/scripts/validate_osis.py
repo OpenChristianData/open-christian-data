@@ -29,6 +29,26 @@ from typing import List, Optional, Tuple
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VERSE_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "verse_index.json"
 
+# OSIS book codes for deuterocanonical/apocryphal books that are absent from the
+# BSB-derived verse index (Protestant 66-book canon). When a book code is in this
+# set, existence checks are skipped rather than reported as "unknown book code".
+# Covers: Catholic, Eastern Orthodox, Slavonic, and Ethiopian Orthodox canons.
+DEUTEROCANONICAL_BOOK_CODES = frozenset({
+    # Catholic deuterocanonical
+    "Tob", "Jdt", "Wis", "Sir", "Bar", "EpJer",
+    "1Macc", "2Macc",
+    # Additions to Daniel
+    "PrAzar", "SgThree", "Sus", "Bel",
+    # Additions to Esther
+    "AddEsth", "EsthGr",
+    # Prayer of Manasseh (in some Catholic/Orthodox editions)
+    "PrMan",
+    # Eastern Orthodox / Slavonic additions
+    "1Esd", "2Esd", "3Macc", "4Macc", "Ps151", "Odes", "PsSol",
+    # Ethiopian Orthodox canon
+    "1En", "Jub",
+})
+
 # Module-level cache -- loaded once on first use
 _INDEX = None
 _INDEX_LOADED = False
@@ -63,6 +83,8 @@ def _validate_endpoint(
     Returns (valid, reason). reason is empty string when valid.
     """
     if book not in index_books:
+        if book in DEUTEROCANONICAL_BOOK_CODES:
+            return True, "deuterocanonical - not in verse index"
         return False, f"unknown book code '{book}'"
 
     if chapter_str is None:

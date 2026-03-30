@@ -11,6 +11,7 @@ Covers:
   3. validate_commentary_file: cross_reference with out-of-range verse -> warning
   4. All three: valid refs produce no OSIS existence warning (positive test)
   5. validate_osis_ref: standalone unit tests (valid, invalid, range, index unavailable)
+  6. Deuterocanonical OSIS refs: known apocryphal codes return valid (not in verse index)
 
 Usage:
     py -3 build/scripts/test_osis_integration.py
@@ -291,6 +292,51 @@ check("validate_osis_array: Ezek.48.36 in invalid list", "Ezek.48.36" in invalid
       f"invalid: {invalid_refs}")
 check("validate_osis_array: Gen.51.1 in invalid list", "Gen.51.1" in invalid_refs,
       f"invalid: {invalid_refs}")
+
+print()
+print("--- 6. Deuterocanonical OSIS refs ---")
+
+# Known deuterocanonical codes should pass (not in BSB verse index, but valid OSIS codes).
+# validate_osis_ref returns (True, "deuterocanonical - not in verse index") for these.
+for ref in ["Tob.1.1", "Sir.24.1", "1Macc.2.1", "Wis.7.1", "Bar.3.1", "PrAzar.1.1"]:
+    valid, reason = validate_osis_ref(ref)
+    check(
+        f"{ref} is valid (deuterocanonical)",
+        valid and reason == "deuterocanonical - not in verse index",
+        f"valid={valid}, reason={reason!r}",
+    )
+
+# Range ref spanning a deuterocanonical book should also pass
+valid, reason = validate_osis_ref("Bar.3.24-Bar.3.25")
+check(
+    "Bar.3.24-Bar.3.25 range is valid (deuterocanonical)",
+    valid,
+    f"valid={valid}, reason={reason!r}",
+)
+
+# Truly unknown book code (not Protestant, not deuterocanonical) still fails
+valid, reason = validate_osis_ref("Unknown.1.1")
+check(
+    "Unknown.1.1 is invalid (not in index, not deuterocanonical)",
+    not valid and "unknown book code" in reason,
+    f"expected invalid, got valid={valid}, reason={reason!r}",
+)
+
+# validate_osis_array: deuterocanonical refs count as valid, not invalid
+valid_count, invalid = validate_osis_array(["Gen.1.1", "Tob.1.1", "Sir.24.1"])
+check(
+    "validate_osis_array: deuterocanonical refs counted as valid",
+    valid_count == 3 and len(invalid) == 0,
+    f"valid_count={valid_count}, invalid={invalid}",
+)
+
+# Mixed: one canonical, one deuterocanonical, one truly bad
+valid_count, invalid = validate_osis_array(["Gen.1.1", "Tob.1.1", "Ezek.48.36"])
+check(
+    "validate_osis_array: canonical + deuterocanonical + bad ref",
+    valid_count == 2 and len(invalid) == 1 and invalid[0][0] == "Ezek.48.36",
+    f"valid_count={valid_count}, invalid={invalid}",
+)
 
 # ---------------------------------------------------------------------------
 # Summary
