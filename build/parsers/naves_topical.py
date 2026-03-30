@@ -34,6 +34,7 @@ Usage:
 """
 
 import argparse
+import csv as _csv
 import hashlib
 import json
 import logging
@@ -58,6 +59,7 @@ REQUEST_LOG = REPO_ROOT / "research" / "reference" / "request_log.csv"
 INDEX_ID = "naves-topical-bible"
 SCRIPT_VERSION = "v1.0.0"
 SCHEMA_VERSION = "2.1.0"
+EXPECTED_ENTRY_COUNT = 5322   # confirmed from binary inspection 2026-03-30
 
 # Unicode arrow that marks subtopic line starts (U+2192, UTF-8 encoded)
 ARROW = "\u2192"
@@ -195,6 +197,14 @@ def parse_subtopics(entry_xml: str) -> list:
     # The <lb/> tags precede each arrow; we split on the arrow itself.
     segments = content.split(ARROW)
 
+    # segments[0] is content before the first arrow -- check it does not contain refs
+    preamble = segments[0] if segments else ""
+    if "<ref osisRef=" in preamble:
+        logging.info(
+            "parse_subtopics: topic has refs before first arrow (preamble refs dropped): %r",
+            preamble[:120],
+        )
+
     subtopics = []
     for seg in segments[1:]:  # segments[0] is text before the first arrow (preamble)
         # Extract the subtopic label: text before the first <ref> or <lb/>
@@ -230,6 +240,8 @@ def load_block_cache() -> dict:
     zdt_path = RAW_DIR / "dict.zdt"
 
     zdx_data = zdx_path.read_bytes()
+    # Nave.zip zdt is ~1.2 MB compressed / ~5 MB decompressed -- safe to load entirely.
+    # For larger SWORD modules, consider streaming per-block reads instead.
     zdt_data = zdt_path.read_bytes()
 
     n_blocks = len(zdx_data) // 8
@@ -265,6 +277,14 @@ def get_entry_from_block(plain: bytes, entry_in_block: int, topic: str) -> str:
         return ""
 
     count, data_start = struct.unpack("<II", plain[0:8])
+
+    # Guard: data_start must be beyond the block's own index section
+    min_data_start = 8 + count * 8
+    if data_start < min_data_start:
+        logging.warning(
+            "data_start=%d < expected minimum %d (topic=%s) -- block may be corrupt",
+            data_start, min_data_start, topic,
+        )
 
     if entry_in_block >= count:
         logging.warning(
@@ -335,27 +355,22 @@ def _regex_extract(plain: bytes, topic: str) -> str:
 # Meta builder
 # ---------------------------------------------------------------------------
 
-def _get_download_date() -> str:
-    """
-    Read download date from research/reference/request_log.csv.
-    Looks for the row containing 'Nave.zip' and returns timestamp[:10].
-    Falls back to today's date if not found.
-    """
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    if not REQUEST_LOG.exists():
-        logging.warning("request_log.csv not found; using today as download_date")
-        return today
-
-    with open(REQUEST_LOG, encoding="utf-8") as fh:
-        for line in fh:
-            if "Nave.zip" in line:
-                parts = line.split(",")
-                if parts:
-                    ts = parts[0].strip()
-                    if len(ts) >= 10:
+def _get_download_date(log_path: Path, fallback: str) -> str:
+    """Read download date for Nave.zip from request_log.csv, or return fallback."""
+    if not log_path.exists():
+        return fallback
+    try:
+        with open(log_path, encoding="utf-8", newline="") as fh:
+            reader = _csv.reader(fh)
+            next(reader, None)  # skip header
+            for row in reader:
+                if len(row) >= 3 and "Nave.zip" in row[2]:
+                    ts = row[0].strip()
+                    if len(ts) >= 10 and ts[:10].count("-") == 2:
                         return ts[:10]
-    logging.warning("Nave.zip not found in request_log.csv; using today as download_date")
-    return today
+    except (OSError, StopIteration):
+        pass
+    return fallback
 
 
 def _compute_source_hash() -> str:
@@ -534,6 +549,14 @@ def parse_all_entries(limit: int = 0) -> tuple:
                 "  Progress: %d/%d entries processed ...", i + 1, min(process_up_to, n_idx)
             )
 
+    data_entries = entries  # alias for count assertion
+    if abs(len(data_entries) - EXPECTED_ENTRY_COUNT) > 50:
+        logging.warning(
+            "Unexpected entry count: got %d, expected ~%d. "
+            "Check raw/naves_topical/ files for corruption.",
+            len(data_entries), EXPECTED_ENTRY_COUNT,
+        )
+
     stats = {
         "total": len(entries),
         "malformed": n_malformed,
@@ -585,8 +608,9 @@ def main() -> None:
 
     # Compute provenance metadata
     source_hash = _compute_source_hash()
-    download_date = _get_download_date()
-    processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    download_date = _get_download_date(REQUEST_LOG, today)
+    processing_date = today
 
     logging.info("source_hash: %s", source_hash)
     logging.info("download_date: %s", download_date)
