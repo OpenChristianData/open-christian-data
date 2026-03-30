@@ -1,0 +1,32 @@
+{
+  "commentary_id": "treasury-of-david",
+  "resource_id": "treasury-of-david",
+  "title": "The Treasury of David",
+  "author": "Charles Haddon Spurgeon",
+  "author_birth_year": 1834,
+  "author_death_year": 1892,
+  "contributors": [],
+  "original_publication_year": 1869,
+  "language": "en",
+  "tradition": ["baptist", "calvinist", "reformed"],
+  "tradition_notes": "Spurgeon was the most prominent Victorian Baptist preacher, Calvinist in soteriology (Five Points). The Treasury of David is his magnum opus commentary on Psalms, blending original exposition with extensive quotations from other commentators (Puritan, Reformed, patristic). Spurgeon did not comment systematically on every verse but grouped them in sections.",
+  "license": "cc0-1.0",
+  "source": "Internet Archive (archive.org)",
+  "source_base_url": "https://archive.org/details/treasuryofdavidc0000spur",
+  "notes": "Spurgeon died 1892; text is public domain in all jurisdictions. Originally published 1869-1885 in 7 volumes covering all 150 Psalms. archive.org identifier treasuryofdavidc0000spur is actually Vol 3 (Psalms 53-78, Funk & Wagnalls edition) despite the identifier name suggesting Vol 1. Additional volumes required for full Psalm coverage.",
+  "known_coverage_gaps": ["Only Psalms 53-78 extracted (Vol 3); Psalms 1-52 and 79-150 require additional volumes"],
+  "source_edition": "Funk & Wagnalls edition (1882), Vol. III, Psalms 53-78",
+  "archive_org_identifier": "treasuryofdavidc0000spur",
+  "psalm_range_note": "Psalms 53-78",
+  "pdf_extraction": {
+    "raw_dir": "raw/ccel/treasury-of-david",
+    "pdf_files": ["treasury-of-david-vol1.pdf"],
+    "expected_chapters": [53, 78],
+    "strip_headers_footers": true,
+    "regex_headings": [
+      {"pattern": "^PSALM (THE |)[A-Z][A-Z -]+\\.?$", "level": 1},
+      {"pattern": "^(EXPOSITION|HOMILETICAL HINTS|HINTS TO THE VILLAGE PREACHER|ILLUSTRATIVE EXTRACTS|EXPLANATORY NOTES AND QUAINT SAYINGS)\\.?$", "level": 2, "flags": "i"},
+      {"pattern": "^Ver(se|s)?s?\\.?\\s+\\d+", "level": 3, "flags": "i"}
+    ]
+  }
+}
