@@ -33,6 +33,7 @@ This project processes public domain Christian literature — commentaries, conf
 | Smith's Bible Dictionary | Reference entries | Full (A–Z) | 4,560 entries | None | Public domain |
 | Hitchcock's Bible Names Dictionary | Reference entries | Full (A–Z) | 2,622 entries | None | Public domain |
 | Torrey's New Topical Textbook | Topical reference | 623 topics | 21,579 scripture refs | None | Public domain |
+| Nave's Topical Bible | Topical reference | 5,322 topics | 76,957 scripture refs | None | Public domain |
 | Luther's Small Catechism | Catechism Q&A | 6 parts | 45 Q&A | None | Public domain |
 | Baltimore Catechism No. 1 | Catechism Q&A | 15 lessons | 206 Q&A | None | Public domain |
 | Baltimore Catechism No. 2 | Catechism Q&A | 19 lessons | 421 Q&A | None | Public domain |
@@ -114,6 +115,9 @@ data/
     smiths-bible-dictionary.json            # Smith's — 4,560 entries
     hitchcocks-bible-names-dictionary.json  # Hitchcock's — 2,622 name etymologies
     torreys-topical-textbook.json           # Torrey's — 623 topics, 21,579 refs
+  topical-reference/
+    naves/
+      naves-topical-bible.json              # Nave's Topical Bible — 5,322 topics, 76,957 refs
   sermons/
     george-macdonald-unspoken-sermons.json  # 36 sermons, 171k words
   catechisms/
@@ -160,6 +164,7 @@ build/
     bible_dictionaries.py     # Parser for JWBickel/BibleDictionaries JSONL (4 works)
     gutenberg_catechisms.py   # Parser for PG catechisms (Luther Small, Baltimore #1-3)
     gutenberg_theology.py     # Parser for PG theology works (Luther Large, Calvin, Augustine)
+    naves_topical.py          # Parser for Nave's Topical Bible (CrossWire SWORD zLD)
   bible_data/
     osis_book_codes.json      # Full Bible book names -> OSIS codes mapping
     verse_index.json          # Canonical verse index for OSIS existence checks
@@ -271,6 +276,10 @@ py -3 build/parsers/gutenberg_catechisms.py
 # Parse PG theology works (reads raw/gutenberg/)
 py -3 build/parsers/gutenberg_theology.py --dry-run
 py -3 build/parsers/gutenberg_theology.py
+
+# Parse Nave's Topical Bible (reads raw/sword_modules/Nave.zip)
+py -3 build/parsers/naves_topical.py --dry-run
+py -3 build/parsers/naves_topical.py
 ```
 
 Requires Python 3.9+. No external dependencies for the pipeline. `pip install jsonschema` for schema validation.
@@ -286,6 +295,7 @@ Requires Python 3.9+. No external dependencies for the pipeline. `pip install js
 - **Catechisms & theological works**: [Project Gutenberg](https://www.gutenberg.org) — Luther's Small Catechism (Smith/PW 2004 trans.), Luther's Large Catechism (Bente/Dau 1921 trans.), Baltimore Catechisms #1-3 (Third Plenary Council 1885), Calvin's Institutes of the Christian Religion (Allen 6th American ed. trans., 2 vols.), Augustine's Confessions (Pusey trans.); all public domain
 - **Prayer texts**: [eskimo.com BCP 1662 digitization](https://eskimo.com/~lhowell/bcp1662/) (Lynda M. Howell) — 5 HTML pages, public domain; [Wikisource Didache (Lake translation)](https://en.wikisource.org/wiki/Didache_(Lake_translation)) — Kirsopp Lake 1912 translation, public domain
 - **Bible dictionaries**: [JWBickel/BibleDictionaries](https://huggingface.co/datasets/JWBickel/BibleDictionaries) — Easton's (1893), Smith's (1863), Hitchcock's (1874), Torrey's (1897); 11,768 entries; structured JSONL by JWBickel; license confirmation pending, underlying texts public domain
+- **Topical reference (Nave's)**: [CrossWire SWORD modules](https://www.crosswire.org/sword/) — Nave's Topical Bible (Orville J. Nave, 1896), SWORD v3.0 zLD module; 5,322 topics, 76,957 scripture references; public domain
 - All authors died before 1928; texts are unambiguously public domain.
 
 ## Summaries
