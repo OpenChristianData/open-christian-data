@@ -34,8 +34,10 @@ import argparse
 import hashlib
 import sys
 import time
+import urllib.error
 import urllib.request
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -89,11 +91,29 @@ def sha256_file(path: Path) -> str:
     return sha256_bytes(path.read_bytes())
 
 
+_RETRY_STATUSES = {429, 500, 502, 503}
+_RETRY_DELAYS = [2.0, 4.0, 8.0]
+
+
 def download_text(url: str, timeout: int = 60) -> bytes:
-    """Download URL with OCD User-Agent. Returns raw bytes."""
+    """Download URL with OCD User-Agent. Retries 3x on transient errors."""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+    last_exc: Exception = RuntimeError("no attempts made")
+    for attempt, delay in enumerate([0.0] + _RETRY_DELAYS, start=1):
+        if delay:
+            time.sleep(delay)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            last_exc = exc
+            if exc.code not in _RETRY_STATUSES:
+                raise
+            print(f"  HTTP {exc.code} on attempt {attempt}/4 -- retrying in {_RETRY_DELAYS[attempt-1] if attempt <= len(_RETRY_DELAYS) else 0}s")
+        except urllib.error.URLError as exc:
+            last_exc = exc
+            print(f"  URLError on attempt {attempt}/4 -- {exc.reason} -- retrying")
+    raise last_exc
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +127,7 @@ def main() -> None:
     args = parser.parse_args()
 
     log_lines = []
-    run_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    run_timestamp = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d %H:%M:%S")
     start_time = time.time()
 
     log(f"[{run_timestamp}] Gutenberg downloader -- {'DRY RUN' if args.dry_run else 'LIVE RUN'}", log_lines)

@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from build.parsers.naves_topical import (
     extract_osis_refs,
     extract_cross_refs,
+    make_unique_id,
     parse_subtopics,
     slugify,
 )
@@ -123,15 +124,35 @@ class TestParseSubtopics:
         assert len(subtopics[0]["references"]) == 3
 
     def test_cross_ref_only_entry_empty_subtopics(self):
-        # Entry that is purely a "See NEBO" redirect: subtopics=[]
+        # Entry that is purely a "See NEBO" redirect: subtopics have no references
         # (cross-refs go to related_topics, not subtopics)
         subtopics = parse_subtopics(ABARIM_XML)
-        assert subtopics == [] or all(len(s["references"]) == 0 for s in subtopics)
+        assert all(len(s["references"]) == 0 for s in subtopics)
 
     def test_subtopic_label_stripped_of_trailing_whitespace(self):
         subtopics = parse_subtopics(AARON_XML)
         for s in subtopics:
             assert s["label"] == s["label"].strip()
+
+
+class TestMakeUniqueId:
+    def test_no_collision(self):
+        seen: set = set()
+        result = make_unique_id("aaron", seen)
+        assert result == "aaron"
+        assert "aaron" in seen
+
+    def test_first_collision(self):
+        seen: set = {"aaron"}
+        result = make_unique_id("aaron", seen)
+        assert result == "aaron-2"
+        assert "aaron-2" in seen
+
+    def test_second_collision(self):
+        seen: set = {"aaron", "aaron-2"}
+        result = make_unique_id("aaron", seen)
+        assert result == "aaron-3"
+        assert "aaron-3" in seen
 
 
 class TestSlugify:

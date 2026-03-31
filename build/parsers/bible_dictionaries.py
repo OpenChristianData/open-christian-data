@@ -374,7 +374,7 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
             )
         out_path = OUTPUT_DIR / f"{dictionary_id}.json"
         logger.info("  [dry-run] Would write to: %s", out_path)
-        return {}
+        return {"status": "dry-run", "entry_count": len(data_entries), "dictionary": dictionary_id}
 
     # Build output
     meta = build_meta(config, source_hash, process_date, download_date)
@@ -489,7 +489,7 @@ def process_torrey(key: str, config: dict, dry_run: bool = False) -> dict:
             )
         out_path = OUTPUT_DIR / f"{index_id}.json"
         logger.info("  [dry-run] Would write to: %s", out_path)
-        return {}
+        return {"status": "dry-run", "entry_count": len(data_entries), "dictionary": index_id}
 
     # Build output
     meta = build_meta(config, source_hash, process_date, download_date)

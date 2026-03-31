@@ -304,7 +304,9 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
         print(f"  [dry-run] Sampling 1 of {total_toml_count} files for {_ascii_safe(author_name)}")
 
     entries = []
-    skipped_files = 0
+    parse_errors = 0
+    empty_files = 0
+    empty_quotes = 0
     unknown_books: set = set()
     # Track ALL used entry_ids to guarantee uniqueness.
     # A naive per-base counter can collide when a generated suffix (e.g. "against-praxeas-5")
@@ -317,7 +319,7 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
         parsed = parse_filename(stem)
         if parsed is None:
             print(f"    WARNING: Cannot parse filename '{stem}' -- skipping")
-            skipped_files += 1
+            parse_errors += 1
             continue
 
         book_name, ch1, v1, ch2, v2 = parsed
@@ -329,17 +331,17 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
             blocks = load_toml_file(tf)
         except Exception as exc:
             print(f"    WARNING: TOML parse error in '{tf.name}': {exc} -- skipping")
-            skipped_files += 1
+            parse_errors += 1
             continue
 
         if not blocks:
-            skipped_files += 1
+            empty_files += 1
             continue
 
         for block in blocks:
             quote = (block.get("quote") or "").strip()
             if not quote:
-                skipped_files += 1
+                empty_quotes += 1
                 continue
 
             source_title = (block.get("source_title") or "").strip()
@@ -401,7 +403,9 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
             "slug": author_slug,
             "files": len(toml_files),
             "entries": len(entries),
-            "skipped_files": skipped_files,
+            "parse_errors": parse_errors,
+            "empty_files": empty_files,
+            "empty_quotes": empty_quotes,
             "unknown_books": unknown_books,
             "status": "dry-run",
         }
@@ -476,12 +480,20 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
     if unknown_books:
         print(f"    Unknown books: {sorted(unknown_books)}")
 
+    if parse_errors or empty_files or empty_quotes:
+        print(
+            f"    Skipped: {parse_errors} parse errors, "
+            f"{empty_files} empty files, {empty_quotes} empty quotes"
+        )
+
     return {
         "author": author_name,
         "slug": author_slug,
         "files": len(toml_files),
         "entries": total,
-        "skipped_files": skipped_files,
+        "parse_errors": parse_errors,
+        "empty_files": empty_files,
+        "empty_quotes": empty_quotes,
         "null_osis": null_osis,
         "empty_source_title": empty_source_title,
         "unknown_books": unknown_books,
@@ -550,7 +562,9 @@ def main() -> None:
     all_stats = []
     total_files_processed = 0
     total_entries = 0
-    total_skipped = 0
+    total_parse_errors = 0
+    total_empty_files = 0
+    total_empty_quotes = 0
     total_null_osis = 0
     total_empty_source_title = 0
     all_unknown_books: set = set()
@@ -569,7 +583,9 @@ def main() -> None:
         all_stats.append(stats)
         total_files_processed += stats.get("files", 0)
         total_entries += stats.get("entries", 0)
-        total_skipped += stats.get("skipped_files", 0)
+        total_parse_errors += stats.get("parse_errors", 0)
+        total_empty_files += stats.get("empty_files", 0)
+        total_empty_quotes += stats.get("empty_quotes", 0)
         total_null_osis += stats.get("null_osis", 0)
         total_empty_source_title += stats.get("empty_source_title", 0)
         all_unknown_books |= stats.get("unknown_books", set())
@@ -581,9 +597,15 @@ def main() -> None:
     print("=" * 60)
     print(f"=== DONE: {len(all_stats)} authors, {total_entries} entries, {elapsed:.1f}s ===")
     print(f"=== TOML files processed: {total_files_processed} ===")
+    total_skipped = total_parse_errors + total_empty_files + total_empty_quotes
     if total_skipped:
         pct = total_skipped * 100 / max(total_files_processed, 1)
-        print(f"=== Skipped (parse errors / empty quotes): {total_skipped} ({pct:.1f}%) ===")
+        print(
+            f"=== Skipped: {total_skipped} total ({pct:.1f}%) -- "
+            f"{total_parse_errors} parse errors, "
+            f"{total_empty_files} empty files, "
+            f"{total_empty_quotes} empty quotes ==="
+        )
 
     if total_null_osis:
         pct = total_null_osis * 100 / max(total_entries, 1)

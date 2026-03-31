@@ -543,6 +543,9 @@ def _main() -> None:
         print("WARNING: No entries produced. Check psalm title patterns and heading config.")
         return
 
+    # Sort by (chapter, verse_start) so downstream consumers see verses in sequence
+    all_entries.sort(key=lambda e: (e["chapter"], int(e["verse_range"].split("-")[0])))
+
     # Quality stats
     null_ct = sum(1 for e in all_entries if not (e.get("commentary_text") or "").strip())
     short = sum(1 for e in all_entries if e.get("word_count", 0) < 20)

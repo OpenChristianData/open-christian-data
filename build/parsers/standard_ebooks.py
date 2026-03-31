@@ -196,7 +196,7 @@ def extract_blocks_from_section(section_elem):
     """
     blocks = []
 
-    def _walk(elem, in_poem=False):
+    def _walk(elem):
         local = elem.tag.split("}")[-1] if "}" in elem.tag else elem.tag
         etype = epub_type(elem)
 
@@ -223,7 +223,7 @@ def extract_blocks_from_section(section_elem):
 
         # Recurse into other container elements
         for child in elem:
-            _walk(child, in_poem)
+            _walk(child)
 
     for child in section_elem:
         _walk(child)
@@ -930,9 +930,9 @@ def main():
     successes = 0
     failures = 0
 
-    for se_id in ids_to_process:
+    for i, se_id in enumerate(ids_to_process, 1):
         print()
-        print(f"=== {se_id} ===")
+        print(f"=== [{i}/{len(ids_to_process)}] {se_id} ===")
         try:
             ok = process_title(se_id, dry_run=args.dry_run, list_files=args.list_files)
             if ok:

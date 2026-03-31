@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/topical_reference.schema.json",
   "title": "Topical Reference Resource File",
-  "description": "A topic-keyed verse index: metadata envelope + array of topic entries with subtopics and scripture references. Covers Torrey's New Topical Textbook.",
+  "description": "A topic-keyed verse index: metadata envelope + array of topic entries with subtopics and scripture references. Covers topical reference works such as Nave's Topical Bible and Torrey's New Topical Textbook.",
   "type": "object",
   "required": ["meta", "data"],
   "additionalProperties": false,

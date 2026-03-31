@@ -29,6 +29,7 @@ import re
 import sys
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -578,7 +579,7 @@ def parse_baltimore(body_lines: list, catechism_num: str, doc_id: str, log_lines
 
 def build_output(cfg: dict, entries: list, source_hash: str, has_gaps: bool = False) -> dict:
     """Wrap parsed entries in the meta envelope."""
-    processing_date = datetime.today().strftime("%Y-%m-%d")
+    processing_date = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d")
     meta = dict(cfg["meta"])  # shallow copy
     if has_gaps:
         meta["completeness"] = "partial"
@@ -731,7 +732,7 @@ def main() -> None:
 
     log_lines = []
     start_time = time.time()
-    run_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    run_ts = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d %H:%M:%S")
 
     log(f"[{run_ts}] gutenberg_catechisms -- {'DRY RUN' if args.dry_run else 'LIVE RUN'}", log_lines)
 

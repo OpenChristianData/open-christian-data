@@ -4,6 +4,12 @@ Run: py -3 build/scripts/inspect_sword_zld.py
 
 Probes both the rawLD (dict.idx + dict.dat) and zLD (dict.zdx + dict.zdt) files.
 Outputs findings needed to write the parser.
+
+NOTE: This was an exploratory script. The rawLD dict.idx probe below uses 6-byte
+entries (<IH>: 4-byte offset + 2-byte size). However, the CORRECT format for the
+final parser is 8-byte entries (<II>: 4-byte offset + 4-byte size), as documented
+and implemented in build/parsers/naves_topical.py. This script may show incorrect
+data if re-run for rawLD format investigation.
 """
 
 import struct

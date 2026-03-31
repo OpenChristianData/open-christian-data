@@ -39,6 +39,7 @@ import re
 import sys
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -176,7 +177,7 @@ def build_meta_envelope(
             "source_hash": source_hash,
             "processing_method": "automated",
             "processing_script_version": PROCESSING_SCRIPT_VERSION,
-            "processing_date": datetime.today().strftime("%Y-%m-%d"),
+            "processing_date": datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d"),
             "notes": notes,
         },
     }
@@ -714,7 +715,11 @@ def run_luther_large(dry_run: bool, log_lines: list) -> bool:
         return False
     log(f"  Body lines: {len(body_lines)}", log_lines)
 
-    data = parse_luther_large(body_lines, log_lines)
+    try:
+        data = parse_luther_large(body_lines, log_lines)
+    except Exception as exc:
+        log(f"  ERROR: parse_luther_large failed -- {exc}", log_lines)
+        return False
     print_quality_stats(data, work_id, log_lines)
 
     meta = build_meta_envelope(
@@ -795,7 +800,11 @@ def run_calvin(dry_run: bool, log_lines: list) -> bool:
         return False
     log(f"  Body lines v1: {len(body_v1)}, v2: {len(body_v2)}", log_lines)
 
-    data = parse_calvin(body_v1, body_v2, log_lines)
+    try:
+        data = parse_calvin(body_v1, body_v2, log_lines)
+    except Exception as exc:
+        log(f"  ERROR: parse_calvin failed -- {exc}", log_lines)
+        return False
     print_quality_stats(data, work_id, log_lines)
 
     meta = build_meta_envelope(
@@ -871,7 +880,11 @@ def run_augustine(dry_run: bool, log_lines: list) -> bool:
         return False
     log(f"  Body lines: {len(body_lines)}", log_lines)
 
-    data = parse_augustine(body_lines, log_lines)
+    try:
+        data = parse_augustine(body_lines, log_lines)
+    except Exception as exc:
+        log(f"  ERROR: parse_augustine failed -- {exc}", log_lines)
+        return False
     print_quality_stats(data, work_id, log_lines)
 
     meta = build_meta_envelope(
@@ -944,7 +957,7 @@ def main() -> None:
 
     log_lines = []
     start_time = time.time()
-    run_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    run_ts = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d %H:%M:%S")
 
     log(f"[{run_ts}] gutenberg_theology -- {'DRY RUN' if args.dry_run else 'LIVE RUN'}", log_lines)
 
