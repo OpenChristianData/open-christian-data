@@ -4,6 +4,47 @@ Newest first.
 
 ---
 
+## 2026-03-31 — Opus Code Review Backlog
+
+**Branch:** main
+**What we worked on:** Ran all 10 outstanding Opus code reviews across pipeline scripts that had never been reviewed. Applied all Important fixes. Added Rule 47 to CODING_DEFAULTS.md.
+
+**What was completed:**
+- `build/parsers/church_fathers.py` — skipped_files counter split into parse_errors / empty_files / empty_quotes with breakdown in summary
+- `build/parsers/standard_ebooks.py` — dead `in_poem` parameter removed from `_walk()`; `[i/N]` progress counter added for `--all` mode
+- `build/parsers/bible_dictionaries.py` — dry-run now returns stats dict (not {}) so `--dry-run --all` no longer reports FAILED
+- `build/parsers/gutenberg_theology.py` — try/except around all 3 parse calls; datetime timezone-aware (Australia/Melbourne)
+- `build/parsers/gutenberg_catechisms.py` — datetime timezone-aware (Australia/Melbourne)
+- `build/scripts/download_gutenberg.py` — retry with exponential backoff (3x, 2/4/8s) for transient HTTP errors; datetime timezone-aware
+- `build/scripts/inspect_sword_zld.py` — docstring note: rawLD probe uses 6-byte `<IH>`, correct format is 8-byte `<II>`
+- `build/parsers/ccel_pdf_commentary.py` — entries now sorted by (chapter, verse_start) before write; note: fix applies to future pipeline runs, committed `psalms.json` still has old ordering
+- `tests/test_naves_osis.py` — TestMakeUniqueId class added (3 tests); ABARIM assertion fixed to exact value with explanatory comment; 23/23 pass
+- `schemas/v1/topical_reference.schema.json` — description updated to cover both Nave's and Torrey's
+- `build/CODE_REVIEWS.md` — all 10 entries updated with 2026-03-31 Opus review dates and findings
+- `CODING_DEFAULTS.md` — Rule 47 added (Testing and verification): run the exact fixture before changing a test assertion
+
+**Key incident:** ABARIM test assertion was changed without running the exact fixture first. Correct output was `[{"label": "See", "references": []}]` (not `[]`). Root cause: `html.unescape()` converts `&#x2192;` to `->` which triggers the arrow-detection branch. Took 3 iterations to resolve. Led to Rule 47.
+
+**Previously-stale items confirmed resolved:** smoke_test_pdf.py already deleted; Nave (orville-j-nave) already in author registry.
+
+**Commits:** c66dda3 (main review fixes, 11 files), 89c3e71 (ABARIM test fix + CODE_REVIEWS Minor items)
+
+**Where we stopped:** All work committed. Working tree has unstaged changes to email_fix_log.csv, email_last_run.txt, run_daily.py (Bob's Brittle — unrelated).
+
+**What's next:**
+1. SE `expected_count` — 8 of 9 structured_text configs still null; populate via `--list-files` after re-cloning SE repos
+2. `psalms.json` sort will self-correct on next Treasury of David pipeline re-run
+3. Block 2: CI pipeline (GitHub Actions)
+4. Block 3: HuggingFace dataset card and publish
+
+**Key decisions made:**
+- Rule 47 scoped to "run the exact fixture" — not just "read the implementation"; the encoding/unescaping specificity is the key insight
+- SE `expected_count` deferred until repos re-cloned (source XHTML files not on disk — deferral is correct, not a shortcut)
+
+**Open questions / decisions pending:** None
+
+---
+
 ## 2026-03-31 — PDF Pipeline Code Review + Bug Fixes
 
 **What we worked on:** Batch Sonnet code review of 5 PDF extraction pipeline files against CODING_DEFAULTS.md. Fix cycle across two retrospective loops: H-level issues first, then M-level, then parser bugs discovered during test expansion.
@@ -86,8 +127,13 @@ Newest first.
 
 **Where we stopped:** All work committed. All schema gates active and tested.
 
+**Additional work (same session, context-compacted continuation):**
+- Researched both ThML source formats by sampling raw SWORD module bytes — discovered Wesley uses text-content `<scripRef>Luke 3:31</scripRef>` (no `passage=` attribute), not the `passage=` form that `_THML_REF_PATTERN` matches. The current regex silently misses all Wesley refs.
+- Confirmed real input varieties: single refs, multi-ref with book carry-over, semicolons + commas mixed, verse ranges, known OCR typos (`1Timm`, `1Chron`, `1Kings`, `1Thes`), partial refs without book context.
+- Wrote prompt for ThML normalizer — in READY_TO_PASTE_PROMPTS.md as "ThML cross-reference normalizer (Barnes + Wesley)".
+
 **What's next:**
-1. **ThML cross-reference normalizer** — build a Bible reference parser to convert Barnes/Wesley `passage=` attributes to OSIS. Currently `cross_references: []` for all 24,886 Barnes+Wesley entries. High value: these refs are dense (Barnes especially).
+1. **ThML cross-reference normalizer** — prompt ready in READY_TO_PASTE_PROMPTS.md. Builds `build/lib/bible_ref_normalizer.py`; also needs `_THML_REF_CONTENT_PATTERN` added to `sword_commentary.py` to catch Wesley text-content refs. 24,886 entries currently have `cross_references: []`.
 2. **Opus code review** — `sword_commentary.py`, `download_sword_modules.py` (both pending; sword_devotional.py optional). See CODE_REVIEWS.md.
 3. **Token counts** — run `add_token_counts.py` across new commentary and devotional files (not yet done for SWORD additions).
 4. **Block 2** — CI pipeline + HuggingFace publish.
@@ -112,20 +158,19 @@ Newest first.
 - OSIS refs pre-computed in TEI XML attributes — no book abbreviation lookup needed
 - `eoff` in block internal index is entry size (not offset); cumulative sum gives position
 - 2 redirect-only entries (SHOMER, TRADE): empty subtopics + non-empty related_topics — validator relaxed
-- `data_start=244` fires block validation guard on all valid blocks (SWORD format quirk) — kept as warning
+- `data_start` guard formula corrected: correct value is `4 + count*8 = 244` (last entry's esz slot overlaps data start); prior formula `8 + count*8 = 248` fired as false warning on every valid block
 
-**Validation:** `py -3 build/validate.py --all` → **0 errors**, 164 warnings, 899 files.
+**Post-session evaluation improvements (same session, /evaluate cycle):**
+- `build/parsers/naves_topical.py` — guard formula fixed (`8+count*8` → `4+count*8`); block layout docstring updated with overlap explanation
+- `plans/2026-03-30-naves-topical-parser.md` — Format Discovery section appended (TEI XML vs plain text, block index overlap, eoff semantics, redirect entries)
+- `data/authors/registry.json` — removed duplicate orville-j-nave entry (richer pre-existing entry preserved)
+- `00 CONTEXT/LESSONS.md` — added: "A check that fires on 100% of valid inputs means your model of the invariant is wrong, not that the data is noisy"
 
-**Commits:** 84fc952 (download), e849125 (inspect), 1901802 (tests), 22f7f78 + 5f6e708 (parser), 030f289 (data + validate), b68aa3a (README)
+**Validation:** `py -3 build/validate.py --all` → **0 errors**, 150 warnings, 899 files.
 
-**Where we stopped:** All work committed (wrap-up 2026-03-31). Working tree clean except smoke_test_pdf.py.
+**Commits:** 84fc952 (download), e849125 (inspect), 1901802 (tests), 22f7f78 + 5f6e708 (parser), 030f289 (data + validate), b68aa3a (README), cb1ad37 (LAST_SESSION), 026bdf6 (guard fix + plan doc + registry dedup)
 
-**What's next:**
-1. Delete smoke_test_pdf.py manually (bash rm was denied in prior session)
-2. Add Nave (Orville J. Nave, 1841–1917) to author registry
-3. Opus code review of naves_topical.py (never reviewed)
-4. Ongoing Opus review backlog — see CODE_REVIEWS.md (7 scripts pending)
-5. Block 2: CI pipeline + HuggingFace publish
+**Where we stopped:** All work committed. Working tree clean.
 
 ---
 
