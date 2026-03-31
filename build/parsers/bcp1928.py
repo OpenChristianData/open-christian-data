@@ -623,6 +623,53 @@ def extract_collects_from_html(html_bytes: bytes, filename: str) -> tuple:
 
 
 # ---------------------------------------------------------------------------
+# Content plausibility check
+# ---------------------------------------------------------------------------
+
+# First words that identify Epistle or Gospel text, not collect text.
+# If any record begins with these, the boundary regex fetched the wrong block.
+_WRONG_BLOCK_OPENERS = {
+    # Good Friday epistle
+    "THE LAW",
+    # Good Friday gospel
+    "PILATE THEREFORE",
+    # Advent 1 epistle
+    "OWE NO",
+    # Common gospel opener
+    "AT THAT TIME",
+    "IN THOSE DAYS",
+    # Rubric-style openers (not collect text)
+    "FOR THE EPISTLE",
+    "THE EPISTLE",
+    "THE GOSPEL",
+}
+
+
+def spot_check_content(records: list) -> int:
+    """
+    Check that no record's text begins with known Epistle/Gospel openers.
+
+    Returns the number of suspect records found (0 = all clear).
+    Any non-zero result means the boundary regex fetched the wrong HTML block
+    for those pages -- investigate before shipping.
+    """
+    suspect = 0
+    for r in records:
+        text = r.get("content_blocks", [""])[0]
+        # Normalise: uppercase, first 4 words
+        first_words = " ".join(text.upper().split()[:4])
+        for opener in _WRONG_BLOCK_OPENERS:
+            if first_words.startswith(opener):
+                print(
+                    f"  WARNING: '{r['prayer_id']}' may be Epistle/Gospel text "
+                    f"(starts: {repr(text[:60])})"
+                )
+                suspect += 1
+                break
+    return suspect
+
+
+# ---------------------------------------------------------------------------
 # Quality report
 # ---------------------------------------------------------------------------
 
@@ -855,9 +902,23 @@ def main() -> None:
         fh.write("\n")
 
     size_kb = OUTPUT_FILE.stat().st_size / 1024
-    elapsed = time.time() - start_time
     print(f"Wrote {len(records)} records -> {OUTPUT_FILE}")
     print(f"File size: {size_kb:.0f} KB")
+
+    # Content plausibility check -- verify no record contains Epistle/Gospel text
+    print()
+    print("Content plausibility check:")
+    suspect_count = spot_check_content(records)
+    if suspect_count == 0:
+        print("  OK -- no records start with known Epistle/Gospel openers")
+    else:
+        print(
+            f"  WARNING: {suspect_count} record(s) flagged -- inspect before shipping"
+        )
+        total_errors += suspect_count
+
+    elapsed = time.time() - start_time
+    print()
     print(f"Done in {elapsed:.1f}s")
 
     if total_errors > 0:
