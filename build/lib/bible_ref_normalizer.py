@@ -23,6 +23,11 @@ Source data quirks (confirmed by grepping all Barnes + Wesley scripRef tags):
 import logging
 import re
 
+# Library module — do not configure a root handler here; callers are responsible.
+# This NullHandler prevents "No handlers could be found" warnings when this module
+# is imported by scripts that haven't yet called logging.basicConfig().
+logging.getLogger(__name__).addHandler(logging.NullHandler())
+
 # ---------------------------------------------------------------------------
 # Book abbreviation lookup  (abbreviation -> canonical OSIS code)
 # ---------------------------------------------------------------------------
@@ -287,7 +292,8 @@ def parse_thml_refs(passage_str: str) -> list[str]:
                 osis_book = _BOOK_LOOKUP.get(book_key)
                 if not osis_book:
                     logging.warning(
-                        "bible_ref_normalizer: unknown book '%s' in '%s' -- skipping",
+                        "bible_ref_normalizer: unknown book '%s' in '%s' -- skipping"
+                        " (add to _BOOK_LOOKUP_RAW in bible_ref_normalizer.py to fix)",
                         book_raw, passage_str,
                     )
                     continue

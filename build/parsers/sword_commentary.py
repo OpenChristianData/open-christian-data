@@ -36,6 +36,7 @@ import re
 import struct
 import sys
 import time
+import traceback
 import zlib
 from datetime import datetime, timezone
 from pathlib import Path
@@ -383,13 +384,15 @@ def _extract_refs_thml(raw: str) -> list:
     """
     raw_strings: list[str] = []
 
-    # Barnes: passage= attribute values
-    for m in _THML_REF_PATTERN.finditer(raw):
-        raw_strings.append(m.group(1))
-
-    # Wesley: text-content values (only when no passage= attribute present)
-    for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
-        raw_strings.append(m.group(1))
+    # Barnes: passage= attribute values (preferred — use text-content as fallback only)
+    passage_matches = list(_THML_REF_PATTERN.finditer(raw))
+    if passage_matches:
+        for m in passage_matches:
+            raw_strings.append(m.group(1))
+    else:
+        # Wesley: text-content values (only when no passage= attributes found in raw)
+        for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
+            raw_strings.append(m.group(1))
 
     # Normalise each string to OSIS refs, then deduplicate preserving order
     seen: set[str] = set()
@@ -545,7 +548,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     # Load source config
     config_path = SOURCES_BASE / module_name / "config.json"
     if not config_path.exists():
-        raise FileNotFoundError(f"Config not found: {config_path}")
+        raise FileNotFoundError(f"Config not found: {config_path} -- run the source setup step first")
     with open(config_path, encoding="utf-8") as f:
         config = json.load(f)
 
@@ -557,7 +560,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     # Module data directory
     module_dir = SWORD_RAW_DIR / sword_name / "modules" / "comments" / "zcom" / sword_name.lower()
     if not module_dir.exists():
-        raise FileNotFoundError(f"Module data dir not found: {module_dir}")
+        raise FileNotFoundError(f"Module data dir not found: {module_dir} -- run download_sword_modules.py first")
 
     # Compute source zip hash for provenance
     zip_path = SWORD_RAW_DIR / f"{sword_name}.zip"
@@ -606,7 +609,11 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
                 continue
             try:
                 raw_text = raw_bytes.decode("utf-8", errors="replace")
-            except Exception:
+            except Exception as exc:
+                logging.warning(
+                    "  Unexpected error decoding verse (%d,%d,%d): %s",
+                    book_idx, chapter, verse, exc,
+                )
                 total_empty += 1
                 continue
             plain, cross_refs = clean_markup(raw_text, "osis" if is_osis else "thml")
@@ -803,7 +810,6 @@ def main() -> None:
             report_quality(stats)
             all_stats.append(stats)
         except Exception as exc:
-            import traceback
             logging.error("FAILED %s: %s", module_name, exc)
             logging.error(traceback.format_exc())
             failed_modules.append(module_name)
