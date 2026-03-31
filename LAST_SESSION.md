@@ -4,6 +4,43 @@ Newest first.
 
 ---
 
+## 2026-03-31 — BCP 1928 Collects Parser
+
+**Branch:** main
+
+**What we worked on:** Built the complete BCP 1928 collects parser from scratch — source investigation, HTML inspection, parser, config, output, validation, README, evaluate skill, and post-evaluate improvements (census script, content spot-check, CODING_DEFAULTS rules).
+
+**What was completed:**
+- `sources/prayers/bcp-1928-collects/config.json` — source config; episcopalnet.org chosen over justus.anglican.org (justus was PDF-only; episcopalnet has 100 individual HTML pages)
+- `build/parsers/bcp1928.py` — scraper + parser; 98 collects from 100 pages (4 skipped: Trinity21-24, confirmed no collect HTML); content spot-check function added post-evaluate
+- `data/prayers/bcp-1928/collects.json` — 98 records, 81 KB, word count min=30 median=56 max=101
+- `README.md` — 5 sections updated: status table, data tree, parsers list, sources config tree, quick-start commands, sources section
+- `build/tools/inspect_bcp1928_structure.py` — structural census tool; run against all 100 files retroactively; output confirmed parser handles all observed variants
+- `CODING_DEFAULTS.md` — Rule 53 (structural census before multi-file HTML parsers) + Rule 54 (content plausibility check after bulk extraction) added
+- `build/CODE_REVIEWS.md` — rows added for bcp1928.py and inspect_bcp1928_structure.py
+
+**Validation:** `py -3 build/validate.py data/prayers/bcp-1928/collects.json` → 0 errors. `py -3 build/validate.py --all` → 0 errors, 146 warnings (900 files).
+
+**Key decisions:**
+- Source: episcopalnet.org (100 HTML pages) not justus.anglican.org (PDF-only)
+- Trinity21-24: silently skipped with INFO log (no collect HTML on those pages — confirmed by inspection)
+- Good Friday: 3 collects split into separate records with -2/-3 ID suffixes
+- Census script created retroactively as validation + future template; docstring notes both uses
+
+**Key lessons (extracted to CODING_DEFAULTS + memory):**
+- Grepping a sample is not sufficient — write a structural census script on ALL files before any regex. The bcp1662.py lesson ("grep all source files") failed to transfer here because it was framed too narrowly. The lesson now includes census script pattern.
+- Schema validation ≠ correct text. The boundary regex between Collect and Epistle was the primary failure point. Content spot-check (first-words blocklist) is now wired into the parser.
+
+**Where we stopped:** All work complete. Not yet committed.
+
+**What's next:**
+1. Commit this session's work (bcp1928.py, inspect tool, README, CODING_DEFAULTS, config, output)
+2. Church fathers source_title editorial curation — prompt in READY_TO_PASTE_PROMPTS.md
+3. Opus code review: bcp1928.py (marked pending in CODE_REVIEWS.md)
+4. Block 2: CI pipeline + HuggingFace publish
+
+---
+
 ## 2026-03-31 — Registry catch-up + source_title patch
 
 **Branch:** main
@@ -168,39 +205,5 @@ Newest first.
 2. **Opus code review** — `sword_commentary.py`, `download_sword_modules.py` (both pending; sword_devotional.py optional). See CODE_REVIEWS.md.
 3. **Token counts** — run `add_token_counts.py` across new commentary and devotional files (not yet done for SWORD additions).
 4. **Block 2** — CI pipeline + HuggingFace publish.
-
----
-
-## 2026-03-31 — Nave's Topical Bible (CrossWire SWORD)
-
-**Branch:** main
-**What we worked on:** End-to-end pipeline for Nave's Topical Bible from CrossWire SWORD zLD module — binary format reverse-engineering, unit tests, parser, validation, README.
-
-**What was completed:**
-- `research/reference/request_log.csv` — download log for Nave.zip (SHA-256 recorded)
-- `build/scripts/inspect_sword_zld.py` — probes zLD binary format (zdx/zdt), revealed 5,322 entries and TEI XML content
-- `tests/test_naves_osis.py` — 20 unit tests: `extract_osis_refs`, `extract_cross_refs`, `parse_subtopics`, `slugify`
-- `build/parsers/naves_topical.py` — full parser; `_decode_zld()` + `get_entry_from_block()` + `parse_subtopics()` + `extract_osis_refs()` + `extract_cross_refs()`; CLI `--dry-run` + `--limit N`
-- `data/topical-reference/naves/naves-topical-bible.json` — 5,322 entries, 76,957 scripture refs, 12,343 KB
-- `build/validate.py` — relaxed: empty subtopics is WARNING (not error) when `related_topics` non-empty (handles redirect-only entries)
-- `README.md` — status table row, data directory listing, pipeline commands, source attribution
-
-**Key discoveries:**
-- OSIS refs pre-computed in TEI XML attributes — no book abbreviation lookup needed
-- `eoff` in block internal index is entry size (not offset); cumulative sum gives position
-- 2 redirect-only entries (SHOMER, TRADE): empty subtopics + non-empty related_topics — validator relaxed
-- `data_start` guard formula corrected: correct value is `4 + count*8 = 244` (last entry's esz slot overlaps data start); prior formula `8 + count*8 = 248` fired as false warning on every valid block
-
-**Post-session evaluation improvements (same session, /evaluate cycle):**
-- `build/parsers/naves_topical.py` — guard formula fixed (`8+count*8` → `4+count*8`); block layout docstring updated with overlap explanation
-- `plans/2026-03-30-naves-topical-parser.md` — Format Discovery section appended (TEI XML vs plain text, block index overlap, eoff semantics, redirect entries)
-- `data/authors/registry.json` — removed duplicate orville-j-nave entry (richer pre-existing entry preserved)
-- `00 CONTEXT/LESSONS.md` — added: "A check that fires on 100% of valid inputs means your model of the invariant is wrong, not that the data is noisy"
-
-**Validation:** `py -3 build/validate.py --all` → **0 errors**, 150 warnings, 899 files.
-
-**Commits:** 84fc952 (download), e849125 (inspect), 1901802 (tests), 22f7f78 + 5f6e708 (parser), 030f289 (data + validate), b68aa3a (README), cb1ad37 (LAST_SESSION), 026bdf6 (guard fix + plan doc + registry dedup)
-
-**Where we stopped:** All work committed. Working tree clean.
 
 
