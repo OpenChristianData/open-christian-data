@@ -35,23 +35,26 @@ Newest first.
 - `tests/test_ordinal_parser.py`: expanded from 10 to 14 tests; added full-range regression test (all 150 via probe)
 - 5 memories saved with sign-off
 
-**Where we stopped:** All code changes complete. Memories saved. CODE_REVIEWS.md updated.
+**Where we stopped:** All code changes complete. Memories saved. CODE_REVIEWS.md updated. Session wrap-up committed (7d95608). Dry-run validated against real data — clean.
+
+**Dry-run result (validated end of session):**
+- `py -3 build/parsers/ccel_pdf_commentary.py --commentary treasury-of-david --all-books --dry-run`
+- 493 entries parsed, Psalms 53-78 (all 26 expected), 0 errors, 21 short-entry warnings (pre-existing, known)
+- Raw Markdown confirmed present at `raw/ccel/treasury-of-david/markdown/treasury-of-david-vol1.md`
+- Parser is ready to run for real
 
 **What's next:**
-1. **Commit uncommitted changes** — 6 files modified/new in OCD repo, never committed this session: `build/extract_pdf.py`, `build/lib/pdf_quality_gate.py`, `build/lib/pdf_normalizer.py`, `build/parsers/ccel_pdf_commentary.py`, `sources/commentaries/treasury-of-david/config.json`, `tests/probe_ordinal_parser.py` (test file may also be modified)
-2. **Run parser against real data** — `ccel_pdf_commentary.py` changes (un-hardcoded build_meta, sorted entries) have not been validated against actual treasury-of-david PDFs. Run a dry-run first: `py -3 build/parsers/ccel_pdf_commentary.py --commentary treasury-of-david --all-books --dry-run`
-3. Delete `smoke_test_pdf.py` (carried from prior session)
-4. Add Nave (Orville J. Nave, 1841–1917) to author registry
-5. Opus code review of `naves_topical.py` (never reviewed)
-6. Block 2: CI pipeline + HuggingFace publish
+1. Run parser for real: `py -3 build/parsers/ccel_pdf_commentary.py --commentary treasury-of-david --all-books`
+2. Delete `smoke_test_pdf.py` (carried from prior session — bash rm was denied)
+3. Opus code review of `naves_topical.py` (never reviewed)
+4. Block 2: CI pipeline + HuggingFace publish
 
 **Key decisions made:**
 - `_TeeWriter` duplication between extract_pdf.py and ccel_pdf_commentary.py is deferred — extract to `build/lib/` when a 3rd script needs it
 - OCR correction tables: always use `re.sub(r"\b...\b")` not `.replace()` (now in memory)
 - Probe-before-tests pattern for finite-domain parsers (now in memory)
 
-**Open questions / decisions pending:**
-- Has the treasury-of-david PDF actually been extracted yet? Parser is ready but raw Markdown input may not exist yet. Check `raw/ccel/treasury-of-david/` before running.
+**Open questions / decisions pending:** None.
 
 ---
 
