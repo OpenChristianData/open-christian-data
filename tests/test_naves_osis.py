@@ -123,11 +123,12 @@ class TestParseSubtopics:
         assert subtopics[0]["label"] == ""
         assert len(subtopics[0]["references"]) == 3
 
-    def test_cross_ref_only_entry_empty_subtopics(self):
-        # Entry that is purely a "See NEBO" redirect: subtopics have no references
-        # (cross-refs go to related_topics, not subtopics)
+    def test_cross_ref_only_entry_empty_references(self):
+        # ABARIM has an arrow before "See NEBO", so it produces one subtopic
+        # with label="See" and references=[] (the cross-ref uses target= not osisRef=,
+        # so no scripture refs are extracted; the NEBO cross-ref goes to related_topics).
         subtopics = parse_subtopics(ABARIM_XML)
-        assert all(len(s["references"]) == 0 for s in subtopics)
+        assert subtopics == [{"label": "See", "references": []}]
 
     def test_subtopic_label_stripped_of_trailing_whitespace(self):
         subtopics = parse_subtopics(AARON_XML)
