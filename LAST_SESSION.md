@@ -4,6 +4,34 @@ Newest first.
 
 ---
 
+## 2026-03-31 — Registry catch-up + source_title patch
+
+**Branch:** main
+
+**What we worked on:** Ran "Registry: Non-Church-Fathers authors (13 missing + source_title gaps)" prompt. Task 1 was already complete (all 13 authors in registry from prior session). Task 2: investigated source_title warnings across church_fathers dataset and patched what was automatable.
+
+**What was completed:**
+- Task 1 (13 missing authors): confirmed all 13 already present in registry (370 entries). No action needed.
+- Investigation: 2,249 entries missing source_title across 129 files. 247 were inferable from same-verse sibling blocks; 2,002 are genuinely absent in upstream HistoricalChristianFaith TOML data.
+- `build/scripts/patch_source_title.py` — idempotent patch script; fills source_title from same-verse siblings where all siblings share a single consistent title. 247 entries patched across 37 files.
+- `CODING_DEFAULTS.md` — Rule 50 added: idempotent patch scripts must be run twice before review.
+- `READY_TO_PASTE_PROMPTS.md` — "Church Fathers: source_title editorial curation" prompt added for the 2,002-entry remaining gap.
+
+**Validation:** `py -3 build/validate.py --all` -> 0 errors, 146 warnings (down from 150).
+
+**Key finding:** source_title warnings reduced from 129 file-level warnings to 125. The 4 files fully resolved: chromatius-of-aquileia, hilary-of-arles, paterius, pseudo-augustine. Remaining 125 warnings are unavoidable upstream gaps.
+
+**Where we stopped:** All work committed (c835d52). Working tree has uncommitted changes to build/validate.py and LAST_SESSION.md from prior sessions, plus untracked build/parsers/bcp1928.py.
+
+**What's next:**
+1. Church fathers source_title editorial curation — prompt in READY_TO_PASTE_PROMPTS.md. Top authors: thomas-aquinas (325 missing), augustine-of-hippo (~176), basil-of-caesarea (~93). Do one author per session.
+2. Commit pending build/validate.py changes (from prior Opus review session)
+3. Commit or clean up bcp1928.py (check if it was mid-session work)
+4. Opus code review backlog — see CODE_REVIEWS.md
+5. Block 2: CI pipeline + HuggingFace publish
+
+---
+
 ## 2026-03-31 — Opus Code Review Backlog
 
 **Branch:** main

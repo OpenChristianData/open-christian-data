@@ -40,6 +40,13 @@ import zlib
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Normalizer lives in build/lib/ alongside other shared pipeline libs.
+# Import here so the module-level import fails fast rather than mid-run.
+_REPO_ROOT_FOR_IMPORT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT_FOR_IMPORT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT_FOR_IMPORT))
+from build.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
+
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
@@ -344,6 +351,13 @@ _THML_REF_PATTERN = re.compile(
     r'<scripRef[^>]*\bpassage=["\']([^"\']+)["\'][^>]*>[^<]*</scripRef>',
     re.IGNORECASE,
 )
+# Wesley uses text-content format (no passage= attribute):
+#   <scripRef>Luke 3:31</scripRef>
+#   <scripRef>Deut 24:1; Matt 19:7</scripRef>
+_THML_REF_CONTENT_PATTERN = re.compile(
+    r'<scripRef>([^<]+)</scripRef>',
+    re.IGNORECASE,
+)
 _OSIS_REF_PATTERN = re.compile(
     r'<reference[^>]*\bosisRef=["\']([^"\']+)["\'][^>]*>',
     re.IGNORECASE,
@@ -358,11 +372,35 @@ _WS_PATTERN = re.compile(r"\s+")
 
 def _extract_refs_thml(raw: str) -> list:
     """
-    ThML scripRef passage= attributes are human-readable (e.g. 'Mt 1:2', 'Lev 4:3, 6:20')
-    and cannot be reliably normalized to OSIS. Return empty list; OSIS enrichment is a
-    separate pipeline step.
+    Extract and normalise scripture refs from ThML markup, returning OSIS strings.
+
+    Two input formats are supported:
+    - Barnes (passage= attribute): <scripRef passage="Mt 1:2">...</scripRef>
+    - Wesley (text-content only):  <scripRef>Luke 3:31</scripRef>
+
+    Each extracted string is parsed by parse_thml_refs() from bible_ref_normalizer.
+    Results are deduplicated while preserving first-seen order.
     """
-    return []
+    raw_strings: list[str] = []
+
+    # Barnes: passage= attribute values
+    for m in _THML_REF_PATTERN.finditer(raw):
+        raw_strings.append(m.group(1))
+
+    # Wesley: text-content values (only when no passage= attribute present)
+    for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
+        raw_strings.append(m.group(1))
+
+    # Normalise each string to OSIS refs, then deduplicate preserving order
+    seen: set[str] = set()
+    refs: list[str] = []
+    for passage_str in raw_strings:
+        for osis_ref in parse_thml_refs(passage_str):
+            if osis_ref not in seen:
+                seen.add(osis_ref)
+                refs.append(osis_ref)
+
+    return refs
 
 
 def _extract_refs_osis(raw: str) -> list:

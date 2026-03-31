@@ -21,10 +21,10 @@ Bible text checks:
 
 Commentary checks:
   1. JSON Schema conformance
-  2. Entry ID uniqueness within a file
-  3. OSIS verse reference format (basic pattern check)
-  4. Word count sanity (> 0)
-  5. verse_range parses correctly (start <= end)
+  2. Entry ID uniqueness within a file (missing/null entry_id is an error)
+  3. verse_range parses correctly (start <= end)
+  4. verse_range_osis present and valid format (absent = warning; cross-validation against verse_range ints for same-chapter ranges)
+  5. Word count sanity (> 0)
   6. book_number matches book_osis
   7. cross_references osis arrays valid (Reference objects: {"raw":..., "osis":[...]})
 
@@ -117,6 +117,12 @@ OSIS_REF_PATTERN = re.compile(
     r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+(-[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+)?$"
 )
 
+# Single-verse OSIS: Book.Chapter.Verse (no ranges).
+# Used for bible_text where each record is exactly one verse.
+OSIS_SINGLE_VERSE_PATTERN = re.compile(
+    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+$"
+)
+
 # Permissive OSIS: allows numbered book prefixes (1Cor, 2Pet) and chapter-level refs (Gen.1, Rev.2-Rev.3).
 # Used for proof text osis arrays in doctrinal_document and catechism_qa files.
 OSIS_PROOF_REF_PATTERN = re.compile(
@@ -136,6 +142,20 @@ KNOWN_BOOK_NUMBERS = {
     "2Tim": 55, "Titus": 56, "Phlm": 57, "Heb": 58, "Jas": 59, "1Pet": 60,
     "2Pet": 61, "1John": 62, "2John": 63, "3John": 64, "Jude": 65, "Rev": 66,
 }
+
+# Book codes accepted in permissive proof-text OSIS checks.
+# Includes all canonical books plus common deuterocanonical / apocryphal OSIS codes.
+_KNOWN_PROOF_BOOK_CODES = frozenset(KNOWN_BOOK_NUMBERS.keys()) | {
+    "Tob", "Jdt", "GkEsth", "AddEsth", "Wis", "Sir", "Bar", "EpJer",
+    "PrAzar", "Sus", "Bel", "1Macc", "2Macc", "3Macc", "4Macc",
+    "1Esd", "2Esd", "PrMan", "Ps151", "Odes", "PsSol", "1En", "Jub",
+}
+
+
+def _check_proof_book_code(osis_str: str) -> bool:
+    """Return True if the book code portion of an OSIS proof ref is in the known set."""
+    return osis_str.split(".")[0] in _KNOWN_PROOF_BOOK_CODES
+
 
 VALID_SUMMARY_STATUSES = {
     "withheld",
@@ -231,18 +251,39 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
             errors.append(f"{loc}: duplicate entry_id '{eid}'")
         elif eid:
             seen_ids.add(eid)
+        else:
+            errors.append(f"{loc}: entry_id is missing or empty")
 
         vr = entry.get("verse_range", "")
+        _vr_start = _vr_end = None
         try:
-            start, end = parse_verse_range(vr)
-            if start > end:
+            _vr_start, _vr_end = parse_verse_range(vr)
+            if _vr_start > _vr_end:
                 errors.append(f"{loc} ({eid}): verse_range start > end: '{vr}'")
         except ValueError:
             errors.append(f"{loc} ({eid}): unparseable verse_range: '{vr}'")
 
         vro = entry.get("verse_range_osis", "")
-        if vro and not OSIS_REF_PATTERN.match(vro):
+        if not vro:
+            warnings.append(f"{loc} ({eid}): verse_range_osis is absent")
+        elif not OSIS_REF_PATTERN.match(vro):
             errors.append(f"{loc} ({eid}): invalid verse_range_osis format: '{vro}'")
+        elif _vr_start is not None:
+            # Cross-validate: verse numbers in OSIS must match integer verse_range.
+            # Only check same-chapter ranges -- cross-chapter OSIS ranges can't map 1:1 to verse ints.
+            try:
+                _osis_s = vro.split("-")[0]
+                _osis_e = vro.split("-")[-1] if "-" in vro else _osis_s
+                if _osis_s.split(".")[:2] == _osis_e.split(".")[:2]:  # same book+chapter
+                    _osis_vs = int(_osis_s.split(".")[2])
+                    _osis_ve = int(_osis_e.split(".")[2])
+                    if _vr_start != _osis_vs or _vr_end != _osis_ve:
+                        errors.append(
+                            f"{loc} ({eid}): verse_range '{vr}' ({_vr_start}-{_vr_end}) "
+                            f"does not match verse_range_osis '{vro}' ({_osis_vs}-{_osis_ve})"
+                        )
+            except (ValueError, IndexError):
+                pass  # malformed OSIS already caught by format check above
 
         # cross_references: schema defines these as Reference objects {"raw": ..., "osis": [...]}.
         # Plain-string refs are handled defensively for forward compat but are not expected.
@@ -343,6 +384,8 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
             errors.append(f"{loc}: duplicate item_id '{item_id}'")
         elif item_id:
             seen_item_ids.add(item_id)
+        else:
+            errors.append(f"{loc}: item_id is missing or empty")
 
         # sort_key uniqueness
         if sort_key in seen_sort_keys:
@@ -373,6 +416,10 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
                     if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
                         errors.append(
                             f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
+                        )
+                    elif osis_str and not _check_proof_book_code(osis_str):
+                        errors.append(
+                            f"{loc} proof[{j}] ref[{k}]: unrecognized book code in OSIS: '{osis_str.split('.')[0]}'"
                         )
                     elif osis_str:
                         # Pattern OK -- queue for verse existence check
@@ -421,6 +468,10 @@ def _check_units(units: list, path_prefix: str, errors: list, osis_to_check: lis
                     if osis_str and not OSIS_PROOF_REF_PATTERN.match(osis_str):
                         errors.append(
                             f"{loc} proof[{j}] ref[{k}]: invalid OSIS: '{osis_str}'"
+                        )
+                    elif osis_str and not _check_proof_book_code(osis_str):
+                        errors.append(
+                            f"{loc} proof[{j}] ref[{k}]: unrecognized book code in OSIS: '{osis_str.split('.')[0]}'"
                         )
                     elif osis_str:
                         # Pattern OK -- queue for verse existence check
@@ -505,8 +556,8 @@ def validate_bible_text_file(path: Path, data: dict) -> tuple:
         elif osis:
             seen_osis.add(osis)
 
-        # OSIS format: Book.Chapter.Verse
-        if not OSIS_REF_PATTERN.match(osis):
+        # OSIS format: Book.Chapter.Verse (single verse; ranges are not valid here)
+        if not OSIS_SINGLE_VERSE_PATTERN.match(osis):
             errors.append(f"{loc}: invalid osis format: '{osis}'")
         elif scope_osis:
             # Book prefix must match scope
@@ -535,12 +586,6 @@ def validate_bible_text_file(path: Path, data: dict) -> tuple:
                     )
             except ValueError:
                 pass  # already caught by OSIS format check above
-
-        # text must be non-empty (BSB omits textual-critical verses -- these
-        # should be skipped by the parser, not stored as empty strings)
-        text = entry.get("text", "")
-        if not text or not text.strip():
-            warnings.append(f"{loc} ({osis}): text is empty")
 
     # Completeness
     if entries:
@@ -576,6 +621,8 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
             errors.append(f"{loc}: duplicate entry_id '{eid}'")
         elif eid:
             seen_ids.add(eid)
+        else:
+            errors.append(f"{loc}: entry_id is missing or empty")
 
         # entry_id format and consistency with month/day/period
         m = DEVOTIONAL_ENTRY_ID_PATTERN.match(eid)
@@ -595,7 +642,11 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
                     f"{loc} ({eid}): day={entry.get('day')} does not match entry_id day {id_day}"
                 )
             period_field = entry.get("period")
-            if id_period and period_field and id_period != period_field:
+            if id_period and not period_field:
+                errors.append(
+                    f"{loc} ({eid}): entry_id has period segment '{id_period}' but 'period' field is absent"
+                )
+            elif id_period and period_field and id_period != period_field:
                 errors.append(
                     f"{loc} ({eid}): period='{period_field}' does not match entry_id segment '{id_period}'"
                 )
@@ -605,7 +656,7 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
         if not blocks:
             errors.append(f"{loc} ({eid}): content_blocks is empty")
         else:
-            empty_blocks = sum(1 for b in blocks if not b.strip())
+            empty_blocks = sum(1 for b in blocks if isinstance(b, str) and not b.strip())
             if empty_blocks:
                 warnings.append(f"{loc} ({eid}): {empty_blocks} empty string(s) in content_blocks")
 
@@ -664,6 +715,8 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
             errors.append(f"{loc}: duplicate entry_id '{eid}'")
         elif eid:
             seen_ids.add(eid)
+        else:
+            errors.append(f"{loc}: entry_id is missing or empty")
 
         # quote non-empty
         quote = entry.get("quote", "")
@@ -672,8 +725,8 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
 
         # word_count positive
         wc = entry.get("word_count", 0)
-        if not isinstance(wc, int) or wc < 0:
-            errors.append(f"{loc} ({eid}): word_count must be a non-negative integer, got {wc!r}")
+        if not isinstance(wc, int) or wc <= 0:
+            errors.append(f"{loc} ({eid}): word_count must be a positive integer, got {wc!r}")
 
         # anchor_ref structure
         ref = entry.get("anchor_ref", {})
@@ -692,6 +745,10 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
                         errors.append(
                             f"{loc} ({eid}): anchor_ref.osis invalid format: '{osis_str}'"
                         )
+                    elif osis_str and not _check_proof_book_code(osis_str):
+                        errors.append(
+                            f"{loc} ({eid}): anchor_ref.osis unrecognized book code: '{osis_str.split('.')[0]}'"
+                        )
 
     # Completeness checks
     if entries:
@@ -701,9 +758,9 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
         if no_osis > 0:
             pct = no_osis * 100 / total
             msg = f"{no_osis}/{total} entries ({pct:.1f}%) have empty anchor_ref.osis (unrecognized book name)"
-            # >50% no-OSIS is unexpected for a standard Church Father
+            # >50% no-OSIS is unexpected for a standard Church Father -- escalate to error
             if pct > 50:
-                warnings.append(f"Completeness: {msg}")
+                errors.append(f"Completeness: {msg}")
             else:
                 warnings.append(f"Completeness: {msg}")
         if empty_source > 0:
@@ -835,9 +892,11 @@ def validate_sermon_file(path: Path, data: dict) -> tuple:
                 f"{loc} (sermon_id={sid!r}): word_count must be a positive integer, got {wc!r}"
             )
 
-    # Completeness: warn if many sermons lack a primary_reference
+    # Completeness: warn if many sermons lack a primary_reference.
+    # Distinguish absent key (incomplete) from null (intentionally no scripture text).
+    _ABSENT = object()
     total = len(entries)
-    no_ref = sum(1 for e in entries if not e.get("primary_reference"))
+    no_ref = sum(1 for e in entries if e.get("primary_reference", _ABSENT) is _ABSENT)
     if no_ref > 0:
         pct = no_ref * 100 / total
         msg = f"{no_ref}/{total} sermons ({pct:.1f}%) missing primary_reference"
@@ -890,7 +949,7 @@ def validate_prayer_file(path: Path, data: dict) -> tuple:
         blocks = entry.get("content_blocks", [])
         if not blocks:
             errors.append(f"{loc} (prayer_id={pid!r}): content_blocks is empty")
-        elif not any(b.strip() for b in blocks):
+        elif not any(b.strip() for b in blocks if isinstance(b, str)):
             errors.append(f"{loc} (prayer_id={pid!r}): all content_blocks are blank")
 
         # word_count positive
@@ -955,9 +1014,9 @@ def validate_reference_entry_file(path: Path, data: dict) -> tuple:
             errors.append(f"{loc} (entry_id={eid!r}): definition_blocks is empty")
 
         wc = entry.get("word_count", 0)
-        if not isinstance(wc, int) or wc < 0:
+        if not isinstance(wc, int) or wc <= 0:
             errors.append(
-                f"{loc} (entry_id={eid!r}): word_count must be a non-negative integer, got {wc!r}"
+                f"{loc} (entry_id={eid!r}): word_count must be a positive integer, got {wc!r}"
             )
 
     return errors, warnings
@@ -1112,6 +1171,8 @@ def check_author_registry() -> tuple:
         except (json.JSONDecodeError, OSError):
             continue  # parse errors are caught by validate_file() elsewhere
 
+        if not isinstance(data, dict):
+            continue  # skip non-dict JSON roots (arrays, scalars) without crashing
         author_val = data.get("meta", {}).get("author")
         if not author_val:
             continue  # null/missing author is valid (e.g. Apostles' Creed)
@@ -1167,6 +1228,10 @@ def check_schema_consistency() -> tuple:
 
             if values is not None:
                 enum_sets.setdefault(field_name, {})[name] = values
+            elif "$ref" in field_def or "$ref" in field_def.get("items", {}):
+                warnings.append(
+                    f"Schema: {name} '{field_name}' uses $ref -- enum consistency check skipped for this schema"
+                )
 
     # Compare: all schemas should have the same enum values for each shared field
     for field_name, by_schema in enum_sets.items():

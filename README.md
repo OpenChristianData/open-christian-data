@@ -27,6 +27,7 @@ This project processes public domain Christian literature — commentaries, conf
 | Unspoken Sermons — George MacDonald | Sermon collection | 3 series | 36 sermons / 171k words | None | Public domain |
 | BCP 1662 Collects | Prayer collection | Sundays + Feast Days | 85 collects | None | Public domain |
 | Didache Prayers (Lake translation) | Prayer collection | Chapters 8-10 | 4 prayers | None | Public domain |
+| BCP 1928 Collects | Prayer collection | Sundays + Feast Days + Holy Days | 98 collects | None | Public domain |
 | Practical Mysticism — Evelyn Underhill | Structured text | 11 chapters | 169 blocks / 32k words | None | Public domain |
 | Paradise Lost — John Milton | Structured text | 12 books | 411 blocks / 82k words | None | Public domain |
 | Easton's Bible Dictionary | Reference entries | Full (A–Z) | 3,963 entries | None | Public domain |
@@ -108,6 +109,8 @@ data/
   prayers/
     bcp-1662/
       collects.json             # BCP 1662 — 85 collects (Sundays + Feast Days)
+    bcp-1928/
+      collects.json             # BCP 1928 — 98 collects (Sundays + Feast Days + Holy Days)
     didache/
       prayers.json              # Didache chapters 8-10 — 4 eucharistic prayers
   reference/
@@ -160,6 +163,7 @@ build/
     sword_devotional.py       # Parser for SWORD rawLD modules (Daily Light)
     standard_ebooks.py        # Parser for Standard Ebooks XHTML (9 titles)
     bcp1662.py                # Parser for BCP 1662 Collects (eskimo.com HTML)
+    bcp1928.py                # Parser for BCP 1928 Collects (episcopalnet.org HTML, 100 pages)
     didache.py                # Parser for Didache prayers (Wikisource wikitext)
     bible_dictionaries.py     # Parser for JWBickel/BibleDictionaries JSONL (4 works)
     gutenberg_catechisms.py   # Parser for PG catechisms (Luther Small, Baltimore #1-3)
@@ -190,6 +194,8 @@ sources/
   prayers/
     bcp-1662-collects/
       config.json             # Source metadata (eskimo.com digitization)
+    bcp-1928-collects/
+      config.json             # Source metadata (episcopalnet.org digitization)
     didache/
       config.json             # Source metadata (Wikisource Lake translation)
 ```
@@ -257,6 +263,10 @@ py -3 build/parsers/standard_ebooks.py --all
 py -3 build/parsers/bcp1662.py --dry-run
 py -3 build/parsers/bcp1662.py
 
+# Generate BCP 1928 collects (downloads 100 HTML pages from episcopalnet.org on first run)
+py -3 build/parsers/bcp1928.py --dry-run
+py -3 build/parsers/bcp1928.py
+
 # Generate Didache prayers (downloads Wikisource wikitext on first run)
 py -3 build/parsers/didache.py --dry-run
 py -3 build/parsers/didache.py
@@ -293,7 +303,7 @@ Requires Python 3.9+. No external dependencies for the pipeline. `pip install js
 - **Devotional text**: [Christian Classics Ethereal Library](https://www.ccel.org) — Spurgeon's Morning and Evening in ThML XML, public domain; [CrossWire SWORD modules](https://www.crosswire.org/sword/) — Daily Light on the Daily Path (Bagster, 732 entries); public domain
 - **Structured texts & sermons**: [Standard Ebooks](https://standardebooks.org) — 9 titles (Bunyan, Augustine, Chesterton ×3, Thomas à Kempis, MacDonald, Underhill, Milton) in CC0-annotated XHTML; underlying texts public domain
 - **Catechisms & theological works**: [Project Gutenberg](https://www.gutenberg.org) — Luther's Small Catechism (Smith/PW 2004 trans.), Luther's Large Catechism (Bente/Dau 1921 trans.), Baltimore Catechisms #1-3 (Third Plenary Council 1885), Calvin's Institutes of the Christian Religion (Allen 6th American ed. trans., 2 vols.), Augustine's Confessions (Pusey trans.); all public domain
-- **Prayer texts**: [eskimo.com BCP 1662 digitization](https://eskimo.com/~lhowell/bcp1662/) (Lynda M. Howell) — 5 HTML pages, public domain; [Wikisource Didache (Lake translation)](https://en.wikisource.org/wiki/Didache_(Lake_translation)) — Kirsopp Lake 1912 translation, public domain
+- **Prayer texts**: [eskimo.com BCP 1662 digitization](https://eskimo.com/~lhowell/bcp1662/) (Lynda M. Howell) — 5 HTML pages, public domain; [episcopalnet.org BCP 1928 digitization](https://www.episcopalnet.org/1928bcp/) — 100 HTML pages covering all Sundays, Holy Days, and special occasions, public domain; [Wikisource Didache (Lake translation)](https://en.wikisource.org/wiki/Didache_(Lake_translation)) — Kirsopp Lake 1912 translation, public domain
 - **Bible dictionaries**: [JWBickel/BibleDictionaries](https://huggingface.co/datasets/JWBickel/BibleDictionaries) — Easton's (1893), Smith's (1863), Hitchcock's (1874), Torrey's (1897); 11,768 entries; structured JSONL by JWBickel; license confirmation pending, underlying texts public domain
 - **Topical reference (Nave's)**: [CrossWire SWORD modules](https://www.crosswire.org/sword/) — Nave's Topical Bible (Orville J. Nave, 1896), SWORD v3.0 zLD module; 5,322 topics, 76,957 scripture references; public domain
 - All authors died before 1928; texts are unambiguously public domain.
