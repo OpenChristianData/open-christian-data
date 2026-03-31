@@ -20,6 +20,7 @@ import json
 import logging
 import sys
 import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -133,20 +134,62 @@ def download_module(name: str, dest: Path, dry_run: bool) -> dict:
 
     logging.info("Downloading %s ...", name)
     logging.info("  URL: %s", url)
+
+    # Retry on transient HTTP failures (Rule 21): 3 attempts, 2/4/8s backoff.
+    # Don't retry 4xx client errors (except 429 rate limit).
+    TRANSIENT_CODES = {429, 500, 502, 503}
+    MAX_RETRIES = 3
+    data = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = resp.read()
+            break  # success
+        except urllib.error.HTTPError as exc:
+            if exc.code in TRANSIENT_CODES and attempt < MAX_RETRIES:
+                delay = 2 ** attempt  # 2s, 4s, 8s
+                logging.warning("  HTTP %d on attempt %d -- retrying in %ds ...", exc.code, attempt, delay)
+                time.sleep(delay)
+            else:
+                logging.error("  FAILED to download %s: HTTP %d", name, exc.code)
+                result["status"] = f"error: HTTP {exc.code}"
+                return result
+        except Exception as exc:
+            if attempt < MAX_RETRIES:
+                delay = 2 ** attempt
+                logging.warning("  Error on attempt %d (%s) -- retrying in %ds ...", attempt, exc, delay)
+                time.sleep(delay)
+            else:
+                logging.error("  FAILED to download %s: %s", name, exc)
+                result["status"] = f"error: {exc}"
+                return result
+
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = resp.read()
         RAW_DIR.mkdir(parents=True, exist_ok=True)
         with open(dest, "wb") as f:
             f.write(data)
+
+        # Verify the download is a valid ZIP -- CrossWire can return an HTML error
+        # page with HTTP 200 (e.g. module not found, CDN error). Without this check
+        # the manifest would record a corrupt file as successfully downloaded.
+        if not is_valid_zip(dest):
+            size = len(data)
+            logging.error(
+                "  FAILED %s: downloaded %d bytes but file is not a valid ZIP "
+                "(possible HTML error page from CrossWire). File left on disk for inspection: %s",
+                name, size, dest,
+            )
+            result["status"] = "error: not a valid ZIP after download"
+            return result
+
         sha = sha256_file(dest)
         size = len(data)
         logging.info("  Downloaded %d bytes -> %s", size, dest.name)
         logging.info("  SHA-256: %s", sha)
         result.update(status="downloaded", size_bytes=size, sha256=sha)
     except Exception as exc:
-        logging.error("  FAILED to download %s: %s", name, exc)
+        logging.error("  FAILED to write %s: %s", name, exc)
         result["status"] = f"error: {exc}"
 
     return result

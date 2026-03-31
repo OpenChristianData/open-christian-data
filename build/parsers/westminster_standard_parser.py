@@ -37,6 +37,14 @@ WSC_CONFIG = REPO_ROOT / "sources" / "catechisms" / "westminster-shorter-catechi
 
 LOG_FILE = Path(__file__).resolve().parent / "westminster_standard_parser.log"
 
+RAW_DIR = REPO_ROOT / "raw" / "westminster-standard-org"
+DOCS_OUT_DIR = REPO_ROOT / "data" / "doctrinal-documents"
+SOURCES_OUT_DIR = REPO_ROOT / "sources" / "doctrinal-documents"
+MANIFEST_PATH = REPO_ROOT / "data" / "doctrinal-documents" / "_manifest.json"
+
+PROCESSING_DATE = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d")
+SCRIPT_VERSION = "build/parsers/westminster_standard_parser.py@v2.0.0"
+
 # ---------------------------------------------------------------------------
 # Logging
 # ---------------------------------------------------------------------------
@@ -85,7 +93,7 @@ def _normalise_citation(citation: str) -> str:
     # Step 2: normalise ' with ' to semicolon (also done inside citation_parser's
     # parse_citation_string, but _parse_citation_with_continuation bypasses that
     # function entirely, so we must repeat it here).
-    s = s.replace(" with ", "; ")
+    s = re.sub(r'\s+with\s+', '; ', s)
 
     # Step 3: detect comma-book splits within each semicolon segment
     semi_parts = s.split(";")
@@ -291,11 +299,13 @@ def enrich_wsc(dry_run: bool = False) -> None:
     # The i-th Q&A block in the HTML corresponds to sort_key i (1-indexed)
     matched = 0
     skipped_no_proofs = 0
+    skipped_not_in_html = 0
 
     for entry in entries:
         sort_key = entry["sort_key"]
         if sort_key not in proofs_by_index:
             log.warning("sort_key %d not found in HTML extraction", sort_key)
+            skipped_not_in_html += 1
             continue
 
         refs = proofs_by_index[sort_key]
@@ -325,6 +335,12 @@ def enrich_wsc(dry_run: bool = False) -> None:
     total_questions = len(entries)
     questions_with_proofs = matched
     questions_without = skipped_no_proofs
+    accounted = matched + skipped_no_proofs + skipped_not_in_html
+    if accounted != total_questions:
+        log.error(
+            "Stats mismatch: matched=%d + no_proofs=%d + not_in_html=%d = %d != total=%d",
+            matched, skipped_no_proofs, skipped_not_in_html, accounted, total_questions,
+        )
     total_refs = sum(
         len(r["references"])
         for e in entries
@@ -337,6 +353,8 @@ def enrich_wsc(dry_run: bool = False) -> None:
     print(f"Total questions:         {total_questions}")
     print(f"Questions with proofs:   {questions_with_proofs}")
     print(f"Questions without proofs:{questions_without}")
+    if skipped_not_in_html:
+        print(f"Not in HTML (skipped):   {skipped_not_in_html}  <-- check HTML source")
     print(f"Total references:        {total_refs}")
     print(f"Parse errors (refs):     {total_parse_errors}")
     if parse_errors:
@@ -365,13 +383,6 @@ def enrich_wsc(dry_run: bool = False) -> None:
 # ---------------------------------------------------------------------------
 # Document parsing — Task 6
 # ---------------------------------------------------------------------------
-
-RAW_DIR = REPO_ROOT / "raw" / "westminster-standard-org"
-DOCS_OUT_DIR = REPO_ROOT / "data" / "doctrinal-documents"
-SOURCES_OUT_DIR = REPO_ROOT / "sources" / "doctrinal-documents"
-
-PROCESSING_DATE = datetime.now(ZoneInfo("Australia/Melbourne")).strftime("%Y-%m-%d")
-SCRIPT_VERSION = "build/parsers/westminster_standard_parser.py@v2.0.0"
 
 DOCUMENT_CONFIGS: dict[str, dict] = {
     "directory-for-family-worship": {
@@ -700,6 +711,19 @@ PARSER_FN_MAP = {
     "sum-of-saving-knowledge": _parse_sum_of_saving_knowledge,
 }
 
+# Guard: PARSER_FN_MAP and DOCUMENT_CONFIGS must stay in sync; a mismatch means
+# a slug has config but no parser (KeyError at runtime) or a parser with no config.
+# Use raise instead of assert so this fires even under python -O.
+_map_only = PARSER_FN_MAP.keys() - DOCUMENT_CONFIGS.keys()
+_cfg_only = DOCUMENT_CONFIGS.keys() - PARSER_FN_MAP.keys()
+if _map_only or _cfg_only:
+    raise SystemExit(
+        f"PARSER_FN_MAP and DOCUMENT_CONFIGS are out of sync. "
+        f"In PARSER_FN_MAP only: {_map_only}. "
+        f"In DOCUMENT_CONFIGS only: {_cfg_only}."
+    )
+del _map_only, _cfg_only
+
 
 def _build_doctrinal_document(slug: str, units: list[dict]) -> dict:
     """Assemble the full doctrinal document JSON structure for a slug."""
@@ -778,6 +802,40 @@ def _find_empty_sections(units: list[dict], _prefix: str = "") -> list[str]:
     return empty
 
 
+# Words that should never open a section's content — indicate nav/footer bleed
+# or a title being captured as body text.
+_WRONG_BLOCK_OPENERS = frozenset({
+    "home", "about", "contact", "copyright", "privacy", "search",
+    "menu", "navigation", "contents", "table", "skip", "back",
+    "next", "previous", "share", "print", "download", "subscribe",
+})
+
+
+def _check_content_plausibility(units: list[dict], slug: str) -> list[str]:
+    """Scan first word of every unit's content against a blocklist of nav/footer openers.
+
+    Returns a list of warning strings (empty if all clear).
+    """
+    warnings: list[str] = []
+
+    def _check(unit_list: list[dict], prefix: str) -> None:
+        for unit in unit_list:
+            num = unit.get("number", "?")
+            label = f"{prefix}{num}" if prefix else num
+            content = unit.get("content", "").strip()
+            if content:
+                first_word = content.split()[0].lower().rstrip(".,;:")
+                if first_word in _WRONG_BLOCK_OPENERS:
+                    warnings.append(
+                        f"  Section {label}: content opens with suspicious word {first_word!r}"
+                    )
+            for child in unit.get("children", []):
+                _check([child], f"{label}.")
+
+    _check(units, "")
+    return warnings
+
+
 def parse_document(slug: str, dry_run: bool = False) -> None:
     """Parse a single Westminster Standards document from HTML and write JSON."""
     if slug not in DOCUMENT_CONFIGS:
@@ -812,9 +870,18 @@ def parse_document(slug: str, dry_run: bool = False) -> None:
     print(f"Empty sections:  {len(empty_sections)}")
     if empty_sections:
         print(f"  Empty nums: {empty_sections}")
+
+    # Content plausibility: flag sections whose text opens with nav/footer words
+    plausibility_warnings = _check_content_plausibility(units, slug)
+    if plausibility_warnings:
+        print(f"Plausibility warnings: {len(plausibility_warnings)}")
+        for w in plausibility_warnings:
+            print(w)
+        log.warning("Plausibility warnings for %s: %s", slug, plausibility_warnings)
     print("")
 
-    log.info("Stats: %d sections, %d words, %d empty", section_count, word_count, len(empty_sections))
+    log.info("Stats: %d sections, %d words, %d empty, %d plausibility warnings",
+             section_count, word_count, len(empty_sections), len(plausibility_warnings))
 
     doc = _build_doctrinal_document(slug, units)
 
@@ -838,19 +905,41 @@ def parse_all_documents(dry_run: bool = False) -> None:
     """Parse all 5 Westminster Standards documents."""
     slugs = list(DOCUMENT_CONFIGS.keys())
     log.info("=== Parsing all %d documents ===", len(slugs))
+
+    # Preflight: verify all HTML source files exist before starting any writes
+    missing = [slug for slug in slugs if not (RAW_DIR / f"{slug}.html").exists()]
+    if missing:
+        log.error("Preflight failed -- missing HTML files: %s", missing)
+        print(f"ERROR: Missing HTML files for: {missing}")
+        print("Run the downloader before parsing.")
+        return
+
+    failed = []
     for slug in slugs:
-        parse_document(slug, dry_run=dry_run)
-    log.info("=== All documents complete ===")
+        try:
+            parse_document(slug, dry_run=dry_run)
+        except Exception as exc:
+            log.error("Failed to parse %r: %s", slug, exc, exc_info=True)
+            print(f"ERROR: {slug} failed: {exc}")
+            failed.append(slug)
+
+    if failed:
+        log.error("=== %d document(s) failed: %s ===", len(failed), failed)
+        print(f"Completed with {len(failed)} failure(s): {failed}")
+    else:
+        log.info("=== All documents complete ===")
 
 
 # ---------------------------------------------------------------------------
 # Manifest sync — Task 6 Step 8
 # ---------------------------------------------------------------------------
 
-MANIFEST_PATH = REPO_ROOT / "data" / "doctrinal-documents" / "_manifest.json"
-
-
 def _load_manifest() -> dict:
+    if not MANIFEST_PATH.exists():
+        raise FileNotFoundError(
+            f"Manifest not found: {MANIFEST_PATH}\n"
+            "Run --sync-manifest after generating at least one document, or create the file manually."
+        )
     with open(MANIFEST_PATH, encoding="utf-8") as f:
         return json.load(f)
 
@@ -942,6 +1031,7 @@ def main() -> None:
         help="Parse and report without writing any files.",
     )
     args = parser.parse_args()
+    log.info("Args: %s", args)
 
     ran_any = False
     if args.enrich_wsc:

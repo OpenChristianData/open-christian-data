@@ -390,7 +390,12 @@ def _extract_refs_thml(raw: str) -> list:
         for m in passage_matches:
             raw_strings.append(m.group(1))
     else:
-        # Wesley: text-content values (only when no passage= attributes found in raw)
+        # Wesley: text-content values (only when no passage= attributes found in raw).
+        # Known limitation: ~31/4074 Wesley scripRef elements contain trailing prose
+        # after the reference (e.g. "<scripRef>Mt 23:37 as the eagle stirs up</scripRef>").
+        # parse_thml_refs() requires a clean reference string and returns [] for these,
+        # logging a warning. Fixing would require stripping prose here before passing to
+        # the normalizer. Accepted loss at current scale (0.8% of Wesley refs).
         for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
             raw_strings.append(m.group(1))
 

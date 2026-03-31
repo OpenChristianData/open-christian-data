@@ -424,7 +424,9 @@ def extract_collect_html_block(html: str) -> str:
             raw_content = p_match.group(1)
             plain = re.sub(r"<[^>]+>", "", raw_content)
             plain = plain.replace("&nbsp;", " ").replace("\xa0", " ").strip()
-            if plain and "Amen." in plain and word_count(plain) >= 10:
+            # Accept "Amen" in any case (AMEN, Amen.) and the liturgical
+            # "[Who.]" abbreviation for the full doxology (e.g. Trinity22).
+            if plain and re.search(r"(?:amen[.!]?|\[who\.\])\s*$", plain, re.IGNORECASE) and word_count(plain) >= 10:
                 return raw_content
         return ""
 
