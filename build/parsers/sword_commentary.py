@@ -582,6 +582,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     total_books = 0
     total_empty = 0
     all_word_counts: list = []
+    entries_with_refs = 0  # entries where cross_references is non-empty
 
     for testament in mod_conf["testaments"]:
         prefix = mod_conf["block_prefix"][testament]
@@ -651,6 +652,8 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
                     "word_count": word_count,
                 }
                 entries.append(entry)
+                if cross_refs:
+                    entries_with_refs += 1
 
             meta = build_meta(config, processing_date, source_hash, testament)
             output = {"meta": meta, "data": entries}
@@ -700,6 +703,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
         "entries_written": total_entries,
         "verses_empty": total_empty,
         "word_count_stats": wc_stats,
+        "entries_with_refs": entries_with_refs,
     }
 
 
@@ -709,10 +713,11 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
 
 def report_quality(stats: dict) -> None:
     """Print quality stats for one module extraction."""
+    n = stats["entries_written"]
     logging.info(
         "  Result: %d books, %d entries, %d empty verse slots",
         stats["books_written"],
-        stats["entries_written"],
+        n,
         stats["verses_empty"],
     )
     wc = stats.get("word_count_stats", {})
@@ -721,7 +726,21 @@ def report_quality(stats: dict) -> None:
             "  Word count: min=%d median=%d max=%d",
             wc["min"], wc["median"], wc["max"],
         )
-    if stats["entries_written"] == 0:
+    # Cross-references coverage -- non-zero means the normalizer is wired correctly
+    with_refs = stats.get("entries_with_refs", 0)
+    if n > 0:
+        pct = 100.0 * with_refs / n
+        logging.info(
+            "  Cross-references: %d/%d entries have refs (%.1f%%)",
+            with_refs, n, pct,
+        )
+        if with_refs == 0:
+            logging.warning(
+                "  WARNING: 0 entries have cross_references for %s"
+                " -- normalizer may not be wired",
+                stats["module"],
+            )
+    if n == 0:
         logging.warning("  WARNING: 0 entries written for %s", stats["module"])
 
 

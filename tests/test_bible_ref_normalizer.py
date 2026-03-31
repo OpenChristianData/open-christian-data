@@ -174,6 +174,135 @@ def test_whitespace_only():
 
 
 # ---------------------------------------------------------------------------
+# Separator normalisation (discovered by probing raw corpus)
+# ---------------------------------------------------------------------------
+
+def test_dot_separator_simple():
+    """Dot used as chapter.verse separator -> normalised to colon."""
+    assert parse_thml_refs("Mt 15.28") == ["Matt.15.28"]
+
+
+def test_dot_separator_in_mixed_string():
+    """Dot and colon separators can appear in the same passage string."""
+    result = parse_thml_refs("Ps 98:1, Is 51.9, 52:10, 63:5")
+    assert result == ["Ps.98.1", "Isa.51.9", "Isa.52.10", "Isa.63.5"]
+
+
+def test_verse_continuation_dot():
+    """'De 32:11.12' -- .12 is a verse continuation, not a separator; returns start verse."""
+    result = parse_thml_refs("De 32:11.12, Ps 91:4")
+    assert result == ["Deut.32.11", "Ps.91.4"]
+
+
+def test_semicolon_as_chv_separator():
+    """Semicolon used as chapter:verse separator ('Jn 12;4' -> John 12:4)."""
+    assert parse_thml_refs("Jn 12;4") == ["John.12.4"]
+
+
+def test_semicolon_as_chv_does_not_affect_normal_refs():
+    """'1Sam 28:3;2Kgs 21:18' -- semicolon is a group separator here, not ch:v."""
+    result = parse_thml_refs("1Sam 28:3;2Kgs 21:18")
+    assert result == ["1Sam.28.3", "2Kgs.21.18"]
+
+
+def test_space_after_colon():
+    """'Heb 10: 5' -- space after colon normalised before parsing."""
+    assert parse_thml_refs("Heb 10: 5") == ["Heb.10.5"]
+
+
+def test_space_after_colon_in_list():
+    """Multiple refs with space-after-colon in a comma-separated list."""
+    result = parse_thml_refs("Php 2: 8, 9, Heb 2: 9,10")
+    assert result == ["Phil.2.8", "Phil.2.9", "Heb.2.9", "Heb.2.10"]
+
+
+def test_cross_chapter_range():
+    """Cross-chapter range like 'Acts 24:1-25:27' -> start verse only."""
+    assert parse_thml_refs("Acts 24:1-25:27") == ["Acts.24.1"]
+
+
+def test_bare_verse_range():
+    """Bare verse range '7-9' uses current book + chapter, returns start."""
+    result = parse_thml_refs("Isa 53:2,3,7-9,12")
+    assert result == ["Isa.53.2", "Isa.53.3", "Isa.53.7", "Isa.53.12"]
+
+
+def test_bare_verse_range_mid_list():
+    """Bare verse range embedded in a longer multi-ref string."""
+    result = parse_thml_refs("Mt 26:14-16,47-50")
+    assert result == ["Matt.26.14", "Matt.26.47"]
+
+
+# ---------------------------------------------------------------------------
+# Corpus-confirmed abbreviations (high-frequency gaps from probe)
+# ---------------------------------------------------------------------------
+
+def test_abbrev_php_philippians():
+    """'Php' (590 occurrences in corpus) -> Phil."""
+    assert parse_thml_refs("Php 4:13") == ["Phil.4.13"]
+
+
+def test_abbrev_de_deuteronomy():
+    """'De' (407 occurrences) -> Deut."""
+    assert parse_thml_refs("De 6:4") == ["Deut.6.4"]
+
+
+def test_abbrev_nu_numbers():
+    """'Nu' (235 occurrences) -> Num."""
+    assert parse_thml_refs("Nu 6:24") == ["Num.6.24"]
+
+
+def test_abbrev_he_hebrews():
+    """'He' (47 occurrences) -> Heb (unambiguous inside scripRef tags)."""
+    assert parse_thml_refs("He 11:1") == ["Heb.11.1"]
+
+
+def test_abbrev_ro_romans():
+    """'Ro' (23 occurrences) -> Rom."""
+    assert parse_thml_refs("Ro 8:28") == ["Rom.8.28"]
+
+
+def test_abbrev_ac_acts():
+    """'Ac' (33 occurrences) -> Acts."""
+    assert parse_thml_refs("Ac 2:38") == ["Acts.2.38"]
+
+
+def test_abbrev_lu_luke():
+    """'Lu' (58 occurrences) -> Luke."""
+    assert parse_thml_refs("Lu 2:14") == ["Luke.2.14"]
+
+
+def test_abbrev_mr_mark():
+    """'Mr' (20 occurrences) -> Mark."""
+    assert parse_thml_refs("Mr 16:16") == ["Mark.16.16"]
+
+
+def test_abbrev_1jo_1john():
+    """'1Jo' (17 occurrences) -> 1John."""
+    assert parse_thml_refs("1Jo 3:16") == ["1John.3.16"]
+
+
+def test_abbrev_joh_john():
+    """'Joh' (16 occurrences) -> John."""
+    assert parse_thml_refs("Joh 3:16") == ["John.3.16"]
+
+
+def test_typo_gall_galatians():
+    """'Gall' (64 occurrences) -> Gal."""
+    assert parse_thml_refs("Gall 5:22") == ["Gal.5.22"]
+
+
+def test_typo_hoss_hosea():
+    """'Hoss' (45 occurrences) -> Hos."""
+    assert parse_thml_refs("Hoss 11:1") == ["Hos.11.1"]
+
+
+def test_typo_romm_romans():
+    """'Romm' (18 occurrences) -> Rom."""
+    assert parse_thml_refs("Romm 3:23") == ["Rom.3.23"]
+
+
+# ---------------------------------------------------------------------------
 # Run directly for quick feedback
 # ---------------------------------------------------------------------------
 
