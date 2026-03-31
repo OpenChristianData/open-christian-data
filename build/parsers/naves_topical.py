@@ -10,11 +10,13 @@ Confirmed format (binary inspection Task 2, 2026-03-30):
 
 Block internal structure (confirmed by inspection):
   Bytes 0..7: (count:4)(data_start:4) header
-  Bytes 8..(8 + count*8 - 1): count * (eoff:4, esz:4) index
-    eoff = size of this entry (the gap to the next entry's start)
-    esz  = cumulative size from this entry to end of block (not used for slicing)
-  Data section starts at offset data_start; entry i starts at the cumulative
-  sum of eoff[0..i-1] bytes into the data section.
+    data_start = 4 + count*8  (for Nave: count=30, data_start=244 always)
+  Bytes 8..(8 + count*8 - 5): count * (eoff:4, esz:4) index, EXCEPT the last
+    entry's esz slot is skipped -- those 4 bytes are the start of data.
+    eoff = size of this entry (cumulative start = sum of previous eoffs)
+    esz  = not meaningful for the last entry; overlaps with data start
+  Data section starts at absolute offset data_start; entry i starts at the
+  cumulative sum of eoff[0..i-1] bytes past data_start.
 
 TEI XML content format:
   <entryFree n="TOPICNAME">
@@ -264,10 +266,12 @@ def get_entry_from_block(plain: bytes, entry_in_block: int, topic: str) -> str:
 
     Block layout:
       bytes 0..3: count (number of entries in block)
-      bytes 4..7: data_start (offset where entry data begins)
-      bytes 8..8+count*8-1: index of (eoff, esz) per entry
+      bytes 4..7: data_start (absolute offset where entry data begins)
+      bytes 8..8+count*8-5: index of (eoff:4, esz:4) per entry, EXCEPT the
+        last entry omits its esz field — that 4-byte slot is the first 4 bytes
+        of data. So data_start = 4 + count*8, not 8 + count*8.
         eoff = size of this entry (cumulative start = sum of previous eoffs)
-        esz  = cumulative size from this entry to end (not used for slicing)
+        esz  = not used for slicing; last entry's esz field is the data start
       data region starts at offset data_start
 
     Returns the decoded entry XML string, or "" on failure.
@@ -278,12 +282,13 @@ def get_entry_from_block(plain: bytes, entry_in_block: int, topic: str) -> str:
 
     count, data_start = struct.unpack("<II", plain[0:8])
 
-    # Guard: data_start must be beyond the block's own index section
-    min_data_start = 8 + count * 8
-    if data_start < min_data_start:
+    # Guard: data_start must equal 4 + count*8 (last entry's esz slot is the
+    # first 4 bytes of data, so the index occupies bytes 8..8+count*8-5).
+    expected_data_start = 4 + count * 8
+    if data_start != expected_data_start:
         logging.warning(
-            "data_start=%d < expected minimum %d (topic=%s) -- block may be corrupt",
-            data_start, min_data_start, topic,
+            "data_start=%d != expected %d (topic=%s) -- block may be corrupt",
+            data_start, expected_data_start, topic,
         )
 
     if entry_in_block >= count:

@@ -1265,3 +1265,53 @@ git commit -m "docs: add Nave's Topical Bible to README status table and pipelin
 1. `_decode_zld` format assumptions may not match actual binary. Task 2 inspection + Task 4 Step 4 `--limit 10` are the gates.
 2. Nave's SWORD content may use ThML XML (`<scripRef>` tags) rather than plain text. If `_parse_entry_content` produces 0 subtopics for most entries, add XML tag stripping before content parsing.
 3. Encoding may be Latin-1 not UTF-8 (Nave's is a 19th-century work with no non-ASCII content in the text itself). The conf file check in Task 1 Step 4 will confirm.
+
+---
+
+## Format Discovery (post-implementation notes, 2026-03-30)
+
+**This section records what was actually discovered during implementation, superseding the format assumptions above.**
+
+### Content format: TEI XML, not plain text
+
+The plan assumed plain-text content with Nave's book abbreviations (e.g. `1Kgs`, `Ps`) requiring normalisation via `osis_book_codes.json` and a Nave-specific abbreviation table. The actual content is **TEI XML** with OSIS book codes pre-computed in `osisRef` attributes:
+
+```xml
+<entryFree n="AARON">
+<def>
+<lb/>Called by God <ref osisRef="Exod.4.14">Ex. 4:14</ref>
+<ref target="Nave:PRIESTS">See PRIESTS</ref>
+</def>
+</entryFree>
+```
+
+Consequences:
+- `normalize_ref_to_osis` and `BOOK_MAP` from the plan were not implemented — OSIS refs are read directly from `osisRef` attributes via regex
+- `xml.etree.ElementTree` is used for subtopic splitting (on `<lb/>` + `→` U+2192), not ThML `<scripRef>` tags
+- Encoding is UTF-8 (confirmed from conf file)
+
+### Block index: last entry's esz slot overlaps with data
+
+The plan showed the block index as `count * (eoff:4, esz:4)` occupying bytes `8..8+count*8-1`, with data starting at `8 + count*8`. The actual structure omits the final entry's `esz` field — those 4 bytes are the start of data:
+
+```
+bytes 0..3:   count  (uint32 LE)
+bytes 4..7:   data_start = 4 + count*8  (for Nave: always 244 with count=30)
+bytes 8..243: 30 * (eoff:4, esz:4) index, EXCEPT last entry has no esz
+bytes 244..:  entry data (starts with "<entryFree ...")
+```
+
+The parser guard formula was corrected from `8 + count * 8` to `4 + count * 8`.
+
+### eoff is entry size, not offset
+
+The field name "eoff" is misleading — it is each entry's **size in bytes**, not its absolute offset. The entry start position is the cumulative sum of all preceding eoff values:
+
+```python
+start_in_data = sum(struct.unpack("<I", plain[8 + i*8:8 + i*8 + 4])[0] for i in range(entry_in_block))
+abs_start = data_start + start_in_data
+```
+
+### Redirect-only entries
+
+Two entries (SHOMER, TRADE) have empty subtopics but non-empty `related_topics` — they are pure redirects. `validate.py` was relaxed to treat empty subtopics as a WARNING (not error) when `related_topics` is non-empty.
