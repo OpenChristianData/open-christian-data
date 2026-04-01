@@ -29,7 +29,7 @@
 | build/scripts/build_verse_index.py | 2026-03-28 | New (Prompt 0b). Standards-reviewer pass (4 issues fixed: hardcoded date, elapsed time, 2x silent exception swallows). |
 | build/scripts/validate_osis.py | 2026-03-28 | New (Prompt 0b). Importable utility. Standards-reviewer pass. Updated 2026-03-28: DEUTEROCANONICAL_BOOK_CODES frozenset added; known apocryphal codes return (True, "deuterocanonical - not in verse index") instead of failing. Covered by test_osis_integration.py section 6 (10 tests). |
 | build/scripts/test_osis_integration.py | 2026-03-28 | New (Prompt 0b post-session). Updated 2026-03-28: section 6 added -- 10 deuterocanonical tests. 33/33 pass. |
-| build/scripts/add_token_counts.py | 2026-03-28 | New (Prompt 0c). Standards-reviewer pass. Idempotent, --dry-run mode. 105,413 records updated across 407 files. |
+| build/scripts/add_token_counts.py | 2026-04-01 | Updated (2026-04-01): prayer schema type added (content_blocks extractor); SCHEMAS_DIR/SCHEMA_FILES config; preflight_schema_check() -- fails hard in live mode if any schema missing token_count. 41,710 records across 151 files. Standards-reviewer pass (Sonnet). Deferred: OUT-01 (no OUTPUT_DIR -- in-place by design), PIPE-02 (no min/median/max token stats), REL-06 (progress every 50 files), REL-02 (preflight error messages). Opus review pending. |
 | schemas/v1/commentary.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
 | schemas/v1/catechism_qa.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer. |
 | schemas/v1/doctrinal_document.schema.json | 2026-03-28 | Updated (0c): token_count added as optional integer in $defs/unit. |

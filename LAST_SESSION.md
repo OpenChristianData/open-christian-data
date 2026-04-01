@@ -4,6 +4,45 @@ Newest first.
 
 ---
 
+## 2026-04-01 — Token counts backfill + prayer schema + pre-flight check
+
+**Branch:** main
+
+**What we worked on:** Ran `add_token_counts.py` to backfill token counts for all 41,519 records missing counts (SWORD commentaries, BCP 1928/1662, Didache, catechisms, devotionals, church fathers). Added `prayer` schema type support. Improved the script with a pre-flight schema check. Evaluated the session output, updated CODING_DEFAULTS and memory.
+
+**What was completed:**
+- `build/scripts/add_token_counts.py` — `prayer` schema type added (tokenises `content_blocks` — spec said `prayer_text` but actual schema uses `content_blocks`); `SCHEMAS_DIR`/`SCHEMA_FILES` config added; `preflight_schema_check()` added — fails hard in live mode if any supported schema doesn't declare `token_count` before any file is written. python-standards-reviewer pass run; 4 findings deferred (see CODE_REVIEWS.md)
+- `schemas/v1/prayer.schema.json` — `token_count` property added (schema must be updated before data write — PIPE-14)
+- `CODING_DEFAULTS.md` (Cowork) — PIPE-14 added: schema update before data write
+- Memory — `feedback_schema_before_data_write.md` saved; `project_ocd_prayer_pipeline.md` updated
+- 41,710 records across 151 files now have `token_count` (cl100k_base): all SWORD commentaries, catechisms, church fathers, devotionals, prayers
+- Privacy fix: `patch_augustine_source_titles.py` and `patch_basil_source_titles.py` had hardcoded absolute user-path literals — replaced with `Path(__file__).parent.parent.parent / ...` before commit (caught by pre-commit hook)
+- Validation: 0 errors, 142 warnings (unchanged)
+- Committed: `19e4773`
+
+**Key decisions made:**
+- `prayer_text` vs `content_blocks`: spec said `prayer_text` but all prayer records use `content_blocks`. Used `content_blocks` (same as devotional extractor).
+- HuggingFace tokenizers: stay with `cl100k_base`. Counts are for rough sizing, not exact context-window arithmetic for a specific model family.
+- Preflight check uses literal string search (`'"token_count"' in content`) not JSON parsing — a noted limitation; low risk on current schemas.
+
+**Standards reviewer findings deferred (add_token_counts.py):**
+- OUT-01: no `OUTPUT_DIR` constant (script writes in-place by design)
+- PIPE-02: no min/median/max token count in summary; no empty-text rate reported
+- REL-06: progress fires every 50 files (too coarse for small batches)
+- REL-02: preflight error messages could include full path and remediation hint
+
+**Where we stopped:** All work complete and committed.
+
+**What's next:**
+1. **Deferred reviewer findings** — add_token_counts.py OUT-01/PIPE-02/REL-06/REL-02 (logged above)
+2. **Opus review** — bcp1662.py, didache.py, prayer.schema.json, build_kjv_verse_index.py (flagged in CODE_REVIEWS.md)
+3. **Church fathers source_title curation** — 122 warnings remain (one author per session, largest-gap-first)
+4. **Cross-ref coverage** — push Barnes above 95% (currently 89.5%)
+5. **CI pipeline** — GitHub Actions (Block 2)
+6. **HuggingFace** — dataset card + publish (Block 3)
+
+---
+
 ## 2026-04-01 — KJV verse index + dynamic OSIS oracle
 
 **Branch:** main
@@ -17,11 +56,11 @@ Newest first.
 - `build/scripts/validate_osis.py` — `KJV_INDEX_PATH` + `_load_kjv_index()` + lazy-load cache added. `KNOWN_OMISSIONS` emptied to `{}` (kept as empty fallback). Dynamic KJV lookup wired into `_validate_endpoint()` — absent-from-BSB verses checked against KJV before failing.
 - `build/CODE_REVIEWS.md` — entries added for both new/modified scripts
 - `00 CONTEXT/LESSONS.md` (Cowork) — lesson added: BZV size check before writing binary parser
-- Memory files — two feedback memories saved: binary size check, edit collision → Write
+- Memory files — two feedback memories saved: binary size check, edit collision -> Write
 
 **Key technical decision:** Canon table used as authoritative versification source (not BZV binary) because CrossWire NT BZV is truncated at Rev.19.1 — 86 entries short of the expected 8332.
 
-**Validation:** `py -3 build/validate.py --all` → 0 errors, 142 warnings (unchanged). `Matt.17.21`, `Mark.9.44`, `John.5.4` all return `OK (in KJV/TR - not in BSB critical text)`.
+**Validation:** `py -3 build/validate.py --all` -> 0 errors, 142 warnings (unchanged). `Matt.17.21`, `Mark.9.44`, `John.5.4` all return `OK (in KJV/TR - not in BSB critical text)`.
 
 **Where we stopped:** All work complete. Committed in 19e4773.
 
@@ -50,7 +89,7 @@ Newest first.
 - `data/commentaries/calvin/psalms.json` — rebuilt in-place. 0 errors, 0 warnings. Known limitation: ~11 no-header Psalm 55 "interloper" entries are misassigned to Psalm 54 (SWORD module packing issue; cannot be fixed by header detection alone — documented in `provenance.notes`).
 - `build/scripts/validate_osis.py` — `_find_range_dash` updated to accept letter suffix before dash (`prev_ch.islower()` added); half-verse examples added to `__main__` help text; `_validate_endpoint` strips trailing letter suffix before integer verse lookup.
 - `build/validate.py` — `OSIS_REF_PATTERN` and `OSIS_SINGLE_VERSE_PATTERN` updated to accept optional trailing `[a-z]` on verse part; `OSIS_PROOF_REF_PATTERN` likewise updated.
-- `READY_TO_PASTE_PROMPTS.md` (Cowork) — two new prompts added: "Token Counts — Add to All Data Files" and "KJV Verse Index — Build Second Verse Index from KJV SWORD Module".
+- `READY_TO_PASTE_PROMPTS.md` (Cowork) — two new prompts added: "Token Counts -- Add to All Data Files" and "KJV Verse Index -- Build Second Verse Index from KJV SWORD Module".
 
 **Privacy check:** Clean. No credentials, API keys, personal emails, or private data in any diff.
 
@@ -86,8 +125,8 @@ Newest first.
 - `data/prayers/bcp-1928/collects.json` — 102 collects (100 parsed, 2 manual). Trinity23 (45 words), Trinity24 (49 words) inserted.
 - `README.md` — both occurrences of "98 collects" updated to "102 collects"
 - `CODING_DEFAULTS.md` (Cowork) — PIPE-13 added: verbatim text from named edition requires primary source scan verification
-- `00 CONTEXT/LESSONS.md` (Cowork) — entry added: "Based on the same source" ≠ "contains the same text"
-- `build/CODE_REVIEWS.md` — bcp1928.py entry updated (100 → 102 collects, MANUAL_COLLECTS + EXPECTED_COLLECT_COUNT changes documented)
+- `00 CONTEXT/LESSONS.md` (Cowork) — entry added: "Based on the same source" != "contains the same text"
+- `build/CODE_REVIEWS.md` — bcp1928.py entry updated (100 -> 102 collects, MANUAL_COLLECTS + EXPECTED_COLLECT_COUNT changes documented)
 - `02 PERSONAL/PERSONAL_PROJECTS.md` — BCP 1928 count updated to 102; prayer schema attribution backlog item added
 
 **Key error caught and fixed:**
@@ -103,67 +142,7 @@ Newest first.
 **What's next:**
 1. Commit BCP 1928 Trinity23/24 changes + all pending uncommitted work
 2. Token counts: `add_token_counts.py` across SWORD + BCP 1928 files (still pending)
-3. CI pipeline (GitHub Actions) — Block 2
+3. CI pipeline (GitHub Actions) -- Block 2
 4. Fix Calvin Psalms misalignment (carry-forward from red team session)
-5. HuggingFace dataset card and publish — Block 3
-
----
-
-## 2026-04-01 — Phase 2 red team digest + all fixes + Calvin Psalms misalignment
-
-**Branch:** main
-
-**What we worked on:** Digested the Phase 2 red team output (5 files, 16 findings). Fixed all 16 findings across `bible_ref_normalizer.py`, `sword_commentary.py`, `validate.py`, `build_verse_index.py`, `validate_osis.py`, `extract_pdf.py`. Rebuilt Barnes, Wesley, Calvin. Discovered Calvin Psalms misalignment as a bonus finding.
-
-**What was completed:**
-- `build/lib/bible_ref_normalizer.py` — `jud`→Judges fix; stale-context clear on failed tokens; new `_BOOK_CHAP_ONLY_RE` handler for chapter-only tokens (root cause of `1Kgs.104.3`); added aliases: `co→Col`, `re→Rev`, `so→Song`, `actsts→Acts`, `hen→Heb`
-- `build/parsers/sword_commentary.py` — `_split_ref_candidates()` for multi-ref Wesley strings; both ThML patterns always collected (removed else branch); per-entry `clean_markup` try/except; `_filter_osis_refs()` strips impossible refs at build time (fixes Calvin section-number refs)
-- `build/validate.py` — `jsonschema` ImportError now `sys.exit(1)`; string cross_refs queued for existence checks + hard errors; range-end overshoots downgraded to warnings; doctrinal tree leaf/non-leaf invariants
-- `build/scripts/validate_osis.py` — explicit verse sets (not max-verse); `KNOWN_OMISSIONS` table (Matt 17:21/18:11/23:14, Mark 7:16/9:44,46/11:26/15:28, Luke 17:36/23:17, John 5:4, Acts 8:37/15:34/24:7/28:29, Rom 16:24); range-end lenient validation
-- `build/scripts/build_verse_index.py` — hard abort on skipped files, duplicate book_osis, malformed rows; assert 66 books before write
-- `build/extract_pdf.py` — quality gate blocks on <10% text pages; `--force` override; OCR detection samples 5 pages by majority vote; per-PDF `_extraction_report.json`
-- `requirements.txt` — `jsonschema==4.26.0` added
-- Rebuilt Barnes (7322 entries, 89.5% refs), Wesley (17564 entries, 15.2% refs), Calvin (13338 entries, 75.0% refs)
-- Validation: **0 errors, 142 warnings** across 900 files
-
-**Bonus finding — Calvin Psalms misalignment:**
-- Calvin's Psalms commentary is systematically misindexed in the SWORD module. Entries are tagged with the wrong OSIS chapter (e.g. `Ps.22.*` contains Calvin's commentary on LXX Psalm 20/21, not MT Psalm 22). The offset is inconsistent (not a clean +1 shift) and affects most of the 150 Psalms.
-- **Action required:** Rebuild `calvin/psalms.json` using the "PSALM N" header in Calvin's own text to assign the correct chapter. ✅ Done in next session.
-- **External note needed:** Notify the SWORD project about the misindexing in the Calvin Psalms module.
-
-**KJV verse index (discussed, not built):**
-- Proposed: download KJV SWORD module, build a second verse index, update `validate_osis_ref` to check BSB then KJV — would replace the hardcoded `KNOWN_OMISSIONS` table. Prompt written in READY_TO_PASTE_PROMPTS.md.
-
-**Where we stopped:** Code changes complete, not committed.
-
-**What's next:** See top entry.
-
----
-
-## 2026-04-01 — Prayer pipeline completion (BCP 1662 + Didache fixes)
-
-**Branch:** main
-
-**What we worked on:** Completed BCP 1662 and Didache prayer parsers. Post-evaluate fixes. End-of-session wrap-up (discovered missed steps and re-ran properly).
-
-**What was completed:**
-- `build/parsers/bcp1662.py` — boundary regex fixed (`For the Epistle.` variant in saints.html); docstring updated to document all HTML variants across all 5 pages; word count alarm added (>150 words prints prayer_id)
-- `data/prayers/bcp-1662/collects.json` — 85 collects, word count min=30 median=56 max=91
-- `data/prayers/didache/prayers.json` — 4 eucharistic prayers generated
-- `schemas/v1/prayer.schema.json` — new schema, enums consistent with all other schemas
-- `build/validate.py` — `schema_type: prayer` dispatch added
-- `README.md` — prayer collections added to status table, repo structure, parsers, sources
-- `build/CODE_REVIEWS.md` — entries added: bcp1662.py, didache.py, prayer.schema.json (all pending Opus review)
-- Validation: 0 errors across 899 files (`--all`)
-
-**Key decisions made:**
-- BCP 1928 already exists (100 collects, built and Opus-reviewed 2026-03-31 per CODE_REVIEWS.md). Context compaction summary showed it as deferred — corrected during wrap-up by reading CODE_REVIEWS.md and git diff.
-- justus.anglican.org confirmed back online (was offline at compaction time).
-- Catechism errors confirmed pre-existing fix — no action needed.
-
-**Process note:** Wrap-up initially run without reading END_OF_SESSION.md. Caught and re-run: memories saved before sign-off corrected; CODE_REVIEWS.md updated; BCP 1928 already-built state surfaced.
-
-**Where we stopped:** All files modified, not committed. Uncommitted pile: prayer pipeline files, source_title patches (Augustine/Basil/Aquinas), baltimore-catechism-no-3 fix, bcp1928.py post-Opus fix.
-
-**What's next:** See top entry.
+5. HuggingFace dataset card and publish -- Block 3
 

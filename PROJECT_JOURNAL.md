@@ -392,3 +392,32 @@ Prompt ready in:
 **Verification findings:** Genesis/Revelation → Summa correct (no dedicated commentaries). Acts → *Lectura super Acta Apostolorum* confirmed. Isaiah 11:9 entry contains "(George Haydock)" — likely upstream misattribution; flagged for provenance audit.
 
 **Key decisions:** Acts entries → "Commentary on Acts" not Summa (verse-by-verse structure). Genesis/Revelation → Summa Theologiae (no dedicated commentary confirmed).
+
+---
+
+## 2026-04-01 — Prayer pipeline completion (BCP 1662 + Didache fixes)
+
+**Branch:** main
+
+**What we worked on:** Completed BCP 1662 and Didache prayer parsers. Post-evaluate fixes. End-of-session wrap-up (discovered missed steps and re-ran properly).
+
+**What was completed:**
+- `build/parsers/bcp1662.py` — boundary regex fixed (`For the Epistle.` variant in saints.html); docstring updated to document all HTML variants across all 5 pages; word count alarm added (>150 words prints prayer_id)
+- `data/prayers/bcp-1662/collects.json` — 85 collects, word count min=30 median=56 max=91
+- `data/prayers/didache/prayers.json` — 4 eucharistic prayers generated
+- `schemas/v1/prayer.schema.json` — new schema, enums consistent with all other schemas
+- `build/validate.py` — `schema_type: prayer` dispatch added
+- `README.md` — prayer collections added to status table, repo structure, parsers, sources
+- `build/CODE_REVIEWS.md` — entries added: bcp1662.py, didache.py, prayer.schema.json (all pending Opus review)
+- Validation: 0 errors across 899 files (`--all`)
+
+**Key decisions made:**
+- BCP 1928 already exists (100 collects, built and Opus-reviewed 2026-03-31 per CODE_REVIEWS.md). Context compaction summary showed it as deferred -- corrected during wrap-up by reading CODE_REVIEWS.md and git diff.
+- justus.anglican.org confirmed back online (was offline at compaction time).
+- Catechism errors confirmed pre-existing fix -- no action needed.
+
+**Process note:** Wrap-up initially run without reading END_OF_SESSION.md. Caught and re-run: memories saved before sign-off corrected; CODE_REVIEWS.md updated; BCP 1928 already-built state surfaced.
+
+**Where we stopped:** All files modified, not committed. Uncommitted pile: prayer pipeline files, source_title patches (Augustine/Basil/Aquinas), baltimore-catechism-no-3 fix, bcp1928.py post-Opus fix.
+
+**What's next:** See top entry.
