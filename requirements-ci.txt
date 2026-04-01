@@ -1,0 +1,8 @@
+# CI-only dependencies — subset of requirements.txt
+# pymupdf4llm is intentionally excluded: it is only used by the PDF extraction
+# pipeline (build/extract_pdf.py, build/lib/pdf_normalizer.py) and is not
+# imported by validate.py or any test file. Excluding it keeps CI fast and
+# avoids native-library install issues on ubuntu-latest.
+beautifulsoup4==4.14.3
+jsonschema==4.26.0
+pytest

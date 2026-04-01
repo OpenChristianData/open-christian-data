@@ -1,0 +1,63 @@
+# CI workflow for open-christian-data
+#
+# Exit-code verification:
+#   build/validate.py:1372-1373 -- sys.exit(1) fires ONLY when total_errors > 0.
+#   Warnings-only runs fall through to implicit exit 0.
+#   Current baseline: 0 errors, 142 warnings -- CI stays green.
+#
+# REPO_ROOT portability:
+#   validate.py defines REPO_ROOT = Path(__file__).resolve().parent.parent
+#   (line 86) -- derived from the script's location, not cwd. Works in any
+#   clone path without modification.
+#
+# Action pinning:
+#   actions/checkout and actions/setup-python are pinned by major version
+#   (e.g. @v4), not by SHA digest. This is convenient but means a breaking
+#   major-version change would require updating this file. Acceptable for a
+#   non-production dataset repo; upgrade to SHA pinning if this ever runs in
+#   a security-sensitive context.
+#
+# Dependencies:
+#   requirements-ci.txt installs only the packages that validate.py and the
+#   test suite actually use. See that file for the full exclusion rationale.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Schema validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-ci.txt
+
+      - name: Run schema validation
+        run: python build/validate.py --all
+
+  test:
+    name: Pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-ci.txt
+
+      - name: Run tests
+        run: python -m pytest tests/ -v

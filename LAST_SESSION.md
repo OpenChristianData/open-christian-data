@@ -4,6 +4,37 @@ Newest first.
 
 ---
 
+## 2026-04-01 — CI pipeline (GitHub Actions)
+
+**What we worked on:** Created the GitHub Actions CI workflow — two parallel jobs protecting the 0-errors baseline and keeping tests green on every push/PR to main.
+
+**What was completed:**
+- `.github/workflows/ci.yml` — `validate` job (`python build/validate.py --all`) + `test` job (`python -m pytest tests/ -v`); both on ubuntu-latest / Python 3.12; parallel (no `needs:`); triggers on push + PR to main. Comments document exit-code logic, REPO_ROOT portability, and action-pinning trade-off.
+- `requirements-ci.txt` — `beautifulsoup4==4.14.3`, `jsonschema==4.26.0`, `pytest`. `pymupdf4llm` excluded (only used by PDF extraction pipeline — confirmed by grepping all imports across `validate.py` and all 4 test files + their imported modules).
+- `PERSONAL_PROJECTS.md` — CI pipeline item marked done.
+- `LESSONS.md` (Cowork) — CI/GitHub Actions lesson added: grep CI-executed imports before wiring deps; use requirements-ci.txt over inline pip install.
+
+**Verification done:**
+- Exit code confirmed: `python build/validate.py --all` exits 0 locally (0 errors, 142 warnings). `sys.exit(1)` at line 1373 fires only when `total_errors > 0`.
+- `REPO_ROOT` portability confirmed: `Path(__file__).resolve().parent.parent` (line 86) — works in any clone path.
+- All test file imports grepped — no hidden external deps beyond the two pinned packages.
+
+**Key decisions made:**
+- `requirements-ci.txt` as structural exclusion (not inline pip install) — communicates intent to future editors in a way a comment can't enforce.
+- Major-version action pinning (`@v4`, `@v5`) accepted as the right trade-off for a non-production dataset repo; documented in workflow comments.
+- Python 3.12 pinned — stable LTS, close to local 3.14, no compatibility concerns for this codebase.
+
+**Where we stopped:** All work complete. Not yet committed.
+
+**What's next:**
+1. **Commit** `.github/workflows/ci.yml` + `requirements-ci.txt`
+2. **Church fathers source_title curation** — 122 warnings remain (one author per session, largest-gap-first; prompt in READY_TO_PASTE_PROMPTS.md)
+3. **Opus review backlog** — bcp1662.py, didache.py, prayer.schema.json, build_kjv_verse_index.py (flagged in CODE_REVIEWS.md)
+4. **Cross-ref coverage** — push Barnes above 95% (currently 89.5%)
+5. **HuggingFace** — dataset card + publish (Block 3)
+
+---
+
 ## 2026-04-01 — Token counts backfill + prayer schema + pre-flight check
 
 **Branch:** main
