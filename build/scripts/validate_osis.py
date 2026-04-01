@@ -12,6 +12,11 @@ Degrades gracefully when the verse index is unavailable (validate_osis_ref
 returns True with reason="index unavailable"; validate_osis_array reports 0
 invalid items). Run build/scripts/build_verse_index.py to generate the index.
 
+The index stores explicit verse sets per chapter (build/bible_data/verse_index.json).
+Textually-disputed verses absent from BSB (e.g. Matt.17.21) are not in the verse
+set; they are caught by the KNOWN_OMISSIONS table below and return a downgraded
+"known omission" status rather than "invalid".
+
 Usage (import):
     from build.scripts.validate_osis import validate_osis_ref, validate_osis_array
 
@@ -28,6 +33,7 @@ from typing import List, Optional, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VERSE_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "verse_index.json"
+KJV_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "kjv_verse_index.json"
 
 # OSIS book codes for deuterocanonical/apocryphal books that are absent from the
 # BSB-derived verse index (Protestant 66-book canon). When a book code is in this
@@ -49,9 +55,20 @@ DEUTEROCANONICAL_BOOK_CODES = frozenset({
     "1En", "Jub",
 })
 
+# ---------------------------------------------------------------------------
+# Known textually-disputed verses absent from modern critical texts (BSB).
+# This table is the fallback for when kjv_verse_index.json is unavailable.
+# When the KJV index IS available it supersedes this table automatically --
+# any verse present in KJV but absent from BSB is returned as
+# (True, "in KJV/TR - not in BSB critical text") without a manual entry here.
+# ---------------------------------------------------------------------------
+KNOWN_OMISSIONS: dict = {}  # Replaced by dynamic KJV index lookup; kept as empty fallback.
+
 # Module-level cache -- loaded once on first use
 _INDEX = None
 _INDEX_LOADED = False
+_KJV_INDEX = None
+_KJV_INDEX_LOADED = False
 
 
 def _load_index() -> Optional[dict]:
@@ -70,6 +87,24 @@ def _load_index() -> Optional[dict]:
         print(f"WARN: Failed to load verse index from {VERSE_INDEX_PATH}: {exc}", file=sys.stderr)
         _INDEX = None
     return _INDEX
+
+
+def _load_kjv_index() -> Optional[dict]:
+    """Load KJV verse index from disk. Returns the index dict or None if unavailable."""
+    global _KJV_INDEX, _KJV_INDEX_LOADED
+    if _KJV_INDEX_LOADED:
+        return _KJV_INDEX
+    _KJV_INDEX_LOADED = True
+    if not KJV_INDEX_PATH.exists():
+        _KJV_INDEX = None
+        return None
+    try:
+        with open(KJV_INDEX_PATH, encoding="utf-8") as f:
+            _KJV_INDEX = json.load(f)
+    except Exception as exc:
+        print(f"WARN: Failed to load KJV index from {KJV_INDEX_PATH}: {exc}", file=sys.stderr)
+        _KJV_INDEX = None
+    return _KJV_INDEX
 
 
 def _validate_endpoint(
@@ -91,23 +126,61 @@ def _validate_endpoint(
         return True, ""  # book-level ref -- valid if book exists
 
     book_data = index_books[book]
-    if chapter_str not in book_data["verse_counts"]:
+    chapter_data = book_data.get("verses")
+    if chapter_data is None:
+        # Fallback: support legacy indices that stored verse_counts (max-verse ints).
+        # This path is exercised only when the index predates Fix 4; rebuild to remove it.
+        chapter_data = book_data.get("verse_counts", {})
+        use_legacy = True
+    else:
+        use_legacy = False
+
+    if chapter_str not in chapter_data:
         max_ch = book_data["chapter_count"]
         return False, f"{book} has no chapter {chapter_str} (book has {max_ch} chapters)"
 
     if verse_str is None:
         return True, ""  # chapter-level ref -- valid if chapter exists
 
-    max_verse = book_data["verse_counts"][chapter_str]
+    # Strip optional half-verse suffix (e.g. "2b" -> 2) before integer lookup.
+    # Half-verse notation (Ps.21.2b = second half of v.2) is standard scholarly convention.
+    verse_base = verse_str.rstrip("abcdefghijklmnopqrstuvwxyz") if verse_str else verse_str
     try:
-        verse_int = int(verse_str)
+        verse_int = int(verse_base)
     except ValueError:
         return False, f"non-integer verse '{verse_str}'"
 
     if verse_int < 1:
         return False, f"verse must be >= 1 (got {verse_str})"
-    if verse_int > max_verse:
-        return False, f"{book}.{chapter_str} has verses 1-{max_verse} (got {verse_str})"
+
+    if use_legacy:
+        # Legacy index: chapter_data[chapter_str] is the max verse int.
+        max_verse = chapter_data[chapter_str]
+        if verse_int > max_verse:
+            return False, f"{book}.{chapter_str} has verses 1-{max_verse} (got {verse_str})"
+    else:
+        # Current index: chapter_data[chapter_str] is a sorted list of verse ints.
+        verse_set = chapter_data[chapter_str]
+        if verse_int not in verse_set:
+            # 1. Check the KJV index: if the verse is present in KJV/TR versification
+            #    it is a textually-disputed verse, not an invalid ref.
+            kjv_index = _load_kjv_index()
+            if kjv_index is not None:
+                kjv_books = kjv_index.get("books", {})
+                kjv_ch_data = kjv_books.get(book, {}).get("verses", {})
+                kjv_verse_set = kjv_ch_data.get(chapter_str, [])
+                if verse_int in kjv_verse_set:
+                    return True, "in KJV/TR - not in BSB critical text"
+            # 2. Fall back to KNOWN_OMISSIONS table (active when KJV index unavailable).
+            chapter_int = int(chapter_str)
+            book_omissions = KNOWN_OMISSIONS.get(book, {})
+            if verse_int in book_omissions.get(chapter_int, set()):
+                return True, "known omission - not in critical text"
+            present = verse_set
+            return False, (
+                f"{book}.{chapter_str} does not contain verse {verse_str} "
+                f"(present in BSB: {present})"
+            )
 
     return True, ""
 
@@ -131,20 +204,22 @@ def _parse_endpoint(part: str) -> Tuple[str, Optional[str], Optional[str]]:
 def _find_range_dash(osis_str: str) -> Optional[int]:
     """Return the index of the dash that separates two OSIS endpoints in a range.
 
-    A range dash is preceded by a digit (end of a verse/chapter number) and
-    followed by an upper-case letter or digit (start of a book code).
+    A range dash is preceded by a digit or a half-verse letter suffix (e.g. '2b')
+    and followed by an upper-case letter or digit (start of a book code).
     Returns None if the string is not a range.
 
     Examples:
-      Gen.1.1-Gen.1.3   -> dash at index 7
-      1Thess.1.1-2Cor.1 -> dash found correctly
-      1John.1.1         -> None (no dash in ref)
+      Gen.1.1-Gen.1.3     -> dash at index 7
+      1Thess.1.1-2Cor.1   -> dash found correctly
+      Ps.21.2b-Ps.21.3    -> dash after 'b' suffix found correctly
+      Ps.22.1a-Ps.22.1b   -> dash after 'a' suffix found correctly
+      1John.1.1           -> None (no dash in ref)
     """
     for i, ch in enumerate(osis_str):
         if ch == "-" and i > 0:
             prev_ch = osis_str[i - 1]
             next_ch = osis_str[i + 1] if i + 1 < len(osis_str) else ""
-            if prev_ch.isdigit() and (next_ch.isupper() or next_ch.isdigit()):
+            if (prev_ch.isdigit() or prev_ch.islower()) and (next_ch.isupper() or next_ch.isdigit()):
                 return i
     return None
 
@@ -226,6 +301,9 @@ if __name__ == "__main__":
         print("  py -3 build/scripts/validate_osis.py Gen.1.1")
         print("  py -3 build/scripts/validate_osis.py Gen.1.1-Gen.1.3")
         print("  py -3 build/scripts/validate_osis.py Ezek.48.40")
+        print("  py -3 build/scripts/validate_osis.py Ps.21.2b")
+        print("  py -3 build/scripts/validate_osis.py Ps.21.2b-Ps.21.3")
+        print("  py -3 build/scripts/validate_osis.py Ps.22.1a-Ps.22.1b")
         sys.exit(1)
 
     index = _load_index()

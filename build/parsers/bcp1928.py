@@ -43,6 +43,12 @@ Additional observations:
   marriage.html, ataburial.html (sacramental occasions)
   (full list in SOURCE_PAGES constant below)
 
+2 pages (Trinity23, Trinity24) contain hymn suggestions only -- no Propers
+text. The collect text for these Sundays is inserted via MANUAL_COLLECTS,
+sourced directly from the 1928 US BCP scan on Internet Archive:
+  https://archive.org/details/1928bookofcommon0000prot (pages 222-223)
+Verified 2026-04-01. Output: 102 collects total.
+
 Usage:
     py -3 build/parsers/bcp1928.py --dry-run        (parse first 3 pages, no write)
     py -3 build/parsers/bcp1928.py                   (full run)
@@ -184,7 +190,52 @@ CRAWL_DELAY_SECONDS = 2
 
 COLLECTION_ID = "bcp-1928-collects"
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v1.1.0"
+# Expected total collects: 100 source pages - 2 hymn-only (Trinity23, Trinity24)
+# + 2 Good Friday extras + 2 manual inserts = 102.
+EXPECTED_COLLECT_COUNT = 102
+
+# ---------------------------------------------------------------------------
+# Manual collect overrides
+# Pages where episcopalnet.org has no Propers text; text sourced manually.
+# ---------------------------------------------------------------------------
+# Text verified against the 1928 US BCP scan on Internet Archive:
+#   https://archive.org/details/1928bookofcommon0000prot pages 222-223
+# Fetched 2026-04-01 via Playwright. Note: the 1928 US BCP differs from the
+# 1662 CoE BCP on these collects in two places:
+#   Trinity 23: semicolon after "godliness" (CoE uses a colon)
+#   Trinity 24: "for the sake of Jesus Christ" (CoE uses "for Jesus Christ's sake")
+MANUAL_COLLECTS = {
+    "trinity23": {
+        "title": "The Twenty-third Sunday after Trinity",
+        "text": (
+            "O GOD, our refuge and strength, who art the author of all godliness; "
+            "Be ready, we beseech thee, to hear the devout prayers of thy Church; "
+            "and grant that those things which we ask faithfully we may obtain "
+            "effectually; through Jesus Christ our Lord. Amen."
+        ),
+        "source_note": (
+            "Sourced from archive.org/details/1928bookofcommon0000prot p.222 "
+            "(fetched 2026-04-01); verified against original 1928 US BCP scan. "
+            "Not present on episcopalnet.org Trinity23.html (hymn suggestions only)."
+        ),
+    },
+    "trinity24": {
+        "title": "The Twenty-fourth Sunday after Trinity",
+        "text": (
+            "O LORD, we beseech thee, absolve thy people from their offences; "
+            "that through thy bountiful goodness we may all be delivered from the "
+            "bands of those sins, which by our frailty we have committed: Grant "
+            "this, O heavenly Father, for the sake of Jesus Christ, our blessed "
+            "Lord and Saviour. Amen."
+        ),
+        "source_note": (
+            "Sourced from archive.org/details/1928bookofcommon0000prot p.223 "
+            "(fetched 2026-04-01); verified against original 1928 US BCP scan. "
+            "Not present on episcopalnet.org Trinity24.html (hymn suggestions only)."
+        ),
+    },
+}
 
 
 # ---------------------------------------------------------------------------
@@ -590,11 +641,11 @@ def extract_collects_from_html(html_bytes: bytes, filename: str) -> tuple:
     # --- Extract collect HTML block ---
     collect_block = extract_collect_html_block(html)
     if not collect_block:
-        # Some pages (Trinity21-24, asaints, ataburial, marriage, etc.) do not
-        # include a collect in the HTML. This is not an error — not every page
-        # in the propers index has all three elements.
-        # Additionally, some pages with a fallback title but no collect (e.g.
-        # Trinity22) should be silently skipped — no error, no record.
+        # Some pages (Trinity23, Trinity24, asaints, ataburial, marriage, etc.)
+        # do not include a collect in the HTML. This is not an error -- not
+        # every page in the propers index has all three elements.
+        # Trinity23 and Trinity24 are handled via MANUAL_COLLECTS after the
+        # main loop. Other pages without a collect are silently skipped.
         print(f"    INFO: No collect found in {filename} -- page may not have one")
         return [], 0
 
@@ -809,7 +860,35 @@ def parse_all_pages(dry_run: bool = False) -> tuple:
             print(f"    {len(items)} collect(s) extracted")
         all_records.extend(items)
 
-    return all_records, total_errors
+    # Insert manual collects for pages that produced zero records.
+    # Iterates pages_to_process (not SOURCE_PAGES) so dry-run is unaffected.
+    committed_ids = {r["prayer_id"] for r in all_records}
+    manual_count = 0
+    for filename in pages_to_process:
+        stem = Path(filename).stem
+        base_id = slugify(stem)
+        if base_id in MANUAL_COLLECTS and base_id not in committed_ids:
+            entry = MANUAL_COLLECTS[base_id]
+            wc = word_count(entry["text"])
+            if wc > 150:
+                print(f"  WARNING: Manual collect '{base_id}' exceeds 150 words ({wc})")
+            record = build_prayer_record(base_id, entry["title"], entry["text"])
+            # source_note is intentionally not written to the output JSON:
+            # prayer.schema.json uses additionalProperties:false on both the
+            # item and context objects. Provenance is documented in MANUAL_COLLECTS
+            # above and in this file's docstring.
+            all_records.append(record)
+            committed_ids.add(base_id)
+            manual_count += 1
+            print(f"  Manual collect inserted: {base_id} ({wc} words)")
+
+    # Warn if any MANUAL_COLLECTS key was never matched (e.g. SOURCE_PAGES mismatch).
+    for key in MANUAL_COLLECTS:
+        if key not in committed_ids:
+            print(f"  WARNING: MANUAL_COLLECTS key '{key}' never inserted -- check SOURCE_PAGES")
+            total_errors += 1
+
+    return all_records, total_errors, manual_count
 
 
 # ---------------------------------------------------------------------------
@@ -868,7 +947,7 @@ def main() -> None:
 
     # Parse
     print("Parsing ...")
-    records, total_errors = parse_all_pages(dry_run=args.dry_run)
+    records, total_errors, manual_count = parse_all_pages(dry_run=args.dry_run)
     print()
 
     # Quality report
@@ -883,13 +962,21 @@ def main() -> None:
             print(json.dumps(r, ensure_ascii=False, indent=2))
         print()
         print(
-            f"Dry-run complete -- {len(records)} sample records, "
-            f"{total_errors} errors. ({elapsed:.1f}s)"
+            f"Dry-run complete -- {len(records)} sample records "
+            f"({manual_count} manual), {total_errors} errors. ({elapsed:.1f}s)"
         )
         return
 
     if total_errors > 0:
         print(f"WARNING: {total_errors} parse errors encountered")
+
+    # Assert expected count before writing (bounded collection -- Rule 59).
+    parsed_count = len(records) - manual_count
+    if len(records) != EXPECTED_COLLECT_COUNT:
+        print(
+            f"WARNING: Expected {EXPECTED_COLLECT_COUNT} records, got {len(records)} "
+            f"({parsed_count} parsed, {manual_count} manual) -- inspect before shipping"
+        )
 
     # Build output
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -904,7 +991,10 @@ def main() -> None:
         fh.write("\n")
 
     size_kb = OUTPUT_FILE.stat().st_size / 1024
-    print(f"Wrote {len(records)} records -> {OUTPUT_FILE}")
+    print(
+        f"Wrote {len(records)} records ({parsed_count} parsed, {manual_count} manual)"
+        f" -> {OUTPUT_FILE}"
+    )
     print(f"File size: {size_kb:.0f} KB")
 
     # Content plausibility check -- verify no record contains Epistle/Gospel text

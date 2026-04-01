@@ -55,6 +55,15 @@ DRY_RUN_PAGES = 3                # pages to process in dry-run mode
 # Font that signals archive.org OCR (GlyphLessFont = invisible text overlay)
 GLYPH_LESS_FONT = "GlyphLessFont"
 
+# OCR detection: sample this many pages across the document, classify as OCR
+# if >= OCR_THRESHOLD fraction of sampled pages contain GlyphLessFont.
+OCR_SAMPLE_PAGES = 5
+OCR_THRESHOLD = 0.5
+
+# Quality gate: fail extraction if fewer than this fraction of pages have text.
+# Override per-run with --force / --ignore-quality-gate.
+MIN_TEXT_PAGE_RATIO = 0.10
+
 # Log file (Rule 3: same folder as script)
 LOG_FILE = Path(__file__).with_suffix(".log")
 
@@ -120,16 +129,35 @@ def find_pdfs(source: str, resource_id: str, pdf_config: dict) -> list:
 # OCR font detection
 # ---------------------------------------------------------------------------
 
-def is_ocr_pdf(doc: pymupdf.Document, sample_pages: int = 10) -> bool:
+def is_ocr_pdf(doc: pymupdf.Document) -> bool:
     """
     Return True if the PDF uses GlyphLessFont (archive.org OCR invisible text overlay).
-    Samples up to sample_pages pages with text content.
+
+    Samples OCR_SAMPLE_PAGES pages spread across the document (first, last, and
+    evenly-spaced middle pages).  If fewer pages exist than the sample size, all
+    pages are sampled.  Classifies as OCR when >= OCR_THRESHOLD of sampled pages
+    contain GlyphLessFont spans (majority-vote, not first-match).
     """
-    checked = 0
-    for i in range(len(doc)):
-        page = doc[i]
+    total = len(doc)
+    if total == 0:
+        return False
+
+    # Build candidate page indices: evenly spaced across the document.
+    if total <= OCR_SAMPLE_PAGES:
+        candidates = list(range(total))
+    else:
+        step = (total - 1) / (OCR_SAMPLE_PAGES - 1)
+        candidates = sorted({round(i * step) for i in range(OCR_SAMPLE_PAGES)})
+
+    glyph_count = 0
+    real_font_count = 0
+
+    for idx in candidates:
+        page = doc[idx]
         if not page.get_text().strip():
-            continue
+            continue  # skip image-only pages; they don't inform font type
+        page_has_glyph = False
+        page_has_real = False
         blocks = page.get_text("dict").get("blocks", [])
         for block in blocks:
             if block.get("type") != 0:
@@ -138,14 +166,18 @@ def is_ocr_pdf(doc: pymupdf.Document, sample_pages: int = 10) -> bool:
                 for span in line.get("spans", []):
                     font = span.get("font", "")
                     if font == GLYPH_LESS_FONT:
-                        return True
-                    if font and font != GLYPH_LESS_FONT:
-                        # Found a real font on this page -- not OCR
-                        return False
-        checked += 1
-        if checked >= sample_pages:
-            break
-    return False
+                        page_has_glyph = True
+                    elif font:
+                        page_has_real = True
+        if page_has_glyph:
+            glyph_count += 1
+        elif page_has_real:
+            real_font_count += 1
+
+    total_classified = glyph_count + real_font_count
+    if total_classified == 0:
+        return False
+    return (glyph_count / total_classified) >= OCR_THRESHOLD
 
 
 # ---------------------------------------------------------------------------
@@ -319,7 +351,7 @@ def process_one_pdf(
     # Output paths
     md_dir = REPO_ROOT / "raw" / source / resource_id / "markdown"
     md_file = md_dir / (pdf_path.stem + ".md")
-    report_file = md_dir / "_extraction_report.json"
+    report_file = md_dir / (pdf_path.stem + "_extraction_report.json")
 
     if md_file.exists() and not force and not dry_run:
         print(f"  Already exists: {md_file.name}  (use --force to re-extract)")
@@ -328,7 +360,7 @@ def process_one_pdf(
     # Extract
     raw_markdown, extraction_meta = extract_pdf(pdf_path, pdf_config, dry_run=dry_run)
 
-    # Quality gate (never blocks -- returns warnings)
+    # Quality gate — check severity thresholds BEFORE writing any output.
     qg_warnings = run_quality_gate(raw_markdown, extraction_meta, pdf_config)
     if qg_warnings:
         print(f"  Quality gate: {len(qg_warnings)} warning(s)")
@@ -336,6 +368,18 @@ def process_one_pdf(
             print(f"    WARNING: {w}")
     else:
         print(f"  Quality gate: OK (0 warnings)")
+
+    # Text-page-ratio threshold (enforced unless --force / --ignore-quality-gate).
+    total_pages = extraction_meta.get("total_pages", 0)
+    pages_with_text = extraction_meta.get("text_layer", {}).get("pages_with_text", 0)
+    text_ratio = pages_with_text / total_pages if total_pages else 0.0
+    if not force and text_ratio < MIN_TEXT_PAGE_RATIO:
+        print(
+            f"  QUALITY GATE FAILED: only {pages_with_text}/{total_pages} pages have text "
+            f"({text_ratio:.1%} < required {MIN_TEXT_PAGE_RATIO:.0%}). "
+            f"Pass --force to override (e.g. OCR-heavy or intentionally sparse PDFs)."
+        )
+        sys.exit(1)
 
     # Normaliser
     clean_markdown = normalise(raw_markdown, pdf_config)
@@ -533,8 +577,14 @@ def main() -> None:
     )
     parser.add_argument(
         "--force",
+        "--ignore-quality-gate",
         action="store_true",
-        help="Re-extract even if output Markdown already exists",
+        dest="force",
+        help=(
+            "Re-extract even if output Markdown already exists, "
+            "and skip the text-page-ratio quality gate "
+            "(use for OCR-heavy or intentionally sparse PDFs)"
+        ),
     )
     args = parser.parse_args()
 

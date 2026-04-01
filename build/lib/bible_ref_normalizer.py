@@ -17,7 +17,8 @@ Source data quirks (confirmed by grepping all Barnes + Wesley scripRef tags):
   - Semicolon-as-colon:   'Jn 12;4'         -> normalised to 'Jn 12:4' pre-parse
   - Chapter-only:         'Mt 4', 'Ps 102'  -> skipped (no verse, can't emit OSIS)
   - Range (verse):        '1Sam 14:24-27'   -> start verse only (deliberate trade-off)
-  - 179 distinct abbreviations found in corpus; all covered by _BOOK_LOOKUP below
+  - 179+ distinct abbreviations found in corpus; _BOOK_LOOKUP covers all known forms
+    but may be extended as new corpus abbreviations are discovered.
 """
 
 import logging
@@ -32,16 +33,14 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 # Book abbreviation lookup  (abbreviation -> canonical OSIS code)
 # ---------------------------------------------------------------------------
 # Built from probing ALL scripRef tags across Barnes + Wesley SWORD modules
-# (179 distinct forms found). Covers:
+# (179+ distinct forms found). Covers:
 #   - All 66 canonical OSIS codes
 #   - Full book names
 #   - All abbreviated forms actually present in the corpus
-#   - Known OCR/transcription typos
+#   - Known OCR/transcription typos (e.g. 'Actsts', 'Hen' for 'Heb')
 # Lookup is case-insensitive (keys are lowercase).
 #
 # NOT included: deuterocanonical books (1Macc etc.) -- out of scope per spec.
-# NOT included: highly ambiguous 2-char forms 're' / 'ro' (lowercase English words).
-# NOT included: 'Co' (ambiguous: Colossians vs Corinthians; 1Cor/2Cor dominate).
 
 _BOOK_LOOKUP_RAW = {
     # ------------------------------------------------------------------ OT
@@ -58,7 +57,10 @@ _BOOK_LOOKUP_RAW = {
     # Joshua
     "josh": "Josh", "joshua": "Josh", "jos": "Josh",
     # Judges
-    "judg": "Judg", "judges": "Judg", "jdg": "Judg",
+    # 'Jud' defaults to Judges (not Jude): Jude is a single-chapter book so any
+    # 'Jud X:Y' with X > 1 is certainly Judges; commentary authors overwhelmingly
+    # use 'Jud' for Judges. Full 'Jude' is used when Jude is intended.
+    "judg": "Judg", "judges": "Judg", "jdg": "Judg", "jud": "Judg",
     # Ruth
     "ruth": "Ruth", "rut": "Ruth",
     # 1 Samuel
@@ -89,8 +91,9 @@ _BOOK_LOOKUP_RAW = {
     "eccl": "Eccl", "ecclesiastes": "Eccl", "ecc": "Eccl", "ec": "Eccl",
     "eccles": "Eccl",
     # Song of Solomon  (OSIS code is 'Song', NOT 'SongOfSol')
+    # 'So' used by Wesley ('So 1:15' etc.)
     "song": "Song", "songofsolomon": "Song", "sos": "Song",
-    "cant": "Song", "canticles": "Song",
+    "cant": "Song", "canticles": "Song", "so": "Song",
     # Isaiah  ('Is' / 'Isai' appear in corpus)
     "isa": "Isa", "isaiah": "Isa", "is": "Isa", "isai": "Isa",
     # Jeremiah  ('Je' appears once)
@@ -134,8 +137,8 @@ _BOOK_LOOKUP_RAW = {
     "luke": "Luke", "luk": "Luke", "lk": "Luke", "lu": "Luke", "lkke": "Luke",
     # John  ('Jn' / 'Joh' / 'Jnn' appear in corpus)
     "john": "John", "jhn": "John", "jn": "John", "joh": "John", "jnn": "John",
-    # Acts  ('Ac' / 'Actst' appear in corpus)
-    "acts": "Acts", "act": "Acts", "ac": "Acts", "actst": "Acts",
+    # Acts  ('Ac' / 'Actst' / 'Actsts' appear in corpus; 'Actsts' is an OCR artifact)
+    "acts": "Acts", "act": "Acts", "ac": "Acts", "actst": "Acts", "actsts": "Acts",
     # Romans  ('Ro' / 'Romm' appear in corpus)
     "rom": "Rom", "romans": "Rom", "ro": "Rom", "romm": "Rom",
     # 1 Corinthians
@@ -148,8 +151,8 @@ _BOOK_LOOKUP_RAW = {
     "eph": "Eph", "ephesians": "Eph", "ep": "Eph",
     # Philippians  ('Php' / 'Phi' are common short forms; 'Ph' appears once)
     "phil": "Phil", "philippians": "Phil", "php": "Phil", "phi": "Phil", "ph": "Phil",
-    # Colossians
-    "col": "Col", "colossians": "Col",
+    # Colossians  ('co' used in Wesley/Barnes, e.g. 'Co 1:15' means Colossians)
+    "col": "Col", "colossians": "Col", "co": "Col",
     # 1 Thessalonians  (typos: '1Thes' -> '1Thess')
     "1thess": "1Thess", "1thessalonians": "1Thess", "1thes": "1Thess", "1th": "1Thess",
     # 2 Thessalonians  (typos: '2Thes' -> '2Thess')
@@ -163,7 +166,8 @@ _BOOK_LOOKUP_RAW = {
     # Philemon  ('Phm' appears in corpus)
     "phlm": "Phlm", "philemon": "Phlm", "phm": "Phlm", "phile": "Phlm",
     # Hebrews  ('He' appears in corpus — unambiguous inside scripRef tags)
-    "heb": "Heb", "hebrews": "Heb", "he": "Heb",
+    # 'Hen' is likely an OCR artifact for 'Heb' (b/n confusion in scan)
+    "heb": "Heb", "hebrews": "Heb", "he": "Heb", "hen": "Heb",
     # James
     "jas": "Jas", "james": "Jas", "jam": "Jas",
     # 1 Peter
@@ -176,10 +180,10 @@ _BOOK_LOOKUP_RAW = {
     "2john": "2John", "2jhn": "2John", "2jn": "2John", "2jo": "2John",
     # 3 John
     "3john": "3John", "3jhn": "3John", "3jn": "3John",
-    # Jude  ('Jud' appears in corpus)
-    "jude": "Jude", "jud": "Jude",
-    # Revelation  ('Revv' typo appears in corpus)
-    "rev": "Rev", "revelation": "Rev", "apocalypse": "Rev", "revv": "Rev",
+    # Jude  (use full 'Jude' only; bare 'jud' is mapped to Judges above)
+    "jude": "Jude",
+    # Revelation  ('Revv' typo and 're' short form appear in corpus)
+    "rev": "Rev", "revelation": "Rev", "apocalypse": "Rev", "revv": "Rev", "re": "Rev",
 }
 
 # Build final lookup (lowercase -> OSIS code, internal spaces stripped)
@@ -221,6 +225,11 @@ _BOOK_REF_RE = re.compile(
     r"^(\d?\s*[A-Za-z]+)\s+(\d+:\d+(?:[-.](?:\d+:)?\d+)?)$",
 )
 
+# Book + chapter-only token (no verse): e.g. 'Ps 29', 'Mt 4'.
+# No ref is emitted, but context is updated so subsequent bare ch:v tokens work.
+# Group 1 = book abbreviation, Group 2 = chapter number.
+_BOOK_CHAP_ONLY_RE = re.compile(r"^(\d?\s*[A-Za-z]+)\s+(\d+)$")
+
 # Bare chapter:verse token (no book name), with optional range/continuation.
 _BARE_CHAP_VERSE_RE = re.compile(r"^(\d+):(\d+)(?:[-.](?:\d+:)?\d+)?$")
 
@@ -242,7 +251,7 @@ def parse_thml_refs(passage_str: str) -> list[str]:
 
     Returns [] for strings that cannot be parsed (logs a warning per token).
     Skips partial refs that have no prior book context.
-    Skips chapter-only refs (e.g. 'Mt 4') — cannot produce a verse-level OSIS ref.
+    Chapter-only refs (e.g. 'Ps 29') update book/chapter context but emit no ref.
     For verse ranges or verse continuations (e.g. '14:24-27', '32:11.12'),
     returns the start/first verse only (deliberate trade-off).
 
@@ -296,6 +305,10 @@ def parse_thml_refs(passage_str: str) -> list[str]:
                         " (add to _BOOK_LOOKUP_RAW in bible_ref_normalizer.py to fix)",
                         book_raw, passage_str,
                     )
+                    # Clear stale context so subsequent bare ch:v tokens don't
+                    # fabricate refs against the previous book.
+                    current_book = None
+                    current_chapter = None
                     continue
                 chap_verse = m.group(2)
                 chap_str, verse_raw = chap_verse.split(":", 1)
@@ -309,10 +322,35 @@ def parse_thml_refs(passage_str: str) -> list[str]:
                         "bible_ref_normalizer: could not parse ch:v from '%s' -- skipping",
                         token,
                     )
+                    # Clear stale context so subsequent bare ch:v tokens don't
+                    # fabricate refs against the previous book.
+                    current_book = None
+                    current_chapter = None
                     continue
                 current_book = osis_book
                 current_chapter = chapter
                 results.append(f"{osis_book}.{chapter}.{verse}")
+                continue
+
+            # --- Case 1b: book+chapter-only token (e.g. 'Ps 29', 'Mt 4') ---
+            # No verse specified — cannot emit a ref, but MUST update context
+            # so subsequent bare ch:v tokens like '104:3' use the right book.
+            m1b = _BOOK_CHAP_ONLY_RE.match(token)
+            if m1b:
+                book_raw = m1b.group(1).strip()
+                book_key = re.sub(r"\s+", "", book_raw).lower()
+                osis_book = _BOOK_LOOKUP.get(book_key)
+                if osis_book:
+                    current_book = osis_book
+                    current_chapter = int(m1b.group(2))
+                else:
+                    logging.warning(
+                        "bible_ref_normalizer: unknown book '%s' in chapter-only"
+                        " token '%s' -- clearing context",
+                        book_raw, token,
+                    )
+                    current_book = None
+                    current_chapter = None
                 continue
 
             # --- Case 2: bare ch:v token (e.g. '6:20', '7:13-14') ---

@@ -57,6 +57,7 @@ MODULES = [
     {"name": "CalvinCommentaries", "description": "Calvin's Commentaries (47 books)"},
     {"name": "Wesley",             "description": "Wesley's Notes on the Bible"},
     {"name": "Daily",              "description": "Daily Light on the Daily Path (devotional)"},
+    {"name": "KJV",                "description": "King James Version"},
 ]
 
 

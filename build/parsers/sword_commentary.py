@@ -49,6 +49,36 @@ if str(_REPO_ROOT_FOR_IMPORT) not in sys.path:
 from build.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
 
 # ---------------------------------------------------------------------------
+# OSIS ref filter
+# ---------------------------------------------------------------------------
+
+def _filter_osis_refs(refs: list[str]) -> list[str]:
+    """
+    Drop cross-reference strings that fail OSIS existence validation.
+
+    This catches cases where the SWORD source module uses non-standard
+    numbering (e.g. Calvin's Harmony of the Gospels uses section numbers
+    like 'Matt.45.24' which are not valid biblical chapter:verse refs).
+    Invalid refs are logged at DEBUG level and silently dropped.
+    """
+    if not refs:
+        return refs
+    try:
+        from build.scripts.validate_osis import validate_osis_ref  # noqa: PLC0415
+    except ImportError:
+        return refs  # index unavailable — pass through unfiltered
+
+    valid = []
+    for ref in refs:
+        ok, reason = validate_osis_ref(ref)
+        if ok:
+            valid.append(ref)
+        else:
+            logging.debug("  _filter_osis_refs: dropped invalid ref %r (%s)", ref, reason)
+    return valid
+
+
+# ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 
@@ -371,6 +401,78 @@ _TAG_PATTERN = re.compile(r"<[^>]+>")
 _WS_PATTERN = re.compile(r"\s+")
 
 
+
+# Regex identifying a token that starts a new book+chapter:verse reference.
+# Used by _split_ref_candidates() to split space-separated multi-ref strings.
+# Matches: optional digit prefix, one or more letters (book abbrev), then
+# whitespace or end-of-token boundary followed by digits:digits.
+# Examples: "Ge", "Psa", "John", "1Sam", "2Cor"
+_BOOK_ABBREV_RE = re.compile(
+    r"(?:^|\s)(\d?\s*[A-Za-z]+)\s+(\d+:\d+(?:[-.]\d+)*(?::\d+)?)",
+)
+
+# Bare chapter:verse pattern used during candidate scanning
+_BARE_CHAV_RE = re.compile(r"^\d+:\d+")
+
+
+def _split_ref_candidates(text: str) -> list[str]:
+    """
+    Split a Wesley-style scripRef text into individual ref candidate strings
+    that parse_thml_refs() can handle one at a time.
+
+    Wesley scripRef text is space-separated and may contain:
+      - "Ge 15:1 17:1"        (same book, two ch:v pairs)
+      - "Psa 104:9 Job 38:9"  (two different books)
+      - "John 11:9 and work John 9:4"  (prose words interspersed)
+
+    Strategy:
+      1. Walk tokens left-to-right tracking a "current book" context.
+      2. When a book-abbreviation token is seen (followed by ch:v), start a new
+         candidate, carrying the book into subsequent bare ch:v tokens.
+      3. Bare ch:v tokens (no book prefix) are emitted as "{current_book} {token}"
+         so parse_thml_refs() can normalise them with book context.
+      4. Tokens that are neither a book abbrev+ch:v starter nor a bare ch:v are
+         skipped (prose words like "and", "work", "as", "the", etc.).
+
+    Returns a list of strings, each suitable for passing to parse_thml_refs().
+    These are minimal single-ref strings, not the full original text.
+    """
+    # Tokenize on whitespace; we'll scan pairs of (token, next_token) to detect
+    # book+ch:v boundaries.
+    tokens = text.split()
+    candidates: list[str] = []
+    current_book: str | None = None
+    i = 0
+    while i < len(tokens):
+        tok = tokens[i]
+        # Check if this token looks like a book abbreviation followed by a ch:v
+        # in the NEXT token (e.g. tok="Ge", tokens[i+1]="15:1")
+        if i + 1 < len(tokens) and re.match(r"^\d?\s*[A-Za-z]+$", tok):
+            next_tok = tokens[i + 1]
+            if _BARE_CHAV_RE.match(next_tok):
+                # Book + ch:v pair
+                current_book = tok
+                candidates.append(f"{tok} {next_tok}")
+                i += 2
+                continue
+        # Check if this single token is already a "book ch:v" compound (no space)
+        # e.g. "Ge15:1" — unlikely in Wesley but guard anyway
+        m = re.match(r"^(\d?[A-Za-z]+)(\d+:\d+.*)$", tok)
+        if m:
+            current_book = m.group(1)
+            candidates.append(tok)
+            i += 1
+            continue
+        # Bare ch:v token — use current book context
+        if _BARE_CHAV_RE.match(tok) and current_book is not None:
+            candidates.append(f"{current_book} {tok}")
+            i += 1
+            continue
+        # Anything else (prose word, standalone number, etc.) — skip
+        i += 1
+    return candidates
+
+
 def _extract_refs_thml(raw: str) -> list:
     """
     Extract and normalise scripture refs from ThML markup, returning OSIS strings.
@@ -379,25 +481,48 @@ def _extract_refs_thml(raw: str) -> list:
     - Barnes (passage= attribute): <scripRef passage="Mt 1:2">...</scripRef>
     - Wesley (text-content only):  <scripRef>Luke 3:31</scripRef>
 
-    Each extracted string is parsed by parse_thml_refs() from bible_ref_normalizer.
-    Results are deduplicated while preserving first-seen order.
+    Both patterns are always collected (Fix 2: no longer an if/else — a source
+    with mixed tags will yield refs from both patterns, deduplicated).
+
+    For content-only refs (Wesley), the text is first split into individual
+    ref candidates by _split_ref_candidates() before normalisation. This fixes
+    the root cause of 570/4177 Wesley scripRef tags failing normalisation:
+    multi-ref strings like "Ge 15:1 17:1" or "Psa 104:9 Job 38:9" were
+    previously passed as one unit to parse_thml_refs(), which requires tokens
+    delimited by commas or semicolons and rejected the whole string. Now each
+    space-separated book+ch:v candidate is extracted and passed individually,
+    recovering refs that would otherwise produce cross_references: [].
+    Prose words ("and", "work", "as", etc.) are skipped during candidate
+    extraction. Accepted residual loss: content with no recognisable book+ch:v
+    pattern at all (e.g. bare chapter references like "Mt 4") still yields [].
     """
     raw_strings: list[str] = []
 
-    # Barnes: passage= attribute values (preferred — use text-content as fallback only)
-    passage_matches = list(_THML_REF_PATTERN.finditer(raw))
-    if passage_matches:
-        for m in passage_matches:
-            raw_strings.append(m.group(1))
-    else:
-        # Wesley: text-content values (only when no passage= attributes found in raw).
-        # Known limitation: ~31/4074 Wesley scripRef elements contain trailing prose
-        # after the reference (e.g. "<scripRef>Mt 23:37 as the eagle stirs up</scripRef>").
-        # parse_thml_refs() requires a clean reference string and returns [] for these,
-        # logging a warning. Fixing would require stripping prose here before passing to
-        # the normalizer. Accepted loss at current scale (0.8% of Wesley refs).
-        for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
-            raw_strings.append(m.group(1))
+    # Barnes: passage= attribute values (always collect these)
+    for m in _THML_REF_PATTERN.finditer(raw):
+        raw_strings.append(m.group(1))
+
+    # Wesley / mixed sources: text-content values (always collect, not else-only).
+    # Each content string is split into individual ref candidates so that
+    # space-separated multi-ref strings like "Ge 15:1 17:1" are resolved.
+    for m in _THML_REF_CONTENT_PATTERN.finditer(raw):
+        content = m.group(1).strip()
+        if not content:
+            continue
+        # If the content contains commas or semicolons, parse_thml_refs already
+        # handles multi-ref splitting well — pass directly.
+        # If it looks like a simple space-separated multi-ref, split first.
+        if "," in content or ";" in content:
+            raw_strings.append(content)
+        else:
+            # Split into per-ref candidates and add each separately so that
+            # "Ge 15:1 17:1" becomes ["Ge 15:1", "Ge 17:1"] before normalisation.
+            candidates = _split_ref_candidates(content)
+            if candidates:
+                raw_strings.extend(candidates)
+            else:
+                # Fallback: pass the whole string to parse_thml_refs as before
+                raw_strings.append(content)
 
     # Normalise each string to OSIS refs, then deduplicate preserving order
     seen: set[str] = set()
@@ -621,7 +746,15 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
                 )
                 total_empty += 1
                 continue
-            plain, cross_refs = clean_markup(raw_text, "osis" if is_osis else "thml")
+            try:
+                plain, cross_refs = clean_markup(raw_text, "osis" if is_osis else "thml")
+            except Exception as exc:
+                logging.warning(
+                    "  clean_markup failed for entry (%d/%d/%d), skipping: %s",
+                    book_idx, chapter, verse, exc,
+                )
+                total_empty += 1
+                continue
             if not plain:
                 total_empty += 1
                 continue
@@ -646,6 +779,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
             verse_entries = sorted(by_book[book_idx])  # sorted by (chapter, verse)
             for chapter, verse, plain, cross_refs in verse_entries:
                 entry_id = f"{resource_id}.{osis}.{chapter}.{verse}"
+                cross_refs = _filter_osis_refs(cross_refs)
                 word_count = len(plain.split())
                 all_word_counts.append(word_count)
                 entry = {

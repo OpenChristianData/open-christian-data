@@ -27,7 +27,7 @@ This project processes public domain Christian literature — commentaries, conf
 | Unspoken Sermons — George MacDonald | Sermon collection | 3 series | 36 sermons / 171k words | None | Public domain |
 | BCP 1662 Collects | Prayer collection | Sundays + Feast Days | 85 collects | None | Public domain |
 | Didache Prayers (Lake translation) | Prayer collection | Chapters 8-10 | 4 prayers | None | Public domain |
-| BCP 1928 Collects | Prayer collection | Sundays + Feast Days + Holy Days | 98 collects | None | Public domain |
+| BCP 1928 Collects | Prayer collection | Sundays + Feast Days + Holy Days | 102 collects | None | Public domain |
 | Practical Mysticism — Evelyn Underhill | Structured text | 11 chapters | 169 blocks / 32k words | None | Public domain |
 | Paradise Lost — John Milton | Structured text | 12 books | 411 blocks / 82k words | None | Public domain |
 | Easton's Bible Dictionary | Reference entries | Full (A–Z) | 3,963 entries | None | Public domain |
@@ -110,7 +110,7 @@ data/
     bcp-1662/
       collects.json             # BCP 1662 — 85 collects (Sundays + Feast Days)
     bcp-1928/
-      collects.json             # BCP 1928 — 98 collects (Sundays + Feast Days + Holy Days)
+      collects.json             # BCP 1928 — 102 collects (Sundays + Feast Days + Holy Days)
     didache/
       prayers.json              # Didache chapters 8-10 — 4 eucharistic prayers
   reference/

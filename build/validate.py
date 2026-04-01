@@ -113,20 +113,22 @@ def _get_osis_validator():
 # Strict OSIS: Book.Chapter.Verse[-Book.Chapter.Verse]
 # Used for commentary verse_range_osis and cross_references (verse-level required).
 # Book codes may have a leading digit (e.g. 1Chr, 2Sam, 1John, 1Pet).
+# Verse number may have a trailing lower-case letter for half-verse notation (e.g. Ps.21.2b).
 OSIS_REF_PATTERN = re.compile(
-    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+(-[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+)?$"
+    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+[a-z]?(-[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+[a-z]?)?$"
 )
 
 # Single-verse OSIS: Book.Chapter.Verse (no ranges).
 # Used for bible_text where each record is exactly one verse.
 OSIS_SINGLE_VERSE_PATTERN = re.compile(
-    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+$"
+    r"^[0-9]?[A-Z][a-zA-Z0-9]+\.\d+\.\d+[a-z]?$"
 )
 
 # Permissive OSIS: allows numbered book prefixes (1Cor, 2Pet) and chapter-level refs (Gen.1, Rev.2-Rev.3).
+# Verse part may carry a half-verse suffix (e.g. Ps.21.2b).
 # Used for proof text osis arrays in doctrinal_document and catechism_qa files.
 OSIS_PROOF_REF_PATTERN = re.compile(
-    r"^(\d?[A-Z][a-zA-Z0-9]*)(\.\d+(\.\d+)?)?(-\d?[A-Z][a-zA-Z0-9]*(\.\d+(\.\d+)?)?)?$"
+    r"^(\d?[A-Z][a-zA-Z0-9]*)(\.\d+(\.\d+[a-z]?)?)?(-\d?[A-Z][a-zA-Z0-9]*(\.\d+(\.\d+[a-z]?)?)?)?$"
 )
 
 KNOWN_BOOK_NUMBERS = {
@@ -194,8 +196,11 @@ def _run_json_schema(data: dict, schema_path: Path, warnings: list, errors: list
     try:
         import jsonschema  # type: ignore
     except ImportError:
-        warnings.append("jsonschema not installed -- skipping schema validation. Run: pip install jsonschema")
-        return
+        print(
+            "ERROR: jsonschema is required. Install it: pip install jsonschema==4.23.0",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     if not schema_path.exists():
         warnings.append(f"Schema file not found: {schema_path}")
@@ -285,20 +290,26 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
             except (ValueError, IndexError):
                 pass  # malformed OSIS already caught by format check above
 
-        # cross_references: schema defines these as Reference objects {"raw": ..., "osis": [...]}.
-        # Plain-string refs are handled defensively for forward compat but are not expected.
-        for j, ref in enumerate(entry.get("cross_references", [])):
-            if isinstance(ref, dict):
-                for osis_str in ref.get("osis", []):
-                    if osis_str and not OSIS_REF_PATTERN.match(osis_str):
+        # cross_references: schema defines these as array[string] OSIS refs.
+        cross_refs = entry.get("cross_references")
+        if cross_refs is not None:
+            for j, ref in enumerate(cross_refs):
+                if isinstance(ref, str):
+                    if not OSIS_REF_PATTERN.match(ref):
                         errors.append(
-                            f"{loc} ({eid}): cross_references[{j}] invalid OSIS: '{osis_str}'"
+                            f"{loc} ({eid}): cross_references[{j}] invalid OSIS format: '{ref}'"
                         )
-                    elif osis_str:
-                        osis_to_check.append(osis_str)
-            elif isinstance(ref, str):
-                if not check_osis_ref(ref):
-                    errors.append(f"{loc} ({eid}): invalid cross_reference OSIS: '{ref}'")
+                    else:
+                        osis_to_check.append(ref)
+                elif isinstance(ref, dict):
+                    # Legacy dict format {"raw": ..., "osis": [...]} -- handle defensively
+                    for osis_str in ref.get("osis", []):
+                        if osis_str and not OSIS_REF_PATTERN.match(osis_str):
+                            errors.append(
+                                f"{loc} ({eid}): cross_references[{j}] invalid OSIS: '{osis_str}'"
+                            )
+                        elif osis_str:
+                            osis_to_check.append(osis_str)
 
         wc = entry.get("word_count", 0)
         if not isinstance(wc, int) or wc <= 0:
@@ -339,20 +350,32 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
                 else:
                     warnings.append(f"Completeness: {msg}")
 
-    # OSIS existence check -- warnings only (source data may have valid edge cases)
+    # OSIS existence check -- hard error for commentary cross_references.
+    # Exception: range-end overshoots are downgraded to warnings — commentary
+    # authors often cite approximate ranges (e.g. "Gen 13:1-20" for a chapter
+    # with 18 verses). Range-start or single-ref failures remain hard errors.
     if osis_to_check:
         validator = _get_osis_validator()
         if validator:
             valid_count, invalid_items = validator(osis_to_check)
             if invalid_items:
-                detail_parts = [f"{s} ({r})" for s, r in invalid_items[:5]]
-                detail = "; ".join(detail_parts)
-                if len(invalid_items) > 5:
-                    detail += f" ... and {len(invalid_items) - 5} more"
-                warnings.append(
-                    f"OSIS existence: {valid_count}/{len(osis_to_check)} valid, "
-                    f"{len(invalid_items)} invalid: {detail}"
-                )
+                hard_items = [(s, r) for s, r in invalid_items if not r.startswith("range end:")]
+                soft_items = [(s, r) for s, r in invalid_items if r.startswith("range end:")]
+                if hard_items:
+                    detail_parts = [f"{s} ({r})" for s, r in hard_items[:5]]
+                    detail = "; ".join(detail_parts)
+                    if len(hard_items) > 5:
+                        detail += f" ... and {len(hard_items) - 5} more"
+                    errors.append(
+                        f"OSIS existence: {valid_count}/{len(osis_to_check)} valid, "
+                        f"{len(hard_items)} invalid cross_reference(s): {detail}"
+                    )
+                if soft_items:
+                    detail_parts = [f"{s} ({r})" for s, r in soft_items[:5]]
+                    detail = "; ".join(detail_parts)
+                    warnings.append(
+                        f"OSIS existence (range-end overshoot, non-fatal): {detail}"
+                    )
 
     return errors, warnings
 
@@ -443,6 +466,9 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
     return errors, warnings
 
 
+_VALID_UNIT_TYPES = frozenset({"chapter", "section", "article", "text", "canon", "rejection"})
+
+
 def _check_units(units: list, path_prefix: str, errors: list, osis_to_check: list = None) -> None:
     """Recursively check that all units in a doctrinal_document have required fields.
 
@@ -456,11 +482,33 @@ def _check_units(units: list, path_prefix: str, errors: list, osis_to_check: lis
         if not isinstance(unit, dict):
             errors.append(f"{loc}: unit must be an object")
             continue
-        if not unit.get("unit_type"):
+
+        # unit_type must be present and from the allowed set
+        unit_type = unit.get("unit_type")
+        if not unit_type:
             errors.append(f"{loc}: missing unit_type")
-        # Recurse into children
-        if unit.get("children"):
-            _check_units(unit["children"], f"{loc}.children", errors, osis_to_check)
+        elif unit_type not in _VALID_UNIT_TYPES:
+            errors.append(
+                f"{loc}: invalid unit_type '{unit_type}' "
+                f"(allowed: {', '.join(sorted(_VALID_UNIT_TYPES))})"
+            )
+
+        children = unit.get("children")
+        has_children = isinstance(children, list) and len(children) > 0
+        content = unit.get("content")
+        has_content = isinstance(content, str) and content.strip()
+
+        if has_children:
+            # Non-leaf: must have at least one child (already guaranteed by has_children above)
+            # but children field present as empty list is still wrong
+            _check_units(children, f"{loc}.children", errors, osis_to_check)
+        elif isinstance(children, list) and len(children) == 0:
+            errors.append(f"{loc}: non-leaf unit has empty children array (must have at least one child)")
+        else:
+            # Leaf unit: must have non-empty content
+            if not has_content:
+                errors.append(f"{loc}: leaf unit (no children) is missing non-empty 'content'")
+
         # Check OSIS refs in proofs -- use permissive pattern (numbered books + chapter-level refs)
         for j, proof in enumerate(unit.get("proofs", [])):
             for k, ref in enumerate(proof.get("references", [])):

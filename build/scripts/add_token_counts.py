@@ -10,6 +10,7 @@ Supported schema types and text extraction rules:
   catechism_qa      -- tokenize "Q: {question} A: {answer}"
   doctrinal_document -- tokenize all content/content_with_proofs fields in units tree (recursive)
   devotional        -- tokenize concatenated content_blocks
+  prayer            -- tokenize concatenated content_blocks
   bible_text        -- tokenize verse text field
 
 Usage:
@@ -37,6 +38,23 @@ LOG_FILE = os.path.join(
 )
 
 ENCODING_NAME = "cl100k_base"
+
+SCHEMAS_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "schemas", "v1",
+)
+
+# Maps each supported schema_type to its JSON Schema file. Used by the
+# pre-flight check to confirm token_count is an allowed field before any
+# data files are written.
+SCHEMA_FILES = {
+    "commentary": "commentary.schema.json",
+    "catechism_qa": "catechism_qa.schema.json",
+    "devotional": "devotional.schema.json",
+    "bible_text": "bible_text.schema.json",
+    "doctrinal_document": "doctrinal_document.schema.json",
+    "prayer": "prayer.schema.json",
+}
 
 # ---------------------------------------------------------------------------
 # Logging setup
@@ -72,6 +90,32 @@ def count_tokens(text):
     return len(ENCODER.encode(text))
 
 
+def preflight_schema_check():
+    """
+    Verify that every supported schema type declares token_count before any data
+    is written. Catches the case where a schema type is added to this script but
+    the corresponding JSON Schema file has not been updated to allow the field.
+    Returns a list of schema_type strings that failed (empty = all OK).
+    """
+    failed = []
+    for schema_type, filename in SCHEMA_FILES.items():
+        path = os.path.join(SCHEMAS_DIR, filename)
+        try:
+            with open(path, encoding="utf-8") as fh:
+                content = fh.read()
+            if '"token_count"' not in content:
+                failed.append(schema_type)
+                log.error(
+                    "Pre-flight FAIL: schema '%s' (%s) does not declare token_count",
+                    schema_type,
+                    filename,
+                )
+        except FileNotFoundError:
+            failed.append(schema_type)
+            log.error("Pre-flight FAIL: schema file not found: %s", path)
+    return failed
+
+
 # ---------------------------------------------------------------------------
 # Text extraction per schema type
 # ---------------------------------------------------------------------------
@@ -91,6 +135,12 @@ def extract_text_catechism_qa(record):
 
 def extract_text_devotional(record):
     """Return the text to tokenize for a devotional record (joined content_blocks)."""
+    blocks = record.get("content_blocks") or []
+    return " ".join(blocks)
+
+
+def extract_text_prayer(record):
+    """Return the text to tokenize for a prayer record (joined content_blocks)."""
     blocks = record.get("content_blocks") or []
     return " ".join(blocks)
 
@@ -221,6 +271,12 @@ def process_file(path, dry_run):
             return 0, 0, 0
         added, mismatches, skipped = process_records_list(data, extract_text_devotional, dry_run)
 
+    elif schema_type == "prayer":
+        if not isinstance(data, list):
+            log.warning("Unexpected data format in %s (prayer not a list)", path)
+            return 0, 0, 0
+        added, mismatches, skipped = process_records_list(data, extract_text_prayer, dry_run)
+
     elif schema_type == "bible_text":
         if not isinstance(data, list):
             log.warning("Unexpected data format in %s (bible_text not a list)", path)
@@ -267,6 +323,24 @@ def main():
         log.info("=== DRY RUN -- no files will be modified ===")
     else:
         log.info("=== LIVE RUN -- files will be modified ===")
+
+    # Pre-flight: confirm every supported schema allows token_count.
+    # Warns in dry-run, aborts in live -- schema update must precede data write.
+    schema_failures = preflight_schema_check()
+    if schema_failures:
+        if args.dry_run:
+            log.warning(
+                "Pre-flight warning: schema check failed for: %s (would abort on live run)",
+                ", ".join(schema_failures),
+            )
+        else:
+            log.error(
+                "Aborting: schema check failed for: %s -- update the schema file(s) before running live",
+                ", ".join(schema_failures),
+            )
+            sys.exit(1)
+    else:
+        log.info("Pre-flight schema check passed: all %d schemas allow token_count.", len(SCHEMA_FILES))
 
     start = time.time()
 
