@@ -161,7 +161,11 @@
                 "additionalProperties": false,
                 "properties": {
                   "work": { "type": "string", "description": "The larger work this prayer comes from." },
-                  "location": { "type": "string", "description": "Location within the work, e.g. Chapter IX.2." }
+                  "location": { "type": "string", "description": "Location within the work, e.g. Chapter IX.2." },
+                  "source_url": {
+                    "type": ["string", "null"],
+                    "description": "Per-record source URL. Use when this prayer was sourced from a URL that differs from the collection-level provenance (e.g. manually-added collects)."
+                  }
                 }
               }
             ]

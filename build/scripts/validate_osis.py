@@ -34,6 +34,7 @@ from typing import List, Optional, Tuple
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VERSE_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "verse_index.json"
 KJV_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "kjv_verse_index.json"
+APOCRYPHA_INDEX_PATH = REPO_ROOT / "build" / "bible_data" / "apocrypha_verse_index.json"
 
 # OSIS book codes for deuterocanonical/apocryphal books that are absent from the
 # BSB-derived verse index (Protestant 66-book canon). When a book code is in this
@@ -64,11 +65,27 @@ DEUTEROCANONICAL_BOOK_CODES = frozenset({
 # ---------------------------------------------------------------------------
 KNOWN_OMISSIONS: dict = {}  # Replaced by dynamic KJV index lookup; kept as empty fallback.
 
+# ---------------------------------------------------------------------------
+# Versification offsets -- verses that are in the SWORD/MT KJV numbering but
+# absent from BSB because the SWORD module counts Psalm superscriptions as
+# verse 1, shifting subsequent verse numbers up by one.  These are NOT
+# manuscript disputes -- the underlying text is identical.
+# Format: frozenset of (book_osis, chapter_str, verse_int) tuples.
+# ---------------------------------------------------------------------------
+VERSIFICATION_OFFSETS: frozenset = frozenset({
+    ("Ps", "140", 14),   # superscription "To the Chief Musician..." counted as v.1 in MT
+    ("Ps", "142", 8),    # superscription "Maschil of David..." counted as v.1 in MT
+})
+# Private alias used internally (public name allows generate_disputed_verses.py to import it).
+_VERSIFICATION_OFFSETS = VERSIFICATION_OFFSETS
+
 # Module-level cache -- loaded once on first use
 _INDEX = None
 _INDEX_LOADED = False
 _KJV_INDEX = None
 _KJV_INDEX_LOADED = False
+_APOCRYPHA_INDEX = None
+_APOCRYPHA_INDEX_LOADED = False
 
 
 def _load_index() -> Optional[dict]:
@@ -107,6 +124,24 @@ def _load_kjv_index() -> Optional[dict]:
     return _KJV_INDEX
 
 
+def _load_apocrypha_index() -> Optional[dict]:
+    """Load apocrypha verse index from disk. Returns the index dict or None if unavailable."""
+    global _APOCRYPHA_INDEX, _APOCRYPHA_INDEX_LOADED
+    if _APOCRYPHA_INDEX_LOADED:
+        return _APOCRYPHA_INDEX
+    _APOCRYPHA_INDEX_LOADED = True
+    if not APOCRYPHA_INDEX_PATH.exists():
+        _APOCRYPHA_INDEX = None
+        return None
+    try:
+        with open(APOCRYPHA_INDEX_PATH, encoding="utf-8") as f:
+            _APOCRYPHA_INDEX = json.load(f)
+    except Exception as exc:
+        print(f"WARN: Failed to load apocrypha index from {APOCRYPHA_INDEX_PATH}: {exc}", file=sys.stderr)
+        _APOCRYPHA_INDEX = None
+    return _APOCRYPHA_INDEX
+
+
 def _validate_endpoint(
     book: str,
     chapter_str: Optional[str],
@@ -119,7 +154,40 @@ def _validate_endpoint(
     """
     if book not in index_books:
         if book in DEUTEROCANONICAL_BOOK_CODES:
-            return True, "deuterocanonical - not in verse index"
+            # Check the apocrypha verse index for existence if available.
+            apocrypha_index = _load_apocrypha_index()
+            if apocrypha_index is not None:
+                apoc_books = apocrypha_index.get("books", {})
+                if book not in apoc_books:
+                    # Book code is valid (in DEUTEROCANONICAL_BOOK_CODES) but absent from
+                    # the KJVA-derived apocrypha index.  This covers Orthodox/Ethiopian canon
+                    # books (e.g. 1En, Jub, Ps151, 3Macc) that pysword KJVA does not include.
+                    # These pass with a note rather than failing -- we simply have no index to
+                    # check them against.
+                    return True, f"deuterocanonical '{book}' - no verse index (extended canon)"
+                if chapter_str is None:
+                    return True, ""  # book-level ref
+                apoc_ch = apoc_books[book].get("verses", {})
+                if chapter_str not in apoc_ch:
+                    max_ch = apoc_books[book]["chapter_count"]
+                    return False, f"{book} has no chapter {chapter_str} (book has {max_ch} chapters)"
+                if verse_str is None:
+                    return True, ""  # chapter-level ref
+                verse_base = verse_str.rstrip("abcdefghijklmnopqrstuvwxyz") if verse_str else verse_str
+                try:
+                    verse_int = int(verse_base)
+                except ValueError:
+                    return False, f"non-integer verse '{verse_str}'"
+                if verse_int < 1:
+                    return False, f"verse must be >= 1 (got {verse_str})"
+                if verse_int not in apoc_ch[chapter_str]:
+                    present = apoc_ch[chapter_str]
+                    return False, (
+                        f"{book}.{chapter_str} does not contain verse {verse_str} "
+                        f"(present in apocrypha index: {present})"
+                    )
+                return True, ""
+            return True, "deuterocanonical - apocrypha index unavailable"
         return False, f"unknown book code '{book}'"
 
     if chapter_str is None:
@@ -170,6 +238,8 @@ def _validate_endpoint(
                 kjv_ch_data = kjv_books.get(book, {}).get("verses", {})
                 kjv_verse_set = kjv_ch_data.get(chapter_str, [])
                 if verse_int in kjv_verse_set:
+                    if (book, chapter_str, verse_int) in _VERSIFICATION_OFFSETS:
+                        return True, "versification offset - SWORD/MT superscription numbering differs from printed KJV/BSB"
                     return True, "in KJV/TR - not in BSB critical text"
             # 2. Fall back to KNOWN_OMISSIONS table (active when KJV index unavailable).
             chapter_int = int(chapter_str)

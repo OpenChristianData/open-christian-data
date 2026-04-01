@@ -60,7 +60,7 @@ EXPECTED_BOOK_COUNT = 66
 KJV_OT = [
     ("Genesis",        "Gen",    1,  [31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,33,26]),
     ("Exodus",         "Exod",   2,  [22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38]),
-    ("Leviticus",      "Lev",    3,  [17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,24,16,15,18,21,20,14,16,17,28]),
+    ("Leviticus",      "Lev",    3,  [17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,46,34]),
     ("Numbers",        "Num",    4,  [54,34,51,49,31,27,89,26,23,36,35,16,33,45,41,50,13,32,22,29,35,41,30,25,18,65,23,31,40,16,54,42,56,29,34,13]),
     ("Deuteronomy",    "Deut",   5,  [46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12]),
     ("Joshua",         "Josh",   6,  [18,24,17,24,15,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,45,34,16,33]),
@@ -74,7 +74,7 @@ KJV_OT = [
     ("2 Chronicles",   "2Chr",   14, [17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23]),
     ("Ezra",           "Ezra",   15, [11,70,13,24,17,22,28,36,15,44]),
     ("Nehemiah",       "Neh",    16, [11,20,32,23,19,19,73,18,38,39,36,47,31]),
-    ("Esther",         "Esth",   17, [22,28,23,31,29,41,4,18,20,11,27,23]),
+    ("Esther",         "Esth",   17, [22,23,15,17,14,14,10,17,32,3]),
     ("Job",            "Job",    18, [22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,22,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,30,24,34,17]),
     ("Psalms",         "Ps",     19, [6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,14,10,8,12,15,21,10,20,14,9,6]),
     ("Proverbs",       "Prov",   20, [33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31]),
@@ -105,7 +105,7 @@ KJV_NT = [
     ("Luke",           "Luke",   42, [80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53]),
     ("John",           "John",   43, [51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25]),
     ("Acts",           "Acts",   44, [26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31]),
-    ("Romans",         "Rom",    45, [32,29,31,25,21,23,25,39,33,21,36,21,14,26,33,24,24,24,27,35]),
+    ("Romans",         "Rom",    45, [32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27]),
     ("1 Corinthians",  "1Cor",   46, [31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24]),
     ("2 Corinthians",  "2Cor",   47, [24,17,18,18,21,18,16,24,15,18,33,21,14]),
     ("Galatians",      "Gal",    48, [24,21,29,31,26,18]),
@@ -258,6 +258,40 @@ def main() -> None:
     if len(books) != EXPECTED_BOOK_COUNT:
         logging.error("Expected %d books, got %d", EXPECTED_BOOK_COUNT, len(books))
         sys.exit(1)
+
+    # 4b. Chapter-count plausibility check.
+    # Reference chapter counts for the 66-book Protestant canon -- these do not vary
+    # between KJV and any modern English translation.  If the canon table has a
+    # transcription error (wrong number of entries in the chapter-lengths array), this
+    # catches it immediately.
+    EXPECTED_CHAPTERS = {
+        "Gen": 50, "Exod": 40, "Lev": 27, "Num": 36, "Deut": 34,
+        "Josh": 24, "Judg": 21, "Ruth": 4, "1Sam": 31, "2Sam": 24,
+        "1Kgs": 22, "2Kgs": 25, "1Chr": 29, "2Chr": 36, "Ezra": 10,
+        "Neh": 13, "Esth": 10, "Job": 42, "Ps": 150, "Prov": 31,
+        "Eccl": 12, "Song": 8, "Isa": 66, "Jer": 52, "Lam": 5,
+        "Ezek": 48, "Dan": 12, "Hos": 14, "Joel": 3, "Amos": 9,
+        "Obad": 1, "Jonah": 4, "Mic": 7, "Nah": 3, "Hab": 3,
+        "Zeph": 3, "Hag": 2, "Zech": 14, "Mal": 4,
+        "Matt": 28, "Mark": 16, "Luke": 24, "John": 21, "Acts": 28,
+        "Rom": 16, "1Cor": 16, "2Cor": 13, "Gal": 6, "Eph": 6,
+        "Phil": 4, "Col": 4, "1Thess": 5, "2Thess": 3, "1Tim": 6,
+        "2Tim": 4, "Titus": 3, "Phlm": 1, "Heb": 13, "Jas": 5,
+        "1Pet": 5, "2Pet": 3, "1John": 5, "2John": 1, "3John": 1,
+        "Jude": 1, "Rev": 22,
+    }
+    ch_errors = []
+    for osis, book_data in books.items():
+        actual_ch = book_data["chapter_count"]
+        expected_ch = EXPECTED_CHAPTERS.get(osis)
+        if expected_ch is not None and actual_ch != expected_ch:
+            ch_errors.append(f"{osis}: expected {expected_ch} chapters, got {actual_ch}")
+    if ch_errors:
+        for err in ch_errors:
+            logging.error("Chapter-count mismatch: %s", err)
+        logging.error("Fix the KJV_CANON table above before proceeding.")
+        sys.exit(1)
+    logging.info("  Chapter-count plausibility check: all %d books OK", len(books))
 
     # 5. Spot-check: all KNOWN_OMISSIONS verses (from validate_osis.py) must be present
     disputed = [

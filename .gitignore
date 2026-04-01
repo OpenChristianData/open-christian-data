@@ -42,3 +42,6 @@ raw/
 # Claude Code local config (contains private paths)
 .claude/
 build/temp/
+
+# Generated audit reports (re-run tool to regenerate)
+build/tools/audit_ref_coverage_report.json
