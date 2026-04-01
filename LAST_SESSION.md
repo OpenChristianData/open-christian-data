@@ -4,6 +4,41 @@ Newest first.
 
 ---
 
+## 2026-04-01 — KJV verse index + dynamic OSIS oracle
+
+**Branch:** main
+
+**What we worked on:** Built a second verse index from the KJV SWORD module and wired it into `validate_osis.py` as a dynamic oracle, replacing the hardcoded `KNOWN_OMISSIONS` table.
+
+**What was completed:**
+- `build/scripts/download_sword_modules.py` — KJV entry added to MODULES list
+- `build/scripts/build_kjv_verse_index.py` — NEW script. Derives verse set from KJV_CANON table (not BZV binary). BZV size check distinguishes truncated (WARN) vs extra slots (INFO). Spot-checks all 10 previously hardcoded KNOWN_OMISSIONS. python-standards-reviewer pass + findings fixed.
+- `build/bible_data/kjv_verse_index.json` — NEW artifact. 66 books, 31,162 total verses. Same shape as verse_index.json.
+- `build/scripts/validate_osis.py` — `KJV_INDEX_PATH` + `_load_kjv_index()` + lazy-load cache added. `KNOWN_OMISSIONS` emptied to `{}` (kept as empty fallback). Dynamic KJV lookup wired into `_validate_endpoint()` — absent-from-BSB verses checked against KJV before failing.
+- `build/CODE_REVIEWS.md` — entries added for both new/modified scripts
+- `00 CONTEXT/LESSONS.md` (Cowork) — lesson added: BZV size check before writing binary parser
+- Memory files — two feedback memories saved: binary size check, edit collision → Write
+
+**Key technical decision:** Canon table used as authoritative versification source (not BZV binary) because CrossWire NT BZV is truncated at Rev.19.1 — 86 entries short of the expected 8332.
+
+**Validation:** `py -3 build/validate.py --all` → 0 errors, 142 warnings (unchanged). `Matt.17.21`, `Mark.9.44`, `John.5.4` all return `OK (in KJV/TR - not in BSB critical text)`.
+
+**Where we stopped:** All work complete. Committed in 19e4773.
+
+**What's next:**
+1. **Opus review** — bcp1662.py, didache.py, prayer.schema.json, build_kjv_verse_index.py (flagged in CODE_REVIEWS.md)
+2. **Prayer schema** — add per-record source attribution field (prayer.schema.json uses additionalProperties:false; interim fix is collection-level notes in config.json)
+3. **Cross-ref coverage** — push Barnes above 95% (currently 89.5%)
+4. **CI pipeline** — GitHub Actions (Block 2)
+5. **HuggingFace** — dataset card + publish (Block 3)
+
+**Key decisions made:**
+- KJV_CANON table is the authoritative source for KJV versification — do not use BZV binary for versification (module defect known, documented)
+- OT BZV +19 extra entries = benign apocrypha placeholder slots
+- NT BZV truncated = WARNING logged; rebuild hint embedded in log message
+
+---
+
 ## 2026-04-01 — Phase 2 red team fixes + Calvin Psalms rebuild + OSIS half-verse support
 
 **Branch:** main
@@ -132,25 +167,3 @@ Newest first.
 
 **What's next:** See top entry.
 
----
-
-## 2026-04-01 — Basil of Caesarea source_title curation
-
-**Branch:** main
-
-**What we worked on:** Populated all 93 blank source_title fields in basil-of-caesarea.json. Ran /evaluate, implemented all improvements, then ran end-of-session.
-
-**What was completed:**
-- `build/scripts/patch_basil_source_titles.py` — new patch script; 93 entries patched. Confidence tiers (HIGH/MEDIUM/LOW) documented per-entry. Post-hoc verifications completed for all uncertain assignments.
-- `data/church-fathers/basil-of-caesarea.json` — all 93 entries now have source_title
-- `build/CODE_REVIEWS.md` — entry added (standards-reviewer pass, no Opus needed)
-- `00 CONTEXT/LESSONS.md` (Cowork) — lesson added: confidence tiers in bulk curation; "grep before correcting" check
-- `02 PERSONAL/PERSONAL_PROJECTS.md` — stats updated to 900 files / 143 warnings
-
-**Assignment breakdown (93 entries):** HEXAEMERON (67), THE MORALS (10), THE LONG RULES (3), HOMILIES ON THE PSALMS (3), Letters (4), ON THE HOLY SPIRIT (2), other (4). Confidence: 8 HIGH / 81 MEDIUM / 4 LOW.
-
-**Validation:** 0 errors, 0 warnings on basil file; 143 warnings total (--all).
-
-**Where we stopped:** All work complete. Not yet committed.
-
-**What's next:** See top entry.

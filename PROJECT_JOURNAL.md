@@ -4,6 +4,27 @@ Permanent historical record. Newest entries at top. Never trimmed.
 
 ---
 
+## 2026-04-01 — Basil of Caesarea source_title curation
+
+**Branch:** main
+
+**What we worked on:** Populated all 93 blank source_title fields in basil-of-caesarea.json. Ran /evaluate, implemented all improvements, then ran end-of-session.
+
+**What was completed:**
+- `build/scripts/patch_basil_source_titles.py` — new patch script; 93 entries patched. Confidence tiers (HIGH/MEDIUM/LOW) documented per-entry. Post-hoc verifications completed for all uncertain assignments.
+- `data/church-fathers/basil-of-caesarea.json` — all 93 entries now have source_title
+- `build/CODE_REVIEWS.md` — entry added (standards-reviewer pass, no Opus needed)
+- `00 CONTEXT/LESSONS.md` (Cowork) — lesson added: confidence tiers in bulk curation; "grep before correcting" check
+- `02 PERSONAL/PERSONAL_PROJECTS.md` — stats updated to 900 files / 143 warnings
+
+**Assignment breakdown (93 entries):** HEXAEMERON (67), THE MORALS (10), THE LONG RULES (3), HOMILIES ON THE PSALMS (3), Letters (4), ON THE HOLY SPIRIT (2), other (4). Confidence: 8 HIGH / 81 MEDIUM / 4 LOW.
+
+**Validation:** 0 errors, 0 warnings on basil file; 143 warnings total (--all).
+
+**Where we stopped:** All work complete. Committed in 19e4773.
+
+---
+
 ## 2026-03-31 — Baltimore Catechism No. 3 — blank answer fix
 
 **Branch:** main

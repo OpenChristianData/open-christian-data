@@ -2,6 +2,8 @@
 
 | Script | Last Reviewed | Notes |
 |---|---|---|
+| build/scripts/build_kjv_verse_index.py | 2026-04-01 | New (KJV verse index). Derives verse set from KJV_CANON table (not BZV binary — module truncated at Rev.19.1). BZV size check distinguishes truncated (WARN) vs extra slots (INFO). Spot-checks all 10 previously hardcoded KNOWN_OMISSIONS. python-standards-reviewer pass + fixes applied (log file, logging calls, error messages with remediation hints). Opus review pending. |
+| build/scripts/validate_osis.py | 2026-04-01 | Updated: KJV secondary oracle added (kjv_verse_index.json lazy-loaded; if verse absent from BSB but present in KJV, returns "in KJV/TR - not in BSB critical text"). KNOWN_OMISSIONS emptied to {} (kept as empty fallback when KJV index unavailable). Previously reviewed 2026-03-28 (Prompt 0b). |
 | build/parsers/bcp1662.py | 2026-04-01 | Modified this session: boundary regex fixed (For the Epistle variant), docstring updated to document all HTML variants across 5 pages, word count alarm added (>150 words flags prayer_id). Standards-reviewer pass not run. Opus review pending. |
 | build/parsers/didache.py | never | Created prior session. Extracts 4 eucharistic prayers from Wikisource wikitext. expected_count=4 asserted at runtime. Standards-reviewer pass not run. Opus review pending. |
 | schemas/v1/prayer.schema.json | never | New schema. Tradition/license enums verified consistent with all other schemas via check_schema_consistency(). Opus review pending. |
