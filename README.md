@@ -1,5 +1,7 @@
 # open-christian-data
 
+[![CI](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml)
+
 Public domain Christian literature as structured, machine-readable data — for developers and AI training.
 
 ## What this is
