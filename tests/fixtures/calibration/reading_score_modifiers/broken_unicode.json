@@ -1,0 +1,25 @@
+{
+  "modifier": "broken_unicode",
+  "adr_value": -2.0,
+  "description": "Reading contains Unicode replacement character (U+FFFD) -> -2.0 applied to reading score",
+  "triggering": {
+    "reading": "In the begin�ning of all created things",
+    "role": "pd_attestor",
+    "language": "en",
+    "expected_base_score": 3.0,
+    "expected_modifier_value": -2.0,
+    "expected_total_score": 1.0,
+    "modifier_fires": true,
+    "notes": "U+FFFD (replacement character) present in reading -> broken Unicode modifier fires at -2.0. pd_attestor base=3.0, total=1.0."
+  },
+  "near_miss": {
+    "reading": "In the beginning of all created things",
+    "role": "pd_attestor",
+    "language": "en",
+    "expected_base_score": 3.0,
+    "expected_modifier_value": 0.0,
+    "expected_total_score": 3.0,
+    "modifier_fires": false,
+    "near_miss_reason": "reading is clean ASCII, no replacement characters, no impossible code points -> modifier does not fire"
+  }
+}

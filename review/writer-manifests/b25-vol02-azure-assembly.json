@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "run_cloud_ocr@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-vol02-azure-assembly",
+  "started_at": "2026-05-28T22:41:47Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_02.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_02.json": {
+      "before_sha256": null,
+      "after_sha256": "e145e45bc1b7e3c826ce1bf5ac4dc5af336e3fcf0c57b05bcfce7e85046a3d4b"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_02.json": {
+      "pages_assembled": 488,
+      "mean_confidence": 97.1
+    }
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 488 page sidecars (format_version=1, bbox_polygon per word). Engine: Azure AI Vision v4.0. Session B2.5, 2026-05-28/29. 9 pages without JPEG: front matter (1-8) and page 253 (permanent scan gap, documented in UPSTREAM_BUGS.md). 1 page retried due to timeout (page 404).",
+  "renames": []
+}

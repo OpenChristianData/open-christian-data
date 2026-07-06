@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "ia_abbyy@s2",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "s2-catalog-ia-abbyy-vol1",
+  "started_at": "2026-05-25T23:44:59.407478Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:9589b6ae4df6eb1c120fe4ebe874e89cf860de42487a263ef42be86dc5c324d5"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "renderings_added": 1,
+      "alias_added": "ia-abbyy-v1"
+    }
+  },
+  "allowed_field_paths": [
+    "/renderings/-",
+    "/aliases/ia-abbyy-v1"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Adds rendering 'ia-abbyy/schaff/encyclopedia/1908-1914/v1' with coverage [1], role pd_attestor, engine abbyy-finereader. Validates against schemas/v1/rendering_catalog.schema.json.",
+  "renames": []
+}

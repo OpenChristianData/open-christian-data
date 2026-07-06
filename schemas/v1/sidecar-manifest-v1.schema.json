@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/sidecar-manifest-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "S1 Sidecar Manifest",
+  "description": "S1 per-lineage sidecar manifest for engine output normalized into the arch3 sidecar contract. It records lineage, source files, per-page sidecar references, manifest cross-checks, and lossless bundle-level extras.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "work_id",
+    "edition_id",
+    "volume",
+    "rendering_id",
+    "engine_family",
+    "engine_version",
+    "source_lineage_id",
+    "source_files",
+    "pages",
+    "manifest_cross_check",
+    "bundle_extras_carried",
+    "bundle_extras_carried_keys",
+    "bundle_extras_jcs_sha256",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "sidecar-manifest-v1"},
+    "manifest_id": {"type": "string", "minLength": 1},
+    "work_id": {"type": "string", "minLength": 1},
+    "edition_id": {"type": "string", "minLength": 1},
+    "volume": {"type": "integer", "minimum": 1},
+    "rendering_id": {"type": "string", "minLength": 1},
+    "engine_family": {"$ref": "#/$defs/engine_family"},
+    "engine_version": {"type": "string"},
+    "source_lineage_id": {"type": "string", "minLength": 1},
+    "source_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_file_ref"}
+    },
+    "pages": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/page_ref"}
+    },
+    "manifest_cross_check": {"$ref": "#/$defs/manifest_cross_check"},
+    "bundle_extras_carried": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "bundle_extras_carried_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "bundle_extras_jcs_sha256": {"$ref": "#/$defs/prefixed_sha256"},
+    "created_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "prefixed_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\\\).+"
+    },
+    "engine_family": {
+      "type": "string",
+      "enum": [
+        "tesseract",
+        "abbyy",
+        "azure_read",
+        "textract",
+        "ccel",
+        "surya",
+        "kraken",
+        "calamari"
+      ]
+    },
+    "page_status": {
+      "type": "string",
+      "enum": ["eligible", "diagnostic_only", "corrupt", "missing"]
+    },
+    "source_file_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_path"},
+        "sha256": {"$ref": "#/$defs/prefixed_sha256"}
+      }
+    },
+    "page_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_native_id",
+        "page_sequence",
+        "status",
+        "sidecar_page_path",
+        "source_payload_sha256",
+        "edition_page_key"
+      ],
+      "oneOf": [
+        {"required": ["canonical_leaf_id"]},
+        {"required": ["clid_exempt"]}
+      ],
+      "properties": {
+        "page_native_id": {"type": "string", "minLength": 1},
+        "page_sequence": {"type": "integer", "minimum": 1},
+        "status": {"$ref": "#/$defs/page_status"},
+        "sidecar_page_path": {"$ref": "#/$defs/relative_path"},
+        "source_payload_sha256": {"$ref": "#/$defs/prefixed_sha256"},
+        "canonical_leaf_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Canonical primary-scan leaf coordinate (leaf_num), engine-agnostic and not the filename."
+        },
+        "edition_page_key": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["section", "anchor", "ordinal"],
+          "properties": {
+            "section": {"enum": ["front_matter", "body", "back_matter"]},
+            "anchor": {"type": "integer"},
+            "ordinal": {"type": "integer", "minimum": 0}
+          }
+        },
+        "clid_exempt": {
+          "const": true,
+          "description": "Set to true on a non-body / unmappable page_ref that legitimately carries no canonical_leaf_id (front/back matter, plate, recovered-gap, alternate-scan body-unrecoverable). Exactly one of canonical_leaf_id / clid_exempt is present (oneOf)."
+        },
+        "failure_class": {"type": "string", "minLength": 1}
+      }
+    },
+    "manifest_cross_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "samples_checked",
+        "samples_matched",
+        "samples_inconclusive",
+        "failed_samples"
+      ],
+      "properties": {
+        "samples_checked": {"type": "integer", "minimum": 0},
+        "samples_matched": {"type": "integer", "minimum": 0},
+        "samples_inconclusive": {"type": "integer", "minimum": 0},
+        "failed_samples": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/failed_sample"}
+        }
+      }
+    },
+    "failed_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leaf", "expected", "observed"],
+      "properties": {
+        "leaf": {"type": "string"},
+        "expected": {"type": ["string", "number", "integer", "boolean", "null"]},
+        "observed": {"type": ["string", "number", "integer", "boolean", "null"]}
+      }
+    }
+  }
+}

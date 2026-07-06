@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bible_text_translations.py@v1.0.0",
+  "writer_identity": "bible_text_translations_parser",
+  "run_id": "10f2d09a7341825ea8f63850ace68b09",
+  "started_at": "2026-07-05T18:44:16.610148+00:00",
+  "data_paths": [
+    "data/bible-text/asv/1-chronicles.json",
+    "data/bible-text/asv/1-corinthians.json",
+    "data/bible-text/asv/1-john.json",
+    "data/bible-text/asv/1-kings.json",
+    "data/bible-text/asv/1-peter.json",
+    "data/bible-text/asv/1-samuel.json",
+    "data/bible-text/asv/1-thessalonians.json",
+    "data/bible-text/asv/1-timothy.json",
+    "data/bible-text/asv/2-chronicles.json",
+    "data/bible-text/asv/2-corinthians.json",
+    "data/bible-text/asv/2-john.json",
+    "data/bible-text/asv/2-kings.json",
+    "data/bible-text/asv/2-peter.json",
+    "data/bible-text/asv/2-samuel.json",
+    "data/bible-text/asv/2-thessalonians.json",
+    "data/bible-text/asv/2-timothy.json",
+    "data/bible-text/asv/3-john.json",
+    "data/bible-text/asv/acts.json",
+    "data/bible-text/asv/amos.json",
+    "data/bible-text/asv/colossians.json",
+    "data/bible-text/asv/daniel.json",
+    "data/bible-text/asv/deuteronomy.json",
+    "data/bible-text/asv/ecclesiastes.json",
+    "data/bible-text/asv/ephesians.json",
+    "data/bible-text/asv/esther.json",
+    "data/bible-text/asv/exodus.json",
+    "data/bible-text/asv/ezekiel.json",
+    "data/bible-text/asv/ezra.json",
+    "data/bible-text/asv/galatians.json",
+    "data/bible-text/asv/genesis.json",
+    "data/bible-text/asv/habakkuk.json",
+    "data/bible-text/asv/haggai.json",
+    "data/bible-text/asv/hebrews.json",
+    "data/bible-text/asv/hosea.json",
+    "data/bible-text/asv/isaiah.json",
+    "data/bible-text/asv/james.json",
+    "data/bible-text/asv/jeremiah.json",
+    "data/bible-text/asv/job.json",
+    "data/bible-text/asv/joel.json",
+    "data/bible-text/asv/john.json",
+    "data/bible-text/asv/jonah.json",
+    "data/bible-text/asv/joshua.json",
+    "data/bible-text/asv/jude.json",
+    "data/bible-text/asv/judges.json",
+    "data/bible-text/asv/lamentations.json",
+    "data/bible-text/asv/leviticus.json",
+    "data/bible-text/asv/luke.json",
+    "data/bible-text/asv/malachi.json",
+    "data/bible-text/asv/mark.json",
+    "data/bible-text/asv/matthew.json",
+    "data/bible-text/asv/micah.json",
+    "data/bible-text/asv/nahum.json",
+    "data/bible-text/asv/nehemiah.json",
+    "data/bible-text/asv/numbers.json",
+    "data/bible-text/asv/obadiah.json",
+    "data/bible-text/asv/philemon.json",
+    "data/bible-text/asv/philippians.json",
+    "data/bible-text/asv/proverbs.json",
+    "data/bible-text/asv/psalms.json",
+    "data/bible-text/asv/revelation.json",
+    "data/bible-text/asv/romans.json",
+    "data/bible-text/asv/ruth.json",
+    "data/bible-text/asv/song-of-solomon.json",
+    "data/bible-text/asv/titus.json",
+    "data/bible-text/asv/zechariah.json",
+    "data/bible-text/asv/zephaniah.json"
+  ],
+  "checksums": {
+    "data/bible-text/asv/1-chronicles.json": {
+      "before_sha256": null,
+      "after_sha256": "c58ef93d98a413bc8a9bed2d606fdac128ea55774746ef75e8c173d68e2b0c64"
+    },
+    "data/bible-text/asv/1-corinthians.json": {
+      "before_sha256": null,
+      "after_sha256": "e230b6a44380c152397ef2b0a421ee75a60c7b5e2f0d2314072621878b540331"
+    },
+    "data/bible-text/asv/1-john.json": {
+      "before_sha256": null,
+      "after_sha256": "c1899690575d7e725d57413ecc2a244b43284e8800d2c9b30c681e6912827f77"
+    },
+    "data/bible-text/asv/1-kings.json": {
+      "before_sha256": null,
+      "after_sha256": "1f07591e8a3309cf92470602fd0be67464fbeddc3ff90499969fc58f18e58f5b"
+    },
+    "data/bible-text/asv/1-peter.json": {
+      "before_sha256": null,
+      "after_sha256": "eccc281a467df4f6d529f42da8725f6918450b86c7108edc5590a2ed086def66"
+    },
+    "data/bible-text/asv/1-samuel.json": {
+      "before_sha256": null,
+      "after_sha256": "bf2ec360260d30f5647447c5617b8a3e723b91a4eb9f4ff89e7b43e1ac834a82"
+    },
+    "data/bible-text/asv/1-thessalonians.json": {
+      "before_sha256": null,
+      "after_sha256": "0a60361b9c14d9038e18c8083726c18c734b61a6416d07e7284d6528c90e5e4a"
+    },
+    "data/bible-text/asv/1-timothy.json": {
+      "before_sha256": null,
+      "after_sha256": "4240d566b999741bdc487dd2b96a10933962d3f200b0ce356ebe852ad8fda9e2"
+    },
+    "data/bible-text/asv/2-chronicles.json": {
+      "before_sha256": null,
+      "after_sha256": "15707d5427cda58860d5cc5c13162c748aee6cacb31a9b0ff3e595c8d793aef9"
+    },
+    "data/bible-text/asv/2-corinthians.json": {
+      "before_sha256": null,
+      "after_sha256": "d0e20e8820921ad8f7f192c9bffec70c143da8281064e97ee74f18ed4a14d1ee"
+    },
+    "data/bible-text/asv/2-john.json": {
+      "before_sha256": null,
+      "after_sha256": "0d1f4aefd2cb83f462b401b9d3ff53236944198ce8a87e41db0b9537af5099af"
+    },
+    "data/bible-text/asv/2-kings.json": {
+      "before_sha256": null,
+      "after_sha256": "d78ca2e2276da10ea06234c9cb06ca44f6e5597d812b90f5ce57537393248351"
+    },
+    "data/bible-text/asv/2-peter.json": {
+      "before_sha256": null,
+      "after_sha256": "73e59d1a52a5ea06d8826eb522e138ebcbb8ab723eab1125ae9568ed84a31dc2"
+    },
+    "data/bible-text/asv/2-samuel.json": {
+      "before_sha256": null,
+      "after_sha256": "9f357d07c5ee3ff5cb08625ce35b152e5b09565e3dddeed212605756e6e5d794"
+    },
+    "data/bible-text/asv/2-thessalonians.json": {
+      "before_sha256": null,
+      "after_sha256": "3fd53ecc0321df3b6b8ef110a0b7abc736703d63e9034cd9be92b5bb0f8ce3b3"
+    },
+    "data/bible-text/asv/2-timothy.json": {
+      "before_sha256": null,
+      "after_sha256": "fd27534d336b1bfc433d07d57be4535f3b4d8621092140ba3518882dec968d52"
+    },
+    "data/bible-text/asv/3-john.json": {
+      "before_sha256": null,
+      "after_sha256": "ccba03310dd704f2e47b2a33b11a23ee0344f7c5922f1f1a09be75cf96404ce7"
+    },
+    "data/bible-text/asv/acts.json": {
+      "before_sha256": null,
+      "after_sha256": "f8b6bc7ee58b038a4db9ae53aaf0b1989d6a05994ae2ba002924ad386b7897ed"
+    },
+    "data/bible-text/asv/amos.json": {
+      "before_sha256": null,
+      "after_sha256": "3e3c8bfed3bd84c0d8f867f513269f1b96a8b885d743dbfe5e79d569253c0110"
+    },
+    "data/bible-text/asv/colossians.json": {
+      "before_sha256": null,
+      "after_sha256": "1e65b2225d0f4d0b1951abb94f37cb1fff93850ceef205e60b5566515c2a44c6"
+    },
+    "data/bible-text/asv/daniel.json": {
+      "before_sha256": null,
+      "after_sha256": "71e1046fa4ce6ac4c4ff485160c88b509fbedd949eb33040a1cdd3266b7a5873"
+    },
+    "data/bible-text/asv/deuteronomy.json": {
+      "before_sha256": null,
+      "after_sha256": "d4ac381ca5b8df209e0edc8df6b2256b0737595b5b50e41b475b6cbec2b06c80"
+    },
+    "data/bible-text/asv/ecclesiastes.json": {
+      "before_sha256": null,
+      "after_sha256": "686c3b5c2a58efe428b59e8807638b551caa4321ac92f4956558c470216d0601"
+    },
+    "data/bible-text/asv/ephesians.json": {
+      "before_sha256": null,
+      "after_sha256": "3ddecd467b82fd757f4929246634baf95f5a6a52a6a21021a40d1a51b9230ce0"
+    },
+    "data/bible-text/asv/esther.json": {
+      "before_sha256": null,
+      "after_sha256": "1e49c37a9bc2a22ca85da62beede36cff8d0136171fb77dd7a901154619ee6f8"
+    },
+    "data/bible-text/asv/exodus.json": {
+      "before_sha256": null,
+      "after_sha256": "3a6bb41c14c7adf66c044267bb40d57fe1ef70d784de68c692980a5697737f38"
+    },
+    "data/bible-text/asv/ezekiel.json": {
+      "before_sha256": null,
+      "after_sha256": "e25c5acac4422f43a923fe719e4487dd81b7dc79a531a30e4012808bbe7367fe"
+    },
+    "data/bible-text/asv/ezra.json": {
+      "before_sha256": null,
+      "after_sha256": "ee3c9cf255b24755e440e64360e6affe901c7acb5c0b60da6585a1d20ccb2105"
+    },
+    "data/bible-text/asv/galatians.json": {
+      "before_sha256": null,
+      "after_sha256": "bca19ad4108ee9029cc720892349004c32c74cf4b901afa35e05d003f0b97c9f"
+    },
+    "data/bible-text/asv/genesis.json": {
+      "before_sha256": null,
+      "after_sha256": "b21d5658d26bc41fbbed3e68c85d7202f043075e64d0e17daca193038cfb4ae0"
+    },
+    "data/bible-text/asv/habakkuk.json": {
+      "before_sha256": null,
+      "after_sha256": "f9937f1c49a5f0311965471b764aea3c84dd9d7918c0efb2268c8554a90c3f3d"
+    },
+    "data/bible-text/asv/haggai.json": {
+      "before_sha256": null,
+      "after_sha256": "d2648d55277d6acc67ece9745106e8d519c9f3e2d4588d21a734532e68f221b2"
+    },
+    "data/bible-text/asv/hebrews.json": {
+      "before_sha256": null,
+      "after_sha256": "b9d6f3cd3837958930289de757deb61037c3fa6f8f37efe51bbae957aea1c9bd"
+    },
+    "data/bible-text/asv/hosea.json": {
+      "before_sha256": null,
+      "after_sha256": "d378188f6e94af0e2f244a1d589842351afb00c177bb45211b5b8bcc1a2f4aa9"
+    },
+    "data/bible-text/asv/isaiah.json": {
+      "before_sha256": null,
+      "after_sha256": "5737b6304c25d71e91ada2b89046fa769317e963dfc95fceae21a5c75afd0db3"
+    },
+    "data/bible-text/asv/james.json": {
+      "before_sha256": null,
+      "after_sha256": "d0557a2a1ed7f814906ee135d07af536e6aae81186b9ef39e660f0384f0fb598"
+    },
+    "data/bible-text/asv/jeremiah.json": {
+      "before_sha256": null,
+      "after_sha256": "852db8f57ded2c9c3f543a1dc9745aa90fd4951ead685ee853fe259eec4f0caf"
+    },
+    "data/bible-text/asv/job.json": {
+      "before_sha256": null,
+      "after_sha256": "c67e53a5e34001aee2a72ffdd2ab110b78f13a757a7b8f97bebc78ee45c5b262"
+    },
+    "data/bible-text/asv/joel.json": {
+      "before_sha256": null,
+      "after_sha256": "dc10ed3ab7f03229f88310f473d89fb21606f636d4ba289fa039ca3f2428501e"
+    },
+    "data/bible-text/asv/john.json": {
+      "before_sha256": null,
+      "after_sha256": "fc8a5912f041cd7d5e7d5fd5979c89ea7bfb5fba21d9b0fdf9ddc9c19340987b"
+    },
+    "data/bible-text/asv/jonah.json": {
+      "before_sha256": null,
+      "after_sha256": "3c3492fb76d523b499d5671a773f387214e5d61ce1a817005d9107351f6be58e"
+    },
+    "data/bible-text/asv/joshua.json": {
+      "before_sha256": null,
+      "after_sha256": "997c3c0a6d1d55c135a64d846f29221e8cd600a301116622923b48cae18c75bc"
+    },
+    "data/bible-text/asv/jude.json": {
+      "before_sha256": null,
+      "after_sha256": "4ae5402e6579c71553342e7359457642b6f274e12c7b1358cb3c03e029f3a6d6"
+    },
+    "data/bible-text/asv/judges.json": {
+      "before_sha256": null,
+      "after_sha256": "ef2cbf8a7a829dae7d863f1387e9fecccbb0bf18420a1c445587405870becc59"
+    },
+    "data/bible-text/asv/lamentations.json": {
+      "before_sha256": null,
+      "after_sha256": "6f8691382cba55f0466ed51b1786dd332057d3173934ba32d4f36d8baafb9195"
+    },
+    "data/bible-text/asv/leviticus.json": {
+      "before_sha256": null,
+      "after_sha256": "f874e3af82ddf8bdb36170f26cf462cc2b494ba56aaebf0f1aa4f7f65ffb3a11"
+    },
+    "data/bible-text/asv/luke.json": {
+      "before_sha256": null,
+      "after_sha256": "b98a4318e3d849d464b5ae3daa3de6840cfe9994bc6ab794481c74608c7161f9"
+    },
+    "data/bible-text/asv/malachi.json": {
+      "before_sha256": null,
+      "after_sha256": "2290cdffbe4038db19bf3b55e10e6e23fa82672722fedebef9c169423e30d044"
+    },
+    "data/bible-text/asv/mark.json": {
+      "before_sha256": null,
+      "after_sha256": "e57b322942ee3b0c282f1ecd2f261c7b79aebd539127ab0068389533dd5dc840"
+    },
+    "data/bible-text/asv/matthew.json": {
+      "before_sha256": null,
+      "after_sha256": "50922a07afa03a8225e3b58d9693385da361a6f62447b90cbfd86dcc88787ffc"
+    },
+    "data/bible-text/asv/micah.json": {
+      "before_sha256": null,
+      "after_sha256": "6c0367dffdf73dadc622454713e3949a4cd4067acef03fd6d1eea6349be0626d"
+    },
+    "data/bible-text/asv/nahum.json": {
+      "before_sha256": null,
+      "after_sha256": "650595e535215faead6847ce0b99b5bac2bd0361a45c6b825feb340208647bdc"
+    },
+    "data/bible-text/asv/nehemiah.json": {
+      "before_sha256": null,
+      "after_sha256": "ec504604eac8d47beb20559e6dd7e81ce2b186618094b802da102852a96838ca"
+    },
+    "data/bible-text/asv/numbers.json": {
+      "before_sha256": null,
+      "after_sha256": "af1b5334ec07bf40d804a6dc2798ed46e3ee852c1186c5fa9c546becb88cb69c"
+    },
+    "data/bible-text/asv/obadiah.json": {
+      "before_sha256": null,
+      "after_sha256": "04edf3e00c3d9d90f0be4ef86ea92d8ed4cd76a5acc2f2df475a753754b2efe1"
+    },
+    "data/bible-text/asv/philemon.json": {
+      "before_sha256": null,
+      "after_sha256": "a330302622254fd2044487639302d078222cab056e8783a3e604af915b7f2b84"
+    },
+    "data/bible-text/asv/philippians.json": {
+      "before_sha256": null,
+      "after_sha256": "5f4901ba7ce0041799cd93768dbbe8165f3ca2a126ed485b75fdd431544ee501"
+    },
+    "data/bible-text/asv/proverbs.json": {
+      "before_sha256": null,
+      "after_sha256": "d1272ca6cb88dce70505ddc1cf7bcd0c58ee6e095d22e5de4b2d99a5c60161c6"
+    },
+    "data/bible-text/asv/psalms.json": {
+      "before_sha256": null,
+      "after_sha256": "30e2fa198dd1ebfed057532bfa578239c0f7d0a5db5722dd4d6e247c560cacd8"
+    },
+    "data/bible-text/asv/revelation.json": {
+      "before_sha256": null,
+      "after_sha256": "646ff04fd0ea40003434cf1ac697ea3199306e2cf49339a8bf3c1a662d6dea1a"
+    },
+    "data/bible-text/asv/romans.json": {
+      "before_sha256": null,
+      "after_sha256": "f943987df00c430a6cc77cf0a94dfd1574be45bb12d6d6ae523cf2fcb6d747cd"
+    },
+    "data/bible-text/asv/ruth.json": {
+      "before_sha256": null,
+      "after_sha256": "36baea3afc18543f4c4e5470683c791dd1411d34a32b6c295d00abbb6a5b0973"
+    },
+    "data/bible-text/asv/song-of-solomon.json": {
+      "before_sha256": null,
+      "after_sha256": "05ce1fb47bfe6d0eb240089636882695a1906b9057e3cbcc148d28aa1a4876c2"
+    },
+    "data/bible-text/asv/titus.json": {
+      "before_sha256": null,
+      "after_sha256": "2f606d6b95cdc3944c892b4a728d455a35903c3d4131fb70a68a6b220ed2f035"
+    },
+    "data/bible-text/asv/zechariah.json": {
+      "before_sha256": null,
+      "after_sha256": "4145f78232d95e5a781bc9d8c91749cc19dfa0db47f6a04cbc8c898e92ba6d6e"
+    },
+    "data/bible-text/asv/zephaniah.json": {
+      "before_sha256": null,
+      "after_sha256": "93d1079a56d0ec8bd83a90d49a77e1f415be9991d683d5c026d18bd52b7a7c2b"
+    }
+  },
+  "expected_delta_counts": {
+    "data/bible-text/asv/1-chronicles.json": {
+      "verses_added": 942
+    },
+    "data/bible-text/asv/1-corinthians.json": {
+      "verses_added": 437
+    },
+    "data/bible-text/asv/1-john.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/asv/1-kings.json": {
+      "verses_added": 816
+    },
+    "data/bible-text/asv/1-peter.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/asv/1-samuel.json": {
+      "verses_added": 810
+    },
+    "data/bible-text/asv/1-thessalonians.json": {
+      "verses_added": 89
+    },
+    "data/bible-text/asv/1-timothy.json": {
+      "verses_added": 113
+    },
+    "data/bible-text/asv/2-chronicles.json": {
+      "verses_added": 822
+    },
+    "data/bible-text/asv/2-corinthians.json": {
+      "verses_added": 257
+    },
+    "data/bible-text/asv/2-john.json": {
+      "verses_added": 13
+    },
+    "data/bible-text/asv/2-kings.json": {
+      "verses_added": 719
+    },
+    "data/bible-text/asv/2-peter.json": {
+      "verses_added": 61
+    },
+    "data/bible-text/asv/2-samuel.json": {
+      "verses_added": 695
+    },
+    "data/bible-text/asv/2-thessalonians.json": {
+      "verses_added": 47
+    },
+    "data/bible-text/asv/2-timothy.json": {
+      "verses_added": 83
+    },
+    "data/bible-text/asv/3-john.json": {
+      "verses_added": 14
+    },
+    "data/bible-text/asv/acts.json": {
+      "verses_added": 1003
+    },
+    "data/bible-text/asv/amos.json": {
+      "verses_added": 146
+    },
+    "data/bible-text/asv/colossians.json": {
+      "verses_added": 95
+    },
+    "data/bible-text/asv/daniel.json": {
+      "verses_added": 357
+    },
+    "data/bible-text/asv/deuteronomy.json": {
+      "verses_added": 959
+    },
+    "data/bible-text/asv/ecclesiastes.json": {
+      "verses_added": 222
+    },
+    "data/bible-text/asv/ephesians.json": {
+      "verses_added": 155
+    },
+    "data/bible-text/asv/esther.json": {
+      "verses_added": 167
+    },
+    "data/bible-text/asv/exodus.json": {
+      "verses_added": 1213
+    },
+    "data/bible-text/asv/ezekiel.json": {
+      "verses_added": 1273
+    },
+    "data/bible-text/asv/ezra.json": {
+      "verses_added": 280
+    },
+    "data/bible-text/asv/galatians.json": {
+      "verses_added": 149
+    },
+    "data/bible-text/asv/genesis.json": {
+      "verses_added": 1533
+    },
+    "data/bible-text/asv/habakkuk.json": {
+      "verses_added": 56
+    },
+    "data/bible-text/asv/haggai.json": {
+      "verses_added": 38
+    },
+    "data/bible-text/asv/hebrews.json": {
+      "verses_added": 303
+    },
+    "data/bible-text/asv/hosea.json": {
+      "verses_added": 197
+    },
+    "data/bible-text/asv/isaiah.json": {
+      "verses_added": 1292
+    },
+    "data/bible-text/asv/james.json": {
+      "verses_added": 108
+    },
+    "data/bible-text/asv/jeremiah.json": {
+      "verses_added": 1364
+    },
+    "data/bible-text/asv/job.json": {
+      "verses_added": 1070
+    },
+    "data/bible-text/asv/joel.json": {
+      "verses_added": 73
+    },
+    "data/bible-text/asv/john.json": {
+      "verses_added": 878
+    },
+    "data/bible-text/asv/jonah.json": {
+      "verses_added": 48
+    },
+    "data/bible-text/asv/joshua.json": {
+      "verses_added": 658
+    },
+    "data/bible-text/asv/jude.json": {
+      "verses_added": 25
+    },
+    "data/bible-text/asv/judges.json": {
+      "verses_added": 618
+    },
+    "data/bible-text/asv/lamentations.json": {
+      "verses_added": 154
+    },
+    "data/bible-text/asv/leviticus.json": {
+      "verses_added": 859
+    },
+    "data/bible-text/asv/luke.json": {
+      "verses_added": 1149
+    },
+    "data/bible-text/asv/malachi.json": {
+      "verses_added": 55
+    },
+    "data/bible-text/asv/mark.json": {
+      "verses_added": 673
+    },
+    "data/bible-text/asv/matthew.json": {
+      "verses_added": 1068
+    },
+    "data/bible-text/asv/micah.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/asv/nahum.json": {
+      "verses_added": 47
+    },
+    "data/bible-text/asv/nehemiah.json": {
+      "verses_added": 406
+    },
+    "data/bible-text/asv/numbers.json": {
+      "verses_added": 1288
+    },
+    "data/bible-text/asv/obadiah.json": {
+      "verses_added": 21
+    },
+    "data/bible-text/asv/philemon.json": {
+      "verses_added": 25
+    },
+    "data/bible-text/asv/philippians.json": {
+      "verses_added": 104
+    },
+    "data/bible-text/asv/proverbs.json": {
+      "verses_added": 915
+    },
+    "data/bible-text/asv/psalms.json": {
+      "verses_added": 2461
+    },
+    "data/bible-text/asv/revelation.json": {
+      "verses_added": 404
+    },
+    "data/bible-text/asv/romans.json": {
+      "verses_added": 432
+    },
+    "data/bible-text/asv/ruth.json": {
+      "verses_added": 85
+    },
+    "data/bible-text/asv/song-of-solomon.json": {
+      "verses_added": 117
+    },
+    "data/bible-text/asv/titus.json": {
+      "verses_added": 46
+    },
+    "data/bible-text/asv/zechariah.json": {
+      "verses_added": 211
+    },
+    "data/bible-text/asv/zephaniah.json": {
+      "verses_added": 53
+    }
+  }
+}

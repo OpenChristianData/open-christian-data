@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_schaff_herzog.py@v1.0.0",
+  "writer_identity": "ia_schaff_herzog_parser",
+  "run_id": "phase-d-coverage-schaff-herzog",
+  "started_at": "2026-05-12T15:17:09Z",
+  "data_paths": [
+    "data/reference/schaff-herzog-encyclopedia.json"
+  ],
+  "checksums": {
+    "data/reference/schaff-herzog-encyclopedia.json": {
+      "before_sha256": "f8564daff52e2f51c131859aab166998238bf2031f784c1838e46774912d6b6c",
+      "after_sha256": "a76781444224c984e85ea668d5aa3977f711451928b02c0718ef8d7e7dde15ee"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff-herzog-encyclopedia.json": {
+      "entries_changed": 0,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta/coverage"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

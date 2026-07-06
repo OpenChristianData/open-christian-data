@@ -1,0 +1,399 @@
+{
+  "schema_version": "rendering-v1",
+  "stage_version": "s2-render-v1",
+  "rendering_id": "rendering-oss-tesseract-vol01-p0010",
+  "engine_family": "tesseract",
+  "engine_version": "fixture-1.0",
+  "source_lineage_id": "tesseract/5.5",
+  "work_id": "schaff-herzog",
+  "edition_id": "1908-1914",
+  "volume": 1,
+  "pipeline_config_hash": "sha256:bb56f870c312ece9fbea9e5dd1b04b52ced12fe0188a0d3920963a49252fc469",
+  "typography_snapshot_id": "typo-fixture",
+  "typography_snapshot_approval_state": "provisional",
+  "ccel_annotation_source_id": null,
+  "dictionary_snapshot_ids": {},
+  "nfkc_allowlist_hash": "sha256:0cfa84f0d6b333e4f8e76d7ee349fdfeddd29ebf7e982024631f0be989ae29c8",
+  "fingerprint_function_hash": "sha256:47ecea5105661b4c88fe6439a7e65fb26ef2139575d34b1f3eb01cbf52822e4d",
+  "source_sidecar_refs": [],
+  "parsed_keys_index_refs": [],
+  "witness_coverage": {
+    "page_count": 1,
+    "eligible_pages": 1,
+    "diagnostic_pages": 0,
+    "corrupt_pages": 0,
+    "missing_pages": 0,
+    "coverage_state": "covered"
+  },
+  "pages": [
+    {
+      "manifest_id": "schaff-herzog/vol_01",
+      "rendering_id": "rendering-oss-tesseract-vol01-p0010",
+      "page_native_id": "leaf_0010",
+      "canonical_leaf_id": 10,
+      "edition_page_key": {
+        "section": "body",
+        "anchor": 10,
+        "ordinal": 0
+      },
+      "page_sequence": 10,
+      "page_dimensions_native": {
+        "width": 2000,
+        "height": 3000,
+        "unit": "pixel"
+      },
+      "source_payload_sha256": "sha256:510f7f3ab9e87b4e973435b24d6d8ac5cf9a2642768ab572a5831efee88ec5ef",
+      "coverage_state": "covered",
+      "reading_order_reliability": "high",
+      "blocks": [
+        {
+          "rendering_block_id": "oss-tesseract-b0",
+          "native_block_ids": [
+            "oss-tesseract:nb0"
+          ],
+          "native_order": 0,
+          "derived_order": 0,
+          "block_type": "paragraph",
+          "block_type_evidence": {
+            "signals": []
+          },
+          "block_type_confidence": "high",
+          "block_type_conflicts": [],
+          "region_class": "body",
+          "language_lane": "en",
+          "language_lane_confidence": "high",
+          "zone_label": "body",
+          "candidate_article_membership": {
+            "status": "none",
+            "candidate_article_ids": []
+          },
+          "bibliography_layout": {
+            "status": "not_bibliography",
+            "evidence": []
+          },
+          "indent_style": "none",
+          "bbox_canonical": [
+            0.1,
+            0.1,
+            0.8,
+            0.8
+          ],
+          "block_extras_carried": {},
+          "block_extras_carried_keys": [],
+          "block_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "layers": {
+            "source_raw": "the early church- history council",
+            "normalised": "the early church- history council",
+            "structured": "the early church- history council",
+            "display": "the early church- history council"
+          },
+          "lines": [
+            {
+              "rendering_line_id": "oss-tesseract-l0",
+              "native_line_ids": [
+                "oss-tesseract:nl0"
+              ],
+              "native_order": 0,
+              "derived_order": 0,
+              "bbox_native": {
+                "x": 200,
+                "y": 396,
+                "w": 600,
+                "h": 68
+              },
+              "bbox_canonical": [
+                0.1,
+                0.132,
+                0.3,
+                0.022667
+              ],
+              "line_geometry": {
+                "x_size": 60.0,
+                "baseline": 460.0,
+                "x_descenders": 470.0,
+                "x_ascenders": 405.0
+              },
+              "indent_evidence": {
+                "style": "none",
+                "block_x": 200.0,
+                "line_x": 200.0
+              },
+              "relative_size_tier": "body",
+              "raw_size_pt": 11.0,
+              "layers": {
+                "source_raw": "the early church-",
+                "normalised": "the early church-",
+                "structured": "the early church-",
+                "display": "the early church-"
+              },
+              "words": [
+                {
+                  "observation_token_id": "ot-sha256:0a55bc2ec9bcc2a035fe3f98aa6896d868d5193ad72d27abc5c088deffa4e5bc",
+                  "native_sequence_index": 0,
+                  "layers": {
+                    "source_raw": "the",
+                    "normalised": "the",
+                    "structured": "the",
+                    "display": "the"
+                  },
+                  "bbox_native": {
+                    "x": 211,
+                    "y": 401,
+                    "w": 119,
+                    "h": 59
+                  },
+                  "bbox_canonical": [
+                    0.1055,
+                    0.133667,
+                    0.0595,
+                    0.019667
+                  ],
+                  "confidence_raw": 0.9,
+                  "zone_label": "body",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": false,
+                  "derived_join_span_id": null
+                },
+                {
+                  "observation_token_id": "ot-sha256:8e47ceea2e0fa4a23750a0e6748b9a268bd43d32d7b057ba9b86935ca52bfd6b",
+                  "native_sequence_index": 1,
+                  "layers": {
+                    "source_raw": "early",
+                    "normalised": "early",
+                    "structured": "early",
+                    "display": "early"
+                  },
+                  "bbox_native": {
+                    "x": 351,
+                    "y": 401,
+                    "w": 179,
+                    "h": 59
+                  },
+                  "bbox_canonical": [
+                    0.1755,
+                    0.133667,
+                    0.0895,
+                    0.019667
+                  ],
+                  "confidence_raw": 0.88,
+                  "zone_label": "marginalia",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": false,
+                  "derived_join_span_id": null
+                },
+                {
+                  "observation_token_id": "ot-sha256:a9ec187f6504a42174175faaa763479278a059b167d816b3016639017c997ba7",
+                  "native_sequence_index": 2,
+                  "layers": {
+                    "source_raw": "church-",
+                    "normalised": "church-",
+                    "structured": "church-",
+                    "display": "church-"
+                  },
+                  "bbox_native": {
+                    "x": 561,
+                    "y": 401,
+                    "w": 210,
+                    "h": 59
+                  },
+                  "bbox_canonical": [
+                    0.2805,
+                    0.133667,
+                    0.105,
+                    0.019667
+                  ],
+                  "confidence_raw": 0.85,
+                  "zone_label": "body",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": true,
+                  "derived_join_span_id": "ds-sha256:6c3bfce3a1bd534763d82a9611e1676e4f6896005df12f40c2ee2b52004777d9"
+                }
+              ],
+              "line_extras_carried": {},
+              "line_extras_carried_keys": [],
+              "line_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+            },
+            {
+              "rendering_line_id": "oss-tesseract-l1",
+              "native_line_ids": [
+                "oss-tesseract:nl1"
+              ],
+              "native_order": 1,
+              "derived_order": 1,
+              "bbox_native": {
+                "x": 200,
+                "y": 465,
+                "w": 600,
+                "h": 68
+              },
+              "bbox_canonical": [
+                0.1,
+                0.155,
+                0.3,
+                0.022667
+              ],
+              "line_geometry": {
+                "x_size": 60.0,
+                "baseline": 460.0,
+                "x_descenders": 470.0,
+                "x_ascenders": 405.0
+              },
+              "indent_evidence": {
+                "style": "none",
+                "block_x": 200.0,
+                "line_x": 200.0
+              },
+              "relative_size_tier": "body",
+              "raw_size_pt": 11.0,
+              "layers": {
+                "source_raw": "history council",
+                "normalised": "history council",
+                "structured": "history council",
+                "display": "history council"
+              },
+              "words": [
+                {
+                  "observation_token_id": "ot-sha256:373c7a4c287df2cdcc0fcf2654cec1fe260f13debd1a481cc839ae3420b587a9",
+                  "native_sequence_index": 3,
+                  "layers": {
+                    "source_raw": "history",
+                    "normalised": "history",
+                    "structured": "history",
+                    "display": "history"
+                  },
+                  "bbox_native": {
+                    "x": 210,
+                    "y": 470,
+                    "w": 230,
+                    "h": 59
+                  },
+                  "bbox_canonical": [
+                    0.105,
+                    0.156667,
+                    0.115,
+                    0.019667
+                  ],
+                  "confidence_raw": 0.86,
+                  "zone_label": "body",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": true,
+                  "derived_join_span_id": "ds-sha256:6c3bfce3a1bd534763d82a9611e1676e4f6896005df12f40c2ee2b52004777d9"
+                },
+                {
+                  "observation_token_id": "ot-sha256:3f78de6a4ed6cf643d633d8f25d8e9cc73709cbace65300ac210516a4f9557af",
+                  "native_sequence_index": 4,
+                  "layers": {
+                    "source_raw": "council",
+                    "normalised": "council",
+                    "structured": "council",
+                    "display": "council"
+                  },
+                  "bbox_native": {
+                    "x": 470,
+                    "y": 470,
+                    "w": 300,
+                    "h": 59
+                  },
+                  "bbox_canonical": [
+                    0.235,
+                    0.156667,
+                    0.15,
+                    0.019667
+                  ],
+                  "confidence_raw": 0.89,
+                  "zone_label": "body",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": false,
+                  "derived_join_span_id": null
+                }
+              ],
+              "line_extras_carried": {},
+              "line_extras_carried_keys": [],
+              "line_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+            }
+          ]
+        }
+      ],
+      "page_extras_carried": {},
+      "page_extras_carried_keys": [],
+      "page_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    }
+  ],
+  "candidate_articles": [],
+  "derived_spans_by_block": {
+    "oss-tesseract-b0": [
+      {
+        "derived_span_id": "ds-sha256:6c3bfce3a1bd534763d82a9611e1676e4f6896005df12f40c2ee2b52004777d9",
+        "operation": "joined_continuation",
+        "contributor_observation_token_ids": [
+          "ot-sha256:a9ec187f6504a42174175faaa763479278a059b167d816b3016639017c997ba7",
+          "ot-sha256:373c7a4c287df2cdcc0fcf2654cec1fe260f13debd1a481cc839ae3420b587a9"
+        ],
+        "boundary_type": "line_break",
+        "structured_text": "church history",
+        "language_lane": "en",
+        "dictionary_match": {
+          "matched": false,
+          "resource_id": "en-core",
+          "snapshot_hash": "sha256:6ab47d70854a8c690a0c2035be903f3d812cbab06f9e442e9b10ad70b1acd446",
+          "matched_form": null
+        },
+        "candidate_window": "church-history",
+        "confidence_floor": 0.85
+      }
+    ]
+  },
+  "structural_uncertainty_queue": [],
+  "operations_ledger_ref": {
+    "path": "reports/ledger.json",
+    "sha256": "sha256:fe14010b4fe83303852f0467c919ef9a7ca089b91e96e3aad7d426dd87079297"
+  },
+  "operations_ledger_hash": "sha256:fe14010b4fe83303852f0467c919ef9a7ca089b91e96e3aad7d426dd87079297",
+  "replay_verification": {
+    "passed": true,
+    "ledger_schema_valid": true,
+    "forward_replay_sha256": "sha256:4b94ea23f6d90b0b30aa00e48079832b689feaba2991df25137802d5bd90f34e",
+    "inverse_replay_sha256": "sha256:89270a50341bb8e83734ee062603c63c219320ed4a40fb9fb8c2792358548e8a",
+    "source_raw_reconstruction_sha256": "sha256:6b7d902199e960ef699051a48fef1214319517d6be498de768f1dc8a9a31ea38",
+    "verified_at": "2026-05-28T00:00:00Z",
+    "verifier_version": "fixture-1.0",
+    "failure_codes": []
+  },
+  "admission_state": {
+    "fully_admitted": true,
+    "coverage_gaps": 0,
+    "reading_order_low_pages": 0,
+    "reading_order_failed_pages": 0,
+    "unresolved_hyphen_count": 0
+  }
+}

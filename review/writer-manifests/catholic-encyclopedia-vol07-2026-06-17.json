@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/catholic_encyclopedia.py@v1.0.0",
+  "writer_identity": "catholic_encyclopedia_parser",
+  "run_id": "catholic-encyclopedia-vol07-2026-06-17",
+  "started_at": "2026-06-17T04:39:35Z",
+  "data_paths": [
+    "data/reference/catholic-encyclopedia-vol07.json"
+  ],
+  "checksums": {
+    "data/reference/catholic-encyclopedia-vol07.json": {
+      "before_sha256": null,
+      "after_sha256": "fa66c3c9dab25646f63299977a913fc092cfccdc853759f4152da2c26e8e9331"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/catholic-encyclopedia-vol07.json": {
+      "entries_written": 219,
+      "contributors_unique": 125,
+      "skipped": 0,
+      "empty_body": 0
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Volume 7 crawl. 219 articles via 26 per-letter index pages on newadvent.org/cathen/. Rate-limited 1-2s/request. No 403/429 encountered.",
+  "renames": []
+}

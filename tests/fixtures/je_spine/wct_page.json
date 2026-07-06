@@ -1,0 +1,222 @@
+{
+  "work_id": "jewish-encyclopedia.vol_02",
+  "volume_id": "vol_02",
+  "page_id": "page_0010",
+  "source_image": {
+    "path": "raw/jewish-encyclopedia/ia-pages/vol_02/page_0010.jpg",
+    "sha256": "cc7dfc066531135243667f5032621f9efba0ce7d2d8419a2080e1cc49ca54cca"
+  },
+  "available_engines": [
+    {
+      "engine_id": "ia-abbyy-v1",
+      "family": "abbyy",
+      "lineage": "ia-abbyy-v1",
+      "engine_version": "LuraDocument XML Exporter for ABBYY FineReader",
+      "engine_run_id": "ia-abbyy/jewish-encyclopedia/1901-1906/v1"
+    },
+    {
+      "engine_id": "tesseract-py314-v1",
+      "family": "tesseract",
+      "lineage": "tesseract-py314-v1",
+      "engine_version": "5.5.0.20241111",
+      "engine_run_id": "tesseract-py314-v1/schaff/encyclopedia/1908-1914/v1"
+    },
+    {
+      "engine_id": "kraken-py312-v1",
+      "family": "kraken",
+      "lineage": "kraken-py312-v1",
+      "engine_version": "unknown",
+      "engine_run_id": "kraken-py312-v1/schaff/encyclopedia/1908-1914/v1"
+    },
+    {
+      "engine_id": "kraken-greek-py312-v1",
+      "family": "kraken",
+      "lineage": "kraken-greek-py312-v1",
+      "engine_version": "unknown",
+      "engine_run_id": "kraken-greek-py312-v1/schaff/encyclopedia/1908-1914/v1"
+    },
+    {
+      "engine_id": "azure-ai-vision-v1",
+      "family": "azure-ai-vision",
+      "lineage": "azure-ai-vision-v1",
+      "engine_version": "2023-10-01",
+      "engine_run_id": "azure-ai-vision/jewish-encyclopedia/1901-1906/v1"
+    }
+  ],
+  "reading_order": [
+    "vol_02:page_0010:body:c1:l000:p000",
+    "vol_02:page_0010:body:c1:l000:p001",
+    "vol_02:page_0010:body:c1:l000:p002",
+    "vol_02:page_0010:body:c1:l000:p003",
+    "vol_02:page_0010:body:c1:l000:p004",
+    "vol_02:page_0010:body:c1:l000:p005",
+    "vol_02:page_0010:body:c1:l000:p006",
+    "vol_02:page_0010:body:c1:l000:p007"
+  ],
+  "positions": [
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p000",
+      "reference_bbox": {
+        "x": 419,
+        "y": 228,
+        "w": 269,
+        "h": 62
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "on",
+          "attesting_families": [
+            "abbyy",
+            "kraken",
+            "tesseract"
+          ]
+        },
+        {
+          "raw_reading": "in",
+          "attesting_families": [
+            "azure-ai-vision"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p001",
+      "reference_bbox": {
+        "x": 467,
+        "y": 229,
+        "w": 16,
+        "h": 17
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "a",
+          "attesting_families": [
+            "abbyy",
+            "kraken",
+            "tesseract"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p002",
+      "reference_bbox": {
+        "x": 397,
+        "y": 253,
+        "w": 112,
+        "h": 36
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "several",
+          "attesting_families": [
+            "azure-ai-vision"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p003",
+      "reference_bbox": {
+        "x": 514,
+        "y": 253,
+        "w": 137,
+        "h": 37
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "centuries",
+          "attesting_families": [
+            "azure-ai-vision"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p004",
+      "reference_bbox": {
+        "x": 699,
+        "y": 253,
+        "w": 52,
+        "h": 37
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "The",
+          "attesting_families": [
+            "kraken"
+          ]
+        },
+        {
+          "raw_reading": "the",
+          "attesting_families": [
+            "azure-ai-vision"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p005",
+      "reference_bbox": {
+        "x": 345,
+        "y": 258,
+        "w": 43,
+        "h": 25
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "for",
+          "attesting_families": [
+            "abbyy"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p006",
+      "reference_bbox": {
+        "x": 195,
+        "y": 254,
+        "w": 52,
+        "h": 34
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "the",
+          "attesting_families": [
+            "abbyy",
+            "azure-ai-vision",
+            "kraken",
+            "tesseract"
+          ]
+        }
+      ]
+    },
+    {
+      "position_id": "vol_02:page_0010:body:c1:l000:p007",
+      "reference_bbox": {
+        "x": 253,
+        "y": 254,
+        "w": 80,
+        "h": 35
+      },
+      "candidate_set": [
+        {
+          "raw_reading": "Jews",
+          "attesting_families": [
+            "abbyy",
+            "azure-ai-vision",
+            "kraken",
+            "tesseract"
+          ]
+        },
+        {
+          "raw_reading": "ews",
+          "attesting_families": [
+            "kraken"
+          ]
+        }
+      ]
+    }
+  ]
+}

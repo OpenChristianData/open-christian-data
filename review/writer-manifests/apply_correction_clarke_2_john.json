@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "applier",
+  "writer_version": "build/tools/apply_correction.py@v1.0.0",
+  "writer_identity": "correction_applier",
+  "run_id": "cacafa053b054c0a97a8b31dd64fcd4f",
+  "started_at": "2026-05-12T16:27:34.243795+00:00",
+  "data_paths": [
+    "data/commentaries/adam-clarke/2-john.json"
+  ],
+  "checksums": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "before_sha256": "c0e296e9b193b005df9da1e666096358a1dc644d1b221478e666b8ee25d4aa6a",
+      "after_sha256": "12157d1d851552dda296bf6e2015e467880bb3905e1cfc9d574f3ec3294ee37f"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/data/*/layers/commentary_text/display"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

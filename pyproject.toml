@@ -1,0 +1,15 @@
+[tool.pytest.ini_options]
+testpaths = ["tests", "build/parsers/tests"]
+python_files = ["test_*.py"]
+addopts = ["--import-mode=importlib", "--tb=short"]
+norecursedirs = ["_tmp*", "_pytest*", ".*"]
+# Keep temp dirs out of the project tree so Codex sandbox ACLs don't orphan them.
+# tmp_path_retention_policy=none: delete tmp_path dirs immediately after each test.
+# cache_dir inside .tmp/: the pytest 9 atomic-rename staging area (pytest-cache-files-*)
+# lands in .tmp/ (hidden to gbrain, already gitignored) instead of the repo root.
+tmp_path_retention_policy = "none"
+cache_dir = ".tmp/.pytest_cache"
+markers = [
+    "slow: corpus-integrity and subprocess tests; skip with '-m \"not slow\"' for fast iteration",
+    "requires_local_artifacts: tests that need generated or untracked local corpus artefacts",
+]

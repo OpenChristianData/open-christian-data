@@ -1,0 +1,318 @@
+/*
+  tei.css -- rendering rules for the Open Christian Data verification viewer.
+
+  CETEIcean converts each TEI element <foo> in the TEI namespace into a
+  custom element <tei-foo>. Attributes carry over mostly as-is (lowercased
+  names), with a few special cases handled by CETEIcean itself:
+    - @rendition becomes the HTML class attribute (not used by our sample)
+    - @xml:id becomes id
+    - @xml:lang becomes lang
+    - @role becomes tei-role (collision with the HTML role attribute)
+  Everything else -- @n, @rend, @place, @type, @facs, @cRef, @url, etc. --
+  stays as a plain attribute on the custom element, so ordinary attribute
+  selectors (e.g. tei-hi[rend="italic"]) work without any extra JS.
+
+  This file only covers elements this project currently emits into TEI.
+  Extend it as the IR grows; do not try to cover the whole TEI vocabulary
+  up front (ADR-0019 defers the constrained ODD until real material informs
+  it -- this stylesheet should track the same "grow from evidence" approach).
+*/
+
+:root {
+  --viewer-max-width: 46rem;
+  --viewer-font: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --viewer-ui-font: -apple-system, "Segoe UI", Roboto, sans-serif;
+  --viewer-border: #d8d3c8;
+  --viewer-muted: #6b6459;
+  --viewer-accent: #7a3b2e;
+}
+
+body {
+  font-family: var(--viewer-font);
+  line-height: 1.6;
+  color: #201d18;
+  background: #fdfcf9;
+  margin: 0;
+  padding: 2rem 1.5rem 6rem;
+}
+
+tei-tei {
+  display: block;
+  max-width: var(--viewer-max-width);
+  margin: 0 auto;
+}
+
+/* teiHeader is hidden by CETEIcean's default behavior (wrapped in a
+   hidden <cetei-original>), so no rule is needed here to hide it. */
+
+/* -------------------------------------------------------------- */
+/* Structural divisions                                            */
+/* -------------------------------------------------------------- */
+
+tei-div {
+  display: block;
+  margin: 1.25rem 0 1.25rem 1.25rem;
+}
+
+/* Top-level divs directly inside body/front/back keep a smaller indent
+   so nesting depth stays visually legible without runaway margins. */
+tei-body > tei-div,
+tei-front > tei-div,
+tei-back > tei-div {
+  margin-left: 0.5rem;
+}
+
+tei-front,
+tei-back {
+  display: block;
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.25rem;
+  border-top: 1px double var(--viewer-border);
+  border-bottom: 1px double var(--viewer-border);
+  background: #f8f5ee;
+}
+
+tei-front {
+  border-top: none;
+}
+
+tei-back {
+  border-bottom: none;
+}
+
+tei-body {
+  display: block;
+}
+
+/* -------------------------------------------------------------- */
+/* Headings by nesting depth                                       */
+/* -------------------------------------------------------------- */
+/* CETEIcean stamps a 0-indexed data-level attribute on <tei-head> equal
+   to the count of ancestor <div>s that themselves contain a <head> --
+   in practice this tracks div nesting depth closely enough to use as a
+   heading-rank proxy. We map levels 0-4+ to heading-like sizes. */
+
+tei-head {
+  display: block;
+  font-weight: bold;
+  font-family: var(--viewer-ui-font);
+  color: #171512;
+  margin: 1.5rem 0 0.75rem;
+}
+
+tei-head[data-level="0"] {
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--viewer-border);
+  padding-bottom: 0.35rem;
+}
+
+tei-head[data-level="1"] {
+  font-size: 1.4rem;
+}
+
+tei-head[data-level="2"] {
+  font-size: 1.15rem;
+}
+
+tei-head[data-level="3"] {
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+tei-head[data-level="4"],
+tei-head:not([data-level="0"]):not([data-level="1"]):not([data-level="2"]):not([data-level="3"]) {
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* -------------------------------------------------------------- */
+/* Page breaks (facsimile anchors)                                 */
+/* -------------------------------------------------------------- */
+/* <pb> is an empty milestone element; CETEIcean leaves it as an
+   untouched custom element with @n (and @facs, if present) intact.
+   We render it as a small margin marker rather than an inline token,
+   so it doesn't interrupt reading flow. */
+
+tei-pb {
+  display: block;
+  position: relative;
+  height: 0;
+  margin: 0.35rem 0;
+}
+
+tei-pb::before {
+  content: "p. " attr(n);
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  top: -0.6em;
+  font-family: var(--viewer-ui-font);
+  font-size: 0.7rem;
+  color: var(--viewer-muted);
+  white-space: nowrap;
+  border: 1px solid var(--viewer-border);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  background: #fff;
+}
+
+/* Narrow viewports: fall back to an inline marker since there's no
+   room in the margin. */
+@media (max-width: 760px) {
+  tei-pb::before {
+    position: static;
+    display: inline-block;
+    margin-right: 0.4rem;
+  }
+}
+
+/* -------------------------------------------------------------- */
+/* Inline emphasis / language                                      */
+/* -------------------------------------------------------------- */
+
+tei-hi[rend="italic"],
+tei-hi[rend~="italic"] {
+  font-style: italic;
+}
+
+tei-hi[rend="bold"],
+tei-hi[rend~="bold"] {
+  font-weight: bold;
+}
+
+tei-emph {
+  font-style: italic;
+}
+
+tei-foreign {
+  font-style: italic;
+  color: #3c3427;
+  /* subtle, not a full color change -- foreign-language spans should
+     read as "part of the same text, different register", not as an
+     error or warning state */
+  border-bottom: 1px dotted #cabfa8;
+}
+
+/* -------------------------------------------------------------- */
+/* Notes: superscript marker, click to expand                      */
+/* -------------------------------------------------------------- */
+/* The default CETEIcean "note" behavior only special-cases
+   @place="end" notes (collected into a trailing <ol class="notes">);
+   plain inline notes fall through to a "(" ")" wrapper with no
+   interactivity. index.html registers a custom "note" behavior that
+   turns every non-end note into a clickable superscript marker plus a
+   hidden inline panel, toggled via a data-expanded attribute -- see
+   the addBehavior() call there. This stylesheet only handles the
+   resulting markup. */
+
+tei-note {
+  display: inline;
+}
+
+.viewer-note-marker {
+  cursor: pointer;
+  font-size: 0.72em;
+  vertical-align: super;
+  color: var(--viewer-accent);
+  font-family: var(--viewer-ui-font);
+  padding: 0 0.1rem;
+  user-select: none;
+}
+
+.viewer-note-marker:hover {
+  text-decoration: underline;
+}
+
+.viewer-note-panel {
+  display: none;
+  font-family: var(--viewer-ui-font);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  background: #f4efe3;
+  border: 1px solid var(--viewer-border);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.35rem 0;
+}
+
+.viewer-note-panel[data-expanded="true"] {
+  display: block;
+}
+
+/* End-placed notes: CETEIcean's default behavior renders these into a
+   trailing <ol class="notes"> appended to the document root. */
+ol.notes {
+  font-family: var(--viewer-ui-font);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--viewer-border);
+  margin-top: 3rem;
+  padding: 1rem 0 0 1.5rem;
+  color: #3c3427;
+}
+
+/* -------------------------------------------------------------- */
+/* Scripture references                                            */
+/* -------------------------------------------------------------- */
+/* @cRef is copied into the title attribute by a small helper in
+   index.html so it shows as a native hover tooltip -- title is not
+   something CSS content: attr() can populate as a real tooltip. */
+
+tei-ref[type="scripture"] {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: help;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------- */
+/* Argument (chapter/section summary)                              */
+/* -------------------------------------------------------------- */
+
+tei-argument {
+  display: block;
+  font-style: italic;
+  color: var(--viewer-muted);
+  margin: 0.75rem 0 1.25rem 1.5rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--viewer-border);
+}
+
+/* -------------------------------------------------------------- */
+/* Quotations and verse                                            */
+/* -------------------------------------------------------------- */
+
+tei-quote {
+  display: block;
+  margin: 1rem 1.5rem;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--viewer-border);
+  color: #262218;
+  background: #f8f5ee;
+}
+
+tei-lg {
+  display: block;
+}
+
+tei-l {
+  display: block;
+  margin: 0;
+  padding-left: 0.5rem;
+  text-indent: -0.5rem;
+}
+
+/* -------------------------------------------------------------- */
+/* Facsimile (not exercised visually in the sample beyond <graphic>) */
+/* -------------------------------------------------------------- */
+
+tei-graphic {
+  display: block;
+  max-width: 100%;
+  margin: 0.75rem 0;
+}
+
+tei-graphic img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--viewer-border);
+}

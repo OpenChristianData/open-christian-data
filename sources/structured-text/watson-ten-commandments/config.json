@@ -1,0 +1,29 @@
+{
+  "resource_id": "watson-ten-commandments",
+  "title": "The Ten Commandments",
+  "author": "Thomas Watson",
+  "author_birth_year": 1620,
+  "author_death_year": 1686,
+  "contributors": [],
+  "original_publication_year": 1692,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "puritan",
+    "nonconformist"
+  ],
+  "tradition_notes": "Watson was a leading Puritan ejected from St. Stephen Walbrook in 1662. Best known for his catechetical expositions of the Westminster Shorter Catechism.",
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "treatise",
+  "source_url": "https://www.ccel.org/ccel/watson/commandments.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org).",
+  "source_hash": "sha256:88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6",
+  "download_date": "2026-04-22",
+  "output_file": "data/structured-text/watson-ten-commandments.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

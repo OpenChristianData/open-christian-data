@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/decision-event-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Decision Event (S5 decisions store)",
+  "description": "One append-only, hash-chained decision/workflow event in the reconciler decisions store, keyed on canonical_token_id. The event_type enum is the maintainer-signed (2026-05-29) reconciliation of the arch3 locked set with the arch4/5/7/8 names plus ADR-0021's machine_release event. The original arch1 authority kinds stay closed; machine_release records deterministic corrector releases on the authority axis; arch3's three workflow events plus arch8's typography_tier_correction sit on the v1-extensible workflow axis (14 values total). The three arch4/5 ledger names (rebind_or_reclassify_decision, page_repair, vote_excluded_reversed) are NOT new enum values; they map onto existing authority events via payload (see x-ocd-event-type-mapping). The promotion-gate clear action (lock section 6 item 25) is an EXISTING event (choose_attestation reaffirm or supersede_decision), never a newly minted reviewer_inconsistency_resolved. AXIS LOCK: each event_type binds to exactly one event_category; typography_tier_correction is always matrix-ineligible.",
+  "type": "object",
+  "additionalProperties": false,
+  "x-ocd-event-type-mapping": {
+    "rebind_or_reclassify_decision": {
+      "reconciled_event": "rebind_target",
+      "note": "Region reclassification is carried via prior_region_class/new_region_class on a rebind_target; arch4 ledger outcome is region_reassigned."
+    },
+    "page_repair": {
+      "reconciled_event": "resolve_structure",
+      "note": "Reading-order / block-type / page repair is structure_resolution.kind in {reading_order_repair, block_type_repair, page_repair}; arch4 ledger outcome is page_repaired."
+    },
+    "vote_excluded_reversed": {
+      "reconciled_event": "reject_machine_flag",
+      "note": "Reversing an engine vote exclusion sets rejected_flag=vote_excluded; the arch4 matrix-events ledger keeps its own outcome string vote_excluded_reversed."
+    },
+    "reviewer_inconsistency_resolved": {
+      "reconciled_event": "choose_attestation | supersede_decision",
+      "note": "Withdrawn as a literal event (lock section 6 item 25 / D3). The promotion-gate clear is a reviewer reaffirmation (choose_attestation referencing the flagged token) or a supersede_decision; no new event minted."
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "event_category",
+    "volume",
+    "actor_id",
+    "timestamp",
+    "measurement_eligible"
+  ],
+  "properties": {
+    "schema_version": {"const": "decision-event-v1"},
+    "event_id": {"$ref": "#/$defs/de_event_id"},
+    "event_hash": {
+      "$ref": "#/$defs/prefixed_sha256",
+      "description": "sha256 of the canonical UTF-8 JSON line (event content with event_id and prev_event_hash set, event_hash field absent). Written by the store writer; absent on in-memory pre-write dicts."
+    },
+    "prev_event_hash": {
+      "$ref": "#/$defs/prefixed_sha256",
+      "description": "event_hash of the immediately preceding event in this volume store. Genesis event: sha256:0000...0000 (64 zeros)."
+    },
+    "event_type": {
+      "enum": [
+        "choose_attestation",
+        "amend_text",
+        "confirm_unresolved",
+        "resolve_structure",
+        "reject_machine_flag",
+        "rebind_target",
+        "supersede_decision",
+        "mark_gold",
+        "withdraw_gold",
+        "machine_release",
+        "orphan_decision",
+        "auto_rebind_system",
+        "reviewer_recheck_requested",
+        "typography_tier_correction"
+      ]
+    },
+    "event_category": {"enum": ["authority_decision", "workflow_event"]},
+    "volume": {"type": "integer", "minimum": 1},
+    "canonical_token_id": {
+      "description": "Fold key; null for some structural / gold-withdrawal / system events.",
+      "oneOf": [
+        {"$ref": "#/$defs/ct_token_id"},
+        {"type": "null"}
+      ]
+    },
+    "structural_path_at_decision": {"type": "string"},
+    "minted_anchor_set_at_decision": {
+      "description": "The FROZEN first-alignment seed (arch3 Codex F8).",
+      "type": "array",
+      "items": {"$ref": "#/$defs/ot_token_id"}
+    },
+    "fallback_fingerprint_at_decision": {"$ref": "#/$defs/prefixed_sha256"},
+    "match_method_used": {
+      "oneOf": [
+        {"$ref": "#/$defs/match_method"},
+        {"type": "null"}
+      ]
+    },
+    "previous_status_at_view": {"$ref": "#/$defs/status_authority"},
+    "new_status": {"$ref": "#/$defs/status_authority"},
+    "status_authority": {"$ref": "#/$defs/status_authority"},
+    "evidence_seen": {"type": "object"},
+    "measurement_eligible": {"type": "boolean"},
+    "actor_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "e.g. maintainer | system:auto_rebind | system:recheck"
+    },
+    "timestamp": {"type": "string", "format": "date-time"},
+    "ui_mode": {
+      "type": "string",
+      "description": "Reviewer-UI mode label. The closed enum is owned by the reviewer subsystem (arch7 / batch B15); kept a free string in v1 to avoid prematurely freezing a vocabulary B3 does not own."
+    },
+    "ui_version": {"type": "string"},
+    "decision_extras_carried": {"type": "object"},
+
+    "selected_observation_token_id": {"$ref": "#/$defs/ot_token_id"},
+    "decision_token": {"$ref": "#/$defs/decision_token"},
+
+    "amended_text": {"type": "string"},
+    "amendment_reason": {"type": "string"},
+
+    "unresolved_reason": {"type": "string"},
+
+    "structure_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": {"$ref": "#/$defs/structure_resolution_kind"},
+        "detail": {"type": "string"},
+        "page_id": {"type": "string"},
+        "prior_reliability": {"type": ["number", "null"]}
+      }
+    },
+
+    "rejected_flag": {
+      "type": "string",
+      "description": "The machine flag being rejected, e.g. vote_excluded (arch4/5 vote_excluded_reversed maps here)."
+    },
+    "rejection_reason": {"type": "string"},
+
+    "rebinds_from_canonical_token_id": {"$ref": "#/$defs/ct_token_id"},
+    "rebind_reason": {"$ref": "#/$defs/rebind_reason"},
+    "anchor_overlap_count": {"type": "integer", "minimum": 0},
+    "rebinding_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "match_method": {"$ref": "#/$defs/match_method"},
+    "prior_region_class": {
+      "type": "string",
+      "description": "Optional on a rebind_target that also reclassifies (arch4/5 rebind_or_reclassify_decision). The region_class vocabulary is owned by the weight-matrix subsystem; kept a free string in v1."
+    },
+    "new_region_class": {"type": "string"},
+
+    "supersedes_event_id": {"$ref": "#/$defs/de_event_id"},
+    "reason": {"type": "string"},
+
+    "gold_sample_ref": {"type": "string"},
+    "withdrawal_reason": {"type": "string"},
+
+    "orphaned_event_id": {"$ref": "#/$defs/de_event_id"},
+    "orphan_reason": {"$ref": "#/$defs/orphan_reason"},
+    "match_method_attempted": {
+      "oneOf": [
+        {"$ref": "#/$defs/match_method"},
+        {"type": "null"}
+      ]
+    },
+    "candidate_canonical_token_ids": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/ct_token_id"}
+    },
+
+    "prior_canonical_token_id": {"$ref": "#/$defs/ct_token_id"},
+    "prior_decision_event_id": {"$ref": "#/$defs/de_event_id"},
+
+    "triggered_by": {"type": "string"},
+
+    "prior_tier": {
+      "type": "string",
+      "description": "Typography tier vocabulary is owned by typography-snapshot-v1 (arch8); kept a free string in v1."
+    },
+    "new_tier": {"type": "string"},
+    "triggers_region_reevaluation": {"type": "boolean"}
+  },
+  "allOf": [
+    {
+      "comment": "Axis lock: authority kinds bind to authority_decision.",
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": [
+              "choose_attestation", "amend_text", "confirm_unresolved",
+              "resolve_structure", "reject_machine_flag", "rebind_target",
+              "supersede_decision", "mark_gold", "withdraw_gold",
+              "machine_release"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {"event_category": {"const": "authority_decision"}},
+        "required": [
+          "structural_path_at_decision",
+          "previous_status_at_view",
+          "new_status"
+        ]
+      }
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "machine_release"}}},
+      "then": {
+        "properties": {
+          "actor_id": {"const": "system:corrector"},
+          "event_category": {"const": "authority_decision"},
+          "measurement_eligible": {"const": false},
+          "status_authority": {"const": "consensus"}
+        },
+        "required": [
+          "canonical_token_id",
+          "status_authority",
+          "evidence_seen",
+          "decision_extras_carried"
+        ]
+      }
+    },
+    {
+      "comment": "Axis lock: the four workflow events bind to workflow_event.",
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": [
+              "orphan_decision", "auto_rebind_system",
+              "reviewer_recheck_requested", "typography_tier_correction"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {"event_category": {"const": "workflow_event"}}
+      }
+    },
+    {
+      "comment": "typography_tier_correction is matrix-ineligible (lock section 7) and names both tiers.",
+      "if": {"properties": {"event_type": {"const": "typography_tier_correction"}}},
+      "then": {
+        "properties": {"measurement_eligible": {"const": false}},
+        "required": ["prior_tier", "new_tier"]
+      }
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "choose_attestation"}}},
+      "then": {"required": ["selected_observation_token_id", "decision_token"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "amend_text"}}},
+      "then": {"required": ["amended_text", "decision_token", "amendment_reason"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "confirm_unresolved"}}},
+      "then": {"required": ["unresolved_reason"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "resolve_structure"}}},
+      "then": {"required": ["structure_resolution"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "reject_machine_flag"}}},
+      "then": {"required": ["rejected_flag", "rejection_reason"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "rebind_target"}}},
+      "then": {"required": ["rebinds_from_canonical_token_id", "rebind_reason", "match_method"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "supersede_decision"}}},
+      "then": {"required": ["supersedes_event_id", "reason"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "mark_gold"}}},
+      "then": {"required": ["gold_sample_ref"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "withdraw_gold"}}},
+      "then": {"required": ["gold_sample_ref", "withdrawal_reason"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "orphan_decision"}}},
+      "then": {"required": ["orphaned_event_id", "orphan_reason", "candidate_canonical_token_ids"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "auto_rebind_system"}}},
+      "then": {"required": ["prior_canonical_token_id", "match_method", "prior_decision_event_id"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"const": "reviewer_recheck_requested"}}},
+      "then": {"required": ["reason", "triggered_by"]}
+    }
+  ],
+  "$defs": {
+    "sha256_hex": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "prefixed_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ot_token_id": {"type": "string", "pattern": "^ot-sha256:[0-9a-f]{64}$"},
+    "ct_token_id": {"type": "string", "pattern": "^ct-sha256:[0-9a-f]{64}$"},
+    "de_event_id": {
+      "type": "string",
+      "pattern": "^(de-sha256:[0-9a-f]{64}|[A-Za-z0-9_.:-]+)$"
+    },
+    "status_authority": {
+      "enum": ["consensus", "llm_resolved", "reviewed", "unresolved"]
+    },
+    "match_method": {
+      "enum": [
+        "anchor_high_confidence",
+        "anchor_partial",
+        "cold_start_fingerprint_unique",
+        "ambiguous_target",
+        "fingerprint_collision",
+        "no_match",
+        "reviewer_manual"
+      ]
+    },
+    "decision_token": {
+      "enum": ["ratification", "override", "amend", "cold_review"]
+    },
+    "rebind_reason": {
+      "enum": ["anchor_overlap", "cold_start_fingerprint_unique", "reviewer_explicit"]
+    },
+    "orphan_reason": {
+      "enum": [
+        "no_anchor_match",
+        "ambiguous_rebind",
+        "fingerprint_not_unique",
+        "article_reassigned",
+        "invalid_seed"
+      ]
+    },
+    "structure_resolution_kind": {
+      "enum": ["reading_order_repair", "block_type_repair", "page_repair", "other"]
+    }
+  }
+}

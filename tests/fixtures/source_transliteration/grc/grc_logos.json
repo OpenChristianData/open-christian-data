@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.logos",
+  "positive_input": "The logos became flesh and dwelt among us",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "logos"},
+  "negative_input": "The word became flesh and dwelt among us",
+  "negative_expected": null
+}

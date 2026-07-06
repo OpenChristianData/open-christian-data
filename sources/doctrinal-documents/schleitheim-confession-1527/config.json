@@ -1,0 +1,30 @@
+{
+  "id": "schleitheim-confession-1527",
+  "title": "The Schleitheim Confession",
+  "author": "Swiss Brethren",
+  "original_publication_year": 1527,
+  "source": {
+    "name": "anabaptists.org",
+    "url": "https://www.anabaptists.org/history/the-schleitheim-confession.html",
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "1527 text; English translation by Rod and Staff Publishers (Sixth Printing, 1985). Public domain by age.",
+    "download_date": "2026-06-17",
+    "source_hash": "sha256:5a7f3b112e2bd074c9eb8626fd58d13086870ebb0be52a3036781ce9077f3750"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "confession",
+  "output_file": "data/doctrinal-documents/schleitheim-confession-1527.json",
+  "parser": "build/parsers/schleitheim_confession.py",
+  "stats": {
+    "article_count": 7,
+    "word_count": 2545
+  },
+  "notes": [
+    "Tradition: anabaptist, mennonite.",
+    "Drafted by Michael Sattler and adopted February 24, 1527 at Schleitheim (canton Schaffhausen).",
+    "The seven articles address baptism, the ban, breaking of bread, separation, pastors, the sword, and the oath.",
+    "Source HTML uses old-style <font color> markup; parser extracts articles via regex on green-font headers.",
+    "English translation by Rod and Staff Publishers; full document, all 7 articles present."
+  ]
+}

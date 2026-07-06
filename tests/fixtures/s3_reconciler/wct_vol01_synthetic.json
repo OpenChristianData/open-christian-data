@@ -1,0 +1,609 @@
+{
+  "schema_type": "word_confusion_table",
+  "schema_version": "word-confusion-table-v1",
+  "work_id": "schaff-herzog",
+  "volume_id": "vol_01",
+  "page_id": "page_0010",
+  "canonical_leaf_id": 10,
+  "edition_page_key": {
+    "section": "body",
+    "anchor": 10,
+    "ordinal": 0
+  },
+  "source_image": {
+    "path": "raw/internet-archive/schaff-herzog-pages/vol_01/page_0010.jpg",
+    "sha256": "3b1f9c2e7a4d6058e1c9b2f0a7d34e58f6b1029c3d4e5f60718293a4b5c6d7e8"
+  },
+  "coordinate_unit": "pixel",
+  "coordinate_frame": "source_image",
+  "image_size": [
+    2000,
+    3000
+  ],
+  "layout_authority": {
+    "tool": "surya",
+    "model_version": "0.17.1",
+    "status": "ok"
+  },
+  "available_engines": [
+    {
+      "engine_id": "tesseract-5.5",
+      "family": "tesseract",
+      "lineage": "tess-default",
+      "engine_version": "5.5.0",
+      "engine_run_id": "run-tess-1"
+    },
+    {
+      "engine_id": "surya-0.17",
+      "family": "surya",
+      "lineage": "surya-default",
+      "engine_version": "0.17.1",
+      "engine_run_id": "run-surya-1"
+    },
+    {
+      "engine_id": "abbyy-nsh",
+      "family": "abbyy",
+      "lineage": "ia-abbyy-v1",
+      "engine_version": "ia-2014",
+      "engine_run_id": "run-abbyy-1"
+    }
+  ],
+  "zones": [
+    {
+      "zone_id": "z_body",
+      "zone_type": "body",
+      "track_id": "t1",
+      "column": 1,
+      "polygon": [
+        {
+          "x": 100,
+          "y": 200
+        },
+        {
+          "x": 900,
+          "y": 200
+        },
+        {
+          "x": 900,
+          "y": 800
+        },
+        {
+          "x": 100,
+          "y": 800
+        }
+      ],
+      "source": "surya"
+    },
+    {
+      "zone_id": "z_head",
+      "zone_type": "running-header",
+      "track_id": "t0",
+      "column": null,
+      "polygon": [
+        {
+          "x": 100,
+          "y": 40
+        },
+        {
+          "x": 900,
+          "y": 40
+        },
+        {
+          "x": 900,
+          "y": 90
+        },
+        {
+          "x": 100,
+          "y": 90
+        }
+      ],
+      "source": "surya"
+    }
+  ],
+  "reading_order": [
+    "p_head_1",
+    "p_body_1",
+    "p_body_2",
+    "p_body_3"
+  ],
+  "positions": [
+    {
+      "position_id": "p_head_1",
+      "zone": {
+        "zone_id": "z_head",
+        "zone_type": "running-header",
+        "track_id": "t0",
+        "column": null,
+        "line_id": "l_head",
+        "line_order": 0,
+        "position_order": 0
+      },
+      "reference_bbox": {
+        "x": 110,
+        "y": 45,
+        "w": 300,
+        "h": 40
+      },
+      "reference_bbox_source": "surya-0.17",
+      "hyphenation": {
+        "hyphenation_status": "none",
+        "raw_line_break_evidence": [],
+        "hypothesis_ids": []
+      },
+      "script": {
+        "image_level": {
+          "label": "latin",
+          "confidence": 0.99,
+          "method": "surya-script"
+        },
+        "text_level": {
+          "label": "latin",
+          "method": "unicode-range"
+        },
+        "routing": "normal-latin"
+      },
+      "candidate_set": [
+        {
+          "candidate_id": "c_head_1a",
+          "raw_reading": "ENCYCLOPEDIA",
+          "candidate_key": "encyclopedia",
+          "normalisation_applied": [
+            "caps_casefold"
+          ],
+          "attesting_engines": [
+            "tesseract-5.5",
+            "surya-0.17"
+          ],
+          "attesting_families": [
+            "tesseract",
+            "surya"
+          ]
+        }
+      ],
+      "span_records": [
+        {
+          "span_record_id": "sr_head_1_tess",
+          "engine_id": "tesseract-5.5",
+          "family": "tesseract",
+          "lineage": "tess-default",
+          "candidate_id": "c_head_1a",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "ENCYCLOPEDIA",
+          "source_spans": [
+            {
+              "token_id": "tk_h1_t",
+              "text": "ENCYCLOPEDIA",
+              "bbox": {
+                "x": 110,
+                "y": 45,
+                "w": 300,
+                "h": 40
+              },
+              "line_id": "l_head"
+            }
+          ],
+          "raw_confidence": 0.9,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        },
+        {
+          "span_record_id": "sr_head_1_surya",
+          "engine_id": "surya-0.17",
+          "family": "surya",
+          "lineage": "surya-default",
+          "candidate_id": "c_head_1a",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "ENCYCLOPEDIA",
+          "source_spans": [
+            {
+              "token_id": "tk_h1_s",
+              "text": "ENCYCLOPEDIA",
+              "bbox": {
+                "x": 111,
+                "y": 45,
+                "w": 299,
+                "h": 40
+              },
+              "line_id": "l_head"
+            }
+          ],
+          "raw_confidence": 0.92,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        }
+      ],
+      "available_engines": [
+        "tesseract-5.5",
+        "surya-0.17",
+        "abbyy-nsh"
+      ],
+      "comparable_engines": [
+        "tesseract-5.5",
+        "surya-0.17"
+      ],
+      "unassigned_engines": [
+        "abbyy-nsh"
+      ],
+      "alignment_confidence": 0.95
+    },
+    {
+      "position_id": "p_body_1",
+      "zone": {
+        "zone_id": "z_body",
+        "zone_type": "body",
+        "track_id": "t1",
+        "column": 1,
+        "line_id": "l_body_1",
+        "line_order": 0,
+        "position_order": 0
+      },
+      "reference_bbox": {
+        "x": 110,
+        "y": 210,
+        "w": 180,
+        "h": 44
+      },
+      "reference_bbox_source": "surya-0.17",
+      "hyphenation": {
+        "hyphenation_status": "none",
+        "raw_line_break_evidence": [],
+        "hypothesis_ids": []
+      },
+      "script": {
+        "image_level": {
+          "label": "latin",
+          "confidence": 0.98,
+          "method": "surya-script"
+        },
+        "text_level": {
+          "label": "latin",
+          "method": "unicode-range"
+        },
+        "routing": "normal-latin"
+      },
+      "candidate_set": [
+        {
+          "candidate_id": "c_b1_church",
+          "raw_reading": "church",
+          "candidate_key": "church",
+          "normalisation_applied": [],
+          "attesting_engines": [
+            "tesseract-5.5",
+            "surya-0.17"
+          ],
+          "attesting_families": [
+            "tesseract",
+            "surya"
+          ]
+        }
+      ],
+      "span_records": [
+        {
+          "span_record_id": "sr_b1_tess",
+          "engine_id": "tesseract-5.5",
+          "family": "tesseract",
+          "lineage": "tess-default",
+          "candidate_id": "c_b1_church",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "church",
+          "source_spans": [
+            {
+              "token_id": "tk_b1_t",
+              "text": "church",
+              "bbox": {
+                "x": 110,
+                "y": 210,
+                "w": 180,
+                "h": 44
+              },
+              "line_id": "l_body_1"
+            }
+          ],
+          "raw_confidence": 0.88,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        },
+        {
+          "span_record_id": "sr_b1_surya",
+          "engine_id": "surya-0.17",
+          "family": "surya",
+          "lineage": "surya-default",
+          "candidate_id": "c_b1_church",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "church",
+          "source_spans": [
+            {
+              "token_id": "tk_b1_s",
+              "text": "church",
+              "bbox": {
+                "x": 111,
+                "y": 210,
+                "w": 179,
+                "h": 44
+              },
+              "line_id": "l_body_1"
+            }
+          ],
+          "raw_confidence": 0.91,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        }
+      ],
+      "available_engines": [
+        "tesseract-5.5",
+        "surya-0.17",
+        "abbyy-nsh"
+      ],
+      "comparable_engines": [
+        "tesseract-5.5",
+        "surya-0.17"
+      ],
+      "unassigned_engines": [
+        "abbyy-nsh"
+      ],
+      "alignment_confidence": 0.96
+    },
+    {
+      "position_id": "p_body_2",
+      "zone": {
+        "zone_id": "z_body",
+        "zone_type": "body",
+        "track_id": "t1",
+        "column": 1,
+        "line_id": "l_body_1",
+        "line_order": 0,
+        "position_order": 1
+      },
+      "reference_bbox": {
+        "x": 300,
+        "y": 210,
+        "w": 160,
+        "h": 44
+      },
+      "reference_bbox_source": "surya-0.17",
+      "hyphenation": {
+        "hyphenation_status": "none",
+        "raw_line_break_evidence": [],
+        "hypothesis_ids": []
+      },
+      "script": {
+        "image_level": {
+          "label": "latin",
+          "confidence": 0.97,
+          "method": "surya-script"
+        },
+        "text_level": {
+          "label": "latin",
+          "method": "unicode-range"
+        },
+        "routing": "normal-latin"
+      },
+      "candidate_set": [
+        {
+          "candidate_id": "c_b2_christ",
+          "raw_reading": "Christ",
+          "candidate_key": "christ",
+          "normalisation_applied": [],
+          "attesting_engines": [
+            "tesseract-5.5"
+          ],
+          "attesting_families": [
+            "tesseract"
+          ]
+        },
+        {
+          "candidate_id": "c_b2_chvist",
+          "raw_reading": "Chvist",
+          "candidate_key": "chvist",
+          "normalisation_applied": [],
+          "attesting_engines": [
+            "abbyy-nsh"
+          ],
+          "attesting_families": [
+            "abbyy"
+          ]
+        }
+      ],
+      "span_records": [
+        {
+          "span_record_id": "sr_b2_tess",
+          "engine_id": "tesseract-5.5",
+          "family": "tesseract",
+          "lineage": "tess-default",
+          "candidate_id": "c_b2_christ",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "Christ",
+          "source_spans": [
+            {
+              "token_id": "tk_b2_t",
+              "text": "Christ",
+              "bbox": {
+                "x": 300,
+                "y": 210,
+                "w": 160,
+                "h": 44
+              },
+              "line_id": "l_body_1"
+            }
+          ],
+          "raw_confidence": 0.7,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        },
+        {
+          "span_record_id": "sr_b2_abbyy",
+          "engine_id": "abbyy-nsh",
+          "family": "abbyy",
+          "lineage": "ia-abbyy-v1",
+          "candidate_id": "c_b2_chvist",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "Chvist",
+          "source_spans": [
+            {
+              "token_id": "tk_b2_a",
+              "text": "Chvist",
+              "bbox": {
+                "x": 301,
+                "y": 210,
+                "w": 159,
+                "h": 44
+              },
+              "line_id": "l_body_1"
+            }
+          ],
+          "raw_confidence": 0.6,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        }
+      ],
+      "available_engines": [
+        "tesseract-5.5",
+        "surya-0.17",
+        "abbyy-nsh"
+      ],
+      "comparable_engines": [
+        "tesseract-5.5",
+        "abbyy-nsh"
+      ],
+      "unassigned_engines": [
+        "surya-0.17"
+      ],
+      "alignment_confidence": 0.82
+    },
+    {
+      "position_id": "p_body_3",
+      "zone": {
+        "zone_id": "z_body",
+        "zone_type": "body",
+        "track_id": "t1",
+        "column": 1,
+        "line_id": "l_body_2",
+        "line_order": 1,
+        "position_order": 0
+      },
+      "reference_bbox": {
+        "x": 110,
+        "y": 270,
+        "w": 200,
+        "h": 46
+      },
+      "reference_bbox_source": "surya-0.17",
+      "hyphenation": {
+        "hyphenation_status": "none",
+        "raw_line_break_evidence": [],
+        "hypothesis_ids": []
+      },
+      "script": {
+        "image_level": {
+          "label": "greek",
+          "confidence": 0.94,
+          "method": "surya-script"
+        },
+        "text_level": {
+          "label": "greek",
+          "method": "unicode-range"
+        },
+        "routing": "biblical-language-lane"
+      },
+      "candidate_set": [
+        {
+          "candidate_id": "c_b3_logos",
+          "raw_reading": "λόγος",
+          "candidate_key": "λογος",
+          "normalisation_applied": [
+            "unicode_nfkc"
+          ],
+          "attesting_engines": [
+            "tesseract-5.5",
+            "surya-0.17"
+          ],
+          "attesting_families": [
+            "tesseract",
+            "surya"
+          ]
+        }
+      ],
+      "span_records": [
+        {
+          "span_record_id": "sr_b3_tess",
+          "engine_id": "tesseract-5.5",
+          "family": "tesseract",
+          "lineage": "tess-default",
+          "candidate_id": "c_b3_logos",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "λόγος",
+          "source_spans": [
+            {
+              "token_id": "tk_b3_t",
+              "text": "λόγος",
+              "bbox": {
+                "x": 110,
+                "y": 270,
+                "w": 200,
+                "h": 46
+              },
+              "line_id": "l_body_2"
+            }
+          ],
+          "raw_confidence": 0.75,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        },
+        {
+          "span_record_id": "sr_b3_surya",
+          "engine_id": "surya-0.17",
+          "family": "surya",
+          "lineage": "surya-default",
+          "candidate_id": "c_b3_logos",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "λόγος",
+          "source_spans": [
+            {
+              "token_id": "tk_b3_s",
+              "text": "λόγος",
+              "bbox": {
+                "x": 111,
+                "y": 270,
+                "w": 199,
+                "h": 46
+              },
+              "line_id": "l_body_2"
+            }
+          ],
+          "raw_confidence": 0.79,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "single"
+        }
+      ],
+      "available_engines": [
+        "tesseract-5.5",
+        "surya-0.17",
+        "abbyy-nsh"
+      ],
+      "comparable_engines": [
+        "tesseract-5.5",
+        "surya-0.17"
+      ],
+      "unassigned_engines": [
+        "abbyy-nsh"
+      ],
+      "alignment_confidence": 0.9
+    }
+  ],
+  "layer1_ops": [
+    {
+      "op_id": "op_align_1",
+      "stage": "s2.5-alignment",
+      "tool": "wct_builder",
+      "detail": "synthetic vol_01 fixture for B10 degraded reconciler TDD"
+    }
+  ]
+}

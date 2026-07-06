@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_puritan_works.py@v1.0.1",
+  "writer_identity": "ccel_puritan_parser",
+  "run_id": "edwards-brainerd-2026-06-03",
+  "started_at": "2026-06-02T14:01:29.824007+00:00",
+  "data_paths": [
+    "data/structured-text/edwards-life-of-brainerd.json",
+    "data/authors/registry.json"
+  ],
+  "checksums": {
+    "data/structured-text/edwards-life-of-brainerd.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:51411103b23bd24b39b4007f8ed05dc4b4a436320138b9c150c9e1d5524ad199"
+    },
+    "data/authors/registry.json": {
+      "before_sha256": "sha256:302d6b54b43bb4b7d2778cbd6567de7b4ac4fac2c8d940e18d0f62462b69135a",
+      "after_sha256": "sha256:312ee0211f0edc30b856e4c6578b48c5204f088132fe0ca8c9827ea845086c4e"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/edwards-life-of-brainerd.json": {
+      "entries_added": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

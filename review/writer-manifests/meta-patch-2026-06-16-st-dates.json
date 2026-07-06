@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "patch-script",
+  "writer_version": "build/tools/patch_missing_metadata.py@v1.0.0",
+  "writer_identity": "meta_patch_st_dates",
+  "run_id": "meta-patch-2026-06-16-st-dates",
+  "started_at": "2026-06-16T10:05:51.939325+00:00",
+  "data_paths": [
+    "data/structured-text/chrysostom-homily-on-lowliness-of-mind.json",
+    "data/structured-text/gregory-of-nyssa-on-infants-early-deaths.json",
+    "data/structured-text/gregory-of-nyssa-on-pilgrimages.json",
+    "data/structured-text/john-owen-sermons.json"
+  ],
+  "checksums": {
+    "data/structured-text/chrysostom-homily-on-lowliness-of-mind.json": {
+      "before_sha256": "b87fe4c60d41fcae8fd0bf76604a06d8e18b63fa473bf2962a3d90cda9a9e2b3",
+      "after_sha256": "c991c21ed7145592a40cfd2aa39da3915586fcfd81d9aa44b8a04f75e356fa9d"
+    },
+    "data/structured-text/gregory-of-nyssa-on-infants-early-deaths.json": {
+      "before_sha256": "5225ad47483d11beccfe4ce13e1d63b12c34e627fc6efb975b8f4a76e197912e",
+      "after_sha256": "bef3525a27bd3b498819cc411c18ae7b18d05cf5da4b09e8eab6cabb63ce4e3f"
+    },
+    "data/structured-text/gregory-of-nyssa-on-pilgrimages.json": {
+      "before_sha256": "653f9dde913f3ccff49843258ae09b46e4f42818fe95fea5e3443c259a777bfc",
+      "after_sha256": "18bc904ba5d4012b6b4d26033b658464a37357b6659f53749f1fd610f493ffba"
+    },
+    "data/structured-text/john-owen-sermons.json": {
+      "before_sha256": "4e896f282a6e8b059cceee5cc08b50cd3ec129cf5df245f6fbf4e325d6f27790",
+      "after_sha256": "a6d2c46ebb6c5acb13b6251585f772a408f3b45d0090a3867983cbe544fcec06"
+    }
+  }
+}

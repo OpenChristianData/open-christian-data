@@ -1,0 +1,16 @@
+# OCR error model — Polytonic Greek (when native-script Greek is present)
+- error_id: grc.lunate_sigma
+  description: "Lunate sigma (ϲ) misread as c or o in some typefaces"
+  confusion: {source: "ϲ", target: "c"}
+- error_id: grc.breathing_marks
+  description: "Breathing marks (᾿ ῾) may be dropped or merged with following letter"
+  confusion: {source: "rough_breathing", target: "dropped"}
+- error_id: grc.iota_subscript
+  description: "Iota subscript misread or dropped"
+  confusion: {source: "ι_subscript", target: "dropped"}
+- error_id: grc.eta_as_n
+  description: "Greek eta (η) misread as Latin n in mixed-script pages"
+  confusion: {source: "η", target: "n"}
+- error_id: grc.rho_as_p
+  description: "Greek rho (ρ) misread as Latin p"
+  confusion: {source: "ρ", target: "p"}

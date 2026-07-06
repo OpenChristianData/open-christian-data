@@ -1,0 +1,38 @@
+{
+  "fixture_id": "boundary_score_44",
+  "target_score": 44,
+  "expected_bucket": "low",
+  "expected_action": "no_edge",
+  "expected_surface": "none",
+  "anchor_block": {
+    "block_type": "heading",
+    "language": "la",
+    "original_text": "",
+    "annotations": {"entry": "Covenant"},
+    "source_pages": []
+  },
+  "attestor_block": {
+    "block_type": "headword",
+    "language": "lat",
+    "original_text": "",
+    "annotations": {"entry": "Covenant"},
+    "source_pages": []
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 1,
+    "anchor_len": 10,
+    "attestor_len": 10
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 30,
+    "text_similarity": 0,
+    "source_order": 7,
+    "block_type": 5,
+    "page_proximity": 0,
+    "language_profile": 2,
+    "ocr_skeleton": 0
+  },
+  "hand_computation": "ann_exact(30) + text_empty(0) + ocr_empty(0) + order_7(7) + bt_compat(5) + page_absent(0) + lang_partial(2) = 44",
+  "notes": "annotation_key: 'entry'='Covenant' in both -> exact=30. empty text -> 0+0. source_order: rel_a=0/(10-1)=0, rel_b=1/(10-1)=0.1111, delta=0.1111, 0.05<=delta<0.20 -> 7. heading/headword -> frozenset({'heading','headword'}) in _COMPATIBLE_TYPES -> compatible=5. source_pages=[] -> 0. lang 'la' vs 'lat': 'la'[:2]=='lat'[:2]='la' but not equal -> partial=2."
+}

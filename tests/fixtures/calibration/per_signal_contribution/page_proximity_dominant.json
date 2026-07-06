@@ -1,0 +1,38 @@
+{
+  "fixture_id": "per_signal_page_proximity_dominant",
+  "description": "page_proximity=10 is the largest single signal; mixed input with annotation partial, source_order 7, compatible block types, language partial",
+  "anchor_block": {
+    "block_type": "heading",
+    "language": "la",
+    "original_text": "",
+    "annotations": {"section": "Ecclesiology"},
+    "source_pages": [{"page_number": 55}]
+  },
+  "attestor_block": {
+    "block_type": "headword",
+    "language": "lat",
+    "original_text": "",
+    "annotations": {"section": "Soteriology"},
+    "source_pages": [{"page_number": 55}]
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 1,
+    "anchor_len": 10,
+    "attestor_len": 10
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 18,
+    "text_similarity": 0,
+    "source_order": 7,
+    "block_type": 5,
+    "page_proximity": 10,
+    "language_profile": 2,
+    "ocr_skeleton": 0
+  },
+  "expected_total_score": 42,
+  "expected_bucket": "low",
+  "signal_dominance": "page_proximity=10 is the single largest signal (24% of total); annotation=18 is the largest but driven by a partial structural match",
+  "hand_computation": "ann_partial(18) + text_empty(0) + ocr_empty(0) + order_7(7) + bt_compat(5) + page_same(10) + lang_partial(2) = 42",
+  "notes": "annotation: shared key 'section', different values (Ecclesiology vs Soteriology) -> partial=18. empty text -> 0+0. source_order: rel_a=0/(10-1)=0, rel_b=1/(10-1)=0.1111, delta=0.1111, 0.05<=delta<0.20 -> 7. heading/headword -> compatible -> 5. same page 55 -> diff=0 -> 10. 'la' vs 'lat': 'la'[:2]=='lat'[:2]='la' but not equal -> partial=2."
+}

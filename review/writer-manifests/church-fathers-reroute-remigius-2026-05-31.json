@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/church_fathers.py@v1.0.0",
+  "writer_identity": "church_fathers_parser",
+  "run_id": "remigius-of-auxerre-reroute-2026-05-31",
+  "started_at": "2026-05-31T00:00:00.000000+00:00",
+  "data_paths": [
+    "data/authors/registry.json",
+    "data/church-fathers/remigius-of-auxerre.json",
+    "data/church-fathers/remigius-of-rheims.json"
+  ],
+  "checksums": {
+    "data/authors/registry.json": {
+      "before_sha256": "d923f94d2798413ca87302ba90a2bcf4edb007c56eb004036995c1790201a01b",
+      "after_sha256": "d20da84e667fde5386a0dbb125a8d3d04b724756c44ec59866c854cb1dd8573b"
+    },
+    "data/church-fathers/remigius-of-auxerre.json": {
+      "before_sha256": null,
+      "after_sha256": "adc29554a3dd41b9a9bd2913cd64971053455ef3c527c8ed7840a418c9f28894"
+    },
+    "data/church-fathers/remigius-of-rheims.json": {
+      "before_sha256": "0c9109265c29b47670570f74fa89162c986de62dcb6db52790bbd6756d0b4662",
+      "after_sha256": null
+    }
+  },
+  "expected_delta_counts": {
+    "data/authors/registry.json":                   {"entries_changed": 2, "description": "add remigius-of-auxerre; update remigius-of-rheims works/notes"},
+    "data/church-fathers/remigius-of-auxerre.json": {"entries_added": 196, "description": "new file receiving all 196 entries rerouted from remigius-of-rheims via REROUTE_AUTHOR"},
+    "data/church-fathers/remigius-of-rheims.json":  {"entries_removed": 196, "description": "deleted -- all entries rerouted to remigius-of-auxerre (Carolingian naming collision, UPSTREAM_BUGS.md 2026-04-15)"}
+  },
+  "allowed_field_paths": [
+    "/data/*/entry_id",
+    "/data/*/anchor_ref",
+    "/data/*/author",
+    "/meta/id",
+    "/meta/author"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

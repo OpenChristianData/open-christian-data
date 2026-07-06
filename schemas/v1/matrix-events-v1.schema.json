@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/matrix-events-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Matrix Events Ledger Entry",
+  "description": "One append-only, hash-chained observation projection entry in matrix-events.jsonl.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entry_seq",
+    "prev_entry_hash",
+    "event_id",
+    "event_type",
+    "occurred_at",
+    "policy_version",
+    "outcome"
+  ],
+  "properties": {
+    "schema_version": {"const": "matrix-events-v1"},
+    "entry_seq": {"type": "integer", "minimum": 0},
+    "prev_entry_hash": {"$ref": "#/$defs/sha256_hex"},
+    "event_id": {"type": "string", "minLength": 1},
+    "event_type": {"type": "string", "minLength": 1},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "policy_version": {"type": "string", "minLength": 1},
+    "outcome": {"$ref": "#/$defs/outcome"},
+    "labels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/label"}
+    },
+    "supersedes_event_id": {"type": "string", "minLength": 1},
+    "replacement_event_id": {
+      "oneOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "null"}
+      ]
+    },
+    "page_id": {"type": "string", "minLength": 1},
+    "prior_reliability": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]
+    },
+    "new_reliability": {"type": "string", "minLength": 1},
+    "prior_region_class": {"$ref": "#/$defs/region_class"},
+    "new_region_class": {"$ref": "#/$defs/region_class"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"outcome": {"const": "labels_emitted"}}},
+      "then": {"required": ["labels"]}
+    },
+    {
+      "if": {"properties": {"outcome": {"const": "supersedes"}}},
+      "then": {"required": ["supersedes_event_id", "replacement_event_id"]}
+    },
+    {
+      "if": {"properties": {"outcome": {"const": "page_repaired"}}},
+      "then": {"required": ["page_id", "prior_reliability", "new_reliability"]}
+    },
+    {
+      "if": {"properties": {"outcome": {"const": "region_reassigned"}}},
+      "then": {"required": ["prior_region_class", "new_region_class"]}
+    }
+  ],
+  "$defs": {
+    "sha256_hex": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "outcome": {
+      "enum": [
+        "labels_emitted",
+        "ineligible_event_type",
+        "not_measurement_eligible",
+        "supersedes",
+        "page_repaired",
+        "region_reassigned",
+        "vote_excluded_reversed",
+        "skipped_page_coverage_ineligible",
+        "skipped_low_order_no_override",
+        "queued_region_class_pending"
+      ]
+    },
+    "region_class": {
+      "enum": [
+        "body",
+        "headword",
+        "bibliography_entry",
+        "bibliography_section_marker",
+        "section_heading",
+        "heading_subsection",
+        "cross_reference",
+        "footnote",
+        "caption",
+        "foreign_language_greek",
+        "foreign_language_hebrew",
+        "foreign_language_latin",
+        "foreign_language_german",
+        "list_item",
+        "table_cell",
+        "quotation",
+        "unknown"
+      ]
+    },
+    "weak_reason": {
+      "enum": [
+        "no_family_map_readiness",
+        "insufficient_family_diversity",
+        "no_independent_check",
+        "dictionary_pass_only",
+        "llm_agreement_only",
+        "llm_resolved_event"
+      ]
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "engine_version_key",
+        "scan_lineage_id",
+        "volume",
+        "region_class",
+        "binary_outcome"
+      ],
+      "properties": {
+        "engine_version_key": {"type": "string", "minLength": 1},
+        "scan_lineage_id": {"type": "string", "minLength": 1},
+        "volume": {"type": "integer", "minimum": 1},
+        "region_class": {"$ref": "#/$defs/region_class"},
+        "binary_outcome": {"enum": ["correct", "incorrect"]},
+        "diagnostic_metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "typography_substyle": {
+              "oneOf": [
+                {"type": "string"},
+                {"type": "null"}
+              ]
+            },
+            "language_overlay": {
+              "oneOf": [
+                {"type": "string"},
+                {"type": "null"}
+              ]
+            },
+            "engine_self_confidence": {
+              "oneOf": [
+                {"type": "number"},
+                {"type": "null"}
+              ]
+            },
+            "admission_scope": {
+              "oneOf": [
+                {"type": "string"},
+                {"type": "null"}
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

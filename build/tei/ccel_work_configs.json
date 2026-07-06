@@ -1,0 +1,82 @@
+{
+  "config_schema": "ccel-tei-work-configs-v1",
+  "notes": "Batch 06 proof configs only. These establish the CCEL TEI mechanism; they do not migrate the full CCEL family.",
+  "works": [
+    {
+      "work_id": "athanasius-on-the-incarnation",
+      "rendering_id": "ccel-npnf204",
+      "status": "proven",
+      "raw_path": "raw/ccel/npnf2/npnf204.xml",
+      "scope": {
+        "tag": "div1",
+        "id": "vii"
+      },
+      "title": "On the Incarnation of the Word",
+      "author": "Athanasius of Alexandria",
+      "contributors": [
+        "Archibald Robertson (editor and translator, 1892)",
+        "Philip Schaff and Henry Wace (series editors)"
+      ],
+      "source_url": "https://www.ccel.org/ccel/schaff/npnf204.xml",
+      "source_hash": "sha256:bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652",
+      "source_edition": "Nicene and Post-Nicene Fathers, Series 2. Philip Schaff and Henry Wace (eds.). Vol. 4: Athanasius: Select Works and Letters. New York, 1892.",
+      "division_rules": [
+        {
+          "tag": "div2",
+          "title": "Introduction.",
+          "tei_type": "preface",
+          "place": "front"
+        },
+        {
+          "tag": "div2",
+          "id": "vii.ii",
+          "tei_type": "work",
+          "place": "body"
+        },
+        {
+          "tag": "div3",
+          "source_type": "Section",
+          "tei_type": "section",
+          "place": "body"
+        }
+      ]
+    },
+    {
+      "work_id": "owen-mortification",
+      "rendering_id": "ccel-owen-mort",
+      "status": "proven",
+      "raw_path": "raw/ccel/owen/mort.xml",
+      "scope": {
+        "tag": "div1",
+        "id": "i"
+      },
+      "title": "Of the Mortification of Sin in Believers",
+      "author": "John Owen",
+      "contributors": [
+        "William H. Goold (editor, Johnstone and Hunter, Edinburgh, 1850-1853)"
+      ],
+      "source_url": "https://www.ccel.org/ccel/owen/mort.xml",
+      "source_hash": "sha256:e3577b8e81583250a41df8b0bd6504dc37209a60944cbd5e20ec2ae82779c211",
+      "source_edition": "Works of John Owen, ed. William H. Goold, Johnstone and Hunter, Edinburgh, 1850-1853.",
+      "division_rules": [
+        {
+          "tag": "div2",
+          "source_type": "Titlepage",
+          "skip": true
+        },
+        {
+          "tag": "div2",
+          "source_type": "Preface",
+          "tei_type": "preface",
+          "place": "front"
+        },
+        {
+          "tag": "div2",
+          "source_type": "Chapter",
+          "tei_type": "chapter",
+          "place": "body"
+        }
+      ]
+    }
+  ]
+}

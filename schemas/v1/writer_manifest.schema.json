@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/writer_manifest.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Writer Manifest",
+  "description": "Receipt for a write to data/. One file per run at review/writer-manifests/<run_id>.json. The audit log carries only the run_id pointer + manifest_checksum_sha256.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "writer",
+    "writer_version",
+    "writer_identity",
+    "run_id",
+    "started_at",
+    "data_paths",
+    "checksums",
+    "expected_delta_counts",
+    "allowed_field_paths",
+    "partial_completion_policy",
+    "renames"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "writer": {
+      "type": "string",
+      "enum": [
+        "parser",
+        "applier",
+        "tool"
+      ]
+    },
+    "writer_version": {
+      "type": "string",
+      "description": "Source path + version, e.g. 'build/parsers/ia_schaff_herzog.py@v1.1.0'."
+    },
+    "writer_identity": {
+      "type": "string",
+      "description": "Allowlist-registered identity. Must be present in build/lib/writer_identities.py."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Globally unique id for this writer run."
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Paths under data/ touched by this run."
+    },
+    "checksums": {
+      "type": "object",
+      "description": "Per-data-path SHA-256 before/after.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "before_sha256",
+          "after_sha256"
+        ],
+        "properties": {
+          "before_sha256": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null when the file did not exist before the run."
+          },
+          "after_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "expected_delta_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entries_changed",
+          "fields_changed"
+        ],
+        "properties": {
+          "entries_changed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fields_changed": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "allowed_field_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "RFC 6901 JSON Pointer with single-segment '*' wildcard. Multi-segment '**' is not supported."
+      },
+      "minItems": 1
+    },
+    "partial_completion_policy": {
+      "type": "string",
+      "enum": [
+        "all_or_nothing",
+        "partial_ok"
+      ]
+    },
+    "renames": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from_path",
+          "to_path",
+          "before_sha256",
+          "after_sha256"
+        ],
+        "properties": {
+          "from_path": {
+            "type": "string"
+          },
+          "to_path": {
+            "type": "string"
+          },
+          "before_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "after_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

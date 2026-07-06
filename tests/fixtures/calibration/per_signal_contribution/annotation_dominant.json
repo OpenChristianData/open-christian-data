@@ -1,0 +1,36 @@
+{
+  "fixture_id": "per_signal_annotation_dominant",
+  "description": "annotation_key carries 30 of 45 total points (67%); source_order carries the remainder; all other signals zero",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "original_text": "",
+    "annotations": {"entry": "Justification"},
+    "source_pages": []
+  },
+  "attestor_block": {
+    "block_type": "heading",
+    "original_text": "",
+    "annotations": {"entry": "Justification"},
+    "source_pages": []
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 0,
+    "anchor_len": 1,
+    "attestor_len": 1
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 30,
+    "text_similarity": 0,
+    "source_order": 15,
+    "block_type": 0,
+    "page_proximity": 0,
+    "language_profile": 0,
+    "ocr_skeleton": 0
+  },
+  "expected_total_score": 45,
+  "expected_bucket": "mid_low",
+  "signal_dominance": "annotation_key=30 is the dominant signal (67% of total)",
+  "hand_computation": "ann_exact(30) + text_empty(0) + ocr_empty(0) + order_15(15) + bt_incompat(0) + page_absent(0) + lang_absent(0) = 45",
+  "notes": "paragraph vs heading -> incompatible -> bt=0. empty source_pages -> no page number -> page=0. no language fields -> lang=0. annotation 'entry'='Justification' exact -> 30. source_order: anchor_len=1 -> rel_a=0; attestor_len=1 -> rel_b=0; delta=0 < 0.05 -> 15."
+}

@@ -1,0 +1,30 @@
+{
+  "resource_id": "sozomen-ecclesiastical-history",
+  "title": "The Ecclesiastical History of Sozomen",
+  "author": "Sozomen",
+  "author_birth_year": 400,
+  "author_death_year": 450,
+  "contributors": [
+    "Chester D. Hartranft (translator, 1890)",
+    "Philip Schaff (series editor)"
+  ],
+  "original_publication_year": null,
+  "language": "en",
+  "original_language": "grc",
+  "tradition": [
+    "patristic",
+    "ecumenical"
+  ],
+  "era": "patristic",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "church-history",
+  "source_url": "https://www.ccel.org/ccel/schaff/npnf202.xml",
+  "source_format": "ThML XML",
+  "source_edition": "Nicene and Post-Nicene Fathers, Series 2. Philip Schaff (ed.). New York: Christian Literature Publishing Co., 1890-1892.",
+  "source_hash": "sha256:0139e8dcea6d40c3b1a5e046f3d45bdf6d1b30c503461d7f29f60309b4f2015c",
+  "download_date": "2026-04-22",
+  "output_file": "data/structured-text/sozomen-ecclesiastical-history.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

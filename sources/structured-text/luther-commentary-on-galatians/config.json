@@ -1,0 +1,32 @@
+{
+  "resource_id": "luther-commentary-on-galatians",
+  "title": "Commentary on the Epistle to the Galatians",
+  "author": "Martin Luther",
+  "author_id": "luther-martin",
+  "author_birth_year": 1483,
+  "author_death_year": 1546,
+  "contributors": [],
+  "original_publication_year": 1937,
+  "language": "en",
+  "original_language": "la",
+  "tradition": [
+    "lutheran"
+  ],
+  "era": "reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "treatise",
+  "source_url": "https://www.gutenberg.org/ebooks/1549",
+  "source_format": "plain text (UTF-8)",
+  "source_edition": "Theodore Graebner, trans., Commentary on the Epistle to the Galatians (1535), public-domain English edition. PG#1549.",
+  "source_hash": "sha256:ed00941bbe9e65b12c6619ea8a756ac053c44ec0a0c88761a83b8dff8d9a59bd",
+  "source_type": "project_gutenberg",
+  "source_file": "raw/gutenberg/pg1549.txt",
+  "editor": null,
+  "editor_year": null,
+  "translator": "Theodore Graebner",
+  "download_date": "2026-07-05",
+  "output_file": "data/structured-text/luther-commentary-on-galatians.json",
+  "notes": "PG plain-text edition. Wrapper stripped; Preface, Luther's Introduction, and six chapter headings parsed into top-level section nodes. Plain-text inline emphasis markers are stripped in the JSON projection; bare numeric note anchors are tagged as [[pg-note-anchor:N]]."
+}

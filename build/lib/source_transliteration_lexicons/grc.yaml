@@ -1,0 +1,74 @@
+# Greek source-transliteration lexicon
+# Phase 1 seed: terms from Schaff-Herzog vol-01 front-matter transliteration table
+# Only attested-in-source tokens — no speculation (R54)
+- rule_id: grc.agape
+  description: "Greek ἀγάπη commonly printed as agapē or agape in 19th-century commentaries"
+  source_tokens: ["agapē", "agape"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.logos
+  description: "Greek λόγος printed as logos"
+  source_tokens: ["logos"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.ekklesia
+  description: "Greek ἐκκλησία printed as ekklesia or ekklēsia"
+  source_tokens: ["ekklesia", "ekklēsia"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.kurios
+  description: "Greek κύριος printed as kurios"
+  source_tokens: ["kurios"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.parousia
+  description: "Greek παρουσία printed as parousia"
+  source_tokens: ["parousia"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.diatheke
+  description: "Greek διαθήκη printed as diatheke"
+  source_tokens: ["diatheke", "diathēkē"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.didache
+  description: "Greek διδαχή printed as didache or didachē"
+  source_tokens: ["didache", "didachē"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.kerygma
+  description: "Greek κήρυγμα printed as kerygma or kērygma"
+  source_tokens: ["kerygma", "kērygma"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: grc.christos
+  description: "Greek Χριστός printed as christos"
+  source_tokens: ["christos"]
+  underlying_language: grc
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"

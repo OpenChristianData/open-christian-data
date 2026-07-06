@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "Phase E lexicon expansion@v1.0.0",
+  "writer_identity": "lexicon_writer",
+  "run_id": "phase-e-lexicon-en",
+  "started_at": "2026-05-12T15:57:30Z",
+  "data_paths": [
+    "data/lexicon/archaic_forms_en.json"
+  ],
+  "checksums": {
+    "data/lexicon/archaic_forms_en.json": {
+      "before_sha256": null,
+      "after_sha256": "c94f714aecad8f850913b38e7be9b9adbae1ee0bb47cf5ab79f362ff84d55f3f"
+    }
+  },
+  "expected_delta_counts": {
+    "data/lexicon/archaic_forms_en.json": {
+      "entries_changed": 1,
+      "fields_changed": 388
+    }
+  },
+  "allowed_field_paths": [
+    "/"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

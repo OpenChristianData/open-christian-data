@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/loss_receipt.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Loss Receipt",
+  "description": "Coverage ledger for a projection from TEI IR into a lossy output format.",
+  "type": "object",
+  "required": ["receipt_schema", "projection", "ir", "output", "totals", "classes", "nodes"],
+  "additionalProperties": false,
+  "properties": {
+    "receipt_schema": {"const": "loss-receipt-v1"},
+    "projection": {
+      "type": "object",
+      "required": ["id", "generator", "generated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string"},
+        "generator": {"type": "string"},
+        "generated_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "ir": {"$ref": "#/$defs/path_hash"},
+    "output": {"$ref": "#/$defs/path_hash"},
+    "totals": {
+      "type": "object",
+      "required": ["addressable_nodes", "projected", "dropped", "normalized"],
+      "additionalProperties": false,
+      "properties": {
+        "addressable_nodes": {"type": "integer", "minimum": 0},
+        "projected": {"type": "integer", "minimum": 0},
+        "dropped": {"type": "integer", "minimum": 0},
+        "normalized": {"type": "integer", "minimum": 0}
+      }
+    },
+    "classes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["projected", "dropped", "normalized"],
+        "additionalProperties": false,
+        "properties": {
+          "projected": {"type": "integer", "minimum": 0},
+          "dropped": {"type": "integer", "minimum": 0},
+          "normalized": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    }
+  },
+  "$defs": {
+    "path_hash": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["record_id"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {"type": "string"},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 0}
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["address", "element", "disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "address": {"type": "string"},
+        "element": {"type": "string"},
+        "disposition": {"enum": ["projected", "dropped", "normalized"]},
+        "target": {"$ref": "#/$defs/target"},
+        "note": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"disposition": {"const": "projected"}},
+            "required": ["disposition"]
+          },
+          "then": {"required": ["target"]}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+ "schema_version": "1.0.0",
+ "writer": "parser",
+ "writer_version": "build/parsers/creeds_json_catechism.py@v1.0.0",
+ "writer_identity": "creeds_json_catechism_parser",
+ "run_id": "91c6a531422348b59dd261c2e5609e89",
+ "started_at": "2026-07-03T00:14:46.041755+00:00",
+ "data_paths": [
+  "data/catechisms/1695-baptist-catechism.json",
+  "data/catechisms/catechism-for-young-children.json",
+  "data/catechisms/exposition-of-the-assemblies-catechism.json",
+  "data/catechisms/heidelberg-catechism.json",
+  "data/catechisms/keachs-catechism.json",
+  "data/catechisms/matthew-henrys-scripture-catechism.json",
+  "data/catechisms/puritan-catechism.json",
+  "data/catechisms/shorter-catechism-explained.json",
+  "data/catechisms/westminster-larger-catechism.json"
+ ],
+ "checksums": {
+  "data/catechisms/1695-baptist-catechism.json": {
+   "before_sha256": "c686c8f5f03f5ec0436a050647f607a0d532fd13066ec7bac9b9ffdea3b1753a",
+   "after_sha256": "c634efe0111f8b8c1d767902ff40cf5d66945386d673ec55d1220ec4adf32cf6"
+  },
+  "data/catechisms/catechism-for-young-children.json": {
+   "before_sha256": "16f06dbaa77659e3702fa94de6dd6a41cac56f4b82801567bf4127d4e9cc346f",
+   "after_sha256": "845507396b8baee4ea4449fe22fc7ea1aa148376781cdb54b932fc9ca39914be"
+  },
+  "data/catechisms/exposition-of-the-assemblies-catechism.json": {
+   "before_sha256": "80121f755f4c7ebacfdb4a523c77317a1bbb0fe756cffb6cd8282fc031bfeafd",
+   "after_sha256": "30be679bbd04554e3505464a68fde529f9af789d19d59d8d96e5aa9f7e9965d3"
+  },
+  "data/catechisms/heidelberg-catechism.json": {
+   "before_sha256": "2c1ba6e9a70fe178effb5421d2bc5e037ee6698d9573222909e6eb93ae554243",
+   "after_sha256": "f03d6c96eb2071231eff72a9d515805c7db1605f84dfd87e8a15df87b61f59e6"
+  },
+  "data/catechisms/keachs-catechism.json": {
+   "before_sha256": "73f97ba91ab570400f3167152943366cae6bb02d6740c9c0f4f86d6c2a878939",
+   "after_sha256": "4a274b5e72e0352c7ed4b492d7e077e94467933cd5b065c3a15256245641bb1b"
+  },
+  "data/catechisms/matthew-henrys-scripture-catechism.json": {
+   "before_sha256": "11f2a713636e944a21b7fbb682569151383ba1a17ec0b2d8cbf7188619ab1d73",
+   "after_sha256": "997affba9fe6daa93352fd46778158f8e51750c976323c41cc65c8941c3f7b4b"
+  },
+  "data/catechisms/puritan-catechism.json": {
+   "before_sha256": "2c95f972ec9d502c98c853dcb5b0a24520ddcaa43e3816cc30b9f7f4e17daf1d",
+   "after_sha256": "fb26e0617ce1fbd7d268be706e7fde9d52a8d0a593296fae000c982a803c7b26"
+  },
+  "data/catechisms/shorter-catechism-explained.json": {
+   "before_sha256": "1a88ffa4fbb96a298a9955158893619de57498d2a7ca6201c532309f44dc01f5",
+   "after_sha256": "97525f710879e32d4af452abc3232ece3e99673aeb70742e16c5b5c6324a4ddf"
+  },
+  "data/catechisms/westminster-larger-catechism.json": {
+   "before_sha256": "7c69343ea12f5a870355359a4c6a1c1f453eff27675f9f76b310ab4f138687da",
+   "after_sha256": "bf60b2bf088ddea79c73e92b6d2339f94788ce979c166116bde9adea7a0dcfc2"
+  }
+ },
+ "expected_delta_counts": {
+  "data/catechisms/1695-baptist-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/catechism-for-young-children.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/exposition-of-the-assemblies-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/heidelberg-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/keachs-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/matthew-henrys-scripture-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/puritan-catechism.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/shorter-catechism-explained.json": {
+   "meta_fields_changed": 2
+  },
+  "data/catechisms/westminster-larger-catechism.json": {
+   "meta_fields_changed": 2
+  }
+ },
+ "partial_completion_policy": "all_or_nothing",
+ "renames": []
+}

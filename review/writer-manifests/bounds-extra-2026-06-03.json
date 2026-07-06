@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_evangelical_holiness.py@v1.0.0",
+  "writer_identity": "ccel_puritan_parser",
+  "run_id": "bounds-extra-2026-06-03",
+  "started_at": "2026-06-02T23:33:37.874521+00:00",
+  "data_paths": [
+    "data/structured-text/bounds-essentials-of-prayer.json",
+    "data/structured-text/bounds-necessity-of-prayer.json",
+    "data/structured-text/bounds-weapon-of-prayer.json",
+    "data/authors/registry.json"
+  ],
+  "checksums": {
+    "data/structured-text/bounds-essentials-of-prayer.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:a935d027e1aa1ccb534e8834ee687a0415330032f777a861fca8961be3679655"
+    },
+    "data/structured-text/bounds-necessity-of-prayer.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:d2ed35a8732e611e2419d27230f764e3382b0fedaffb10a9393427c48cadf0bd"
+    },
+    "data/structured-text/bounds-weapon-of-prayer.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:8b77d3cf5ff0735c25509acc1eea2149c9f63251f613064261c11405711d6b50"
+    },
+    "data/authors/registry.json": {
+      "before_sha256": "sha256:3f9b0c26dec763c7de58b5ad03ac1b2d3b15d29a45d986b860dead8e91cf747c",
+      "after_sha256": "sha256:eb3815cccf726c1f4e71b8c100a232fb5864e7797b81426baf3a1c460fb89859"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/bounds-essentials-of-prayer.json": {
+      "entries_added": 1
+    },
+    "data/structured-text/bounds-necessity-of-prayer.json": {
+      "entries_added": 1
+    },
+    "data/structured-text/bounds-weapon-of-prayer.json": {
+      "entries_added": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

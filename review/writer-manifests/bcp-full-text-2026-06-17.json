@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bcp_full_text.py@v1.0.0",
+  "writer_identity": "bcp_full_text_parser",
+  "run_id": "bcp-full-text-2026-06-17",
+  "started_at": "2026-06-17T00:00:00+00:00",
+  "data_paths": [
+    "data/structured-text/bcp-1549.json",
+    "data/structured-text/bcp-1559.json",
+    "data/structured-text/bcp-1662.json"
+  ],
+  "checksums": {
+    "data/structured-text/bcp-1549.json": {
+      "before_sha256": null,
+      "after_sha256": "1b553962b589b974d3a6e02380f6ffeb30e448a238a9a20063507a6431d9921c"
+    },
+    "data/structured-text/bcp-1559.json": {
+      "before_sha256": null,
+      "after_sha256": "574b743e8e9579d0be13b5e940aa6e1e85372c276bef1f917473f33fdbb2355d"
+    },
+    "data/structured-text/bcp-1662.json": {
+      "before_sha256": null,
+      "after_sha256": "01be40f03ff25d63ae5da746c740a3ccb77b533026a9757a7e31621b13eea297"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/bcp-1549.json": {
+      "entries_added": 34
+    },
+    "data/structured-text/bcp-1559.json": {
+      "entries_added": 14
+    },
+    "data/structured-text/bcp-1662.json": {
+      "entries_added": 20
+    }
+  }
+}

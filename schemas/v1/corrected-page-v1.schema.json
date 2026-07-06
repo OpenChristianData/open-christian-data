@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/corrected-page-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Corrected Page",
+  "description": "Page-keyed sidecar for machine-composed corrector readings. One position entry corresponds to one word-confusion-table-v1 position and carries derivable readings, character provenance, protected-class routing, and the chosen action. This sidecar does not overwrite the WCT.",
+  "type": "object",
+  "required": [
+    "schema_type",
+    "schema_version",
+    "work_id",
+    "volume_id",
+    "page_id",
+    "source_wct_page",
+    "positions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_type": {"const": "corrected_page"},
+    "schema_version": {"const": "corrected-page-v1"},
+    "work_id": {"type": "string"},
+    "volume_id": {"type": "string"},
+    "page_id": {"type": "string"},
+    "source_wct_page": {
+      "type": "object",
+      "required": ["path"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "positions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/corrected_position"}
+    }
+  },
+  "$defs": {
+    "canonical_derivation_level": {
+      "type": "string",
+      "enum": ["L0", "L1", "L2", "L3"]
+    },
+    "canonical_origin_kind": {
+      "type": "string",
+      "enum": ["observed", "machine_composed", "human_amended"]
+    },
+    "character_source_type": {
+      "type": "string",
+      "enum": [
+        "engine_family",
+        "confusion_rule",
+        "lexicon",
+        "language_model",
+        "human"
+      ]
+    },
+    "protected_class_label": {
+      "type": "string",
+      "enum": [
+        "none",
+        "proper_name",
+        "number",
+        "date",
+        "scripture_reference",
+        "greek",
+        "hebrew",
+        "unknown"
+      ]
+    },
+    "chosen_action": {
+      "type": "string",
+      "enum": [
+        "release_observed",
+        "release_flagged",
+        "route_human_review",
+        "release_accepted",
+        "defer"
+      ]
+    },
+    "score_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["confidence"],
+      "properties": {
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "character_vote_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "lexicon_score": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "language_model_score": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "character_provenance_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grapheme", "source_type", "source_id"],
+      "properties": {
+        "grapheme": {"type": "string", "minLength": 1},
+        "source_type": {"$ref": "#/$defs/character_source_type"},
+        "source_id": {"type": "string"},
+        "wct_candidate_id": {"type": "string"},
+        "wct_span_record_id": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "derivable_reading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derivation_level",
+        "origin_kind",
+        "text",
+        "scores"
+      ],
+      "properties": {
+        "derivation_level": {"$ref": "#/$defs/canonical_derivation_level"},
+        "origin_kind": {"$ref": "#/$defs/canonical_origin_kind"},
+        "text": {"type": "string"},
+        "scores": {"$ref": "#/$defs/score_bundle"},
+        "character_provenance": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/character_provenance_entry"}
+        }
+      }
+    },
+    "corrected_position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "position_id",
+        "protected_class",
+        "derivable_readings",
+        "chosen_action"
+      ],
+      "properties": {
+        "position_id": {"type": "string"},
+        "protected_class": {"$ref": "#/$defs/protected_class_label"},
+        "derivable_readings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/derivable_reading"}
+        },
+        "chosen_reading_index": {"type": ["integer", "null"], "minimum": 0},
+        "chosen_action": {"$ref": "#/$defs/chosen_action"},
+        "derivation_method": {"type": ["string", "null"]},
+        "decision_event_id": {"type": "string"},
+        "derivation_policy_version": {"type": "string"},
+        "validation_report_id": {"type": ["string", "null"]},
+        "supersedes": {"type": ["string", "null"]},
+        "superseded_by": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

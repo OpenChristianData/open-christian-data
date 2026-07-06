@@ -1,0 +1,16 @@
+# OCR error model — Hebrew (vowel points and character confusion)
+- error_id: hbo.dalet_resh
+  description: "Dalet (ד) and Resh (ר) confusion — similar shapes"
+  confusion: {source: "ד", target: "ר", bidirectional: true}
+- error_id: hbo.vav_yod
+  description: "Vav (ו) and Yod (י) confusion in small type"
+  confusion: {source: "ו", target: "י", bidirectional: true}
+- error_id: hbo.vowel_points_dropped
+  description: "Nikud (vowel points) may be dropped in older prints"
+  confusion: {source: "nikud", target: "dropped"}
+- error_id: hbo.shin_sin
+  description: "Shin (שׁ) and Sin (שׂ) dots dropped or confused"
+  confusion: {source: "shin_dot", target: "dropped"}
+- error_id: hbo.final_forms
+  description: "Final forms (ך ם ן ף ץ) confused with medial forms"
+  confusion: {source: "final_form", target: "medial_form"}

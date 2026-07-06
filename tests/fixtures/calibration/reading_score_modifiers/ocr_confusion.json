@@ -1,0 +1,21 @@
+{
+  "modifier": "ocr_confusion",
+  "adr_value": -1.5,
+  "description": "Attestor token is derivable from anchor token by applying a known OCR confusion pattern -> -1.5 applied to attestor reading score",
+  "triggering": {
+    "anchor_reading": "morning the nation were glad",
+    "attestor_reading": "moming the nation were glad",
+    "language": "en",
+    "expected_modifier_fires": true,
+    "expected_modifier_value": -1.5,
+    "notes": "OCR error model en.rn_as_m: 'rn'->m confusion. 'morning'.replace('rn','m')='moming'. Attestor token 'moming' is derivable from anchor token 'morning' by this confusion -> modifier fires."
+  },
+  "near_miss": {
+    "anchor_reading": "morning the nation were glad",
+    "attestor_reading": "morbing the nation were glad",
+    "language": "en",
+    "expected_modifier_fires": false,
+    "expected_modifier_value": 0.0,
+    "near_miss_reason": "'morbing' is NOT derivable from 'morning' by any confusion in the en OCR error model. Checking all model entries: 'morning'.replace('rn','m')='moming' (not 'morbing'); 'morning'.replace('cl','d') -> no 'cl' in 'morning'; etc. No pattern matches -> modifier does not fire."
+  }
+}

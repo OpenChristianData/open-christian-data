@@ -1,0 +1,38 @@
+{
+  "fixture_id": "per_signal_text_similarity_dominant",
+  "description": "text_similarity (25) + ocr_skeleton (5) together carry 50% of the 60-point total; annotation absent; language and source_order contribute the rest",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "language": "en",
+    "original_text": "The resurrection of the dead is affirmed in both the Old and the New Testament.",
+    "annotations": {},
+    "source_pages": []
+  },
+  "attestor_block": {
+    "block_type": "paragraph",
+    "language": "en",
+    "original_text": "The resurrection of the dead is affirmed in both the Old and the New Testament.",
+    "annotations": {},
+    "source_pages": []
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 0,
+    "anchor_len": 1,
+    "attestor_len": 1
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 0,
+    "text_similarity": 25,
+    "source_order": 15,
+    "block_type": 10,
+    "page_proximity": 0,
+    "language_profile": 5,
+    "ocr_skeleton": 5
+  },
+  "expected_total_score": 60,
+  "expected_bucket": "mid_high",
+  "signal_dominance": "text_similarity=25 is the single largest contributor; text+ocr=30 is 50% of total",
+  "hand_computation": "ann_absent(0) + text_identical(25) + ocr_identical(5) + order_15(15) + bt_exact(10) + page_absent(0) + lang_exact(5) = 60",
+  "notes": "no shared annotation keys (empty dicts) -> 0. identical text -> sim=1.0 -> 25; skeleton same -> 5. anchor_len=1 -> rel_a=0; attestor_len=1 -> rel_b=0; delta=0 -> 15. paragraph=paragraph -> 10. no source_pages -> 0. 'en'=='en' -> exact -> 5."
+}

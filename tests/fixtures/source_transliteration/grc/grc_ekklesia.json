@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.ekklesia",
+  "positive_input": "The ekklesia is the body of Christ",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "ekklesia"},
+  "negative_input": "The church is the body of Christ",
+  "negative_expected": null
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/publish-projection-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Publish Projection",
+  "description": "Page-keyed sidecar emitted by the corrector publish gate (M15). One entry per corrected-page position, carrying the publication decision (unflagged / flagged / routed) and the public origin label. This is a separate, re-runnable policy layer: it reads an immutable corrected-page-v1 sidecar and never overwrites it, so re-certifying a threshold means re-running the gate rather than mutating the corrector output.",
+  "type": "object",
+  "required": [
+    "schema_type",
+    "schema_version",
+    "work_id",
+    "volume_id",
+    "page_id",
+    "region_class",
+    "source_corrected_page",
+    "positions",
+    "summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_type": {"const": "publish_projection"},
+    "schema_version": {"const": "publish-projection-v1"},
+    "work_id": {"type": "string"},
+    "volume_id": {"type": "string"},
+    "page_id": {"type": "string"},
+    "region_class": {"type": "string"},
+    "source_corrected_page": {
+      "type": "object",
+      "required": ["path"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "positions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/projected_position"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["unflagged", "flagged", "routed"],
+      "additionalProperties": false,
+      "properties": {
+        "unflagged": {"type": "integer", "minimum": 0},
+        "flagged": {"type": "integer", "minimum": 0},
+        "routed": {"type": "integer", "minimum": 0}
+      }
+    }
+  },
+  "$defs": {
+    "publish_status": {
+      "type": "string",
+      "enum": ["unflagged", "flagged", "routed"]
+    },
+    "origin_kind": {
+      "type": ["string", "null"],
+      "enum": ["observed", "machine_composed", "human_amended", null]
+    },
+    "derivation_level": {
+      "type": ["string", "null"],
+      "enum": ["L0", "L1", "L2", "L3", null]
+    },
+    "projected_position": {
+      "type": "object",
+      "required": ["position_id", "publish_status"],
+      "additionalProperties": false,
+      "properties": {
+        "position_id": {"type": "string"},
+        "publish_status": {"$ref": "#/$defs/publish_status"},
+        "origin_kind": {"$ref": "#/$defs/origin_kind"},
+        "derivation_level": {"$ref": "#/$defs/derivation_level"},
+        "text": {"type": ["string", "null"]},
+        "route_reason": {"type": ["string", "null"]},
+        "character_provenance": {
+          "type": "array",
+          "items": {"type": "object"}
+        }
+      }
+    }
+  }
+}

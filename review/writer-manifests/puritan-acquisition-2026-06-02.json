@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_puritan_works.py@v1.0.1",
+  "writer_identity": "ccel_puritan_parser",
+  "run_id": "puritan-acquisition-2026-06-02",
+  "started_at": "2026-06-02T13:54:30.855874+00:00",
+  "data_paths": [
+    "data/structured-text/rutherford-letters.json",
+    "data/structured-text/boston-crook-in-the-lot.json",
+    "data/structured-text/murray-absolute-surrender.json",
+    "data/authors/registry.json"
+  ],
+  "checksums": {
+    "data/structured-text/rutherford-letters.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:289f05632abbd80c1cbd38eb50b5560f7984f0877fd6d61b65d62d9deefc9445"
+    },
+    "data/structured-text/boston-crook-in-the-lot.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:2de45c21e0606ff7f969caf3998b3752aae1547d7663d8d290c62ffdaaa34a92"
+    },
+    "data/structured-text/murray-absolute-surrender.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:ea434d65863ba7b017f288d53d55c89db6ac01728a8dec1f1e28997760fa610c"
+    },
+    "data/authors/registry.json": {
+      "before_sha256": "sha256:ef9b9fff1efd68a68d6e0fb1e0f4e29402439685e4961bd790db9f0b0037a26f",
+      "after_sha256": "sha256:302d6b54b43bb4b7d2778cbd6567de7b4ac4fac2c8d940e18d0f62462b69135a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/rutherford-letters.json": {
+      "entries_added": 1
+    },
+    "data/structured-text/boston-crook-in-the-lot.json": {
+      "entries_added": 1
+    },
+    "data/structured-text/murray-absolute-surrender.json": {
+      "entries_added": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

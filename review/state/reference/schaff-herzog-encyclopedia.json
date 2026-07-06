@@ -1,0 +1,31 @@
+{
+  "schema_type": "review_state",
+  "schema_version": "1.0.0",
+  "record_path": "data/reference/schaff-herzog-encyclopedia.json",
+  "record_resource_id": "schaff-herzog-encyclopedia",
+  "record_checksum_sha256": "f8564daff52e2f51c131859aab166998238bf2031f784c1838e46774912d6b6c",
+  "parser_version_seen": "build/parsers/ia_schaff_herzog.py@v1.0.0",
+  "confidence": {
+    "structural_fidelity": "unverified",
+    "text_fidelity": "unverified",
+    "edition_provenance": "unverified"
+  },
+  "entries": {
+    "schaff-herzog.aachen-synods-of": {
+      "warnings_acknowledged": [
+        {
+          "producer": "ocr_scanner",
+          "code": "digit_in_letter",
+          "signature": "field=definition_blocks.b8f3a1c2;offset=1832;token=TH0",
+          "signature_version": "v1.0.0",
+          "reason": "confirmed",
+          "note": "Real OCR artefact: capital O misread as zero. Needs correction in Phase G."
+        }
+      ],
+      "warnings_dismissed": [],
+      "last_reviewed_at": "2026-05-12T10:45:30.719695Z",
+      "last_reviewer": "vertical-slice-loop"
+    }
+  },
+  "dead_letter": []
+}

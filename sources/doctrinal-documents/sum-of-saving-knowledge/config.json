@@ -1,0 +1,32 @@
+{
+  "id": "sum-of-saving-knowledge",
+  "title": "The Sum of Saving Knowledge",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1650,
+  "source": {
+    "name": "thewestminsterstandard.org",
+    "url": "https://thewestminsterstandard.org/sum-of-saving-knowledge",
+    "repository": null,
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "17th-century text; no copyrightable original content added by host site.",
+    "download_date": "2026-03-28",
+    "source_hash": "sha256:6d459961a17f79cc6c689d8bfc6ac7500124ae5730a5e343cd81e4aa0896e868"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "declaration",
+  "output_file": "data/doctrinal-documents/sum-of-saving-knowledge.json",
+  "parser": "build/parsers/westminster_standard_parser.py",
+  "stats": {
+    "section_count": 9,
+    "word_count": 12475
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Completeness: partial -- inline proof texts deferred to Phase 2.",
+    "Attributed to David Dickson and James Durham (c. 1650); appended to Westminster Standards by Church of Scotland.",
+    "9 top-level sections: Preface, The Sum (intro), Heads I-IV, Practical Use (large), Warrants to Believe (4 subsections), Evidences of True Faith (4 subsections).",
+    "Hierarchical structure: Warrants to Believe and Evidences of True Faith contain nested child sections.",
+    "Parsed from thewestminsterstandard.org HTML."
+  ]
+}

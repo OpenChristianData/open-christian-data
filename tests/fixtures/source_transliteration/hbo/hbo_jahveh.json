@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.jahveh",
+  "positive_input": "Jahveh a variant transliteration used by German scholars",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "Jahveh"},
+  "negative_input": "A variant transliteration used by German scholars",
+  "negative_expected": null
+}

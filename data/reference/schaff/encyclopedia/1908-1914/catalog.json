@@ -1,0 +1,290 @@
+{
+  "work_id": "schaff.encyclopedia",
+  "edition": "1908-1914",
+  "modernisation_intent": "intended",
+  "pd_anchor_decision": {
+    "chosen_rendering": "ccel/schaff/encyclopedia/1908-1914/thml",
+    "rationale": "CCEL ThML preserves entry structure where text is available. IA OCR supplies public-domain attestation for image-only volumes and remains available for disagreement review. The effective pd_anchor is conditional per volume: CCEL files for vols 3-8 and 10-12 are stubs with no article content, so those volumes use ia-ocr as their effective anchor. See per_volume_effective_pd_anchor.",
+    "decided_at": "2026-05-19T00:00:00+00:00",
+    "alternates_considered": [
+      {
+        "rendering_id": "ia/schaff/encyclopedia/1908-1914/ocr",
+        "rejected_because": "IA OCR is retained as a public-domain attestor because OCR noise makes it less stable as the anchor. It is the effective anchor for volumes where CCEL provides only stub content."
+      }
+    ],
+    "per_volume_effective_pd_anchor": {
+      "1": "ccel/schaff/encyclopedia/1908-1914/thml",
+      "2": "ccel/schaff/encyclopedia/1908-1914/thml",
+      "3": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "4": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "5": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "6": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "7": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "8": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "9": "ccel/schaff/encyclopedia/1908-1914/thml",
+      "10": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "11": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "12": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "13": "ccel/schaff/encyclopedia/1908-1914/thml"
+    }
+  },
+  "aliases": {
+    "ccel-thml": "ccel/schaff/encyclopedia/1908-1914/thml",
+    "ia-ocr": "ia/schaff/encyclopedia/1908-1914/ocr",
+    "oss-tesseract-v1": "oss-tesseract/schaff/encyclopedia/1908-1914/v1",
+    "gcv-v1": "google-cloud-vision/schaff/encyclopedia/1908-1914/v1",
+    "textract-v1": "aws-textract/schaff/encyclopedia/1908-1914/v1",
+    "azure-v1": "azure-ai-vision/schaff/encyclopedia/1908-1914/v1",
+    "ia-abbyy-v1": "ia-abbyy/schaff/encyclopedia/1908-1914/v1"
+  },
+  "renderings": [
+    {
+      "rendering_id": "ccel/schaff/encyclopedia/1908-1914/thml",
+      "role": "pd_anchor",
+      "source": "ccel",
+      "source_url": "https://www.ccel.org/ccel/schaff/{volume_id}.xml",
+      "format": "thml",
+      "license": "public-domain",
+      "fetched_at": "2026-04-13",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "notes": "Source URL pattern from build/parsers/ccel_schaff_herzog.py."
+    },
+    {
+      "rendering_id": "ia/schaff/encyclopedia/1908-1914/ocr",
+      "role": "pd_attestor",
+      "source": "ia",
+      "source_url": "https://archive.org/details/NewSchaffHerzogEncyclopediaOfReligious",
+      "source_url_pattern": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "ABBYY FineReader OCR",
+      "fetched_at": "2026-04-13",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12
+        ]
+      },
+      "notes": "Source URL pattern and file list from build/parsers/ia_schaff_herzog.py."
+    },
+    {
+      "rendering_id": "oss-tesseract/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "local-ocr",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "Tesseract",
+      "engine_version": "tesseract v5.5.0.20241111",
+      "language_packs": [
+        "eng"
+      ],
+      "psm_mode": 1,
+      "preprocessing": "raw",
+      "config_hash": "69f7a4887aedad0e7158706cb3cf9ff212eff7bf5cc55f194ab65b484adc45ab",
+      "coverage": {
+        "volumes": [
+          1
+        ]
+      },
+      "source_manifest_ref": "raw/internet-archive/schaff-herzog-pages/vol_NN.manifest.json",
+      "notes": "Own-OCR rendering from IA JP2 scans via Tesseract (UB Mannheim 5.5.0 build). PSM=1, lang=eng, preprocessing=raw locked at B2.2 probe matrix. config_hash: sha256(canonical_json). Coverage updated per volume as B5 rollout proceeds. Vol 13 excluded (index only). Deviation D1: 5.5.0 vs spec 5.4.x -- no breaking CLI changes."
+    },
+    {
+      "rendering_id": "google-cloud-vision/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "google-cloud-vision",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "Google Cloud Vision API",
+      "engine_version": "v1",
+      "config_hash": "pending",
+      "coverage": {
+        "volumes": []
+      },
+      "source_manifest_ref": "raw/internet-archive/schaff-herzog-pages/vol_NN.manifest.json",
+      "notes": "Cloud OCR via Google Cloud Vision API DOCUMENT_TEXT_DETECTION. Free tier: 1,000 units/month. Hard abort at 950 enforced by build/tools/quota_state.json. B2.2 probe: 8/8 pages, mean conf 97.7%. Coverage updated per volume."
+    },
+    {
+      "rendering_id": "aws-textract/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "aws-textract",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "AWS Textract",
+      "engine_version": "detect-document-text-v1",
+      "config_hash": "pending",
+      "coverage": {
+        "volumes": []
+      },
+      "source_manifest_ref": "raw/internet-archive/schaff-herzog-pages/vol_NN.manifest.json",
+      "notes": "Cloud OCR via AWS Textract DetectDocumentText. Free tier: 1,000 pages/month (first 3 months). Hard abort at 950/month. B2.2 status: excluded -- SubscriptionRequiredException on all 8 probe pages (account needs Textract subscription). Deviation D3b."
+    },
+    {
+      "rendering_id": "azure-ai-vision/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "azure-ai-vision",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "Azure AI Vision Read",
+      "engine_version": "2024-02-01",
+      "config_hash": "pending",
+      "coverage": {
+        "volumes": [
+          1,
+          2,
+          9
+        ]
+      },
+      "source_manifest_ref": "raw/internet-archive/schaff-herzog-pages/vol_NN.manifest.json",
+      "notes": "Cloud OCR via Azure AI Vision Read API (F0 free tier). Free tier: 5,000 transactions/month. Hard abort at 4,750/month. B2.2 status: excluded -- HTTP 404 on all 8 probe pages (endpoint not found or resource deleted). Deviation D3c."
+    },
+    {
+      "rendering_id": "ia-abbyy/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "internet-archive",
+      "source_url_pattern": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "LuraDocument XML Exporter for ABBYY FineReader",
+      "fetched_at": "2026-05-25T23:44:39.739501Z",
+      "source_hash": "sha256:0223f66e0f76c5e51529cc19b281f4aff167112a8a8a4111c2f5b3b2a066ec77",
+      "coverage": {
+        "volumes": [
+          1
+        ]
+      },
+      "source_manifest_ref": "raw/internet-archive/schaff-herzog/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909._abbyy.gz",
+      "notes": "Word-level positions + confidence from IA's ABBYY FineReader OCR. Richer than the existing ia/.../ocr (djvu.txt) rendering. Vol 1 added by Session 2. 489 of 491 manifest pages parsed (leaf 0064 has 3 duplicate page_num assignments in manifest -- pre-existing fetcher bug; not blocking)."
+    },
+    {
+      "rendering_id": "ia-abbyy-dli/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "dli",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader 11.0",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [
+          1,
+          3,
+          4,
+          6,
+          8,
+          10,
+          11
+        ]
+      },
+      "notes": "DLI (Digital Library of India) ABBYY FineReader 11.0 — newest ABBYY version available on IA. Co-primary source for vols 1, 3, 4, 6, 8, 10, 11. Confidence systematically lower than NSH-main (DLI scans have lighter ink). Added Session B2.5."
+    },
+    {
+      "rendering_id": "ia-abbyy-haucgoog/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "haucgoog",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader (version per item)",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      "notes": "Haucgoog (Harvard/Google Books) ABBYY OCR, copy 0. Vol 1 added prior session; vols 2-12 added Session B2.5. Note: vols 3, 12 are tif-only (no jp2); ABBYY GZ parseable regardless."
+    },
+    {
+      "rendering_id": "ia-abbyy-haucgoog-c1/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "haucgoog",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader (version per item)",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [1, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      },
+      "notes": "Haucgoog copy 1. Vol 1 added prior session; vols 3-11 added Session B2.5. Vol 2 has only one haucgoog copy (c0). Vol 12 has only one haucgoog copy (c0)."
+    },
+    {
+      "rendering_id": "ia-abbyy-haucgoog-c2/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "haucgoog",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader (version per item)",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [5, 6, 7, 8, 9, 10, 11]
+      },
+      "notes": "Haucgoog copy 2. Added Session B2.5. Vol 1 copy 2 (newschaffherzog37haucgoog) excluded — confirmed partial scan (267 pages, A-Basil only)."
+    },
+    {
+      "rendering_id": "ia-abbyy-haucgoog-c3/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "haucgoog",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader (version per item)",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [5, 6, 8, 9, 11]
+      },
+      "notes": "Haucgoog copy 3. Added Session B2.5."
+    },
+    {
+      "rendering_id": "ia-abbyy-haucgoog-c4/schaff/encyclopedia/1908-1914/v1",
+      "role": "pd_attestor",
+      "source": "haucgoog",
+      "source_url_pattern": "https://archive.org/download/{item_id}/{filename}",
+      "format": "ocr",
+      "license": "public-domain",
+      "engine": "abbyy-finereader",
+      "engine_version": "ABBYY FineReader (version per item)",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "source_hash": "sha256:unknown",
+      "coverage": {
+        "volumes": [5, 9]
+      },
+      "notes": "Haucgoog copy 4. Added Session B2.5."
+    }
+  ]
+}

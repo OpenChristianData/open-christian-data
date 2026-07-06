@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0.0",
+  "acquisition_id": "ccel-calvin-commentaries-thml-2026-07-06",
+  "work_id": "calvin-commentaries",
+  "title": "Calvin's Commentaries--Complete",
+  "author": "John Calvin",
+  "source": "Christian Classics Ethereal Library",
+  "source_work_url": "https://www.ccel.org/ccel/calvin/commentaries.html",
+  "source_format": "ThML XML components",
+  "fetched_at_utc": "2026-07-05T17:22:12Z",
+  "license": "public-domain-supported-by-source-metadata",
+  "edition_evidence": [
+    "Source metadata supports public-domain status for the underlying translation/edition and the fetched component XML rights records.",
+    "Component XML DC.Rights is Public Domain in all 45 calcomNN files.",
+    "Top-level ThML identifies the Calvin Translation Society edition and pubHistory 1847 (Calvin Society). This is not a claim over unrelated CCEL site artefacts."
+  ],
+  "coverage_evidence": [
+    "Fetched top-level commentaries.xml plus 45 component XML files calcom01.xml through calcom45.xml.",
+    "Catalogue/component-title coverage was verified, including Acts volumes 1-2; every verse boundary was not exhaustively audited in this batch.",
+    "CrossWire CalvinCommentaries catalogue omits Acts.",
+    "Component titles cover Genesis, Harmony of the Law, Joshua, Psalms, Isaiah, Jeremiah-Lamentations, Ezekiel, Daniel, Minor Prophets, Harmony of the Gospels, John, Acts, Romans, Corinthians, Galatians-Ephesians, Philippians-Colossians-Thessalonians, Pastorals/Philemon, Hebrews, and Catholic Epistles."
+  ],
+  "quality_census": {
+    "component_files": 45,
+    "total_component_bytes": 74240076,
+    "note_tags": 17283,
+    "language_spans": 22781,
+    "language_span_counts": {
+      "la": 4171,
+      "el": 2967,
+      "he": 9433,
+      "fr": 6098,
+      "other": 112
+    },
+    "italic_tags": 114331,
+    "scripture_reference_tags": 24787,
+    "div1_tags": 766,
+    "table_tags": 4924,
+    "public_domain_dc_rights_files": 45
+  },
+  "files": [
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom01.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom01.xml",
+      "bytes": 1760992,
+      "sha256": "4b700a5aa4f799f9363cc232cde85409a4f2ff58ebba6c82d9c4830ba83c7b33"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom02.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom02.xml",
+      "bytes": 1633371,
+      "sha256": "fa675fccdbe4d1ad0e555069e0c00c46d732974cc1989b1ca3df87bb073f0663"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom03.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom03.xml",
+      "bytes": 1961516,
+      "sha256": "5f153f44091059eff0d75451785cee7e3d0d9e63edecee645fe7b1b7c1dcaf53"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom04.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom04.xml",
+      "bytes": 2127111,
+      "sha256": "d0af9b325ea95e6fec6cd69e7cb67e660379868cfed63006424e147e086db721"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom05.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom05.xml",
+      "bytes": 2122727,
+      "sha256": "228608eda64658283ba7672b84267f0a62615eec37abe72c2128ede9fce9ee7c"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom06.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom06.xml",
+      "bytes": 1611118,
+      "sha256": "de96d1361801c31a76db343b05fe227664184aeefeb365b895d1ecf3e7592ad6"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom07.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom07.xml",
+      "bytes": 1152629,
+      "sha256": "98657e5ee3b1564e7d16729a8fd4fc73b1f46439f02e750fdbe700488fc33879"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom08.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom08.xml",
+      "bytes": 2199058,
+      "sha256": "d536c3aef54fbece4f8411ee9e76279333c97cd321ce1fc99241da17ea917586"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom09.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom09.xml",
+      "bytes": 1640391,
+      "sha256": "ed4df1781f8f4fcc5c192adae0702a198f19176e2ae5e4790b34b5780971a591"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom10.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom10.xml",
+      "bytes": 1801480,
+      "sha256": "7663f8e936be7b2f896a01e146ac30e03884f6edc04f3fc65d2b97bb51f99070"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom11.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom11.xml",
+      "bytes": 1731132,
+      "sha256": "ba8b446e8df7599db0e8088704f5c108fab17a873f34df75f7449eb79b13d6ea"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom12.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom12.xml",
+      "bytes": 1724469,
+      "sha256": "53e9f7cb53092c67c71ed3f6b0bf6f625f0fcdc4b4f4272327c8939fb9e4b3de"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom13.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom13.xml",
+      "bytes": 2106254,
+      "sha256": "f87ca5809cf9d52d8a4dd90bca1453254f8d6518a1668f7af1418865cfd80043"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom14.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom14.xml",
+      "bytes": 1592692,
+      "sha256": "d4875806cb10179dd4ec51d38260c8d85150ac3272c38916858b06c25905c00d"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom15.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom15.xml",
+      "bytes": 1671753,
+      "sha256": "5470801c8e4f73adb79bc425d586298c79ec45ddb1f4ee69bebff0b2163a76dc"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom16.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom16.xml",
+      "bytes": 1507464,
+      "sha256": "14f5e0b5fb890e04a18d0907e3d9303d3bc7a5f91bc6958d13ee7fbe5dcb683c"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom17.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom17.xml",
+      "bytes": 1816285,
+      "sha256": "798e2868501737dbad1257ada4cc88415384bd0513dc89f5c3bd662108435b78"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom18.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom18.xml",
+      "bytes": 1545485,
+      "sha256": "2c7989b0bef3b1d9b5a8d5c977eb409d1ba7f515643f4f01a52a7bc0bb3dd5f9"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom19.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom19.xml",
+      "bytes": 1591008,
+      "sha256": "bdde519e98338ce70f1ebf26efc3040e57b716ef15ecb88af529095df0ae6249"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom20.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom20.xml",
+      "bytes": 2096932,
+      "sha256": "1fb1279732e1ec3820a9458094b74074c4146c8bb0f72ad4b775fd9cad1a3b00"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom21.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom21.xml",
+      "bytes": 1903789,
+      "sha256": "2cf559a316f8dd267805ea332e66c62300a45baf5c579bb105cd1ecc6fa8727b"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom22.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom22.xml",
+      "bytes": 1281225,
+      "sha256": "e1f87bee30d0c44206811f55508b83e30df6b4738c665c3e3e473646bcd4a8a0"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom23.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom23.xml",
+      "bytes": 1506195,
+      "sha256": "545b547bdaea2b48492da3530a4e369806c20dc734d13691014cac24e44970e9"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom24.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom24.xml",
+      "bytes": 1389618,
+      "sha256": "852e065780ef1969630ce55d7310c8df1029ab4e303d3b7efbf05626b84a2496"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom25.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom25.xml",
+      "bytes": 1438004,
+      "sha256": "a0d0e8a8afc1027bbd960a5ee6a6dfbefee08a5cb60fbcc74b1a1780bb0041e0"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom26.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom26.xml",
+      "bytes": 1537578,
+      "sha256": "fa11e0f55eb5228fb048abc3a79c93c03d877604274bf7a137ed68149dcb4ee5"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom27.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom27.xml",
+      "bytes": 1505639,
+      "sha256": "706711217a3b7e0bf3698bf855f5675371e41faf82bd6369874ff5051c94c171"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom28.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom28.xml",
+      "bytes": 1689113,
+      "sha256": "b88752f77e187112a3f920aa82e9aaa125f32765a9843daf3c94290f3dd44a67"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom29.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom29.xml",
+      "bytes": 1239178,
+      "sha256": "11295fba3e70f79968a46a1a499e7daef96d51e20552a517f1ae919d630d2054"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom30.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom30.xml",
+      "bytes": 2105095,
+      "sha256": "90e826641081bd15d455a799da7f60574d4394d884de75d6f351ade0d1763ab8"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom31.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom31.xml",
+      "bytes": 1924843,
+      "sha256": "4989da59aa4b29fd076d95bae451def22de137db54bd7c52eb070f544913b428"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom32.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom32.xml",
+      "bytes": 1874608,
+      "sha256": "a6a0045ee9a75603a35142bdcfa2fdeac79a9d867ea32b1e16cbc47a8c0d6681"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom33.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom33.xml",
+      "bytes": 1423641,
+      "sha256": "28cecf1fe7cdf9837f6760f8febb9bea5cee08ead5950596fa4dac1dfb4a98af"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom34.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom34.xml",
+      "bytes": 1452233,
+      "sha256": "69f6362ccb18d6e09c8c4aae165179b8dc4838ae19b268b3a3787fb6ed37c39a"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom35.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom35.xml",
+      "bytes": 979783,
+      "sha256": "d4681c28a63055fa04fcd4883f8f9acf0e2614086bdfe40c0fd303bf26ddd035"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom36.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom36.xml",
+      "bytes": 1667294,
+      "sha256": "b48725d5eb77240b1bc4e5918d7141387811e9e2916e19f210a3cc75e6886af1"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom37.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom37.xml",
+      "bytes": 1304211,
+      "sha256": "a1ca28543d1700c301dfb9e72e9fa8646febd1575e76ae0bc91ddb95a871bf34"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom38.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom38.xml",
+      "bytes": 2269410,
+      "sha256": "83f148d977bb0e02928d209dd4cb2b19ebea440dd9c5e85fe3e73131fb53289c"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom39.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom39.xml",
+      "bytes": 1767435,
+      "sha256": "176ef9aa57b3973664dcf65d4ca12c1b7b319e51e8df7c270d237d6ad1aed012"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom40.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom40.xml",
+      "bytes": 1698566,
+      "sha256": "62b7b8c27c058d259cc4dc63564970ead43d516beeb9225b83a01c6d02fa1db2"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom41.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom41.xml",
+      "bytes": 1250834,
+      "sha256": "fac8c754eb4291391a28e94f9e285c40f9a5dfc43326f63a3438f65f9aa9aefd"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom42.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom42.xml",
+      "bytes": 1370466,
+      "sha256": "51096062bcf518040d5384f2597331b6e96dece4d0aaf2e5dda64c262dd921d2"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom43.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom43.xml",
+      "bytes": 1219919,
+      "sha256": "b5cdb241085c0eea44aa29388d88a53d2940ee0910cd43c39182f4a0c581528b"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom44.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom44.xml",
+      "bytes": 1443756,
+      "sha256": "b3bc9df38e418bc26ec525e01e9a4f59a41ca0b8f9c52ede49d880f0eac59827"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom45.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/calcom45.xml",
+      "bytes": 1603776,
+      "sha256": "61ee8f73bf8a3f274bdf599c20631874a1070d489edf9fd659d572bfb20b1d1f"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "source_url": "https://ccel.org/ccel/c/calvin/commentaries.xml",
+      "bytes": 8839,
+      "sha256": "d5167554c4c40ac2ba320e9ec75afd2565001e0f5f84b0245832b7bfa183b08f"
+    }
+  ]
+}

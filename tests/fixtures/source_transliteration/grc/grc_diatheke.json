@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.diatheke",
+  "positive_input": "The diatheke is the new covenant in his blood",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "diatheke"},
+  "negative_input": "The covenant is the new covenant in his blood",
+  "negative_expected": null
+}

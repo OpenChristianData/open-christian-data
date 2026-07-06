@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "run_cloud_ocr@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-vol09-azure-assembly",
+  "started_at": "2026-05-29T01:52:18Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_09.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_09.json": {
+      "before_sha256": null,
+      "after_sha256": "7af0060c80131e8b16bb907fc0fc85665194cdb553772a3f879ecc50dfdd16df"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_09.json": {
+      "pages_assembled": 492,
+      "mean_confidence": 97.9
+    }
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 492 page sidecars (format_version=1, bbox_polygon per word). Engine: Azure AI Vision v4.0. Session B2.5, 2026-05-29. 7 pages without JPEG: front matter (1-7). 1 page retried due to connection refused (page 375).",
+  "renames": []
+}

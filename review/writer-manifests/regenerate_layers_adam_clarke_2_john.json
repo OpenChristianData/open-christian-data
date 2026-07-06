@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/helloao_commentary.py@v1.0.0",
+  "writer_identity": "adam_clarke_parser",
+  "run_id": "f00ccd4b-43ca-4aca-8a67-f14318c91e9d",
+  "started_at": "2026-05-12T14:56:31.523067Z",
+  "data_paths": [
+    "data/commentaries/adam-clarke/2-john.json",
+    "data/commentaries/adam-clarke/_manifest.json"
+  ],
+  "checksums": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "before_sha256": "a08079da94a8689b7d032c71504575162918f6d3ecfc8cb3df5fb239231c3187",
+      "after_sha256": "dbc74dbf71f8e0aca30a1554760d5cff205039dc6c8e4f67cfcac519c67b2298"
+    },
+    "data/commentaries/adam-clarke/_manifest.json": {
+      "before_sha256": "663f5b307c6369c1ec67d99d78dd551daa5db90b88a119087909c73dd89c6dbf",
+      "after_sha256": "09fe6c3a497c24529672ef0557dc66dc73cdafcfca7a152fba92f6394e15939a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "entries_changed": 13,
+      "fields_changed": 13
+    },
+    "data/commentaries/adam-clarke/_manifest.json": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta/*",
+    "/data/*/layers"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.yahweh",
+  "positive_input": "Yahweh is the covenant name of God in the Hebrew scriptures",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "Yahweh"},
+  "negative_input": "The LORD is the covenant name of God in the Hebrew scriptures",
+  "negative_expected": null
+}

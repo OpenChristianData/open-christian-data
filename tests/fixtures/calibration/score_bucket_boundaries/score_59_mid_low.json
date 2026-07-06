@@ -1,0 +1,38 @@
+{
+  "fixture_id": "boundary_score_59",
+  "target_score": 59,
+  "expected_bucket": "mid_low",
+  "expected_action": "no_cluster",
+  "expected_surface": "required",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "language": "la",
+    "original_text": "",
+    "annotations": {"author": "Anselm"},
+    "source_pages": [{"page_number": 88}]
+  },
+  "attestor_block": {
+    "block_type": "paragraph",
+    "language": "lat",
+    "original_text": "",
+    "annotations": {"author": "Anselm"},
+    "source_pages": [{"page_number": 88}]
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 1,
+    "anchor_len": 10,
+    "attestor_len": 10
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 30,
+    "text_similarity": 0,
+    "source_order": 7,
+    "block_type": 10,
+    "page_proximity": 10,
+    "language_profile": 2,
+    "ocr_skeleton": 0
+  },
+  "hand_computation": "ann_exact(30) + text_empty(0) + ocr_empty(0) + order_7(7) + bt_exact(10) + page_same(10) + lang_partial(2) = 59",
+  "notes": "annotation_key: 'author'='Anselm' in both -> exact=30. empty text -> 0+0. source_order: rel_a=0/(10-1)=0, rel_b=1/(10-1)=0.1111, delta=0.1111, 0.05<=delta<0.20 -> 7. paragraph=paragraph -> exact=10. same page 88 -> diff=0 -> 10. lang_a='la', lang_b='lat': not equal, but 'la'[:2]='la'=='lat'[:2]='la' -> partial=2."
+}

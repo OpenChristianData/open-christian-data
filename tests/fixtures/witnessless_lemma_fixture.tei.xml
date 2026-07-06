@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Witnessless Lemma Validation Fixture</title>
+        <author>Athanasius of Alexandria</author>
+        <respStmt xml:id="reviewer">
+          <resp>Contributor</resp>
+          <name>Open Christian Data reviewer</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Open Christian Data</publisher>
+        <availability status="free">
+          <p>Public domain source text prepared for Open Christian Data.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <ptr target="https://example.org/athanasius-fixture"/>
+          <idno type="sha256">0000000000000000000000000000000000000000000000000000000000000000</idno>
+          <note type="print-source">Test fixture, not a real printed edition.</note>
+        </bibl>
+        <listWit>
+          <witness xml:id="tesseract">Tesseract OCR pass</witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="book" n="1">
+        <p>In the beginning
+          <app>
+            <lem resp="#reviewer" cert="high">Athanasius</lem>
+            <rdg wit="#tesseract">Athanasing</rdg>
+          </app>
+          wrote to the bishops.
+          <note type="provenance">decision_event_id: evt-abc123</note>
+        </p>
+      </div>
+    </body>
+  </text>
+</TEI>

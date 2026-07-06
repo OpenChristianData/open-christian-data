@@ -1,0 +1,201 @@
+{
+  "schema_version": "rendering-v1",
+  "stage_version": "s2-render-v1",
+  "rendering_id": "rendering-textract-vol01-p0010",
+  "engine_family": "textract",
+  "engine_version": "fixture-1.0",
+  "source_lineage_id": "textract/detect-document-text-v1",
+  "work_id": "schaff-herzog",
+  "edition_id": "1908-1914",
+  "volume": 1,
+  "pipeline_config_hash": "sha256:bb56f870c312ece9fbea9e5dd1b04b52ced12fe0188a0d3920963a49252fc469",
+  "typography_snapshot_id": "typo-fixture",
+  "typography_snapshot_approval_state": "provisional",
+  "ccel_annotation_source_id": null,
+  "dictionary_snapshot_ids": {},
+  "nfkc_allowlist_hash": "sha256:0cfa84f0d6b333e4f8e76d7ee349fdfeddd29ebf7e982024631f0be989ae29c8",
+  "fingerprint_function_hash": "sha256:47ecea5105661b4c88fe6439a7e65fb26ef2139575d34b1f3eb01cbf52822e4d",
+  "source_sidecar_refs": [],
+  "parsed_keys_index_refs": [],
+  "witness_coverage": {
+    "page_count": 1,
+    "eligible_pages": 1,
+    "diagnostic_pages": 0,
+    "corrupt_pages": 0,
+    "missing_pages": 0,
+    "coverage_state": "covered"
+  },
+  "pages": [
+    {
+      "manifest_id": "schaff-herzog/vol_01",
+      "rendering_id": "rendering-textract-vol01-p0010",
+      "page_native_id": "leaf_0010",
+      "canonical_leaf_id": 10,
+      "edition_page_key": {
+        "section": "body",
+        "anchor": 10,
+        "ordinal": 0
+      },
+      "page_sequence": 10,
+      "page_dimensions_native": {
+        "width": 2000,
+        "height": 3000,
+        "unit": "pixel"
+      },
+      "source_payload_sha256": "sha256:267de735b8bdbc3a5fc38e15e616f63d5fc98bd68ccfcd91475ece2366fd0b25",
+      "coverage_state": "covered",
+      "reading_order_reliability": "high",
+      "blocks": [
+        {
+          "rendering_block_id": "textract-b0",
+          "native_block_ids": [
+            "textract:nb0"
+          ],
+          "native_order": 0,
+          "derived_order": 0,
+          "block_type": "paragraph",
+          "block_type_evidence": {
+            "signals": []
+          },
+          "block_type_confidence": "high",
+          "block_type_conflicts": [],
+          "region_class": "body",
+          "language_lane": "en",
+          "language_lane_confidence": "high",
+          "zone_label": "body",
+          "candidate_article_membership": {
+            "status": "none",
+            "candidate_article_ids": []
+          },
+          "bibliography_layout": {
+            "status": "not_bibliography",
+            "evidence": []
+          },
+          "indent_style": "none",
+          "bbox_canonical": [
+            0.1,
+            0.1,
+            0.8,
+            0.8
+          ],
+          "block_extras_carried": {},
+          "block_extras_carried_keys": [],
+          "block_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "layers": {
+            "source_raw": "RELIGIOUS",
+            "normalised": "RELIGIOUS",
+            "structured": "RELIGIOUS",
+            "display": "RELIGIOUS"
+          },
+          "lines": [
+            {
+              "rendering_line_id": "textract-l0",
+              "native_line_ids": [
+                "textract:nl0"
+              ],
+              "native_order": 0,
+              "derived_order": 0,
+              "bbox_native": {
+                "x": 600,
+                "y": 115,
+                "w": 400,
+                "h": 70
+              },
+              "bbox_canonical": [
+                0.3,
+                0.038333,
+                0.2,
+                0.023333
+              ],
+              "line_geometry": {
+                "x_size": 60.0,
+                "baseline": 460.0,
+                "x_descenders": 470.0,
+                "x_ascenders": 405.0
+              },
+              "indent_evidence": {
+                "style": "none",
+                "block_x": 200.0,
+                "line_x": 200.0
+              },
+              "relative_size_tier": "body",
+              "raw_size_pt": 11.0,
+              "layers": {
+                "source_raw": "RELIGIOUS",
+                "normalised": "RELIGIOUS",
+                "structured": "RELIGIOUS",
+                "display": "RELIGIOUS"
+              },
+              "words": [
+                {
+                  "observation_token_id": "ot-sha256:c85bcc4ef1bf9439f2b5aec450d453272a0b0f9602eeb815100a30fb9f687a91",
+                  "native_sequence_index": 0,
+                  "layers": {
+                    "source_raw": "RELIGIOUS",
+                    "normalised": "RELIGIOUS",
+                    "structured": "RELIGIOUS",
+                    "display": "RELIGIOUS"
+                  },
+                  "bbox_native": {
+                    "x": 600,
+                    "y": 120,
+                    "w": 400,
+                    "h": 60
+                  },
+                  "bbox_canonical": [
+                    0.3,
+                    0.04,
+                    0.2,
+                    0.02
+                  ],
+                  "confidence_raw": 0.8,
+                  "zone_label": "body",
+                  "candidate_article_membership": {
+                    "status": "none",
+                    "candidate_article_ids": []
+                  },
+                  "word_extras_carried": {},
+                  "word_extras_carried_keys": [],
+                  "word_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                  "in_derived_join_span": false,
+                  "derived_join_span_id": null
+                }
+              ],
+              "line_extras_carried": {},
+              "line_extras_carried_keys": [],
+              "line_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+            }
+          ]
+        }
+      ],
+      "page_extras_carried": {},
+      "page_extras_carried_keys": [],
+      "page_extras_jcs_sha256": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    }
+  ],
+  "candidate_articles": [],
+  "derived_spans_by_block": {},
+  "structural_uncertainty_queue": [],
+  "operations_ledger_ref": {
+    "path": "reports/ledger.json",
+    "sha256": "sha256:fe14010b4fe83303852f0467c919ef9a7ca089b91e96e3aad7d426dd87079297"
+  },
+  "operations_ledger_hash": "sha256:fe14010b4fe83303852f0467c919ef9a7ca089b91e96e3aad7d426dd87079297",
+  "replay_verification": {
+    "passed": true,
+    "ledger_schema_valid": true,
+    "forward_replay_sha256": "sha256:4b94ea23f6d90b0b30aa00e48079832b689feaba2991df25137802d5bd90f34e",
+    "inverse_replay_sha256": "sha256:89270a50341bb8e83734ee062603c63c219320ed4a40fb9fb8c2792358548e8a",
+    "source_raw_reconstruction_sha256": "sha256:6b7d902199e960ef699051a48fef1214319517d6be498de768f1dc8a9a31ea38",
+    "verified_at": "2026-05-28T00:00:00Z",
+    "verifier_version": "fixture-1.0",
+    "failure_codes": []
+  },
+  "admission_state": {
+    "fully_admitted": true,
+    "coverage_gaps": 0,
+    "reading_order_low_pages": 0,
+    "reading_order_failed_pages": 0,
+    "unresolved_hyphen_count": 0
+  }
+}

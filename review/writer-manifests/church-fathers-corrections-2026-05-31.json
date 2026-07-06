@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/church_fathers.py@v1.0.0",
+  "writer_identity": "church_fathers_parser",
+  "run_id": "06649aebf9e04eb5ab8d8879508d573a",
+  "started_at": "2026-05-31T10:26:00.000000+00:00",
+  "data_paths": [
+    "data/church-fathers/andreas-of-caesarea.json",
+    "data/church-fathers/athanasius-of-alexandria.json",
+    "data/church-fathers/caesarius-of-arles.json",
+    "data/church-fathers/callistus-i-of-rome.json",
+    "data/church-fathers/cyprian.json",
+    "data/church-fathers/jerome.json",
+    "data/church-fathers/pope-anterus.json",
+    "data/church-fathers/pseudo-athanasius.json",
+    "data/church-fathers/pseudo-jerome.json",
+    "data/church-fathers/remigius-of-rheims.json",
+    "data/church-fathers/tatian-the-assyrian.json"
+  ],
+  "checksums": {
+    "data/church-fathers/andreas-of-caesarea.json": {
+      "before_sha256": "54e34f78bf9f5a800d5f69c34a4fb7d12581b388399a1e0453016214c4566d7c",
+      "after_sha256": "fe21d770e984bc191f57fa318f33df42b6d6df5498f7a37a79d8f17f3ce739fc"
+    },
+    "data/church-fathers/athanasius-of-alexandria.json": {
+      "before_sha256": "cafb5ea406fabf731413b3385c400afed30d1a77af2887d45897834f912a487f",
+      "after_sha256": "84bfa33d4a964e555e083fe0ce9ac0c18647dc9e58a4fd7caa280b39a2351391"
+    },
+    "data/church-fathers/caesarius-of-arles.json": {
+      "before_sha256": "75fd8c0f2e4b7be6e4d54cf5c28166c2979b5578249d2bde676a5545ba340972",
+      "after_sha256": "f2001a01d14386f2870cf6d77951ac59ca6996f8c96cb9b521468b23cd03593d"
+    },
+    "data/church-fathers/callistus-i-of-rome.json": {
+      "before_sha256": "b5d22bff5e813611ec9c5da6e028037122452866746b50ee7480636c078e39e2",
+      "after_sha256": "e82f6b8fe9268f0575f8f82e9c1e978448543db7fc6613038f500ede9faf09d6"
+    },
+    "data/church-fathers/cyprian.json": {
+      "before_sha256": "61849f8d8cd33a209dffdc6f8be9cc925e4cd8d706c2eb9310236ac3245fd652",
+      "after_sha256": "91b49baad8d46cd56252e91899431bb16e8ef7f1968d9bee7089459b856d1f26"
+    },
+    "data/church-fathers/jerome.json": {
+      "before_sha256": "68f76c23d8b0332b876fa2a8d1b3ccb24086cf06e80c23a7b2a61b426b06f280",
+      "after_sha256": "2a2e3b20154028d10b22c4085fb9af45848bc4d6b9542ec67164e555e35397ca"
+    },
+    "data/church-fathers/pope-anterus.json": {
+      "before_sha256": "b90e94adfff64abb731e7bacda8aec4c5b47a55dd6049c0bd39367ea8ca9e2dd",
+      "after_sha256": "d490e53f68431f516ee7bdf7dc4a5acf5a434d05dd337e9153e6753fa2d78f74"
+    },
+    "data/church-fathers/pseudo-athanasius.json": {
+      "before_sha256": "9c3b0b6ecaeeb518c16e1e95bd70f205cf148728fc9c7ee41d0d63b6b4369bd5",
+      "after_sha256": "a91554a09e3f11ff877abf85a1f087f56f45e348d9ddf765a6d138106bb5f2a1"
+    },
+    "data/church-fathers/pseudo-jerome.json": {
+      "before_sha256": "b3f313e765da4909f0c00ac5489578081ea6abf403a2443cfaa4a19f36994ff0",
+      "after_sha256": "740b0f30cabb3ebf95774803e9042e41c749fc3ea26bef8912fcf76fa98c2f8c"
+    },
+    "data/church-fathers/remigius-of-rheims.json": {
+      "before_sha256": "a93cdbcc9652c3f98dd0375e5b15bd5a874be838b7831f2b51704695ad76f2f6",
+      "after_sha256": "0c9109265c29b47670570f74fa89162c986de62dcb6db52790bbd6756d0b4662"
+    },
+    "data/church-fathers/tatian-the-assyrian.json": {
+      "before_sha256": "84a31c9c1c74bf7d56650087a19fec16e5433d2554b24e40096c9a136f02c8f0",
+      "after_sha256": "e8d509f5abb9397eaf7ef4c9832914752e43f21001bcc06ce94e318a4e443110"
+    }
+  },
+  "expected_delta_counts": {
+    "data/church-fathers/pope-anterus.json":         {"entries_changed": 1, "description": "verse_fix Eph.4.29->Eph.4.32"},
+    "data/church-fathers/andreas-of-caesarea.json":  {"entries_changed": 1, "description": "verse_fix 2Thess.1.8->Rev.20.9-10"},
+    "data/church-fathers/caesarius-of-arles.json":   {"entries_changed": 1, "description": "verse_fix 2Thess.1.8->Rev.16.16"},
+    "data/church-fathers/callistus-i-of-rome.json":  {"entries_changed": 1, "description": "verse_fix Rom.3.3->Rom.2.10"},
+    "data/church-fathers/cyprian.json":              {"entries_removed": 1, "description": "exclude 1Pet.5.5.unknown (composite)"},
+    "data/church-fathers/tatian-the-assyrian.json":  {"entries_removed": 1, "description": "exclude Mark.9.48.unknown (truncated)"},
+    "data/church-fathers/athanasius-of-alexandria.json": {"entries_removed": 3, "description": "reroute Ezra.1.1/Neh.1.1/Song.1.1 to pseudo-athanasius"},
+    "data/church-fathers/pseudo-athanasius.json":    {"entries_added": 3, "description": "receive rerouted Ezra.1.1/Neh.1.1/Song.1.1 from athanasius"},
+    "data/church-fathers/jerome.json":               {"entries_removed": 2, "description": "reroute Mark.1.11/Mark.15.32 to pseudo-jerome"},
+    "data/church-fathers/pseudo-jerome.json":        {"entries_added": 2, "description": "receive rerouted Mark.1.11/Mark.15.32 from jerome"},
+    "data/church-fathers/remigius-of-rheims.json":   {"entries_changed": 0, "description": "provenance.notes Auxerre misattribution flag added; entries unchanged"}
+  },
+  "allowed_field_paths": [
+    "/data/*/entry_id",
+    "/data/*/anchor_ref",
+    "/meta/provenance/notes"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_devotional.py@v1.0.1",
+  "writer_identity": "sword_devotional_parser",
+  "run_id": "batch02-daily-light-scriprefs-20260706",
+  "started_at": "2026-07-06T00:20:09+00:00",
+  "data_paths": [
+    "data/devotionals/daily-light/daily-light.json"
+  ],
+  "checksums": {
+    "data/devotionals/daily-light/daily-light.json": {
+      "before_sha256": "764f1d5cb8bdff8570ace87c0ef2173cea1ee4955a0462cf354d14c7521865a0",
+      "after_sha256": "7d0a1bcee56eecaaae982f825d06f04d2c65eff5e5e01cb697d7f7cb537809c9"
+    }
+  },
+  "expected_delta_counts": {
+    "data/devotionals/daily-light/daily-light.json": {
+      "entries_changed": 732,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/data/*/cross_references",
+    "/meta/provenance/processing_date",
+    "/meta/provenance/processing_script_version"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

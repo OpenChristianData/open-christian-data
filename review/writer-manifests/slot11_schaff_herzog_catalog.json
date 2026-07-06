@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "build/tools/migrate_schaff_herzog.py@slot11",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "slot11_schaff_herzog_catalog",
+  "started_at": "2026-05-19T04:00:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": null,
+      "after_sha256": "785eb4f5b04503dd2beffa07c13104c9a9434431e66b320159806012ac672958"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

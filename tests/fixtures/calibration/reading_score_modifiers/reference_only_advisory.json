@@ -1,0 +1,19 @@
+{
+  "modifier": "reference_only_advisory",
+  "adr_value": 0.5,
+  "description": "reference_only rendering contributes +0.5 to advisory_score only; does not enter pd_only_gap calculation (R5 fix)",
+  "triggering": {
+    "rendering_role": "reference_only",
+    "expected_pd_contribution": 0.0,
+    "expected_advisory_score": 0.5,
+    "modifier_fires": true,
+    "notes": "When a rendering has role=reference_only, its advisory bonus (+0.5) goes to advisory_score field only. pd_only_gap uses anchor_pd_score - attestor_pd_score = 4.0 - 0.0 = 4.0; the +0.5 advisory never enters this calculation, preventing reference_only from tipping the auto-choice gap (R5 closure)."
+  },
+  "near_miss": {
+    "rendering_role": "pd_attestor",
+    "expected_pd_contribution": 3.0,
+    "expected_advisory_score": 0.0,
+    "modifier_fires": false,
+    "near_miss_reason": "pd_attestor role contributes its base score 3.0 to the pd_only_gap directly; advisory_score remains 0.0. modifier_fires=false means the ADVISORY-specific +0.5 path is not taken."
+  }
+}

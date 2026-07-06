@@ -1,0 +1,334 @@
+{
+  "schema_type": "word_confusion_table",
+  "schema_version": "word-confusion-table-v1",
+  "work_id": "schaff-herzog",
+  "volume_id": "vol_01",
+  "page_id": "page_0010",
+  "canonical_leaf_id": 10,
+  "edition_page_key": {
+    "section": "body",
+    "anchor": 10,
+    "ordinal": 0
+  },
+  "source_image": {
+    "path": "raw/internet-archive/schaff-herzog-pages/vol_01/page_0010.jpg",
+    "sha256": "3b1f9c2e7a4d6058e1c9b2f0a7d34e58f6b1029c3d4e5f60718293a4b5c6d7e8"
+  },
+  "coordinate_unit": "pixel",
+  "coordinate_frame": "source_image",
+  "image_size": [
+    5034,
+    6959
+  ],
+  "layout_authority": {
+    "tool": "surya",
+    "model_version": "0.17.1",
+    "status": "planned"
+  },
+  "available_engines": [
+    {
+      "engine_id": "ia-abbyy",
+      "family": "abbyy",
+      "lineage": "abbyy/luradocument-nsh-main",
+      "engine_version": "luradocument",
+      "engine_run_id": "run_vol01_p0010_ia-abbyy"
+    },
+    {
+      "engine_id": "ia-abbyy-dli",
+      "family": "abbyy",
+      "lineage": "abbyy/finereader-11.0",
+      "engine_version": "11.0",
+      "engine_run_id": "run_vol01_p0010_ia-abbyy-dli"
+    },
+    {
+      "engine_id": "ia-abbyy-haucgoog",
+      "family": "abbyy",
+      "lineage": "abbyy/luradocument-haucgoog",
+      "engine_version": "luradocument",
+      "engine_run_id": "run_vol01_p0010_ia-abbyy-haucgoog"
+    },
+    {
+      "engine_id": "ia-abbyy-haucgoog-c1",
+      "family": "abbyy",
+      "lineage": "abbyy/luradocument-haucgoog-c1",
+      "scan_id": "haucgoog-c1",
+      "engine_version": "luradocument",
+      "engine_run_id": "run_vol01_p0010_ia-abbyy-haucgoog-c1"
+    },
+    {
+      "engine_id": "ia-abbyy-haucgoog-c2",
+      "family": "abbyy",
+      "lineage": "abbyy/luradocument-haucgoog-c2",
+      "scan_id": "haucgoog-c2",
+      "engine_version": "luradocument",
+      "engine_run_id": "run_vol01_p0010_ia-abbyy-haucgoog-c2"
+    },
+    {
+      "engine_id": "oss-tesseract",
+      "family": "tesseract",
+      "lineage": "tesseract/5.5",
+      "engine_version": "5.5.0.20241111",
+      "engine_run_id": "run_vol01_p0010_oss-tesseract"
+    },
+    {
+      "engine_id": "azure",
+      "family": "azure-ai-vision",
+      "lineage": "azure-read-v4",
+      "engine_version": "2023-10-01",
+      "engine_run_id": "run_vol01_p0010_azure"
+    },
+    {
+      "engine_id": "gcv",
+      "family": "google-cloud-vision",
+      "lineage": "gcv/v1",
+      "engine_version": "v1",
+      "engine_run_id": "run_vol01_p0010_gcv"
+    },
+    {
+      "engine_id": "textract",
+      "family": "aws-textract",
+      "lineage": "textract/detect-document-text-v1",
+      "engine_version": "detect-document-text-v1",
+      "engine_run_id": "run_vol01_p0010_textract"
+    }
+  ],
+  "zones": [
+    {
+      "zone_id": "z_body_1",
+      "zone_type": "body",
+      "track_id": "body:c1",
+      "column": 1,
+      "polygon": [
+        {
+          "x": 1380,
+          "y": 1140
+        },
+        {
+          "x": 2520,
+          "y": 1140
+        },
+        {
+          "x": 2520,
+          "y": 6700
+        },
+        {
+          "x": 1380,
+          "y": 6700
+        }
+      ],
+      "source": "surya"
+    }
+  ],
+  "reading_order": [
+    "vol_01:page_0010:body:c1:l004:p008"
+  ],
+  "positions": [
+    {
+      "position_id": "vol_01:page_0010:body:c1:l004:p008",
+      "zone": {
+        "zone_id": "z_body_1",
+        "zone_type": "body",
+        "track_id": "body:c1",
+        "column": 1,
+        "line_id": "z_body_1:l004",
+        "line_order": 4,
+        "position_order": 8
+      },
+      "reference_bbox": {
+        "x": 1428,
+        "y": 1212,
+        "w": 312,
+        "h": 52
+      },
+      "reference_bbox_source": "surya-line-snap+engine-union",
+      "hyphenation": {
+        "hyphenation_status": "ambiguous",
+        "raw_line_break_evidence": [
+          {
+            "engine": "oss-tesseract",
+            "token_ids": [
+              "oss-tesseract:page_0010:b1:l3:w12",
+              "oss-tesseract:page_0010:b1:l4:w1"
+            ],
+            "raw_tokens": [
+              "church-",
+              "history"
+            ]
+          }
+        ],
+        "hypothesis_ids": [
+          "h_joined",
+          "h_unjoined"
+        ]
+      },
+      "script": {
+        "image_level": {
+          "label": "latin",
+          "confidence": 0.94,
+          "method": "surya-script-classifier"
+        },
+        "text_level": {
+          "label": "latin",
+          "method": "unicode-block"
+        },
+        "routing": "normal-latin"
+      },
+      "candidate_set": [
+        {
+          "candidate_id": "cand_001",
+          "raw_reading": "church-history",
+          "candidate_key": "church-history",
+          "normalisation_applied": [
+            "unicode_nfkc"
+          ],
+          "attesting_engines": [
+            "azure",
+            "textract"
+          ],
+          "attesting_families": [
+            "azure-ai-vision",
+            "aws-textract"
+          ]
+        },
+        {
+          "candidate_id": "cand_002",
+          "raw_reading": "church history",
+          "candidate_key": "church history",
+          "normalisation_applied": [
+            "unicode_nfkc",
+            "hyphen_unjoined_key"
+          ],
+          "attesting_engines": [
+            "oss-tesseract"
+          ],
+          "attesting_families": [
+            "tesseract"
+          ]
+        }
+      ],
+      "span_records": [
+        {
+          "span_record_id": "span_p008_oss-tesseract",
+          "engine_id": "oss-tesseract",
+          "family": "tesseract",
+          "lineage": "tesseract/5.5",
+          "candidate_id": "cand_002",
+          "token_span_type": "split",
+          "segmentation_relation": "1:n",
+          "raw_text": "church- history",
+          "normalized_text": "church history",
+          "was_normalized": false,
+          "source_spans": [
+            {
+              "token_id": "oss-tesseract:page_0010:b1:l3:w12",
+              "text": "church-",
+              "bbox": {
+                "x": 1428,
+                "y": 1212,
+                "w": 168,
+                "h": 49
+              },
+              "line_id": "z_body_1:l003"
+            },
+            {
+              "token_id": "oss-tesseract:page_0010:b1:l4:w1",
+              "text": "history",
+              "bbox": {
+                "x": 323,
+                "y": 1270,
+                "w": 144,
+                "h": 48
+              },
+              "line_id": "z_body_1:l004"
+            }
+          ],
+          "raw_confidence": 89.0,
+          "calibrated_confidence": null,
+          "visual_distance_to_candidate": 0.0,
+          "raw_confidence_aggregation": "min"
+        },
+        {
+          "span_record_id": "span_p008_azure",
+          "engine_id": "azure",
+          "family": "azure-ai-vision",
+          "lineage": "azure-read-v4",
+          "candidate_id": "cand_001",
+          "token_span_type": "exact",
+          "segmentation_relation": "1:1",
+          "raw_text": "church-history",
+          "normalized_text": "church-history",
+          "was_normalized": false,
+          "source_spans": [
+            {
+              "token_id": "azure:page_0010:b0:l4:w8",
+              "text": "church-history",
+              "bbox": {
+                "x": 1429,
+                "y": 1211,
+                "w": 310,
+                "h": 53
+              },
+              "bbox_polygon": [
+                {
+                  "x": 1429,
+                  "y": 1211
+                },
+                {
+                  "x": 1739,
+                  "y": 1213
+                },
+                {
+                  "x": 1738,
+                  "y": 1264
+                },
+                {
+                  "x": 1428,
+                  "y": 1263
+                }
+              ],
+              "line_id": "z_body_1:l004"
+            }
+          ],
+          "raw_confidence": 94.2,
+          "calibrated_confidence": null,
+          "visual_distance_to_candidate": 0.0,
+          "raw_confidence_aggregation": "single"
+        },
+        {
+          "span_record_id": "span_p008_ia-abbyy-haucgoog-c1",
+          "engine_id": "ia-abbyy-haucgoog-c1",
+          "family": "abbyy",
+          "lineage": "abbyy/luradocument-haucgoog-c1",
+          "scan_id": "haucgoog-c1",
+          "candidate_id": null,
+          "token_span_type": "skip",
+          "segmentation_relation": "gap",
+          "source_spans": [],
+          "raw_confidence": null,
+          "calibrated_confidence": null,
+          "raw_confidence_aggregation": "none"
+        }
+      ],
+      "available_engines": [
+        "ia-abbyy",
+        "ia-abbyy-dli",
+        "ia-abbyy-haucgoog",
+        "ia-abbyy-haucgoog-c1",
+        "ia-abbyy-haucgoog-c2",
+        "oss-tesseract",
+        "azure",
+        "gcv",
+        "textract"
+      ],
+      "comparable_engines": [
+        "oss-tesseract",
+        "azure",
+        "textract",
+        "gcv"
+      ],
+      "unassigned_engines": [],
+      "alignment_confidence": 0.78
+    }
+  ],
+  "layer1_ops": []
+}

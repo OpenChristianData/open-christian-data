@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/correction_ledger.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Correction Ledger Entry",
+  "description": "One line in review/corrections/<resource>.jsonl. JSONL: one entry per line. Schema describes a single entry, not the file.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "correction_id",
+    "resource_id",
+    "record_path",
+    "entry_id",
+    "field_path",
+    "correction_type",
+    "blocker",
+    "before_text",
+    "after_text",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "correction_id": {
+      "type": "string",
+      "description": "Globally unique id, e.g. ULID or UUID."
+    },
+    "resource_id": {
+      "type": "string",
+      "description": "meta.id of the record's resource."
+    },
+    "record_path": {
+      "type": "string",
+      "description": "Relative path to data/<...>/<record>.json."
+    },
+    "entry_id": {
+      "type": "string",
+      "description": "Stable anchor identifying the entry being corrected."
+    },
+    "field_path": {
+      "type": "string",
+      "description": "Field path within the entry (e.g. 'commentary_text' or 'definition_blocks.<block_id>')."
+    },
+    "correction_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "structural"
+      ],
+      "description": "text: mutates layers.<field>.display. structural: move/reclassify/split/merge, deferred to a follow-up phase."
+    },
+    "blocker": {
+      "type": "string",
+      "enum": [
+        "none",
+        "structural_deferred",
+        "needs_parser_fix",
+        "needs_manual_reparse",
+        "blocked_by_anchor_change"
+      ]
+    },
+    "applier_deferred_reason": {
+      "type": "string",
+      "description": "Free-text note when blocker != 'none' explaining the deferral."
+    },
+    "before_text": {
+      "type": "string"
+    },
+    "after_text": {
+      "type": "string"
+    },
+    "producer_warning_signature": {
+      "type": "string",
+      "description": "Signature of the warning this correction answers, if any."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "needs_review",
+        "approved",
+        "applied",
+        "rejected"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC."
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "applied_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "applier_run_id": {
+      "type": "string",
+      "description": "writer_manifest run_id of the applier run that applied this entry."
+    },
+    "rejected_reason": {
+      "type": "string"
+    },
+    "proposed_by": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "approved"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "approved_at",
+          "approved_by"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "applied"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "approved_at",
+          "approved_by",
+          "applied_at",
+          "applier_run_id"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "rejected"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "rejected_reason"
+        ]
+      }
+    }
+  ]
+}

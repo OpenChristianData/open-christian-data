@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="60">
+<title>Fable architecture review — 2026-07-04</title>
+<style>
+body{font-family:Segoe UI,system-ui,sans-serif;margin:2rem auto;max-width:1000px;background:#fafafa;color:#222}
+h1{font-size:1.3rem} .meta{color:#666;font-size:.85rem;margin-bottom:1rem}
+table{border-collapse:collapse;width:100%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+th,td{border:1px solid #ddd;padding:.45rem .6rem;text-align:left;font-size:.9rem;vertical-align:top}
+th{background:#2c3e50;color:#fff}
+.pending{color:#999}.running{color:#b8860b;font-weight:600}.done{color:#1a7f37;font-weight:600}.issue{color:#b91c1c;font-weight:600}
+footer{margin-top:2rem;font-size:.8rem;color:#777}
+</style>
+</head>
+<body>
+<h1>OCD end-to-end architecture review — scheduled run 2026-07-04</h1>
+<p class="meta">Autonomous run (fable-ocd-ocr). Auto-refreshes every 60s. Phases: recon → architecture review → completion plan → batch decomposition → prompts + tracker. Prior session's page archived at <code>docs/_archive/session-progress-2026-07-03-tei-pilot.html</code>.</p>
+<table>
+<tr><th>Area / artifact</th><th>Status</th><th>Key finding / file</th><th>Updated</th></tr>
+<tr><td>Git history + working tree state</td><td class="done">done</td><td>HEAD ddb0386c (ADR-0020, 00:24 today). tei-reviewer batches 01/03/05 landed; 02a artifact staged, commit blocked on 1Password signer. loss_receipt.schema.json IS on disk (30030a1f) — tracker escalation stale.</td><td>04 Jul</td></tr>
+<tr><td>Anchor docs + ADRs (claims inventory)</td><td class="done">done</td><td>50-claim inventory + 20-ADR ledger + 9 doc contradictions (README 541k vs 296k disk; stale PROJECT_STATE JE rates)</td><td>04 Jul</td></tr>
+<tr><td>Planning layer: plans/ + prompts/execution/ + tracker</td><td class="done">done</td><td>THREE decompositions: nsh-page-key (complete), tei-reviewer (in-flight, 3/8 done), next-units (8 batches, none started). Two live forward plans to reconcile.</td><td>04 Jul</td></tr>
+<tr><td>TEI IR + reviewer code + schemas</td><td class="done">done</td><td>TEI chain proven (City of God, both renderings); spine batches 01/03/05 wired+tested; materializer/UI/drift-checker absent as expected; 6 dead affordance stubs + producer-less review_state schema flagged</td><td>04 Jul</td></tr>
+<tr><td>NSH OCR pipeline + corrector code</td><td class="done">done</td><td>S0–S3 + corrector M1–M15 code-complete; WCT built only for vols 01/02; front/back OCR pending 12/13 vols; gold worksheet/crops/adapters wired. Remaining: Track C, U11 run, M15 certification.</td><td>04 Jul</td></tr>
+<tr><td>Data on disk: data/, reports/, ir/, viewer/</td><td class="done">done</td><td>1,459 data JSONs; 100k report artifacts (52k S1 + 43k S2); ir/ = City of God only; HF exports stale (2026-06-01); 35 staged je-corrected files confirmed clean (no mixed batch)</td><td>04 Jul</td></tr>
+<tr><td>Dataset production: parsers, sources, tests, HF publish</td><td class="done">done</td><td>66 parsers / 298 configs / enums fresh / 3,890 tests collect; 28 legacy parsers untested; export path works but artifacts stale</td><td>04 Jul</td></tr>
+<tr><td>Architecture review doc (plans/2026-07-04-fable-architecture-review.md)</td><td class="done">done</td><td>Parts 0–3 written: 8 doc-vs-disk gaps, 6 risks R1–R6, judgement = adopt direction, complete + repair planning fork</td><td>04 Jul</td></tr>
+<tr><td>Completion plan (same doc, Part 2)</td><td class="done">done</td><td>7 waves; critical path = Wave-0 attended sitting → importer → spine → UI → Track C → certification → SH publish</td><td>04 Jul</td></tr>
+<tr><td>Batch decomposition (batch-decomposition skill)</td><td class="done">done</td><td>Completion campaign: 7 waves, batches 02/02b/06/UI/07/09/10/11/08 + adopted dataset campaign with new 09-publish-truth; chips = 02b/06/UI/11/08, bootstraps = 02/07/09; attended sittings = W0 + 10</td><td>04 Jul</td></tr>
+<tr><td>Batch prompts (prompts/execution/)</td><td class="done">done</td><td>6 new prompts written (02b, 07, 08, 09, 10, 11) + 3 revised (02, 06.fable, UI.fable) + dataset 09-publish-truth; stale 02.goal superseded</td><td>04 Jul</td></tr>
+<tr><td>Tracker + master plan updated (old versions archived first)</td><td class="done">done</td><td>Both rewritten; priors in prompts/execution/tei-reviewer/_archive/ and plans/2026-07-03-next-units-execution/_archive/; factual record preserved; loss-receipt escalation closed</td><td>04 Jul</td></tr>
+<tr><td>ADR (only if a hard-to-reverse decision needs recording)</td><td class="done">done</td><td class="issue">ADR-0021 (Proposed, machine_release import semantics) written + STAGED — signed commit blocked by locked signer (exit 124, HEAD unchanged). The maintainer's W0 sitting commits it (command in tracker).</td><td>04 Jul</td></tr>
+</table>
+<h2 style="font-size:1.05rem">Bottom line</h2>
+<p>The architecture is sound and adopted; nothing needed a ground-up change. The critical path is human, not code:
+a ~20-minute attended sitting (commit staged 02a, ratify ADR-0021, relaunch OCR) unblocks the ledger → materializer →
+reviewer UI → certification → first Schaff-Herzog publish chain. Full review: <code>plans/2026-07-04-fable-architecture-review.md</code>.
+First batch after the sitting: <code>02-cp-ledger-importer</code>; runnable today without it: <code>02b</code> + dataset wave 1.</p>
+<footer>Read-only on code/data/schemas. Writes are planning artifacts only.</footer>
+</body>
+</html>

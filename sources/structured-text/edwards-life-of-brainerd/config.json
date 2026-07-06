@@ -1,0 +1,33 @@
+{
+  "resource_id": "edwards-life-of-brainerd",
+  "title": "The Life of David Brainerd",
+  "author": "Jonathan Edwards",
+  "author_id": "jonathan-edwards",
+  "author_birth_year": 1703,
+  "author_death_year": 1758,
+  "contributors": [],
+  "original_publication_year": 1749,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "calvinist",
+    "evangelical"
+  ],
+  "tradition_notes": "Edwards was America's preeminent Reformed theologian and philosopher. President of the College of New Jersey; architect of the First Great Awakening.",
+  "era": "modern",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "devotional-classic",
+  "source_url": "https://www.ccel.org/ccel/edwards/works2.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org). Extracted from works2 volume. Edwards' memoir of the missionary David Brainerd (1718-1747).",
+  "source_hash": "sha256:11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e",
+  "source_type": "ccel_thml",
+  "source_file": "raw\\ccel\\edwards\\brainerd.xml",
+  "translator": null,
+  "download_date": "2026-06-02",
+  "output_file": "data/structured-text/edwards-life-of-brainerd.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded. Extracted from works2.xml div1 id='ix'."
+}

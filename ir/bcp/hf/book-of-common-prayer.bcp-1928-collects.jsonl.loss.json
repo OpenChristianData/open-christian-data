@@ -1,0 +1,2948 @@
+{
+  "receipt_schema": "loss-receipt-v1",
+  "projection": {
+    "id": "hf-clean-text-v1",
+    "generator": "build/tei/project_hf.py",
+    "generated_at": "2026-07-05T23:31:18.026936Z"
+  },
+  "ir": {
+    "path": "ir/bcp/book-of-common-prayer.bcp-1928-collects.tei.xml",
+    "sha256": "c10185c7181d64a59a98fe10b502a5a9b44877bb8e87e6a04da418d4fa13b6e4"
+  },
+  "output": {
+    "path": "ir/bcp/hf/book-of-common-prayer.bcp-1928-collects.jsonl",
+    "sha256": "3aeb215cace48da12cd7deeaf2ff34cc09742f72ae69b9a43dc3dd03e606d41d"
+  },
+  "totals": {
+    "addressable_nodes": 310,
+    "projected": 310,
+    "dropped": 0,
+    "normalized": 0
+  },
+  "classes": {
+    "text": {
+      "projected": 1,
+      "dropped": 0,
+      "normalized": 0
+    },
+    "body": {
+      "projected": 1,
+      "dropped": 0,
+      "normalized": 0
+    },
+    "div": {
+      "projected": 103,
+      "dropped": 0,
+      "normalized": 0
+    },
+    "head": {
+      "projected": 1,
+      "dropped": 0,
+      "normalized": 0
+    },
+    "label": {
+      "projected": 102,
+      "dropped": 0,
+      "normalized": 0
+    },
+    "p": {
+      "projected": 102,
+      "dropped": 0,
+      "normalized": 0
+    }
+  },
+  "nodes": [
+    {
+      "address": "text[1]",
+      "element": "text",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "body[1]",
+      "element": "body",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-collects",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-collects/head[1]",
+      "element": "head",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "head->title_path"
+    },
+    {
+      "address": "bcp-bcp-1928-advent1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent1-collect",
+        "char_start": 0,
+        "char_end": 441
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-advent2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent2-collect",
+        "char_start": 0,
+        "char_end": 349
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-advent3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent3-collect",
+        "char_start": 0,
+        "char_end": 468
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-advent4-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent4-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-advent4-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-advent4-collect",
+        "char_start": 0,
+        "char_end": 393
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-christmas-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas-collect",
+        "char_start": 0,
+        "char_end": 383
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stephen-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stephen-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stephen-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stephen-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stephen-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stephen-collect",
+        "char_start": 0,
+        "char_end": 487
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stjohn-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohn-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjohn-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohn-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjohn-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohn-collect",
+        "char_start": 0,
+        "char_end": 298
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-holyinnocents-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-holyinnocents-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-holyinnocents-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-holyinnocents-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-holyinnocents-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-holyinnocents-collect",
+        "char_start": 0,
+        "char_end": 352
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-christmas1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas1-collect",
+        "char_start": 0,
+        "char_end": 383
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-circumcision-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-circumcision-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-circumcision-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-circumcision-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-circumcision-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-circumcision-collect",
+        "char_start": 0,
+        "char_end": 326
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-christmas2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-christmas2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-christmas2-collect",
+        "char_start": 0,
+        "char_end": 193
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany-collect",
+        "char_start": 0,
+        "char_end": 260
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany1-collect",
+        "char_start": 0,
+        "char_end": 270
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany2-collect",
+        "char_start": 0,
+        "char_end": 212
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany3-collect",
+        "char_start": 0,
+        "char_end": 195
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany4-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany4-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany4-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany4-collect",
+        "char_start": 0,
+        "char_end": 301
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany5-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany5-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany5-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany5-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany5-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany5-collect",
+        "char_start": 0,
+        "char_end": 236
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany6-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany6-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany6-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany6-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-epiphany6-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-epiphany6-collect",
+        "char_start": 0,
+        "char_end": 478
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-septuagesima-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-septuagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-septuagesima-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-septuagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-septuagesima-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-septuagesima-collect",
+        "char_start": 0,
+        "char_end": 319
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-sexagesima-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-sexagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-sexagesima-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-sexagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-sexagesima-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-sexagesima-collect",
+        "char_start": 0,
+        "char_end": 186
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-quinquagesima-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-quinquagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-quinquagesima-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-quinquagesima-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-quinquagesima-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-quinquagesima-collect",
+        "char_start": 0,
+        "char_end": 324
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-ashwednesday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ashwednesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ashwednesday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ashwednesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ashwednesday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ashwednesday-collect",
+        "char_start": 0,
+        "char_end": 360
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-lent1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent1-collect",
+        "char_start": 0,
+        "char_end": 337
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-lent2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent2-collect",
+        "char_start": 0,
+        "char_end": 318
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-lent3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent3-collect",
+        "char_start": 0,
+        "char_end": 212
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-lent4-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent4-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-lent4-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-lent4-collect",
+        "char_start": 0,
+        "char_end": 210
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-passionsunday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-passionsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-passionsunday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-passionsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-passionsunday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-passionsunday-collect",
+        "char_start": 0,
+        "char_end": 198
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-palmsunday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-palmsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-palmsunday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-palmsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-palmsunday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-palmsunday-collect",
+        "char_start": 0,
+        "char_end": 410
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-mondaybfreaster-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-mondaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-mondaybfreaster-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-mondaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-mondaybfreaster-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-mondaybfreaster-collect",
+        "char_start": 0,
+        "char_end": 300
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-tuesdaybfreaster-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-tuesdaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-tuesdaybfreaster-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-tuesdaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-tuesdaybfreaster-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-tuesdaybfreaster-collect",
+        "char_start": 0,
+        "char_end": 282
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-wednesdaybfreaster-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-wednesdaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-wednesdaybfreaster-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-wednesdaybfreaster-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-wednesdaybfreaster-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-wednesdaybfreaster-collect",
+        "char_start": 0,
+        "char_end": 224
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-maundythursday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-maundythursday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-maundythursday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-maundythursday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-maundythursday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-maundythursday-collect",
+        "char_start": 0,
+        "char_end": 398
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-collect",
+        "char_start": 0,
+        "char_end": 305
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-2-collect",
+        "char_start": 0,
+        "char_end": 353
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-goodfriday-3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-goodfriday-3-collect",
+        "char_start": 0,
+        "char_end": 536
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-eastereven-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastereven-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastereven-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastereven-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastereven-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastereven-collect",
+        "char_start": 0,
+        "char_end": 374
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter-collect",
+        "char_start": 0,
+        "char_end": 438
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-eastermonday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastermonday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastermonday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastermonday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastermonday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastermonday-collect",
+        "char_start": 0,
+        "char_end": 227
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-eastertuesday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastertuesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastertuesday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastertuesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-eastertuesday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-eastertuesday-collect",
+        "char_start": 0,
+        "char_end": 181
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter1-collect",
+        "char_start": 0,
+        "char_end": 300
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter2-collect",
+        "char_start": 0,
+        "char_end": 346
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter3-collect",
+        "char_start": 0,
+        "char_end": 387
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter4-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter4-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter4-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter4-collect",
+        "char_start": 0,
+        "char_end": 369
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-easter5rogation-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter5rogation-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter5rogation-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter5rogation-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-easter5rogation-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-easter5rogation-collect",
+        "char_start": 0,
+        "char_end": 232
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionday-collect",
+        "char_start": 0,
+        "char_end": 312
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionsundayafter-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionsundayafter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionsundayafter-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionsundayafter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ascensionsundayafter-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ascensionsundayafter-collect",
+        "char_start": 0,
+        "char_end": 376
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunday-collect",
+        "char_start": 0,
+        "char_end": 385
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunmonday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunmonday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunmonday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunmonday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsunmonday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsunmonday-collect",
+        "char_start": 0,
+        "char_end": 337
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-whitsuntuesday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsuntuesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsuntuesday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsuntuesday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-whitsuntuesday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-whitsuntuesday-collect",
+        "char_start": 0,
+        "char_end": 295
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity-collect",
+        "char_start": 0,
+        "char_end": 388
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity1-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity1-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity1-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity1-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity1-collect",
+        "char_start": 0,
+        "char_end": 331
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity2-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity2-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity2-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity2-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity2-collect",
+        "char_start": 0,
+        "char_end": 277
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity3-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity3-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity3-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity3-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity3-collect",
+        "char_start": 0,
+        "char_end": 234
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity4-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity4-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity4-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity4-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity4-collect",
+        "char_start": 0,
+        "char_end": 336
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity5-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity5-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity5-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity5-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity5-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity5-collect",
+        "char_start": 0,
+        "char_end": 209
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity6-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity6-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity6-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity6-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity6-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity6-collect",
+        "char_start": 0,
+        "char_end": 276
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity7-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity7-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity7-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity7-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity7-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity7-collect",
+        "char_start": 0,
+        "char_end": 260
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity8-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity8-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity8-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity8-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity8-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity8-collect",
+        "char_start": 0,
+        "char_end": 240
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity9-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity9-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity9-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity9-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity9-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity9-collect",
+        "char_start": 0,
+        "char_end": 246
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity10-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity10-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity10-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity10-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity10-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity10-collect",
+        "char_start": 0,
+        "char_end": 208
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity11-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity11-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity11-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity11-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity11-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity11-collect",
+        "char_start": 0,
+        "char_end": 293
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity12-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity12-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity12-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity12-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity12-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity12-collect",
+        "char_start": 0,
+        "char_end": 389
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity13-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity13-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity13-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity13-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity13-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity13-collect",
+        "char_start": 0,
+        "char_end": 304
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity14-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity14-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity14-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity14-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity14-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity14-collect",
+        "char_start": 0,
+        "char_end": 221
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity15-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity15-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity15-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity15-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity15-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity15-collect",
+        "char_start": 0,
+        "char_end": 271
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity16-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity16-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity16-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity16-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity16-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity16-collect",
+        "char_start": 0,
+        "char_end": 225
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity17-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity17-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity17-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity17-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity17-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity17-collect",
+        "char_start": 0,
+        "char_end": 159
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity18-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity18-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity18-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity18-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity18-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity18-collect",
+        "char_start": 0,
+        "char_end": 212
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity19-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity19-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity19-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity19-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity19-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity19-collect",
+        "char_start": 0,
+        "char_end": 185
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity20-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity20-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity20-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity20-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity20-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity20-collect",
+        "char_start": 0,
+        "char_end": 262
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity21-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity21-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity21-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity21-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity21-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity21-collect",
+        "char_start": 0,
+        "char_end": 196
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity22-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity22-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity22-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity22-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity22-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity22-collect",
+        "char_start": 0,
+        "char_end": 255
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-nextbeforeadvent-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-nextbeforeadvent-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-nextbeforeadvent-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-nextbeforeadvent-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-nextbeforeadvent-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-nextbeforeadvent-collect",
+        "char_start": 0,
+        "char_end": 204
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-standrew-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-standrew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-standrew-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-standrew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-standrew-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-standrew-collect",
+        "char_start": 0,
+        "char_end": 348
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stthomas-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stthomas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stthomas-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stthomas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stthomas-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stthomas-collect",
+        "char_start": 0,
+        "char_end": 428
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-conversion-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-conversion-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-conversion-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-conversion-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-conversion-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-conversion-collect",
+        "char_start": 0,
+        "char_end": 357
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-purification-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-purification-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-purification-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-purification-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-purification-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-purification-collect",
+        "char_start": 0,
+        "char_end": 264
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthias-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthias-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthias-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthias-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthias-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthias-collect",
+        "char_start": 0,
+        "char_end": 301
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-annunciation-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-annunciation-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-annunciation-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-annunciation-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-annunciation-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-annunciation-collect",
+        "char_start": 0,
+        "char_end": 275
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stmark-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmark-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmark-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmark-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmark-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmark-collect",
+        "char_start": 0,
+        "char_end": 292
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stphilipstjames-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stphilipstjames-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stphilipstjames-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stphilipstjames-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stphilipstjames-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stphilipstjames-collect",
+        "char_start": 0,
+        "char_end": 339
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stbarnabas-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbarnabas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stbarnabas-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbarnabas-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stbarnabas-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbarnabas-collect",
+        "char_start": 0,
+        "char_end": 262
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stjohnbaptist-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohnbaptist-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjohnbaptist-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohnbaptist-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjohnbaptist-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjohnbaptist-collect",
+        "char_start": 0,
+        "char_end": 425
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stpeter-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stpeter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stpeter-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stpeter-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stpeter-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stpeter-collect",
+        "char_start": 0,
+        "char_end": 389
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stjames-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjames-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjames-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjames-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stjames-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stjames-collect",
+        "char_start": 0,
+        "char_end": 343
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-transfiguration-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-transfiguration-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-transfiguration-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-transfiguration-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-transfiguration-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-transfiguration-collect",
+        "char_start": 0,
+        "char_end": 372
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stbartholomew-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbartholomew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stbartholomew-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbartholomew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stbartholomew-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stbartholomew-collect",
+        "char_start": 0,
+        "char_end": 278
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthew-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthew-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthew-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmatthew-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmatthew-collect",
+        "char_start": 0,
+        "char_end": 329
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stmichaelangels-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmichaelangels-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmichaelangels-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmichaelangels-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stmichaelangels-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stmichaelangels-collect",
+        "char_start": 0,
+        "char_end": 283
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stluke-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stluke-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stluke-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stluke-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stluke-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stluke-collect",
+        "char_start": 0,
+        "char_end": 281
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-stsimonjude-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stsimonjude-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stsimonjude-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stsimonjude-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-stsimonjude-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-stsimonjude-collect",
+        "char_start": 0,
+        "char_end": 316
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-allsaints-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-allsaints-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-allsaints-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-allsaints-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-allsaints-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-allsaints-collect",
+        "char_start": 0,
+        "char_end": 372
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-asaints-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-asaints-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-asaints-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-asaints-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-asaints-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-asaints-collect",
+        "char_start": 0,
+        "char_end": 274
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-dedication-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-dedication-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-dedication-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-dedication-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-dedication-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-dedication-collect",
+        "char_start": 0,
+        "char_end": 266
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-emberdays-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-emberdays-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-emberdays-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-emberdays-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-emberdays-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-emberdays-collect",
+        "char_start": 0,
+        "char_end": 317
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-rogationdays-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-rogationdays-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-rogationdays-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-rogationdays-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-rogationdays-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-rogationdays-collect",
+        "char_start": 0,
+        "char_end": 266
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-independenceday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-independenceday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-independenceday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-independenceday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-independenceday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-independenceday-collect",
+        "char_start": 0,
+        "char_end": 253
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-thanksgivingday-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-thanksgivingday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-thanksgivingday-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-thanksgivingday-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-thanksgivingday-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-thanksgivingday-collect",
+        "char_start": 0,
+        "char_end": 338
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-marriage-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-marriage-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-marriage-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-marriage-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-marriage-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-marriage-collect",
+        "char_start": 0,
+        "char_end": 305
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-ataburial-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ataburial-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ataburial-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ataburial-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-ataburial-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-ataburial-collect",
+        "char_start": 0,
+        "char_end": 346
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity23-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity23-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity23-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity23-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity23-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity23-collect",
+        "char_start": 0,
+        "char_end": 253
+      }
+    },
+    {
+      "address": "bcp-bcp-1928-trinity24-collect",
+      "element": "div",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity24-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity24-collect-label",
+      "element": "label",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity24-collect"
+      },
+      "note": "container"
+    },
+    {
+      "address": "bcp-bcp-1928-trinity24-collect/p[1]",
+      "element": "p",
+      "disposition": "projected",
+      "target": {
+        "record_id": "book-of-common-prayer/bcp-1928-collects/bcp-bcp-1928-trinity24-collect",
+        "char_start": 0,
+        "char_end": 291
+      }
+    }
+  ]
+}

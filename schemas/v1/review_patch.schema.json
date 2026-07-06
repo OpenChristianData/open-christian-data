@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/review_patch.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Review Patch",
+  "description": "Reviewer UI output: per-affordance decisions accumulated in browser memory, downloaded as JSON, applied via apply_review_patch.py CLI. Carries tool_version stamp and content-hash snapshot of every targeted file for drift detection.",
+  "type": "object",
+  "required": ["schema_type", "schema_version", "tool_version", "generated_at", "content_hashes", "decisions"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_type": {"type": "string", "const": "review_patch"},
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "tool_version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["decision_kind"],
+        "additionalProperties": true,
+        "properties": {
+          "decision_kind": {
+            "type": "string",
+            "enum": [
+              "adjudication",
+              "structural_resolution",
+              "catalog_role_change",
+              "modernisation_approval"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

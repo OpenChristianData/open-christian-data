@@ -1,0 +1,33 @@
+{
+  "resource_id": "pascal-pensees",
+  "title": "Pensées",
+  "author": "Blaise Pascal",
+  "author_birth_year": 1623,
+  "author_death_year": 1662,
+  "contributors": [
+    {
+      "name": "W.F. Trotter",
+      "role": "translator"
+    }
+  ],
+  "original_publication_year": 1660,
+  "language": "en",
+  "original_language": "fr",
+  "tradition": [
+    "catholic",
+    "jansenist"
+  ],
+  "tradition_notes": "Pascal was a French mathematician, physicist, and Christian apologist. His Pensées, left unfinished at his death, present a defense of Christianity through sustained philosophical and rhetorical argument. His theology was influenced by Jansenism (Port-Royal).",
+  "era": "post-reformation",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "theological-work",
+  "source_url": "https://www.ccel.org/ccel/pascal/pensees.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org). English translation by W.F. Trotter, first published 1910 by J.M. Dent & Sons (London) / E.P. Dutton (New York), Everyman's Library No. 874. Translation is US public domain (first published 1910, pre-1928).",
+  "source_hash": "sha256:37033b976d68c6efe1524ad2bfaf3da7f6c0f4ef94bd5d4228585390207938ff",
+  "download_date": "2026-04-24",
+  "output_file": "data/structured-text/pascal-pensees.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

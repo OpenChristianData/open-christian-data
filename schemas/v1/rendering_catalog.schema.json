@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/rendering_catalog.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Rendering Catalog",
+  "description": "Per-work-edition catalog of all known renderings and their roles. Single source of truth for the pd_anchor decision. Replaces witness_inventory.schema.json.",
+  "type": "object",
+  "required": ["work_id", "edition", "modernisation_intent", "pd_anchor_decision", "renderings"],
+  "additionalProperties": false,
+  "properties": {
+    "work_id": {"type": "string"},
+    "edition": {"type": "string"},
+    "modernisation_intent": {
+      "type": "string",
+      "enum": ["intended", "not_applicable"]
+    },
+    "pd_anchor_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chosen_rendering", "rationale", "decided_at", "alternates_considered"],
+      "properties": {
+        "chosen_rendering": {"type": "string"},
+        "rationale": {"type": "string"},
+        "decided_at": {"type": "string", "format": "date-time"},
+        "alternates_considered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["rendering_id", "rejected_because"],
+            "additionalProperties": false,
+            "properties": {
+              "rendering_id": {"type": "string"},
+              "rejected_because": {"type": "string"}
+            }
+          }
+        },
+        "per_volume_effective_pd_anchor": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "Maps volume number (string key) to the canonical rendering_id that is the effective pd_anchor for that volume. Overrides chosen_rendering on a per-volume basis."
+        }
+      }
+    },
+    "aliases": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "description": "Maps short alias IDs (e.g. ccel-thml, ia-ocr) to their canonical rendering_id values. Used in reconciled records; resolvable via this catalog."
+    },
+    "renderings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rendering_id", "role"],
+        "properties": {
+          "rendering_id": {"type": "string"},
+          "role": {
+            "type": "string",
+            "enum": ["pd_anchor", "pd_attestor", "reference_only", "pending"]
+          }
+        },
+        "if": {
+          "properties": {
+            "rights": {"const": "copyrighted"}
+          },
+          "required": ["rights"]
+        },
+        "then": {"$ref": "#/$defs/copyrighted_rendering"},
+        "else": {"$ref": "#/$defs/pd_rendering"}
+      }
+    }
+  },
+  "$defs": {
+    "pd_rendering": {
+      "type": "object",
+      "required": ["rendering_id", "role"],
+      "additionalProperties": true,
+      "properties": {
+        "rendering_id": {"type": "string"},
+        "role": {
+          "type": "string",
+          "enum": ["pd_anchor", "pd_attestor", "reference_only", "pending"]
+        },
+        "source": {"type": "string"},
+        "format": {
+          "type": "string",
+          "enum": ["thml", "ocr", "html", "tei", "epub", "pdf", "plain"]
+        },
+        "license": {"type": "string"},
+        "fetched_at": {"type": "string"},
+        "source_hash": {"type": "string"},
+        "coverage": {"type": "object"},
+        "notes": {"type": "string"},
+        "engine": {"type": "string"},
+        "engine_version": {"type": "string"},
+        "language_packs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "copyrighted_rendering": {
+      "type": "object",
+      "required": ["rendering_id", "role", "rights"],
+      "additionalProperties": false,
+      "properties": {
+        "rendering_id": {"type": "string"},
+        "role": {"type": "string", "const": "reference_only"},
+        "rights": {"type": "string", "const": "copyrighted"},
+        "rights_holder": {"type": "string", "maxLength": 120},
+        "source": {"type": "string"},
+        "format": {
+          "type": "string",
+          "enum": ["thml", "ocr", "html", "tei", "epub", "pdf", "plain"]
+        },
+        "edition": {"type": "string", "maxLength": 60},
+        "fetched_at": {"type": "string", "format": "date"},
+        "source_url": {"type": "string", "format": "uri"},
+        "source_hash": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["algorithm", "value"],
+          "properties": {
+            "algorithm": {"type": "string", "const": "sha256"},
+            "value": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          }
+        },
+        "engine": {"type": "string"},
+        "engine_version": {"type": "string"},
+        "parser": {"type": "string"},
+        "page_count": {"type": "integer"},
+        "byte_size": {"type": "integer"},
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "volume": {"type": "integer"},
+            "ranges": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["start_page", "end_page"],
+                "additionalProperties": false,
+                "properties": {
+                  "start_page": {"type": "integer"},
+                  "end_page": {"type": "integer"}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

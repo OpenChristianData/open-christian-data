@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "human",
+  "writer_version": "manual",
+  "writer_identity": "church_fathers_parser",
+  "run_id": "church-fathers-remigius-verse-count-fix",
+  "started_at": "2026-06-01T00:00:00Z",
+  "notes": "Manual correction: notes field said '196 verse files' but the source directory contains 195 files (one duplicate was processed as two quotes from the same file).",
+  "data_paths": [
+    "data/church-fathers/remigius-of-auxerre.json"
+  ]
+}

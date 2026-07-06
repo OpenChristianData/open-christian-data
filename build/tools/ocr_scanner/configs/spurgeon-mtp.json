@@ -1,0 +1,16 @@
+{
+  "source_id": "spurgeon-mtp",
+  "pattern_set": "html_transcription",
+  "pattern_set_version": "1",
+  "scan_fields": ["title", "content_blocks"],
+  "ignore_fields": ["collection_id", "sermon_id", "series", "primary_reference", "primary_reference_text", "date_preached", "location", "word_count"],
+  "whitelist_terms": [
+    "SPURGEON", "TABERNACLE", "NEWINGTON", "CALVARY", "CALVINIST",
+    "ARMINIAN", "TRINITARIAN", "PEDOBAPTIST"
+  ],
+  "whitelist_patterns": [
+    "^[IVX]+\\.?$",
+    "^[A-Z]\\.[A-Z]\\.?$"
+  ],
+  "tier3_enabled": false
+}

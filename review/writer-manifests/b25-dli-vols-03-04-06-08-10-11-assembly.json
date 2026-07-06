@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "ia_abbyy@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-dli-vols-03-04-06-08-10-11-assembly",
+  "started_at": "2026-05-29T15:06:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_03.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_04.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_06.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_08.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_10.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_11.json",
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_03.json": {
+      "before_sha256": null,
+      "after_sha256": "81727063643b682bc96ad29b61991c1c460409c61af14d129cd6252a03dde098"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_04.json": {
+      "before_sha256": null,
+      "after_sha256": "9372a016938132c4ba46133e9632aa14198220f571b8195b490b1f7f9ab530ff"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_06.json": {
+      "before_sha256": null,
+      "after_sha256": "2750fb316ffb109500df020ff229ec126d71e37310e382c068323ef4194bcac5"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_08.json": {
+      "before_sha256": null,
+      "after_sha256": "b2e5f8d5dbfefd9e063ca5ba891f92970c6aa98a038afcd469bba9747d6edb04"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_10.json": {
+      "before_sha256": null,
+      "after_sha256": "0c45c1c577a9f7e4f04a41606bc1ebdeeff13123397fccbc4f4aa01801f9079f"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_11.json": {
+      "before_sha256": null,
+      "after_sha256": "0aba880cf5fc26b5a381cc6883e0a8e4a9aad62c1444aa2445121c52bac8b6be"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": "f910daba57d1b00abbeb5865cce7a5d9708ece432b3b1c74c5d6643924c0be2a",
+      "after_sha256": "d25ccacbd64550af032a12653969c6ca6972a57563e99b204544b7b04ec1c4e8"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_03.json": {"pages_assembled": 543, "confidence_mean": 50.6},
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_04.json": {"pages_assembled": 524, "confidence_mean": 51.8},
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_06.json": {"pages_assembled": 530, "confidence_mean": 66.1},
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_08.json": {"pages_assembled": 522, "confidence_mean": 74.7},
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_10.json": {"pages_assembled": 528, "confidence_mean": 65.4},
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_11.json": {"pages_assembled": 547, "confidence_mean": 74.5}
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "DLI ABBYY FineReader 11.0 download+parse via ia_abbyy.py --source dli --download. Session B2.5, 2026-05-29. All 6 volumes parsed clean (0 skipped pages each). Confidence systematically lower than NSH-main (DLI scans have lighter ink). Catalog updated to add ia-abbyy-dli/schaff/encyclopedia/1908-1914/v1 rendering.",
+  "renames": []
+}

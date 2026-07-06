@@ -1,0 +1,53 @@
+{
+  "resource_id": "schaff-herzog-encyclopedia",
+  "manifest_version": "1.0.0",
+  "manifest_checksum_sha256": "e6d62708b2d988e8569616f00bb2785ace42e20142114b36489c85aeb7fd00b1",
+  "scans": [
+    {
+      "volume": 1,
+      "page": 12,
+      "image_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909..pdf#page=12",
+      "hocr_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909._hocr.html",
+      "image_storage": "external_url",
+      "provider": "Internet Archive",
+      "notes": "Volume 1 (A-Basilians), 1909 edition. Per-page image is the IA PDF anchored to page 12; renderer overlays a bbox highlight in CSS."
+    },
+    {
+      "volume": 1,
+      "page": 47,
+      "image_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909..pdf#page=47",
+      "hocr_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909._hocr.html",
+      "image_storage": "external_url",
+      "provider": "Internet Archive"
+    },
+    {
+      "volume": 1,
+      "page": 113,
+      "image_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909..pdf#page=113",
+      "hocr_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909._hocr.html",
+      "image_storage": "external_url",
+      "provider": "Internet Archive"
+    },
+    {
+      "volume": 1,
+      "page": 207,
+      "image_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909..pdf#page=207",
+      "hocr_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/01.NewSchaffHerzogEncycReligKnowl.v1.Jackson.Sherman.Gilmore.1909._hocr.html",
+      "image_storage": "external_url",
+      "provider": "Internet Archive"
+    },
+    {
+      "volume": 2,
+      "page": 88,
+      "image_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/02.NewSchaffHerzogEncycReligKnowl.v2.Jackson.Sherman.Gilmore.1909..pdf#page=88",
+      "hocr_url": "https://archive.org/download/NewSchaffHerzogEncyclopediaOfReligious/02.NewSchaffHerzogEncycReligKnowl.v2.Jackson.Sherman.Gilmore.1909._hocr.html",
+      "image_storage": "external_url",
+      "provider": "Internet Archive"
+    }
+  ],
+  "meta": {
+    "created_at_utc": "2026-05-13T00:45:00+00:00",
+    "created_by": "phase_f_scaffolding",
+    "notes": "Initial scan manifest covering 5 illustrative pages from SH IA volumes 1 and 2. Operator-run follow-up will populate entry.scan_source on the SH record for every IA-sourced entry; this manifest provides the index. The hocr_url points at the per-volume hOCR file -- callers parse the relevant page range. manifest_checksum_sha256 is populated by build/tools/sign_scans_manifest.py."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "resource_id": "rutherford-letters",
+  "title": "Letters of Samuel Rutherford",
+  "author": "Samuel Rutherford",
+  "author_id": "samuel-rutherford",
+  "author_birth_year": 1600,
+  "author_death_year": 1661,
+  "contributors": [],
+  "original_publication_year": 1664,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "presbyterian"
+  ],
+  "tradition_notes": "Rutherford was a Scottish Presbyterian minister and theologian, professor at the University of St Andrews, and a principal drafter of the Westminster Confession (1646). His letters are celebrated for their fervent experimental Calvinism and vivid expressions of union with Christ.",
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "devotional-classic",
+  "source_url": "https://www.ccel.org/ccel/rutherford/letters.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org). First published posthumously: Edinburgh, 1664. This edition ed. Andrew Bonar (Oliphant, Edinburgh, 1891).",
+  "source_hash": "sha256:33fda0ccc68d7e35aec2dbe6abd366ca55e81c8a116973c9ed69e3becede6ebf",
+  "source_type": "ccel_thml",
+  "source_file": "raw\\ccel\\rutherford\\letters.xml",
+  "translator": null,
+  "download_date": "2026-06-02",
+  "output_file": "data/structured-text/rutherford-letters.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

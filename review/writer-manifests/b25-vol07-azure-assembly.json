@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "run_cloud_ocr@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-vol07-azure-assembly",
+  "started_at": "2026-05-29T15:01:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_07.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_07.json": {
+      "before_sha256": null,
+      "after_sha256": "87a30abc37c0cbfa6a538c4661bf03f7027fead195f07282415a0c6b729cf43a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_07.json": {
+      "pages_assembled": 439,
+      "mean_confidence": 97.6
+    }
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 439 page sidecars (438 with OCR data). Engine: Azure AI Vision v4.0. Session B2.5, 2026-05-29. 63 pages without JPEG: front/back matter and IA errors. OCR run stalled at page 124 and was resumed; 123 pre-existing sidecars skipped on resume. 1 partial sidecar retried (page 201, conf 98.3).",
+  "renames": []
+}

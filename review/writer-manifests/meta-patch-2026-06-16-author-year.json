@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "patch-script",
+  "writer_version": "build/tools/patch_missing_metadata.py@v1.0.0",
+  "writer_identity": "meta_patch_author_year",
+  "run_id": "meta-patch-2026-06-16-author-year",
+  "started_at": "2026-06-16T09:48:28.284341+00:00",
+  "data_paths": [
+    "data/doctrinal-documents/apostles-creed.json",
+    "data/doctrinal-documents/athanasian-creed.json",
+    "data/doctrinal-documents/confession-of-peter.json",
+    "data/doctrinal-documents/french-confession-of-faith.json",
+    "data/doctrinal-documents/savoy-declaration.json",
+    "data/doctrinal-documents/tertullians-rule-of-faith.json",
+    "data/doctrinal-documents/waldensian-confession.json",
+    "data/prayers/bcp-1662/collects.json",
+    "data/prayers/bcp-1928/collects.json",
+    "data/prayers/didache/prayers.json",
+    "data/structured-text/athanasius-against-the-arians.json",
+    "data/structured-text/athanasius-against-the-heathen.json",
+    "data/structured-text/athanasius-apology-to-the-emperor.json",
+    "data/structured-text/athanasius-arian-history.json",
+    "data/structured-text/athanasius-circular-to-bishops-of-egypt-and-libya.json",
+    "data/structured-text/athanasius-defence-against-the-arians.json",
+    "data/structured-text/athanasius-defence-of-dionysius.json",
+    "data/structured-text/athanasius-defence-of-his-flight.json",
+    "data/structured-text/athanasius-defence-of-the-nicene-definition.json",
+    "data/structured-text/athanasius-deposition-of-arius.json",
+    "data/structured-text/athanasius-encyclical-letter.json",
+    "data/structured-text/athanasius-letters-and-chronicles.json",
+    "data/structured-text/athanasius-life-of-antony.json",
+    "data/structured-text/athanasius-on-ariminum-and-seleucia.json",
+    "data/structured-text/athanasius-on-the-incarnation.json",
+    "data/structured-text/athanasius-statement-of-faith.json",
+    "data/structured-text/athanasius-synodal-letter-to-africa.json",
+    "data/structured-text/athanasius-synodal-letter-to-antioch.json",
+    "data/structured-text/augustine-care-for-dead.json",
+    "data/structured-text/augustine-faith-things-not-seen.json",
+    "data/structured-text/augustine-letters-part-1.json",
+    "data/structured-text/augustine-on-continence.json",
+    "data/structured-text/augustine-on-patience.json",
+    "data/structured-text/augustine-on-the-creed.json",
+    "data/structured-text/eusebius-ecclesiastical-history.json",
+    "data/structured-text/eusebius-letter-on-nicene-creed.json",
+    "data/structured-text/eusebius-life-of-constantine.json",
+    "data/structured-text/gregory-of-nyssa-against-eunomius.json",
+    "data/structured-text/gregory-of-nyssa-answer-to-eunomius-second-book.json",
+    "data/structured-text/gregory-of-nyssa-funeral-oration-on-meletius.json",
+    "data/structured-text/gregory-of-nyssa-great-catechism.json",
+    "data/structured-text/gregory-of-nyssa-letters.json",
+    "data/structured-text/gregory-of-nyssa-not-three-gods.json",
+    "data/structured-text/gregory-of-nyssa-on-the-baptism-of-christ.json",
+    "data/structured-text/gregory-of-nyssa-on-the-faith.json",
+    "data/structured-text/gregory-of-nyssa-on-the-holy-spirit.json",
+    "data/structured-text/gregory-of-nyssa-on-the-holy-trinity.json",
+    "data/structured-text/gregory-of-nyssa-on-the-making-of-man.json",
+    "data/structured-text/gregory-of-nyssa-on-the-soul-and-resurrection.json",
+    "data/structured-text/gregory-of-nyssa-on-virginity.json",
+    "data/structured-text/socrates-ecclesiastical-history.json",
+    "data/structured-text/sozomen-ecclesiastical-history.json",
+    "data/structured-text/theodoret-ecclesiastical-history.json"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/apostles-creed.json": {
+      "before_sha256": "d348e2d66a266d539af67f792a1f91e3e6c92e1fa0791cb990771159789e7d55",
+      "after_sha256": "9e5688166ebe649b40bfa218a2ff68c25e8cf4e86a9b569e94b9a9e0b6516518"
+    },
+    "data/doctrinal-documents/athanasian-creed.json": {
+      "before_sha256": "8f56f33d608c3b4a71d0168584991da6bc8be015cdfa0e74c9877f9952b83826",
+      "after_sha256": "7cfc8b51f378fc226a22e70b8cdc4cf1baa37427bafd51a34dcc0a19e1f27e04"
+    },
+    "data/doctrinal-documents/confession-of-peter.json": {
+      "before_sha256": "4cf94107c5124b7cca8b0a6c10a6b2999504ef6c412c0be924d644b0ccb2fac8",
+      "after_sha256": "28daf29501b553db69d9bb2f543c9fd523a69ddcffcee6ba5674f84b19902bcd"
+    },
+    "data/doctrinal-documents/french-confession-of-faith.json": {
+      "before_sha256": "d7dd49021a0d519da5515841228a3f423d6f8a9f46e4202e662933b43923e494",
+      "after_sha256": "ec9d2dd39d6469e3a19a708292242c7ba651a76a7a2f0db92265ce368def2594"
+    },
+    "data/doctrinal-documents/savoy-declaration.json": {
+      "before_sha256": "3c5aa5821f01aef2c1b44ec0b1bb68215a5d572192845c9ebe52efd9bfef2ac8",
+      "after_sha256": "1ae5636fb318221f36727a025a4fef33275b069ef56babdda4323173cb95e363"
+    },
+    "data/doctrinal-documents/tertullians-rule-of-faith.json": {
+      "before_sha256": "7e7ea0dd3bc5994e86c5767bd6af5be508ae587ea3352c7cda867b4c5f2b4f90",
+      "after_sha256": "53fa3c6186f7f00b8fbe64be8e58948e22d4f3d5fe59c2163c283c413327185d"
+    },
+    "data/doctrinal-documents/waldensian-confession.json": {
+      "before_sha256": "ef2bb9d1622f26f67109e9bfe802ff4ff7245280ed6a80ea80126e1aa8512dd4",
+      "after_sha256": "d64975ca9c592764fb81673da567f2edbf924008a33bfce9974d185fb7b4119e"
+    },
+    "data/prayers/bcp-1662/collects.json": {
+      "before_sha256": "4bb4b25cf2fb3fbaeb2136567f2d13cbe085edf7b159f440ec57defc8f9dc478",
+      "after_sha256": "26a278d1b8fe7d4615c6d25430ea32dcc4f12585252837b829c70de76bfbf5f2"
+    },
+    "data/prayers/bcp-1928/collects.json": {
+      "before_sha256": "4cf6319683c89c9fb883f825d238d602ada7350f3c8cdd5d91e0ebca0b9255ec",
+      "after_sha256": "68249ea1634e1b782045facf48b16e039bc6808eec03ceb0e19fd46e8a8010ae"
+    },
+    "data/prayers/didache/prayers.json": {
+      "before_sha256": "2329d6d57acd9e3c44c899f41414dfef46108023663145bca8e84ac45cc3b632",
+      "after_sha256": "6b9febaf1b06e4c2c1701e4962e6eb1970b33b424cbea92b3f9b6355a799dc92"
+    },
+    "data/structured-text/athanasius-against-the-arians.json": {
+      "before_sha256": "165b5dab376780b7fdfe7a2679581ea585dcb98e3c1b5180ead05850d027abf1",
+      "after_sha256": "7839a95d372ae7b988e1a8f6511bd3bda3a53762b288a4ef963bb0071420538e"
+    },
+    "data/structured-text/athanasius-against-the-heathen.json": {
+      "before_sha256": "8318236a97f5bf80cd14a32479c8e21c1c4bcb061083bede6994f7d01757e659",
+      "after_sha256": "eeb33cdce82a48fcfb7815031c0b4cf956c88bbd904325a5afd6b3a44cda58c2"
+    },
+    "data/structured-text/athanasius-apology-to-the-emperor.json": {
+      "before_sha256": "e7f19e9fe36e794562e567fdbb4a9b2e98eae92e07b2e2fe01bf9f2f96b84141",
+      "after_sha256": "0dcf8623353a82fe2a9416055a4a7dbdb4fbae3083a8b62a61f9d1a2cec5deb8"
+    },
+    "data/structured-text/athanasius-arian-history.json": {
+      "before_sha256": "ac974b72daae97f5e285b2203f74b5e992dd2995a86476cfde895292c61e5ff9",
+      "after_sha256": "34d6d051eed46533fd66c3aa247d5cec5750b8ef729aa734053c84fb6bfc00c3"
+    },
+    "data/structured-text/athanasius-circular-to-bishops-of-egypt-and-libya.json": {
+      "before_sha256": "c9ff74a20a31efccc0c3c365f95f4bea267dbf15599ad8876586f2ff4aa093ae",
+      "after_sha256": "ed0f50abf63dbdb924ba60099902db02e33bac61cc789f68703443473e9f838a"
+    },
+    "data/structured-text/athanasius-defence-against-the-arians.json": {
+      "before_sha256": "e40fc33c10980bee69907cd3c376a29337de06921725f11c6b4d0b2528f63c0c",
+      "after_sha256": "8638445e4974275de9274c7caa59b9f60f42c90fa8c69661ff2a9c9c71af6cf0"
+    },
+    "data/structured-text/athanasius-defence-of-dionysius.json": {
+      "before_sha256": "c47b3266df97a1437294a23dcfd7255352493d501c047c37b1e94550a3c8f621",
+      "after_sha256": "a7ec43b79f739aaad2fda62b6896da15515508a18ee7a3067489b8e56bb314a3"
+    },
+    "data/structured-text/athanasius-defence-of-his-flight.json": {
+      "before_sha256": "e519120acf25daaea964124efa6af48558ea7a5e3f4ff7a588865a649d15c3a1",
+      "after_sha256": "9bfbb680fec48a69705f9c45e23c99ad006c5d7d274a64be427d1862a9b2ebd1"
+    },
+    "data/structured-text/athanasius-defence-of-the-nicene-definition.json": {
+      "before_sha256": "4221b14ecb5b6b542f0b48ccdf081fd3b802c5514dc73f5ae3370e5250090fac",
+      "after_sha256": "f105752a462b01e0f41a056fb893b2bcc98aa36557bcc5c4103083d6cb7aec20"
+    },
+    "data/structured-text/athanasius-deposition-of-arius.json": {
+      "before_sha256": "5c88b9d0c7124d5fdb2009921f003c80c0b1bde3a2c9513c965849ff20d7cfc8",
+      "after_sha256": "df0267dcb1ec37afa95d3620c1a935ce6c56e31a3c10630df5c66bb1bc04111c"
+    },
+    "data/structured-text/athanasius-encyclical-letter.json": {
+      "before_sha256": "1ebf7c3ef76f7be5d78717bbfb12c34484ccb66ed0dbde5c7054bde8dd7b359e",
+      "after_sha256": "2085e1ad9b5bc0f7d2fee289a5f81b6a3d8ecfe7d72ae0324a7563651ec5657f"
+    },
+    "data/structured-text/athanasius-letters-and-chronicles.json": {
+      "before_sha256": "ebee8f1ae2054031d073941d293e5f001eef5010151c96fa0f482e8fe35745d1",
+      "after_sha256": "a55e6167adead4e104039e00583540c6e3db1ecffbd64b6b3fe72f3fb7f03a28"
+    },
+    "data/structured-text/athanasius-life-of-antony.json": {
+      "before_sha256": "aa3882fdfaed2322055038d7a93d2a472860a84987a4508b7ac2158679c13591",
+      "after_sha256": "b9bcbeae1e2e76d75a573a9cbdd4ffdfbea1fa225d1922d6d4b9f94e4040aef8"
+    },
+    "data/structured-text/athanasius-on-ariminum-and-seleucia.json": {
+      "before_sha256": "d29bfa5cfa61b96460eb7985b7d7a1732e97c2ce2d5a0e384eb844cffa2493cf",
+      "after_sha256": "8d254dc51ed346f42f7ea3b50a95392224ef5791820b32d19da94d9f719e9195"
+    },
+    "data/structured-text/athanasius-on-the-incarnation.json": {
+      "before_sha256": "77a038d21ac448a09b4dbf5826102038b43250543e539d55b297e8c079e384f4",
+      "after_sha256": "23aedc7f77516f888e1ccd4f0e70d5ef354ba7c9113e0b7a20f50b46e1aab94d"
+    },
+    "data/structured-text/athanasius-statement-of-faith.json": {
+      "before_sha256": "328c186c9d50bd4bcb8df32c5507b4db8fb64b1ae34795a93b690d8efb397020",
+      "after_sha256": "4d71089bddcb21e2aae821b90c3e8feb6f75a85f9bdeb5b9b2549cac04db8637"
+    },
+    "data/structured-text/athanasius-synodal-letter-to-africa.json": {
+      "before_sha256": "03e7cde0dc849d5f6c6b60fcf4b37590aa69402ce9a62a364a974f6717a101a8",
+      "after_sha256": "0307a00cbbf830b648da9419a65e5ab99517b37991f97651d7fc7eb8ba1bdc46"
+    },
+    "data/structured-text/athanasius-synodal-letter-to-antioch.json": {
+      "before_sha256": "2f4ae131cbde711198773d72959594e91fd2905c415b95c63f56a14a75416613",
+      "after_sha256": "c7c9a35aee164228b7c471bdd42412c0bec1958f54ee66c7b27d97dce1049f09"
+    },
+    "data/structured-text/augustine-care-for-dead.json": {
+      "before_sha256": "1fad2b66682212c2074aed7086fd78faae460574606f3df3cc194b85a33e9f8e",
+      "after_sha256": "b4a7b081da26423e2905180db3b940f47d1b47119c3dc8c96a6d0b66b99add55"
+    },
+    "data/structured-text/augustine-faith-things-not-seen.json": {
+      "before_sha256": "8ba79650cc75506bbf79de09566891719663227e04ef775bc529b0e3aa972b8b",
+      "after_sha256": "bbe13360ad7afa4739e648ad588f644cb82fdbfe9f6bda1e9c1949b9bbc4c1a1"
+    },
+    "data/structured-text/augustine-letters-part-1.json": {
+      "before_sha256": "2827c7f762d4a656b4d75516338030de5801c97ca4a3afed410bd67594dd5568",
+      "after_sha256": "7ecb0cbe9cd0fb340edff7dfb37da4ea8738668d19d241f5a4751163e32b9367"
+    },
+    "data/structured-text/augustine-on-continence.json": {
+      "before_sha256": "20302de08832bd4c86c62bba6771dd3f1af0b237c7425acc33c604458768bf39",
+      "after_sha256": "02b1c2d72064ddf4ecb4d53d85c20c9f7b6a049cf50af1ef2f961c6b7f300e58"
+    },
+    "data/structured-text/augustine-on-patience.json": {
+      "before_sha256": "ae313379b1ffe0f4731117ee1bc0d984f3bb04c0e87d9163971d2b44371ccac6",
+      "after_sha256": "3a4cdce7a53a96e2423b50224ee1bb2d6d6986e8a468de7940b93f42dbae4af6"
+    },
+    "data/structured-text/augustine-on-the-creed.json": {
+      "before_sha256": "90f15ae841fbf40695eb3eeaee120fb3de026092d671a51e41fe20508cba3f4e",
+      "after_sha256": "a9ebfaf3295aa4c5483ab0b6a520e2a53f2ae07d5b4ecd28eb4f2ea2ce96ff17"
+    },
+    "data/structured-text/eusebius-ecclesiastical-history.json": {
+      "before_sha256": "294c7b173e9df351cfdaf86cfa19d87e1e586bcb825c1c8e1ff32a4ea8ac4d14",
+      "after_sha256": "b6a2cf73307c92c8dcbce97440614699c54dbdb5aa963d2ec40e71eb11153357"
+    },
+    "data/structured-text/eusebius-letter-on-nicene-creed.json": {
+      "before_sha256": "3d261ae3ee08976f78f70441cfe5da7f7c7bb72f805ffdaf88a8587836e63484",
+      "after_sha256": "bc2dc5c6da62d9a3ff2d6ebbaf993138a65217f68e6627b52d0fd3d07d41c56c"
+    },
+    "data/structured-text/eusebius-life-of-constantine.json": {
+      "before_sha256": "abbbcd335c075b73d65cf6470d05e6c4dcc218ea72bb69ddc19ca06406615b18",
+      "after_sha256": "1626a9451d64677b025f3f0116c1172a5784bc1cf3867a2bc83485319822b7d9"
+    },
+    "data/structured-text/gregory-of-nyssa-against-eunomius.json": {
+      "before_sha256": "d36bc8d4591e3433134888498e0442a561cf48fc49b04e655c9fe516882b7d8e",
+      "after_sha256": "afb2c62a9408dafca7ff8e44cc6d04089f7a39727811ca062ba72a5f75530e0e"
+    },
+    "data/structured-text/gregory-of-nyssa-answer-to-eunomius-second-book.json": {
+      "before_sha256": "88e028872d3e6345aaa6a74600319f2562b6b11ba1c2144a79dcb1013d9db295",
+      "after_sha256": "8b8f46817d7848e992226ec5f89b5b2a5bb7ce316c47c22565f0e28ec818904f"
+    },
+    "data/structured-text/gregory-of-nyssa-funeral-oration-on-meletius.json": {
+      "before_sha256": "99b633f30b712869e2d5e6b598c4552010dd904bfca4b84126860939bf6651e6",
+      "after_sha256": "6af8cb9bad43612331050f75945ff419280bc1362ef77c47247017137dedbcbe"
+    },
+    "data/structured-text/gregory-of-nyssa-great-catechism.json": {
+      "before_sha256": "890f6ef77dcfda93009c34cc44ef1389bcafee716e624232abeaa2d675abcf42",
+      "after_sha256": "24339cc17a51c1cbb6700bbee087da1224c80ad8b243353d1da0a5dab3a41179"
+    },
+    "data/structured-text/gregory-of-nyssa-letters.json": {
+      "before_sha256": "3d86ec442e794aa146c33d4fef435e391bd89998ba7babace4b68203851e7424",
+      "after_sha256": "697a3045ed6502fafa7a8dd64ec56ca68f847ff827ee9954ee9ddce7c3af79c2"
+    },
+    "data/structured-text/gregory-of-nyssa-not-three-gods.json": {
+      "before_sha256": "1ed99578138023f23daf88ed31fb0f45de4ae03ed3444951881be02b5a0b9e2a",
+      "after_sha256": "ed649d2a809b0ded211a08d6709b2eaa9c48c94bfcc3bfd63e5237312f1dd752"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-baptism-of-christ.json": {
+      "before_sha256": "330f3fc8b88600258957fa7ace5cfdfe7e5c4a991f8d670db1c680f362317a7d",
+      "after_sha256": "6494f8028de6244a1d6abacbfbca6a4342eea88d39f19795cd685d7a0a377811"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-faith.json": {
+      "before_sha256": "9538d9054a1c1a942f4c01cf77174d333ae2995f922ceb4c1635cfe4fd33247f",
+      "after_sha256": "7db11ea80e3afe427d7efc000340efd75004135b8d322961658731b591a642fd"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-holy-spirit.json": {
+      "before_sha256": "8bf21e074ef9d3c3d0081f2911bf4b3ad343ae520dc784a81efc59a87fba6666",
+      "after_sha256": "81519388a618a8995f9ee8476ad882bca9161b42c9e87273515148ce8dff656c"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-holy-trinity.json": {
+      "before_sha256": "2c8629704591440d73d5dc3f5efc9040875d5273184384f6fd3c861447565aa6",
+      "after_sha256": "d20a5c51dee70007d834ccaae6f4a251618360401a853e13f489fb3b423b276f"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-making-of-man.json": {
+      "before_sha256": "edbe7fe60f85ede9237309686e96baf78e450717022bec395bd7629203ca7013",
+      "after_sha256": "cdc2a9b49d56bb103f7ec29723d6a4c5f9123e921050ecab79c408e321634cba"
+    },
+    "data/structured-text/gregory-of-nyssa-on-the-soul-and-resurrection.json": {
+      "before_sha256": "c11fc46fe48aa6e86db9d4e2e07bf9da87c5274f7b79c82961df09217786109d",
+      "after_sha256": "a439db86d82b825f62171d888d6ef6be93fcfea823e3b2087e7876340014eea6"
+    },
+    "data/structured-text/gregory-of-nyssa-on-virginity.json": {
+      "before_sha256": "fbed0fb399f5bfdf517bd98933f59d39ec9802201f25b88d47fa186aea616632",
+      "after_sha256": "cb44d1450873add8cddcbd01a1cfa329fa9b64bedaa38ef09e2b6959290eb5b4"
+    },
+    "data/structured-text/socrates-ecclesiastical-history.json": {
+      "before_sha256": "8a7484a2d8550d140ecf9a38a9f4db5057b167d50a87d6dca25595a3afa5d8bd",
+      "after_sha256": "eb0b8016464bcf81ab0949078a95300448a8cc90b8bfbb7852360983cd458210"
+    },
+    "data/structured-text/sozomen-ecclesiastical-history.json": {
+      "before_sha256": "cd0bf0e083c1528784cb713fe3330f23c0e406e1bcf0cb557ba9ad357f80aa0d",
+      "after_sha256": "8006c33f8d82c0863d9da4431c88c904044b6e88752882b784754cdce1ea625d"
+    },
+    "data/structured-text/theodoret-ecclesiastical-history.json": {
+      "before_sha256": "33ecfdaabf0523eca23aca642a39a7a10cc897a01387a19350a8b1872a0b9771",
+      "after_sha256": "6856adab09d009f89eb6ecf12470d2bc6836267a07dc29bfa445820202fde077"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/gold-sample-manifest-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Gold Sample Manifest",
+  "description": "Sampler output for OCR gold sample selection.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sample_id",
+    "volume",
+    "sample_role",
+    "created_at",
+    "strata_definition",
+    "strata"
+  ],
+  "properties": {
+    "schema_version": {"const": "gold-sample-manifest-v1"},
+    "sample_id": {"type": "string", "minLength": 1},
+    "volume": {"type": "integer", "minimum": 1},
+    "sample_role": {"$ref": "#/$defs/sample_role"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "strata_definition": {"$ref": "#/$defs/strata_definition"},
+    "strata": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/stratum"}
+    },
+    "comparison_contract": {"$ref": "#/$defs/comparison_contract"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "sample_role": {"const": "representativeness_spot_check"}
+        }
+      },
+      "then": {"required": ["comparison_contract"]},
+      "else": {
+        "not": {"required": ["comparison_contract"]}
+      }
+    }
+  ],
+  "$defs": {
+    "prefixed_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\\\).+"
+    },
+    "ot_token_id": {"type": "string", "pattern": "^ot-sha256:[0-9a-f]{64}$"},
+    "sample_role": {
+      "type": "string",
+      "enum": [
+        "dominant_failure",
+        "calibration",
+        "representativeness_spot_check"
+      ]
+    },
+    "availability": {
+      "type": "string",
+      "enum": ["derived_at_s1", "pending_upstream_stage"]
+    },
+    "zone_type_bucket": {"type": "string", "enum": ["text", "diagnostic"]},
+    "script_bucket": {
+      "type": "string",
+      "enum": ["latin", "greek", "hebrew", "mixed", "other"]
+    },
+    "scan_quality_bucket": {"type": "string", "enum": ["high", "medium", "low"]},
+    "engine_coverage_bucket": {"type": "string", "enum": ["single", "pair", "multi"]},
+    "confidence_bucket": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "null_conf"]
+    },
+    "dictionary_pass_bucket": {"type": "string", "enum": ["pass", "fail", "mixed"]},
+    "bbox_agreement_bucket": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "single_engine"]
+    },
+    "consensus_disagreement_pattern_bucket": {
+      "type": "string",
+      "enum": ["agree", "minor_disagree", "major_disagree", "single"]
+    },
+    "indicator": {
+      "type": "string",
+      "enum": ["oracle_gap", "segmentation_difference"]
+    },
+    "coverage_flag": {
+      "type": "string",
+      "enum": ["covered", "empty_required_value_uncovered", "no_source_data"]
+    },
+    "strata_definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimensions"],
+      "properties": {
+        "dimensions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/dimension_definition"}
+        }
+      }
+    },
+    "dimension_definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "source", "availability", "buckets"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "zone_type",
+            "script",
+            "scan_quality",
+            "engine_coverage",
+            "confidence_bucket",
+            "dictionary_pass",
+            "bbox_agreement",
+            "consensus_disagreement_pattern",
+            "engine_family_set"
+          ]
+        },
+        "source": {"type": "string", "minLength": 1},
+        "availability": {"$ref": "#/$defs/availability"},
+        "buckets": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "stratum_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zone_type": {"$ref": "#/$defs/zone_type_bucket"},
+        "script": {"$ref": "#/$defs/script_bucket"},
+        "scan_quality": {"$ref": "#/$defs/scan_quality_bucket"},
+        "engine_coverage": {"$ref": "#/$defs/engine_coverage_bucket"},
+        "confidence_bucket": {"$ref": "#/$defs/confidence_bucket"},
+        "dictionary_pass": {"$ref": "#/$defs/dictionary_pass_bucket"},
+        "bbox_agreement": {"$ref": "#/$defs/bbox_agreement_bucket"},
+        "consensus_disagreement_pattern": {
+          "$ref": "#/$defs/consensus_disagreement_pattern_bucket"
+        },
+        "engine_family_set": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "stratum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stratum_key",
+        "target_count",
+        "actual_count",
+        "selected_pages",
+        "coverage_flag"
+      ],
+      "properties": {
+        "stratum_key": {"$ref": "#/$defs/stratum_key"},
+        "target_count": {"type": "integer", "minimum": 0},
+        "actual_count": {"type": "integer", "minimum": 0},
+        "selected_pages": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/relative_path"}
+        },
+        "coverage_flag": {"$ref": "#/$defs/coverage_flag"}
+      }
+    },
+    "tolerance_bands": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "oracle_gap": {"type": "number", "minimum": 0},
+        "segmentation_difference": {"type": "number", "minimum": 0}
+      }
+    },
+    "comparison_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "compared_volume",
+        "baseline_volume",
+        "indicators",
+        "tolerance_bands"
+      ],
+      "properties": {
+        "compared_volume": {"type": "integer", "minimum": 1},
+        "baseline_volume": {"type": "integer", "minimum": 1},
+        "indicators": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/indicator"},
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "tolerance_bands": {"$ref": "#/$defs/tolerance_bands"}
+      }
+    }
+  }
+}

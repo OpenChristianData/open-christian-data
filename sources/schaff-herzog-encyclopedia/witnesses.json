@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "related_resource_id": "schaff-herzog-encyclopedia",
+  "witnesses": [],
+  "cross_source_readings": [
+    {
+      "pair_id": "schaff-herzog-ccel-vs-ia",
+      "members": [
+        {
+          "source_id": "ccel-thml",
+          "parser": "build/parsers/ccel_schaff_herzog.py",
+          "source_format": "ThML XML",
+          "url": "https://www.ccel.org/ccel/schaff/",
+          "notes": "CCEL ThML XML covers volumes 1, 2, and 9. Permission for use confirmed with CCEL (Quincy) on 2026-04-01."
+        },
+        {
+          "source_id": "ia-djvu",
+          "parser": "build/parsers/ia_schaff_herzog.py",
+          "source_format": "djvu OCR (_djvu.txt) + hOCR coordinates",
+          "url": "https://archive.org/details/NewSchaffHerzogEncyclopediaOfReligious",
+          "notes": "Internet Archive djvu OCR covers volumes 3-8 and 10-12. ABBYY FineReader engine; reported character accuracy 95-97%."
+        }
+      ],
+      "notes": "Two parsers ingest the same encyclopedia from independent OCR pipelines. The OCR scanner producer treats CCEL-vs-IA disagreements as a witness-equivalent signal (Phase A4)."
+    }
+  ],
+  "notes": "Schaff-Herzog has a single canonical edition (1908-1914). Cross-source readings between CCEL ThML and IA djvu OCR substitute for a traditional witness comparison for text-fidelity scoring on this resource."
+}

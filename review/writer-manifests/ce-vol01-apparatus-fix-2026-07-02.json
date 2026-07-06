@@ -1,0 +1,24 @@
+{
+ "schema_version": "1.0.0",
+ "writer": "parser",
+ "writer_version": "build/parsers/catholic_encyclopedia.py@v1.0.0",
+ "writer_identity": "catholic_encyclopedia_parser",
+ "run_id": "97924e314b4440a7b4850069e56a1418",
+ "started_at": "2026-07-03T00:14:45.950443+00:00",
+ "data_paths": [
+  "data/reference/catholic-encyclopedia-vol01.json"
+ ],
+ "checksums": {
+  "data/reference/catholic-encyclopedia-vol01.json": {
+   "before_sha256": "15fe4a140f689f7e4b5f55587c0cc13e6708529d697698674728c91cb62641bf",
+   "after_sha256": "929b494de3ed0db725a6a3bbb5932750a38c0a8572ba47018d91687261d2b168"
+  }
+ },
+ "expected_delta_counts": {
+  "data/reference/catholic-encyclopedia-vol01.json": {
+   "entries_changed": 317
+  }
+ },
+ "partial_completion_policy": "all_or_nothing",
+ "renames": []
+}

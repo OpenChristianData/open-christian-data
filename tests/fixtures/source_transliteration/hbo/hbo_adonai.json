@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.adonai",
+  "positive_input": "Adonai is the name reverently spoken in place of YHWH",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "Adonai"},
+  "negative_input": "Lord is the name reverently spoken in place of YHWH",
+  "negative_expected": null
+}

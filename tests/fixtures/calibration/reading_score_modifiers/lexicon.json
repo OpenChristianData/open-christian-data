@@ -1,0 +1,31 @@
+{
+  "modifier": "lexicon",
+  "adr_value": 1.0,
+  "description": "Anchor reading is lexicon-valid for 'la'; attestor reading is not -> anchor gets +1.0 differential modifier",
+  "triggering": {
+    "anchor_reading": "gratia",
+    "attestor_reading": "grnfla",
+    "language": "la",
+    "anchor_role": "pd_anchor",
+    "attestor_role": "pd_attestor",
+    "anchor_base_score": 4.0,
+    "anchor_expected_modifier": 1.0,
+    "attestor_base_score": 3.0,
+    "attestor_expected_modifier": 0.0,
+    "modifier_fires": true,
+    "notes": "'gratia' is in la.VOCAB (core liturgical Latin); 'grnfla' is not in la.VOCAB -> anchor valid, attestor invalid -> anchor gets +1.0"
+  },
+  "near_miss": {
+    "anchor_reading": "gratia",
+    "attestor_reading": "gloria",
+    "language": "la",
+    "anchor_role": "pd_anchor",
+    "attestor_role": "pd_attestor",
+    "anchor_base_score": 4.0,
+    "anchor_expected_modifier": 0.0,
+    "attestor_base_score": 3.0,
+    "attestor_expected_modifier": 0.0,
+    "modifier_fires": false,
+    "near_miss_reason": "both 'gratia' and 'gloria' are in la.VOCAB -> both valid -> no differential -> modifier does not fire"
+  }
+}

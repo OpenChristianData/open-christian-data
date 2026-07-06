@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.christos",
+  "positive_input": "The christos the anointed one of God",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "christos"},
+  "negative_input": "The anointed one of God",
+  "negative_expected": null
+}

@@ -1,0 +1,28 @@
+{
+  "collection_id": "newman-parochial-sermons",
+  "resource_id": "newman-parochial-sermons",
+  "title": "Parochial and Plain Sermons",
+  "author": "John Henry Newman",
+  "author_birth_year": 1801,
+  "author_death_year": 1890,
+  "contributors": [
+    {
+      "role": "editor",
+      "name": "W. J. Copeland"
+    }
+  ],
+  "original_publication_year": 1834,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "anglican"
+  ],
+  "tradition_notes": "John Henry Newman (1801-1890) was an Anglican clergyman at St. Mary the Virgin, Oxford, who later converted to Roman Catholicism (1845). These 8 volumes of sermons, preached 1825-1843 and published 1834-1843 (Rivingtons), are widely regarded as the most influential Victorian Anglican sermon series. The 1868 Copeland edition (repr. Rivingtons) is used here.",
+  "era": "modern",
+  "audience": "lay",
+  "license": "public-domain",
+  "source_url": "https://archive.org/download/parochialplainse01newmuoft/parochialplainse01newmuoft_djvu.txt",
+  "source_format": "DjVu OCR plain text (vols 1-6); Project Gutenberg plain text (vols 7-8)",
+  "source_edition": "Parochial and Plain Sermons, 8 vols., Rivingtons, London, 1868 (W.J. Copeland ed.). Internet Archive University of Toronto scans (vols 1-6: parochialplainse01-06newmuoft); PG #24256 (vol 7), PG #24284 (vol 8).",
+  "notes": "135 sermons across 8 volumes. Sermon boundaries detected by 'SERMON [Roman numeral]' heading. Scripture refs extracted for PG vols 7-8 (100% coverage via embedded dash-ref pattern); IA vols 1-6 have primary_reference=null per task instructions (no explicit 'Text:' label). OCR quality in IA volumes causes some sermon merging."
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_abbyy.py@b2.4",
+  "writer_identity": "ia_schaff_herzog_parser",
+  "run_id": "b24-vol01-pages1-9-recovery",
+  "started_at": "2026-05-27T06:30:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "before_sha256": "526bc25ab67e0fc30990c57a8075a4646bdfb33c8aa64ae60ed9326ae2423356",
+      "after_sha256": "9cb9082d22e3c638563a6f5730bc83a44ae1deaaa1b935b5a8f8fef2d0b66e5c"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "page_count": 541,
+      "pages_parsed": 498,
+      "unmapped_leaf_count": 43,
+      "confidence_mean": 82.2
+    }
+  },
+  "allowed_field_paths": ["/pages", "/page_count", "/pages_with_data", "/unmapped_leaf_count", "/confidence_mean", "/assembled_at"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Recovered vol 1 pages 1-9 (leaves 37-45) by patching manifest with leaf-to-page assignments. Original incident (503e174d) identified only leaves 40-45; OCR inspection confirmed leaves 37-39 also contain body content (AACHEN starts at leaf 37 = page 1, leaf 36 = last front matter). page_count 541 unchanged (leaf-indexed sidecars for leaves 37-45 replaced by page_NNNN sidecars). pages_parsed 489 -> 498, unmapped_leaf_count 52 -> 43, skip_rate 9.6% -> 7.9%.",
+  "renames": []
+}

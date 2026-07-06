@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_abbyy.py@b2.4",
+  "writer_identity": "ia_schaff_herzog_parser",
+  "run_id": "b24-mid-vol-gaps-vol2-vol11",
+  "started_at": "2026-05-28T00:45:00Z",
+  "notes": "Mid-volume gap investigation: vol 2 leaf 0275 (page 253, BODY) and vol 11 leaf 0505 (page 478, BODY) patched into manifests. Vol 11 also required renumbering leaves 0506-0536 (+1 each) due to IA page_numbers metadata skipping leaf 0505, causing off-by-one propagation. Vol 2 pages 254-255 confirmed absent from scan (no leaves, documented in UPSTREAM_BUGS.md). Vols 3 and 4 from gap table had no current manifest gaps.",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_02.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_11.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_02.json": {
+      "before_sha256": "f458f1ba9ae198861933e15cdfa8b1ad2244f91cfcfbeb567fcb79ffbe03104c",
+      "after_sha256": "38ff3f6938441d72d49c9b899abed9e826a1c2f338f18cc9e0c6bcc974cf3c53"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_11.json": {
+      "before_sha256": "ef7087af46bd9d2aadda5bebce32a4d6d39f7455eccd5bdf1facd87089b084fa",
+      "after_sha256": "d5fe32a499bf15bc6805ced2561be1b93309c14079d9fa0b0404ded641b8c595"
+    }
+  },
+  "expected_delta_counts": {
+    "vol_02": {"pages_added": 1, "pages_renumbered": 0, "note": "added page 253 (leaf 0275); pages 254-255 permanently absent from scan"},
+    "vol_11": {"pages_added": 1, "pages_renumbered": 31, "note": "added page 478 (leaf 0505); renumbered leaves 0506-0536 from pages 478-508 to pages 479-509"}
+  },
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

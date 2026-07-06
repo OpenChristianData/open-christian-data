@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "local_schaff_tesseract@b2.4",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b24-vol01-tesseract-assembly",
+  "started_at": "2026-05-26T08:18:14Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/oss-tesseract-v1/vol_01.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/oss-tesseract-v1/vol_01.json": {
+      "before_sha256": null,
+      "after_sha256": "81ec3cca8ded36e4fd01b3069d9682a420f69d6eff7021daa6b00f5244d89a32"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/oss-tesseract-v1/vol_01.json": {
+      "pages_assembled": 491,
+      "mean_confidence": 92.9
+    }
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 491 page sidecars (format_version=1, sidecar format includes x_size/baseline line metrics and per-word bbox). Engine: Tesseract 5.5 PSM=1 lang=eng. Session 1A, 2026-05-25.",
+  "renames": []
+}

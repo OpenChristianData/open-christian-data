@@ -1,0 +1,45 @@
+{
+  "resource_id": "donne-devotions-upon-emergent-occasions",
+  "title": "Devotions Upon Emergent Occasions",
+  "author": "John Donne",
+  "author_birth_year": 1572,
+  "author_death_year": 1631,
+  "contributors": [
+    {
+      "name": "Stacy Brown",
+      "role": "transcriber"
+    },
+    {
+      "name": "John Hagerson",
+      "role": "transcriber"
+    },
+    {
+      "name": "Juliet Sutherland",
+      "role": "transcriber"
+    },
+    {
+      "name": "Online Distributed Proofreading Team",
+      "role": "transcriber",
+      "url": "http://www.pgdp.net"
+    }
+  ],
+  "original_publication_year": 1624,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "anglican"
+  ],
+  "tradition_notes": "John Donne (1572–1631), Dean of St Paul's Cathedral, wrote the Devotions during a severe illness in 1623. The work's 23 Stations trace his sickness, recovery, and spiritual reflection — each in three movements: Meditation, Expostulation, and Prayer. The seventeenth Meditation contains the famous 'No man is an island' passage.",
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "devotional-classic",
+  "source_url": "http://www.gutenberg.org/cache/epub/23772/pg23772.txt",
+  "source_format": "plain text (UTF-8)",
+  "source_edition": "Devotions Upon Emergent Occasions; Together with Death's Duel, Project Gutenberg PG#23772",
+  "source_hash": "sha256:f1f2b08f2dcfe9f6618bb8031a5d055b5d58e30f80a399ff866d5b205b1773b7",
+  "download_date": "2026-07-05",
+  "output_file": "data/structured-text/donne-devotions-upon-emergent-occasions.json",
+  "notes": "Contains all 23 Stations plus Death's Duel sermon appended. Each Station parsed as a section with three child sub-sections (Meditation, Expostulation, Prayer). OCD devotional schema was considered but requires month/day integer fields; these Stations are illness-stage-keyed, so structured_text used instead."
+}

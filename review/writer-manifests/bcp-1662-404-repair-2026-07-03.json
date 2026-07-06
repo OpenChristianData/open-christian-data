@@ -1,0 +1,24 @@
+{
+ "schema_version": "1.0.0",
+ "writer": "parser",
+ "writer_version": "build/parsers/bcp_full_text.py@v1.0.0",
+ "writer_identity": "bcp_full_text_parser",
+ "run_id": "33e6a79a9ae64a6faed5e619088ad155",
+ "started_at": "2026-07-03T03:38:46.237673+00:00",
+ "data_paths": [
+  "data/structured-text/bcp-1662.json"
+ ],
+ "checksums": {
+  "data/structured-text/bcp-1662.json": {
+   "before_sha256": "4a80fd6096a17ae478ba4c24db063a941f247ea9cde1846cd09163f1e6ea4712",
+   "after_sha256": "b8289f9551f9289ccc9e83862b4d9ab9d05373c46af2f79303104096ce6c2ea1"
+  }
+ },
+ "expected_delta_counts": {
+  "data/structured-text/bcp-1662.json": {
+   "sections_repaired": 5
+  }
+ },
+ "partial_completion_policy": "all_or_nothing",
+ "renames": []
+}

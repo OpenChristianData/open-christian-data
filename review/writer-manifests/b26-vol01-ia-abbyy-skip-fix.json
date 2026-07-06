@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_abbyy.py@b2.6",
+  "writer_identity": "ia_schaff_herzog_parser",
+  "run_id": "b26-vol01-ia-abbyy-skip-fix",
+  "started_at": "2026-05-26T10:45:56Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "before_sha256": "5094c5ee7654e484495304d7d6badd02f93b33489bfdfd6dfa38c149a31e15aa",
+      "after_sha256": "526bc25ab67e0fc30990c57a8075a4646bdfb33c8aa64ae60ed9326ae2423356"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "page_count": 541,
+      "unmapped_leaf_count": 52,
+      "confidence_mean": 82.2
+    }
+  },
+  "allowed_field_paths": ["/pages", "/page_count", "/pages_with_data", "/unmapped_leaf_count", "/confidence_mean", "/assembled_at"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Re-assembled vol 1 after F4 leaf-index fallback fix. 52 previously-skipped leaves now captured as page_leaf*.ia-abbyy.json sidecars. page_count 489 -> 541, unmapped_leaf_count added. Incident ref: 503e174d.",
+  "renames": []
+}

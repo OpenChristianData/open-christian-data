@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_expositors_bible.py@v1.1.0",
+  "writer_identity": "ccel_expositors_bible_parser",
+  "run_id": "3878473f505c828579d76783c2524339",
+  "started_at": "2026-06-17T05:36:45.878920+00:00",
+  "data_paths": [
+    "data/commentaries/expositors-bible/mark.json"
+  ],
+  "checksums": {
+    "data/commentaries/expositors-bible/mark.json": {
+      "before_sha256": null,
+      "after_sha256": "3878473f505c828579d76783c2524339223dad9e97b15f707b708e516caca273"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/expositors-bible/mark.json": {
+      "entries_added": 85
+    }
+  }
+}

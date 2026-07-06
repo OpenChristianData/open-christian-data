@@ -1,0 +1,43 @@
+{
+  "commentary_id": "expositors-bible",
+  "resource_id": "expositors-bible",
+  "title": "The Expositor's Bible",
+  "author": "Multiple Authors, ed. W. Robertson Nicoll",
+  "author_birth_year": null,
+  "author_death_year": null,
+  "contributors": [
+    "W. Robertson Nicoll (series editor, 1851\u20131923)",
+    "Marcus Dods", "G.A. Chadwick", "Samuel H. Kellogg",
+    "R.A. Watson", "Andrew Harper", "William G. Blaikie",
+    "Frederic W. Farrar", "W.H. Bennett", "Walter F. Adeney",
+    "Alexander Maclaren", "Robert F. Horton", "Samuel Cox",
+    "George Adam Smith", "C.J. Ball", "John Skinner",
+    "J. Monro Gibson", "Henry Burton", "G.T. Stokes",
+    "H.C.G. Moule", "James Denney", "G.G. Findlay",
+    "Robert Rainy", "Alfred Plummer", "Thomas Charles Edwards",
+    "J. Rawson Lumby", "William Milligan"
+  ],
+  "original_publication_year": 1887,
+  "language": "en",
+  "original_language": "en",
+  "tradition": ["evangelical"],
+  "tradition_notes": "Multi-author series representing the breadth of British evangelical scholarship, c. 1887\u20131905. Contributors span Presbyterian (Free Church of Scotland, Church of Scotland), Anglican, Baptist, Congregationalist, and Methodist traditions. Broadly Protestant and evangelical in orientation.",
+  "era": "modern",
+  "audience": "lay",
+  "license": "public-domain",
+  "source_format": "CCEL ThML XML",
+  "source_base_url": "https://www.ccel.org/ccel/{author}/{work}.xml",
+  "source_edition": "Christian Classics Ethereal Library digital edition (various dates)",
+  "versification": "KJV",
+  "coverage": "48 of 49 volumes on CCEL (full Bible except Twelve Prophets Vol 2)",
+  "known_coverage_gaps": [
+    "The Twelve Prophets Vol 2 (George Adam Smith) \u2014 not digitised on CCEL",
+    "smith_ga/expositorprophets1 covers Amos, Hosea, Micah only \u2014 Joel, Jonah, Obadiah absent from CCEL XML",
+    "Ecclesiastes (cox_s/expositoreccl) \u2014 0 entries: thematic division org ('The Translation', 'The Exposition'); no osisRef markup in body",
+    "Mark (chadwick/mark) \u2014 0 entries: chapter-titled div1 only, no inline verse refs",
+    "John vol 2 (dods/expositorjohn2) \u2014 0 entries: chapter-titled div1 only, no inline verse refs",
+    "Galatians (findlay/expositorgal) \u2014 0 entries: prologue/thematic structure, no verse-ref anchors",
+    "Philippians (rainy/expositorphil) \u2014 0 entries: chapter-titled div1 only, no inline verse refs"
+  ],
+  "notes": "Series editor Nicoll died 1923 \u2014 all text is public domain. 49-volume series published 1887-1905 by Hodder & Stoughton, London. Source permission confirmed with CCEL (Quincy, 2026-04-01). robots.txt: crawl-delay 10s."
+}

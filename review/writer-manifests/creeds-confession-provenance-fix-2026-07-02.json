@@ -1,0 +1,272 @@
+{
+ "schema_version": "1.0.0",
+ "writer": "parser",
+ "writer_version": "build/parsers/creeds_json_confession.py@v1.0.0",
+ "writer_identity": "creeds_json_confession_parser",
+ "run_id": "9a8250fb046240afa8cd9fcb072cbade",
+ "started_at": "2026-07-03T00:14:46.504017+00:00",
+ "data_paths": [
+  "data/doctrinal-documents/abstract-of-principles.json",
+  "data/doctrinal-documents/apostles-creed.json",
+  "data/doctrinal-documents/athanasian-creed.json",
+  "data/doctrinal-documents/belgic-confession-of-faith.json",
+  "data/doctrinal-documents/canons-of-dort.json",
+  "data/doctrinal-documents/chalcedonian-definition.json",
+  "data/doctrinal-documents/christ-hymn-of-colossians.json",
+  "data/doctrinal-documents/christ-hymn-of-philippians.json",
+  "data/doctrinal-documents/christian-shema.json",
+  "data/doctrinal-documents/confession-of-peter.json",
+  "data/doctrinal-documents/consensus-tigurinus.json",
+  "data/doctrinal-documents/council-of-orange.json",
+  "data/doctrinal-documents/first-confession-of-basel.json",
+  "data/doctrinal-documents/first-helvetic-confession.json",
+  "data/doctrinal-documents/french-confession-of-faith.json",
+  "data/doctrinal-documents/gregorys-declaration-of-faith.json",
+  "data/doctrinal-documents/helvetic-consensus.json",
+  "data/doctrinal-documents/ignatius-creed.json",
+  "data/doctrinal-documents/irenaeus-rule-of-faith.json",
+  "data/doctrinal-documents/london-baptist-confession-1689.json",
+  "data/doctrinal-documents/nicene-creed.json",
+  "data/doctrinal-documents/savoy-declaration.json",
+  "data/doctrinal-documents/scots-confession.json",
+  "data/doctrinal-documents/second-helvetic-confession.json",
+  "data/doctrinal-documents/shema-yisrael.json",
+  "data/doctrinal-documents/ten-theses-of-berne.json",
+  "data/doctrinal-documents/tertullians-rule-of-faith.json",
+  "data/doctrinal-documents/tetrapolitan-confession.json",
+  "data/doctrinal-documents/waldensian-confession.json",
+  "data/doctrinal-documents/westminster-confession-of-faith.json",
+  "data/doctrinal-documents/zwinglis-67-articles.json",
+  "data/doctrinal-documents/zwinglis-fidei-ratio.json"
+ ],
+ "checksums": {
+  "data/doctrinal-documents/abstract-of-principles.json": {
+   "before_sha256": "d5b98cffb74b88d43f2243ea5c5f9bf028f039e940b8aefb76e583ab465cb10c",
+   "after_sha256": "4bfe1f1565b832368ac97a9eff7eb6e70ebb44ecc596522b4099422806abcb62"
+  },
+  "data/doctrinal-documents/apostles-creed.json": {
+   "before_sha256": "c0d8f0b18d763a807c9cfc1fbc1064b51a461ff4701b8c72491e849af7d3386a",
+   "after_sha256": "a891fca9712f0187de08b5b4ebb99c844dbbfca76c2c84a3031e0f7287a76026"
+  },
+  "data/doctrinal-documents/athanasian-creed.json": {
+   "before_sha256": "fb24c22642a04cf261705888c3e735382fecda3dd6a97e047eb436d4415ae2a7",
+   "after_sha256": "5c37e6b9a4ab623980071ea233b061fa8a0f8d3bef713285bbe5c6d2e1c581b7"
+  },
+  "data/doctrinal-documents/belgic-confession-of-faith.json": {
+   "before_sha256": "a15fb59d71f6bc10d199bed8b55bbef9541508b79f9e2ea8abac669d00a109f3",
+   "after_sha256": "eab7a9ff72c34867aa4c5679625efeb932c9869238f1c2d859927c4a92c0d0ed"
+  },
+  "data/doctrinal-documents/canons-of-dort.json": {
+   "before_sha256": "1f2f2b64d467f120244ed1f1c9be82bf6330ad38a68d531baabadd3f041613d5",
+   "after_sha256": "a2fb56cd253c000ac9e7b5492aed4cdf51f96db6a208721d7631c1c0041d8f3c"
+  },
+  "data/doctrinal-documents/chalcedonian-definition.json": {
+   "before_sha256": "3bb69639df04bd77eca75e7c0fb64efcd1de710d0857a3bb1645d2b2e36c5d56",
+   "after_sha256": "b7431ced77aaed2eee5150d64199f2993ccad7002627ad5cc872cb1ee92a35a3"
+  },
+  "data/doctrinal-documents/christ-hymn-of-colossians.json": {
+   "before_sha256": "a39c1066c17772e59ef8c625bd2e4b40becb7237fdf34a2f14ade9daccbb5c9f",
+   "after_sha256": "c18853d806e699ae9aefc7eeac52e906d5a5becb545ed8438d92b2704ebfbb50"
+  },
+  "data/doctrinal-documents/christ-hymn-of-philippians.json": {
+   "before_sha256": "9f8d3eb6e6e32bfe4ecaf1ce19db9d32c316ef17a4d550771edbc3b813a039e6",
+   "after_sha256": "53ae35b60e4cc80249572ba0fbf8b12a8a11408578766c2ad530385294915122"
+  },
+  "data/doctrinal-documents/christian-shema.json": {
+   "before_sha256": "ee42ce4443839cb89b0ca89f82461401cc60657a0d3290b8459977e092c2e3ee",
+   "after_sha256": "0c9d5d75017531472485bfb2bc9b4f0039ef4c4795f599316082b0213708f2db"
+  },
+  "data/doctrinal-documents/confession-of-peter.json": {
+   "before_sha256": "de978b19ece20bd5f4a0c7a31d06999f63ee6b24e4a4c785646eaac4d7711b25",
+   "after_sha256": "570b22891e3c7095d7f0d7b51bb40b0080f17a4779f9acc9f07076abf53508ed"
+  },
+  "data/doctrinal-documents/consensus-tigurinus.json": {
+   "before_sha256": "89b04ffbeb8892b5ac6989c891f9a9c4f6587525cefc16083c6c304b657c8309",
+   "after_sha256": "01cad0e8e3ffab6278a253f09464c15c1070398acbb4b03129a84217b5c06858"
+  },
+  "data/doctrinal-documents/council-of-orange.json": {
+   "before_sha256": "2d84a4006f5bc63cb5e9e2b3e5f6cd4964d40c94552256ee0a5786bd606b697b",
+   "after_sha256": "fe01c873660be09f5cd536760a3644e6244b5e76fa045c67cd6164c08b3356d2"
+  },
+  "data/doctrinal-documents/first-confession-of-basel.json": {
+   "before_sha256": "0c4aef5cffef23faa4f64b4a076ea8c7b6c2db236ddf9334c80e8a80e15fceef",
+   "after_sha256": "42b21b44a6407c028eba6ad52fe91081f6c173c0d5a095d41232017bbf583470"
+  },
+  "data/doctrinal-documents/first-helvetic-confession.json": {
+   "before_sha256": "3482be5026b8af761ed49b410ff8b454e5e7765c1938e2ecb089b34ef4593c7a",
+   "after_sha256": "5ffaf079df19743475974351f546ca11ac9a89bc18994f39bf75dce3e2cd260a"
+  },
+  "data/doctrinal-documents/french-confession-of-faith.json": {
+   "before_sha256": "2db54df81df676d2ea31866b03f5c2a18777578f6f2065ab2dd5313b6339c933",
+   "after_sha256": "0c021b98a72f95721829c72b2c98c691b2ccf93de0b4fe17618e100a1416390a"
+  },
+  "data/doctrinal-documents/gregorys-declaration-of-faith.json": {
+   "before_sha256": "5681db60b23db0d550e5d0779780e29979c532d7597772a8976d42601742a4b7",
+   "after_sha256": "e496bee3f0c85a4173d7263f65b4c93e219a529156fd5a9d8a74736c90e0d58a"
+  },
+  "data/doctrinal-documents/helvetic-consensus.json": {
+   "before_sha256": "496e8dff53f85f825b76da81bde29b36dd0061bbbb72c91fdb567164d2ef03df",
+   "after_sha256": "e0f40420b4636dd180ac325e27385d9e9a28362456f4ed782f6c86fd6a6b647f"
+  },
+  "data/doctrinal-documents/ignatius-creed.json": {
+   "before_sha256": "f84d3cad15a63ef386ac4e4fcf1c6fd85c7b834bb06c77142d76daaf7eef0e9a",
+   "after_sha256": "c60e1666f82ec2fcfea852f6ee7d1defbf1cc9ea1c4fab7d891ee84d926bdd65"
+  },
+  "data/doctrinal-documents/irenaeus-rule-of-faith.json": {
+   "before_sha256": "8bf8abb801af108792339f1aaa574f08c1251436baf9f615089eea8bec1ee7a0",
+   "after_sha256": "01e3af140e0951fd4da5faf39503019e599d30f91e74d8863905b0bdbe02d80f"
+  },
+  "data/doctrinal-documents/london-baptist-confession-1689.json": {
+   "before_sha256": "b8949c2e5eff6258c20a20c0339cbc6c10011511a7e089e553c6ed0ea9180459",
+   "after_sha256": "7d73421125f2a53703b7bd57703d7ef8cc45a700a1d8b0b5f6c531db47146978"
+  },
+  "data/doctrinal-documents/nicene-creed.json": {
+   "before_sha256": "30904fb6a3fabc995e69338a60917c69656ddd4518ee815b809e45bb30080bf4",
+   "after_sha256": "6436c8284d2efd3dfa77f343ba3496d786d31f9c79bbcb019a64f19ac0c16798"
+  },
+  "data/doctrinal-documents/savoy-declaration.json": {
+   "before_sha256": "f9875b610289f530d30b416fb009b444223f01b984283ffa16abacdfbd1514b7",
+   "after_sha256": "8e32b5fabcf80fb398c45b30d18620b03be903425ec67a7abf2f7976d7f1b23a"
+  },
+  "data/doctrinal-documents/scots-confession.json": {
+   "before_sha256": "78b155d0e6abdc2191db806b80e2c27969adeb85ae8ac78c7000497abad7bfee",
+   "after_sha256": "00e07ef11da1ac836cd4dc80c58f843c9008c185b81fb45fbcd388a40c60e2a8"
+  },
+  "data/doctrinal-documents/second-helvetic-confession.json": {
+   "before_sha256": "a1008ab84df164a23ca1a757f76024ba835e5c434094946e941b20cf241acafd",
+   "after_sha256": "bac3168a27557c0e5637b310be930b5df8dc9114b7b2e562e9fab25037d3f66d"
+  },
+  "data/doctrinal-documents/shema-yisrael.json": {
+   "before_sha256": "951671ce47fff1f9efeb5d2452230369bcf5ae6a983f994fe128766fdc186dd5",
+   "after_sha256": "e688ecb91e3643298627825601d195726fb0ae4a62f0f74db6399795dcaf8f59"
+  },
+  "data/doctrinal-documents/ten-theses-of-berne.json": {
+   "before_sha256": "21dcb3e25fb8467e3993f047e268732529d3540418b6899f6a31b3cd94a5f618",
+   "after_sha256": "aada122e4a6805117bf2dcf878328b76be18aa0c2f3bc0b251fba28db0b47e14"
+  },
+  "data/doctrinal-documents/tertullians-rule-of-faith.json": {
+   "before_sha256": "0be62edaece0f58bfba69476c592b740ae9a1e78c965d05c3d745a4631d65f83",
+   "after_sha256": "c68e29ae653d36ee18969658968b8d56ee67d40278e4df9a38c1950134d17fde"
+  },
+  "data/doctrinal-documents/tetrapolitan-confession.json": {
+   "before_sha256": "d88dd257a402c276d1f57b88f2f2e46a3773559cf6d42857fc32a383078968d3",
+   "after_sha256": "16f8cc52d8f2687e837265b154c0276d90954a3dd62f7221bbd75ba56dd580ae"
+  },
+  "data/doctrinal-documents/waldensian-confession.json": {
+   "before_sha256": "5d1cb3f5f6c2ddc29ea80e79d89962313fef88bf8aac9ec4d3525f6699ae484d",
+   "after_sha256": "7ba4504a69e1a38adbcde64fb0244ea15fcf6a9d30fb19e49b6483a6804e104b"
+  },
+  "data/doctrinal-documents/westminster-confession-of-faith.json": {
+   "before_sha256": "7b34b69f215c06a8d635966111b273498c3d16ab87544ea19888ee30b28a64ac",
+   "after_sha256": "e4b8a0600d2c6740bd8eb802b58b214fdcf9eccb2a8e72168ee03d6e1f2ea67a"
+  },
+  "data/doctrinal-documents/zwinglis-67-articles.json": {
+   "before_sha256": "b625af69320cb793e51467323d462b35019a954620eab0beee99079296fd3be7",
+   "after_sha256": "b2f5428b774a12e855616a9f387622e0e7de6fee380799f47a11cd20c3a711d5"
+  },
+  "data/doctrinal-documents/zwinglis-fidei-ratio.json": {
+   "before_sha256": "cf0abbba0b66bc8cf1acd7cc43d72b5f5f81580665acbebe393472d25df2690e",
+   "after_sha256": "7045e976cc9d6f6201e338a59498100efa517faaf37e27dd1ba9c1cf9096de24"
+  }
+ },
+ "expected_delta_counts": {
+  "data/doctrinal-documents/abstract-of-principles.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/apostles-creed.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/athanasian-creed.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/belgic-confession-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/canons-of-dort.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/chalcedonian-definition.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/christ-hymn-of-colossians.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/christ-hymn-of-philippians.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/christian-shema.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/confession-of-peter.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/consensus-tigurinus.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/council-of-orange.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/first-confession-of-basel.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/first-helvetic-confession.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/french-confession-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/gregorys-declaration-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/helvetic-consensus.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/ignatius-creed.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/irenaeus-rule-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/london-baptist-confession-1689.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/nicene-creed.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/savoy-declaration.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/scots-confession.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/second-helvetic-confession.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/shema-yisrael.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/ten-theses-of-berne.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/tertullians-rule-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/tetrapolitan-confession.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/waldensian-confession.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/westminster-confession-of-faith.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/zwinglis-67-articles.json": {
+   "meta_fields_changed": 1
+  },
+  "data/doctrinal-documents/zwinglis-fidei-ratio.json": {
+   "meta_fields_changed": 1
+  }
+ },
+ "partial_completion_policy": "all_or_nothing",
+ "renames": []
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_robertson_word_pictures.py@v1.0.0",
+  "writer_identity": "ccel_robertson_parser",
+  "run_id": "ccel-robertson-osis-corrections-2026-06-30",
+  "started_at": "2026-06-30T06:52:47Z",
+  "data_paths": [
+    "data/commentaries/robertson-word-pictures-vol1/matt.json",
+    "data/commentaries/robertson-word-pictures-vol1/mark.json"
+  ],
+  "checksums": {
+    "data/commentaries/robertson-word-pictures-vol1/matt.json": {
+      "before_sha256": "c912a693439154a077c64279a32f82d4b321941a7d2ebe7a6916067f399d3d34",
+      "after_sha256": "8416f51f6f64e339591fe2868eba2bd4c69b732271d9477205ef113bbef0e037"
+    },
+    "data/commentaries/robertson-word-pictures-vol1/mark.json": {
+      "before_sha256": "a67a4b0a17303150d985c3528c6b1e9d3821473713fd99449e441635b0e8bfa7",
+      "after_sha256": "44561e666eb534228e653bb2d77f53be9a46a2d7021651d09bdd40b160f8641e"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/robertson-word-pictures-vol1/matt.json": {
+      "entries_changed": 9,
+      "fields_changed": 71
+    },
+    "data/commentaries/robertson-word-pictures-vol1/mark.json": {
+      "entries_changed": 5,
+      "fields_changed": 43
+    }
+  },
+  "allowed_field_paths": [
+    "/meta/provenance/download_date",
+    "/meta/provenance/processing_date",
+    "/data/*/cross_references"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

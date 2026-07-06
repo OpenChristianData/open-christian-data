@@ -1,0 +1,10 @@
+{
+  "slug": "schaff",
+  "source_type": "local-ocr",
+  "parser_module": "build.parsers.local_schaff_tesseract",
+  "rendering_id": "oss-tesseract/schaff/encyclopedia/1908-1914/v1",
+  "resource_id": "schaff-herzog-encyclopedia",
+  "title": "New Schaff-Herzog Encyclopedia of Religious Knowledge",
+  "license": "public-domain",
+  "notes": "Own-OCR rendering of IA JP2 scans via Tesseract (UB Mannheim build). Source scans fetched from Internet Archive item NewSchaffHerzogEncyclopediaOfReligious. Config hash and PSM/preprocessing locked at B2.2; see catalog.json oss-tesseract-v1 entry. Coverage updated per volume as OCR runs complete."
+}

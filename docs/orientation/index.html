@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Christian Data - Project Orientation</title>
+<style>
+  :root{
+    --bg:#f5f7f2;
+    --ink:#17211d;
+    --muted:#61716a;
+    --line:#d8dfd5;
+    --line-strong:#b7c2b7;
+    --panel:#ffffff;
+    --soft:#edf2e9;
+    --dataset:#2f6b58;
+    --dataset-2:#dff0e8;
+    --nsh:#315f7a;
+    --nsh-2:#dfeef5;
+    --gate:#b08135;
+    --gate-2:#f5ead8;
+    --risk:#9c4f4f;
+    --dark:#18241f;
+    --radius:16px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      linear-gradient(180deg,#f9faf6 0,#f5f7f2 360px),
+      var(--bg);
+    color:var(--ink);
+    font:16px/1.55 "Segoe UI",Inter,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--nsh);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font:12px/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;background:#eef2ed;border:1px solid #d4ddd2;border-radius:6px;padding:1px 5px;color:#21352d}
+  .wrap{max-width:1240px;margin:0 auto;padding:26px 22px 88px}
+  .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--gate);font-weight:800}
+  h1,h2,h3,p{margin-top:0}
+  h1{font-size:58px;line-height:1.02;letter-spacing:-1.8px;margin-bottom:18px}
+  h2{font-size:36px;line-height:1.1;letter-spacing:-.8px;margin-bottom:10px}
+  h3{font-size:22px;line-height:1.15;margin-bottom:8px}
+  p{margin-bottom:10px}
+  .muted{color:var(--muted)}
+  .lede{font-size:20px;line-height:1.45;color:#31413a}
+  .subtitle{font-size:24px;line-height:1.3;font-weight:600;color:var(--dataset);letter-spacing:-.3px;margin:-8px 0 18px;text-align:center}
+  .hero-copy h1{text-align:center}
+
+  .hero{
+    display:block;
+    border:1px solid var(--line);
+    border-radius:24px;
+    background:
+      radial-gradient(780px 400px at 0 0,rgba(47,107,88,.11),transparent 60%),
+      var(--panel);
+    padding:34px;
+  }
+  .hero-copy{display:flex;flex-direction:column;justify-content:center}
+  .hero-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+  .summary-card{border:1px solid var(--line);border-radius:14px;background:#fbfcf8;padding:14px}
+  .summary-card b{display:block;font-size:19px;line-height:1.1;margin-bottom:5px;color:var(--dataset)}
+  .summary-card span{font-size:13px;color:var(--muted)}
+
+  .hero-map{
+    border:1px solid var(--line-strong);
+    border-radius:20px;
+    background:#fbfcf8;
+    padding:18px;
+    max-width:600px;
+    margin:28px auto 0;
+  }
+  .flow-svg{width:100%;height:auto;display:block}
+  .caption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+
+  .nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:18px 0 0;
+  }
+  .nav a{border:1px solid var(--line);border-radius:999px;background:#fff;padding:7px 12px;font-size:13px;color:#26352f}
+
+  .section{
+    margin-top:34px;
+    border:1px solid var(--line);
+    border-radius:24px;
+    background:var(--panel);
+    padding:30px;
+  }
+  .section.alt{background:#fbfcf8}
+  .section.dark{
+    background:linear-gradient(135deg,#18241f,#13242d);
+    color:#f5f7f2;
+    border-color:#263a33;
+  }
+  .section.dark .muted,.section.dark .lede{color:#c6d2ca}
+  .section-head{display:block;margin-bottom:22px;max-width:84ch}
+  .section-head p{color:var(--muted);margin-top:8px}
+  .section.dark .section-head p{color:#c6d2ca}
+
+  .two-lanes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .lane-panel{
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .lane-panel.dataset{border-color:#b6d4c6}
+  .lane-panel.nsh{border-color:#b7d1dd}
+  .lane-title{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+  .lane-title b{font-size:24px}
+  .badge{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;border-radius:999px;padding:5px 9px}
+  .badge.dataset{background:var(--dataset-2);color:var(--dataset)}
+  .badge.nsh{background:var(--nsh-2);color:var(--nsh)}
+  .lane-body{padding:20px}
+  .lane-steps{display:grid;gap:10px}
+  .lane-step{display:grid;grid-template-columns:38px 1fr;gap:12px;border:1px solid var(--line);border-radius:12px;background:#fbfcf8;padding:11px}
+  .lane-step > i{font-style:normal;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--soft);font-weight:900;align-self:start}
+  .lane-panel.dataset .lane-step > i{background:var(--dataset-2);color:var(--dataset)}
+  .lane-panel.nsh .lane-step > i{background:var(--nsh-2);color:var(--nsh)}
+  .lane-step span i{font-style:italic;color:#3a4d44}
+  .lane-step b{display:block}
+  .lane-step span{display:block;color:var(--muted);font-size:13px}
+
+  .diagram-card{
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:#fff;
+    padding:18px;
+    margin-top:18px;
+  }
+  .diagram-title{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:10px}
+  .diagram-title b{font-size:18px}
+  .diagram-title span{font-size:12px;color:var(--muted)}
+
+  .stage-grid{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:12px;
+    margin-top:20px;
+  }
+  .stage{
+    border:1px solid var(--line);
+    border-radius:15px;
+    background:#fff;
+    padding:14px;
+    min-height:170px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .stage.dataset{border-color:#b6d4c6}
+  .stage.nsh{border-color:#b7d1dd}
+  .stage .topline{display:flex;justify-content:space-between;gap:10px;align-items:center}
+  .stage-num{font-weight:900;font-size:13px;color:var(--muted)}
+  .stage-icon{height:62px;border-radius:12px;background:var(--soft);position:relative;overflow:hidden}
+  .stage.dataset .stage-icon{background:var(--dataset-2)}
+  .stage.nsh .stage-icon{background:var(--nsh-2)}
+  .stage p{font-size:13px;color:var(--muted);margin:0}
+
+  .icon-sources::before{content:"";position:absolute;left:16px;right:16px;top:16px;height:8px;border-radius:99px;background:var(--dataset);box-shadow:0 14px 0 #77aa91,0 28px 0 #aecbbb}
+  .icon-config::before{content:"{}";position:absolute;inset:11px 15px;border:1px solid #9ec7b5;border-radius:9px;display:grid;place-items:center;font:800 20px ui-monospace,Consolas;color:var(--dataset)}
+  .icon-parser::before{content:"";position:absolute;left:14px;top:28px;width:30px;height:8px;background:var(--dataset);border-radius:99px;box-shadow:48px 0 0 var(--dataset)}
+  .icon-parser::after{content:"";position:absolute;left:43px;top:22px;border-left:14px solid var(--dataset);border-top:10px solid transparent;border-bottom:10px solid transparent}
+  .icon-schema::before{content:"";position:absolute;left:18px;top:13px;width:70px;height:38px;border:2px solid var(--dataset);border-radius:8px}
+  .icon-schema::after{content:"";position:absolute;left:30px;right:30px;top:25px;height:4px;background:#77aa91;border-radius:99px;box-shadow:0 12px 0 #77aa91}
+  .icon-publish::before{content:"";position:absolute;left:17px;right:17px;top:18px;bottom:18px;border:2px solid var(--dataset);border-radius:8px}
+  .icon-publish::after{content:"HF";position:absolute;inset:0;display:grid;place-items:center;color:var(--dataset);font-weight:900}
+
+  .icon-scans::before{content:"";position:absolute;left:28px;top:10px;width:62px;height:44px;background:#fff;border:1px solid #aac8d6;border-radius:7px;transform:rotate(-5deg);box-shadow:-10px 6px 0 #cbdfea}
+  .icon-account::before{content:"";position:absolute;inset:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:repeating-linear-gradient(90deg,#fff 0 16px,transparent 16px 22px)}
+  .icon-key::before{content:"";position:absolute;left:16px;right:16px;top:18px;height:12px;border-radius:99px;background:var(--nsh)}
+  .icon-key::after{content:"";position:absolute;right:18px;top:13px;width:18px;height:18px;border:5px solid var(--nsh);border-radius:50%}
+  .icon-engines::before{content:"";position:absolute;inset:12px;display:grid;grid-template-columns:1fr 1fr;gap:7px;background:linear-gradient(#fff,#fff) left top/45% 42% no-repeat,linear-gradient(#fff,#fff) right top/45% 42% no-repeat,linear-gradient(#fff,#fff) left bottom/45% 42% no-repeat,linear-gradient(#fff,#fff) right bottom/45% 42% no-repeat}
+  .icon-wct::before{content:"";position:absolute;inset:12px;background:linear-gradient(90deg,var(--nsh) 1px,transparent 1px),linear-gradient(var(--nsh) 1px,transparent 1px);background-size:28px 18px;border:1px solid #9fbfcd;border-radius:8px}
+  .icon-correct::before{content:"L0";position:absolute;left:13px;top:14px;width:42px;height:42px;border-radius:50%;background:#dff0e8;color:var(--dataset);display:grid;place-items:center;font-weight:900}
+  .icon-correct::after{content:"L1";position:absolute;right:13px;top:14px;width:42px;height:42px;border-radius:50%;background:#f5ead8;color:var(--gate);display:grid;place-items:center;font-weight:900}
+  .icon-gate::before{content:"";position:absolute;left:18px;right:18px;top:16px;bottom:16px;border:2px solid var(--nsh);border-radius:10px}
+  .icon-gate::after{content:"PASS";position:absolute;inset:0;display:grid;place-items:center;color:var(--nsh);font-weight:900;font-size:14px}
+
+  .pipeline-section{padding:0;overflow:hidden}
+  .pipeline-layout{display:block;background:#fff}
+  .sticky-panel{border-bottom:1px solid var(--line);background:#f8faf5;padding:28px}
+  .sticky-panel .mini-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .mini-nav a{display:block;border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:#fff;color:#26352f;font-size:13px}
+  .pipeline-flow{position:relative;padding:34px 40px 48px}
+  .pipeline-flow::before{content:"";position:absolute;left:74px;top:48px;bottom:48px;width:4px;background:linear-gradient(var(--nsh),#6d5a8c);border-radius:99px}
+  .phase{
+    position:relative;
+    display:grid;
+    grid-template-columns:92px 1fr;
+    gap:18px;
+    margin-bottom:26px;
+    align-items:start;
+  }
+  .phase:last-child{margin-bottom:0}
+  .phase-no{
+    z-index:1;
+    width:72px;height:72px;border-radius:50%;
+    display:grid;place-items:center;
+    background:#fff;
+    border:3px solid var(--phase);
+    color:var(--phase);
+    font-size:22px;font-weight:900;
+    box-shadow:0 0 0 8px #fff;
+  }
+  .phase-divider{
+    display:flex;align-items:baseline;gap:10px;
+    margin:18px 0 16px 110px;
+    padding-bottom:6px;
+    border-bottom:2px solid color-mix(in srgb,var(--phase) 45%,var(--line));
+  }
+  .phase-divider .pd-kicker{font:800 11px "Segoe UI",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--phase)}
+  .phase-divider .pd-title{font-weight:700;font-size:17px;color:var(--ink)}
+  .phase-card{
+    border:1px solid color-mix(in srgb,var(--phase) 35%,var(--line));
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .phase-main{
+    display:grid;
+    grid-template-columns:minmax(0,.95fr) minmax(300px,.65fr);
+    gap:18px;
+    padding:22px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--phase) 10%,#fff),#fff);
+  }
+  .phase-copy p{color:#40514a}
+  .why{margin-top:14px;padding:11px 13px;border-left:4px solid var(--phase);background:rgba(255,255,255,.7);border-radius:0 10px 10px 0}
+  .why b{display:block;margin-bottom:2px}
+  .phase-visual{min-height:190px;border:1px solid var(--line);border-radius:16px;background:#fbfcf8;position:relative;overflow:hidden;padding:14px}
+  .phase-meta{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:#fbfcf8}
+  .phase-meta div{padding:13px 16px;border-right:1px solid var(--line)}
+  .phase-meta div:last-child{border-right:none}
+  .phase-meta b{display:block;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-size:11px;margin-bottom:4px}
+  .phase-meta span{font-size:13px;color:#27362f}
+
+  .visual-sheet{position:absolute;left:28px;right:32px;top:26px;bottom:26px;background:#fff;border:1px solid #d5ddd2;border-radius:12px;transform:rotate(-2deg)}
+  .visual-sheet::before{content:"";position:absolute;left:28px;right:28px;top:36px;height:7px;background:#83918a;border-radius:99px;box-shadow:0 22px 0 #c1cbc0,0 44px 0 #c1cbc0,0 66px 0 #c1cbc0,0 88px 0 #c1cbc0}
+  .page-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;height:100%}
+  .page-grid span{border-radius:6px;background:#fff;border:1px solid #ccd6cc}
+  .page-grid span:nth-child(9),.page-grid span:nth-child(18){background:#f4d9d9;border-color:#d8a1a1}
+  .page-grid span.non{background:#e7eef4;border-color:#aac3d4}
+  .vlegend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+  .vlegend i{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+  .vlegend i::before{content:"";width:11px;height:11px;border-radius:3px;border:1px solid #ccd6cc;background:#fff;display:inline-block}
+  .vlegend i.miss::before{background:#f4d9d9;border-color:#d8a1a1}
+  .vlegend i.non::before{background:#e7eef4;border-color:#aac3d4}
+  .vcap{font-size:11px;color:var(--muted);text-align:center;margin-top:2px}
+  .vflow{display:flex;flex-direction:column;gap:10px;height:100%}
+  .vote{display:flex;flex-direction:column;gap:8px;justify-content:center;height:100%}
+  .vote-row{display:grid;grid-template-columns:46px 1fr 40px;gap:9px;align-items:center;font-size:12px}
+  .vote-row .vc{font-family:ui-monospace,Consolas,monospace;color:#26352f}
+  .vote-row .vw{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+  .vbar{height:10px;border-radius:99px;background:#eef2ed;overflow:hidden}
+  .vbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#cdd9d0,#b7c2b7)}
+  .vote-row.win .vbar i{background:linear-gradient(90deg,var(--nsh),#9fc3d4)}
+  .vote-row.win .vc{font-weight:800;color:var(--nsh)}
+  .key-stack{display:grid;gap:10px}
+  .key-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+  .key-card b{display:block;font-family:"Segoe UI",Inter,Arial,sans-serif;font-size:13px;color:var(--nsh);margin-bottom:4px}
+  .engine-matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;height:100%}
+  .engine-box{border:1px solid #bdd3df;border-radius:12px;background:#fff;padding:12px;position:relative}
+  .engine-box b{display:block;color:var(--nsh)}
+  .engine-box span{font-size:12px;color:var(--muted)}
+  .engine-box::after{content:"";position:absolute;left:12px;right:12px;bottom:12px;height:5px;border-radius:99px;background:linear-gradient(90deg,var(--nsh),transparent)}
+  .sidecar-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .json-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px;font:12px/1.45 ui-monospace,Consolas,monospace;color:#26352f;overflow-wrap:anywhere}
+  .json-card .dim{color:#74827a}
+  .render-bars{position:absolute;left:24px;right:24px;top:28px;bottom:28px;display:grid;gap:9px}
+  .render-bars span{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--nsh),#cde2eb)}
+  .wct-grid{display:grid;grid-template-columns:1.15fr repeat(4,1fr);gap:6px}
+  .wct-grid span{border:1px solid #d5dde2;border-radius:7px;background:#fff;padding:7px;text-align:center;font-size:12px}
+  .wct-grid span:nth-child(5n+1){text-align:left;color:var(--nsh);font-weight:800}
+  .rings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:center;height:100%}
+  .ring{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;border:11px solid var(--line);font-weight:900;background:#fff}
+  .ring.good{border-color:#9ecdb9;color:var(--dataset)}
+  .ring.warn{border-color:#dfc28c;color:var(--gate)}
+  .ring.risk{border-color:#dda2a2;color:var(--risk)}
+  .publish-lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;height:100%}
+  .publish-lane{border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}
+  .publish-lane b{display:block;color:var(--dataset)}
+  .publish-lane span{font-size:12px;color:var(--muted)}
+
+  .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .principle{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}
+  .principle b{display:block;font-size:17px;margin-bottom:4px}
+  .principle span{display:block;color:var(--muted);font-size:13px}
+
+  .talk-track{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .script-card{border:1px solid #2d4038;border-radius:18px;background:rgba(255,255,255,.06);padding:22px}
+  .script-card ol{margin:12px 0 0;padding-left:22px}
+  .script-card li{margin:8px 0}
+  .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .status{border:1px solid #385247;border-radius:14px;background:rgba(255,255,255,.06);padding:14px}
+  .status b{display:block;color:#fff}
+  .status span{font-size:13px;color:#c6d2ca}
+
+  footer{margin-top:24px;color:var(--muted);font-size:12px}
+
+  /* --- review/annotation layer (review aid; remove before publish) --- */
+  #revBar{position:fixed;right:16px;bottom:16px;z-index:9999;display:flex;gap:8px;align-items:center;font:13px "Segoe UI",Arial,sans-serif}
+  #revBar button{border:1px solid var(--line-strong);background:#fff;border-radius:999px;padding:8px 13px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.14);color:#26352f}
+  #revBar button.on{background:var(--nsh);color:#fff;border-color:var(--nsh)}
+  body.note-mode .wrap *{cursor:crosshair}
+  body.note-mode .wrap *:hover{outline:1px dashed rgba(43,88,113,.55);outline-offset:2px}
+  body.edit-mode [data-edit]{cursor:text;outline:1px dashed transparent;outline-offset:2px}
+  body.edit-mode [data-edit]:hover{outline-color:var(--gate);background:rgba(176,129,53,.07)}
+  .has-note{outline:2px solid var(--nsh) !important;outline-offset:3px}
+  [data-edit].has-edit{outline:2px solid var(--gate) !important;outline-offset:2px}
+  .rev-pop{position:absolute;z-index:10000;background:#fff;border:1px solid var(--line-strong);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.2);padding:12px;width:320px}
+  .rev-pop .ph{font:11px "Segoe UI",Arial,sans-serif;color:var(--muted);margin-bottom:6px}
+  .rev-pop textarea{width:100%;height:92px;border:1px solid var(--line);border-radius:8px;padding:8px;font:13px "Segoe UI",Arial,sans-serif;resize:vertical;box-sizing:border-box}
+  .rev-pop .row{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+  .rev-pop button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:13px}
+  .rev-pop button.save{background:var(--nsh);color:#fff;border-color:var(--nsh)}
+  #revOut{position:fixed;right:16px;bottom:62px;z-index:9999;width:420px;max-height:60vh;overflow:auto;background:#fff;border:1px solid var(--line-strong);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.22);padding:12px;display:none}
+  #revOut textarea{width:100%;height:240px;border:1px solid var(--line);border-radius:8px;padding:8px;font:12px ui-monospace,Consolas,monospace;box-sizing:border-box}
+
+  @media(max-width:1080px){
+    .hero,.section-head,.phase-main,.talk-track{grid-template-columns:1fr}
+    .hero{min-height:auto}
+    .stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .principles,.status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pipeline-flow::before{left:50px}
+    .phase{grid-template-columns:58px 1fr;gap:12px}
+    .phase-no{width:50px;height:50px;font-size:17px;box-shadow:0 0 0 6px #fff}
+    .phase-divider{margin-left:70px}
+  }
+  @media(max-width:760px){
+    .wrap{padding:14px}
+    .hero,.section{padding:20px;border-radius:18px}
+    h1{font-size:42px}
+    h2{font-size:29px}
+    .hero-summary,.two-lanes,.stage-grid,.principles,.status-grid{grid-template-columns:1fr}
+    .hero-map{padding:8px;overflow:hidden}
+    .diagram-card{overflow:hidden}
+    .pipeline-flow{padding:22px 14px 30px}
+    .phase-main{padding:16px}
+    .phase-meta{grid-template-columns:1fr}
+    .phase-meta div{border-right:none;border-bottom:1px solid var(--line)}
+    .phase-meta div:last-child{border-bottom:none}
+    .sidecar-pair,.engine-matrix,.rings,.publish-lanes{grid-template-columns:1fr}
+    .wct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .wct-grid span{font-size:11px;padding:5px;overflow-wrap:anywhere}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <h1>Open Christian Data</h1>
+    <p class="subtitle">Open Source Public Domain Christian Texts for AI</p>
+    <p class="lede">AI systems are fast becoming how people find, read and study religious texts &mdash; but a model can only draw on what it has been given as clean, open data. The foundational works of the Christian tradition are almost all in the public domain, yet they survive mostly as scanned page images and uneven digital editions, so today's tools quote them loosely, get them wrong, or skip them altogether. Open Christian Data exists to put that heritage in front of those systems accurately and openly &mdash; so that AI is shaped for good by the real texts instead of by guesswork, so that someone searching for Christian teaching, history or Scripture is met with accurate sources rather than approximations, and so that other Christians who want to build on this work begin from a dependable dataset instead of assembling one from scratch.</p>
+    <p class="muted">That purpose drives three deliberate choices. The texts must be <b>public domain</b> (their authors died before 1928), so no licence or paywall can ever restrict who uses them or how. The output must be structured <b>JSON</b> (a standard, machine-readable data format) rather than PDFs or web pages, so software can use it at scale. And every record must carry its source, so an AI &mdash; or a researcher &mdash; can trace a passage back and rely on it instead of guessing. Two data pipelines build the dataset, because the sources arrive in two states: most already contain extractable text and pass through the <b>Digital Text Extraction Pipeline</b>; one major source survives only as page scans and must be rebuilt by an <b>OCR pipeline</b> (OCR, optical character recognition: software that reads text out of an image) &mdash; the <i>New Schaff-Herzog Encyclopedia of Religious Knowledge</i>, abbreviated <b>NSH</b>.</p>
+    <div class="hero-summary">
+      <div class="summary-card"><b>Complete works</b><span>Whole Bibles, a full encyclopedia, sermons and treatises &mdash; not snippets or scattered excerpts</span></div>
+      <div class="summary-card"><b>CC0 licensed</b><span>Released into the public domain: anyone can use it for anything &mdash; commercial products, AI training, research &mdash; with no permission, fees, or attribution required</span></div>
+      <div class="summary-card"><b>Full traceability</b><span>Every entry records the exact source it came from, so any passage can be checked against the original</span></div>
+    </div>
+    <nav class="nav" aria-label="Presentation sections">
+      <a href="#whole-map">Whole project map</a>
+      <a href="#dataset">Part 1: digital-text extraction</a>
+      <a href="#nsh">Part 2: the NSH OCR pipeline</a>
+      <a href="#spine">The TEI spine</a>
+      <a href="#where">Current state: where to look</a>
+    </nav>
+  </div>
+
+  <div class="hero-map" id="whole-map">
+    <svg class="flow-svg" viewBox="0 0 520 664" role="img" aria-label="System flow, top to bottom: two data pipelines, the Digital Text Extraction Pipeline and the NSH OCR pipeline, both converge on schema validation, then on data and publication to HuggingFace">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#4d665c" stroke-width="1.8" stroke-linecap="round"/>
+        </marker>
+        <style>
+          .node{fill:#fff;stroke:#c8d2c8;stroke-width:1.4}
+          .nodeD{fill:#dff0e8;stroke:#78ad94}
+          .nodeN{fill:#dfeef5;stroke:#82b5ca}
+          .nodeG{fill:#f5ead8;stroke:#c49d58}
+          .h{font:700 16px Segoe UI,Arial,sans-serif;fill:#17211d}
+          .s{font:12px Segoe UI,Arial,sans-serif;fill:#61716a}
+          .t{font:800 11px Segoe UI,Arial,sans-serif;letter-spacing:.12em;fill:#61716a}
+          .lane{font:800 11px Segoe UI,Arial,sans-serif;letter-spacing:.06em}
+          .laneD{fill:#2f6b58}.laneN{fill:#2b5871}
+          .line{stroke:#4d665c;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+        </style>
+      </defs>
+
+      <text x="24" y="26" class="t">EVERYTHING FLOWS TOP TO BOTTOM</text>
+
+      <text x="24" y="68" class="lane laneD">PART 1 &middot; DIGITAL TEXT EXTRACTION</text>
+      <rect class="node nodeD" x="24" y="80" width="212" height="68" rx="14"/>
+      <text x="42" y="112" class="h">Digital sources</text>
+      <text x="42" y="133" class="s">CCEL, SWORD, Gutenberg</text>
+
+      <text x="284" y="68" class="lane laneN">PART 2 &middot; OCR PIPELINE</text>
+      <rect class="node nodeN" x="284" y="80" width="212" height="68" rx="14"/>
+      <text x="302" y="112" class="h">Scanned NSH</text>
+      <text x="302" y="133" class="s">13 volumes of images</text>
+
+      <rect class="node nodeD" x="24" y="190" width="212" height="68" rx="14"/>
+      <text x="42" y="222" class="h">Parsers</text>
+      <text x="42" y="243" class="s">one per source family</text>
+
+      <rect class="node nodeN" x="284" y="190" width="212" height="68" rx="14"/>
+      <text x="302" y="222" class="h">OCR pipeline</text>
+      <text x="302" y="243" class="s">rebuilds the text</text>
+
+      <rect class="node nodeG" x="140" y="320" width="240" height="68" rx="14"/>
+      <text x="160" y="352" class="h">Schema validation</text>
+      <text x="160" y="373" class="s">every record checked</text>
+
+      <rect class="node" x="170" y="440" width="180" height="68" rx="14"/>
+      <text x="190" y="472" class="h">data/ JSON</text>
+      <text x="190" y="493" class="s">canonical output</text>
+
+      <rect class="node" x="170" y="560" width="180" height="68" rx="14"/>
+      <text x="190" y="592" class="h">HuggingFace</text>
+      <text x="190" y="613" class="s">published dataset</text>
+
+      <path class="line" d="M130 148V190"/>
+      <path class="line" d="M390 148V190"/>
+      <path class="line" d="M130 258 C 130 296 196 304 232 320"/>
+      <path class="line" d="M390 258 C 390 296 324 304 288 320"/>
+      <path class="line" d="M260 388V440"/>
+      <path class="line" d="M260 508V560"/>
+    </svg>
+    <div class="caption">Both data pipelines run top to bottom and converge on the same validation step: nothing reaches <code>data/</code> or HuggingFace until it passes the schema checks.</div>
+  </div>
+</header>
+
+<section class="section alt">
+  <div class="section-head">
+    <div>
+      <div class="kicker">High-level split</div>
+      <h2>Two data pipelines, one dataset</h2>
+    </div>
+    <p>The two lines exist because the sources arrive in two states. Where a usable digital text already exists, the work is ordinary data engineering: extract, structure, check. Where only page scans survive, the text itself has to be rebuilt from images before any of that can begin &mdash; which is most of the difficulty, and most of this document.</p>
+  </div>
+
+  <div class="two-lanes">
+    <article class="lane-panel dataset">
+      <div class="lane-title"><b>Part 1: the Digital Text Extraction Pipeline</b><span class="badge dataset">text already exists</span></div>
+      <div class="lane-body">
+        <p class="muted">For sources whose text can already be pulled from a digital file. Four steps, repeated for each new source.</p>
+        <div class="lane-steps">
+          <div class="lane-step"><i>1</i><div><b>Acquire a public-domain source</b><span>Record where it came from, its licence and its format &mdash; its <i>provenance</i>.</span></div></div>
+          <div class="lane-step"><i>2</i><div><b>Parse into the shared shape</b><span>A small Python program (a <i>parser</i>, one per source family) converts the source into JSON records.</span></div></div>
+          <div class="lane-step"><i>3</i><div><b>Validate against the schema</b><span>The <i>schema</i> &mdash; the rules for a valid record &mdash; rejects anything malformed before it counts as data.</span></div></div>
+          <div class="lane-step"><i>4</i><div><b>Publish</b><span>Clean JSON lands in <code>data/</code> and is exported to HuggingFace for reuse.</span></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="lane-panel nsh">
+      <div class="lane-title"><b>Part 2: the NSH OCR pipeline</b><span class="badge nsh">text must be rebuilt</span></div>
+      <div class="lane-body">
+        <p class="muted">For the scanned <i>New Schaff-Herzog</i> encyclopedia, where the text must be reconstructed from images first. More steps, because no single machine read can be trusted on its own.</p>
+        <div class="lane-steps">
+          <div class="lane-step"><i>1</i><div><b>Account for every page</b><span>Work out which scanned pages exist, which are real body pages, and which are missing, then give each a stable key.</span></div></div>
+          <div class="lane-step"><i>2</i><div><b>Read with several engines</b><span>Several OCR programs each read every page; one engine's reading of one page is a <i>page transcription</i>.</span></div></div>
+          <div class="lane-step"><i>3</i><div><b>Standardise each reading</b><span>Rewrite every engine's transcription into one common form so they can be compared fairly.</span></div></div>
+          <div class="lane-step"><i>4</i><div><b>Line them up and decide</b><span>A <i>word alignment table</i> sets the engines side by side; a <i>weighted vote</i> then picks the reading for each word, giving a <i>reconciled page</i>.</span></div></div>
+          <div class="lane-step"><i>5</i><div><b>Score, draft, review</b><span>A scorecard learns which engine to trust where, an AI drafts the hard cases, and a person ratifies them.</span></div></div>
+          <div class="lane-step"><i>6</i><div><b>Set the type and publish</b><span>Mark each word's role (body, heading, footnote), then gate what is safe to ship.</span></div></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="dataset">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Part 1</div>
+      <h2>The Digital Text Extraction Pipeline</h2>
+      <p class="lede">Most of the dataset's sources already hold usable text inside a digital file &mdash; a CCEL web page, a SWORD Bible module, a Project Gutenberg book. This pipeline exists to pull that text out and reshape every source, however differently it was stored, into one consistent structure &mdash; so that anything built on the dataset can treat all of it the same way.</p>
+    </div>
+    <p>The hard part here is not <i>reading</i> the text &mdash; it is already machine-readable &mdash; but taming the differences between sources. Every archive uses its own format, its own conventions, its own quirks. The five steps below turn that variety into a single predictable shape, and prove it is sound before anything is published.</p>
+  </div>
+
+  <div class="diagram-card">
+    <div class="diagram-title"><b>The Digital Text Extraction Pipeline, end to end</b><span>Source -> parser -> schema -> data -> publish</span></div>
+    <svg class="flow-svg" viewBox="0 0 1060 250" role="img" aria-label="Digital Text Extraction Pipeline flow chart">
+      <defs>
+        <marker id="arrowD" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#2f6b58" stroke-width="1.8" stroke-linecap="round"/>
+        </marker>
+        <style>
+          .dnode{fill:#fff;stroke:#b6d4c6;stroke-width:1.5}
+          .dnodeHot{fill:#dff0e8;stroke:#2f6b58;stroke-width:1.8}
+          .dtext{font:700 17px Segoe UI,Arial,sans-serif;fill:#17211d}
+          .dsmall{font:13px Segoe UI,Arial,sans-serif;fill:#61716a}
+          .dline{stroke:#2f6b58;stroke-width:2.2;fill:none;marker-end:url(#arrowD)}
+        </style>
+      </defs>
+      <rect class="dnode" x="28" y="76" width="162" height="84" rx="15"/>
+      <text class="dtext" x="50" y="110">Sources</text><text class="dsmall" x="50" y="134">archives, modules</text>
+      <path class="dline" d="M190 118H248"/>
+      <rect class="dnode" x="248" y="76" width="162" height="84" rx="15"/>
+      <text class="dtext" x="270" y="110">Config</text><text class="dsmall" x="270" y="134">licence, provenance</text>
+      <path class="dline" d="M410 118H468"/>
+      <rect class="dnodeHot" x="468" y="76" width="162" height="84" rx="15"/>
+      <text class="dtext" x="490" y="110">Parser</text><text class="dsmall" x="490" y="134">Python transform</text>
+      <path class="dline" d="M630 118H688"/>
+      <rect class="dnodeHot" x="688" y="76" width="162" height="84" rx="15"/>
+      <text class="dtext" x="710" y="110">Validate</text><text class="dsmall" x="710" y="134">schema + tests</text>
+      <path class="dline" d="M850 118H908"/>
+      <rect class="dnode" x="908" y="76" width="126" height="84" rx="15"/>
+      <text class="dtext" x="930" y="110">Publish</text><text class="dsmall" x="930" y="134">data/ + HF</text>
+    </svg>
+  </div>
+
+  <div class="p1-cards" style="display:flex;flex-direction:column;gap:16px;margin-top:22px">
+
+    <div class="phase-card" style="--phase:var(--dataset)">
+      <div class="phase-main" style="grid-template-columns:1fr">
+        <div class="phase-copy">
+          <h3>1 &middot; Sources &mdash; find a text worth including</h3>
+          <p>A <b>source</b> is one public-domain collection the project draws from: the Christian Classics Ethereal Library (<b>CCEL</b>), the <b>SWORD</b> Bible-software project, Project Gutenberg, Standard Ebooks and other archives. Each is chosen for two reasons at once &mdash; its texts are old enough to be free of copyright (their authors died before 1928), and they already exist as digital files rather than page images, so the words can be read straight out of the file.</p>
+          <div class="why"><b>Why it matters</b> If a work is still under copyright it is not the project's to give away; if it survives only as scanned images it cannot be read from a file, and must go through the OCR pipeline instead. Both tests have to pass before a source belongs here.</div>
+        </div>
+      </div>
+      <div class="phase-meta"><div><b>Input</b><span>A public-domain digital collection</span></div><div><b>Output</b><span>Raw source files, ready to process</span></div><div><b>Risk controlled</b><span>Copyrighted or image-only text slipping in</span></div></div>
+    </div>
+
+    <div class="phase-card" style="--phase:var(--dataset)">
+      <div class="phase-main" style="grid-template-columns:1fr">
+        <div class="phase-copy">
+          <h3>2 &middot; Configs &mdash; record where every text came from</h3>
+          <p>Before a single word is touched, each source gets a <b>config</b> &mdash; a short record that pins down where the text came from, the exact licence it carries, its original URL and its file format. Together these are the source's <b>provenance</b>: the paper trail that lets any passage in the finished dataset be traced back to the precise copy it was taken from.</p>
+          <div class="why"><b>Why it matters</b> Provenance is what separates a dependable dataset from an anonymous pile of text. Without it a reader has no way to check a passage against the original, and the project's promise of full traceability quietly breaks.</div>
+        </div>
+      </div>
+      <div class="phase-meta"><div><b>Input</b><span>An acquired source</span></div><div><b>Output</b><span>A provenance + licence record</span></div><div><b>Risk controlled</b><span>Text with no verifiable origin</span></div></div>
+    </div>
+
+    <div class="phase-card" style="--phase:var(--dataset)">
+      <div class="phase-main" style="grid-template-columns:1fr">
+        <div class="phase-copy">
+          <h3>3 &middot; Parsers &mdash; convert each source into the shared shape</h3>
+          <p>A <b>parser</b> is a small program (written in Python) that reads one source's own particular format and rewrites its text into the dataset's shared shape. There is <i>one parser per source family</i>, on purpose: every archive has its own oddities, and keeping a source's quirks sealed inside its own parser means a strange edge case in one collection can never corrupt another.</p>
+          <div class="why"><b>Why it matters</b> A single giant parser trying to handle every source at once would grow tangled and fragile. Isolating each source keeps every quirk contained, and keeps each parser small enough to test thoroughly on its own.</div>
+        </div>
+      </div>
+      <div class="phase-meta"><div><b>Input</b><span>Raw source files</span></div><div><b>Output</b><span>JSON records in the shared shape</span></div><div><b>Risk controlled</b><span>One source's quirks leaking into the rest</span></div></div>
+    </div>
+
+    <div class="phase-card" style="--phase:var(--dataset)">
+      <div class="phase-main" style="grid-template-columns:1fr">
+        <div class="phase-copy">
+          <h3>4 &middot; Schemas &mdash; hold every record to one contract</h3>
+          <p>A <b>schema</b> is a written contract for what a valid record must look like: which fields have to be present, what type each one holds, and the exact set of allowed values for things like tradition or work kind. Every record a parser produces is checked against it, and a record that does not fit is <i>rejected</i>, never quietly patched to fit.</p>
+          <div class="why"><b>Why it matters</b> The schema is what makes the whole dataset predictable. Because every record obeys the same contract, software built on the data can rely on its shape without special-casing each source one by one.</div>
+        </div>
+      </div>
+      <div class="phase-meta"><div><b>Input</b><span>Parser output</span></div><div><b>Output</b><span>Validated records (or a clear rejection)</span></div><div><b>Risk controlled</b><span>Malformed or inconsistent records reaching users</span></div></div>
+    </div>
+
+    <div class="phase-card" style="--phase:var(--dataset)">
+      <div class="phase-main" style="grid-template-columns:1fr">
+        <div class="phase-copy">
+          <h3>5 &middot; Publication &mdash; ship only what has passed every check</h3>
+          <p>Records that pass validation are written to the project's canonical store (the <code>data/</code> folder) and can then be published to <b>HuggingFace</b> &mdash; the public hub where open datasets are hosted and downloaded. Publication is deliberately the <i>last</i> step and is gated on validation: nothing reaches the public copy until it has passed every check above.</p>
+          <div class="why"><b>Why it matters</b> Publishing is a one-way door &mdash; once a dataset has been downloaded, a mistake in it cannot be recalled. Making validation the gate keeps errors from ever leaving the workshop in the first place.</div>
+        </div>
+      </div>
+      <div class="phase-meta"><div><b>Input</b><span>Validated records</span></div><div><b>Output</b><span>The public dataset on HuggingFace</span></div><div><b>Risk controlled</b><span>Shipping unchecked data that cannot be recalled</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="nsh">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Part 2</div>
+      <h2>The NSH OCR pipeline</h2>
+      <p class="lede">One source cannot take the easy path. The <i>New Schaff-Herzog Encyclopedia of Religious Knowledge</i> &mdash; a complete thirteen-volume reference work spanning the whole sweep of Christian history, theology and biography &mdash; survives only as photographs of its printed pages. Its text has to be rebuilt from those images before it can join the dataset.</p>
+    </div>
+  </div>
+
+  <p>The encyclopedia is worth this trouble precisely because it is so complete. Published between 1908 and 1914 and long in the public domain, it is one of the most comprehensive Christian reference works ever assembled &mdash; an ideal backbone for a dataset meant to answer real questions accurately. But every digital copy that exists today is raw, uncorrected OCR, riddled with the errors that dense 1908 print, two-column layouts, tiny footnotes and passages of Greek and Hebrew all produce. Feed that straight into an AI and it quotes the encyclopedia fluently and wrongly. Rebuilding it properly is the problem this pipeline exists to solve.</p>
+
+  <p>The danger it guards against is a quiet one. OCR that reads smoothly can still be wrong, and confident-but-wrong text is worse than no text at all &mdash; a reader has no way to tell it is mistaken. So the pipeline never trusts a single machine read. Instead it treats OCR as a chain: each page is read by several independent engines, the pipeline records exactly where they disagree, decides each word by a weighted vote, and routes anything still uncertain to a person. The ten stages below run top to bottom, and the same evidence is carried forward at every step &mdash; so any final reading can always be traced back to what each engine actually saw.</p>
+
+</section>
+
+<section class="section pipeline-section">
+  <div class="pipeline-layout">
+    <aside class="sticky-panel">
+      <div class="kicker">NSH stage by stage</div>
+      <h2>Each stage, explained in plain language</h2>
+      <p class="muted">Read top to bottom: this is the whole pipeline, one card per stage. Each card covers what the stage is for, how it works, and the specific error it prevents. Every term is defined where it first appears.</p>
+      <nav class="mini-nav" aria-label="Pipeline stages">
+        <a href="#p1">1. Ingest</a>
+        <a href="#p2">2. Transcription</a>
+        <a href="#p3">3. Standardise</a>
+        <a href="#p4">4. Alignment</a>
+        <a href="#p5">5. Reconciliation</a>
+        <a href="#p6">6. Scoring</a>
+        <a href="#p7">7. LLM review</a>
+        <a href="#p8">8. Typography</a>
+        <a href="#p9">9. Human review</a>
+        <a href="#p10">10. Publication</a>
+      </nav>
+    </aside>
+
+    <div class="pipeline-flow">
+      <div class="phase-divider" style="--phase:var(--nsh)"><span class="pd-kicker">Phase 1</span><span class="pd-title">Get the pages right</span></div>
+      <article class="phase" id="p1" style="--phase:var(--nsh)">
+        <div class="phase-no">01</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Ingest &mdash; know the book before reading it</h3>
+              <p>Before any word is read, the pipeline has to know exactly what it is looking at. The raw material is a set of scanned page images from the Internet Archive, each volume shipped with a <i>manifest</i> &mdash; a list of what the scan is meant to contain. But a scan is rarely tidy: some pages are front matter or blank, some are full-page photographic plates, some carry printed page numbers that don't match the order the files arrive in, and some are missing outright.</p>
+              <p>So this stage takes a complete inventory. It accounts for every page, marks which ones carry real article text (the <i>body</i> pages) and which are front matter, plate, blank or absent, and gives each page a <b>stable key</b> &mdash; a permanent label that survives file renames, so renaming a file can never silently shuffle the data underneath it. Two keys do the work: <code>canonical_leaf_id</code> names one physical scanned page (a <i>leaf</i>), and <code>edition_page_key</code> names a printed page of the encyclopedia even when the same page appears in several different scanned copies. What it hands forward is a complete, accounted, fully keyed set of pages.</p>
+              <div class="why"><b>Why it matters</b> Run OCR on an incomplete or mis-ordered set of pages and the result looks confident but is quietly wrong &mdash; the hardest kind of error to notice downstream.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="page-grid" style="height:calc(100% - 22px)"><span class="non"></span><span class="non"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="vlegend" style="position:absolute;left:14px;right:14px;bottom:12px"><i>body page</i><i class="non">front matter / plate</i><i class="miss">missing</i></div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Internet Archive scans + manifests</span></div><div><b>Output</b><span>A complete, accounted, keyed page set</span></div><div><b>Risk controlled</b><span>Missing pages silently read as text</span></div></div>
+        </div>
+      </article>
+
+      <div class="phase-divider" style="--phase:var(--dataset)"><span class="pd-kicker">Phase 2</span><span class="pd-title">Read every page</span></div>
+      <article class="phase" id="p2" style="--phase:var(--dataset)">
+        <div class="phase-no">02</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Transcription &mdash; read every page, several ways</h3>
+              <p>With the pages accounted for, the pipeline reads them &mdash; but it deliberately gathers more than one opinion. Four independent OCR engines (ABBYY, Tesseract, Kraken and Azure) each read every keyed page on their own, because no single engine is reliable on small, dense 1908 print and each carries its own blind spots.</p>
+              <p>One engine's reading of one page is a <b>page transcription</b>: the list of words it believes it found, each with a position on the page and the engine's own confidence in it. Because every engine reads every page, one page yields several transcriptions &mdash; and the exact spots where they disagree are precisely the spots worth checking later.</p>
+              <div class="why"><b>Why it matters</b> No single engine is reliable on small, dense 1908 print. Disagreement between engines is the raw material the rest of the pipeline turns into trust.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="engine-matrix" style="height:calc(100% - 20px)">
+                <div class="engine-box"><b>ABBYY</b><span>reads &ldquo;rn&rdquo;</span></div>
+                <div class="engine-box"><b>Tesseract</b><span>reads &ldquo;m&rdquo;</span></div>
+                <div class="engine-box"><b>Kraken</b><span>reads &ldquo;m&rdquo;</span></div>
+                <div class="engine-box"><b>Azure</b><span>reads &ldquo;m&rdquo;</span></div>
+              </div>
+              <div class="vcap" style="position:absolute;left:14px;right:14px;bottom:10px">the same word on page 234, four independent reads</div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Keyed page images</span></div><div><b>Output</b><span>One page transcription per engine</span></div><div><b>Risk controlled</b><span>Trusting one engine's blind spots</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p3" style="--phase:var(--dataset)">
+        <div class="phase-no">03</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Normalisation &amp; Standardisation &mdash; make the readings comparable</h3>
+              <p>Now the pipeline has several readings of each page, but it cannot compare them yet &mdash; because the engines differ not only on <i>words</i> but on <i>format</i>. One writes the ligature &ldquo;&#xFB01;&rdquo; as a single character, another as two letters; spacing and punctuation vary. Compared blindly, those harmless differences would look like real disagreements.</p>
+              <p>This stage rewrites each page transcription into one common, tidy form &mdash; a <b>standardised transcription</b>. Characters are converted to canonical shapes and the structure is made uniform, while <i>protected</i> characters (Greek, Hebrew) are deliberately left untouched so nothing meaningful is lost. It is still one transcription per engine; nothing has been compared yet. The point is only to make the readings truly comparable before any judgement is made.</p>
+              <div class="why"><b>Why it matters</b> Engines can only be compared once they speak the same form. Skip it and harmless formatting differences masquerade as real disagreements.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="vflow" style="justify-content:center">
+                <div class="json-card"><span class="dim">raw &middot; one engine</span><br>&#xFB01;re&nbsp;&nbsp;&nbsp;,&nbsp;,&nbsp;&nbsp;&nbsp;&beta;&#943;&omicron;&sigmaf;</div>
+                <div class="vcap">&darr;&nbsp; unify characters &amp; spacing, keep Greek</div>
+                <div class="json-card"><span class="dim">standardised</span><br>fire&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;&beta;&#943;&omicron;&sigmaf;</div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Page transcriptions</span></div><div><b>Output</b><span>A standardised transcription per engine</span></div><div><b>Risk controlled</b><span>Format quirks hiding real differences</span></div></div>
+        </div>
+      </article>
+
+      <div class="phase-divider" style="--phase:var(--gate)"><span class="pd-kicker">Phase 3</span><span class="pd-title">Compare &amp; decide</span></div>
+      <article class="phase" id="p4" style="--phase:var(--gate)">
+        <div class="phase-no">04</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Alignment &mdash; line the engines up, word by word</h3>
+              <p>Only now are the engines actually compared. Alignment builds the <b>word alignment table</b>: it lines every engine's standardised transcription up side by side, word for word. Each row is one <b>position</b> &mdash; a single word-slot on the page &mdash; each column is an engine, and each cell holds that engine's <b>candidate</b>, its one best guess for the word in that slot.</p>
+              <p>Crucially, this stage only <i>records</i> who said what. It makes no decision about which engine is right &mdash; it simply freezes the evidence into a table. That frozen table is what every later step reasons over, and what any final reading can be traced back to.</p>
+              <div class="why"><b>Why it matters</b> Freezing the evidence before any judgement means every later decision can be checked back against exactly what each engine saw, slot by slot.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="wct-grid">
+                <span>position</span><span>ABBYY</span><span>Tess</span><span>Kraken</span><span>agree?</span>
+                <span>p234:112</span><span>form</span><span>from</span><span>form</span><span>2/3</span>
+                <span>p234:113</span><span>grace</span><span>grace</span><span>grace</span><span>3/3</span>
+                <span>p234:114</span><span>rn</span><span>m</span><span>m</span><span>split</span>
+              </div>
+              <div class="vcap" style="margin-top:9px">rows are word-slots, columns are engines &mdash; nothing is decided here</div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Standardised transcriptions</span></div><div><b>Output</b><span>The word alignment table</span></div><div><b>Risk controlled</b><span>Disagreement hidden instead of recorded</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p5" style="--phase:var(--gate)">
+        <div class="phase-no">05</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Reconciliation &mdash; decide each word</h3>
+              <p>This is the judging step. At every position the reconciler holds a <b>weighted vote</b>: each engine's candidate counts, but scaled by how reliable that engine has proven to be for this kind of text &mdash; its score from stage 6. The candidate with the most weighted support wins and becomes the reading on the <b>reconciled page</b>.</p>
+              <p>When independent engines agree and an outside check confirms it, that agreement is a <b>consensus</b> &mdash; the most trusted outcome. When every engine is wrong, the reconciler may carefully <b>compose</b> a new reading, but a composed reading is always marked as composed, never disguised as something an engine actually saw.</p>
+              <div class="why"><b>Why it matters</b> The reconciled page is the machine's best answer, not the final text &mdash; calling it &ldquo;corrected&rdquo; would overstate it. Review and publication still follow.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="vote">
+                <div class="vcap" style="text-align:left;margin:0">position p234:114 &mdash; weighted vote</div>
+                <div class="vote-row"><span class="vc">&ldquo;rn&rdquo;</span><span class="vbar"><i style="width:34%"></i></span><span class="vw">0.62</span></div>
+                <div class="vote-row win"><span class="vc">&ldquo;m&rdquo;</span><span class="vbar"><i style="width:100%"></i></span><span class="vw">1.82</span></div>
+                <div class="vcap" style="text-align:left;margin:0">winner &ldquo;m&rdquo; &mdash; two reliable engines (0.94 + 0.88) outweigh one (0.62)</div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Word alignment table + reliability scores</span></div><div><b>Output</b><span>The reconciled page</span></div><div><b>Risk controlled</b><span>A machine guess treated as fact</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p6" style="--phase:var(--gate)">
+        <div class="phase-no">06</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Engine Reliability Scoring &mdash; learn who to trust, and where</h3>
+              <p>Stage 5's vote is only as good as the weights behind it &mdash; and this stage is where those weights come from. It keeps a running scorecard of how accurate each engine has proven to be, broken down by <i>kind of content</i>: an engine can be excellent on plain body text yet weak on Greek footnotes, so a separate score is kept for each. That number is the <b>engine reliability score</b>, and it is exactly the weight the vote uses.</p>
+              <p>The rule that keeps the scorecard honest: a result raises a score only when there is independent proof it was right &mdash; a confirmed consensus, or a human decision from stage 9. Engines merely agreeing with one another never counts, because agreement is not the same thing as being correct.</p>
+              <div class="why"><b>Why it matters</b> Trust has to be earned, not self-declared. An engine's own confidence is no use &mdash; engines are often confidently wrong &mdash; so only proven results move the score.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="engine-matrix" style="height:calc(100% - 20px)">
+                <div class="engine-box"><b>ABBYY &middot; body</b><span>score 0.96</span></div>
+                <div class="engine-box"><b>ABBYY &middot; Greek</b><span>score 0.62</span></div>
+                <div class="engine-box"><b>Tesseract &middot; body</b><span>score 0.94</span></div>
+                <div class="engine-box"><b>Kraken &middot; Greek</b><span>score 0.88</span></div>
+              </div>
+              <div class="vcap" style="position:absolute;left:14px;right:14px;bottom:10px">one score per engine, per content type &mdash; raised only by proven-right results</div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Proven-right decisions (stages 5 &amp; 9)</span></div><div><b>Output</b><span>Reliability scores (the weight matrix)</span></div><div><b>Risk controlled</b><span>Engines agreeing into false confidence</span></div></div>
+        </div>
+      </article>
+
+      <div class="phase-divider" style="--phase:#6d5a8c"><span class="pd-kicker">Phase 4</span><span class="pd-title">Check &amp; publish</span></div>
+      <article class="phase" id="p7" style="--phase:#6d5a8c">
+        <div class="phase-no">07</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>LLM Review &mdash; an AI assistant for the hard cases</h3>
+              <p>By this point a pile of genuinely hard cases remains &mdash; words no vote could settle confidently. One person starting cold on every one of them would be impossibly slow, so a large language model (an <b>LLM</b> &mdash; the kind of AI behind chat assistants) pre-digests the queue first.</p>
+              <p>In fast batches it drafts an opinion on each hard case: which candidate is probably right, and why. It may even propose a reading no engine produced. But two limits are absolute: its opinion alone is never published, and it never raises an engine's reliability score on its own. It exists to give the human reviewer a running start, never to be the authority.</p>
+              <div class="why"><b>Why it matters</b> The AI multiplies one reviewer's reach without ever becoming the final word (the decision is recorded in ADR-0018).</div>
+            </div>
+            <div class="phase-visual">
+              <div class="key-stack">
+                <div class="key-card"><b>Hard case</b>p234:114 &mdash; &ldquo;rn&rdquo; vs &ldquo;m&rdquo;</div>
+                <div class="key-card"><b>AI draft</b>likely &ldquo;m&rdquo; &mdash; surrounding words are prose</div>
+                <div class="key-card"><b>Status</b>proposed &mdash; awaits a human</div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>The flagged, uncertain cases</span></div><div><b>Output</b><span>Drafted opinions for the reviewer</span></div><div><b>Risk controlled</b><span>An AI guess slipping in as fact</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p8" style="--phase:#6d5a8c">
+        <div class="phase-no">08</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Typography &mdash; mark the role of each word</h3>
+              <p>Getting the right <i>word</i> is only half the job; the other half is knowing what that word <i>is</i>. The same line reads completely differently depending on whether it is body text, a heading, or a footnote &mdash; and the encyclopedia's dense, multi-part entries are full of all three.</p>
+              <p>This stage assigns that role to each word, judged from how large the engines measured it and where it sits on the page. It runs <i>before</i> human review on purpose, so that when the reviewer signs off they ratify the layout and the words together, in a single pass.</p>
+              <div class="why"><b>Why it matters</b> Mistaking a footnote for body text, or a heading for a sentence, changes how the page reads even when every individual word is correct.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="key-stack">
+                <div class="key-card"><b>Heading</b>ABELARD, PETER</div>
+                <div class="key-card"><b>Body</b>French scholastic philosopher and theologian&hellip;</div>
+                <div class="key-card"><b>Footnote</b>1. See Migne, Patrologia Latina.</div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>The reconciled page</span></div><div><b>Output</b><span>A type role per word</span></div><div><b>Risk controlled</b><span>Headings and footnotes mis-set</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p9" style="--phase:#6d5a8c">
+        <div class="phase-no">09</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Human Review &mdash; a person makes the call</h3>
+              <p>This is where a person makes the call. A single human reviewer works through the flagged cases &mdash; the uncertain words and layout decisions the earlier stages could not settle &mdash; confirming, overriding or amending each one, with the AI drafts from stage 7 as a starting point.</p>
+              <p>Every decision is written to an <b>append-only, hash-chained log</b>: entries can be added but never quietly altered, because each one is mathematically linked to the entry before it. Besides a confirmed consensus, this is the only place a decision is trusted enough to update the engine scorecard in stage 6 &mdash; so a single ruling both fixes the page in front of the reviewer and teaches the pipeline for every page after.</p>
+              <div class="why"><b>Why it matters</b> The one human is the real bottleneck, so every stage above exists to spend that person's attention as carefully as possible.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="key-stack">
+                <div class="key-card"><b>Confirm</b>accept the machine's reading</div>
+                <div class="key-card"><b>Override / amend</b>fix it, with a reason</div>
+                <div class="key-card"><b>Logged</b>append-only, hash-chained record</div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Flagged cases + AI drafts</span></div><div><b>Output</b><span>A permanent decisions log; confirmed gold</span></div><div><b>Risk controlled</b><span>Unreviewed machine text shipping</span></div></div>
+        </div>
+      </article>
+
+      <article class="phase" id="p10" style="--phase:#6d5a8c">
+        <div class="phase-no">10</div>
+        <div class="phase-card">
+          <div class="phase-main">
+            <div class="phase-copy">
+              <h3>Publication &mdash; ship only what is safe to ship</h3>
+              <p>The final stage decides how each piece of text is allowed to leave the pipeline. Text that is an exact engine reading, or human-confirmed, ships <b>unflagged</b>. A machine-<b>composed</b> reading ships <b>flagged</b> &mdash; usable, but openly marked &mdash; until its error rate has actually been measured and certified. Anything sensitive (names, numbers, dates, Scripture, Greek or Hebrew) is always <b>routed to a human</b> first.</p>
+              <p>Whatever passes the gate is packaged and pushed to <b>HuggingFace</b> alongside the rest of the dataset, where it joins the output of the Digital Text Extraction Pipeline as one consistent whole.</p>
+              <div class="why"><b>Why it matters</b> The project keeps two questions firmly apart &mdash; &ldquo;can we generate this?&rdquo; and &ldquo;can we safely publish this?&rdquo; Only the second decides what ships.</div>
+            </div>
+            <div class="phase-visual">
+              <div class="publish-lanes">
+                <div class="publish-lane"><b>Unflagged</b><span>exact or human-confirmed text</span></div>
+                <div class="publish-lane"><b>Flagged</b><span>machine-composed, until certified</span></div>
+                <div class="publish-lane"><b>Review</b><span>protected or risky cases</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="phase-meta"><div><b>Input</b><span>Reconciled, reviewed pages</span></div><div><b>Output</b><span>The published dataset on HuggingFace</span></div><div><b>Risk controlled</b><span>Shipping machine text as if certain</span></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pipeline-map">
+  <div class="section-head">
+    <div>
+      <div class="kicker">The whole pipeline</div>
+      <h2>All ten stages, end to end</h2>
+    </div>
+    <p>The same chain as the cards above, in one picture: scanned pages enter at the top and leave as validated data at the bottom. The dashed arrow is the learning loop &mdash; human review re-trains the scorecard that weights the vote.</p>
+  </div>
+  <div class="diagram-card" style="max-width:680px;margin-left:auto;margin-right:auto">
+    <svg class="flow-svg" viewBox="0 0 760 950" role="img" aria-label="The whole NSH OCR pipeline, top to bottom: ten stages in four phases, ending at HuggingFace, with a dashed learning loop from Human Review back to Engine Reliability Scoring">
+      <defs>
+        <marker id="pmArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#4d665c" stroke-width="1.8" stroke-linecap="round"/>
+        </marker>
+        <marker id="pmLoop" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#6d5a8c" stroke-width="1.8" stroke-linecap="round"/>
+        </marker>
+        <style>
+          .pmhead{font:800 11px "Segoe UI",Arial,sans-serif;letter-spacing:.09em}
+          .pmname{font:700 14.5px "Segoe UI",Arial,sans-serif;fill:#17211d}
+          .pmgloss{font:11.5px "Segoe UI",Arial,sans-serif;fill:#61716a}
+          .pmnum{font:800 13px "Segoe UI",Arial,sans-serif;fill:#fff}
+          .pmline{stroke:#4d665c;stroke-width:2.2;fill:none;marker-end:url(#pmArrow)}
+          .pmloop{stroke:#6d5a8c;stroke-width:2;fill:none;stroke-dasharray:6 5;marker-end:url(#pmLoop)}
+          .pmloopT{font:700 11px "Segoe UI",Arial,sans-serif;fill:#6d5a8c}
+          .pmend{fill:#18241f}
+          .pmendT{font:800 15px "Segoe UI",Arial,sans-serif;fill:#fff}
+          .pmendS{font:11.5px "Segoe UI",Arial,sans-serif;fill:#c6d2ca}
+        </style>
+      </defs>
+
+      <text class="pmhead" x="64" y="52" fill="#315f7a">PHASE 1 &middot; GET THE PAGES RIGHT</text>
+      <text class="pmhead" x="64" y="158" fill="#2f6b58">PHASE 2 &middot; READ EVERY PAGE</text>
+      <text class="pmhead" x="64" y="332" fill="#b08135">PHASE 3 &middot; COMPARE &amp; DECIDE</text>
+      <text class="pmhead" x="64" y="574" fill="#6d5a8c">PHASE 4 &middot; CHECK &amp; PUBLISH</text>
+
+      <g>
+        <rect x="140" y="64" width="460" height="54" rx="12" fill="#fff" stroke="#315f7a" stroke-width="1.6"/>
+        <circle cx="172" cy="91" r="16" fill="#315f7a"/><text class="pmnum" x="172" y="96" text-anchor="middle">1</text>
+        <text class="pmname" x="200" y="88">Ingest</text><text class="pmgloss" x="200" y="105">account for every page; give each a stable key</text>
+      </g>
+      <g>
+        <rect x="140" y="170" width="460" height="54" rx="12" fill="#fff" stroke="#2f6b58" stroke-width="1.6"/>
+        <circle cx="172" cy="197" r="16" fill="#2f6b58"/><text class="pmnum" x="172" y="202" text-anchor="middle">2</text>
+        <text class="pmname" x="200" y="194">Transcription</text><text class="pmgloss" x="200" y="211">several OCR engines each read the page</text>
+      </g>
+      <g>
+        <rect x="140" y="238" width="460" height="54" rx="12" fill="#fff" stroke="#2f6b58" stroke-width="1.6"/>
+        <circle cx="172" cy="265" r="16" fill="#2f6b58"/><text class="pmnum" x="172" y="270" text-anchor="middle">3</text>
+        <text class="pmname" x="200" y="262">Standardisation</text><text class="pmgloss" x="200" y="279">rewrite each reading into one common form</text>
+      </g>
+      <g>
+        <rect x="140" y="344" width="460" height="54" rx="12" fill="#fff" stroke="#b08135" stroke-width="1.6"/>
+        <circle cx="172" cy="371" r="16" fill="#b08135"/><text class="pmnum" x="172" y="376" text-anchor="middle">4</text>
+        <text class="pmname" x="200" y="368">Alignment</text><text class="pmgloss" x="200" y="385">line the engines up, word by word</text>
+      </g>
+      <g>
+        <rect x="140" y="412" width="460" height="54" rx="12" fill="#fff" stroke="#b08135" stroke-width="1.6"/>
+        <circle cx="172" cy="439" r="16" fill="#b08135"/><text class="pmnum" x="172" y="444" text-anchor="middle">5</text>
+        <text class="pmname" x="200" y="436">Reconciliation</text><text class="pmgloss" x="200" y="453">a weighted vote picks each word</text>
+      </g>
+      <g>
+        <rect x="140" y="480" width="460" height="54" rx="12" fill="#fff" stroke="#b08135" stroke-width="1.6"/>
+        <circle cx="172" cy="507" r="16" fill="#b08135"/><text class="pmnum" x="172" y="512" text-anchor="middle">6</text>
+        <text class="pmname" x="200" y="504">Engine Reliability Scoring</text><text class="pmgloss" x="200" y="521">learn which engine to trust, and where</text>
+      </g>
+      <g>
+        <rect x="140" y="586" width="460" height="54" rx="12" fill="#fff" stroke="#6d5a8c" stroke-width="1.6"/>
+        <circle cx="172" cy="613" r="16" fill="#6d5a8c"/><text class="pmnum" x="172" y="618" text-anchor="middle">7</text>
+        <text class="pmname" x="200" y="610">LLM Review</text><text class="pmgloss" x="200" y="627">an AI drafts the uncertain cases</text>
+      </g>
+      <g>
+        <rect x="140" y="654" width="460" height="54" rx="12" fill="#fff" stroke="#6d5a8c" stroke-width="1.6"/>
+        <circle cx="172" cy="681" r="16" fill="#6d5a8c"/><text class="pmnum" x="172" y="686" text-anchor="middle">8</text>
+        <text class="pmname" x="200" y="678">Typography</text><text class="pmgloss" x="200" y="695">mark body, heading or footnote</text>
+      </g>
+      <g>
+        <rect x="140" y="722" width="460" height="54" rx="12" fill="#fff" stroke="#6d5a8c" stroke-width="1.6"/>
+        <circle cx="172" cy="749" r="16" fill="#6d5a8c"/><text class="pmnum" x="172" y="754" text-anchor="middle">9</text>
+        <text class="pmname" x="200" y="746">Human Review</text><text class="pmgloss" x="200" y="763">a person ratifies; every call is logged</text>
+      </g>
+      <g>
+        <rect x="140" y="790" width="460" height="54" rx="12" fill="#fff" stroke="#6d5a8c" stroke-width="1.6"/>
+        <circle cx="172" cy="817" r="16" fill="#6d5a8c"/><text class="pmnum" x="172" y="822" text-anchor="middle">10</text>
+        <text class="pmname" x="200" y="814">Publication</text><text class="pmgloss" x="200" y="831">gate, then publish what is safe</text>
+      </g>
+
+      <path class="pmline" d="M370 118V170"/>
+      <path class="pmline" d="M370 224V238"/>
+      <path class="pmline" d="M370 292V344"/>
+      <path class="pmline" d="M370 398V412"/>
+      <path class="pmline" d="M370 466V480"/>
+      <path class="pmline" d="M370 534V586"/>
+      <path class="pmline" d="M370 640V654"/>
+      <path class="pmline" d="M370 708V722"/>
+      <path class="pmline" d="M370 776V790"/>
+      <path class="pmline" d="M370 844V872"/>
+
+      <rect class="pmend" x="210" y="872" width="340" height="56" rx="12"/>
+      <text class="pmendT" x="232" y="900">HuggingFace</text>
+      <text class="pmendS" x="232" y="918">the published, validated dataset</text>
+
+      <path class="pmloop" d="M600 749 C 694 740 694 516 600 507"/>
+      <text class="pmloopT" x="710" y="628" text-anchor="middle" transform="rotate(-90 710 628)">review re-trains the scorecard</text>
+    </svg>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Guardrails</div>
+      <h2>What makes the project trustworthy</h2>
+    </div>
+    <p>These four rules are not decoration. Every step in both data pipelines exists because quiet data corruption is easy to miss and hard to undo once it has shipped.</p>
+  </div>
+  <div class="principles">
+    <div class="principle"><b>Public-domain first</b><span>Authors died before 1928; licensing and provenance come before ingestion.</span></div>
+    <div class="principle"><b>Schema contract</b><span>Every data file has a predictable shape, not just plausible content.</span></div>
+    <div class="principle"><b>Page truth before OCR</b><span>NSH pages are accounted for before the project trusts the words.</span></div>
+    <div class="principle"><b>Machine text labelled</b><span>Machine-composed readings are never presented as human-attested.</span></div>
+  </div>
+</section>
+
+<section class="section" id="spine">
+  <div class="section-head">
+    <div>
+      <div class="kicker">The shared spine</div>
+      <h2>The TEI intermediate representation</h2>
+    </div>
+    <p>Since July 2026, both data pipelines feed one shared spine. Every source is normalised into a single faithful <b>intermediate representation</b> in <b>TEI</b> (the Text Encoding Initiative's XML standard for scholarly texts) that a human can verify against the original, and every published output &mdash; the HuggingFace JSON, a future reading website &mdash; is a <i>projection</i> from that IR, each carrying a <b>loss receipt</b> (a machine-checked ledger of exactly what the projection kept and dropped). Three accepted decisions define the spine:</p>
+  </div>
+  <div class="status-grid">
+    <div class="status"><b>ADR-0019 &middot; the IR is TEI</b><span>Accepted 2026-07-01; proven end-to-end 2026-07-03 on Augustine's <i>City of God</i>: both renderings normalised to TEI under <code>ir/augustine/</code>, census-gated at the ID level, schema-valid against vendored TEI P5, viewable in a local browser viewer. IRs build from raw sources, never from published JSON.</span></div>
+    <div class="status"><b>ADR-0020 &middot; reviewer shell reopened</b><span>Accepted 2026-07-04, superseding the earlier static-HTML-only lock (ADR-0012): the human-review interface batch chooses its own shell and records the choice as a decision, instead of inheriting a constraint that predates the TEI spine.</span></div>
+    <div class="status"><b>ADR-0021 &middot; machine releases in the ledger</b><span>Accepted 2026-07-04: how tens of thousands of machine corrector decisions enter the append-only decision ledger as explicit <code>machine_release</code> events &mdash; recorded with their evidence, never disguised as human decisions, never counted toward accuracy measurement.</span></div>
+  </div>
+</section>
+
+<section class="section dark" id="where">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Current state</div>
+      <h2>Where to look (this page does not track status)</h2>
+    </div>
+    <p>Status changes weekly; this page deliberately does not restate it. Each side of the project has one anchor document (stable context) and one progress tracker (live state). Start with the anchor for your side, then open its tracker. Paths are relative to the repository root; the links below work when this file is opened from its place in the repository.</p>
+  </div>
+  <div class="status-grid">
+    <div class="status"><b>NSH / reviewer side</b><span>Anchor: <a href="../NSH_PROJECT_STATE.md" style="color:inherit"><code>docs/NSH_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../plans/tei-reviewer/00-progress-tracker.md" style="color:inherit"><code>plans/tei-reviewer/00-progress-tracker.md</code></a>. Corrector module detail: <a href="../BUILD_PLAN_gold_free_corrector.md" style="color:inherit"><code>docs/BUILD_PLAN_gold_free_corrector.md</code></a> &sect;0.</span></div>
+    <div class="status"><b>Dataset side</b><span>Anchor: <a href="../DATASET_PROJECT_STATE.md" style="color:inherit"><code>docs/DATASET_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../plans/2026-07-03-next-units-execution/00-progress-tracker.md" style="color:inherit"><code>plans/2026-07-03-next-units-execution/00-progress-tracker.md</code></a>.</span></div>
+    <div class="status"><b>Launching a work session</b><span>Ready-to-paste session bootstraps live in <a href="../../plans/tei-reviewer/BOOTSTRAPS.md" style="color:inherit"><code>plans/tei-reviewer/BOOTSTRAPS.md</code></a>. Respect the wave order below: a batch starts only when its dependencies are Done in the tracker.</span></div>
+  </div>
+
+  <div class="diagram-card" style="max-width:680px;margin:28px auto 0">
+    <svg class="flow-svg" viewBox="0 0 760 840" role="img" aria-label="NSH-side campaign waves, top to bottom: three foundation batches done; wave 0 attended sitting mostly done; then importer and WCT rebuild in wave 1; materializer spine; three-mode reviewer UI; accuracy harness and Track C gold; U11 measurement and M15 certification; first Schaff-Herzog publish; final integration. The dataset campaign runs in parallel.">
+      <defs>
+        <marker id="wvArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#4d665c" stroke-width="1.8" stroke-linecap="round"/>
+        </marker>
+        <style>
+          .wnode{fill:#fff;stroke:#c8d2c8;stroke-width:1.4}
+          .wdone{fill:#dff0e8;stroke:#78ad94}
+          .wgate{fill:#f5ead8;stroke:#c49d58}
+          .wside{fill:#eef1ec;stroke:#c8d2c8;stroke-dasharray:5 4}
+          .wh{font:700 15px Segoe UI,Arial,sans-serif;fill:#17211d}
+          .ws{font:12px Segoe UI,Arial,sans-serif;fill:#61716a}
+          .wt{font:800 11px Segoe UI,Arial,sans-serif;letter-spacing:.12em;fill:#61716a}
+          .wline{stroke:#4d665c;stroke-width:2.2;fill:none;marker-end:url(#wvArrow)}
+        </style>
+      </defs>
+
+      <text x="24" y="28" class="wt">NSH-SIDE CAMPAIGN WAVES (STATUS AS OF 2026-07-04 &mdash; THE TRACKER IS LIVE TRUTH)</text>
+
+      <rect class="wnode wdone" x="24" y="44" width="452" height="56" rx="12"/>
+      <text x="42" y="68" class="wh">Foundations &mdash; done</text>
+      <text x="42" y="88" class="ws">01 canonical token ids &middot; 03 decision seam &middot; 05 lemma fixture (committed)</text>
+
+      <rect class="wnode wgate" x="24" y="128" width="452" height="56" rx="12"/>
+      <text x="42" y="152" class="wh">W0 &middot; attended sitting (maintainer)</text>
+      <text x="42" y="172" class="ws">02a corrected pages committed &middot; ADR-0021 ratified &middot; OCR relaunch pending</text>
+
+      <rect class="wnode" x="24" y="212" width="218" height="56" rx="12"/>
+      <text x="42" y="236" class="wh">W1 &middot; 02 importer</text>
+      <text x="42" y="256" class="ws">corrected pages &rarr; ledger</text>
+
+      <rect class="wnode" x="258" y="212" width="218" height="56" rx="12"/>
+      <text x="276" y="236" class="wh">W1 &middot; 02b WCT rebuild</text>
+      <text x="276" y="256" class="ws">+ token-id stability proof</text>
+
+      <rect class="wnode" x="24" y="296" width="452" height="56" rx="12"/>
+      <text x="42" y="320" class="wh">W2 &middot; 06 materializer spine</text>
+      <text x="42" y="340" class="ws">ledger &rarr; TEI, deterministic, coverage-gated</text>
+
+      <rect class="wnode" x="24" y="380" width="452" height="56" rx="12"/>
+      <text x="42" y="404" class="wh">W3 &middot; three-mode reviewer UI</text>
+      <text x="42" y="424" class="ws">the human adjudication surface (shell per ADR-0020)</text>
+
+      <rect class="wnode" x="24" y="464" width="218" height="56" rx="12"/>
+      <text x="42" y="488" class="wh">W4 &middot; 07 harness</text>
+      <text x="42" y="508" class="ws">accuracy vs human gold</text>
+
+      <rect class="wnode" x="258" y="464" width="218" height="56" rx="12"/>
+      <text x="276" y="488" class="wh">W4 &middot; 09 Track C gold</text>
+      <text x="276" y="508" class="ws">SH sample adjudicated</text>
+
+      <rect class="wnode wgate" x="24" y="548" width="452" height="56" rx="12"/>
+      <text x="42" y="572" class="wh">W5 &middot; 10 measurement + certification (attended)</text>
+      <text x="42" y="592" class="ws">U11 per-stratum deltas &rarr; certify or keep the embargo</text>
+
+      <rect class="wnode" x="24" y="632" width="452" height="56" rx="12"/>
+      <text x="42" y="656" class="wh">W6 &middot; 11 first Schaff-Herzog publish</text>
+      <text x="42" y="676" class="ws">corrector &rarr; publish gate &rarr; TEI + HuggingFace with receipts</text>
+
+      <rect class="wnode" x="24" y="716" width="452" height="56" rx="12"/>
+      <text x="42" y="740" class="wh">W7 &middot; 08 final integration</text>
+      <text x="42" y="760" class="ws">end-to-end walk; context docs reconciled last</text>
+
+      <rect class="wnode wside" x="512" y="212" width="224" height="140" rx="12"/>
+      <text x="530" y="240" class="wh">Dataset campaign</text>
+      <text x="530" y="262" class="ws">runs in parallel (sibling):</text>
+      <text x="530" y="282" class="ws">9 batches &mdash; fidelity fixes,</text>
+      <text x="530" y="302" class="ws">liturgy + CCEL &rarr; TEI, Bibles,</text>
+      <text x="530" y="322" class="ws">publish-truth. Own tracker;</text>
+      <text x="530" y="342" class="ws">none started as of 2026-07-04.</text>
+
+      <path class="wline" d="M250 100V128"/>
+      <path class="wline" d="M133 184V212"/>
+      <path class="wline" d="M367 184V212"/>
+      <path class="wline" d="M133 268V296"/>
+      <path class="wline" d="M367 268 C 367 282 330 288 310 296"/>
+      <path class="wline" d="M250 352V380"/>
+      <path class="wline" d="M133 436V464"/>
+      <path class="wline" d="M367 436V464"/>
+      <path class="wline" d="M133 520V548"/>
+      <path class="wline" d="M367 520V548"/>
+      <path class="wline" d="M250 604V632"/>
+      <path class="wline" d="M250 688V716"/>
+    </svg>
+    <div class="caption">Redrawn from the NSH execution plan (<code>plans/tei-reviewer/00-execution-plan.md</code> &sect;1). Done/pending marks reflect the tracker as verified on 2026-07-04; the tracker, not this picture, is live truth.</div>
+  </div>
+</section>
+
+<footer>
+  <b>This is the canonical orientation page for the whole project</b> (<code>docs/orientation/index.html</code>, consolidated 2026-07-04; the older <code>project-orientation.html</code>, <code>docs/SYSTEM_MAP.html</code> and <code>reports/_orientation/orientation.html</code> now point here). <b>Canonical vocabulary and the ten-stage taxonomy come from <code>SHARED-LEXICON.md</code> (the "NSH OCR pipeline — Layer 1" section) and <code>docs/adr/0016</code> / <code>0018</code>.</b> Other facts are drawn from <code>README.md</code>, the two anchor docs (<code>docs/NSH_PROJECT_STATE.md</code>, <code>docs/DATASET_PROJECT_STATE.md</code>) and the ADRs. Schema ids, filenames and stage numbers are not yet renamed (the lexicon is name-layer only); the friendly names used here map to them via the ADR-0016 rename map. This page carries no live counts or status &mdash; see "Current state: where to look" above.
+</footer>
+
+</div>
+
+<!-- Review/annotation layer: click anything to leave a note (incl. diagrams), or switch to Edit text to rewrite text inline. Exports both with precise locators. Remove this block (and the matching CSS) before publishing. -->
+<script>
+(function(){
+  var NKEY='ocd-orientation-notes-v1', EKEY='ocd-orientation-edits-v1';
+  function loadN(){try{return JSON.parse(localStorage.getItem(NKEY))||{};}catch(e){return{};}}
+  function saveN(d){try{localStorage.setItem(NKEY,JSON.stringify(d));}catch(e){}}
+  function loadE(){try{return JSON.parse(localStorage.getItem(EKEY))||{};}catch(e){return{};}}
+  function saveE(d){try{localStorage.setItem(EKEY,JSON.stringify(d));}catch(e){}}
+  function esc(s){return (window.CSS&&CSS.escape)?CSS.escape(s):s;}
+  function cssPath(el){
+    if(!el||el.nodeType!==1) return '';
+    var parts=[];
+    while(el && el.nodeType===1 && el.tagName.toLowerCase()!=='body'){
+      if(el.id){ parts.unshift('#'+esc(el.id)); break; }
+      var tag=el.tagName.toLowerCase(), part=tag, par=el.parentNode;
+      if(par){
+        var same=Array.prototype.filter.call(par.children,function(c){return c.tagName===el.tagName;});
+        if(same.length>1) part+=':nth-of-type('+(same.indexOf(el)+1)+')';
+      }
+      parts.unshift(part);
+      el=par;
+    }
+    return parts.join('>');
+  }
+  function ctxName(n){var c=n.closest&&n.closest('article.phase, section, header');if(!c)return '';var h=c.querySelector('h1,h2,h3');return h?h.innerText.split('—')[0].trim():'';}
+  function descify(n){
+    var svg=n.closest&&n.closest('svg');
+    if(svg||n.tagName==='svg'||(n.querySelector&&n.querySelector('svg'))){
+      var s=(n.tagName==='svg')?n:(svg||(n.querySelector&&n.querySelector('svg')));
+      var al=s?(s.getAttribute('aria-label')||''):'';
+      var dt=n.querySelector&&n.querySelector('.diagram-title b, .caption');
+      return 'DIAGRAM ['+(((dt&&dt.innerText)||al)||'').replace(/\s+/g,' ').slice(0,80)+']';
+    }
+    var t=(n.innerText||'').trim().replace(/\s+/g,' ').slice(0,90);
+    var c=ctxName(n);
+    return (c&&t.indexOf(c)!==0)?(c+' › '+t):t;
+  }
+  function anchorFor(t){
+    var dia=t.closest('.diagram-card, .hero-map, .phase-visual, svg');
+    if(dia) return dia.closest('.diagram-card, .hero-map, .phase-visual')||dia;
+    return t;
+  }
+  var EDSEL='.hero-copy h1,.subtitle,.lede,.muted,.kicker,.summary-card b,.summary-card span,h2,h3,.section-head>p,.lane-title b,.lane-step b,.lane-step span,.lane-body>.muted,.why,.phase-copy p,.phase-meta b,.phase-meta span,.caption,.diagram-title b,.diagram-title span,.stage b,.stage p,.principle b,.principle span,.status b,.status span,.key-card,.engine-box b,.engine-box span,.publish-lane b,.publish-lane span,.vcap,.rail-name,.rail-phase,.wct-grid span,footer';
+  Array.prototype.forEach.call(document.querySelectorAll(EDSEL),function(n){n.setAttribute('data-edit','1');n.setAttribute('data-orig',(n.innerText||'').replace(/\s+/g,' ').trim());});
+  (function(){var e=loadE();Object.keys(e).forEach(function(k){try{var el=document.querySelector(k);if(el&&typeof e[k].after==='string')el.textContent=e[k].after;}catch(x){}});})();
+
+  var mode=null, pop=null;
+  var bar=document.createElement('div'); bar.id='revBar';
+  var noteBtn=document.createElement('button'); noteBtn.textContent='✎ Notes';
+  var editBtn=document.createElement('button'); editBtn.textContent='✏ Edit text';
+  var copyBtn=document.createElement('button'); copyBtn.textContent='Copy all';
+  var hint=document.createElement('span'); hint.id='revHint'; hint.style.cssText='display:none;background:#fff;border:1px dashed var(--nsh);border-radius:999px;padding:7px 12px;color:#2b5871;font-size:12px';
+  bar.appendChild(hint); bar.appendChild(noteBtn); bar.appendChild(editBtn); bar.appendChild(copyBtn); document.body.appendChild(bar);
+  var out=document.createElement('div'); out.id='revOut';
+  out.innerHTML='<div style="font:13px \'Segoe UI\',Arial;margin-bottom:6px">Paste this back to Claude, then Close:</div>';
+  var ta=document.createElement('textarea'); out.appendChild(ta);
+  var closeOut=document.createElement('button'); closeOut.textContent='Close'; closeOut.style.cssText='margin-top:8px;border:1px solid #ccd6cc;border-radius:8px;padding:6px 11px;cursor:pointer;background:#fff'; closeOut.onclick=function(){out.style.display='none';}; out.appendChild(closeOut);
+  document.body.appendChild(out);
+
+  function refresh(){
+    var nd=loadN(), ed=loadE();
+    Array.prototype.forEach.call(document.querySelectorAll('.has-note'),function(n){n.classList.remove('has-note');});
+    Array.prototype.forEach.call(document.querySelectorAll('.has-edit'),function(n){n.classList.remove('has-edit');});
+    Object.keys(nd).forEach(function(k){try{var el=document.querySelector(k);if(el&&nd[k].note)el.classList.add('has-note');}catch(x){}});
+    Object.keys(ed).forEach(function(k){try{var el=document.querySelector(k);if(el)el.classList.add('has-edit');}catch(x){}});
+    var nc=Object.keys(nd).length, ec=Object.keys(ed).length;
+    noteBtn.textContent=(mode==='note'?'✎ Notes: ON':'✎ Notes')+(nc?(' ('+nc+')'):'');
+    editBtn.textContent=(mode==='edit'?'✏ Edit text: ON':'✏ Edit text')+(ec?(' ('+ec+')'):'');
+  }
+  function setMode(m){
+    mode=(mode===m)?null:m;
+    document.body.classList.toggle('note-mode',mode==='note');
+    document.body.classList.toggle('edit-mode',mode==='edit');
+    noteBtn.classList.toggle('on',mode==='note'); editBtn.classList.toggle('on',mode==='edit');
+    if(pop){pop.remove();pop=null;}
+    if(mode==='note'){hint.textContent='click anything (incl. diagrams) to add a note';hint.style.display='inline-block';}
+    else if(mode==='edit'){hint.textContent='click any text to rewrite it';hint.style.display='inline-block';}
+    else hint.style.display='none';
+    refresh();
+  }
+  noteBtn.onclick=function(){setMode('note');};
+  editBtn.onclick=function(){setMode('edit');};
+
+  function openPop(anchor,isEdit){
+    if(pop){pop.remove();pop=null;}
+    var key=cssPath(anchor), nd=loadN(), ed=loadE();
+    pop=document.createElement('div'); pop.className='rev-pop';
+    var ph=document.createElement('div'); ph.className='ph'; ph.textContent=(isEdit?'Edit: ':'Note: ')+descify(anchor).slice(0,70); pop.appendChild(ph);
+    var area=document.createElement('textarea');
+    if(isEdit){ area.value=(ed[key]&&typeof ed[key].after==='string')?ed[key].after:(anchor.getAttribute('data-orig')||(anchor.innerText||'').replace(/\s+/g,' ').trim()); }
+    else { area.value=(nd[key]&&nd[key].note)||''; area.placeholder='What should change here?'; }
+    pop.appendChild(area);
+    var row=document.createElement('div'); row.className='row';
+    var del=document.createElement('button'); del.textContent='Delete';
+    var sv=document.createElement('button'); sv.textContent='Save'; sv.className='save';
+    row.appendChild(del); row.appendChild(sv); pop.appendChild(row);
+    document.body.appendChild(pop);
+    var r=anchor.getBoundingClientRect();
+    pop.style.top=(window.scrollY+r.top+24)+'px';
+    pop.style.left=Math.max(8,Math.min(window.scrollX+r.left,window.scrollX+window.innerWidth-340))+'px';
+    area.focus();
+    sv.onclick=function(){
+      var v=area.value.trim();
+      if(isEdit){ var d=loadE(); if(v){ var before=(anchor.getAttribute('data-orig')||'').trim(); d[key]={before:before,after:v,label:descify(anchor)}; anchor.textContent=v; } else { delete d[key]; if(anchor.getAttribute('data-orig')!=null) anchor.textContent=anchor.getAttribute('data-orig'); } saveE(d); }
+      else { var d2=loadN(); if(v){ d2[key]={note:v,label:descify(anchor)}; } else { delete d2[key]; } saveN(d2); }
+      pop.remove(); pop=null; refresh();
+    };
+    del.onclick=function(){ if(isEdit){var d=loadE();delete d[key];saveE(d);if(anchor.getAttribute('data-orig')!=null)anchor.textContent=anchor.getAttribute('data-orig');}else{var d2=loadN();delete d2[key];saveN(d2);} pop.remove();pop=null;refresh(); };
+  }
+
+  document.addEventListener('click',function(e){
+    if(!mode) return;
+    if((pop&&pop.contains(e.target))||bar.contains(e.target)||out.contains(e.target)) return;
+    if(pop){pop.remove();pop=null;}
+    if(mode==='edit'){ var ed=e.target.closest('[data-edit]'); if(!ed) return; e.preventDefault(); e.stopPropagation(); openPop(ed,true); }
+    else { var an=anchorFor(e.target); if(!an||an===document.body) return; e.preventDefault(); e.stopPropagation(); openPop(an,false); }
+  },true);
+
+  copyBtn.onclick=function(){
+    var nd=loadN(), ed=loadE(), eL=[], nL=[];
+    Object.keys(ed).forEach(function(k){ eL.push('✏ '+(ed[k].label||k)+'\n   was: '+ed[k].before+'\n   now: '+ed[k].after); });
+    Object.keys(nd).forEach(function(k){ nL.push('» '+(nd[k].label||k)+'\n   '+nd[k].note); });
+    var text='';
+    if(eL.length) text+='=== TEXT EDITS ('+eL.length+') ===\n'+eL.join('\n\n')+'\n\n';
+    if(nL.length) text+='=== NOTES ('+nL.length+') ===\n'+nL.join('\n\n');
+    if(!text) text='(nothing yet — turn on ✎ Notes or ✏ Edit text, then click an element)';
+    ta.value=text; out.style.display='block'; ta.select();
+    if(navigator.clipboard){navigator.clipboard.writeText(text).catch(function(){});}else{try{document.execCommand('copy');}catch(e){}}
+  };
+  refresh();
+})();
+</script>
+</body>
+</html>

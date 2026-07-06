@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/audit_event.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Audit Event",
+  "description": "Per-line schema for review/audit.jsonl. One JSON object per line. Manifest body lives separately at review/writer-manifests/<run_id>.json; this event carries only the run_id pointer + checksum.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_type",
+    "timestamp_utc",
+    "actor",
+    "resource_id",
+    "record_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "acknowledge",
+        "dismiss",
+        "set_confidence_axis",
+        "correction_applied",
+        "bulk_dismissed",
+        "bulk_acknowledged",
+        "sidecar_schema_migrated",
+        "dead_letter_replayed",
+        "dead_letter_gc",
+        "stale_lock_broken"
+      ]
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "type": "string",
+      "description": "Reviewer username or tool identity."
+    },
+    "resource_id": {
+      "type": "string"
+    },
+    "record_path": {
+      "type": "string"
+    },
+    "entry_id": {
+      "type": "string"
+    },
+    "field_path": {
+      "type": "string"
+    },
+    "correction_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+      "description": "For correction_applied events: id from the correction ledger."
+    },
+    "writer_manifest_run_id": {
+      "type": "string",
+      "description": "Pointer to review/writer-manifests/<run_id>.json. Required for writer-driven events (correction_applied)."
+    },
+    "manifest_checksum_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "warning_signature": {
+      "type": "string",
+      "description": "For acknowledge / dismiss / bulk_dismissed / bulk_acknowledged events."
+    },
+    "warning_producer": {
+      "type": "string"
+    },
+    "warning_code": {
+      "type": "string"
+    },
+    "decision_reason": {
+      "type": "string",
+      "description": "For acknowledge / dismiss events."
+    },
+    "from_version": {
+      "type": "string",
+      "description": "For sidecar_schema_migrated."
+    },
+    "to_version": {
+      "type": "string",
+      "description": "For sidecar_schema_migrated."
+    },
+    "migration_chain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "For sidecar_schema_migrated: list of intermediate versions traversed."
+    },
+    "confidence_axis": {
+      "type": "string",
+      "enum": [
+        "structural_fidelity",
+        "text_fidelity",
+        "edition_provenance"
+      ]
+    },
+    "confidence_tier": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "machine-checked",
+        "witness-compared",
+        "human-reviewed",
+        "reference-grade"
+      ]
+    },
+    "promote_explicit": {
+      "type": "boolean",
+      "description": "True when set_confidence_axis sets reference-grade with --promote."
+    },
+    "counts": {
+      "type": "object",
+      "description": "Free-form counts for events like bulk_dismissed, bulk_acknowledged, dead_letter_replayed, dead_letter_gc.",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "lock_owner_pid": {
+      "type": "integer",
+      "description": "For stale_lock_broken."
+    },
+    "lock_owner_hostname": {
+      "type": "string",
+      "description": "For stale_lock_broken."
+    },
+    "target_path": {
+      "type": "string",
+      "description": "For stale_lock_broken."
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "correction_applied"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "writer_manifest_run_id",
+          "manifest_checksum_sha256",
+          "entry_id",
+          "field_path"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "sidecar_schema_migrated"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "from_version",
+          "to_version",
+          "migration_chain"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "set_confidence_axis"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "confidence_axis",
+          "confidence_tier"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "stale_lock_broken"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "lock_owner_pid",
+          "lock_owner_hostname",
+          "target_path"
+        ]
+      }
+    }
+  ]
+}

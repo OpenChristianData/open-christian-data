@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/helloao_commentary.py@v1.0.0",
+  "writer_identity": "adam_clarke_parser",
+  "run_id": "phase-d-coverage-adam-clarke-2-john",
+  "started_at": "2026-05-12T15:17:09Z",
+  "data_paths": [
+    "data/commentaries/adam-clarke/2-john.json"
+  ],
+  "checksums": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "before_sha256": "dbc74dbf71f8e0aca30a1554760d5cff205039dc6c8e4f67cfcac519c67b2298",
+      "after_sha256": "c0e296e9b193b005df9da1e666096358a1dc644d1b221478e666b8ee25d4aa6a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/adam-clarke/2-john.json": {
+      "entries_changed": 0,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta/coverage"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

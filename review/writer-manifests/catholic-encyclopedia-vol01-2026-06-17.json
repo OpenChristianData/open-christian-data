@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/catholic_encyclopedia.py@v1.0.0",
+  "writer_identity": "catholic_encyclopedia_parser",
+  "run_id": "catholic-encyclopedia-vol01-2026-06-17",
+  "started_at": "2026-06-17T13:17:23Z",
+  "data_paths": [
+    "data/reference/catholic-encyclopedia-vol01.json"
+  ],
+  "checksums": {
+    "data/reference/catholic-encyclopedia-vol01.json": {
+      "before_sha256": null,
+      "after_sha256": "0ab274ffe829c85f8e89dde5acab470c067bb99c80882c8d19ea0e8adc537492"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/catholic-encyclopedia-vol01.json": {
+      "entries_written": 317,
+      "contributors_unique": 133,
+      "skipped": 0,
+      "empty_body": 0
+    }
+  },
+  "allowed_field_paths": ["/meta", "/data"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Vol 1 pilot crawl. 317 articles discovered via 26 per-letter index pages on newadvent.org/cathen/. All vol 1 entries start with A (Aachen through Asylum range). Rate-limited 1-2s/request. No 403/429 encountered.",
+  "renames": []
+}

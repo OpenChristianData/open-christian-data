@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/scans_manifest.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "x-ocd-default-resource-type": "scans_manifest",
+  "title": "Scans Manifest",
+  "description": "Per-resource manifest of source-scan images and OCR coordinate files. Consumed by build/tools/render_ocr_disagreement_html.py and (Phase H) by the renderer cache key. manifest_version is bumped when the image_storage scheme changes or the scan inventory changes; manifest_checksum_sha256 is computed at write time and folded into render cache invalidation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "resource_id",
+    "manifest_version",
+    "manifest_checksum_sha256",
+    "scans",
+    "meta"
+  ],
+  "properties": {
+    "resource_id": {
+      "type": "string",
+      "description": "Canonical meta.id of the resource these scans relate to."
+    },
+    "manifest_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "manifest_checksum_sha256": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "SHA-256 of the manifest body with checksum field replaced by null. Computed at write time; null only allowed during initial write-then-rewrite bootstrap."
+    },
+    "scans": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scan_entry"
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at_utc", "created_by"],
+      "properties": {
+        "created_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "scan_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "volume",
+        "page",
+        "image_url",
+        "image_storage",
+        "provider"
+      ],
+      "properties": {
+        "volume": {
+          "type": ["string", "integer"]
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "image_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hocr_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "image_storage": {
+          "type": "string",
+          "enum": ["external_url", "git_lfs"]
+        },
+        "provider": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

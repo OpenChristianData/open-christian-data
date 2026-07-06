@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "patch-script",
+  "writer_version": "build/tools/patch_contributors.py@v1.0.0",
+  "writer_identity": "meta_patch_bsb_contributors",
+  "run_id": "meta-patch-2026-06-16-bsb-contributors",
+  "started_at": "2026-06-16T12:00:00.000000+00:00",
+  "data_paths": [
+    "data/bible-text/bsb/1-chronicles.json",
+    "data/bible-text/bsb/1-corinthians.json",
+    "data/bible-text/bsb/1-john.json",
+    "data/bible-text/bsb/1-kings.json",
+    "data/bible-text/bsb/1-peter.json",
+    "data/bible-text/bsb/1-samuel.json",
+    "data/bible-text/bsb/1-thessalonians.json",
+    "data/bible-text/bsb/1-timothy.json",
+    "data/bible-text/bsb/2-chronicles.json",
+    "data/bible-text/bsb/2-corinthians.json",
+    "data/bible-text/bsb/2-john.json",
+    "data/bible-text/bsb/2-kings.json",
+    "data/bible-text/bsb/2-peter.json",
+    "data/bible-text/bsb/2-samuel.json",
+    "data/bible-text/bsb/2-thessalonians.json",
+    "data/bible-text/bsb/2-timothy.json",
+    "data/bible-text/bsb/3-john.json",
+    "data/bible-text/bsb/acts.json",
+    "data/bible-text/bsb/amos.json",
+    "data/bible-text/bsb/colossians.json",
+    "data/bible-text/bsb/daniel.json",
+    "data/bible-text/bsb/deuteronomy.json",
+    "data/bible-text/bsb/ecclesiastes.json",
+    "data/bible-text/bsb/ephesians.json",
+    "data/bible-text/bsb/esther.json",
+    "data/bible-text/bsb/exodus.json",
+    "data/bible-text/bsb/ezekiel.json",
+    "data/bible-text/bsb/ezra.json",
+    "data/bible-text/bsb/galatians.json",
+    "data/bible-text/bsb/genesis.json",
+    "data/bible-text/bsb/habakkuk.json",
+    "data/bible-text/bsb/haggai.json",
+    "data/bible-text/bsb/hebrews.json",
+    "data/bible-text/bsb/hosea.json",
+    "data/bible-text/bsb/isaiah.json",
+    "data/bible-text/bsb/james.json",
+    "data/bible-text/bsb/jeremiah.json",
+    "data/bible-text/bsb/job.json",
+    "data/bible-text/bsb/joel.json",
+    "data/bible-text/bsb/john.json",
+    "data/bible-text/bsb/jonah.json",
+    "data/bible-text/bsb/joshua.json",
+    "data/bible-text/bsb/jude.json",
+    "data/bible-text/bsb/judges.json",
+    "data/bible-text/bsb/lamentations.json",
+    "data/bible-text/bsb/leviticus.json",
+    "data/bible-text/bsb/luke.json",
+    "data/bible-text/bsb/malachi.json",
+    "data/bible-text/bsb/mark.json",
+    "data/bible-text/bsb/matthew.json",
+    "data/bible-text/bsb/micah.json",
+    "data/bible-text/bsb/nahum.json",
+    "data/bible-text/bsb/nehemiah.json",
+    "data/bible-text/bsb/numbers.json",
+    "data/bible-text/bsb/obadiah.json",
+    "data/bible-text/bsb/philemon.json",
+    "data/bible-text/bsb/philippians.json",
+    "data/bible-text/bsb/proverbs.json",
+    "data/bible-text/bsb/psalms.json",
+    "data/bible-text/bsb/revelation.json",
+    "data/bible-text/bsb/romans.json",
+    "data/bible-text/bsb/ruth.json",
+    "data/bible-text/bsb/song-of-solomon.json",
+    "data/bible-text/bsb/titus.json",
+    "data/bible-text/bsb/zechariah.json",
+    "data/bible-text/bsb/zephaniah.json"
+  ],
+  "checksums": {
+    "data/bible-text/bsb/1-chronicles.json": {
+      "before_sha256": "9f659155ae3a94217af8a0921582478059e26181937075faa145b270e8b48581",
+      "after_sha256": "3f23431c515d5230a727fd15ce0b4159132819342b1410a448cdba16e30d9ce9"
+    },
+    "data/bible-text/bsb/1-corinthians.json": {
+      "before_sha256": "5959f6f119d5d0d7ba51afcc2730be7b0bf2ef9afeafe2a934e20318f3e911a7",
+      "after_sha256": "5dcc0ed84a66045295a6105ab92597088702d5eeb5e3e0ab3a0546c67fb3826e"
+    },
+    "data/bible-text/bsb/1-john.json": {
+      "before_sha256": "a57215f453ec780d1865887a2c3996cd3335fc1c5a95c10c25003c369876247b",
+      "after_sha256": "66651b327c3af664258d14aa9c2a4758672deec066769e39175f52eb38a732cb"
+    },
+    "data/bible-text/bsb/1-kings.json": {
+      "before_sha256": "6e433f0470fe854fe3551ece13a16b1dc7f114dffb5df99074192896efe02d10",
+      "after_sha256": "0ab80e1a09d37c3dce067903783c320ef69c5f8c4acbbca24def41870c7484d9"
+    },
+    "data/bible-text/bsb/1-peter.json": {
+      "before_sha256": "4e3696c89dc9fcce1cea174d4e766fe326a017f1784f61d4d52c1da18e0a157d",
+      "after_sha256": "21c58ce22b163fbb4d8e5148b8c894273f9919890ad928a335c7c8bd9015dd6c"
+    },
+    "data/bible-text/bsb/1-samuel.json": {
+      "before_sha256": "c6b3bf9c06ccb85f59b3433f78920aa007122e040df3e216f2938100a61c2209",
+      "after_sha256": "37624dd0329b18371086e90795f7fcb02eed56caa4673a7d6712c4ad6e9131c0"
+    },
+    "data/bible-text/bsb/1-thessalonians.json": {
+      "before_sha256": "6407c9ff602cc07d4ccf57a6624f167dc2a026b7f2551bd6c1267dae957ab48b",
+      "after_sha256": "791fbfd63070323569846d6374638ad4f54d1af1531377307a7ef7d48794bf82"
+    },
+    "data/bible-text/bsb/1-timothy.json": {
+      "before_sha256": "e3c7b78d56d081e6553f593b6a996bfb88eca05e0aac0268f77806c7963550e8",
+      "after_sha256": "6c1bdafafc1ff93f3c5e4205d481cf9ea8fb583355144d9d9169e5a9fb3479fa"
+    },
+    "data/bible-text/bsb/2-chronicles.json": {
+      "before_sha256": "3abe270e90096d528ebd5cfbd8a76ef0cafa78db9c0e997f186c1554d75a3de2",
+      "after_sha256": "624244ccb01b73dc9a011961de06c686a85110d3d3c720a3d8b22fcc8a01f953"
+    },
+    "data/bible-text/bsb/2-corinthians.json": {
+      "before_sha256": "33a50b95931db5a714be5a7c35e90175b27e4a9c6a4fb2e07698e96b98736ed1",
+      "after_sha256": "36c22d99eb2394621787288020b93367eff3eee83f139f37c739f979e611e26f"
+    },
+    "data/bible-text/bsb/2-john.json": {
+      "before_sha256": "e752d4bf07848e1e13d898a8f84dcda715985489a32dd8e00b5f8b6429e493e0",
+      "after_sha256": "b1c59becf96a7ba95b5b9e8aa86d204c769306bf3825599758e0aebce22866be"
+    },
+    "data/bible-text/bsb/2-kings.json": {
+      "before_sha256": "f9d75b09d4a1b6e2f11d767223eb22407bb35427d5c92d50e0f3bc12629e59d5",
+      "after_sha256": "87abe46fbad3e96b06de4555dab4dfdce3d5fa4c3707417fb424ad1d0c555808"
+    },
+    "data/bible-text/bsb/2-peter.json": {
+      "before_sha256": "4a53e86422e69760c64af9557b423bccd4a947257b828e53c29c477f4c1002cd",
+      "after_sha256": "fc71d3d6d4b4e5e5f059629399359d94ccd0ff9e3cb6bbc1a80d88bcb32df166"
+    },
+    "data/bible-text/bsb/2-samuel.json": {
+      "before_sha256": "261d9d67dad6a24b1415528d484074ec15c33524c2a89ec85f25594baeb97e40",
+      "after_sha256": "e05ddf23a437909d1448ef12d28acd4b7f7dbbb76a940cf9a69507d7042eb54c"
+    },
+    "data/bible-text/bsb/2-thessalonians.json": {
+      "before_sha256": "4834cf5e683567563ac01e36d604ef6b5a73d815b533fa56cc1defcd81216dcd",
+      "after_sha256": "cf9a4a919ec4e800614c7d249aaeaabf29b9b4433ee986805bdbf952dc6c6a17"
+    },
+    "data/bible-text/bsb/2-timothy.json": {
+      "before_sha256": "bf0a471fcea29cd31d92f0b2cd98fa9b08f1757f85456dc5f019cbf4b1e8e644",
+      "after_sha256": "07138ffd6de076b6c000e370478a004e99e73e596ab6847a47bc89ba4b8265c8"
+    },
+    "data/bible-text/bsb/3-john.json": {
+      "before_sha256": "cfc7c37154cf59b5d710638412039fdae41b66989315d35c932390ec0a982575",
+      "after_sha256": "e99c523f57fd3d13bb8ddfd5c615ff15a857350355aac37ce1beba96d2c49815"
+    },
+    "data/bible-text/bsb/acts.json": {
+      "before_sha256": "c8be070016874f2ae64f2a9c780effd0ae34aa143fd67b3520f4222ea1668f16",
+      "after_sha256": "2347ba148e16af43fcdfd1a9b0ef93c7722fc55f9f75e85287c61e9bc51bfac7"
+    },
+    "data/bible-text/bsb/amos.json": {
+      "before_sha256": "3bacd7cbc2417b67039d183ceb2fc8a3aa1ae40d581713ed3b0924a99ac2c907",
+      "after_sha256": "9b026c13f7e854c9fa6d2f9485b248b379d0e5740c9edc9c315b727a39e97fbd"
+    },
+    "data/bible-text/bsb/colossians.json": {
+      "before_sha256": "6e8a9d891631595e2b2d9aef35c73f3e7a8eb870382d731e722fa9350922a5a7",
+      "after_sha256": "1a16d70bd85929cf9db1583e6a0a8589e3d7a2b9bba82469566bb7b9377de155"
+    },
+    "data/bible-text/bsb/daniel.json": {
+      "before_sha256": "2978ea390122f6d4dad0782e3c95479685c4d70df5b4e40c3ed461e04e7d46a5",
+      "after_sha256": "9a4dfbd4169704c7e9a0af288156dc31524a905a1e2e1211e5ed1a735b9188aa"
+    },
+    "data/bible-text/bsb/deuteronomy.json": {
+      "before_sha256": "b6bb34eee33f6a0f46bc13facdb8f15c81036af20d82683414ab6924483e72f9",
+      "after_sha256": "f9d221e1c5fb94c9535e3f64420f9072dfa7cc3dfc61b0771d0d0ba7aeb86a36"
+    },
+    "data/bible-text/bsb/ecclesiastes.json": {
+      "before_sha256": "135c6cca2ddb2b0e5f7ad65f8b3132bbaf14c5aa653bcf570eead7c96e12e8bc",
+      "after_sha256": "2c320d047409905b197ac25d9932aff002f86a42c4f9f3951b37a1c8f2cc9c32"
+    },
+    "data/bible-text/bsb/ephesians.json": {
+      "before_sha256": "6b27c777f6501483e4b1e8aa9353ea22b7ace61ec07ff4e276aa6297c34df716",
+      "after_sha256": "3734f83030eabf090226dfce06f2a6d6c2da685a6ae034f7d9113c922a785ae0"
+    },
+    "data/bible-text/bsb/esther.json": {
+      "before_sha256": "873a04bf08210dcde3ea105aa8bf6d809c7ed1d29bff6a45c5a75c2259e70b4c",
+      "after_sha256": "20776e08914d163609b29732e8c7f1c62118b85bc3f924a71388a2139837d7fe"
+    },
+    "data/bible-text/bsb/exodus.json": {
+      "before_sha256": "6b798b896e067f10350d8977bec2841979ed607e64949a5fabcce5bf4eb48c6a",
+      "after_sha256": "9a129d0097908f6292899a2e5de9918f58566ef112b77d07aefe1f17719cdec2"
+    },
+    "data/bible-text/bsb/ezekiel.json": {
+      "before_sha256": "e733dcbbf90e9356d0c28d446a2d14b696bd32d6d4b824db461dbd4d08ca716a",
+      "after_sha256": "5c5370affcd33722f9965d9289cd9b1a7098107749b67d2a8a991e4584e21875"
+    },
+    "data/bible-text/bsb/ezra.json": {
+      "before_sha256": "5617faa21ce62ddb571672851c0df270753f0001164b496ad0ee4f3b3329485f",
+      "after_sha256": "11eb1905700226732c45b81b98c0028df4c0b565b70930b089d2e3cc3bbb37c8"
+    },
+    "data/bible-text/bsb/galatians.json": {
+      "before_sha256": "2441c2fcf1a7356fb9ede9a0c34023dfea57bf23c84c0f1ca0eb7fe3f848aa54",
+      "after_sha256": "44c66b18023173f6a4d1b3d516ba7a9ebc3fa7e715a4045479b9102c42c44cc5"
+    },
+    "data/bible-text/bsb/genesis.json": {
+      "before_sha256": "fa5f269bb84e8f28d3679f3f57617aafb5dee7f6ae6cfb3ddcbf97e18827f9bd",
+      "after_sha256": "4ce76921543a86c304e311fd74e616c4e3c761940ee10761ba28f611f2a13149"
+    },
+    "data/bible-text/bsb/habakkuk.json": {
+      "before_sha256": "4fbd016d6dec1ac5cf9218bcdc7c865abd4d6ebd7ee23cec360e240636265f59",
+      "after_sha256": "82466eae0a863fc6b483e4d59ce39307a834d6d68e6b1a1a4e8d583fb2e84938"
+    },
+    "data/bible-text/bsb/haggai.json": {
+      "before_sha256": "cfe0421b5f0704e398e95ff04d2b13ff8911219b3112389061acf073233ba75b",
+      "after_sha256": "b91e69fdb47ff7ca885a3c53a8ea8bd0ddd454cbad6d978179b4e24e3f5bf7a5"
+    },
+    "data/bible-text/bsb/hebrews.json": {
+      "before_sha256": "ef58d969ad487b76bee1fb60863ead8702e9afb3facd75c4f7350146b9f02867",
+      "after_sha256": "423de80a18570a9389a5afd2db657340ea0a568457f7ffd0599a862632893113"
+    },
+    "data/bible-text/bsb/hosea.json": {
+      "before_sha256": "1ed326b213e90f8059da54eeedac8be5307d2e280478326a9cc3612c3a188b9b",
+      "after_sha256": "a94caf41f3a140591653187c6e5be832b408045c2d26d1dab4abb00f2481ed9d"
+    },
+    "data/bible-text/bsb/isaiah.json": {
+      "before_sha256": "b895ceb9440406d954c394f671be1e63d4e12d1ce226078a4ffe00920032e437",
+      "after_sha256": "27c285fa5175d66fd36aa999062d2b414330ab97e5ac9225cf513282fdaa5a8f"
+    },
+    "data/bible-text/bsb/james.json": {
+      "before_sha256": "bd61a123f5613c13af4fe7290ba7ee7f296fed64e651def2c32b0d3b427759d1",
+      "after_sha256": "bab45310d7c6bd486c86fc8b46ba17506a1ae685dfdcb73e2655ac5ddcb936af"
+    },
+    "data/bible-text/bsb/jeremiah.json": {
+      "before_sha256": "6513adf342d6eb84c1b7c1f4d2d098164bdf9a4c8908bdc6bed4c798cbcb0aab",
+      "after_sha256": "d700c7158f39736303f0eb91b5a500d75a0fffc1557c148ff785334e912298d3"
+    },
+    "data/bible-text/bsb/job.json": {
+      "before_sha256": "e488221dfde5369ccc9154d52751e82dd7c474f41cfaa1efa38de05bbe32b4a8",
+      "after_sha256": "3a38247751d9ec597d9ffa61abaadef74bbc7e432a8894f3d471617c1ceb1070"
+    },
+    "data/bible-text/bsb/joel.json": {
+      "before_sha256": "68b05f0e84f88c0ee0583f7f8a5ef743c2cba5584a5de165dbdd216e5492df76",
+      "after_sha256": "837f8f541e565df91caacf9a7b7b2218fa1951b74c483239b64d51c0f84eb203"
+    },
+    "data/bible-text/bsb/john.json": {
+      "before_sha256": "edfe3e317eed3f2445f2c28faa085ee3ea86ab3c21d4deef5eefbd5afb77efbd",
+      "after_sha256": "77e80cb8660b716f065fc727a2e323ecb8060cbcc463ac1770e24b4c9475d2fb"
+    },
+    "data/bible-text/bsb/jonah.json": {
+      "before_sha256": "08701a8e19a5e4c0d3897e94bd80559ad67281076c1136502d5d688112e02114",
+      "after_sha256": "06b004720f4420fb828a08be89849852c8dd508bf713ab24077092c1c3c811d1"
+    },
+    "data/bible-text/bsb/joshua.json": {
+      "before_sha256": "03a8b7fa0e79387610debae68c33177d5119b00080398748497a86418438a5e1",
+      "after_sha256": "1e426611668e4052fe6648be627d6f71212a37d9443a7d4403a875a998715894"
+    },
+    "data/bible-text/bsb/jude.json": {
+      "before_sha256": "9c7bad0016f30e3626ffa8b94688dee27bdcdfa85ff59c8922b6f4187ffc6e71",
+      "after_sha256": "cb31221c20ebd4bb2478e29375c2c0acaa18e21242aefd06bed2e3b83353a35e"
+    },
+    "data/bible-text/bsb/judges.json": {
+      "before_sha256": "a7bfc680800852c3aabe4108376d7ad4de38d769ba4ae7cb8002c5297fe10f44",
+      "after_sha256": "d9fdc27e6d1e854fc55124a40b033cc1412101ce77e218aecf1f450cf4334740"
+    },
+    "data/bible-text/bsb/lamentations.json": {
+      "before_sha256": "3386b392ea018a3f13d8faa17c13b68089785481902859c875116f1d0434a69d",
+      "after_sha256": "0e28c88768765010ed2bbd707b08929c19750ff87a88012145a5c59c5b4b2914"
+    },
+    "data/bible-text/bsb/leviticus.json": {
+      "before_sha256": "62566886a03c5a6d2e36be806dd47f3039d9605f753944b8e259d06d9d627874",
+      "after_sha256": "2dd5290a2905e2786f9b1c5779aebea2deb1876f8a407169e3583ec44cea9408"
+    },
+    "data/bible-text/bsb/luke.json": {
+      "before_sha256": "69c3eb2c974a7c0ed7e2f407307fc8cc186be3f5a2ed083b08612619b621177d",
+      "after_sha256": "3abd0c9fd486ab2d7fa1f111358b487916fc9d8d55ee469509894fcdb7a3e85b"
+    },
+    "data/bible-text/bsb/malachi.json": {
+      "before_sha256": "2445f50ecd2dfe530926b662bef9a18f476894b6a99e3da50161b3f6e1540881",
+      "after_sha256": "fbc6145d170a18cd4302e4c95b1e3f20e096fd07c41b721e96c8892c2075b26f"
+    },
+    "data/bible-text/bsb/mark.json": {
+      "before_sha256": "d6034644964c76821723b7677ce8238372a51bf1084462aea4303f29e8c46f8d",
+      "after_sha256": "08627b72e83b15b163445c658b4b9982bb83cf1458ce74322b3f63ef9fb11dfc"
+    },
+    "data/bible-text/bsb/matthew.json": {
+      "before_sha256": "a47edd79b675e664beed258ca3245da21b1655b12c4f8a5e0d524e5933db4747",
+      "after_sha256": "4630162251fab1177316ff98c5430f874ccc4dda21af0992540f7f77c6170925"
+    },
+    "data/bible-text/bsb/micah.json": {
+      "before_sha256": "07ec13beb36811e699191e8dc4becace718acb460ab130e20ac2ad977d347c7c",
+      "after_sha256": "c9aae74b960de6099900b6d4a81776b918d744314fd5ba9d43897414b663ef7b"
+    },
+    "data/bible-text/bsb/nahum.json": {
+      "before_sha256": "a1db092567656a775c53b749d3cf7640b43175c991639dd9c4639878c416fa05",
+      "after_sha256": "3390f0690c76a6762f3f9459ca3116c4e8020c76f790cff3988ea5ded2910a6c"
+    },
+    "data/bible-text/bsb/nehemiah.json": {
+      "before_sha256": "7d2b5138efb3768e56181b61b1d54f7fdeb7dbd8ee27bce86b81f04a57fa6cbe",
+      "after_sha256": "b4a3935e42b6940f30ac52f2049489dec7f528f9cbe313ed37c2485d38b9295d"
+    },
+    "data/bible-text/bsb/numbers.json": {
+      "before_sha256": "60a02ab84bb64bda657ac21b228152c8f3d61284d4b13693e660e0de15f5053f",
+      "after_sha256": "d305119aabb5dc74a4cb0a56123c936c85c387bd66be56999ccf3f336e782d50"
+    },
+    "data/bible-text/bsb/obadiah.json": {
+      "before_sha256": "fb08ce57324530e53bebe5799af42e154a71e2d669c33dbd74c0d9e8cc285fc9",
+      "after_sha256": "0cd64b40dab2b297d9787d9f5a1c85097661125d94b88fe994a2d0931a756c7f"
+    },
+    "data/bible-text/bsb/philemon.json": {
+      "before_sha256": "4137780387f50cd2ff78928fa91a1b0cdca65918baa9e37b9aa4aa80318ccb4f",
+      "after_sha256": "850c9712c8cef1d67225ded5b5fe0d5b2b10b0765e4e7ce7e9ad5d6ccb4cdc9f"
+    },
+    "data/bible-text/bsb/philippians.json": {
+      "before_sha256": "06bb40ba0b29656cb3182677fe4e5a6de2434d9a8771a2f6076c3e4ce69b8e18",
+      "after_sha256": "9becdb9b93cecb16152c382bc4039dd0d159bddea4b7549cfb3e91806ff6a2b1"
+    },
+    "data/bible-text/bsb/proverbs.json": {
+      "before_sha256": "e0410c0d1ffb3fe99185d510dab6b7e56779c7f2d88f55220ebd3b7ba6fbca63",
+      "after_sha256": "885b21b2a3f199806a4cac411cadc792856447c1c8d32a1fbcd98b7419c4239a"
+    },
+    "data/bible-text/bsb/psalms.json": {
+      "before_sha256": "372662cb094a17338069d9bb1138d24a6de463f3252cd5ee3c3b8a8773bf5e83",
+      "after_sha256": "b82d44b933a1920b56313c22efa9eed30eb05d9451482dc5b1a2fc27f15a162e"
+    },
+    "data/bible-text/bsb/revelation.json": {
+      "before_sha256": "ce9e2984d9eb407a0a81665d119d055a0a55afb29011dbd8f46448cf8acbf58d",
+      "after_sha256": "140111739defe884bbbcf379fc2de12c758a828ed0dc8150b97c875928467b30"
+    },
+    "data/bible-text/bsb/romans.json": {
+      "before_sha256": "167d546aa4eb2c07152bfd362ee07273087a7c273623103a137bc916c453fc67",
+      "after_sha256": "fa7567e6b8f18d767cf2efff320241fdf1346fbc53f23473bd84e020f492b1e6"
+    },
+    "data/bible-text/bsb/ruth.json": {
+      "before_sha256": "62aa346f7a66de427da301f4c5c12e71b3daaa5b98615c161d5da8ae6cf4b03c",
+      "after_sha256": "6db8c389e5f9dceea887cbe0288381ea70b1781357d44c4ca3db82da4e8b48f0"
+    },
+    "data/bible-text/bsb/song-of-solomon.json": {
+      "before_sha256": "757fa80d06cfe6332e1b4ba48b9fba12756bde919ada7a139a45dcd2d488dcde",
+      "after_sha256": "552fa460f110ebe1c6adc5d509b578b7e248bc6eaafdeed1951e6d86b74a739a"
+    },
+    "data/bible-text/bsb/titus.json": {
+      "before_sha256": "0a8dcb6bef496122471917be358945f7b3f3fed42504a768dbef23654cb782d3",
+      "after_sha256": "528a6ddd0f979810c3e2c403e685ef696314a7574508f13a0935ab09c6ca2ff3"
+    },
+    "data/bible-text/bsb/zechariah.json": {
+      "before_sha256": "22a5a7c4c3e9c598a0268f948a9098ae916e66d946e9c92df8e1a5554bb0daf0",
+      "after_sha256": "9547b38dc9593c075704b7d423d6257cd218df9ade373ea43ffc432da89e7192"
+    },
+    "data/bible-text/bsb/zephaniah.json": {
+      "before_sha256": "63544b0f2e9065dc6f82384163e7d59f9a3ba469f756882c178797e64d10eff7",
+      "after_sha256": "64d0798482a0b92a04f3cbe72da6df6d1b454daa5de3fc7c1eccdfcfe8cfb78d"
+    }
+  }
+}

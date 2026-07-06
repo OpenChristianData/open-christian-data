@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "run_cloud_ocr@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-vol02-vol09-catalog-update",
+  "started_at": "2026-05-29T01:52:18Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": "9aa08c1473a95d7b90358151dd58b0afb076ff794e35b582ab7dde5d81df8ba3",
+      "after_sha256": "fa4d0414c665a6e60aed2d8ca085940d2f2f3a2db3287047bb283a238421f33a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "volumes_added": [2, 9]
+    }
+  },
+  "allowed_field_paths": ["/renderings"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Updated azure-v1 rendering coverage from [1] to [1, 2, 9] after B2.5 assembly of vols 2 and 9.",
+  "renames": []
+}

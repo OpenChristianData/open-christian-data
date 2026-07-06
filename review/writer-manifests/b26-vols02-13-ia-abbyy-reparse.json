@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_abbyy.py@b2.6",
+  "writer_identity": "ia_schaff_herzog_parser",
+  "run_id": "b26-vols02-13-ia-abbyy-reparse",
+  "started_at": "2026-05-27T08:00:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_02.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_03.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_04.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_05.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_06.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_07.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_08.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_09.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_10.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_11.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_12.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_13.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_02.json": {
+      "before_sha256": null,
+      "after_sha256": "b56254cf5b60c86f35cdcf82d715082e81a2ccff205d18a03660e37285762be0"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_03.json": {
+      "before_sha256": null,
+      "after_sha256": "d848924e6ca2b3d4b285288f1a94eaf5faa436b45ebe01d1d1e4331b441a0cd2"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_04.json": {
+      "before_sha256": null,
+      "after_sha256": "697dd5d9a8015bb6028f5af96273adc9de9eb87f268c94bc68a44c58229cdbe1"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_05.json": {
+      "before_sha256": null,
+      "after_sha256": "9eca832267719d5ea56c3f3d5bf4f5d017a5ab3628649d7c9353d066384ee9e3"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_06.json": {
+      "before_sha256": null,
+      "after_sha256": "dd8c2e993fdf75d5366d63340bf20f9d82f46a1cb043120c50e831d2d7fabb8e"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_07.json": {
+      "before_sha256": null,
+      "after_sha256": "027add2dcf30c552852bab2772530ade05f962f0ce2730e3fd8957456e6e5730"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_08.json": {
+      "before_sha256": null,
+      "after_sha256": "e831662e24049b7812e1a0f3ea347fad628193ef62028f0ea17837d2ba6236a7"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_09.json": {
+      "before_sha256": null,
+      "after_sha256": "a5b01819b89d602a8bf3841c5b5c49219465442c88548865b4ec8ce3f99ed62a"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_10.json": {
+      "before_sha256": null,
+      "after_sha256": "e004f25786be2495a22980d1f12e871ffbe5f8da42ea2de851d635baf32bbb7c"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_11.json": {
+      "before_sha256": null,
+      "after_sha256": "f184a37b228a47c68bed9ab123c6b43a4a97af853c607eb31214ef53de7b4da2"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_12.json": {
+      "before_sha256": null,
+      "after_sha256": "6371bc49f3bfc17d241d7c548be25799d246f580b9b7d47ee7f46c3ff9146062"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_13.json": {
+      "before_sha256": null,
+      "after_sha256": "dfd8c2ab63ebcf129c4a5d7d173bc66eb6d74ade2e4c1e54d8b750a74e72eaf5"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_02.json": {
+      "page_count": 529,
+      "unmapped_leaf_count": 41,
+      "confidence_mean": 80.3
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_03.json": {
+      "page_count": 531,
+      "unmapped_leaf_count": 40,
+      "confidence_mean": 72.6
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_04.json": {
+      "page_count": 523,
+      "unmapped_leaf_count": 30,
+      "confidence_mean": 81.3
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_05.json": {
+      "page_count": 540,
+      "unmapped_leaf_count": 45,
+      "confidence_mean": 70.6
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_06.json": {
+      "page_count": 535,
+      "unmapped_leaf_count": 50,
+      "confidence_mean": 81.4
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_07.json": {
+      "page_count": 533,
+      "unmapped_leaf_count": 33,
+      "confidence_mean": 84.1
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_08.json": {
+      "page_count": 523,
+      "unmapped_leaf_count": 34,
+      "confidence_mean": 81.1
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_09.json": {
+      "page_count": 534,
+      "unmapped_leaf_count": 42,
+      "confidence_mean": 82.0
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_10.json": {
+      "page_count": 529,
+      "unmapped_leaf_count": 41,
+      "confidence_mean": 82.5
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_11.json": {
+      "page_count": 545,
+      "unmapped_leaf_count": 46,
+      "confidence_mean": 77.9
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_12.json": {
+      "page_count": 645,
+      "unmapped_leaf_count": 55,
+      "confidence_mean": 71.1
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_13.json": {
+      "page_count": 241,
+      "unmapped_leaf_count": 39,
+      "confidence_mean": 64.0
+    }
+  },
+  "allowed_field_paths": [
+    "/pages",
+    "/page_count",
+    "/pages_with_data",
+    "/unmapped_leaf_count",
+    "/confidence_mean",
+    "/assembled_at"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "First-time parse for vols 2-13. All 12 volumes fired skip-rate WARNINGs (5.7-16.2%) due to IA page_numbers front-matter boundary loss. Leaf-index sidecars (F4) capture previously-dropped body pages for all volumes. Vol 10 additionally has foreign-page scan defect at leaves 367-387.",
+  "renames": []
+}

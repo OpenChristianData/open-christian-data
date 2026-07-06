@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "id": "ccel/watts/hymns",
+    "title": "Hymns and Spiritual Songs",
+    "author_slug": "isaac-watts",
+    "author_display_name": "Isaac Watts",
+    "author_birth_year": 1674,
+    "author_death_year": 1748,
+    "original_publication_year": 1707,
+    "language": "en",
+    "tradition": ["reformed", "nonconformist"],
+    "license": "public-domain",
+    "schema_type": "reconciled_record",
+    "schema_version": "3.0.0",
+    "edition": "1719",
+    "pd_anchor": "ccel/watts/hymns/thml",
+    "modernisation_ruleset_version": null,
+    "attestation_summary": {
+      "block_count": 2,
+      "fully_attested_blocks": 2,
+      "blocks_with_disagreements": 0,
+      "blocks_with_structural_disagreements": 0
+    }
+  },
+  "blocks": [
+    {
+      "block_id": "b1c2d3e4f5a6b701",
+      "block_id_history": [],
+      "block_type": "verse_line",
+      "language": "en",
+      "language_confidence": 0.98,
+      "language_alternates": [],
+      "language_segments": [],
+      "original_text": "O God, our help in ages past, our hope for years to come, our shelter from the stormy blaſt, and our eternal home.",
+      "modern_text": "",
+      "annotations": {"hymn_number": "90", "stanza": "1"},
+      "source_pages": [
+        {"rendering_id": "ccel/watts/hymns/thml", "page_number": 1}
+      ],
+      "attested_by": ["ccel/watts/hymns/thml"],
+      "disagreements": [],
+      "structural_disagreements": [],
+      "modernisations": []
+    },
+    {
+      "block_id": "b1c2d3e4f5a6b702",
+      "block_id_history": [],
+      "block_type": "verse_line",
+      "language": "en",
+      "language_confidence": 0.98,
+      "language_alternates": [],
+      "language_segments": [],
+      "original_text": "A thouſand ages in thy ſight are like an evening gone, ſhort as the watch that ends the night before the riſing ſun.",
+      "modern_text": "",
+      "annotations": {"hymn_number": "90", "stanza": "2"},
+      "source_pages": [
+        {"rendering_id": "ccel/watts/hymns/thml", "page_number": 1}
+      ],
+      "attested_by": ["ccel/watts/hymns/thml"],
+      "disagreements": [],
+      "structural_disagreements": [],
+      "modernisations": []
+    }
+  ],
+  "match_explanations": []
+}

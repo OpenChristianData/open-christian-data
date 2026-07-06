@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_expositors_bible.py@v1.1.0",
+  "writer_identity": "ccel_expositors_bible_parser",
+  "run_id": "expositors-bible-book-keying-fix-2026-06-17",
+  "started_at": "2026-06-17T08:45:00.000000+00:00",
+  "data_paths": [
+    "data/commentaries/expositors-bible/ezra.json",
+    "data/commentaries/expositors-bible/song.json",
+    "data/commentaries/expositors-bible/1tim.json",
+    "data/commentaries/expositors-bible/jas.json",
+    "data/commentaries/expositors-bible/neh.json",
+    "data/commentaries/expositors-bible/esth.json",
+    "data/commentaries/expositors-bible/lam.json",
+    "data/commentaries/expositors-bible/2tim.json",
+    "data/commentaries/expositors-bible/titus.json",
+    "data/commentaries/expositors-bible/jude.json"
+  ],
+  "checksums": {
+    "data/commentaries/expositors-bible/ezra.json": {
+      "before_sha256": "22b389c18a36443507cfe0e107325c9f966612b2ae6d3f41dc20612adeb975f8",
+      "after_sha256": "1bacf2c667184878aaa870276c962f0b27c0b4ff436bdbe4d5a7f0eeda647cff"
+    },
+    "data/commentaries/expositors-bible/song.json": {
+      "before_sha256": "bad5e0dfa7487c61b4661fabd0d12b6add20d33b2fa3cf1cb61d8956e3ad75fa",
+      "after_sha256": "e41d808dde3067388d15d19f43ae06cb354c65e6c055f8daad620846bace75e5"
+    },
+    "data/commentaries/expositors-bible/1tim.json": {
+      "before_sha256": "08544d9177bae4c483fa5dc166003adca2f1dbe7e8831f485d5c1d5417e74c93",
+      "after_sha256": "10214628f44544d41809dd353d3057a233d92170740cf87de53aaebe01e4aaf8"
+    },
+    "data/commentaries/expositors-bible/jas.json": {
+      "before_sha256": "1cf2966d021cfeab650aa8eda23c07463752a9926516984742c8c2934ad75230",
+      "after_sha256": "80bf8a732d5812940e3948ef8830b4221246bdde48cf959a2a0421d990fe49fd"
+    },
+    "data/commentaries/expositors-bible/neh.json": {
+      "before_sha256": null,
+      "after_sha256": "5df859c6b00586f60b52e52156e4a03f8c6d7fc2278f47b7a03ca7b4e7d4b598"
+    },
+    "data/commentaries/expositors-bible/esth.json": {
+      "before_sha256": null,
+      "after_sha256": "aecaf8a5b8ee247dd93a5e6bf5761b11d15faa12af2cf2cf2cd603e7bd5d7a27"
+    },
+    "data/commentaries/expositors-bible/lam.json": {
+      "before_sha256": null,
+      "after_sha256": "a8658438c7b816bdb7efdf63b134f85c656afd2bc9fa1b4ab75931e8902e2f6d"
+    },
+    "data/commentaries/expositors-bible/2tim.json": {
+      "before_sha256": null,
+      "after_sha256": "0384a8e18f1c760496e6b29dd73479ba11261684226cbe166f1a93a2fe0c5102"
+    },
+    "data/commentaries/expositors-bible/titus.json": {
+      "before_sha256": null,
+      "after_sha256": "7ab25a0d568ca1a1b3ccaf34e7be208145601059bc595e77a424cdbc75a4ad09"
+    },
+    "data/commentaries/expositors-bible/jude.json": {
+      "before_sha256": null,
+      "after_sha256": "d7dce8fe07e8c5a24ca3f3e8cab337f9b97c8fd1ddc94e633f08cea63d7d7aaf"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/expositors-bible/ezra.json": {
+      "entries_added": 14
+    },
+    "data/commentaries/expositors-bible/neh.json": {
+      "entries_added": 16
+    },
+    "data/commentaries/expositors-bible/esth.json": {
+      "entries_added": 5
+    },
+    "data/commentaries/expositors-bible/song.json": {
+      "entries_added": 2
+    },
+    "data/commentaries/expositors-bible/lam.json": {
+      "entries_added": 19
+    },
+    "data/commentaries/expositors-bible/1tim.json": {
+      "entries_added": 16
+    },
+    "data/commentaries/expositors-bible/2tim.json": {
+      "entries_added": 11
+    },
+    "data/commentaries/expositors-bible/titus.json": {
+      "entries_added": 9
+    },
+    "data/commentaries/expositors-bible/jas.json": {
+      "entries_added": 26
+    },
+    "data/commentaries/expositors-bible/jude.json": {
+      "entries_added": 8
+    }
+  },
+  "allowed_field_paths": [],
+  "partial_completion_policy": "all-or-nothing",
+  "renames": []
+}

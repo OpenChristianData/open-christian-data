@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/review_state.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Sidecar Review State",
+  "description": "Per-record sidecar tracking review work outside data/. Path mirrors data/: data/<path>/<record>.json -> review/state/<path>/<record>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_type",
+    "schema_version",
+    "record_path",
+    "record_resource_id",
+    "record_checksum_sha256",
+    "parser_version_seen",
+    "confidence",
+    "entries",
+    "dead_letter"
+  ],
+  "properties": {
+    "schema_type": {
+      "const": "review_state"
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Semantic version of this sidecar shape, e.g. '1.0.0'.",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_path": {
+      "type": "string",
+      "description": "Relative path to the data/ record this sidecar attaches to."
+    },
+    "record_resource_id": {
+      "type": "string",
+      "description": "Canonical meta.id of the record's resource."
+    },
+    "record_checksum_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the record bytes captured at last sidecar write."
+    },
+    "parser_version_seen": {
+      "type": "string",
+      "description": "Parser module + version observed at last sidecar write, e.g. 'build/parsers/ia_schaff_herzog.py@v1.0.0'."
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structural_fidelity",
+        "text_fidelity",
+        "edition_provenance"
+      ],
+      "properties": {
+        "structural_fidelity": {
+          "$ref": "#/$defs/confidence_tier"
+        },
+        "text_fidelity": {
+          "$ref": "#/$defs/confidence_tier"
+        },
+        "edition_provenance": {
+          "$ref": "#/$defs/confidence_tier"
+        }
+      }
+    },
+    "entries": {
+      "type": "object",
+      "description": "Map of entry_id -> per-entry review state.",
+      "additionalProperties": {
+        "$ref": "#/$defs/entry_state"
+      }
+    },
+    "dead_letter": {
+      "type": "array",
+      "maxItems": 100,
+      "description": "Bounded in-sidecar dead-letter buffer. Overflow spills to review/dead-letter/<resource>.jsonl and the sidecar then stores spill_path/spill_count.",
+      "items": {
+        "$ref": "#/$defs/dead_letter_entry"
+      }
+    },
+    "spill_path": {
+      "type": "string",
+      "description": "Relative path to the per-resource dead-letter spill file when dead_letter overflowed."
+    },
+    "spill_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total entries spilled to spill_path beyond the in-sidecar buffer."
+    }
+  },
+  "$defs": {
+    "confidence_tier": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "machine-checked",
+        "witness-compared",
+        "human-reviewed",
+        "reference-grade"
+      ]
+    },
+    "entry_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "warnings_acknowledged",
+        "warnings_dismissed"
+      ],
+      "properties": {
+        "warnings_acknowledged": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning_decision"
+          }
+        },
+        "warnings_dismissed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning_decision"
+          }
+        },
+        "last_reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 UTC timestamp of the most recent review action on this entry."
+        },
+        "last_reviewer": {
+          "type": "string"
+        }
+      }
+    },
+    "warning_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer",
+        "code",
+        "signature",
+        "signature_version",
+        "reason"
+      ],
+      "properties": {
+        "producer": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "signature_version": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "expected",
+            "false_positive",
+            "wont_fix",
+            "other"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "dead_letter_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reason",
+        "raw_warning",
+        "received_at"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "enum": [
+            "producer_unknown",
+            "evidence_schema_failed",
+            "sidecar_schema_too_old",
+            "producer_signature_field_missing",
+            "renderer_unknown_evidence_shape",
+            "producer_output_schema_failed",
+            "producer_budget_exhausted",
+            "producer_dedupe_evidence_mismatch",
+            "correction_orphaned_by_parser"
+          ]
+        },
+        "raw_warning": {
+          "type": "object",
+          "description": "The original warning payload as emitted by the producer.",
+          "additionalProperties": true
+        },
+        "received_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "producer": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "entry_id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

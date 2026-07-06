@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_fisher_marrow.py@v1.0.2",
+  "writer_identity": "ia_fisher_marrow_parser",
+  "run_id": "batch02-fisher-marrow-fidelity-20260706",
+  "started_at": "2026-07-06T00:18:20+00:00",
+  "data_paths": [
+    "data/structured-text/fisher-marrow-of-modern-divinity.json"
+  ],
+  "checksums": {
+    "data/structured-text/fisher-marrow-of-modern-divinity.json": {
+      "before_sha256": "766ef56e15c231f79e77f44ff9ac479ec298bae2c509e442779dcca4e0fc190f",
+      "after_sha256": "cdfc3f5d6bc41cf017747e4d675abbccea222cbf1b3243207afa75d47da634a0"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/fisher-marrow-of-modern-divinity.json": {
+      "entries_changed": 1,
+      "fields_changed": 3
+    }
+  },
+  "allowed_field_paths": [
+    "/data/sections",
+    "/meta/provenance/notes",
+    "/meta/provenance/processing_date",
+    "/meta/provenance/processing_script_version"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

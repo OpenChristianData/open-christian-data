@@ -1,0 +1,32 @@
+{
+  "resource_id": "hooker-ecclesiastical-polity",
+  "title": "Of the Laws of Ecclesiastical Polity",
+  "author": "Richard Hooker",
+  "author_id": "hooker-richard",
+  "author_birth_year": 1554,
+  "author_death_year": 1600,
+  "contributors": [],
+  "original_publication_year": 1597,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "anglican"
+  ],
+  "era": "reformation",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "treatise",
+  "source_url": "https://archive.org/download/worksofrichardho0001hook/worksofrichardho0001hook_djvu.txt; https://archive.org/download/worksofrichardho0002hook/worksofrichardho0002hook_djvu.txt; https://archive.org/download/worksofrichardho0003hook_pt1/worksofrichardho0003hook_pt1_djvu.txt",
+  "source_format": "DjVuTXT (OCR)",
+  "source_edition": "John Keble, ed., The Works of Richard Hooker, Oxford University Press, 1836, vols. 1-3. Internet Archive DjVuTXT scans.",
+  "source_hash": "sha256:acd6b5b1f3ac0303550d1902c5345d60ec07a20070ef737439ca3ac66eda1495",
+  "source_type": "ia_djvutxt",
+  "source_file": "raw/gutenberg/worksofrichardho0001hook_djvu.txt; raw/gutenberg/worksofrichardho0002hook_djvu.txt; raw/gutenberg/worksofrichardho0003hook_pt1_djvu.txt",
+  "editor": "John Keble",
+  "editor_year": 1836,
+  "translator": null,
+  "download_date": "2026-07-05",
+  "output_file": "data/structured-text/hooker-ecclesiastical-polity.json",
+  "notes": "Parser strategy: extend gutenberg_systematics.py rather than fork. Hooker matches the existing multi-volume structured_text parser shape; its extra Keble apparatus is handled by work-specific book ranges and cleanup. The plain-text OCR does not expose stable chapter title lines, so numbered Roman divisions and running-header chapter signals are normalised into chapter nodes. Keble editorial footnotes and marginal notes remain inline where OCR interleaves them; sermons and the tractate on Justification are outside this Polity-only output. Plain-text inline emphasis markers are stripped in the JSON projection; bare numeric note anchors are tagged as [[pg-note-anchor:N]]."
+}

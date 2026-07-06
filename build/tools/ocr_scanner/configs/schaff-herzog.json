@@ -1,0 +1,30 @@
+{
+  "source_id": "schaff-herzog",
+  "pattern_set": "ia_djvu",
+  "pattern_set_version": "1",
+  "scan_fields": ["term", "alt_terms", "definition_blocks"],
+  "ignore_fields": ["entry_id", "dictionary_id", "scripture_references", "related_terms", "word_count"],
+  "whitelist_terms": ["OF", "TO", "DE", "IN", "AT", "ON", "OR", "AN", "BY", "AS", "IS", "IT", "IF", "UP", "SO", "NO", "DO", "HE", "WE", "MY", "MPL", "MPG", "MGH", "ANF", "NPNF", "DB", "CR", "AKR", "ALKG", "MPQ", "ASS", "LTHK", "RE", "ZKG", "TLZ", "ZWT", "TU", "ASB", "BA", "ID", "DU", "LA", "LE", "IB", "OP", "MPO", "EB"],
+  "whitelist_patterns": [
+    "^[IVXLCDM]+\\.?$",
+    "^[A-Z]\\.[A-Z]\\.?$",
+    "^[A-Z]\\.$",
+    "^[A-Z]$",
+    "^[A-Z][,;:]$",
+    "^\\d+(?:st|nd|rd|th)$",
+    "^\\([IVX]+[^A-Za-z]*$",
+    "^\\([A-Z][a-z]",
+    "^\\([A-Z][^A-Za-z]",
+    "^\\([A-Z]$"
+  ],
+  "tier3_enabled": false,
+  "_known_corruptions": {
+    "description": "Four cases from initial audit. See plan for detectability status.",
+    "cases": [
+      {"corrupted": "THE0T0K0S", "corrected": "THEOTOKOS", "reason": "digit_in_letter", "status": "corrected_in_parser_not_detectable"},
+      {"corrupted": "THE0T0K08", "corrected": "THEOTOKOS", "reason": "digit_in_letter", "status": "present_in_json_detectable"},
+      {"corrupted": "THE ATINES", "corrected": "THEATINES", "reason": "apparent_space_insertion", "status": "corrected_in_parser_not_detectable"},
+      {"corrupted": "(ECOLAMPADIUS", "corrected": "OECOLAMPADIUS", "reason": "ligature_bracket", "status": "present_in_json_detectable_plus_20_others"}
+    ]
+  }
+}

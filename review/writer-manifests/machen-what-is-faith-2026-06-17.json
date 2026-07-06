@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/gutenberg_evangelical.py@v1.0.0",
+  "writer_identity": "gutenberg_evangelical_parser",
+  "run_id": "machen-what-is-faith-2026-06-17",
+  "started_at": "2026-06-17T02:00:00+00:00",
+  "data_paths": [
+    "data/structured-text/machen-what-is-faith.json"
+  ],
+  "checksums": {
+    "data/structured-text/machen-what-is-faith.json": {
+      "before_sha256": null,
+      "after_sha256": "d84a8961c6435fdd814597b136278769160bb9e877bf6f2285bcc7065a330fc7"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/machen-what-is-faith.json": {
+      "entries_added": 7
+    }
+  }
+}

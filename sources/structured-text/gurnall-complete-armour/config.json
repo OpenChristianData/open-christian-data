@@ -1,0 +1,32 @@
+{
+  "resource_id": "gurnall-complete-armour",
+  "title": "The Christian in Complete Armour",
+  "author": "William Gurnall",
+  "author_id": "gurnall-william",
+  "author_birth_year": 1616,
+  "author_death_year": 1679,
+  "contributors": [
+    "John Campbell (reviser)"
+  ],
+  "original_publication_year": 1662,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "puritan"
+  ],
+  "era": "post-reformation",
+  "audience": "pastoral",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "treatise",
+  "source_url": "https://archive.org/download/christianincom00gurn/christianincom00gurn_djvu.txt",
+  "source_format": "plain text (OCR from IA scan)",
+  "source_edition": "Carefully revised and corrected by Rev. John Campbell, D.D. London: Thomas Tegg, 1845. (Princeton Theological Seminary scan via Internet Archive.)",
+  "source_hash": "sha256:aa145a5411d1f87b35cde03407e9c4db4cc0a003a550821c3a9c73d54be2c4fa",
+  "source_type": "ia_ocr_txt",
+  "source_file": "raw/ia/gurnall_complete_armour.txt",
+  "download_date": "2026-04-23",
+  "output_file": "data/structured-text/gurnall-complete-armour.json",
+  "notes": "1845 combined edition merges all 3 original volumes (1655-1662) without volume markers. OCR text from ABBYY FineReader 8.0 scan at 400 ppi. Double spaces and OCR artifacts normalized. TOC entries (CHAP.) skipped; body chapters detected by full 'CHAPTER' keyword."
+}

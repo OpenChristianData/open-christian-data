@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "manual@phase-b0",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "phase-b0-catalog-fix",
+  "started_at": "2026-05-20T00:00:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": "829ab3fe64e1a487739667c783b9a22daf527564cfcab58eafe18fff40d0b108",
+      "after_sha256": "87da65f9381dde3f221211e206829936b8d4e3bc8991ab3b15e4f7151a8cfb7f"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "entries_changed": 0,
+      "fields_changed": 3
+    }
+  },
+  "allowed_field_paths": [
+    "/pd_anchor_decision/rationale",
+    "/pd_anchor_decision/alternates_considered",
+    "/pd_anchor_decision/per_volume_effective_pd_anchor",
+    "/aliases"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

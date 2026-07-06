@@ -1,0 +1,26 @@
+{
+  "vol": 1,
+  "common_pages": 489,
+  "total_flags": 70821,
+  "flags_by_stream": {
+    "tess_vs_abbyy": 31606,
+    "azure_vs_abbyy": 39215
+  },
+  "flags_by_class": {
+    "body": 61884,
+    "bibliography": 8812,
+    "column_edge": 125
+  },
+  "pages_by_class": {
+    "body": 437,
+    "bibliography": 50,
+    "column_edge": 2
+  },
+  "anchor_engine": "abbyy",
+  "renderings_compared": [
+    "abbyy",
+    "tesseract",
+    "azure"
+  ],
+  "note": "CCEL ThML excluded from token alignment because anchor blocks are headword-only (no body text). N-rendering decision: Option A with ABBYY as token-alignment reference, two pairwise flag streams."
+}

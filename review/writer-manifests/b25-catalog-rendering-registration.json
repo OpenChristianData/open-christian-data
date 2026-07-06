@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "manual@phase-b25",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-catalog-rendering-registration",
+  "started_at": "2026-05-25T00:00:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": "87da65f9381dde3f221211e206829936b8d4e3bc8991ab3b15e4f7151a8cfb7f",
+      "after_sha256": "22f9d3fa6685ca8dd1cf9ca703a95c008a57cf628744e7cf38406699624c548d"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "entries_changed": 0,
+      "fields_changed": 2
+    }
+  },
+  "allowed_field_paths": [
+    "/aliases",
+    "/renderings"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

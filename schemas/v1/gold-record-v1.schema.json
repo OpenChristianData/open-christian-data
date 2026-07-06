@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/gold-record-v1.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Gold Record",
+  "description": "One reviewer-authored ground-truth unit for OCR gold sampling.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "gold_id",
+    "volume",
+    "unit",
+    "verification",
+    "output_status",
+    "manifest_id",
+    "rendering_id",
+    "page_native_id",
+    "page_sequence",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "gold-record-v1"},
+    "gold_id": {"type": "string", "minLength": 1},
+    "volume": {"type": "integer", "minimum": 1},
+    "unit": {"enum": ["page", "zone", "token"]},
+    "verification": {"enum": ["verified", "unverifiable"]},
+    "output_status": {
+      "enum": [
+        "recognised_from_page",
+        "restored_from_reference",
+        "human_confirmed",
+        "unresolved"
+      ]
+    },
+    "manifest_id": {"type": "string", "minLength": 1},
+    "rendering_id": {"type": "string", "minLength": 1},
+    "page_native_id": {"type": "string", "minLength": 1},
+    "page_sequence": {"type": "integer", "minimum": 1},
+    "block_id": {"type": "string", "minLength": 1},
+    "observation_token_id": {"$ref": "#/$defs/ot_token_id"},
+    "ground_truth_text": {"type": ["string", "null"]},
+    "unverifiable_reason": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "timestamp", "source_basis"],
+      "properties": {
+        "actor_id": {"type": "string", "minLength": 1},
+        "timestamp": {"type": "string", "format": "date-time"},
+        "source_basis": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"unit": {"const": "zone"}}},
+      "then": {"required": ["block_id"]}
+    },
+    {
+      "if": {"properties": {"unit": {"const": "token"}}},
+      "then": {"required": ["block_id", "observation_token_id"]}
+    },
+    {
+      "if": {"properties": {"verification": {"const": "verified"}}},
+      "then": {
+        "required": ["ground_truth_text"],
+        "properties": {
+          "ground_truth_text": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"verification": {"const": "unverifiable"}}},
+      "then": {
+        "required": ["ground_truth_text", "unverifiable_reason"],
+        "properties": {
+          "ground_truth_text": {"type": "null"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "prefixed_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\\\).+"
+    },
+    "ot_token_id": {"type": "string", "pattern": "^ot-sha256:[0-9a-f]{64}$"}
+  }
+}

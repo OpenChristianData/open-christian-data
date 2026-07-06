@@ -1,0 +1,36 @@
+{
+  "fixture_id": "boundary_score_77",
+  "target_score": 77,
+  "expected_bucket": "mid_high",
+  "expected_action": "cluster",
+  "expected_surface": "silent",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "original_text": "Origen of Alexandria interpreted many passages of sacred scripture in a symbolic fashion.",
+    "annotations": {"headword": "Allegory"},
+    "source_pages": [{"page_number": 22}]
+  },
+  "attestor_block": {
+    "block_type": "heading",
+    "original_text": "Origen of Alexandria interpreted many passages of sacred scripture in a symbolic fashion.",
+    "annotations": {"headword": "Allegory"},
+    "source_pages": [{"page_number": 22}]
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 1,
+    "anchor_len": 10,
+    "attestor_len": 10
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 30,
+    "text_similarity": 25,
+    "source_order": 7,
+    "block_type": 0,
+    "page_proximity": 10,
+    "language_profile": 0,
+    "ocr_skeleton": 5
+  },
+  "hand_computation": "ann_exact(30) + text_identical(25) + ocr_identical(5) + order_7(7) + bt_incompat(0) + page_same(10) + lang_absent(0) = 77",
+  "notes": "annotation_key: shared key 'headword', same value 'Allegory' -> exact=30. text identical -> 25+5. source_order: rel_a=0/(10-1)=0, rel_b=1/(10-1)=0.1111, delta=0.1111, 0.05<=0.1111<0.20 -> 7. block_type paragraph vs heading -> frozenset not in _COMPATIBLE_TYPES -> 0. same page 22 -> diff=0 -> 10. no language -> 0. surface=silent because anchor bt_a='paragraph'."
+}

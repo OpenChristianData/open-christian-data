@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/gutenberg_commentary.py@v1.0.0",
+  "writer_identity": "gutenberg_commentary_parser",
+  "run_id": "146861de904b46c18efc50103721912d",
+  "started_at": "2026-06-17T06:19:18+00:00",
+  "data_paths": [
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json",
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json"
+  ],
+  "checksums": {
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json": {
+      "before_sha256": null,
+      "after_sha256": "ab55f346e50fc3628383da0aeab84a5ed2fcc4a0bab421988f52424c415f5c98"
+    },
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json": {
+      "before_sha256": null,
+      "after_sha256": "859020cb41464bec7fd152ecbc6fdff56199206d529d8eb6603bb3dca2df4881"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json": {
+      "entries_added": 81
+    },
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json": {
+      "entries_added": 15
+    }
+  }
+}

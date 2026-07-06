@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/modernised_record.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "title": "Modernised Record",
+  "description": "Modernised sibling of a reconciled record. Same block structure; meta carries paired_with (path to the original) and a non-null modernisation_ruleset_version. Modernisations[] on blocks records which rules fired and what changed.",
+  "type": "object",
+  "required": ["meta", "blocks", "match_explanations"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "author_slug",
+        "author_display_name",
+        "author_birth_year",
+        "author_death_year",
+        "original_publication_year",
+        "language",
+        "tradition",
+        "license",
+        "schema_type",
+        "schema_version",
+        "edition",
+        "pd_anchor",
+        "modernisation_ruleset_version",
+        "attestation_summary",
+        "paired_with"
+      ],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "author_slug": {"type": "string"},
+        "author_display_name": {"type": "string"},
+        "author_birth_year": {"type": ["integer", "null"]},
+        "author_death_year": {"type": ["integer", "null"]},
+        "original_publication_year": {"type": ["integer", "null"]},
+        "language": {"type": "string", "pattern": "^[a-z]{2,3}$"},
+        "tradition": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "adventist", "anabaptist", "anglican", "arminian", "baptist",
+              "brethren", "calvinist", "calvinist-methodist", "catholic",
+              "confessional", "congregationalist", "continental-reformed",
+              "dutch-reformed", "ecumenical", "evangelical", "free-church",
+              "fundamentalist", "holiness", "jansenist", "lutheran",
+              "mennonite", "methodist", "monastic", "moravian",
+              "non-denominational", "nonconformist", "orthodox",
+              "particular-baptist", "patristic", "pietist", "presbyterian",
+              "puritan", "quaker", "reformed", "revivalist",
+              "salvation-army", "scholastic", "wesleyan"
+            ]
+          }
+        },
+        "license": {
+          "type": "string",
+          "enum": [
+            "public-domain", "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0",
+            "cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nd", "cc-by-nc-nd",
+            "cc-by-nc-sa", "restricted", "all-rights-reserved"
+          ]
+        },
+        "schema_type": {"type": "string", "const": "modernised_record"},
+        "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "edition": {"type": "string"},
+        "pd_anchor": {"type": "string"},
+        "modernisation_ruleset_version": {
+          "type": "string",
+          "pattern": "^[a-z]+@[0-9]+\\.[0-9]+\\.[0-9]+"
+        },
+        "paired_with": {"type": "string"},
+        "attestation_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "block_count",
+            "fully_attested_blocks",
+            "blocks_with_disagreements",
+            "blocks_with_structural_disagreements"
+          ],
+          "properties": {
+            "block_count": {"type": "integer", "minimum": 0},
+            "fully_attested_blocks": {"type": "integer", "minimum": 0},
+            "blocks_with_disagreements": {"type": "integer", "minimum": 0},
+            "blocks_with_structural_disagreements": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/block"}
+    },
+    "match_explanations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/match_explanation"}
+    }
+  },
+  "$defs": {
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "block_id_history",
+        "block_type",
+        "language",
+        "language_confidence",
+        "language_alternates",
+        "language_segments",
+        "original_text",
+        "modern_text",
+        "annotations",
+        "source_pages",
+        "attested_by",
+        "disagreements",
+        "structural_disagreements",
+        "modernisations"
+      ],
+      "properties": {
+        "block_id": {"type": "string"},
+        "block_id_history": {"type": "array", "items": {"type": "string"}},
+        "block_type": {
+          "type": "string",
+          "enum": [
+            "paragraph", "heading", "lemma", "list_item", "footnote",
+            "verse_line", "headword", "quote", "table_row"
+          ]
+        },
+        "language": {"type": "string", "pattern": "^[a-z]{2,8}$"},
+        "language_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "language_alternates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["language", "confidence"],
+            "additionalProperties": false,
+            "properties": {
+              "language": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        },
+        "language_segments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/language_segment"}
+        },
+        "original_text": {"type": "string"},
+        "modern_text": {"type": "string"},
+        "annotations": {"type": "object"},
+        "source_pages": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/source_page"}
+        },
+        "attested_by": {"type": "array", "items": {"type": "string"}},
+        "disagreements": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/disagreement"}
+        },
+        "structural_disagreements": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/structural_disagreement"}
+        },
+        "modernisations": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/modernisation"}
+        }
+      }
+    },
+    "language_segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["span", "language", "original_script", "transliteration"],
+      "properties": {
+        "span": {
+          "type": "object",
+          "required": ["start_token", "end_token"],
+          "additionalProperties": false,
+          "properties": {
+            "start_token": {"type": "integer", "minimum": 0},
+            "end_token": {"type": "integer", "minimum": 0}
+          }
+        },
+        "language": {"type": "string"},
+        "original_script": {"type": "string"},
+        "transliteration": {"type": "string"},
+        "transliterated_from": {"type": "string"}
+      }
+    },
+    "source_page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rendering_id", "page_number"],
+      "properties": {
+        "rendering_id": {"type": "string"},
+        "page_number": {"type": ["integer", "null"]},
+        "bbox": {
+          "type": "object",
+          "properties": {
+            "x": {"type": "number"},
+            "y": {"type": "number"},
+            "width": {"type": "number"},
+            "height": {"type": "number"}
+          }
+        }
+      }
+    },
+    "disagreement": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["span", "kind", "chosen_reading", "chosen_reading_attested_by"],
+      "properties": {
+        "span": {
+          "type": "object",
+          "required": ["start_token", "end_token"],
+          "properties": {
+            "start_token": {"type": "integer", "minimum": 0},
+            "end_token": {"type": "integer", "minimum": 0}
+          }
+        },
+        "kind": {"type": "string"},
+        "chosen_reading": {"type": "string"},
+        "chosen_reading_attested_by": {"type": "array", "items": {"type": "string"}},
+        "match_explanation_id": {"type": "string"}
+      }
+    },
+    "structural_disagreement": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "neighbour_merged_in_source",
+            "block_split_in_source",
+            "block_missing_in_source",
+            "heading_extra_in_source",
+            "heading_missing_in_source",
+            "block_type_conflict_in_source",
+            "annotation_chunking_disagreement",
+            "unclassified"
+          ]
+        },
+        "match_explanation_id": {"type": "string"}
+      }
+    },
+    "modernisation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["rule_id", "span", "original", "modern"],
+      "properties": {
+        "rule_id": {"type": ["string", "null"]},
+        "rule_version": {"type": "string"},
+        "kind": {"type": "string", "enum": ["editorial"]},
+        "editor_decision": {
+          "type": "object",
+          "required": ["rationale", "decided_at"],
+          "properties": {
+            "rationale": {"type": "string"},
+            "decided_at": {"type": "string", "format": "date-time"}
+          }
+        },
+        "span": {
+          "type": "object",
+          "required": ["start_token", "end_token"],
+          "properties": {
+            "start_token": {"type": "integer", "minimum": 0},
+            "end_token": {"type": "integer", "minimum": 0}
+          }
+        },
+        "original": {"type": "string"},
+        "modern": {"type": "string"}
+      }
+    },
+    "match_explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["match_explanation_id", "scope", "signals", "total_score", "decision"],
+      "properties": {
+        "match_explanation_id": {"type": "string"},
+        "scope": {
+          "type": "string",
+          "enum": ["block_pair_edge", "disagreement", "structural_disagreement"]
+        },
+        "block_id": {"type": "string"},
+        "block_id_pair": {"type": "array", "items": {"type": "string"}, "minItems": 2, "maxItems": 2},
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "raw_score", "weight", "contribution"],
+            "properties": {
+              "name": {"type": "string"},
+              "raw_score": {"type": "number"},
+              "weight": {"type": "number"},
+              "contribution": {"type": "number"}
+            }
+          }
+        },
+        "total_score": {"type": "number"},
+        "decision": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["kind", "bucket", "score_range", "action", "surface"],
+              "additionalProperties": false,
+              "properties": {
+                "kind": {"const": "edge_match"},
+                "bucket": {"type": "string"},
+                "score_range": {"type": "string"},
+                "action": {"type": "string"},
+                "surface": {"type": "string"}
+              }
+            },
+            {
+              "type": "object",
+              "required": ["kind", "pd_only_gap", "winning_has_pd_support", "classification", "advisory_score"],
+              "additionalProperties": false,
+              "properties": {
+                "kind": {"const": "reading_score"},
+                "pd_only_gap": {"type": "number"},
+                "winning_has_pd_support": {"type": "boolean"},
+                "classification": {"type": "string"},
+                "advisory_score": {"type": "number"}
+              }
+            },
+            {
+              "type": "object",
+              "required": ["kind", "rule_applied", "outcome"],
+              "additionalProperties": false,
+              "properties": {
+                "kind": {"const": "structural_rule"},
+                "rule_applied": {"type": "string"},
+                "outcome": {"type": "string"}
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

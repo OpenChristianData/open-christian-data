@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.elohim",
+  "positive_input": "Elohim the creator God who made the heavens and the earth",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "Elohim"},
+  "negative_input": "God the creator who made the heavens and the earth",
+  "negative_expected": null
+}

@@ -1,0 +1,139 @@
+{
+  "generated": "2026-04-01",
+  "description": "Verses present in KJV/TR versification but absent from the BSB critical text. type='manuscript_omission': verse absent from modern critical text (textual dispute). type='versification_offset': verse numbering differs due to SWORD/MT superscription counting -- the underlying text is the same, only the verse number differs.",
+  "total_count": 19,
+  "counts": {
+    "versification_offset": 2,
+    "manuscript_omission": 17
+  },
+  "books": {
+    "Ps": {
+      "140": [
+        {
+          "verse": 14,
+          "type": "versification_offset"
+        }
+      ],
+      "142": [
+        {
+          "verse": 8,
+          "type": "versification_offset"
+        }
+      ]
+    },
+    "Matt": {
+      "17": [
+        {
+          "verse": 21,
+          "type": "manuscript_omission"
+        }
+      ],
+      "18": [
+        {
+          "verse": 11,
+          "type": "manuscript_omission"
+        }
+      ],
+      "23": [
+        {
+          "verse": 14,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "Mark": {
+      "7": [
+        {
+          "verse": 16,
+          "type": "manuscript_omission"
+        }
+      ],
+      "9": [
+        {
+          "verse": 44,
+          "type": "manuscript_omission"
+        },
+        {
+          "verse": 46,
+          "type": "manuscript_omission"
+        }
+      ],
+      "11": [
+        {
+          "verse": 26,
+          "type": "manuscript_omission"
+        }
+      ],
+      "15": [
+        {
+          "verse": 28,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "Luke": {
+      "17": [
+        {
+          "verse": 36,
+          "type": "manuscript_omission"
+        }
+      ],
+      "23": [
+        {
+          "verse": 17,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "John": {
+      "5": [
+        {
+          "verse": 4,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "Acts": {
+      "8": [
+        {
+          "verse": 37,
+          "type": "manuscript_omission"
+        }
+      ],
+      "15": [
+        {
+          "verse": 34,
+          "type": "manuscript_omission"
+        }
+      ],
+      "24": [
+        {
+          "verse": 7,
+          "type": "manuscript_omission"
+        }
+      ],
+      "28": [
+        {
+          "verse": 29,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "Rom": {
+      "16": [
+        {
+          "verse": 24,
+          "type": "manuscript_omission"
+        }
+      ]
+    },
+    "3John": {
+      "1": [
+        {
+          "verse": 15,
+          "type": "manuscript_omission"
+        }
+      ]
+    }
+  }
+}

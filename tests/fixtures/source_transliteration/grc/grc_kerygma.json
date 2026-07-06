@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.kerygma",
+  "positive_input": "The kerygma is the proclamation of the gospel",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "kerygma"},
+  "negative_input": "The proclamation is the proclamation of the gospel",
+  "negative_expected": null
+}

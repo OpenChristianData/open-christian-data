@@ -1,0 +1,26 @@
+{
+  "providers": {
+    "google_cloud_vision": {
+      "monthly_free_limit": 1000,
+      "monthly_soft_cap": 950,
+      "unit": "pages"
+    },
+    "aws_textract": {
+      "monthly_free_limit": 1000,
+      "monthly_soft_cap": 950,
+      "unit": "pages",
+      "free_tier_months": 3
+    },
+    "azure_ai_vision": {
+      "monthly_free_limit": 5000,
+      "monthly_soft_cap": 4750,
+      "unit": "pages"
+    },
+    "azure_document_intelligence": {
+      "monthly_free_limit": 500,
+      "monthly_soft_cap": 480,
+      "unit": "pages",
+      "notes": "Reserve for difficult pages; AI Vision is the default engine"
+    }
+  }
+}

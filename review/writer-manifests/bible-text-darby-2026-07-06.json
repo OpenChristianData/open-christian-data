@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bible_text_translations.py@v1.0.0",
+  "writer_identity": "bible_text_translations_parser",
+  "run_id": "adf43df9d746d59b83a98cc980c68176",
+  "started_at": "2026-07-05T18:44:20.070233+00:00",
+  "data_paths": [
+    "data/bible-text/darby/1-chronicles.json",
+    "data/bible-text/darby/1-corinthians.json",
+    "data/bible-text/darby/1-john.json",
+    "data/bible-text/darby/1-kings.json",
+    "data/bible-text/darby/1-peter.json",
+    "data/bible-text/darby/1-samuel.json",
+    "data/bible-text/darby/1-thessalonians.json",
+    "data/bible-text/darby/1-timothy.json",
+    "data/bible-text/darby/2-chronicles.json",
+    "data/bible-text/darby/2-corinthians.json",
+    "data/bible-text/darby/2-john.json",
+    "data/bible-text/darby/2-kings.json",
+    "data/bible-text/darby/2-peter.json",
+    "data/bible-text/darby/2-samuel.json",
+    "data/bible-text/darby/2-thessalonians.json",
+    "data/bible-text/darby/2-timothy.json",
+    "data/bible-text/darby/3-john.json",
+    "data/bible-text/darby/acts.json",
+    "data/bible-text/darby/amos.json",
+    "data/bible-text/darby/colossians.json",
+    "data/bible-text/darby/daniel.json",
+    "data/bible-text/darby/deuteronomy.json",
+    "data/bible-text/darby/ecclesiastes.json",
+    "data/bible-text/darby/ephesians.json",
+    "data/bible-text/darby/esther.json",
+    "data/bible-text/darby/exodus.json",
+    "data/bible-text/darby/ezekiel.json",
+    "data/bible-text/darby/ezra.json",
+    "data/bible-text/darby/galatians.json",
+    "data/bible-text/darby/genesis.json",
+    "data/bible-text/darby/habakkuk.json",
+    "data/bible-text/darby/haggai.json",
+    "data/bible-text/darby/hebrews.json",
+    "data/bible-text/darby/hosea.json",
+    "data/bible-text/darby/isaiah.json",
+    "data/bible-text/darby/james.json",
+    "data/bible-text/darby/jeremiah.json",
+    "data/bible-text/darby/job.json",
+    "data/bible-text/darby/joel.json",
+    "data/bible-text/darby/john.json",
+    "data/bible-text/darby/jonah.json",
+    "data/bible-text/darby/joshua.json",
+    "data/bible-text/darby/jude.json",
+    "data/bible-text/darby/judges.json",
+    "data/bible-text/darby/lamentations.json",
+    "data/bible-text/darby/leviticus.json",
+    "data/bible-text/darby/luke.json",
+    "data/bible-text/darby/malachi.json",
+    "data/bible-text/darby/mark.json",
+    "data/bible-text/darby/matthew.json",
+    "data/bible-text/darby/micah.json",
+    "data/bible-text/darby/nahum.json",
+    "data/bible-text/darby/nehemiah.json",
+    "data/bible-text/darby/numbers.json",
+    "data/bible-text/darby/obadiah.json",
+    "data/bible-text/darby/philemon.json",
+    "data/bible-text/darby/philippians.json",
+    "data/bible-text/darby/proverbs.json",
+    "data/bible-text/darby/psalms.json",
+    "data/bible-text/darby/revelation.json",
+    "data/bible-text/darby/romans.json",
+    "data/bible-text/darby/ruth.json",
+    "data/bible-text/darby/song-of-solomon.json",
+    "data/bible-text/darby/titus.json",
+    "data/bible-text/darby/zechariah.json",
+    "data/bible-text/darby/zephaniah.json"
+  ],
+  "checksums": {
+    "data/bible-text/darby/1-chronicles.json": {
+      "before_sha256": null,
+      "after_sha256": "912fd866a4d97bcf694837114ac94445e593a4cc8755ea6f236d60b3c685d397"
+    },
+    "data/bible-text/darby/1-corinthians.json": {
+      "before_sha256": null,
+      "after_sha256": "8778843a5b190bf678cc41733f23a2d43112eedab537a1ba1709a4b5ee6653d9"
+    },
+    "data/bible-text/darby/1-john.json": {
+      "before_sha256": null,
+      "after_sha256": "259dba08ce01ee2b10da2b2be2969748ff1a800d2782e749c6f188c1958db4be"
+    },
+    "data/bible-text/darby/1-kings.json": {
+      "before_sha256": null,
+      "after_sha256": "fd44cd633ed1f82fa46363014022716b52db7b839a3e8059fb6092a8e0d10d68"
+    },
+    "data/bible-text/darby/1-peter.json": {
+      "before_sha256": null,
+      "after_sha256": "f2a1480865f4edda9105d02f9d7fffdecee0ee1b8fbad204544f1396c81e83a4"
+    },
+    "data/bible-text/darby/1-samuel.json": {
+      "before_sha256": null,
+      "after_sha256": "bddb774826bf96655b2d11f44f161d78cb5795e5539a0d291e32b1900eca5412"
+    },
+    "data/bible-text/darby/1-thessalonians.json": {
+      "before_sha256": null,
+      "after_sha256": "4343ed84762acf249c2ed8ff0c5cac5684a442798abac42f61ef65437f969975"
+    },
+    "data/bible-text/darby/1-timothy.json": {
+      "before_sha256": null,
+      "after_sha256": "37b4d3b335bc2d2cc706de39b5002560bd9fd5fa7390b87bfeb1e84db3159f2e"
+    },
+    "data/bible-text/darby/2-chronicles.json": {
+      "before_sha256": null,
+      "after_sha256": "3056eb2469d2563d21ef3609c1a6e1e0ff7fb519224ac69091b788bcd5c7e9cc"
+    },
+    "data/bible-text/darby/2-corinthians.json": {
+      "before_sha256": null,
+      "after_sha256": "f3f978f214f46c3de32030d0d820a261bdfc27c2b7534e785725ad1a9e6b70b7"
+    },
+    "data/bible-text/darby/2-john.json": {
+      "before_sha256": null,
+      "after_sha256": "3a99e2ec2fee69f5b66458d6f2671d05bbb2552a850c15d5665a41063fcdc075"
+    },
+    "data/bible-text/darby/2-kings.json": {
+      "before_sha256": null,
+      "after_sha256": "143aa47c42ec2980ad8cd6c4a90d25e82a72a721bc78aef6ec45e6eb8789c065"
+    },
+    "data/bible-text/darby/2-peter.json": {
+      "before_sha256": null,
+      "after_sha256": "1d2afbb9be365139b69eb6b7a4e62ea43c381c1821097a4a393400f6d2f2429b"
+    },
+    "data/bible-text/darby/2-samuel.json": {
+      "before_sha256": null,
+      "after_sha256": "688580400d9a7fd5c9fc4a7d38ea16ac4841a0b6b288e5e7ff91c7b501cee669"
+    },
+    "data/bible-text/darby/2-thessalonians.json": {
+      "before_sha256": null,
+      "after_sha256": "b7ccf23c303a362ac971e8fe19af66bb8d0f0596166910bc5afd877961e049fd"
+    },
+    "data/bible-text/darby/2-timothy.json": {
+      "before_sha256": null,
+      "after_sha256": "cd3d519a546ba3ff723b6111ec82da9eaf6395818b2175bb8a1a68c0d141e16a"
+    },
+    "data/bible-text/darby/3-john.json": {
+      "before_sha256": null,
+      "after_sha256": "5e0fbc8af4744c93b6fd9b1566bc369e641e11836ba03b071564a2f3667763b4"
+    },
+    "data/bible-text/darby/acts.json": {
+      "before_sha256": null,
+      "after_sha256": "bd7e2cd4cb9dd3cf56c66162bd5bd7499cc75a3a992b49212bd1035fde3afb70"
+    },
+    "data/bible-text/darby/amos.json": {
+      "before_sha256": null,
+      "after_sha256": "26a97567e5e2c8b79d18588638f594aa36acb8f82035685ecc3eb478b2f57d82"
+    },
+    "data/bible-text/darby/colossians.json": {
+      "before_sha256": null,
+      "after_sha256": "12827de6b3fba608bd8f236c426e4a19cc8a58bb9c9c912036b23ee2aee030f9"
+    },
+    "data/bible-text/darby/daniel.json": {
+      "before_sha256": null,
+      "after_sha256": "c461eb18fdb0cebc26fbf523fc129febdd0bba00cd5064d43cab89249926de39"
+    },
+    "data/bible-text/darby/deuteronomy.json": {
+      "before_sha256": null,
+      "after_sha256": "3300a121bf3666baac9191e4c0a95be14d657d21fe1f55c1d2ddd1dfee664515"
+    },
+    "data/bible-text/darby/ecclesiastes.json": {
+      "before_sha256": null,
+      "after_sha256": "1aec4a2f69da6d687c86bcf19c34c3787558b2d1afa8adfbab37926eb58e3baa"
+    },
+    "data/bible-text/darby/ephesians.json": {
+      "before_sha256": null,
+      "after_sha256": "112aa0674b51a137f7b8801765cdc23ccd93a89b759c90c43d421aefe22f287a"
+    },
+    "data/bible-text/darby/esther.json": {
+      "before_sha256": null,
+      "after_sha256": "902b2042fce6cb0577ad0b9c18d766e5149613a5f6b1631b998318dea456c026"
+    },
+    "data/bible-text/darby/exodus.json": {
+      "before_sha256": null,
+      "after_sha256": "b96822b7824f7d262a929b49e02197bba40ca2385e319bf19a5dfc6931628781"
+    },
+    "data/bible-text/darby/ezekiel.json": {
+      "before_sha256": null,
+      "after_sha256": "dfce5012e411bcb751640f9311e59683f758d0acdd80bfc61ca9bba0d4d90a36"
+    },
+    "data/bible-text/darby/ezra.json": {
+      "before_sha256": null,
+      "after_sha256": "4756c335120044bf8838ed5d1cd1750370682a4ebcec5a5dbd71b96f0d08cabf"
+    },
+    "data/bible-text/darby/galatians.json": {
+      "before_sha256": null,
+      "after_sha256": "3a994bb5b3f98fd2ad20abcbbac9e19697b98faec5e9864226591cc488bec1fc"
+    },
+    "data/bible-text/darby/genesis.json": {
+      "before_sha256": null,
+      "after_sha256": "5708e099f9a100869cd5a8be93cee05df06ec55684b47c3e2fa6b5567b6d9e2b"
+    },
+    "data/bible-text/darby/habakkuk.json": {
+      "before_sha256": null,
+      "after_sha256": "e807248bd1674b5b9b16776fffb6772fb667318386b201f49a6799e9882d7651"
+    },
+    "data/bible-text/darby/haggai.json": {
+      "before_sha256": null,
+      "after_sha256": "44d2ad816c09aefc8a553ca55b92db7bf73a9cf48da401081b4f8e64f67f9481"
+    },
+    "data/bible-text/darby/hebrews.json": {
+      "before_sha256": null,
+      "after_sha256": "79f9e92dcabe73a831d5f7165f0c9de842069464d15f08c5cd29b47f515d33b1"
+    },
+    "data/bible-text/darby/hosea.json": {
+      "before_sha256": null,
+      "after_sha256": "54b857976fdaa6678190ea7d4c5106939c422a248a935f76c3a63953c49eae0f"
+    },
+    "data/bible-text/darby/isaiah.json": {
+      "before_sha256": null,
+      "after_sha256": "9036ad236164c0fea667f351b9036025c4d5bce44bdedbc9c9bca7ab3accf818"
+    },
+    "data/bible-text/darby/james.json": {
+      "before_sha256": null,
+      "after_sha256": "9e21967055d19ec07f2aa97e75ab7737d934e15fd184c8844b4a72ea2ccbbbb4"
+    },
+    "data/bible-text/darby/jeremiah.json": {
+      "before_sha256": null,
+      "after_sha256": "f19be386283c3c9812299d6f2755e0df2b5efdb843b12dce83a117c159e9dad7"
+    },
+    "data/bible-text/darby/job.json": {
+      "before_sha256": null,
+      "after_sha256": "fbcc3512a2943c3ca44ebd51d744304d494cf1f16a4efacee8eb325790b9727a"
+    },
+    "data/bible-text/darby/joel.json": {
+      "before_sha256": null,
+      "after_sha256": "cba924ce703c3b74e1c440c6ed0cd89c546cb420313cdac9a2d0e152bb6d9533"
+    },
+    "data/bible-text/darby/john.json": {
+      "before_sha256": null,
+      "after_sha256": "83471a4f56b4c8b98a5a7068100f0690efde434a8548ac906b37c0ae562b9508"
+    },
+    "data/bible-text/darby/jonah.json": {
+      "before_sha256": null,
+      "after_sha256": "421615213cabe1537d124ed91d2ac61a39f05d453e8de72c637fe0bce05da0a4"
+    },
+    "data/bible-text/darby/joshua.json": {
+      "before_sha256": null,
+      "after_sha256": "09373569a177245825684be5527408c76708e6b466de2d3c729c9d4e6eedeb1b"
+    },
+    "data/bible-text/darby/jude.json": {
+      "before_sha256": null,
+      "after_sha256": "0865c7a1f3ce4b663a6a35c55fbbe3f2f712e79d421322628c70f2cf136d7ac3"
+    },
+    "data/bible-text/darby/judges.json": {
+      "before_sha256": null,
+      "after_sha256": "f2f281c8f818210496580256067e050cfd1e6fcc893a7d36d67d8f17c862f2a9"
+    },
+    "data/bible-text/darby/lamentations.json": {
+      "before_sha256": null,
+      "after_sha256": "ec9eedda5fa9fa8968e83a5339eb3be0933214fe85cd30b411132bb92ea4c713"
+    },
+    "data/bible-text/darby/leviticus.json": {
+      "before_sha256": null,
+      "after_sha256": "f3313fcc1a591d4dca55cde670d11140ae501239d6a2278bae4985cc0d304a40"
+    },
+    "data/bible-text/darby/luke.json": {
+      "before_sha256": null,
+      "after_sha256": "f733fc1b3a686660e5104a544ef494af3f3559c3507c00ec593c4262a2e876a7"
+    },
+    "data/bible-text/darby/malachi.json": {
+      "before_sha256": null,
+      "after_sha256": "9e48ce9658c2339b57c6b7e031460ddff26f8cb91f2732b7a4cb58c8f0590d9d"
+    },
+    "data/bible-text/darby/mark.json": {
+      "before_sha256": null,
+      "after_sha256": "29cebffef3997b578caa83fee7a2bde58255cf6c0c1585af0346973d268c3c77"
+    },
+    "data/bible-text/darby/matthew.json": {
+      "before_sha256": null,
+      "after_sha256": "26b9cb0db440b82444aa64117828a51863c5213a83b86dee776ffd860727f732"
+    },
+    "data/bible-text/darby/micah.json": {
+      "before_sha256": null,
+      "after_sha256": "771af87e136d6de2258b6b2f47eb07b9ad93614d60ba6d09f0a2a6fd9432d35a"
+    },
+    "data/bible-text/darby/nahum.json": {
+      "before_sha256": null,
+      "after_sha256": "0524272f2d580a3b10807112641f7b93cbd2f29e4bea1081c71fb4e729269762"
+    },
+    "data/bible-text/darby/nehemiah.json": {
+      "before_sha256": null,
+      "after_sha256": "c6742a89bda7269ba9ac14d673804a6854bbe85bcb8197d81b6a68094bf477a3"
+    },
+    "data/bible-text/darby/numbers.json": {
+      "before_sha256": null,
+      "after_sha256": "3a940e5970b5b28ed154fad9a34efe02c75138b7d88debfd69e1ee0d5d491531"
+    },
+    "data/bible-text/darby/obadiah.json": {
+      "before_sha256": null,
+      "after_sha256": "5d451f434c4ab4a368bdc0eb0e3763fc5b72c80ae03e159174116a129a34798d"
+    },
+    "data/bible-text/darby/philemon.json": {
+      "before_sha256": null,
+      "after_sha256": "9172d7d74f3e51d5efb932f15f33d9498bc05eccecdc735b5184845ea73728d3"
+    },
+    "data/bible-text/darby/philippians.json": {
+      "before_sha256": null,
+      "after_sha256": "1b5e058dfee32aa7efc51feae6353663ccb129a2794c5c69dffa2f6f89adc921"
+    },
+    "data/bible-text/darby/proverbs.json": {
+      "before_sha256": null,
+      "after_sha256": "0b55ef252f45a53d8193c3f5de2825eb49841ff6ef8af2f40eafc19c5a156328"
+    },
+    "data/bible-text/darby/psalms.json": {
+      "before_sha256": null,
+      "after_sha256": "0040f7b22b40c6a80d4c04b07c84d7d80b2367c5cf2b19360e7a4685efeebdfc"
+    },
+    "data/bible-text/darby/revelation.json": {
+      "before_sha256": null,
+      "after_sha256": "6780a836f7da8113d1053c0c69dddf539889a6c93d2c7274d32aef1792855cef"
+    },
+    "data/bible-text/darby/romans.json": {
+      "before_sha256": null,
+      "after_sha256": "e5d0a7b87a1e59dc92aa29d4b53c7b20ec569204647053b148287d51c3b9d572"
+    },
+    "data/bible-text/darby/ruth.json": {
+      "before_sha256": null,
+      "after_sha256": "ed22651d154d16b78a97fef8a42a962084098ede64540f624576427d6f691959"
+    },
+    "data/bible-text/darby/song-of-solomon.json": {
+      "before_sha256": null,
+      "after_sha256": "30f08ebb60cef7281506cdc46dfcdd558c449fe37863358bfacac7259362afd3"
+    },
+    "data/bible-text/darby/titus.json": {
+      "before_sha256": null,
+      "after_sha256": "b5df5cae03f188ff47ebbd26d47e20ec3b02aab0494a4c4157242eb881a09250"
+    },
+    "data/bible-text/darby/zechariah.json": {
+      "before_sha256": null,
+      "after_sha256": "33757133b27d33261b9c9aee1940ee7e0126a7caacaee96a6c5bcde89b27c27d"
+    },
+    "data/bible-text/darby/zephaniah.json": {
+      "before_sha256": null,
+      "after_sha256": "70a693648b108ff6b5cd7a00b3ab846edc1bf1a7dbe0a809793728539663b8de"
+    }
+  },
+  "expected_delta_counts": {
+    "data/bible-text/darby/1-chronicles.json": {
+      "verses_added": 942
+    },
+    "data/bible-text/darby/1-corinthians.json": {
+      "verses_added": 437
+    },
+    "data/bible-text/darby/1-john.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/darby/1-kings.json": {
+      "verses_added": 816
+    },
+    "data/bible-text/darby/1-peter.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/darby/1-samuel.json": {
+      "verses_added": 810
+    },
+    "data/bible-text/darby/1-thessalonians.json": {
+      "verses_added": 89
+    },
+    "data/bible-text/darby/1-timothy.json": {
+      "verses_added": 113
+    },
+    "data/bible-text/darby/2-chronicles.json": {
+      "verses_added": 822
+    },
+    "data/bible-text/darby/2-corinthians.json": {
+      "verses_added": 257
+    },
+    "data/bible-text/darby/2-john.json": {
+      "verses_added": 13
+    },
+    "data/bible-text/darby/2-kings.json": {
+      "verses_added": 719
+    },
+    "data/bible-text/darby/2-peter.json": {
+      "verses_added": 61
+    },
+    "data/bible-text/darby/2-samuel.json": {
+      "verses_added": 695
+    },
+    "data/bible-text/darby/2-thessalonians.json": {
+      "verses_added": 47
+    },
+    "data/bible-text/darby/2-timothy.json": {
+      "verses_added": 83
+    },
+    "data/bible-text/darby/3-john.json": {
+      "verses_added": 14
+    },
+    "data/bible-text/darby/acts.json": {
+      "verses_added": 1005
+    },
+    "data/bible-text/darby/amos.json": {
+      "verses_added": 146
+    },
+    "data/bible-text/darby/colossians.json": {
+      "verses_added": 95
+    },
+    "data/bible-text/darby/daniel.json": {
+      "verses_added": 357
+    },
+    "data/bible-text/darby/deuteronomy.json": {
+      "verses_added": 959
+    },
+    "data/bible-text/darby/ecclesiastes.json": {
+      "verses_added": 222
+    },
+    "data/bible-text/darby/ephesians.json": {
+      "verses_added": 155
+    },
+    "data/bible-text/darby/esther.json": {
+      "verses_added": 167
+    },
+    "data/bible-text/darby/exodus.json": {
+      "verses_added": 1213
+    },
+    "data/bible-text/darby/ezekiel.json": {
+      "verses_added": 1273
+    },
+    "data/bible-text/darby/ezra.json": {
+      "verses_added": 280
+    },
+    "data/bible-text/darby/galatians.json": {
+      "verses_added": 149
+    },
+    "data/bible-text/darby/genesis.json": {
+      "verses_added": 1533
+    },
+    "data/bible-text/darby/habakkuk.json": {
+      "verses_added": 56
+    },
+    "data/bible-text/darby/haggai.json": {
+      "verses_added": 38
+    },
+    "data/bible-text/darby/hebrews.json": {
+      "verses_added": 303
+    },
+    "data/bible-text/darby/hosea.json": {
+      "verses_added": 197
+    },
+    "data/bible-text/darby/isaiah.json": {
+      "verses_added": 1292
+    },
+    "data/bible-text/darby/james.json": {
+      "verses_added": 108
+    },
+    "data/bible-text/darby/jeremiah.json": {
+      "verses_added": 1364
+    },
+    "data/bible-text/darby/job.json": {
+      "verses_added": 1070
+    },
+    "data/bible-text/darby/joel.json": {
+      "verses_added": 73
+    },
+    "data/bible-text/darby/john.json": {
+      "verses_added": 879
+    },
+    "data/bible-text/darby/jonah.json": {
+      "verses_added": 48
+    },
+    "data/bible-text/darby/joshua.json": {
+      "verses_added": 658
+    },
+    "data/bible-text/darby/jude.json": {
+      "verses_added": 25
+    },
+    "data/bible-text/darby/judges.json": {
+      "verses_added": 618
+    },
+    "data/bible-text/darby/lamentations.json": {
+      "verses_added": 154
+    },
+    "data/bible-text/darby/leviticus.json": {
+      "verses_added": 859
+    },
+    "data/bible-text/darby/luke.json": {
+      "verses_added": 1151
+    },
+    "data/bible-text/darby/malachi.json": {
+      "verses_added": 55
+    },
+    "data/bible-text/darby/mark.json": {
+      "verses_added": 678
+    },
+    "data/bible-text/darby/matthew.json": {
+      "verses_added": 1070
+    },
+    "data/bible-text/darby/micah.json": {
+      "verses_added": 105
+    },
+    "data/bible-text/darby/nahum.json": {
+      "verses_added": 47
+    },
+    "data/bible-text/darby/nehemiah.json": {
+      "verses_added": 406
+    },
+    "data/bible-text/darby/numbers.json": {
+      "verses_added": 1288
+    },
+    "data/bible-text/darby/obadiah.json": {
+      "verses_added": 21
+    },
+    "data/bible-text/darby/philemon.json": {
+      "verses_added": 25
+    },
+    "data/bible-text/darby/philippians.json": {
+      "verses_added": 104
+    },
+    "data/bible-text/darby/proverbs.json": {
+      "verses_added": 915
+    },
+    "data/bible-text/darby/psalms.json": {
+      "verses_added": 2461
+    },
+    "data/bible-text/darby/revelation.json": {
+      "verses_added": 404
+    },
+    "data/bible-text/darby/romans.json": {
+      "verses_added": 433
+    },
+    "data/bible-text/darby/ruth.json": {
+      "verses_added": 85
+    },
+    "data/bible-text/darby/song-of-solomon.json": {
+      "verses_added": 117
+    },
+    "data/bible-text/darby/titus.json": {
+      "verses_added": 46
+    },
+    "data/bible-text/darby/zechariah.json": {
+      "verses_added": 211
+    },
+    "data/bible-text/darby/zephaniah.json": {
+      "verses_added": 53
+    }
+  }
+}

@@ -1,0 +1,57 @@
+# Hebrew source-transliteration lexicon
+# Phase 1 seed from Schaff-Herzog vol-01 front-matter transliteration table
+- rule_id: hbo.yahweh
+  description: "Hebrew יהוה printed as Yahweh"
+  source_tokens: ["Yahweh", "yahweh"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.adonai
+  description: "Hebrew אֲדֹנָי printed as Adonai"
+  source_tokens: ["Adonai", "adonai"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.elohim
+  description: "Hebrew אֱלֹהִים printed as Elohim"
+  source_tokens: ["Elohim", "elohim"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.jehovah
+  description: "Tetragrammaton transliterated as Jehovah/Iehovah in 18th-19th c. printing"
+  source_tokens: ["Jehovah", "jehovah", "Iehovah", "iehovah"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.jahveh
+  description: "Tetragrammaton transliterated as Jahveh/Jahweh by 19th-c. German scholars"
+  source_tokens: ["Jahveh", "jahveh", "Jahweh", "jahweh", "Yahveh", "yahveh", "Yehovah", "yehovah"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.zebaoth
+  description: "Hebrew צְבָאוֹת printed as Zebaoth (German-scholarly form; 'hosts' / 'armies')"
+  source_tokens: ["Zebaoth", "zebaoth"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"
+
+- rule_id: hbo.jhvh
+  description: "Tetragrammaton printed as JHVH (Latin-letter representation)"
+  source_tokens: ["JHVH"]
+  underlying_language: hbo
+  seed_source: "Schaff-Herzog vol-01 front-matter transliteration table"
+  enabled: true
+  version_added: "1.0.0"

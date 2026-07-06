@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Jewish Encyclopedia vol_02 page_0010</title>
+        <author>Jewish Encyclopedia contributors</author>
+        <respStmt xml:id="corrector">
+          <resp>Machine corrector</resp>
+          <name>Open Christian Data corrector</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Open Christian Data</publisher>
+        <availability status="free">
+          <p>Public domain source text prepared for Open Christian Data.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <ptr target="raw/jewish-encyclopedia/ia-pages/vol_02/page_0010.jpg"/>
+          <idno type="sha256">cc7dfc066531135243667f5032621f9efba0ce7d2d8419a2080e1cc49ca54cca</idno>
+          <note type="print-source">Jewish Encyclopedia, 1901-1906</note>
+        </bibl>
+        <listWit>
+          <witness xml:id="abbyy">abbyy</witness>
+          <witness xml:id="tesseract">tesseract</witness>
+          <witness xml:id="kraken">kraken</witness>
+          <witness xml:id="azure-ai-vision">azure-ai-vision</witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface_page_0010">
+      <graphic url="raw/jewish-encyclopedia/ia-pages/vol_02/page_0010.jpg"/>
+      <zone xml:id="z_page_0010_0000" ulx="419" uly="228" lrx="688" lry="290"/>
+      <zone xml:id="z_page_0010_0001" ulx="467" uly="229" lrx="483" lry="246"/>
+      <zone xml:id="z_page_0010_0002" ulx="397" uly="253" lrx="509" lry="289"/>
+      <zone xml:id="z_page_0010_0003" ulx="514" uly="253" lrx="651" lry="290"/>
+      <zone xml:id="z_page_0010_0005" ulx="345" uly="258" lrx="388" lry="283"/>
+      <zone xml:id="z_page_0010_0006" ulx="195" uly="254" lrx="247" lry="288"/>
+      <zone xml:id="z_page_0010_0007" ulx="253" uly="254" lrx="333" lry="289"/>
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+      <pb xml:id="pb_page_0010" n="10" facs="#surface_page_0010"/>
+      <ab xml:id="ab_page_0010">
+        <w xml:id="w_page_0010_0000" facs="#z_page_0010_0000">
+          <app>
+            <lem wit="#abbyy #kraken #tesseract" cert="high">on</lem>
+            <rdg wit="#azure-ai-vision">in</rdg>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0001" facs="#z_page_0010_0001">
+          <app>
+            <lem wit="#abbyy #kraken #tesseract" cert="high">a</lem>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0002" facs="#z_page_0010_0002">
+          <app>
+            <lem resp="#corrector" cert="high">several</lem>
+            <note type="provenance">decision_event_id: jewish-encyclopedia.vol_02:vol_02:page_0010:vol_02:page_0010:body:c1:l000:p002:schaff-matrix-policy-degraded-v1</note>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0003" facs="#z_page_0010_0003">
+          <app>
+            <lem resp="#corrector" cert="high">centuries</lem>
+            <note type="provenance">decision_event_id: jewish-encyclopedia.vol_02:vol_02:page_0010:vol_02:page_0010:body:c1:l000:p003:schaff-matrix-policy-degraded-v1</note>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0005" facs="#z_page_0010_0005">
+          <app>
+            <lem resp="#corrector" cert="high">for</lem>
+            <note type="provenance">decision_event_id: jewish-encyclopedia.vol_02:vol_02:page_0010:vol_02:page_0010:body:c1:l000:p005:schaff-matrix-policy-degraded-v1</note>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0006" facs="#z_page_0010_0006">
+          <app>
+            <lem wit="#abbyy #azure-ai-vision #kraken #tesseract" cert="high">the</lem>
+          </app>
+        </w>
+        <w xml:id="w_page_0010_0007" facs="#z_page_0010_0007">
+          <app>
+            <lem wit="#abbyy #azure-ai-vision #kraken #tesseract" cert="high">Jews</lem>
+            <rdg wit="#kraken">ews</rdg>
+          </app>
+        </w>
+      </ab>
+    </body>
+  </text>
+</TEI>

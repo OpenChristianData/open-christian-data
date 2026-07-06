@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "run_cloud_ocr@b2.5",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b25-vol03-azure-assembly",
+  "started_at": "2026-05-29T05:47:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_03.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_03.json": {
+      "before_sha256": null,
+      "after_sha256": "8808ca21ac829174f496460c4c3d93f95f802a2b176041e5ac515a72431bbb4d"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/azure-v1/vol_03.json": {
+      "pages_assembled": 463,
+      "mean_confidence": 97.8
+    }
+  },
+  "allowed_field_paths": ["/pages"],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 463 page sidecars (462 with OCR data). Engine: Azure AI Vision v4.0. Session B2.5, 2026-05-29. 38 pages without JPEG: front/back matter and IA 500 errors during fetch. 1 partial sidecar retried (page 300, conf 99.0).",
+  "renames": []
+}

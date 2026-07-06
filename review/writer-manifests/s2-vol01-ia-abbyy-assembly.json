@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "ia_abbyy@s2",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "s2-vol01-ia-abbyy-assembly",
+  "started_at": "2026-05-25T23:44:59.407478Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "before_sha256": null,
+      "after_sha256": "sha256:95ce0b9f47ba123052c57dd66808c01ffa10920e14a48a578cbdbdfb42748bc8"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-v1/vol_01.json": {
+      "pages_assembled": 489,
+      "mean_confidence": 82.3
+    }
+  },
+  "allowed_field_paths": [
+    "/pages"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Assembled from 489 page sidecars produced by build/parsers/ia_abbyy.py. ABBYY pagesCount=541; manifest had 491 pages; 2 missed because leaf 0064 is assigned to 3 distinct page_nums in vol_01.manifest.json (pre-existing fetcher bug, surfaced but not fixed in Session 2).",
+  "renames": []
+}

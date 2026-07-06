@@ -1,0 +1,19 @@
+{
+  "slug": "spurgeon-lectures-to-my-students",
+  "schema": "structured_text",
+  "source_type": "ia_multi",
+  "volumes": [
+    {
+      "ia_id": "lecturestomystu00spuruoft",
+      "source_url": "https://archive.org/download/lecturestomystu00spuruoft/lecturestomystu00spuruoft_djvu.txt"
+    },
+    {
+      "ia_id": "1877secondseries00spur",
+      "source_url": "https://archive.org/download/1877secondseries00spur/1877secondseries00spur_djvu.txt"
+    }
+  ],
+  "source_url": "https://archive.org/download/lecturestomystu00spuruoft/lecturestomystu00spuruoft_djvu.txt; https://archive.org/download/1877secondseries00spur/1877secondseries00spur_djvu.txt",
+  "source_hash": "sha256:028f95dd26fa5b7d4788d06ee94b38128ae81e91cfc3bf46eca135339d6a920c",
+  "download_date": "2026-04-24",
+  "processing_script": "build/parsers/gutenberg_evangelical.py@v1.0.0"
+}

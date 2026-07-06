@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_boethius_tractates.py@v1.0.0",
+  "writer_identity": "ccel_boethius_tractates_parser",
+  "run_id": "boethius-theological-tractates-2026-06-17",
+  "started_at": "2026-06-17T03:00:00+00:00",
+  "data_paths": [
+    "data/structured-text/boethius-theological-tractates.json"
+  ],
+  "checksums": {
+    "data/structured-text/boethius-theological-tractates.json": {
+      "before_sha256": null,
+      "after_sha256": "99ef322815868e8d246992e6993dba56f3ee62b4622b77377419bf2598f5aab8"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/boethius-theological-tractates.json": {
+      "entries_added": 5
+    }
+  }
+}

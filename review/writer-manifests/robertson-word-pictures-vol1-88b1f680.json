@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_robertson_word_pictures.py@v1.0.0",
+  "writer_identity": "ccel_robertson_parser",
+  "run_id": "88b1f680c57d41ceaf44cd4b162a44cf",
+  "started_at": "2026-06-16T19:33:50.836358+00:00",
+  "data_paths": [
+    "data/commentaries/robertson-word-pictures-vol1/matt.json",
+    "data/commentaries/robertson-word-pictures-vol1/mark.json"
+  ],
+  "checksums": {
+    "data/commentaries/robertson-word-pictures-vol1/matt.json": {
+      "before_sha256": null,
+      "after_sha256": "c912a693439154a077c64279a32f82d4b321941a7d2ebe7a6916067f399d3d34"
+    },
+    "data/commentaries/robertson-word-pictures-vol1/mark.json": {
+      "before_sha256": null,
+      "after_sha256": "a67a4b0a17303150d985c3528c6b1e9d3821473713fd99449e441635b0e8bfa7"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/robertson-word-pictures-vol1/matt.json": {
+      "entries_added": 28
+    },
+    "data/commentaries/robertson-word-pictures-vol1/mark.json": {
+      "entries_added": 16
+    }
+  }
+}

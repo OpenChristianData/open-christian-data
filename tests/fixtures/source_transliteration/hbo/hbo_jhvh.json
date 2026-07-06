@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.jhvh",
+  "positive_input": "JHVH the tetragrammaton in older European scholarly conventions",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "JHVH"},
+  "negative_input": "The tetragrammaton in older European scholarly conventions",
+  "negative_expected": null
+}

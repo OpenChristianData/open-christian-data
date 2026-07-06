@@ -1,0 +1,67 @@
+# English modernisation ruleset — en@1.0.0
+# Rule entry shape: id, kind (table|regex|literal), pattern/table, optional exceptions,
+# enabled, test_cases: [{in, out}]
+version: "1.0.0"
+rules:
+  - id: en.archaic_verb_eth_to_s_irregular
+    kind: table
+    enabled: true
+    table:
+      hath: has
+      saith: says
+      doth: does
+    test_cases:
+      - {in: "He hath power.", out: "He has power."}
+      - {in: "She saith unto them.", out: "She says unto them."}
+      - {in: "It doth appear.", out: "It does appear."}
+
+  - id: en.archaic_verb_eth_to_s_regular
+    kind: regex
+    enabled: true
+    pattern: '\b(\w+e)th\b'
+    replacement: '\1s'
+    exceptions: [breath, beneath, death, wreath, sheath]
+    test_cases:
+      - {in: "He giveth freely.", out: "He gives freely."}
+      - {in: "It moveth forward.", out: "It moves forward."}
+      - {in: "She believeth.", out: "She believes."}
+      - {in: "breath", out: "breath"}
+      - {in: "death", out: "death"}
+      - {in: "beneath", out: "beneath"}
+      - {in: "wreath", out: "wreath"}
+      - {in: "sheath", out: "sheath"}
+
+  - id: en.long_s
+    kind: literal
+    enabled: true
+    pattern: "ſ"
+    replacement: "s"
+    test_cases:
+      - {in: "thouſand", out: "thousand"}
+      - {in: "blaſt", out: "blast"}
+
+  - id: en.archaic_heavn
+    kind: literal
+    enabled: true
+    pattern: "Heav'n"
+    replacement: "Heaven"
+    test_cases:
+      - {in: "Heav'n above.", out: "Heaven above."}
+
+  - id: en.archaic_eer
+    kind: literal
+    enabled: true
+    pattern: "e'er"
+    replacement: "ever"
+    test_cases:
+      - {in: "e'er and anon", out: "ever and anon"}
+
+  # Disabled: ye/thou second-person modernisation is too aggressive for v1.0.0.
+  # Retained for future consideration; test_cases prove the intended behaviour.
+  - id: en.archaic_ye_to_you
+    kind: table
+    enabled: false
+    table:
+      ye: you
+    test_cases:
+      - {in: "ye shall know the truth.", out: "you shall know the truth."}

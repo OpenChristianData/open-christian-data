@@ -1,0 +1,33 @@
+{
+  "resource_id": "fisher-marrow-of-modern-divinity",
+  "title": "The Marrow of Modern Divinity",
+  "author": "Edward Fisher",
+  "author_id": "fisher-edward",
+  "author_birth_year": 1627,
+  "author_death_year": 1655,
+  "contributors": [
+    "Thomas Boston (annotator, 1677-1732)"
+  ],
+  "original_publication_year": 1645,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "puritan"
+  ],
+  "tradition_notes": "Edward Fisher was an English lay theologian whose Marrow of Modern Divinity (1645) became central to Scottish Federal Theology after Thomas Boston (1677-1732) reissued it with annotations in 1718. The 1720s 'Marrow Controversy' in the Church of Scotland turned on Boston's reading of Fisher's covenantal framework. This is the canonical Scottish Reformed form of the work.",
+  "era": "post-reformation",
+  "audience": "pastoral",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "theological-work",
+  "source_url": "https://archive.org/details/marrowmoderndiv00bostgoog",
+  "source_format": "_djvu.txt OCR (Google Books, ABBYY FineReader)",
+  "source_edition": "Edinburgh: J. and D. Collie, 1828; Thomas Boston annotated edition (reprint of Boston's 1718 annotated text)",
+  "source_hash": "sha256:14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+  "source_type": "internet_archive_djvu",
+  "source_file": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+  "download_date": "2026-04-28",
+  "output_file": "data/structured-text/fisher-marrow-of-modern-divinity.json",
+  "notes": "Boston annotated edition of the Marrow, the canonical form in the Scottish Federal tradition. Speaker labels Evan./Nom./Ant./Neo. preserved as bold prefix in content_blocks; Boston's footnote markers (*, dagger) preserved inline. Plain-text OCR cannot reliably segregate footnote bodies from main text; this is documented in research/prompts/acquire-fisher-marrow-ia-census.md. Crawl-delay 10s honoured."
+}

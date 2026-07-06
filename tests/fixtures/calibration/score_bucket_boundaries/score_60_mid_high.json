@@ -1,0 +1,36 @@
+{
+  "fixture_id": "boundary_score_60",
+  "target_score": 60,
+  "expected_bucket": "mid_high",
+  "expected_action": "cluster",
+  "expected_surface": "silent",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "original_text": "",
+    "annotations": {"entry": "Pelagius"},
+    "source_pages": [{"page_number": 47}]
+  },
+  "attestor_block": {
+    "block_type": "paragraph",
+    "original_text": "",
+    "annotations": {"entry": "Pelagius"},
+    "source_pages": [{"page_number": 48}]
+  },
+  "context": {
+    "anchor_idx": 5,
+    "attestor_idx": 5,
+    "anchor_len": 11,
+    "attestor_len": 11
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 30,
+    "text_similarity": 0,
+    "source_order": 15,
+    "block_type": 10,
+    "page_proximity": 5,
+    "language_profile": 0,
+    "ocr_skeleton": 0
+  },
+  "hand_computation": "ann_exact(30) + text_empty(0) + ocr_empty(0) + order_15(15) + bt_exact(10) + page_adj(5) + lang_absent(0) = 60",
+  "notes": "annotation_key: 'entry'='Pelagius' in both -> exact=30. empty text -> tokens=[] -> sim=0 -> 0; skel_ratio=0 -> 0. source_order: anchor_len=11>1 -> rel_a=5/10=0.5; attestor_len=11 -> rel_b=5/10=0.5; delta=0 < 0.05 -> 15. paragraph=paragraph -> exact=10. pages 47 vs 48 -> diff=1 -> adjacent=5. no language -> 0. surface=silent because anchor bt_a='paragraph'."
+}

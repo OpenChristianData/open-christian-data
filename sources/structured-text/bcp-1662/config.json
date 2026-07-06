@@ -1,0 +1,20 @@
+{
+  "resource_id": "bcp-1662",
+  "title": "The Book of Common Prayer (1662)",
+  "author": "Church of England",
+  "original_publication_year": 1662,
+  "language": "en",
+  "tradition": ["anglican"],
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "devotional-classic",
+  "source_url": "https://www.eskimo.com/~lhowell/bcp1662/",
+  "source_format": "HTML",
+  "source_edition": "Transcription by Lesley Holwell at eskimo.com/~lhowell/bcp1662/",
+  "source_hash": "sha256:pending",
+  "download_date": "2026-06-17",
+  "output_file": "data/structured-text/bcp-1662.json",
+  "notes": "Public domain. Restoration-era BCP, the standard Anglican liturgy from 1662. Full service texts fetched via curl (Python 3.14 TLS incompatibility with this host). source_hash updated by bcp_full_text.py after download."
+}

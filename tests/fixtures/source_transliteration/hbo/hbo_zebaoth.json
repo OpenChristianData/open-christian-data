@@ -1,0 +1,7 @@
+{
+  "rule_id": "hbo.zebaoth",
+  "positive_input": "Zebaoth the LORD of hosts and of armies",
+  "positive_expected": {"transliterated_from": "hbo", "source_token": "Zebaoth"},
+  "negative_input": "The LORD of hosts and of armies",
+  "negative_expected": null
+}

@@ -1,0 +1,44 @@
+{
+  "schema_type": "review_state",
+  "schema_version": "1.0.0",
+  "record_path": "data/commentaries/adam-clarke/2-john.json",
+  "record_resource_id": "adam-clarke",
+  "record_checksum_sha256": "a08079da94a8689b7d032c71504575162918f6d3ecfc8cb3df5fb239231c3187",
+  "parser_version_seen": "build/parsers/helloao_commentary.py@v1.0.0",
+  "confidence": {
+    "structural_fidelity": "unverified",
+    "text_fidelity": "unverified",
+    "edition_provenance": "unverified"
+  },
+  "entries": {
+    "adam-clarke.2John.1.1": {
+      "warnings_acknowledged": [],
+      "warnings_dismissed": [
+        {
+          "producer": "historical_lexicon",
+          "code": "archaic_variant",
+          "signature": "field=commentary_text;surface=shew",
+          "signature_version": "v1.0.0",
+          "reason": "expected",
+          "note": "Archaic spelling shew->show; expected in a 1810 commentary."
+        }
+      ],
+      "last_reviewed_at": "2026-05-12T10:45:30.104834Z",
+      "last_reviewer": "vertical-slice-loop"
+    },
+    "adam-clarke.2John.1.9": {
+      "warnings_acknowledged": [
+        {
+          "producer": "historical_lexicon",
+          "code": "en",
+          "signature": "historical_lexicon.en.archaic_variant.hath.adam-clarke.2John.1.9.commentary_text",
+          "signature_version": "1",
+          "reason": "other",
+          "note": "auto_acknowledged_by_correction_applier"
+        }
+      ],
+      "warnings_dismissed": []
+    }
+  },
+  "dead_letter": []
+}

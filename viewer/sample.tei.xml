@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Sample Verification Viewer Fixture</title>
+        <author>Open Christian Data</author>
+      </titleStmt>
+      <publicationStmt>
+        <p>Standalone fixture for exercising the verification viewer before real IR files exist. Not a real edition.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Invented text for viewer development only.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <div type="titlepage">
+        <head>A Sample Treatise</head>
+        <argument>
+          <p>This argument summarizes the chapter that follows: it introduces the
+          question of the soul's nature, previews the three replies considered, and
+          states the author's conclusion in brief.</p>
+        </argument>
+      </div>
+    </front>
+    <body>
+      <pb n="1" facs="#f1"/>
+      <div type="book" n="1">
+        <head>Book One</head>
+        <div type="chapter" n="1">
+          <head>Chapter One: On the Nature of the Soul</head>
+          <p>Here begins the discussion. Some hold that the soul is <hi rend="italic">simple and
+          indivisible</hi>, while others argue for a composite nature. The term
+          <foreign xml:lang="grc">ψυχή</foreign> itself carries this ambiguity, as does the Latin
+          <foreign xml:lang="la">anima</foreign>.</p>
+          <p>The reader is reminded that this claim rests on <ref type="scripture" cRef="Gen.1.27">Genesis 1:27</ref>,
+          which speaks of humankind made in the divine image, and again on
+          <ref type="scripture" cRef="John.1.1-John.1.5">John 1:1-5</ref> for the nature of the Word.</p>
+          <p>As one early witness put it<note>This is an inline note: a brief aside that
+          expands on the surrounding claim without interrupting the main argument for readers who
+          do not need the detail.</note>, the question was already old by the time it reached
+          the schools.</p>
+          <pb n="2" facs="#f2"/>
+          <p>Consider the following testimony, offered in verse:</p>
+          <quote>
+            <lg>
+              <l>The soul that sinneth, it shall die;</l>
+              <l>the son shall not bear the iniquity of the father,</l>
+              <l>neither shall the father bear the iniquity of the son.</l>
+            </lg>
+          </quote>
+          <p>A second note follows for comparison<note place="end">This is an end-placed note,
+          which CETEIcean's default behavior collects into a numbered list at the end of the
+          document rather than expanding inline.</note> immediately after this sentence.</p>
+        </div>
+      </div>
+    </body>
+    <back>
+      <div type="colophon">
+        <head>Colophon</head>
+        <p>End of the sample fixture. This section exists only to exercise
+        <hi rend="italic">front</hi>/<hi rend="italic">back</hi> visual separation from the
+        <hi rend="italic">body</hi>.</p>
+      </div>
+    </back>
+    <facsimile>
+      <surface xml:id="f1">
+        <graphic url="https://placehold.co/400x560?text=Page+1"/>
+      </surface>
+      <surface xml:id="f2">
+        <graphic url="https://placehold.co/400x560?text=Page+2"/>
+      </surface>
+    </facsimile>
+  </text>
+</TEI>

@@ -1,0 +1,30 @@
+{
+  "id": "solemn-league-and-covenant",
+  "title": "The Solemn League and Covenant",
+  "author": "Westminster Assembly",
+  "original_publication_year": 1643,
+  "source": {
+    "name": "thewestminsterstandard.org",
+    "url": "https://thewestminsterstandard.org/solemn-league-and-covenant",
+    "repository": null,
+    "format": "HTML",
+    "license": "Public Domain",
+    "license_notes": "17th-century text; no copyrightable original content added by host site.",
+    "download_date": "2026-03-28",
+    "source_hash": "sha256:3fe0cafcaa19a2a5a424370a983d54ac99438fac9fdc6ceb8e3b1604f5897d9e"
+  },
+  "schema_type": "doctrinal_document",
+  "document_kind": "covenant",
+  "output_file": "data/doctrinal-documents/solemn-league-and-covenant.json",
+  "parser": "build/parsers/westminster_standard_parser.py",
+  "stats": {
+    "section_count": 7,
+    "word_count": 1404
+  },
+  "notes": [
+    "Tradition: reformed, presbyterian.",
+    "Completeness: partial -- prefatory matter (Assembly Approbation, Parliamentary Act) present as introductory context only; inline proof texts deferred to Phase 2.",
+    "7 units: 1 preamble section + 6 articles (I.-VI.).",
+    "Parsed from thewestminsterstandard.org HTML."
+  ]
+}

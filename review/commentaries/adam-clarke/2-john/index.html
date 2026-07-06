@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clarke&#x27;s Commentary on the Bible - OCD review</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f7f6f2;
+  --paper: #fffdfa;
+  --ink: #24211c;
+  --muted: #6e665c;
+  --line: #ded7cb;
+  --accent: #7b4d2f;
+  --label: #0f5f68;
+  --warning: #9b2f24;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.58;
+}
+
+.page-header {
+  padding: 32px max(24px, 6vw) 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.eyebrow,
+.entry-type,
+dt,
+h3,
+summary {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 980px;
+  margin: 8px 0 18px;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 24px;
+  max-width: 1180px;
+  margin: 0;
+}
+
+.meta-grid div {
+  min-width: 0;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 2px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 860px);
+  gap: 28px;
+  align-items: start;
+  padding: 28px max(20px, 5vw) 56px;
+}
+
+.review-panel {
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 18px 0;
+  color: var(--muted);
+}
+
+.review-panel h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font: 700 0.9rem Arial, Helvetica, sans-serif;
+}
+
+.warnings,
+.nav-list {
+  margin: 0 0 24px;
+  padding-left: 18px;
+}
+
+.warnings {
+  color: var(--warning);
+}
+
+.warnings li {
+  margin-bottom: 8px;
+}
+
+.warning-severity,
+.warning-code,
+.warning-evidence {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+}
+
+.warning-severity,
+.warning-code {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.warning-evidence {
+  display: block;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.nav-list a {
+  color: var(--label);
+  text-decoration: none;
+}
+
+.entries {
+  display: grid;
+  gap: 22px;
+}
+
+.entry {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 22px;
+}
+
+.entry-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.entry-type {
+  color: var(--label);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.entry-id {
+  color: var(--muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.entry h2 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.commentary-text {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+}
+
+.verse-text,
+.summary-block,
+.cross-refs {
+  border-left: 3px solid var(--line);
+  margin: 14px 0;
+  padding-left: 14px;
+}
+
+h3 {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.summary-block h3 span {
+  color: var(--label);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.cross-refs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cross-refs li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+}
+
+details {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 12px;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--label);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+pre {
+  max-height: 420px;
+  overflow: auto;
+  padding: 12px;
+  background: #f1eee8;
+  font-size: 0.82rem;
+  white-space: pre-wrap;
+}
+
+.empty-state {
+  margin: 0 0 24px;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .review-panel {
+    position: static;
+    max-height: none;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+<header class="page-header">
+<div class="eyebrow">OCD commentary review</div>
+<h1>Clarke&#x27;s Commentary on the Bible</h1>
+<dl class="meta-grid">
+<div><dt>Author</dt><dd>Adam Clarke</dd></div>
+<div><dt>Resource ID</dt><dd>adam-clarke</dd></div>
+<div><dt>Schema</dt><dd>commentary 2.2.0</dd></div>
+<div><dt>Licence</dt><dd>cc0-1.0</dd></div>
+<div><dt>Source file</dt><dd>data\commentaries\adam-clarke\2-john.json</dd></div>
+<div><dt>Source URL</dt><dd><a href="https://bible.helloao.org/api/c/adam-clarke/2JN">https://bible.helloao.org/api/c/adam-clarke/2JN</a></dd></div>
+<div><dt>Source edition</dt><dd>HelloAO Bible API local download - Clarke&#x27;s Commentary on the Bible (PDM 1.0 (https://creativecommons.org/publicdomain/mark/1.0/))</dd></div>
+</dl>
+</header>
+<main class="layout">
+<aside class="review-panel">
+<h2>Review warnings</h2>
+<p class="empty-state">No review warnings generated by this renderer.</p>
+<h2>Navigation</h2>
+<ol class="nav-list"><li><a href="#adam-clarke.2John.intro">2 John introduction</a></li><li><a href="#adam-clarke.2John.1.intro">2 John 1 introduction</a></li><li><a href="#adam-clarke.2John.1.1">2 John 1:1</a></li><li><a href="#adam-clarke.2John.1.2">2 John 1:2</a></li><li><a href="#adam-clarke.2John.1.3">2 John 1:3</a></li><li><a href="#adam-clarke.2John.1.4">2 John 1:4</a></li><li><a href="#adam-clarke.2John.1.5">2 John 1:5</a></li><li><a href="#adam-clarke.2John.1.6">2 John 1:6</a></li><li><a href="#adam-clarke.2John.1.7">2 John 1:7</a></li><li><a href="#adam-clarke.2John.1.8">2 John 1:8</a></li><li><a href="#adam-clarke.2John.1.9">2 John 1:9</a></li><li><a href="#adam-clarke.2John.1.10">2 John 1:10</a></li><li><a href="#adam-clarke.2John.1.11">2 John 1:11</a></li><li><a href="#adam-clarke.2John.1.12">2 John 1:12</a></li><li><a href="#adam-clarke.2John.1.13">2 John 1:13</a></li></ol>
+</aside>
+<section class="entries" aria-label="Commentary entries">
+<article class="entry entry-intro" id="adam-clarke.2John.intro">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: intro</span>
+<a class="entry-id" href="#adam-clarke.2John.intro">adam-clarke.2John.intro</a>
+</div>
+<h2>2 John introduction</h2>
+
+<p class="commentary-text">Preface to the Second Epistle of John The authority of the First Epistle of John being established, little need be said concerning either the second or third, if we regard the language and the sentiment only, for these so fully accord with the first, that there can be no doubt that he who wrote one, wrote all the three. But it must not be concealed that there were doubts entertained in the primitive Church as to the two latter being canonical. And so late as the days of Eusebius, who lived in the fourth century, they were ranked among those writings which were then termed αντιλεγομενα, not received by all, or contradicted, because not believed to be the genuine productions of the Apostle John. It is very likely that, being letters to private persons, they had for a considerable time been kept in the possession of the families to which they were originally sent; and only came to light perhaps long after the death of the apostle, and the death of the elect lady or Kyria, and Gaius or Caius, to whom they were addressed. When first discovered, all the immediate vouchers were gone; and the Church of Christ, that was always on its guard against imposture, and especially in relation to writings professing to be the work of apostles, hesitated to receive them into the number of canonical Scriptures, till it was fully satisfied that they were Divinely inspired. This extreme caution was of the utmost consequence to the Christian faith; for had it been otherwise, had any measure of what is called credulity prevailed, the Church would have been inundated with spurious writings, and the genuine faith greatly corrupted, if not totally destroyed. The number of apocryphal gospels, acts of apostles, and epistles, which were offered to the Church in the earliest ages of Christianity, is truly astonishing. We have the names of at least seventy-five gospels which were offered to, and rejected by, the Church; besides Acts of Peter, Acts of Paul and Thecla, Third Epistle to the Corinthians, Epistle to the Laodiceans, Book of Enoch, etc., some of which are come down to the present time, but are convicted of forgery by the sentiment, the style, and the doctrine. The suspicion, however, of forgery, in reference to the Second Epistle of Peter, second and third of John, Jude, and the Apocalypse, was so strong, that in the third century, when the Peshito Syriac version was made, these books were omitted, and have not since been received into that version to the present day, which is the version still in use in the Syrian Churches. But the later Syriac version, which was made a.d. 508, and is called the Philoxenian, from Philoxenus, bishop of Hierapolis, under whose direction it was formed from the Greek by his rural Bishop Polycarp, and was afterwards corrected and published by Thomas of Charkel, in 616, contains these, as well as all the other canonical books of the New Testament. From the time that the language, sentiments, and doctrines of these two epistles were critically examined, no doubts were entertained of their authenticity; and at present they are received by the whole Christian Church throughout the world; for although they are not in the ancient Syriac version, they are in the Philoxenian; and concerning their authenticity I believe the Syrian Churches have at present no doubts. Dr. Lardner observes that the first epistle was received and quoted by Polycarp, bishop of Smyrna, contemporary with the apostle; by Papias, who himself had been a disciple of St. John; by Irenaeus; Clement of Alexandria; Origen, and many others. The second epistle is quoted by Irenaeus, was received by Clement of Alexandria, mentioned by Origen and Dionysius of Alexandria, is quoted by Alexander, bishop of Alexandria. All the three epistles were received by Athanasius, by Cyril, of Jerusalem; by the council of Laodicea; by Epiphanius; by Jerome; by Ruffinus; by the third council of Carthage; by Augustine, and by all those authors who received the same canon of the New Testament that we do. All the epistles are in the Codex Alexandrinus, in the catalogues of Gregory of Nazianzen, etc., etc. Thus we find they were known and quoted at a very early period; and have been received as genuine by the most respectable fathers, Greek and Latin, of the Christian Church. Their being apparently of a private nature might have prevented their more general circulation at the beginning, kept them for a considerable time unknown, and prevented them from being reckoned canonical. But such a circumstance as this cannot operate in the present times. As to the time in which this epistle was written, it is very uncertain. It is generally supposed to have been written at Ephesus between a.d. 80 and 90, but of this there is no proof; nor are there any data in the epistle itself to lead to any probable conjecture relative to this point. I have placed it at A D. 85, but could not wish to pledge myself to the correctness of that date. The Second Epistle of John Chronological Notes Relative to this Epistle - Year of the Constantinopolitan era of the world, or that used by the Byzantine historians, and other eastern writers, 5593. - Year of the Alexandrian era of the world, 5587. - Year of the Antiochian era of the world, 5577. - Year of the world, according to Archbishop Usher, 4089. - Year of the world, according to Eusebius, in his Chronicon, 4311. - Year of the minor Jewish era of the world, or that in common use, 3845. - Year of the Greater Rabbinical era of the world, 4444. - Year from the Flood, according to Archbishop Usher, and the English Bible, 2433. - Year of the Cali yuga, or Indian era of the Deluge, 3187. - Year of the era of Iphitus, or since the first commencement of the Olympic games, 1025. - Year of the era of Nabonassar, king of Babylon, 834. - Year of the CCXVIth Olympiad, 1. - Year from the building of Rome, according to Fabius Pictor, 832. - Year from the building of Rome, according to Frontinus, 836. - Year from the building of Rome, according to the Fasti Capitolini, 837. - Year from the building of Rome, according to Varro, which was that most generally used, 838. - Year of the era of the Seleucidae, 397. - Year of the Caesarean era of Antioch, 133. - Year of the Julian era, 130. - Year of the Spanish era, 123. - Year from the birth of Jesus Christ, according to Archbishop Usher, 89. - Year of the vulgar era of Christ&#x27;s nativity, 85. - Year of Artabanus IV., king of the Parthians, 4. - Year of the Dionysian period, or Easter Cycle, 86. - Year of the Grecian Cycle of nineteen years, or Common Golden Number, 10; or the year before the fourth embolismic. - Year of the Jewish Cycle of nineteen years, 7; or the year before the third embolismic. - Year of the Solar Cycle, 10. - Dominical Letter, it being the first year after the Bissextile, or Leap Year, B. - Day of the Jewish Passover, the twenty-seventh of March, which happened in this year on the Jewish Sabbath. - Easter Sunday, the third of April. - Epact, or age of the moon on the 22d of March, (the day of the earliest Easter Sunday possible), 9. - Epact, according to the present mode of computation, or the moon&#x27;s age on New Year&#x27;s day, or the Calends of January, 17. - Monthly Epacts, or age of the moon on the Calends of each month respectively, (beginning with January), 17, 19, 18, 19, 20, 21, 22, 24, 24, 25, 27, 27. - Number of Direction, or the number of days from the twenty-first of March to the Jewish Passover, 6. - Year of the Emperor Flavius Domitianus Caesar, the last of those usually styled the Twelve Caesars, 5. - Roman Consuls, Domitianus Augustus Caesar, the eleventh time, and T. Aurelius Fulvus or Fulvius. - The years in which Domitian had been consul before were, a.d. 71, 73, 74, 75, 76, 77, 80, 82, 83, and 84. It should be observed that the date of this epistle is very uncertain. The above is only upon the supposition that it was written about a.d. 85. See the preface to 2 John.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.intro&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 0,
+  &quot;verse_range&quot;: &quot;intro&quot;,
+  &quot;verse_range_osis&quot;: null,
+  &quot;verse_text&quot;: null,
+  &quot;commentary_text&quot;: &quot;Preface to the Second Epistle of John The authority of the First Epistle of John being established, little need be said concerning either the second or third, if we regard the language and the sentiment only, for these so fully accord with the first, that there can be no doubt that he who wrote one, wrote all the three. But it must not be concealed that there were doubts entertained in the primitive Church as to the two latter being canonical. And so late as the days of Eusebius, who lived in the fourth century, they were ranked among those writings which were then termed αντιλεγομενα, not received by all, or contradicted, because not believed to be the genuine productions of the Apostle John. It is very likely that, being letters to private persons, they had for a considerable time been kept in the possession of the families to which they were originally sent; and only came to light perhaps long after the death of the apostle, and the death of the elect lady or Kyria, and Gaius or Caius, to whom they were addressed. When first discovered, all the immediate vouchers were gone; and the Church of Christ, that was always on its guard against imposture, and especially in relation to writings professing to be the work of apostles, hesitated to receive them into the number of canonical Scriptures, till it was fully satisfied that they were Divinely inspired. This extreme caution was of the utmost consequence to the Christian faith; for had it been otherwise, had any measure of what is called credulity prevailed, the Church would have been inundated with spurious writings, and the genuine faith greatly corrupted, if not totally destroyed. The number of apocryphal gospels, acts of apostles, and epistles, which were offered to the Church in the earliest ages of Christianity, is truly astonishing. We have the names of at least seventy-five gospels which were offered to, and rejected by, the Church; besides Acts of Peter, Acts of Paul and Thecla, Third Epistle to the Corinthians, Epistle to the Laodiceans, Book of Enoch, etc., some of which are come down to the present time, but are convicted of forgery by the sentiment, the style, and the doctrine. The suspicion, however, of forgery, in reference to the Second Epistle of Peter, second and third of John, Jude, and the Apocalypse, was so strong, that in the third century, when the Peshito Syriac version was made, these books were omitted, and have not since been received into that version to the present day, which is the version still in use in the Syrian Churches. But the later Syriac version, which was made a.d. 508, and is called the Philoxenian, from Philoxenus, bishop of Hierapolis, under whose direction it was formed from the Greek by his rural Bishop Polycarp, and was afterwards corrected and published by Thomas of Charkel, in 616, contains these, as well as all the other canonical books of the New Testament. From the time that the language, sentiments, and doctrines of these two epistles were critically examined, no doubts were entertained of their authenticity; and at present they are received by the whole Christian Church throughout the world; for although they are not in the ancient Syriac version, they are in the Philoxenian; and concerning their authenticity I believe the Syrian Churches have at present no doubts. Dr. Lardner observes that the first epistle was received and quoted by Polycarp, bishop of Smyrna, contemporary with the apostle; by Papias, who himself had been a disciple of St. John; by Irenaeus; Clement of Alexandria; Origen, and many others. The second epistle is quoted by Irenaeus, was received by Clement of Alexandria, mentioned by Origen and Dionysius of Alexandria, is quoted by Alexander, bishop of Alexandria. All the three epistles were received by Athanasius, by Cyril, of Jerusalem; by the council of Laodicea; by Epiphanius; by Jerome; by Ruffinus; by the third council of Carthage; by Augustine, and by all those authors who received the same canon of the New Testament that we do. All the epistles are in the Codex Alexandrinus, in the catalogues of Gregory of Nazianzen, etc., etc. Thus we find they were known and quoted at a very early period; and have been received as genuine by the most respectable fathers, Greek and Latin, of the Christian Church. Their being apparently of a private nature might have prevented their more general circulation at the beginning, kept them for a considerable time unknown, and prevented them from being reckoned canonical. But such a circumstance as this cannot operate in the present times. As to the time in which this epistle was written, it is very uncertain. It is generally supposed to have been written at Ephesus between a.d. 80 and 90, but of this there is no proof; nor are there any data in the epistle itself to lead to any probable conjecture relative to this point. I have placed it at A D. 85, but could not wish to pledge myself to the correctness of that date. The Second Epistle of John Chronological Notes Relative to this Epistle - Year of the Constantinopolitan era of the world, or that used by the Byzantine historians, and other eastern writers, 5593. - Year of the Alexandrian era of the world, 5587. - Year of the Antiochian era of the world, 5577. - Year of the world, according to Archbishop Usher, 4089. - Year of the world, according to Eusebius, in his Chronicon, 4311. - Year of the minor Jewish era of the world, or that in common use, 3845. - Year of the Greater Rabbinical era of the world, 4444. - Year from the Flood, according to Archbishop Usher, and the English Bible, 2433. - Year of the Cali yuga, or Indian era of the Deluge, 3187. - Year of the era of Iphitus, or since the first commencement of the Olympic games, 1025. - Year of the era of Nabonassar, king of Babylon, 834. - Year of the CCXVIth Olympiad, 1. - Year from the building of Rome, according to Fabius Pictor, 832. - Year from the building of Rome, according to Frontinus, 836. - Year from the building of Rome, according to the Fasti Capitolini, 837. - Year from the building of Rome, according to Varro, which was that most generally used, 838. - Year of the era of the Seleucidae, 397. - Year of the Caesarean era of Antioch, 133. - Year of the Julian era, 130. - Year of the Spanish era, 123. - Year from the birth of Jesus Christ, according to Archbishop Usher, 89. - Year of the vulgar era of Christ&#x27;s nativity, 85. - Year of Artabanus IV., king of the Parthians, 4. - Year of the Dionysian period, or Easter Cycle, 86. - Year of the Grecian Cycle of nineteen years, or Common Golden Number, 10; or the year before the fourth embolismic. - Year of the Jewish Cycle of nineteen years, 7; or the year before the third embolismic. - Year of the Solar Cycle, 10. - Dominical Letter, it being the first year after the Bissextile, or Leap Year, B. - Day of the Jewish Passover, the twenty-seventh of March, which happened in this year on the Jewish Sabbath. - Easter Sunday, the third of April. - Epact, or age of the moon on the 22d of March, (the day of the earliest Easter Sunday possible), 9. - Epact, according to the present mode of computation, or the moon&#x27;s age on New Year&#x27;s day, or the Calends of January, 17. - Monthly Epacts, or age of the moon on the Calends of each month respectively, (beginning with January), 17, 19, 18, 19, 20, 21, 22, 24, 24, 25, 27, 27. - Number of Direction, or the number of days from the twenty-first of March to the Jewish Passover, 6. - Year of the Emperor Flavius Domitianus Caesar, the last of those usually styled the Twelve Caesars, 5. - Roman Consuls, Domitianus Augustus Caesar, the eleventh time, and T. Aurelius Fulvus or Fulvius. - The years in which Domitian had been consul before were, a.d. 71, 73, 74, 75, 76, 77, 80, 82, 83, and 84. It should be observed that the date of this epistle is very uncertain. The above is only upon the supposition that it was written about a.d. 85. See the preface to 2 John.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 1405
+}</pre>
+</details>
+</article>
+<article class="entry entry-intro" id="adam-clarke.2John.1.intro">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: intro</span>
+<a class="entry-id" href="#adam-clarke.2John.1.intro">adam-clarke.2John.1.intro</a>
+</div>
+<h2>2 John 1 introduction</h2>
+
+<p class="commentary-text">The apostle&#x27;s address to a Christian matron and her children, Jo2 1:1-3. He rejoices to find that certain of her family had received, and continued to adorn, the truth; and he exhorts them to continue to love one another according to the commandment of Christ, Jo2 1:4-6, And particularly cautions them against deceivers, and to so watch, that they might not lose the benefit of what they had received, Jo2 1:7, Jo2 1:8. The necessity of abiding in the doctrine of Christ, Jo2 1:9. He cautions them against receiving, or in any way forwarding, those who did not bring the true doctrine of Christ, Jo2 1:10, Jo2 1:11. Excuses himself from writing more largely, and purposes to pay her and family a visit shortly, Jo2 1:12, Jo2 1:13.</p>
+
+<section class="cross-refs"><h3>Cross references</h3><ul><li>2John.1.1</li><li>2John.1.4</li><li>2John.1.7</li><li>2John.1.8</li><li>2John.1.9</li><li>2John.1.10</li><li>2John.1.11</li><li>2John.1.12</li><li>2John.1.13</li></ul></section>
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.intro&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;intro&quot;,
+  &quot;verse_range_osis&quot;: null,
+  &quot;verse_text&quot;: null,
+  &quot;commentary_text&quot;: &quot;The apostle&#x27;s address to a Christian matron and her children, Jo2 1:1-3. He rejoices to find that certain of her family had received, and continued to adorn, the truth; and he exhorts them to continue to love one another according to the commandment of Christ, Jo2 1:4-6, And particularly cautions them against deceivers, and to so watch, that they might not lose the benefit of what they had received, Jo2 1:7, Jo2 1:8. The necessity of abiding in the doctrine of Christ, Jo2 1:9. He cautions them against receiving, or in any way forwarding, those who did not bring the true doctrine of Christ, Jo2 1:10, Jo2 1:11. Excuses himself from writing more largely, and purposes to pay her and family a visit shortly, Jo2 1:12, Jo2 1:13.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [
+    &quot;2John.1.1&quot;,
+    &quot;2John.1.4&quot;,
+    &quot;2John.1.7&quot;,
+    &quot;2John.1.8&quot;,
+    &quot;2John.1.9&quot;,
+    &quot;2John.1.10&quot;,
+    &quot;2John.1.11&quot;,
+    &quot;2John.1.12&quot;,
+    &quot;2John.1.13&quot;
+  ],
+  &quot;word_count&quot;: 128
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.1">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.1">adam-clarke.2John.1.1</a>
+</div>
+<h2>2 John 1:1</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>The elder, To the chosen lady and her children, whom I love in the truth—and not I alone, but also all who know the truth—</p>
+</section>
+<p class="commentary-text">The elder - John the apostle, who was now a very old man, generally supposed to be about ninety, and therefore he uses the term ὁ πρεσβυτερος, presbyter or elder, not as the name of an office, but as designating his advanced age. He is allowed to have been the oldest of all the apostles, and to have been the only one who died a natural death.<br>This title led some of the ancients to attribute this epistle to a person called John the Presbyter, a member of the Church at Ephesus; and not to John the apostle. But this is a groundless supposition.<br>The elect lady - Εκλεκτῃ Κυρια· As Κυρια, kuria, may be the feminine of Κυριος, kurios, lord, therefore it may signify lady; and so several, both ancients and moderns, have understood it. But others have considered it the proper name of a woman, Kyria; and that this is a very ancient opinion is evident from the Peshito Syriac, the oldest version we have, which uses it as a proper name koureea, as does also the Arabic kooreea.<br>Some have thought that Eclecta was the name of this matron, from the word εκλεκτη, which we translate elect, and which here signifies the same as excellent, eminent, honorable, or the like. Others think that a particular Church is intended, which some suppose to be the Church at Jerusalem, and that the elect sister, Jo2 1:13, means the Church at Ephesus; but these are conjectures which appear to me to have no good ground. I am satisfied that no metaphor is here intended; that the epistle was sent to some eminent Christian matron, not far from Ephesus, who was probably deaconess of the Church, who, it is likely, had a Church at her house, or at whose house the apostles and traveling evangelists frequently preached, and were entertained. This will appear more probable in the course of the notes.<br>Whom I love in the truth - Whom I love as the Christian religion requires us to love one another.<br>And not I only - She was well known in the Churches; many had witnessed or heard of her fidelity, and partook of her hospitality; so that she had a good report of all Christians in that quarter.</p>
+
+<section class="cross-refs"><h3>Cross references</h3><ul><li>2John.1.13</li></ul></section>
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.1&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;1&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.1&quot;,
+  &quot;verse_text&quot;: &quot;The elder, To the chosen lady and her children, whom I love in the truth—and not I alone, but also all who know the truth—&quot;,
+  &quot;commentary_text&quot;: &quot;The elder - John the apostle, who was now a very old man, generally supposed to be about ninety, and therefore he uses the term ὁ πρεσβυτερος, presbyter or elder, not as the name of an office, but as designating his advanced age. He is allowed to have been the oldest of all the apostles, and to have been the only one who died a natural death.\nThis title led some of the ancients to attribute this epistle to a person called John the Presbyter, a member of the Church at Ephesus; and not to John the apostle. But this is a groundless supposition.\nThe elect lady - Εκλεκτῃ Κυρια· As Κυρια, kuria, may be the feminine of Κυριος, kurios, lord, therefore it may signify lady; and so several, both ancients and moderns, have understood it. But others have considered it the proper name of a woman, Kyria; and that this is a very ancient opinion is evident from the Peshito Syriac, the oldest version we have, which uses it as a proper name koureea, as does also the Arabic kooreea.\nSome have thought that Eclecta was the name of this matron, from the word εκλεκτη, which we translate elect, and which here signifies the same as excellent, eminent, honorable, or the like. Others think that a particular Church is intended, which some suppose to be the Church at Jerusalem, and that the elect sister, Jo2 1:13, means the Church at Ephesus; but these are conjectures which appear to me to have no good ground. I am satisfied that no metaphor is here intended; that the epistle was sent to some eminent Christian matron, not far from Ephesus, who was probably deaconess of the Church, who, it is likely, had a Church at her house, or at whose house the apostles and traveling evangelists frequently preached, and were entertained. This will appear more probable in the course of the notes.\nWhom I love in the truth - Whom I love as the Christian religion requires us to love one another.\nAnd not I only - She was well known in the Churches; many had witnessed or heard of her fidelity, and partook of her hospitality; so that she had a good report of all Christians in that quarter.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [
+    &quot;2John.1.13&quot;
+  ],
+  &quot;word_count&quot;: 378
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.2">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.2">adam-clarke.2John.1.2</a>
+</div>
+<h2>2 John 1:2</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>because of the truth that abides in us and will be with us forever:</p>
+</section>
+<p class="commentary-text">For the truth&#x27;s sake - On account of the Gospel.<br>Which dwelleth in us - By the grace which it has proclaimed.<br>And shall be with us - For God will preserve not only the Christian religion but its truth, all its essential doctrines for ever. And they that abide in the truth shall go whither that truth leads, i.e. to glory. The Armenian has a strange reading here: &quot;For the truth&#x27;s sake which dwelleth in us, because it is also with you; and ye shall be with us for ever.&quot; But this is supported by no other version, nor by any MS.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.2&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;2&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.2&quot;,
+  &quot;verse_text&quot;: &quot;because of the truth that abides in us and will be with us forever:&quot;,
+  &quot;commentary_text&quot;: &quot;For the truth&#x27;s sake - On account of the Gospel.\nWhich dwelleth in us - By the grace which it has proclaimed.\nAnd shall be with us - For God will preserve not only the Christian religion but its truth, all its essential doctrines for ever. And they that abide in the truth shall go whither that truth leads, i.e. to glory. The Armenian has a strange reading here: \&quot;For the truth&#x27;s sake which dwelleth in us, because it is also with you; and ye shall be with us for ever.\&quot; But this is supported by no other version, nor by any MS.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 103
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.3">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.3">adam-clarke.2John.1.3</a>
+</div>
+<h2>2 John 1:3</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>Grace, mercy, and peace from God the Father and from Jesus Christ, the Son of the Father, will be with us in truth and love.</p>
+</section>
+<p class="commentary-text">Grace be with you - This is addressed to her, her household, and probably that part of the Church which was more immediately under her care.<br>The Son of the Father - The apostle still keeps in view the miraculous conception of Christ; a thing which the Gnostics absolutely denied; a doctrine which is at the ground work of our salvation.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.3&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;3&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.3&quot;,
+  &quot;verse_text&quot;: &quot;Grace, mercy, and peace from God the Father and from Jesus Christ, the Son of the Father, will be with us in truth and love.&quot;,
+  &quot;commentary_text&quot;: &quot;Grace be with you - This is addressed to her, her household, and probably that part of the Church which was more immediately under her care.\nThe Son of the Father - The apostle still keeps in view the miraculous conception of Christ; a thing which the Gnostics absolutely denied; a doctrine which is at the ground work of our salvation.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 61
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.4">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.4">adam-clarke.2John.1.4</a>
+</div>
+<h2>2 John 1:4</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>I was overjoyed to find some of your children walking in the truth, just as the Father has commanded us.</p>
+</section>
+<p class="commentary-text">That I found of thy children walking in truth - I have already supposed this Christian matron to be mother of a family, probably a widow, for no mention is made of her husband; and that she was also a deaconess in the church, and one in those house the traveling evangelists preached, and there they were entertained. The children mentioned here may either be her own children, or those members of the Church which were under her care, or some of both. The apostle was glad to find, probably by an epistle sent from herself to him, or from the information of some of the itinerant evangelists, that the work of God was prospering in the place where she lived, and also in her own household. He does not say that all were walking in the truth, but εκ των τεκνων, some of her children; there was a growing and spreading work, and there were many adversaries who strove to pervert them who had already believed, and perhaps were successful in drawing several away from their simplicity.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.4&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;4&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.4&quot;,
+  &quot;verse_text&quot;: &quot;I was overjoyed to find some of your children walking in the truth, just as the Father has commanded us.&quot;,
+  &quot;commentary_text&quot;: &quot;That I found of thy children walking in truth - I have already supposed this Christian matron to be mother of a family, probably a widow, for no mention is made of her husband; and that she was also a deaconess in the church, and one in those house the traveling evangelists preached, and there they were entertained. The children mentioned here may either be her own children, or those members of the Church which were under her care, or some of both. The apostle was glad to find, probably by an epistle sent from herself to him, or from the information of some of the itinerant evangelists, that the work of God was prospering in the place where she lived, and also in her own household. He does not say that all were walking in the truth, but εκ των τεκνων, some of her children; there was a growing and spreading work, and there were many adversaries who strove to pervert them who had already believed, and perhaps were successful in drawing several away from their simplicity.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 178
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.5">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.5">adam-clarke.2John.1.5</a>
+</div>
+<h2>2 John 1:5</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>And now I urge you, dear lady—not as a new commandment to you, but one we have had from the beginning—that we love one another.</p>
+</section>
+<p class="commentary-text">That which we had from the beginning - The commandment to love one another was what they had heard from the first publication of Christianity, and what he wishes this excellent woman to inculcate on all those under her care. The mode of address here shows that it was a person, not a Church, to which the apostle wrote.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.5&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;5&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.5&quot;,
+  &quot;verse_text&quot;: &quot;And now I urge you, dear lady—not as a new commandment to you, but one we have had from the beginning—that we love one another.&quot;,
+  &quot;commentary_text&quot;: &quot;That which we had from the beginning - The commandment to love one another was what they had heard from the first publication of Christianity, and what he wishes this excellent woman to inculcate on all those under her care. The mode of address here shows that it was a person, not a Church, to which the apostle wrote.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 59
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.6">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.6">adam-clarke.2John.1.6</a>
+</div>
+<h2>2 John 1:6</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>And this is love, that we walk according to His commandments. This is the very commandment you have heard from the beginning, that you must walk in love.</p>
+</section>
+<p class="commentary-text">And this is love - That is, our love is shown and proved by our walking according to the commandments of God; for love is the principle of obedience.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.6&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;6&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.6&quot;,
+  &quot;verse_text&quot;: &quot;And this is love, that we walk according to His commandments. This is the very commandment you have heard from the beginning, that you must walk in love.&quot;,
+  &quot;commentary_text&quot;: &quot;And this is love - That is, our love is shown and proved by our walking according to the commandments of God; for love is the principle of obedience.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 29
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.7">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.7">adam-clarke.2John.1.7</a>
+</div>
+<h2>2 John 1:7</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>For many deceivers have gone out into the world, refusing to confess the coming of Jesus Christ in the flesh. Any such person is the deceiver and the antichrist.</p>
+</section>
+<p class="commentary-text">For many deceivers, etc. - Of these he had spoken before, see Jo1 4:1, etc. And these appear to have been Gnostics, for they denied that Jesus was come in the flesh. And this doctrine, so essential to salvation, none could deny but a deceiver and an antichrist. Instead of εισηλθον are entered in, many excellent MSS. and versions have εξηλθον, are gone out. The sense is nearly the same.</p>
+
+<section class="cross-refs"><h3>Cross references</h3><ul><li>1John.4.1</li></ul></section>
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.7&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;7&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.7&quot;,
+  &quot;verse_text&quot;: &quot;For many deceivers have gone out into the world, refusing to confess the coming of Jesus Christ in the flesh. Any such person is the deceiver and the antichrist.&quot;,
+  &quot;commentary_text&quot;: &quot;For many deceivers, etc. - Of these he had spoken before, see Jo1 4:1, etc. And these appear to have been Gnostics, for they denied that Jesus was come in the flesh. And this doctrine, so essential to salvation, none could deny but a deceiver and an antichrist. Instead of εισηλθον are entered in, many excellent MSS. and versions have εξηλθον, are gone out. The sense is nearly the same.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [
+    &quot;1John.4.1&quot;
+  ],
+  &quot;word_count&quot;: 70
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.8">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.8">adam-clarke.2John.1.8</a>
+</div>
+<h2>2 John 1:8</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>Watch yourselves, so that you do not lose what we have worked for, but that you may be fully rewarded.</p>
+</section>
+<p class="commentary-text">Look to yourselves - Be on your guard against these seducers; watch, pray, love God and each other, and walk in newness of life.<br>That we lose not those things which we have wrought - That we apostles, who have been the means of your conversion, may not be deprived of you as our crown of rejoicing in the day of the Lord Jesus.<br>Instead of the first person plural, απολεσωμεν, etc., We lose, etc., many MSS., versions, and fathers, read the whole clause in the second person plural, απολεσητε, Ye lose, etc. Take heed to yourselves that Ye lose not the things which Ye have wrought, but that Ye receive a full reward. This reading is more consistent and likely, and is supported by at least as good evidence as the other. We find that if these persons did not keep on their guard they might lose their salvation, and the apostles their rejoicing in the day of the Lord Jesus. Even this intimation might put them on their guard. Had the apostle said ye cannot finally fall, what a different effect would it have produced! Griesbach has placed these readings in the margin as being very probable.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.8&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;8&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.8&quot;,
+  &quot;verse_text&quot;: &quot;Watch yourselves, so that you do not lose what we have worked for, but that you may be fully rewarded.&quot;,
+  &quot;commentary_text&quot;: &quot;Look to yourselves - Be on your guard against these seducers; watch, pray, love God and each other, and walk in newness of life.\nThat we lose not those things which we have wrought - That we apostles, who have been the means of your conversion, may not be deprived of you as our crown of rejoicing in the day of the Lord Jesus.\nInstead of the first person plural, απολεσωμεν, etc., We lose, etc., many MSS., versions, and fathers, read the whole clause in the second person plural, απολεσητε, Ye lose, etc. Take heed to yourselves that Ye lose not the things which Ye have wrought, but that Ye receive a full reward. This reading is more consistent and likely, and is supported by at least as good evidence as the other. We find that if these persons did not keep on their guard they might lose their salvation, and the apostles their rejoicing in the day of the Lord Jesus. Even this intimation might put them on their guard. Had the apostle said ye cannot finally fall, what a different effect would it have produced! Griesbach has placed these readings in the margin as being very probable.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 199
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.9">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.9">adam-clarke.2John.1.9</a>
+</div>
+<h2>2 John 1:9</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>Anyone who runs ahead without remaining in the teaching of Christ does not have God. Whoever remains in His teaching has both the Father and the Son.</p>
+</section>
+<p class="commentary-text">Whosoever transgresseth - Παραβαινων· He who passes over the sacred enclosure, or goes beyond the prescribed limits; and abideth not in the doctrine - does not remain within these holy limits, but indulges himself either in excesses of action or passion; hath not God for his Father, nor the love of God in his heart.<br>Hath both the father and the Son - He who abideth in the doctrine of Christ, his body is a temple of the Holy Trinity, and he has communion with the Father as his Father, and with the Son as his Savior and Redeemer.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.9&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;9&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.9&quot;,
+  &quot;verse_text&quot;: &quot;Anyone who runs ahead without remaining in the teaching of Christ does not have God. Whoever remains in His teaching has both the Father and the Son.&quot;,
+  &quot;commentary_text&quot;: &quot;Whosoever transgresseth - Παραβαινων· He who passes over the sacred enclosure, or goes beyond the prescribed limits; and abideth not in the doctrine - does not remain within these holy limits, but indulges himself either in excesses of action or passion; hath not God for his Father, nor the love of God in his heart.\nHath both the father and the Son - He who abideth in the doctrine of Christ, his body is a temple of the Holy Trinity, and he has communion with the Father as his Father, and with the Son as his Savior and Redeemer.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 99
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.10">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.10">adam-clarke.2John.1.10</a>
+</div>
+<h2>2 John 1:10</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>If anyone comes to you but does not bring this teaching, do not receive him into your home or even greet him.</p>
+</section>
+<p class="commentary-text">If there come any unto you - Under the character of an apostle or evangelist, to preach in your house; and bring not this doctrine, that Jesus is come in the flesh, and has died for the redemption of the world.<br>Receive him not unto your house - Give him no entertainment as an evangelical teacher. Let him not preach under your roof.<br>Neither bid him God speed - Και χαιρειν αυτῳ μη λεγερε· And do not say, Health to him - do not salute him with Peace be to thee! The usual salutation among friends and those of the same religion in the east is, Salam aleekum, &quot;Peace be to you;&quot; which those of the same religion will use among themselves, but never to strangers, except in very rare cases. This is the case to the present day; and, from what John says here, it was a very ancient custom. We have often seen that peace among the Hebrews comprehended every spiritual and temporal blessing. The words mean, according to the eastern use of them, &quot;Have no religious connection with him, nor act towards him so as to induce others to believe you acknowledge him as a brother.&quot;</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.10&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;10&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.10&quot;,
+  &quot;verse_text&quot;: &quot;If anyone comes to you but does not bring this teaching, do not receive him into your home or even greet him.&quot;,
+  &quot;commentary_text&quot;: &quot;If there come any unto you - Under the character of an apostle or evangelist, to preach in your house; and bring not this doctrine, that Jesus is come in the flesh, and has died for the redemption of the world.\nReceive him not unto your house - Give him no entertainment as an evangelical teacher. Let him not preach under your roof.\nNeither bid him God speed - Και χαιρειν αυτῳ μη λεγερε· And do not say, Health to him - do not salute him with Peace be to thee! The usual salutation among friends and those of the same religion in the east is, Salam aleekum, \&quot;Peace be to you;\&quot; which those of the same religion will use among themselves, but never to strangers, except in very rare cases. This is the case to the present day; and, from what John says here, it was a very ancient custom. We have often seen that peace among the Hebrews comprehended every spiritual and temporal blessing. The words mean, according to the eastern use of them, \&quot;Have no religious connection with him, nor act towards him so as to induce others to believe you acknowledge him as a brother.\&quot;&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 199
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.11">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.11">adam-clarke.2John.1.11</a>
+</div>
+<h2>2 John 1:11</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>Whoever greets such a person shares in his evil deeds.</p>
+</section>
+<p class="commentary-text">Is partaker of his evil deeds - He that acts towards him as if he considered him a Christian brother, and sound in the faith, puts it in his power to deceive others, by thus apparently accrediting his ministry. No sound Christian should countenance any man as a Gospel minister, who holds and preaches erroneous doctrines; especially concerning the Lord Jesus. Nor can any Christian attend the ministry of such teachers without being criminal in the sight of God. He who attends their ministry is, in effect, bidding them God speed; no matter whether such belong to an established Church, or to any congregation of dissenters from it. But what St. John says here does not mean that we should deny such the common offices of humanity, charity, and mercy. No. In these offices we are equally bound to all men; far less does it intimate that we should persecute such on account of their heretical or heterodox sentiments. No. This right has God given to no man, to no Church, to no state. They who persecute others, even for the worst heretical opinions, may expect the heaviest judgments of Almighty God.<br>There is a remarkable addition here in several MSS. Of the Vulgate, and in some printed editions. Ecce praedixi vobis, ut in diem Domini nostri Jesu Christi non confundamini. &quot;Behold, I have foretold this to you, that ye may not be confounded in the day of our Lord Jesus Christ.&quot;<br>This addition is found in the edition of Pope Sixtus the Fifth, and in the Complutensian Polyglot; but it is not acknowledged by any of the versions, nor by any Greek MSS.</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.11&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;11&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.11&quot;,
+  &quot;verse_text&quot;: &quot;Whoever greets such a person shares in his evil deeds.&quot;,
+  &quot;commentary_text&quot;: &quot;Is partaker of his evil deeds - He that acts towards him as if he considered him a Christian brother, and sound in the faith, puts it in his power to deceive others, by thus apparently accrediting his ministry. No sound Christian should countenance any man as a Gospel minister, who holds and preaches erroneous doctrines; especially concerning the Lord Jesus. Nor can any Christian attend the ministry of such teachers without being criminal in the sight of God. He who attends their ministry is, in effect, bidding them God speed; no matter whether such belong to an established Church, or to any congregation of dissenters from it. But what St. John says here does not mean that we should deny such the common offices of humanity, charity, and mercy. No. In these offices we are equally bound to all men; far less does it intimate that we should persecute such on account of their heretical or heterodox sentiments. No. This right has God given to no man, to no Church, to no state. They who persecute others, even for the worst heretical opinions, may expect the heaviest judgments of Almighty God.\nThere is a remarkable addition here in several MSS. Of the Vulgate, and in some printed editions. Ecce praedixi vobis, ut in diem Domini nostri Jesu Christi non confundamini. \&quot;Behold, I have foretold this to you, that ye may not be confounded in the day of our Lord Jesus Christ.\&quot;\nThis addition is found in the edition of Pope Sixtus the Fifth, and in the Complutensian Polyglot; but it is not acknowledged by any of the versions, nor by any Greek MSS.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 274
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.12">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.12">adam-clarke.2John.1.12</a>
+</div>
+<h2>2 John 1:12</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>I have many things to write to you, but I would prefer not to do so with paper and ink. Instead, I hope to come and speak with you face to face, so that our joy may be complete.</p>
+</section>
+<p class="commentary-text">Having many things to write - That is, I have many things that I might write to thee, but I think it best not to commit them to paper, because I hope to visit thee shortly, and speak fully of those matters, which will be a means of increasing the comfort both of thee and thy family, as well as my own. There is more comfort in mutual interviews among friends than in epistolaty correspondence,</p>
+
+
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.12&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;12&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.12&quot;,
+  &quot;verse_text&quot;: &quot;I have many things to write to you, but I would prefer not to do so with paper and ink. Instead, I hope to come and speak with you face to face, so that our joy may be complete.&quot;,
+  &quot;commentary_text&quot;: &quot;Having many things to write - That is, I have many things that I might write to thee, but I think it best not to commit them to paper, because I hope to visit thee shortly, and speak fully of those matters, which will be a means of increasing the comfort both of thee and thy family, as well as my own. There is more comfort in mutual interviews among friends than in epistolaty correspondence,&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [],
+  &quot;word_count&quot;: 75
+}</pre>
+</details>
+</article>
+<article class="entry entry-verse" id="adam-clarke.2John.1.13">
+<div class="entry-toolbar">
+<span class="entry-type">Entry type: verse</span>
+<a class="entry-id" href="#adam-clarke.2John.1.13">adam-clarke.2John.1.13</a>
+</div>
+<h2>2 John 1:13</h2>
+<section class="verse-text">
+<h3>Verse text</h3>
+<p>The children of your elect sister send you greetings.</p>
+</section>
+<p class="commentary-text">The children of thy elect sister - Probably her own sister, who lived at Ephesus; and, being acquainted with the apostle&#x27;s writing, desired to be thus remembered to her. Elect, both in this and the first verse, signifies excellent, eminent, or honorable. See on Jo2 1:1 (note).<br>Amen is wanting in the most ancient MSS., and in most of the versions; but ἡ χαρις μετα σου and μεθ&#x27; ὑμων, Grace be with thee, or with you, is found in several MSS. and versions.<br>Subscriptions in the Versions: -<br>The end of the Second Epistle. - Syriac.<br>The Second Epistle of John is ended. - Philox. Syriac.<br>Praise be to God for ever, Amen! - Arabic.<br>In the Manuscripts: -<br>The Second of John. - Codex Alexandrinus and Codex Vaticanus.<br>The Second of John to the Parthians. - One of Colbert&#x27;s MSS.<br>The Second catholic Epistle of St. John the apostle and divine.<br>There are other subscriptions, but, like the above, they are worthy of little regard.</p>
+<p class="commentary-text">This epistle is more remarkable for the spirit of Christian love which it breathes than for any thing else. It contains scarcely any thing that is not found in the preceding; and out of the thirteen verses there are at least eight which are found, either in so many words or in sentiment, precisely the same with those of the first epistle. The most remarkable part of it is the tenth and eleventh verses, (Jo2 1:10, Jo2 1:11) relative to the orders concerning the heretical teacher; and from them we see how such teachers were treated in the apostolic Church. They held no communion with them, afforded them no support, as teachers; but did not persecute them.<br>On this model the conduct of all Christians should be formed, relative to the teachers of false doctrine in general. To go thus far, we have apostolical authority, to go farther, we have none. And let us still remember, in all cases it is our duty to love even our enemies, and consequently to do them any act of humanity and mercy.</p>
+
+<section class="cross-refs"><h3>Cross references</h3><ul><li>2John.1.1</li><li>2John.1.10</li><li>2John.1.11</li></ul></section>
+<details>
+<summary>Raw entry JSON</summary>
+<pre>{
+  &quot;entry_id&quot;: &quot;adam-clarke.2John.1.13&quot;,
+  &quot;book&quot;: &quot;2 John&quot;,
+  &quot;book_osis&quot;: &quot;2John&quot;,
+  &quot;book_number&quot;: 63,
+  &quot;chapter&quot;: 1,
+  &quot;verse_range&quot;: &quot;13&quot;,
+  &quot;verse_range_osis&quot;: &quot;2John.1.13&quot;,
+  &quot;verse_text&quot;: &quot;The children of your elect sister send you greetings.&quot;,
+  &quot;commentary_text&quot;: &quot;The children of thy elect sister - Probably her own sister, who lived at Ephesus; and, being acquainted with the apostle&#x27;s writing, desired to be thus remembered to her. Elect, both in this and the first verse, signifies excellent, eminent, or honorable. See on Jo2 1:1 (note).\nAmen is wanting in the most ancient MSS., and in most of the versions; but ἡ χαρις μετα σου and μεθ&#x27; ὑμων, Grace be with thee, or with you, is found in several MSS. and versions.\nSubscriptions in the Versions: - \nThe end of the Second Epistle. - Syriac.\nThe Second Epistle of John is ended. - Philox. Syriac.\nPraise be to God for ever, Amen! - Arabic.\nIn the Manuscripts: - \nThe Second of John. - Codex Alexandrinus and Codex Vaticanus.\nThe Second of John to the Parthians. - One of Colbert&#x27;s MSS.\nThe Second catholic Epistle of St. John the apostle and divine.\nThere are other subscriptions, but, like the above, they are worthy of little regard.\n\nThis epistle is more remarkable for the spirit of Christian love which it breathes than for any thing else. It contains scarcely any thing that is not found in the preceding; and out of the thirteen verses there are at least eight which are found, either in so many words or in sentiment, precisely the same with those of the first epistle. The most remarkable part of it is the tenth and eleventh verses, (Jo2 1:10, Jo2 1:11) relative to the orders concerning the heretical teacher; and from them we see how such teachers were treated in the apostolic Church. They held no communion with them, afforded them no support, as teachers; but did not persecute them.\nOn this model the conduct of all Christians should be formed, relative to the teachers of false doctrine in general. To go thus far, we have apostolical authority, to go farther, we have none. And let us still remember, in all cases it is our duty to love even our enemies, and consequently to do them any act of humanity and mercy.&quot;,
+  &quot;summary&quot;: null,
+  &quot;summary_review_status&quot;: &quot;withheld&quot;,
+  &quot;summary_source_span&quot;: null,
+  &quot;summary_reviewer&quot;: null,
+  &quot;key_quote&quot;: null,
+  &quot;key_quote_source_span&quot;: null,
+  &quot;key_quote_selection_criteria&quot;: null,
+  &quot;cross_references&quot;: [
+    &quot;2John.1.1&quot;,
+    &quot;2John.1.10&quot;,
+    &quot;2John.1.11&quot;
+  ],
+  &quot;word_count&quot;: 345
+}</pre>
+</details>
+</article>
+</section>
+</main>
+</body>
+</html>

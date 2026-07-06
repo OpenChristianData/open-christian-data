@@ -1,0 +1,221 @@
+/* Shared review stylesheet — per-file review pages + corpus dashboard.
+ * Mobile-responsive + print stylesheet.
+ *
+ * Breakpoints:
+ *   < 600px   phone
+ *   600-1023  tablet
+ *   >= 1024   desktop
+ */
+
+:root {
+  --fg: #1a1a1a;
+  --fg-muted: #6d655d;
+  --bg: #fdfcfa;
+  --bg-muted: #f1ede7;
+  --accent: #8a3a17;
+  --accent-soft: #d97a4d;
+  --warn: #b87b00;
+  --error: #a52a2a;
+  --border: #d6cfc4;
+  --queue-row: #f9f7f3;
+  --queue-row-alt: #f1ede7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--fg);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 980px;
+  padding: 1.5rem 1.25rem 4rem;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-soft);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th {
+  background: var(--bg-muted);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: var(--queue-row-alt);
+}
+
+.queue-table td {
+  font-size: 0.9rem;
+}
+
+.queue-table .snippet {
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+  font-size: 0.85rem;
+  background: var(--queue-row);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.queue-table mark {
+  background: #fdebca;
+  padding: 0 2px;
+}
+
+.dashboard-resource {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-resource a {
+  font-weight: 600;
+}
+
+.dashboard-counts {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.dashboard-counts .pill {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg-muted);
+  margin-left: 0.25rem;
+}
+
+.dashboard-counts .pill.warn { background: #fff1d2; color: var(--warn); }
+.dashboard-counts .pill.error { background: #fde5e5; color: var(--error); }
+.dashboard-counts .pill.ok { background: #e4f1e2; color: #357531; }
+
+.dead-letter-pane {
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  background: #fff5f5;
+  border: 1px solid #f3cccc;
+  border-radius: 6px;
+}
+
+.confidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.confidence-grid .axis {
+  background: var(--bg-muted);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.confidence-grid .axis-label {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.confidence-grid .axis-value {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* Phone breakpoint: 375px target */
+@media (max-width: 599px) {
+  main {
+    padding: 1rem 0.75rem 3rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  table.queue-table thead { display: none; }
+  table.queue-table tr {
+    display: block;
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0;
+  }
+  table.queue-table td {
+    display: block;
+    border: 0;
+    padding: 0.25rem 0;
+  }
+  table.queue-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--fg-muted);
+    display: inline-block;
+    min-width: 6rem;
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  .dashboard-resource {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-counts {
+    white-space: normal;
+    font-size: 0.8rem;
+  }
+  .confidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print: clean output with all warnings visible */
+@media print {
+  body { font-size: 11pt; background: white; }
+  main { max-width: none; padding: 0 0.5in; }
+  a { color: var(--fg); text-decoration: underline; }
+  .dead-letter-pane { page-break-before: always; }
+  .queue-table tr { page-break-inside: avoid; }
+  .dashboard-resource { page-break-inside: avoid; }
+}

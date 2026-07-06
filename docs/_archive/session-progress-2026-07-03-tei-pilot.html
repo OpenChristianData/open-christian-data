@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="30">
+<title>TEI IR build campaign — live progress</title>
+<style>
+  body { font-family: Segoe UI, system-ui, sans-serif; margin: 2rem auto; max-width: 900px; color: #1a1a1a; }
+  h1 { font-size: 1.3rem; } h2 { font-size: 1.05rem; margin-top: 1.6rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 0.9rem; }
+  th { background: #f2f2f2; }
+  .done { background: #e6f4e6; } .active { background: #fff7d6; } .pending { color: #777; }
+  .blocked { background: #fbe3e3; }
+  code { background: #f5f5f5; padding: 1px 4px; }
+  footer { margin-top: 2rem; font-size: 0.8rem; color: #777; }
+</style>
+</head>
+<body>
+<h1>TEI IR build campaign — City of God pilot (Phase 1)</h1>
+<p>Campaign: raw source → TEI IR (human-verifiable) → projections + coverage ledger (machine-verifiable).
+Plan of record: Phase 0 evaluation + Codex xhigh review + NSH alignment (2026-07-02).</p>
+
+<table>
+<tr><th>#</th><th>Step</th><th>Status</th><th>Commit</th><th>Updated (UTC)</th><th>Notes</th></tr>
+<tr class="done"><td>0</td><td>Phase 0 evaluation + sign-off</td><td>Done</td><td>—</td><td>2026-07-02</td><td>Codex xhigh: proceed-with-modifications; all 4 findings adopted</td></tr>
+<tr class="done"><td>1</td><td>Alignment response to NSH session</td><td>Done</td><td>—</td><td>2026-07-02</td><td><code>research/2026-07-02-tei-alignment-response-dataset-to-reviewer.md</code></td></tr>
+<tr class="done"><td>2</td><td>Raw feature census (both renderings)</td><td>Done — 10 tests green; CCEL 665 chapters / 1,698 notes; SE 1,691/1,691 endnotes resolved</td><td>5662f35d</td><td>2026-07-02</td><td>Codex implemented vs RED-verified tests; SE clone at 6290cb2</td></tr>
+<tr class="done"><td>3</td><td>City of God fidelity contract</td><td>Done</td><td>f4876364</td><td>2026-07-02</td><td><code>docs/FIDELITY_CONTRACT.md</code> + NSH alignment response</td></tr>
+<tr class="done"><td>4</td><td>TEI validation tooling spike</td><td>Done — both XSD and RelaxNG work under lxml (~14s parse / 0.1s validate); XSD standardized</td><td>—</td><td>2026-07-02</td><td>TEI P5 4.11.0 vendored at <code>build/tei/vendor/</code>; spike agent killed mid-run, finished inline</td></tr>
+<tr class="done"><td>5</td><td>ThML → TEI converter (CCEL)</td><td>Done — schema-valid (TEI P5 4.11.0 PASS), census-exact, 17 tests green</td><td>255cf6a9</td><td>2026-07-02</td><td>pre-commit content-scan exclusion extended to <code>ir/</code> (approved), same rationale as <code>data/</code></td></tr>
+<tr class="done"><td>6</td><td>SE XHTML → TEI converter</td><td>Done — schema-valid PASS; 22 books, book 1 = preface + 36 chapters; 1,691 endnotes inlined</td><td>2dd8e850</td><td>2026-07-02</td><td>the collapsed chapter layer is recovered in the IR</td></tr>
+<tr class="done"><td>7</td><td>Census-vs-TEI gate (ID sets)</td><td>Done — 5 tests, no censused ID missing from either IR</td><td>180995ff</td><td>2026-07-02</td><td>ID-set level, stricter than counts; includes self-proof the gate can fail</td></tr>
+<tr class="done"><td>8</td><td>Viewer renders real IRs</td><td>Done — both render &lt;1s, zero console errors, counts exact; 2 CETEIcean bugs found+fixed</td><td>8bd26653</td><td>2026-07-02</td><td>browser-verified by subagent (accessibility-tree proof; screenshot tool was down)</td></tr>
+<tr class="done"><td>10</td><td>HF projection + coverage ledger</td><td>Done — 666 records per rendering, ledgers PASS, whitespace normalized</td><td>30030a1f</td><td>2026-07-03</td><td>the two renderings agree: 665 chapters + 1 preface each</td></tr>
+<tr class="done"><td>11</td><td>Full suite + docs reconciliation</td><td>Done — 3,805 passed, 0 failures (slow gates included)</td><td>see final commit</td><td>2026-07-03</td><td>format map grain-corrected; curation question resolved; tracker + memory updated</td></tr>
+<tr class="done"><td>9</td><td>Viewer scaffold (CETEIcean 1.9.5 vendored)</td><td>Done — <code>viewer/index.html</code></td><td>889d371c</td><td>2026-07-02</td><td>real-IR render verified in step 8</td></tr>
+</table>
+
+<h2>Phase 2+ (after pilot)</h2>
+<table>
+<tr><th>#</th><th>Step</th><th>Status</th><th>Commit</th><th>Updated (UTC)</th><th>Notes</th></tr>
+<tr class="done"><td>P2-1</td><td>Batch 03: CE + Creeds fidelity fixes</td><td>Done — validate 0 errors, 44 tests</td><td>f9e40d51</td><td>2026-07-03</td><td>related_terms narrowed to real See/See-also apparatus on review; writer manifests shipped</td></tr>
+<tr class="done"><td>P2-2</td><td>Format walks: ALL 10 families now walked</td><td>Done — 6 walked this session by parallel agents, claims host-verified</td><td>4bd98231, fa131c7d</td><td>2026-07-03</td><td>liturgy = worst row + strongest TEI candidate; versified Bible cleared (stays JSON); SWORD needs upstream OSIS/ThML</td></tr>
+<tr class="done"><td>P2-3</td><td>BCP 404-ingestion fix</td><td>Done — 5 sections repaired (641-3,705 words each), fetch gate added, 37 tests</td><td>5ed2417f</td><td>2026-07-03</td><td>source site tarpits rapid fetches; cache pre-warmed politely</td></tr>
+<tr class="pending"><td>P2-4</td><td>Next correction targets (priority order)</td><td>Pending</td><td>—</td><td>—</td><td>gutenberg shared-helper underscore/anchor fix; Daily Light scripRef drop; fisher-marrow de-hyphenation + Part II sectioning; liturgy → TEI IR</td></tr>
+</table>
+
+<p><b>Session closed 2026-07-03.</b> Next session picks up P2-4 from the tracker (gutenberg shared-helper fix, Daily Light scripRefs, fisher-marrow, liturgy → TEI IR, batches 04/05 audits).</p>
+<footer>Auto-refreshes every 30s. Maintained by the build session; timestamps UTC.</footer>
+</body>
+</html>

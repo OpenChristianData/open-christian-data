@@ -1,0 +1,23 @@
+{
+  "modifier": "punctuation",
+  "adr_value": 0.75,
+  "description": "When anchor registers Oxford comma at >=95% consistency, a reading with Oxford comma earns +0.75; one without earns 0",
+  "triggering": {
+    "anchor_style": {"oxford_comma": true},
+    "reading": "faith, hope, and charity",
+    "competitor_reading": "faith, hope and charity",
+    "expected_modifier_for_reading": 0.75,
+    "expected_modifier_for_competitor": 0.0,
+    "modifier_fires": true,
+    "notes": "anchor_style has oxford_comma=True (sampled at >=95% consistency); reading contains ', and' pattern -> modifier fires at +0.75; competitor lacks the serial comma -> no modifier"
+  },
+  "near_miss": {
+    "anchor_style": {},
+    "reading": "faith, hope, and charity",
+    "competitor_reading": "faith, hope and charity",
+    "expected_modifier_for_reading": 0.0,
+    "expected_modifier_for_competitor": 0.0,
+    "modifier_fires": false,
+    "near_miss_reason": "anchor_style is empty dict (anchor consistency was 80%, below the 95% threshold required by ADR-0013 R25 to register a convention); convention not registered -> modifier does not fire even though reading has Oxford comma"
+  }
+}

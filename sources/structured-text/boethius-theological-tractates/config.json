@@ -1,0 +1,32 @@
+{
+  "resource_id": "boethius-theological-tractates",
+  "title": "The Theological Tractates",
+  "author": "Boethius",
+  "author_id": "boethius",
+  "author_birth_year": 480,
+  "author_death_year": 524,
+  "contributors": [
+    "H.F. Stewart (translator, 1918)",
+    "E.K. Rand (translator, 1918)"
+  ],
+  "original_publication_year": null,
+  "language": "en",
+  "original_language": "la",
+  "tradition": [
+    "patristic",
+    "ecumenical"
+  ],
+  "tradition_notes": "Boethius (c. 480-524) was a late Roman philosopher and statesman whose Theological Tractates address speculative theology: the Trinity, divine predication, ontology of the good, Catholic faith, and Christology (against Eutyches and Nestorius). Translated by H.F. Stewart and E.K. Rand (1918) for the Loeb Classical Library.",
+  "era": "patristic",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "theological-work",
+  "source_url": "https://www.ccel.org/ccel/boethius/tracts.xml",
+  "source_format": "ThML XML",
+  "source_edition": "Boethius: The Theological Tractates. H.F. Stewart and E.K. Rand (translators). London: W. Heinemann; New York: G.P. Putnam's Sons (Loeb Classical Library), 1918.",
+  "source_hash": "sha256:406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8",
+  "download_date": "2026-06-16",
+  "output_file": "data/structured-text/boethius-theological-tractates.json",
+  "notes": "CCEL confirmed OK to parse. Crawl-delay 10s per robots.txt. Extracted from div1 id='iv' (all five div2 tractates)."
+}

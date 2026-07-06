@@ -1,0 +1,36 @@
+{
+  "fixture_id": "boundary_score_78",
+  "target_score": 78,
+  "expected_bucket": "high",
+  "expected_action": "cluster",
+  "expected_surface": "silent",
+  "anchor_block": {
+    "block_type": "paragraph",
+    "original_text": "The doctrine of grace holds that salvation is freely given to those elected by divine mercy.",
+    "annotations": {"section": "Grace"},
+    "source_pages": [{"page_number": 14}]
+  },
+  "attestor_block": {
+    "block_type": "paragraph",
+    "original_text": "The doctrine of grace holds that salvation is freely given to those elected by divine mercy.",
+    "annotations": {"section": "Sanctification"},
+    "source_pages": [{"page_number": 15}]
+  },
+  "context": {
+    "anchor_idx": 0,
+    "attestor_idx": 0,
+    "anchor_len": 1,
+    "attestor_len": 1
+  },
+  "expected_signal_contributions": {
+    "annotation_key": 18,
+    "text_similarity": 25,
+    "source_order": 15,
+    "block_type": 10,
+    "page_proximity": 5,
+    "language_profile": 0,
+    "ocr_skeleton": 5
+  },
+  "hand_computation": "ann_partial(18) + text_identical(25) + ocr_identical(5) + order_15(15) + bt_exact(10) + page_adj(5) + lang_absent(0) = 78",
+  "notes": "annotation_key: shared key 'section', values differ (Grace vs Sanctification) -> partial=18. text identical -> sim=1.0 -> 25, skeleton identical -> 5. source_order: anchor_len=1 -> rel_a=0; attestor_len=1 -> rel_b=0; delta=0 < 0.05 -> 15. block_type paragraph=paragraph exact -> 10. pages 14 vs 15 -> diff=1 -> adjacent -> 5. no language field -> 0."
+}

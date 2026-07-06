@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.kurios",
+  "positive_input": "kurios Jesus is Lord over all",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "kurios"},
+  "negative_input": "Lord Jesus is Lord over all",
+  "negative_expected": null
+}

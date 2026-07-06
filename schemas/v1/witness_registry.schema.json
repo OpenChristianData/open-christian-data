@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/witness_registry.schema.json",
+  "x-ocd-schema-version": "3.0.0",
+  "x-ocd-default-resource-type": "witness_registry",
+  "title": "Witness Registry",
+  "description": "Phase G full witness registry schema. Supersedes the Phase 0 interim witness_inventory shape; migration is a field rename, not a remodel. One witness per record; the file is a JSONL collection or an array.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "witness_id",
+    "related_resource_id",
+    "edition",
+    "rights_status",
+    "source_type",
+    "provider"
+  ],
+  "properties": {
+    "witness_id": {
+      "type": "string",
+      "description": "Stable kebab-case identifier."
+    },
+    "related_resource_id": {
+      "type": "string",
+      "description": "Canonical meta.id of the related OCD resource."
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "language"],
+      "properties": {
+        "publisher": {"type": "string"},
+        "year": {"type": ["integer", "null"]},
+        "volume": {"type": ["integer", "string", "null"]},
+        "page_range": {"type": ["string", "null"]},
+        "language": {"type": "string"}
+      }
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["public-domain-source", "public-domain-derivative", "comparison-only", "other"]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["scan", "transcription", "hocr_pair", "ocr", "html", "epub", "hand_corrected_text", "unknown"]
+    },
+    "provider": {"type": "string"},
+    "url": {"type": "string", "format": "uri"},
+    "checksum_sha256": {
+      "oneOf": [
+        {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        {"type": "null"}
+      ]
+    },
+    "captured_at_utc": {
+      "oneOf": [
+        {"type": "string", "format": "date-time"},
+        {"type": "null"}
+      ]
+    },
+    "verified": {"type": "boolean"},
+    "notes": {"type": "string"}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/schleitheim_confession.py@v1.0.0",
+  "writer_identity": "schleitheim_confession_parser",
+  "run_id": "5a7f3b11c57d41ceaf44cd4b162a44cf",
+  "started_at": "2026-06-17T08:20:00.000000+00:00",
+  "data_paths": [
+    "data/doctrinal-documents/schleitheim-confession-1527.json"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/schleitheim-confession-1527.json": {
+      "before_sha256": null,
+      "after_sha256": "2e2c77fb1ba77f5850ce988c5c02c3a37c1eb44a0b550c530b0be6491aa7c69d"
+    }
+  },
+  "expected_delta_counts": {
+    "data/doctrinal-documents/schleitheim-confession-1527.json": {
+      "units_added": 7
+    }
+  }
+}

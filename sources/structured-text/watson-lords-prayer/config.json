@@ -1,0 +1,29 @@
+{
+  "resource_id": "watson-lords-prayer",
+  "title": "The Lord's Prayer",
+  "author": "Thomas Watson",
+  "author_birth_year": 1620,
+  "author_death_year": 1686,
+  "contributors": [],
+  "original_publication_year": 1692,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "puritan",
+    "nonconformist"
+  ],
+  "tradition_notes": "Watson was a leading Puritan ejected from St. Stephen Walbrook in 1662. Best known for his catechetical expositions of the Westminster Shorter Catechism.",
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "treatise",
+  "source_url": "https://www.ccel.org/ccel/watson/prayer.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org).",
+  "source_hash": "sha256:9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca",
+  "download_date": "2026-04-22",
+  "output_file": "data/structured-text/watson-lords-prayer.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

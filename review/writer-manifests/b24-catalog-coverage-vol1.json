@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "manual@b2.4",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b24-catalog-coverage-vol1",
+  "started_at": "2026-05-26T08:20:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "before_sha256": "22f9d3fa6685ca8dd1cf9ca703a95c008a57cf628744e7cf38406699624c548d",
+      "after_sha256": "82d1826ac81ad6a98e657e6dc1ae193d27d7947cc4bb14c9c887a878a62b2896"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/catalog.json": {
+      "entries_changed": 2,
+      "fields_changed": 2
+    }
+  },
+  "allowed_field_paths": [
+    "/renderings/*/coverage/volumes"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Set coverage.volumes=[1] for oss-tesseract/schaff/encyclopedia/1908-1914/v1 and azure-ai-vision/schaff/encyclopedia/1908-1914/v1 after successful vol 1 assembly (491 pages each). Session 1A, 2026-05-26.",
+  "renames": []
+}

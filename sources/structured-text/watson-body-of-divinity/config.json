@@ -1,0 +1,29 @@
+{
+  "resource_id": "watson-body-of-divinity",
+  "title": "A Body of Divinity",
+  "author": "Thomas Watson",
+  "author_birth_year": 1620,
+  "author_death_year": 1686,
+  "contributors": [],
+  "original_publication_year": 1692,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "reformed",
+    "puritan",
+    "nonconformist"
+  ],
+  "tradition_notes": "Watson was a leading Puritan ejected from St. Stephen Walbrook in 1662. Best known for his catechetical expositions of the Westminster Shorter Catechism.",
+  "era": "post-reformation",
+  "audience": "lay",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "systematic-theology",
+  "source_url": "https://www.ccel.org/ccel/watson/divinity.xml",
+  "source_format": "ThML XML",
+  "source_edition": "CCEL ThML edition (sourced via CCEL.org). Original: London, 1692.",
+  "source_hash": "sha256:4d51224997805193f13058ccf5fa84a6652bc41570283956cbcbe1300e1f815a",
+  "download_date": "2026-04-22",
+  "output_file": "data/structured-text/watson-body-of-divinity.json",
+  "notes": "CCEL confirmed OK to parse (Quincy, 2026-04-01). Crawl-delay 10s per robots.txt. ThML entities replaced; DOCTYPE stripped; footnotes excluded."
+}

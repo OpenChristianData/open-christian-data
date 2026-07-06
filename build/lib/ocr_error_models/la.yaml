@@ -1,0 +1,16 @@
+# OCR error model — Latin printing (mainly abbreviation errors)
+- error_id: la.ae_as_ae_ligature
+  description: "ae ligature (æ) misread as plain ae"
+  confusion: {source: "æ", target: "ae"}
+- error_id: la.oe_as_oe_ligature
+  description: "oe ligature (œ) misread as plain oe"
+  confusion: {source: "œ", target: "oe"}
+- error_id: la.long_s_as_f
+  description: "Long s (ſ) in Latin printing misread as f"
+  confusion: {source: "ſ", target: "f"}
+- error_id: la.u_as_v
+  description: "u/v confusion in classical Latin type"
+  confusion: {source: "u", target: "v", bidirectional: true}
+- error_id: la.rn_as_m
+  description: "rn misread as m"
+  confusion: {source: "rn", target: "m"}

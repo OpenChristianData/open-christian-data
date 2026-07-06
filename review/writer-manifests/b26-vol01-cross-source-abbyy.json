@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "ia_abbyy@b2.4",
+  "writer_identity": "schaff_herzog_catalog_author",
+  "run_id": "b26-vol01-cross-source-abbyy",
+  "started_at": "2026-05-26T20:00:00Z",
+  "data_paths": [
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_01.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-v1/vol_01.json",
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-c1-v1/vol_01.json"
+  ],
+  "checksums": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_01.json": {
+      "before_sha256": null,
+      "after_sha256": "59f333b8c0be27bb0b362ce49ebce69b7f4a6532166dc43c5cdff716f448dc44"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-v1/vol_01.json": {
+      "before_sha256": null,
+      "after_sha256": "9b49fee78a010cde842500175a89513ec0358702327cd921bab569947d8219ae"
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-c1-v1/vol_01.json": {
+      "before_sha256": null,
+      "after_sha256": "33eb4dea5def16bd34eab8836b4ab49c2c30ea5a579da57df3b4341ce0bba9da"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-dli-v1/vol_01.json": {
+      "pages_assembled": 541,
+      "mean_confidence": 55.4
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-v1/vol_01.json": {
+      "pages_assembled": 539,
+      "mean_confidence": 63.8
+    },
+    "data/reference/schaff/encyclopedia/1908-1914/ia-abbyy-haucgoog-c1-v1/vol_01.json": {
+      "pages_assembled": 541,
+      "mean_confidence": 78.8
+    }
+  },
+  "allowed_field_paths": [
+    "/pages"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Vol 1 ABBYY renderings from three independent IA sources: DLI (in.ernet.dli.2015.168094), haucgoog copy 0 (item 11), haucgoog copy 1 (item 25). Produced by build/parsers/ia_abbyy.py --all-copies --download. Inventory comparison documented in research/2026-05-26-ia-schaff-herzog-extended-inventory.md.",
+  "renames": []
+}

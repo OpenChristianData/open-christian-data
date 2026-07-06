@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ia_hastings_dictionary.py@v1.0.1",
+  "writer_identity": "ia_hastings_dictionary_parser",
+  "run_id": "batch02-hastings-apparatus-20260706",
+  "started_at": "2026-07-06T00:28:33+00:00",
+  "data_paths": [
+    "data/reference/hastings-dictionary-of-the-bible.json"
+  ],
+  "checksums": {
+    "data/reference/hastings-dictionary-of-the-bible.json": {
+      "before_sha256": "e3731550e681c6ce1b51c1c4de08bc8dcc907689c4db1702fd440c20b690b602",
+      "after_sha256": "be17e4473bc211f81fc8cc98525db1453321f53e03de807b30f9bbfcd9d421f3"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/hastings-dictionary-of-the-bible.json": {
+      "entries_changed": 2512,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/data/*/related_terms",
+    "/meta/provenance/notes",
+    "/meta/provenance/processing_date",
+    "/meta/provenance/processing_script_version"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

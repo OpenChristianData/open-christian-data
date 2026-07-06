@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Christian Data -- Verification Viewer</title>
+<link rel="stylesheet" href="tei.css">
+<style>
+  /* Chrome around the rendered TEI document -- kept separate from
+     tei.css, which is only meant to style TEI content. */
+  .viewer-toolbar {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.85rem;
+    background: #201d18;
+    color: #f4efe3;
+    padding: 0.6rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .viewer-toolbar label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .viewer-toolbar input[type="text"] {
+    font: inherit;
+    padding: 0.2rem 0.4rem;
+    width: 22rem;
+    max-width: 40vw;
+  }
+
+  .viewer-toolbar button {
+    font: inherit;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+  }
+
+  .viewer-status {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.8rem;
+    color: #6b6459;
+    padding: 0.4rem 1rem;
+  }
+
+  .viewer-status[data-state="error"] {
+    color: #a3352b;
+  }
+
+  #viewer-root {
+    padding: 0 1rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="viewer-toolbar">
+  <strong>OCD Verification Viewer</strong>
+
+  <label>
+    URL / path:
+    <input type="text" id="viewer-url-input" placeholder="../ir/example.tei.xml">
+  </label>
+  <button type="button" id="viewer-load-url">Load</button>
+
+  <label>
+    File:
+    <input type="file" id="viewer-file-input" accept=".xml,.tei,text/xml,application/xml">
+  </label>
+</div>
+<div class="viewer-status" id="viewer-status"></div>
+
+<div id="viewer-root"></div>
+
+<script src="vendor/CETEI.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------
+  // Why two loading paths.
+  //
+  // CETEIcean's getHTML5(url) uses fetch(), which works fine when this
+  // page is served over http(s) (e.g. `python -m http.server` from
+  // viewer/, or any static host). But when index.html is opened
+  // directly from disk (file:// URL), Chrome and Firefox both block
+  // fetch()/XHR against other file:// URLs as a cross-origin request
+  // -- there is no server to grant CORS, so the request fails before
+  // it starts. Safari is more permissive but shouldn't be relied on.
+  //
+  // So: try fetch() first (works over http/https, and in some
+  // browser/flag combinations even over file://), and always offer the
+  // <input type="file"> picker as a fallback that works everywhere,
+  // because FileReader reads local bytes directly without a network
+  // request and is not subject to the file:// CORS restriction.
+  // ---------------------------------------------------------------
+
+  var statusEl = document.getElementById("viewer-status");
+  var rootEl = document.getElementById("viewer-root");
+  var urlInput = document.getElementById("viewer-url-input");
+  var loadUrlBtn = document.getElementById("viewer-load-url");
+  var fileInput = document.getElementById("viewer-file-input");
+
+  function setStatus(message, state) {
+    statusEl.textContent = message;
+    statusEl.setAttribute("data-state", state || "ok");
+  }
+
+  function isFileProtocol() {
+    return window.location.protocol === "file:";
+  }
+
+  // Reads the ?file= query param, if present, as the default source.
+  function getFileParam() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get("file");
+  }
+
+  // -----------------------------------------------------------------
+  // Custom CETEIcean behaviors.
+  //
+  // These run once, before any document is loaded, via addBehavior().
+  // They override/extend the small set of defaults CETEIcean ships
+  // with (see vendor/CETEI.js -- the built-in "note" behavior only
+  // special-cases @place="end"; everything else needs project-specific
+  // handling here rather than in CSS, because it requires DOM
+  // manipulation (building a toggle panel, copying an attribute into
+  // `title` for a native tooltip) that CSS alone cannot do.
+  // -----------------------------------------------------------------
+
+  var cetei = new CETEI();
+
+  // tei-note: render every note as a clickable superscript marker.
+  // - @place="end" notes keep CETEIcean's own end-note collection
+  //   behavior (numbered list appended after the text) since that's
+  //   already the standard "endnote" convention and works well.
+  // - All other notes become an inline marker + hidden panel, toggled
+  //   by a click. This avoids a fixed footnote-panel layout (no extra
+  //   viewport chrome needed) and keeps note text next to the anchor
+  //   point, which matters for verifying OCR/transcription notes
+  //   against a scan.
+  // Single source of truth for the note transform. Applied by a
+  // single deterministic post-render sweep (sweepNotes(), called from
+  // renderXMLString() after the DOM is attached) that walks
+  // <tei-note> elements in document order itself, NOT by
+  // cetei.addBehavior()'s per-element custom-element upgrade timing.
+  //
+  // Two reasons this has to be a sweep rather than an addBehavior()
+  // callback:
+  //  1. CETEIcean's per-element upgrade, verified on the CCEL City of
+  //     God file (1,699 <tei-note> instances), reliably skips the
+  //     transform for the FIRST instance of a tag in document order
+  //     while correctly transforming every instance after it (element
+  //     #1, a place=null "print-source" note, was left as untouched
+  //     raw text; instances #2-1699, all place="end", rendered fine).
+  //     Whichever note happens to be first in a given document is the
+  //     one CETEIcean drops -- not specific to either branch below.
+  //  2. addBehavior()'s per-element upgrade order is not guaranteed to
+  //     match document order, which would desequence noteCounter.
+  //
+  // cetei.addBehavior("tei", "note", ...) is still registered (see
+  // below the noop registration) purely to SUPPRESS CETEIcean's own
+  // built-in default "note" behavior (which would otherwise run its
+  // own end-note collection / paren-wrap logic on every note before
+  // the sweep even starts, causing double-transformation). The
+  // registered function does nothing -- all real work happens in
+  // transformNote()/sweepNotes() below.
+  var noteCounter = 0;
+  function transformNote(elt) {
+    var doc = elt.ownerDocument;
+    noteCounter++;
+
+    if (elt.getAttribute("place") === "end") {
+      // Replicate CETEIcean's own end-note shape: numbered marker,
+      // entry appended to a trailing <ol class="notes">.
+      var endId = "_note_" + noteCounter;
+      var endLink = doc.createElement("a");
+      endLink.setAttribute("id", "src" + endId);
+      endLink.setAttribute("href", "#" + endId);
+      endLink.textContent = String(noteCounter);
+      var endSup = doc.createElement("sup");
+      endSup.appendChild(endLink);
+      var notesList = doc.querySelector("ol.notes");
+      if (!notesList) {
+        notesList = doc.createElement("ol");
+        notesList.setAttribute("class", "notes");
+        rootEl.appendChild(notesList);
+      }
+      var entry = doc.createElement("li");
+      entry.id = endId;
+      entry.innerHTML = elt.innerHTML;
+      notesList.appendChild(entry);
+      elt.innerHTML = "";
+      elt.appendChild(endSup);
+      return;
+    }
+
+    // All other notes: inline marker + hidden panel, toggled by
+    // click. Avoids a fixed footnote-panel layout and keeps note text
+    // next to the anchor point, which matters for verifying
+    // OCR/transcription notes against a scan.
+    var marker = doc.createElement("sup");
+    marker.className = "viewer-note-marker";
+    marker.textContent = "[" + noteCounter + "]";
+    marker.setAttribute("tabindex", "0");
+    marker.setAttribute("role", "button");
+    marker.setAttribute("aria-expanded", "false");
+
+    var panel = doc.createElement("span");
+    panel.className = "viewer-note-panel";
+    panel.setAttribute("data-expanded", "false");
+    panel.innerHTML = elt.innerHTML;
+
+    function toggle() {
+      var expanded = panel.getAttribute("data-expanded") === "true";
+      panel.setAttribute("data-expanded", expanded ? "false" : "true");
+      marker.setAttribute("aria-expanded", expanded ? "false" : "true");
+    }
+    marker.addEventListener("click", toggle);
+    marker.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") {
+        ev.preventDefault();
+        toggle();
+      }
+    });
+
+    elt.innerHTML = "";
+    elt.appendChild(marker);
+    elt.appendChild(panel);
+  }
+
+  // Registered purely to suppress CETEIcean's own built-in default
+  // "note" behavior (see the comment above transformNote() for why).
+  // Intentionally does nothing -- all real work happens in
+  // sweepNotes()/transformNote() below, run once after the whole
+  // document is attached.
+  cetei.addBehavior("tei", "note", function () {});
+
+  // Runs transformNote() over every <tei-note> in document order.
+  // Called once from renderXMLString() after the DOM is attached --
+  // see comment on transformNote() for why this replaces
+  // cetei.addBehavior("tei", "note", ...) entirely rather than
+  // supplementing it.
+  function sweepNotes(container) {
+    var notes = container.querySelectorAll("tei-note");
+    for (var i = 0; i < notes.length; i++) {
+      transformNote(notes[i]);
+    }
+  }
+
+  // tei-ref[type="scripture"]: copy @cRef into a real `title` attribute
+  // so the reference target shows as a native browser tooltip on
+  // hover. CSS content:attr() can render attribute text visibly but
+  // cannot populate the `title` attribute itself, so this has to
+  // happen in JS.
+  //
+  // NOTE: this addBehavior() call is kept registered (harmless,
+  // future-proofs against upstream CETEIcean fixes) but is NOT relied
+  // on for the actual title-copying -- see applyScriptureRefTooltips()
+  // below and its call site in renderXMLString(). On real documents
+  // with many <tei-ref> instances, CETEIcean's custom-element
+  // upgrade only reliably invokes a behavior that returns no
+  // replacement content (a no-op return, which is what this needs)
+  // for the FIRST element of a given tag name; verified on the CCEL
+  // City of God file (2,338 tei-ref[type=scripture] elements): only
+  // element #1 got @title, the other 2,337 did not, even though
+  // @cref was present and data-processed was set on all of them.
+  // Behaviors that DO return replacement content (e.g. the note
+  // behavior above) are unaffected, since CETEIcean's append()
+  // wrapper only special-cases the truthy-return path identically
+  // regardless of which element triggered it -- it's specifically
+  // the "mutate the source element and return nothing" pattern that
+  // silently no-ops after the first instance.
+  cetei.addBehavior("tei", "ref", function (elt) {
+    if (elt.getAttribute("type") === "scripture" && elt.hasAttribute("cref")) {
+      // Attribute names are lowercased by the browser's HTML parser;
+      // the TEI source's @cRef arrives here as the lowercase "cref".
+      elt.setAttribute("title", elt.getAttribute("cref"));
+    }
+    // No replacement content -- keep the element's own text as-is.
+    // Returning undefined/nothing is a no-op per CETEIcean's append().
+  });
+
+  // Reliable fallback/primary path for the behavior above: a plain
+  // DOM sweep run once after the whole document is in place. Cheap
+  // (a single querySelectorAll + attribute set per match) even at
+  // several thousand refs, and not subject to whatever upgrade-order
+  // quirk causes the addBehavior() path to miss elements after the
+  // first.
+  function applyScriptureRefTooltips(container) {
+    var refs = container.querySelectorAll('tei-ref[type="scripture"][cref]:not([title])');
+    for (var i = 0; i < refs.length; i++) {
+      refs[i].setAttribute("title", refs[i].getAttribute("cref"));
+    }
+  }
+
+  // ---------------------------------------------------------------
+  // Loading
+  // ---------------------------------------------------------------
+
+  function renderXMLString(xmlString, sourceLabel) {
+    rootEl.innerHTML = "";
+    noteCounter = 0;
+    try {
+      cetei.makeHTML5(xmlString, function (dom) {
+        rootEl.appendChild(dom);
+        sweepNotes(rootEl);
+        applyScriptureRefTooltips(rootEl);
+        setStatus("Loaded " + sourceLabel + ".", "ok");
+      });
+    } catch (err) {
+      setStatus("Failed to parse " + sourceLabel + ": " + err.message, "error");
+      console.error(err);
+    }
+  }
+
+  function loadFromURL(url) {
+    if (!url) {
+      return;
+    }
+    setStatus("Loading " + url + " ...");
+    fetch(url)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status + " " + response.statusText);
+        }
+        return response.text();
+      })
+      .then(function (xmlString) {
+        renderXMLString(xmlString, url);
+      })
+      .catch(function (err) {
+        var hint = isFileProtocol()
+          ? " (this page was opened via file://, which browsers block fetch() against -- use the File picker above instead, or serve viewer/ over http)"
+          : "";
+        setStatus("Could not load " + url + ": " + err.message + hint, "error");
+        console.error(err);
+      });
+  }
+
+  function loadFromFile(file) {
+    if (!file) {
+      return;
+    }
+    setStatus("Reading " + file.name + " ...");
+    var reader = new FileReader();
+    reader.onload = function () {
+      renderXMLString(reader.result, file.name);
+    };
+    reader.onerror = function () {
+      setStatus("Could not read " + file.name + ": " + reader.error, "error");
+    };
+    reader.readAsText(file);
+  }
+
+  loadUrlBtn.addEventListener("click", function () {
+    loadFromURL(urlInput.value.trim());
+  });
+  urlInput.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter") {
+      loadFromURL(urlInput.value.trim());
+    }
+  });
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files && fileInput.files[0]) {
+      loadFromFile(fileInput.files[0]);
+    }
+  });
+
+  // ---------------------------------------------------------------
+  // Default source on page load, in priority order:
+  //   1. ?file=<path-or-url> query param, if present
+  //   2. ../ir/ default directory is intentionally NOT auto-guessed
+  //      (no filename to guess), so fall back to the bundled sample
+  //      so the viewer works standalone before real IR files exist.
+  // On file://, skip the network attempt entirely and just prompt use
+  // of the file picker, since it will fail with a confusing CORS error.
+  // ---------------------------------------------------------------
+
+  var fileParam = getFileParam();
+  if (fileParam) {
+    urlInput.value = fileParam;
+    if (isFileProtocol()) {
+      setStatus("Opened via file:// -- fetch() is blocked for local files. Use the File picker above to open " + fileParam + ".", "error");
+    } else {
+      loadFromURL(fileParam);
+    }
+  } else if (isFileProtocol()) {
+    urlInput.value = "sample.tei.xml";
+    setStatus("Opened via file:// -- fetch() is blocked for local files. Use the File picker above (try sample.tei.xml in this folder), or serve viewer/ over http and reload.", "error");
+  } else {
+    urlInput.value = "sample.tei.xml";
+    loadFromURL("sample.tei.xml");
+  }
+})();
+</script>
+
+</body>
+</html>

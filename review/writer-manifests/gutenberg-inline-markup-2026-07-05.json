@@ -1,0 +1,481 @@
+{
+  "schema_version": "3.0.0",
+  "writer": "parser",
+  "writer_version": "build/lib/pg_inline_markup.py@batch-2026-07-05; build/parsers/gutenberg_*.py@batch-2026-07-05",
+  "writer_identity": "gutenberg_inline_markup_parser",
+  "run_id": "gutenberg-inline-markup-2026-07-05",
+  "started_at": "2026-07-05T13:40:33.643713Z",
+  "data_paths": [
+    "data/catechisms/aa-hodge-outlines.json",
+    "data/catechisms/baltimore-catechism-no-1.json",
+    "data/catechisms/baltimore-catechism-no-2.json",
+    "data/catechisms/baltimore-catechism-no-3.json",
+    "data/catechisms/luthers-small-catechism.json",
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json",
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json",
+    "data/prayers/andrewes-private-devotions/prayers.json",
+    "data/sermons/luther-lenker-sermons.json",
+    "data/sermons/maclaren-expositions.json",
+    "data/sermons/newman-parochial-sermons.json",
+    "data/structured-text/augustines-confessions.json",
+    "data/structured-text/brooks-precious-remedies.json",
+    "data/structured-text/burroughs-rare-jewel-contentment.json",
+    "data/structured-text/calvins-institutes.json",
+    "data/structured-text/carey-enquiry.json",
+    "data/structured-text/charnock-existence-attributes-vol-1.json",
+    "data/structured-text/charnock-existence-attributes-vol-2.json",
+    "data/structured-text/dabney-systematic-theology.json",
+    "data/structured-text/donne-devotions-upon-emergent-occasions.json",
+    "data/structured-text/drummond-greatest-thing.json",
+    "data/structured-text/drummond-natural-law.json",
+    "data/structured-text/gurnall-complete-armour.json",
+    "data/structured-text/hooker-ecclesiastical-polity.json",
+    "data/structured-text/luther-bondage-of-the-will.json",
+    "data/structured-text/luther-commentary-on-galatians.json",
+    "data/structured-text/luthers-large-catechism.json",
+    "data/structured-text/machen-christianity-and-liberalism.json",
+    "data/structured-text/machen-what-is-faith.json",
+    "data/structured-text/miley-systematic-theology-vol-1.json",
+    "data/structured-text/miley-systematic-theology-vol-2.json",
+    "data/structured-text/murray-abide-in-christ.json",
+    "data/structured-text/murray-humility.json",
+    "data/structured-text/murray-with-christ-in-prayer.json",
+    "data/structured-text/newman-apologia-pro-vita-sua.json",
+    "data/structured-text/pink-sovereignty-of-god.json",
+    "data/structured-text/shedd-dogmatic-theology-vol-1.json",
+    "data/structured-text/shedd-dogmatic-theology-vol-2.json",
+    "data/structured-text/shedd-dogmatic-theology-vol-3.json",
+    "data/structured-text/sibbes-bruised-reed.json",
+    "data/structured-text/smith-christians-secret-happy-life.json",
+    "data/structured-text/spurgeon-all-of-grace.json",
+    "data/structured-text/spurgeon-lectures-to-my-students.json",
+    "data/structured-text/strong-systematic-theology-vol-1.json",
+    "data/structured-text/strong-systematic-theology-vol-2.json",
+    "data/structured-text/strong-systematic-theology-vol-3.json",
+    "data/structured-text/taylor-holy-dying.json",
+    "data/structured-text/taylor-holy-living.json",
+    "data/structured-text/torrey-how-to-pray.json",
+    "data/structured-text/torrey-what-the-bible-teaches.json",
+    "data/structured-text/wilberforce-practical-view.json"
+  ],
+  "checksums": {
+    "data/catechisms/aa-hodge-outlines.json": {
+      "before_sha256": "77861141228c392f7acdc363d8fca257c13bd281d404a8330e68e01fd4f75556",
+      "after_sha256": "b85fb8f3aee75835fbfd40c3a2ea923ef64abeb32da8a0dfda11dbc526dd7d83"
+    },
+    "data/catechisms/baltimore-catechism-no-1.json": {
+      "before_sha256": "961bf06868123a63686f934d4c99ba6e50b607f2a2776e46e825e8ead0903f51",
+      "after_sha256": "7d8e638d65439959504172c0ccb75f07676bc4bd465587edb6fb8029e8158552"
+    },
+    "data/catechisms/baltimore-catechism-no-2.json": {
+      "before_sha256": "7d4109ba6751f884c727b016f534e45c9a59e34d8592d10da5f21befd87e1752",
+      "after_sha256": "23dc3eb85c514af4aec366fc33ac8da9631f14efaabe4cd9c64d438ce8b4f66b"
+    },
+    "data/catechisms/baltimore-catechism-no-3.json": {
+      "before_sha256": "e79c92af8a73489b50fd0e81163ee2eaa2009402faa5731ab83ddbcb36ffe3c4",
+      "after_sha256": "2c76c672bc04f8a34cc7e1f42a8955dfbb021705393f75779f21bd9f95bef208"
+    },
+    "data/catechisms/luthers-small-catechism.json": {
+      "before_sha256": "6ece217ebe9bafef76b2b1161823d4e5a1dd3b0a14a0bf0460ddd2ef496ec4fd",
+      "after_sha256": "7f480c9d72ae7517a8d9ef2522ccfa29b0a8421cb5b4fce413f11f8f4736bd37"
+    },
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json": {
+      "before_sha256": "0111838c15fc23f85ead6fb676c13f43ceed690c72b1fe5cde70dedc4fb0462c",
+      "after_sha256": "bee5461e43467173fb1bd4bd732581be136b1640b090350bc51954731c507c14"
+    },
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json": {
+      "before_sha256": "ba216a6067ec6436db9bfe6bfb91c716a5475a1d111df62f01b6287afc6bcf2d",
+      "after_sha256": "7d83726d9f9d5daebfd4ba26544f7fb07b39274c94dec3939b7b2854006567b7"
+    },
+    "data/prayers/andrewes-private-devotions/prayers.json": {
+      "before_sha256": "75f809692810f969d69194adce3f37824a21af28a49bb7ec2c099d266cd96b5d",
+      "after_sha256": "1c5cb14ad5845c385d09dafbc8eb866a44b17166847401aabefd526fe1d5907c"
+    },
+    "data/sermons/luther-lenker-sermons.json": {
+      "before_sha256": "45d546e169b3abfef37200b87535fc52a75d9a7395cdb2916f0561250698e4e7",
+      "after_sha256": "8324047b34635b3a5caa19f48c1528b8e808cf6c0a566e10b11d24f0e0148fb0"
+    },
+    "data/sermons/maclaren-expositions.json": {
+      "before_sha256": "135aac3a3b313c398af2022a2caea799cc9173ced8e4c541fee2057d9db4b918",
+      "after_sha256": "4cc4b947963ffa964ea3d11724145dfe9a0d8fe93e1b5170690c8378bda9a53c"
+    },
+    "data/sermons/newman-parochial-sermons.json": {
+      "before_sha256": "ee5ec8238c37763519604981dd24ece483b32a91dedceeda00f5abfe19831521",
+      "after_sha256": "d4825dca1c4be620cfcf0ac3022bcb834554824aa506aa1f41ae425461d63750"
+    },
+    "data/structured-text/augustines-confessions.json": {
+      "before_sha256": "0cc6e37f4df4a98653af272d74788f49ae41181dc0a57505c3fe7c6c4cc0d9f4",
+      "after_sha256": "1210c03a72191fda736e176de0eb138873e1fc33d32374599f0d57e4f14748f4"
+    },
+    "data/structured-text/brooks-precious-remedies.json": {
+      "before_sha256": "1430408f5d65d709a078303578b2d3c3da65732a8ba34c09f4bab5b77632717d",
+      "after_sha256": "3ac20af9c536781ff0f441a697ce2bc6b17cd9ff087ab8f71d12c1ba1ea595c5"
+    },
+    "data/structured-text/burroughs-rare-jewel-contentment.json": {
+      "before_sha256": "760ffb6f99f16e0a47bd3317250d581315f37388c81931e3a37c17c8a1c5637c",
+      "after_sha256": "952bbf96ca7c13640b4c1145f565e507a420f282d158451ab9ee3b9a42b51c79"
+    },
+    "data/structured-text/calvins-institutes.json": {
+      "before_sha256": "f60d072300e47a9ef74ed4cfd2514a5ebd5600ce15c5461fa6138c3d337c2c04",
+      "after_sha256": "f234380bf9b3384b2017c94e57d9d45a25cd0955cc7e3e50d7bf135afd7b3d64"
+    },
+    "data/structured-text/carey-enquiry.json": {
+      "before_sha256": "7e200bf58538e4ed8f9f0766ce609288b7cc69a2e58d57749ace0239fd4b6850",
+      "after_sha256": "e8fd318d43d6e965171198b8a7d10bcc782e5a8964cecb2c780ad19ba3d1908f"
+    },
+    "data/structured-text/charnock-existence-attributes-vol-1.json": {
+      "before_sha256": "e042355c79204282b2a3c1846ad668ebdd9639248c9ac7a5ee819dd95eb1a845",
+      "after_sha256": "bacaeef0fec6997e94616b89c6e90cff6f23d27548ee49d83f5202f79c72b1b1"
+    },
+    "data/structured-text/charnock-existence-attributes-vol-2.json": {
+      "before_sha256": "2cc80f84ff69ab35240ac83e1d44cdde8e126ecacbe91bd50f6dd83192030b7d",
+      "after_sha256": "e4ee46e5c00d1114e9a93aee9467c8cf913cb9dec92a228d1ac1ace0f74ea165"
+    },
+    "data/structured-text/dabney-systematic-theology.json": {
+      "before_sha256": "037b5de9fbae58a840a177f4b74ac8bd853f1d37445d5d92664df788f48f81a6",
+      "after_sha256": "76824714b5d91940206cc88ff5d0682841a495fcbea163d213ce9cdd67b0fd86"
+    },
+    "data/structured-text/donne-devotions-upon-emergent-occasions.json": {
+      "before_sha256": "1b16f4e433104f4f2c1ac2ea6608b81727a60ca871a030c9b2a06c124959c996",
+      "after_sha256": "d9bc0524c262d829eb0c6d2a0e41f11e05622ff3709493a9dda2bfe16dae7977"
+    },
+    "data/structured-text/drummond-greatest-thing.json": {
+      "before_sha256": "f0e62517db797436d3e694160585e0b22ad850403912f9f5e6f01e6f8209d506",
+      "after_sha256": "178f286d024ed655fc5c1d57bd29b35a55bb94842215d14cb604f727477c968b"
+    },
+    "data/structured-text/drummond-natural-law.json": {
+      "before_sha256": "ddeada20e70fdb760277082eb25fb1f5c96eb320d4ef7d42b579da08ec205c90",
+      "after_sha256": "96d1ded0bd91d0ce9ea71ba1ca5aafb8a082d29d728c6480af650dafdf801e95"
+    },
+    "data/structured-text/gurnall-complete-armour.json": {
+      "before_sha256": "836cfa5ea255730e8dc90776fd16a93181a1bf17e37f484a3b212baa435da08e",
+      "after_sha256": "ab9fd01f5ad0f6f766a26b764654c4d45713cb5392795ff492d29a4f434366c8"
+    },
+    "data/structured-text/hooker-ecclesiastical-polity.json": {
+      "before_sha256": "87ec1559286fb650c946478b5f88f6edf15d9e3d54791297434239cea8dea9cd",
+      "after_sha256": "bd11beab835a4f9d72a7645e097e05ba46b9c4e87de894dad7d7f4f061b2f1c0"
+    },
+    "data/structured-text/luther-bondage-of-the-will.json": {
+      "before_sha256": "b9b2db01f39872f3cd2592c91958f4c7dd5daeb07b269ed98cec9ee71c0ab7a0",
+      "after_sha256": "11d1344560fe5ada627fefa226aa40c42a7c3a21e2269be1dc39795eea245b6b"
+    },
+    "data/structured-text/luther-commentary-on-galatians.json": {
+      "before_sha256": "ee209f6fdfa68530ea60778b0394d19e8e7d71f7c2bb880cb1b0f7a17128e267",
+      "after_sha256": "dc7eeaa08b88141b524c5dc64936ca815baad0df03a09ad6de9c7f7e7eb9d089"
+    },
+    "data/structured-text/luthers-large-catechism.json": {
+      "before_sha256": "e6daef06e638e6d3d8c9e9f41728476b3ad58bc4748bd5124ef7b7acd9b32d30",
+      "after_sha256": "9b8be3ca1b635355366da83a8b719cac4f2d7dbb05dce228b5e61c251239cad9"
+    },
+    "data/structured-text/machen-christianity-and-liberalism.json": {
+      "before_sha256": "5c3e517f33f1d7935308f1f74b852d6d88bab58acbfcd3dd8498e30ab0447b94",
+      "after_sha256": "bf2db8a978992a2657a259efd5094618cd85850d737bd73e421adc07406bfdcf"
+    },
+    "data/structured-text/machen-what-is-faith.json": {
+      "before_sha256": "5a3c5d062cda66ae80885179d1027d719a4d7ec2f2af152fe176d558fb3576b6",
+      "after_sha256": "7d12049f38f364258e97ffe3cfc56ffcd71385d35be6e987670500826ee74c52"
+    },
+    "data/structured-text/miley-systematic-theology-vol-1.json": {
+      "before_sha256": "a5ab6db4bcb9b827cc89d782b8c8d343b0f6dadcdea39674e2f12fe23034bd82",
+      "after_sha256": "1c73f81c90f97715268b04a16640771900e5c530c8276bde3ae15881b6aaa0e3"
+    },
+    "data/structured-text/miley-systematic-theology-vol-2.json": {
+      "before_sha256": "74b957fdf208b92ef7cdea19b042e7e3803fb77af1a43440e979579cf3c2ac6e",
+      "after_sha256": "0d8edcb29008670055a5e2eb4ee4b4bd83f6fc0c00ddd1c35931aed021c9a5f3"
+    },
+    "data/structured-text/murray-abide-in-christ.json": {
+      "before_sha256": "0aa37fdde9b818be1994e5cdb725a0514842ea347afd47b4d60ab2953634b2af",
+      "after_sha256": "a53237159e11591cd6f272287c600eb46a4347fe9fd71ee42df87c2cb5fa39e5"
+    },
+    "data/structured-text/murray-humility.json": {
+      "before_sha256": "59f2f815d00b0d4c947efc9dc465652b39d8a17bfd13d1c3d2ef088738638065",
+      "after_sha256": "5fab1cc86acac28924d558018d1e43886aed6823127ba15fcd348ea746b5e988"
+    },
+    "data/structured-text/murray-with-christ-in-prayer.json": {
+      "before_sha256": "283193b25f43ab7417ce191727f61c077477e55bea95de263ebd8608f2204a9f",
+      "after_sha256": "faea60c2253655e1f9dd7fbf6fa36f7e5fac4ce6bb4e2c702fb139684e2b1c56"
+    },
+    "data/structured-text/newman-apologia-pro-vita-sua.json": {
+      "before_sha256": "6c4a2dc7b4f24f624fd2a3781ad86fb9fccd42598ca1e68cd946a0381b7714f7",
+      "after_sha256": "953b25758ab0efacc4acd3578e22866e357b50cb1fcb7b02e3b2ec545825fec3"
+    },
+    "data/structured-text/pink-sovereignty-of-god.json": {
+      "before_sha256": "bd036d842508fb6b401a8a6e0f2a351eeaa94e3bd71441ef0f252aed858135f4",
+      "after_sha256": "f2857a090f82f811f73f461ee2f23242b4bad42993e62045eec16677e353d36e"
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-1.json": {
+      "before_sha256": "3da69b5adb56ff242805e2ea23cfd870907f5ab7c0df97112f625c0e9345b7c7",
+      "after_sha256": "459b9d78a5c2eb0714e6afe3cd77c1493a15358e3f3e8de7585a41398e8a8b9c"
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-2.json": {
+      "before_sha256": "31f673774e92312160786c3823e1fc9c509e58c7510ed8258da041839d3f4674",
+      "after_sha256": "22d96c9a15a9b165d1d03bb5974d36cc5ed3de8f302bc5e7b9824af08bae3407"
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-3.json": {
+      "before_sha256": "f710073bf5a61c35e0ede6d87662221604083749f255a5863d2486ee9f5df237",
+      "after_sha256": "6a3693551c0c4dc274dfa8bb6a9f412dee42dfb67a8995216accfaae3520e6b0"
+    },
+    "data/structured-text/sibbes-bruised-reed.json": {
+      "before_sha256": "87cc70ee18c2a0115a7e261c24d110577d604aa8bcf38f7dc4ecc15b112dbf7c",
+      "after_sha256": "b2dde7f2c26f7325b58072b037208c4e8fa3a9ea81bffcb8039b8636ebcb3611"
+    },
+    "data/structured-text/smith-christians-secret-happy-life.json": {
+      "before_sha256": "a04ae3ab67877b4f90d8395305d987ce5ea30aea4c0176306d2c775fb6ca6834",
+      "after_sha256": "170bacd8a4079cd755eeaf6e3dad640fb83aa871c7b6fc996c0baedcea0a7e73"
+    },
+    "data/structured-text/spurgeon-all-of-grace.json": {
+      "before_sha256": "492b0797a58a6ada25080c5f8b94671732eae4705a078b746daa4ffbde4f1c93",
+      "after_sha256": "5f658558c76833afc6ac36799835f2f9afb830a77c47313a4b5a52e1614fe92d"
+    },
+    "data/structured-text/spurgeon-lectures-to-my-students.json": {
+      "before_sha256": "f43c7d5cc715143a82be7c565c40b230488eed7c307731898ee4d50f4e608676",
+      "after_sha256": "234ae5627dcebdbc413bea5299aa88d61a44da3d64c4387f2defa19c62f19294"
+    },
+    "data/structured-text/strong-systematic-theology-vol-1.json": {
+      "before_sha256": "62c6f1aaa82582dbf14b0f383039a1f92fa31dd9e4b93b65465c1275f20148d1",
+      "after_sha256": "f6e99d83c3232903928309f8206d65dedca258d2744b64ebcab5b393d1d663c9"
+    },
+    "data/structured-text/strong-systematic-theology-vol-2.json": {
+      "before_sha256": "c8a94cc2251ebadf11f84c9154935406663cf2ac81c3834410c6a684f8e5cb72",
+      "after_sha256": "6208782d963136c03dd48ac736d30446149afcc6edf260b8d0a8c34c207f8868"
+    },
+    "data/structured-text/strong-systematic-theology-vol-3.json": {
+      "before_sha256": "05870ae186f15343e55227c0ab0243356bd92b03db8c5f8f093bad667fcbcdec",
+      "after_sha256": "04b8731acb716ec1f994eb4e95412f52b9d030da4d8dffcf2b20a20e0ee681b4"
+    },
+    "data/structured-text/taylor-holy-dying.json": {
+      "before_sha256": "4cabc7494aad7d7ceeef85a3cf712cdae262f8dbb0b5117462d3ff75636df214",
+      "after_sha256": "aee66c7f4b34fb7efac2337ddbfe5cf5c7eacfca8f967d1f258691981f45d6b9"
+    },
+    "data/structured-text/taylor-holy-living.json": {
+      "before_sha256": "4fa6f41c0f86b235bb6dc4e0dfdc84b8a05850a4df6135bde1080c13b0636b7e",
+      "after_sha256": "c9c306b32403cbe1c9fbfaf0dbd37bc48af0ba6f5f499a07fd447c85f8fb45ca"
+    },
+    "data/structured-text/torrey-how-to-pray.json": {
+      "before_sha256": "7214840dcd8be0ba3cbba3f498ca060a053a17a19f79306cc9a90592be7ba7c1",
+      "after_sha256": "5dbfbd34a769bebd7cbb98d942af5194aaaefdf6e8e39c29d5311193a3dd94b8"
+    },
+    "data/structured-text/torrey-what-the-bible-teaches.json": {
+      "before_sha256": "000e525f67d4090f698376bd97539694173279e757142935363799187d8b6be1",
+      "after_sha256": "0ffa10b645edf7a3fcda98525810fcfc878aed01a0699c7fb4243f1d55606ad3"
+    },
+    "data/structured-text/wilberforce-practical-view.json": {
+      "before_sha256": "1e40c9a0a3e3d11a2391b309ca87425109e8bf42da57c612c87858fed15713c6",
+      "after_sha256": "516086d0f391ce3af3c96495ce16ca9fda85841c03ead7acfb6214a5321773ae"
+    }
+  },
+  "expected_delta_counts": {
+    "data/catechisms/aa-hodge-outlines.json": {
+      "entries_changed": 232,
+      "fields_changed": 11
+    },
+    "data/catechisms/baltimore-catechism-no-1.json": {
+      "entries_changed": 206,
+      "fields_changed": 208
+    },
+    "data/catechisms/baltimore-catechism-no-2.json": {
+      "entries_changed": 421,
+      "fields_changed": 423
+    },
+    "data/catechisms/baltimore-catechism-no-3.json": {
+      "entries_changed": 1398,
+      "fields_changed": 5499
+    },
+    "data/catechisms/luthers-small-catechism.json": {
+      "entries_changed": 45,
+      "fields_changed": 47
+    },
+    "data/commentaries/lightfoot-colossians-philemon/colossians.json": {
+      "entries_changed": 81,
+      "fields_changed": 83
+    },
+    "data/commentaries/lightfoot-colossians-philemon/philemon.json": {
+      "entries_changed": 15,
+      "fields_changed": 15
+    },
+    "data/prayers/andrewes-private-devotions/prayers.json": {
+      "entries_changed": 14,
+      "fields_changed": 69
+    },
+    "data/sermons/luther-lenker-sermons.json": {
+      "entries_changed": 122,
+      "fields_changed": 16
+    },
+    "data/sermons/maclaren-expositions.json": {
+      "entries_changed": 1255,
+      "fields_changed": 9727
+    },
+    "data/sermons/newman-parochial-sermons.json": {
+      "entries_changed": 135,
+      "fields_changed": 718
+    },
+    "data/structured-text/augustines-confessions.json": {
+      "entries_changed": 15,
+      "fields_changed": 2
+    },
+    "data/structured-text/brooks-precious-remedies.json": {
+      "entries_changed": 29,
+      "fields_changed": 2
+    },
+    "data/structured-text/burroughs-rare-jewel-contentment.json": {
+      "entries_changed": 72,
+      "fields_changed": 2
+    },
+    "data/structured-text/calvins-institutes.json": {
+      "entries_changed": 6,
+      "fields_changed": 596
+    },
+    "data/structured-text/carey-enquiry.json": {
+      "entries_changed": 8,
+      "fields_changed": 48
+    },
+    "data/structured-text/charnock-existence-attributes-vol-1.json": {
+      "entries_changed": 11,
+      "fields_changed": 538
+    },
+    "data/structured-text/charnock-existence-attributes-vol-2.json": {
+      "entries_changed": 7,
+      "fields_changed": 709
+    },
+    "data/structured-text/dabney-systematic-theology.json": {
+      "entries_changed": 4,
+      "fields_changed": 10
+    },
+    "data/structured-text/donne-devotions-upon-emergent-occasions.json": {
+      "entries_changed": 25,
+      "fields_changed": 447
+    },
+    "data/structured-text/drummond-greatest-thing.json": {
+      "entries_changed": 7,
+      "fields_changed": 120
+    },
+    "data/structured-text/drummond-natural-law.json": {
+      "entries_changed": 15,
+      "fields_changed": 306
+    },
+    "data/structured-text/gurnall-complete-armour.json": {
+      "entries_changed": 214,
+      "fields_changed": 8
+    },
+    "data/structured-text/hooker-ecclesiastical-polity.json": {
+      "entries_changed": 10,
+      "fields_changed": 251
+    },
+    "data/structured-text/luther-bondage-of-the-will.json": {
+      "entries_changed": 15,
+      "fields_changed": 5
+    },
+    "data/structured-text/luther-commentary-on-galatians.json": {
+      "entries_changed": 10,
+      "fields_changed": 5
+    },
+    "data/structured-text/luthers-large-catechism.json": {
+      "entries_changed": 7,
+      "fields_changed": 65
+    },
+    "data/structured-text/machen-christianity-and-liberalism.json": {
+      "entries_changed": 9,
+      "fields_changed": 55
+    },
+    "data/structured-text/machen-what-is-faith.json": {
+      "entries_changed": 10,
+      "fields_changed": 5
+    },
+    "data/structured-text/miley-systematic-theology-vol-1.json": {
+      "entries_changed": 5,
+      "fields_changed": 45
+    },
+    "data/structured-text/miley-systematic-theology-vol-2.json": {
+      "entries_changed": 5,
+      "fields_changed": 27
+    },
+    "data/structured-text/murray-abide-in-christ.json": {
+      "entries_changed": 28,
+      "fields_changed": 3
+    },
+    "data/structured-text/murray-humility.json": {
+      "entries_changed": 14,
+      "fields_changed": 73
+    },
+    "data/structured-text/murray-with-christ-in-prayer.json": {
+      "entries_changed": 28,
+      "fields_changed": 5
+    },
+    "data/structured-text/newman-apologia-pro-vita-sua.json": {
+      "entries_changed": 15,
+      "fields_changed": 348
+    },
+    "data/structured-text/pink-sovereignty-of-god.json": {
+      "entries_changed": 13,
+      "fields_changed": 32
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-1.json": {
+      "entries_changed": 16,
+      "fields_changed": 4
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-2.json": {
+      "entries_changed": 20,
+      "fields_changed": 4
+    },
+    "data/structured-text/shedd-dogmatic-theology-vol-3.json": {
+      "entries_changed": 9,
+      "fields_changed": 30
+    },
+    "data/structured-text/sibbes-bruised-reed.json": {
+      "entries_changed": 28,
+      "fields_changed": 2
+    },
+    "data/structured-text/smith-christians-secret-happy-life.json": {
+      "entries_changed": 19,
+      "fields_changed": 2
+    },
+    "data/structured-text/spurgeon-all-of-grace.json": {
+      "entries_changed": 8,
+      "fields_changed": 22
+    },
+    "data/structured-text/spurgeon-lectures-to-my-students.json": {
+      "entries_changed": 4,
+      "fields_changed": 5
+    },
+    "data/structured-text/strong-systematic-theology-vol-1.json": {
+      "entries_changed": 7,
+      "fields_changed": 1207
+    },
+    "data/structured-text/strong-systematic-theology-vol-2.json": {
+      "entries_changed": 6,
+      "fields_changed": 1422
+    },
+    "data/structured-text/strong-systematic-theology-vol-3.json": {
+      "entries_changed": 5,
+      "fields_changed": 881
+    },
+    "data/structured-text/taylor-holy-dying.json": {
+      "entries_changed": 8,
+      "fields_changed": 346
+    },
+    "data/structured-text/taylor-holy-living.json": {
+      "entries_changed": 7,
+      "fields_changed": 571
+    },
+    "data/structured-text/torrey-how-to-pray.json": {
+      "entries_changed": 14,
+      "fields_changed": 2
+    },
+    "data/structured-text/torrey-what-the-bible-teaches.json": {
+      "entries_changed": 42,
+      "fields_changed": 5
+    },
+    "data/structured-text/wilberforce-practical-view.json": {
+      "entries_changed": 9,
+      "fields_changed": 314
+    }
+  },
+  "allowed_field_paths": [
+    "/meta/provenance/processing_date",
+    "/meta/provenance/processing_script_version",
+    "/meta/provenance/notes",
+    "/data/**"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

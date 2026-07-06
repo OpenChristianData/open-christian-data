@@ -1,0 +1,7 @@
+{
+  "rule_id": "grc.agape",
+  "positive_input": "The agapē of God is shed abroad in our hearts",
+  "positive_expected": {"transliterated_from": "grc", "source_token": "agapē"},
+  "negative_input": "The love of God is shed abroad in our hearts",
+  "negative_expected": null
+}

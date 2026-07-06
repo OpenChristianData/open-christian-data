@@ -1,0 +1,19 @@
+# OCR error model — English historical printing
+# Sources: common 19th-century letterpress OCR errors
+- error_id: en.rn_as_m
+  description: "rn misread as m in cursive or worn type"
+  confusion: {source: "rn", target: "m"}
+  examples: ["rnodern→modern", "moming→morning"]
+- error_id: en.cl_as_d
+  description: "cl misread as d in tight-set type"
+  confusion: {source: "cl", target: "d"}
+- error_id: en.long_s_as_f
+  description: "Long s (ſ) misread as f"
+  confusion: {source: "ſ", target: "f"}
+  examples: ["ſin→fin", "ſpirit→fpirit"]
+- error_id: en.i_as_l
+  description: "Lowercase i misread as l in sans-serif type"
+  confusion: {source: "i", target: "l"}
+- error_id: en.vv_as_w
+  description: "vv misread as w"
+  confusion: {source: "vv", target: "w"}

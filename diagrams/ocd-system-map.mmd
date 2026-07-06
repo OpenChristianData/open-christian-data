@@ -1,0 +1,32 @@
+graph TD
+  classDef done fill:#1f8a55,stroke:#7ee0a8,color:#eafff3
+  classDef prog fill:#9a7416,stroke:#f0c674,color:#fff7e6
+  classDef todo fill:#9a2f2f,stroke:#f08c8c,color:#ffecec
+  classDef store fill:#1d4e8a,stroke:#6ea8fe,color:#eaf2ff
+  classDef src fill:#2a2f3a,stroke:#9aa4b2,color:#e7ebf0
+
+  subgraph A["Half A -- Dataset Production"]
+    direction TB
+    A1["Sources<br/>CCEL / SWORD / Gutenberg / IA / HelloAO"]:::src
+    A2["Parsers<br/>build/parsers, 49 production"]:::done
+    A3["Schemas + enums<br/>schemas/v1, 12 types"]:::done
+    A4["Validation gate<br/>build/validate.py, pre-commit"]:::done
+    A5[("data/<br/>1,359 files, 296k records")]:::store
+    A6["HuggingFace<br/>CC0 dataset, published"]:::done
+    A1 --> A2 --> A3 --> A4 --> A5 --> A6
+  end
+
+  subgraph B["Half B -- NSH OCR Pipeline"]
+    direction TB
+    B1["Scan acquisition<br/>13 vols, ~6,310 images"]:::done
+    B2["Leaf + edition page keys<br/>scan-independent join"]:::done
+    B3["OCR panel S1<br/>ABBYY / Tesseract / Kraken / Azure"]:::done
+    B4["Render + WCT<br/>wct_builder.py, coverage rebuild"]:::prog
+    B5["Gold-free corrector<br/>M1-M14 built"]:::done
+    B6["Publish gate M15<br/>Track C then U11 then M15"]:::todo
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6
+  end
+
+  INV{{"Shared invariants<br/>pre-1928 PD, schema-first, blank-over-guess, OSIS, American English"}}:::src
+  INV -. governs .-> A
+  INV -. governs .-> B
