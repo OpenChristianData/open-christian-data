@@ -19,6 +19,16 @@ from build.tei.ccel_work_config import (
     load_ccel_work_config,
     select_ccel_scope,
 )
+from build.tei.gutenberg_to_tei import (
+    INLINE_RE,
+    _footnotes,
+    _footnote_ranges,
+    _is_vol1_source,
+    _load_source,
+    _paragraphs,
+    _paired_parenthetical_anchor_count,
+    _source_groups,
+)
 
 CENSUS_SCHEMA_ID = "tei-census-v1"
 
@@ -252,7 +262,13 @@ def census_se_work(work_dir: str | Path) -> dict[str, Any]:
     noterefs: list[etree._Element] = []
     bridgeheads: list[etree._Element] = []
     emphasis: list[etree._Element] = []
+    typographic_emphasis: list[etree._Element] = []
+    bold: list[etree._Element] = []
+    lists: list[etree._Element] = []
+    list_items: list[etree._Element] = []
     verse_blocks: list[etree._Element] = []
+    front_sections: list[etree._Element] = []
+    back_sections: list[etree._Element] = []
     section_depths: dict[str, int] = {}
 
     for path in content_files:
@@ -263,6 +279,12 @@ def census_se_work(work_dir: str | Path) -> dict[str, Any]:
             section_id = section.get("id")
             if section_id:
                 section_depths[section_id] = _section_depth(section)
+        body = root.find("{http://www.w3.org/1999/xhtml}body")
+        body_tokens = _epub_type_tokens(body) if body is not None else set()
+        if "frontmatter" in body_tokens:
+            front_sections.extend(file_sections)
+        if "backmatter" in body_tokens:
+            back_sections.extend(file_sections)
         noterefs.extend(
             node
             for node in root.xpath(".//x:a", namespaces=_XHTML_NS)
@@ -271,13 +293,17 @@ def census_se_work(work_dir: str | Path) -> dict[str, Any]:
         bridgeheads.extend(
             node
             for node in root.xpath(".//x:p", namespaces=_XHTML_NS)
-            if "se:bridgehead" in _epub_type_tokens(node)
+            if _epub_type_tokens(node) & {"se:bridgehead", "bridgehead"}
         )
         emphasis.extend(root.xpath(".//x:em", namespaces=_XHTML_NS))
+        typographic_emphasis.extend(root.xpath(".//x:i", namespaces=_XHTML_NS))
+        bold.extend(root.xpath(".//x:b | .//x:strong", namespaces=_XHTML_NS))
+        lists.extend(root.xpath(".//x:ol | .//x:ul", namespaces=_XHTML_NS))
+        list_items.extend(root.xpath(".//x:li", namespaces=_XHTML_NS))
         verse_blocks.extend(
             node
             for node in root.xpath(".//x:blockquote", namespaces=_XHTML_NS)
-            if "z3998:verse" in _epub_type_tokens(node)
+            if _epub_type_tokens(node) & {"z3998:verse", "z3998:song", "z3998:poem"}
         )
 
     endnotes: list[etree._Element] = []
@@ -314,10 +340,130 @@ def census_se_work(work_dir: str | Path) -> dict[str, Any]:
             "endnotes": _feature(endnotes),
             "bridgeheads": _feature(bridgeheads),
             "emphasis": _feature(emphasis),
+            "typographic_emphasis": _feature(typographic_emphasis),
+            "bold": _feature(bold),
+            "lists": _feature(lists),
+            "list_items": _feature(list_items),
             "verse_blocks": _feature(verse_blocks),
+            "front_sections": _feature(front_sections),
+            "back_sections": _feature(back_sections),
         },
         "section_depths": section_depths,
         "unresolved_noterefs": unresolved_noterefs,
+    }
+
+
+def census_gutenberg_calvin(vol1_path: str | Path, vol2_path: str | Path) -> dict[str, Any]:
+    """Census the selected Calvin Gutenberg rendering before TEI conversion."""
+    sources = (_load_source(Path(vol1_path), 1), _load_source(Path(vol2_path), 2))
+    book_ids_by_roman: dict[str, str] = {}
+    chapters: list[str] = []
+    body_paragraphs: list[tuple[str, int]] = []
+    body_markup_texts: dict[str, list[str]] = {source.slug: [] for source in sources}
+    markup_texts: list[str] = []
+    anchor_markup_texts: dict[str, list[str]] = {source.slug: [] for source in sources}
+    for source in sources:
+        front = _paragraphs(source.lines, 0, source.first_book)
+        front_texts = [text for _line, text in front]
+        markup_texts.extend(front_texts)
+        anchor_markup_texts[source.slug].extend(front_texts)
+        for book, chapter_events in _source_groups(source):
+            book_id = f"{source.slug}-book-{book.roman}"
+            book_ids_by_roman.setdefault(book.roman, book_id)
+            for position, chapter in enumerate(chapter_events):
+                chapters.append(f"{source.slug}-chapter-{book.roman}-{chapter.roman}")
+                stop = chapter_events[position + 1].line if position + 1 < len(chapter_events) else next(
+                    (
+                        event.line
+                        for event in source.events
+                        if event.kind == "book" and event.line > book.line
+                    ),
+                    source.main_stop,
+                )
+                paragraphs = _paragraphs(
+                    source.lines,
+                    chapter.content_start,
+                    stop,
+                    skip_ranges=_footnote_ranges(source),
+                )
+                body_paragraphs.extend((source.slug, line) for line, _text in paragraphs)
+                body_texts = [text for _line, text in paragraphs]
+                body_markup_texts[source.slug].extend(body_texts)
+                anchor_markup_texts[source.slug].extend(body_texts)
+                markup_texts.extend(body_texts)
+        note_texts = [text for _line, _number, text in _footnotes(source)]
+        markup_texts.extend(note_texts)
+
+    emphasis_count = sum(1 for text in markup_texts for match in INLINE_RE.finditer(text) if match.group(1))
+    anchor_counts_by_source = {
+        source.slug: (
+            _paired_parenthetical_anchor_count(
+                anchor_markup_texts[source.slug],
+                frozenset(number for _line, number, _text in _footnotes(source)),
+            )
+            if _is_vol1_source(source)
+            else sum(
+                1
+                for text in body_markup_texts[source.slug]
+                for match in INLINE_RE.finditer(text)
+                if match.group(2)
+            )
+        )
+        for source in sources
+    }
+    anchor_count = sum(anchor_counts_by_source.values())
+    note_bodies = [
+        f"{source.slug}-note-{number}"
+        for source in sources
+        for _line, number, _text in _footnotes(source)
+    ]
+    source_files = [
+        {"path": _display_path(source.path), "sha256": _sha256(source.path)} for source in sources
+    ]
+    return {
+        "census_schema": CENSUS_SCHEMA_ID,
+        "source": {
+            "type": "gutenberg_plain_text",
+            "work_id": "calvins-institutes",
+            "rendering_id": "gutenberg",
+            "files": source_files,
+            "apparatus_shape": [
+                {
+                    "volume": ("I", "II")[index],
+                    "source": source.slug,
+                    "anchor_count": anchor_counts_by_source[source.slug],
+                    "note_body_count": len(_footnotes(source)),
+                    "resolution": (
+                        "unanchored back-matter"
+                        if anchor_counts_by_source[source.slug] == 0
+                        else "all refs resolve"
+                        if _is_vol1_source(source)
+                        else "all refs resolve; one note body is unreferenced"
+                    ),
+                }
+                for index, source in enumerate(sources)
+            ],
+            "scopes": [
+                "each volume after the first all-caps BOOK heading through the selected work boundary",
+                "Vol. I FOOTNOTES and Vol. II Footnote N: blocks are preserved as per-volume note bodies and removed from body prose",
+            ],
+            "excluded": [
+                "Project Gutenberg license wrapper lines",
+                "Vol. II material after END OF THE INSTITUTES. (index and scripture index)",
+            ],
+        },
+        "features": {
+            "books": {
+                "count": len(book_ids_by_roman),
+                "ids": [book_ids_by_roman[roman] for roman in ("I", "II", "III", "IV") if roman in book_ids_by_roman],
+            },
+            "chapters": {"count": len(chapters), "ids": chapters},
+            "paragraphs": {"count": len(body_paragraphs), "ids": []},
+            "front_matter": {"count": len(sources), "ids": [f"{source.slug}-front" for source in sources]},
+            "emphasis": {"count": emphasis_count, "ids": []},
+            "note_anchors": {"count": anchor_count, "ids": []},
+            "note_bodies": {"count": len(note_bodies), "ids": note_bodies},
+        },
     }
 
 
@@ -370,6 +516,11 @@ def main() -> None:
     se.add_argument("work_dir", type=Path)
     se.add_argument("output_path", type=Path)
 
+    gutenberg = subparsers.add_parser("gutenberg-calvin", help="Census the selected Calvin Gutenberg rendering.")
+    gutenberg.add_argument("vol1_path", type=Path)
+    gutenberg.add_argument("vol2_path", type=Path)
+    gutenberg.add_argument("output_path", type=Path)
+
     bcp = subparsers.add_parser("bcp", help="Census one BCP liturgy edition.")
     bcp.add_argument("edition_slug")
     bcp.add_argument("output_path", type=Path)
@@ -380,6 +531,8 @@ def main() -> None:
         census = census_thml_div1(args.xml_path, args.div1_id)
     elif args.source_type == "se":
         census = census_se_work(args.work_dir)
+    elif args.source_type == "gutenberg-calvin":
+        census = census_gutenberg_calvin(args.vol1_path, args.vol2_path)
     else:
         census = census_bcp_liturgy(args.edition_slug, args.raw_root)
     _write_json(args.output_path, census)

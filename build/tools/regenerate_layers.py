@@ -16,7 +16,7 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.atomic_io import write_json_atomic  # noqa: E402
+from ocd_kernel.lib.atomic_io import write_json_atomic  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 

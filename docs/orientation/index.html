@@ -303,6 +303,9 @@
   .status{border:1px solid #385247;border-radius:14px;background:rgba(255,255,255,.06);padding:14px}
   .status b{display:block;color:#fff}
   .status span{font-size:13px;color:#c6d2ca}
+  .split-banner{border:1px solid #9bb9c8;background:#eef7fb;color:#173746;border-radius:14px;padding:14px 16px;margin:0 0 18px}
+  .split-banner b{display:block;margin-bottom:4px}
+  .split-banner code{background:rgba(255,255,255,.72);padding:1px 5px;border-radius:5px}
 
   footer{margin-top:24px;color:var(--muted);font-size:12px}
 
@@ -583,6 +586,10 @@
 </section>
 
 <section class="section" id="nsh">
+  <div class="split-banner">
+    <b>OCR production moved on 2026-07-08.</b>
+    <span>The OCR production pipeline now lives in the sibling <code>EzraOCR</code> repo. Its docs are under <code>EzraOCR/docs/</code>, with <code>../EzraOCR/docs/NSH_PROJECT_STATE.md</code> there as the anchor. The OCR sections below are frozen historical state as of 2026-07-08.</span>
+  </div>
   <div class="section-head">
     <div>
       <div class="kicker">Part 2</div>
@@ -997,9 +1004,9 @@
     <p>Status changes weekly; this page deliberately does not restate it. Each side of the project has one anchor document (stable context) and one progress tracker (live state). Start with the anchor for your side, then open its tracker. Paths are relative to the repository root; the links below work when this file is opened from its place in the repository.</p>
   </div>
   <div class="status-grid">
-    <div class="status"><b>NSH / reviewer side</b><span>Anchor: <a href="../NSH_PROJECT_STATE.md" style="color:inherit"><code>docs/NSH_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../plans/tei-reviewer/00-progress-tracker.md" style="color:inherit"><code>plans/tei-reviewer/00-progress-tracker.md</code></a>. Corrector module detail: <a href="../BUILD_PLAN_gold_free_corrector.md" style="color:inherit"><code>docs/BUILD_PLAN_gold_free_corrector.md</code></a> &sect;0.</span></div>
-    <div class="status"><b>Dataset side</b><span>Anchor: <a href="../DATASET_PROJECT_STATE.md" style="color:inherit"><code>docs/DATASET_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../plans/2026-07-03-next-units-execution/00-progress-tracker.md" style="color:inherit"><code>plans/2026-07-03-next-units-execution/00-progress-tracker.md</code></a>.</span></div>
-    <div class="status"><b>Launching a work session</b><span>Ready-to-paste session bootstraps live in <a href="../../plans/tei-reviewer/BOOTSTRAPS.md" style="color:inherit"><code>plans/tei-reviewer/BOOTSTRAPS.md</code></a>. Respect the wave order below: a batch starts only when its dependencies are Done in the tracker.</span></div>
+    <div class="status"><b>NSH / reviewer side</b><span>Anchor: <a href="../../../EzraOCR/docs/NSH_PROJECT_STATE.md" style="color:inherit"><code>../EzraOCR/docs/NSH_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../../EzraOCR/plans/tei-reviewer/00-progress-tracker.md" style="color:inherit"><code>../EzraOCR/plans/tei-reviewer/00-progress-tracker.md</code></a>. Corrector module detail: <a href="../../../EzraOCR/docs/BUILD_PLAN_gold_free_corrector.md" style="color:inherit"><code>../EzraOCR/docs/BUILD_PLAN_gold_free_corrector.md</code></a> &sect;0.</span></div>
+    <div class="status"><b>Dataset side</b><span>Anchor: <a href="../DATASET_PROJECT_STATE.md" style="color:inherit"><code>docs/DATASET_PROJECT_STATE.md</code></a> &rarr; tracker: <a href="../../plans/2026-07-07-dataset-corrections-and-tei-long-tail/00-progress-tracker.md" style="color:inherit"><code>plans/2026-07-07-dataset-corrections-and-tei-long-tail/00-progress-tracker.md</code></a>.</span></div>
+    <div class="status"><b>Launching a work session</b><span>Ready-to-paste session bootstraps live in <a href="../../../EzraOCR/plans/tei-reviewer/BOOTSTRAPS.md" style="color:inherit"><code>../EzraOCR/plans/tei-reviewer/BOOTSTRAPS.md</code></a>. Respect the wave order below: a batch starts only when its dependencies are Done in the tracker.</span></div>
   </div>
 
   <div class="diagram-card" style="max-width:680px;margin:28px auto 0">
@@ -1087,12 +1094,12 @@
       <path class="wline" d="M250 604V632"/>
       <path class="wline" d="M250 688V716"/>
     </svg>
-    <div class="caption">Redrawn from the NSH execution plan (<code>plans/tei-reviewer/00-execution-plan.md</code> &sect;1). Done/pending marks reflect the tracker as verified on 2026-07-04; the tracker, not this picture, is live truth.</div>
+    <div class="caption">Redrawn from the NSH execution plan (<code>../EzraOCR/plans/tei-reviewer/00-execution-plan.md</code> &sect;1). Done/pending marks reflect the tracker as verified on 2026-07-04; the tracker, not this picture, is live truth.</div>
   </div>
 </section>
 
 <footer>
-  <b>This is the canonical orientation page for the whole project</b> (<code>docs/orientation/index.html</code>, consolidated 2026-07-04; the older <code>project-orientation.html</code>, <code>docs/SYSTEM_MAP.html</code> and <code>reports/_orientation/orientation.html</code> now point here). <b>Canonical vocabulary and the ten-stage taxonomy come from <code>SHARED-LEXICON.md</code> (the "NSH OCR pipeline — Layer 1" section) and <code>docs/adr/0016</code> / <code>0018</code>.</b> Other facts are drawn from <code>README.md</code>, the two anchor docs (<code>docs/NSH_PROJECT_STATE.md</code>, <code>docs/DATASET_PROJECT_STATE.md</code>) and the ADRs. Schema ids, filenames and stage numbers are not yet renamed (the lexicon is name-layer only); the friendly names used here map to them via the ADR-0016 rename map. This page carries no live counts or status &mdash; see "Current state: where to look" above.
+  <b>This is the canonical orientation page for the whole project</b> (<code>docs/orientation/index.html</code>, consolidated 2026-07-04; the older <code>project-orientation.html</code>, <code>docs/SYSTEM_MAP.html</code> and <code>reports/_orientation/orientation.html</code> now point here). <b>Canonical vocabulary and the ten-stage taxonomy come from <code>SHARED-LEXICON.md</code> (the "NSH OCR pipeline — Layer 1" section) and <code>docs/adr/0016</code> / <code>0018</code>.</b> Other facts are drawn from <code>README.md</code>, the two anchor docs (<code>../EzraOCR/docs/NSH_PROJECT_STATE.md</code>, <code>docs/DATASET_PROJECT_STATE.md</code>) and the ADRs. Schema ids, filenames and stage numbers are not yet renamed (the lexicon is name-layer only); the friendly names used here map to them via the ADR-0016 rename map. This page carries no live counts or status &mdash; see "Current state: where to look" above.
 </footer>
 
 </div>

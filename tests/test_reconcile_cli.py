@@ -133,7 +133,7 @@ def test_reconcile_anchor_swap_atomic(tmp_path: Path, monkeypatch: pytest.Monkey
     for index in range(3):
         _write_json(work_dir / "original" / f"part-{index}.json", _record(f"part-{index}"))
 
-    from build.lib import atomic_io
+    from ocd_kernel.lib import atomic_io
 
     calls = {"count": 0}
     real_write = atomic_io.write_json_atomic

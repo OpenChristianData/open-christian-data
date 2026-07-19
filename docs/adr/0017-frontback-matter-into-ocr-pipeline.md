@@ -73,5 +73,5 @@ This **reverses the prior "front/back stay out of the WCT" invariant.**
   is unchanged.
 - Phase 2c (real-word-ratio noise sweep over the kept leaves) is a gated follow-up that can only run
   after the next OCR pass produces their text.
-- `docs/NSH_PROJECT_STATE.md` invariant 8 / the milestone banner are updated to record that front/back
+- `../EzraOCR/docs/NSH_PROJECT_STATE.md` invariant 8 / the milestone banner are updated to record that front/back
   now enter the pipeline, tagged by `section`.

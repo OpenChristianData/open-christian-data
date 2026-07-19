@@ -27,7 +27,7 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.bible_ref_normalizer import parse_thml_refs
+from ocd_kernel.lib.bible_ref_normalizer import parse_thml_refs
 from build.lib.paths import REPO_ROOT
 
 # ---------------------------------------------------------------------------

@@ -11,12 +11,13 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib import atomic_io
+from ocd_kernel.lib import atomic_io
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 OBJECT_SCHEMA = {"type": "object"}
-CATALOG_SCHEMA = json.loads((REPO_ROOT / "schemas" / "v1" / "rendering_catalog.schema.json").read_text(encoding="utf-8"))
-RECORD_SCHEMA = json.loads((REPO_ROOT / "schemas" / "v1" / "reconciled_record.schema.json").read_text(encoding="utf-8"))
+CATALOG_SCHEMA = json.loads(resolve_schema_path("rendering_catalog").read_text(encoding="utf-8"))
+RECORD_SCHEMA = json.loads(resolve_schema_path("reconciled_record").read_text(encoding="utf-8"))
 
 
 def _utc_now() -> str:

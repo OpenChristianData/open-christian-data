@@ -151,8 +151,53 @@ scan). These leaves appear between vol 10's page 342 (leaf 0366) and page 368
 the R-range (around REVIVAL, REWARD, RHETORIC area based on surrounding page
 numbers). Found 2026-05-27 via manifest validation gap warning.
 
+## SWORD modules (CrossWire)
+
+### Wesley — module omits 1 Kings and Philemon entirely
+
+| Module | Missing books | Positions carrying text | Found |
+|---|---|---|---|
+| `Wesley` (WesleyNotes zcom) | 1 Kings, Philemon | **0** of every verse position in each book | 2026-07-16 |
+
+John Wesley's *Explanatory Notes Upon the Old Testament* and *Upon the New
+Testament* both cover these books — 1 Kings in the OT notes, Philemon in the NT
+notes. The CrossWire `Wesley` module carries no text at any verse position in
+either. This is an upstream coverage gap, not a parser defect.
+
+**Verified against the module directly, not inferred from parser silence:**
+
+```python
+from build.parsers.sword_commentary import KJV_CANON, SwordZComReader, build_verse_position_map
+# for 1Kgs (ot) and Phlm (nt): every position returns empty
+```
+
+Both return 0 positions with text. This check matters because the same symptom —
+a book the parser does not emit — is also what a *versification bug* produces, and
+in this repo it did: before 2026-07-16 the shared `KJV_CANON` table was wrong for
+six books, which fabricated a phantom `wesley/1-kings.json` (100 entries) and
+`wesley/philemon.json` (22 entries) by reading real text from wrong offsets.
+Philemon's phantom file opened with `"In this psalm, of a rest yet to come."` The
+phantoms were removed in `5b6cfbba`; the genuine upstream gap remains.
+
+Effect: consumers get no Wesley commentary on 1 Kings or Philemon. Consumers who
+saw the pre-2026-07-16 published data got *fabricated* commentary on both, which
+is worse. If CrossWire ships a corrected module, re-ingesting would add real
+coverage for two books.
+
+**Local acceptance (2026-07-17):** OCD accepts this as an upstream-source limitation
+for the corrected local output. No alternative edition-matched witness is being
+substituted, and no Wesley coverage is claimed for 1 Kings or Philemon. This does
+not accept the upstream module as correct and does not make the previously published
+fabricated commentary harmless.
+
+**To re-check after any module update:** probe both books with the snippet
+above, confirm a non-zero text-bearing count for each, and verify the returned
+text belongs to the requested book rather than an offset-shifted neighbor.
+
 ## Reporting status
 
 NSH-main page_numbers defect drafted 2026-05-26 (see
 `research/2026-05-26-ia-bug-report-nsh-main-page-numbers.md`); other entries
-not yet reported.
+not yet reported. Wesley module coverage gap (2026-07-16) has a self-contained
+draft at `research/2026-07-17-wesley-module-gap-report.md`; it has not been sent,
+no external issue has been filed, and no CrossWire destination is asserted here.

@@ -1,138 +1,58 @@
-"""Build index.md -- a human-readable catalogue of every work in data/.
+"""Build index.md -- a human-readable catalog of recognized works in data/.
 
 Output: index.md at repo root, organized by category.
 
-Deduplication: files sharing the same meta.id within the same top-level
-category represent a single work split across Bible books or volumes.
-They collapse to one entry; file_count > 1 is noted in the table.
-
-Excluded:
-  - data/authors/        (author registry, not works)
-  - files with rendering_id at top level (NSH OCR pipeline data)
-  - files where meta.title == 'Fixture Work' (test fixtures)
-  - _manifest.json and catalog.json (internal bookkeeping)
+Work identity and exclusions come from ``count_dataset_records.collect_work_catalog``
+so this public index cannot drift from ``docs/WORK_CATALOG.md`` or the release count.
 """
 
-import json
 import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 OUT = ROOT / "index.md"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from build.tools.count_dataset_records import collect_work_catalog  # noqa: E402
 
 CATEGORY_LABELS = {
-    "bible-text": "Bible Text",
+    "bible-text": "Bible Translations",
     "catechisms": "Catechisms",
     "church-fathers": "Church Fathers",
     "commentaries": "Commentaries",
     "devotionals": "Devotionals",
     "doctrinal-documents": "Doctrinal Documents",
     "hymns": "Hymns",
-    "lexicon": "Lexicon",
     "prayers": "Prayers",
-    "reference": "Reference",
+    "reference": "Dictionaries and Encyclopedias",
     "sermons": "Sermons",
-    "structured-text": "Structured Text",
-    "topical-reference": "Topical Reference",
+    "structured-text": "Books and Long-Form Works",
+    "topical-reference": "Topical Bibles and Indexes",
 }
 
 
-def _str(val):
-    return val if isinstance(val, str) and val else None
-
-
-def _int(val):
-    if val is None:
-        return None
-    try:
-        return int(val)
-    except (TypeError, ValueError):
-        return None
-
-
-def _list(val):
-    return val if isinstance(val, list) and val else None
-
-
-def load_file(path: pathlib.Path):
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        print(f"  WARN: {path.relative_to(ROOT)} -- JSON error: {e}", file=sys.stderr)
-        return None
-
-
-def is_pipeline_data(raw: dict) -> bool:
-    return "rendering_id" in raw
-
-
-def is_fixture(meta: dict) -> bool:
-    return meta.get("title") == "Fixture Work"
-
-
-def entry_from_meta(meta: dict, category: str, path: pathlib.Path, file_count: int) -> dict:
-    slug = path.stem
-    title = _str(meta.get("title")) or _str(meta.get("author")) or slug
-    tradition = _list(meta.get("tradition"))
-    return {
-        "id": _str(meta.get("id")) or slug,
-        "title": title,
-        "category": category,
-        "file_count": file_count,
-        "author": _str(meta.get("author")),
-        "year": _int(meta.get("original_publication_year")),
-        "tradition": ", ".join(tradition) if tradition else None,
-        "era": _str(meta.get("era")),
-        "language": _str(meta.get("language")),
-    }
-
-
 def collect_entries():
-    files = sorted(
-        (f for f in DATA_DIR.rglob("*.json") if "authors" not in f.parts and f != OUT),
-        key=lambda f: (f.relative_to(DATA_DIR).parts[0], f.stem),
-    )
-
-    groups: dict[tuple, dict] = {}
-    skipped_pipeline = skipped_fixture = skipped_internal = 0
-
-    for path in files:
-        raw = load_file(path)
-        if raw is None:
-            continue
-
-        category = path.relative_to(DATA_DIR).parts[0]
-
-        if is_pipeline_data(raw):
-            skipped_pipeline += 1
-            continue
-
-        if path.name.startswith("_") or path.name == "catalog.json":
-            skipped_internal += 1
-            continue
-
-        meta = raw.get("meta") or {}
-
-        if is_fixture(meta):
-            skipped_fixture += 1
-            continue
-
-        mid = _str(meta.get("id"))
-
-        group_key = (category, mid) if mid else (category, str(path))
-
-        if group_key not in groups:
-            groups[group_key] = {"meta": meta, "path": path, "file_count": 0, "category": category}
-        groups[group_key]["file_count"] += 1
-
-    entries = [
-        entry_from_meta(g["meta"], g["category"], g["path"], g["file_count"])
-        for g in groups.values()
-    ]
+    catalog = collect_work_catalog(DATA_DIR)
+    entries = []
+    for work in catalog.works:
+        metadata = work["metadata_fields"]
+        traditions = metadata.get("tradition", [])
+        entries.append(
+            {
+                "id": work["work_id"],
+                "title": work["title"],
+                "category": work["category"],
+                "file_count": work["file_count"],
+                "author": work.get("author"),
+                "year": work.get("publication_date"),
+                "tradition": ", ".join(traditions) if traditions else None,
+            }
+        )
     entries.sort(key=lambda e: (e["category"], e["title"] or ""))
-
-    print(f"  Skipped: {skipped_pipeline} pipeline, {skipped_fixture} fixture, {skipped_internal} internal")
+    skipped = catalog.summary.get("skipped", {})
+    print(f"  Skipped by authoritative catalog rules: {sum(skipped.values())}")
     return entries
 
 

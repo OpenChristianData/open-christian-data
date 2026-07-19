@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "f07d33fba2ed4b6bb18ab65fc7696693",
+  "started_at": "2026-07-16T02:11:32.164445+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/philemon.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/philemon.json": {
+      "before_sha256": "5d7051ab3990a1752b2d1bf53e3eddcd8b4a36026e87d26708d0dd809b39e0af",
+      "after_sha256": "459b385732254a31ce2510c79a6d1650b977abfcd8d3c5e7ab05bdaa3862d260"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/philemon.json": {
+      "entries_changed": 25,
+      "fields_changed": 152
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

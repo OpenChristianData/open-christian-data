@@ -7,7 +7,7 @@ from pathlib import Path
 from lxml import etree
 
 from build.tei.bcp_source import BcpEdition, BcpEvent, load_bcp_edition, sha256
-from build.tei.writer import TEI_NS, serialize, stamp_header, tei_el
+from ocd_kernel.tei.writer import TEI_NS, serialize, stamp_header, tei_el
 
 
 class ConversionError(ValueError):
@@ -39,7 +39,17 @@ def _header(edition: BcpEdition) -> etree._Element:
         source_sha256=_combined_sha(edition.files),
         print_source=f"Book of Common Prayer, {edition.year} edition",
     )
+    if edition.translator:
+        title_stmt = header.find(f".//{{{TEI_NS}}}titleStmt")
+        if title_stmt is None:
+            raise ConversionError("Generated BCP header has no titleStmt")
+        resp_stmt = tei_el("respStmt")
+        resp_stmt.append(tei_el("resp", text="Translator"))
+        resp_stmt.append(tei_el("name", text=edition.translator))
+        title_stmt.append(resp_stmt)
     bibl = header.find(f".//{{{TEI_NS}}}sourceDesc/{{{TEI_NS}}}bibl")
+    if bibl is None:
+        raise ConversionError("Generated BCP header has no source bibliography")
     bibl.append(tei_el("note", {"type": "edition"}, text=edition.slug))
     return header
 
@@ -69,15 +79,21 @@ def convert_bcp_to_tei(edition_slug: str, output_path: str | Path, *, raw_root: 
     text.append(body)
     root.append(text)
 
-    current_service: etree._Element | None = None
+    services: dict[str, etree._Element] = {}
     for event in edition.events:
         if event.feature == "services":
-            current_service = tei_el("div", {"xml:id": event.xml_id, "type": "service"})
-            current_service.append(tei_el("head", text=event.text))
-            body.append(current_service)
+            service = tei_el("div", {"xml:id": event.xml_id, "type": "service"})
+            service.append(tei_el("head", text=event.text))
+            body.append(service)
+            services[event.xml_id] = service
             continue
+        try:
+            target = services[event.service_id] if event.service_id else body
+        except KeyError as exc:
+            raise ConversionError(
+                f"Event {event.xml_id!r} references unknown service {event.service_id!r}"
+            ) from exc
         if event.feature == "collects":
-            target = current_service if current_service is not None else body
             collect = tei_el("div", {"xml:id": event.xml_id, "type": "collect"})
             collect.append(
                 tei_el(
@@ -89,11 +105,7 @@ def convert_bcp_to_tei(edition_slug: str, output_path: str | Path, *, raw_root: 
             collect.append(tei_el("p", text=event.text))
             target.append(collect)
             continue
-        if current_service is None:
-            current_service = tei_el("div", {"xml:id": f"bcp-{edition.slug}-service", "type": "service"})
-            current_service.append(tei_el("head", text=edition.title))
-            body.append(current_service)
-        _append_event(current_service, event)
+        _append_event(target, event)
 
     output = Path(output_path)
     serialize(etree.ElementTree(root), output)

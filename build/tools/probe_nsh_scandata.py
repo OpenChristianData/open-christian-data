@@ -10,6 +10,9 @@ Reads only the scandata XML (cheap) for each requested volume and prints:
 
 Usage:
   py -3 build/tools/probe_nsh_scandata.py 8 1 2 5 11 6
+
+Fetcher helpers live in the sibling OCR repo:
+  ../EzraOCR/ezra/tools/fetch_ia_pages.py
 """
 from __future__ import annotations
 
@@ -17,12 +20,13 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-# Import helpers from the fetcher by path (no package install needed).
+# Import helpers from the sibling OCR fetcher by path (no package install needed).
 import importlib.util
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+EZRA_ROOT = REPO_ROOT.parent / "EzraOCR"
 _spec = importlib.util.spec_from_file_location(
-    "fetch_ia_pages", REPO_ROOT / "build" / "tools" / "fetch_ia_pages.py"
+    "fetch_ia_pages", EZRA_ROOT / "ezra" / "tools" / "fetch_ia_pages.py"
 )
 _fip = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_fip)

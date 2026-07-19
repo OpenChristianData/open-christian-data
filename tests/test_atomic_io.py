@@ -1,4 +1,4 @@
-"""Tests for build.lib.atomic_io.
+"""Tests for ocd_kernel.lib.atomic_io.
 
 Covers: JSON atomic writes, JSONL appends with line-schema validation, lock
 acquire contention, stale-lock break with same-host PID liveness, and the
@@ -16,7 +16,7 @@ from pathlib import Path
 
 import pytest
 
-from build.lib import atomic_io
+from ocd_kernel.lib import atomic_io
 
 
 SIMPLE_JSON_SCHEMA = {
@@ -94,8 +94,8 @@ def test_write_json_atomic_retries_on_sync_lock_then_succeeds(tmp_path: Path, mo
             raise _sync_lock_error()
         real_replace(src, dst)
 
-    with patch("build.lib.atomic_io.os.replace", side_effect=flaky_replace):
-        with patch("build.lib.atomic_io.time.sleep"):  # don't actually wait
+    with patch("ocd_kernel.lib.atomic_io.os.replace", side_effect=flaky_replace):
+        with patch("ocd_kernel.lib.atomic_io.time.sleep"):  # don't actually wait
             atomic_io.write_json_atomic(target, {"name": "a", "value": 1}, SIMPLE_JSON_SCHEMA)
 
     assert json.loads(target.read_text(encoding="utf-8")) == {"name": "a", "value": 1}
@@ -111,8 +111,8 @@ def test_write_json_atomic_raises_and_cleans_up_after_max_retries(tmp_path: Path
     def always_fail(src, dst):
         raise _sync_lock_error()
 
-    with patch("build.lib.atomic_io.os.replace", side_effect=always_fail):
-        with patch("build.lib.atomic_io.time.sleep"):
+    with patch("ocd_kernel.lib.atomic_io.os.replace", side_effect=always_fail):
+        with patch("ocd_kernel.lib.atomic_io.time.sleep"):
             with pytest.raises(OSError):
                 atomic_io.write_json_atomic(target, {"name": "a", "value": 1}, SIMPLE_JSON_SCHEMA)
 

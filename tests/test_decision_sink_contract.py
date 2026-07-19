@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pytest
 
-from build.lib.atomic_io import SchemaValidationError
+from ocd_kernel.lib.atomic_io import SchemaValidationError
 from build.tools.apply_review_patch import validate_review_patch
 
 

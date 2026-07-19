@@ -7,10 +7,11 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Iterator
 
-from build.lib.atomic_io import SchemaValidationError, append_jsonl_atomic, validate_payload
+from ocd_kernel.lib.atomic_io import SchemaValidationError, append_jsonl_atomic, validate_payload
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 ZERO_HASH = "0" * 64
-SCHEMA_PATH = Path(__file__).resolve().parents[2] / "schemas" / "v1" / "matrix-events-v1.schema.json"
+SCHEMA_PATH = resolve_schema_path("matrix-events-v1")
 
 
 class LedgerIntegrityError(Exception):

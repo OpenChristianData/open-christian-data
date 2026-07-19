@@ -25,7 +25,7 @@ Sources (raw/gutenberg/sermons/maclaren/):
 Output (data/sermons/):
   maclaren-expositions.json  -- All 15 volumes, one entry per exposition sermon
 
-Schema: sermon (schemas/v1/sermon.schema.json)
+Schema: sermon (ocd_kernel/schemas/v1/sermon.schema.json)
 Tradition: reformed, baptist, evangelical
 
 Usage:

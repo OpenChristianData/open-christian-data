@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/westminster_standard_parser.py@v2.0.0",
+  "writer_identity": "westminster_standard_parser",
+  "run_id": "6ddffe308ffa46a0ade8a3eadf0a0a94",
+  "started_at": "2026-07-17T00:05:45.563130+00:00",
+  "data_paths": [
+    "data/doctrinal-documents/directory-for-family-worship.json"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/directory-for-family-worship.json": {
+      "before_sha256": "7b2366f9c9eb40fff325f6bf37f5c41dceb1295e5b0d3fd1aabe77f60cd194f3",
+      "after_sha256": "a247caf1d520f6b317af90a93709f758f6f1912b32ca1cdea57e675396dc2118"
+    }
+  },
+  "expected_delta_counts": {
+    "data/doctrinal-documents/directory-for-family-worship.json": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

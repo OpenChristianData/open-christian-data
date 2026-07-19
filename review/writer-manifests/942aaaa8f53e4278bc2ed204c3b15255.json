@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "942aaaa8f53e4278bc2ed204c3b15255",
+  "started_at": "2026-07-16T02:11:28.889214+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/isaiah.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/isaiah.json": {
+      "before_sha256": "2d379f71ef12eb69d58758673ea5bf91e3d09e7af41731fddb59a4ad0ca2182e",
+      "after_sha256": "060130e59fddd50028be6af59eacd7a78c88dfad5ed68c93507350112ea69a51"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/isaiah.json": {
+      "entries_changed": 996,
+      "fields_changed": 3983
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

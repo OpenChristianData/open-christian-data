@@ -23,7 +23,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from build.lib.pytest_skips import skip_if_missing_data  # noqa: E402
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.parsers.ia_fisher_marrow import (  # noqa: E402
     RE_CHAPTER_HEADING,
     RE_PART_SECOND,

@@ -37,18 +37,19 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.atomic_io import (  # noqa: E402
+from ocd_kernel.lib.atomic_io import (  # noqa: E402
     AtomicWriteError,
     append_jsonl_atomic,
     validate_payload,
     write_json_atomic,
 )
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from ocd_kernel.lib.schema_enums import resolve_schema_path  # noqa: E402
 
 LEDGER_SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "correction_ledger.schema.json"
 WRITER_MANIFEST_SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "writer_manifest.schema.json"
-AUDIT_SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "audit_event.schema.json"
-REVIEW_STATE_SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "review_state.schema.json"
+AUDIT_SCHEMA_PATH = resolve_schema_path("audit_event")
+REVIEW_STATE_SCHEMA_PATH = resolve_schema_path("review_state")
 
 WRITER_IDENTITY = "correction_applier"
 

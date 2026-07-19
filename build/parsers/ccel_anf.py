@@ -32,7 +32,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
 from build.lib.contributors import normalize_contributors  # noqa: E402
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 RAW_DIR = REPO_ROOT / "raw" / "ccel" / "anf"

@@ -67,6 +67,20 @@
           "before_sha256",
           "after_sha256"
         ],
+        "not": {
+          "properties": {
+            "before_sha256": {
+              "type": "null"
+            },
+            "after_sha256": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "before_sha256",
+            "after_sha256"
+          ]
+        },
         "properties": {
           "before_sha256": {
             "oneOf": [
@@ -81,8 +95,16 @@
             "description": "Null when the file did not exist before the run."
           },
           "after_sha256": {
-            "type": "string",
-            "pattern": "^[0-9a-f]{64}$"
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null when the file was deleted by the run."
           }
         }
       }

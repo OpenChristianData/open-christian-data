@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "3a889df92b74427b8f0a66d6b768678d",
+  "started_at": "2026-07-16T02:13:02.082895+00:00",
+  "data_paths": [
+    "data/commentaries/barnes/1-thessalonians.json"
+  ],
+  "checksums": {
+    "data/commentaries/barnes/1-thessalonians.json": {
+      "before_sha256": "780d88ed2f2dd97c0bb0e79adc9f485a1f82e380fc364de7a758cc3efa728b08",
+      "after_sha256": "ed12cb689c3c40e655964c1dbabd5fd01aa902dfa2d50f4b3ab8756ec885fc6f"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/barnes/1-thessalonians.json": {
+      "entries_changed": 89,
+      "fields_changed": 307
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

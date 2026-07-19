@@ -16,11 +16,13 @@ from pathlib import Path
 import jsonschema
 import pytest
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
+
 SCHEMA_DIR = Path(__file__).resolve().parents[1] / "schemas" / "v1"
 
 
 def _schema(name: str) -> dict:
-    return json.loads((SCHEMA_DIR / f"{name}.schema.json").read_text(encoding="utf-8"))
+    return json.loads(resolve_schema_path(name).read_text(encoding="utf-8"))
 
 
 _BASE_META = {

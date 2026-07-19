@@ -1,0 +1,3860 @@
+{
+  "receipt_schema": "loss-receipt-v2",
+  "projection": {
+    "id": "hf-clean-text-v2",
+    "generator": "build/tei/project_hf.py",
+    "generated_at": "2026-07-16T11:44:09.323199Z"
+  },
+  "ir": {
+    "path": "ir/spurgeon/spurgeon-mtp.proof-wave.tei.xml",
+    "sha256": "dfbbcd23a38e9234fda6c5832db92e3455c6ea81f6424d403bfe852e7bde8bf8"
+  },
+  "output": {
+    "path": "ir/spurgeon/hf/spurgeon-mtp.proof-wave.jsonl",
+    "sha256": "3170ffa9b4e56f9eafb77203f0b93f24677c6ab3e1e7ae56158b6a52a009a21d"
+  },
+  "totals": {
+    "addressable_nodes": 278,
+    "delivered": 229,
+    "normalized": 3,
+    "structural": 46,
+    "dropped": 0,
+    "empty": 0
+  },
+  "classes": {
+    "text": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 1,
+      "dropped": 0,
+      "empty": 0
+    },
+    "body": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 1,
+      "dropped": 0,
+      "empty": 0
+    },
+    "div": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 3,
+      "dropped": 0,
+      "empty": 0
+    },
+    "head": {
+      "delivered": 3,
+      "normalized": 0,
+      "structural": 0,
+      "dropped": 0,
+      "empty": 0
+    },
+    "quote": {
+      "delivered": 13,
+      "normalized": 0,
+      "structural": 0,
+      "dropped": 0,
+      "empty": 0
+    },
+    "p": {
+      "delivered": 213,
+      "normalized": 0,
+      "structural": 0,
+      "dropped": 0,
+      "empty": 0
+    },
+    "ref": {
+      "delivered": 0,
+      "normalized": 3,
+      "structural": 0,
+      "dropped": 0,
+      "empty": 0
+    },
+    "lb": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 31,
+      "dropped": 0,
+      "empty": 0
+    },
+    "list": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 5,
+      "dropped": 0,
+      "empty": 0
+    },
+    "item": {
+      "delivered": 0,
+      "normalized": 0,
+      "structural": 5,
+      "dropped": 0,
+      "empty": 0
+    }
+  },
+  "nodes": [
+    {
+      "address": "text[1]",
+      "element": "text",
+      "disposition": "structural",
+      "reason_code": "structural.text"
+    },
+    {
+      "address": "body[1]",
+      "element": "body",
+      "disposition": "structural",
+      "reason_code": "structural.body"
+    },
+    {
+      "address": "spurgeon-mtp-1",
+      "element": "div",
+      "disposition": "structural",
+      "reason_code": "structural.div"
+    },
+    {
+      "address": "spurgeon-mtp-1-head",
+      "element": "head",
+      "disposition": "delivered",
+      "canonical_text_sha256": "38f3a69574b1f43a2333dbb699778d2f1fd8f9386e6687aee16c48005d94af2e",
+      "canonical_text_length": 23,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "title_path",
+          "char_start": 0,
+          "char_end": 23,
+          "item_index": 1
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-1",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3b78ac1148826012a58f2b24387caf24a14f8ab197292a2dbe8b7dbbae08f7de",
+      "canonical_text_length": 88,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 88
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-1-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "9b215b078dfbc1e52e7db5f05a4cdcd9b797aed11feea8b2043b08ce8f0921dd",
+      "canonical_text_length": 76,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 76
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-1-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0f28329393c30cae5b54ec614f5f2bdf080bcb1fb1291c32847fca748738f7eb",
+      "canonical_text_length": 11,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 77,
+          "char_end": 88
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-1-p-2/ref[1]",
+      "element": "ref",
+      "disposition": "normalized",
+      "canonical_text_sha256": "0f28329393c30cae5b54ec614f5f2bdf080bcb1fb1291c32847fca748738f7eb",
+      "canonical_text_length": 11,
+      "reason_code": "normalize.ref.annotation-removed",
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 77,
+          "char_end": 88
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0daaa2b120f522e5af1c6f6637ff863ff169a12638a338b32b8eb0f8bdc39c7f",
+      "canonical_text_length": 682,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 90,
+          "char_end": 772
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "8a332581d6c963352716780d1d67229fe8fa7c073f3c3d21b7c4a7aca5d8f48f",
+      "canonical_text_length": 558,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 774,
+          "char_end": 1332
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-2",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6d62b4300edfd3dac81081340440101623887ac0d6ce152d9e77880118232333",
+      "canonical_text_length": 63,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 1334,
+          "char_end": 1397
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-2-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6d62b4300edfd3dac81081340440101623887ac0d6ce152d9e77880118232333",
+      "canonical_text_length": 63,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 1334,
+          "char_end": 1397
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-2-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-p-3",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a3ca357d49a1f0cdd4beb334818527474498976f946f1514e6008a57a6780ab3",
+      "canonical_text_length": 707,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 1399,
+          "char_end": 2106
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-4",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f1b5314b74d0918e00d1ba3d0c4cf444329078f9e88965febb465ec00260a60e",
+      "canonical_text_length": 643,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 2108,
+          "char_end": 2751
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-5",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2ea79ed65654d6395fafbc450ec1f6ed98b01beb913dfe10fd13c89881e15117",
+      "canonical_text_length": 470,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 2753,
+          "char_end": 3223
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-6",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "73064f640f6925a4b0ba654824dae1422ff2ba256612722e12b7cf50aed10673",
+      "canonical_text_length": 265,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 3225,
+          "char_end": 3490
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-list-1",
+      "element": "list",
+      "disposition": "structural",
+      "reason_code": "structural.list"
+    },
+    {
+      "address": "spurgeon-mtp-1-list-1-item-1",
+      "element": "item",
+      "disposition": "structural",
+      "reason_code": "structural.item"
+    },
+    {
+      "address": "spurgeon-mtp-1-list-1-item-1-p",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6a88d6c582bf0f3924bcf77a5fd65e7c389745ad406543e8354a55192d0b2631",
+      "canonical_text_length": 233,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 3492,
+          "char_end": 3725
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-7",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "e895d13359f0dca76f9ee10a7b2a26d0910de9b1ef86567b3a2f6b29e976accc",
+      "canonical_text_length": 805,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 3727,
+          "char_end": 4532
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-8",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3aceab6847c82f1760042aff39f1e8c6d3ee6c66a201df4ddaed836e06e77ac1",
+      "canonical_text_length": 597,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 4534,
+          "char_end": 5131
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-9",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4a3a40785f2c34f47a6157c3e095ee77a7a2e858440013c85bc312afa80e72b7",
+      "canonical_text_length": 694,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 5133,
+          "char_end": 5827
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-10",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b2990706552fd6fe20816c8cd54e899ae1f9a5a48e2088399a7a4b6c12cf98b1",
+      "canonical_text_length": 613,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 5829,
+          "char_end": 6442
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-11",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "15ff646c3ddaeebf8d5aca59102aba4c7ef93cc4fabc0bde112e845ad0d51ffe",
+      "canonical_text_length": 600,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 6444,
+          "char_end": 7044
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-12",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4f6a14d73b73a1920bd4ff5e4defc1e8c0a2d0e4f719bebebb6d808d6585e482",
+      "canonical_text_length": 556,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 7046,
+          "char_end": 7602
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-13",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "82c44c2089fd96a6041da462803c2b10cf95190b70f6dec666c533467f32fd59",
+      "canonical_text_length": 855,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 7604,
+          "char_end": 8459
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-14",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1e1c778d6d902aaa03abced359f266a902598a3913ea711541deb5b94028b148",
+      "canonical_text_length": 530,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 8461,
+          "char_end": 8991
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-15",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "24f14e3714faf6550db4e869f4db73f3aa73c9d898e06aa4478bd73b91cf5a8f",
+      "canonical_text_length": 558,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 8993,
+          "char_end": 9551
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-16",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "843f027a26887a683fa35fc80696e0809f2b4b137fb9da151de745cbe9648039",
+      "canonical_text_length": 711,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 9553,
+          "char_end": 10264
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-17",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5a35f652b7d4d4ba99fa0f510e04ebf16e5b69d16029f583a0b0d5862d269df1",
+      "canonical_text_length": 533,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 10266,
+          "char_end": 10799
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-3",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6e0b7f74ac69a196fc68a2f5e9d6b64472b4ac42fd375b5a5cace3317dc9a2aa",
+      "canonical_text_length": 126,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 10801,
+          "char_end": 10927
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-3-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6e0b7f74ac69a196fc68a2f5e9d6b64472b4ac42fd375b5a5cace3317dc9a2aa",
+      "canonical_text_length": 126,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 10801,
+          "char_end": 10927
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-3-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-3-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-3-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-p-18",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "d5a84e6a477075e10913afe0e8f55c897f1838aff3d57cf0fad481b4a6ac6ba2",
+      "canonical_text_length": 699,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 10929,
+          "char_end": 11628
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-19",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "600386786bd46e648da8a8d58fb137eb3d9447fc703306a019511a83dd2f6b3b",
+      "canonical_text_length": 741,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 11630,
+          "char_end": 12371
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-20",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "adae5311aafa90db10abf5ab2698cd5bb9f38fa155933501611ebd846e0582a6",
+      "canonical_text_length": 707,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 12373,
+          "char_end": 13080
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-21",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f8fd727cb8555b5b0ed7d3ae5bee22acf6be7ba55d8d2311815a88e686d0b469",
+      "canonical_text_length": 316,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 13082,
+          "char_end": 13398
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-22",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a6177fd626f8bbc355d345a1e5822b6c018bd9dd2fe4056b324d7aaff7ffd77c",
+      "canonical_text_length": 675,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 13400,
+          "char_end": 14075
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-23",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "763fe3b0b9aed838bc984cf7216e7bcc3fc61720d12d7138eff87c01a42e68cf",
+      "canonical_text_length": 571,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 14077,
+          "char_end": 14648
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-24",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "728f3c9947399cfcdd0df633d924ce86989ddd7ff28fc63c6ea02fb1025de8f8",
+      "canonical_text_length": 686,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 14650,
+          "char_end": 15336
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-25",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f8f4eddd2f587775384da658ba99ff08b27dab409c69451d577fa9bda46d020e",
+      "canonical_text_length": 201,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 15338,
+          "char_end": 15539
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-26",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c530b5407dc03e001942e9a5e5d85413c5e805ff2f23054bb82b43c666cab9ae",
+      "canonical_text_length": 155,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 15541,
+          "char_end": 15696
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-4",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b21999d76ed210fc18f5670b3bddba3247c7bd3644d3f4759cdf9a588af71fa7",
+      "canonical_text_length": 135,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 15698,
+          "char_end": 15833
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-4-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b21999d76ed210fc18f5670b3bddba3247c7bd3644d3f4759cdf9a588af71fa7",
+      "canonical_text_length": 135,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 15698,
+          "char_end": 15833
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-4-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-4-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-4-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-p-27",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0cedd60dd4aa6cceb5febf1d3834c228ea93efed2c65386a72ecf841842b6799",
+      "canonical_text_length": 365,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 15835,
+          "char_end": 16200
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-5",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "be35df71f51e96919ccf100e0a8cf28e9b49dedd8c29e6ab82ef56ca5a5a2873",
+      "canonical_text_length": 58,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 16202,
+          "char_end": 16260
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-5-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "be35df71f51e96919ccf100e0a8cf28e9b49dedd8c29e6ab82ef56ca5a5a2873",
+      "canonical_text_length": 58,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 16202,
+          "char_end": 16260
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-5-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-p-28",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "14cbc6baeca9978a48d2e64714dbe5f13358749be9ae6899a4c2310dfb7a9d89",
+      "canonical_text_length": 171,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 16262,
+          "char_end": 16433
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-list-2",
+      "element": "list",
+      "disposition": "structural",
+      "reason_code": "structural.list"
+    },
+    {
+      "address": "spurgeon-mtp-1-list-2-item-1",
+      "element": "item",
+      "disposition": "structural",
+      "reason_code": "structural.item"
+    },
+    {
+      "address": "spurgeon-mtp-1-list-2-item-1-p",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a4804fc5a6de53a2730028dbed1f48b84c31e998ec0b0ed428c1622f85558354",
+      "canonical_text_length": 779,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 16435,
+          "char_end": 17214
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-29",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "752459ce4290fca5e9cd12bc979b63ed301849c9498b6f6490af6779e5b1839b",
+      "canonical_text_length": 350,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 17216,
+          "char_end": 17566
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-30",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a913e069bbd18f694fbe6cf1c14f3cd116369390682554924cd79e2cea196002",
+      "canonical_text_length": 804,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 17568,
+          "char_end": 18372
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-31",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ed0a14b6c64c2e20d898cacf86e9335edbfe0838ee5c5bc0fd65a106f01ef9c6",
+      "canonical_text_length": 535,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 18374,
+          "char_end": 18909
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-32",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2ae097f92f87d8ec99cc95742f3fbffd113e8403074edf73e04a90824196c5ab",
+      "canonical_text_length": 417,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 18911,
+          "char_end": 19328
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-33",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "760bec0e0ca3ec00ee8742194f9cde3847bdff146c77ffd200414358f7f09370",
+      "canonical_text_length": 768,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 19330,
+          "char_end": 20098
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-34",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "77047ffcbbe4d2b3ff8e5fb8893965818bc99336436a34236bba447b2442ba3e",
+      "canonical_text_length": 587,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 20100,
+          "char_end": 20687
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-35",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "672203e2bd738c92597182475c18dc17f3b3c44028bd313718a4d8cae9df2983",
+      "canonical_text_length": 682,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 20689,
+          "char_end": 21371
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-36",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "7dac59d0d72844a1e6ed06774b8b39077a280a8c3a3af613bebfc1d2d1807ec2",
+      "canonical_text_length": 633,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 21373,
+          "char_end": 22006
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-37",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "9b70b1942792e40bc8d49b77ef7a9a1fa7dd173feb7800e197525a3bad899505",
+      "canonical_text_length": 358,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22008,
+          "char_end": 22366
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-38",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "810c6b191e6e6b24b91f2db0861fcb2730fa7b46a3778ab98ad024403b5dd490",
+      "canonical_text_length": 236,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22368,
+          "char_end": 22604
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-39",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5d822fd846b4c455e3031a07010b21a4f10a3454019047dadc975c927a2fadfe",
+      "canonical_text_length": 247,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22606,
+          "char_end": 22853
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-6",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "664fca9fb4b68606826903613c08ef32bb8b346aea3a328e4a2aca008679f59a",
+      "canonical_text_length": 123,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22855,
+          "char_end": 22978
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-6-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "664fca9fb4b68606826903613c08ef32bb8b346aea3a328e4a2aca008679f59a",
+      "canonical_text_length": 123,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22855,
+          "char_end": 22978
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-6-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-6-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-6-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-p-40",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "d13853b211c94d9f9a83bc78032cea414837bec7fc434b69c548dd30ae0b8a5d",
+      "canonical_text_length": 115,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 22980,
+          "char_end": 23095
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-41",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "aa6f78f12e65bb67c22d35bee0f22448a4111223599d1a5feff23fcd6eafc8e0",
+      "canonical_text_length": 707,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 23097,
+          "char_end": 23804
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-42",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1de8b45ff442610aea5aaaf5125b025967711592b0fc8bd0cf0feb658de400b0",
+      "canonical_text_length": 554,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 23806,
+          "char_end": 24360
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-43",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2728d5d53a1c376299d0fb49e2e548dcf57941aac0512a353d135ff014bc5c42",
+      "canonical_text_length": 270,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 24362,
+          "char_end": 24632
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-44",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f3e9dc5ccc4bb9172f9e9f72a8f1bf236f4b9299e67df891e0b04a825fec5586",
+      "canonical_text_length": 568,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 24634,
+          "char_end": 25202
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-45",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "822b4262ba2a1f7204653f68b9c22afcd975f638caeba431af488865b7c53764",
+      "canonical_text_length": 476,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 25204,
+          "char_end": 25680
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-46",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c2ae5c4e1b80b4fa2308e9d701cdc1a985d1eec68d230f708b39a0db1498be44",
+      "canonical_text_length": 529,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 25682,
+          "char_end": 26211
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-47",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f5e1b9a80f0022f28e64e9cf0700ba14050c0d8d6ec8ada40df55eb765e42e78",
+      "canonical_text_length": 573,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 26213,
+          "char_end": 26786
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-48",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a000b8f75fb3a0631f10503a07b0e44394151d4eef02aa11e4fda81a4f74d4fd",
+      "canonical_text_length": 545,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 26788,
+          "char_end": 27333
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-49",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "702e1774c2ddbeac4d69d66d60f1cd793dbd5b74c87fad58e9565f7389c8b9ee",
+      "canonical_text_length": 697,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 27335,
+          "char_end": 28032
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-50",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5da7102852b3d17b1f8b8fba5448cd1a402219da60f1a0955f15b8d1c317b0d7",
+      "canonical_text_length": 674,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 28034,
+          "char_end": 28708
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-51",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6528d8e0138e808f3275256e6009d3d1455e780a86dc629fedfb105a0fcdc516",
+      "canonical_text_length": 484,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 28710,
+          "char_end": 29194
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-52",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a11732e43385056551700fe862ef0f5f98bcec90ebeebdcf6a20893f8029bf36",
+      "canonical_text_length": 129,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 29196,
+          "char_end": 29325
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-53",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "cf2e5577cf6bf5ef707336e714905d4e51da59b254f02c8c2c59495326e47c34",
+      "canonical_text_length": 603,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 29327,
+          "char_end": 29930
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-54",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "fbc4efd275c0316932d673f63b341e860a36bc3005eedfb7f71a1bca29ffba37",
+      "canonical_text_length": 728,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 29932,
+          "char_end": 30660
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-55",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "89c171410581e3612c3ca3cc49df21f6a0cf44f81b24832427ad09d9dd5c7f26",
+      "canonical_text_length": 655,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 30662,
+          "char_end": 31317
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-56",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5e625701388c810477be306ac400cef6aa32d989433ba10ac268aeafeb4babc8",
+      "canonical_text_length": 806,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 31319,
+          "char_end": 32125
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-57",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "295bce2911a5c7c251497deb9e51bcbc1a811ef2cd2331cc62b8a44ee49bf9d5",
+      "canonical_text_length": 822,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 32127,
+          "char_end": 32949
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-58",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3daf4578a48d6975ca63a1e4142322c600d8156907ec119fbe76cb4c73c3855e",
+      "canonical_text_length": 247,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 32951,
+          "char_end": 33198
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-59",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1db4426915a1fe68c7dcfeaefc2f17dd48ff082a7626d0817dc2204fc804bee1",
+      "canonical_text_length": 614,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 33200,
+          "char_end": 33814
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-p-60",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ad5165ec4d24e593768c9f5559c741c175c4a7a4221a296935264ea0272b4980",
+      "canonical_text_length": 338,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 33816,
+          "char_end": 34154
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-7",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "63513439472dbe982b849d135a09bc576bd7da8f083db7f44272f94067ea15e4",
+      "canonical_text_length": 136,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 34156,
+          "char_end": 34292
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-7-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "63513439472dbe982b849d135a09bc576bd7da8f083db7f44272f94067ea15e4",
+      "canonical_text_length": 136,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-1",
+          "field": "text",
+          "char_start": 34156,
+          "char_end": 34292
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-7-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-7-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-1-quote-7-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15",
+      "element": "div",
+      "disposition": "structural",
+      "reason_code": "structural.div"
+    },
+    {
+      "address": "spurgeon-mtp-15-head",
+      "element": "head",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2af7acec2ddeedb8d2703e41809ef8096c4899cf108e1d161d25604c278dfdd5",
+      "canonical_text_length": 9,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "title_path",
+          "char_start": 0,
+          "char_end": 9,
+          "item_index": 1
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-1",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "61984cb3bf51faf4735e83693f3a7d6ff2b08ca59875545dd8a39c1e00f6a646",
+      "canonical_text_length": 104,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 104
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-1-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "16da4d6f08a1f3fc830ef90e04fb9656c94d14ff88d7d52c776c643123d508aa",
+      "canonical_text_length": 93,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 93
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-1-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "324f37e2f6fbec23d726b56a5deaf3272c0246930d2ff07b5853bf43d5dbbb91",
+      "canonical_text_length": 10,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 94,
+          "char_end": 104
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-1-p-2/ref[1]",
+      "element": "ref",
+      "disposition": "normalized",
+      "canonical_text_sha256": "324f37e2f6fbec23d726b56a5deaf3272c0246930d2ff07b5853bf43d5dbbb91",
+      "canonical_text_length": 10,
+      "reason_code": "normalize.ref.annotation-removed",
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 94,
+          "char_end": 104
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b08435f07a6b9e9a4388a432c5f526d0a3722b44e07c8ce4d7ab3c76307b76de",
+      "canonical_text_length": 709,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 106,
+          "char_end": 815
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0dc7cf37557ff5ab699acb6d5f23ed284bfd2d467f8e3a6b30547cbe543bc1e8",
+      "canonical_text_length": 650,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 817,
+          "char_end": 1467
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-3",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b23c0f36898c0c12e44ba88ee60bff49be38e32729846415957d4f740a820e65",
+      "canonical_text_length": 412,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 1469,
+          "char_end": 1881
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-4",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "e2862286bd2e01219a898550ae5716ac3ff526c0186efb84d06756a338f60184",
+      "canonical_text_length": 685,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 1883,
+          "char_end": 2568
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-5",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0595833c7baff9245c145632c6fd3d48fdbeb4a72cdc4fe979b0fd910ecb28e9",
+      "canonical_text_length": 519,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 2570,
+          "char_end": 3089
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-6",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5b29a4733bc31a151e86d000dad60d54c3dcc70d18ed68e1240a22486083cfa9",
+      "canonical_text_length": 392,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 3091,
+          "char_end": 3483
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-7",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "477367b714e00a5ea7bd7ff036356c7de178890a73892d9c9e20094eead7c627",
+      "canonical_text_length": 261,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 3485,
+          "char_end": 3746
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-8",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "23c20c9ce36c42f33deb8b385f68cc0e1f9e1a0509c3e10b7f966d38643a72e3",
+      "canonical_text_length": 620,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 3748,
+          "char_end": 4368
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-9",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a5c739f6f1684b479d3a191d63aa466788d90980874d4ba035a09b2c73e926a0",
+      "canonical_text_length": 613,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 4370,
+          "char_end": 4983
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-10",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2197b0b61333db90bd26c3559dccf891e4ff62bb79bdc5cbf1d1688265beeac1",
+      "canonical_text_length": 474,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 4985,
+          "char_end": 5459
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-11",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "99270e2c49d3081af8ca656dd315c03a9ab2e967dab69799d16f6dcdbac427b3",
+      "canonical_text_length": 567,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 5461,
+          "char_end": 6028
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-12",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f2574d6467a22c12f00a4170ab664dc7732cb6c29763541044a62a50c04b4df4",
+      "canonical_text_length": 564,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 6030,
+          "char_end": 6594
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-13",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "cd723c8160cd1ca9cae69ad0b79cd15ab44a1f9001ae5d3315ece1facb2402a1",
+      "canonical_text_length": 701,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 6596,
+          "char_end": 7297
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-14",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b641dea9fa463f206e25928ce8a12efb1a88bf7f116d6b18becb2613c3c7f610",
+      "canonical_text_length": 634,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 7299,
+          "char_end": 7933
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-15",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "250aaaef1b28f9c04f0cb13d6a410d434bce70f3d1851296cb4c62255b0f0bbe",
+      "canonical_text_length": 629,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 7935,
+          "char_end": 8564
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-16",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "bdcdf67d2d0bd3d2fba045cea90f2de9ddcd6d7ca99e1d8766ddeae7a363baa8",
+      "canonical_text_length": 610,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 8566,
+          "char_end": 9176
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-17",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3fae204015993daf58e7d844f02847020c439f0f37cbb9f2d293aa585c1a1dcc",
+      "canonical_text_length": 530,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 9178,
+          "char_end": 9708
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-18",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6509ac0a26dfe248088ac7d4b508d711ae0beae68d149a0644be46e44316749d",
+      "canonical_text_length": 546,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 9710,
+          "char_end": 10256
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-19",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "eaa5ee0adaf02a357db71778dbd22e0081793e4061eef9f524384ab4fe53bfde",
+      "canonical_text_length": 571,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 10258,
+          "char_end": 10829
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-20",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "12b09cea80dd7597d09788f887568fe9aca6bce159c6ee643ece68c5de3360a6",
+      "canonical_text_length": 367,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 10831,
+          "char_end": 11198
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-21",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "60975a13333ab43a679205f823fe1a6b80d35e04525c082cf782f549f78b41e1",
+      "canonical_text_length": 626,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 11200,
+          "char_end": 11826
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-22",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "549a737d7b2b9d764f746e32608ebe0551438a86815675d575215152a119caf7",
+      "canonical_text_length": 545,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 11828,
+          "char_end": 12373
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-23",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "300e1f53318b26866166f41a8d822204e1f78306507f6b5fd673709b44bf0ddd",
+      "canonical_text_length": 428,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 12375,
+          "char_end": 12803
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-24",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1cca0ceb67f1792d98fd348b325f02543fbbc05ac5b9db9df26c5343551f1598",
+      "canonical_text_length": 785,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 12805,
+          "char_end": 13590
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-25",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6de6ef7cfa6c58615240d95ba4e8c3cfdc9932f60c82f6b314cada2a0e8a96d4",
+      "canonical_text_length": 684,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 13592,
+          "char_end": 14276
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-26",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b517c688cab6026c9a745457d9820e513a5963748f52a09a72676000ac4d3c44",
+      "canonical_text_length": 615,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 14278,
+          "char_end": 14893
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-27",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f10e5c73a0211660cd2e9b8c24aa6c1fe8dcbba5b41dc895a7ddadc4f4789b47",
+      "canonical_text_length": 581,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 14895,
+          "char_end": 15476
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-28",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "af3a5ffce011b23a87b60dda8f957f91d8bf1c57b48bfc1f9a2aa82e1cd16fc0",
+      "canonical_text_length": 757,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 15478,
+          "char_end": 16235
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-29",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "132442ad64838534c598fddf2e0cd592b2a3fbd0756fbb8140f41f789964912b",
+      "canonical_text_length": 566,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 16237,
+          "char_end": 16803
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-30",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "8a122f3094a7d6b93100093725deea03465f81c777131fde3b41a919cbd30007",
+      "canonical_text_length": 324,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 16805,
+          "char_end": 17129
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-31",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f8e6ca845e8b507d74c6820c49252312b1e71cac5898fe9e8e4d1fe7b0bffe32",
+      "canonical_text_length": 644,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 17131,
+          "char_end": 17775
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-32",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a47359c4210bf088cffc35fb8d9e26ec4b717d629366fbf60ab77d4e19478c0b",
+      "canonical_text_length": 787,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 17777,
+          "char_end": 18564
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-33",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c70f77525e7e66af537972a8f1516ddd874bc6d874560e618601828c9294cb51",
+      "canonical_text_length": 635,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 18566,
+          "char_end": 19201
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-34",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "7bb8b50652d6d2652f5fa58aadee0f9c44c2250eba3a392fb3ae5afe85eb7b19",
+      "canonical_text_length": 371,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 19203,
+          "char_end": 19574
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-35",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "121f98ee99c52f1680955e92e0cc2261ae5098c37e03ab9ba8f2d47da8f2cd56",
+      "canonical_text_length": 452,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 19576,
+          "char_end": 20028
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-36",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6288bbb3857ad912ea195a198d765644a21bda2072b34390e8c3be1068de1b31",
+      "canonical_text_length": 474,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 20030,
+          "char_end": 20504
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-37",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "458194a84601c3f459ff61b75102ac46e411a5da12c590fba5205a2553a3ca21",
+      "canonical_text_length": 590,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 20506,
+          "char_end": 21096
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-38",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3e890866e215640153a0d629be33d43de5f4ca20454443979a650006577e9510",
+      "canonical_text_length": 1157,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 21098,
+          "char_end": 22255
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-39",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "7c0bbee1ae313997e79e759dec2f8d0c1a78e681436e4db3c4af4fef2102426b",
+      "canonical_text_length": 618,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 22257,
+          "char_end": 22875
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-40",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "bc68777202ac7c5f03ae0e636042c6eec4f582ae68b21557bd9ffab998f2bb67",
+      "canonical_text_length": 663,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 22877,
+          "char_end": 23540
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-41",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c412319ae9b981d4ba5c0e2ae0131c484d2b36b35537351d54aa21a2b5df9726",
+      "canonical_text_length": 506,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 23542,
+          "char_end": 24048
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-42",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "bf243fcc855f1b297ea53db3d0235892bf44b952082b5df593a67d474fbf9b6d",
+      "canonical_text_length": 734,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 24050,
+          "char_end": 24784
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-43",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "e7f65381a4098f10945c9eb62a1f73216c5c9f6344eb9920a5af7289363ca7c7",
+      "canonical_text_length": 525,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 24786,
+          "char_end": 25311
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-44",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "271d933715e65d393d9b88c4bd69a73e6bcfe401f229c97e0228c330f119dcf6",
+      "canonical_text_length": 191,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 25313,
+          "char_end": 25504
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3eba96e1ba4a3aa5357407fd06b744945f0f2a1d0250cbefc78344f23945bb08",
+      "canonical_text_length": 159,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 25506,
+          "char_end": 25665
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3eba96e1ba4a3aa5357407fd06b744945f0f2a1d0250cbefc78344f23945bb08",
+      "canonical_text_length": 159,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 25506,
+          "char_end": 25665
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-2-p-1/lb[4]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-p-45",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "43145d5a35756b650d2ee4b86aa8f6687933f668f8e6ee1bc20d1ddf199b9980",
+      "canonical_text_length": 495,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 25667,
+          "char_end": 26162
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-46",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "7f5e6765f2e2539e798b09b2c78eca3f0ea7fcdcaf38c6762eb188a028be43fd",
+      "canonical_text_length": 365,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26164,
+          "char_end": 26529
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-3",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "05d49f9c077c2856104f6148743eec0499941bbf9e96512c22e212f421b15c63",
+      "canonical_text_length": 63,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26531,
+          "char_end": 26594
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-3-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "05d49f9c077c2856104f6148743eec0499941bbf9e96512c22e212f421b15c63",
+      "canonical_text_length": 63,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26531,
+          "char_end": 26594
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-3-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-p-47",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5088d5f566365a47c1af9be3f0756969b86e55e05a2c3b4925d3569aff6bdb69",
+      "canonical_text_length": 127,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26596,
+          "char_end": 26723
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-4",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "31a237e8441a47e4b0fc37e4f7731f2b148dd4ab2ee5ca3107e80547b83f14a6",
+      "canonical_text_length": 49,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26725,
+          "char_end": 26774
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-4-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "31a237e8441a47e4b0fc37e4f7731f2b148dd4ab2ee5ca3107e80547b83f14a6",
+      "canonical_text_length": 49,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26725,
+          "char_end": 26774
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-4-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-p-48",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2e3a50004ed59af1afb95b3640654142d7c6710214ff3d78c8f00d2ef4c67292",
+      "canonical_text_length": 427,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 26776,
+          "char_end": 27203
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-49",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f470d15d459439cf41c3dbb7dea16a7762931b9d546ce2935261dcc748612fad",
+      "canonical_text_length": 388,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 27205,
+          "char_end": 27593
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-50",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6a635ae41aa7e3961557a27d954fcb367c05c9426f446b74d549566d89c3c45a",
+      "canonical_text_length": 493,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 27595,
+          "char_end": 28088
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-51",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "fc50d670ff6dbf2f4b38e58f99ca423418818964f3fd24047a65eb8294b4ff41",
+      "canonical_text_length": 533,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 28090,
+          "char_end": 28623
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-52",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "09185501a2ad52efb693ba2ba9d439cb7f7f0974034159588a3c005398b8d8c1",
+      "canonical_text_length": 536,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 28625,
+          "char_end": 29161
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-53",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "654f525ca4a1255ed5003dda66d4798c14839d732f529326bc9619e04d5c97e6",
+      "canonical_text_length": 614,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 29163,
+          "char_end": 29777
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-54",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "01e5e570e5de459547b020b0e4062eb5fd8b76f4cf01158e5f1cda2873fa9983",
+      "canonical_text_length": 196,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 29779,
+          "char_end": 29975
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-55",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "dfcf3a6c7a5f041ea5fb7427927d16e41d410512244c06e8b8148fd38559f4a0",
+      "canonical_text_length": 507,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 29977,
+          "char_end": 30484
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-56",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ce1e11a504740a31c9709c8ae090eff806689feccf49987691764f86cafe0bf8",
+      "canonical_text_length": 640,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 30486,
+          "char_end": 31126
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-57",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f7b4894100b102580a489879d3287a95e541bc254bb23d57d9e01711e969e898",
+      "canonical_text_length": 255,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 31128,
+          "char_end": 31383
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-58",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5cde6952103209483dd2d0864cb3c1db7ff4a3a5fffbf745ce9e96a59d5bd52d",
+      "canonical_text_length": 535,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 31385,
+          "char_end": 31920
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-59",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2ba77a1f52dfc0206d578d9102be1b6c7ed25df904cb6806851025b3fbe937b0",
+      "canonical_text_length": 626,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 31922,
+          "char_end": 32548
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-60",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b5ffd9d2b934fabe150d8fad8bca3972f228a5857fb85734d2fd4b1dc519e540",
+      "canonical_text_length": 220,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 32550,
+          "char_end": 32770
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-61",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ec35b53ff490ed181914ae156e127208e2893c44d399d46a559a1b79893c2c62",
+      "canonical_text_length": 676,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 32772,
+          "char_end": 33448
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-62",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "af02a9f0fb298d209724ab61e561941534ea514c0e79af5f45d13faa0f05960e",
+      "canonical_text_length": 548,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 33450,
+          "char_end": 33998
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-63",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "aef5e741285a74e708b1beae5b9202a4130af9abbaf57787ad7621a3e4e3dc44",
+      "canonical_text_length": 544,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 34000,
+          "char_end": 34544
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-64",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1ccb399f585fde1317572f9a818872c78019de5e05311373a2722fd179abe64c",
+      "canonical_text_length": 446,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 34546,
+          "char_end": 34992
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-65",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "564fecab0b67ee24f11bec8526704e383c6f74074fba7549066d5e77a62f7f48",
+      "canonical_text_length": 256,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 34994,
+          "char_end": 35250
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-p-66",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "148be01e5f4f8e70cb794327e95c93f2da50f44cf55105be3b268d9227dc4cc7",
+      "canonical_text_length": 24,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 35252,
+          "char_end": 35276
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "22d03d11beb428ccf51f95f6a7c8ee0a062e04bb60e7544c41af25805e1aadbd",
+      "canonical_text_length": 488,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 35278,
+          "char_end": 35766
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "22d03d11beb428ccf51f95f6a7c8ee0a062e04bb60e7544c41af25805e1aadbd",
+      "canonical_text_length": 488,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-15",
+          "field": "text",
+          "char_start": 35278,
+          "char_end": 35766
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[1]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[2]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[3]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[4]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[5]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[6]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[7]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[8]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[9]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[10]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-15-quote-5-p-1/lb[11]",
+      "element": "lb",
+      "disposition": "structural",
+      "reason_code": "structural.lb"
+    },
+    {
+      "address": "spurgeon-mtp-317",
+      "element": "div",
+      "disposition": "structural",
+      "reason_code": "structural.div"
+    },
+    {
+      "address": "spurgeon-mtp-317-head",
+      "element": "head",
+      "disposition": "delivered",
+      "canonical_text_sha256": "bb11a66b9e4ee4ff4fc8aaade800806f807c3bb8df0cbc051ed05b4ce129a845",
+      "canonical_text_length": 24,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "title_path",
+          "char_start": 0,
+          "char_end": 24,
+          "item_index": 1
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-quote-1",
+      "element": "quote",
+      "disposition": "delivered",
+      "canonical_text_sha256": "02354c324143de87db9e357b44f86bd3b223d791d41be50230575977ac2c54d7",
+      "canonical_text_length": 93,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 93
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-quote-1-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "5b79c8e125a7a987fc1956f48761092ea12aae72441dccc50d8d04773ab0a6fa",
+      "canonical_text_length": 83,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 0,
+          "char_end": 83
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-quote-1-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "d6e8b2c0976acee1bb2af1330c37a4277632fc990305cf8919c1b3e4efe91ecf",
+      "canonical_text_length": 9,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 84,
+          "char_end": 93
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-quote-1-p-2/ref[1]",
+      "element": "ref",
+      "disposition": "normalized",
+      "canonical_text_sha256": "d6e8b2c0976acee1bb2af1330c37a4277632fc990305cf8919c1b3e4efe91ecf",
+      "canonical_text_length": 9,
+      "reason_code": "normalize.ref.annotation-removed",
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 84,
+          "char_end": 93
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-1",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "44d10cacb5bd1ceea51240ef99b868acbdffd0737d754534723db780bb28537a",
+      "canonical_text_length": 749,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 95,
+          "char_end": 844
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-2",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "094424745f241101d8c4f26cdbe503d85154ec48b7911eb995d613c70526cafc",
+      "canonical_text_length": 811,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 846,
+          "char_end": 1657
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-3",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "80c9a0a691673e240e56da30118e5472c5c6ef800eb59eb62495e4268ddff1d2",
+      "canonical_text_length": 400,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 1659,
+          "char_end": 2059
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-list-1",
+      "element": "list",
+      "disposition": "structural",
+      "reason_code": "structural.list"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-1-item-1",
+      "element": "item",
+      "disposition": "structural",
+      "reason_code": "structural.item"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-1-item-1-p",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "666ee0679d3b5225d4bfadda76642cf14d3015fb961181a7ebd47bffdfb8a5df",
+      "canonical_text_length": 105,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 2061,
+          "char_end": 2166
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-4",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "fe9a0212305757b5dd99b94bdf19680f3ef4545e777a3db01d645fbff7110406",
+      "canonical_text_length": 882,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 2168,
+          "char_end": 3050
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-5",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "e7cfca9d66dcd95af0647176997ab99bdbcb4637a6720b0d81e2a5bbdf9e7f56",
+      "canonical_text_length": 542,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 3052,
+          "char_end": 3594
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-6",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "43571a0ae375a34e39c3d9c0d6625db55d655f530e06a2e90e0c6d666e78df7f",
+      "canonical_text_length": 717,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 3596,
+          "char_end": 4313
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-7",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4332ea52a7607ba6becac68ac7936053be94c66b896785eb9b4864ba28f722f7",
+      "canonical_text_length": 489,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 4315,
+          "char_end": 4804
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-8",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "bb0e45028a2a6e4fe9780da6455099a050c1784b3e43ce9282e0f15106f17b50",
+      "canonical_text_length": 593,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 4806,
+          "char_end": 5399
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-9",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "52da3c6f88b615c50445ccb0c137bddab71969bc0b6c6faca9276f037762190b",
+      "canonical_text_length": 406,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 5401,
+          "char_end": 5807
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-10",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4fa2e73df9df60f3cf2a53730ff486391acb7a531a8f0e3f1143b52d137fb470",
+      "canonical_text_length": 782,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 5809,
+          "char_end": 6591
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-11",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f42e5c61dff01a062cc1cbcd33b400e6024548619ac5601ba6979de55fdc76fe",
+      "canonical_text_length": 716,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 6593,
+          "char_end": 7309
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-12",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "9f9e2cbf25ab453c8b9610f19cbd0a5dd5ef8b0772336321d1178f7d3c17a8b0",
+      "canonical_text_length": 644,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 7311,
+          "char_end": 7955
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-13",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "acd0de956235343544f45e7a6f18d9a6024b3d6256d8113e5043d9e42908a155",
+      "canonical_text_length": 746,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 7957,
+          "char_end": 8703
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-14",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a35238258c3950a1cacf421e0a8ec2d813d636d5dcabb4da44dd42f3017d1c8b",
+      "canonical_text_length": 721,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 8705,
+          "char_end": 9426
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-15",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "d4fa2dbe3d12f91cb0064acbe523e186c053c77978701de31636af37f70cd402",
+      "canonical_text_length": 838,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 9428,
+          "char_end": 10266
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-16",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2e87a21fe3ab008ae96bb3dfe43512eb4174b2f31399ae7bede164b794e2a530",
+      "canonical_text_length": 638,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 10268,
+          "char_end": 10906
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-17",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "986e96729b38f4c99ece134b8df13477117adcb1efea3b1cbff2f849177e9689",
+      "canonical_text_length": 963,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 10908,
+          "char_end": 11871
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-18",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "07235df80ca748aa9095e1fdb069700db4d7b1f7910156a85b99330006f78d39",
+      "canonical_text_length": 819,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 11873,
+          "char_end": 12692
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-19",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "0f42153a3b9227bee222537470f96e2b1c53474518db04ec033c98f287afba60",
+      "canonical_text_length": 806,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 12694,
+          "char_end": 13500
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-20",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "99e145e5adca0e1694c04a8757589d4838eb69aae3d8ba440138bc2c111ea66e",
+      "canonical_text_length": 351,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 13502,
+          "char_end": 13853
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-21",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4eaf3dde473b7dfd21d0a7e02f02b35ced3e16d3122c25c507a4c6c0eae8e218",
+      "canonical_text_length": 576,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 13855,
+          "char_end": 14431
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-22",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b0abd903b5d77c12ee39bd37e40d1ff280839ed34a5f1b4886042cf91aa3557a",
+      "canonical_text_length": 496,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 14433,
+          "char_end": 14929
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-23",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "aff3a62e1395666bc50187f4c69da2e99a0760d51c35c7898a52814194cad5de",
+      "canonical_text_length": 608,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 14931,
+          "char_end": 15539
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-24",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "912af2afdb2a3f342b8283e09d303f0cc894597e76fc89a8ceb06c1676b783bd",
+      "canonical_text_length": 550,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 15541,
+          "char_end": 16091
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-25",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ad5595014f4fef1f6794544b02d672a069b43def88e588b1be2edda170d78b9d",
+      "canonical_text_length": 737,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 16093,
+          "char_end": 16830
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-26",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "33e2673778a0c78d1a6305261e8ff116ddf1279f23a31d71decbfc795b2fa433",
+      "canonical_text_length": 583,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 16832,
+          "char_end": 17415
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-27",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "2bb82eac4a5c4495f029154cd67c4147f9056c33eee8d23154dee0e641a16c02",
+      "canonical_text_length": 625,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 17417,
+          "char_end": 18042
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-28",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "7ee6dbbafecbb7a8888db6eb3c1268572e26ff8bdd1d0e24e86bb041f0ea00ae",
+      "canonical_text_length": 842,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 18044,
+          "char_end": 18886
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-29",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "619ee38908e4380fb551db4b7a335fdd44317166072f6cbc07ebbd7fc1e23b6a",
+      "canonical_text_length": 1007,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 18888,
+          "char_end": 19895
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-30",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "060c3c110656b8949024a4d7a3d1df962838f9886be8c14c70f030f3caaa6a58",
+      "canonical_text_length": 984,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 19897,
+          "char_end": 20881
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-31",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "e282b1b1dcae4486a756aee9be9962f0af7fbdd74a1478232cb986c61288192c",
+      "canonical_text_length": 650,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 20883,
+          "char_end": 21533
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-32",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "93bbcc30926d68ef1d975f02c2c333a532b98012755cbef9df67ddf918d58def",
+      "canonical_text_length": 837,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 21535,
+          "char_end": 22372
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-33",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "fdeac5bf5ca2a1622276a5a4a8c5f21e27cc8674a4341ad1afd4273a2ed07037",
+      "canonical_text_length": 719,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 22374,
+          "char_end": 23093
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-34",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b005e8e0e7be2ebd228f477bc99583daea9927c311fc33720e8ee14ebe146b97",
+      "canonical_text_length": 800,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 23095,
+          "char_end": 23895
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-35",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a3eeeec4e80f1255293a9e4cf11945938946a15e16a93fcd88ebda74a28f4b64",
+      "canonical_text_length": 553,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 23897,
+          "char_end": 24450
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-36",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "86fa871b51a9c936d3a1da5e3e4fee35f304ba7a750215765bf293de138309f8",
+      "canonical_text_length": 166,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 24452,
+          "char_end": 24618
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-37",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "25db50ab29a416ec4d4af3f60b19b5beb1a8ca12883a5989647cc39b24d18b74",
+      "canonical_text_length": 669,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 24620,
+          "char_end": 25289
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-38",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "4d706bb7552f970f1ed26e0bb967cb3a02f27bebd8469a22b1976c93d4705305",
+      "canonical_text_length": 598,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 25291,
+          "char_end": 25889
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-39",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b29c3c313399926fc57d3e8b22b009c050bde130e4ed4b2a2c6f7b4b3732a58b",
+      "canonical_text_length": 528,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 25891,
+          "char_end": 26419
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-40",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "63864c5ec89246b5f3debf5d2d2b90a4574a28870734ad24788135defd51b0f8",
+      "canonical_text_length": 541,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 26421,
+          "char_end": 26962
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-41",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "96181706ec4466403473acd05c05c1c667ce063c9fc6f59637f38758a8149ef7",
+      "canonical_text_length": 636,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 26964,
+          "char_end": 27600
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-42",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "088e9aaac93072baa59854e28d0ea3cb1ecb1f21a8b5e81766761f0cbcc955c9",
+      "canonical_text_length": 542,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 27602,
+          "char_end": 28144
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-43",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "829e38fb17ae9a9b52ddb393d086a5eff3ceea311f282e5402d7106fb154acdb",
+      "canonical_text_length": 644,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 28146,
+          "char_end": 28790
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-44",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "ddc7241b6202af5e599342f08bd8b60d6053cb117aa8d48e5d36192b27915d5b",
+      "canonical_text_length": 540,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 28792,
+          "char_end": 29332
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-45",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3710f5278baabb757ca86b594a3b52525e5d4a60791e9aa98d6350922584990f",
+      "canonical_text_length": 865,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 29334,
+          "char_end": 30199
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-46",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "3bf928d68dfce5f7374176d692fd541b41284179d903897e03ef3b37091e19fc",
+      "canonical_text_length": 838,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 30201,
+          "char_end": 31039
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-47",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "34e46d5fce6167c5a3cb34018b473031c0bbcb6db104158bef17ba5c9d7c0cfc",
+      "canonical_text_length": 834,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 31041,
+          "char_end": 31875
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-48",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "1a7dee991cf0cd7dd2656c04556c601a7999e6147908b0e89d75386e3bf16619",
+      "canonical_text_length": 144,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 31877,
+          "char_end": 32021
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-49",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "cf839f2691e6c193883b8e9a51288cd39f05b77516010a760cf499b56b4d0abc",
+      "canonical_text_length": 150,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 32023,
+          "char_end": 32173
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-50",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "428b22737fbb4ef46d190e7ec6874695e4d149bf17f55da7bf6f55672755d5cf",
+      "canonical_text_length": 498,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 32175,
+          "char_end": 32673
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-51",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c77c18bd94e357fd25d3d35f45f8d81edaebf2beac60df2ab46dc03b7056319f",
+      "canonical_text_length": 513,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 32675,
+          "char_end": 33188
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-52",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "397677227947625677d7bfa81f8d98be4b0c6acb07935a9481b705ca973d8f28",
+      "canonical_text_length": 553,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 33190,
+          "char_end": 33743
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-53",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "289445b7dd38ae4931e4e833ecfb8e67c7ccf75efd0091fd1d4d7eba98676a98",
+      "canonical_text_length": 750,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 33745,
+          "char_end": 34495
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-54",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "90f411bfeda2002c73b525b798bdcc83d0add027e29ac9eebed95ec1a29b5a05",
+      "canonical_text_length": 689,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 34497,
+          "char_end": 35186
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-55",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "48ae3b726ffb3641f6344c78d98719ba615a9e8b3fff61023c6a49f6fc6cd729",
+      "canonical_text_length": 861,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 35188,
+          "char_end": 36049
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-56",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "24d8332bc5e18e13f722fb7da6cec38202a033bebf0bc8382d5c2ab2707e1a90",
+      "canonical_text_length": 775,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 36051,
+          "char_end": 36826
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-57",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "8ea2d53d4dfbb02782204ac0d02254303d20c73389b8f63a76bd5f9d66c2c424",
+      "canonical_text_length": 692,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 36828,
+          "char_end": 37520
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-58",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "a4e201d27a7028d3acb3c36ae6f2534e17af1dfee83666e068fe775052e7dfbd",
+      "canonical_text_length": 589,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 37522,
+          "char_end": 38111
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-59",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "f944b2fd8caf6892ea301b6759bf48c730be84414120fb74aab083c2c17d4862",
+      "canonical_text_length": 296,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 38113,
+          "char_end": 38409
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-60",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "994e14044c3ded57ae5a4810da61fa67b1687ccc54683355a96c4510e7e391c0",
+      "canonical_text_length": 824,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 38411,
+          "char_end": 39235
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-61",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "c4e064ee67738cb597088757725e9190189877e5e9ae9476ae9b3a3ce4f1b068",
+      "canonical_text_length": 780,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 39237,
+          "char_end": 40017
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-62",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "93f368ecabfabcc8d0af6ed0ca0cbb765a4ea710c983e1638153f2320121ad86",
+      "canonical_text_length": 1000,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 40019,
+          "char_end": 41019
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-63",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "8da2f44bdf4e6d6ca8f026dc9cc4541f4078a175140820ed267a7b9d5694631f",
+      "canonical_text_length": 63,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 41021,
+          "char_end": 41084
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-64",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "6018ef3a7c47934c7e84641a0cfef8cc74d0fa87d9cc09774dd12d7b0733178f",
+      "canonical_text_length": 723,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 41086,
+          "char_end": 41809
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-65",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "743afa55877757ec1912ad19e7b740438d34d5bb2dc8d15dad1e6af7eef03a26",
+      "canonical_text_length": 271,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 41811,
+          "char_end": 42082
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-66",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "14bf35ede03320bfa2e7c25babdb9c4363ed6c77f81dfea2c0340d6d141d3419",
+      "canonical_text_length": 21,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 42084,
+          "char_end": 42105
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-list-2",
+      "element": "list",
+      "disposition": "structural",
+      "reason_code": "structural.list"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-2-item-1",
+      "element": "item",
+      "disposition": "structural",
+      "reason_code": "structural.item"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-2-item-1-list-1",
+      "element": "list",
+      "disposition": "structural",
+      "reason_code": "structural.list"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-2-item-1-list-1-item-1",
+      "element": "item",
+      "disposition": "structural",
+      "reason_code": "structural.item"
+    },
+    {
+      "address": "spurgeon-mtp-317-list-2-item-1-list-1-item-1-p",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "d600ca8b639f6b7cc8b364661bd60de79a4a97a053bbf6f8e520148b23c3dbd5",
+      "canonical_text_length": 8,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 42107,
+          "char_end": 42115
+        }
+      ]
+    },
+    {
+      "address": "spurgeon-mtp-317-p-67",
+      "element": "p",
+      "disposition": "delivered",
+      "canonical_text_sha256": "b16adb0f6f61ef34b1de3f045b29b6fcbdf357b02ea8a35a9aa291a15e11be83",
+      "canonical_text_length": 33,
+      "targets": [
+        {
+          "record_id": "spurgeon-mtp/proof-wave/spurgeon-mtp-317",
+          "field": "text",
+          "char_start": 42117,
+          "char_end": 42150
+        }
+      ]
+    }
+  ]
+}

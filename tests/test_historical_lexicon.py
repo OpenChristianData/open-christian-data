@@ -5,7 +5,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.historical_lexicon import scan_historical_variants  # noqa: E402
+from ocd_kernel.lib.historical_lexicon import scan_historical_variants  # noqa: E402
 from build.lib.review_warnings import collect_review_warnings  # noqa: E402
 from build.tools.render_review_html import render_commentary_html  # noqa: E402
 

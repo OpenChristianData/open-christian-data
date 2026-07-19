@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "5fa99b7cdcd344c98877458f1cd22e8c",
+  "started_at": "2026-07-16T02:11:29.091740+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/jeremiah.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/jeremiah.json": {
+      "before_sha256": "cae4ab9016606c3886aa23429fe3d8c79374d8b12ee4e070aaf8b98ab61aa987",
+      "after_sha256": "35480e361e88bfeed7a9a1001b75155cd38958c2b0267cf7746b667a7b34d7b5"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/jeremiah.json": {
+      "entries_changed": 1337,
+      "fields_changed": 5718
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

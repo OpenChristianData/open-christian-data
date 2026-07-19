@@ -19,6 +19,10 @@
   "source_format": "SWORD zCom (BlockType=BOOK, CompressType=ZIP, SourceType=ThML)",
   "source_edition": "CrossWire SWORD module v1.1 (2001-11-28), based on Sulu Kelley and Bill Brown electronic edition",
   "versification": "KJV",
-  "coverage": "Full Bible (OT + NT)",
-  "notes": "Wesley died 1791 -- text is public domain in all jurisdictions. OT Notes first published 1765, NT Notes first published 1754. The electronic text was prepared by Sulu Kelley and Bill Brown with ThML markup added by the CrossWire team."
+  "coverage": "64 books (OT + NT; 1 Kings and Philemon absent from the CrossWire module)",
+  "known_coverage_gaps": [
+    "1 Kings and Philemon -- the CrossWire module returns no text at any verse position"
+  ],
+  "expected_book_osis": ["Gen", "Exod", "Lev", "Num", "Deut", "Josh", "Judg", "Ruth", "1Sam", "2Sam", "2Kgs", "1Chr", "2Chr", "Ezra", "Neh", "Esth", "Job", "Ps", "Prov", "Eccl", "Song", "Isa", "Jer", "Lam", "Ezek", "Dan", "Hos", "Joel", "Amos", "Obad", "Jonah", "Mic", "Nah", "Hab", "Zeph", "Hag", "Zech", "Mal", "Matt", "Mark", "Luke", "John", "Acts", "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col", "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev"],
+  "notes": "Wesley died 1791 -- text is public domain in all jurisdictions. OT Notes first published 1765, NT Notes first published 1754. The electronic text was prepared by Sulu Kelley and Bill Brown with ThML markup added by the CrossWire team. The SWORD module has no content for 1 Kings or Philemon; those intentional gaps are excluded from expected_book_osis."
 }

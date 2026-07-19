@@ -27,7 +27,7 @@ Evidence:
 - `plans/2026-05-26-precleaning-architecture-comparison.md:31` says every shipped word must be `consensus | llm_resolved | maintainer_reviewed`.
 - `docs/adr/0014-composed-readings.md:15-22` allows machine-composed readings with character provenance and L1-L3 derivation levels.
 - `docs/adr/0014-composed-readings.md:34` changes the falsifiable gate to "zero tokens lacking character provenance".
-- `docs/DESIGN_BRIEF_gold_free_corrector.md:34-40` requires L0-L3 and per-character provenance, but the brief asserts auditability rather than proving equivalence to whole-word attestation.
+- `../EzraOCR/docs/DESIGN_BRIEF_gold_free_corrector.md:34-40` requires L0-L3 and per-character provenance, but the brief asserts auditability rather than proving equivalence to whole-word attestation.
 
 Proposed amendment:
 
@@ -79,7 +79,7 @@ Failure chain:
 Evidence:
 
 - `build/lib/wct_builder.py:23-34` says WCT does alignment and candidate grouping only, with no truth choice, no LM/context scoring, and correction downstream.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:175-180` says character-column voting, lexicality rescoring, LM rescoring, and active-learning selection were not built before the 2026-06-05 direction.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:175-180` says character-column voting, lexicality rescoring, LM rescoring, and active-learning selection were not built before the 2026-06-05 direction.
 - `build/lib/s3_reconciler.py:163-170` picks `_best_candidate` by attesting families, attesting engines, then candidate id.
 - `build/lib/s3_reconciler.py:248-331` chooses `chosen["raw_reading"]`, classifies disputes, writes a reviewer queue entry, and records match explanations with total score 0.0.
 - `build/lib/s3_reconciler.py:403-405` fail-closes on region-class stamps and no premature matrix labels, not character provenance.
@@ -106,8 +106,8 @@ Failure chain:
 Evidence:
 
 - `docs/adr/0014-composed-readings.md:31` says protected classes route to human review regardless of level.
-- `docs/DESIGN_BRIEF_gold_free_corrector.md:41-50` makes real-word-error rate first-class and routes protected classes away from unflagged publication.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:184-190` says lexical filtering concentrates real-word-error danger and that protected classes are the reservoir.
+- `../EzraOCR/docs/DESIGN_BRIEF_gold_free_corrector.md:41-50` makes real-word-error rate first-class and routes protected classes away from unflagged publication.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:184-190` says lexical filtering concentrates real-word-error danger and that protected classes are the reservoir.
 - `build/lib/s3_reconciler.py:105-135` assigns region class from Greek/Hebrew script, Latin/German high-confidence override, block hint, or zone type.
 - `build/lib/s3_reconciler.py:260-331` routes positions on pending region class or candidate dispute, not on proper-name, number, date, or Scripture-reference detection.
 
@@ -133,8 +133,8 @@ Evidence:
 
 - `docs/adr/0014-composed-readings.md:22` sets publication policy by surrogate-measured false-correction rate per level.
 - `docs/adr/0015-surrogate-as-validator.md:13` measures per-method and per-level false-correction, coverage, and real-word-error rate.
-- `docs/DESIGN_BRIEF_gold_free_corrector.md:41-50` defines real-word-error rate and says tiers above threshold are flagged or routed.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:186-190` says the last fraction of a percent is the dangerous class and that protected classes are the reservoir.
+- `../EzraOCR/docs/DESIGN_BRIEF_gold_free_corrector.md:41-50` defines real-word-error rate and says tiers above threshold are flagged or routed.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:186-190` says the last fraction of a percent is the dangerous class and that protected classes are the reservoir.
 - `docs/adr/0013-reconcile-scoring-and-n2-tie-breaker.md:136-142` uses calibration gates and cross-type fixtures when distributions may differ; ADR-0014/0015 do not specify an equivalent stratified gate.
 
 Proposed amendment:
@@ -159,9 +159,9 @@ Failure chain:
 Evidence:
 
 - `docs/adr/0015-surrogate-as-validator.md:13` sets the auto-accept threshold near 0.1%.
-- `docs/DESIGN_BRIEF_gold_free_corrector.md:47-50` repeats the same threshold and says above-threshold tiers are flagged or routed.
+- `../EzraOCR/docs/DESIGN_BRIEF_gold_free_corrector.md:47-50` repeats the same threshold and says above-threshold tiers are flagged or routed.
 - Programmatic check in this review: `ceil(log(0.05) / log(0.999)) = 2995`, so zero errors need about 2,995 observations for a 95% upper bound below 0.1%.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:42-44` says multi-column encyclopedia layout ground truth does not exist and a Schaff-Herzog-specific gold sample is unavoidable.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:42-44` says multi-column encyclopedia layout ground truth does not exist and a Schaff-Herzog-specific gold sample is unavoidable.
 
 Proposed amendment:
 
@@ -185,8 +185,8 @@ Evidence:
 
 - `docs/adr/0015-surrogate-as-validator.md:9` argues the Jewish Encyclopedia is non-circular and same-edition.
 - `docs/adr/0015-surrogate-as-validator.md:15` bans a per-text reference at runtime.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:15-26` says engine behaviour differs across scripts and confidence-weighted voting needs calibration.
-- `docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:42-44` says a Schaff-Herzog-specific gold sample is unavoidable.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:15-26` says engine behaviour differs across scripts and confidence-weighted voting needs calibration.
+- `../EzraOCR/docs/OCR_RESEARCH_SYNTHESIS_2026-05-31.md:42-44` says a Schaff-Herzog-specific gold sample is unavoidable.
 - `plans/2026-05-26-precleaning-architecture-comparison.md:33` says Schaff-Herzog bibliographies contain Latin, German, Hebrew, and Greek transliterations, and language ID affects confusion-table choice.
 
 Proposed amendment:

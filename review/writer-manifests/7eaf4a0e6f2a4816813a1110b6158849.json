@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "7eaf4a0e6f2a4816813a1110b6158849",
+  "started_at": "2026-07-16T02:11:31.936523+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/philippians.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/philippians.json": {
+      "before_sha256": "ceb06e7decf9a408a17fe9994b47ee247dffff0b341eae00467ba998a7d9ac93",
+      "after_sha256": "7af62730430e7920c183baf0775ee23521889bad1e6b8106b26dd3dd3cc782b2"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/philippians.json": {
+      "entries_changed": 103,
+      "fields_changed": 486
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

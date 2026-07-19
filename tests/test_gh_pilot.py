@@ -23,7 +23,7 @@ import unicodedata
 import pytest
 
 from build.lib import gh_pilot
-from build.lib.schema_enums import get_enum
+from ocd_kernel.lib.schema_enums import get_enum
 
 
 # Readable forms in comments; escapes are authoritative so the diacritics survive.

@@ -1,6 +1,6 @@
 # Schaff-Herzog OCR Pipeline — Architecture Context Map
 
-> **For current NSH pipeline state, read `docs/NSH_PROJECT_STATE.md` (the anchor doc) first.** This
+> **For current NSH pipeline state, read `../EzraOCR/docs/NSH_PROJECT_STATE.md` (the anchor doc) first.** This
 > file is the **arch1–arch9 reading-order map only** — it explains what each design document is and
 > the order to read them. Its "Where we are" / "Next step" sections are dated 2026-05-28 and are
 > stale (the build is complete and the frontier is now the gold-free corrector); the anchor doc's
@@ -18,12 +18,12 @@ Most documents below live in `plans/` and `prompts/` (gitignored working-copy de
 
 ## Where we are
 
-> **2026-06-05 update:** current direction is in `docs/BUILD_ROADMAP_2026-06-05.md` (gold-free corrector stack, cross-architect design, JE surrogate) and `docs/PIPELINE_BUILD_STATE.md` (real built-state). The text below is the 2026-05-28 design map, kept for the arch1–arch9 reading order.
+> **2026-06-05 update:** current direction is in `../EzraOCR/docs/BUILD_ROADMAP_2026-06-05.md` (gold-free corrector stack, cross-architect design, JE surrogate) and `../EzraOCR/docs/PIPELINE_BUILD_STATE.md` (real built-state). The text below is the 2026-05-28 design map, kept for the arch1–arch9 reading order.
 
-**Build complete.** All batches B0–B17 landed — chain terminus `df212439`/`98bbec19` (2026-05-31). The **10-page vol_01 run is also complete** (2026-06-02). See `docs/MEASUREMENT_FINDINGS_vol01_10page.md` for M0–M3 results. M2/M3 headline rates are circular (CCEL-vs-agreement conditioned); see `docs/MEASUREMENT_REFERENCE_OPTIONS.md` for the non-circular path. M0 (single-best baseline) and family-independence results are now interpretable.
+**Build complete.** All batches B0–B17 landed — chain terminus `df212439`/`98bbec19` (2026-05-31). The **10-page vol_01 run is also complete** (2026-06-02). See `../EzraOCR/docs/MEASUREMENT_FINDINGS_vol01_10page.md` for M0–M3 results. M2/M3 headline rates are circular (CCEL-vs-agreement conditioned); see `../EzraOCR/docs/MEASUREMENT_REFERENCE_OPTIONS.md` for the non-circular path. M0 (single-best baseline) and family-independence results are now interpretable.
 
 Open work (as of 2026-06-03):
-- **Human adjudication** — ~300–500 disagreement-queue positions; lifts the tuning embargo. Scope in `docs/MEASUREMENT_REFERENCE_OPTIONS.md`.
+- **Human adjudication** — ~300–500 disagreement-queue positions; lifts the tuning embargo. Scope in `../EzraOCR/docs/MEASUREMENT_REFERENCE_OPTIONS.md`.
 - **OCR speed optimisation DONE** (2026-06-03, commit `5c89aea1`): Tesseract PSM=3 + batch subprocess; Kraken max-width 1800 + batch subprocess. A clean validation run on idle machine is recommended before relying on the committed timing figures (warm-process bias present in benchmarks).
 - **B2.5 data work** — Azure OCR + ABBYY multi-source downloads still pending (independent; prompts in `prompts/`).
 - **Vol 5/6/13 mid-volume gap investigation** — no prompt written yet; read `CLAUDE.local.md` "Known data quirks" for the cascade renumbering rule before starting.

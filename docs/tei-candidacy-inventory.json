@@ -1,0 +1,791 @@
+{
+  "inventory_schema": "tei-candidacy-inventory-v1",
+  "generated_date": "2026-07-16",
+  "classification_vocabulary": [
+    "tei-now",
+    "tei-later",
+    "json-native",
+    "correction-only",
+    "do-not-migrate",
+    "unknown"
+  ],
+  "scope": "Production dataset parsers, source configs, dataset envelopes, and TEI/census artifacts in this repository. The EzraOCR NSH pipeline is excluded.",
+  "excluded_parsers": [
+    {
+      "path": "build/parsers/_framework.py",
+      "reason": "Shared parser helpers; it emits no dataset family."
+    },
+    {
+      "path": "build/parsers/ia_schaff_herzog_census.py",
+      "reason": "Read-only source census helper; it emits no production dataset envelope."
+    }
+  ],
+  "excluded_source_configs": [
+    {
+      "path_glob": "sources/local-ocr/schaff/config.json",
+      "reason": "NSH OCR rendering configuration owned by the sibling EzraOCR repository."
+    }
+  ],
+  "excluded_data_outputs": [
+    {
+      "path_glob": "data/reference/schaff/encyclopedia/1908-1914/**/*.json",
+      "reason": "NSH OCR renderings are EzraOCR scope, not production dataset-family candidates in this inventory."
+    }
+  ],
+  "entries": [
+    {
+      "id": "ccel-thml",
+      "label": "CCEL ThML works",
+      "classification": "tei-now",
+      "tei_status": "proven-partial",
+      "proof_works": [
+        "city-of-god.ccel-npnf102",
+        "athanasius-on-the-incarnation.ccel-npnf204",
+        "owen-mortification.ccel-owen-mort",
+        "gregory-of-nyssa-against-eunomius.ccel-npnf205",
+        "gregory-of-nyssa-on-the-soul-and-resurrection.ccel-npnf205"
+      ],
+      "parsers": [
+        "build/parsers/ccel_anf.py",
+        "build/parsers/ccel_boethius_tractates.py",
+        "build/parsers/ccel_church_history.py",
+        "build/parsers/ccel_creeds_of_christendom.py",
+        "build/parsers/ccel_devotional.py",
+        "build/parsers/ccel_evangelical_holiness.py",
+        "build/parsers/ccel_expositors_bible.py",
+        "build/parsers/ccel_hodge_systematic.py",
+        "build/parsers/ccel_npnf1.py",
+        "build/parsers/ccel_npnf2.py",
+        "build/parsers/ccel_owen_works.py",
+        "build/parsers/ccel_puritan_works.py",
+        "build/parsers/ccel_robertson_word_pictures.py",
+        "build/parsers/ccel_schaff_hcc.py",
+        "build/parsers/ccel_schaff_herzog.py",
+        "build/parsers/ccel_sermon.py",
+        "build/parsers/ccel_whitefield_sermon.py"
+      ],
+      "data_globs": [
+        "data/structured-text/*.json",
+        "data/commentaries/expositors-bible/*.json",
+        "data/commentaries/robertson-word-pictures-vol1/*.json",
+        "data/devotionals/spurgeons-morning-evening/*.json",
+        "data/sermons/george-whitefield-sermons.json",
+        "data/sermons/john-wesley-sermons.json"
+      ],
+      "data_exclude_globs": [
+        "data/structured-text/bcp-*.json",
+        "data/structured-text/augustines-confessions.json",
+        "data/structured-text/calvins-institutes.json",
+        "data/structured-text/carey-enquiry.json",
+        "data/structured-text/charnock-existence-attributes-vol-*.json",
+        "data/structured-text/donne-devotions-upon-emergent-occasions.json",
+        "data/structured-text/drummond-*.json",
+        "data/structured-text/luther-bondage-of-the-will.json",
+        "data/structured-text/luther-commentary-on-galatians.json",
+        "data/structured-text/luthers-large-catechism.json",
+        "data/structured-text/murray-humility.json",
+        "data/structured-text/newman-apologia-pro-vita-sua.json",
+        "data/structured-text/strong-systematic-theology-vol-*.json",
+        "data/structured-text/taylor-holy-*.json",
+        "data/structured-text/wilberforce-practical-view.json",
+        "data/structured-text/brooks-precious-remedies.json",
+        "data/structured-text/burroughs-rare-jewel-contentment.json",
+        "data/structured-text/dabney-systematic-theology.json",
+        "data/structured-text/gurnall-complete-armour.json",
+        "data/structured-text/hooker-ecclesiastical-polity.json",
+        "data/structured-text/machen-*.json",
+        "data/structured-text/miley-systematic-theology-vol-*.json",
+        "data/structured-text/murray-abide-in-christ.json",
+        "data/structured-text/murray-with-christ-in-prayer.json",
+        "data/structured-text/pink-sovereignty-of-god.json",
+        "data/structured-text/shedd-dogmatic-theology-vol-*.json",
+        "data/structured-text/sibbes-bruised-reed.json",
+        "data/structured-text/smith-christians-secret-happy-life.json",
+        "data/structured-text/spurgeon-all-of-grace.json",
+        "data/structured-text/spurgeon-lectures-to-my-students.json",
+        "data/structured-text/torrey-*.json",
+        "data/structured-text/city-of-god.json",
+        "data/structured-text/heretics.json",
+        "data/structured-text/imitation-of-christ.json",
+        "data/structured-text/orthodoxy.json",
+        "data/structured-text/paradise-lost.json",
+        "data/structured-text/pilgrims-progress.json",
+        "data/structured-text/practical-mysticism.json",
+        "data/structured-text/the-everlasting-man.json",
+        "data/structured-text/fisher-marrow-of-modern-divinity.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/**/config.json",
+          "field_in": {
+            "source_format": ["ThML XML", "CCEL ThML XML"]
+          },
+          "field_contains": {
+            "source_url": ["ccel.org"]
+          }
+        },
+        {
+          "path_glob": "sources/commentaries/expositors-bible/config.json",
+          "field_in": {
+            "source_format": ["CCEL ThML XML"]
+          },
+          "field_contains": {
+            "source_base_url": ["ccel.org"]
+          }
+        }
+      ],
+      "ir_globs": ["ir/augustine/*ccel*.tei.xml", "ir/ccel/*.tei.xml"],
+      "census_globs": [
+        "ir/census/city-of-god.ccel-*.census.json",
+        "ir/census/athanasius-*.census.json",
+        "ir/census/owen-*.census.json",
+        "ir/census/gregory-of-nyssa-*.census.json"
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#1--ccel-thml",
+        "build/tei/ccel_work_configs.json",
+        "ir/ccel/athanasius-on-the-incarnation.ccel-npnf204.tei.xml",
+        "ir/ccel/owen-mortification.ccel-owen-mort.tei.xml",
+        "ir/ccel/gregory-of-nyssa-against-eunomius.ccel-npnf205.tei.xml",
+        "ir/ccel/gregory-of-nyssa-on-the-soul-and-resurrection.ccel-npnf205.tei.xml"
+      ],
+      "priority": 1,
+      "owning_batch": "04",
+      "notes": "The converter is proven on five selected renderings, not on the 216 dataset source configs referencing ccel.org (full-text count, 2026-07-15). Footnotes, page breaks, emphasis, language spans, tables, and other apparatus justify per-work migration from raw ThML."
+    },
+    {
+      "id": "standard-ebooks-xhtml",
+      "label": "Standard Ebooks XHTML",
+      "classification": "tei-now",
+      "tei_status": "proven-partial",
+      "proof_works": [
+        "city-of-god.standard-ebooks",
+        "pilgrims-progress.standard-ebooks",
+        "imitation-of-christ.standard-ebooks"
+      ],
+      "parsers": ["build/parsers/standard_ebooks.py"],
+      "data_globs": [
+        "data/sermons/george-macdonald-unspoken-sermons.json",
+        "data/structured-text/city-of-god.json",
+        "data/structured-text/heretics.json",
+        "data/structured-text/imitation-of-christ.json",
+        "data/structured-text/orthodoxy.json",
+        "data/structured-text/paradise-lost.json",
+        "data/structured-text/pilgrims-progress.json",
+        "data/structured-text/practical-mysticism.json",
+        "data/structured-text/the-everlasting-man.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/standard-ebooks/*/config.json",
+          "field_in": {"source_format": ["XHTML"]}
+        }
+      ],
+      "ir_globs": [
+        "ir/augustine/*standard-ebooks*.tei.xml",
+        "ir/bunyan/*standard-ebooks*.tei.xml",
+        "ir/kempis/*standard-ebooks*.tei.xml"
+      ],
+      "census_globs": [
+        "ir/census/city-of-god.standard-ebooks.census.json",
+        "ir/census/pilgrims-progress.standard-ebooks.census.json",
+        "ir/census/imitation-of-christ.standard-ebooks.census.json"
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#2--standard-ebooks",
+        "build/tei/se_to_tei.py",
+        "ir/augustine/city-of-god.standard-ebooks.tei.xml",
+        "ir/bunyan/pilgrims-progress.standard-ebooks.tei.xml",
+        "ir/kempis/imitation-of-christ.standard-ebooks.tei.xml",
+        "ir/census/pilgrims-progress.standard-ebooks.census.json",
+        "ir/census/imitation-of-christ.standard-ebooks.census.json"
+      ],
+      "priority": 2,
+      "owning_batch": "05",
+      "notes": "City of God, Bunyan, and Kempis prove nested sections, endnotes, bridgeheads, verse/song/poem blocks, lists, front/back matter, and semantic inline markup. The other six XHTML configs are deferred pending separate scope decisions and gates."
+    },
+    {
+      "id": "bcp-liturgy",
+      "label": "Book of Common Prayer HTML",
+      "classification": "tei-now",
+      "tei_status": "proven-partial",
+      "proof_works": [
+        "book-of-common-prayer.bcp-1549",
+        "book-of-common-prayer.bcp-1559",
+        "book-of-common-prayer.bcp-1662",
+        "book-of-common-prayer.bcp-1928-collects"
+      ],
+      "parsers": [
+        "build/parsers/bcp1662.py",
+        "build/parsers/bcp1928.py",
+        "build/parsers/bcp_full_text.py"
+      ],
+      "config_rules": [
+        {"path_glob": "sources/prayers/bcp-*-collects/config.json"},
+        {"path_glob": "sources/structured-text/bcp-*/config.json"}
+      ],
+      "data_globs": ["data/prayers/bcp-*/*.json", "data/structured-text/bcp-*.json"],
+      "ir_globs": ["ir/bcp/*.tei.xml"],
+      "census_globs": ["ir/census/book-of-common-prayer.*.census.json"],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#9--anglican-liturgy",
+        "docs/FIDELITY_CONTRACT.md#class-anglican-liturgy-book-of-common-prayer-html-154915591662-full-text--1928-collects",
+        "ir/bcp/book-of-common-prayer.bcp-1662.tei.xml"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "All current BCP renderings have proof artifacts, but the status remains proven/partial rather than a family-wide completeness claim. Publication still uses legacy JSON, and cutover is blocked by projection-ledger false-accounting, lost speaker roles, wrong 1662 collect nesting, and false translator metadata."
+    },
+    {
+      "id": "gutenberg-clean-text",
+      "label": "Project Gutenberg clean text",
+      "classification": "tei-later",
+      "parsers": [
+        "build/parsers/gutenberg_anglican.py",
+        "build/parsers/gutenberg_catechisms.py",
+        "build/parsers/gutenberg_commentary.py",
+        "build/parsers/gutenberg_evangelical.py",
+        "build/parsers/gutenberg_maclaren.py",
+        "build/parsers/gutenberg_puritan.py",
+        "build/parsers/gutenberg_sermons.py",
+        "build/parsers/gutenberg_systematics.py",
+        "build/parsers/gutenberg_theology.py"
+      ],
+      "data_globs": [
+        "data/catechisms/baltimore-catechism-no-*.json",
+        "data/catechisms/luthers-small-catechism.json",
+        "data/commentaries/lightfoot-colossians-philemon/*.json",
+        "data/prayers/andrewes-private-devotions/prayers.json",
+        "data/sermons/maclaren-expositions.json",
+        "data/structured-text/augustines-confessions.json",
+        "data/structured-text/calvins-institutes.json",
+        "data/structured-text/carey-enquiry.json",
+        "data/structured-text/charnock-existence-attributes-vol-*.json",
+        "data/structured-text/donne-devotions-upon-emergent-occasions.json",
+        "data/structured-text/drummond-*.json",
+        "data/structured-text/luther-bondage-of-the-will.json",
+        "data/structured-text/luther-commentary-on-galatians.json",
+        "data/structured-text/luthers-large-catechism.json",
+        "data/structured-text/murray-humility.json",
+        "data/structured-text/newman-apologia-pro-vita-sua.json",
+        "data/structured-text/strong-systematic-theology-vol-*.json",
+        "data/structured-text/taylor-holy-*.json",
+        "data/structured-text/wilberforce-practical-view.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/**/config.json",
+          "field_in": {"source_type": ["pg", "gutenberg_txt", "project_gutenberg"]}
+        },
+        {
+          "path_glob": "sources/**/config.json",
+          "field_contains": {"source_url": ["gutenberg.org"]}
+        },
+        {
+          "path_glob": "sources/prayers/andrewes-private-devotions/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/luther-bondage-of-the-will/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/taylor-holy-*/config.json"
+        }
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#5--gutenberg-plain-text",
+        "build/parsers/gutenberg_theology.py",
+        "build/tei/gutenberg_to_tei.py",
+        "sources/structured-text/augustine-confessions/config.json",
+        "ir/calvin/calvins-institutes.gutenberg.tei.xml",
+        "ir/census/calvins-institutes.gutenberg.census.json"
+      ],
+      "priority": 5,
+      "owning_batch": "05",
+      "proof_works": ["calvins-institutes.gutenberg"],
+      "ir_globs": ["ir/calvin/calvins-institutes.gutenberg.tei.xml"],
+      "census_globs": ["ir/census/calvins-institutes.gutenberg.census.json"],
+      "notes": "Calvin's two-volume rendering proves a bounded TEI path for true underscore emphasis, front matter, and explicit Project Gutenberg work boundaries. The apparatus is per-volume: Vol. I has 2,016 sequential parenthetical refs resolving to its 2,016 note bodies; Vol. II has 1,489 refs resolving to 1,490 note bodies, leaving one body unreferenced. Confessions pg3296 is apparatus-free for this purpose and Luther's Large Catechism pg1722 is too low-yield; other marked works remain deferred pending per-work census."
+    },
+    {
+      "id": "ia-ocr-general",
+      "label": "Internet Archive OCR through general text parsers",
+      "classification": "tei-later",
+      "parsers": [
+        "build/parsers/ccel_pdf_commentary.py",
+        "build/parsers/gutenberg_anglican.py",
+        "build/parsers/gutenberg_catechisms.py",
+        "build/parsers/gutenberg_commentary.py",
+        "build/parsers/gutenberg_evangelical.py",
+        "build/parsers/gutenberg_maclaren.py",
+        "build/parsers/gutenberg_puritan.py",
+        "build/parsers/gutenberg_sermons.py",
+        "build/parsers/gutenberg_systematics.py",
+        "build/parsers/gutenberg_theology.py"
+      ],
+      "data_globs": [
+        "data/catechisms/aa-hodge-outlines.json",
+        "data/commentaries/treasury-of-david/psalms.json",
+        "data/sermons/luther-lenker-sermons.json",
+        "data/sermons/newman-parochial-sermons.json",
+        "data/structured-text/brooks-precious-remedies.json",
+        "data/structured-text/burroughs-rare-jewel-contentment.json",
+        "data/structured-text/dabney-systematic-theology.json",
+        "data/structured-text/gurnall-complete-armour.json",
+        "data/structured-text/hooker-ecclesiastical-polity.json",
+        "data/structured-text/machen-*.json",
+        "data/structured-text/miley-systematic-theology-vol-*.json",
+        "data/structured-text/murray-abide-in-christ.json",
+        "data/structured-text/murray-with-christ-in-prayer.json",
+        "data/structured-text/pink-sovereignty-of-god.json",
+        "data/structured-text/shedd-dogmatic-theology-vol-*.json",
+        "data/structured-text/sibbes-bruised-reed.json",
+        "data/structured-text/smith-christians-secret-happy-life.json",
+        "data/structured-text/spurgeon-all-of-grace.json",
+        "data/structured-text/spurgeon-lectures-to-my-students.json",
+        "data/structured-text/torrey-*.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/**/config.json",
+          "exclude_paths": [
+            "sources/structured-text/fisher-marrow-of-modern-divinity/config.json",
+            "sources/reference/hastings-dictionary-of-the-bible/config.json",
+            "sources/reference/schaff-herzog-encyclopedia/config.json"
+          ],
+          "field_in": {
+            "source_type": ["ia", "ia_djvutxt", "ia_ocr_txt", "ia_multi", "internet_archive_djvu"]
+          }
+        },
+        {
+          "path_glob": "sources/**/config.json",
+          "exclude_paths": [
+            "sources/structured-text/fisher-marrow-of-modern-divinity/config.json",
+            "sources/reference/hastings-dictionary-of-the-bible/config.json",
+            "sources/reference/schaff-herzog-encyclopedia/config.json"
+          ],
+          "field_contains": {"source_url": ["archive.org"]}
+        },
+        {
+          "path_glob": "sources/**/config.json",
+          "exclude_paths": [
+            "sources/structured-text/fisher-marrow-of-modern-divinity/config.json",
+            "sources/reference/hastings-dictionary-of-the-bible/config.json",
+            "sources/reference/schaff-herzog-encyclopedia/config.json"
+          ],
+          "field_contains": {"source_base_url": ["archive.org"]}
+        }
+      ],
+      "evidence": [
+        "docs/IA_BATCH06_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#6--internet-archive-ocr",
+        "research/MANIFEST.md#status-key",
+        "build/parsers/ccel_pdf_commentary.py"
+      ],
+      "priority": 7,
+      "owning_batch": "06",
+      "notes": "Batch 06 evidence-only: 10 general text/PDF parser routes are heterogeneous and no family-wide raw count is valid. Census and ingest work-by-work. Preserve raw OCR without inventing correction quality; English prose and Greek/Hebrew-heavy works retain the MANIFEST quality split."
+    },
+    {
+      "id": "ia-fisher-marrow",
+      "label": "Fisher Marrow of Modern Divinity IA OCR",
+      "classification": "tei-now",
+      "parsers": ["build/parsers/ia_fisher_marrow.py"],
+      "data_globs": ["data/structured-text/fisher-marrow-of-modern-divinity.json"],
+      "ir_globs": ["ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml"],
+      "census_globs": ["ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json"],
+      "config_rules": [
+        {"path_glob": "sources/structured-text/fisher-marrow-of-modern-divinity/config.json"}
+      ],
+      "evidence": [
+        "docs/IA_BATCH06_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#6--internet-archive-ocr--ia_fisher_marrow--marrow-of-modern-divinity",
+        "build/parsers/ia_fisher_marrow.py",
+        "build/tei/ia_fisher_marrow_to_tei.py",
+        "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml",
+        "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl",
+        "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt"
+      ],
+      "priority": 3,
+      "owning_batch": "06",
+      "notes": "Raw-to-TEI migration is complete for the bounded Fisher witness. The census records 2 parts, 4 chapters, 8 commandments, 41 structural sections, 6 synopsis lines, 455 high-confidence dialogue labels, 0 Greek/Hebrew code points, and 0 page breaks; RelaxNG and the projection loss ledger pass, with the campaign-wide caveat that a ledger PASS alone does not prove text delivery. The existing structured-text JSON remains a downstream legacy projection, not conversion input."
+    },
+    {
+      "id": "ia-hastings-dictionary",
+      "label": "Hastings Dictionary IA OCR",
+      "classification": "tei-later",
+      "parsers": ["build/parsers/ia_hastings_dictionary.py"],
+      "data_globs": ["data/reference/hastings-dictionary-of-the-bible.json"],
+      "config_rules": [
+        {"path_glob": "sources/reference/hastings-dictionary-of-the-bible/config.json"}
+      ],
+      "evidence": [
+        "docs/IA_BATCH06_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#4--headword-reference",
+        "build/parsers/ia_hastings_dictionary.py",
+        "raw/ia/hastings-dictionary/DictionaryOfTheBibleV1_djvu.txt"
+      ],
+      "priority": 8,
+      "owning_batch": "06",
+      "notes": "Batch 06 evidence-only: the source config names 5 raw volume files. The downstream output has 2,512 entries and 835 See/See-also links across 479 entries, while OCR Bible-reference extraction remains absent. A later headword TEI census should precede migration; do not claim richer OCR apparatus than the plain text carries."
+    },
+    {
+      "id": "ia-schaff-herzog-legacy",
+      "label": "Legacy Schaff-Herzog IA combined route",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/ia_schaff_herzog.py"],
+      "data_globs": ["data/reference/schaff-herzog-encyclopedia.json"],
+      "config_rules": [
+        {"path_glob": "sources/reference/schaff-herzog-encyclopedia/config.json"}
+      ],
+      "evidence": [
+        "docs/IA_BATCH06_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#6b--internet-archive-ocr--ia_abbyy--local_schaff_tesseract--ia_schaff_herzog--nsh-ocr-family",
+        "build/parsers/ia_schaff_herzog.py",
+        "data/reference/schaff-herzog-encyclopedia.json"
+      ],
+      "priority": 0,
+      "owning_batch": "06",
+      "notes": "Batch 06 evidence-only and do-not-migrate: the legacy combined reference JSON has 8,351 entries but is a frozen superseded route. NSH rendering artifacts are excluded from this repository and belong to EzraOCR."
+    },
+    {
+      "id": "catholic-encyclopedia-html",
+      "label": "Catholic Encyclopedia HTML",
+      "classification": "tei-later",
+      "parsers": ["build/parsers/catholic_encyclopedia.py"],
+      "data_globs": ["data/reference/catholic-encyclopedia-vol*.json"],
+      "config_rules": [
+        {"path_glob": "sources/reference/catholic-encyclopedia/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#4--headword-reference",
+        "build/parsers/catholic_encyclopedia.py",
+        "data/reference/catholic-encyclopedia-vol01.json"
+      ],
+      "priority": 10,
+      "owning_batch": "08",
+      "notes": "The JSON correction recovered scripture and explicit related links. A later HTML census may justify TEI for inline/link apparatus, but current evidence does not outrank CCEL, XHTML, or Fisher."
+    },
+    {
+      "id": "bible-dictionaries-jsonl",
+      "label": "Bible dictionary JSONL",
+      "classification": "correction-only",
+      "parsers": ["build/parsers/bible_dictionaries.py"],
+      "data_globs": [
+        "data/reference/eastons-bible-dictionary.json",
+        "data/reference/hitchcocks-bible-names-dictionary.json",
+        "data/reference/smiths-bible-dictionary.json",
+        "data/reference/torreys-topical-textbook.json"
+      ],
+      "config_rules": [],
+      "evidence": [
+        "build/parsers/bible_dictionaries.py",
+        "raw/bible_dictionaries/eastons.jsonl",
+        "docs/FORMAT_STATE_MAP.md#4--headword-reference"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The cached JSONL is already headword plus definition text. Hard-coded empty scripture_references and related_terms are parser-audit targets, not evidence that TEI would recover source structure."
+    },
+    {
+      "id": "sword-commentary",
+      "label": "SWORD commentary modules",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/sword_commentary.py"],
+      "data_globs": [
+        "data/commentaries/barnes/*.json",
+        "data/commentaries/calvin/*.json",
+        "data/commentaries/wesley/*.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/commentaries/*/config.json",
+          "field_contains": {"source_format": ["SWORD zCom"]}
+        }
+      ],
+      "evidence": [
+        "docs/SWORD_BATCH07_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#7--sword-modules",
+        "build/parsers/sword_commentary.py",
+        "sources/commentaries/calvin/config.json"
+      ],
+      "priority": 0,
+      "owning_batch": "07",
+      "notes": "Confirmed downstream zCom projections. Calvin's acquired CCEL component XML belongs in the CCEL queue; Barnes and Wesley upstream routes are identified but not acquired. Do not build TEI from the binaries. See docs/SWORD_BATCH07_EVIDENCE.md."
+    },
+    {
+      "id": "sword-devotional",
+      "label": "SWORD Daily Light devotional",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/sword_devotional.py"],
+      "data_globs": ["data/devotionals/daily-light/*.json"],
+      "config_rules": [
+        {
+          "path_glob": "sources/devotionals/daily-light/config.json",
+          "field_contains": {"source_format": ["SWORD rawLD"]}
+        }
+      ],
+      "evidence": [
+        "docs/SWORD_BATCH07_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#7--sword-modules",
+        "raw/sword_modules/Daily/mods.d/daily.conf",
+        "build/parsers/sword_devotional.py",
+        "sources/devotionals/daily-light/config.json"
+      ],
+      "priority": 0,
+      "owning_batch": "07",
+      "notes": "Confirmed rawLD downstream projection. The module metadata names only a site-level TextSource; no edition-matched Daily Light upstream artifact is acquired. See docs/SWORD_BATCH07_EVIDENCE.md."
+    },
+    {
+      "id": "sword-naves-topical",
+      "label": "SWORD Nave topical module",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/naves_topical.py"],
+      "data_globs": ["data/topical-reference/naves/*.json"],
+      "config_rules": [],
+      "evidence": [
+        "docs/SWORD_BATCH07_EVIDENCE.md",
+        "raw/naves_topical/mods.d/nave.conf",
+        "build/parsers/naves_topical.py",
+        "data/topical-reference/naves/naves-topical-bible.json",
+        "docs/FORMAT_STATE_MAP.md#7--sword-modules"
+      ],
+      "priority": 0,
+      "owning_batch": "07",
+      "notes": "Confirmed zLD downstream projection. The module names the CCEL Nave XML route, but that upstream is not acquired; any future IR must start from the hash-pinned upstream XML, not Nave.zip. See docs/SWORD_BATCH07_EVIDENCE.md."
+    },
+    {
+      "id": "versified-bible-json",
+      "label": "Scrollmapper-shaped versified Bible JSON",
+      "classification": "json-native",
+      "parsers": [
+        "build/parsers/bible_text_translations.py",
+        "build/parsers/bsb_bible_text.py"
+      ],
+      "data_globs": ["data/bible-text/*/*.json"],
+      "config_rules": [
+        {"path_glob": "sources/bible-text/*/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#8--versified-bible",
+        "build/parsers/bible_text_translations.py",
+        "raw/bible_databases/formats/json/KJV.json"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The flat OSIS/verse/text list is a lossless representation of the equally flat upstream JSON. TEI would recover no fidelity; a future tagged Bible source would be a separate rendering decision."
+    },
+    {
+      "id": "creeds-json",
+      "label": "Creeds.json catechism and confession",
+      "classification": "json-native",
+      "parsers": [
+        "build/parsers/creeds_json_catechism.py",
+        "build/parsers/creeds_json_confession.py",
+        "build/parsers/wsc_parser.py"
+      ],
+      "data_globs": [
+        "data/catechisms/*.json",
+        "data/doctrinal-documents/*.json"
+      ],
+      "data_exclude_globs": [
+        "data/catechisms/aa-hodge-outlines.json",
+        "data/catechisms/baltimore-catechism-no-*.json",
+        "data/catechisms/luthers-small-catechism.json",
+        "data/doctrinal-documents/directory-for-*.json",
+        "data/doctrinal-documents/form-of-church-government.json",
+        "data/doctrinal-documents/schleitheim-confession-1527.json",
+        "data/doctrinal-documents/solemn-league-and-covenant.json",
+        "data/doctrinal-documents/sum-of-saving-knowledge.json"
+      ],
+      "config_rules": [
+        {"path_glob": "sources/catechisms/westminster-shorter-catechism/config.json"},
+        {"path_glob": "sources/doctrinal-documents/westminster-confession-of-faith/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#3--pre-structured-json",
+        "build/parsers/creeds_json_catechism.py",
+        "raw/Creeds.json/creeds"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The source already declares question/answer or document structure in JSON. Prior defects were metadata corrections, not representational loss."
+    },
+    {
+      "id": "westminster-html",
+      "label": "Westminster Standards HTML",
+      "classification": "unknown",
+      "parsers": ["build/parsers/westminster_standard_parser.py"],
+      "data_globs": [
+        "data/doctrinal-documents/directory-for-*.json",
+        "data/doctrinal-documents/form-of-church-government.json",
+        "data/doctrinal-documents/solemn-league-and-covenant.json",
+        "data/doctrinal-documents/sum-of-saving-knowledge.json"
+      ],
+      "config_rules": [
+        {"path_glob": "sources/doctrinal-documents/directory-for-*/config.json"},
+        {"path_glob": "sources/doctrinal-documents/form-of-church-government/config.json"},
+        {"path_glob": "sources/doctrinal-documents/solemn-league-and-covenant/config.json"},
+        {"path_glob": "sources/doctrinal-documents/sum-of-saving-knowledge/config.json"}
+      ],
+      "evidence": [
+        "build/parsers/westminster_standard_parser.py",
+        "build/scrapers/westminster_standard_org.py",
+        "docs/BATCH08_EVIDENCE.md",
+        "data/doctrinal-documents/directory-for-publick-worship.json",
+        "sources/doctrinal-documents/directory-for-publick-worship/config.json"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "Five of six canonical pages were acquired and hash-pinned on 2026-07-16; each exactly reproduces its current parser output. Directory for Publick Worship remained intermittently denied and could not be pinned, and no complete six-page inline/structural census exists. Keep unknown pending that witness and census. This HTML route is distinct from the Creeds.json confession route."
+    },
+    {
+      "id": "helloao-commentary-json",
+      "label": "HelloAO commentary JSON API",
+      "classification": "json-native",
+      "parsers": ["build/parsers/helloao_commentary.py"],
+      "data_globs": [
+        "data/commentaries/adam-clarke/*.json",
+        "data/commentaries/jamieson-fausset-brown/*.json",
+        "data/commentaries/john-gill/*.json",
+        "data/commentaries/keil-delitzsch/*.json",
+        "data/commentaries/matthew-henry/*.json"
+      ],
+      "config_rules": [
+        {
+          "path_glob": "sources/commentaries/*/config.json",
+          "field_contains": {"source_base_url": ["bible.helloao.org"]}
+        }
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#3--pre-structured-json",
+        "build/parsers/helloao_commentary.py",
+        "raw/helloao_local"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The API is already verse-keyed structured JSON and maps directly to the commentary records."
+    },
+    {
+      "id": "church-fathers-toml",
+      "label": "HistoricalChristianFaith commentary TOML",
+      "classification": "json-native",
+      "parsers": ["build/parsers/church_fathers.py"],
+      "data_globs": ["data/church-fathers/*.json"],
+      "config_rules": [],
+      "evidence": [
+        "build/parsers/church_fathers.py",
+        "raw/Commentaries-Database",
+        "data/church-fathers/augustine-of-hippo.json"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "Each upstream TOML commentary block is already a flat quotation keyed to a Bible reference with source attribution; JSON preserves that source grain."
+    },
+    {
+      "id": "hymnary-csv",
+      "label": "Hymnary public-domain CSV",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/hymnary_pd.py"],
+      "config_rules": [
+        {"path_glob": "sources/hymns/hymnary-pd/config.json"}
+      ],
+      "data_globs": ["data/hymns/hymnary-pd/*.json"],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#10--misc-single-source--hymnary_pd-csv--didache-wikitext",
+        "build/parsers/hymnary_pd.py",
+        "raw/hymnary-pd"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The metadata table has no nested textual apparatus for TEI to preserve; the flat JSON is lossless for the CSV columns."
+    },
+    {
+      "id": "didache-prayer-excerpts",
+      "label": "Didache prayer excerpts",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/didache.py"],
+      "data_globs": ["data/prayers/didache/*.json"],
+      "config_rules": [
+        {"path_glob": "sources/prayers/didache/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#10--misc-single-source--hymnary_pd-csv--didache-wikitext",
+        "build/parsers/didache.py",
+        "data/prayers/didache/prayers.json"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "This is an intentional four-prayer excerpt scope. Wikisource container references are editorial apparatus, not missing prayer text."
+    },
+    {
+      "id": "schleitheim-confession",
+      "label": "Schleitheim Confession HTML",
+      "classification": "correction-only",
+      "parsers": ["build/parsers/schleitheim_confession.py"],
+      "data_globs": ["data/doctrinal-documents/schleitheim-confession-1527.json"],
+      "config_rules": [
+        {"path_glob": "sources/doctrinal-documents/schleitheim-confession-1527/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#10b--misc-single-source--schleitheim_confession--schleitheim-confession",
+        "build/parsers/schleitheim_confession.py",
+        "raw/anabaptists.org/schleitheim-confession-1527.manifest.json"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "Batch 02 removed site chrome and cached the witness. Seven article boundaries and the closing imprint survive; the remaining markup is presentation-only."
+    },
+    {
+      "id": "spurgeon-mtp-html",
+      "label": "Spurgeon Metropolitan Tabernacle Pulpit HTML",
+      "classification": "tei-now",
+      "parsers": [
+        "build/parsers/spurgeon_mtp.py",
+        "build/parsers/spurgeon_mtp_missing.py"
+      ],
+      "data_globs": [
+        "data/sermons/spurgeon-mtp/*.json",
+        "data/sermons/spurgeon-mtp.json"
+      ],
+      "config_rules": [
+        {"path_glob": "sources/sermons/spurgeon-mtp/config.json"}
+      ],
+      "ir_globs": [
+        "ir/spurgeon/*.tei.xml"
+      ],
+      "census_globs": [
+        "ir/census/spurgeon-mtp.*.census.json"
+      ],
+      "evidence": [
+        "docs/BATCH08_EVIDENCE.md",
+        "docs/FORMAT_STATE_MAP.md#10d--sermon-html--spurgeon_mtp--metropolitan-tabernacle-pulpit",
+        "build/tei/spurgeon_mtp_to_tei.py",
+        "ir/census/spurgeon-mtp.proof-wave.census.json",
+        "ir/spurgeon/spurgeon-mtp.proof-wave.tei.xml",
+        "build/parsers/spurgeon_mtp.py",
+        "raw/spurgeon_sermons/html/1.html"
+      ],
+      "priority": 4,
+      "owning_batch": "08",
+      "notes": "Status: proof works, 3 of 3,547. The bounded raw-HTML proof preserves ordered-list containers, items, and one nested list; the family-wide JSON projection still flattens list semantics."
+    },
+    {
+      "id": "logos-schaff-herzog",
+      "label": "Logos Schaff-Herzog limited witness",
+      "classification": "do-not-migrate",
+      "parsers": ["build/parsers/logos_schaff_herzog.py"],
+      "data_globs": [],
+      "config_rules": [
+        {"path_glob": "sources/reference/logos-schaff-herzog/config.json"}
+      ],
+      "evidence": [
+        "docs/FORMAT_STATE_MAP.md#10c--misc-single-source--logos_schaff_herzog--logos-nsherk-limited-html",
+        "build/parsers/logos_schaff_herzog.py",
+        "raw/logos/nsherk/articles"
+      ],
+      "priority": 0,
+      "owning_batch": "08",
+      "notes": "The 44-fragment scrape is an incomplete same-edition auxiliary witness, not a separate rendering. Do not create a standalone TEI migration from it."
+    }
+  ]
+}

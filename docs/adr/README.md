@@ -29,6 +29,7 @@ Each ADR captures one decision. Lightweight format: context, decision, consequen
 | [0019](0019-ir-is-tei.md) | The intermediate representation (IR) is TEI (unconstrained P5; ODD deferred) | Accepted | 2026-07-01 |
 | [0020](0020-reopen-reviewer-ui-shell.md) | Withdraw the vanilla-JS mandate; reopen the reviewer-UI shell decision | Accepted | 2026-07-04 |
 | [0021](0021-ledger-import-semantics-machine-releases.md) | Ledger import semantics for machine-released corrections (`machine_release` event type) | Accepted | 2026-07-04 |
+| [0022](0022-generated-static-tei-reviewer-shell.md) | Generated static shell for the TEI reviewer | Accepted | 2026-07-06 |
 
 ## When to add a new ADR
 

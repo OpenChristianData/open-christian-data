@@ -1,37 +1,74 @@
-"""Project TEI IR into HF clean-text JSONL plus a loss-receipt ledger."""
+"""Project TEI IR into HF clean-text JSONL plus a loss-receipt-v2 ledger."""
 
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
-import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from lxml import etree
 
 from build.lib.paths import REPO_ROOT
-from build.tei.writer import TEI_NS, derive_address
+from ocd_kernel.tei.normalization import normalize_block, normalize_inline
+from ocd_kernel.tei.projection_profile import (
+    DISPOSITIONS,
+    PROFILE_ID,
+    classify_base,
+    destination_for,
+    drop_reason,
+    rule_for,
+    structural_reason,
+)
+from ocd_kernel.tei.writer import TEI_NS, derive_address
 
 NS = {"tei": TEI_NS}
-PROJECTION_ID = "hf-clean-text-v1"
 GENERATOR = "build/tei/project_hf.py"
 LANGUAGE = "en"
 LICENSE = "CC0"
-DROP_DIV_TYPES = {"title", "titlepage", "imprint", "halftitlepage", "colophon", "copyright-page"}
-DROP_ELEMENTS = {"note", "pb"}
-NORMALIZED_ELEMENTS = {"ref", "hi", "emph", "foreign", "seg", "abbr", "title"}
-BLOCK_ELEMENTS = {"p", "quote", "lg"}
+BLOCK_ROOTS = frozenset(
+    {
+        "p",
+        "quote",
+        "lg",
+        "sp",
+        "label",
+        "trailer",
+        "l",
+        "date",
+        "q",
+        "bibl",
+    }
+)
 
 
 @dataclass(frozen=True)
-class Span:
+class TargetSpan:
+    """One exact slice in a projected output field."""
+
     record_id: str
-    start: int
-    end: int
+    field: str
+    char_start: int
+    char_end: int
+    item_index: int | None = None
+    item_field: str | None = None
+
+    def as_dict(self) -> dict[str, Any]:
+        target: dict[str, Any] = {
+            "record_id": self.record_id,
+            "field": self.field,
+            "char_start": self.char_start,
+            "char_end": self.char_end,
+        }
+        if self.item_index is not None:
+            target["item_index"] = self.item_index
+        if self.item_field is not None:
+            target["item_field"] = self.item_field
+        return target
 
 
 def _local(node: etree._Element) -> str:
@@ -46,85 +83,310 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _collapse_spaces(value: str) -> str:
-    return re.sub(r"[ \t\r\f\v]+", " ", value).strip()
+def _sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-def _collapse_all_whitespace(value: str) -> str:
-    return re.sub(r"\s+", " ", value).strip()
-
-
-def _normalize_text(value: str) -> str:
-    lines = [_collapse_spaces(line) for line in value.split("\n")]
-    return "\n".join(line for line in lines if line)
-
-
-def clean_text(node: etree._Element) -> str:
-    local = _local(node)
-    if local in DROP_ELEMENTS:
-        return ""
-    if local == "lg":
-        return "\n".join(filter(None, (clean_text(child) for child in node if _local(child) == "l")))
-    if local == "l":
-        return _normalize_text(_text_with_children(node))
-    return _normalize_text(_text_with_children(node))
-
-
-def _text_with_children(node: etree._Element) -> str:
+def _source_fragment(node: etree._Element) -> str:
     parts: list[str] = []
     if node.text:
         parts.append(node.text)
     for child in node:
-        parts.append(clean_text(child))
+        parts.append(_source_fragment(child))
         if child.tail:
             parts.append(child.tail)
     return "".join(parts)
 
 
-def _under(node: etree._Element, locals_: set[str]) -> bool:
-    parent = node.getparent()
-    while parent is not None:
-        if _local(parent) in locals_:
-            return True
-        parent = parent.getparent()
-    return False
+def _fragment_part(value: str) -> str:
+    """Keep word boundaries while collapsing source formatting whitespace."""
+
+    if not value:
+        return ""
+    normalized = normalize_inline(value)
+    if not normalized:
+        return " " if any(character.isspace() for character in value) else ""
+    prefix = " " if value[0].isspace() else ""
+    suffix = " " if value[-1].isspace() else ""
+    return prefix + normalized + suffix
 
 
-def _under_dropped_wrapper(node: etree._Element) -> bool:
-    current: etree._Element | None = node
+def _projected_fragment(node: etree._Element) -> str:
+    """Render a live node while omitting every dropped descendant."""
+
+    local = _local(node)
+    if local == "lb":
+        return "\n"
+    if local == "lg":
+        lines = [
+            _canonical_projected(child)
+            for child in node
+            if _local(child) == "l" and classify_base(child) != "dropped"
+        ]
+        return normalize_block("\n".join(lines))
+
+    parts: list[str] = []
+    if node.text:
+        parts.append(_fragment_part(node.text))
+    for child in node:
+        if classify_base(child) != "dropped":
+            parts.append(_projected_fragment(child))
+        if child.tail:
+            parts.append(_fragment_part(child.tail))
+    return "".join(parts)
+
+
+def _canonical_source(node: etree._Element) -> str:
+    local = _local(node)
+    if local == "lg":
+        lines = [_canonical_source(child) for child in node if _local(child) == "l"]
+        return normalize_block("\n".join(lines))
+    if local == "l":
+        return normalize_inline(_source_fragment(node))
+    if local in {"p", "quote", "sp", "trailer"}:
+        return normalize_block(_source_fragment(node))
+    return normalize_inline(_source_fragment(node))
+
+
+def _canonical_projected(node: etree._Element) -> str:
+    local = _local(node)
+    if local == "lg":
+        return _projected_fragment(node)
+    if local == "l":
+        return normalize_inline(_projected_fragment(node))
+    if local in {"p", "quote", "sp", "trailer"}:
+        return normalize_block(_projected_fragment(node))
+    return normalize_inline(_projected_fragment(node))
+
+
+def _canonical_text(node: etree._Element) -> str:
+    """Return the receipt canonical text for one node."""
+
+    if classify_base(node) == "dropped":
+        return _canonical_source(node)
+    if _local(node) == "sp":
+        return _speech_text(node)
+    if destination_for(node) == "argument":
+        return normalize_inline(_projected_fragment(node))
+    return _canonical_projected(node)
+
+
+def clean_text(node: etree._Element) -> str:
+    """Backward-compatible name for the projector's canonical text function."""
+
+    return _canonical_text(node)
+
+
+def _under(node: etree._Element, locals_: frozenset[str]) -> bool:
+    current = node.getparent()
     while current is not None:
-        if _local(current) == "div" and current.get("type") in DROP_DIV_TYPES:
+        if _local(current) in locals_:
             return True
         current = current.getparent()
     return False
 
 
+def _has_ancestor(node: etree._Element, locals_: frozenset[str]) -> bool:
+    return _under(node, locals_)
+
+
+def _content_roots(record_div: etree._Element) -> list[etree._Element]:
+    """Find direct-record content without traversing into child record divs."""
+
+    roots: list[etree._Element] = []
+
+    def visit(parent: etree._Element) -> None:
+        for child in parent:
+            local = _local(child)
+            if local == "div":
+                continue
+            if local in {"head", "argument", "note", "pb"}:
+                continue
+            if local in BLOCK_ROOTS:
+                if local == "p" and _has_ancestor(child, frozenset({"sp", "argument"})):
+                    continue
+                if local == "l" and _has_ancestor(child, frozenset({"lg", "quote"})):
+                    continue
+                if local == "date" and _has_ancestor(child, frozenset({"trailer"})):
+                    continue
+                if _canonical_text(child):
+                    roots.append(child)
+                continue
+            visit(child)
+
+    visit(record_div)
+    return roots
+
+
+def _record_divs(text: etree._Element) -> list[etree._Element]:
+    """Select every non-dropped div that owns direct deliverable content."""
+
+    live = [
+        div
+        for div in text.xpath(".//tei:div", namespaces=NS)
+        if classify_base(div) != "dropped"
+    ]
+    records: list[etree._Element] = []
+    for div in live:
+        direct_argument = div.find("./tei:argument", namespaces=NS)
+        if _content_roots(div) or (
+            direct_argument is not None and bool(_canonical_text(direct_argument))
+        ):
+            records.append(div)
+
+    # A <head> does not by itself make a div a record -- it is delivered through
+    # the title_path of every descendant record it governs. The exception is a
+    # head-bearing div that governs no content record at all (a standalone
+    # divider such as <div type="part"><head>Part I</head></div>): its heading
+    # would otherwise have no delivery path and its text would be lost. Only
+    # those divs get a record; minting one per head-bearing div would add a
+    # contentless record to every structural book/part div in the corpus.
+    owned = set(records)
+    for div in live:
+        head = div.find("./tei:head", namespaces=NS)
+        if head is None or not _canonical_text(head):
+            continue
+        if any(_is_descendant_or_self(record, div) for record in owned):
+            continue
+        records.append(div)
+
+    selected = set(records)
+    return [div for div in live if div in selected]
+
+
+def _text_blocks(record_div: etree._Element) -> list[etree._Element]:
+    """Compatibility wrapper for callers that used the v1 helper name."""
+
+    return _content_roots(record_div)
+
+
+def _render_block(node: etree._Element) -> str:
+    if _local(node) != "sp":
+        return _canonical_projected(node)
+    speakers = [
+        _canonical_projected(child)
+        for child in node
+        if _local(child) == "speaker" and _canonical_projected(child)
+    ]
+    body = _speech_parts(node)
+    if speakers and body:
+        return "\n".join(speakers + ["\n\n".join(body)])
+    return "\n\n".join(speakers + body) or _canonical_projected(node)
+
+
+def _speech_parts(node: etree._Element) -> list[str]:
+    """Return ordered spoken blocks, excluding the immediate role label."""
+
+    return [
+        _canonical_text(child)
+        for child in node
+        if _local(child) != "speaker"
+        and _local(child) in BLOCK_ROOTS
+        and _canonical_text(child)
+    ]
+
+
+def _speech_text(node: etree._Element) -> str:
+    if _speech_is_top_level_block(node):
+        return "\n\n".join(_speech_parts(node))
+    parts: list[str] = []
+    if node.text:
+        parts.append(_fragment_part(node.text))
+    for child in node:
+        if _local(child) != "speaker" and classify_base(child) != "dropped":
+            parts.append(_projected_fragment(child))
+        if child.tail:
+            parts.append(_fragment_part(child.tail))
+    return normalize_block("".join(parts))
+
+
+def _speech_is_top_level_block(node: etree._Element) -> bool:
+    current = node.getparent()
+    while current is not None and _local(current) != "div":
+        if _local(current) in BLOCK_ROOTS:
+            return False
+        current = current.getparent()
+    return True
+
+
+def _speech_speaker(node: etree._Element) -> str | None:
+    speakers = [
+        _canonical_projected(child)
+        for child in node
+        if _local(child) == "speaker" and _canonical_projected(child)
+    ]
+    if len(speakers) > 1:
+        raise ValueError(f"<sp> has multiple immediate <speaker> labels: {derive_address(node)}")
+    return speakers[0] if speakers else None
+
+
+def _owned_speeches(record_div: etree._Element) -> list[etree._Element]:
+    """Return every live speech owned by this record, excluding child record divs."""
+
+    speeches: list[etree._Element] = []
+
+    def visit(parent: etree._Element) -> None:
+        for child in parent:
+            if _local(child) == "div" or classify_base(child) == "dropped":
+                continue
+            if _local(child) == "sp":
+                speeches.append(child)
+            visit(child)
+
+    visit(record_div)
+    return speeches
+
+
+def _speech_items(
+    record_div: etree._Element, record_text: str
+) -> list[dict[str, Any]]:
+    """Build ordered speech metadata with exact offsets into the flat record text."""
+
+    items: list[dict[str, Any]] = []
+    search_from = 0
+    for speech in _owned_speeches(record_div):
+        spoken = _speech_text(speech)
+        if not spoken:
+            raise ValueError(f"<sp> has no spoken text: {derive_address(speech)}")
+        start = record_text.find(spoken, search_from)
+        if start < 0:
+            raise ValueError(f"<sp> spoken text is absent from flat text: {derive_address(speech)}")
+        items.append(
+            {
+                "speaker": _speech_speaker(speech),
+                "text": spoken,
+                "char_start": start,
+                "char_end": start + len(spoken),
+            }
+        )
+        search_from = start + len(spoken)
+    return items
+
+
 def _first_head_text(div: etree._Element) -> str | None:
-    head = div.find("tei:head", namespaces=NS)
+    head = div.find("./tei:head", namespaces=NS)
     if head is None:
         return None
-    text = _collapse_all_whitespace(clean_text(head))
+    text = _canonical_text(head)
     return text or None
 
 
 def _header_text(tree: etree._ElementTree, xpath: str) -> str | None:
-    node = tree.xpath(xpath, namespaces=NS)
-    if not node:
+    nodes = tree.xpath(xpath, namespaces=NS)
+    if not nodes:
         return None
-    text = _collapse_spaces(" ".join(str(part) for part in node[0].itertext()))
+    text = normalize_inline("".join(nodes[0].itertext()))
     return text or None
 
 
 def _source(tree: etree._ElementTree) -> dict[str, str]:
     translator = ""
     for resp_stmt in tree.xpath(".//tei:titleStmt/tei:respStmt", namespaces=NS):
-        resp = _collapse_spaces(" ".join(resp_stmt.xpath("./tei:resp//text()", namespaces=NS))).lower()
-        name = _collapse_spaces(" ".join(resp_stmt.xpath("./tei:name//text()", namespaces=NS)))
+        resp = normalize_inline("".join(resp_stmt.xpath("./tei:resp//text()", namespaces=NS))).lower()
+        name = normalize_inline("".join(resp_stmt.xpath("./tei:name//text()", namespaces=NS)))
         if "translator" in resp and name:
             translator = name
             break
-    if not translator:
-        translator = "Marcus Dods"
     ptrs = tree.xpath(".//tei:sourceDesc//tei:ptr[@target]", namespaces=NS)
     return {
         "author": _header_text(tree, ".//tei:titleStmt/tei:author") or "",
@@ -135,62 +397,35 @@ def _source(tree: etree._ElementTree) -> dict[str, str]:
 
 
 def _ids_from_path(path: Path) -> tuple[str, str]:
-    name = path.name
     suffix = ".tei.xml"
-    if not name.endswith(suffix):
+    if not path.name.endswith(suffix):
         raise ValueError(f"TEI filename must end with {suffix}: {path}")
-    stem = name.removesuffix(suffix)
+    stem = path.name.removesuffix(suffix)
     work_id, rendering_id = stem.rsplit(".", 1)
     return work_id, rendering_id
 
 
-def _record_divs(text: etree._Element) -> list[etree._Element]:
-    records: list[etree._Element] = []
-    for div in text.xpath(".//tei:div", namespaces=NS):
-        if div.get("type") in DROP_DIV_TYPES:
-            continue
-        has_child_div = bool(div.xpath("./tei:div", namespaces=NS))
-        has_prose = bool(_text_blocks(div)) or div.find("tei:argument", namespaces=NS) is not None
-        if not has_child_div and has_prose:
-            records.append(div)
-    return records
-
-
-def _text_blocks(record_div: etree._Element) -> list[etree._Element]:
-    blocks: list[etree._Element] = []
-    for node in record_div.xpath(".//*[local-name()='p' or local-name()='quote' or local-name()='lg']"):
-        if _under(node, {"head", "argument", "note"}):
-            continue
-        if any(ancestor in blocks for ancestor in node.iterancestors()):
-            continue
-        if clean_text(node):
-            blocks.append(node)
-    return blocks
-
-
 def _title_path(title: str, record_div: etree._Element) -> list[str]:
-    parts = [_collapse_all_whitespace(title)]
     divs = [
-        ancestor for ancestor in reversed(list(record_div.iterancestors()))
-        if _local(ancestor) == "div" and ancestor.get("type") not in DROP_DIV_TYPES
+        ancestor
+        for ancestor in reversed(list(record_div.iterancestors()))
+        if _local(ancestor) == "div" and classify_base(ancestor) != "dropped"
     ]
     divs.append(record_div)
+    values = [normalize_inline(title)]
     for div in divs:
-        head = _first_head_text(div)
-        if head:
-            parts.append(head)
-    deduped: list[str] = []
-    for part in parts:
-        if not deduped or deduped[-1] != part:
-            deduped.append(part)
-    return deduped
+        for head_node in div.findall("./tei:head", namespaces=NS):
+            head = _canonical_text(head_node)
+            if head and values[-1] != head:
+                values.append(head)
+    return values
 
 
 def _argument(record_div: etree._Element) -> str | None:
-    argument = record_div.find("tei:argument", namespaces=NS)
+    argument = record_div.find("./tei:argument", namespaces=NS)
     if argument is None:
         return None
-    text = _collapse_all_whitespace(clean_text(argument))
+    text = _canonical_text(argument)
     return text or None
 
 
@@ -198,51 +433,26 @@ def _record_id(work_id: str, rendering_id: str, div: etree._Element) -> str:
     return f"{work_id}/{rendering_id}/{derive_address(div)}"
 
 
-def _nearest_record(node: etree._Element, record_divs: list[etree._Element]) -> etree._Element | None:
-    current: etree._Element | None = node
-    while current is not None:
-        if current in record_divs:
-            return current
-        current = current.getparent()
-    for record_div in record_divs:
-        if node in record_div.iterancestors() or record_div in node.iterdescendants():
-            return record_div
-    return record_divs[0] if record_divs else None
-
-
-def _find_span(record_text: str, needle: str, starts: dict[str, int]) -> tuple[int, int] | None:
-    if not needle:
-        return None
-    start_at = starts.get(needle, 0)
-    start = record_text.find(needle, start_at)
-    if start == -1:
-        start = record_text.find(needle)
-    if start == -1:
-        return None
-    end = start + len(needle)
-    starts[needle] = end
-    return start, end
-
-
 def _build_records(
     tree: etree._ElementTree,
     tei_path: Path,
-) -> tuple[list[dict], list[etree._Element], dict[etree._Element, Span]]:
+) -> tuple[list[dict[str, Any]], list[etree._Element]]:
     work_id, rendering_id = _ids_from_path(tei_path)
     title = _header_text(tree, ".//tei:titleStmt/tei:title") or work_id
     source = _source(tree)
-    text = tree.xpath("/tei:TEI/tei:text", namespaces=NS)[0]
+    text_nodes = tree.xpath("/tei:TEI/tei:text", namespaces=NS)
+    if not text_nodes:
+        raise ValueError(f"TEI has no /TEI/text element: {tei_path}")
+    text = text_nodes[0]
     record_divs = _record_divs(text)
-    spans: dict[etree._Element, Span] = {}
-    records: list[dict] = []
+    records: list[dict[str, Any]] = []
     for div in record_divs:
-        rid = _record_id(work_id, rendering_id, div)
-        blocks = _text_blocks(div)
-        block_texts = [clean_text(block) for block in blocks if clean_text(block)]
-        record_text = "\n\n".join(block_texts)
-        records.append(
-            {
-                "id": rid,
+        blocks = _content_roots(div)
+        rendered_blocks = [_render_block(block) for block in blocks]
+        record_text = "\n\n".join(rendered_blocks)
+        speeches = _speech_items(div, record_text)
+        record = {
+                "id": _record_id(work_id, rendering_id, div),
                 "work_id": work_id,
                 "rendering_id": rendering_id,
                 "title_path": _title_path(title, div),
@@ -251,84 +461,278 @@ def _build_records(
                 "language": LANGUAGE,
                 "source": source,
             }
-        )
-        starts: dict[str, int] = {}
-        for node in div.iter():
-            if _under(node, {"head", "argument", "note"}) or _local(node) in DROP_ELEMENTS:
-                continue
-            needle = clean_text(node)
-            span = _find_span(record_text, needle, starts)
-            if span is not None:
-                spans[node] = Span(rid, span[0], span[1])
-    return records, record_divs, spans
+        if speeches:
+            record["speeches"] = speeches
+        records.append(record)
+    return records, record_divs
 
 
-def _node_disposition(node: etree._Element) -> tuple[str, str | None]:
+def _is_descendant_or_self(node: etree._Element, ancestor: etree._Element) -> bool:
+    current: etree._Element | None = node
+    while current is not None:
+        if current is ancestor:
+            return True
+        current = current.getparent()
+    return False
+
+
+def _nearest_div(node: etree._Element) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if _local(current) == "div":
+            return current
+        current = current.getparent()
+    return None
+
+
+def _nearest_record_div(
+    node: etree._Element, record_divs: list[etree._Element]
+) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if current in record_divs:
+            return current
+        current = current.getparent()
+    return None
+
+
+def _governing_records(
+    head: etree._Element,
+    record_divs: list[etree._Element],
+) -> list[etree._Element]:
+    owning_div = _nearest_div(head)
+    if owning_div is None:
+        return []
+    return [div for div in record_divs if _is_descendant_or_self(div, owning_div)]
+
+
+def _head_ancestor(node: etree._Element) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if _local(current) == "head":
+            return current
+        current = current.getparent()
+    return None
+
+
+def _find_target_span(
+    value: str,
+    needle: str,
+    node: etree._Element,
+    previous: dict[tuple[str, str, str], list[tuple[etree._Element, tuple[int, int]]]],
+    key: tuple[str, str, str],
+) -> tuple[int, int] | None:
+    if not needle:
+        return None
+    prior = previous.get(key, [])
+    for prior_node, span in reversed(prior):
+        if _is_descendant_or_self(node, prior_node) and node is not prior_node:
+            return span
+    start_at = prior[-1][1][1] if prior else 0
+    start = value.find(needle, start_at)
+    if start < 0:
+        return None
+    span = (start, start + len(needle))
+    previous.setdefault(key, []).append((node, span))
+    return span
+
+
+def _title_target_span(
+    node: etree._Element,
+    canonical: str,
+    record: dict[str, Any],
+) -> TargetSpan | None:
+    head = _head_ancestor(node)
+    if head is None:
+        return None
+    title = _canonical_text(head)
+    title_path = record["title_path"]
+    try:
+        item_index = title_path.index(title)
+    except ValueError:
+        return None
+    start = title_path[item_index].find(canonical)
+    if start < 0:
+        return None
+    return TargetSpan(
+        record["id"],
+        "title_path",
+        start,
+        start + len(canonical),
+        item_index,
+    )
+
+
+def _targets_for_node(
+    node: etree._Element,
+    canonical: str,
+    records_by_div: dict[etree._Element, str],
+    records_by_id: dict[str, dict[str, Any]],
+    record_divs: list[etree._Element],
+    previous: dict[tuple[str, str, str], list[tuple[etree._Element, tuple[int, int]]]],
+) -> list[TargetSpan]:
     local = _local(node)
-    if _under_dropped_wrapper(node) or local in DROP_ELEMENTS:
-        return "dropped", None
-    if local == "ref":
-        return "normalized", "cRef annotation removed, text kept"
-    if local in NORMALIZED_ELEMENTS:
-        return "normalized", "markup removed, text kept"
-    return "projected", None
+    if local in {"sp", "speaker"}:
+        record_div = _nearest_record_div(node, record_divs)
+        if record_div is None:
+            return []
+        record_id = records_by_div.get(record_div)
+        if record_id is None:
+            return []
+        record = records_by_id[record_id]
+        speech_node = node if local == "sp" else node.getparent()
+        if speech_node is None or _local(speech_node) != "sp":
+            return []
+        speech_nodes = _owned_speeches(record_div)
+        try:
+            speech_index = speech_nodes.index(speech_node)
+        except ValueError:
+            return []
+        item_field = "text" if local == "sp" else "speaker"
+        speeches = record.get("speeches", [])
+        if speech_index >= len(speeches) or speeches[speech_index].get(item_field) != canonical:
+            return []
+        item = speeches[speech_index]
+        if local == "sp":
+            flat_span = (item["char_start"], item["char_end"])
+        else:
+            end = item["char_start"]
+            while end > 0 and record["text"][end - 1].isspace():
+                end -= 1
+            start = end - len(canonical)
+            if start < 0 or record["text"][start:end] != canonical:
+                return []
+            flat_span = (start, end)
+        return [
+            TargetSpan(record_id, "text", flat_span[0], flat_span[1]),
+            TargetSpan(
+                record_id,
+                "speeches",
+                0,
+                len(canonical),
+                speech_index,
+                item_field,
+            ),
+        ]
+
+    field = destination_for(node)
+    if field == "title_path":
+        head = _head_ancestor(node)
+        if head is None:
+            return []
+        targets: list[TargetSpan] = []
+        for record_div in _governing_records(head, record_divs):
+            record_id = records_by_div.get(record_div)
+            if record_id is None:
+                continue
+            target = _title_target_span(node, canonical, records_by_id[record_id])
+            if target is not None:
+                targets.append(target)
+        return targets
+
+    record_div = _nearest_record_div(node, record_divs)
+    if record_div is None or field is None:
+        return []
+    record_id = records_by_div.get(record_div)
+    if record_id is None:
+        return []
+    value = records_by_id[record_id].get(field)
+    if not isinstance(value, str):
+        return []
+    key = (record_id, field, canonical)
+    span = _find_target_span(value, canonical, node, previous, key)
+    if span is None:
+        return []
+    return [TargetSpan(record_id, field, span[0], span[1])]
 
 
 def _ledger(
     tree: etree._ElementTree,
     tei_path: Path,
     output_path: Path,
-    records: list[dict],
+    records: list[dict[str, Any]],
     record_divs: list[etree._Element],
-    spans: dict[etree._Element, Span],
     repo_root: Path,
-) -> dict:
-    text = tree.xpath("/tei:TEI/tei:text", namespaces=NS)[0]
-    record_ids = {_id: _id for _id in (record["id"] for record in records)}
-    nodes: list[dict] = []
+) -> dict[str, Any]:
+    text_nodes = tree.xpath("/tei:TEI/tei:text", namespaces=NS)
+    if not text_nodes:
+        raise ValueError(f"TEI has no /TEI/text element: {tei_path}")
+    text = text_nodes[0]
+    records_by_id = {record["id"]: record for record in records}
+    records_by_div = {
+        div: record["id"]
+        for div in record_divs
+        for record in records
+        if record["id"].endswith(f"/{derive_address(div)}")
+    }
+    previous: dict[tuple[str, str, str], list[tuple[etree._Element, tuple[int, int]]]] = {}
+    nodes: list[dict[str, Any]] = []
     classes: dict[str, dict[str, int]] = {}
+
     for node in text.iter():
         local = _local(node)
-        disposition, note = _node_disposition(node)
-        entry: dict = {
+        base = classify_base(node)
+        if base is None:
+            if not _canonical_text(node):
+                continue
+            raise ValueError(f"unclassified TEI element fails closed: {local} at {derive_address(node)}")
+
+        canonical = _canonical_text(node)
+        if base == "dropped":
+            disposition = "dropped"
+            reason_code = drop_reason(node)
+        elif base == "structural":
+            disposition = "structural"
+            reason_code = structural_reason(local)
+        elif base in {"delivered", "normalized"}:
+            disposition = base if canonical else "empty"
+            reason_code = (
+                "empty.text-bearing"
+                if disposition == "empty"
+                else rule_for(local).reason_code if disposition == "normalized" else None
+            )
+        else:
+            raise ValueError(f"unsupported projection role {base!r} for {local}")
+
+        entry: dict[str, Any] = {
             "address": derive_address(node),
             "element": local,
             "disposition": disposition,
         }
-        classes.setdefault(local, {"projected": 0, "dropped": 0, "normalized": 0})[disposition] += 1
-        if disposition != "dropped":
-            span = spans.get(node)
-            if span is not None:
-                entry["target"] = {
-                    "record_id": span.record_id,
-                    "char_start": span.start,
-                    "char_end": span.end,
-                }
-            else:
-                record_div = _nearest_record(node, record_divs)
-                if record_div is not None:
-                    entry["target"] = {"record_id": _record_id(*_ids_from_path(tei_path), record_div)}
-                elif record_ids:
-                    entry["target"] = {"record_id": next(iter(record_ids))}
-                note = note or "container"
-        if local == "head" and disposition != "dropped":
-            note = "head->title_path"
-        elif _under(node, {"argument"}) or local == "argument":
-            note = note or "argument"
-        if note:
-            entry["note"] = note
+        if disposition in {"delivered", "normalized", "dropped"}:
+            entry["canonical_text_sha256"] = _sha256_text(canonical)
+            entry["canonical_text_length"] = len(canonical)
+        elif disposition == "empty":
+            entry["canonical_text_length"] = 0
+        if reason_code is not None:
+            entry["reason_code"] = reason_code
+        if disposition in {"delivered", "normalized"}:
+            targets = _targets_for_node(
+                node,
+                canonical,
+                records_by_div,
+                records_by_id,
+                record_divs,
+                previous,
+            )
+            if not targets:
+                raise ValueError(
+                    f"no exact output target for {local} at {derive_address(node)}"
+                )
+            entry["targets"] = [target.as_dict() for target in targets]
+
+        class_counts = classes.setdefault(local, {disposition_name: 0 for disposition_name in DISPOSITIONS})
+        class_counts[disposition] += 1
         nodes.append(entry)
 
     totals = {
         "addressable_nodes": len(nodes),
-        "projected": sum(1 for node in nodes if node["disposition"] == "projected"),
-        "dropped": sum(1 for node in nodes if node["disposition"] == "dropped"),
-        "normalized": sum(1 for node in nodes if node["disposition"] == "normalized"),
+        **{disposition: sum(1 for node in nodes if node["disposition"] == disposition) for disposition in DISPOSITIONS},
     }
     return {
-        "receipt_schema": "loss-receipt-v1",
+        "receipt_schema": "loss-receipt-v2",
         "projection": {
-            "id": PROJECTION_ID,
+            "id": PROFILE_ID,
             "generator": GENERATOR,
             "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         },
@@ -346,17 +750,19 @@ def project_file(
     *,
     receipt_path: Path | None = None,
     repo_root: Path = REPO_ROOT,
-) -> dict:
+) -> dict[str, Any]:
     tree = etree.parse(str(tei_path))
-    records, record_divs, spans = _build_records(tree, tei_path)
+    records, record_divs = _build_records(tree, tei_path)
     output_jsonl.parent.mkdir(parents=True, exist_ok=True)
     with output_jsonl.open("w", encoding="utf-8", newline="\n") as fh:
         for record in records:
             fh.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
-    receipt = _ledger(tree, tei_path, output_jsonl, records, record_divs, spans, repo_root)
+    receipt = _ledger(tree, tei_path, output_jsonl, records, record_divs, repo_root)
     target_receipt = receipt_path or output_jsonl.with_suffix(output_jsonl.suffix + ".loss.json")
     target_receipt.parent.mkdir(parents=True, exist_ok=True)
-    target_receipt.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    target_receipt.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     return receipt
 
 

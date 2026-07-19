@@ -33,7 +33,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from build.lib import _generated_enums  # noqa: E402
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum, resolve_schema_path  # noqa: E402
 
 SCHEMA_DIR = REPO_ROOT / "schemas" / "v1"
 SCHEMA_NAME = "decision-event-v1"
@@ -58,7 +58,7 @@ _HEX64 = "0" * 64
 
 
 def _schema() -> dict:
-    return json.loads((SCHEMA_DIR / f"{SCHEMA_NAME}.schema.json").read_text(encoding="utf-8"))
+    return json.loads(resolve_schema_path(SCHEMA_NAME).read_text(encoding="utf-8"))
 
 
 def _accepts(instance: dict) -> None:

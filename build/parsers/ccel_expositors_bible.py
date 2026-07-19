@@ -107,7 +107,7 @@ UA = "OpenChristianData/1.0 (research; open-source data project; contact: opench
 CRAWL_DELAY = 10  # seconds -- CCEL robots.txt crawl-delay
 
 # Import normalizer from build/lib
-from build.lib.bible_ref_normalizer import extract_refs_from_text  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import extract_refs_from_text  # noqa: E402
 from build.lib._generated_enums import COMMENTARY__META__TRADITION  # noqa: E402
 from build.lib.contributors import normalize_contributors  # noqa: E402
 

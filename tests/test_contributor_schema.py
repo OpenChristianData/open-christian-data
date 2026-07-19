@@ -16,16 +16,20 @@ import jsonschema
 from referencing import Registry, Resource
 import referencing.jsonschema
 
+from ocd_kernel.lib.schema_enums import kernel_schemas_dir, resolve_schema_path
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS_V1 = REPO_ROOT / "schemas" / "v1"
+KERNEL_SCHEMAS_V1 = kernel_schemas_dir()
 CONTRIBUTOR_DEF_PATH = SCHEMAS_V1 / "_defs" / "contributor.schema.json"
-STRUCTURED_TEXT_PATH = SCHEMAS_V1 / "structured_text.schema.json"
+KERNEL_CONTRIBUTOR_DEF_PATH = KERNEL_SCHEMAS_V1 / "_defs" / "contributor.schema.json"
+STRUCTURED_TEXT_PATH = resolve_schema_path("structured_text")
 
 
 def _build_registry() -> Registry:
     """Build a Registry containing the contributor def and all v1 schemas."""
     resources = []
-    contributor_def = json.loads(CONTRIBUTOR_DEF_PATH.read_text(encoding="utf-8"))
+    contributor_def = json.loads(KERNEL_CONTRIBUTOR_DEF_PATH.read_text(encoding="utf-8"))
     resources.append(
         Resource.from_contents(
             contributor_def, default_specification=referencing.jsonschema.DRAFT202012
@@ -39,6 +43,10 @@ def _build_registry() -> Registry:
             )
         )
     return Registry().with_resources([(r.id(), r) for r in resources])
+
+
+def test_contributor_def_copies_are_byte_identical() -> None:
+    assert CONTRIBUTOR_DEF_PATH.read_bytes() == KERNEL_CONTRIBUTOR_DEF_PATH.read_bytes()
 
 
 def _make_minimal_structured_text(contributors: list) -> dict:

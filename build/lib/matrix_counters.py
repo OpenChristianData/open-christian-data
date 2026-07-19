@@ -17,8 +17,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from build.lib.atomic_io import SchemaValidationError
-from build.lib.class1_gate import (
+from ocd_kernel.lib.atomic_io import SchemaValidationError
+from ocd_kernel.lib.class1_gate import (
     ELIGIBLE_MATRIX_EVENT_TYPES,
     Class1GateResult,
     evaluate_class1,

@@ -25,7 +25,7 @@ class MigrationError(Exception):
     """Raised when a sidecar cannot be migrated."""
 
 
-# Current writer schema version. Bump together with ``schemas/v1/review_state.schema.json``.
+# Current writer schema version. Bump together with ``ocd_kernel/schemas/v1/review_state.schema.json``.
 CURRENT_VERSION = "1.0.0"
 
 

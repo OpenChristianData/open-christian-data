@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any, Mapping
 
-from build.lib.block_id import block_id
+from ocd_kernel.lib.block_id import block_id
 
 
 SOURCE_RAW_ORIGINS = frozenset({"observed", "unavailable", "reconstructed"})

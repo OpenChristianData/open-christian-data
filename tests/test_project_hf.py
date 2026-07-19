@@ -7,11 +7,12 @@ from pathlib import Path
 import jsonschema
 import pytest
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 from build.tei.check_ledger import check_receipt
 from build.tei.project_hf import project_file
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "loss_receipt.schema.json"
+SCHEMA_PATH = resolve_schema_path("loss_receipt_v2")
 REAL_TEI = [
     REPO_ROOT / "ir" / "augustine" / "city-of-god.ccel-npnf102.tei.xml",
     REPO_ROOT / "ir" / "augustine" / "city-of-god.standard-ebooks.tei.xml",
@@ -94,8 +95,8 @@ def test_project_hf_writes_clean_text_and_loss_receipt(tmp_path: Path) -> None:
     assert nodes_by_address["n1"]["disposition"] == "dropped"
     assert nodes_by_address["p1/pb[1]"]["disposition"] == "dropped"
     assert nodes_by_address["p1/ref[1]"]["disposition"] == "normalized"
-    assert nodes_by_address["p1/ref[1]"]["note"] == "cRef annotation removed, text kept"
-    assert nodes_by_address["chapter-1/head[1]"]["note"] == "head->title_path"
+    assert nodes_by_address["p1/ref[1]"]["reason_code"] == "normalize.ref.annotation-removed"
+    assert nodes_by_address["chapter-1/head[1]"]["targets"][0]["field"] == "title_path"
     assert receipt["totals"]["addressable_nodes"] == len(receipt["nodes"])
     assert receipt_path.exists()
 

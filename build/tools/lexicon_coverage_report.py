@@ -17,9 +17,9 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.historical_lexicon import SUPPORTED_LANGS, archaic_forms, coverage_status  # noqa: E402
-from build.lib.lang_classifier import classify_spans  # noqa: E402
-from build.lib.text_extractor import extract_text  # noqa: E402
+from ocd_kernel.lib.historical_lexicon import SUPPORTED_LANGS, archaic_forms, coverage_status  # noqa: E402
+from ocd_kernel.lib.lang_classifier import classify_spans  # noqa: E402
+from ocd_kernel.lib.text_extractor import extract_text  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 

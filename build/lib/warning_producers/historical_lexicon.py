@@ -5,9 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from build.lib.historical_lexicon import scan_historical_variants
-from build.lib.lang_classifier import classify_spans
-from build.lib.text_extractor import extract_text
+from ocd_kernel.lib.historical_lexicon import scan_historical_variants
+from ocd_kernel.lib.lang_classifier import classify_spans
+from ocd_kernel.lib.text_extractor import extract_text
 from build.lib.warning_producers import WARNING_OUTPUT_SCHEMA, build_warning
 
 

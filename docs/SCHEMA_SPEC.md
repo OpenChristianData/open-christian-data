@@ -707,13 +707,16 @@ For: Pre-1928 public domain hymns. Schema informed by OpenLyrics standard and Mu
 
 ---
 
-### 13. `liturgical_service` -- Structured worship order (FUTURE)
+### 13. `liturgical_service` -- Structured worship order (FUTURE JSON projection)
 
 For: BCP 1662 Morning/Evening Prayer, Communion service
 
 This schema type is defined directionally but not finalized. Real data from BCP 1662 shows this needs: ordered elements, rubrics, speaker roles, alternatives, call/response support. Informed by Fountain screenplay format (typed elements with speaker attribution).
 
-**Status:** Deferred until a parser is built for BCP source material.
+**Status:** Deferred as a JSON schema. The BCP source family is now modeled first as TEI IR
+(`ir/bcp/`) with service order, rubrics, labels, and speaker units preserved by census gates. Build a
+`liturgical_service` JSON projection only when a downstream consumer needs this shape; do not create
+a second hand-modeled source parser beside the TEI path.
 
 ---
 
@@ -989,7 +992,9 @@ Not in Creeds.json source. Must be hardcoded in parser as a mapping table. Well-
 Three documents use `SubQuestions` arrays. Handled by optional `sub_questions` in `catechism_qa`.
 
 ### #5: Liturgical service schema
-Deferred. BCP 1662 data downloaded but schema design needs more work. Fountain/FDX patterns identified as structural inspiration.
+Deferred as a JSON projection. BCP 1549/1559/1662 services and 1928 collects now have TEI IRs, so
+the remaining question is projection shape for consumers, not whether BCP source material can be
+parsed. Fountain/FDX patterns remain structural inspiration for a future JSON view.
 
 ### #6: Build canonical verse index from BSB
 Need `build/bible_data/verse_index.json` derived from BSB data. Required for OSIS reference validation and verse hub construction.
@@ -1024,7 +1029,7 @@ Liturgical calendar -> scripture reading mappings (e.g., Revised Common Lectiona
 | 10 | `reference_entry` | -- | ~11,763 | Downloaded |
 | 11 | `topical_reference` | -- | ~20,000 | Not acquired |
 | 12 | `hymn` | -- | TBD | Downloaded |
-| 13 | `liturgical_service` | *(new, deferred)* | TBD | Downloaded, schema TBD |
+| 13 | `liturgical_service` | *(new, deferred)* | TBD | TEI IR exists for BCP; JSON projection deferred |
 
 ---
 

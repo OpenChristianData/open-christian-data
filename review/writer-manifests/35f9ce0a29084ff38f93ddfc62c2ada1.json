@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "35f9ce0a29084ff38f93ddfc62c2ada1",
+  "started_at": "2026-07-16T02:13:02.052628+00:00",
+  "data_paths": [
+    "data/commentaries/barnes/colossians.json"
+  ],
+  "checksums": {
+    "data/commentaries/barnes/colossians.json": {
+      "before_sha256": "cd9cf72b0bab32d26ea0ea6a86521623853d9e0dec859642b8804934fc2a4de9",
+      "after_sha256": "0524a0dd4114a488dcb9899b2c938aba040c9827145dbc1f32c0ec3a9d0b1815"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/barnes/colossians.json": {
+      "entries_changed": 95,
+      "fields_changed": 316
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -78,6 +78,7 @@ build/parsers/*_output.txt
 
 # Test temp directories (created by test runs, never committed)
 tests/_tmp_*/
+tests/._tmp_pytest/
 
 # OCR scanner reports (regenerable)
 build/tools/ocr_scanner/reports/*.json
@@ -121,14 +122,9 @@ research/2026-06-11-handoff-nsh-rebuild-vol11-and-holes.md
 research/2026-06-11-nsh-coverage-positioning-audit.md
 research/2026-06-11-handoff-vol11-resume.md
 
-# Local standards-check tooling + PostToolUse hooks (kept local; settings.json
-# wires them only on this machine)
+# Local standards-check tooling (kept local; hardcodes machine paths)
 .claude/standards_check.py
 .claude/standards_manifest.toml
-.claude/hooks/post_py_compile.py
-.claude/hooks/post_standards_check.py
-.claude/hooks/post_ruff_check.py
-.claude/hooks/post_ocd_validate.py
 # Session-local standards-check state (contains absolute machine paths)
 .claude/.session_state/
 
@@ -150,8 +146,6 @@ secrets/
 # Quota state (runtime counters — regenerated each session)
 build/tools/quota_state.json
 
-# IA page cache (large binaries — fetch fresh via fetch_ia_pages.py)
-raw/internet-archive/schaff-herzog-pages/vol_*/
 # Local test/Codex temp directories (generated, sometimes permission-restricted)
 .codex-a2-temp/
 .codex_tmp_pytest/
@@ -175,3 +169,7 @@ logs/
 
 # Local editor run/preview config (not published)
 .claude/launch.json
+
+# Editable-install build artifact (strict mode)
+ocd_kernel/build/
+*.egg-info/

@@ -4,6 +4,8 @@
 **Scope:** The Open Christian Data **dataset** is the project. The OCR pipeline is a capability the dataset needs for its hardest source class — texts that survive only as page scans or uncorrected OCR. Its first and largest target, the Schaff-Herzog Encyclopedia (NSH), grew subproject-sized in its own right, but it is not a separate project: it manufactures faithful text that enters the dataset like any other source.
 **Purpose:** Orient a cold session on what the architecture is *for*, and record the central decision: **the intermediate representation (IR) is TEI** ([ADR-0019](adr/0019-ir-is-tei.md)). No implementation, no `data/` edits. Supersedes the 2026-06-22 and earlier 2026-07-01 drafts, which mis-scoped the project and mis-recommended a bespoke JSON format.
 
+> **Split note, 2026-07-08:** The OCR production pipeline moved to the sibling `EzraOCR` repo. OCR docs now live under `EzraOCR/docs/`, with `../EzraOCR/docs/NSH_PROJECT_STATE.md` there as the anchor. The OCR sections below are frozen historical state as of 2026-07-08.
+
 ---
 
 ## Telos — why the project exists
@@ -79,7 +81,7 @@ Reconciliation of multiple copies is a stage that *can* run inside this model; i
 | Effort | Date | Status | Role under the unified frame |
 |---|---|---|---|
 | **2026-05-14 rearchitecture** (`plans/2026-05-14-multi-source-rearchitecture.md`, `SHARED-LEXICON.md`, ADRs 0001–0015) | 05-14 | Built for NSH only; born-digital migration never started | The canonical model: work/edition/source/format/rendering, `pd_anchor`, the pipeline, the lexicon. Its ADR-0001 "linear block sequence" is a JSON-era choice now superseded by TEI as the IR (see §6). |
-| **NSH / OCR pipeline** (`docs/NSH_PROJECT_STATE.md`, schemas `sidecar-page-v1`/`word-confusion-table-v1`/`corrected-page-v1`) | ongoing | S1→S2.5 production; S3 + corrector code-complete, unreviewed | The hardest **source**. Manufactures faithful text from scans; its bbox geometry ports into TEI facsimile zones. |
+| **NSH / OCR pipeline** (`../EzraOCR/docs/NSH_PROJECT_STATE.md`, schemas `sidecar-page-v1`/`word-confusion-table-v1`/`corrected-page-v1`) | ongoing | S1→S2.5 production; S3 + corrector code-complete, unreviewed | The hardest **source**. Manufactures faithful text from scans; its bbox geometry ports into TEI facsimile zones. |
 | **Fidelity-IR plan** (`plans/2026-06-18-fidelity-ir-architecture-plan.md`, `plans/_archive/2026-06-18-fidelity-execution/`) | 06-18 | Draft; 0 batches run | The born-digital IR design. Its "IR" becomes TEI; its **loss receipt** is the genuinely additive idea and stays. The 3 bug fixes are real and format-independent. |
 | **Data-structure redesign** (`docs/DESIGN_data_structure_redesign.md`, `docs/BUILD_PLAN_data_structure_redesign.md`) | 06-17 | Designed, DO-NOT-SHIP; 0 commits | The envelope-metadata layer (author + works registries). Compatible; keep. |
 | **Unified pipeline** (`docs/BUILD_PLAN_unified_pipeline.md`) | 06-18 | Sequencing keystone; not started | Correctly unifies envelope + content. Its open "IR format — JSON-AST vs TEI-lite, the 6-month lock-in" (U6-A) is now **decided: TEI** (see §6). |

@@ -37,7 +37,9 @@ import struct
 import sys
 import time
 import traceback
+import uuid
 import zlib
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -46,7 +48,7 @@ from pathlib import Path
 _REPO_ROOT_FOR_IMPORT = Path(__file__).resolve().parents[2]
 if str(_REPO_ROOT_FOR_IMPORT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT_FOR_IMPORT))
-from build.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.config_validation import validate_config_enums  # noqa: E402
 
@@ -94,6 +96,7 @@ def _filter_osis_refs(refs: list[str]) -> list[str]:
 # Config
 # ---------------------------------------------------------------------------
 
+from build.lib import writer_manifest  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 SWORD_RAW_DIR = REPO_ROOT / "raw" / "sword_modules"
 OUTPUT_BASE = REPO_ROOT / "data" / "commentaries"
@@ -167,7 +170,7 @@ KJV_CANON = {
     "ot": [
         ("Genesis", "Gen", [31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,33,26]),
         ("Exodus", "Exod", [22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38]),
-        ("Leviticus", "Lev", [17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,24,16,15,18,21,20,14,16,17,28]),
+        ("Leviticus", "Lev", [17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,46,34]),
         ("Numbers", "Num", [54,34,51,49,31,27,89,26,23,36,35,16,33,45,41,50,13,32,22,29,35,41,30,25,18,65,23,31,40,16,54,42,56,29,34,13]),
         ("Deuteronomy", "Deut", [46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12]),
         ("Joshua", "Josh", [18,24,17,24,15,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,45,34,16,33]),
@@ -181,9 +184,9 @@ KJV_CANON = {
         ("II Chronicles", "2Chr", [17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23]),
         ("Ezra", "Ezra", [11,70,13,24,17,22,28,36,15,44]),
         ("Nehemiah", "Neh", [11,20,32,23,19,19,73,18,38,39,36,47,31]),
-        ("Esther", "Esth", [22,28,23,31,29,41,4,18,20,11,27,23]),
+        ("Esther", "Esth", [22,23,15,17,14,14,10,17,32,3]),
         ("Job", "Job", [22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,22,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,30,24,34,17]),
-        ("Psalms", "Ps", [6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,14,10,8,12,15,21,10,20,14,9,6]),
+        ("Psalms", "Ps", [6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,13,10,7,12,15,21,10,20,14,9,6]),
         ("Proverbs", "Prov", [33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31]),
         ("Ecclesiastes", "Eccl", [18,26,22,16,20,12,29,17,18,20,10,14]),
         ("Song of Solomon", "Song", [17,17,11,16,16,13,13,14]),
@@ -211,11 +214,11 @@ KJV_CANON = {
         ("Luke", "Luke", [80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53]),
         ("John", "John", [51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25]),
         ("Acts", "Acts", [26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31]),
-        ("Romans", "Rom", [32,29,31,25,21,23,25,39,33,21,36,21,14,26,33,24,24,24,27,35]),
+        ("Romans", "Rom", [32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27]),
         ("I Corinthians", "1Cor", [31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24]),
         ("II Corinthians", "2Cor", [24,17,18,18,21,18,16,24,15,18,33,21,14]),
         ("Galatians", "Gal", [24,21,29,31,26,18]),
-        ("Ephesians", "Eph", [23,22,21,28,20,12]),
+        ("Ephesians", "Eph", [23,22,21,32,33,24]),
         ("Philippians", "Phil", [30,30,21,23]),
         ("Colossians", "Col", [29,23,25,18]),
         ("I Thessalonians", "1Thess", [10,20,13,18,28]),
@@ -230,7 +233,7 @@ KJV_CANON = {
         ("II Peter", "2Pet", [21,22,18]),
         ("I John", "1John", [10,29,24,21,21]),
         ("II John", "2John", [13]),
-        ("III John", "3John", [15]),
+        ("III John", "3John", [14]),
         ("Jude", "Jude", [25]),
         ("Revelation of John", "Rev", [20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21]),
     ],
@@ -269,6 +272,29 @@ def _book_slug(name: str) -> str:
 # SWORD zCom reader
 # ---------------------------------------------------------------------------
 
+class IncompleteSourceError(RuntimeError):
+    """The source module could not be read completely and must not be reconciled."""
+
+
+class ExpectedBookSetError(RuntimeError):
+    """The complete source result does not match the configured module coverage."""
+
+
+class StaleBookOutputError(RuntimeError):
+    """Existing book output is not part of the complete set produced by this run."""
+
+
+@dataclass
+class ModulePlan:
+    """A fully parsed, validated module staged for a later output replacement."""
+
+    module_name: str
+    outputs: dict[str, dict]
+    produced_book_osis: frozenset[str]
+    expected_book_osis: frozenset[str]
+    stats: dict
+
+
 class SwordZComReader:
     """
     Reads SWORD zCom module files (BZS, BZV, BZZ) for one testament.
@@ -294,6 +320,10 @@ class SwordZComReader:
         self._bzs_data = bzs_path.read_bytes()
         self._bzv_data = bzv_path.read_bytes()
         self._bzz_data = bzz_path.read_bytes()
+        if len(self._bzs_data) % 12:
+            raise IncompleteSourceError(f"Malformed BZS index (not 12-byte aligned): {bzs_path}")
+        if len(self._bzv_data) % 10:
+            raise IncompleteSourceError(f"Malformed BZV index (not 10-byte aligned): {bzv_path}")
         self._cache: dict = {}  # block_num -> decompressed bytes
 
         n_blocks = len(self._bzs_data) // 12
@@ -309,27 +339,33 @@ class SwordZComReader:
             return self._cache[block_num]
 
         if block_num * 12 + 12 > len(self._bzs_data):
-            self._cache[block_num] = b""
-            return b""
+            raise IncompleteSourceError(
+                f"BZV points to missing BZS block {block_num} in {len(self._bzs_data) // 12}-block index"
+            )
 
         offset, clen, _uclen = struct.unpack_from("<III", self._bzs_data, block_num * 12)
         if clen == 0 or offset + clen > len(self._bzz_data):
-            self._cache[block_num] = b""
-            return b""
+            raise IncompleteSourceError(
+                f"Invalid BZS block {block_num}: offset={offset}, compressed_length={clen}, "
+                f"BZZ length={len(self._bzz_data)}"
+            )
 
         compressed = self._bzz_data[offset : offset + clen]
         try:
             result = zlib.decompress(compressed)
         except zlib.error as exc:
-            logging.warning("    Block %d decomp failed: %s", block_num, exc)
-            result = b""
+            raise IncompleteSourceError(
+                f"Could not decompress BZS block {block_num} from {len(compressed)} bytes"
+            ) from exc
         self._cache[block_num] = result
         return result
 
     def get_text_at_index(self, bzv_index: int) -> bytes:
         """Return raw bytes for a verse at the given BZV positional index. Empty if no content."""
         if bzv_index < 0 or bzv_index >= self._n_bzv_entries:
-            return b""
+            raise IncompleteSourceError(
+                f"BZV position {bzv_index} is outside the {self._n_bzv_entries}-entry source index"
+            )
         entry_offset = bzv_index * 10
         block_num, verse_start, verse_len = struct.unpack_from(
             "<IIH", self._bzv_data, entry_offset
@@ -338,7 +374,10 @@ class SwordZComReader:
             return b""
         block_data = self._decompress_block(block_num)
         if verse_start + verse_len > len(block_data):
-            return b""
+            raise IncompleteSourceError(
+                f"BZV verse range exceeds decompressed block {block_num}: "
+                f"start={verse_start}, length={verse_len}, block_length={len(block_data)}"
+            )
         return block_data[verse_start : verse_start + verse_len]
 
 
@@ -608,17 +647,16 @@ def clean_markup(text: str, source_type: str) -> tuple:
 # ---------------------------------------------------------------------------
 
 class SchemaValidationError(Exception):
-    """First-book schema validation found errors. Stops extraction before bulk file writes."""
+    """Schema validation found errors before planned output replacement."""
 
 
-def _check_first_book_schema(module_name: str, slug: str, output: dict) -> None:
+def _check_book_schema(module_name: str, slug: str, output: dict) -> None:
     """
-    Validate the first book's output dict against the commentary schema in-memory.
-    Raises SchemaValidationError if any errors are found — this stops the run
-    before 27-66 files with the same defect are written.
+    Validate one planned book's output dict against the commentary schema in-memory.
+    Raises SchemaValidationError if any errors are found before output replacement.
 
-    Called unconditionally (dry-run and production alike) for the first book
-    in each testament. Overhead is negligible (~0.05s).
+    Called for every planned book in both dry-run and production planning.
+    Overhead is negligible compared with source parsing.
     """
     repo_str = str(REPO_ROOT)
     if repo_str not in sys.path:
@@ -626,15 +664,16 @@ def _check_first_book_schema(module_name: str, slug: str, output: dict) -> None:
     try:
         from build.validate import validate_commentary_file  # noqa: PLC0415
     except ImportError as exc:
-        logging.warning("  Schema check skipped (could not import validate): %s", exc)
-        return
+        raise SchemaValidationError(
+            f"{module_name}/{slug}: schema validator unavailable"
+        ) from exc
 
     fake_path = OUTPUT_BASE / module_name / f"{slug}.json"
     errors, _warnings = validate_commentary_file(fake_path, output)
     if errors:
         logging.error(
             "  SCHEMA CHECK FAILED (%s/%s) -- %d error(s). "
-            "Stopping extraction to prevent writing bulk bad output:",
+            "Stopping planning to prevent writing bad output:",
             module_name, slug, len(errors),
         )
         for e in errors[:10]:
@@ -693,10 +732,99 @@ def build_meta(config: dict, processing_date: str, source_hash: str, testament: 
 # Module extraction
 # ---------------------------------------------------------------------------
 
-def extract_module(module_name: str, dry_run: bool = False) -> dict:
+def _configured_expected_book_osis(module_name: str, config: dict) -> frozenset[str]:
+    """Load and validate the source config's structured expected book set."""
+    raw_expected = config.get("expected_book_osis")
+    if not isinstance(raw_expected, list) or not raw_expected:
+        raise ExpectedBookSetError(
+            f"{module_name}: source config must declare a non-empty expected_book_osis list"
+        )
+    expected = frozenset(raw_expected)
+    if len(expected) != len(raw_expected):
+        raise ExpectedBookSetError(f"{module_name}: expected_book_osis contains duplicates")
+    unknown = sorted(set(expected) - set(OSIS_TO_NAME))
+    if unknown:
+        raise ExpectedBookSetError(
+            f"{module_name}: expected_book_osis contains unknown OSIS books: {', '.join(unknown)}"
+        )
+    return expected
+
+
+def validate_expected_book_set(
+    module_name: str,
+    produced_book_osis: set[str] | frozenset[str],
+    expected_book_osis: set[str] | frozenset[str],
+) -> None:
+    """Require the complete parsed source set to equal configured coverage exactly."""
+    produced = frozenset(produced_book_osis)
+    expected = frozenset(expected_book_osis)
+    missing = sorted(expected - produced, key=lambda book: OSIS_BOOK_NUMBER.get(book, 999))
+    unexpected = sorted(produced - expected, key=lambda book: OSIS_BOOK_NUMBER.get(book, 999))
+    if not missing and not unexpected:
+        return
+
+    details = []
+    if missing:
+        details.append("missing=" + ", ".join(missing))
+    if unexpected:
+        details.append("unexpected=" + ", ".join(unexpected))
+    raise ExpectedBookSetError(
+        f"{module_name}: parsed book set does not match expected coverage (" + "; ".join(details) + ")"
+    )
+
+
+def reconcile_book_outputs(
+    module_name: str,
+    produced_book_slugs: set[str],
+    *,
+    source_read_complete: bool,
+) -> None:
+    """Refuse to claim a complete run while stale module JSON files remain.
+
+    The parser stages every produced book in memory before calling this helper. That
+    makes the source-read-complete check a gate before any output write or stale-file
+    action. Stale files are deliberately not deleted automatically: a clear failure
+    preserves valid prior output when a source read was incomplete or unexpectedly
+    changed.
     """
-    Extract one SWORD commentary module to OCD JSON files.
-    Returns stats dict.
+    if not source_read_complete:
+        raise IncompleteSourceError(
+            f"{module_name}: source read is incomplete; refusing book-output reconciliation"
+        )
+
+    output_dir = OUTPUT_BASE / module_name
+    produced_files = {f"{slug}.json" for slug in produced_book_slugs}
+    existing_files: set[str] = set()
+    if output_dir.exists():
+        existing_files = {
+            path.name
+            for path in output_dir.glob("*.json")
+            if path.is_file()
+        }
+    stale_files = sorted(existing_files - produced_files)
+
+    logging.info(
+        "  Produced book-file set (%d): %s",
+        len(produced_files),
+        ", ".join(sorted(produced_files)) or "<empty>",
+    )
+    logging.info(
+        "  Existing JSON file set (%d): %s",
+        len(existing_files),
+        ", ".join(sorted(existing_files)) or "<empty>",
+    )
+    if stale_files:
+        raise StaleBookOutputError(
+            f"{module_name}: stale book output files would remain after regeneration: "
+            + ", ".join(stale_files)
+            + "; refusing to claim success"
+        )
+
+
+def plan_module(module_name: str, *, dry_run: bool = False) -> ModulePlan:
+    """
+    Parse and validate one SWORD commentary module without replacing output files.
+    Returns a complete in-memory module plan for a later commit phase.
     """
     if module_name not in MODULE_CONFIGS:
         raise ValueError(f"Unknown module: {module_name}")
@@ -708,9 +836,9 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     config_path = SOURCES_BASE / module_name / "config.json"
     if not config_path.exists():
         raise FileNotFoundError(f"Config not found: {config_path} -- run the source setup step first")
-    with open(config_path, encoding="utf-8") as f:
-        config = json.load(f)
+    config = json.loads(config_path.read_text(encoding="utf-8"))
     validate_config_enums(config, "commentary")
+    expected_book_osis = _configured_expected_book_osis(module_name, config)
 
     resource_id = config["resource_id"]
     source_type = config.get("source_format", "ThML")
@@ -720,17 +848,15 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     # Module data directory
     module_dir = SWORD_RAW_DIR / sword_name / "modules" / "comments" / "zcom" / sword_name.lower()
     if not module_dir.exists():
-        raise FileNotFoundError(f"Module data dir not found: {module_dir} -- run download_sword_modules.py first")
+        raise IncompleteSourceError(
+            f"Module data dir not found: {module_dir} -- run download_sword_modules.py first"
+        )
 
     # Compute source zip hash for provenance
     zip_path = SWORD_RAW_DIR / f"{sword_name}.zip"
     source_hash = ""
     if zip_path.exists():
-        h = hashlib.sha256()
-        with open(zip_path, "rb") as fh:
-            for chunk in iter(lambda: fh.read(65536), b""):
-                h.update(chunk)
-        source_hash = h.hexdigest()
+        source_hash = hashlib.sha256(zip_path.read_bytes()).hexdigest()
 
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -747,6 +873,9 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
     total_failed = 0
     all_word_counts: list = []
     entries_with_refs = 0  # entries where cross_references is non-empty
+    books_to_write: dict[str, dict] = {}
+    produced_book_slugs: set[str] = set()
+    produced_book_osis: set[str] = set()
 
     for testament in mod_conf["testaments"]:
         prefix = mod_conf["block_prefix"][testament]
@@ -755,8 +884,9 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
         try:
             reader = SwordZComReader(module_dir, testament, prefix)
         except FileNotFoundError as exc:
-            logging.warning("  Skipping %s %s: %s", module_name, testament, exc)
-            continue
+            raise IncompleteSourceError(
+                f"{module_name} {testament.upper()} source read is incomplete: {exc}"
+            ) from exc
 
         verse_map = build_verse_position_map(testament)
         books = KJV_CANON[testament]
@@ -768,24 +898,17 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
             if not raw_bytes:
                 total_empty += 1
                 continue
-            try:
-                raw_text = raw_bytes.decode("utf-8", errors="replace")
-            except Exception as exc:
-                logging.warning(
-                    "  Unexpected error decoding verse (%d,%d,%d): %s",
-                    book_idx, chapter, verse, exc,
-                )
-                total_empty += 1
-                continue
+            # Some legacy ThML payloads contain Windows-1252 bytes inside otherwise
+            # UTF-8 source. Preserve the parser's established replacement behavior;
+            # structural reader failures are handled fail-closed by the zCom reader.
+            raw_text = raw_bytes.decode("utf-8", errors="replace")
             try:
                 plain, cross_refs = clean_markup(raw_text, "osis" if is_osis else "thml")
             except Exception as exc:
-                logging.warning(
-                    "  clean_markup failed for entry (%d/%d/%d), skipping: %s",
-                    book_idx, chapter, verse, exc,
-                )
-                total_failed += 1
-                continue
+                raise IncompleteSourceError(
+                    f"{module_name} {testament.upper()} source could not be parsed at "
+                    f"entry ({book_idx},{chapter},{verse})"
+                ) from exc
             if not plain:
                 total_empty += 1
                 continue
@@ -798,7 +921,7 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
             module_name, testament.upper(), len(by_book), len(books)
         )
 
-        # Write one JSON file per book
+        # Build one planned JSON output per book
         first_book_for_testament = True
         for book_idx in sorted(by_book.keys()):
             name, osis, chapter_lengths = books[book_idx]
@@ -836,35 +959,36 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
             output = {"meta": meta, "data": entries}
             total_entries += len(entries)
             total_books += 1
+            produced_book_slugs.add(slug)
+            produced_book_osis.add(osis)
+            books_to_write[slug] = output
 
-            # First-book gate: validate schema before writing anything to disk.
-            # A schema error here aborts the whole module, not just one book.
-            if first_book_for_testament:
-                first_book_for_testament = False
-                _check_first_book_schema(module_name, slug, output)
-                # In dry-run: surface the first entry's key fields so
-                # cross_reference format is visible at a glance.
-                if dry_run and entries:
-                    sample = entries[0]
-                    logging.info(
-                        "  Sample entry (%s %s): entry_id=%s  cross_references=%s",
-                        module_name, slug,
-                        sample["entry_id"],
-                        sample["cross_references"][:3],
-                    )
+            # Validate every planned book before any output replacement.
+            is_first_book = first_book_for_testament
+            first_book_for_testament = False
+            _check_book_schema(module_name, slug, output)
+            # In dry-run: surface the first entry's key fields so
+            # cross_reference format is visible at a glance.
+            if is_first_book and dry_run and entries:
+                sample = entries[0]
+                logging.info(
+                    "  Sample entry (%s %s): entry_id=%s  cross_references=%s",
+                    module_name, slug,
+                    sample["entry_id"],
+                    sample["cross_references"][:3],
+                )
 
             # Progress log
             logging.info(
                 "  [%s] %s: %d entries", module_name, f"{osis}/{slug}", len(entries)
             )
 
-            if not dry_run:
-                out_dir = OUTPUT_BASE / module_name
-                out_dir.mkdir(parents=True, exist_ok=True)
-                out_file = out_dir / f"{slug}.json"
-                with open(out_file, "w", encoding="utf-8", newline="\n") as f:
-                    json.dump(output, f, ensure_ascii=False, indent=2)
-                    f.write("\n")
+    validate_expected_book_set(module_name, produced_book_osis, expected_book_osis)
+    reconcile_book_outputs(
+        module_name,
+        produced_book_slugs,
+        source_read_complete=True,
+    )
 
     sorted_wc = sorted(all_word_counts)
     wc_stats = {}
@@ -874,15 +998,33 @@ def extract_module(module_name: str, dry_run: bool = False) -> dict:
             "median": sorted_wc[len(sorted_wc) // 2],
             "max": sorted_wc[-1],
         }
-    return {
+    stats = {
         "module": module_name,
         "books_written": total_books,
         "entries_written": total_entries,
         "verses_empty": total_empty,
         "entries_failed": total_failed,
+        "produced_book_files": sorted(f"{slug}.json" for slug in produced_book_slugs),
+        "produced_book_osis": sorted(produced_book_osis),
+        "expected_book_osis": sorted(expected_book_osis),
         "word_count_stats": wc_stats,
         "entries_with_refs": entries_with_refs,
     }
+    return ModulePlan(
+        module_name=module_name,
+        outputs={f"{slug}.json": output for slug, output in books_to_write.items()},
+        produced_book_osis=frozenset(produced_book_osis),
+        expected_book_osis=expected_book_osis,
+        stats=stats,
+    )
+
+
+def extract_module(module_name: str, dry_run: bool = False) -> dict:
+    """Plan one module completely, then replace its files unless dry-run is requested."""
+    plan = plan_module(module_name, dry_run=dry_run)
+    if not dry_run:
+        write_module_plans([plan])
+    return plan.stats
 
 
 # ---------------------------------------------------------------------------
@@ -944,6 +1086,111 @@ def setup_logging() -> None:
 # CLI
 # ---------------------------------------------------------------------------
 
+def _temporary_book_path(out_file: Path) -> Path:
+    """Return a unique same-directory staging path for an atomic book replacement."""
+    return out_file.with_name(f".{out_file.name}.{uuid.uuid4().hex}.tmp")
+
+
+def _stage_book_output(out_file: Path, output: dict) -> Path:
+    """Serialize one output to a same-directory temporary file, without touching its target."""
+    temp_file = _temporary_book_path(out_file)
+    try:
+        temp_file.touch(exist_ok=False)
+        temp_file.write_text(
+            json.dumps(output, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+    except Exception:
+        try:
+            temp_file.unlink()
+        except FileNotFoundError:
+            pass
+        raise
+    return temp_file
+
+
+def _replace_atomically(temp_file: Path, out_file: Path) -> None:
+    """Replace a target with a same-filesystem staged file atomically."""
+    temp_file.replace(out_file)
+
+
+def _commit_staged_book_with_manifest(
+    out_file: Path,
+    output: dict,
+    temp_file: Path,
+) -> None:
+    """Atomically commit one staged book and emit its existing writer manifest."""
+    previous = json.loads(out_file.read_text(encoding="utf-8")) if out_file.exists() else None
+    entries_changed, fields_changed = writer_manifest.diff_counts(
+        previous, output, key=lambda entry: entry["entry_id"]
+    )
+    root = OUTPUT_BASE.parents[1]
+    with writer_manifest.run(
+        writer_identity="sword_commentary_parser",
+        writer_version=f"build/parsers/sword_commentary.py@{SCRIPT_VERSION}",
+        data_paths=[out_file],
+        repo_root=root,
+        manifests_dir=root / "review" / "writer-manifests",
+    ) as manifest_run:
+        _replace_atomically(temp_file, out_file)
+        manifest_run.record_delta(
+            out_file, entries_changed=entries_changed, fields_changed=fields_changed
+        )
+
+
+def _remove_staged_file(temp_file: Path) -> None:
+    """Remove a staged file when it has not already been atomically committed."""
+    try:
+        temp_file.unlink()
+    except FileNotFoundError:
+        pass
+
+
+def _write_book_with_manifest(out_file: Path, output: dict) -> None:
+    """Stage and atomically write one book's commentary file with its writer manifest.
+
+    One manifest per book file rather than one per module run: the book set is
+    discovered during planning, and the emitter is handed its path before the commit
+    so it captures the before-hash.
+
+    The root is derived from OUTPUT_BASE (<root>/data/commentaries) rather than imported,
+    so a test that redirects OUTPUT_BASE gets its manifests in the matching tree instead
+    of writing into the real repo.
+    """
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    temp_file = _stage_book_output(out_file, output)
+    try:
+        _commit_staged_book_with_manifest(out_file, output, temp_file)
+    finally:
+        _remove_staged_file(temp_file)
+
+
+def write_module_plans(plans: list[ModulePlan]) -> None:
+    """Stage all planned module files, then atomically replace them in plan order.
+
+    A failure while staging leaves existing book files untouched because no target has
+    been replaced yet. A failure during the replacement phase can leave earlier files
+    committed; the per-file atomic boundary is real, but this function does not claim a
+    cross-module transaction.
+    """
+    staged: list[tuple[Path, dict, Path]] = []
+    try:
+        for plan in plans:
+            out_dir = OUTPUT_BASE / plan.module_name
+            out_dir.mkdir(parents=True, exist_ok=True)
+            for file_name in sorted(plan.outputs):
+                out_file = out_dir / file_name
+                temp_file = _stage_book_output(out_file, plan.outputs[file_name])
+                staged.append((out_file, plan.outputs[file_name], temp_file))
+
+        for out_file, output, temp_file in staged:
+            _commit_staged_book_with_manifest(out_file, output, temp_file)
+    finally:
+        for _out_file, _output, temp_file in staged:
+            _remove_staged_file(temp_file)
+
+
 def main() -> None:
     setup_logging()
 
@@ -975,16 +1222,18 @@ def main() -> None:
     logging.info("Modules: %s", ", ".join(modules))
 
     all_stats = []
+    planned_modules: list[ModulePlan] = []
     failed_modules = []
     for i, module_name in enumerate(modules):
         logging.info("")
         logging.info("--- %s ---", module_name.upper())
         try:
-            stats = extract_module(module_name, dry_run=args.dry_run)
-            report_quality(stats)
-            all_stats.append(stats)
+            plan = plan_module(module_name, dry_run=args.dry_run)
+            report_quality(plan.stats)
+            all_stats.append(plan.stats)
+            planned_modules.append(plan)
         except Exception as exc:
-            logging.error("FAILED %s: %s", module_name, exc)
+            logging.error("FAILED planning %s: %s", module_name, exc)
             logging.error(traceback.format_exc())
             failed_modules.append(module_name)
 
@@ -1000,6 +1249,15 @@ def main() -> None:
         logging.error("  FAILED: %s", ", ".join(failed_modules))
     logging.info("Elapsed: %.1fs", elapsed)
 
+    if failed_modules:
+        raise SystemExit(1)
+    if not args.dry_run:
+        try:
+            write_module_plans(planned_modules)
+        except Exception as exc:
+            logging.error("FAILED output replacement: %s", exc)
+            logging.error(traceback.format_exc())
+            raise SystemExit(1) from exc
     if args.dry_run:
         logging.info("Dry-run complete -- no files written.")
 

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from build.tei.validate_schematron import validate_file
+from ocd_kernel.tei.validate_schematron import validate_file
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 REAL_PAGE = REPO_ROOT / ".tmp_audit" / "taskA-materializer-out" / "page_0010.tei.xml"

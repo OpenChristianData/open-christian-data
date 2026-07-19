@@ -1,20 +1,26 @@
+import base64
+import hashlib
 import json
+import os
+import shutil
+import tempfile
 from pathlib import Path
 
 import pytest
 from jsonschema import Draft202012Validator
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _schema(name: str) -> dict:
-    return json.loads((REPO_ROOT / "schemas" / "v1" / name).read_text(encoding="utf-8"))
+    return json.loads(resolve_schema_path(name).read_text(encoding="utf-8"))
 
 
-RECONCILED_SCHEMA = _schema("reconciled_record.schema.json")
-MODERNISED_SCHEMA = _schema("modernised_record.schema.json")
-CATALOG_SCHEMA = _schema("rendering_catalog.schema.json")
+RECONCILED_SCHEMA = _schema("reconciled_record")
+MODERNISED_SCHEMA = _schema("modernised_record")
+CATALOG_SCHEMA = _schema("rendering_catalog")
 
 
 def _write_json(path: Path, payload: dict) -> None:
@@ -156,11 +162,29 @@ def _stage_export_fixture(tmp_path: Path, *, include_work_c: bool = False) -> No
         _stage_work(tmp_path, work_slug="work-c", title="Work C", with_modernised=False)
 
 
-def _load_split(export_root: Path, config: str):
+def _short_hf_cache_root(caller_root: Path) -> Path:
+    """Return a caller-path-independent cache root for HuggingFace test locks."""
+    caller_key = os.path.normcase(os.path.abspath(os.fspath(caller_root)))
+    digest = hashlib.sha256(caller_key.encode("utf-8")).digest()[:16]
+    token = base64.urlsafe_b64encode(digest).decode("ascii").rstrip("=")
+    return Path(tempfile.gettempdir()) / "h" / token
+
+
+@pytest.fixture
+def hf_cache_root(tmp_path: Path):
+    cache_root = _short_hf_cache_root(tmp_path)
+    if cache_root.exists():
+        shutil.rmtree(cache_root)
+    yield cache_root
+    if cache_root.exists():
+        shutil.rmtree(cache_root)
+
+
+def _load_split(export_root: Path, config: str, cache_root: Path):
     from datasets import Dataset
     from datasets import load_dataset
 
-    dataset = load_dataset(str(export_root), config, cache_dir=str(export_root / ".hf-cache"))
+    dataset = load_dataset(str(export_root), config, cache_dir=str(cache_root))
     split = dataset["train"] if isinstance(dataset, dict) else dataset
     assert isinstance(split, Dataset)
     return split
@@ -171,7 +195,7 @@ def _work_ids(dataset) -> set[str]:
 
 
 @pytest.mark.slow
-def test_exports_artefact_validates(tmp_path: Path) -> None:
+def test_exports_artefact_validates(tmp_path: Path, hf_cache_root: Path) -> None:
     _stage_export_fixture(tmp_path)
 
     from build.tools.export_hf_dataset import main
@@ -183,13 +207,13 @@ def test_exports_artefact_validates(tmp_path: Path) -> None:
     dataset_infos = json.loads((export_root / "dataset_infos.json").read_text(encoding="utf-8"))
     assert set(dataset_infos) == {"original", "modernised"}
 
-    original = _load_split(export_root, "original")
-    modernised = _load_split(export_root, "modernised")
+    original = _load_split(export_root, "original", hf_cache_root)
+    modernised = _load_split(export_root, "modernised", hf_cache_root)
     assert len(original) == 2
     assert len(modernised) == 1
 
 
-def test_two_config_split_correct(tmp_path: Path) -> None:
+def test_two_config_split_correct(tmp_path: Path, hf_cache_root: Path) -> None:
     _stage_export_fixture(tmp_path)
 
     from build.tools.export_hf_dataset import main
@@ -197,8 +221,11 @@ def test_two_config_split_correct(tmp_path: Path) -> None:
     export_root = tmp_path / "exports"
     assert main(["--data-root", str(tmp_path / "data"), "--output", str(export_root)]) == 0
 
-    assert _work_ids(_load_split(export_root, "original")) == {"reference/work-a", "reference/work-b"}
-    assert _work_ids(_load_split(export_root, "modernised")) == {"reference/work-b"}
+    assert _work_ids(_load_split(export_root, "original", hf_cache_root)) == {
+        "reference/work-a",
+        "reference/work-b",
+    }
+    assert _work_ids(_load_split(export_root, "modernised", hf_cache_root)) == {"reference/work-b"}
 
     card = (export_root / "README.md").read_text(encoding="utf-8")
     assert "| reference/work-a | present | absent |" in card
@@ -223,3 +250,30 @@ def test_coverage_gap_dataset_card_surfacing(tmp_path: Path) -> None:
         if line.startswith("| reference/schaff/encyclopedia/1908-1914 |")
     )
     assert "R43" in schaff_row
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows lock-path regression")
+def test_hf_cache_root_is_independent_of_long_caller_path(tmp_path: Path) -> None:
+    caller_root = tmp_path.joinpath(*(["caller-path-segment-abcdefghijklmnop"] * 12))
+    cache_root = _short_hf_cache_root(caller_root)
+
+    _stage_export_fixture(tmp_path)
+    from build.tools.export_hf_dataset import main
+    from datasets import load_dataset_builder
+
+    export_root = tmp_path / "exports"
+    assert main(["--data-root", str(tmp_path / "data"), "--output", str(export_root)]) == 0
+    try:
+        builder = load_dataset_builder(str(export_root), "original", cache_dir=str(cache_root))
+        builder_cache = Path(builder._cache_dir)
+        lock_path = cache_root / f"{builder_cache.as_posix().replace('/', '_')}.lock"
+
+        assert len(os.fspath(lock_path)) <= 220
+    finally:
+        if cache_root.exists():
+            shutil.rmtree(cache_root)
+
+    assert len(os.fspath(caller_root)) > 260
+    assert len(cache_root.name) == 22
+    assert os.fspath(caller_root) not in os.fspath(cache_root)
+    assert cache_root != _short_hf_cache_root(caller_root / "different")

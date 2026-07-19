@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "ac877901b50142208f33be48ef5b5121",
+  "started_at": "2026-07-16T02:11:29.806543+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/zechariah.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/zechariah.json": {
+      "before_sha256": "e70bf8e5ceb37a6d7b55f2629a14385e9669520ce849063e847442f810aea543",
+      "after_sha256": "090e6f933d5e622ee4d1b6243dc0c009f9360f2259ed0aa20a071eaa599d20c9"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/zechariah.json": {
+      "entries_changed": 203,
+      "fields_changed": 841
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

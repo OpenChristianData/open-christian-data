@@ -43,8 +43,24 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-ci.txt
 
+      - name: Install shared kernel
+        run: pip install -e ./ocd_kernel
+
       - name: Run schema validation
         run: python build/validate.py --all
+
+      - name: Check kernel schema enums
+        run: >
+          python -m ocd_kernel.tools.check_schema_enums_fresh
+          --schemas-dir ocd_kernel/schemas/v1
+          --generated-path ocd_kernel/lib/_generated_enums.py
+
+      - name: Check OCD schema enums
+        run: >
+          python -m ocd_kernel.tools.check_schema_enums_fresh
+          --schemas-dir ocd_kernel/schemas/v1
+          --schemas-dir schemas/v1
+          --generated-path build/lib/_generated_enums.py
 
       - name: Run public identity scan
         if: github.repository == 'OpenChristianData/open-christian-data'
@@ -62,6 +78,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements-ci.txt
+
+      - name: Install shared kernel
+        run: pip install -e ./ocd_kernel
 
       - name: Run tests
         run: python -m pytest tests/ -m "not requires_local_artifacts" -v

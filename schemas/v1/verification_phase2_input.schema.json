@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/verification_phase2_input.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Verification Phase 2 Input Index",
+  "description": "Immutable read-only route inputs derived from verification-inventory-v1 without workspace rediscovery.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["identity", "inventory_binding", "routes", "dependencies"],
+  "properties": {
+    "identity": {"const": "verification-phase2-input-index-v1"},
+    "inventory_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "raw_sha256"],
+      "properties": {
+        "identity": {"const": "verification-inventory-v1"},
+        "raw_sha256": {"$ref": "#/$defs/raw_sha256"}
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/route"}
+    },
+    "dependencies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/dependency"}
+    }
+  },
+  "$defs": {
+    "identifier": {"type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$"},
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[^/]+(?:/[^/]+)*$"
+    },
+    "raw_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "raw_sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repository_path"},
+        "raw_sha256": {"$ref": "#/$defs/raw_sha256"}
+      }
+    },
+    "source_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "raw_sha256"],
+      "properties": {
+        "source_url": {"$ref": "#/$defs/identifier"},
+        "raw_sha256": {"$ref": "#/$defs/raw_sha256"}
+      }
+    },
+    "work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_id", "title", "author", "category", "schema_type", "schema_version", "reconstruction_state"],
+      "properties": {
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "title": {"$ref": "#/$defs/identifier"},
+        "author": {"type": "string"},
+        "category": {"$ref": "#/$defs/identifier"},
+        "schema_type": {"$ref": "#/$defs/identifier"},
+        "schema_version": {"$ref": "#/$defs/identifier"},
+        "reconstruction_state": {"enum": ["authenticated", "referenced_only"]}
+      }
+    },
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rendering_id", "schema_type", "schema_version", "renderer_adapter"],
+      "properties": {
+        "rendering_id": {"$ref": "#/$defs/identifier"},
+        "schema_type": {"$ref": "#/$defs/identifier"},
+        "schema_version": {"$ref": "#/$defs/identifier"},
+        "renderer_adapter": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "panel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "artifacts"],
+      "properties": {
+        "status": {"enum": ["available", "not_available", "referenced_only", "schema_projection_available"]},
+        "artifacts": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+        "source_references": {"type": "array", "items": {"$ref": "#/$defs/source_reference"}}
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["route_id", "work", "rendering", "canonical_artifacts", "source_panel", "ir_panel", "publication_panel"],
+      "properties": {
+        "route_id": {"$ref": "#/$defs/identifier"},
+        "work": {"$ref": "#/$defs/work"},
+        "rendering": {"$ref": "#/$defs/rendering"},
+        "canonical_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}},
+        "source_panel": {"$ref": "#/$defs/panel"},
+        "ir_panel": {"$ref": "#/$defs/panel"},
+        "publication_panel": {"$ref": "#/$defs/panel"}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "raw_sha256"],
+      "properties": {
+        "role": {"$ref": "#/$defs/identifier"},
+        "path": {"$ref": "#/$defs/repository_path"},
+        "raw_sha256": {"$ref": "#/$defs/raw_sha256"}
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import jsonschema
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 def _source_record() -> dict:
@@ -126,7 +127,7 @@ def test_old_to_new_review_state_mapping_count(tmp_path):
 def test_schema_validation_post_migration(tmp_path):
     paths = _run_fixture_migration(tmp_path)
     record = _load_first_migrated_record(paths)
-    record_schema = json.loads(Path("schemas/v1/reconciled_record.schema.json").read_text(encoding="utf-8"))
+    record_schema = json.loads(resolve_schema_path("reconciled_record").read_text(encoding="utf-8"))
 
     jsonschema.validate(instance=record, schema=record_schema)
     assert not list((paths["output_root"] / "modernised").glob("*.json"))
@@ -134,7 +135,7 @@ def test_schema_validation_post_migration(tmp_path):
 
 def test_audit_append_validation(tmp_path):
     paths = _run_fixture_migration(tmp_path)
-    audit_schema = json.loads(Path("schemas/v1/audit_event.schema.json").read_text(encoding="utf-8"))
+    audit_schema = json.loads(resolve_schema_path("audit_event").read_text(encoding="utf-8"))
     audit_lines = paths["audit_path"].read_text(encoding="utf-8").splitlines()
     sizes = []
 
@@ -147,7 +148,7 @@ def test_audit_append_validation(tmp_path):
 
 
 def test_r70_migration_resumes_after_post_anchor_abort(tmp_path, monkeypatch):
-    from build.lib import atomic_io
+    from ocd_kernel.lib import atomic_io
     from build.tools.migrate_schaff_herzog import MigrationAborted, migrate_records
 
     source_dir = _write_source_fixture(tmp_path)

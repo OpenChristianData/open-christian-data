@@ -4,16 +4,17 @@ from pathlib import Path
 import pytest
 from jsonschema import Draft202012Validator
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _schema(name: str) -> dict:
-    return json.loads((REPO_ROOT / "schemas" / "v1" / name).read_text(encoding="utf-8"))
+    return json.loads(resolve_schema_path(name).read_text(encoding="utf-8"))
 
 
-RECONCILED_SCHEMA = _schema("reconciled_record.schema.json")
-CATALOG_SCHEMA = _schema("rendering_catalog.schema.json")
+RECONCILED_SCHEMA = _schema("reconciled_record")
+CATALOG_SCHEMA = _schema("rendering_catalog")
 
 
 def _write_json(path: Path, payload: dict) -> None:

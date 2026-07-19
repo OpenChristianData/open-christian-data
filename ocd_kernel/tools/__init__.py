@@ -1,0 +1,1 @@
+"""Shared kernel tool entrypoints."""

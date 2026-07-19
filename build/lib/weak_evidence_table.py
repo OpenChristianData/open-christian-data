@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterator
 
-from build.lib.atomic_io import append_jsonl_atomic
+from ocd_kernel.lib.atomic_io import append_jsonl_atomic
 
 WEAK_REASON_VALUES = [
     "no_family_map_readiness",

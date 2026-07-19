@@ -8,7 +8,11 @@ import json
 from pathlib import Path
 
 
-from build.parsers.spurgeon_mtp import natural_sort_key, write_chunked_output
+from build.parsers.spurgeon_mtp import (
+    natural_sort_key,
+    parse_sermon_html,
+    write_chunked_output,
+)
 
 
 def _make_entries(n: int) -> list[dict]:
@@ -120,4 +124,29 @@ def test_natural_sort_orders_numerically(tmp_path: Path) -> None:
         "sermons-101-200.json",
         "sermons-201-300.json",
         "sermons-1001-1100.json",
+    ]
+
+
+def test_parse_sermon_html_preserves_direct_list_items_in_source_order() -> None:
+    """Direct sermon-body lists become ordered text blocks without duplicate wrappers."""
+    html = b"""
+    <article class="sermon">
+      <h1>List sermon</h1>
+      <blockquote><p>Reference quote</p><p><span class="reference">John 3:16</span></p></blockquote>
+      <p>Before list.</p>
+      <ol><li>First list item.</li><li>Second list item.</li></ol>
+      <p>After list.</p>
+      <ul><li>Third list item.</li></ul>
+    </article>
+    """
+
+    entry = parse_sermon_html(html, sermon_n=9999)
+
+    assert entry is not None
+    assert entry["content_blocks"] == [
+        "Before list.",
+        "First list item.",
+        "Second list item.",
+        "After list.",
+        "Third list item.",
     ]

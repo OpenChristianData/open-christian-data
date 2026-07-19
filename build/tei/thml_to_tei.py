@@ -11,7 +11,7 @@ from typing import Any
 
 from lxml import etree
 
-from build.lib.bible_ref_normalizer import parse_maclaren_ref, parse_thml_refs
+from ocd_kernel.lib.bible_ref_normalizer import parse_maclaren_ref, parse_thml_refs
 from build.tei.census import _display_path, _parse_thml
 from build.tei.ccel_work_config import (
     CcelWorkConfig,
@@ -19,7 +19,7 @@ from build.tei.ccel_work_config import (
     load_ccel_work_config,
     select_ccel_scope,
 )
-from build.tei.writer import TEI_NS, XML_ID, XML_LANG, serialize, stamp_header, tei_el
+from ocd_kernel.tei.writer import TEI_NS, XML_ID, XML_LANG, serialize, stamp_header, tei_el
 
 LANG_MAP = {
     "EL": "grc",

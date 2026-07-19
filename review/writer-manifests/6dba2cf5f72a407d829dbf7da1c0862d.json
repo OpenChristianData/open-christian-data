@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "6dba2cf5f72a407d829dbf7da1c0862d",
+  "started_at": "2026-07-16T02:13:01.845918+00:00",
+  "data_paths": [
+    "data/commentaries/barnes/1-corinthians.json"
+  ],
+  "checksums": {
+    "data/commentaries/barnes/1-corinthians.json": {
+      "before_sha256": "617fd5cb4befa13561458c33a1ffd5b512f285e12fbe0934a5b720dc23b366eb",
+      "after_sha256": "fe21170a1949cf4f59e28e8ed23a5ad42fa45185c614020917a033de6e5406bf"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/barnes/1-corinthians.json": {
+      "entries_changed": 437,
+      "fields_changed": 1459
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "inline_unicode_whitespace_including_nbsp",
+    "mode": "inline",
+    "input": "  alpha\t\u00a0\u2003beta\n",
+    "expected": "alpha beta"
+  },
+  {
+    "name": "block_preserves_logical_line_boundaries",
+    "mode": "block",
+    "input": " one\u00a0two \n three\tfour ",
+    "expected": "one two\nthree four"
+  },
+  {
+    "name": "block_preserves_an_internal_empty_line",
+    "mode": "block",
+    "input": "first\n\nlast",
+    "expected": "first\n\nlast"
+  },
+  {
+    "name": "inline_trims_after_unicode_collapse",
+    "mode": "inline",
+    "input": "\u2009 around \u00a0",
+    "expected": "around"
+  }
+]

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from build.lib.queue_assembly import assemble_queue_item
+from ocd_kernel.lib.queue_assembly import assemble_queue_item
 
 
 def _token(candidate_attestations: list[dict] | None = None) -> dict:

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "8e0f1fc1df414070a957d8beaae9ac39",
+  "started_at": "2026-07-16T02:13:05.840174+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/revelation.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/revelation.json": {
+      "before_sha256": "b4efe15265e32910b7a96f67aeda788c173f25db9b52da899f31b4f661e4cd8b",
+      "after_sha256": "7db0837b6b29ad70c6b850650a59f7649ce9d20cdb537f486f4857076c622f46"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/revelation.json": {
+      "entries_changed": 383,
+      "fields_changed": 2442
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

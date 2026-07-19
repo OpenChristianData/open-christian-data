@@ -1,6 +1,6 @@
 """CI guard: every source-transliteration lexicon entry must have a fixture file.
 
-RED because build/lib/source_transliteration_lexicons/ doesn't exist yet.
+Guards the kernel-packaged source-transliteration lexicons.
 """
 
 from __future__ import annotations
@@ -8,7 +8,7 @@ from __future__ import annotations
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
-LEXICON_DIR = _REPO_ROOT / "build" / "lib" / "source_transliteration_lexicons"
+LEXICON_DIR = _REPO_ROOT / "ocd_kernel" / "lib" / "source_transliteration_lexicons"
 FIXTURE_DIR = _REPO_ROOT / "tests" / "fixtures" / "source_transliteration"
 
 

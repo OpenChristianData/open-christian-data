@@ -36,7 +36,7 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.atomic_io import append_jsonl_atomic  # noqa: E402
+from ocd_kernel.lib.atomic_io import append_jsonl_atomic  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 LEDGER_SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "correction_ledger.schema.json"
@@ -195,7 +195,7 @@ def _rewrite_ledger_atomically(ledger_path: Path, entries: Iterable[dict[str, An
     for entry in entries:
         # Validate each entry against the schema before rewriting; reuse the
         # atomic_io validator via a probe append to a temp file.
-        from build.lib.atomic_io import validate_payload  # noqa: WPS433
+        from ocd_kernel.lib.atomic_io import validate_payload  # noqa: WPS433
 
         validate_payload(entry, schema)
         lines.append(json.dumps(entry, ensure_ascii=False))

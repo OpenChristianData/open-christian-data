@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "15a21111aee34eb291adf1c7fc34bca1",
+  "started_at": "2026-07-16T02:11:32.002335+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/1-thessalonians.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/1-thessalonians.json": {
+      "before_sha256": "c60b5bccbed4983260808bab9ca5e3bad34872d61f463d46c06dff9edb2c3444",
+      "after_sha256": "d91988c66600659fe18d7c1334a7d5584532b65445daba1a59c0c3cd8423c51e"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/1-thessalonians.json": {
+      "entries_changed": 87,
+      "fields_changed": 449
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

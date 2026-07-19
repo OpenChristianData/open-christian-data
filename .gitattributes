@@ -3,3 +3,19 @@
 *.sh text eol=lf
 .gitignore text eol=lf
 .gitattributes text eol=lf
+
+# CVW Phase 1A raw-byte identities must survive Windows checkouts unchanged.
+cvw_phase1a/** text eol=lf
+docs/WORK_CATALOG.md text eol=lf
+tests/test_cvw_phase1a.py text eol=lf
+plans/2026-07-17-cvw-phase1a-governing-prior-review.md text eol=lf
+
+# These seven loss receipts were authored from CRLF TEI bytes; pin their
+# checkout line endings so strict receipt verification is portable.
+ir/augustine/city-of-god.ccel-npnf102.tei.xml text eol=crlf
+ir/augustine/city-of-god.standard-ebooks.tei.xml text eol=crlf
+ir/bcp/book-of-common-prayer.bcp-1549.tei.xml text eol=crlf
+ir/bcp/book-of-common-prayer.bcp-1559.tei.xml text eol=crlf
+ir/bcp/book-of-common-prayer.bcp-1928-collects.tei.xml text eol=crlf
+ir/ccel/athanasius-on-the-incarnation.ccel-npnf204.tei.xml text eol=crlf
+ir/ccel/owen-mortification.ccel-owen-mort.tei.xml text eol=crlf

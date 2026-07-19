@@ -1,7 +1,7 @@
 """Fail-closed event vocabulary guard for downstream decision-event consumers.
 
 Production callers obtain the allowed set from
-get_enum("decision-event-v1", "event_type") in build.lib.schema_enums once that
+get_enum("decision-event-v1", "event_type") in ocd_kernel.lib.schema_enums once that
 schema is built in a later batch; this module never imports it.
 """
 

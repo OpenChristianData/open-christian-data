@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "a904f6960dc648b583b3587226adb0c3",
+  "started_at": "2026-07-16T02:13:04.320174+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/proverbs.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/proverbs.json": {
+      "before_sha256": "5817c4962d4031561d33cee18ca7ef688308d841c3f029de42ce388ddd39fd9f",
+      "after_sha256": "f22ac50f4f7203365ceeaca2fc8eb54bb5ccf6251667624eabe1aac37dfdfee2"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/proverbs.json": {
+      "entries_changed": 761,
+      "fields_changed": 5364
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

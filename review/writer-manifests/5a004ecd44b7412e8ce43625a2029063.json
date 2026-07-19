@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "5a004ecd44b7412e8ce43625a2029063",
+  "started_at": "2026-07-16T02:11:32.364529+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/jude.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/jude.json": {
+      "before_sha256": null,
+      "after_sha256": "c3489ffe405f17bbe79b673e29a8c03f77d84769618647d1c65fab05e6508a13"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/jude.json": {
+      "entries_changed": 24,
+      "fields_changed": 264
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

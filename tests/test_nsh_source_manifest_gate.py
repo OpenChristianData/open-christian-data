@@ -4,7 +4,7 @@ Every consumer of an NSH ``vol_NN.manifest.json`` must read through
 ``build/lib/nsh_leaf_model.py`` (the accessor), never touch ``manifest["pages"]``
 / ``manifest["unnumbered_leaves"]`` directly. A prose "switch every consumer"
 instruction rots; this gate makes a missed consumer impossible to reintroduce
-(design docs/DESIGN_nsh_leaf_sequence_manifest.md SS3, the red-team's TEST-08).
+(design ../EzraOCR/docs/DESIGN_nsh_leaf_sequence_manifest.md SS3, the red-team's TEST-08).
 
 Two signals, chosen so the gate never false-positives on the S2/S3/WCT chain
 (which reads a DIFFERENT ``pages[]`` -- the sidecar manifest):
@@ -57,7 +57,6 @@ _PAGES_QUALIFIED = re.compile(
 # defers its conversion to leaves[] to P2).
 _EXEMPT_UNNUMBERED = {
     "build/lib/nsh_leaf_model.py",
-    "build/tools/fetch_ia_pages.py",
 }
 
 # Files that consume the NSH SOURCE manifest -- here a manifest/mf-qualified
@@ -66,11 +65,8 @@ _NSH_SOURCE_CONSUMERS = {
     "build/lib/s0_ingest.py",
     "build/lib/page_order.py",
     "build/tools/generate_page_order.py",
-    "build/tools/generate_vol01_page_order.py",
     "build/tools/verify_nsh_page_accounting.py",
     "build/tools/nsh_precommit_ocr_gate.py",
-    "build/tools/fetch_haucgoog_pages.py",
-    "build/tools/refetch_pending_pages.py",
     "build/tools/ocr_pipeline/extract_ccel_page_gold.py",
     "build/parsers/ia_abbyy.py",
 }

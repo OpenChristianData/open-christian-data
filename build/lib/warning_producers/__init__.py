@@ -6,6 +6,7 @@ import hashlib
 import importlib
 import json
 import pkgutil
+import sys
 import traceback
 from collections.abc import Iterable, Mapping
 from datetime import datetime, timezone
@@ -15,6 +16,7 @@ from typing import Any
 import jsonschema
 
 from build.lib.paths import REPO_ROOT
+import ocd_kernel.lib.warning_producers as kernel_warning_producers
 
 METRIC_FIELDS = (
     "warnings_emitted",
@@ -116,12 +118,13 @@ def warning_signature(signature_fields: Iterable[str], values: Mapping[str, Any]
 
 def discover_producers() -> list[Any]:
     """Discover, import, validate, and return registered producer modules."""
-    package_name = __name__
     modules: list[Any] = []
-    for module_info in pkgutil.iter_modules(__path__):
-        if module_info.name == "__init__" or module_info.name.startswith("_"):
-            continue
-        modules.append(importlib.import_module(f"{package_name}.{module_info.name}"))
+    for package in (kernel_warning_producers, sys.modules[__name__]):
+        package_name = package.__name__
+        for module_info in pkgutil.iter_modules(package.__path__):
+            if module_info.name == "__init__" or module_info.name.startswith("_"):
+                continue
+            modules.append(importlib.import_module(f"{package_name}.{module_info.name}"))
     return _validate_and_sort(modules)
 
 
@@ -134,8 +137,6 @@ def run_all_producers(record: dict, meta: dict, *, producers: list[Any] | None =
     forbids silent failures; this is the minimum loud-failure contract
     without crashing the whole pipeline.
     """
-    import sys
-
     ordered = _topological_sort(_validate_and_sort(producers if producers is not None else discover_producers()))
     resource_type = meta.get("resource_type")
     results: dict[str, list] = {}
@@ -210,7 +211,7 @@ def _spill_producer_crash(
     target_dir = dead_letter_dir if dead_letter_dir is not None else REPO_ROOT / "review" / "dead-letter"
     target_dir.mkdir(parents=True, exist_ok=True)
     # Shape conforms to dead_letter_entry in
-    # schemas/v1/review_state.schema.json: reason + raw_warning +
+    # ocd_kernel/schemas/v1/review_state.schema.json: reason + raw_warning +
     # received_at are required; producer is optional but always emitted.
     record = {
         "reason": reason,

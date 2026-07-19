@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "7813da97f6db42e69cb56f01fc2f463a",
+  "started_at": "2026-07-16T02:13:05.371689+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/2-corinthians.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/2-corinthians.json": {
+      "before_sha256": "07aa066f767a2a68da8fec4834981ca391005f628f264c541f2dd249a53307b4",
+      "after_sha256": "a858a808d8a4fe746ec261c1a5964d3ba06815892652cb3e0cbb654b66ad578a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/2-corinthians.json": {
+      "entries_changed": 250,
+      "fields_changed": 1231
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/verification_inventory.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Verification Ownership Inventory",
+  "description": "A closed, grain-separated inventory of repository artifacts owned by verification-inventory-v1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identity",
+    "works",
+    "renderings",
+    "source_artifacts",
+    "members",
+    "canonical_artifacts",
+    "ir_artifacts",
+    "dependencies",
+    "catalog_snapshot"
+  ],
+  "properties": {
+    "identity": {
+      "const": "verification-inventory-v1"
+    },
+    "works": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/work"
+      }
+    },
+    "renderings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rendering"
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source_artifact"
+      }
+    },
+    "members": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/member"
+      }
+    },
+    "canonical_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/canonical_artifact"
+      }
+    },
+    "ir_artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ir_artifact"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/dependency"
+      }
+    },
+    "catalog_snapshot": {
+      "$ref": "#/$defs/catalog_snapshot"
+    },
+    "projection_artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/projection_artifact"
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[^/]+(?:/[^/]+)*$"
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "work_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "work"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/identifier"
+        },
+        "author": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/$defs/identifier"
+        },
+        "schema_type": {
+          "$ref": "#/$defs/identifier"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/identifier"
+        },
+        "reconstruction_state": {
+          "enum": ["authenticated", "referenced_only"]
+        }
+      }
+    },
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "rendering_id",
+        "work_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "rendering"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "schema_type": {
+          "$ref": "#/$defs/identifier"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/identifier"
+        },
+        "renderer_adapter": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "source_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "raw_sha256",
+        "rendering_id"
+      ],
+      "oneOf": [
+        {
+          "required": ["path"],
+          "not": {
+            "anyOf": [
+              {"required": ["availability"]},
+              {"required": ["source_url"]}
+            ]
+          }
+        },
+        {
+          "required": ["availability", "source_url"],
+          "not": {"required": ["path"]}
+        }
+      ],
+      "properties": {
+        "grain": {
+          "const": "source_artifact"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "availability": {
+          "const": "referenced-only"
+        },
+        "source_url": {
+          "$ref": "#/$defs/identifier"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "member_id",
+        "rendering_id",
+        "source_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "collection_member"
+        },
+        "member_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "canonical_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "member_id",
+        "path",
+        "raw_sha256"
+      ],
+      "properties": {
+        "grain": {
+          "const": "canonical_artifact"
+        },
+        "member_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "ir_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "path",
+        "raw_sha256",
+        "rendering_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "ir_artifact"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "projection_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "path",
+        "raw_sha256",
+        "rows",
+        "schema_type"
+      ],
+      "properties": {
+        "grain": {
+          "const": "projection_artifact"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "schema_type": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "path",
+        "raw_sha256"
+      ],
+      "properties": {
+        "role": {
+          "$ref": "#/$defs/identifier"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "catalog_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "raw_sha256"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "file_count",
+            "identity_path",
+            "identity_raw_sha256",
+            "title",
+            "work_id"
+          ]
+        },
+        {
+          "required": ["canonical_artifacts", "work_units"]
+        }
+      ],
+      "properties": {
+        "file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "title": {
+          "$ref": "#/$defs/identifier"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "identity_path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "identity_raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "canonical_artifacts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "work_units": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

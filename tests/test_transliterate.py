@@ -6,6 +6,7 @@ from pathlib import Path
 import json
 
 from jsonschema import Draft202012Validator
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 GREEK_SEGMENT = "  ἀγάπη\tλόγος  "
@@ -71,8 +72,7 @@ def _block(text: str, *, language: str = "en", language_segments: list[dict] | N
 
 
 def _language_segment_validator() -> Draft202012Validator:
-    schema_path = Path("schemas/v1/reconciled_record.schema.json")
-    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    schema = json.loads(resolve_schema_path("reconciled_record").read_text(encoding="utf-8"))
     return Draft202012Validator(schema["$defs"]["language_segment"])
 
 

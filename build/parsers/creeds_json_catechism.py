@@ -29,7 +29,7 @@ from build.lib._generated_enums import (  # noqa: E402
     CATECHISM_QA__META__COMPLETENESS,
     CATECHISM_QA__META__PROVENANCE__PROCESSING_METHOD,
 )
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 OUTPUT_DIR = REPO_ROOT / "data" / "catechisms"

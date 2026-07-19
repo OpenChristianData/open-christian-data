@@ -12,7 +12,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-from build.lib.atomic_io import write_json_atomic
+from ocd_kernel.lib.atomic_io import write_json_atomic
 
 
 ALLOWED_STATUSES = {

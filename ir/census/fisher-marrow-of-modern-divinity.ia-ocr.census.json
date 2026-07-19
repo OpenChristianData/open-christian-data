@@ -1,0 +1,419 @@
+{
+  "census_schema": "tei-census-v1",
+  "source": {
+    "type": "internet_archive_djvutxt",
+    "work_id": "fisher-marrow-of-modern-divinity",
+    "rendering_id": "ia-ocr",
+    "path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+    "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+    "scope": {
+      "start_line": 1285,
+      "start_marker": "INTRODUCTION.",
+      "end": "end of raw witness",
+      "excluded_before_body": "Google Books wrapper, title-page/contents container, and front matter before the first Recommendations heading; the preserved editorial front matter begins at the first Recommendations heading."
+    }
+  },
+  "ocr_quality": {
+    "classification": "ocr-raw-english-prose",
+    "english_prose": "Readable enough for structural ingestion, but visibly uncorrected ABBYY OCR; residual character and word errors remain in the TEI text.",
+    "greek_codepoints": 0,
+    "hebrew_codepoints": 0,
+    "tables": "No table carrier was observed in the selected scope.",
+    "apparatus": "Asterisk and section-mark symbols occur inline, but the DjVuTXT witness does not reliably delimit Boston footnote bodies from main prose; no note boundaries are invented.",
+    "evidence_samples": [
+      {
+        "line": 2503,
+        "text": "CHAPTER TL"
+      },
+      {
+        "line": 15573,
+        "text": "CHAP. LV."
+      },
+      {
+        "line": 19090,
+        "text": "COMMANDMENT VHI."
+      }
+    ]
+  },
+  "structure": {
+    "raw_line_count": 22946,
+    "newline_count": 22945,
+    "form_feed_page_breaks": 0,
+    "body_start_line": 1285,
+    "chapter_headings": {
+      "count": 4,
+      "ids": [
+        "fisher-marrow-l1694-chapter-1",
+        "fisher-marrow-l2503-chapter-2",
+        "fisher-marrow-l10966-chapter-3",
+        "fisher-marrow-l15573-chapter-4"
+      ],
+      "forms": {
+        "CHAPTER I.": 1,
+        "CHAPTER TL": 1,
+        "CHAPTER III.": 1,
+        "CHAP. LV.": 1
+      }
+    },
+    "parts": {
+      "count": 2,
+      "explicit_part_second_boundaries": 1
+    },
+    "commandment_headings": {
+      "count": 8,
+      "ids": [
+        "fisher-marrow-l17014-commandment-1",
+        "fisher-marrow-l17329-commandment-2",
+        "fisher-marrow-l17633-commandment-3",
+        "fisher-marrow-l18157-commandment-4",
+        "fisher-marrow-l18765-commandment-5",
+        "fisher-marrow-l19090-commandment-6",
+        "fisher-marrow-l19244-commandment-7",
+        "fisher-marrow-l19385-commandment-8"
+      ],
+      "forms": {
+        "COMMANDMENT I,": 1,
+        "COMMANDMENT IF.": 1,
+        "COMMANDMENT HI,": 1,
+        "COMMANDMENT IV-": 1,
+        "COMMANDMENT VI.": 1,
+        "COMMANDMENT VHI.": 1,
+        "COMMANDMENT IX.": 1,
+        "COMMANDMENT X.": 1
+      },
+      "missing_standalone_headings": [
+        "COMMANDMENT III",
+        "COMMANDMENT V"
+      ]
+    },
+    "section_markers": {
+      "all_sect_prefixed_lines": 47,
+      "structural_count": 41,
+      "ids": [
+        "fisher-marrow-l1301-section-1",
+        "fisher-marrow-l1363-section-2",
+        "fisher-marrow-l1703-section-3",
+        "fisher-marrow-l2058-section-4",
+        "fisher-marrow-l2139-section-5",
+        "fisher-marrow-l2291-section-6",
+        "fisher-marrow-l2461-section-7",
+        "fisher-marrow-l2528-section-8",
+        "fisher-marrow-l2804-section-9",
+        "fisher-marrow-l2813-section-10",
+        "fisher-marrow-l3138-section-11",
+        "fisher-marrow-l3357-section-12",
+        "fisher-marrow-l4114-section-13",
+        "fisher-marrow-l4296-section-14",
+        "fisher-marrow-l5275-section-15",
+        "fisher-marrow-l5888-section-16",
+        "fisher-marrow-l6280-section-17",
+        "fisher-marrow-l6330-section-18",
+        "fisher-marrow-l6816-section-19",
+        "fisher-marrow-l7961-section-20",
+        "fisher-marrow-l8214-section-21",
+        "fisher-marrow-l8992-section-22",
+        "fisher-marrow-l9525-section-23",
+        "fisher-marrow-l9883-section-24",
+        "fisher-marrow-l10019-section-25",
+        "fisher-marrow-l10982-section-26",
+        "fisher-marrow-l11231-section-27",
+        "fisher-marrow-l11510-section-28",
+        "fisher-marrow-l12138-section-29",
+        "fisher-marrow-l12277-section-30",
+        "fisher-marrow-l12800-section-31",
+        "fisher-marrow-l13227-section-32",
+        "fisher-marrow-l13513-section-33",
+        "fisher-marrow-l13868-section-34",
+        "fisher-marrow-l14157-section-35",
+        "fisher-marrow-l14865-section-36",
+        "fisher-marrow-l14945-section-37",
+        "fisher-marrow-l15158-section-38",
+        "fisher-marrow-l15580-section-39",
+        "fisher-marrow-l15726-section-40",
+        "fisher-marrow-l16138-section-41"
+      ],
+      "heading_forms": [
+        "SECTION I,",
+        "SECT* U.—Of THB Promibis.",
+        "SECT. IIL — Or the PxnroRUANCE or the PaaflnsK*"
+      ],
+      "synopsis_count": 6,
+      "synopsis_ids": [
+        "fisher-marrow-l1287-synopsis",
+        "fisher-marrow-l1698-synopsis",
+        "fisher-marrow-l2806-synopsis",
+        "fisher-marrow-l6282-synopsis",
+        "fisher-marrow-l10969-synopsis",
+        "fisher-marrow-l15577-synopsis"
+      ],
+      "synopsis_forms": [
+        "Sect. 1. DilTerfncea about the Lfkw—2. A threefold L&w,",
+        "Sect, I. The Nature of tlie Coreoantof Works,~2. Adam's Fall. — 3. TLe",
+        "Sect. I. TliePifUnise made toAdatH. — 2. The Prnmige renewed to Abnu",
+        "Sect, L — Christ's futfilling of the haw la the room nf the Elect,- — 2. Be-",
+        "Sect. 1. Tie nature of the Law of Christ. — 2* The laiF of the tea com-",
+        "Sect. I. No rest for the soul till it come to God, — 2. How the soul is kept"
+      ],
+      "punctuation_forms": {
+        "sect.": 27,
+        "sect*": 5,
+        "sect,": 7,
+        "sect-": 7,
+        "sect ": 0,
+        "section": 1
+      }
+    },
+    "speaker_labels": {
+      "high_confidence_count": 455,
+      "forms": {
+        "&an~": 1,
+        "Nam.": 7,
+        "Neo.": 42,
+        "Ant": 4,
+        "Evan*": 24,
+        "Nom^": 6,
+        "Evan.": 102,
+        "iVbm.": 5,
+        "Evan,": 44,
+        "Nom*": 4,
+        "Ant.": 24,
+        "iVom.": 3,
+        "Nom,": 8,
+        "JVom.": 4,
+        "£van*": 1,
+        "Nom.": 24,
+        "Norn,": 3,
+        "jVbm.": 1,
+        "&an.": 4,
+        "Ecan^": 1,
+        "JVbm.": 1,
+        "AnL": 13,
+        "Mvan.": 3,
+        "N^om^": 1,
+        "Nam,": 4,
+        "£van.": 3,
+        "Ant,": 4,
+        "Evan^": 4,
+        "Eean>": 1,
+        "Etfan^": 1,
+        "Ant*": 4,
+        "jVeo,": 1,
+        "Evan>": 1,
+        "JVbm*": 1,
+        "£van~": 1,
+        "N^eo,": 1,
+        "Neo*": 16,
+        "iVeo,": 4,
+        "Norn.": 9,
+        "JVeo>": 1,
+        "Nmn.": 2,
+        "Evan,:": 1,
+        "Etfan*": 2,
+        "jVom-": 1,
+        "iVeo.": 6,
+        "Evan-": 1,
+        "Neo,": 16,
+        "Anl*": 1,
+        "No7n,": 1,
+        "^eo.": 1,
+        "Mvan,": 1,
+        "iVffo.": 1,
+        "Euan*": 1,
+        "JVeo": 1,
+        "Eran.": 2,
+        "JVeo.": 1,
+        "JVeo*": 1,
+        "N^o.": 1,
+        "Neo^": 5,
+        "Neo»": 1,
+        "&an-": 1,
+        "iVffo,": 1,
+        "^eo*": 1,
+        "iV^o.": 1,
+        "JV^o.": 1,
+        "N^eo.": 1,
+        "Mvan*": 1,
+        "Ecan,": 1,
+        "Neo-": 1,
+        "E^an.": 1,
+        "Etfan,": 1,
+        "Eean*": 1,
+        "jVom.": 1,
+        "Norn*": 1,
+        "No7n*": 1,
+        "N^om.": 1,
+        "Etfan.": 1,
+        "JVom^": 1,
+        "Mvan^": 1,
+        "Mvan>": 1,
+        "jVeo.": 1,
+        "&an*": 1
+      },
+      "ambiguous_unconverted_count": 123,
+      "ambiguous_samples": [
+        {
+          "line": 1289,
+          "text": "jVomts/a. Sift, mj neighbour, Neophitus, and I haviug lately"
+        },
+        {
+          "line": 1335,
+          "text": "iVtfjfi, Sir, for my own part, I hold it very racist, liiiit every"
+        },
+        {
+          "line": 1397,
+          "text": "believer^ M'liicli of these three laws yuu iueati*"
+        },
+        {
+          "line": 1745,
+          "text": "J eat, and have given thee abundantly to eat : let all the fruit*"
+        },
+        {
+          "line": 1808,
+          "text": "iVbzn. But, sir, what 19 the reason you call it but thematltfr"
+        },
+        {
+          "line": 1937,
+          "text": "iVbffi. But yet I cannot but marvel that God, in making the"
+        },
+        {
+          "line": 1941,
+          "text": "£!van. Do not marvel at eI : for by that one species of sin"
+        },
+        {
+          "line": 1982,
+          "text": "^ God. huvjiTL^r ^iveQ niHin a bciDg; after his own imag'i;, a g^lortqus e:^-"
+        },
+        {
+          "line": 2061,
+          "text": "^mn. No, indeed; for he disobeyed God's express com-"
+        },
+        {
+          "line": 2073,
+          "text": "jVoffi. But why then did not the Lord create him immu-"
+        },
+        {
+          "line": 2435,
+          "text": "OhJecL \"Do we Uien make void the law,\" (Roai, iii. 31.) leaving An"
+        },
+        {
+          "line": 2484,
+          "text": "^■Sect. L Of the elernat Purpose of Grace. — 2. Of the Promise* — 3. Of"
+        }
+      ]
+    },
+    "inline_marker_counts": {
+      "*": {
+        "characters": 2039,
+        "lines": 1758
+      },
+      "†": {
+        "characters": 0,
+        "lines": 0
+      },
+      "‡": {
+        "characters": 0,
+        "lines": 0
+      },
+      "§": {
+        "characters": 44,
+        "lines": 44
+      }
+    }
+  },
+  "features": {
+    "chapters": {
+      "count": 4,
+      "ids": [
+        "fisher-marrow-l1694-chapter-1",
+        "fisher-marrow-l2503-chapter-2",
+        "fisher-marrow-l10966-chapter-3",
+        "fisher-marrow-l15573-chapter-4"
+      ]
+    },
+    "parts": {
+      "count": 2,
+      "ids": [
+        "fisher-marrow-part-I",
+        "fisher-marrow-part-II"
+      ]
+    },
+    "commandments": {
+      "count": 8,
+      "ids": [
+        "fisher-marrow-l17014-commandment-1",
+        "fisher-marrow-l17329-commandment-2",
+        "fisher-marrow-l17633-commandment-3",
+        "fisher-marrow-l18157-commandment-4",
+        "fisher-marrow-l18765-commandment-5",
+        "fisher-marrow-l19090-commandment-6",
+        "fisher-marrow-l19244-commandment-7",
+        "fisher-marrow-l19385-commandment-8"
+      ]
+    },
+    "sections": {
+      "count": 41,
+      "ids": [
+        "fisher-marrow-l1301-section-1",
+        "fisher-marrow-l1363-section-2",
+        "fisher-marrow-l1703-section-3",
+        "fisher-marrow-l2058-section-4",
+        "fisher-marrow-l2139-section-5",
+        "fisher-marrow-l2291-section-6",
+        "fisher-marrow-l2461-section-7",
+        "fisher-marrow-l2528-section-8",
+        "fisher-marrow-l2804-section-9",
+        "fisher-marrow-l2813-section-10",
+        "fisher-marrow-l3138-section-11",
+        "fisher-marrow-l3357-section-12",
+        "fisher-marrow-l4114-section-13",
+        "fisher-marrow-l4296-section-14",
+        "fisher-marrow-l5275-section-15",
+        "fisher-marrow-l5888-section-16",
+        "fisher-marrow-l6280-section-17",
+        "fisher-marrow-l6330-section-18",
+        "fisher-marrow-l6816-section-19",
+        "fisher-marrow-l7961-section-20",
+        "fisher-marrow-l8214-section-21",
+        "fisher-marrow-l8992-section-22",
+        "fisher-marrow-l9525-section-23",
+        "fisher-marrow-l9883-section-24",
+        "fisher-marrow-l10019-section-25",
+        "fisher-marrow-l10982-section-26",
+        "fisher-marrow-l11231-section-27",
+        "fisher-marrow-l11510-section-28",
+        "fisher-marrow-l12138-section-29",
+        "fisher-marrow-l12277-section-30",
+        "fisher-marrow-l12800-section-31",
+        "fisher-marrow-l13227-section-32",
+        "fisher-marrow-l13513-section-33",
+        "fisher-marrow-l13868-section-34",
+        "fisher-marrow-l14157-section-35",
+        "fisher-marrow-l14865-section-36",
+        "fisher-marrow-l14945-section-37",
+        "fisher-marrow-l15158-section-38",
+        "fisher-marrow-l15580-section-39",
+        "fisher-marrow-l15726-section-40",
+        "fisher-marrow-l16138-section-41"
+      ]
+    },
+    "section_synopses": {
+      "count": 6,
+      "ids": [
+        "fisher-marrow-l1287-p",
+        "fisher-marrow-l1698-p",
+        "fisher-marrow-l2806-p",
+        "fisher-marrow-l6282-p",
+        "fisher-marrow-l10969-p",
+        "fisher-marrow-l15577-p"
+      ]
+    },
+    "page_breaks": {
+      "count": 0,
+      "ids": []
+    },
+    "speaker_labels": {
+      "count": 455,
+      "ids": []
+    }
+  }
+}

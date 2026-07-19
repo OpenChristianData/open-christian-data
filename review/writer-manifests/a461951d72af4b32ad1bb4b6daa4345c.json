@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "a461951d72af4b32ad1bb4b6daa4345c",
+  "started_at": "2026-07-16T02:11:28.530498+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/psalms.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/psalms.json": {
+      "before_sha256": "60861120c5a828903dbef9319c73eb421b1c6928dd6626c3a5204ea0cd904778",
+      "after_sha256": "158b968fbdb3947d5a8032ba5d30711741881dae473ef431603d6d24a538aed6"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/psalms.json": {
+      "entries_changed": 1978,
+      "fields_changed": 7354
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/spurgeon_mtp.py@v2.1.0",
+  "writer_identity": "spurgeon_mtp_parser",
+  "run_id": "batch-01-spurgeon-mtp-lists",
+  "started_at": "2026-07-15T00:03:00.521640+00:00",
+  "data_paths": [
+    "data/sermons/spurgeon-mtp/sermons-1-100.json",
+    "data/sermons/spurgeon-mtp/sermons-101-200.json",
+    "data/sermons/spurgeon-mtp/sermons-201-300.json",
+    "data/sermons/spurgeon-mtp/sermons-301-400.json",
+    "data/sermons/spurgeon-mtp/sermons-401-500.json",
+    "data/sermons/spurgeon-mtp/sermons-501-600.json",
+    "data/sermons/spurgeon-mtp/sermons-601-700.json",
+    "data/sermons/spurgeon-mtp/sermons-701-800.json",
+    "data/sermons/spurgeon-mtp/sermons-801-900.json",
+    "data/sermons/spurgeon-mtp/sermons-901-1000.json",
+    "data/sermons/spurgeon-mtp/sermons-1001-1100.json",
+    "data/sermons/spurgeon-mtp/sermons-1101-1200.json",
+    "data/sermons/spurgeon-mtp/sermons-1201-1300.json",
+    "data/sermons/spurgeon-mtp/sermons-1301-1400.json",
+    "data/sermons/spurgeon-mtp/sermons-1401-1500.json",
+    "data/sermons/spurgeon-mtp/sermons-1501-1600.json",
+    "data/sermons/spurgeon-mtp/sermons-1601-1700.json",
+    "data/sermons/spurgeon-mtp/sermons-1701-1800.json",
+    "data/sermons/spurgeon-mtp/sermons-1801-1900.json",
+    "data/sermons/spurgeon-mtp/sermons-1901-2000.json",
+    "data/sermons/spurgeon-mtp/sermons-2001-2100.json",
+    "data/sermons/spurgeon-mtp/sermons-2101-2200.json",
+    "data/sermons/spurgeon-mtp/sermons-2201-2300.json",
+    "data/sermons/spurgeon-mtp/sermons-2301-2400.json",
+    "data/sermons/spurgeon-mtp/sermons-2401-2500.json",
+    "data/sermons/spurgeon-mtp/sermons-2501-2600.json",
+    "data/sermons/spurgeon-mtp/sermons-2601-2700.json",
+    "data/sermons/spurgeon-mtp/sermons-2701-2800.json",
+    "data/sermons/spurgeon-mtp/sermons-2801-2900.json",
+    "data/sermons/spurgeon-mtp/sermons-2901-3000.json",
+    "data/sermons/spurgeon-mtp/sermons-3001-3100.json",
+    "data/sermons/spurgeon-mtp/sermons-3101-3200.json",
+    "data/sermons/spurgeon-mtp/sermons-3201-3300.json",
+    "data/sermons/spurgeon-mtp/sermons-3301-3400.json",
+    "data/sermons/spurgeon-mtp/sermons-3401-3500.json",
+    "data/sermons/spurgeon-mtp/sermons-3501-3547.json"
+  ],
+  "checksums": {
+    "data/sermons/spurgeon-mtp/sermons-1-100.json": {
+      "before_sha256": "cb4b0ce12dcea6bff4e86bf95a4a21ac19e8066350c31c81ce229029fada8752",
+      "after_sha256": "454456c4a9c84d763d7d9550753f5a56d1c36889a10220da5d203fa226b82667"
+    },
+    "data/sermons/spurgeon-mtp/sermons-101-200.json": {
+      "before_sha256": "5561edd3cf7eced7a859574b0d5fe76ba1fff859c195cfedfdfb63d3913cbe97",
+      "after_sha256": "30efd1d351e682c7b5ed5ba0c6e3f02e8efe56c93089335063cad9f5fcae6927"
+    },
+    "data/sermons/spurgeon-mtp/sermons-201-300.json": {
+      "before_sha256": "13e46caf5c2fba9d06e071f6b233a3da516a2dc046f58dbe8e8b0348de105472",
+      "after_sha256": "5e13ca1e14bd6e19b9db167dacdb8378a12f8847915f6cef58a55c309fc928c4"
+    },
+    "data/sermons/spurgeon-mtp/sermons-301-400.json": {
+      "before_sha256": "4d89a1f0eefa019339574b861322c6fb7def5a4eb9a7a16fa93747b85c70f225",
+      "after_sha256": "c9041cc2e14afbc98f0507fb674138c9b63f0889136480263c789cef5d89c014"
+    },
+    "data/sermons/spurgeon-mtp/sermons-401-500.json": {
+      "before_sha256": "39bfacfb15c89e4238cd36c312de9366ddd8ab8ca4591c9e70becd8d73989488",
+      "after_sha256": "399589f196881b3619a389503691b9ee04430424ae08967176d5d2d63b908112"
+    },
+    "data/sermons/spurgeon-mtp/sermons-501-600.json": {
+      "before_sha256": "489dee8c88bf0a23e3968258d07bc415e2fa17747d37f6f44cfb0883298ba9a5",
+      "after_sha256": "04ab67a9c16d044b416ef06a3579a59d4330358de248ddf949a872695ebd9be7"
+    },
+    "data/sermons/spurgeon-mtp/sermons-601-700.json": {
+      "before_sha256": "1f89900c337edfc668e9a3223f058d9b56a2b2d9371f4108ddf713bfa68eafa9",
+      "after_sha256": "2bd0b2731e76b5ddad4ac2daf00a8093f1da878634e9d4b5b75dba861f74fbd7"
+    },
+    "data/sermons/spurgeon-mtp/sermons-701-800.json": {
+      "before_sha256": "5dd13febd85f3635614ea61e65330a5230f418d1954d0d71c0e14604e3ad45e9",
+      "after_sha256": "e9ae264fa6d353d6de95836efd29bf6d3842f175167d2cdac33f4ba4f8664f43"
+    },
+    "data/sermons/spurgeon-mtp/sermons-801-900.json": {
+      "before_sha256": "ac6d40fd05c79cadc697b9ee5ba938df072ebe0fa7b04a8593ec27014b4f2fac",
+      "after_sha256": "4ce49016b70349054a3d85d0c143999170e63154cf84555d6cc3ecb29cf9022e"
+    },
+    "data/sermons/spurgeon-mtp/sermons-901-1000.json": {
+      "before_sha256": "5c4215a4859f0eba3aa12f9491ec318633be74c2f63eda425b19da503bb2cff4",
+      "after_sha256": "49a1c4e987fae2df6a9e630d9c5c0c64ebf8565c606be6bf9da32602d2764ba1"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1001-1100.json": {
+      "before_sha256": "65586e1d389fcaf6d2390481f8523a125fd2c1b95802c2c6b7525a851d8557a5",
+      "after_sha256": "ac515d3b43b69db7ba237d5eae757cc58c3cb4f56bee0f9c7bf6fc7fa8a9cbcf"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1101-1200.json": {
+      "before_sha256": "c9380aecc08788da7707a98b532032df2cf6eab29750cf35a102ef14de69bc47",
+      "after_sha256": "53fee3b88b22e2d007bc4455a1a10b39821f035c3457efb2c2970ce03612e1e2"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1201-1300.json": {
+      "before_sha256": "2cbefa2b28f38a651713f9bab3e3c17e05cccbebdd02cd803ce1e34ff4602c88",
+      "after_sha256": "9e1272031b9df4d31be2b534ac2890422fb1fbc44f2565e905365ac04412923f"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1301-1400.json": {
+      "before_sha256": "4819055d1dc9b98aa9e18e70cef92e03fa145e9b11dac368f1b9fe10a9c7b16e",
+      "after_sha256": "60218162cd18e0d2ad6af9c1584f11dcc15b25de5235afe86f09b18cc802febb"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1401-1500.json": {
+      "before_sha256": "47fdd9a814d0dfd931b98a1e7c20413dbee11476496c9a19f08d60f6fca8687e",
+      "after_sha256": "1d2358b14b4db8e9e14542ca7865a777b647577a6743436a3d8a052b9378e48a"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1501-1600.json": {
+      "before_sha256": "cc8fafa9ec069cca94dd8401eeb5f26b7205803e98610b3682681b1c5b62b2dd",
+      "after_sha256": "ef611c2f32895ae183b06d34a243a30de31dc6a1ff1d5b93febd5fa7c4e014a9"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1601-1700.json": {
+      "before_sha256": "ca06c58f4f99bb672eb8c89e0938a929811b97b12d4a8ab23d81c8741b643142",
+      "after_sha256": "78ef748d7d4628a70b685c6d092fd5a2664ca5fb988e481fde13365f31353e99"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1701-1800.json": {
+      "before_sha256": "b5aac6f58d16e2917b3aea34e53633e0954d636ca08e4cbf7f4db58dfd944618",
+      "after_sha256": "4e9ceac30a57be5165fcfca54075c9a116237f33551060c608b68734155f7cc6"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1801-1900.json": {
+      "before_sha256": "3f653ef375574a2f8903ae9d6d8b9d6a6e042aeffb979b8a658ec46722e089b8",
+      "after_sha256": "936ad3dcd015008ef7cb41a4b5b062ae6bacdfcf595712284930c13583717379"
+    },
+    "data/sermons/spurgeon-mtp/sermons-1901-2000.json": {
+      "before_sha256": "81096417eaa7e70a9e6444fbd82edd785c211fa228f16ca1fe03309c46f6909e",
+      "after_sha256": "755ae51ce1b2e72c17b48a4628b84605ff0448a6881fc7ca12964925cd0a2094"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2001-2100.json": {
+      "before_sha256": "2ea55a464bcdd7b2b3124ffbf8adcc71ed3a9fb2e6610b93573785e84c179c7b",
+      "after_sha256": "c9f09a8685f75b70161fb1ef4824707ddf258192cf2717d328673f25473d4adb"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2101-2200.json": {
+      "before_sha256": "8eb93e5aa60888461601b6df42c8918b8d5910ec0816d0bdc9cf272058b57e1f",
+      "after_sha256": "30b5c8c95e15081ccffd74701565cea3274300191713dd6e4e5da96353b27d4f"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2201-2300.json": {
+      "before_sha256": "cbd7674b8605a301ed6edd23d4a4c25808f9a5785e2b6ef5223f3a82b622d75b",
+      "after_sha256": "b2271051ba4bce3e1df99cfc8272903f5a6a897faec101c6d96db22972c3bc5e"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2301-2400.json": {
+      "before_sha256": "ef949f3b635b6ec444857938420b0717c5145637a8f07850dd0a5ea7c021fa5a",
+      "after_sha256": "4ffd78e625e57a9a4f3e0856360be1d1ce1367e42ca3dd553de19cb30cc36fb5"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2401-2500.json": {
+      "before_sha256": "e7844cdd81c24de490524f811c7202e56aad18adb4402ed33397feec26861b03",
+      "after_sha256": "06c18c28ec34cea842907f33ec2d92b34b0b4dbc6b7f0f9a57f1de3231fb559d"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2501-2600.json": {
+      "before_sha256": "bb35b162e62a0603132f4c585bfd9748f01ed8f987872bc90830e90f055d70e9",
+      "after_sha256": "3c8c142ce1ea9a09a16bb84fbf3640835e56f933464040beb501bd859427cfe8"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2601-2700.json": {
+      "before_sha256": "495b8b6f547a4d16dcf2ec73c4a2e26b67ea78175b968735b6331eadd48d86d8",
+      "after_sha256": "eb23a0637f685c179ad2134ac0aa72289e6f79122509e4f10c62a76af70173db"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2701-2800.json": {
+      "before_sha256": "74f8d468de94817531454b7f60c15188b5ab699633be75d0173e496892a3b033",
+      "after_sha256": "361d5063614149136d57b5839e2796294cfb556f3eb4125d5ae36baa1c99e6ee"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2801-2900.json": {
+      "before_sha256": "01d4bf3091464e6907cab4a2531b5f41426dfd9a154f5dde95ce62d1de401f6f",
+      "after_sha256": "542bbc6338a145538329d60dbcae93ce59f936501e9e7551913fb5bd458a9fa7"
+    },
+    "data/sermons/spurgeon-mtp/sermons-2901-3000.json": {
+      "before_sha256": "3d90432f1ed49620f160883b9323ee0a619235a71fbe4813019e6339b3cc8503",
+      "after_sha256": "619b3a644b4cb8a45d5673df9b304de59da8b3d19833877e4501bde514b7bb6c"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3001-3100.json": {
+      "before_sha256": "a84590b469e3a69883e04519405c4b06a115f28fdce944e624360de1d2cf9e13",
+      "after_sha256": "86885f3a1c9a2fef8b310b37ac43b315ec65564a81f7e0d9db03ae9b0a0087c9"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3101-3200.json": {
+      "before_sha256": "7a5807337d93667f7b0d62b8017babd60cca230b26ca856cb08a8ccbe3c6f0b9",
+      "after_sha256": "d22e36f8d03ee9cd6412bace39397c327b5f330e14af5b3c6ef775e6036e733e"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3201-3300.json": {
+      "before_sha256": "912060f0489e306e15e4a4d8a91accc0bc86972ecefd4058417414d185be15a9",
+      "after_sha256": "d39501af0ab8a62239a161e274abe8c27befa225caf2ddd15692f82ed020aa26"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3301-3400.json": {
+      "before_sha256": "6037fa59ad21826e87e9a9c74a487d284ca1e04ba154b5355afc8de49c02675e",
+      "after_sha256": "c6d8932d103965b5785a97e315b8ff86d463495bb4772b87d231dc1b09782b29"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3401-3500.json": {
+      "before_sha256": "341ffb2bff59233c34a73c10547d9901771e6cecc15bcfff40267e0545e1561e",
+      "after_sha256": "9bf6c3006a6b4bfd29edfeae123dc98253859394a1e9a2871f323df9e6985c46"
+    },
+    "data/sermons/spurgeon-mtp/sermons-3501-3547.json": {
+      "before_sha256": "66d7b3fc4077fdd5302bbd147b9f77b96613e022e315f2160267c6129a7fc64d",
+      "after_sha256": "04ceec59e1675594009256fba9646872296832b398178858dae278100f7f3d90"
+    }
+  },
+  "expected_delta_counts": {
+    "sermon_count_before": 3547,
+    "sermon_count_after": 3547,
+    "direct_list_item_blocks_added": 3757,
+    "chunks_regenerated": 36
+  },
+  "allowed_field_paths": [
+    "/meta/provenance/source_hash",
+    "/meta/provenance/processing_script_version",
+    "/meta/provenance/processing_date",
+    "/meta/provenance/download_date",
+    "/meta/provenance/notes",
+    "/data/*/content_blocks",
+    "/data/*/word_count"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "notes": "Regenerated all Spurgeon MTP chunks after preserving direct sermon-body ordered and unordered list-item text in source order. List container and numbering/bullet boundaries remain unrepresentable in string-only content_blocks and are documented in provenance.",
+  "renames": []
+}
+

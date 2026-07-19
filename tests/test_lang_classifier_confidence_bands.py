@@ -8,7 +8,7 @@ classify_block, LANG_BLOCK_NEEDS_REVIEW, and check_language_confidence.
 from __future__ import annotations
 
 
-from build.lib.lang_classifier import classify_spans, classify_block, LANG_BLOCK_NEEDS_REVIEW, check_language_confidence
+from ocd_kernel.lib.lang_classifier import classify_spans, classify_block, LANG_BLOCK_NEEDS_REVIEW, check_language_confidence
 
 
 def test_greek_script_is_high_confidence() -> None:

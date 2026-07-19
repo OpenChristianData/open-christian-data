@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/creeds_json_confession.py@sha256:3621ad898790b796acfc79262bfe3f94508652f58a60d8a7261b55f3da6aa46f",
+  "writer_identity": "creeds_json_confession_parser",
+  "run_id": "creeds-json-esv-removal-2026-07-18",
+  "started_at": "2026-07-18T08:02:43+10:00",
+  "data_paths": [
+    "data/doctrinal-documents/christ-hymn-of-colossians.json",
+    "data/doctrinal-documents/christ-hymn-of-philippians.json",
+    "data/doctrinal-documents/christian-shema.json",
+    "data/doctrinal-documents/confession-of-peter.json",
+    "data/doctrinal-documents/shema-yisrael.json"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/christ-hymn-of-colossians.json": {
+      "before_sha256": "c18853d806e699ae9aefc7eeac52e906d5a5becb545ed8438d92b2704ebfbb50",
+      "after_sha256": null
+    },
+    "data/doctrinal-documents/christ-hymn-of-philippians.json": {
+      "before_sha256": "53ae35b60e4cc80249572ba0fbf8b12a8a11408578766c2ad530385294915122",
+      "after_sha256": null
+    },
+    "data/doctrinal-documents/christian-shema.json": {
+      "before_sha256": "0c9d5d75017531472485bfb2bc9b4f0039ef4c4795f599316082b0213708f2db",
+      "after_sha256": null
+    },
+    "data/doctrinal-documents/confession-of-peter.json": {
+      "before_sha256": "570b22891e3c7095d7f0d7b51bb40b0080f17a4779f9acc9f07076abf53508ed",
+      "after_sha256": null
+    },
+    "data/doctrinal-documents/shema-yisrael.json": {
+      "before_sha256": "e688ecb91e3643298627825601d195726fb0ae4a62f0f74db6399795dcaf8f59",
+      "after_sha256": null
+    }
+  },
+  "expected_delta_counts": {
+    "data/doctrinal-documents/christ-hymn-of-colossians.json": {
+      "entries_changed": 1,
+      "fields_changed": 0
+    },
+    "data/doctrinal-documents/christ-hymn-of-philippians.json": {
+      "entries_changed": 1,
+      "fields_changed": 0
+    },
+    "data/doctrinal-documents/christian-shema.json": {
+      "entries_changed": 1,
+      "fields_changed": 0
+    },
+    "data/doctrinal-documents/confession-of-peter.json": {
+      "entries_changed": 1,
+      "fields_changed": 0
+    },
+    "data/doctrinal-documents/shema-yisrael.json": {
+      "entries_changed": 1,
+      "fields_changed": 0
+    }
+  },
+  "allowed_field_paths": [
+    "/"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -63,7 +63,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.lib.text_utils import compute_source_hash, smart_title  # noqa: E402
 from build.lib.pg_inline_markup import (  # noqa: E402
     append_pg_inline_markup_note,

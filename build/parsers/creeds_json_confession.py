@@ -27,7 +27,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib._generated_enums import DOCTRINAL_DOCUMENT__DATA__DOCUMENT_KIND  # noqa: E402
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data" / "doctrinal-documents"
@@ -254,39 +254,16 @@ DOCUMENT_CONFIGS = {
         ),
     },
     # --- Single-content docs (Data is a dict, not a list) ---
-    "christ_hymn_of_colossians": {
-        "document_id": "christ-hymn-of-colossians",
-        "document_kind": "creed",
-        "tradition": ["ecumenical", "patristic"],
-        "tradition_notes": (
-            "Early Christian hymn from Colossians 1:15-20. "
-            "One of the New Testament Christological hymns."
-        ),
-    },
-    "christ_hymn_of_philippians": {
-        "document_id": "christ-hymn-of-philippians",
-        "document_kind": "creed",
-        "tradition": ["ecumenical", "patristic"],
-        "tradition_notes": (
-            "Early Christian hymn from Philippians 2:6-11 (Carmen Christi). "
-            "One of the New Testament Christological hymns."
-        ),
-    },
-    "christian_shema": {
-        "document_id": "christian-shema",
-        "document_kind": "creed",
-        "tradition": ["ecumenical"],
-        "tradition_notes": (
-            "1 Corinthians 8:6 -- the Pauline expansion of the Jewish Shema; "
-            "an early Christological confession."
-        ),
-    },
-    "confession_of_peter": {
-        "document_id": "confession-of-peter",
-        "document_kind": "creed",
-        "tradition": ["ecumenical", "patristic"],
-        "tradition_notes": "Peter's confession of Christ as found in Matthew 16:16.",
-    },
+    # Excluded on purpose: christ_hymn_of_colossians, christ_hymn_of_philippians,
+    # christian_shema, confession_of_peter, and shema_yisrael. Upstream Creeds.json
+    # supplies the text of these five from the ESV (esv.literalword.com), a
+    # copyrighted modern translation that cannot ship under this project's CC0
+    # dedication. They are bare Scripture passages rather than composed creeds, so
+    # the wording is wholly the translation's; there is no public-domain source text
+    # underneath to recover. The passages themselves remain available in the CC0
+    # Berean Standard Bible under bible_text. To restore them as doctrinal documents,
+    # re-source the wording from a public-domain or CC0 translation first.
+    # See docs/SOURCES.md and build/CLASSIFICATION_LOG.md.
     "gregorys_declaration_of_faith": {
         "document_id": "gregorys-declaration-of-faith",
         "document_kind": "creed",
@@ -320,16 +297,6 @@ DOCUMENT_CONFIGS = {
         "tradition": ["patristic"],
         "tradition_notes": (
             "Rule of faith from Tertullian's The Prescription of Heretics (c. 200 AD)."
-        ),
-    },
-    "shema_yisrael": {
-        "document_id": "shema-yisrael",
-        "document_kind": "creed",
-        "tradition": ["ecumenical"],
-        "tradition_notes": (
-            "Deuteronomy 6:4-5, the foundational declaration of monotheistic faith. "
-            "Quoted by Jesus as the greatest commandment (Mark 12:29). "
-            "Jewish in origin, foundational to Christian theology."
         ),
     },
 }

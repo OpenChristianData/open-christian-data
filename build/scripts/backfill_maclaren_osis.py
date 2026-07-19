@@ -30,7 +30,7 @@ DATA_FILE = REPO_ROOT / "data" / "sermons" / "maclaren-expositions.json"
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.bible_ref_normalizer import parse_maclaren_ref  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import parse_maclaren_ref  # noqa: E402
 
 
 def main() -> None:

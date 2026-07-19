@@ -8,6 +8,7 @@ Covers:
   - Section count lock against committed output
 """
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -18,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.parsers.schleitheim_confession import (  # noqa: E402
     DOCUMENT_CONFIG,
     build_output,
@@ -64,6 +65,12 @@ ordained of God outside the perfection of Christ.<p>
 
 <font color="#008000"><b>VII.  We are agreed as follows concerning the oath:</b></font>  We are agreed
 that the oath is a confirmation among those who are quarreling.<p>
+
+<div style="margin-left:50px">
+The Seven Articles of Schleitheim<br>
+Canton Schaffhausen, Switzerland,<br>
+February 24, 1527
+</div>
 
 </body></html>
 """
@@ -141,6 +148,11 @@ def test_extract_articles_content_nonempty():
         assert a["content"].strip(), f"Article {a['number']!r} has empty content"
 
 
+def test_extract_articles_retains_confession_closing_imprint():
+    articles = extract_articles(_MINIMAL_HTML)
+    assert "The Seven Articles of Schleitheim" in articles[-1]["content"]
+
+
 def test_extract_articles_first_title_contains_baptism():
     articles = extract_articles(_MINIMAL_HTML)
     assert "baptism" in articles[0]["title"].lower()
@@ -216,6 +228,9 @@ def test_build_output_source_hash_stored():
 
 _EXPECTED_UNIT_COUNT = 7
 _OUTPUT_PATH = REPO_ROOT / "data" / "doctrinal-documents" / "schleitheim-confession-1527.json"
+_RAW_CACHE_PATH = REPO_ROOT / "raw" / "anabaptists.org" / "schleitheim-confession-1527.html"
+_SOURCE_CONFIG_PATH = REPO_ROOT / "sources" / "doctrinal-documents" / "schleitheim-confession-1527" / "config.json"
+_DOCUMENT_CLOSE = "The Seven Articles of Schleitheim"
 
 
 @pytest.mark.skipif(not _OUTPUT_PATH.exists(), reason="output file not yet generated")
@@ -263,3 +278,39 @@ def test_output_provenance_source_hash_format():
     source_hash = doc["meta"]["provenance"]["source_hash"]
     assert source_hash.startswith("sha256:"), f"Expected sha256: prefix, got {source_hash!r}"
     assert len(source_hash) == 71, f"Expected len 71, got {len(source_hash)}"
+
+
+@pytest.mark.requires_local_artifacts
+def test_cached_raw_article_vii_stops_at_confession_terminus():
+    """The cached witness must not allow post-document site chrome into Article VII."""
+    assert _RAW_CACHE_PATH.exists(), f"Missing cached raw witness: {_RAW_CACHE_PATH}"
+    articles = extract_articles(_RAW_CACHE_PATH.read_bytes())
+    article_vii = next(article for article in articles if article["number"] == "VII")
+
+    assert _DOCUMENT_CLOSE in article_vii["content"]
+    assert "February 24, 1527" in article_vii["content"]
+    assert "This material was typed by" not in article_vii["content"]
+    assert "Amazon disclosure" not in article_vii["content"]
+    assert "Share This Page" not in article_vii["content"]
+
+
+@pytest.mark.requires_local_artifacts
+def test_cached_raw_hash_matches_source_config():
+    assert _RAW_CACHE_PATH.exists(), f"Missing cached raw witness: {_RAW_CACHE_PATH}"
+    with _SOURCE_CONFIG_PATH.open(encoding="utf-8") as fh:
+        config = json.load(fh)
+    cached_hash = "sha256:" + hashlib.sha256(_RAW_CACHE_PATH.read_bytes()).hexdigest()
+    assert cached_hash == config["source"]["source_hash"]
+
+
+def test_output_article_vii_stops_at_confession_terminus():
+    """The regenerated dataset retains the real close but excludes source-site chrome."""
+    with _OUTPUT_PATH.open(encoding="utf-8") as fh:
+        doc = json.load(fh)
+    article_vii = doc["data"]["units"][-1]["content"]
+
+    assert _DOCUMENT_CLOSE in article_vii
+    assert "February 24, 1527" in article_vii
+    assert "This material was typed by" not in article_vii
+    assert "Amazon disclosure" not in article_vii
+    assert "Share This Page" not in article_vii

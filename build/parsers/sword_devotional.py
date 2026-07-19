@@ -38,7 +38,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.config_validation import validate_config_enums  # noqa: E402
-from build.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import parse_thml_refs  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
 SWORD_RAW_DIR = REPO_ROOT / "raw" / "sword_modules"

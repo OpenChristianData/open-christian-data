@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from build.lib.text_extractor import effective_resource_type, extract_text
+from ocd_kernel.lib.text_extractor import effective_resource_type, extract_text
 
 
 SCHEMAS_DIR = Path(__file__).resolve().parents[1] / "schemas" / "v1"

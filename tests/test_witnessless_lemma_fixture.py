@@ -4,7 +4,7 @@ This test answers the source-plan question (unknown 1): does a witnessless <lem>
 carrying @resp and @cert but NO @wit validate against tei_all?
 
 Both flavors are checked:
-  - XSD via build.tei.validate.validate_file (the pipeline gate)
+  - XSD via ocd_kernel.tei.validate.validate_file (the pipeline gate)
   - RelaxNG via lxml.etree.RelaxNG (the TEI-canonical reference flavor)
 
 Marked @pytest.mark.slow because the ~14-second schema parse dwarfs the fast
@@ -17,11 +17,12 @@ import pytest
 from pathlib import Path
 from lxml import etree
 
-from build.tei.validate import validate_file
+from ocd_kernel.tei import validate as tei_validate
+from ocd_kernel.tei.validate import validate_file
 
 _REPO_ROOT = Path(__file__).parents[1]
 _FIXTURE_PATH = _REPO_ROOT / "tests" / "fixtures" / "witnessless_lemma_fixture.tei.xml"
-_RNG_PATH = _REPO_ROOT / "build" / "tei" / "vendor" / "relaxng" / "tei_all.rng"
+_RNG_PATH = Path(tei_validate.__file__).parent / "vendor" / "relaxng" / "tei_all.rng"
 
 
 pytestmark = pytest.mark.slow

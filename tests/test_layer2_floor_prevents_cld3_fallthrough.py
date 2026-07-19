@@ -1,14 +1,14 @@
 """R55 — Layer 2 floor: 60 fixtures across 6 language families must resolve at
 layer2 with language_confidence >= 0.60.
 
-RED until classify_block is implemented in build.lib.lang_classifier.
+RED until classify_block is implemented in ocd_kernel.lib.lang_classifier.
 """
 
 from __future__ import annotations
 
 import pytest
 
-from build.lib.lang_classifier import classify_block
+from ocd_kernel.lib.lang_classifier import classify_block
 
 
 EN_FIXTURES = [

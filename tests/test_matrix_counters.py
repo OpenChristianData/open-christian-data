@@ -28,7 +28,7 @@ from build.lib.matrix_counters import (
     thresholds_for,
 )
 from build.lib.matrix_observation_sink import LedgerIntegrityError, MatrixObservationSink
-from build.lib.schema_enums import get_enum
+from ocd_kernel.lib.schema_enums import get_enum
 
 POLICY_VERSION = "weight-matrix-policy-v1"
 

@@ -8,7 +8,7 @@ and will pass again once classify_block is implemented.
 from __future__ import annotations
 
 
-from build.lib.lang_classifier import classify, classify_spans, classify_block
+from ocd_kernel.lib.lang_classifier import classify, classify_spans, classify_block
 
 
 def test_classify_returns_no_hint_for_unmatched_english() -> None:

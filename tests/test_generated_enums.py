@@ -14,9 +14,11 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from build.lib import _generated_enums  # noqa: E402
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum, kernel_schemas_dir  # noqa: E402
 
 TMP_ROOT = REPO_ROOT / "tests" / "_tmp_generated_enums"
+KERNEL_SCHEMAS_DIR = kernel_schemas_dir()
+OCD_SCHEMAS_DIR = REPO_ROOT / "schemas" / "v1"
 
 
 def _reset_tmp_dir(name: str) -> Path:
@@ -33,7 +35,11 @@ def test_generated_enums_are_deterministic() -> None:
     output_path = temp_dir / "_generated_enums.py"
     command = [
         sys.executable,
-        "build/tools/generate_schema_enums.py",
+        "ocd_kernel/tools/generate_schema_enums.py",
+        "--schemas-dir",
+        str(KERNEL_SCHEMAS_DIR),
+        "--schemas-dir",
+        str(OCD_SCHEMAS_DIR),
         "--output",
         str(output_path),
     ]
@@ -45,6 +51,14 @@ def test_generated_enums_are_deterministic() -> None:
 
 
 def test_generated_constants_match_get_enum() -> None:
+    kernel_module_text = (REPO_ROOT / "ocd_kernel" / "lib" / "_generated_enums.py").read_text(
+        encoding="utf-8"
+    )
+    assert "COMMENTARY__META__TRADITION" in kernel_module_text
+    assert "STRUCTURED_TEXT__META__TRADITION" not in kernel_module_text
+    assert hasattr(_generated_enums, "COMMENTARY__META__TRADITION")
+    assert hasattr(_generated_enums, "STRUCTURED_TEXT__META__TRADITION")
+
     assert _generated_enums.STRUCTURED_TEXT__META__TRADITION == get_enum(
         "structured_text", "meta", "tradition"
     )
@@ -103,7 +117,7 @@ def test_drift_check_exits_nonzero_when_generated_file_is_stale() -> None:
         subprocess.run(
             [
                 sys.executable,
-                "build/tools/check_schema_enums_fresh.py",
+                "ocd_kernel/tools/check_schema_enums_fresh.py",
                 "--generated-path",
                 str(generated_path),
             ],

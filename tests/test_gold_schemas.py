@@ -2,22 +2,21 @@ from __future__ import annotations
 
 import copy
 import json
-import sys
 from pathlib import Path
 
 import jsonschema
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 SCHEMA_DIR = REPO_ROOT / "schemas" / "v1"
 TOKEN_ID = "ot-sha256:" + "1" * 64
 
 
 def _schema(name: str) -> dict:
-    path = SCHEMA_DIR / f"{name}.schema.json"
+    path = resolve_schema_path(name)
     assert path.exists(), f"{path.name} is missing"
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -51,38 +50,6 @@ def _valid_gold_record() -> dict:
             "timestamp": "2026-05-29T00:00:00Z",
             "source_basis": "scan leaf and Schaff-Herzog 1908 edition",
         },
-    }
-
-
-def _valid_gold_sample_manifest() -> dict:
-    return {
-        "schema_version": "gold-sample-manifest-v1",
-        "sample_id": "gold-sample-vol01-dominant-failure",
-        "volume": 1,
-        "sample_role": "dominant_failure",
-        "created_at": "2026-05-29T00:00:00Z",
-        "strata_definition": {
-            "dimensions": [
-                {
-                    "name": "zone_type",
-                    "source": "sidecar blocks[].block_type",
-                    "availability": "derived_at_s1",
-                    "buckets": ["text", "diagnostic"],
-                }
-            ]
-        },
-        "strata": [
-            {
-                "stratum_key": {"zone_type": "text"},
-                "target_count": 2,
-                "actual_count": 2,
-                "selected_pages": [
-                    "reports/gold/vol_01/pages/page_0001.json",
-                    "reports/gold/vol_01/pages/page_0002.json",
-                ],
-                "coverage_flag": "covered",
-            }
-        ],
     }
 
 
@@ -123,14 +90,3 @@ def test_unverifiable_gold_record_with_non_null_text_rejected() -> None:
     record["unverifiable_reason"] = "scan is unreadable at this token"
 
     _rejects(_schema("gold-record-v1"), record)
-
-
-def test_gold_sample_manifest_validates() -> None:
-    _accepts(_schema("gold-sample-manifest-v1"), _valid_gold_sample_manifest())
-
-
-def test_gold_sample_manifest_rejects_absolute_selected_page_path() -> None:
-    manifest = _valid_gold_sample_manifest()
-    manifest["strata"][0]["selected_pages"] = ["C:/absolute/page_0001.json"]
-
-    _rejects(_schema("gold-sample-manifest-v1"), manifest)

@@ -9,7 +9,7 @@
     "format": "HTML",
     "license": "Public Domain",
     "license_notes": "1527 text; English translation by Rod and Staff Publishers (Sixth Printing, 1985). Public domain by age.",
-    "download_date": "2026-06-17",
+    "download_date": "2026-07-15",
     "source_hash": "sha256:5a7f3b112e2bd074c9eb8626fd58d13086870ebb0be52a3036781ce9077f3750"
   },
   "schema_type": "doctrinal_document",
@@ -18,13 +18,14 @@
   "parser": "build/parsers/schleitheim_confession.py",
   "stats": {
     "article_count": 7,
-    "word_count": 2545
+    "word_count": 2352
   },
   "notes": [
     "Tradition: anabaptist, mennonite.",
     "Drafted by Michael Sattler and adopted February 24, 1527 at Schleitheim (canton Schaffhausen).",
     "The seven articles address baptism, the ban, breaking of bread, separation, pastors, the sword, and the oath.",
     "Source HTML uses old-style <font color> markup; parser extracts articles via regex on green-font headers.",
-    "English translation by Rod and Staff Publishers; full document, all 7 articles present."
+    "English translation by Rod and Staff Publishers; full document, all 7 articles present.",
+    "Raw witness cached at raw/anabaptists.org/schleitheim-confession-1527.html (gitignored); rebuild by fetching provenance.source_url once and verifying provenance.source_hash against the committed sibling manifest raw/anabaptists.org/schleitheim-confession-1527.manifest.json."
   ]
 }

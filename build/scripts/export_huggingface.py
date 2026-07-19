@@ -38,6 +38,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_DIR = PROJECT_ROOT / "exports" / "huggingface"
 LOG_FILE = Path(__file__).parent / "export_huggingface.log"
+DATASET_CARD = PROJECT_ROOT / "docs" / "HUGGINGFACE_DATASET_CARD.md"
+NSH_REFERENCE_PREFIX = ("reference", "schaff", "encyclopedia", "1908-1914")
 
 # Directories under data/ that contain no exportable data records
 SKIP_DATA_DIRS = {"authors"}
@@ -245,6 +247,9 @@ def find_json_files(data_dir, skip_dirs, skip_filenames):
         if top_subdir and top_subdir[0] in skip_dirs:
             dirs.clear()
             continue
+        if top_subdir[: len(NSH_REFERENCE_PREFIX)] == NSH_REFERENCE_PREFIX:
+            dirs.clear()
+            continue
 
         for filename in sorted(files):
             if not filename.endswith(".json"):
@@ -317,6 +322,10 @@ def run_export():
     logging.info("  OUTPUT_DIR : %s", OUTPUT_DIR)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if DATASET_CARD.exists():
+        (OUTPUT_DIR / "README.md").write_text(DATASET_CARD.read_text(encoding="utf-8"), encoding="utf-8")
+    else:
+        logging.warning("Dataset card not found at %s -- README.md not refreshed", DATASET_CARD)
 
     # Collect all records grouped by schema_type
     all_records = {}   # schema_type -> list of record dicts

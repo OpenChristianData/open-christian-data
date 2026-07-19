@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "4afc2548b7954bffb83df4f703a0152c",
+  "started_at": "2026-07-16T02:13:05.428459+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/ephesians.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/ephesians.json": {
+      "before_sha256": "a444c5cd9d55dcdca77bb7c92caa654745eef9271f2837bbefc0eaa8cb305550",
+      "after_sha256": "31e78d491ccf9cc74d7a47c16a204fc3b1efef4377ef2b90f612ad64fce15a0a"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/ephesians.json": {
+      "entries_changed": 149,
+      "fields_changed": 735
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

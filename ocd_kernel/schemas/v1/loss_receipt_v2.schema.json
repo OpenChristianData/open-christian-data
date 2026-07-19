@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/loss_receipt_v2.schema.json",
+  "x-ocd-schema-version": "2.0.0",
+  "title": "Loss Receipt v2",
+  "description": "Strict TEI projection ledger with independently verifiable delivery evidence.",
+  "type": "object",
+  "required": ["receipt_schema", "projection", "ir", "output", "totals", "classes", "nodes"],
+  "additionalProperties": false,
+  "properties": {
+    "receipt_schema": {"const": "loss-receipt-v2"},
+    "projection": {
+      "type": "object",
+      "required": ["id", "generator", "generated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "generator": {"type": "string", "minLength": 1},
+        "generated_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "ir": {"$ref": "#/$defs/path_hash"},
+    "output": {"$ref": "#/$defs/path_hash"},
+    "totals": {
+      "type": "object",
+      "required": ["addressable_nodes", "delivered", "normalized", "structural", "dropped", "empty"],
+      "additionalProperties": false,
+      "properties": {
+        "addressable_nodes": {"type": "integer", "minimum": 0},
+        "delivered": {"type": "integer", "minimum": 0},
+        "normalized": {"type": "integer", "minimum": 0},
+        "structural": {"type": "integer", "minimum": 0},
+        "dropped": {"type": "integer", "minimum": 0},
+        "empty": {"type": "integer", "minimum": 0}
+      }
+    },
+    "classes": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/class_counts"
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    }
+  },
+  "$defs": {
+    "path_hash": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "class_counts": {
+      "type": "object",
+      "required": ["delivered", "normalized", "structural", "dropped", "empty"],
+      "additionalProperties": false,
+      "properties": {
+        "delivered": {"type": "integer", "minimum": 0},
+        "normalized": {"type": "integer", "minimum": 0},
+        "structural": {"type": "integer", "minimum": 0},
+        "dropped": {"type": "integer", "minimum": 0},
+        "empty": {"type": "integer", "minimum": 0}
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["record_id", "field", "char_start", "char_end"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "field": {"enum": ["text", "argument", "title_path", "speeches"]},
+        "item_index": {"type": "integer", "minimum": 0},
+        "item_field": {"enum": ["speaker", "text"]},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 0}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"field": {"const": "title_path"}},
+            "required": ["field"]
+          },
+          "then": {"required": ["item_index"]}
+        },
+        {
+          "if": {
+            "properties": {"field": {"const": "speeches"}},
+            "required": ["field"]
+          },
+          "then": {"required": ["item_index", "item_field"]},
+          "else": {"not": {"required": ["item_field"]}}
+        },
+        {
+          "if": {
+            "properties": {"field": {"enum": ["text", "argument"]}},
+            "required": ["field"]
+          },
+          "then": {"not": {"required": ["item_index"]}}
+        }
+      ]
+    },
+    "node": {
+      "type": "object",
+      "required": ["address", "element", "disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "address": {"type": "string", "minLength": 1},
+        "element": {"type": "string", "minLength": 1},
+        "disposition": {"enum": ["delivered", "normalized", "structural", "dropped", "empty"]},
+        "canonical_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "canonical_text_length": {"type": "integer", "minimum": 0},
+        "reason_code": {
+          "enum": [
+            "drop.element.note",
+            "drop.element.pb",
+            "drop.div.type",
+            "drop.ancestor.note",
+            "drop.ancestor.pb",
+            "drop.ancestor.div-type",
+            "normalize.ref.annotation-removed",
+            "normalize.inline.markup-removed",
+            "structural.text",
+            "structural.body",
+            "structural.front",
+            "structural.back",
+            "structural.div",
+            "structural.list",
+            "structural.item",
+            "structural.table",
+            "structural.row",
+            "structural.cell",
+            "structural.lb",
+            "empty.text-bearing"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/target"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"disposition": {"enum": ["delivered", "normalized"]}},
+            "required": ["disposition"]
+          },
+          "then": {
+            "required": ["canonical_text_sha256", "canonical_text_length", "targets"]
+          }
+        },
+        {
+          "if": {
+            "properties": {"disposition": {"const": "normalized"}},
+            "required": ["disposition"]
+          },
+          "then": {"required": ["reason_code"]}
+        },
+        {
+          "if": {
+            "properties": {"disposition": {"const": "structural"}},
+            "required": ["disposition"]
+          },
+          "then": {
+            "required": ["reason_code"],
+            "not": {
+              "anyOf": [
+                {"required": ["canonical_text_sha256"]},
+                {"required": ["canonical_text_length"]},
+                {"required": ["targets"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"disposition": {"const": "dropped"}},
+            "required": ["disposition"]
+          },
+          "then": {
+            "required": ["canonical_text_sha256", "canonical_text_length", "reason_code"],
+            "not": {"required": ["targets"]}
+          }
+        },
+        {
+          "if": {
+            "properties": {"disposition": {"const": "empty"}},
+            "required": ["disposition"]
+          },
+          "then": {
+            "required": ["canonical_text_length", "reason_code"],
+            "properties": {"canonical_text_length": {"const": 0}},
+            "not": {
+              "anyOf": [
+                {"required": ["targets"]},
+                {"required": ["canonical_text_sha256"]}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

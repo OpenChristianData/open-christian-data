@@ -1,0 +1,121 @@
+{
+  "census_schema": "tei-census-v1",
+  "source": {
+    "type": "sermon_html",
+    "family": "spurgeon-mtp-html",
+    "path": "raw/spurgeon_sermons/html",
+    "file_count": 3547,
+    "scope": {
+      "selected_sermons": [
+        1,
+        15,
+        317
+      ],
+      "selection_rule": "lowest-numbered sermon with at least two direct article lists; lowest-numbered sermon with a nested list; and lowest-numbered sermon with no article ol/ul, deduplicated and sorted"
+    },
+    "files": [
+      {
+        "path": "raw/spurgeon_sermons/html/1.html",
+        "sha256": "39a99f4d95ebe439d6fb232dd9d3b226039848a97fa14792d6dbf8f5698f0699"
+      },
+      {
+        "path": "raw/spurgeon_sermons/html/15.html",
+        "sha256": "67d27cc11b0e10b937f519a40a79fd4fd405e6b2e5c6e1311384b800f3d5b068"
+      },
+      {
+        "path": "raw/spurgeon_sermons/html/317.html",
+        "sha256": "c2e34e15ef0faf41326e067c64b49690670522edd294e43955e0151bbf03e0a4"
+      }
+    ],
+    "sha256": "9a1cc61a2d7d119f33b08325708ca3264d759ff52e3440a0bf41c2ebbc2579a3"
+  },
+  "family_census": {
+    "sermon_files": 3547,
+    "article_tags": {
+      "article": 3547,
+      "blockquote": 13597,
+      "br": 24751,
+      "code": 14,
+      "em": 2,
+      "h1": 3547,
+      "li": 3767,
+      "ol": 3766,
+      "p": 178407,
+      "span": 3425,
+      "strong": 10
+    },
+    "list_elements": {
+      "ol": 3766,
+      "ul": 0,
+      "li": 3767
+    },
+    "files_with_ol": 3403,
+    "files_with_ul": 0,
+    "files_with_article_lists": 3403,
+    "files_without_article_ol_ul": 144,
+    "nested_list_elements": 9,
+    "list_forms": {
+      "ol": 6,
+      "ol[type=a]": 3760
+    },
+    "note": "All 3,547 raw pages contain a site-navigation ul outside the sermon article; the family list counts above are restricted to article content."
+  },
+  "features": {
+    "blockquotes": {
+      "count": 13
+    },
+    "bold_runs": {
+      "count": 0
+    },
+    "bulleted_lists": {
+      "count": 0
+    },
+    "code_runs": {
+      "count": 0
+    },
+    "italic_runs": {
+      "count": 0
+    },
+    "line_breaks": {
+      "count": 31
+    },
+    "list_items": {
+      "count": 5
+    },
+    "nested_lists": {
+      "count": 1
+    },
+    "ordered_lists": {
+      "count": 5
+    },
+    "paragraphs": {
+      "count": 209
+    },
+    "scripture_reference_spans": {
+      "count": 3
+    },
+    "sermons": {
+      "count": 3
+    }
+  },
+  "selected_wave": {
+    "tag_counts": {
+      "article": 3,
+      "blockquote": 13,
+      "br": 31,
+      "h1": 3,
+      "li": 5,
+      "ol": 5,
+      "p": 209,
+      "span": 3
+    },
+    "list_forms": {
+      "ol[type=a]": 5
+    },
+    "notes": [
+      "The selected wave contains ordered ol[type=a] carriers only; no sermon article contains ul.",
+      "Sermon 317 exercises the one selected nested-list form, including its malformed-looking duplicate text carrier.",
+      "Sermon 15 is the plain article control."
+    ]
+  }
+}

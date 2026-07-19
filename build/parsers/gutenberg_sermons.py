@@ -15,7 +15,7 @@ Output:
   data/sermons/luther-lenker-sermons.json
   data/sermons/newman-parochial-sermons.json
 
-Schema: sermon (schemas/v1/sermon.schema.json)
+Schema: sermon (ocd_kernel/schemas/v1/sermon.schema.json)
 Tradition: Luther = lutheran, reformation; Newman = anglican
 
 Usage:

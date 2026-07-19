@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/naves_topical.py@v1.0.0",
+  "writer_identity": "naves_topical_parser",
+  "run_id": "0043eb1bf4b845da8529855f7313f24b",
+  "started_at": "2026-07-16T01:53:56.939197+00:00",
+  "data_paths": [
+    "data/topical-reference/naves/naves-topical-bible.json"
+  ],
+  "checksums": {
+    "data/topical-reference/naves/naves-topical-bible.json": {
+      "before_sha256": "ef2c41fb3a14b9bd02f739150dce2e0ee97adc2d3527e9a709356c03175a6e47",
+      "after_sha256": "43651081534d62d1c325e3963a0905590fb4e50bb316d80a9e8660155df6edbb"
+    }
+  },
+  "expected_delta_counts": {
+    "data/topical-reference/naves/naves-topical-bible.json": {
+      "entries_changed": 41,
+      "fields_changed": 41
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

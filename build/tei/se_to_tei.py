@@ -10,7 +10,7 @@ from pathlib import Path
 
 from lxml import etree
 
-from build.tei.writer import TEI_NS, serialize, stamp_header, tei_el
+from ocd_kernel.tei.writer import TEI_NS, serialize, stamp_header, tei_el
 
 XHTML_NS = "http://www.w3.org/1999/xhtml"
 EPUB_NS = "http://www.idpf.org/2007/ops"
@@ -21,18 +21,25 @@ EPUB_TYPE = f"{{{EPUB_NS}}}type"
 NS = {"x": XHTML_NS, "opf": "http://www.idpf.org/2007/opf"}
 
 SECTION_TYPE_MAP = {
+    "appendix": "appendix",
     "chapter": "chapter",
     "colophon": "colophon",
     "copyright-page": "copyright-page",
+    "dedication": "dedication",
     "division": "book",
+    "epigraph": "epigraph",
+    "foreword": "foreword",
     "halftitlepage": "halftitlepage",
+    "introduction": "introduction",
     "imprint": "imprint",
     "part": "part",
+    "preamble": "preamble",
     "preface": "preface",
+    "z3998:subchapter": "subchapter",
     "titlepage": "titlepage",
 }
 
-BODY_MATTER_TYPES = {"bodymatter", "frontmatter", "backmatter", "z3998:non-fiction"}
+BODY_MATTER_TYPES = {"bodymatter", "frontmatter", "backmatter", "z3998:fiction", "z3998:non-fiction"}
 HEADING_TYPES = {"title", "fulltitle", "z3998:ordinal", "z3998:roman"}
 TYPOGRAPHIC_TYPES = {
     "se:era",
@@ -58,6 +65,10 @@ TYPOGRAPHIC_TYPES = {
     "z3998:signature",
     "z3998:surname",
     "z3998:translator",
+    "title",
+    "label",
+    "ordinal",
+    "z3998:subchapter",
 }
 
 
@@ -139,6 +150,10 @@ def _ana(tokens: set[str]) -> dict[str, str]:
     return {"ana": " ".join(sorted(tokens))} if tokens else {}
 
 
+def _is_bridgehead(node: etree._Element) -> bool:
+    return bool(_tokens(node) & {"se:bridgehead", "bridgehead"})
+
+
 def _assert_known_types(node: etree._Element, allowed: set[str]) -> None:
     unknown = _tokens(node) - allowed
     if unknown:
@@ -180,9 +195,9 @@ def _convert_inline(node: etree._Element, state: _State) -> etree._Element | Non
         _assert_known_types(node, TYPOGRAPHIC_TYPES)
         state.typographic_mappings.add("abbr -> abbr @ana")
         out = tei_el("abbr", {**_xml_attrs(node), **_ana(tokens)})
-    elif tag == "b":
+    elif tag in {"b", "strong"}:
         _assert_known_types(node, TYPOGRAPHIC_TYPES)
-        state.typographic_mappings.add("b -> hi rend='bold' @ana")
+        state.typographic_mappings.add(f"{tag} -> hi rend='bold' @ana")
         out = tei_el("hi", {**_xml_attrs(node), "rend": "bold", **_ana(tokens)})
     elif tag == "cite":
         _assert_known_types(node, TYPOGRAPHIC_TYPES)
@@ -220,6 +235,9 @@ def _convert_inline(node: etree._Element, state: _State) -> etree._Element | Non
         datetime_value = node.get("datetime")
         if datetime_value:
             out.set("when", datetime_value)
+    elif tag == "q":
+        _assert_known_types(node, TYPOGRAPHIC_TYPES)
+        out = tei_el("q", {**_xml_attrs(node), **_ana(tokens)})
     else:
         raise ConversionError(f"No TEI mapping for XHTML tag <{tag}> at {_source_location(node)}")
 
@@ -251,11 +269,11 @@ def _copy_note_children(source: etree._Element, target: etree._Element, state: _
     for child in source:
         tag = etree.QName(child).localname
         if tag == "p":
-            _copy_children(child, target, state)
+            paragraph = tei_el("p", _xml_attrs(child))
+            _copy_children(child, paragraph, state)
+            target.append(paragraph)
         elif tag == "blockquote":
-            q = tei_el("q", _xml_attrs(child))
-            _append_text(q, _text_content(child))
-            target.append(q)
+            target.append(_convert_blockquote(child, state))
         elif tag == "cite":
             title = tei_el("title", _xml_attrs(child))
             _copy_children(child, title, state)
@@ -276,8 +294,8 @@ def _convert_heading(node: etree._Element, state: _State) -> etree._Element:
 
 def _convert_p(node: etree._Element, state: _State) -> etree._Element:
     tokens = _tokens(node)
-    _assert_known_types(node, {"se:bridgehead", "z3998:signature"})
-    p = tei_el("p", {**_xml_attrs(node), **_ana(tokens - {"se:bridgehead"})})
+    _assert_known_types(node, {"se:bridgehead", "bridgehead", "z3998:signature", "title"})
+    p = tei_el("p", {**_xml_attrs(node), **_ana(tokens - {"se:bridgehead", "bridgehead"})})
     _copy_children(node, p, state)
     return p
 
@@ -302,9 +320,9 @@ def _convert_verse_p(node: etree._Element, state: _State) -> list[etree._Element
 
 def _convert_blockquote(node: etree._Element, state: _State) -> etree._Element:
     tokens = _tokens(node)
-    _assert_known_types(node, {"z3998:verse"})
+    _assert_known_types(node, {"z3998:verse", "z3998:song", "z3998:poem", "epigraph"})
     quote = tei_el("quote", _xml_attrs(node))
-    if "z3998:verse" in tokens:
+    if tokens & {"z3998:verse", "z3998:song", "z3998:poem"}:
         lg = tei_el("lg")
         trailing: list[etree._Element] = []
         for child in node:
@@ -327,6 +345,50 @@ def _convert_blockquote(node: etree._Element, state: _State) -> etree._Element:
     return quote
 
 
+def _convert_list(node: etree._Element, state: _State) -> etree._Element:
+    list_type = "ordered" if etree.QName(node).localname == "ol" else "bulleted"
+    out = tei_el("list", {**_xml_attrs(node), "type": list_type})
+    for child in node:
+        if etree.QName(child).localname != "li":
+            raise ConversionError(
+                f"No TEI list mapping for <{etree.QName(child).localname}> at {_source_location(child)}"
+            )
+        item = tei_el("item", _xml_attrs(child))
+        _append_text(item, child.text)
+        for item_child in child:
+            item_tag = etree.QName(item_child).localname
+            if item_tag == "p":
+                item.append(_convert_p(item_child, state))
+            elif item_tag in {"ol", "ul"}:
+                item.append(_convert_list(item_child, state))
+            else:
+                converted = _convert_inline(item_child, state)
+                if converted is not None:
+                    item.append(converted)
+            _append_text(item, item_child.tail)
+        out.append(item)
+        _append_text(out, child.tail)
+    return out
+
+
+def _convert_hgroup(node: etree._Element, state: _State) -> etree._Element:
+    head = tei_el("head", _xml_attrs(node))
+    for child in node:
+        tag = etree.QName(child).localname
+        if tag in {"h1", "h2", "h3", "h4"} or (tag == "p" and "title" in _tokens(child)):
+            _copy_children(child, head, state)
+        else:
+            raise ConversionError(f"No TEI hgroup mapping for <{tag}> at {_source_location(child)}")
+        _append_text(head, child.tail)
+    return head
+
+
+def _convert_header_p(node: etree._Element, state: _State) -> etree._Element:
+    head = tei_el("head", _xml_attrs(node))
+    _copy_children(node, head, state)
+    return head
+
+
 def _copy_block_children(source: etree._Element, target: etree._Element, state: _State) -> None:
     _append_text(target, source.text)
     for child in source:
@@ -341,13 +403,21 @@ def _convert_block(node: etree._Element, state: _State) -> etree._Element | None
     if tag in {"h1", "h2", "h3", "h4"}:
         return _convert_heading(node, state)
     if tag == "p":
-        if "se:bridgehead" in _tokens(node):
+        if _is_bridgehead(node):
             argument = tei_el("argument")
             argument.append(_convert_p(node, state))
             return argument
         return _convert_p(node, state)
     if tag == "blockquote":
         return _convert_blockquote(node, state)
+    if tag in {"ol", "ul"}:
+        return _convert_list(node, state)
+    if tag == "hgroup":
+        return _convert_hgroup(node, state)
+    if tag == "cite":
+        bibl = tei_el("bibl", _xml_attrs(node))
+        _copy_children(node, bibl, state)
+        return bibl
     if tag == "header":
         container = tei_el("ab")
         for child in node:
@@ -386,16 +456,25 @@ def _append_header_children(section: etree._Element, div: etree._Element, state:
                 header_tag = etree.QName(header_child).localname
                 if header_tag in {"h1", "h2", "h3", "h4"}:
                     div.append(_convert_heading(header_child, state))
-                elif header_tag == "p" and "se:bridgehead" in _tokens(header_child):
+                elif header_tag == "p" and _is_bridgehead(header_child):
                     argument = tei_el("argument")
                     argument.append(_convert_p(header_child, state))
                     div.append(argument)
+                elif header_tag == "p":
+                    div.append(_convert_header_p(header_child, state))
+                elif header_tag == "hgroup":
+                    div.append(_convert_hgroup(header_child, state))
+                elif header_tag == "blockquote":
+                    div.append(_convert_blockquote(header_child, state))
                 elif header_tag == "img":
                     _assert_known_types(header_child, TYPOGRAPHIC_TYPES)
                 else:
                     raise ConversionError(
                         f"No TEI header mapping for <{header_tag}> at {_source_location(header_child)}"
                     )
+        elif tag == "hgroup":
+            consumed.add(child)
+            div.append(_convert_hgroup(child, state))
     return consumed
 
 

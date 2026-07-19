@@ -32,6 +32,7 @@ class BcpEvent:
     label: str = ""
     div_type: str = ""
     speaker: str = ""
+    service_id: str = ""
 
 
 @dataclass(frozen=True)
@@ -44,6 +45,7 @@ class BcpEdition:
     source_kind: str
     files: tuple[Path, ...]
     events: tuple[BcpEvent, ...]
+    translator: str | None = None
 
 
 def slugify(value: str) -> str:
@@ -151,28 +153,31 @@ def _append_text_event(
                 events.append(
                     BcpEvent(
                         feature="speaker_units",
-                        xml_id=source_id(edition, service_id, "sp", str(len(events) + 1), speaker),
+                        xml_id=source_id(edition, path.stem, "sp", str(len(events) + 1), speaker),
                         text=body,
                         source_path=source_rel(path, raw_root),
                         speaker=speaker,
+                        service_id=service_id,
                     )
                 )
             else:
                 events.append(
                     BcpEvent(
                         feature="rubrics" if rubric else "paragraphs",
-                        xml_id=source_id(edition, service_id, "block", str(ordinal), str(len(events) + 1)),
+                        xml_id=source_id(edition, path.stem, "block", str(ordinal), str(len(events) + 1)),
                         text=body,
                         source_path=source_rel(path, raw_root),
+                        service_id=service_id,
                     )
                 )
         return
     events.append(
         BcpEvent(
             feature="rubrics" if rubric else "paragraphs",
-            xml_id=source_id(edition, service_id, "block", str(ordinal)),
+            xml_id=source_id(edition, path.stem, "block", str(ordinal)),
             text=text,
             source_path=source_rel(path, raw_root),
+            service_id=service_id,
         )
     )
 
@@ -225,6 +230,7 @@ def _events_from_justus_page(edition: str, path: Path, title: str, raw_root: Pat
                         "section break",
                         source_rel(path, raw_root),
                         label="section break",
+                        service_id=service_id,
                     )
                 )
                 continue
@@ -241,13 +247,14 @@ def _events_from_justus_page(edition: str, path: Path, title: str, raw_root: Pat
                         text,
                         source_rel(path, raw_root),
                         label=text,
+                        service_id=service_id,
                     )
                 )
                 continue
             _append_text_event(
                 events,
                 edition=edition,
-                service_id=path.stem,
+                service_id=service_id,
                 path=path,
                 raw_root=raw_root,
                 ordinal=ordinal,
@@ -282,13 +289,14 @@ def _events_from_eskimo_page(edition: str, path: Path, title: str, raw_root: Pat
                     text,
                     source_rel(path, raw_root),
                     label=text,
+                    service_id=service_id,
                 )
             )
             continue
         _append_text_event(
             events,
             edition=edition,
-            service_id=path.stem,
+            service_id=service_id,
             path=path,
             raw_root=raw_root,
             ordinal=ordinal,
@@ -322,10 +330,11 @@ def _collect_events_1662(raw_root: Path) -> list[BcpEvent]:
 
 
 def _collect_events_1928(raw_root: Path) -> list[BcpEvent]:
+    service_id = source_id("bcp-1928", "collects")
     events: list[BcpEvent] = [
         BcpEvent(
             "services",
-            source_id("bcp-1928", "collects"),
+            service_id,
             "Collects, Epistles, and Gospels",
             "manual:bcp1928.SOURCE_PAGES",
             label="Collects, Epistles, and Gospels",
@@ -346,6 +355,7 @@ def _collect_events_1928(raw_root: Path) -> list[BcpEvent]:
                     source_rel(path, raw_root),
                     label=record.get("title") or record["prayer_id"],
                     div_type="collect",
+                    service_id=service_id,
                 )
             )
     committed = {event.xml_id for event in events}
@@ -361,6 +371,7 @@ def _collect_events_1928(raw_root: Path) -> list[BcpEvent]:
                 "manual:bcp1928.MANUAL_COLLECTS",
                 label=entry["title"],
                 div_type="collect",
+                service_id=service_id,
             )
         )
     return events
@@ -379,6 +390,7 @@ def load_bcp_edition(slug: str, raw_root: Path | None = None) -> BcpEdition:
             source_kind="episcopalnet_collects",
             files=files,
             events=tuple(_collect_events_1928(root)),
+            translator=None,
         )
 
     cfg = bcp_full_text.EDITIONS[slug]
@@ -412,6 +424,7 @@ def load_bcp_edition(slug: str, raw_root: Path | None = None) -> BcpEdition:
         source_kind=str(cfg["source"]),
         files=tuple(files),
         events=tuple(events),
+        translator=None,
     )
 
 

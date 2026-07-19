@@ -8,22 +8,22 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-_LEXICONS_DIR = REPO_ROOT / "build" / "lib" / "lexicons"
+_LEXICONS_DIR = REPO_ROOT / "ocd_kernel" / "lib" / "lexicons"
 
 
 def test_old_lexicon_files_do_not_exist() -> None:
     """The renamed source files must not exist — not even as shim re-exports."""
     assert not (_LEXICONS_DIR / "el.py").exists(), (
-        "build/lib/lexicons/el.py still exists — R53 rename has not landed or a shim was introduced"
+        "ocd_kernel/lib/lexicons/el.py still exists — R53 rename has not landed or a shim was introduced"
     )
     assert not (_LEXICONS_DIR / "he_latn.py").exists(), (
-        "build/lib/lexicons/he_latn.py still exists — R53 rename has not landed or a shim was introduced"
+        "ocd_kernel/lib/lexicons/he_latn.py still exists — R53 rename has not landed or a shim was introduced"
     )
 
 
 def test_new_lexicon_modules_import_successfully() -> None:
     """grc and hbo_latn must be importable; en and la must continue to work."""
-    from build.lib.lexicons import grc, hbo_latn, en, la  # noqa: F401 — import-check only
+    from ocd_kernel.lib.lexicons import grc, hbo_latn, en, la  # noqa: F401 — import-check only
 
     # Sanity: the modules expose the same public API as the old ones did.
     assert hasattr(grc, "ARCHAIC_FORMS")
@@ -36,7 +36,7 @@ def test_new_lexicon_modules_import_successfully() -> None:
 
 def test_lang_classifier_uses_new_lang_codes() -> None:
     """lang_classifier.py must not reference the old codes 'el' or 'he_latn' in language-code positions."""
-    classifier_src = (REPO_ROOT / "build" / "lib" / "lang_classifier.py").read_text(encoding="utf-8")
+    classifier_src = (REPO_ROOT / "ocd_kernel" / "lib" / "lang_classifier.py").read_text(encoding="utf-8")
 
     # _script_spans call for Greek must use "grc", not "el".
     assert '"grc"' in classifier_src, (

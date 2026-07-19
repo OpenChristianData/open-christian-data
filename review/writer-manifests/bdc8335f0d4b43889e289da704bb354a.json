@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "bdc8335f0d4b43889e289da704bb354a",
+  "started_at": "2026-07-16T02:11:27.873824+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/exodus.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/exodus.json": {
+      "before_sha256": "b32e2fc4e6164832e13ee15bbdc972d9ea3ff582c8fa26012dcde2475a81c743",
+      "after_sha256": "2b6185bc93d0aa1a3470d8a29509e1723e72cfe9136ca71a29ff2b5bbec51096"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/exodus.json": {
+      "entries_changed": 0,
+      "fields_changed": 0
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

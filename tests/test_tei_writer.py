@@ -4,7 +4,7 @@ from pathlib import Path
 
 from lxml import etree
 
-from build.tei.writer import TEI_NS, derive_address, serialize, stamp_header, tei_el
+from ocd_kernel.tei.writer import TEI_NS, derive_address, serialize, stamp_header, tei_el
 
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 

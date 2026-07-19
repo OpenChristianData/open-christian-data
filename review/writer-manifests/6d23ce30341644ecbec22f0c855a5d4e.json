@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "6d23ce30341644ecbec22f0c855a5d4e",
+  "started_at": "2026-07-16T02:13:03.746241+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/exodus.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/exodus.json": {
+      "before_sha256": "8916446c429d90dcc5a03958354f23f182741db4e1c3a47d6ad0ad8f777fade5",
+      "after_sha256": "22f2914f23f9e934505ae461c8e6d1a612d9856e888b57bd654c2eefb704cdbe"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/exodus.json": {
+      "entries_changed": 0,
+      "fields_changed": 0
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

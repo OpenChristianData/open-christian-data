@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/verification_event.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Verification Event",
+  "description": "A closed, hash-bound observation in the bounded verification-event-v1 slice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identity",
+    "bundle_binding",
+    "work_id",
+    "rendering_id",
+    "subject_grain",
+    "subject_id",
+    "anchor",
+    "actor",
+    "timestamp",
+    "event_kind",
+    "dimension",
+    "severity",
+    "disposition",
+    "evidence",
+    "notes"
+  ],
+  "properties": {
+    "identity": {
+      "const": "verification-event-v1"
+    },
+    "bundle_binding": {
+      "$ref": "#/$defs/bundle_binding"
+    },
+    "work_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "rendering_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "subject_grain": {
+      "enum": [
+        "work",
+        "rendering",
+        "collection_member",
+        "artifact",
+        "canonical_record"
+      ]
+    },
+    "subject_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "anchor": {
+      "$ref": "#/$defs/anchor"
+    },
+    "scope_snapshot": {
+      "$ref": "#/$defs/scope_snapshot"
+    },
+    "actor": {
+      "$ref": "#/$defs/identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[^ \\t\\r\\n]+$"
+    },
+    "event_kind": {
+      "enum": [
+        "finding",
+        "disposition",
+        "correction",
+        "review_closed",
+        "review_reopened",
+        "invalidated"
+      ]
+    },
+    "dimension": {
+      "enum": [
+        "omission",
+        "duplication",
+        "corruption",
+        "reassignment",
+        "order",
+        "hierarchy",
+        "apparatus",
+        "reference",
+        "metadata",
+        "source-boundary",
+        "provenance",
+        "renderer-only defect",
+        "missing-check",
+        "known-limitation"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "open",
+        "confirmed",
+        "false_positive",
+        "accepted_limitation",
+        "corrected",
+        "closed",
+        "reopened",
+        "invalidated"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/evidence_reference"
+      }
+    },
+    "notes": {
+      "$ref": "#/$defs/notes"
+    },
+    "prior_event_sha256": {
+      "$ref": "#/$defs/raw_sha256"
+    },
+    "correction_receipt": {
+      "$ref": "#/$defs/correction_receipt"
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[^/]+(?:/[^/]+)*$"
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "bundle_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "raw_sha256"
+      ],
+      "properties": {
+        "identity": {
+          "const": "verification-bundle-v1"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame",
+        "anchor_id"
+      ],
+      "properties": {
+        "frame": {
+          "enum": [
+            "source_members",
+            "canonical_outputs"
+          ]
+        },
+        "anchor_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "scope_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverage",
+        "member_grain",
+        "member_ids",
+        "count",
+        "member_set_sha256"
+      ],
+      "properties": {
+        "coverage": {
+          "enum": [
+            "complete",
+            "limited"
+          ]
+        },
+        "member_grain": {
+          "const": "collection_member"
+        },
+        "member_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "member_set_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "evidence_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "raw_sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "correction_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "manifest_path",
+        "manifest_raw_sha256",
+        "affected_data_path"
+      ],
+      "properties": {
+        "run_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "manifest_path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "manifest_raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "affected_data_path": {
+          "$ref": "#/$defs/repository_path"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bible_dictionaries.py@v1.1.0",
+  "writer_identity": "bible_dictionaries_parser",
+  "run_id": "ced47c9fa39b40b5843127b53ada4deb",
+  "started_at": "2026-07-16T01:56:17.961912+00:00",
+  "data_paths": [
+    "data/reference/torreys-topical-textbook.json"
+  ],
+  "checksums": {
+    "data/reference/torreys-topical-textbook.json": {
+      "before_sha256": "d4e2abc80efc248f36e7a2cac4da119311643097ec8eafc269991f2eec881e43",
+      "after_sha256": "8c4af8517f622bbb47ff352927aa3cf71ebb4e04b7f604b9a65436bf547d533e"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/torreys-topical-textbook.json": {
+      "entries_changed": 623,
+      "fields_changed": 628
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

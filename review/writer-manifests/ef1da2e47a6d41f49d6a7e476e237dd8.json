@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "ef1da2e47a6d41f49d6a7e476e237dd8",
+  "started_at": "2026-07-16T02:11:29.270398+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/ezekiel.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/ezekiel.json": {
+      "before_sha256": "eefb6f03d7dbadc7a36381805ffa50dee6b7148e58b90a285f76c66a027b2c59",
+      "after_sha256": "721a760a8af6e481fbd5101314ede7e78f1d59ffd2517aea215913f2ad67fc33"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/ezekiel.json": {
+      "entries_changed": 472,
+      "fields_changed": 2878
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

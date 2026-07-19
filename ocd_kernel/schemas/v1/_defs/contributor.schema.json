@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/_defs/contributor.schema.json",
+  "title": "Contributor",
+  "description": "A person or organization that contributed to a resource (translator, editor, transcriber, etc.).",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name of the contributor."
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "author", "translator", "editor", "series_editor", "reviser",
+        "transcriber", "compiler", "contributor", "narrator", "annotator", "digitizer"
+      ],
+      "description": "Role the contributor played."
+    },
+    "note": {
+      "type": "string",
+      "description": "Clarifying note (e.g. 'General Editor, 1908-1914 edition' or 'Volume 5 only')."
+    },
+    "affiliation": {
+      "type": "string",
+      "description": "Organizational affiliation (free-text)."
+    },
+    "url": {
+      "type": "string",
+      "description": "Stable identifier URL (ORCID, VIAF, homepage)."
+    }
+  }
+}

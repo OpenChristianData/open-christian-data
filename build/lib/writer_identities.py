@@ -56,6 +56,11 @@ _REGISTERED: dict[str, str] = {
     "sword_devotional_parser": "parser",
     "ia_fisher_marrow_parser": "parser",
     "ia_hastings_dictionary_parser": "parser",
+    "spurgeon_mtp_parser": "parser",
+    "naves_topical_parser": "parser",
+    "bible_dictionaries_parser": "parser",
+    "sword_commentary_parser": "parser",
+    "westminster_standard_parser": "parser",
 }
 
 

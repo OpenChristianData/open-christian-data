@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "a31b7f368caf4ccf81d3da2c7d588108",
+  "started_at": "2026-07-16T02:11:29.577780+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/jonah.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/jonah.json": {
+      "before_sha256": "0607838c2d4f0b2c46bc2cd233f519b9b729ae3bb59eeb503136557d0b282df6",
+      "after_sha256": "ac121ed0fd21ce851bb5aba89baf1dc135e9c6f742e635cbf9a51bfa7cc4a83f"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/jonah.json": {
+      "entries_changed": 48,
+      "fields_changed": 166
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

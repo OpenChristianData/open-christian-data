@@ -71,8 +71,13 @@ RETRY_DELAYS = [2, 4, 8]  # seconds between retries on 5xx or network errors
 
 COLLECTION_ID = "spurgeon-metropolitan-tabernacle-pulpit"
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v2.0.0"
+SCRIPT_VERSION = "v2.1.0"
 LOCATION_DEFAULT = "Metropolitan Tabernacle, London"
+LIST_PROJECTION_NOTE = (
+    "List projection: direct ordered and unordered sermon-body list items are "
+    "flattened into content_blocks in source order; list container and "
+    "numbering/bullet boundaries are not represented."
+)
 
 USER_AGENT = (
     "OpenChristianData/1.0 (research; open-source data project; "
@@ -400,12 +405,15 @@ def parse_sermon_html(html_bytes: bytes, sermon_n: int):
         if quote_parts:
             primary_reference_text = " ".join(quote_parts)
 
-    # --- Content blocks (body paragraphs and inline blockquotes, in source order) ---
+    # --- Content blocks (body paragraphs, blockquotes, and list items in source order) ---
     # Walk direct children of <article> in order:
     #   - Skip h1 (title already captured)
     #   - Skip first blockquote (scripture reference)
     #   - Include subsequent <p> tags as content blocks
     #   - Include subsequent <blockquote> tags as content blocks (poetry/hymns)
+    #   - Flatten direct <ol>/<ul> children to their direct <li> text, as the
+    #     sermon schema has string-only content blocks and cannot retain list
+    #     container, ordinal, or bullet semantics.
     content_blocks = []
     seen_first_blockquote = False
 
@@ -427,6 +435,11 @@ def parse_sermon_html(html_bytes: bytes, sermon_n: int):
             text = clean_text(elem.get_text())
             if text:
                 content_blocks.append(text)
+        elif tag in {"ol", "ul"}:
+            for item in elem.find_all("li", recursive=False):
+                text = clean_text(item.get_text())
+                if text:
+                    content_blocks.append(text)
 
     if not content_blocks:
         return None
@@ -558,6 +571,10 @@ def report_quality(entries: list) -> None:
 def build_meta(config: dict, data_hash: str, processing_date: str) -> dict:
     """Build the OCD metadata envelope from source config + runtime values."""
     raw_contributors = config.get("contributors", [])
+    config_notes = config.get("notes")
+    provenance_notes = " ".join(
+        note for note in (config_notes, LIST_PROJECTION_NOTE) if note
+    )
     return {
         "id": config["resource_id"],
         "title": config["title"],
@@ -585,7 +602,7 @@ def build_meta(config: dict, data_hash: str, processing_date: str) -> dict:
             "processing_method": "automated",
             "processing_script_version": f"build/parsers/spurgeon_mtp.py@{SCRIPT_VERSION}",
             "processing_date": processing_date,
-            "notes": config.get("notes"),
+            "notes": provenance_notes,
         },
     }
 

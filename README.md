@@ -1,129 +1,69 @@
-# open-christian-data
+<h1 align="center">Open Christian Data</h1>
+
+<p align="center"><strong>Repository of Public Domain Christian Texts</strong></p>
 
 [![CI](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml)
 
-541,000+ structured records spanning Bible text, commentaries, sermons, catechisms, church fathers, theology, prayer, and reference works — all public domain, all clean JSON.
+## What is Open Christian Data?
 
-## What this is
+Open Christian Data (OCD) aims to be the single unified collection of all public domain Christian text. It exists to bring this collection together from across the internet and to structure it in a useful format for public use.
 
-Open Christian Data is a structured dataset of public domain Christian literature: Bible text, commentaries, sermons, catechisms, confessions, theology, prayer, and reference works, all formatted as clean, consistent JSON.
+Most public domain Christian literature beyond the Bible is scattered across scanned books, old websites, specialist file formats, and separate digitization projects. Even when a text is online, it may not be available as part of a collection in which its author, work, edition, structure, and source history are clearly preserved. We stand on the shoulders of the faithful saints who have come before to build on their work and stay true to their ethos that information about Christianity and historical Christian texts should be freely and widely available to all. Many of those who have come before, we believe, forged their work in this spirit and dreamed of a project like this one day existing, and we hope to honor and carry on those dreams. We believe advances in AI have made this project possible on a scale that has never been possible before.
 
-All content is written by authors who died before 1928. All texts are in the public domain. The published training dataset is CC0; code, schemas, and tooling are CC BY-NC 4.0.
+The original goal of the project was to make a dataset for AI use, which you can find [on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data), and that is still a primary goal of the project. However development on that project raised at least three issues to resolve that lead to a larger project with expanded usefulness:
 
-**The problem it solves.** The public domain contains centuries of Christian thought, but almost none of it is machine-readable. Commentaries sit in scanned PDFs. Sermons are buried in proprietary Bible software formats. Catechisms live in WordPress pages. This project converts those sources into structured JSON with consistent schemas and full provenance metadata, so developers and AI systems can actually use them.
+1. How do you verify that the text is a faithful copy of its source?
+2. How do you verify that the text is a faithful copy of the original published work itself? This raises the issue of both text structure and formatting of the original published work but also the accuracy of the text to the original work. Seeing as both provide information to a true scholar of the text, both issues come into view.
+3. How do you ensure the text is usable for AI? It has to be public domain with no rights attached, aligned in any case with the motivating spirit of this project which is the public good. This work is produced in the hopes that it will be useful in ways the producers can not even yet envision.
 
-## How it works
+Code can only take you so far and is not human friendly for review, so we determined it useful and necessary to have an intermediate step that we normalized all text into so that it can be visually verified. It then became obvious that this work will incidentally produce useful renderings of the texts in human readable formats that can be useful for purposes beyond the original intended purpose of the project.
 
-1. **Sources** — texts are downloaded from Project Gutenberg, the Christian Classics Ethereal Library (CCEL), CrossWire Bible modules (SWORD), Standard Ebooks, and other public domain archives.
-2. **Parsers** — Python scripts in `build/parsers/` convert each source into JSON following a shared schema. Each parser has a corresponding test file and source config.
-3. **Validation** — every output file is validated against a JSON Schema before it can be committed. CI runs validation on every push.
-4. **Output** — clean JSON committed to `data/`, published to HuggingFace Datasets as flattened Parquet at [OpenChristianData/open-christian-data](https://huggingface.co/datasets/OpenChristianData/open-christian-data).
+**Current Release: V0.2.0:**
 
-## Status
+**Nearly 150 million words of Christian texts across 12 categories, including 363 books.** The collection also includes 34,904 hymns, 5,297 sermons, nine Bible translations, and extensive commentary and reference material.
 
-### Bible Text
+## How the collection is made
 
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Berean Standard Bible | 66 books | 31,086 verses | CC0 |
+1. **Find a reliable source.** We identify a particular work and edition, find the best available copy, and confirm that the text can be included in a public domain collection.
+2. **Create an accurate digital text.** Some sources are already digital and can be carefully parsed. Others survive only as scanned books and must be transcribed using OCR and then corrected against the page images. The aim is to reproduce the text and structure of the chosen edition faithfully.
+3. **Keep the work intact.** We record who wrote and contributed to the work, which edition or translation is represented, how the work is divided, and where the text came from. Books remain books, sermons remain sermons, hymns remain hymns, and commentaries remain connected to the Bible passages they discuss.
+4. **Build a verifiable master copy.** The project is moving each work into a shared intermediate representation (IR) using the Text Encoding Initiative (TEI) standard. This master copy preserves more of the work than any one published format and can be rendered as a readable page so that people can compare it with the original source and correct errors.
+5. **Publish useful versions.** The texts, provenance, developing TEI representations, and visual verification tools live in this GitHub project. From the master text we can produce simpler versions for particular uses, including the JSON dataset published on Hugging Face for AI training and development.
 
-### Commentaries
+## Where the collection is published
 
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Matthew Henry's Complete Commentary | 66 books | 5,344 entries | CC0 |
-| Barnes' Notes on the NT | 27 books | 7,322 entries | Public domain |
-| Calvin's Collected Commentaries | 49 books | 13,338 entries | Public domain |
-| Wesley's Notes on the Bible | 66 books | 17,564 entries | Public domain |
-| Jamieson-Fausset-Brown, John Gill, Adam Clarke, Keil-Delitzsch, Expositor's Bible, Treasury of David | Various | Various | Public domain |
+This GitHub repository is the home of the texts in all their forms, their source history, and the tools used to build and check them.
 
-### Church Fathers
+The [Open Christian Data dataset on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data) is the home of the AI-focused dataset publication. It presents the collection as downloadable JSON records organized by format, making it straightforward to use for model training, evaluation, retrieval, and other computational work.
 
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Church Fathers & Historical Authors | 325 authors | 70,164 quotes | Public domain |
-| Augustine — Complete Works, NPNF1 (vols 1–8) | 49 treatises | 49 works | Public domain |
+## Current collection
 
-### Structured Texts — 165 works total
+The collection currently includes books, Bible translations, commentaries, topical indexes, devotionals, sermons, doctrinal documents, catechisms, prayers, hymns, dictionaries and encyclopedias, and scripture-linked quotations from the Church Fathers. The Hugging Face publication divides some long works into smaller passages so they can be searched, retrieved, and used in AI systems.
 
-Selected highlights:
+Counts below are generated from current `data/` by:
 
-| Author / Collection | Works | Notable titles |
-|---|---|---|
-| John Owen | 31 | Mortification, Communion with God, Death of Death, Pneumatologia, Justification... |
-| Thomas Watson | 5 | Body of Divinity, Beatitudes, Ten Commandments, Lord's Prayer, Divine Contentment |
-| Charles Hodge — Systematic Theology | 3 vols | — |
-| A.H. Strong — Systematic Theology | 3 vols | — |
-| W.G.T. Shedd — Dogmatic Theology | 3 vols | — |
-| John Miley — Systematic Theology | 2 vols | — |
-| Philip Schaff — History of the Christian Church | 8 vols | — |
-| Eusebius, Socrates, Sozomen, Theodoret — Church Histories | 5 works | — |
-| Puritan Classics | 12 | Charnock ×2, Baxter ×3, Gurnall, Flavel, Sibbes, Brooks, Burroughs, Watson ×5 |
-| Jonathan Edwards | 3 | Freedom of the Will, Religious Affections, Select Sermons |
-| Anglican Classics | 6 | Donne, Taylor ×2, Andrewes, Ryle ×2, Newman (Apologia) |
-| Calvin's Institutes of the Christian Religion | 1 | 4 books / 80 chapters / 7,430 blocks / 646k words |
-| Classic literature & devotion | 11 | Bunyan ×3, Chesterton ×3, Pascal, à Kempis, Milton, Underhill, MacDonald |
-| Reformed / Evangelical | 10 | Pink, Machen, Spurgeon ×2, Murray ×3, Carey, Wilberforce, Drummond ×2 |
-| Finney, Bounds | 6 | Lectures on Revivals, Systematic Theology, Power Through Prayer, + 4 more |
+```bash
+py -3 build/tools/count_dataset_records.py
+```
 
-Full list: [`data/structured-text/`](data/structured-text/)
+| Category                                     | What the collection contains                                                                                                     |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Books and long-form works                    | 288 works, including theology, church history, treatises, and devotional classics, divided into 259,198 passages for publication |
+| Bible translations                           | 9 translations containing 282,395 verses                                                                                         |
+| Commentaries                                 | 34 commentaries containing 115,069 entries                                                                                       |
+| Dictionaries and encyclopedias               | 6 dictionaries and encyclopedias containing 25,682 entries                                                                       |
+| Topical Bibles and indexes                   | *Nave's Topical Bible* and *Torrey's New Topical Textbook*, containing 5,945 topics                                              |
+| Devotionals                                  | 2 devotionals containing 1,464 readings                                                                                          |
+| Sermons                                      | 5,297 sermons from 7 collections                                                                                                 |
+| Creeds, confessions, and doctrinal documents | 33 documents published as 1,314 articles and clauses                                                                             |
+| Catechisms                                   | 15 catechisms containing 3,509 questions and answers                                                                             |
+| Prayers and liturgies                        | 4 sources containing 205 prayers and collects                                                                                    |
+| Hymns                                        | 34,904 hymn texts                                                                                                                |
+| Church Fathers quotations                    | 70,164 scripture-linked quotations                                                                                               |
 
-### Sermons
+The Hugging Face files contain 805,146 downloadable records. That is a technical loading statistic: depending on the category, a record may be a verse, passage, sermon, hymn, question and answer, prayer, quotation, or reference entry. The generated work catalog and metadata audit live at [`docs/WORK_CATALOG.md`](docs/WORK_CATALOG.md). A browser-friendly review surface is available at [`docs/WORK_CATALOG.html`](docs/WORK_CATALOG.html).
 
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Spurgeon's Metropolitan Tabernacle Pulpit | 63 volumes | 3,547 sermons | Public domain |
-| Maclaren's Expositions of Holy Scripture | Full Bible | 1,257 expositions | Public domain |
-| John Wesley's Standard Sermons | — | 141 sermons | Public domain |
-| Newman's Parochial and Plain Sermons | 8 volumes | 135 sermons | Public domain |
-| Luther's Church Postil (Lenker trans.) | 8 volumes | 122 sermons | Public domain |
-| Whitefield's Sermons | — | 61 sermons | Public domain |
-| George MacDonald's Unspoken Sermons | 3 series | 36 sermons / 171k words | Public domain |
-
-### Catechisms — 15 catechisms
-
-| Resource | Entries | License |
-|---|---|---|
-| Westminster Shorter Catechism | 107 Q&A | Public domain |
-| Westminster Larger Catechism | 196 Q&A | Public domain |
-| Luther's Small Catechism | 45 Q&A | Public domain |
-| Luther's Large Catechism | 419 blocks / 48k words | Public domain |
-| Heidelberg Catechism | 129 Q&A | Public domain |
-| Baltimore Catechism No. 1 | 206 Q&A | Public domain |
-| Baltimore Catechism No. 2 | 421 Q&A | Public domain |
-| Baltimore Catechism No. 3 | 1,400 Q&A | Public domain |
-| + 7 more (Keach's, Puritan, 1695 Baptist, Catechism for Young Children, A.A. Hodge Outlines...) | — | Public domain |
-
-### Doctrinal Documents — 37 documents
-
-Creeds, confessions, and statements spanning the ecumenical and Reformed traditions: Westminster Confession, Belgic Confession, Canons of Dort, London Baptist Confession 1689, Savoy Declaration, Second Helvetic Confession, Apostles' Creed, Nicene Creed, Athanasian Creed, Chalcedonian Definition, and more.
-
-### Reference Works
-
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Schaff-Herzog Encyclopedia of Religious Knowledge | Full (A–Z) | 16,508 entries | Public domain |
-| Easton's Bible Dictionary | Full (A–Z) | 3,963 entries | Public domain |
-| Smith's Bible Dictionary | Full (A–Z) | 4,560 entries | Public domain |
-| Hitchcock's Bible Names Dictionary | Full (A–Z) | 2,622 entries | Public domain |
-| Torrey's New Topical Textbook | 623 topics | 21,580 scripture refs | Public domain |
-| Nave's Topical Bible | 5,322 topics | 76,957 scripture refs | Public domain |
-
-### Devotionals
-
-| Resource | Coverage | Entries | License |
-|---|---|---|---|
-| Spurgeon's Morning and Evening | 366 days | 732 entries | Public domain |
-| Daily Light on the Daily Path | 366 days | 732 entries | Public domain |
-
-### Prayers
-
-| Resource | Entries | License |
-|---|---|---|
-| BCP 1662 Collects | 85 collects | Public domain |
-| BCP 1928 Collects | 102 collects | Public domain |
-| Andrewes' Private Devotions | 14 prayers | Public domain |
-| Didache Prayers (Lake trans.) | 4 prayers | Public domain |
+Examples include *An Exposition of the Old and New Testament*, *The Metropolitan Tabernacle Pulpit*, *The Catholic Encyclopedia*, *Nave's Topical Bible*, *The City of God*, *Institutes of the Christian Religion*, and editions of *The Book of Common Prayer*.
 
 ## Data format
 
@@ -161,82 +101,66 @@ Each resource is a JSON file with a metadata envelope and a data array:
 
 ## Schema
 
-All verse references use OSIS format (`Gen.1.1`, `Rom.9.1-Rom.9.5`). Schema definitions are in `schemas/v1/`. TypeScript types in `schemas/types.ts`.
+All verse references use OSIS format (`Gen.1.1`, `Rom.9.1-Rom.9.5`). TypeScript types are in `schemas/types.ts`.
+
+Schema definitions live in two places. Dataset-specific schemas are in `schemas/v1/`; schemas shared with the project's OCR repository are in `ocd_kernel/schemas/v1/`. Resolve either by name with `resolve_schema_path()` from `ocd_kernel.lib.schema_enums` rather than hardcoding a directory, and read enum values from `build.lib._generated_enums` rather than redeclaring them. Allowed values for `tradition`, `era`, `audience`, and `work_kind` are documented in [`docs/SCHEMA_SPEC.md`](docs/SCHEMA_SPEC.md).
 
 ## Repository structure
 
 ```
 data/
   bible-text/
-    bsb/                      # 66 book files — 31,086 verses total
-  church-fathers/             # 325 files — 70,165 quotes from 325 authors
+    bsb/                      # book-scoped Bible text resources
+  church-fathers/             # source-scoped verse-reference quotation resources
   commentaries/
-    matthew-henry/            # 66 books, 5,344 entries (HelloAO)
-    barnes/                   # NT only — 27 books, 7,322 entries (SWORD)
-    calvin/                   # 49 books, 13,338 entries (SWORD)
-    wesley/                   # Full Bible — 66 books, 17,564 entries (SWORD)
-    jamieson-fausset-brown/   # Full Bible (HelloAO)
-    john-gill/                # Full Bible (HelloAO)
-    adam-clarke/              # Full Bible (HelloAO)
-    keil-delitzsch/           # OT (HelloAO)
-    expositors-bible/         # Various books (HelloAO)
-    treasury-of-david/        # Psalms — Spurgeon (HelloAO)
-  doctrinal-documents/        # 37 creeds, confessions, and statements
-  structured-text/            # 165 works — theology, devotion, church history
-    augustine-*.json          # 49 Augustine works from NPNF1 (vols 1–8)
-    john-owen-*.json          # 31 John Owen works
-    schaff-history-vol-*.json # Philip Schaff Church History (8 vols)
-    hodge-systematic-*.json   # Charles Hodge Systematic Theology (3 vols)
-    strong-systematic-*.json  # A.H. Strong Systematic Theology (3 vols)
-    shedd-dogmatic-*.json     # W.G.T. Shedd Dogmatic Theology (3 vols)
-    calvins-institutes.json   # 7,430 blocks / 646k words
-    watson-*.json             # Thomas Watson (5 works)
-    ...                       # See data/structured-text/ for full list
+    matthew-henry/            # book-scoped files for one commentary work
+    calvin/                   # book-scoped files for one commentary collection
+    expositors-bible/         # work/author-scoped commentary files
+    ...
+  doctrinal-documents/        # creeds, confessions, and statements
+  structured-text/            # theology, devotion, church history, and related works
+    augustine-*.json
+    john-owen-*.json
+    schaff-history-vol-*.json
+    calvins-institutes.json
+    ...
   sermons/
-    spurgeon-mtp/             # 3,547 sermons across 36 chunk files (MTP vols 1–63)
-    maclaren-expositions.json # 1,257 expositions (full Bible)
-    john-wesley-sermons.json  # 141 Standard Sermons
-    newman-parochial-sermons.json  # 135 sermons (8 volumes)
-    luther-lenker-sermons.json     # 122 sermons (Church Postil, 8 vols, Lenker trans.)
-    george-whitefield-sermons.json # 61 sermons
-    george-macdonald-unspoken-sermons.json  # 36 sermons / 171k words
-  catechisms/                 # 15 catechisms
-    westminster-shorter-catechism.json  # 107 Q&A
-    westminster-larger-catechism.json   # 196 Q&A
-    heidelberg-catechism.json           # 129 Q&A
-    luthers-small-catechism.json        # 45 Q&A
-    baltimore-catechism-no-{1,2,3}.json # 206 / 421 / 1,400 Q&A
-    ...                       # + 8 more
+    spurgeon-mtp/
+    maclaren-expositions.json
+    john-wesley-sermons.json
+    ...
+  catechisms/
+    westminster-shorter-catechism.json
+    westminster-larger-catechism.json
+    heidelberg-catechism.json
+    ...
   devotionals/
-    spurgeons-morning-evening/morning-evening.json  # 732 entries
-    daily-light/daily-light.json                    # 732 entries (Bagster)
+    spurgeons-morning-evening/morning-evening.json
+    daily-light/daily-light.json
+  hymns/
+    hymnary-pd/collection.json  # hymn texts provided by Hymnary.org
   prayers/
-    bcp-1662/collects.json              # 85 collects
-    bcp-1928/collects.json              # 102 collects
-    andrewes-private-devotions/prayers.json  # 14 prayers
-    didache/prayers.json                # 4 eucharistic prayers
+    bcp-1662/collects.json
+    bcp-1928/collects.json
+    andrewes-private-devotions/prayers.json
+    didache/prayers.json
   reference/
-    schaff-herzog-encyclopedia.json          # 8,351 entries
-    eastons-bible-dictionary.json            # 3,963 entries
-    smiths-bible-dictionary.json             # 4,560 entries
-    hitchcocks-bible-names-dictionary.json   # 2,622 entries
-    torreys-topical-textbook.json            # 623 topics, 21,580 refs
+    schaff-herzog-encyclopedia.json
+    eastons-bible-dictionary.json
+    smiths-bible-dictionary.json
+    hitchcocks-bible-names-dictionary.json
+    torreys-topical-textbook.json
   topical-reference/
-    naves/naves-topical-bible.json      # 5,322 topics, 76,957 refs
+    naves/naves-topical-bible.json
+  authors/
+    registry.json             # author registry shared across resources
+  lexicon/                    # historical English lexicon used by checking
+                              # tools (see data/lexicon/README.md)
 schemas/
-  v1/
-    bible_text.schema.json
-    church_fathers.schema.json
-    commentary.schema.json
-    devotional.schema.json
-    structured_text.schema.json
-    sermon.schema.json
-    prayer.schema.json
-    catechism.schema.json
-    reference_entry.schema.json
-    topical_reference.schema.json
-    doctrinal_document.schema.json
+  v1/                         # dataset JSON schemas (one per record type)
   types.ts                    # TypeScript types
+ocd_kernel/
+  schemas/v1/                 # shared schemas used across the project's repos
 build/
   parsers/                    # One parser per source type
   validate.py                 # Schema + structural validation
@@ -335,29 +259,38 @@ py -3 build/parsers/naves_topical.py --dry-run
 py -3 build/parsers/naves_topical.py
 ```
 
-Requires Python 3.9+. No external dependencies for the pipeline. `pip install jsonschema` for schema validation.
+Requires Python 3.11 or newer; CI runs 3.12. Install dependencies with `pip install -r requirements.txt`.
+
+Most parsers and `build/validate.py` need only the standard library. The extra dependencies are narrow: `jsonschema` for schema validation, `beautifulsoup4` for the HTML sources, `pymupdf4llm` for the PDF sources, and `datasets` with `huggingface_hub` for publishing to Hugging Face.
 
 ## Sources
 
-- **Bible text**: [Berean Standard Bible](https://berean.bible) — CC0 since April 2023. 31,086 verses across 66 books. Sourced from [bible-databases](https://github.com/thiagobodruk/bible).
-- **Commentary text (HelloAO)**: [HelloAO Bible API](https://bible.helloao.org) — Matthew Henry, Jamieson-Fausset-Brown, John Gill, Adam Clarke, Keil-Delitzsch, Expositor's Bible, Treasury of David; all PDM 1.0 (public domain).
-- **Commentary text (SWORD)**: [CrossWire SWORD modules](https://www.crosswire.org/sword/) — Barnes' Notes on the NT (7,322 entries), Calvin's Collected Commentaries (13,338 entries), Wesley's Notes on the Bible (17,564 entries); public domain.
-- **Church Fathers quotes**: [HistoricalChristianFaith/Commentaries-Database](https://github.com/HistoricalChristianFaith/Commentaries-Database) — 325 authors (Augustine, Chrysostom, Jerome, Origen, Aquinas...), public domain.
-- **Augustine — NPNF1**: [Christian Classics Ethereal Library](https://www.ccel.org) — 49 works from Nicene and Post-Nicene Fathers vol. 1–8, ThML XML source; public domain.
-- **Structured texts**: [Standard Ebooks](https://standardebooks.org) — Bunyan, Chesterton ×3, Thomas à Kempis, MacDonald, Underhill, Milton, and others in CC0-annotated XHTML; underlying texts public domain. [CCEL](https://www.ccel.org) — Owen (32 works), Watson, Baxter, Flavel, Edwards, Ryle, Charles Hodge (Systematic Theology), Philip Schaff (History of the Christian Church), Finney, Bounds, Pascal, Wesley, and others; ThML XML; public domain. [Project Gutenberg](https://www.gutenberg.org) — A.H. Strong (Systematic Theology), Charnock, and others; plain text; public domain. [Internet Archive](https://archive.org) — W.G.T. Shedd (Dogmatic Theology), John Miley, R.L. Dabney, Gurnall, Brooks, Sibbes, and others; DjVuTXT; public domain.
-- **Sermons**: [The Kingdom Collective](https://www.thekingdomcollective.com) — Spurgeon's Metropolitan Tabernacle Pulpit (3,547 sermons); public domain. [CCEL](https://www.ccel.org) — Whitefield's Sermons; ThML XML; public domain. [Project Gutenberg](https://www.gutenberg.org) — Luther's Church Postil (Lenker trans.), Wesley, Newman, MacDonald; plain text; public domain. [CrossWire SWORD](https://www.crosswire.org/sword/) — Maclaren's Expositions; public domain.
-- **Catechisms & confessions**: [Project Gutenberg](https://www.gutenberg.org), [Creeds.json](https://github.com/NonExistentUsername/creeds) — Westminster standards, Heidelberg, Baltimore, Luther, and 30+ more; all public domain.
-- **Devotionals**: [CCEL](https://www.ccel.org) — Spurgeon's Morning and Evening (ThML XML); [CrossWire SWORD](https://www.crosswire.org/sword/) — Daily Light on the Daily Path (Bagster); public domain.
-- **Prayers**: [eskimo.com](https://eskimo.com/~lhowell/bcp1662/) — BCP 1662 (Lynda M. Howell digitization); [episcopalnet.org](https://www.episcopalnet.org/1928bcp/) — BCP 1928; [Wikisource](https://en.wikisource.org/wiki/Didache_(Lake_translation)) — Didache (Lake 1912 trans.); [Project Gutenberg](https://www.gutenberg.org) — Andrewes' Private Devotions; all public domain.
-- **Reference works**: [JWBickel/BibleDictionaries](https://huggingface.co/datasets/JWBickel/BibleDictionaries) — Easton's (1893), Smith's (1863), Hitchcock's (1874), Torrey's (1897); public domain. [Project Gutenberg](https://www.gutenberg.org) — Schaff-Herzog Encyclopedia of Religious Knowledge (1914 ed., 8,351 entries); public domain. [CrossWire SWORD](https://www.crosswire.org/sword/) — Nave's Topical Bible (1896); public domain.
-- All authors died before 1928; texts are unambiguously public domain.
+The collection depends on the work of libraries, archives, digitization
+projects, editors, and software communities. Principal sources include CCEL,
+Internet Archive, Project Gutenberg, Standard Ebooks, CrossWire, HelloAO,
+Hymnary.org, HistoricalChristianFaith, Scrollmapper, Berean Bible, The Kingdom
+Collective, New Advent, Wikisource, and specialist source sites.
+
+The hymn collection was provided by [Hymnary.org](https://hymnary.org/) at
+Calvin University. If you build with it, please link to Hymnary.org and tell
+them about your project through [their contact page](https://hymnary.org/contact).
+Many books and other texts were **sourced via
+[CCEL.org](https://www.ccel.org/)**.
+
+The [principal-source and acknowledgment ledger](docs/SOURCES.md) maps sources
+to the material represented in the release, records requested credit and legal
+notices, distinguishes old works from modern digitizations and databases, and
+documents unresolved rights questions. Specific source and edition information
+also travels with individual records. See [Third-Party Notices](THIRD_PARTY_NOTICES.md)
+and the [licensing policy](docs/LICENSING.md) for additional detail.
 
 ## Contributing
 
-The most useful contribution is adding a new source — a public domain text that isn't yet in the dataset.
+The most useful contribution is adding a new source — a public-domain text that isn't yet in the dataset.
 
 **Adding a new source:**
-1. Check that the author died before 1928 (public domain requirement)
+
+1. Establish the rights of the exact work, translation, edition, transcription, and source file; an author's death date alone is not enough
 2. Identify the source format (Project Gutenberg, CCEL ThML, SWORD module, Standard Ebooks, HTML, PDF)
 3. Create a parser in `build/parsers/<name>.py` — see existing parsers for patterns; shared utilities live in `build/lib/`
 4. Add source metadata in `sources/<type>/<slug>/config.json`
@@ -375,7 +308,7 @@ Each entry has `summary` and `key_quote` fields. These are `null` and `summary_r
 
 ## License
 
-- **Training dataset** (published to HuggingFace): [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — public domain, use for any purpose including commercial AI training
-- **Everything else** (code, schemas, intermediate data, tooling): [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free for non-commercial use with attribution; commercial use requires a license
+- **Published dataset** (Hugging Face): [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — intended for unrestricted reuse; see the [source and acknowledgment ledger](docs/SOURCES.md) for source-specific rights and open follow-up.
+- **Everything else** (code, schemas, intermediate data, tooling): [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free for non-commercial use with attribution; commercial use requires a license.
 
 For commercial licensing: openchristiandata@gmail.com

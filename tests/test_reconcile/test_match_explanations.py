@@ -11,9 +11,10 @@ from pathlib import Path
 import jsonschema
 import pytest
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 SCHEMA_DIR = Path(__file__).resolve().parents[2] / "schemas" / "v1"
-RECONCILED_SCHEMA = json.loads((SCHEMA_DIR / "reconciled_record.schema.json").read_text(encoding="utf-8"))
+RECONCILED_SCHEMA = json.loads(resolve_schema_path("reconciled_record").read_text(encoding="utf-8"))
 ME_SCHEMA = RECONCILED_SCHEMA["$defs"]["match_explanation"]
 
 

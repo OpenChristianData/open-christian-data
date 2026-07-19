@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "cd4abc8e50a74fc698b06f0448416b66",
+  "started_at": "2026-07-16T02:13:04.862696+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/malachi.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/malachi.json": {
+      "before_sha256": "1659a5a6bbe8cb1c53cfc124b9fe06d8d59d2191a18d799e0f9cb1352a45e9e1",
+      "after_sha256": "e5fed74a54ba32c03503a3c43863b03b832cf261a988314ca890645498691c29"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/malachi.json": {
+      "entries_changed": 55,
+      "fields_changed": 200
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

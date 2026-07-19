@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "9537f15920e14e53b162dbeed9e6030e",
+  "started_at": "2026-07-16T02:13:02.200858+00:00",
+  "data_paths": [
+    "data/commentaries/barnes/titus.json"
+  ],
+  "checksums": {
+    "data/commentaries/barnes/titus.json": {
+      "before_sha256": "06bbda44f7392e992d4e4642148a8dffebfad2aed3f64e391fb94b5d04c6af29",
+      "after_sha256": "49385070f0fad14d9ebf89f2aa8ad5d0903923bfc91c4ea40bad222376828aa2"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/barnes/titus.json": {
+      "entries_changed": 46,
+      "fields_changed": 162
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

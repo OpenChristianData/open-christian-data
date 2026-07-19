@@ -62,6 +62,7 @@ from build.lib._generated_enums import (
 # Config
 # ---------------------------------------------------------------------------
 
+from build.lib import writer_manifest  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 RAW_DIR = REPO_ROOT / "raw" / "naves_topical" / "modules" / "lexdict" / "zld" / "nave"
 OUTPUT_DIR = REPO_ROOT / "data" / "topical-reference" / "naves"
@@ -188,6 +189,9 @@ def parse_subtopics(entry_xml: str) -> list:
     - Subtopics that contain only cross-refs (no osisRef) produce an entry with
       references=[] (they are still emitted so the cross-ref can be captured
       elsewhere; callers may filter these out).
+    - Scripture refs before the first arrow are preserved as a leading
+      unlabeled subtopic. These are source content from entries whose first
+      subtopic is not arrow-marked in the TEI conversion.
     - Pure cross-ref-only entries (no arrows, no osisRef) return [].
     """
     import html as _html
@@ -214,15 +218,23 @@ def parse_subtopics(entry_xml: str) -> list:
     # The <lb/> tags precede each arrow; we split on the arrow itself.
     segments = content.split(ARROW)
 
-    # segments[0] is content before the first arrow -- check it does not contain refs
+    # segments[0] is content before the first arrow. In the raw module this is
+    # real source content in 41 entries (not a preamble to discard): numbered
+    # entries and topic-level Scripture indexes whose first subtopic is not
+    # arrow-marked in the TEI conversion. Keep it as an unlabeled leading
+    # subtopic because the schema has no source-native field for an unheaded
+    # segment.
     preamble = segments[0] if segments else ""
-    if "<ref osisRef=" in preamble:
+    preamble_refs = extract_osis_refs(preamble)
+    subtopics = []
+    if preamble_refs:
         logging.info(
-            "parse_subtopics: topic has refs before first arrow (preamble refs dropped): %r",
+            "parse_subtopics: preserving %d refs before first arrow as an unlabeled subtopic: %r",
+            len(preamble_refs),
             preamble[:120],
         )
+        subtopics.append({"label": "", "references": preamble_refs})
 
-    subtopics = []
     for seg in segments[1:]:  # segments[0] is text before the first arrow (preamble)
         # Extract the subtopic label: text before the first <ref> or <lb/>
         # Strip leading/trailing whitespace
@@ -493,6 +505,9 @@ def parse_all_entries(limit: int = 0) -> tuple:
     subtopic_counts = []
     ref_counts = []
     total_refs = 0
+    raw_refs = 0
+    pre_arrow_entries = 0
+    pre_arrow_refs = 0
 
     process_up_to = limit if limit > 0 else n_idx
 
@@ -540,6 +555,21 @@ def parse_all_entries(limit: int = 0) -> tuple:
             n_malformed += 1
             continue
 
+        # Count source refs before parsing so a source/output reconciliation
+        # check can catch any future silent loss.
+        entry_raw_refs = len(extract_osis_refs(entry_xml))
+        raw_refs += entry_raw_refs
+        content_match = re.search(r"<def>(.*?)</def>", entry_xml, re.DOTALL)
+        if content_match:
+            import html as _html
+
+            content = _html.unescape(content_match.group(1))
+            if ARROW in content:
+                entry_pre_arrow_refs = len(extract_osis_refs(content.split(ARROW, 1)[0]))
+                if entry_pre_arrow_refs:
+                    pre_arrow_entries += 1
+                    pre_arrow_refs += entry_pre_arrow_refs
+
         # Parse the TEI XML into OCD structure
         subtopics = parse_subtopics(entry_xml)
         related = extract_cross_refs(entry_xml)
@@ -549,6 +579,12 @@ def parse_all_entries(limit: int = 0) -> tuple:
         subtopic_counts.append(len(subtopics))
         ref_counts.append(n_refs)
         total_refs += n_refs
+
+        if n_refs != entry_raw_refs:
+            raise ValueError(
+                f"Nave reference reconciliation failed for {topic!r}: "
+                f"raw={entry_raw_refs}, emitted={n_refs}"
+            )
 
         # Build the entry_id
         slug = slugify(topic)
@@ -581,6 +617,9 @@ def parse_all_entries(limit: int = 0) -> tuple:
         "total": len(entries),
         "malformed": n_malformed,
         "skipped": n_skipped,
+        "raw_refs": raw_refs,
+        "pre_arrow_entries": pre_arrow_entries,
+        "pre_arrow_refs": pre_arrow_refs,
         "total_refs": total_refs,
         "subtopics_min": min(subtopic_counts) if subtopic_counts else 0,
         "subtopics_med": _median(subtopic_counts),
@@ -589,6 +628,10 @@ def parse_all_entries(limit: int = 0) -> tuple:
         "refs_med": _median(ref_counts),
         "refs_max": max(ref_counts) if ref_counts else 0,
     }
+    if raw_refs != total_refs:
+        raise ValueError(
+            f"Nave reference reconciliation failed: raw={raw_refs}, emitted={total_refs}"
+        )
     return entries, stats
 
 
@@ -644,6 +687,8 @@ def main() -> None:
     logging.info("Topics parsed:    %d", stats["total"])
     logging.info("Malformed:        %d", stats["malformed"])
     logging.info("Skipped (empty):  %d", stats["skipped"])
+    logging.info("Raw refs:         %d", stats["raw_refs"])
+    logging.info("Pre-arrow refs:   %d (preserved)", stats["pre_arrow_refs"])
     logging.info("Total refs:       %d", stats["total_refs"])
     logging.info(
         "Subtopics/entry:  min=%d  med=%.1f  max=%d",
@@ -675,12 +720,36 @@ def main() -> None:
         logging.info(summary)
         return
 
-    # Write output
+    # Write output, wrapped in a writer manifest. Every staged data/ change must be
+    # paired with one (build/tools/check_writer_manifest_gate.py); the emitter captures
+    # the before-hash around the write, which is why the write lives inside the block.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     out_file = OUTPUT_DIR / "naves-topical-bible.json"
-    with open(out_file, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    previous = (
+        json.loads(out_file.read_text(encoding="utf-8")) if out_file.exists() else None
+    )
+    with writer_manifest.run(
+        writer_identity="naves_topical_parser",
+        writer_version=f"build/parsers/naves_topical.py@{SCRIPT_VERSION}",
+        data_paths=[out_file],
+    ) as manifest_run:
+        with open(out_file, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        # entry_id, not topic: topic is not unique (REVERENCE and SIN each appear
+        # twice), so keying on it would silently collapse those pairs and hide any
+        # change to them.
+        entries_changed, fields_changed = writer_manifest.diff_counts(
+            previous, output, key=lambda entry: entry["entry_id"]
+        )
+        manifest_run.record_delta(
+            out_file, entries_changed=entries_changed, fields_changed=fields_changed
+        )
+    logging.info(
+        "Writer manifest: %d entries changed, %d fields changed",
+        entries_changed,
+        fields_changed,
+    )
 
     size_kb = out_file.stat().st_size / 1024
     summary = (

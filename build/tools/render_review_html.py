@@ -27,7 +27,8 @@ from build.lib.render_cache import (  # noqa: E402
     sha256_of_file,
 )
 from build.lib.render_strategies import get_strategy  # noqa: E402
-from build.lib.text_extractor import effective_resource_type  # noqa: E402
+from ocd_kernel.lib.text_extractor import effective_resource_type  # noqa: E402
+from ocd_kernel.lib.schema_enums import resolve_schema_path  # noqa: E402
 from build.lib.warning_producers import discover_producers, run_all_producers  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 
@@ -455,6 +456,8 @@ def _render_review_ui_scripts() -> str:
         return ""
     chunks = []
     for path in sorted(script_dir.glob("*.js")):
+        if path.name.endswith(".test.js"):
+            continue
         chunks.append(path.read_text(encoding="utf-8"))
     if not chunks:
         return ""
@@ -753,8 +756,9 @@ def _validate_resource_payload(payload: dict[str, Any]) -> None:
     schema_type = meta.get("schema_type")
     if not isinstance(schema_type, str) or not schema_type:
         raise ValueError("Expected resource JSON with meta.schema_type.")
-    schema_path = SCHEMAS_DIR / f"{schema_type}.schema.json"
-    if not schema_path.exists():
+    try:
+        schema_path = resolve_schema_path(schema_type)
+    except FileNotFoundError:
         raise ValueError(f"Unknown meta.schema_type: {schema_type}")
     # reconciled_record and modernised_record use "blocks"; legacy types use "data".
     if schema_type in {"reconciled_record", "modernised_record"}:

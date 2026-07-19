@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from build.lib.warning_producers import WARNING_OUTPUT_SCHEMA, build_warning
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 PRODUCER_ID = "taxonomy_consistency"
@@ -55,7 +56,7 @@ def _schema_default(record_meta: dict[str, Any]) -> str:
     schema_type = record_meta.get("schema_type")
     if not isinstance(schema_type, str) or not schema_type:
         raise ValueError("record.meta.schema_type must be a non-empty string")
-    with (SCHEMAS_DIR / f"{schema_type}.schema.json").open(encoding="utf-8") as handle:
+    with resolve_schema_path(schema_type).open(encoding="utf-8") as handle:
         schema = json.load(handle)
     default = schema.get("x-ocd-default-resource-type")
     if not isinstance(default, str) or not default:

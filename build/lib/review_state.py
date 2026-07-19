@@ -23,10 +23,11 @@ from typing import Any, Mapping
 import jsonschema
 
 from build.lib import sidecar_migrations
-from build.lib.atomic_io import write_json_atomic
+from ocd_kernel.lib.atomic_io import write_json_atomic
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
-SCHEMA_PATH = Path(__file__).resolve().parents[2] / "schemas" / "v1" / "review_state.schema.json"
+SCHEMA_PATH = resolve_schema_path("review_state")
 
 
 def load_schema() -> dict:

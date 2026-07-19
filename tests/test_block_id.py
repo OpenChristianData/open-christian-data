@@ -1,4 +1,4 @@
-from build.lib.block_id import block_id
+from ocd_kernel.lib.block_id import block_id
 
 
 def test_block_id_is_deterministic():

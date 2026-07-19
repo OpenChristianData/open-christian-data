@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from build.lib.warning_producers import discover_producers, run_all_producers
-from build.lib.text_extractor import effective_resource_type
+from ocd_kernel.lib.text_extractor import effective_resource_type
 from pathlib import Path
 
 

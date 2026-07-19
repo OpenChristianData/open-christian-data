@@ -4,7 +4,7 @@
 
 ## Context
 
-The build treated a human-adjudicated gold set as the gate for all correction. The tuning embargo holds the reconciler in degraded mode — every signal weight is 0.0, nothing is auto-chosen, everything routes to review — until a non-circular reference exists (`docs/PIPELINE_BUILD_STATE.md`).
+The build treated a human-adjudicated gold set as the gate for all correction. The tuning embargo holds the reconciler in degraded mode — every signal weight is 0.0, nothing is auto-chosen, everything routes to review — until a non-circular reference exists (`../EzraOCR/docs/PIPELINE_BUILD_STATE.md`).
 
 Two facts reframe this. First, the highest-return research-attested techniques — character-column voting, lexicality rescoring, in-corpus language-model rescoring, and active-learning sample selection — are unsupervised; they need no human gold. Second, the Jewish Encyclopedia (1906) provides a paired diplomatic transcription and page facsimiles of the same edition: a non-circular reference with no edition offset (unlike the CCEL proposal, a 1951 reprint scored against 1908–1914 scans). The embargo conflated "the confidence-weighted matrix needs gold" with "all correction needs gold."
 

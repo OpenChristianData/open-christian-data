@@ -5,6 +5,7 @@ from pathlib import Path
 
 import jsonschema
 import pytest
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 def _write_json(path: Path, payload: dict) -> None:
@@ -71,7 +72,7 @@ def test_modernise_record_cli(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -
     assert result in (0, None)
     modernised_path = tmp_path / "data/reference/test-work/2000/modernised/part-1.json"
     modernised = json.loads(modernised_path.read_text(encoding="utf-8"))
-    schema = json.loads(Path("schemas/v1/modernised_record.schema.json").read_text(encoding="utf-8"))
+    schema = json.loads(resolve_schema_path("modernised_record").read_text(encoding="utf-8"))
     jsonschema.validate(modernised, schema)
 
     first_bytes = modernised_path.read_bytes()

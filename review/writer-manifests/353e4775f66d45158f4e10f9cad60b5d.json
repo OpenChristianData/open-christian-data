@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/westminster_standard_parser.py@v2.0.0",
+  "writer_identity": "westminster_standard_parser",
+  "run_id": "353e4775f66d45158f4e10f9cad60b5d",
+  "started_at": "2026-07-17T00:05:45.986783+00:00",
+  "data_paths": [
+    "data/doctrinal-documents/solemn-league-and-covenant.json"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/solemn-league-and-covenant.json": {
+      "before_sha256": "1d90b1a8e43981a11b5e9006cb5f7ed5cd0aeae77a1a7b9c82756f2c09ecb6da",
+      "after_sha256": "ca742687602a5eb684cd48af4b938381f7e035767cd6a9670fa11e1e7995e0f1"
+    }
+  },
+  "expected_delta_counts": {
+    "data/doctrinal-documents/solemn-league-and-covenant.json": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

@@ -20,7 +20,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.parsers import ccel_creeds_of_christendom as cc  # noqa: E402
 
 RAW = REPO_ROOT / "raw" / "ccel" / "schaff" / "creeds1.xml"

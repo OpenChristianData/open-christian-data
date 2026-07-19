@@ -14,12 +14,14 @@ from pathlib import Path
 import jsonschema
 import pytest
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
+
 
 SCHEMA_DIR = Path(__file__).resolve().parents[1] / "schemas" / "v1"
 
 
 def _schema(name: str) -> dict:
-    return json.loads((SCHEMA_DIR / f"{name}.schema.json").read_text(encoding="utf-8"))
+    return json.loads(resolve_schema_path(name).read_text(encoding="utf-8"))
 
 
 def _accepts(schema: dict, instance: dict) -> None:
@@ -236,6 +238,62 @@ def test_writer_manifest_accepts_new_file_with_null_before_sha():
     )
 
 
+def test_writer_manifest_accepts_deleted_file_with_null_after_sha():
+    schema = _schema("writer_manifest")
+    _accepts(
+        schema,
+        {
+            "schema_version": "1.0.0",
+            "writer": "parser",
+            "writer_version": "build/parsers/foo.py@v1.0.0",
+            "writer_identity": "foo_parser",
+            "run_id": "delete-run",
+            "started_at": "2026-07-18T08:00:00+10:00",
+            "data_paths": ["data/foo.json"],
+            "checksums": {
+                "data/foo.json": {
+                    "before_sha256": "c" * 64,
+                    "after_sha256": None,
+                }
+            },
+            "expected_delta_counts": {
+                "data/foo.json": {"entries_changed": 1, "fields_changed": 0}
+            },
+            "allowed_field_paths": ["/"],
+            "partial_completion_policy": "all_or_nothing",
+            "renames": [],
+        },
+    )
+
+
+def test_writer_manifest_rejects_path_absent_before_and_after():
+    schema = _schema("writer_manifest")
+    _rejects(
+        schema,
+        {
+            "schema_version": "1.0.0",
+            "writer": "parser",
+            "writer_version": "build/parsers/foo.py@v1.0.0",
+            "writer_identity": "foo_parser",
+            "run_id": "no-op-run",
+            "started_at": "2026-07-18T08:00:00+10:00",
+            "data_paths": ["data/foo.json"],
+            "checksums": {
+                "data/foo.json": {
+                    "before_sha256": None,
+                    "after_sha256": None,
+                }
+            },
+            "expected_delta_counts": {
+                "data/foo.json": {"entries_changed": 0, "fields_changed": 0}
+            },
+            "allowed_field_paths": ["/"],
+            "partial_completion_policy": "all_or_nothing",
+            "renames": [],
+        },
+    )
+
+
 def test_writer_manifest_rejects_unknown_writer():
     schema = _schema("writer_manifest")
     _rejects(
@@ -438,27 +496,6 @@ def test_field_path_remap_accepts_example():
             "orphaned_field_paths": [
                 "schaff-herzog.theotokos|layers.definition_blocks.deadbeefdeadbeef"
             ],
-        },
-    )
-
-
-# --- warning_signature_remap -------------------------------------------------
-
-
-def test_warning_signature_remap_accepts_example():
-    schema = _schema("warning_signature_remap")
-    _accepts(
-        schema,
-        {
-            "schema_version": "1.0.0",
-            "producer": "ocr_scanner",
-            "from_signature_version": "v1.0.0",
-            "to_signature_version": "v2.0.0",
-            "remap_rule": "drop_offset_field",
-            "explicit_remap": {
-                "field=definition_blocks.b8f3a1c2;offset=1832;token=THE0T0K08":
-                    "field=definition_blocks.b8f3a1c2;token=THE0T0K08"
-            },
         },
     )
 

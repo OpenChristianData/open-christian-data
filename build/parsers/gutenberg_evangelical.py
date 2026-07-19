@@ -72,7 +72,7 @@ from build.lib._generated_enums import (  # noqa: E402
     STRUCTURED_TEXT__META__ERA,
     STRUCTURED_TEXT__META__PROVENANCE__PROCESSING_METHOD,
 )
-from build.lib.schema_enums import get_enum  # noqa: E402
+from ocd_kernel.lib.schema_enums import get_enum  # noqa: E402
 from build.lib.text_utils import compute_source_hash, smart_title  # noqa: E402
 from build.lib.pg_inline_markup import (  # noqa: E402
     append_pg_inline_markup_note,

@@ -40,7 +40,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.class1_gate import evaluate_class1  # noqa: E402
+from ocd_kernel.lib.class1_gate import evaluate_class1  # noqa: E402
 from build.lib.llm_evidence_provider import (  # noqa: E402
     ADMISSION_OUTCOMES,
     EVENT_KINDS,

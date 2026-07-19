@@ -22,9 +22,9 @@
       "download_date": "2026-03-30",
       "source_hash": "sha256:e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
       "processing_method": "automated",
-      "processing_script_version": "build/parsers/bible_dictionaries.py@v1.0.0",
-      "processing_date": "2026-03-30",
-      "notes": "Sourced from JWBickel/BibleDictionaries on HuggingFace. Underlying text is public domain (19th century). Structured JSONL format by JWBickel; license confirmation pending (EMAIL-4 sent). scripture_references and related_terms are empty in this initial pass -- to be populated during enrichment."
+      "processing_script_version": "build/parsers/bible_dictionaries.py@v1.1.0",
+      "processing_date": "2026-07-16",
+      "notes": "Sourced from JWBickel/BibleDictionaries on HuggingFace. Underlying text is public domain (19th century). Structured JSONL format by JWBickel; license confirmation pending (EMAIL-4 sent). The 2026-07-16 full field census found only term and definitions in every record; no explicit alternate-term field is present. Bible citations embedded in definitions are mapped to scripture_references through the shared OSIS normalizer, and explicit See/See also headword assertions are mapped to related_terms. alt_terms remains empty because the source does not provide that apparatus. Observed populated fields: scripture_references on 0/2622 entries (0 citation groups); related_terms on 2/2622 entries (2 links)."
     }
   },
   "data": [
@@ -6397,7 +6397,9 @@
         "see Ephratah"
       ],
       "scripture_references": [],
-      "related_terms": [],
+      "related_terms": [
+        "Ephratah"
+      ],
       "word_count": 2
     },
     {
@@ -12085,7 +12087,9 @@
         "see Charran"
       ],
       "scripture_references": [],
-      "related_terms": [],
+      "related_terms": [
+        "Charran"
+      ],
       "word_count": 2
     },
     {

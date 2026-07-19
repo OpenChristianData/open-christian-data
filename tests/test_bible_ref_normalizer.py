@@ -1,5 +1,5 @@
 """test_bible_ref_normalizer.py
-Unit tests for build.lib.bible_ref_normalizer.parse_thml_refs and
+Unit tests for ocd_kernel.lib.bible_ref_normalizer.parse_thml_refs and
 extract_refs_from_text.
 
 All cases derived from real examples confirmed in Barnes, Wesley, and HelloAO corpora.
@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from build.lib.bible_ref_normalizer import (  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import (  # noqa: E402
     extract_refs_from_text,
     parse_maclaren_ref,
     parse_thml_refs,

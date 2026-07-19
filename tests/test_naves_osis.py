@@ -5,12 +5,16 @@ Run: py -3 -m pytest tests/test_naves_osis.py -v
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from build.parsers.naves_topical import (
+    RAW_DIR,
     extract_osis_refs,
     extract_cross_refs,
     make_unique_id,
+    parse_all_entries,
     parse_subtopics,
     slugify,
 )
@@ -134,6 +138,41 @@ class TestParseSubtopics:
         subtopics = parse_subtopics(AARON_XML)
         for s in subtopics:
             assert s["label"] == s["label"].strip()
+
+    def test_pre_arrow_refs_are_preserved(self):
+        xml = """<entryFree n="AZARIAH">
+<def>
+<lb/>1. Son of Ethan <ref osisRef="1Chr.2.8">1Ch 2:8</ref>
+<lb/>→ 10. Son of Obed <ref osisRef="2Chr.23.3">2Ch 23:3</ref>
+</def>
+</entryFree>"""
+        subtopics = parse_subtopics(xml)
+        assert subtopics[0] == {
+            "label": "",
+            "references": [{"raw": "1Ch 2:8", "osis": ["1Chr.2.8"]}],
+        }
+        assert subtopics[1]["label"] == "10. Son of Obed"
+
+
+@pytest.mark.slow
+@pytest.mark.skipif(
+    not (RAW_DIR / "dict.idx").exists(),
+    reason="raw Nave zLD module is not downloaded",
+)
+def test_full_nave_ref_census_reconciles_raw_and_output():
+    entries, stats = parse_all_entries()
+    output_refs = sum(
+        len(subtopic["references"])
+        for entry in entries
+        for subtopic in entry["subtopics"]
+    )
+
+    assert stats["raw_refs"] == 77_935
+    assert stats["pre_arrow_entries"] == 41
+    assert stats["pre_arrow_refs"] == 978
+    assert stats["raw_refs"] - stats["pre_arrow_refs"] == 76_957
+    assert stats["total_refs"] == stats["raw_refs"]
+    assert output_refs == stats["raw_refs"]
 
 
 class TestMakeUniqueId:

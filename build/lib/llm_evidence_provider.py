@@ -46,7 +46,7 @@ import unicodedata
 from dataclasses import dataclass
 from typing import Protocol
 
-from build.lib.class1_gate import evaluate_class1
+from ocd_kernel.lib.class1_gate import evaluate_class1
 from build.lib.matrix_counters import build_observation_entry
 
 # Three-state evidence vocabularies. These are arch6 logic constants, NOT a schema

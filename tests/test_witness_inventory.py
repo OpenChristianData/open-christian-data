@@ -7,11 +7,13 @@ from pathlib import Path
 
 import jsonschema
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
+
 SCHEMA_DIR = Path(__file__).resolve().parents[1] / "schemas" / "v1"
 
 
 def test_rendering_catalog_supersedes_witness_inventory() -> None:
-    schema = json.loads((SCHEMA_DIR / "rendering_catalog.schema.json").read_text(encoding="utf-8"))
+    schema = json.loads(resolve_schema_path("rendering_catalog").read_text(encoding="utf-8"))
     catalog = {
         "work_id": "adam-clarke.commentary",
         "edition": "1810-1826",

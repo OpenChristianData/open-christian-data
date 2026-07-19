@@ -67,8 +67,10 @@ def test_check_ledger_passes_projector_receipt(tmp_path: Path) -> None:
             "missing ledger node",
         ),
         (
-            lambda receipt: receipt["nodes"][0]["target"].update({"char_start": 0, "char_end": 1}),
-            "span mismatch",
+            lambda receipt: next(
+                node for node in receipt["nodes"] if node.get("address") == "p1"
+            )["targets"][0].update({"char_start": 0, "char_end": 1}),
+            "target",
         ),
         (
             lambda receipt: receipt["output"].update({"path": "ir/augustine/hf/missing.jsonl"}),

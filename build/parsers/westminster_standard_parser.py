@@ -38,6 +38,7 @@ from build.lib._generated_enums import (  # noqa: E402
 )
 from build.lib.text_utils import compute_source_hash  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib import writer_manifest  # noqa: E402
 
 WSC_HTML = REPO_ROOT / "raw" / "westminster-standard-org" / "westminster-shorter-catechism.html"
 WSC_JSON = REPO_ROOT / "data" / "catechisms" / "westminster-shorter-catechism.json"
@@ -746,8 +747,8 @@ def _build_doctrinal_document(slug: str, units: list[dict]) -> dict:
     """Assemble the full doctrinal document JSON structure for a slug."""
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     config = DOCUMENT_CONFIGS[slug]
-    html_path = RAW_DIR / f"{slug}.html"
-    source_hash = compute_source_hash(html_path)
+    source = _load_document_source(slug)
+    download_date = source["download_date"]
 
     return {
         "meta": {
@@ -766,11 +767,11 @@ def _build_doctrinal_document(slug: str, units: list[dict]) -> dict:
             "schema_version": "2.1.0",
             "completeness": config["completeness"],
             "provenance": {
-                "source_url": f"https://thewestminsterstandard.org/{slug}",
+                "source_url": source["url"],
                 "source_format": "html",
-                "source_edition": "thewestminsterstandard.org (web edition, 2026-03-28)",
-                "download_date": "2026-03-28",
-                "source_hash": source_hash,
+                "source_edition": f"thewestminsterstandard.org (web edition, {download_date})",
+                "download_date": download_date,
+                "source_hash": source["source_hash"],
                 "processing_method": "automated",
                 "processing_script_version": SCRIPT_VERSION,
                 "processing_date": processing_date,
@@ -787,6 +788,29 @@ def _build_doctrinal_document(slug: str, units: list[dict]) -> dict:
             "units": units,
         },
     }
+
+
+def _load_document_source(slug: str) -> dict:
+    """Load a document's source config and prove its pin matches the HTML cache."""
+    config_path = SOURCES_OUT_DIR / slug / "config.json"
+    payload = json.loads(config_path.read_text(encoding="utf-8"))
+    source = payload.get("source")
+    if not isinstance(source, dict):
+        raise ValueError(f"{slug}: source config is missing a source object")
+
+    required = ("url", "download_date", "source_hash")
+    missing = [key for key in required if not source.get(key)]
+    if missing:
+        raise ValueError(f"{slug}: source config is missing {', '.join(missing)}")
+
+    html_path = RAW_DIR / f"{slug}.html"
+    actual_hash = compute_source_hash(html_path)
+    if actual_hash != source["source_hash"]:
+        raise ValueError(
+            f"{slug}: cached HTML hash {actual_hash} does not match "
+            f"config pin {source['source_hash']}"
+        )
+    return source
 
 
 def _count_words_in_units(units: list[dict]) -> int:
@@ -854,6 +878,136 @@ def _check_content_plausibility(units: list[dict], slug: str) -> list[str]:
     return warnings
 
 
+def _document_delta_payload(document: dict | None) -> dict | None:
+    """Adapt a doctrinal document to the shared manifest delta contract.
+
+    ``writer_manifest.diff_counts`` compares a list of entries. A doctrinal
+    document stores its entries under ``data.units`` and also has meaningful
+    metadata and data-level fields, so represent those real objects as entries
+    without adding synthetic fields that would inflate ``fields_changed``.
+    Nested children remain part of their parent unit's direct ``children``
+    field, which matches ``diff_counts``' direct-field semantics.
+    """
+    if document is None:
+        return None
+
+    meta = document["meta"]
+    data = document["data"]
+    entries = [meta, {key: value for key, value in data.items() if key != "units"}]
+    entries.extend(data.get("units", []))
+    return {"meta": {}, "data": entries}
+
+
+def _document_delta_key(entry: dict) -> str:
+    """Return a stable key for one flattened doctrinal-document entry."""
+    if "document_id" in entry:
+        return f"data:{entry['document_id']}"
+    if "unit_type" in entry and "number" in entry:
+        return f"unit:{entry['unit_type']}:{entry['number']}"
+    return f"meta:{entry['id']}"
+
+
+def _document_delta_counts(before: dict | None, after: dict) -> tuple[int, int]:
+    """Measure changed document entries and direct fields for a parser run."""
+    return writer_manifest.diff_counts(
+        _document_delta_payload(before),
+        _document_delta_payload(after) or {},
+        key=_document_delta_key,
+    )
+
+
+def _unit_sibling_key(unit: dict) -> tuple[str, str]:
+    """Return the parser's stable key for a unit within one sibling scope."""
+    missing = [field for field in ("unit_type", "number") if field not in unit]
+    if missing:
+        raise ValueError(
+            "cannot preserve token_count without a complete sibling key; "
+            f"missing {', '.join(missing)}"
+        )
+    return str(unit["unit_type"]), str(unit["number"])
+
+
+def _index_unit_siblings(
+    units: list[dict], *, tree_name: str, scope: tuple[tuple[str, str], ...]
+) -> dict[tuple[str, str], dict]:
+    """Index one sibling list, rejecting keys that would make matching ambiguous."""
+    indexed: dict[tuple[str, str], dict] = {}
+    for unit in units:
+        key = _unit_sibling_key(unit)
+        if key in indexed:
+            scope_label = "root" if not scope else " / ".join(
+                f"{unit_type}:{number}" for unit_type, number in scope
+            )
+            raise ValueError(
+                f"duplicate sibling key {key!r} in {tree_name} document at {scope_label}"
+            )
+        indexed[key] = unit
+    return indexed
+
+
+def _validate_unit_sibling_keys(
+    units: list[dict], *, tree_name: str, scope: tuple[tuple[str, str], ...] = ()
+) -> None:
+    """Prove every sibling scope in a unit tree has deterministic keys."""
+    indexed = _index_unit_siblings(units, tree_name=tree_name, scope=scope)
+    for key, unit in indexed.items():
+        _validate_unit_sibling_keys(
+            unit.get("children", []),
+            tree_name=tree_name,
+            scope=(*scope, key),
+        )
+
+
+def _tokenized_source_text(unit: dict) -> str:
+    """Select source text using add_token_counts.py's doctrinal-unit semantics."""
+    return unit.get("content") or unit.get("content_with_proofs") or ""
+
+
+def _copy_unchanged_token_counts(
+    previous_units: list[dict],
+    current_units: list[dict],
+    *,
+    scope: tuple[tuple[str, str], ...] = (),
+) -> None:
+    """Copy verified token counts recursively between already-validated trees."""
+    previous_by_key = _index_unit_siblings(
+        previous_units, tree_name="previous", scope=scope
+    )
+    current_by_key = _index_unit_siblings(
+        current_units, tree_name="current", scope=scope
+    )
+
+    for key, current_unit in current_by_key.items():
+        previous_unit = previous_by_key.get(key)
+        if previous_unit is None:
+            continue
+
+        if (
+            "token_count" in previous_unit
+            and _tokenized_source_text(previous_unit)
+            == _tokenized_source_text(current_unit)
+        ):
+            current_unit["token_count"] = previous_unit["token_count"]
+
+        _copy_unchanged_token_counts(
+            previous_unit.get("children", []),
+            current_unit.get("children", []),
+            scope=(*scope, key),
+        )
+
+
+def _preserve_unchanged_token_counts(previous: dict | None, current: dict) -> None:
+    """Preserve downstream token enrichment only across deterministic text matches."""
+    if previous is None:
+        return
+
+    previous_units = previous.get("data", {}).get("units", [])
+    current_units = current.get("data", {}).get("units", [])
+    _validate_unit_sibling_keys(previous_units, tree_name="previous")
+    _validate_unit_sibling_keys(current_units, tree_name="current")
+    _copy_unchanged_token_counts(previous_units, current_units)
+
+
 def parse_document(slug: str, dry_run: bool = False) -> None:
     """Parse a single Westminster Standards document from HTML and write JSON."""
     if slug not in DOCUMENT_CONFIGS:
@@ -901,19 +1055,46 @@ def parse_document(slug: str, dry_run: bool = False) -> None:
     log.info("Stats: %d sections, %d words, %d empty, %d plausibility warnings",
              section_count, word_count, len(empty_sections), len(plausibility_warnings))
 
+    out_path = DOCS_OUT_DIR / f"{slug}.json"
+    previous = None
+    if not dry_run and out_path.exists():
+        previous = json.loads(out_path.read_text(encoding="utf-8"))
+
     doc = _build_doctrinal_document(slug, units)
+    _preserve_unchanged_token_counts(previous, doc)
 
     if dry_run:
         log.info("DRY RUN -- no files written for %s", slug)
         print("DRY RUN: no files written.")
         return
 
-    out_path = DOCS_OUT_DIR / f"{slug}.json"
+    entries_changed, fields_changed = _document_delta_counts(previous, doc)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     log.info("Writing: %s", out_path)
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(doc, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    repo_root = DOCS_OUT_DIR.parents[1]
+    with writer_manifest.run(
+        writer_identity="westminster_standard_parser",
+        writer_version=SCRIPT_VERSION,
+        data_paths=[out_path],
+        repo_root=repo_root,
+        manifests_dir=repo_root / "review" / "writer-manifests",
+    ) as manifest_run:
+        out_path.write_text(
+            json.dumps(doc, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+        manifest_run.record_delta(
+            out_path,
+            entries_changed=entries_changed,
+            fields_changed=fields_changed,
+        )
     log.info("Written: %s", out_path)
+    log.info(
+        "Writer manifest: %d entries changed, %d fields changed",
+        entries_changed,
+        fields_changed,
+    )
 
     elapsed = (datetime.now(timezone.utc) - start_time).total_seconds()
     print(f"Done: {out_path.name} ({elapsed:.1f}s)")

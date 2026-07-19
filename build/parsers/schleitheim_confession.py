@@ -14,8 +14,6 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
-
 # ---------------------------------------------------------------------------
 # Bootstrap REPO_ROOT into sys.path
 # ---------------------------------------------------------------------------
@@ -32,7 +30,8 @@ from build.lib.paths import REPO_ROOT  # noqa: E402
 
 SOURCE_URL = "https://www.anabaptists.org/history/the-schleitheim-confession.html"
 OUTPUT_PATH = REPO_ROOT / "data" / "doctrinal-documents" / "schleitheim-confession-1527.json"
-SCRIPT_VERSION = "build/parsers/schleitheim_confession.py@v1.0.0"
+RAW_HTML_PATH = REPO_ROOT / "raw" / "anabaptists.org" / "schleitheim-confession-1527.html"
+SCRIPT_VERSION = "build/parsers/schleitheim_confession.py@v1.1.0"
 
 DOCUMENT_CONFIG = {
     "document_id": "schleitheim-confession-1527",
@@ -62,6 +61,13 @@ _HEADER_RE = re.compile(
 
 # Extracts Roman numeral and title from a header string like "I.  Observe concerning baptism:"
 _ARTICLE_NUM_RE = re.compile(r'^([IVXLCDM]+)\.\s+(.*?)[\s:]*$', re.DOTALL | re.IGNORECASE)
+
+_DOCUMENT_TERMINUS_RE = re.compile(
+    r"The Seven Articles of Schleitheim\s*<br\s*/?>\s*"
+    r"Canton Schaffhausen, Switzerland,\s*<br\s*/?>\s*"
+    r"February 24, 1527",
+    re.IGNORECASE,
+)
 
 # Matches any HTML tag for stripping
 _TAG_RE = re.compile(r'<[^>]+>')
@@ -108,6 +114,17 @@ def extract_articles(html_bytes: bytes) -> list[dict]:
         number = m.group(1).upper()
         title_raw = m.group(2).strip().rstrip(":")
         title = re.sub(r'\s+', ' ', title_raw).strip()
+
+        # The source's own closing imprint is the confession terminus. It
+        # precedes a typed-by note and unrelated site chrome, so this is a
+        # content-based boundary rather than a site-markup heuristic.
+        if number == "VII":
+            terminus = _DOCUMENT_TERMINUS_RE.search(body_raw)
+            if terminus is None:
+                raise RuntimeError(
+                    "Article VII is missing the Schleitheim confession closing imprint."
+                )
+            body_raw = body_raw[: terminus.end()]
 
         # Clean body: split on <p> or <P> paragraph separators, strip tags, drop empties
         body_paras = re.split(r'<[Pp]\s*>', body_raw)
@@ -176,14 +193,12 @@ def build_output(articles: list[dict], source_hash: str, download_date: str) -> 
 
 
 def main() -> None:
-    print(f"Fetching {SOURCE_URL} ...")
-    resp = requests.get(
-        SOURCE_URL,
-        headers={"User-Agent": "Mozilla/5.0 Chrome/120", "Accept": "text/html"},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    html_bytes = resp.content
+    if not RAW_HTML_PATH.exists():
+        raise FileNotFoundError(
+            f"Missing cached raw witness: {RAW_HTML_PATH.relative_to(REPO_ROOT)}"
+        )
+    print(f"Reading cached witness {RAW_HTML_PATH.relative_to(REPO_ROOT)} ...")
+    html_bytes = RAW_HTML_PATH.read_bytes()
     source_hash = "sha256:" + hashlib.sha256(html_bytes).hexdigest()
     download_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 

@@ -7,8 +7,8 @@ import pytest
 from lxml import etree
 
 from build.tei.thml_to_tei import ConversionError, convert_ccel_work_to_tei, convert_thml_to_tei
-from build.tei.validate import validate_file
-from build.tei.writer import TEI_NS
+from ocd_kernel.tei.validate import validate_file
+from ocd_kernel.tei.writer import TEI_NS
 
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 NS = {"tei": TEI_NS}

@@ -3,7 +3,7 @@ Parser for CCEL/archive.org PDF-extracted commentary Markdown into OCD schema.
 
 Reads clean Markdown from raw/{source}/{id}/markdown/*.md (produced by
 build/extract_pdf.py) and outputs commentary JSON matching
-schemas/v1/commentary.schema.json.
+ocd_kernel/schemas/v1/commentary.schema.json.
 
 Currently targets Spurgeon's Treasury of David. The psalm identification logic
 handles Treasury of David vol PDFs from archive.org (OCR, GlyphLessFont).

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "4cd0fb19bfc44d08b5b3d82286d76ce0",
+  "started_at": "2026-07-16T02:11:29.534378+00:00",
+  "data_paths": [
+    "data/commentaries/calvin/obadiah.json"
+  ],
+  "checksums": {
+    "data/commentaries/calvin/obadiah.json": {
+      "before_sha256": "fdd318543ebdb5f4136398de8b2fb496653ae7a8a218cdb2933b70d065c110c7",
+      "after_sha256": "0a078c19f9b52d7b6ddb9300e4a9533a302eee6d2165fdbc918f954b6ebc95fc"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/calvin/obadiah.json": {
+      "entries_changed": 21,
+      "fields_changed": 94
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

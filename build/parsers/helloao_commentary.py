@@ -32,7 +32,7 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib.bible_ref_normalizer import extract_refs_from_text  # noqa: E402
+from ocd_kernel.lib.bible_ref_normalizer import extract_refs_from_text  # noqa: E402
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.config_validation import validate_config_enums  # noqa: E402
 from build.lib.text_layers import (  # noqa: E402

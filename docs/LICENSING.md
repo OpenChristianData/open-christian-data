@@ -2,9 +2,15 @@
 
 ## Default target: CC0
 
-OCD datasets default to CC0 (Creative Commons Zero — public domain dedication). Every
-record carries `source_license`, `source_url`, and `translation_year` provenance fields
-to enable per-record license tracking.
+OCD datasets default to CC0 (Creative Commons Zero — public domain dedication).
+Source rights and provenance are recorded in the fields appropriate to each
+schema. These commonly include a source URL, license or rights statement,
+edition or translation information, processing details, and source-file
+identity. Field names and availability vary by content type.
+
+The [source and acknowledgment ledger](SOURCES.md) records principal sources,
+requested credit, third-party notices, and unresolved rights questions for the
+current release.
 
 ## Publishing rules
 
@@ -14,28 +20,30 @@ to enable per-record license tracking.
 | CC BY 4.0 (e.g. STEPBible) | CC BY 4.0 with attribution |
 | CC BY-SA | Avoid (see below) |
 
-**For pre-1928 texts:** a PD original always exists somewhere. A CC BY-SA on Wikisource
-reflects their transcription effort, not the underlying text. Prefer a PD source so the
-dataset stays CC0.
+**For older texts:** distinguish the underlying work from the exact translation,
+edition, transcription, digitization, and structured database being used. A
+public-domain original does not make every modern representation of it public
+domain. Prefer a verified public-domain or CC0 source so the dataset stays CC0.
 
 **If inputs are mixed:** use HF `license: other` + a `LICENSE.md` that documents the
 provenance breakdown.
 
 ## License contamination rules
 
-1. Check `source_license` before publishing any new dataset.
+1. Check the rights and provenance fields required by the applicable schema
+   before publishing any new dataset.
 2. A single CC BY-SA source contaminates the entire dataset output if mixed in without
    isolation — use a separate dataset or exclude the source.
 3. STEPBible data (CC BY 4.0) is permissible but requires attribution in the dataset card.
 
-## Per-record provenance fields
+## Record-level provenance
 
-`source_license` — SPDX identifier (e.g. `CC0-1.0`, `CC-BY-4.0`) or `public-domain`
-`source_url` — canonical URL of the source file used
-`translation_year` — year of the specific translation used (for edition disambiguation)
+Consult the applicable JSON schema for the authoritative fields. Depending on
+content type, provenance may live in a `provenance` object and in work- or
+edition-level metadata rather than three universal top-level fields.
 
-The provenance fields allow upgrading datasets to CC0 later when better-licensed sources
-are found without losing traceability.
+Keeping that information with the data makes it possible to replace a source
+with a better-licensed or better-attested edition without losing traceability.
 
 ## Decision record
 

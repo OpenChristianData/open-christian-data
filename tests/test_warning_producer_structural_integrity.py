@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from build.lib.warning_producers.structural_integrity import run
+from ocd_kernel.lib.warning_producers.structural_integrity import run
 
 
 def _codes(record):

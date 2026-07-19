@@ -11,7 +11,8 @@ from pathlib import Path
 from lxml import etree
 
 from build.lib.paths import REPO_ROOT
-from build.tei.writer import TEI_NS, derive_address
+from build.tei.check_ledger_v2 import check_receipt_v2
+from ocd_kernel.tei.writer import TEI_NS, derive_address
 
 NS = {"tei": TEI_NS}
 DROP_DIV_TYPES = {"title", "titlepage", "imprint", "halftitlepage", "colophon", "copyright-page"}
@@ -111,6 +112,8 @@ def _check_counts(receipt: dict, errors: list[str]) -> None:
 
 def check_receipt(receipt_path: Path, *, repo_root: Path = REPO_ROOT) -> list[str]:
     receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    if receipt.get("receipt_schema") == "loss-receipt-v2":
+        return check_receipt_v2(receipt_path, repo_root=repo_root)
     errors: list[str] = []
     ir_path = repo_root / receipt["ir"]["path"]
     output_path = repo_root / receipt["output"]["path"]
@@ -185,7 +188,11 @@ def main(argv: list[str] | None = None) -> int:
         for error in errors:
             print(error)
         return 1
-    print("PASS")
+    receipt = json.loads(args.receipt_path.read_text(encoding="utf-8"))
+    if receipt.get("receipt_schema") == "loss-receipt-v1":
+        print("LEGACY: loss-receipt-v1 is valid but does not prove delivery")
+    else:
+        print("PASS")
     return 0
 
 

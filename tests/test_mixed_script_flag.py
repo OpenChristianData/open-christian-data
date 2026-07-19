@@ -7,7 +7,7 @@ classify_block injects the flag into every return path.
 from __future__ import annotations
 
 
-from build.lib.lang_classifier import classify_block
+from ocd_kernel.lib.lang_classifier import classify_block
 
 
 def test_mixed_script_key_always_present():

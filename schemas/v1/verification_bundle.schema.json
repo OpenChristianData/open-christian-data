@@ -1,0 +1,448 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openchristiandata/open-christian-data/schemas/v1/verification_bundle.schema.json",
+  "x-ocd-schema-version": "1.0.0",
+  "title": "Verification Bundle",
+  "description": "A closed, immutable bounded review bundle for verification-bundle-v1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identity",
+    "scope",
+    "inventory_binding",
+    "artifacts",
+    "dependencies",
+    "policy",
+    "sampling",
+    "frames",
+    "selected_anchors",
+    "machine_checks",
+    "publication_projection"
+  ],
+  "properties": {
+    "identity": {
+      "const": "verification-bundle-v1"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "inventory_binding": {
+      "$ref": "#/$defs/inventory_binding"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/source_artifact"
+          },
+          {
+            "$ref": "#/$defs/canonical_artifact"
+          }
+        ]
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "$ref": "#/$defs/dependency"
+      }
+    },
+    "policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "sampling": {
+      "$ref": "#/$defs/sampling"
+    },
+    "frames": {
+      "$ref": "#/$defs/frames"
+    },
+    "selected_anchors": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/selection"
+      }
+    },
+    "machine_checks": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "inventory-schema-valid",
+          "source-output-member-reconciliation",
+          "artifact-byte-availability",
+          "raw-hash-verification"
+        ]
+      }
+    },
+    "publication_projection": {
+      "$ref": "#/$defs/publication_projection"
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[^/]+(?:/[^/]+)*$"
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "rendering_id"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "inventory_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "raw_sha256"
+      ],
+      "properties": {
+        "identity": {
+          "const": "verification-inventory-v1"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "source_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "path",
+        "raw_sha256",
+        "rendering_id",
+        "work_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "source_artifact"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "canonical_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "member_id",
+        "path",
+        "raw_sha256",
+        "rendering_id",
+        "work_id"
+      ],
+      "properties": {
+        "grain": {
+          "const": "canonical_artifact"
+        },
+        "member_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "path",
+        "raw_sha256"
+      ],
+      "properties": {
+        "role": {
+          "$ref": "#/$defs/identifier"
+        },
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "algorithm",
+        "sample_size",
+        "machine_checks"
+      ],
+      "properties": {
+        "identity": {
+          "const": "verification-policy-v1"
+        },
+        "algorithm": {
+          "const": "sha256-index-v1"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "machine_checks": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "inventory-schema-valid",
+              "source-output-member-reconciliation",
+              "artifact-byte-availability",
+              "raw-hash-verification"
+            ]
+          }
+        }
+      }
+    },
+    "sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "seed",
+        "sample_size"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256-index-v1"
+        },
+        "seed": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 3
+        }
+      }
+    },
+    "source_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchor_id",
+        "grain",
+        "member_id",
+        "source_id",
+        "rendering_id",
+        "artifact_path",
+        "artifact_sha256"
+      ],
+      "properties": {
+        "anchor_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "grain": {
+          "const": "collection_member"
+        },
+        "member_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "artifact_path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "canonical_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchor_id",
+        "grain",
+        "member_id",
+        "rendering_id",
+        "artifact_path",
+        "artifact_sha256"
+      ],
+      "properties": {
+        "anchor_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "grain": {
+          "const": "canonical_artifact"
+        },
+        "member_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "rendering_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "artifact_path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        }
+      }
+    },
+    "source_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count",
+        "anchors_sha256",
+        "anchors"
+      ],
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "anchors_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source_anchor"
+          }
+        }
+      }
+    },
+    "canonical_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count",
+        "anchors_sha256",
+        "anchors"
+      ],
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "anchors_sha256": {
+          "$ref": "#/$defs/raw_sha256"
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/canonical_anchor"
+          }
+        }
+      }
+    },
+    "frames": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_members",
+        "canonical_outputs"
+      ],
+      "properties": {
+        "source_members": {
+          "$ref": "#/$defs/source_frame"
+        },
+        "canonical_outputs": {
+          "$ref": "#/$defs/canonical_frame"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame",
+        "anchor_id",
+        "reason"
+      ],
+      "properties": {
+        "frame": {
+          "enum": [
+            "source_members",
+            "canonical_outputs"
+          ]
+        },
+        "anchor_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "reason": {
+          "enum": [
+            "mandatory-first",
+            "mandatory-last",
+            "mandatory-first-and-last",
+            "hash-seeded"
+          ]
+        }
+      }
+    },
+    "publication_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "const": "not_applicable"
+        },
+        "reason": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    }
+  }
+}

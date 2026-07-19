@@ -16,10 +16,11 @@ import jsonschema
 import pytest
 from pathlib import Path
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 from build.parsers.logos_schaff_herzog import parse_article
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
-_SCHEMA_PATH = _REPO_ROOT / "schemas" / "v1" / "reference_entry.schema.json"
+_SCHEMA_PATH = resolve_schema_path("reference_entry")
 
 # ---------------------------------------------------------------------------
 # Fixtures -- verbatim copies of actual downloaded HTML (TEST-13)

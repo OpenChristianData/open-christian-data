@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocd-kernel"
+version = "0.1.0"
+description = "Shared kernel utilities for Open Christian Data"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema",
+  "lxml",
+  "PyYAML",
+  "remotezip",
+  "requests",
+]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ocd_kernel*"]
+
+[tool.setuptools.package-data]
+"ocd_kernel.lib.lexicons" = ["data/*.json"]
+"ocd_kernel.lib.source_transliteration_lexicons" = ["*.yaml"]
+"ocd_kernel.tei" = [
+  "vendor/VERSION.txt",
+  "vendor/SPIKE_NOTES.md",
+  "vendor/relaxng/*.rng",
+  "vendor/schematron/*.sch",
+  "vendor/xsd/*.xsd",
+]

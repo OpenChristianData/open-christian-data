@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bible_dictionaries.py@v1.1.0",
+  "writer_identity": "bible_dictionaries_parser",
+  "run_id": "a2b2342bc8954a32806eded4f479e06f",
+  "started_at": "2026-07-16T01:56:17.484466+00:00",
+  "data_paths": [
+    "data/reference/hitchcocks-bible-names-dictionary.json"
+  ],
+  "checksums": {
+    "data/reference/hitchcocks-bible-names-dictionary.json": {
+      "before_sha256": "d99c4d37636a8fb289f74129c4f8cc51cb342a01da7d6995f1627f99a72e4b99",
+      "after_sha256": "f25a4ca485c4bc25e3900c852b221831227346a139f4480d22287c2b43b3306e"
+    }
+  },
+  "expected_delta_counts": {
+    "data/reference/hitchcocks-bible-names-dictionary.json": {
+      "entries_changed": 2,
+      "fields_changed": 2
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

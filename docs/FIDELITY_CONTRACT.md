@@ -2,7 +2,9 @@
 
 **Status:** Living document, seeded 2026-07-02 with the City of God pilot class (two renderings).
 Further source classes are added as each format family is brought into the TEI IR — the class table
-is written when the family is walked, not speculatively.
+is written when the family is walked, not speculatively. The 2026-07-16 campaign expanded the named
+proof set but performed no publish cutover. Unresolved fidelity and cutover work lives in
+`docs/DATASET_SUCCESSOR_QUEUE.md`.
 
 This is the oracle the fidelity gates check against. It rules, per source class and feature, what
 must survive and where. "The goal is not to preserve everything, but to make every intentional loss
@@ -17,8 +19,16 @@ rules:
    `normalized` (deliberate canonicalization, recorded here once) or `excluded` (recorded here
    once, with the reason). The census-vs-TEI gate enforces this mechanically: every censused
    feature ID must appear in the IR or be covered by a `normalized`/`excluded` ruling.
-2. **IR -> projection** may drop anything, but every drop appears on that projection's coverage
-   ledger (`loss-receipt-v1`), per node ID. A drop absent from the ledger fails the build.
+2. **IR -> projection** may drop anything, and the intended contract is that every drop appears on
+   that projection's coverage ledger (`loss-receipt-v1`), per node ID. The present checker enforces
+   node accounting and verifies text only when a target carries character spans; it does not prove
+   that every node classified as projected contributed its text.
+
+> **Integrity warning (2026-07-16): a ledger PASS is necessary, not sufficient.** The BCP-1549
+> ledger reports `dropped: 0`, `normalized: 0`, and 332 projected labels while 287 of those label
+> texts are absent from output. Earlier PASS results in this document remain valid accounting
+> results, and their independent census/carrier/viewer evidence still stands, but the ledger alone
+> cannot certify fidelity until the P1 successor fix lands. Nothing was cut over or published.
 
 So the per-feature categories are:
 
@@ -65,6 +75,43 @@ So the per-feature categories are:
 | `toc.xhtml` / nav documents | excluded | — | generated navigation, derivable from structure |
 | CSS, images, fonts | excluded | — | presentation assets of the container (record in census as excluded file classes) |
 
+## Class: Standard Ebooks XHTML (Batch 05 accepted renderings: Bunyan and Kempis)
+
+The Batch 05 census is deliberately source-specific: the existing City of God contract remains
+unchanged, while these renderings add carriers that the pilot did not exercise.
+
+| Feature (census name) | Ruling | TEI carrier | Notes |
+|---|---|---|---|
+| Additional section vocabulary (`appendix`, `dedication`, `epigraph`, `foreword`, `introduction`, `preamble`, `z3998:subchapter`) | preserve | `<div type>` | Map the source token to the TEI type without flattening its nesting. |
+| Bare `bridgehead` paragraphs | preserve | `<argument><p>` | Kempis uses the bare token rather than `se:bridgehead`; it remains a chapter-level argument carrier. |
+| `hgroup` headings | preserve | `<head>` | Preserve the heading text and source identity while normalizing the XHTML heading wrapper. |
+| Semantic and typographic emphasis (`em`, `i`, `b`, `strong`) | preserve | `<emph>` or `<hi rend="italic|bold">` | Keep semantic `<em>` distinct from typographic `<i>`; bold elements normalize to TEI bold. |
+| Ordered and unordered lists (`ol`, `ul`, `li`) | preserve | `<list type="ordered|bulleted"><item>` | Keep container and item boundaries; nested lists remain nested. |
+| Verse, song, and poem blockquotes | preserve | `<quote><lg><l>` | `z3998:verse`, `z3998:song`, and `z3998:poem` all carry line structure; note-body instances are included after note resolution. |
+| Quoted inline text and citations (`q`, `cite`) | preserve | `<q>` and `<bibl>`/`<title>` | The wrapper is normalized, but visible text and citation boundaries survive. |
+| Note-body block structure | preserve | nested `<p>`, `<quote>`, and inline TEI elements inside `<note>` | Do not collapse endnote paragraphs or verse into a single note string. |
+
+**Verified 2026-07-15:** TEI validation, census gates, clean-text projection, and loss ledgers pass
+for *The Pilgrim's Progress* and *The Imitation of Christ*. Viewer smoke should inspect each work's
+front matter, a chapter argument, an endnote, and a verse/list carrier.
+
+## Class: Project Gutenberg marked-up plain text (Calvin *Institutes*, volumes 1-2)
+
+| Feature (census name) | Ruling | TEI carrier | Notes |
+|---|---|---|---|
+| Work scope and Gutenberg wrapper | preserve / excluded | `<front>`, `<body>`, `<back>` | Preserve the selected work; exclude Project Gutenberg license wrapper text and the Vol. II index after the explicit work boundary. |
+| Books and chapters (`books`, `chapters`) | preserve | nested `<div type="book|chapter" n xml:id>` | Book III is assembled from both volumes into one logical book; IDs remain source-derived. |
+| Front matter (`front_matter`) | preserve | `<front><div type="titlepage">` | The two volume title/translator blocks are content of the rendering and remain available for provenance/display. |
+| Underscore emphasis (`emphasis`) | preserve | `<hi rend="italic">` | Only true underscore-delimited emphasis is mapped; literal snake_case text remains literal. |
+| Numeric note anchors (`note_anchors`) | preserve | `<ref type="note" target="#slug-note-N">` | Vol. I's 2,016 sequential `(N)` refs and Vol. II's 1,489 `[N]` refs resolve to source-derived note IDs. |
+| Per-volume footnote blocks (`note_bodies`) | preserve | one `<back>` with per-volume `<div type="notes"><note place="end">` containers | Vol. I contributes 2,016 bodies and all are referenced; Vol. II contributes 1,490 bodies, of which 1,489 have inline refs and one is unreferenced. This remains a per-volume apparatus. |
+| Projection losses | explicit | `*.loss.json` | HF clean text intentionally drops notes and markup; the receipt accounts for dropped/normalized nodes, subject to the integrity warning above. |
+
+**Verified 2026-07-16:** the Calvin TEI artifact validates, the census gate matches books/chapters,
+1,361 body paragraphs, front matter, emphasis, 3,505 resolving refs, and 3,506 notes, and its
+projection ledger passes. Vol. I pairing consumes only the next expected note number in source
+order; non-anchor parenthetical numbers are left literal or excluded with the Gutenberg wrapper.
+
 ## Class: Anglican liturgy (Book of Common Prayer HTML, 1549/1559/1662 full text + 1928 collects)
 
 | Feature (census name) | Ruling | TEI carrier | Notes |
@@ -79,6 +126,47 @@ So the per-feature categories are:
 | Italic/red display used only to mark rubrics | normalized | rubric classification on `<p rend="rubric">` | colour and font choice are presentation, not separately preserved |
 | Navigation tables, source-site chrome, scripts, tracking blocks | excluded | — | digital container apparatus, not prayer-book content |
 | Source-site editorial side notes | excluded | — | Justus narrow right-column notes are not the BCP text; do not mix them into liturgical order |
+
+**Verified 2026-07-16:** TEI validation and strict-v2 projection ledgers pass for
+`book-of-common-prayer.bcp-1549`, `bcp-1559`, `bcp-1662`, and `bcp-1928-collects`. Viewer smokes now
+cover all four renderings; the 1559 and 1928 captures use distinctive body text and pass the
+viewer's rendered-DOM checks (upgraded TEI elements, nonzero paragraphs, and no dangling note
+references). B04-B06 also deliver speaker roles, body-peer 1662 collects, and rendering-specific
+metadata without an unsupported translator.
+
+### BCP 1559 legacy-to-current record reconciliation
+
+The old JSON contains 14 sections. The current TEI contains 16 source-page service carriers, and
+the clean projection intentionally emits one row per carrier, including empty carriers: 16 rows.
+The complete mapping is below; legacy numbers are one-based positions in
+`data/structured-text/bcp-1559.json`.
+
+| Source page / current service | Legacy section | Current state |
+|---|---:|---|
+| `Baptism_1559.htm` — Baptism | 1 | shared |
+| `BCP_1559.htm` — The 1559 Book of Common Prayer | — | current-only; empty service |
+| `Burial_1559.htm` — Burial | 2 | shared |
+| `Churching_of_Women_1559.htm` — Churching of Women & Commination | 3 | shared combined page; it already contains both rites |
+| `Commination_1559.htm` — A Commination against Sinners… | — | current-only duplicate source page; empty service, so it is not a second delivery of the combined page's text |
+| `Communion_1559.htm` — Holy Communion | 4 | shared |
+| `Confirmation_1559.htm` — Catechism & Confirmation | 5 | shared |
+| `EP_1559.htm` — Evening Prayer | 6 | shared |
+| `front_matter_1559.htm` — Act of Uniformity; Preface; and Of Ceremonies | — | current-only; empty service |
+| `Godly_Prayers.htm` — Godly Prayers | 7 | shared |
+| `JamesI_Procl_Uniformity.htm` — James I's Proclamation of Uniformity | 8 | shared |
+| `Kalendar_1559.htm` — Kalendar & Tables | 9 | shared identity; empty current service |
+| `Litany_1559.htm` — Litany | 10 | shared |
+| `Marriage_1559.htm` — Marriage | 12 | shared |
+| `MP_1559.htm` — Morning Prayer | 11 | shared |
+| `Visitation_Sick_1559.htm` — Visitation of the Sick | 14 | shared |
+| `PDF1623.htm` — mis-titled “Churching of Women & Commination” | 13 | legacy-only source-site download notice: 4 blocks / 173 words about a 1623 PDF, correctly excluded from the 1559 TEI |
+
+Thus the arithmetic is `14 legacy - 1 legacy-only PDF notice + 3 current-only source-page
+carriers = 16 current rows`. Thirteen legacy sections map one-to-one to current services. The
+Churching page remains the same combined Churching-and-Commination unit on both surfaces; there is
+no additional unaccounted merge or split. The four empty services are exactly **The 1559 Book of
+Common Prayer**, **A Commination against Sinners, from the 1559 Book of Common Prayer**, **Act of
+Uniformity; Preface; and Of Ceremonies**, and **Kalendar & Tables**.
 
 ## Class: CCEL ThML (config-driven proof works: NPNF2 `npnf204` div1 `vii`; Owen `mort` div1 `i`)
 
@@ -107,9 +195,39 @@ per-work config and validation before they are treated as migrated.
 | Tables / rows / cells (`tables`, `table_rows`, `table_cells`) | preserve | `<table>`, `<row>`, `<cell>` | used by NPNF2 introductory material; IDs are gate-checked where the source supplies them |
 | Work title pages / titlepage divisions | normalized or excluded by config | `<front>` when content belongs to the rendering; omitted when the work config marks a pure container titlepage skip | Owen `Titlepage` div is excluded in the proof config; NPNF2 Introduction is preserved as front matter |
 
+**Verified 2026-07-07:** TEI validation and projection ledgers passed for Athanasius, *On the
+Incarnation*, and Owen, *Of the Mortification of Sin*. Viewer smoke loaded the Owen TEI through
+`viewer/index.html`.
+
+## Class: Internet Archive DjVuTXT (Fisher *Marrow of Modern Divinity* proof witness)
+
+| Feature | Ruling | TEI carrier | Notes |
+|---|---|---|---|
+| Parts, chapters, commandments, sections | preserve | nested `<div type>` | Raw OCR forms remain verbatim; absent commandment headings are not fabricated. |
+| Dialogue | preserve where high-confidence | `<sp><speaker>` | 455 high-confidence starts are carried; 123 ambiguous starts remain prose rather than guessed. |
+| OCR errors and inline marks | preserve | text | The converter does not silently repair OCR or invent note boundaries. |
+| Running headers and page-number lines | excluded | — | OCR wrapper noise, not work content. |
+
+**Verified 2026-07-16:** the bounded Fisher TEI validates and its census agrees on 2 parts, 4
+chapters, 8 commandments, 41 structural sections, 6 synopsis lines, and 455 dialogue carriers. Its
+ledger passes subject to the integrity warning above. This does not migrate general IA OCR.
+
+## Class: Spurgeon MTP sermon HTML (proof works 1, 15, and 317)
+
+| Feature | Ruling | TEI carrier | Notes |
+|---|---|---|---|
+| Sermon article scope | preserve | `<div type="sermon">` | Converter scopes to the article and excludes the five-item site navigation on every page. |
+| Ordered lists and items | preserve | `<list type="ordered"><item>` | The proof set carries 5 lists, 5 items, and 1 nested list. |
+| Paragraphs, quotations, line breaks, scripture refs | preserve | `<p>`, `<quote>`, `<lb>`, `<ref>` | Proof census and TEI carrier counts agree. |
+
+**Verified 2026-07-16:** the proof artifact validates and its ledger passes subject to the integrity
+warning above. **Status: proof works, 3 of 3,547**; the family-wide JSON still flattens list
+container and ordinal semantics.
+
 ## Projection defaults (all classes)
 
-The HF training projection is clean faithful text only (maintainer decision, 2026-07-02 NSH
-alignment): structure headings survive as text, `<argument>` survives as text; notes, page breaks,
-`<ref>` annotations, emphasis markup, and front/back matter are dropped — every drop per node ID on
-the coverage ledger. Other projections rule per-output; the ledger mechanism is identical.
+The HF training projection targets clean faithful text (maintainer decision, 2026-07-02 NSH
+alignment): structure headings and `<argument>` survive as text; notes, page breaks, `<ref>`
+annotations, emphasis markup, and front/back matter are intentionally dropped and should be
+accounted for per node ID. Until the P1 checker fix lands, a ledger PASS confirms accounting but not
+complete text delivery. Other projections rule per output; the same caveat applies.

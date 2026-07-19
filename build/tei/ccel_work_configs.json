@@ -1,6 +1,6 @@
 {
   "config_schema": "ccel-tei-work-configs-v1",
-  "notes": "Batch 06 proof configs only. These establish the CCEL TEI mechanism; they do not migrate the full CCEL family.",
+  "notes": "Batch 04 adds two census-gated NPNF2 wave renderings to the Batch 06 proof configs. These establish selected CCEL TEI coverage; they do not migrate the full CCEL family.",
   "works": [
     {
       "work_id": "athanasius-on-the-incarnation",
@@ -74,6 +74,72 @@
           "tag": "div2",
           "source_type": "Chapter",
           "tei_type": "chapter",
+          "place": "body"
+        }
+      ]
+    },
+    {
+      "work_id": "gregory-of-nyssa-against-eunomius",
+      "rendering_id": "ccel-npnf205",
+      "status": "proven",
+      "raw_path": "raw/ccel/npnf2/npnf205.xml",
+      "scope": {
+        "tag": "div2",
+        "id": "viii.i"
+      },
+      "title": "Against Eunomius",
+      "author": "Gregory of Nyssa",
+      "contributors": [
+        "William Moore and Henry Austin Wilson (translators, 1893)",
+        "Philip Schaff and Henry Wace (series editors)"
+      ],
+      "source_url": "https://www.ccel.org/ccel/schaff/npnf205.xml",
+      "source_hash": "sha256:43e87ed232457fd2d5862f72dd2d5d84fe1e8b69f4c3eec839bad04579327bf3",
+      "source_edition": "Nicene and Post-Nicene Fathers, Series 2. Philip Schaff and Henry Wace (eds.). Vol. 5: Gregory of Nyssa: Dogmatic Treatises, etc. New York, 1893.",
+      "division_rules": [
+        {
+          "tag": "div3",
+          "source_type": "Letter",
+          "tei_type": "letter",
+          "place": "body"
+        },
+        {
+          "tag": "div3",
+          "source_type": "Book",
+          "tei_type": "book",
+          "place": "body"
+        }
+      ]
+    },
+    {
+      "work_id": "gregory-of-nyssa-on-the-soul-and-resurrection",
+      "rendering_id": "ccel-npnf205",
+      "status": "proven",
+      "raw_path": "raw/ccel/npnf2/npnf205.xml",
+      "scope": {
+        "tag": "div2",
+        "id": "x.iii"
+      },
+      "title": "On the Soul and the Resurrection",
+      "author": "Gregory of Nyssa",
+      "contributors": [
+        "William Moore and Henry Austin Wilson (translators, 1893)",
+        "Philip Schaff and Henry Wace (series editors)"
+      ],
+      "source_url": "https://www.ccel.org/ccel/schaff/npnf205.xml",
+      "source_hash": "sha256:43e87ed232457fd2d5862f72dd2d5d84fe1e8b69f4c3eec839bad04579327bf3",
+      "source_edition": "Nicene and Post-Nicene Fathers, Series 2. Philip Schaff and Henry Wace (eds.). Vol. 5: Gregory of Nyssa: Dogmatic Treatises, etc. New York, 1893.",
+      "division_rules": [
+        {
+          "tag": "div3",
+          "title": "Argument.",
+          "tei_type": "argument",
+          "place": "front"
+        },
+        {
+          "tag": "div3",
+          "title": "On the Soul and the Resurrection.",
+          "tei_type": "work",
           "place": "body"
         }
       ]

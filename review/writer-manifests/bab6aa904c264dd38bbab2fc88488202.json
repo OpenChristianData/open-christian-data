@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "bab6aa904c264dd38bbab2fc88488202",
+  "started_at": "2026-07-16T02:13:04.410696+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/isaiah.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/isaiah.json": {
+      "before_sha256": "fbfa7d6f87d33253cb47066db8e2e489544f30cfd5a12ea3c532e5ae48896dfe",
+      "after_sha256": "13fff91dc933ff6ffc007ff23f9ffa5c313153a4ecd59916fff3078ea42a2cf1"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/isaiah.json": {
+      "entries_changed": 1174,
+      "fields_changed": 5632
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

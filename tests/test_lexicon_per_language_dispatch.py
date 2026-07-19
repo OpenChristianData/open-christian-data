@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from build.lib.historical_lexicon import scan_historical_variants
+from ocd_kernel.lib.historical_lexicon import scan_historical_variants
 from build.lib.warning_producers.historical_lexicon import run
 
 

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "b0afaa19bc6342ba842b966cdf5431dc",
+  "started_at": "2026-07-16T02:13:04.267411+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/psalms.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/psalms.json": {
+      "before_sha256": "f3586a7bcff3fa2f2d3ef4c8a87499cb256e70fe84a2393d6e6a71f86ef6e91e",
+      "after_sha256": "d89a84ad34afc9359d6381095695f732c89e95424fdf83e2be77d0b93cdc7968"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/psalms.json": {
+      "entries_changed": 1914,
+      "fields_changed": 14477
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

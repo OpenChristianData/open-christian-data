@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 from build.lib._generated_enums import RESOURCE_TYPES
+from ocd_kernel.lib.schema_enums import resolve_schema_path
 
 
 SCHEMAS_DIR = Path(__file__).resolve().parents[1] / "schemas" / "v1"
@@ -27,7 +28,7 @@ CONTENT_SCHEMAS = [
 
 @pytest.mark.parametrize("schema_name", CONTENT_SCHEMAS)
 def test_content_schema_declares_default_resource_type(schema_name: str) -> None:
-    with (SCHEMAS_DIR / f"{schema_name}.schema.json").open(encoding="utf-8") as handle:
+    with resolve_schema_path(schema_name).open(encoding="utf-8") as handle:
         schema = json.load(handle)
 
     assert schema["x-ocd-default-resource-type"] in RESOURCE_TYPES

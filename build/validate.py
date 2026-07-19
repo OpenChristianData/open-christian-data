@@ -80,12 +80,15 @@ import re
 import sys
 from pathlib import Path
 
+from ocd_kernel.lib.schema_enums import kernel_schemas_dir, resolve_schema_path
+
 # Devotional entry_id pattern: MM-DD or MM-DD-period
 DEVOTIONAL_ENTRY_ID_PATTERN = re.compile(r"^(\d{2})-(\d{2})(?:-(\w+))?$")
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 SCHEMA_DIR = REPO_ROOT / "schemas" / "v1"
+KERNEL_SCHEMA_DIR = kernel_schemas_dir()
 SCHAFF_REARCH_DATA_DIR = DATA_DIR / "reference" / "schaff" / "encyclopedia" / "1908-1914"
 SCHAFF_DATASET_DIRS = frozenset(("modernised", "original", "source"))
 SCHEMA_CONSISTENCY_EXCLUDED = frozenset(("modernised_record.schema", "reconciled_record.schema"))
@@ -102,6 +105,22 @@ _osis_validator_loaded = False
 # Populated on first call to _get_schema_registry(); None if referencing is unavailable.
 _schema_registry = None
 _schema_registry_loaded = False
+
+
+def _schema_dirs() -> list[Path]:
+    candidates = [KERNEL_SCHEMA_DIR, SCHEMA_DIR]
+    return [path for index, path in enumerate(candidates) if path.is_dir() and path not in candidates[:index]]
+
+
+def _schema_path(schema_name: str) -> Path:
+    return resolve_schema_path(schema_name)
+
+
+def _iter_schema_files() -> list[Path]:
+    schema_files: list[Path] = []
+    for schema_dir in _schema_dirs():
+        schema_files.extend(sorted(schema_dir.glob("*.schema.json")))
+    return schema_files
 
 
 def _get_osis_validator():
@@ -135,7 +154,7 @@ def _get_schema_registry():
         import referencing.jsonschema  # type: ignore
 
         resources = []
-        for schema_file in SCHEMA_DIR.glob("*.schema.json"):
+        for schema_file in _iter_schema_files():
             try:
                 s = json.loads(schema_file.read_text(encoding="utf-8"))
                 resources.append(
@@ -145,8 +164,10 @@ def _get_schema_registry():
                 )
             except json.JSONDecodeError:
                 pass  # json.loads() failed on malformed file; Resource.from_contents() cannot raise here -- DRAFT202012 instance uses _detect_or_default, which falls back rather than raising CannotDetermineSpecification
-        defs_dir = SCHEMA_DIR / "_defs"
-        if defs_dir.exists():
+        for schema_dir in _schema_dirs():
+            defs_dir = schema_dir / "_defs"
+            if not defs_dir.exists():
+                continue
             for schema_file in defs_dir.glob("*.schema.json"):
                 try:
                     s = json.loads(schema_file.read_text(encoding="utf-8"))
@@ -272,7 +293,7 @@ def _run_named_schema(data: dict, schema_name: str) -> tuple[list, list]:
     """Validate a top-level resource against a named schema with no envelope assumptions."""
     errors: list = []
     warnings: list = []
-    _run_json_schema(data, SCHEMA_DIR / f"{schema_name}.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path(schema_name), warnings, errors)
     return errors, warnings
 
 
@@ -315,7 +336,7 @@ def validate_commentary_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "commentary.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("commentary"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -472,7 +493,7 @@ def validate_catechism_qa_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "catechism_qa.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("catechism_qa"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -618,7 +639,7 @@ def validate_doctrinal_document_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "doctrinal_document.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("doctrinal_document"), warnings, errors)
 
     if not isinstance(data, dict):
         errors.append("Root must be an object")
@@ -672,7 +693,7 @@ def validate_bible_text_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "bible_text.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("bible_text"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -742,7 +763,7 @@ def validate_devotional_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "devotional.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("devotional"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -854,7 +875,7 @@ def validate_church_fathers_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "church_fathers.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("church_fathers"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -960,7 +981,7 @@ def validate_structured_text_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "structured_text.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("structured_text"), warnings, errors)
 
     if not isinstance(data, dict):
         errors.append("Root must be an object")
@@ -997,7 +1018,7 @@ def validate_sermon_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "sermon.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("sermon"), warnings, errors)
 
     if not isinstance(data, dict):
         errors.append("Root must be an object")
@@ -1065,7 +1086,7 @@ def validate_prayer_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "prayer.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("prayer"), warnings, errors)
 
     if not isinstance(data, dict):
         errors.append("Root must be an object")
@@ -1141,7 +1162,7 @@ def validate_reference_entry_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "reference_entry.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("reference_entry"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -1179,7 +1200,7 @@ def validate_topical_reference_file(path: Path, data: dict) -> tuple:
     errors = []
     warnings = []
 
-    _run_json_schema(data, SCHEMA_DIR / "topical_reference.schema.json", warnings, errors)
+    _run_json_schema(data, _schema_path("topical_reference"), warnings, errors)
 
     entries = _check_envelope(data, errors)
 
@@ -1219,7 +1240,7 @@ def validate_file(path: Path) -> tuple:
     if {"work_id", "edition", "renderings"}.issubset(data):
         errors: list = []
         warnings: list = []
-        _run_json_schema(data, SCHEMA_DIR / "rendering_catalog.schema.json", warnings, errors)
+        _run_json_schema(data, _schema_path("rendering_catalog"), warnings, errors)
         return errors, warnings
 
     if schema_type == "commentary":
@@ -1288,7 +1309,7 @@ def check_author_registry() -> tuple:
         return errors, warnings
 
     # Validate registry against its own schema
-    registry_schema_path = REPO_ROOT / "schemas" / "v1" / "author_registry.schema.json"
+    registry_schema_path = _schema_path("author_registry")
     if registry_schema_path.exists():
         _run_json_schema(registry_data, registry_schema_path, warnings, errors)
         if errors:
@@ -1360,7 +1381,7 @@ def check_schema_consistency() -> tuple:
     errors = []
     warnings = []
 
-    schema_files = sorted(SCHEMA_DIR.glob("*.schema.json"))
+    schema_files = _iter_schema_files()
     if len(schema_files) < 2:
         return errors, warnings
 

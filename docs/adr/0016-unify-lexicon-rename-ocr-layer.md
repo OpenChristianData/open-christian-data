@@ -8,7 +8,7 @@ The NSH OCR pipeline (S1–S2.5) had grown its own vocabulary that collided with
 lexicon — most damagingly `rendering` (two unrelated meanings) and `sidecar` (three meanings, and already
 retired in the dataset half). We unify both halves under one `SHARED-LEXICON.md` and rename the OCR-layer
 objects to the simplest distinct functional descriptions, anchored to the OCR-fusion and textual-criticism
-literature where useful (see `docs/LEXICON_literature_crossref.md`). We change the human-facing language now
+literature where useful (see `../EzraOCR/docs/LEXICON_literature_crossref.md`). We change the human-facing language now
 (lexicon, docs, comments) but keep the frozen schema ids, filenames, and stage numbers unchanged; the
 physical rename and the stage renumber are a deferred migration driven by the map below.
 

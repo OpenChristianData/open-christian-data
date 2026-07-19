@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from build.lib.warning_producers.text_suspicion import run
+from ocd_kernel.lib.warning_producers.text_suspicion import run
 
 
 def _commentary(text: str):

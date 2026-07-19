@@ -9,7 +9,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from datetime import datetime, timezone
 
-from build.lib.atomic_io import write_json_atomic
+from ocd_kernel.lib.atomic_io import write_json_atomic
 from build.lib.publish_projection import (
     build_audit_artifact,
     build_slim_config,

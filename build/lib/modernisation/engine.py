@@ -14,10 +14,12 @@ from typing import Any
 
 import yaml
 
+from ocd_kernel.lib.schema_enums import resolve_schema_path
+from ocd_kernel.lib.source_transliteration_lexicons import load_source_transliteration_lexicons
+
 
 _RULESET_DIR = Path(__file__).resolve().parent / "rulesets" / "transliteration"
 _MODERNISE_RULESET_DIR = Path(__file__).resolve().parent / "rulesets"
-_LEXICON_DIR = Path(__file__).resolve().parent.parent / "source_transliteration_lexicons"
 _NON_LATIN_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff]")
 _GREEK_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]+(?:\s+[\u0370-\u03ff\u1f00-\u1fff]+)*")
 _HEBREW_RE = re.compile(r"[\u0590-\u05ff]+(?:\s+[\u0590-\u05ff]+)*")
@@ -106,10 +108,7 @@ def _load_ruleset(language: str) -> dict[str, str]:
 
 
 def _load_source_lexicon(language: str) -> list[dict[str, Any]]:
-    path = _LEXICON_DIR / f"{language}.yaml"
-    if not path.exists():
-        return []
-    entries = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    entries = load_source_transliteration_lexicons(language)
     return [entry for entry in entries if entry.get("enabled", True)]
 
 
@@ -438,7 +437,7 @@ if __name__ == "__main__":
 
     from jsonschema import Draft202012Validator
 
-    _schema_path = Path(__file__).resolve().parent.parent.parent.parent / "schemas" / "v1" / "modernised_record.schema.json"
+    _schema_path = resolve_schema_path("modernised_record")
     _bootstrap_dir = Path(__file__).resolve().parent.parent.parent.parent / "tests" / "fixtures" / "modernise" / "bootstrap"
 
     _schema = _json.loads(_schema_path.read_text(encoding="utf-8"))

@@ -1,10 +1,12 @@
 # Open Christian Data — Glossary
 
+The NSH OCR-pipeline vocabulary (“Layer 1”) moved to the EzraOCR repo: `../EzraOCR/docs/NSH_LEXICON.md`.
+
 Canonical vocabulary for the rearchitected OCD pipeline. Glossary only — no rationale, no schema sketches, no implementation detail. For those, see `plans/2026-05-14-multi-source-rearchitecture.md` (rearchitecture design) and `docs/adr/` (architecture decisions).
 
 Update this file when terms resolve or change. Never let two terms in the codebase refer to the same concept; never let one term refer to two concepts.
 
-> **2026-06-19 / extended 2026-06-25 — major NSH OCR-pipeline vocabulary change.** A grill-with-docs lexicon pass renamed the OCR layer: `sidecar` -> **page transcription**, `rendering` -> **standardised transcription**, `WCT` -> **word alignment table**, the S3 reconciler -> **Reconciliation** (product **reconciled page**; `consensus` kept narrow), and the whole stage set into a clean **ten-stage taxonomy** (one stage = one cohesive unit; LLM Review and Human Review split; Typography moved before Human Review; feedback loops named). The canonical terms are in the **"NSH OCR pipeline — Layer 1"** section at the foot of this file. Schema ids, filenames, and stage numbers are **not** renamed yet — that physical migration is deferred; the old->new map and rationale are in **ADR-0016**. The one design change beyond naming (LLM may propose unattested readings, gated by Human Review in v1) is **ADR-0018**.
+> **2026-06-19 / extended 2026-06-25 — major NSH OCR-pipeline vocabulary change.** A grill-with-docs lexicon pass renamed the OCR layer: `sidecar` -> **page transcription**, `rendering` -> **standardised transcription**, `WCT` -> **word alignment table**, the S3 reconciler -> **Reconciliation** (product **reconciled page**; `consensus` kept narrow), and the whole stage set into a clean **ten-stage taxonomy** (one stage = one cohesive unit; LLM Review and Human Review split; Typography moved before Human Review; feedback loops named). The canonical terms now live in the EzraOCR repo (`../EzraOCR/docs/NSH_LEXICON.md`). Schema ids, filenames, and stage numbers are **not** renamed yet — that physical migration is deferred; the old->new map and rationale are in **ADR-0016**. The one design change beyond naming (LLM may propose unattested readings, gated by Human Review in v1) is **ADR-0018**.
 
 ---
 
@@ -174,102 +176,3 @@ The pipeline has **eight stages**: `Fetch → Parse → Reconcile → Transliter
 
 **Per-language transliteration ruleset** — A YAML file at `build/lib/modernisation/rulesets/transliteration/<lang>.yaml` defining the transliteration scheme for that language (e.g. SBL-style for `grc` and `hbo`). Applied during the Modernise stage to produce `modern_text` and per-segment `transliteration`.
 
----
-
-## NSH OCR pipeline — Layer 1 (added 2026-06-19)
-
-The per-page OCR chain that reconciles several OCR engines into a reconciled page. In this lexicon's
-dataset terms, the whole chain produces one `our-ocr` *Rendering* of an edition. Names below are the
-canonical human-facing terms; the frozen schema id / filename in parentheses is **not** renamed yet
-(see ADR-0016). Naming rule: the simplest functional description that captures the thing distinctly.
-
-### Core objects
-
-**Page image** — the digital photo of one page. (Already in this lexicon as *Scans*.)
-
-**Leaf** — the stable label for one physical page (recto + verso), shared across every engine and scan; the cross-engine, cross-stage join key. (`canonical_leaf_id` / `leaf_num`.)
-
-**Engine** — one OCR program that reads page images (e.g. Tesseract, ABBYY, Azure, Kraken).
-
-**Engine family** — a group of engines whose agreement is not independent; agreement is counted per family, never per engine. Kraken and Kraken-Greek are one family.
-
-**Engine panel** — the set of engines compared on a page.
-
-**Alternate scans** — different photographs of the same edition (e.g. the `dli`, `haucgoog` lineages); same edition, different physical copies.
-
-**Page transcription** — one engine's OCR of one page: the words it found, with their positions and confidence. The thing produced when you OCR a page; an *OCR transcription* (the "OCR" marks it as the machine product). Per engine, so one page yields one page transcription per engine. (Formerly "sidecar" / `sidecar-page-v1`.)
-
-**Volume transcription bundle** — all of one engine's page transcriptions for one volume, collated into a single unit. (Formerly the per-engine `sidecar` volume folder.)
-
-**Transcription manifest** — the catalogue file inside a volume transcription bundle: which leaves are present, their hashes, and the engine name and version. Tools read it to know what exists without opening every page. (Formerly `sidecar-manifest` / `sidecar-manifest-v1`.)
-
-**Standardised transcription** — a page transcription after the S2 stage: one engine's page, normalised (canonical character forms; protected characters preserved) and standardised (one common form, local structure, derived spans, uncertainty records); still per engine, no cross-engine comparison. (Formerly "rendering" / `rendering-v1`.)
-
-**Word alignment table** — the per-page table that lines every engine's standardised transcription up word by word: rows are positions, columns are engines, each cell is that engine's word there. Produced by the *word alignment* step; makes no truth choice. (Formerly "WCT" / `word-confusion-table-v1`.)
-
-**Position** — one place in the word alignment table where the engines give their words; one word-slot. (Kept.)
-
-**Candidate** — one engine's word at one position: that engine's best guess, put forward for consideration alongside the other engines' candidates. The unit each cell of the alignment table holds, and the unit reconciliation votes over; strictly per engine and pre-decision. (Kept — already the ROVER-family term for a competing word at a slot.) *Reserved: `hypothesis` is held for a later, system-level meaning — the single word the pipeline judges most likely correct at a position **after** reconciliation — so `candidate` never drifts into meaning the system's chosen word.*
-
-**Reconciled page** — the reconciler's per-page output: one chosen reading per position, each with its provenance (which engines attested it, by which route). **Not a final text** — review and publication come later — so it is never called a "corrected page." (Formerly the `corrected-page` "sidecar" label; `reconciled-v1` canonical tokens.)
-
-**Consensus** — (narrow, technical) the specific agreement-event where ≥2 *independent* engine families agree on a candidate **and** an external check (gold, CCEL oracle, or human) confirms it. Reconciliation's most-trusted route, but only one of several — it is **not** the name of the stage. (`consensus_corroborated` / `consensus_unconfirmed`; the confident-consensus audit slice samples it for echo-chamber detection.)
-
-**Composed reading** — a reading the reconciler composes at a position where no engine was right (a conjecture / emendation, correction levels L1–L3). A sub-output of reconciliation, not a separate stage. (Kept; `machine_composed`.)
-
-**OCR engine attestation** — the record, on a reconciled page, of which OCR engines bore a given reading and what each read. The engine-layer twin of the dataset half's **rendering attestation** ("Attested by" / "Chosen reading attested by", §Provenance & attestation) — same concept (a source bears this text), one layer down. The same datum appears earlier as a **candidate** in the word alignment table (pre-decision); it becomes an OCR engine attestation once recorded as provenance on the reconciled page. Qualify **rendering attestation** vs **OCR engine attestation** when both are in view. (The generic textual-criticism word for a source that bears text is *witness*; OCD uses the concrete terms — rendering, OCR engine — not "witness" as a label.) (`attestations[]` on `reconciled-v1` canonical tokens.)
-
-### Stages — clean taxonomy (one stage = one cohesive unit)
-
-Names and order are locked here as the canonical human-facing model. The **legacy S-numbers** (the frozen architecture's S0–S6, with the S2.5 half-step and the compound S5/S6) are kept in parentheses until the physical renumber migration (ADR-0016). The clean sequence is **ten stages**:
-
-1. **Ingest** (was S0) — page-to-leaf map plus integrity gate.
-2. **Transcription** (was S1; gloss "OCR") — each engine OCRs the pages; produces page transcriptions.
-3. **Normalisation and Standardisation** (was S2; operation: *OCR normalisation and standardisation*) — produces standardised transcriptions; per engine, no comparison.
-4. **Alignment** (was the S2.5 half-step) — produces the word alignment table; makes no truth choice.
-5. **Reconciliation** (was S3) — the reconciler resolves the aligned candidates into one reconciled page: consensus where engine families agree, composed reading where no engine is right; classifies disputes, assigns region_class, routes uncertain cases to review. *Runs at two layers — engine-level (here) and edition-level (the dataset `Reconcile`, which merges whole renderings); qualify as **engine reconciliation** vs **edition (source) reconciliation** when both are in view.* (Code name: "the reconciler"; `reconciled-v1`.)
-6. **Engine Reliability Scoring** (was S4) — the engine scorecard: how reliable each engine family is, per context (region_class), as Beta-posterior counters. Only externally-corroborated or reviewer-confirmed results raise the trusted score; mere engine agreement is held in a separate weak-evidence pile. (Artifact: the weight matrix; promoted immutable snapshots.)
-7. **LLM Review** (was the LLM half of S5) — an LLM pre-digests the hard queued cases into drafted confirm/override/amend opinions, batched so one human reviewer goes further. Its opinion alone never raises an engine's trusted score. *(Per ADR-0018 the LLM may also propose a reading no engine produced — an L3 composed reading under ADR-0014 — which in v1 routes through Human Review, never canonical without ratification.)*
-8. **Typography** (was the typography half of S6) — assigns role-aware type tiers (body / heading levels / footnote) from engine x-size measurements; presentation, not word choice. Placed **before** Human Review so the reviewer ratifies typography too. *(Deviation from the locked arch, which put typography after review.)*
-9. **Human Review** (was the reviewer half of S5) — the single human reviewer ratifies the flagged text and typography cases (assisted by stage 7); decisions written to an append-only, hash-chained ledger. The only place besides corroborated consensus that yields a trusted training result.
-10. **Publication** (was the publication half of S6) — packages the reviewed records and pushes to HuggingFace.
-
-**Feedback loops (the chain is not purely linear).** A flat 1→10 reading hides the cycles Human Review and the scorecard create:
-- **Reconciliation ⇄ Engine Reliability Scoring** — Reconciliation reads the promoted scorecard snapshot to weight its vote; its results feed the next snapshot.
-- **Human Review → Engine Reliability Scoring** — reviewer-confirmed decisions are trusted training events that update the scorecard.
-- **Human Review → LLM Review** — reviewer decisions tune / calibrate the LLM (the calibration ledger).
-- **Human Review → Reconciliation / Typography** — amendments and typography-tier corrections re-enter: re-reconcile, or re-evaluate region_class on a typography supersession.
-
-### Geometry zone vs reliability class (two axes, never written bare)
-
-Two frozen enums describe a word's place for two different purposes; they share `body` and `footnote` as bare literals, so an unqualified value silently mis-keys one axis for the other.
-
-**Geometry zone** — *where on the page a word physically sits, classified from page geometry*: body, footnote, running-header, page-number, figure, marginalia, bibliography (7 values). Coarse; drives layout handling (running-headers and page-numbers are dropped; footnotes ordered after body). (Frozen `zone_type` / `$defs/wct_zone_type`; no rename — canonical noun only.)
-
-**Reliability class** — *which trust bucket an engine's accuracy is scored in* during Engine Reliability Scoring (stage 6): body, headword, bibliography_entry, section_heading, footnote, caption, foreign_language_greek/hebrew/latin/german, list_item, table_cell, quotation, … (16 values). Finer; the per-engine scorecard is kept per reliability class, because an engine strong on body prose can be weak on headwords or Greek. **Derived in Reconciliation from the geometry zone + language + block-type + typography — so the geometry zone is an *input* to it, not the same thing.** Despite the `region_` prefix, this is a reliability bucket, not a page region. (Frozen `region_class`; no rename — canonical noun only.)
-
-**Discipline:** never write a shared value bare — "the **footnote geometry zone**" (layout) vs "the **footnote reliability class**" (scoring). Exemplar mapping: the `bibliography` *geometry zone* → the `bibliography_entry` *reliability class*.
-
-### The weighting vocabulary (five terms; "confidence" never bare)
-
-How a position's reading is decided, with the three "how sure" numbers kept distinct so "confidence" stops meaning three things.
-
-**OCR confidence** — the engine's self-reported certainty in its own reading (`confidence_raw`, per word 0–1). Comes *from* the engine; diagnostic only, never a trust input (a confident engine is often confidently wrong). Always say *OCR* confidence, never "confidence" bare.
-
-**Engine reliability score** — the *learned* accuracy of an engine family in a reliability class, produced by Engine Reliability Scoring as a Beta-posterior mean over proven-right history. This is the vote weight. (`weight`; the weight-matrix cell value.)
-
-**Reliability-score maturity** — how well-backed an engine reliability score is, from the effective sample size of the cells that resolved a token (`weight_confidence`: low <30 / medium 30–200 / high >200 labels). Low ⇒ the score is still thin and the token may be re-decided as the scorecard fills; such tokens deprioritize in the reviewer queue. A meta-confidence *about the score*, not about the reading — deliberately not called "confidence" to kill the overload.
-
-**Weighted vote** — Reconciliation's method: at a position, each candidate's support is the sum of the engine reliability scores backing it; highest weighted support wins. At bootstrap (no history) every score is the flat prior, so it reduces to plain majority.
-
-**Resolution path** — the per-token receipt of how a reading was decided: the route (consensus / dictionary / reviewer / composed) and the exact reliability-score cells used (`resolution_path` / `weight_cells_used`). The thing you inspect to answer "why this reading, and what weighted it?"
-
-### Design revision decided this pass (→ ADR-0018)
-
-- **LLM Review scope.** The locked architecture barred the LLM from proposing any reading no engine produced ("never creates unattested canonical text"). Resolved 2026-06-25 (ADR-0018): the LLM **may** propose unattested readings via the existing ADR-0014 L3 composed-reading path (character provenance + `machine_composed` label + protected-class gate). Guardrails: never auto-canonical (v1 routes every LLM conjecture through Human Review); never trains Engine Reliability Scoring on its own; marked as an LLM conjecture in provenance. v1 human-review-all is a named temporary constraint — there is no LLM-conjecture calibration data yet — with a v2 revisit trigger once reviewer-adjudicated outcomes can calibrate a per-stratum bar.
-
-### Flagged ambiguities — all resolved 2026-06-25
-
-- **zone_type ↔ region_class** → **Geometry zone** vs **reliability class** (two-axes subsection above).
-- **attestation** → **rendering attestation** vs **OCR engine attestation** (Core objects above).
-- **confidence** → split three ways: **OCR confidence** (engine self-report) · **engine reliability score** (the weight) · **reliability-score maturity** (`weight_confidence`); "confidence" is never written bare (weighting-vocabulary subsection above).

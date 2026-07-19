@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "1646d3679e3141e89bb9e65f50306d0f",
+  "started_at": "2026-07-16T02:13:03.856630+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/deuteronomy.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/deuteronomy.json": {
+      "before_sha256": "d7706cf6cc37cd1aa66371e8039d34baec8c23284bd34af2b5b99243e55f7523",
+      "after_sha256": "06d4dd81966397b286c2dfb9ac258a8e378b9fc5dacac0b3600fc57f3c3de989"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/deuteronomy.json": {
+      "entries_changed": 698,
+      "fields_changed": 5551
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

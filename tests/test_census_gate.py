@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 from lxml import etree
 
-from build.tei import validate as tei_validate
-from build.tei.writer import TEI_NS
+from ocd_kernel.tei import validate as tei_validate
+from ocd_kernel.tei.writer import TEI_NS
 
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 XML_LANG = "{http://www.w3.org/XML/1998/namespace}lang"
@@ -45,6 +45,28 @@ BATCH06_CCEL_FILES = [
         Path("ir/ccel/owen-mortification.ccel-owen-mort.tei.xml"),
     ),
 ]
+BATCH04_CCEL_FILES = [
+    (
+        Path("ir/census/gregory-of-nyssa-against-eunomius.ccel-npnf205.census.json"),
+        Path("ir/ccel/gregory-of-nyssa-against-eunomius.ccel-npnf205.tei.xml"),
+    ),
+    (
+        Path("ir/census/gregory-of-nyssa-on-the-soul-and-resurrection.ccel-npnf205.census.json"),
+        Path("ir/ccel/gregory-of-nyssa-on-the-soul-and-resurrection.ccel-npnf205.tei.xml"),
+    ),
+]
+SE_BATCH05_FILES = [
+    (
+        Path("ir/census/pilgrims-progress.standard-ebooks.census.json"),
+        Path("ir/bunyan/pilgrims-progress.standard-ebooks.tei.xml"),
+    ),
+    (
+        Path("ir/census/imitation-of-christ.standard-ebooks.census.json"),
+        Path("ir/kempis/imitation-of-christ.standard-ebooks.tei.xml"),
+    ),
+]
+CALVIN_BATCH05_CENSUS = Path("ir/census/calvins-institutes.gutenberg.census.json")
+CALVIN_BATCH05_TEI = Path("ir/calvin/calvins-institutes.gutenberg.tei.xml")
 
 
 @pytest.fixture(scope="session")
@@ -183,6 +205,111 @@ def _raw_endnote_body_emphasis_count(path: Path) -> int:
     )
 
 
+def _raw_se_endnotes_path(census: dict) -> Path:
+    return Path(census["source"]["path"]) / "src" / "epub" / "text" / "endnotes.xhtml"
+
+
+def _raw_se_endnote_descendant_count(census: dict, xpath: str) -> int:
+    path = _raw_se_endnotes_path(census)
+    if not path.exists():
+        return 0
+    tree = etree.parse(str(path))
+    return int(
+        tree.xpath(
+            xpath,
+            namespaces={
+                "xhtml": "http://www.w3.org/1999/xhtml",
+                "epub": "http://www.idpf.org/2007/ops",
+            },
+        )
+    )
+
+
+def _assert_standard_ebooks_batch05_census_survives(census: dict, text: etree._Element) -> None:
+    known_features = {
+        "sections",
+        "noterefs",
+        "endnotes",
+        "bridgeheads",
+        "emphasis",
+        "typographic_emphasis",
+        "bold",
+        "lists",
+        "list_items",
+        "verse_blocks",
+        "front_sections",
+        "back_sections",
+    }
+    _assert_no_unknown_features(census, known_features)
+    carriers = {
+        "sections": _xml_ids(text.xpath(".//tei:div", namespaces=NS)),
+        "noterefs": _corresp_ids(text.xpath(".//tei:note/@corresp", namespaces=NS)),
+        "endnotes": _xml_ids(text.xpath(".//tei:note", namespaces=NS)),
+        "front_sections": _xml_ids(text.xpath(".//tei:front//tei:div", namespaces=NS)),
+        "back_sections": _xml_ids(text.xpath(".//tei:back//tei:div", namespaces=NS)),
+    }
+    for feature in census["features"]:
+        expected = _feature_count(census, feature)
+        if feature in carriers:
+            _assert_subset(feature, _feature_ids(census, feature), carriers[feature])
+        elif feature == "bridgeheads":
+            _assert_count(feature, expected, len(text.xpath(".//tei:argument", namespaces=NS)))
+        elif feature == "verse_blocks":
+            expected += _raw_se_endnote_descendant_count(
+                census,
+                "count(//xhtml:li//xhtml:blockquote[contains(concat(' ', normalize-space(@epub:type), ' '), ' z3998:verse ') or contains(concat(' ', normalize-space(@epub:type), ' '), ' z3998:song ') or contains(concat(' ', normalize-space(@epub:type), ' '), ' z3998:poem ')])",
+            )
+            _assert_count(feature, expected, len(text.xpath(".//tei:quote/tei:lg", namespaces=NS)))
+        elif feature == "emphasis":
+            expected += _raw_se_endnote_descendant_count(census, "count(//xhtml:li//xhtml:em)")
+            _assert_count(feature, expected, len(text.xpath(".//tei:emph", namespaces=NS)))
+        elif feature == "typographic_emphasis":
+            expected += _raw_se_endnote_descendant_count(census, "count(//xhtml:li//xhtml:i)")
+            _assert_count(feature, expected, len(text.xpath(".//tei:hi[@rend='italic']", namespaces=NS)))
+        elif feature == "bold":
+            expected += _raw_se_endnote_descendant_count(census, "count(//xhtml:li//xhtml:b | //xhtml:li//xhtml:strong)")
+            _assert_count(feature, expected, len(text.xpath(".//tei:hi[@rend='bold']", namespaces=NS)))
+        elif feature == "lists":
+            expected += _raw_se_endnote_descendant_count(census, "count(//xhtml:li//xhtml:ol | //xhtml:li//xhtml:ul)")
+            _assert_count(feature, expected, len(text.xpath(".//tei:list", namespaces=NS)))
+        elif feature == "list_items":
+            expected += _raw_se_endnote_descendant_count(census, "count(//xhtml:li//xhtml:ol//xhtml:li | //xhtml:li//xhtml:ul//xhtml:li)")
+            _assert_count(feature, expected, len(text.xpath(".//tei:list/tei:item", namespaces=NS)))
+        else:
+            raise AssertionError(f"Unrecognized census feature with no gate check: {feature}")
+
+
+def _assert_gutenberg_calvin_census_survives(census: dict, text: etree._Element) -> None:
+    known_features = {
+        "books",
+        "chapters",
+        "paragraphs",
+        "front_matter",
+        "emphasis",
+        "note_anchors",
+        "note_bodies",
+    }
+    _assert_no_unknown_features(census, known_features)
+    carriers = {
+        "books": _xml_ids(text.xpath("./tei:body/tei:div[@type='book']", namespaces=NS)),
+        "chapters": _xml_ids(text.xpath("./tei:body//tei:div[@type='chapter']", namespaces=NS)),
+        "front_matter": _xml_ids(text.xpath("./tei:front/tei:div", namespaces=NS)),
+        "note_bodies": _xml_ids(text.xpath("./tei:back//tei:note", namespaces=NS)),
+    }
+    for feature in census["features"]:
+        expected = _feature_count(census, feature)
+        if feature in carriers:
+            _assert_subset(feature, _feature_ids(census, feature), carriers[feature])
+        elif feature == "paragraphs":
+            _assert_count(feature, expected, len(text.xpath("./tei:body//tei:p", namespaces=NS)))
+        elif feature == "emphasis":
+            _assert_count(feature, expected, len(text.xpath(".//tei:hi[@rend='italic']", namespaces=NS)))
+        elif feature == "note_anchors":
+            _assert_count(feature, expected, len(text.xpath(".//tei:ref[@type='note']", namespaces=NS)))
+        else:
+            raise AssertionError(f"Unrecognized census feature with no gate check: {feature}")
+
+
 @pytest.mark.slow
 def test_gate_detects_missing_note() -> None:
     census = {"features": {"notes": {"count": 2, "ids": ["note-1", "note-2"]}}}
@@ -269,6 +396,57 @@ def test_standard_ebooks_census_id_sets_survive_in_tei_text() -> None:
 
 
 @pytest.mark.slow
+@pytest.mark.parametrize(("census_path", "tei_path"), SE_BATCH05_FILES)
+@pytest.mark.requires_local_artifacts
+def test_batch05_standard_ebooks_census_id_sets_and_new_carriers_survive(
+    census_path: Path,
+    tei_path: Path,
+) -> None:
+    census = _read_json_required(census_path)
+    text = _parse_tei_text_required(tei_path)
+    _assert_standard_ebooks_batch05_census_survives(census, text)
+
+
+@pytest.mark.slow
+def test_batch05_standard_ebooks_gate_detects_missing_bare_bridgehead() -> None:
+    census_path, tei_path = SE_BATCH05_FILES[1]
+    census = _read_json_required(census_path)
+    tree = etree.parse(str(tei_path))
+    argument = tree.xpath("//tei:argument", namespaces=NS)[0]
+    argument.getparent().remove(argument)
+    text = tree.xpath("/tei:TEI/tei:text", namespaces=NS)[0]
+
+    with pytest.raises(AssertionError, match="bridgeheads count mismatch"):
+        _assert_standard_ebooks_batch05_census_survives(census, text)
+
+
+@pytest.mark.slow
+def test_batch05_gutenberg_calvin_census_id_sets_and_carriers_survive() -> None:
+    census = _read_json_required(CALVIN_BATCH05_CENSUS)
+    text = _parse_tei_text_required(CALVIN_BATCH05_TEI)
+    assert _feature_count(census, "paragraphs") == 1361
+    assert _feature_count(census, "note_bodies") == 3506
+    assert _feature_count(census, "note_anchors") == 3505
+    assert census["source"]["apparatus_shape"] == [
+        {
+            "volume": "I",
+            "source": "pg45001",
+            "anchor_count": 2016,
+            "note_body_count": 2016,
+            "resolution": "all refs resolve",
+        },
+        {
+            "volume": "II",
+            "source": "pg64392",
+            "anchor_count": 1489,
+            "note_body_count": 1490,
+            "resolution": "all refs resolve; one note body is unreferenced",
+        },
+    ]
+    _assert_gutenberg_calvin_census_survives(census, text)
+
+
+@pytest.mark.slow
 @pytest.mark.parametrize(("census_path", "tei_path"), list(zip(BCP_CENSUS_FILES, BCP_TEI_FILES, strict=True)))
 def test_bcp_census_id_sets_survive_in_tei_text(census_path: Path, tei_path: Path) -> None:
     census = _read_json_or_skip(census_path)
@@ -309,6 +487,36 @@ def test_batch06_ccel_work_gate_detects_deliberate_note_loss(tmp_path: Path) -> 
     corrupted.write_text(tei_path.read_text(encoding="utf-8"), encoding="utf-8")
     tree = etree.parse(str(corrupted))
     note = tree.xpath("//tei:note[@xml:id=$note_id]", namespaces=NS, note_id=next(iter(_feature_ids(census, "notes"))))[0]
+    note.getparent().remove(note)
+    tree.write(str(corrupted), encoding="UTF-8", xml_declaration=True)
+    text = _parse_tei_text_required(corrupted)
+
+    with pytest.raises(AssertionError, match="missing 1 censused ids"):
+        _assert_ccel_work_census_survives(census, text)
+
+
+@pytest.mark.slow
+@pytest.mark.parametrize(("census_path", "tei_path"), BATCH04_CCEL_FILES)
+def test_batch04_ccel_work_census_id_sets_survive_in_tei_text(
+    census_path: Path,
+    tei_path: Path,
+) -> None:
+    census = _read_json_required(census_path)
+    text = _parse_tei_text_required(tei_path)
+
+    _assert_ccel_work_census_survives(census, text)
+
+
+@pytest.mark.slow
+def test_batch04_ccel_work_gate_detects_deliberate_note_loss(tmp_path: Path) -> None:
+    census_path, tei_path = BATCH04_CCEL_FILES[0]
+    census = _read_json_required(census_path)
+    assert tei_path.exists(), f"{tei_path.as_posix()} is absent; regenerate the batch 04 TEI IR."
+    corrupted = tmp_path / tei_path.name
+    corrupted.write_text(tei_path.read_text(encoding="utf-8"), encoding="utf-8")
+    tree = etree.parse(str(corrupted))
+    note_id = next(iter(_feature_ids(census, "notes")))
+    note = tree.xpath("//tei:note[@xml:id=$note_id]", namespaces=NS, note_id=note_id)[0]
     note.getparent().remove(note)
     tree.write(str(corrupted), encoding="UTF-8", xml_declaration=True)
     text = _parse_tei_text_required(corrupted)
@@ -361,4 +569,11 @@ def test_bcp_tei_irs_validate_against_vendored_schema(tei_schema: etree.XMLSchem
 def test_batch06_ccel_tei_irs_validate_against_vendored_schema(tei_schema: etree.XMLSchema) -> None:
     for _, tei_path in BATCH06_CCEL_FILES:
         assert tei_path.exists(), f"{tei_path.as_posix()} is absent; regenerate the batch 06 TEI IR."
+        assert _validate_tei_file(tei_path, tei_schema) == []
+
+
+@pytest.mark.slow
+def test_batch04_ccel_tei_irs_validate_against_vendored_schema(tei_schema: etree.XMLSchema) -> None:
+    for _, tei_path in BATCH04_CCEL_FILES:
+        assert tei_path.exists(), f"{tei_path.as_posix()} is absent; regenerate the batch 04 TEI IR."
         assert _validate_tei_file(tei_path, tei_schema) == []

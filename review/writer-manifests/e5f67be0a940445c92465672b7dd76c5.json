@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "e5f67be0a940445c92465672b7dd76c5",
+  "started_at": "2026-07-16T02:13:05.453873+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/philippians.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/philippians.json": {
+      "before_sha256": "efb9da074bf4f19618f0f231d1455051b7edf89c13fbcd59768053f5c9e2d7d3",
+      "after_sha256": "1a562e9542959b2495f735c0edbd8bf919d5635569e00146aa20e1f928cac963"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/philippians.json": {
+      "entries_changed": 98,
+      "fields_changed": 464
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

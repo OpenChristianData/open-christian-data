@@ -1,12 +1,12 @@
 """R54 — Source-transliteration lexicons detect grc and hbo terms.
 
-RED until build.lib.source_transliteration_lexicons is created.
+RED until ocd_kernel.lib.source_transliteration_lexicons is created.
 """
 
 from __future__ import annotations
 
 
-from build.lib.source_transliteration_lexicons import load_source_transliteration_lexicons
+from ocd_kernel.lib.source_transliteration_lexicons import load_source_transliteration_lexicons
 
 
 def test_agape_detected_as_grc_transliteration() -> None:

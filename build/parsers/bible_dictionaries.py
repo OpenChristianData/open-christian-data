@@ -34,18 +34,20 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
 from build.lib._generated_enums import REFERENCE_ENTRY__META__TRADITION
+from ocd_kernel.lib.bible_ref_normalizer import parse_thml_refs
 
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 
+from build.lib import writer_manifest  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
 RAW_DIR = REPO_ROOT / "raw" / "bible_dictionaries"
 OUTPUT_DIR = REPO_ROOT / "data" / "reference"
 LOG_PATH = Path(__file__).resolve().parent / "bible_dictionaries.log"
 
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v1.1.0"
 
 # ---------------------------------------------------------------------------
 # Logging -- persists to file alongside script (Rule 3)
@@ -211,6 +213,116 @@ def load_jsonl(path: Path) -> list:
     return entries
 
 
+# The JSONL source does not carry separate apparatus fields.  Its citation
+# and cross-reference apparatus is embedded in the definition strings, so the
+# extractors below preserve the source text while delegating OSIS parsing to
+# the shared normalizer.
+_SCRIPTURE_REF_RE = re.compile(
+    r"\b(\d?\s*[A-Z][A-Za-z]+\.?\d?)\s+"
+    r"(\d+:\d+(?:-\d+)?"
+    r"(?:\s*(?:[,;]\s*|\s+and\s+)"
+    r"\d+(?::\d+)?(?:-\d+)?)*"
+    r")\b"
+)
+_SEE_CLAUSE_RE = re.compile(
+    r"\b[Ss]ee(?:\s+also)?\s+(?P<clause>[^.;)]{1,160})"
+)
+_INDEXED_SEE_TARGET_RE = re.compile(
+    r"\[\d+\]\s*(?P<target>[A-Z][^\[]*?)(?=\s*\[\d+\]|$)"
+)
+_NON_TERM_SEE_PREFIXES = (
+    "illustration ",
+    "chapters ",
+    "chapter ",
+    "margin",
+    "below",
+    "above",
+    "the ",
+    "a ",
+    "an ",
+    "him ",
+    "his ",
+    "her ",
+    "it ",
+    "this ",
+    "that ",
+    "following ",
+    "same ",
+)
+
+
+def extract_scripture_references(blocks: list[str]) -> list[dict]:
+    """Extract source citations and normalize them through the shared parser.
+
+    The source stores citations inline in prose rather than in a structured
+    field.  ``raw`` preserves the matched source spelling; the trailing full
+    stop after an abbreviated book name is removed only for the normalizer.
+    Unparseable matches remain in the definition text and are not guessed into
+    the structured field.
+    """
+    references: list[dict] = []
+    seen: set[tuple[str, tuple[str, ...]]] = set()
+    for block in blocks:
+        for match in _SCRIPTURE_REF_RE.finditer(block):
+            raw = match.group(0).strip()
+            normalizer_input = f"{match.group(1).strip().rstrip('.')} {match.group(2).strip()}"
+            osis = parse_thml_refs(normalizer_input)
+            if not osis:
+                continue
+            key = (raw, tuple(osis))
+            if key in seen:
+                continue
+            seen.add(key)
+            references.append({"raw": raw, "osis": osis})
+    return references
+
+
+def extract_related_terms(blocks: list[str]) -> list[str]:
+    """Extract only explicit ``See``/``See also`` headword assertions.
+
+    Numbered references such as ``See [12]MOSES`` are common in the source.
+    The bracketed number is a source locator, not part of the target term.
+    Generic prose such as ``See chapters ...`` and ``See illustration ...``
+    is intentionally excluded.
+    """
+    related: list[str] = []
+    seen: set[str] = set()
+    for block in blocks:
+        for match in _SEE_CLAUSE_RE.finditer(block):
+            clause = match.group("clause").strip()
+            indexed_targets = [
+                indexed.group("target")
+                for indexed in _INDEXED_SEE_TARGET_RE.finditer(clause)
+            ]
+            candidates = indexed_targets or [clause]
+            for candidate in candidates:
+                target = re.split(r"[\[\]\(\)]", candidate, maxsplit=1)[0]
+                target = target.strip(' "\' .;,')
+                if not target or not target[0].isupper():
+                    continue
+                if target.lower().startswith(_NON_TERM_SEE_PREFIXES):
+                    continue
+                if "chapter" in target.lower() or ":" in target:
+                    continue
+                if target in seen:
+                    continue
+                seen.add(target)
+                related.append(target)
+    return related
+
+
+def _normalize_inline_references(text: str) -> list[str]:
+    """Return deduplicated OSIS values from a Torrey inline reference block."""
+    seen: set[str] = set()
+    osis: list[str] = []
+    for reference in extract_scripture_references([text]):
+        for value in reference["osis"]:
+            if value not in seen:
+                seen.add(value)
+                osis.append(value)
+    return osis
+
+
 # ---------------------------------------------------------------------------
 # Torrey's subtopic parser
 # ---------------------------------------------------------------------------
@@ -224,8 +336,8 @@ def parse_torrey_subtopics(definitions: list) -> list:
       "Label --Ref1; Ref2."    -> same, variant with no space after '--' (rare in source)
       "Label"                  -> subtopic with empty references (section heading)
 
-    The raw refs string (after ' --') is stored as a single Reference object
-    with osis=[] for the initial pipeline pass. OSIS normalization is downstream.
+    The raw refs string (after ' --') is stored as a single Reference object.
+    Its OSIS list is populated from the source-backed inline citations.
     """
     subtopics = []
     for block in definitions:
@@ -237,7 +349,10 @@ def parse_torrey_subtopics(definitions: list) -> list:
             raw_refs = block[m.end() :].strip()
             subtopics.append({
                 "label": label,
-                "references": [{"raw": raw_refs, "osis": []}],
+                "references": [{
+                    "raw": raw_refs,
+                    "osis": _normalize_inline_references(raw_refs),
+                }],
             })
         else:
             # Bare label with no references (section heading like "Exemplified")
@@ -253,19 +368,57 @@ def parse_torrey_subtopics(definitions: list) -> list:
 # ---------------------------------------------------------------------------
 
 
-def build_meta(config: dict, source_hash: str, process_date: str, download_date: str) -> dict:
+def build_meta(
+    config: dict,
+    source_hash: str,
+    process_date: str,
+    download_date: str,
+    apparatus_stats: dict | None = None,
+) -> dict:
     """Build the meta envelope block from a dictionary config."""
     schema_type = config["schema_type"]
     resource_id = config["resource_id"]
     source_url = "https://huggingface.co/datasets/JWBickel/BibleDictionaries"
 
     notes = (
-        f"Sourced from JWBickel/BibleDictionaries on HuggingFace. "
-        f"Underlying text is public domain (19th century). "
-        f"Structured JSONL format by JWBickel; license confirmation pending (EMAIL-4 sent). "
-        f"scripture_references and related_terms are empty in this initial pass -- "
-        f"to be populated during enrichment."
+        "Sourced from JWBickel/BibleDictionaries on HuggingFace. "
+        "Underlying text is public domain (19th century). "
+        "Structured JSONL format by JWBickel; license confirmation pending (EMAIL-4 sent). "
+        "The 2026-07-16 full field census found only term and definitions in every "
+        "record; no explicit alternate-term field is present. "
     )
+    if schema_type == "reference_entry":
+        notes += (
+            "Bible citations embedded in definitions are mapped to scripture_references "
+            "through the shared OSIS normalizer, and explicit See/See also headword "
+            "assertions are mapped to related_terms. alt_terms remains empty because "
+            "the source does not provide that apparatus."
+        )
+    else:
+        notes += (
+            "Inline Bible citations after Torrey subtopic separators are normalized "
+            "into subtopic references, and explicit See/See also topic assertions are "
+            "mapped to related_topics. alt_topics remains empty because the source does "
+            "not provide that apparatus."
+        )
+    if apparatus_stats:
+        if schema_type == "reference_entry":
+            notes += (
+                f" Observed populated fields: scripture_references on "
+                f"{apparatus_stats['scripture_populated']}/{apparatus_stats['entry_count']} "
+                f"entries ({apparatus_stats['scripture_total']} citation groups); "
+                f"related_terms on {apparatus_stats['related_populated']}/"
+                f"{apparatus_stats['entry_count']} entries "
+                f"({apparatus_stats['related_total']} links)."
+            )
+        else:
+            notes += (
+                f" Observed normalized OSIS values: {apparatus_stats['reference_total']} "
+                f"across {apparatus_stats['reference_subtopics']} subtopics; "
+                f"related_topics on {apparatus_stats['related_populated']}/"
+                f"{apparatus_stats['entry_count']} topics "
+                f"({apparatus_stats['related_total']} links)."
+            )
 
     meta = {
         "id": resource_id,
@@ -321,6 +474,41 @@ def _get_download_date(source_file: str, fallback: str) -> str:
     return fallback
 
 
+def _write_with_manifest(out_path: Path, output: dict) -> None:
+    """Write a dictionary output file wrapped in its writer manifest.
+
+    The emitter captures the before-hash around the write, so the write must happen
+    inside the block (see build/lib/writer_manifest). Both write sites in this parser
+    share this helper so the two cannot drift apart.
+    """
+    previous = json.loads(out_path.read_text(encoding="utf-8")) if out_path.exists() else None
+    # Derive the root from OUTPUT_DIR (<root>/data/reference) rather than importing
+    # REPO_ROOT, so a test that redirects OUTPUT_DIR gets its manifests in the matching
+    # tree instead of writing into the real repo.
+    root = OUTPUT_DIR.parents[1]
+    with writer_manifest.run(
+        writer_identity="bible_dictionaries_parser",
+        writer_version=f"build/parsers/bible_dictionaries.py@{SCRIPT_VERSION}",
+        data_paths=[out_path],
+        repo_root=root,
+        manifests_dir=root / "review" / "writer-manifests",
+    ) as manifest_run:
+        with open(out_path, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        entries_changed, fields_changed = writer_manifest.diff_counts(
+            previous, output, key=lambda entry: entry["entry_id"]
+        )
+        manifest_run.record_delta(
+            out_path, entries_changed=entries_changed, fields_changed=fields_changed
+        )
+    logger.info(
+        "  Writer manifest: %d entries changed, %d fields changed",
+        entries_changed,
+        fields_changed,
+    )
+
+
 def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dict:
     """Process one reference dictionary (Easton's, Smith's, Hitchcock's).
 
@@ -354,6 +542,10 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
     seen_ids: set = set()
     data_entries = []
     empty_def_count = 0
+    scripture_populated = 0
+    scripture_total = 0
+    related_populated = 0
+    related_total = 0
 
     for line_num, raw in enumerate(raw_entries, 1):
         term = raw.get("term", "").strip()
@@ -368,6 +560,13 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
         if not definitions:
             empty_def_count += 1
 
+        scripture_references = extract_scripture_references(definitions)
+        related_terms = extract_related_terms(definitions)
+        scripture_populated += bool(scripture_references)
+        scripture_total += len(scripture_references)
+        related_populated += bool(related_terms)
+        related_total += len(related_terms)
+
         # Build stable unique entry_id (set as source of truth -- Rule 45)
         base_id = f"{dictionary_id}.{slugify(term)}"
         entry_id = make_unique_id(base_id, seen_ids)
@@ -379,8 +578,8 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
             "term": term,
             "alt_terms": [],
             "definition_blocks": definitions,
-            "scripture_references": [],
-            "related_terms": [],
+            "scripture_references": scripture_references,
+            "related_terms": related_terms,
             "word_count": count_words(definitions),
         }
         data_entries.append(entry)
@@ -397,17 +596,27 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
         return {"status": "dry-run", "entry_count": len(data_entries), "dictionary": dictionary_id}
 
     # Build output
-    meta = build_meta(config, source_hash, process_date, download_date)
+    apparatus_stats = {
+        "entry_count": len(data_entries),
+        "scripture_populated": scripture_populated,
+        "scripture_total": scripture_total,
+        "related_populated": related_populated,
+        "related_total": related_total,
+    }
+    meta = build_meta(config, source_hash, process_date, download_date, apparatus_stats)
     output = {"meta": meta, "data": data_entries}
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUTPUT_DIR / f"{dictionary_id}.json"
-    with open(out_path, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    _write_with_manifest(out_path, output)
 
     size_kb = out_path.stat().st_size / 1024
     logger.info("  Wrote %d entries -> %s (%.0f KB)", len(data_entries), out_path.name, size_kb)
+    logger.info(
+        "  Apparatus: scripture_references=%d entries/%d groups; "
+        "related_terms=%d entries/%d links; alt_terms=0 entries",
+        scripture_populated, scripture_total, related_populated, related_total,
+    )
 
     # Quality stats (CODING_DEFAULTS Rule 43)
     words = [e["word_count"] for e in data_entries]
@@ -437,6 +646,10 @@ def process_reference_dict(key: str, config: dict, dry_run: bool = False) -> dic
         "entry_count": len(data_entries),
         "file": out_path.name,
         "status": "ok",
+        "scripture_populated": scripture_populated,
+        "scripture_total": scripture_total,
+        "related_populated": related_populated,
+        "related_total": related_total,
     }
 
 
@@ -488,6 +701,7 @@ def process_torrey(key: str, config: dict, dry_run: bool = False) -> dict:
         seen_ids.add(entry_id)
 
         subtopics = parse_torrey_subtopics(definitions)
+        related_topics = extract_related_terms(definitions)
 
         entry = {
             "entry_id": entry_id,
@@ -495,14 +709,18 @@ def process_torrey(key: str, config: dict, dry_run: bool = False) -> dict:
             "topic": topic,
             "alt_topics": [],
             "subtopics": subtopics,
-            "related_topics": [],
+            "related_topics": related_topics,
         }
         data_entries.append(entry)
 
     if dry_run:
         logger.info("  [dry-run] %d source entries -> %d records", actual_count, len(data_entries))
         for e in data_entries[:3]:
-            refs_total = sum(len(st["references"]) for st in e["subtopics"])
+            refs_total = sum(
+                len(reference["osis"])
+                for subtopic in e["subtopics"]
+                for reference in subtopic["references"]
+            )
             logger.info(
                 "  [dry-run]   entry_id=%s  subtopics=%d  refs=%d",
                 e["entry_id"], len(e["subtopics"]), refs_total,
@@ -512,24 +730,54 @@ def process_torrey(key: str, config: dict, dry_run: bool = False) -> dict:
         return {"status": "dry-run", "entry_count": len(data_entries), "dictionary": index_id}
 
     # Build output
-    meta = build_meta(config, source_hash, process_date, download_date)
+    reference_subtopics = sum(
+        1
+        for entry in data_entries
+        for subtopic in entry["subtopics"]
+        for reference in subtopic["references"]
+        if reference["osis"]
+    )
+    reference_total = sum(
+        len(reference["osis"])
+        for entry in data_entries
+        for subtopic in entry["subtopics"]
+        for reference in subtopic["references"]
+    )
+    related_populated = sum(bool(entry["related_topics"]) for entry in data_entries)
+    related_total = sum(len(entry["related_topics"]) for entry in data_entries)
+    apparatus_stats = {
+        "entry_count": len(data_entries),
+        "reference_subtopics": reference_subtopics,
+        "reference_total": reference_total,
+        "related_populated": related_populated,
+        "related_total": related_total,
+    }
+    meta = build_meta(config, source_hash, process_date, download_date, apparatus_stats)
     output = {"meta": meta, "data": data_entries}
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUTPUT_DIR / f"{index_id}.json"
-    with open(out_path, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    _write_with_manifest(out_path, output)
 
     size_kb = out_path.stat().st_size / 1024
     logger.info("  Wrote %d entries -> %s (%.0f KB)", len(data_entries), out_path.name, size_kb)
+    logger.info(
+        "  Apparatus: normalized OSIS=%d across %d subtopics; "
+        "related_topics=%d entries/%d links; alt_topics=0 entries",
+        reference_total, reference_subtopics, related_populated, related_total,
+    )
 
     # Quality stats (CODING_DEFAULTS Rule 43)
     n = len(data_entries)
     subtopic_counts = [len(e["subtopics"]) for e in data_entries]
     sc_sorted = sorted(subtopic_counts)
     refs_per_entry = [
-        sum(len(st["references"]) for st in e["subtopics"]) for e in data_entries
+        sum(
+            len(reference["osis"])
+            for subtopic in e["subtopics"]
+            for reference in subtopic["references"]
+        )
+        for e in data_entries
     ]
     total_refs = sum(refs_per_entry)
     rpe_sorted = sorted(refs_per_entry)
@@ -555,6 +803,10 @@ def process_torrey(key: str, config: dict, dry_run: bool = False) -> dict:
         "entry_count": len(data_entries),
         "file": out_path.name,
         "status": "ok",
+        "reference_subtopics": reference_subtopics,
+        "reference_total": reference_total,
+        "related_populated": related_populated,
+        "related_total": related_total,
     }
 
 

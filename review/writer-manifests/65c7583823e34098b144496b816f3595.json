@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/sword_commentary.py@v1.0.0",
+  "writer_identity": "sword_commentary_parser",
+  "run_id": "65c7583823e34098b144496b816f3595",
+  "started_at": "2026-07-16T02:13:04.380190+00:00",
+  "data_paths": [
+    "data/commentaries/wesley/song-of-solomon.json"
+  ],
+  "checksums": {
+    "data/commentaries/wesley/song-of-solomon.json": {
+      "before_sha256": "8e556502b05b7b6958b726d5e5ee05794d81e792fcadb35dbf6a677d169829b8",
+      "after_sha256": "253177e04b2dc4eae4ef58074ec9ee1f4c64002e29202269f28bfe090dc7ffb9"
+    }
+  },
+  "expected_delta_counts": {
+    "data/commentaries/wesley/song-of-solomon.json": {
+      "entries_changed": 115,
+      "fields_changed": 461
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}
