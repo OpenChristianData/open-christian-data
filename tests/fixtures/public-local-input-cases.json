@@ -2625,7 +2625,8 @@
     "tests/test_install_boethius_complete_envelope_acceptance.py": {
       "external_path": "D:/Library/Open Christian Data/candidate-reviews",
       "tests": [
-        "test_marked_fixture_rolls_back_exact_preimage"
+        "test_marked_fixture_rolls_back_exact_preimage",
+        "test_read_only_preflight"
       ]
     },
     "tests/test_install_lib031_remaining_acceptance.py": {
@@ -2979,7 +2980,9 @@
     "tests/test_openmgh_bsb752_ansbert_hymn.py": {
       "external_path": "D:/Library/Open Christian Data/candidate-reviews/openmgh-bsb752-ansbert-hymn-public-notice-20260928-v3",
       "tests": [
-        "test_future_visible_notice_binding"
+        "test_future_visible_notice_binding",
+        "test_original_preflight_rejects_wrong_root",
+        "test_stage_pin_rejects_wrong_receipt_hash"
       ]
     },
     "tests/test_openmgh_bsb752_othgerii.py": {
@@ -3079,6 +3082,7 @@
     "tests/test_openmgh_bsb830_york_four.py": {
       "external_path": "D:/Library/Open Christian Data/candidate-reviews/y830iv-stage-20261001-v2.json",
       "tests": [
+        "test_current_generation_rejects_historical_receipt",
         "test_exact_single_work_pin_and_language",
         "test_fixture_rejects_unrelated_work_authority",
         "test_fixture_rolls_back_both_source_sidecars_then_installs"
@@ -3291,6 +3295,346 @@
         "test_current_metadata_cannot_masquerade_as_the_original_packet",
         "test_staged_or_installed_witnesses_are_exact",
         "test_two_distinct_retained_witnesses_and_pg_selection"
+      ]
+    },
+    "tests/test_fell_a41072_exact_source_and_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight",
+        "test_guarded_install_rolls_back_marked_fixture",
+        "test_isolated_historical_preflight_checks_exact_complete_generation",
+        "test_resealed_candidate_text_mutation_is_rejected",
+        "test_source_byte_mutation_is_rejected"
+      ],
+      "declared_in": "build/tools/install_fell_a41072_acceptance.py"
+    },
+    "tests/test_npnf210_two_acceptances.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_clean_fixture_install",
+        "test_current_accepted_generation_is_not_the_recorded_acquired_preimage",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_virgins_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_two_acceptances.py"
+    },
+    "tests/test_prayers_baths_for_cure_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/prayers-baths-stage-20261001-v4",
+      "tests": [
+        "test_frozen_stage_read_only_preflight",
+        "test_guarded_install_rolls_back_marked_fixture"
+      ],
+      "declared_in": "build/tools/install_prayers_baths_for_cure_acceptance.py"
+    },
+    "tests/test_standard_ebooks_four_acceptance_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_original_stage_rejects_managed_root_identity"
+      ]
+    },
+    "tests/test_george_smith_pg35873_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260923/george-smith-martyn-pg35873-v4-fragment-links/package/content.tei.xml",
+      "tests": [
+        "test_current_accepted_generation_rejects_frozen_preimage"
+      ],
+      "declared_in": "build/tei/george_smith_pg35873_native.py"
+    },
+    "tests/test_gerhardt_pg30362_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260927-pg30362-gerhardt-kelly-1867-v5/package/content.tei.xml",
+      "tests": [
+        "test_current_accepted_generation_rejects_frozen_preimage"
+      ],
+      "declared_in": "build/tei/gerhardt_pg30362_native.py"
+    },
+    "tests/test_keble_pg4272_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260926-pg4272-keble-1887-cassell-v1/package/content.tei.xml",
+      "tests": [
+        "test_current_accepted_generation_rejects_frozen_preimage"
+      ],
+      "declared_in": "build/tei/keble_pg4272_native.py"
+    },
+    "tests/test_lightfoot_essays_pg18191_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_lightfoot_essays_pg18191.py"
+    },
+    "tests/test_missionary_survey_pg13360_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_passes_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_missionary_survey_pg13360.py"
+    },
+    "tests/test_newman_development_pg35110_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_newman_development_pg35110.py"
+    },
+    "tests/test_openmgh_bsb754_origo_public_notice.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/openmgh-bsb754-origo-public-notice-20260927-v1",
+      "tests": [
+        "test_origo_future_public_notice_binding"
+      ],
+      "declared_in": "build/tools/prepare_openmgh_bsb754_origo_public_notice.py"
+    },
+    "tests/test_openmgh_bsb830_honorius.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/h830/honorius-de-apostatis/package/content.tei.xml",
+      "tests": [
+        "test_actual_current_generation_rejects_historical_before"
+      ]
+    },
+    "tests/test_ports_of_entry_pg55955_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_ports_of_entry_pg55955.py"
+    },
+    "tests/test_prepare_john_owen_worship_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/37c-234-john-owen-worship-20260918-route-v4-paragraph-locations",
+      "tests": [
+        "test_header_binding_refuses_changed_reviewed_member"
+      ],
+      "declared_in": "build/tools/prepare_john_owen_worship_acceptance.py"
+    },
+    "tests/test_stephens_pg53809_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260923/stephens-chrysostom-pg53809-final/package/content.tei.xml",
+      "tests": [
+        "test_read_only_guard_pins_immutable_receipt"
+      ],
+      "declared_in": "build/tei/stephens_pg53809_native.py"
+    },
+    "tests/test_teresa_pg8120_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_teresa_pg8120.py"
+    },
+    "tests/test_torreys_topical_textbook_reconstruction_contract.py": {
+      "external_path": "D:/Library/Open Christian Data/raw/bible_dictionaries/manifest.json",
+      "tests": [
+        "test_torreys_oracle_parser_rejects_duplicate_source_keys"
+      ]
+    },
+    "tests/test_visitas_pg22658_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260923/pg22658-l789-v6/package/content.tei.xml",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tei/visitas_pg22658_native.py"
+    },
+    "tests/test_singmaster_pg55819_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_frozen_stage_read_only_preflight"
+      ],
+      "declared_in": "build/tools/stage_singmaster_pg55819.py"
+    },
+    "tests/test_creeds_json_lib062_remaining_install.py": {
+      "external_path": "D:/Library/Open Christian Data/reports/runs/creeds-json-exposition-stage-20260929-r1",
+      "tests": [
+        "test_guarded_install_commits_exact_generation_in_isolation",
+        "test_guarded_preflight_rejects_stale_preimage",
+        "test_injected_post_install_failure_rolls_back",
+        "test_original_preflight_rejects_wrong_historical_root"
+      ],
+      "declared_in": "build/tools/install_creeds_json_lib062_remaining.py"
+    },
+    "tests/test_creeds_json_two_catechisms_install.py": {
+      "external_path": "D:/Library/Open Christian Data/reports/runs/creeds-json-two-catechisms-stage-20260926-r4",
+      "tests": [
+        "test_guarded_install_commits_exact_generation_in_isolation",
+        "test_guarded_preflight_rejects_stale_preimage",
+        "test_injected_post_install_failure_rolls_back",
+        "test_original_stage_identity_rejects_wrong_root"
+      ],
+      "declared_in": "build/tools/install_creeds_json_two_catechisms.py"
+    },
+    "tests/test_npnf210_duties_faith_v3_acceptances.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_clean_fixture_install",
+        "test_current_installed_generation_rejects_historical_initial_install",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_faith_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_duties_faith_v3_acceptances.py"
+    },
+    "tests/test_gregory_eunomius_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/gregory-eunomius-electronic-stage-20260927-v3",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_gregory_eunomius_electronic_acceptance.py"
+    },
+    "tests/test_hammon_n15943_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/hammon-n15943-electronic-stage-20260927-v1",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_hammon_n15943_acceptance.py"
+    },
+    "tests/test_hodge_vol3_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/hodge-vol3-electronic-stage-20260927-v2",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_hodge_vol3_electronic_acceptance.py"
+    },
+    "tests/test_locke_a48888_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/locke-a48888-electronic-stage-20260927-v1",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_locke_a48888_acceptance.py"
+    },
+    "tests/test_marrant_n17016_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/marrant-n17016-electronic-stage-20260927-v1",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_marrant_n17016_acceptance.py"
+    },
+    "tests/test_npnf210_letters_aggregate_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_aggregate_preserves_shared_front_and_fifteen_division_anchors",
+        "test_clean_fixture_install",
+        "test_current_installed_generation_rejects_historical_initial_install",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_letters_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_letters_aggregate_acceptance.py"
+    },
+    "tests/test_wilberforce_pg25709_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/wilberforce-pg25709-electronic-stage-20260927-v3",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_wilberforce_pg25709_acceptance.py"
+    },
+    "tests/test_install_npnf211_electronic_acceptances.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/npnf211-electronic-acceptance-stage-20260926-e",
+      "tests": [
+        "test_current_generation_is_not_the_retained_acquired_preimage",
+        "test_isolated_install_rejects_stale_canonical_preimage",
+        "test_isolated_install_rolls_back_after_new_live",
+        "test_isolated_pinned_install_commits_and_journals",
+        "test_only_prose_category_can_be_added_to_work_identity",
+        "test_three_work_stage_has_exact_source_boundaries_and_preflight"
+      ],
+      "declared_in": "build/tools/install_npnf211_electronic_acceptances.py"
+    },
+    "tests/test_npnf210_repentance_v3_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_clean_fixture_install",
+        "test_current_installed_generation_rejects_historical_initial_install",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_repentance_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_repentance_v3_acceptance.py"
+    },
+    "tests/test_npnf210_satyrus_v3_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_clean_fixture_install",
+        "test_current_installed_generation_rejects_historical_initial_install",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_satyrus_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_satyrus_v3_acceptance.py"
+    },
+    "tests/test_npnf210_widows_v3_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_clean_fixture_install",
+        "test_current_installed_generation_rejects_historical_initial_install",
+        "test_exact_stage_and_read_only_canonical_preflight",
+        "test_injected_failure_restores_exact_widows_preimage",
+        "test_stale_fixture_preimage_rejected"
+      ],
+      "declared_in": "build/tools/install_npnf210_widows_v3_acceptance.py"
+    },
+    "tests/test_ryle_guarded_install.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/ryle-holiness-electronic-stage-20260927-v5",
+      "tests": [
+        "test_original_receipt_guard_rejects_wrong_context_root"
+      ],
+      "declared_in": "build/tools/install_ryle_holiness_electronic_acceptance.py"
+    },
+    "tests/test_install_lib031_bounds_power_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data/bpow3",
+      "tests": [
+        "test_clean_fixture_install_retains_previous_and_checks_actual_prose",
+        "test_injected_failure_restores_exact_prior_generation"
+      ],
+      "declared_in": "build/tools/install_lib031_bounds_power_acceptance.py"
+    },
+    "tests/test_npnf210_mysteries_installer.py": {
+      "external_path": "D:/Library/Open Christian Data",
+      "tests": [
+        "test_current_installed_generation_rejects_original_initial_install",
+        "test_fixture_preimage_drift_fails_closed",
+        "test_injected_swap_failure_restores_exact_before",
+        "test_read_only_preflight_and_clean_fixture_install"
+      ],
+      "declared_in": "build/tools/install_npnf210_mysteries_acceptance.py"
+    },
+    "tests/test_install_athanasius_npnf204_acceptances.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/athanasius-npnf204-acceptance-stage-20260926-v1",
+      "tests": [
+        "test_changed_preimage_is_rejected_before_any_swap",
+        "test_failure_after_new_live_restores_exact_previous_work",
+        "test_later_work_failure_preserves_earlier_install_and_unrelated_work",
+        "test_preflight_checks_all_twenty_without_writing"
+      ],
+      "declared_in": "build/tools/install_athanasius_npnf204_acceptances.py"
+    },
+    "tests/test_install_lib029_complete_volume_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews",
+      "tests": [
+        "test_marked_fixture_guard_rejects_unmarked_root",
+        "test_marked_fixture_rolls_back_entire_work_generation",
+        "test_original_root_guard_rejects_wrong_context"
+      ],
+      "declared_in": "build/tools/install_lib029_complete_volume_acceptance.py"
+    },
+    "tests/test_schleitheim_confession_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/schleitheim-acceptance-20260928-v2",
+      "tests": [
+        "test_current_accepted_generation_cannot_replace_historical_before",
+        "test_exact_receipt_source_credit_and_read_only_preflight",
+        "test_long_path_fixture_rollback_then_installs",
+        "test_original_wrong_root_remains_rejected"
+      ],
+      "declared_in": "build/tools/install_schleitheim_confession_acceptance.py"
+    },
+    "tests/test_sum_saving_knowledge_acceptance.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/sum-saving-acceptance-20260928-v1",
+      "tests": [
+        "test_current_accepted_generation_cannot_replace_historical_before",
+        "test_exact_receipt_source_credit_and_read_only_preflight",
+        "test_long_path_fixture_rollback_then_installs",
+        "test_original_wrong_root_remains_rejected"
+      ],
+      "declared_in": "build/tools/install_sum_saving_knowledge_acceptance.py"
+    },
+    "tests/test_npnf210_mysteries_acceptance_stage.py": {
+      "external_path": "D:/Library/Open Christian Data/am26-mysteries-v5",
+      "tests": [
+        "test_acceptance_rejects_changed_source_and_master",
+        "test_exact_stage_public_acceptance_and_projection"
       ]
     }
   },

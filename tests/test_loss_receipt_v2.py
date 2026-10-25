@@ -441,7 +441,7 @@ def test_strict_checker_rejects_dirty_receipt_formatting_without_rebind(
         capture_output=True,
     )
     subprocess.run(
-        ["git", "commit", "-m", "bind canonical IR"],
+        ["git", "commit", "--allow-empty", "-m", "bind canonical IR"],
         check=True,
         cwd=tmp_path,
         capture_output=True,

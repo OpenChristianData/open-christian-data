@@ -1,4 +1,5 @@
 from pathlib import Path
+from collections import deque
 from types import SimpleNamespace
 import ast
 import json
@@ -61,6 +62,25 @@ def test_marker_filter_is_explicit_and_unfiltered_tests_still_run(tmp_path):
     assert "required source not supplied" in complete.stdout
 
 
+def _declared_external_values(module, source):
+    from build.tools.pre_commit_pytest import _direct_imports
+
+    pending, visited = deque([module]), set()
+    while pending:
+        current = pending.popleft()
+        if current in visited:
+            continue
+        visited.add(current)
+        path = ROOT / current
+        if current == source:
+            return {node.value.replace("\\", "/").removeprefix("//?/").rstrip("/")
+                    for node in ast.walk(ast.parse(path.read_bytes()))
+                    if isinstance(node, ast.Constant) and isinstance(node.value, str)}
+        pending.extend(name.replace(".", "/") + ".py" for name in _direct_imports(path)
+                       if (ROOT / (name.replace(".", "/") + ".py")).is_file())
+    raise AssertionError(f"External source is not imported by {module}: {source}")
+
+
 @pytest.mark.requires_local_artifacts
 def test_declared_cases_exist_and_inputs_are_real_retained_source_bindings():
     inventory = json.loads((ROOT / "tests/fixtures/public-local-input-cases.json").read_bytes())
@@ -70,8 +90,7 @@ def test_declared_cases_exist_and_inputs_are_real_retained_source_bindings():
                      if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))}
         assert set(record["tests"]) <= functions, module
         if "external_path" in record:
-            declared = {node.value.replace("\\", "/").rstrip("/") for node in ast.walk(ast.parse((ROOT / module).read_bytes()))
-                        if isinstance(node, ast.Constant) and isinstance(node.value, str)}
+            declared = _declared_external_values(module, record.get("declared_in", module))
             assert record["external_path"] in declared, module
             continue
         manifest = json.loads((ROOT / record["source_manifest"]).read_bytes())
@@ -149,3 +168,19 @@ def test_private_input_marks_only_the_exact_parameter_case(tmp_path):
 def test_input_inventory_does_not_deselect_its_own_portable_proofs():
     assert not any(node.startswith("tests/test_public_release_inputs.py::")
                    for node in local_input_cases(ROOT))
+
+
+def test_imported_external_input_requires_its_actual_import_graph(tmp_path, monkeypatch):
+    module = tmp_path / "tests/test_stage.py"
+    source = tmp_path / "build/tools/stage.py"
+    unrelated = source.with_name("unrelated.py")
+    module.parent.mkdir()
+    source.parent.mkdir(parents=True)
+    module.write_text("from build.tools import stage\n", encoding="utf-8")
+    source.write_text('ROOT = r"\\\\?\\D:\\Library\\Open Christian Data\\stage"\n', encoding="utf-8")
+    unrelated.write_bytes(source.read_bytes())
+    monkeypatch.setattr(sys.modules[__name__], "ROOT", tmp_path)
+    assert "D:/Library/Open Christian Data/stage" in _declared_external_values(
+        "tests/test_stage.py", "build/tools/stage.py")
+    with pytest.raises(AssertionError, match="not imported"):
+        _declared_external_values("tests/test_stage.py", "build/tools/unrelated.py")

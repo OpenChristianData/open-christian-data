@@ -15,7 +15,7 @@ from ocd_kernel.tei.install_accepted import _files
 from build.tools.stage_original_douay_current import ROOT, WORK, EDITION
 
 
-BASE = Path("D:/Library/Open Christian Data/candidate-reviews").resolve(strict=True)
+BASE = Path("D:/Library/Open Christian Data/candidate-reviews")
 OLD_STAGE = ROOT / ".tmp_audit/original-douay-stage-v7"
 OLD_PROMOTED = ROOT / ".tmp_audit/original-douay-promoted-v7"
 NEW_STAGE = BASE / "original-douay-current-20261002-v2-stage"
@@ -28,7 +28,8 @@ def sha(data: bytes) -> str:
 
 
 def main() -> None:
-    if any(target.exists() or target.parent.resolve(strict=True) != BASE for target in (NEW_STAGE, NEW_PROMOTED)):
+    base = BASE.resolve(strict=True)
+    if any(target.exists() or target.parent.resolve(strict=True) != base for target in (NEW_STAGE, NEW_PROMOTED)):
         raise ValueError("Exact durable Douay stage destinations must be fresh siblings of candidate-reviews")
     original_receipt = (OLD_PROMOTED / "stage-receipt.json").read_bytes()
     receipt = json.loads(original_receipt)
