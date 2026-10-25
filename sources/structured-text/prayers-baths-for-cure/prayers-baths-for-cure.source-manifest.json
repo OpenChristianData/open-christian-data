@@ -1,0 +1,74 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "tcp-a47235-pinned-tei-p5",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/tcp/high-range/A47235/A47235.xml",
+      "role": "primary-source",
+      "bytes": 69708,
+      "sha256": "741b3c5faf5c90d1735563fc793fdc5cd7eebc9118d2707a731742f82f8e0117"
+    },
+    {
+      "name": "acquisition-receipt",
+      "path": "raw/tcp/high-range/A47235/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "bytes": 1849,
+      "sha256": "35ad8430ef582cce5ff92097caf917f6ff9aed62f98055c4e27a77f1b02ba3b0"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/prayers-baths-for-cure/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1273,
+      "sha256": "6f605d2b02596dbefca7bfd1910efa21bc0f24c66d5642460060411549b5d96c"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/prayers-baths-for-cure/prayers-baths-for-cure.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 6412,
+      "sha256": "d7d7aded8689c16c79a45020febda9c8a28ff6d7f2724e933830dfc76be5d334"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/prayers-baths-for-cure/prayers-baths-for-cure.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2236,
+      "sha256": "b6746f2a73815b33607385a936d89a391d0c5c0509de19cf34b27d8298b5bf3f"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-tcp-a47235-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/prayers_baths_for_cure_reconstruction.py",
+    "implementation_sha256": "ed55f50c4b2ea0e3cdf5c244b48c92fc2ba4d470fb9476a309bfd3bb14afe8fe"
+  },
+  "validator": {
+    "id": "ocd-tcp-a47235-exact-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/prayers_baths_for_cure_oracle.py",
+    "implementation_sha256": "fb7ef76539511e890f8c426510b9ec75f86baef7b2d5ced9687ad9ef4b3ab2e4",
+    "import_closure_sha256": "a24912fdc78cee6a34d2fd03adebe753e4884380af0f2654738af3999060db4b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

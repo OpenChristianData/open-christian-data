@@ -1,0 +1,138 @@
+{
+  "authorities": [
+    {
+      "bytes": 324650,
+      "name": "retained-source",
+      "path": "raw/gutenberg/66953/html/pg66953-images.html",
+      "role": "primary-source",
+      "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+    },
+    {
+      "bytes": 299881,
+      "name": "retained-package",
+      "path": "raw/gutenberg/66953/pg66953-h.zip",
+      "role": "supporting-package",
+      "sha256": "378b882a4f2c88a3b5c64121bee030c99a7f27e50f24b4b56be5034f4e17245e"
+    },
+    {
+      "bytes": 119400,
+      "name": "retained-cover",
+      "path": "raw/gutenberg/66953/html/images/cover.jpg",
+      "role": "unreferenced-support",
+      "sha256": "9bd8876cb1e861f62f8d37b87ca9f5fa249b01a9c23bc1de450b4a221be3bfcd"
+    },
+    {
+      "bytes": 63540,
+      "name": "retained-frontispiece",
+      "path": "raw/gutenberg/66953/html/images/frontispiece.jpg",
+      "role": "referenced-body-image",
+      "sha256": "f2545fbdee8e4cd9e6898293e2cce68d382723e965ffa4617714c77b5d48c2ed"
+    },
+    {
+      "bytes": 2695,
+      "name": "retained-title-detail",
+      "path": "raw/gutenberg/66953/html/images/titlepage-detail.jpg",
+      "role": "referenced-body-image",
+      "sha256": "00d81211099790e854dfb69b6f2c9a1ebd6950fd7725d5a8d3d6372e085747f0"
+    },
+    {
+      "bytes": 1260,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/jarena-lee-pg66953/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "5c37e4cb11e22853551328f87f401854fa505f5c4b74a757ac0f0288ff7e6364"
+    },
+    {
+      "bytes": 971,
+      "name": "validation-policy",
+      "path": "sources/structured-text/jarena-lee-pg66953/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "976b8ed2ecb52a99da696aa3b8ecb231c88a33d1f6a77c3501a5e495fb73b1aa"
+    },
+    {
+      "bytes": 1475,
+      "name": "source-readme",
+      "path": "sources/structured-text/jarena-lee-pg66953/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "ce7f6a6bda7ae6a3a23b11e05ace7568d627ec29ab519e5f340e225f0ed10ef0"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 11179,
+      "name": "producer-implementation",
+      "path": "build/tei/jarena_lee_pg66953_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "d0c6e69f2480633a7d0c6f6cda8affc24d3294d973db994d065708e213fb60a3"
+    },
+    {
+      "bytes": 12488,
+      "name": "oracle-implementation",
+      "path": "build/tei/jarena_lee_pg66953_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "00721cc925e9408cfbf7a4ee2331463f573c3f819e9eefb47083c4ab74609ae3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-jarena-lee-pg66953-extracted-html-to-tei",
+    "implementation_path": "build/tei/jarena_lee_pg66953_reconstruction.py",
+    "implementation_sha256": "d0c6e69f2480633a7d0c6f6cda8affc24d3294d973db994d065708e213fb60a3",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "body_image_occurrences": 3,
+    "body_image_support_members": 2,
+    "candidate_status": "nonaccepted",
+    "flattened_structural_wrappers": 0,
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "package_cover_role": "unreferenced support",
+    "represented_body_elements": 823,
+    "source_url": "https://www.gutenberg.org/ebooks/66953",
+    "title": "Religious Experience and Journal of Mrs. Jarena Lee",
+    "unrepresented_body_elements": 0
+  },
+  "source_bundle": {
+    "bytes": 324650,
+    "members": 1,
+    "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+  },
+  "source_id": "jarena-lee-pg66953-current-extracted-html",
+  "source_members": [
+    {
+      "bytes": 324650,
+      "logical_name": "pg66953-images.html",
+      "name": "pg66953-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/66953/html/pg66953-images.html",
+      "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-jarena-lee-pg66953-independent-html-oracle",
+    "implementation_path": "build/tei/jarena_lee_pg66953_oracle.py",
+    "implementation_sha256": "00721cc925e9408cfbf7a4ee2331463f573c3f819e9eefb47083c4ab74609ae3",
+    "import_closure_sha256": "555ae002db9a379cbf1818633bb3248beb804a7101325b00f4d4115bade58d60",
+    "version": "1"
+  },
+  "work_id": "jarena-lee-religious-experience-and-journal"
+}

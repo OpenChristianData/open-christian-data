@@ -1,0 +1,398 @@
+{
+  "fixture_id": "adam-clarke-zep-1",
+  "edition": "adam-clarke-commentary-fixture",
+  "source_path": "raw/helloao_local/api/c/adam-clarke/ZEP/1.json",
+  "source_url": "ocd-source:raw/helloao_local/api/c/adam-clarke/ZEP/1.json",
+  "source_sha256": "992cfd6477a2054c5648f8265c8790f67700745e3b1e83ac53e03323136c826a",
+  "retained_source_sha256": "992cfd6477a2054c5648f8265c8790f67700745e3b1e83ac53e03323136c826a",
+  "source_selector": {
+    "kind": "json-api",
+    "book_id": "ZEP",
+    "chapter": 1,
+    "native_scope": "book-and-chapter",
+    "selected_selectors": [
+      "book.introduction",
+      "chapter.content[2]",
+      "chapter.content[3]"
+    ]
+  },
+  "source_scope_exclusions": [],
+  "source_scope_exclusion_count": 0,
+  "native_unit_count": 18,
+  "selected_unit_count": 3,
+  "outside_scope_count": 15,
+  "native_units": [
+    {
+      "selector": "book.introduction",
+      "scope": "Bible:ZEP",
+      "label": "",
+      "text": "This chapter begins with denouncing God's judgments against Judah and Jerusalem, Zep 1:1-3. Idolaters, and sinners of several other denominations, are then particularly threatened; and their approaching visitation enlarged on, by the enumeration of several circumstances which tend greatly to heighten its terrors, Zep 1:4-18. \n",
+      "normalized_text": "This chapter begins with denouncing God's judgments against Judah and Jerusalem, Zep 1:1-3. Idolaters, and sinners of several other denominations, are then particularly threatened; and their approaching visitation enlarged on, by the enumeration of several circumstances which tend greatly to heighten its terrors, Zep 1:4-18.",
+      "text_sha256": "4fc08479ccc8ec200c6347d7c5ded87a4eaf407290fb542b788e63b8f43611c7",
+      "selected": true
+    },
+    {
+      "selector": "chapter.content[1]",
+      "scope": "Bible:ZEP.1.1",
+      "label": "",
+      "native_number": 1,
+      "text": "The word of the Lord which came unto Zephaniah - Though this prophet has given us so large a list of his ancestors, yet little concerning him is known, because we know nothing certain relative to the persons of the family whose names are here introduced. We have one chronological note which is of more value for the correct understanding of his prophecy than the other could have been, how circumstantially soever it had been delivered; viz., that he prophesied in the days of Josiah, son of Amon, king of Judah; and from the description which he gives of the disorders which prevailed in Judea in his time, it is evident that he must have prophesied before the reformation made by Josiah, which was in the eighteenth year of his reign. And as he predicts the destruction of Nineveh, Zep 2:13, which, as Calmet remarks, could not have taken place before the sixteenth of Josiah, allowing with Berosus twenty-one years for the reign of Nabopolassar over the Chaldeans; we must, therefore, place this prophecy about the beginning of the reign of Josiah, or from b.c. 640 to b.c. 609. But see the chronological notes. \n",
+      "normalized_text": "The word of the Lord which came unto Zephaniah - Though this prophet has given us so large a list of his ancestors, yet little concerning him is known, because we know nothing certain relative to the persons of the family whose names are here introduced. We have one chronological note which is of more value for the correct understanding of his prophecy than the other could have been, how circumstantially soever it had been delivered; viz., that he prophesied in the days of Josiah, son of Amon, king of Judah; and from the description which he gives of the disorders which prevailed in Judea in his time, it is evident that he must have prophesied before the reformation made by Josiah, which was in the eighteenth year of his reign. And as he predicts the destruction of Nineveh, Zep 2:13, which, as Calmet remarks, could not have taken place before the sixteenth of Josiah, allowing with Berosus twenty-one years for the reign of Nabopolassar over the Chaldeans; we must, therefore, place this prophecy about the beginning of the reign of Josiah, or from b.c. 640 to b.c. 609. But see the chronological notes.",
+      "text_sha256": "61a1142e70e84bacbe7f0146a1a6edd4089850b831b3d06c748db28d3ec27d85",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[2]",
+      "scope": "Bible:ZEP.1.2",
+      "label": "",
+      "native_number": 2,
+      "text": "I will utterly consume all things - All being now ripe for destruction, I will shortly bring a universal scourge upon the land. He speaks particularly of the idolaters. \n",
+      "normalized_text": "I will utterly consume all things - All being now ripe for destruction, I will shortly bring a universal scourge upon the land. He speaks particularly of the idolaters.",
+      "text_sha256": "6a24b6b6cad23666751a39bb07555fb173bdd54478c9fbfa655666dc2ae86366",
+      "selected": true
+    },
+    {
+      "selector": "chapter.content[3]",
+      "scope": "Bible:ZEP.1.3",
+      "label": "",
+      "native_number": 3,
+      "text": "I will consume man and beast - By war, and by pestilence. Even the waters shall he infected, and the fish destroyed; the air become contaminated, and the fowls die. \n",
+      "normalized_text": "I will consume man and beast - By war, and by pestilence. Even the waters shall he infected, and the fish destroyed; the air become contaminated, and the fowls die.",
+      "text_sha256": "bf032328c301a107796e3b7ec20e2a0df04ecd82e43dd8ef80c44c90844b78f5",
+      "selected": true
+    },
+    {
+      "selector": "chapter.content[4]",
+      "scope": "Bible:ZEP.1.4",
+      "label": "",
+      "native_number": 4,
+      "text": "I will cut off the remnant of Baal - I think he refers here, partly at least, to the reformation which Josiah was to bring about. See the account, Kg2 23:5 (note).\nThe Chemarims - The black-robed priests of different idols. See the note on Kg2 23:6. These were put down by Josiah. \n",
+      "normalized_text": "I will cut off the remnant of Baal - I think he refers here, partly at least, to the reformation which Josiah was to bring about. See the account, Kg2 23:5 (note). The Chemarims - The black-robed priests of different idols. See the note on Kg2 23:6. These were put down by Josiah.",
+      "text_sha256": "955b0750d56a0f1fa6bd1837c1a5ce76f8aa4267b168b25e878572629b01fc51",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[5]",
+      "scope": "Bible:ZEP.1.5",
+      "label": "",
+      "native_number": 5,
+      "text": "The host of heaven - Sun, moon, planets, and stars. This worship was one of the most ancient and the most common of all species of idolatry; and it had a greater semblance of reason to recommend it. See Kg2 23:6, Kg2 23:12; Jer 19:13; Jer 32:29.\nThat swear by the Lord, and that swear by Malcham - Associating the name of an idol with that of the Most High. For Malcham, see on Hos 4:15 (note), and Amo 5:26 (note). \n",
+      "normalized_text": "The host of heaven - Sun, moon, planets, and stars. This worship was one of the most ancient and the most common of all species of idolatry; and it had a greater semblance of reason to recommend it. See Kg2 23:6, Kg2 23:12; Jer 19:13; Jer 32:29. That swear by the Lord, and that swear by Malcham - Associating the name of an idol with that of the Most High. For Malcham, see on Hos 4:15 (note), and Amo 5:26 (note).",
+      "text_sha256": "5647d0c9f5a0c6a8b7411bac890ec233fff19b03d3fd5ceef99c71055224c1f2",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[6]",
+      "scope": "Bible:ZEP.1.6",
+      "label": "",
+      "native_number": 6,
+      "text": "Them that are turned back - Who have forsaken the true God, and become idolaters.\nNor inquired for him - Have not desired to know his will. \n",
+      "normalized_text": "Them that are turned back - Who have forsaken the true God, and become idolaters. Nor inquired for him - Have not desired to know his will.",
+      "text_sha256": "c28124c8f5399f7e3ded089a6287dc4d7f11836e59657103f14ddc6beec3b64c",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[7]",
+      "scope": "Bible:ZEP.1.7",
+      "label": "",
+      "native_number": 7,
+      "text": "Hold thy peace at the presence of the Lords God - הס has, the same as hush, hist, among us. Remonstrances are now useless. You had time to acquaint yourselves with God; you would not: you cry now in vain; destruction is at the door.\nThe Lord hath prepared a sacrifice - A slaughter of the people.\nHe hath bid his guests - The Babylonians, to whom he has given a commission to destroy you. In all festivals sacrifices,\n1. The victims were offered to God, and their blood poured out before the altar.\n2. The people who were invited feasted upon the sacrifice. See on Isa 34:6 (note). \n",
+      "normalized_text": "Hold thy peace at the presence of the Lords God - הס has, the same as hush, hist, among us. Remonstrances are now useless. You had time to acquaint yourselves with God; you would not: you cry now in vain; destruction is at the door. The Lord hath prepared a sacrifice - A slaughter of the people. He hath bid his guests - The Babylonians, to whom he has given a commission to destroy you. In all festivals sacrifices, 1. The victims were offered to God, and their blood poured out before the altar. 2. The people who were invited feasted upon the sacrifice. See on Isa 34:6 (note).",
+      "text_sha256": "541cbc7c1fa70546c87527c430ad3ddb1a91fe710c32e1f84982cfb410322a84",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[8]",
+      "scope": "Bible:ZEP.1.8",
+      "label": "",
+      "native_number": 8,
+      "text": "I will punish the princes, and the king's children - After the death of Josiah the kingdom of Judah saw no prosperity, and every reign terminated miserably; until at last King Zedekiah and the king's children were cruelly massacred at Riblah, when Nebuchadnezzar had taken Jerusalem.\nStrange apparel - I really think this refers more to their embracing idolatrous customs and heathen usages, than to their changing their dress. They acquired new habits, as we would say; customs, that they used as they did their clothing - at all times, and in every thing. \n",
+      "normalized_text": "I will punish the princes, and the king's children - After the death of Josiah the kingdom of Judah saw no prosperity, and every reign terminated miserably; until at last King Zedekiah and the king's children were cruelly massacred at Riblah, when Nebuchadnezzar had taken Jerusalem. Strange apparel - I really think this refers more to their embracing idolatrous customs and heathen usages, than to their changing their dress. They acquired new habits, as we would say; customs, that they used as they did their clothing - at all times, and in every thing.",
+      "text_sha256": "351eb46ea4566c469b19f928c74db7c870b62bf424b8198c3080b96fffb61d5d",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[9]",
+      "scope": "Bible:ZEP.1.9",
+      "label": "",
+      "native_number": 9,
+      "text": "That leap on the threshold - Or, that leap over the threshold. It is most probable that the Philistines are here meant. After the time that Dagon fell before the ark, and his hands were broken off on the threshold of his temple, his worshippers would no more set a foot upon the threshold, but stepped or leaped over it, when they entered into his temple. The Chaldee understands this of the Philistines, without giving this reason for it. Some understand it of haughtiness and pride: others think that leaping on the threshold refers to the customs of the Arabs, who used to ride into people's houses and take away whatever they could carry; and that this is the reason why, in several parts of the East, they have their doors made very low, to prevent those depredators from entering. In this manner, we learn the Persians have frequently oppressed the poor Armenians, going on horseback into their houses, and taking whatever they thought proper. Mr. Harmer understands it in this way. \n",
+      "normalized_text": "That leap on the threshold - Or, that leap over the threshold. It is most probable that the Philistines are here meant. After the time that Dagon fell before the ark, and his hands were broken off on the threshold of his temple, his worshippers would no more set a foot upon the threshold, but stepped or leaped over it, when they entered into his temple. The Chaldee understands this of the Philistines, without giving this reason for it. Some understand it of haughtiness and pride: others think that leaping on the threshold refers to the customs of the Arabs, who used to ride into people's houses and take away whatever they could carry; and that this is the reason why, in several parts of the East, they have their doors made very low, to prevent those depredators from entering. In this manner, we learn the Persians have frequently oppressed the poor Armenians, going on horseback into their houses, and taking whatever they thought proper. Mr. Harmer understands it in this way.",
+      "text_sha256": "f3b9c469988076b7776413d1bce47f57129bd8dcfe9ea24cde849de0573394c1",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[10]",
+      "scope": "Bible:ZEP.1.10",
+      "label": "",
+      "native_number": 10,
+      "text": "A cry from the fish-gate - This gate, which is mentioned Neh 3:3, was opposite to Joppa; and perhaps the way in which the news came of the irruption of the Chaldean army, the great crashing from the hills.\nThe second - Or second city, may here mean a part of Jerusalem, mentioned Kg2 22:14; Ch2 34:22. \n",
+      "normalized_text": "A cry from the fish-gate - This gate, which is mentioned Neh 3:3, was opposite to Joppa; and perhaps the way in which the news came of the irruption of the Chaldean army, the great crashing from the hills. The second - Or second city, may here mean a part of Jerusalem, mentioned Kg2 22:14; Ch2 34:22.",
+      "text_sha256": "aacf89239ea56abe81b009835b30bb2954e8edc644b5d9854f356bd9b741daca",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[11]",
+      "scope": "Bible:ZEP.1.11",
+      "label": "",
+      "native_number": 11,
+      "text": "Maktesh - Calmet says this signifies a mortar, or a rock in form of a mortar, and was the name of a quarter of Jerusalem where they hulled rice, corn, etc., according to St. Jerome. Some think the city of Jerusalem is meant, where the inhabitants should be beat and pounded to death as grain is pounded in a mortar.\nNewcome translates it, the lower city, and considers it the valley in Jerusalem, which divided the upper from the lower city.\nThey that bear silver - The merchants, moneychangers, usurers, rich men. \n",
+      "normalized_text": "Maktesh - Calmet says this signifies a mortar, or a rock in form of a mortar, and was the name of a quarter of Jerusalem where they hulled rice, corn, etc., according to St. Jerome. Some think the city of Jerusalem is meant, where the inhabitants should be beat and pounded to death as grain is pounded in a mortar. Newcome translates it, the lower city, and considers it the valley in Jerusalem, which divided the upper from the lower city. They that bear silver - The merchants, moneychangers, usurers, rich men.",
+      "text_sha256": "aba6a748108926ba422e58a973ad47aa66dd098938f21deb27e19c32efb3739f",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[12]",
+      "scope": "Bible:ZEP.1.12",
+      "label": "",
+      "native_number": 12,
+      "text": "I will search Jerusalem with candles - I will make a universal and thorough search.\nThat are settled on their lees - Those who are careless, satisfied with the goods of this life; who trust in their riches, and are completely irreligious; who, while they acknowledge that there is a God, think, like the Aristotelians, that he is so supremely happy in the contemplation of his own excellences, that he feels it beneath his dignity to concern himself with the affairs of mortals. \n",
+      "normalized_text": "I will search Jerusalem with candles - I will make a universal and thorough search. That are settled on their lees - Those who are careless, satisfied with the goods of this life; who trust in their riches, and are completely irreligious; who, while they acknowledge that there is a God, think, like the Aristotelians, that he is so supremely happy in the contemplation of his own excellences, that he feels it beneath his dignity to concern himself with the affairs of mortals.",
+      "text_sha256": "c471fe22322a4d09fbb8b77597aff0d221f218fe82c080b0d06c53124802d86e",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[13]",
+      "scope": "Bible:ZEP.1.13",
+      "label": "",
+      "native_number": 13,
+      "text": "Their goods (in which they trust) shall become a booty - To the Chaldeans. They shall have no profit of all their labors. The houses they have built they shall not inhabit; of the wine of the vineyards they have planted, they shall not drink. See Amo 5:11, where we find the same evils threatened. \n",
+      "normalized_text": "Their goods (in which they trust) shall become a booty - To the Chaldeans. They shall have no profit of all their labors. The houses they have built they shall not inhabit; of the wine of the vineyards they have planted, they shall not drink. See Amo 5:11, where we find the same evils threatened.",
+      "text_sha256": "486b8e2954a828c6f080735a2f73affa244d35c5a840b8ca7b33daf7e0654d6a",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[14]",
+      "scope": "Bible:ZEP.1.14",
+      "label": "",
+      "native_number": 14,
+      "text": "The great day of the Lord is near - It commenced with the death of the good king Josiah, who was slain by Pharaoh-necho at Megiddo, and continued to the destruction of Jerusalem by Nebuchadnezzar. \n",
+      "normalized_text": "The great day of the Lord is near - It commenced with the death of the good king Josiah, who was slain by Pharaoh-necho at Megiddo, and continued to the destruction of Jerusalem by Nebuchadnezzar.",
+      "text_sha256": "656d8aaebc8d71903ae08f9691891d33ad345026d1fd9094e1aa0221d7f4baef",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[15]",
+      "scope": "Bible:ZEP.1.15",
+      "label": "",
+      "native_number": 15,
+      "text": "That day is a day of wrath - See Isa 22:5 (note); Jer 30:7 (note); Joe 2:2 (note), Joe 2:11 (note); Amo 5:18 (note); Zep 1:18 (note), and the notes there. From the fourteenth to the sixteenth verse inclusive there is a most beautiful amplification of the disasters that were coming on Jerusalem; the invasion, incursion, attack, carnage, confusion, horrible din occasioned by the sound of the trumpet, the cries of the people, and the shrieks and groans of the dying, are pointed out with great force and mighty effect. \n",
+      "normalized_text": "That day is a day of wrath - See Isa 22:5 (note); Jer 30:7 (note); Joe 2:2 (note), Joe 2:11 (note); Amo 5:18 (note); Zep 1:18 (note), and the notes there. From the fourteenth to the sixteenth verse inclusive there is a most beautiful amplification of the disasters that were coming on Jerusalem; the invasion, incursion, attack, carnage, confusion, horrible din occasioned by the sound of the trumpet, the cries of the people, and the shrieks and groans of the dying, are pointed out with great force and mighty effect.",
+      "text_sha256": "5a2368b394cbf6c6157346328ca6ac88a86600098d2a44192b5c59cce182a729",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[17]",
+      "scope": "Bible:ZEP.1.17",
+      "label": "",
+      "native_number": 17,
+      "text": "They shall walk like blind men - Be in the most perplexing doubt and uncertainty; and while in this state, have their blood poured out by the sword of their enemies, and their flesh trodden under foot. \n",
+      "normalized_text": "They shall walk like blind men - Be in the most perplexing doubt and uncertainty; and while in this state, have their blood poured out by the sword of their enemies, and their flesh trodden under foot.",
+      "text_sha256": "b69bbaa81dee95127c75278847dd6921060df22658fecc9d0f8e55e670390fb9",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[18]",
+      "scope": "Bible:ZEP.1.18",
+      "label": "",
+      "native_number": 18,
+      "text": "Their silver nor their gold - In which they trusted, and from which they expected happiness; these shall not profit them in this awful day. And God will bring this about speedily; and a speedy riddance - a universal desolation, shall in a short time take place in every part of the land.\n\n",
+      "normalized_text": "Their silver nor their gold - In which they trusted, and from which they expected happiness; these shall not profit them in this awful day. And God will bring this about speedily; and a speedy riddance - a universal desolation, shall in a short time take place in every part of the land.",
+      "text_sha256": "cfad42623bc18497f733bb4795a052199ea63d6708683d0a2768c40669457259",
+      "selected": false
+    }
+  ],
+  "selected_units": [
+    {
+      "selector": "book.introduction",
+      "scope": "Bible:ZEP",
+      "label": "",
+      "text": "This chapter begins with denouncing God's judgments against Judah and Jerusalem, Zep 1:1-3. Idolaters, and sinners of several other denominations, are then particularly threatened; and their approaching visitation enlarged on, by the enumeration of several circumstances which tend greatly to heighten its terrors, Zep 1:4-18. \n",
+      "normalized_text": "This chapter begins with denouncing God's judgments against Judah and Jerusalem, Zep 1:1-3. Idolaters, and sinners of several other denominations, are then particularly threatened; and their approaching visitation enlarged on, by the enumeration of several circumstances which tend greatly to heighten its terrors, Zep 1:4-18.",
+      "text_sha256": "4fc08479ccc8ec200c6347d7c5ded87a4eaf407290fb542b788e63b8f43611c7",
+      "selected": true
+    },
+    {
+      "selector": "chapter.content[2]",
+      "scope": "Bible:ZEP.1.2",
+      "label": "",
+      "native_number": 2,
+      "text": "I will utterly consume all things - All being now ripe for destruction, I will shortly bring a universal scourge upon the land. He speaks particularly of the idolaters. \n",
+      "normalized_text": "I will utterly consume all things - All being now ripe for destruction, I will shortly bring a universal scourge upon the land. He speaks particularly of the idolaters.",
+      "text_sha256": "6a24b6b6cad23666751a39bb07555fb173bdd54478c9fbfa655666dc2ae86366",
+      "selected": true
+    },
+    {
+      "selector": "chapter.content[3]",
+      "scope": "Bible:ZEP.1.3",
+      "label": "",
+      "native_number": 3,
+      "text": "I will consume man and beast - By war, and by pestilence. Even the waters shall he infected, and the fish destroyed; the air become contaminated, and the fowls die. \n",
+      "normalized_text": "I will consume man and beast - By war, and by pestilence. Even the waters shall he infected, and the fish destroyed; the air become contaminated, and the fowls die.",
+      "text_sha256": "bf032328c301a107796e3b7ec20e2a0df04ecd82e43dd8ef80c44c90844b78f5",
+      "selected": true
+    }
+  ],
+  "outside_scope": [
+    {
+      "selector": "chapter.content[1]",
+      "scope": "Bible:ZEP.1.1",
+      "label": "",
+      "native_number": 1,
+      "text": "The word of the Lord which came unto Zephaniah - Though this prophet has given us so large a list of his ancestors, yet little concerning him is known, because we know nothing certain relative to the persons of the family whose names are here introduced. We have one chronological note which is of more value for the correct understanding of his prophecy than the other could have been, how circumstantially soever it had been delivered; viz., that he prophesied in the days of Josiah, son of Amon, king of Judah; and from the description which he gives of the disorders which prevailed in Judea in his time, it is evident that he must have prophesied before the reformation made by Josiah, which was in the eighteenth year of his reign. And as he predicts the destruction of Nineveh, Zep 2:13, which, as Calmet remarks, could not have taken place before the sixteenth of Josiah, allowing with Berosus twenty-one years for the reign of Nabopolassar over the Chaldeans; we must, therefore, place this prophecy about the beginning of the reign of Josiah, or from b.c. 640 to b.c. 609. But see the chronological notes. \n",
+      "normalized_text": "The word of the Lord which came unto Zephaniah - Though this prophet has given us so large a list of his ancestors, yet little concerning him is known, because we know nothing certain relative to the persons of the family whose names are here introduced. We have one chronological note which is of more value for the correct understanding of his prophecy than the other could have been, how circumstantially soever it had been delivered; viz., that he prophesied in the days of Josiah, son of Amon, king of Judah; and from the description which he gives of the disorders which prevailed in Judea in his time, it is evident that he must have prophesied before the reformation made by Josiah, which was in the eighteenth year of his reign. And as he predicts the destruction of Nineveh, Zep 2:13, which, as Calmet remarks, could not have taken place before the sixteenth of Josiah, allowing with Berosus twenty-one years for the reign of Nabopolassar over the Chaldeans; we must, therefore, place this prophecy about the beginning of the reign of Josiah, or from b.c. 640 to b.c. 609. But see the chronological notes.",
+      "text_sha256": "61a1142e70e84bacbe7f0146a1a6edd4089850b831b3d06c748db28d3ec27d85",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[4]",
+      "scope": "Bible:ZEP.1.4",
+      "label": "",
+      "native_number": 4,
+      "text": "I will cut off the remnant of Baal - I think he refers here, partly at least, to the reformation which Josiah was to bring about. See the account, Kg2 23:5 (note).\nThe Chemarims - The black-robed priests of different idols. See the note on Kg2 23:6. These were put down by Josiah. \n",
+      "normalized_text": "I will cut off the remnant of Baal - I think he refers here, partly at least, to the reformation which Josiah was to bring about. See the account, Kg2 23:5 (note). The Chemarims - The black-robed priests of different idols. See the note on Kg2 23:6. These were put down by Josiah.",
+      "text_sha256": "955b0750d56a0f1fa6bd1837c1a5ce76f8aa4267b168b25e878572629b01fc51",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[5]",
+      "scope": "Bible:ZEP.1.5",
+      "label": "",
+      "native_number": 5,
+      "text": "The host of heaven - Sun, moon, planets, and stars. This worship was one of the most ancient and the most common of all species of idolatry; and it had a greater semblance of reason to recommend it. See Kg2 23:6, Kg2 23:12; Jer 19:13; Jer 32:29.\nThat swear by the Lord, and that swear by Malcham - Associating the name of an idol with that of the Most High. For Malcham, see on Hos 4:15 (note), and Amo 5:26 (note). \n",
+      "normalized_text": "The host of heaven - Sun, moon, planets, and stars. This worship was one of the most ancient and the most common of all species of idolatry; and it had a greater semblance of reason to recommend it. See Kg2 23:6, Kg2 23:12; Jer 19:13; Jer 32:29. That swear by the Lord, and that swear by Malcham - Associating the name of an idol with that of the Most High. For Malcham, see on Hos 4:15 (note), and Amo 5:26 (note).",
+      "text_sha256": "5647d0c9f5a0c6a8b7411bac890ec233fff19b03d3fd5ceef99c71055224c1f2",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[6]",
+      "scope": "Bible:ZEP.1.6",
+      "label": "",
+      "native_number": 6,
+      "text": "Them that are turned back - Who have forsaken the true God, and become idolaters.\nNor inquired for him - Have not desired to know his will. \n",
+      "normalized_text": "Them that are turned back - Who have forsaken the true God, and become idolaters. Nor inquired for him - Have not desired to know his will.",
+      "text_sha256": "c28124c8f5399f7e3ded089a6287dc4d7f11836e59657103f14ddc6beec3b64c",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[7]",
+      "scope": "Bible:ZEP.1.7",
+      "label": "",
+      "native_number": 7,
+      "text": "Hold thy peace at the presence of the Lords God - הס has, the same as hush, hist, among us. Remonstrances are now useless. You had time to acquaint yourselves with God; you would not: you cry now in vain; destruction is at the door.\nThe Lord hath prepared a sacrifice - A slaughter of the people.\nHe hath bid his guests - The Babylonians, to whom he has given a commission to destroy you. In all festivals sacrifices,\n1. The victims were offered to God, and their blood poured out before the altar.\n2. The people who were invited feasted upon the sacrifice. See on Isa 34:6 (note). \n",
+      "normalized_text": "Hold thy peace at the presence of the Lords God - הס has, the same as hush, hist, among us. Remonstrances are now useless. You had time to acquaint yourselves with God; you would not: you cry now in vain; destruction is at the door. The Lord hath prepared a sacrifice - A slaughter of the people. He hath bid his guests - The Babylonians, to whom he has given a commission to destroy you. In all festivals sacrifices, 1. The victims were offered to God, and their blood poured out before the altar. 2. The people who were invited feasted upon the sacrifice. See on Isa 34:6 (note).",
+      "text_sha256": "541cbc7c1fa70546c87527c430ad3ddb1a91fe710c32e1f84982cfb410322a84",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[8]",
+      "scope": "Bible:ZEP.1.8",
+      "label": "",
+      "native_number": 8,
+      "text": "I will punish the princes, and the king's children - After the death of Josiah the kingdom of Judah saw no prosperity, and every reign terminated miserably; until at last King Zedekiah and the king's children were cruelly massacred at Riblah, when Nebuchadnezzar had taken Jerusalem.\nStrange apparel - I really think this refers more to their embracing idolatrous customs and heathen usages, than to their changing their dress. They acquired new habits, as we would say; customs, that they used as they did their clothing - at all times, and in every thing. \n",
+      "normalized_text": "I will punish the princes, and the king's children - After the death of Josiah the kingdom of Judah saw no prosperity, and every reign terminated miserably; until at last King Zedekiah and the king's children were cruelly massacred at Riblah, when Nebuchadnezzar had taken Jerusalem. Strange apparel - I really think this refers more to their embracing idolatrous customs and heathen usages, than to their changing their dress. They acquired new habits, as we would say; customs, that they used as they did their clothing - at all times, and in every thing.",
+      "text_sha256": "351eb46ea4566c469b19f928c74db7c870b62bf424b8198c3080b96fffb61d5d",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[9]",
+      "scope": "Bible:ZEP.1.9",
+      "label": "",
+      "native_number": 9,
+      "text": "That leap on the threshold - Or, that leap over the threshold. It is most probable that the Philistines are here meant. After the time that Dagon fell before the ark, and his hands were broken off on the threshold of his temple, his worshippers would no more set a foot upon the threshold, but stepped or leaped over it, when they entered into his temple. The Chaldee understands this of the Philistines, without giving this reason for it. Some understand it of haughtiness and pride: others think that leaping on the threshold refers to the customs of the Arabs, who used to ride into people's houses and take away whatever they could carry; and that this is the reason why, in several parts of the East, they have their doors made very low, to prevent those depredators from entering. In this manner, we learn the Persians have frequently oppressed the poor Armenians, going on horseback into their houses, and taking whatever they thought proper. Mr. Harmer understands it in this way. \n",
+      "normalized_text": "That leap on the threshold - Or, that leap over the threshold. It is most probable that the Philistines are here meant. After the time that Dagon fell before the ark, and his hands were broken off on the threshold of his temple, his worshippers would no more set a foot upon the threshold, but stepped or leaped over it, when they entered into his temple. The Chaldee understands this of the Philistines, without giving this reason for it. Some understand it of haughtiness and pride: others think that leaping on the threshold refers to the customs of the Arabs, who used to ride into people's houses and take away whatever they could carry; and that this is the reason why, in several parts of the East, they have their doors made very low, to prevent those depredators from entering. In this manner, we learn the Persians have frequently oppressed the poor Armenians, going on horseback into their houses, and taking whatever they thought proper. Mr. Harmer understands it in this way.",
+      "text_sha256": "f3b9c469988076b7776413d1bce47f57129bd8dcfe9ea24cde849de0573394c1",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[10]",
+      "scope": "Bible:ZEP.1.10",
+      "label": "",
+      "native_number": 10,
+      "text": "A cry from the fish-gate - This gate, which is mentioned Neh 3:3, was opposite to Joppa; and perhaps the way in which the news came of the irruption of the Chaldean army, the great crashing from the hills.\nThe second - Or second city, may here mean a part of Jerusalem, mentioned Kg2 22:14; Ch2 34:22. \n",
+      "normalized_text": "A cry from the fish-gate - This gate, which is mentioned Neh 3:3, was opposite to Joppa; and perhaps the way in which the news came of the irruption of the Chaldean army, the great crashing from the hills. The second - Or second city, may here mean a part of Jerusalem, mentioned Kg2 22:14; Ch2 34:22.",
+      "text_sha256": "aacf89239ea56abe81b009835b30bb2954e8edc644b5d9854f356bd9b741daca",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[11]",
+      "scope": "Bible:ZEP.1.11",
+      "label": "",
+      "native_number": 11,
+      "text": "Maktesh - Calmet says this signifies a mortar, or a rock in form of a mortar, and was the name of a quarter of Jerusalem where they hulled rice, corn, etc., according to St. Jerome. Some think the city of Jerusalem is meant, where the inhabitants should be beat and pounded to death as grain is pounded in a mortar.\nNewcome translates it, the lower city, and considers it the valley in Jerusalem, which divided the upper from the lower city.\nThey that bear silver - The merchants, moneychangers, usurers, rich men. \n",
+      "normalized_text": "Maktesh - Calmet says this signifies a mortar, or a rock in form of a mortar, and was the name of a quarter of Jerusalem where they hulled rice, corn, etc., according to St. Jerome. Some think the city of Jerusalem is meant, where the inhabitants should be beat and pounded to death as grain is pounded in a mortar. Newcome translates it, the lower city, and considers it the valley in Jerusalem, which divided the upper from the lower city. They that bear silver - The merchants, moneychangers, usurers, rich men.",
+      "text_sha256": "aba6a748108926ba422e58a973ad47aa66dd098938f21deb27e19c32efb3739f",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[12]",
+      "scope": "Bible:ZEP.1.12",
+      "label": "",
+      "native_number": 12,
+      "text": "I will search Jerusalem with candles - I will make a universal and thorough search.\nThat are settled on their lees - Those who are careless, satisfied with the goods of this life; who trust in their riches, and are completely irreligious; who, while they acknowledge that there is a God, think, like the Aristotelians, that he is so supremely happy in the contemplation of his own excellences, that he feels it beneath his dignity to concern himself with the affairs of mortals. \n",
+      "normalized_text": "I will search Jerusalem with candles - I will make a universal and thorough search. That are settled on their lees - Those who are careless, satisfied with the goods of this life; who trust in their riches, and are completely irreligious; who, while they acknowledge that there is a God, think, like the Aristotelians, that he is so supremely happy in the contemplation of his own excellences, that he feels it beneath his dignity to concern himself with the affairs of mortals.",
+      "text_sha256": "c471fe22322a4d09fbb8b77597aff0d221f218fe82c080b0d06c53124802d86e",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[13]",
+      "scope": "Bible:ZEP.1.13",
+      "label": "",
+      "native_number": 13,
+      "text": "Their goods (in which they trust) shall become a booty - To the Chaldeans. They shall have no profit of all their labors. The houses they have built they shall not inhabit; of the wine of the vineyards they have planted, they shall not drink. See Amo 5:11, where we find the same evils threatened. \n",
+      "normalized_text": "Their goods (in which they trust) shall become a booty - To the Chaldeans. They shall have no profit of all their labors. The houses they have built they shall not inhabit; of the wine of the vineyards they have planted, they shall not drink. See Amo 5:11, where we find the same evils threatened.",
+      "text_sha256": "486b8e2954a828c6f080735a2f73affa244d35c5a840b8ca7b33daf7e0654d6a",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[14]",
+      "scope": "Bible:ZEP.1.14",
+      "label": "",
+      "native_number": 14,
+      "text": "The great day of the Lord is near - It commenced with the death of the good king Josiah, who was slain by Pharaoh-necho at Megiddo, and continued to the destruction of Jerusalem by Nebuchadnezzar. \n",
+      "normalized_text": "The great day of the Lord is near - It commenced with the death of the good king Josiah, who was slain by Pharaoh-necho at Megiddo, and continued to the destruction of Jerusalem by Nebuchadnezzar.",
+      "text_sha256": "656d8aaebc8d71903ae08f9691891d33ad345026d1fd9094e1aa0221d7f4baef",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[15]",
+      "scope": "Bible:ZEP.1.15",
+      "label": "",
+      "native_number": 15,
+      "text": "That day is a day of wrath - See Isa 22:5 (note); Jer 30:7 (note); Joe 2:2 (note), Joe 2:11 (note); Amo 5:18 (note); Zep 1:18 (note), and the notes there. From the fourteenth to the sixteenth verse inclusive there is a most beautiful amplification of the disasters that were coming on Jerusalem; the invasion, incursion, attack, carnage, confusion, horrible din occasioned by the sound of the trumpet, the cries of the people, and the shrieks and groans of the dying, are pointed out with great force and mighty effect. \n",
+      "normalized_text": "That day is a day of wrath - See Isa 22:5 (note); Jer 30:7 (note); Joe 2:2 (note), Joe 2:11 (note); Amo 5:18 (note); Zep 1:18 (note), and the notes there. From the fourteenth to the sixteenth verse inclusive there is a most beautiful amplification of the disasters that were coming on Jerusalem; the invasion, incursion, attack, carnage, confusion, horrible din occasioned by the sound of the trumpet, the cries of the people, and the shrieks and groans of the dying, are pointed out with great force and mighty effect.",
+      "text_sha256": "5a2368b394cbf6c6157346328ca6ac88a86600098d2a44192b5c59cce182a729",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[17]",
+      "scope": "Bible:ZEP.1.17",
+      "label": "",
+      "native_number": 17,
+      "text": "They shall walk like blind men - Be in the most perplexing doubt and uncertainty; and while in this state, have their blood poured out by the sword of their enemies, and their flesh trodden under foot. \n",
+      "normalized_text": "They shall walk like blind men - Be in the most perplexing doubt and uncertainty; and while in this state, have their blood poured out by the sword of their enemies, and their flesh trodden under foot.",
+      "text_sha256": "b69bbaa81dee95127c75278847dd6921060df22658fecc9d0f8e55e670390fb9",
+      "selected": false
+    },
+    {
+      "selector": "chapter.content[18]",
+      "scope": "Bible:ZEP.1.18",
+      "label": "",
+      "native_number": 18,
+      "text": "Their silver nor their gold - In which they trusted, and from which they expected happiness; these shall not profit them in this awful day. And God will bring this about speedily; and a speedy riddance - a universal desolation, shall in a short time take place in every part of the land.\n\n",
+      "normalized_text": "Their silver nor their gold - In which they trusted, and from which they expected happiness; these shall not profit them in this awful day. And God will bring this about speedily; and a speedy riddance - a universal desolation, shall in a short time take place in every part of the land.",
+      "text_sha256": "cfad42623bc18497f733bb4795a052199ea63d6708683d0a2768c40669457259",
+      "selected": false
+    }
+  ],
+  "outside_scope_unit_count": 15,
+  "identity": {
+    "work_id": "adam-clarke",
+    "textual_form_id": "adam-clarke-commentary",
+    "edition_id": "adam-clarke-commentary-fixture"
+  },
+  "edition_title": "Adam Clarke commentary: Zephaniah 1",
+  "representation_revision": "commentary-fixture-v1",
+  "tei_sha256": "cdd5ef326f62aa3f5313abb7d2162068cd5fb4b036695150b97dd385c653b156",
+  "scope_id": "adam-clarke-zep---selection"
+}

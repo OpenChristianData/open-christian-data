@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/topical-indexes.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "language",
+    "text",
+    "representation_revision",
+    "provenance",
+    "category",
+    "topic",
+    "locator",
+    "items"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "category": {
+      "const": "topical_indexes"
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "heading"
+      ],
+      "properties": {
+        "kind": {
+          "const": "topic"
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "references"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "label",
+                "target"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "scripture",
+                    "topic",
+                    "source-reference-run"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "target": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "alternative_topics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "description": "Ordered explicitly alternate topic headings in the accepted TEI; not related-topic links or inferred synonyms."
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-topical-indexes-bounded-v3",
+    "elements": {
+      "TEI": [
+        "teiHeader",
+        "text"
+      ],
+      "teiHeader": [
+        "fileDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title"
+      ],
+      "title": [],
+      "publicationStmt": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p"
+      ],
+      "p": [],
+      "text": [
+        "body"
+      ],
+      "body": [
+        "div"
+      ],
+      "div": [
+        "head",
+        "list"
+      ],
+      "head": [],
+      "list": [
+        "item"
+      ],
+      "item": [
+        "ref",
+        "label"
+      ],
+      "ref": [],
+      "label": []
+    },
+    "attributes": {
+      "div": [
+        "type",
+        "xml:id"
+      ],
+      "ref": [
+        "type",
+        "cRef",
+        "target"
+      ],
+      "head": [
+        "type"
+      ]
+    },
+    "roles": {
+      "header": "header-metadata",
+      "text": "mapped",
+      "reference_run": "literal-reference-run-not-resolved"
+    },
+    "header_elements": {
+      "teiHeader": [
+        "fileDesc",
+        "revisionDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title",
+        "author"
+      ],
+      "title": [],
+      "author": [],
+      "publicationStmt": [
+        "p",
+        "publisher",
+        "availability"
+      ],
+      "publisher": [],
+      "availability": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p",
+        "bibl"
+      ],
+      "p": [],
+      "bibl": [
+        "ptr",
+        "idno",
+        "note"
+      ],
+      "ptr": [],
+      "idno": [],
+      "note": [],
+      "revisionDesc": [
+        "change"
+      ],
+      "change": []
+    },
+    "header_attributes": {
+      "availability": [
+        "status"
+      ],
+      "ptr": [
+        "target"
+      ],
+      "idno": [
+        "type"
+      ],
+      "note": [
+        "type"
+      ],
+      "change": [
+        "xml:id",
+        "when"
+      ]
+    }
+  }
+}

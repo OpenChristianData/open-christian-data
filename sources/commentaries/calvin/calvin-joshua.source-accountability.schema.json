@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://openchristiandata.org/schemas/source-to-tei/calvin-joshua-accountability-v1.schema.json",
+  "title":"Calvin Joshua title-scoped source accountability",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["contract","profile_sha256","crosswalk_sha256","historical_container_id","title","selected_members","included","sibling_exclusions","group_count","component_count"],
+  "properties":{
+    "contract":{"const":"ocd-calvin-series-accountability-v1"},
+    "profile_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "crosswalk_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "historical_container_id":{"const":"calvin-commentaries"},
+    "title":{"const":"Commentary on Joshua"},
+    "selected_members":{"const":["calcom07.xml"]},
+    "included":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"object","additionalProperties":false,"required":["member","path","role","bytes","sha256","wrapper_sha256","mapped_selector_count"],"properties":{"member":{"enum":["commentaries.xml","calcom07.xml"]},"path":{"type":"string"},"role":{"enum":["shared-catalogue-front-matter","primary-commentary-source"]},"bytes":{"type":"integer","minimum":1},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"wrapper_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"mapped_selector_count":{"type":"integer","minimum":1}}}},
+    "sibling_exclusions":{"type":"array","minItems":44,"maxItems":44,"items":{"type":"object","additionalProperties":false,"required":["member","group","disposition"],"properties":{"member":{"type":"string","pattern":"^calcom[0-9]{2}\\.xml$"},"group":{"type":"string","minLength":1},"disposition":{"const":"sibling-title-excluded-from-this-TEI"}}}},
+    "group_count":{"const":19},
+    "component_count":{"const":45}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "independent lxml source parse versus html5lib converter",
+    "complete normalized wording in sourceorder",
+    "365numbered letterheads",
+    "heading level and order",
+    "paragraph/link/media relationships",
+    "table ownership/cell spans",
+    "P5schema",
+    "fresh deterministic replay and located mutations"
+  ],
+  "contract": "ocd-rutherford-pg42557-validation-policy-v1",
+  "shared_assumptions": [
+    "Same retained electronic witness, same TEI schema, lxmlserialization/schemaimplementation; independent source parser paths.",
+    "Provider proofreading credited; its individual corrections not re-audited."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "contract": "ocd-standard-ebooks-validation-policy-v1",
+  "policy_id": "practical-mysticism-complete-source-to-tei-v1",
+  "version": 1,
+  "work_id": "practical-mysticism",
+  "image_policy": "exact-bytes-data-uri",
+  "candidate_status": "nonaccepted",
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "required_counts": {"source_members": 33, "source_bytes": 4902244, "readable_xhtml_members": 18, "spine_members": 18, "toc_members": 1, "embedded_epub_images": 3},
+  "checks": [
+    "exact-retained-tree-member-set-and-hashes",
+    "opf-spine-and-matter-order",
+    "complete-source-carrier-accounting",
+    "all-non-readable-members-explicitly-dispositioned",
+    "exact-relative-image-resolution-and-byte-embedding",
+    "source-bound-header-and-edition-separation",
+    "tei-p5-xsd",
+    "fresh-process-determinism",
+    "producer-independent-oracle",
+    "candidate-separated-from-human-acceptance"
+  ]
+}

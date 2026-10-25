@@ -1,0 +1,71 @@
+{
+  "contract": "ocd-watson-runtime-supplement-v1",
+  "work_id": "watson-divine-contentment",
+  "claim": "Current unchanged oracle validates byte-identical substantive candidate members; existing accepted master and acceptance remain unchanged.",
+  "acceptance": {
+    "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acceptance.json",
+    "bytes": 8181,
+    "sha256": "3b6eb16a79265fe18685cd926d04f6c517e03d4494bd8fe6cdf3229aeccca601"
+  },
+  "bindings": [
+    {
+      "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/master.tei.xml",
+      "bytes": 332947,
+      "sha256": "c72641deb76db40c5fb95e2152b04df683ac714dbaee73f90cb9c62c31805e8f"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-proof-20261012.source-manifest.json",
+      "bytes": 5532,
+      "sha256": "2dad666358b483f14497ee76a836efdcc4f4e5fd5bf5bfb911f947cfa070fdb9"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-proof-20261021.source-manifest.json",
+      "bytes": 5394,
+      "sha256": "f3722a961f60ef11012744386d8dbcf924016181c112b6b09592d774b9e0d42a"
+    },
+    {
+      "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acquisitions/watson-divine-contentment-ccel-retained.json",
+      "bytes": 3835,
+      "sha256": "adcaf589768062fb60b3577031fc8d8c33f0286e4f57a1c8234716f6f8630ce2"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-supplement-20261021.json",
+      "bytes": 4146,
+      "sha256": "2bf652d2cec38d17da378409afcf50abe5d537afa092e7bad245c683bc66da80"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-proof-20261025.source-manifest.json",
+      "bytes": 5394,
+      "sha256": "c9e1db589ce8b05c2ba1d5e56aa57881c274504f8d1d81c5de047de0ba103aeb"
+    }
+  ],
+  "authority_changes": [
+    {
+      "name": "closure-identities",
+      "path": "ocd_kernel/library/identities.py",
+      "before": {
+        "bytes": 21331,
+        "sha256": "2ca820099d6952907fcfd94e0ae5bf0e7dd897273587c0318423f4d7ce4c402c"
+      },
+      "after": {
+        "bytes": 21850,
+        "sha256": "e4a0cb972707d575e254291993d900f90f7192c9755714aec39fba4b71ebb401"
+      }
+    }
+  ],
+  "previous_package_sha256": "3cc864e82ba6cf619cb4a658a98483a82c93773211bed9879285575bb041982b",
+  "current_package_sha256": "72f2533c09335285512d2fb0f98bacb11dbd5158d56f56718c9bfb43125215c1",
+  "validation": {
+    "path": "library/works/watson-divine-contentment/integration/runtime-proof-20261025/current-candidate/validation.json",
+    "bytes": 1512,
+    "sha256": "5d58ddf0c53ca87127ddcb12c5a5a97493296d2490cdded20ae0ebd3259b87d9"
+  },
+  "source_sha256": "767ed95de4c4c990480670084e8dd1ac16b6c61d50b864e8b0202e528a076d7b",
+  "unchanged_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ]
+}

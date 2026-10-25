@@ -1,0 +1,56 @@
+{
+  "contract": "edwards-religious-affections-independent-validation-policy-v1",
+  "work_id": "edwards-religious-affections",
+  "scope": "The sole primary member is the complete retained ThML document. Preserve its complete header and document-shell inventory, all eight ordered top-level div1 roots, and every body descendant; no neighboring CCEL work is in scope.",
+  "body_policy": "Every supported body element is projected once in source order to standard TEI. Preserve exact direct text and child tails. The independent reader separately enumerates all source body elements and all TEI body elements, then compares order, shape, source IDs, significant source attributes, text, and tails.",
+  "attribute_policy": "Record every source element attribute exactly in source-accountability.json. Map source IDs to xml:id, links and scripture targets without normalization, note place/number, and source presentation classes/styles to TEI rend/type where applicable. Navigation title/progress/prev/next attributes remain source metadata and do not establish edition or part identity.",
+  "shell_policy": "Record the XML declaration, external DOCTYPE identifiers, prolog/epilog nodes, processing instructions, comments, and complete ThML.head element inventory. The external DTD is never fetched. Non-body comments and processing instructions are accounted for but not emitted as TEI content.",
+  "metadata_policy": "Preserve provider-record title, creator, publisher, record-created date, language, subjects, description, empty source/rights fields, and all other header values as source observations. Do not infer print edition, publication year, translator, rights clearance, or canonical part/witness boundaries.",
+  "required_body_tags": [
+    "a", "added", "div", "div1", "div2", "h1", "h2", "i", "insertIndex", "note", "p", "scripCom", "scripRef", "span"
+  ],
+  "unresolved_records": [
+    {
+      "question_id": "work-boundary",
+      "status": "unresolved",
+      "question": "Does this retained CCEL record represent exactly the standalone work identified by the work ID, rather than a broader or revised textual scope?",
+      "evidence": "The source record supplies the title Religious Affections and creator Jonathan Edwards. No independent print-edition or complete-work boundary statement was found in the retained envelope.",
+      "next_action": "Resolve from primary-source or reviewed owner evidence; retain this candidate as nonaccepted until then."
+    },
+    {
+      "question_id": "textual-form-and-translation",
+      "status": "unresolved",
+      "question": "Which revision or translation is represented, and is any translator attributable to this exact retained text?",
+      "evidence": "The provider record reports language eng but no translator or revision statement.",
+      "next_action": "Keep textual-form and translator identity unasserted pending work-specific evidence."
+    },
+    {
+      "question_id": "edition-and-date",
+      "status": "unresolved",
+      "question": "Which print edition or imprint underlies this CCEL electronic record, and what publication date belongs to that edition?",
+      "evidence": "The provider description says written in 1746, while DC.Date records Created 2000-07-09. PrintSourceInfo and pubHistory are empty; neither date establishes a print edition or publication year.",
+      "next_action": "Resolve only from primary bibliographic evidence; do not promote either source statement to an edition date."
+    },
+    {
+      "question_id": "parts-and-source-structure",
+      "status": "unresolved",
+      "question": "How do the source's eight div1 containers relate to the work's authoritative part, volume, or constituent-work boundaries?",
+      "evidence": "The source contains eight ordered div1 roots, including title page, introduction, three labeled parts/sign groupings, acknowledgements, and indexes; div1 v and vi divide the source's Part III asymmetrically.",
+      "next_action": "Preserve the source hierarchy verbatim and await reviewed part-boundary evidence."
+    },
+    {
+      "question_id": "witness-relationship",
+      "status": "unresolved",
+      "question": "What print or electronic witness relationship does this exact retained XML member represent?",
+      "evidence": "One retained XML member is hash-bound; the header does not identify a print witness or edition statement.",
+      "next_action": "Keep the exact byte member binding without asserting a physical, manuscript, or print witness identity."
+    },
+    {
+      "question_id": "rights-clearance",
+      "status": "unresolved",
+      "question": "Are rights and publication conditions cleared for the reconstructed candidate?",
+      "evidence": "The source DC.Rights element is empty. CCEL parsing permission and attribution guidance do not constitute a project rights-clearance decision.",
+      "next_action": "Keep rights clearance and publication authorization separate from technical reconstruction."
+    }
+  ]
+}

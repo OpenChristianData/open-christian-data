@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-mark-validation-policy-v1",
+  "policy_id": "mark-complete-source-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_feature_count": 2405,
+  "tei_header": {
+    "title": "The Expositor's Bible: The Gospel According to St. Mark",
+    "author": "G. A. Chadwick",
+    "contributors": ["William Robertson Nicoll (series editor)"],
+    "source_url": "https://www.ccel.org/ccel/chadwick/mark.html",
+    "print_source": "London: Hodder & Stoughton, 1896 (as stated by the retained CCEL rendering; no print collation)",
+    "availability_status": "restricted",
+    "rights_statement": "Underlying text is public domain. CCEL permits parsing this ThML; do not sell CCEL files or derivatives of their formatting. Attribution to CCEL is included in README.source.md."
+  },
+  "required_unresolved_ids": [
+    "mark-print-collation-not-performed",
+    "mark-rights-acceptance-review"
+  ],
+  "forbidden_import_prefixes": [
+    "build.lib.ccel_thml",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.case_declaration",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.verifier_process",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "checks": [
+    "source-authority-digests",
+    "candidate-package-integrity",
+    "complete-source-feature-crosswalk",
+    "exact-depth-first-order-and-hierarchy",
+    "exact-text-tail-and-attribute-projection",
+    "complete-bound-tei-header",
+    "tei-p5-xsd",
+    "rights-and-attribution",
+    "localized-unresolved-claims",
+    "producer-independent-import-closure"
+  ]
+}

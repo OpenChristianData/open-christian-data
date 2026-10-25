@@ -1,0 +1,486 @@
+{
+  "version": "ocd-metadata-labels-v2",
+  "languages": {
+    "en": "en",
+    "eng": "en",
+    "la": "la",
+    "lat": "la",
+    "grc": "grc",
+    "syc": "syc",
+    "pt": "pt",
+    "por": "pt",
+    "mul": "mul",
+    "nl": "nl",
+    "nld": "nl",
+    "fr": "fr",
+    "fra": "fr",
+    "de": "de",
+    "deu": "de",
+    "es": "es",
+    "spa": "es"
+  },
+  "providers": {
+    "monergism": "monergism",
+    "monergism books": "monergism",
+    "newman reader": "newman-reader",
+    "newman-reader": "newman-reader",
+    "ccel": "ccel",
+    "christian classics ethereal library": "ccel",
+    "project gutenberg": "gutenberg",
+    "project gutenberg; exact extracted html representation of the retained zip": "gutenberg",
+    "monumenta germaniae historica (openmgh)": "openmgh",
+    "nonlinearfruit/creeds.json": "creeds-json",
+    "docsouth.unc.edu": "docsouth",
+    "text creation partnership": "tcp",
+    "internet archive": "internet-archive",
+    "internet archive / princeton theological seminary library": "internet-archive",
+    "covenanter.org": "covenanter",
+    "covenanter": "covenanter",
+    "standard ebooks": "standard-ebooks",
+    "ebible.org": "ebible",
+    "wikisource": "wikisource",
+    "the westminster standard": "westminster-standard",
+    "helloao bible api": "helloao",
+    "patristic text archive (pta)": "pta",
+    "aosis / african journal of pentecostal studies": "aosis-ajops",
+    "crosswire bible society": "crosswire",
+    "scrollmapper/bible_databases": "scrollmapper",
+    "scrollmapper bible_databases repository (per retained asv config)": "scrollmapper",
+    "biblecorps": "biblecorps",
+    "crosswire": "crosswire",
+    "justus anglican": "justus-anglican",
+    "retained 1662 bcp html providers": "bcp1662-retained-provider-set",
+    "retained 1662 bcp html provider": "bcp1662-retained-provider-set",
+    "episcopalnet": "episcopalnet",
+    "new advent": "new-advent",
+    "commentaries-database retained tree": "historicalchristianfaith-commentaries-database",
+    "jwbickel/bibledictionaries": "jwbickel-bible-dictionaries",
+    "dbnl": "dbnl",
+    "hymnary.org": "hymnary",
+    "opengreekandlatin/first1kgreek": "ogl-first1kgreek",
+    "open english bible project": "open-english-bible",
+    "janvier-s/original-douay-rheims": "janvier-s-original-douay-rheims",
+    "anabaptists.org": "anabaptists-org",
+    "patristic text archive": "pta",
+    "kingdom collective and supplemental retained witnesses": "spurgeon-retained-provider-set",
+    "creeds.json": "creeds-json",
+    "theologai": "theologai"
+  },
+  "roles": {
+    "author": "aut",
+    "coauthor": "aut",
+    "translator": "trl",
+    "editor": "edt",
+    "compiler": "com",
+    "illustrator": "ill",
+    "introduction author": "win",
+    "appendix author": "wst",
+    "everyman's library series editor": "edt",
+    "series_editor": "edt",
+    "series editor": "edt",
+    "contributor": "ctb",
+    "annotator": "ann",
+    "transcriber": "trc",
+    "sender": "crp",
+    "dictator": "ocd:dictator"
+  },
+  "authorities": {
+    "roles": "https://www.loc.gov/marc/relators/relaterm.html",
+    "languages": "docs/adr/0010-biblical-language-iso-codes.md",
+    "ocd:dictator": "docs/STRUCTURED_METADATA.md#local-relators"
+  },
+  "formats": {
+    "thml xml": "thml",
+    "ccel thml xml": "thml",
+    "json": "json",
+    "xhtml": "xhtml",
+    "html": "html",
+    "plain text (utf-8)": "text",
+    "plain text (ocr from ia scan)": "text",
+    "djvutxt (ocr)": "djvutxt",
+    "project gutenberg html with images (utf-8)": "html",
+    "project gutenberg html (utf-8)": "html",
+    "tei p5 xml (eebo-tcp phase i)": "tei",
+    "sword zcom (blocktype=chapter, compresstype=zip, sourcetype=thml)": "sword-zcom",
+    "sword zcom (blocktype=book, compresstype=zip, sourcetype=osis)": "sword-zcom",
+    "project gutenberg plain text (utf-8)": "text",
+    "sword zcom (blocktype=book, compresstype=zip, sourcetype=thml)": "sword-zcom",
+    "sword rawld (sourcetype=thml)": "sword-rawld",
+    "csv": "csv",
+    "wikisource wikitext (json api)": "wikitext",
+    "logos web reader (limited view mode html)": "html",
+    "djvu ocr plain text": "text",
+    "djvu ocr plain text (vols 1-6); project gutenberg plain text (vols 7-8)": "text",
+    "four official project gutenberg html zip packages": "html",
+    "ebible usfm authority package with usfx comparison carrier": "multiple",
+    "online library of liberty epub, text-based ebook pdf, and facsimile pdf": "multiple",
+    "toml member tree": "toml",
+    "_djvu.txt ocr (google books, abbyy finereader)": "text",
+    "project gutenberg tei p4 source package with html, text, and pdf witnesses": "multiple",
+    "project gutenberg current html with legacy text and zip container witnesses": "multiple",
+    "html transcription cached as extracted utf-8 text": "text",
+    "project gutenberg xhtml 1.0 source with current html, utf-8 text, and html container witnesses": "multiple",
+    "json source tree in a github tag archive": "json",
+    "ebible usfm source package, with usfx comparison carrier and retained print witnesses": "multiple",
+    "project gutenberg legacy xhtml with current html, utf-8 text, and html zip witnesses": "multiple"
+  },
+  "provider_sets": {
+    "bcp1662-retained-provider-set": {
+      "kind": "provider-set",
+      "description": "Retained BCP 1662 HTML cohort; acquisition URL identifies the leading carrier, not each member provider."
+    },
+    "spurgeon-retained-provider-set": {
+      "kind": "provider-set",
+      "description": "Kingdom Collective cohort with supplemental retained witnesses; does not attribute all members to Kingdom Collective."
+    }
+  },
+  "format_descriptions": {
+    "sword zcom (blocktype=chapter, compresstype=zip, sourcetype=thml)": {
+      "representations": [
+        {
+          "format": "thml",
+          "encoding": "utf-8",
+          "packaging": "sword-zcom-zip",
+          "production": null
+        }
+      ]
+    },
+    "sword zcom (blocktype=book, compresstype=zip, sourcetype=osis)": {
+      "representations": [
+        {
+          "format": "osis",
+          "encoding": "utf-8",
+          "packaging": "sword-zcom-zip",
+          "production": null
+        }
+      ]
+    },
+    "project gutenberg plain text (utf-8)": {
+      "representations": [
+        {
+          "format": "text",
+          "encoding": "utf-8",
+          "packaging": null,
+          "production": null
+        }
+      ]
+    },
+    "sword zcom (blocktype=book, compresstype=zip, sourcetype=thml)": {
+      "representations": [
+        {
+          "format": "thml",
+          "encoding": null,
+          "packaging": "sword-zcom-zip",
+          "production": null
+        }
+      ]
+    },
+    "sword rawld (sourcetype=thml)": {
+      "representations": [
+        {
+          "format": "thml",
+          "encoding": null,
+          "packaging": "sword-rawld",
+          "production": null
+        }
+      ]
+    },
+    "csv": {
+      "representations": [
+        {
+          "format": "csv",
+          "encoding": null,
+          "packaging": null,
+          "production": null
+        }
+      ]
+    },
+    "wikisource wikitext (json api)": {
+      "representations": [
+        {
+          "format": "wikitext",
+          "encoding": null,
+          "packaging": "json-api",
+          "production": null
+        }
+      ]
+    },
+    "logos web reader (limited view mode html)": {
+      "representations": [
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": null
+        }
+      ]
+    },
+    "djvu ocr plain text": {
+      "representations": [
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": "ocr"
+        }
+      ]
+    },
+    "djvu ocr plain text (vols 1-6); project gutenberg plain text (vols 7-8)": {
+      "representations": [
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": "ocr",
+          "scope": "volumes 1-6"
+        },
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "volumes 7-8"
+        }
+      ]
+    },
+    "four official project gutenberg html zip packages": {
+      "representations": [
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null
+        }
+      ]
+    },
+    "ebible usfm authority package with usfx comparison carrier": {
+      "representations": [
+        {
+          "format": "usfm",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null,
+          "scope": "authority"
+        },
+        {
+          "format": "usfx",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null,
+          "scope": "comparison"
+        }
+      ]
+    },
+    "online library of liberty epub, text-based ebook pdf, and facsimile pdf": {
+      "representations": [
+        {
+          "format": "epub",
+          "encoding": null,
+          "packaging": null,
+          "production": null
+        },
+        {
+          "format": "pdf",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "text-based eBook"
+        },
+        {
+          "format": "pdf",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "facsimile"
+        }
+      ]
+    },
+    "toml member tree": {
+      "representations": [
+        {
+          "format": "toml",
+          "encoding": null,
+          "packaging": "member-tree",
+          "production": null
+        }
+      ]
+    },
+    "_djvu.txt ocr (google books, abbyy finereader)": {
+      "representations": [
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": "ocr"
+        }
+      ]
+    },
+    "project gutenberg tei p4 source package with html, text, and pdf witnesses": {
+      "representations": [
+        {
+          "format": "tei-p4",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "primary"
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "comparison"
+        },
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "comparison"
+        },
+        {
+          "format": "pdf",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "comparison"
+        }
+      ]
+    },
+    "project gutenberg current html with legacy text and zip container witnesses": {
+      "representations": [
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "primary"
+        },
+        {
+          "format": "text",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "legacy comparison"
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null
+        }
+      ]
+    },
+    "html transcription cached as extracted utf-8 text": {
+      "representations": [
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": "transcription",
+          "scope": "upstream origin; not asserted as a retained HTML carrier"
+        },
+        {
+          "format": "text",
+          "encoding": "utf-8",
+          "packaging": null,
+          "production": "extracted-text",
+          "scope": "retained extracted text carrier"
+        }
+      ]
+    },
+    "project gutenberg xhtml 1.0 source with current html, utf-8 text, and html container witnesses": {
+      "representations": [
+        {
+          "format": "xhtml",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "primary"
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": null
+        },
+        {
+          "format": "text",
+          "encoding": "utf-8",
+          "packaging": null,
+          "production": null
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null
+        }
+      ]
+    },
+    "json source tree in a github tag archive": {
+      "representations": [
+        {
+          "format": "json",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null
+        }
+      ]
+    },
+    "ebible usfm source package, with usfx comparison carrier and retained print witnesses": {
+      "representations": [
+        {
+          "format": "usfm",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null,
+          "scope": "authority"
+        },
+        {
+          "format": "usfx",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null,
+          "scope": "comparison"
+        },
+        {
+          "format": "pdf",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "retained print comparison"
+        }
+      ]
+    },
+    "project gutenberg legacy xhtml with current html, utf-8 text, and html zip witnesses": {
+      "representations": [
+        {
+          "format": "xhtml",
+          "encoding": null,
+          "packaging": null,
+          "production": null,
+          "scope": "primary"
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": null,
+          "production": null
+        },
+        {
+          "format": "text",
+          "encoding": "utf-8",
+          "packaging": null,
+          "production": null
+        },
+        {
+          "format": "html",
+          "encoding": null,
+          "packaging": "zip",
+          "production": null
+        }
+      ]
+    }
+  }
+}

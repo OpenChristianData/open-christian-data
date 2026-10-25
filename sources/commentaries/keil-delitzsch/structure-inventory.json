@@ -1,0 +1,4543 @@
+{
+  "contract": "ocd-source-structure-inventory-v1",
+  "version": 1,
+  "work_id": "keil-delitzsch",
+  "source_id": "helloao-keil-delitzsch-complete-retained-json",
+  "source_root": "raw/helloao_local/api/c/keil-delitzsch",
+  "scope": {
+    "selection": "84 exact detector carriers plus the parent-observed retained Isaiah book-introduction carrier",
+    "carrier_count": 85,
+    "rendered_carrier_count": 4,
+    "evidence_only_carrier_count": 81,
+    "heading_span_count": 421,
+    "paragraph_policy": {
+      "contract": "ocd-source-paragraph-segmentation-v1",
+      "delimiter": "\n\n",
+      "mode": "split-every-exact-double-newline",
+      "carrier_total_count": 6949,
+      "carrier_count_with_delimiter": 594,
+      "delimiter_count": 1826
+    },
+    "detector": {
+      "pattern": "(?:\\A|\\n\\n)(?P<head>[IVXLC]+\\.\\s+[A-Z][^\\n]{2,159}?)(?=\\n\\n|\\Z)",
+      "carrier_count": 84,
+      "heading_match_count": 202,
+      "claim": "Detector output selected explicit source spans; title and introduction blocks were added only for the three repeated book-introduction texts and the parent-observed Isaiah carrier."
+    },
+    "source_supported_unheaded_blocks": [
+      "The Book of 2 Samuel",
+      "Introduction to 2 Samuel",
+      "The Prophecies of Ezekiel",
+      "Introduction",
+      "Review of Ezekiel 40-48",
+      "The Prophecies of Daniel",
+      "The Prophecies of Isaiah",
+      "Time of the Prophet"
+    ],
+    "inline_heading_blocks": [
+      {
+        "text": "I. Historical Account of Uzziah-Jotham",
+        "delimiter": " - ",
+        "disposition": "head plus exact delimiter and following prose remain ordered in the section carrier"
+      },
+      {
+        "text": "II. Historical Account of Ahaz and the Syro-Ephraimitish War.",
+        "delimiter": " - ",
+        "disposition": "head plus exact delimiter and following prose remain ordered in the section carrier"
+      }
+    ],
+    "excluded_signals": [
+      {
+        "classification": "parenthetical-note",
+        "examples": [
+          "(For more see the Introduction to 1 Samuel.)",
+          "(Note: ...)"
+        ],
+        "disposition": "retained in the following prose segment; no unsupported note hierarchy is invented"
+      },
+      {
+        "classification": "prose-enumeration",
+        "examples": [
+          "(1.) Kg2 16:1-4."
+        ],
+        "disposition": "retained in prose; it is not promoted to a heading"
+      }
+    ],
+    "out_of_scope": "Other Keil retained book-introduction carriers use exact source paragraph segmentation; potential heading, note, and label semantics remain unpromoted without a pinned source-supported span."
+  },
+  "entries": [
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/1.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 23637,
+      "source_file_sha256": "369952089a9bdf4e5694741601d129b9b6c5bc3c903a82ac9cd692310ef36a5c",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/10.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 26891,
+      "source_file_sha256": "d512031620721b3fafce948fa93a54ed9a78e037a162e18385094d55d1382e30",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/11.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 21254,
+      "source_file_sha256": "dee166d59a3dc1a80c94b842ed9168464bb73d7062961a26bd3610dde126880b",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/12.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 26347,
+      "source_file_sha256": "b76886821aba8a5c7b6009f5f6d6c21ce0b2ca3285ab05028e83581a601a102c",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/13.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 27981,
+      "source_file_sha256": "7ae1fb4d5be88e86d9756806756aaf8d2e3c9436b758f640c420beda8a117e6a",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/14.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 24039,
+      "source_file_sha256": "0ebc876436559d16a4a0378b467273f03afbd66bf847ac70b93afbec98458d88",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/15.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 30768,
+      "source_file_sha256": "67c7a772beee8c02c3521d27825d10acb2269d59270b88bd823185b3a36af993",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/16.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 18416,
+      "source_file_sha256": "39dc60ba2f80418014e84e5d02c75e7318c5afdc08527c2536bf6fc1f8007c00",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/17.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 21911,
+      "source_file_sha256": "3253fdd0cb8ed550007fcd589450b3ca93a58128d61e4d2384f748719d92ed9a",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/18.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 23694,
+      "source_file_sha256": "e29450d7976f35b82393217b4e19ae45c0fe95676e59c5c6d26a66e3c16c8318",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/19.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 28064,
+      "source_file_sha256": "d0d727d77c22a8b6bfb8055961c9ae14583fd065e0185c3ca025f3bd1bce4e7c",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/2.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 23707,
+      "source_file_sha256": "bbd0b1dc989c2476c9c0699cb2ef8013494767f50e209157268e4ab9c4be5490",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/20.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 19515,
+      "source_file_sha256": "2396846e9ec1acfbc71207b6eff16a75aeb2871eb15b1abbb09666e1c885a9ad",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/21.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 27431,
+      "source_file_sha256": "c0a6f324ce582fd06d4488317b2fbe2f9e8ca59ac0f77b818b42e359f02deb7c",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/22.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 47755,
+      "source_file_sha256": "640e6496c53bf270083c19b5a432076c5673ea1c1338c463027697114719910d",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/23.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 44956,
+      "source_file_sha256": "416ac60e031aef91168e36341a48bf2655114ca886d990dd9d712c7e397bff67",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/24.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 34798,
+      "source_file_sha256": "5eebe223e658d7ffd099e92c1f9ab14306de85bbcd4abcc531d52dab6f0ac74f",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/3.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 26675,
+      "source_file_sha256": "42aa0921c0bb8206add2b9c1a5431e2aa3ac7732acf86bf4a28c7a24be09881e",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/4.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 15009,
+      "source_file_sha256": "3e217d21ac2a69037afa55fc092716d6b46614e42c952af9e15f234bca5ed9c8",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/5.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 41171,
+      "source_file_sha256": "2371190253e9ca18dfe2921e00b9c1418caacbafaddddff5334107eb84bb860b",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/6.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 36994,
+      "source_file_sha256": "b9ed6eed931ccf88648b74eeffc00768f1153022ad61881266d8c299ff3c7ea7",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/7.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 44333,
+      "source_file_sha256": "c7683bc64baf9f968f8133b9b030bbba97124a593bc33d1e891c5a7028ee8a8e",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/8.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 43895,
+      "source_file_sha256": "98bee3f0db6641d32ed74ca413f96ed9aebc57a84135e92d6892995cf4872a49",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/2SA/9.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 9978,
+      "source_file_sha256": "474dc5e60b765c4f599ecba6c246bf637a40beb6efd7d79e07e592dc3e2de28e",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/1.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 101520,
+      "source_file_sha256": "2cd31441df6727fc6229beba477352bdef551b47019bdfe548e4733d86011ee3",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/10.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 91580,
+      "source_file_sha256": "b86f578950018e1811f436da1d0a5fc29f0fc18011a4000c43d6425088025f03",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/11.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 167631,
+      "source_file_sha256": "c4d5178e63015b0afaa4cb2673ef0be44d7a62c62532dac218c89d4842a220c3",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/12.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 119457,
+      "source_file_sha256": "38c4493b3410e44572354198e32545f5b70cf85467e2631b0bc914c596871795",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/2.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 106843,
+      "source_file_sha256": "13a84f9f3e63eb3a8da92cebac18df16f6dddea6117161455e8a7ccf5bd30492",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/3.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 86435,
+      "source_file_sha256": "0e42c6731f01156c6b1fcd62994898c78851f3f379c814a0503b290f144b9c72",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/4.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 112211,
+      "source_file_sha256": "4234a3b05415dc44541d416989252f30c2e296b6b1e90fb78e1884a23d7ddbfe",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/5.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 102007,
+      "source_file_sha256": "9457b6f6f3a908d00abbacc277944113abd062cfa20e8646e5447beea5f5356e",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/6.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 107876,
+      "source_file_sha256": "e0d44a32fb3d6336143bd66c05ae7b3038aff1d1c79c2162a8f888a08483f82c",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/7.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 131457,
+      "source_file_sha256": "10f6f7e4c8f36284e10f252d028f7c7f09cae6280f658c0ef38bbf5155278863",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/8.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 133688,
+      "source_file_sha256": "18d94cc75607d026f6face4f552914849bcf292e5a8069a028a50597039b6157",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/DAN/9.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 186264,
+      "source_file_sha256": "9ab116e7f876600a66b27c4b5c840793ef45b7b034681ebc6008021a6122b37e",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/1.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 107747,
+      "source_file_sha256": "f3bfea9fa44d7f12df1106efb273a646c7ed5758b77d0caffb9a16a712e985da",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/10.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 54224,
+      "source_file_sha256": "f2419dd8b2d3a7e2369562c091f9b74547b768d0b4584ffe44347657b9f7759b",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/11.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 61039,
+      "source_file_sha256": "4a1ee6dcea4d8b225df32dd6be4c8611c32f277587eec9d3db1134ff189cda84",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/12.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 51507,
+      "source_file_sha256": "95ffaa2016cee110589de300cd8e2ce4f27868dbc2ccc42939f13b3155751b64",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/13.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 62190,
+      "source_file_sha256": "dddc3410bc1adf9fe28ac19fb0b1dab9f877e3b44daf8ebe3794bf5e08ad659e",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/14.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 64577,
+      "source_file_sha256": "4171d0933f2a7f2df57b6f765a08e779bc7d1d5b461110c46381847208ddb7a1",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/15.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 39724,
+      "source_file_sha256": "986ca7e25f15f22079de2267213a0798e33f360391688306470836723214a97f",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/16.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 125181,
+      "source_file_sha256": "57cab64cdd80fc4bd83e06934fcceab46665b31f5a53bc0bd8615592b8b3268a",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/17.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 55152,
+      "source_file_sha256": "260f41412096282fee4e6c451a9fb3205ae8cc011bae8743fb2472e18868358a",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/18.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 60148,
+      "source_file_sha256": "03cfc25ab2145bb99590bf0dae2f94b64d2b6aa47d1c5cd98c50b38619b732e8",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/19.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 45301,
+      "source_file_sha256": "423deaf5751b06babdf52f7822212f25e4ccb07f540aa4b066962d5bb37369b3",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/2.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 45865,
+      "source_file_sha256": "1f21e749653fca1074a4f1c06b1d9778f3e5a73fe1d022e75378816f77745fd4",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/20.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 88070,
+      "source_file_sha256": "9da3184436a263415cab11b0c4e4ef44c13f12d2acb1c03b9fc4001f8e7f2d4f",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/21.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 79767,
+      "source_file_sha256": "d5bc0ddf0628886393b09d137db2b7cee2f9d5862db2b2652a2086646274cc71",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/22.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 58129,
+      "source_file_sha256": "df89d84ccb01c968cd295b29c4bccc08e7e7e64c359be4f195bebb37eca04667",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/23.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 72472,
+      "source_file_sha256": "c1fa63ba3a84b992025adb4f607b7e009a9c43c7b3ed81c2331503aacb39f303",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/24.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 64725,
+      "source_file_sha256": "8f901d3a75923e7293809ae945655c4ba25000e68be07420dca9122d20ca7e3d",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/25.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 54678,
+      "source_file_sha256": "4ae944bc9774b12bd29f821de3ace0449af220db1d814a67ceeb3dbe42731cab",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/26.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 62437,
+      "source_file_sha256": "d33b39ab4ec5fce7c5d208cf504ef0e2dc4d68bbdbd28edf6a0970c42953e671",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/27.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 82936,
+      "source_file_sha256": "62ec6f52df356c3ec7c33839ffdc646b80c84f6db984a0a1621548c0714e7f64",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/28.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 81304,
+      "source_file_sha256": "0c6d45027d7457bd69f9822722a858de5594abe24a7dffacb2322f8466a39ff2",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/29.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 62774,
+      "source_file_sha256": "b26a31d16e8d4cc0d21db1dfa6d19ba53725fc236ecf055c2488c54678bcfe70",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/3.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 37632,
+      "source_file_sha256": "29a7e9061d73ee08fa59dce816221dc00a4e0054d364f65f20c6d45e2373ac58",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/30.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 60858,
+      "source_file_sha256": "70a14983f97a7fb2cbcab221f4531f71655c29a9020660aa8d0daa301302e4a0",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/31.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 62504,
+      "source_file_sha256": "d465208cbca658fead4fb881b0988657a3c41590d8c31261760ee7e77331d320",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/32.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 80557,
+      "source_file_sha256": "8b5a552a5d63e85fee49eec68d9a1168888b16ade351a2af6b03c5d53d5b04ce",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/33.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 60771,
+      "source_file_sha256": "373d3b09e739a795ebfd04fdc3ddd0de6a4f05cd9ac4b68f5377a6d64ab6a98e",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/34.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 60525,
+      "source_file_sha256": "68d3c0ede8cb25294c566f1e9b67d7e00bdd151fe1b2ddbebe1b06c0925d44a0",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/35.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 45868,
+      "source_file_sha256": "916bba8d0f71126a9b8ce809142f0f1c21f0717a6d741ced4d48d246b8f6a68e",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/37.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 100514,
+      "source_file_sha256": "513468cd2fe784df2a0e58b37b7ee9dabb4297cba108f4dd3cf589566fe3e9ed",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/38.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 61355,
+      "source_file_sha256": "8c8658b41984abba76637a89db2f67ce55cbfbb56e30d1577c06f04cd8470acf",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/39.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 55609,
+      "source_file_sha256": "d0c9367a7c1ae0cf84d81aaa7bfa470128599cb51e7f60d37af7d336dfa51ccb",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/40.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 131900,
+      "source_file_sha256": "a9d695326e322af7425370b7a116c278b65861a8cdd523a50255ca9ad04f581e",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/41.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 93225,
+      "source_file_sha256": "79012cca2cacadc2e1c46655e9d6ff35a6113bc365257080eea463fa10693a73",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/42.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 80153,
+      "source_file_sha256": "11d7b42a211a64c30cab782b23adfd1ab2e3b619ef66663cb940d65acdc36b8c",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/43.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 86239,
+      "source_file_sha256": "4cbe103e23d0ade72849792fa471f8ebc1cff91ec901b11f8f7f724f4c5eccad",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/44.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 76196,
+      "source_file_sha256": "21b8c10feaab441a923cee88f46bf9d4f8f1a6901af322e471a367159df91edd",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/45.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 81816,
+      "source_file_sha256": "e42120fa17301e2194b983886065cf54f9d76ec59c06f5529aef5366c41ddf63",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/46.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 57610,
+      "source_file_sha256": "d3c68b103b196a39f76c54d75275ca7f7219ed737969586a706f99e07c03c7ec",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/47.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 72030,
+      "source_file_sha256": "651b78961bb29be785587968018fd2af873cb5ab84afcb53484f2f4e40214a27",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/48.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 66197,
+      "source_file_sha256": "6ed52ad397806e8e0de426946abd6d69de855031f3ffc4855d8e72df8e5b411c",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/6.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 39915,
+      "source_file_sha256": "3e65e80a4f654f00684d703e48108b4ffd32aa277443f06bb0e9c0914ac99c01",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/7.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 62372,
+      "source_file_sha256": "b6f37a91778f2275a794bff3f4e5c1b821a83420efe5adde6b131ff7f4e7adef",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/8.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 64110,
+      "source_file_sha256": "4d0b5c31a44d8f5a10c9b7c4d37df726ddca72ac677f803c948a54694ccf52cd",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/EZK/9.json",
+      "json_pointer": "/book/introduction",
+      "carrier_kind": "book-introduction-evidence",
+      "rendered_carrier": false,
+      "source_file_bytes": 51503,
+      "source_file_sha256": "7f7cedc8a7bfd93a47053de84280730e339b6154e9b900703ad3dcf43ac88624",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/books.json",
+      "json_pointer": "/books/22/introduction",
+      "carrier_kind": "book-introduction",
+      "rendered_carrier": true,
+      "source_file_bytes": 888549,
+      "source_file_sha256": "7cd91215f597032af346c8b04669992ad2bb947cc40e63ad4ede007631ebce92",
+      "carrier_utf8_bytes": 32791,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "fbb63621d8785feef61df1e189160e720f0186fbf0fe96372f3e73f2de72eea0",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Isaiah",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 59,
+          "text": "Time of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 7025,
+          "end": 7063,
+          "text": "I. Historical Account of Uzziah-Jotham",
+          "boundary_before": "blank-line",
+          "boundary_after": "inline-space-hyphen",
+          "classification": "source-supported-heading-with-inline-prose-delimiter"
+        },
+        {
+          "start": 24457,
+          "end": 24518,
+          "text": "II. Historical Account of Ahaz and the Syro-Ephraimitish War.",
+          "boundary_before": "blank-line",
+          "boundary_after": "inline-space-hyphen",
+          "classification": "source-supported-heading-with-inline-prose-delimiter"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/books.json",
+      "json_pointer": "/books/25/introduction",
+      "carrier_kind": "book-introduction",
+      "rendered_carrier": true,
+      "source_file_bytes": 888549,
+      "source_file_sha256": "7cd91215f597032af346c8b04669992ad2bb947cc40e63ad4ede007631ebce92",
+      "carrier_utf8_bytes": 32813,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b78e9582ae7c0d4f5f5ac4534ac280f4a38681c654ad53a8e58279ec8efcaf51",
+      "headings": [
+        {
+          "start": 0,
+          "end": 25,
+          "text": "The Prophecies of Ezekiel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 41,
+          "end": 69,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1911,
+          "end": 1939,
+          "text": "II. The Times of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 13082,
+          "end": 13106,
+          "text": "III. The Book of Ezekiel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 32383,
+          "end": 32406,
+          "text": "Review of Ezekiel 40-48",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/books.json",
+      "json_pointer": "/books/26/introduction",
+      "carrier_kind": "book-introduction",
+      "rendered_carrier": true,
+      "source_file_bytes": 888549,
+      "source_file_sha256": "7cd91215f597032af346c8b04669992ad2bb947cc40e63ad4ede007631ebce92",
+      "carrier_utf8_bytes": 32830,
+      "carrier_codepoint_length": 32767,
+      "carrier_sha256": "b27cdb73d4a29069dffccdf5a552a116e55a32fffd713cd180a60b94e11e48ea",
+      "headings": [
+        {
+          "start": 0,
+          "end": 24,
+          "text": "The Prophecies of Daniel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "text": "Introduction",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 40,
+          "end": 68,
+          "text": "I. The Person of the Prophet",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 9029,
+          "end": 9084,
+          "text": "II. Daniel's Place in the History of the Kingdom of God",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 31757,
+          "end": 31812,
+          "text": "III. The Contents and Arrangement of the Book of Daniel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/keil-delitzsch/books.json",
+      "json_pointer": "/books/9/introduction",
+      "carrier_kind": "book-introduction",
+      "rendered_carrier": true,
+      "source_file_bytes": 888549,
+      "source_file_sha256": "7cd91215f597032af346c8b04669992ad2bb947cc40e63ad4ede007631ebce92",
+      "carrier_utf8_bytes": 3420,
+      "carrier_codepoint_length": 3420,
+      "carrier_sha256": "e9d8133e655f18d29d5df863b24f302b3a1a7093f730bf84743b200ed664c81f",
+      "headings": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The Book of 2 Samuel",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 22,
+          "end": 46,
+          "text": "Introduction to 2 Samuel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 1023,
+          "end": 1080,
+          "text": "I. David King Over Judah; and Ishbosheth King Over Israel",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    }
+  ]
+}

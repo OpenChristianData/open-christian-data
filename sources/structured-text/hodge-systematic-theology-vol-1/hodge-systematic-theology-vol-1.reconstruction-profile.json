@@ -1,0 +1,93 @@
+{
+  "assigned_census": {
+    "attribute_counts": {
+      "border": 2,
+      "class": 2481,
+      "href": 647,
+      "id": 5053,
+      "lang": 858,
+      "n": 1257,
+      "next": 123,
+      "osisRef": 622,
+      "parsed": 622,
+      "passage": 623,
+      "prev": 123,
+      "progress": 114,
+      "rowspan": 4,
+      "style": 211,
+      "title": 123,
+      "version": 1
+    },
+    "attributes": 12864,
+    "characters": 1652513,
+    "direct_text_bytes": 880193,
+    "elements": 6632,
+    "non_ascii_characters": 9228,
+    "notes": 610,
+    "page_breaks": 647,
+    "scripture_refs": 623,
+    "tag_counts": {
+      "blockquote": 2,
+      "br": 1,
+      "div": 1,
+      "div1": 2,
+      "div2": 19,
+      "div3": 102,
+      "h1": 1,
+      "h2": 22,
+      "h3": 20,
+      "i": 1578,
+      "note": 610,
+      "p": 2043,
+      "pb": 647,
+      "scripRef": 623,
+      "span": 947,
+      "table": 2,
+      "td": 8,
+      "tr": 4
+    },
+    "tail_text_bytes": 786642,
+    "tail_nodes": 6066,
+    "text_nodes": 5251
+  },
+  "assigned_root_counts": {
+    "iii": 1696,
+    "iv": 4936
+  },
+  "assigned_roots": [
+    ["hodge-vol-1", "iii", "hodge-systematic-theology-vol-1"],
+    ["hodge-vol-1", "iv", "hodge-systematic-theology-vol-1"]
+  ],
+  "contract": "ocd-37c203-reconstruction-profile-v1",
+  "profile_id": "hodge-systematic-theology-vol-1-ccel-content-roots-v1",
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "complete-five-root-envelope-and-two-content-root-order",
+    "exact-elements-attributes-text-tails-and-source-attribute-accounting",
+    "exact-retained-electronic-header-and-local-edition-claim-boundary",
+    "source-native-table-note-page-break-scripture-and-inline-coverage",
+    "one-nonaccepted-work-with-two-source-root-bindings-and-publication-not-ready"
+  ],
+  "source_envelope": {
+    "assigned_top_level_div1_ids_in_source_order": ["iii", "iv"],
+    "excluded_top_level_div1_ids": ["i", "ii", "v"],
+    "root_titles": {
+      "i": "Title",
+      "ii": "Prefatory",
+      "iii": "Introduction",
+      "iv": "Part I. Theology Proper.",
+      "v": "Indexes"
+    },
+    "top_level_div1_count": 5,
+    "top_level_div1_ids_in_order": ["i", "ii", "iii", "iv", "v"]
+  },
+  "source_member": {
+    "bytes": 2243559,
+    "key": "hodge-vol-1",
+    "path": "raw/ccel/hodge/theology1.xml",
+    "sha256": "f01ffb5235657a0b21f56a1a4eb7ef95b836ba9d907f9acd1402e8a6fe450fc6"
+  },
+  "scope_boundary": "This candidate represents only complete source-native subtrees rooted at div1 ids iii and iv in retained source order. The title-page, prefatory, and index roots i, ii, and v remain source-accounted outside the assigned work projection; the candidate does not claim an independently collated print witness.",
+  "version": 1,
+  "work_id": "hodge-systematic-theology-vol-1"
+}

@@ -1,177 +1,1017 @@
-"""Verify a TEI projection loss receipt independently of the projector."""
+"""Strict, independent verification for the current TEI loss receipt."""
 
 from __future__ import annotations
 
 import argparse
+import copy
+import hashlib
 import json
-import re
 import sys
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
+import jsonschema
 from lxml import etree
 
 from build.lib.paths import REPO_ROOT
-from build.tei.check_ledger_v2 import check_receipt_v2
+from ocd_kernel.lib.git_artifact import (
+    CanonicalGitArtifactError,
+    CanonicalGitRepositoryRootError,
+    committed_artifact,
+    committed_artifact_candidate,
+    is_committed_path,
+    repository_lexical_path,
+    repository_revision,
+)
+from ocd_kernel.lib.schema_enums import resolve_schema_path
+from ocd_kernel.tei.normalization import normalize_inline, normalize_block
+from ocd_kernel.tei.projection_profile import (
+    DROP_ELEMENTS,
+    classify_base,
+    destination_for,
+    drop_reason,
+    rule_for,
+    structural_reason,
+)
 from ocd_kernel.tei.writer import TEI_NS, derive_address
 
 NS = {"tei": TEI_NS}
-DROP_DIV_TYPES = {"title", "titlepage", "imprint", "halftitlepage", "colophon", "copyright-page"}
-DROP_ELEMENTS = {"note", "pb"}
-NORMALIZED_ELEMENTS = {"ref", "hi", "emph", "foreign", "seg", "abbr", "title"}
+DISPOSITIONS = ("delivered", "normalized", "structural", "dropped", "empty")
+BLOCK_ROOTS = frozenset(
+    {
+        "p",
+        "quote",
+        "lg",
+        "sp",
+        "label",
+        "trailer",
+        "l",
+        "date",
+        "q",
+        "bibl",
+    }
+)
+
+
+@dataclass(frozen=True)
+class ExpectedTarget:
+    record_id: str
+    field: str
+    char_start: int
+    char_end: int
+    item_index: int | None = None
+    item_field: str | None = None
+
+    def as_dict(self) -> dict[str, Any]:
+        target: dict[str, Any] = {
+            "record_id": self.record_id,
+            "field": self.field,
+            "char_start": self.char_start,
+            "char_end": self.char_end,
+        }
+        if self.item_index is not None:
+            target["item_index"] = self.item_index
+        if self.item_field is not None:
+            target["item_field"] = self.item_field
+        return target
+
+
+@dataclass(frozen=True)
+class ExpectedNode:
+    element: str
+    disposition: str
+    canonical_text: str
+    reason_code: str | None
+    targets: tuple[ExpectedTarget, ...]
 
 
 def _local(node: etree._Element) -> str:
     return etree.QName(node).localname
 
 
-def _collapse_spaces(value: str) -> str:
-    return re.sub(r"[ \t\r\f\v]+", " ", value).strip()
+def _sha256_bytes(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _normalize_text(value: str) -> str:
-    lines = [_collapse_spaces(line) for line in value.split("\n")]
-    return "\n".join(line for line in lines if line)
+def _sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-def _text_with_children(node: etree._Element) -> str:
+def _resolve_repo_path(repo_root: Path, relative_path: str) -> Path:
+    return repository_lexical_path(
+        Path(repo_root) / relative_path,
+        repository_root=repo_root,
+    )
+
+
+def _load_jsonl(content: bytes) -> tuple[dict[str, dict[str, Any]], list[str]]:
+    records: dict[str, dict[str, Any]] = {}
+    errors: list[str] = []
+    try:
+        text = content.decode("utf-8", errors="strict")
+    except UnicodeDecodeError as exc:
+        return {}, [f"invalid UTF-8 JSONL: {exc}"]
+    for line_number, line in enumerate(text.splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid JSONL at line {line_number}: {exc.msg}")
+            continue
+        record_id = record.get("id") if isinstance(record, dict) else None
+        if not isinstance(record_id, str):
+            errors.append(f"JSONL line {line_number} has no string id")
+            continue
+        if record_id in records:
+            errors.append(f"duplicate output record: {record_id}")
+        records[record_id] = record
+    return records, errors
+
+
+def _load_receipt_schema() -> dict[str, Any]:
+    return json.loads(resolve_schema_path("loss_receipt_v2").read_text(encoding="utf-8"))
+
+
+def _validate_receipt_shape(receipt: dict[str, Any]) -> list[str]:
+    validator = jsonschema.Draft202012Validator(
+        _load_receipt_schema(), format_checker=jsonschema.FormatChecker()
+    )
+    return [error.message for error in sorted(validator.iter_errors(receipt), key=str)]
+
+
+def _authorize_committed_receipt(
+    receipt_path: Path,
+    receipt: dict[str, Any],
+    *,
+    repo_root: Path,
+    revision: str,
+) -> str | None:
+    """Authorize a clean receipt or the exact governed IR-digest rebind delta."""
+
+    candidate = committed_artifact_candidate(
+        receipt_path,
+        repository_root=repo_root,
+        revision=revision,
+    )
+    if candidate.checkout_clean_oid == candidate.blob_oid:
+        return None
+
+    try:
+        committed_receipt = json.loads(candidate.canonical_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return "unauthorized committed receipt change: committed receipt is invalid"
+    if not isinstance(committed_receipt, dict):
+        return "unauthorized committed receipt change: committed receipt is not an object"
+
+    expected = copy.deepcopy(committed_receipt)
+    live_ir = receipt.get("ir")
+    expected_ir = expected.get("ir")
+    if not isinstance(live_ir, dict) or not isinstance(expected_ir, dict):
+        return "unauthorized committed receipt change: invalid IR binding"
+    live_digest = live_ir.get("sha256")
+    if not isinstance(live_digest, str):
+        return "unauthorized committed receipt change: invalid IR digest"
+    committed_digest = expected_ir.get("sha256")
+    if live_digest == committed_digest:
+        return "unauthorized committed receipt change: no governed IR digest rebind"
+    expected_ir["sha256"] = live_digest
+    if receipt != expected:
+        return "unauthorized committed receipt change: only ir.sha256 may differ"
+    expected_bytes = (
+        json.dumps(expected, ensure_ascii=False, indent=2) + "\n"
+    ).encode("utf-8")
+    if candidate.checkout_bytes != expected_bytes:
+        return "unauthorized committed receipt change: non-governed serialization"
+
+    relative_receipt = candidate.repository_relative_path
+    ir_relative = live_ir.get("path")
+    if (
+        not relative_receipt.endswith(".loss.json")
+        or not isinstance(ir_relative, str)
+        or not ir_relative.startswith("ir/")
+    ):
+        return "unauthorized committed receipt change: path is not governed IR evidence"
+    try:
+        ir_artifact = committed_artifact(
+            Path(repo_root) / ir_relative,
+            repository_root=repo_root,
+            revision=revision,
+        )
+    except CanonicalGitArtifactError as exc:
+        return f"unauthorized committed receipt change: {exc}"
+    canonical_digest = hashlib.sha256(ir_artifact.canonical_bytes).hexdigest()
+    if live_digest != canonical_digest:
+        return "unauthorized committed receipt change: ir.sha256 is not the canonical Git digest"
+    return None
+
+
+def _source_fragment(node: etree._Element) -> str:
     parts: list[str] = []
     if node.text:
         parts.append(node.text)
     for child in node:
-        if _local(child) not in DROP_ELEMENTS:
-            parts.append(_node_clean_text(child))
+        parts.append(_source_fragment(child))
         if child.tail:
             parts.append(child.tail)
     return "".join(parts)
 
 
-def _node_clean_text(node: etree._Element) -> str:
+def _fragment_part(value: str) -> str:
+    """Keep word boundaries while collapsing source formatting whitespace."""
+
+    if not value:
+        return ""
+    normalized = normalize_inline(value)
+    if not normalized:
+        return " " if any(character.isspace() for character in value) else ""
+    prefix = " " if value[0].isspace() else ""
+    suffix = " " if value[-1].isspace() else ""
+    return prefix + normalized + suffix
+
+
+def _projected_fragment(node: etree._Element) -> str:
+    """Render a node's text while omitting dropped descendants."""
+
     local = _local(node)
     if local in DROP_ELEMENTS:
         return ""
+    if local == "lb":
+        return "\n"
     if local == "lg":
-        return "\n".join(filter(None, (_node_clean_text(child) for child in node if _local(child) == "l")))
-    return _normalize_text(_text_with_children(node))
+        lines = [
+            _canonical_projected(child)
+            for child in node
+            if _local(child) == "l" and classify_base(child) != "dropped"
+        ]
+        return normalize_block("\n".join(lines))
+
+    parts: list[str] = []
+    if node.text:
+        parts.append(_fragment_part(node.text))
+    for child in node:
+        if classify_base(child) != "dropped":
+            parts.append(_projected_fragment(child))
+        if child.tail:
+            parts.append(_fragment_part(child.tail))
+    return "".join(parts)
 
 
-def _under_dropped_wrapper(node: etree._Element) -> bool:
-    current: etree._Element | None = node
+def _canonical_projected(node: etree._Element) -> str:
+    local = _local(node)
+    if local == "lg":
+        return _projected_fragment(node)
+    if local == "l":
+        return normalize_inline(_projected_fragment(node))
+    if local in {"p", "quote", "sp", "trailer"}:
+        return normalize_block(_projected_fragment(node))
+    return normalize_inline(_projected_fragment(node))
+
+
+def _canonical_source(node: etree._Element) -> str:
+    local = _local(node)
+    if local == "lg":
+        lines = [
+            _canonical_source(child)
+            for child in node
+            if _local(child) == "l"
+        ]
+        return normalize_block("\n".join(lines))
+    if local == "l":
+        return normalize_inline(_source_fragment(node))
+    if local in {"p", "quote", "sp", "trailer"}:
+        return normalize_block(_source_fragment(node))
+    return normalize_inline(_source_fragment(node))
+
+
+def _canonical_text(node: etree._Element) -> str:
+    if classify_base(node) == "dropped":
+        return _canonical_source(node)
+    if _local(node) == "sp":
+        return _spoken_text(node)
+    if destination_for(node) == "argument":
+        return normalize_inline(_projected_fragment(node))
+    return _canonical_projected(node)
+
+
+def _direct_text(node: etree._Element) -> str:
+    parts = [node.text or ""]
+    parts.extend(child.tail or "" for child in node)
+    return normalize_inline("".join(parts))
+
+
+def _ids_from_path(path: Path) -> tuple[str, str]:
+    suffix = ".tei.xml"
+    if not path.name.endswith(suffix):
+        raise ValueError(f"TEI filename must end with {suffix}: {path}")
+    work_id, rendering_id = path.name.removesuffix(suffix).rsplit(".", 1)
+    return work_id, rendering_id
+
+
+def _record_id(tei_path: Path, div: etree._Element) -> str:
+    work_id, rendering_id = _ids_from_path(tei_path)
+    return f"{work_id}/{rendering_id}/{derive_address(div)}"
+
+
+def _has_ancestor(node: etree._Element, local_names: frozenset[str]) -> bool:
+    current = node.getparent()
     while current is not None:
-        if _local(current) == "div" and current.get("type") in DROP_DIV_TYPES:
+        if _local(current) in local_names:
             return True
         current = current.getparent()
     return False
 
 
-def _expected_disposition(node: etree._Element) -> str:
-    local = _local(node)
-    if _under_dropped_wrapper(node) or local in DROP_ELEMENTS:
-        return "dropped"
-    if local in NORMALIZED_ELEMENTS:
-        return "normalized"
-    return "projected"
+def _nearest_div(node: etree._Element) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if _local(current) == "div":
+            return current
+        current = current.getparent()
+    return None
 
 
-def _load_jsonl(path: Path) -> dict[str, dict]:
-    records: dict[str, dict] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
+def _nearest_record_div(
+    node: etree._Element, record_ids: dict[etree._Element, str]
+) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if current in record_ids:
+            return current
+        current = current.getparent()
+    return None
+
+
+def _under_div(node: etree._Element, div: etree._Element) -> bool:
+    current: etree._Element | None = node
+    while current is not None:
+        if current is div:
+            return True
+        current = current.getparent()
+    return False
+
+
+def _content_roots(div: etree._Element) -> list[etree._Element]:
+    """Find direct-record content without traversing into child record divs."""
+
+    roots: list[etree._Element] = []
+
+    def visit(parent: etree._Element) -> None:
+        for child in parent:
+            local = _local(child)
+            if local == "div":
+                continue
+            if local in {"head", "argument", "note", "pb"}:
+                continue
+            if local in BLOCK_ROOTS:
+                if local == "p" and _has_ancestor(child, frozenset({"sp", "argument"})):
+                    continue
+                if local == "l" and _has_ancestor(child, frozenset({"lg", "quote"})):
+                    continue
+                if local == "date" and _has_ancestor(child, frozenset({"trailer"})):
+                    continue
+                if _canonical_text(child):
+                    roots.append(child)
+                continue
+            visit(child)
+
+    visit(div)
+    return roots
+
+
+def _record_divs(text: etree._Element) -> list[etree._Element]:
+    live = [
+        div
+        for div in text.xpath(".//tei:div", namespaces=NS)
+        if classify_base(div) != "dropped"
+    ]
+    records: list[etree._Element] = []
+    for div in live:
+        direct_argument = div.find("./tei:argument", namespaces=NS)
+        if _content_roots(div) or (direct_argument is not None and _canonical_text(direct_argument)):
+            records.append(div)
+
+    # A <head> does not by itself make a div a record: its destination is
+    # title_path, and it is normally delivered through the title_path of every
+    # descendant record it governs. The exception is a head-bearing div that
+    # governs NO content record at all -- a standalone divider such as Standard
+    # Ebooks' <div type="part"><head>Part I</head></div>. _governing_records only
+    # reaches descendant-or-self records, so such a heading would have nowhere to
+    # be delivered and its text would be silently lost. Give only those divs a
+    # record. Minting one for every head-bearing div instead would add a
+    # contentless record to every structural book/part div in the corpus.
+    owned = set(records)
+    for div in live:
+        head = div.find("./tei:head", namespaces=NS)
+        if head is None or not _canonical_text(head):
             continue
-        record = json.loads(line)
-        records[record["id"]] = record
-    return records
+        if any(_is_descendant_or_self(record, div) for record in owned):
+            continue
+        records.append(div)
+
+    selected = set(records)
+    return [div for div in live if div in selected]
 
 
-def _receipt_nodes_by_address(receipt: dict) -> tuple[dict[str, dict], list[str]]:
-    seen: dict[str, dict] = {}
+def _render_block(node: etree._Element) -> str:
+    if _local(node) != "sp":
+        return _canonical_text(node)
+    speakers = [
+        _canonical_text(child)
+        for child in node
+        if _local(child) == "speaker" and _canonical_text(child)
+    ]
+    body = _spoken_parts(node)
+    if speakers and body:
+        return "\n".join(speakers + ["\n\n".join(body)])
+    return "\n\n".join(speakers + body) or _canonical_text(node)
+
+
+def _spoken_parts(node: etree._Element) -> list[str]:
+    return [
+        _canonical_text(child)
+        for child in node
+        if _local(child) != "speaker"
+        and _local(child) in BLOCK_ROOTS
+        and _canonical_text(child)
+    ]
+
+
+def _spoken_text(node: etree._Element) -> str:
+    if _speech_is_record_block(node):
+        return "\n\n".join(_spoken_parts(node))
+    pieces: list[str] = []
+    if node.text:
+        pieces.append(_fragment_part(node.text))
+    for child in node:
+        if _local(child) != "speaker" and classify_base(child) != "dropped":
+            pieces.append(_projected_fragment(child))
+        if child.tail:
+            pieces.append(_fragment_part(child.tail))
+    return normalize_block("".join(pieces))
+
+
+def _speech_is_record_block(node: etree._Element) -> bool:
+    ancestor = node.getparent()
+    while ancestor is not None and _local(ancestor) != "div":
+        if _local(ancestor) in BLOCK_ROOTS:
+            return False
+        ancestor = ancestor.getparent()
+    return True
+
+
+def _immediate_speaker(node: etree._Element) -> str | None:
+    values = [
+        _canonical_projected(child)
+        for child in node
+        if _local(child) == "speaker" and _canonical_projected(child)
+    ]
+    if len(values) != 1:
+        return values[0] if values else None
+    return values[0]
+
+
+def _record_owned_speeches(record_div: etree._Element) -> list[etree._Element]:
+    speeches: list[etree._Element] = []
+
+    def descend(parent: etree._Element) -> None:
+        for child in parent:
+            if _local(child) == "div" or classify_base(child) == "dropped":
+                continue
+            if _local(child) == "sp":
+                speeches.append(child)
+            descend(child)
+
+    descend(record_div)
+    return speeches
+
+
+def _reconstruct_speeches(
+    record_div: etree._Element, record_text: str
+) -> list[dict[str, Any]]:
+    speeches: list[dict[str, Any]] = []
+    search_from = 0
+    for speech in _record_owned_speeches(record_div):
+        spoken = _spoken_text(speech)
+        start = record_text.find(spoken, search_from) if spoken else -1
+        if start >= 0:
+            speeches.append(
+                {
+                    "speaker": _immediate_speaker(speech),
+                    "text": spoken,
+                    "char_start": start,
+                    "char_end": start + len(spoken),
+                }
+            )
+            search_from = start + len(spoken)
+    return speeches
+
+
+def _header_title(tree: etree._ElementTree) -> str:
+    titles = tree.xpath(".//tei:titleStmt/tei:title", namespaces=NS)
+    return normalize_inline(_source_fragment(titles[0])) if titles else ""
+
+
+def _first_direct_head(div: etree._Element) -> str | None:
+    head = div.find("./tei:head", namespaces=NS)
+    if head is None:
+        return None
+    value = _canonical_text(head)
+    return value or None
+
+
+def _head_ancestor(node: etree._Element) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None:
+        if _local(current) == "head":
+            return current
+        current = current.getparent()
+    return None
+
+
+def _title_path(title: str, div: etree._Element) -> list[str]:
+    divs = [
+        ancestor
+        for ancestor in reversed(list(div.iterancestors()))
+        if _local(ancestor) == "div" and classify_base(ancestor) != "dropped"
+    ]
+    divs.append(div)
+    values = [title]
+    for current in divs:
+        for head_node in current.xpath("./tei:head", namespaces=NS):
+            head = _canonical_text(head_node)
+            if head and (not values or values[-1] != head):
+                values.append(head)
+    return values
+
+
+def _build_expected_records(
+    tree: etree._ElementTree, tei_path: Path
+) -> tuple[list[dict[str, Any]], list[etree._Element]]:
+    text_nodes = tree.xpath("/tei:TEI/tei:text", namespaces=NS)
+    if not text_nodes:
+        return [], []
+    text = text_nodes[0]
+    record_divs = _record_divs(text)
+    title = _header_title(tree) or _ids_from_path(tei_path)[0]
+    records: list[dict[str, Any]] = []
+    for div in record_divs:
+        blocks = _content_roots(div)
+        rendered_blocks = [_render_block(block) for block in blocks]
+        argument = div.find("./tei:argument", namespaces=NS)
+        argument_text = _canonical_text(argument) if argument is not None else ""
+        record = {
+                "id": _record_id(tei_path, div),
+                "text": "\n\n".join(rendered_blocks),
+                "argument": argument_text or None,
+                "title_path": _title_path(title, div),
+            }
+        speeches = _reconstruct_speeches(div, record["text"])
+        if speeches:
+            record["speeches"] = speeches
+        records.append(record)
+    return records, record_divs
+
+
+def _is_descendant_or_self(node: etree._Element, ancestor: etree._Element) -> bool:
+    current: etree._Element | None = node
+    while current is not None:
+        if current is ancestor:
+            return True
+        current = current.getparent()
+    return False
+
+
+def _governing_records(
+    head: etree._Element, record_divs: list[etree._Element], record_ids: dict[etree._Element, str]
+) -> list[tuple[etree._Element, str]]:
+    owning_div = _nearest_div(head)
+    if owning_div is None:
+        return []
+    return [
+        (div, record_ids[div])
+        for div in record_divs
+        if _is_descendant_or_self(div, owning_div)
+    ]
+
+
+def _block_root(node: etree._Element, record_div: etree._Element) -> etree._Element | None:
+    current: etree._Element | None = node
+    while current is not None and current is not record_div:
+        local = _local(current)
+        if local in BLOCK_ROOTS:
+            if local == "p" and _has_ancestor(current, frozenset({"argument"})):
+                return None
+            return current
+        if local in {"head", "argument", "note", "pb", "div"}:
+            return None
+        current = current.getparent()
+    return None
+
+
+def _find_target_span(
+    value: str,
+    needle: str,
+    node: etree._Element,
+    previous: dict[tuple[str, str, str], list[tuple[etree._Element, tuple[int, int]]]],
+    key: tuple[str, str, str],
+) -> tuple[int, int] | None:
+    if not needle:
+        return None
+    prior = previous.get(key, [])
+    for prior_node, span in reversed(prior):
+        if _is_descendant_or_self(node, prior_node) and node is not prior_node:
+            return span
+    start_at = prior[-1][1][1] if prior else 0
+    start = value.find(needle, start_at)
+    if start < 0:
+        return None
+    span = (start, start + len(needle))
+    previous.setdefault(key, []).append((node, span))
+    return span
+
+
+def _expected_nodes(
+    tree: etree._ElementTree,
+    tei_path: Path,
+    record_divs: list[etree._Element],
+    expected_records: list[dict[str, Any]],
+) -> tuple[dict[str, ExpectedNode], list[str]]:
+    text_nodes = tree.xpath("/tei:TEI/tei:text", namespaces=NS)
+    if not text_nodes:
+        return {}, ["TEI has no /TEI/text element"]
+    text = text_nodes[0]
+    record_ids = {div: _record_id(tei_path, div) for div in record_divs}
+    records_by_id = {record["id"]: record for record in expected_records}
+    expected: dict[str, ExpectedNode] = {}
     errors: list[str] = []
-    for node in receipt["nodes"]:
-        address = node["address"]
-        if address in seen:
+    previous: dict[tuple[str, str, str], list[tuple[etree._Element, tuple[int, int]]]] = {}
+
+    for element in text.iter():
+        address = derive_address(element)
+        local = _local(element)
+        base = classify_base(element)
+        if base is None:
+            if not _canonical_text(element):
+                continue
+            errors.append(f"unknown TEI element fails closed: {local} at {address}")
+            continue
+        if base == "delivered" and local == "sp" and _direct_text(element):
+            errors.append(f"delivered <sp> has unmapped direct text: {address}")
+        canonical = _canonical_text(element)
+        if base == "structural":
+            if _direct_text(element):
+                errors.append(f"structural element has unmapped direct text: {address}")
+            expected[address] = ExpectedNode(
+                local, "structural", "", structural_reason(local), ()
+            )
+            continue
+        if base == "dropped":
+            expected[address] = ExpectedNode(local, "dropped", canonical, drop_reason(element), ())
+            continue
+        if base not in {"delivered", "normalized"}:
+            errors.append(f"profile returned unsupported role {base!r} for {address}")
+            continue
+        disposition = "empty" if not canonical else base
+        if disposition == "empty":
+            expected[address] = ExpectedNode(local, "empty", "", "empty.text-bearing", ())
+            continue
+
+        targets: list[ExpectedTarget] = []
+        field = destination_for(element)
+        if local in {"sp", "speaker"}:
+            record_div = _nearest_record_div(element, record_ids)
+            speech_node = element if local == "sp" else element.getparent()
+            if (
+                record_div is None
+                or speech_node is None
+                or _local(speech_node) != "sp"
+            ):
+                errors.append(f"speech node has no governing output record: {address}")
+            else:
+                record_id = record_ids[record_div]
+                record = records_by_id[record_id]
+                speech_nodes = _record_owned_speeches(record_div)
+                try:
+                    speech_index = speech_nodes.index(speech_node)
+                except ValueError:
+                    errors.append(f"speech node has no structured item: {address}")
+                else:
+                    item_field = "text" if local == "sp" else "speaker"
+                    speech_items = record.get("speeches", [])
+                    if (
+                        speech_index >= len(speech_items)
+                        or speech_items[speech_index].get(item_field) != canonical
+                    ):
+                        errors.append(f"structured speech value mismatch for {address}")
+                    else:
+                        targets.append(
+                            ExpectedTarget(
+                                record_id,
+                                "speeches",
+                                0,
+                                len(canonical),
+                                speech_index,
+                                item_field,
+                            )
+                        )
+                    item = speech_items[speech_index]
+                    if local == "sp":
+                        span = (item["char_start"], item["char_end"])
+                    else:
+                        end = item["char_start"]
+                        while end > 0 and record["text"][end - 1].isspace():
+                            end -= 1
+                        start = end - len(canonical)
+                        span = (start, end) if start >= 0 else None
+                        if span is not None and record["text"][start:end] != canonical:
+                            span = None
+                    if span is None:
+                        errors.append(f"speech value has no flat-text span for {address}")
+                    else:
+                        targets.append(
+                            ExpectedTarget(record_id, "text", span[0], span[1])
+                        )
+        elif field == "title_path":
+            governing_head = _head_ancestor(element)
+            if governing_head is None:
+                errors.append(f"title-path node has no governing head: {address}")
+                governing_records: list[tuple[etree._Element, str]] = []
+            else:
+                governing_records = _governing_records(
+                    governing_head, record_divs, record_ids
+                )
+            title = _canonical_text(governing_head) if governing_head is not None else ""
+            for record_div, record_id in governing_records:
+                title_path = records_by_id[record_id]["title_path"]
+                try:
+                    item_index = title_path.index(title)
+                except ValueError:
+                    errors.append(f"title-path text missing for {address} in {record_id}")
+                    continue
+                start = title_path[item_index].find(canonical)
+                if start < 0:
+                    errors.append(f"title-path span missing for {address} in {record_id}")
+                    continue
+                targets.append(
+                    ExpectedTarget(record_id, field, start, start + len(canonical), item_index)
+                )
+        else:
+            record_div = _nearest_record_div(element, record_ids)
+            if record_div is None or record_div not in record_ids:
+                errors.append(f"no governing output record for delivered node: {address}")
+            else:
+                record_id = record_ids[record_div]
+                record = records_by_id[record_id]
+                if field is None:
+                    errors.append(f"no target field declared for {address}")
+                elif field == "text" and _block_root(element, record_div) is None:
+                    errors.append(f"delivered text node has no output block: {address}")
+                else:
+                    value = record.get(field)
+                    if not isinstance(value, str):
+                        errors.append(f"target field is not a string for {address}: {field}")
+                    else:
+                        key = (record_id, field, canonical)
+                        span = _find_target_span(value, canonical, element, previous, key)
+                        if span is None:
+                            errors.append(f"canonical text has no exact output span for {address}")
+                        else:
+                            targets.append(ExpectedTarget(record_id, field, span[0], span[1]))
+        expected[address] = ExpectedNode(
+            local,
+            disposition,
+            canonical,
+            rule_for(local).reason_code if disposition == "normalized" else None,
+            tuple(targets),
+        )
+    return expected, errors
+
+
+def _receipt_nodes(receipt: dict[str, Any]) -> tuple[dict[str, dict[str, Any]], list[str]]:
+    entries: dict[str, dict[str, Any]] = {}
+    errors: list[str] = []
+    for entry in receipt.get("nodes", []):
+        address = entry.get("address")
+        if address in entries:
             errors.append(f"duplicate ledger node: {address}")
-        seen[address] = node
-    return seen, errors
+        entries[address] = entry
+    return entries, errors
 
 
-def _check_counts(receipt: dict, errors: list[str]) -> None:
-    nodes = receipt["nodes"]
-    totals = {
-        "addressable_nodes": len(nodes),
-        "projected": sum(1 for node in nodes if node["disposition"] == "projected"),
-        "dropped": sum(1 for node in nodes if node["disposition"] == "dropped"),
-        "normalized": sum(1 for node in nodes if node["disposition"] == "normalized"),
-    }
-    if receipt["totals"] != totals:
-        errors.append(f"totals mismatch: receipt={receipt['totals']} computed={totals}")
+def _target_key(target: dict[str, Any]) -> tuple[str, str, int | None, str | None, int, int]:
+    return (
+        target["record_id"],
+        target["field"],
+        target.get("item_index"),
+        target.get("item_field"),
+        target["char_start"],
+        target["char_end"],
+    )
+
+
+def _expected_target_key(
+    target: ExpectedTarget,
+) -> tuple[str, str, int | None, str | None, int, int]:
+    return (
+        target.record_id,
+        target.field,
+        target.item_index,
+        target.item_field,
+        target.char_start,
+        target.char_end,
+    )
+
+
+def _check_counts(receipt: dict[str, Any], entries: dict[str, dict[str, Any]], errors: list[str]) -> None:
+    totals = {"addressable_nodes": len(entries)}
+    for disposition in DISPOSITIONS:
+        totals[disposition] = sum(
+            1 for entry in entries.values() if entry.get("disposition") == disposition
+        )
+    if receipt.get("totals") != totals:
+        errors.append(f"totals mismatch: receipt={receipt.get('totals')} computed={totals}")
+
     classes: dict[str, dict[str, int]] = {}
-    for node in nodes:
-        classes.setdefault(node["element"], {"projected": 0, "dropped": 0, "normalized": 0})[node["disposition"]] += 1
-    if receipt["classes"] != classes:
+    for entry in entries.values():
+        element = entry.get("element")
+        classes.setdefault(element, {disposition: 0 for disposition in DISPOSITIONS})[
+            entry.get("disposition")
+        ] += 1
+    if receipt.get("classes") != classes:
         errors.append("classes mismatch")
 
 
 def check_receipt(receipt_path: Path, *, repo_root: Path = REPO_ROOT) -> list[str]:
-    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
-    if receipt.get("receipt_schema") == "loss-receipt-v2":
-        return check_receipt_v2(receipt_path, repo_root=repo_root)
+    """Return strict v2 verification errors; an empty list means PASS."""
+
+    try:
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"could not read receipt: {exc}"]
+    shape_errors = _validate_receipt_shape(receipt)
+    if shape_errors:
+        return [f"schema: {error}" for error in shape_errors]
+
+    try:
+        revision = repository_revision(repo_root)
+        committed_receipt = is_committed_path(
+            receipt_path,
+            repository_root=repo_root,
+            revision=revision,
+        )
+    except CanonicalGitRepositoryRootError as exc:
+        return [f"canonical Git authority unavailable: {exc}"]
+    except CanonicalGitArtifactError as exc:
+        if (Path(repo_root) / ".git").exists():
+            return [f"canonical Git authority unavailable: {exc}"]
+        committed_receipt = False
+        revision = ""
+    if committed_receipt:
+        try:
+            authorization_error = _authorize_committed_receipt(
+                receipt_path,
+                receipt,
+                repo_root=repo_root,
+                revision=revision,
+            )
+            if authorization_error is not None:
+                return [authorization_error]
+        except CanonicalGitArtifactError as exc:
+            return [str(exc)]
+
     errors: list[str] = []
-    ir_path = repo_root / receipt["ir"]["path"]
-    output_path = repo_root / receipt["output"]["path"]
-    if not ir_path.exists():
+    try:
+        ir_path = _resolve_repo_path(repo_root, receipt["ir"]["path"])
+    except CanonicalGitArtifactError as exc:
+        return [f"IR path is outside the repository: {exc}"]
+    try:
+        output_path = _resolve_repo_path(repo_root, receipt["output"]["path"])
+    except CanonicalGitArtifactError as exc:
+        return [f"output path is outside the repository: {exc}"]
+    if not ir_path.is_file():
         return [f"IR path does not exist: {ir_path}"]
-    if not output_path.exists():
+    if not output_path.is_file():
         return [f"output path does not exist: {output_path}"]
 
-    records = _load_jsonl(output_path)
-    tree = etree.parse(str(ir_path))
-    text = tree.xpath("/tei:TEI/tei:text", namespaces=NS)[0]
-    by_address, duplicate_errors = _receipt_nodes_by_address(receipt)
-    errors.extend(duplicate_errors)
-    used_records: set[str] = set()
+    ir_bytes = ir_path.read_bytes()
+    output_bytes = output_path.read_bytes()
+    if committed_receipt:
+        try:
+            ir_bytes = committed_artifact(
+                ir_path,
+                repository_root=repo_root,
+                revision=revision,
+            ).canonical_bytes
+            output_bytes = committed_artifact(
+                output_path,
+                repository_root=repo_root,
+                revision=revision,
+            ).canonical_bytes
+        except CanonicalGitArtifactError as exc:
+            return [str(exc)]
 
-    for element in text.iter():
-        address = derive_address(element)
-        entry = by_address.get(address)
-        if entry is None:
-            errors.append(f"missing ledger node: {address}")
-            continue
-        expected_disposition = _expected_disposition(element)
-        if entry["element"] != _local(element):
-            errors.append(f"element mismatch for {address}: {entry['element']} != {_local(element)}")
-        if entry["disposition"] != expected_disposition:
-            errors.append(
-                f"disposition mismatch for {address}: {entry['disposition']} != {expected_disposition}"
-            )
-        target = entry.get("target")
-        if entry["disposition"] == "projected" and target is None:
-            errors.append(f"projected node missing target: {address}")
-            continue
-        if target is None:
-            continue
-        record = records.get(target["record_id"])
-        if record is None:
-            errors.append(f"target record missing for {address}: {target['record_id']}")
-            continue
-        used_records.add(target["record_id"])
-        if "char_start" in target or "char_end" in target:
-            start = target.get("char_start")
-            end = target.get("char_end")
-            if not isinstance(start, int) or not isinstance(end, int) or start > end:
-                errors.append(f"invalid char span for {address}: {target}")
-                continue
-            expected_text = _node_clean_text(element)
-            actual_text = record.get("text", "")[start:end]
-            if actual_text != expected_text:
+    if hashlib.sha256(ir_bytes).hexdigest() != receipt["ir"]["sha256"]:
+        errors.append("IR sha256 mismatch")
+    if hashlib.sha256(output_bytes).hexdigest() != receipt["output"]["sha256"]:
+        errors.append("output sha256 mismatch")
+
+    records, record_errors = _load_jsonl(output_bytes)
+    errors.extend(record_errors)
+    try:
+        tree = etree.ElementTree(etree.fromstring(ir_bytes))
+    except (OSError, etree.XMLSyntaxError) as exc:
+        return errors + [f"could not parse IR: {exc}"]
+    expected_records, record_divs = _build_expected_records(tree, ir_path)
+    expected_by_id = {record["id"]: record for record in expected_records}
+    for record_id in sorted(set(expected_by_id) - set(records)):
+        errors.append(f"missing output record: {record_id}")
+    for record_id in sorted(set(records) - set(expected_by_id)):
+        errors.append(f"orphan output record: {record_id}")
+    for record_id in sorted(set(expected_by_id) & set(records)):
+        expected = expected_by_id[record_id]
+        actual = records[record_id]
+        for field in ("text", "argument", "title_path", "speeches"):
+            if actual.get(field) != expected.get(field):
                 errors.append(
-                    f"span mismatch for {address}: expected {expected_text!r}, got {actual_text!r}"
+                    f"output field mismatch for {record_id}.{field}: "
+                    f"expected {expected.get(field)!r}, got {actual.get(field)!r}"
                 )
 
-    expected_addresses = {derive_address(element) for element in text.iter()}
-    for address in sorted(set(by_address) - expected_addresses):
+    expected_nodes, node_build_errors = _expected_nodes(
+        tree, ir_path, record_divs, expected_records
+    )
+    errors.extend(node_build_errors)
+    entries, entry_errors = _receipt_nodes(receipt)
+    errors.extend(entry_errors)
+    expected_addresses = set(expected_nodes)
+    for address in sorted(expected_addresses - set(entries)):
+        errors.append(f"missing ledger node: {address}")
+    for address in sorted(set(entries) - expected_addresses):
         errors.append(f"extra ledger node: {address}")
-    for record_id in sorted(set(records) - used_records):
-        errors.append(f"orphan output record: {record_id}")
-    _check_counts(receipt, errors)
+
+    for address, expected in expected_nodes.items():
+        entry = entries.get(address)
+        if entry is None:
+            continue
+        if entry.get("element") != expected.element:
+            errors.append(f"element mismatch for {address}: {entry.get('element')} != {expected.element}")
+        if entry.get("disposition") != expected.disposition:
+            errors.append(
+                f"disposition mismatch for {address}: {entry.get('disposition')} != {expected.disposition}"
+            )
+        if expected.disposition in {"delivered", "normalized", "dropped"}:
+            expected_length = len(expected.canonical_text)
+            if entry.get("canonical_text_length") != expected_length:
+                errors.append(f"canonical length mismatch for {address}")
+            if entry.get("canonical_text_sha256") != _sha256_text(expected.canonical_text):
+                errors.append(f"canonical hash mismatch for {address}")
+        elif expected.disposition == "empty":
+            if entry.get("canonical_text_length") != 0:
+                errors.append(f"empty node has nonzero canonical length for {address}")
+        if expected.reason_code is not None and entry.get("reason_code") != expected.reason_code:
+            errors.append(
+                f"reason mismatch for {address}: {entry.get('reason_code')} != {expected.reason_code}"
+            )
+        actual_targets = entry.get("targets", [])
+        actual_keys = sorted(_target_key(target) for target in actual_targets)
+        expected_keys = sorted(_expected_target_key(target) for target in expected.targets)
+        if actual_keys != expected_keys:
+            errors.append(f"target set mismatch for {address}")
+        for target in actual_targets:
+            record = records.get(target.get("record_id"))
+            if record is None:
+                errors.append(f"target record missing for {address}: {target.get('record_id')}")
+                continue
+            field = target.get("field")
+            if field == "title_path":
+                index = target.get("item_index")
+                value = record.get("title_path", [])[index] if isinstance(index, int) and index < len(record.get("title_path", [])) else None
+            elif field == "speeches":
+                index = target.get("item_index")
+                item_field = target.get("item_field")
+                speeches = record.get("speeches", [])
+                value = (
+                    speeches[index].get(item_field)
+                    if isinstance(index, int)
+                    and index < len(speeches)
+                    and item_field in {"speaker", "text"}
+                    else None
+                )
+            else:
+                value = record.get(field)
+            start = target.get("char_start")
+            end = target.get("char_end")
+            if not isinstance(value, (str, list)) or not isinstance(start, int) or not isinstance(end, int):
+                errors.append(f"invalid target evidence for {address}")
+                continue
+            if start >= end or end > len(value):
+                errors.append(f"target span out of bounds for {address}")
+                continue
+            if isinstance(value, str) and value[start:end] != expected.canonical_text:
+                errors.append(f"target slice mismatch for {address}")
+    _check_counts(receipt, entries, errors)
     return errors
 
 
@@ -188,11 +1028,7 @@ def main(argv: list[str] | None = None) -> int:
         for error in errors:
             print(error)
         return 1
-    receipt = json.loads(args.receipt_path.read_text(encoding="utf-8"))
-    if receipt.get("receipt_schema") == "loss-receipt-v1":
-        print("LEGACY: loss-receipt-v1 is valid but does not prove delivery")
-    else:
-        print("PASS")
+    print("PASS")
     return 0
 
 

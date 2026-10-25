@@ -1,0 +1,42 @@
+{
+  "contract": "ocd-creeds-json-lib064-validation-policy-v1",
+  "policy_id": "creeds-json-lib064-retained-byte-json-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_package_count": 10,
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "import_closure": [
+    "build/__init__.py",
+    "build/tei/__init__.py",
+    "build/tei/creeds_json_lib064_oracle.py",
+    "ocd_kernel/__init__.py",
+    "ocd_kernel/reconstruction/__init__.py",
+    "ocd_kernel/reconstruction/contract.py",
+    "ocd_kernel/reconstruction/verifier.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.parsers.creeds_json_confession",
+    "build.tei.creeds_json_lib064_reconstruction"
+  ],
+  "checks": [
+    "literal-retained-source-byte-and-sha256-binding",
+    "complete-43-member-family-census-with-10-included-and-33-excluded",
+    "exact-universal-newline-normalized-legacy-claim-lineage",
+    "strict-json-no-duplicate-keys",
+    "exact-object-key-array-and-scalar-order",
+    "exact-content-contentwithproofs-proofs-and-proofswithscripture",
+    "exact-metadata-attribution-null-empty-and-structural-edge-cases",
+    "embedded-base64-reproduces-literal-retained-bytes",
+    "candidate-package-integrity",
+    "tei-p5-xsd",
+    "source-accountability-and-unresolved-boundaries",
+    "producer-independent-import-closure"
+  ]
+}

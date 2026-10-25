@@ -1,0 +1,47 @@
+{
+  "contract": "ocd-npnf211-lib049-reconstruction-profile-v14",
+  "profile_id": "npnf211-lib049-three-work-v14",
+  "version": 14,
+  "source_member": {
+    "path": "raw/ccel/npnf2/npnf211.xml",
+    "bytes": 4045340,
+    "sha256": "4ca2fa69fc584c8a697884454a3d95453b044e7548b48ff44a1d95605741a5b2"
+  },
+  "assigned_roots": ["ii", "iii", "iv"],
+  "work_assignments": {
+    "ii": "sulpitius-severus-selected-works",
+    "iii": "vincent-of-lerins-commonitory",
+    "iv": "john-cassian-selected-works"
+  },
+  "outside_assigned_work_scope": {
+    "top_level_div1": ["i", "v"],
+    "shell": ["XML declaration", "DOCTYPE", "two pre-root comments", "ThML", "ThML.head", "ThML.body wrapper"],
+    "root_tails": ["ii", "iii", "iv"]
+  },
+  "assigned_feature_count": 14950,
+  "assigned_attribute_count": 34639,
+  "assigned_text_node_count": 10553,
+  "assigned_tail_node_count": 11893,
+  "assigned_character_count": 2832630,
+  "assigned_non_ascii_character_count": 13199,
+  "assigned_feature_counts": {
+    "div1": 3, "div2": 50, "div3": 92, "div4": 1061, "h1": 8,
+    "h2": 26, "h3": 69, "h4": 1169, "h5": 2, "h6": 8, "hr": 19,
+    "i": 777, "note": 2684, "p": 5129, "pb": 587, "scripRef": 1803,
+    "span": 1442, "sup": 2, "table": 1, "td": 12, "tr": 6
+  },
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "assigned_table_census": {"tables": 1, "rows": 6, "cells": 12},
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-text-and-in-scope-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-and-source-headings-projected",
+    "notes-page-breaks-scripture-references-language-spans-tables-and-formatting-preserved",
+    "exact-source-member-shell-head-front-index-and-root-tail-accounting",
+    "exact-prolog-root-boundary-and-namespace-policy",
+    "retained-metadata-rights-and-credit-claims-preserved-without-inference",
+    "all-three-works-nonaccepted-and-publication-not-ready"
+  ]
+}

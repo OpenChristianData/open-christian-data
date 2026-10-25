@@ -1,0 +1,124 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "crosswire-daily-light-sword-rawld-retained",
+  "ticket_id": "LIB-006",
+  "work_id": "daily-light",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "source_order": {
+    "extracted_dir": "Daily",
+    "members": [
+      "modules/lexdict/rawld/devotionals/daily/daily.dat",
+      "modules/lexdict/rawld/devotionals/daily/daily.idx",
+      "mods.d/daily.conf"
+    ],
+    "index_first": true,
+    "days": "01.01 through 12.31 including 02.29"
+  },
+  "retained_member_census": {
+    "extracted_dir_bytes": 1037473,
+    "members": [
+      {
+        "name": "modules/lexdict/rawld/devotionals/daily/daily.dat",
+        "role": "textual-witness",
+        "bytes": 1034668,
+        "sha256": "a7b7a9a4207836d152365e465ca3ba219de3df01d5516e2bfcf7ed6201f8e543"
+      },
+      {
+        "name": "modules/lexdict/rawld/devotionals/daily/daily.idx",
+        "role": "binary-order-index-authority",
+        "bytes": 2202,
+        "sha256": "76bdcf08e75da1bcb98b46fbc7a0b97183c055756cef9b4e4b7318e439083899"
+      },
+      {
+        "name": "mods.d/daily.conf",
+        "role": "module-metadata-and-rights-evidence",
+        "bytes": 603,
+        "sha256": "4c5afc29317b58ad7c110affbac23ffc534a9e04d1d4f86c05efd4cb584689fb"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/devotionals/daily-light/daily-light.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2842,
+      "sha256": "576d119dd8d6484a2d0454377ee43635807ae72d39eb209242be00040dfb934b"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/devotionals/daily-light/daily-light.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2208,
+      "sha256": "3ef0e975671991e8430c554e2510edc1099de23ac4d781ed0780e30df23198cc"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/devotionals/daily-light/README.md",
+      "role": "source-attribution",
+      "bytes": 1490,
+      "sha256": "f4657a272d8c268bc0bc53493ae919c1dbe7e873f6ebe4f1fe3a3269ac7c662b"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/devotionals/daily-light/daily-light.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 5304,
+      "sha256": "e49cde16a626df4ae64bb7bead30fe5838394848547408f07214992dbde1cbda"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "retained-daily-dat",
+      "path": "raw/sword_modules/Daily/modules/lexdict/rawld/devotionals/daily/daily.dat",
+      "role": "primary-source",
+      "bytes": 1034668,
+      "sha256": "a7b7a9a4207836d152365e465ca3ba219de3df01d5516e2bfcf7ed6201f8e543"
+    },
+    {
+      "name": "retained-daily-idx",
+      "path": "raw/sword_modules/Daily/modules/lexdict/rawld/devotionals/daily/daily.idx",
+      "role": "primary-source",
+      "bytes": 2202,
+      "sha256": "76bdcf08e75da1bcb98b46fbc7a0b97183c055756cef9b4e4b7318e439083899"
+    },
+    {
+      "name": "retained-daily-conf",
+      "path": "raw/sword_modules/Daily/mods.d/daily.conf",
+      "role": "source-support-metadata-rights",
+      "bytes": 603,
+      "sha256": "4c5afc29317b58ad7c110affbac23ffc534a9e04d1d4f86c05efd4cb584689fb"
+    }
+  ],
+  "converter": {
+    "id": "ocd-daily-light-sword-rawld-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/daily_light_reconstruction.py",
+    "implementation_sha256": "b48016fb48e4f6cf7c825ea6e96a70cdc487a0d0737364ec2bf7685322da4b9b"
+  },
+  "validator": {
+    "id": "ocd-daily-light-sword-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/daily_light_oracle.py",
+    "implementation_sha256": "6aa98b5d3e72e7edb4651b61ede987fd928ec30a1c3495ffb68637c99f329a5f",
+    "import_closure_sha256": "72f07a5608a9139faceef90f7027d9be8a943bf462f865fb551a6f096f98acbc"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

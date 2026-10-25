@@ -1,0 +1,7 @@
+# Barclay retained source and data credit
+
+Carry the literal Robert Barclay authorship, John Baskerville printing, Emmanuel Ackerman and Online Distributed Proofreading Team electronic production, and HathiTrust Digital Library, Google, and University of Michigan Library image credits visibly to `data/prose/barclay-apology-true-christian-divinity/publication/README.md`. The exact primary credits are frozen in the work-local preflight from the retained Project Gutenberg eBook 56487 title page and production envelope.
+
+The eighth English edition and 1765 print statement remain distinct from the February 2, 2018 electronic release date. [Project Gutenberg](https://www.gutenberg.org/ebooks/56487) identifies public-domain status in the United States; retain the [Project Gutenberg License](https://www.gutenberg.org/policy/license.html) and trademark conditions, and qualify non-US use and independent rights clearance.
+
+The complete accepted front/body/back structure is reused unchanged. The Gutenberg license wrapper remains in the retained raw HTML and source accounting outside TEI work text. The older rich structured-text source README and original data README remain historical provenance, with their exact preimages preserved; this distinct source notice explicitly targets the public-safe release notice. No acquisition, reconstruction, master or metadata change, rights clearance, human acceptance, or public publication is asserted.

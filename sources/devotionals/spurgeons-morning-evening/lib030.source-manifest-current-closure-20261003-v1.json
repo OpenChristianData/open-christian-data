@@ -1,0 +1,16 @@
+{
+  "contract":"ocd-source-manifest-v1",
+  "source_id":"ccel-lib030-retained-thml-source-set",
+  "authorities":[
+    {"name":"retained-source-set","path":"sources/devotionals/spurgeons-morning-evening/lib030-retained-source-set.json","role":"primary-source","bytes":345,"sha256":"1edf64d668edff3f88297921800fa418ce26d4e6906614ca1425640b0135fd5b"},
+    {"name":"reconstruction-profile","path":"sources/devotionals/spurgeons-morning-evening/lib030.reconstruction-profile.json","role":"complete-source-feature-profile","bytes":3525,"sha256":"2d280910d1781e4717496541a4e275e45801125cfe83905775e8953dd348f6da"},
+    {"name":"validation-policy","path":"sources/devotionals/spurgeons-morning-evening/lib030.validation-policy.json","role":"independent-validation-policy","bytes":4224,"sha256":"7cfa112c9f243832a5c027bd609515c85a242e9d914a4a5af35d62d24d719326"},
+    {"name":"source-accountability-schema","path":"sources/devotionals/spurgeons-morning-evening/lib030.source-accountability.schema.json","role":"complete-source-accountability-schema","bytes":2178,"sha256":"baaf0e5349fb2ddd97178800880d9c7885714a4abaf8d250051f0ef2fb68cfd3"},
+    {"name":"source-attribution","path":"sources/devotionals/spurgeons-morning-evening/lib030-source-attribution.md","role":"source-attribution-readme","bytes":1331,"sha256":"866034f3c87810104ee39fb0d385aa7a018741dd5f2f1886e8c3236b901539fe"},
+    {"name":"tei-p5-xsd","path":"ocd_kernel/tei/vendor/xsd/tei_all.xsd","role":"tei-validation-schema","bytes":1108622,"sha256":"2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name":"candidate-package-schema","path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","role":"candidate-package-schema","bytes":2173,"sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter":{"id":"ocd-lib030-ccel-thml-cohort-to-tei","version":"3","callable":"_convert","implementation_path":"build/tei/lib030_reconstruction.py","implementation_sha256":"daf4ae5adc35599f20f40352dc2e1bc370327bfbb9a7d4ef18b190701afdf000"},
+  "validator":{"id":"ocd-lib030-source-to-tei-oracle","version":"3","callable":"_oracle","implementation_path":"build/tei/lib030_oracle.py","implementation_sha256":"ddadae3d9ea1c43afcddbf62359056ba288d15cfa1ed9365a2a8357d3f27f9c0","import_closure_sha256":"72b38a99bc9cc4a3089e727db4845ecbd03024a123d3f08eb7ba913dca64223a"},
+  "package_schema":{"path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+}

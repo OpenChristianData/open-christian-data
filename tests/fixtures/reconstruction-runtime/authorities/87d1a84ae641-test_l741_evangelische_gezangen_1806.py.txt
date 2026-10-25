@@ -1,0 +1,192 @@
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import xml.etree.ElementTree as ET
+
+from lxml import etree
+import pytest
+
+from build.tei.l741_evangelische_gezangen_1806_oracle import _oracle
+from build.tei.l741_evangelische_gezangen_1806 import _convert
+from ocd_kernel.lib.storage_topology import resolve_repo_path
+from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest, reconstruct, validate
+from ocd_kernel.tei.validate import compiled_schema
+
+ROOT = Path(__file__).resolve().parents[1]
+DOSSIER = ROOT / "sources/manifest-acquisitions/l741-evangelische-gezangen-1806"
+MANIFEST = DOSSIER / "source-manifest.json"
+SOURCE_LOGICAL = "raw/dbnl/evangelische-gezangen-1806/evangelische-gezangen-1806.xml"
+TEI_NS = "http://www.tei-c.org/ns/1.0"
+XML_NS = "http://www.w3.org/XML/1998/namespace"
+XMLID = f"{{{XML_NS}}}id"
+NS = {"t": TEI_NS}
+
+
+def _sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _canonical(value: object) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+
+
+@pytest.fixture(scope="module")
+def candidate_bundle(tmp_path_factory: pytest.TempPathFactory):
+    source_manifest = SourceManifest.load(MANIFEST, repository_root=ROOT)
+    candidate = reconstruct(source_manifest, tmp_path_factory.mktemp("l741-base") / "candidate", _convert)
+    attestation = _oracle(source_manifest, candidate)
+    assert attestation["status"] == "pass"
+    report = validate(source_manifest, candidate, _oracle)
+    return source_manifest, candidate, report
+
+
+def _reseal(candidate: CandidatePackage, tmp_path: Path, label: str, mutate) -> CandidatePackage:
+    destination = tmp_path / label
+    shutil.copytree(candidate.path, destination)
+    tei_path = destination / "content.tei.xml"
+    tree = etree.parse(str(tei_path))
+    mutate(tree)
+    changed = etree.tostring(tree, encoding="UTF-8", xml_declaration=True, pretty_print=False)
+    tei_path.write_bytes(changed)
+    manifest_path = destination / "manifest.json"
+    manifest = json.loads(manifest_path.read_bytes())
+    manifest["members"] = [
+        {"name": path.name, "bytes": len(content := path.read_bytes()), "sha256": _sha(content)}
+        for path in sorted(destination.iterdir())
+        if path.name != "manifest.json"
+    ]
+    manifest_path.write_bytes(_canonical(manifest))
+    return CandidatePackage.load(destination)
+
+
+def _p5_valid(candidate: CandidatePackage) -> bool:
+    root = etree.fromstring(candidate.member_bytes("content.tei.xml"))
+    return compiled_schema().validate(root)
+
+
+def test_exact_source_identity_and_bundle_are_bound(candidate_bundle) -> None:
+    source_manifest, candidate, report = candidate_bundle
+    profile = json.loads(source_manifest.authority_path("complete-source-feature-profile").read_bytes())
+    assert source_manifest.record["ticket_id"] == "L741"
+    assert source_manifest.record["work_id"] == "evangelische-gezangen-1806"
+    assert source_manifest.record["textual_form_id"] == "evangelische-gezangen-1806-dbnl-retained"
+    assert source_manifest.record["edition_id"] == "evangelische-gezangen-1806-dbnl-electronic"
+    assert source_manifest.record["acquisition_id"] == "evangelische-gezangen-1806-dbnl-acquired"
+    link = profile["work_catalog_link"]
+    assert link["work_id"] == source_manifest.record["work_id"]
+    assert link["textual_form_id"] == source_manifest.record["textual_form_id"]
+    assert link["edition_id"] == source_manifest.record["edition_id"]
+    assert link["acquisition_id"] == source_manifest.record["acquisition_id"]
+    assert _sha(source_manifest.authority_path("registered-work-identity").read_bytes()) == link["work_record"]["sha256"]
+    assert _sha(source_manifest.authority_path("registered-work-state").read_bytes()) == link["state_record"]["sha256"]
+    assert _sha(source_manifest.authority_path("registered-work-acquisition").read_bytes()) == link["acquisition_record"]["sha256"]
+    assert [dict(item) for item in source_manifest.record["source_members"]] == [{
+        "path": SOURCE_LOGICAL,
+        "name": "evangelische-gezangen-1806.xml",
+        "bytes": 574306,
+        "sha256": "d8132943dd20b1053d1d77bda57cab2b69c9dc567e38ea4450baab914925abb9",
+    }]
+    assert profile["source_identity_evidence"]["receipt_edition"] == "1ste druk, 1806; anonymous Dutch Reformed hymnal"
+    assert profile["retained_bundle_member_count"] == 5
+    assert _sha(resolve_repo_path(ROOT, SOURCE_LOGICAL).read_bytes()) == profile["primary_source"]["sha256"]
+    pointers = profile["source_body"]["external_score_image_pointers"]
+    assert len(pointers) == 68
+    receipt = json.loads(source_manifest.authority_path("l741-score-image-acquisition-receipt").read_bytes())
+    assert receipt["member_count"] == 68
+    receipt_by_name = {item["name"]: item for item in receipt["members"]}
+    for pointer in pointers:
+        retained = resolve_repo_path(ROOT, pointer["asset_logical_path"]).read_bytes()
+        record = receipt_by_name[pointer["to"]]
+        assert pointer["asset_url"] == f"{profile['source_body']['score_image_target_base']}{pointer['to']}"
+        assert record["source_url"] == pointer["asset_url"]
+        assert len(retained) == pointer["asset_bytes"] == record["bytes"]
+        assert _sha(retained) == pointer["asset_sha256"] == record["sha256"]
+        assert retained[:6] in (b"GIF87a", b"GIF89a")
+    assert report.status == "pass"
+    assert candidate.manifest["status"] == "nonaccepted"
+
+
+def test_candidate_is_one_direct_tei_with_source_work_boundaries(candidate_bundle) -> None:
+    source_manifest, candidate, _report = candidate_bundle
+    profile = json.loads(source_manifest.authority_path("complete-source-feature-profile").read_bytes())
+    root = etree.fromstring(candidate.member_bytes("content.tei.xml"))
+    assert root.tag == f"{{{TEI_NS}}}TEI"
+    assert len(root.xpath("/t:TEI", namespaces=NS)) == 1
+    assert len(root.xpath(".//t:TEI", namespaces=NS)) == 0
+    assert root.get(XMLID) == "evangelische-gezangen-1806"
+    assert root.xpath("string(/t:TEI/t:teiHeader/t:fileDesc/t:titleStmt/t:title[@type='main'])", namespaces=NS) == "Evangelische Gezangen, om nevens het Boek der Psalmen bij den openbaren godsdienst in de Nederlandsche Hervormde Gemeenten gebruikt te worden"
+    assert [etree.QName(node).localname for node in root.xpath("/t:TEI/t:text/*", namespaces=NS)] == ["front", "body", "back"]
+    assert [len(root.xpath(f"/t:TEI/t:text/t:{name}/*", namespaces=NS)) for name in ("front", "body", "back")] == [3, 192, 4]
+    assert len(root.xpath(".//t:lg[@type='poem']", namespaces=NS)) == 265
+    assert len(root.xpath(".//t:pb", namespaces=NS)) == 414
+    assert len(root.xpath(".//t:interpGrp", namespaces=NS)) == 193
+    assert len(root.xpath(".//t:interp", namespaces=NS)) == 194
+    assert len(root.xpath(".//t:interp[@type='song']", namespaces=NS)) == 192
+    assert len(root.xpath(".//t:table", namespaces=NS)) == 26
+    assert len(root.xpath(".//t:row", namespaces=NS)) == 192
+    assert len(root.xpath(".//t:cell", namespaces=NS)) == 384
+    assert len(root.xpath(".//t:figure", namespaces=NS)) == 68
+    graphics = root.xpath(".//t:graphic", namespaces=NS)
+    assert len(graphics) == 68
+    expected_uris = [source_manifest.authority_path(pointer["asset_authority"]).resolve(strict=True).as_uri() for pointer in profile["source_body"]["external_score_image_pointers"]]
+    assert [node.get("url") for node in graphics] == expected_uris
+    assert [node.get(f"{{{XML_NS}}}base") for node in graphics] == [None] * 68
+    assert compiled_schema().validate(root)
+
+
+def test_source_body_text_elements_links_and_sidecars_are_fully_accounted(candidate_bundle) -> None:
+    source_manifest, candidate, _report = candidate_bundle
+    profile = json.loads(source_manifest.authority_path("complete-source-feature-profile").read_bytes())
+    source_root = ET.fromstring(resolve_repo_path(ROOT, SOURCE_LOGICAL).read_bytes())
+    source_body = source_root.find("./text/body")
+    account = json.loads(candidate.member_bytes("source-accountability.json"))
+    assert account["work_id"] == "evangelische-gezangen-1806"
+    assert account["textual_form_id"] == "evangelische-gezangen-1806-dbnl-retained"
+    assert account["edition_id"] == "evangelische-gezangen-1806-dbnl-electronic"
+    assert account["acquisition_id"] == "evangelische-gezangen-1806-dbnl-acquired"
+    assert account["work_catalog_link"] == profile["work_catalog_link"]
+    assert source_body is not None
+    source_elements = [node for node in source_body.iter() if node is not source_body and isinstance(node.tag, str)]
+    assert len(account["source_body"]["one_to_one_source_element_map"]) == len(source_elements)
+    assert len({item["candidate_xml_id"] for item in account["source_body"]["one_to_one_source_element_map"]}) == len(source_elements)
+    assert account["source_body"]["candidate_text_stream_matches_source"] is True
+    assert account["source_body"]["page_break_labels"] == [node.get("n") for node in source_body.iter() if isinstance(node.tag, str) and node.tag == "pb"]
+    refs = [node.get("to") for node in source_body.iter() if isinstance(node.tag, str) and node.tag == "xptr"]
+    root = etree.fromstring(candidate.member_bytes("content.tei.xml"))
+    graphics = root.xpath(".//t:graphic", namespaces=NS)
+    expected_uris = [source_manifest.authority_path(pointer["asset_authority"]).resolve(strict=True).as_uri() for pointer in profile["source_body"]["external_score_image_pointers"]]
+    assert [node.get("url") for node in graphics] == expected_uris
+    assert [node.get(f"{{{XML_NS}}}base") for node in graphics] == [None] * 68
+    assert account["source_body"]["candidate_score_image_links"] == [
+        {"uri": uri, "source_path": pointer["asset_logical_path"], "bytes": pointer["asset_bytes"], "sha256": pointer["asset_sha256"]}
+        for uri, pointer in zip(expected_uris, profile["source_body"]["external_score_image_pointers"], strict=True)
+    ]
+    assert account["source_body"]["external_score_image_pointers"] == profile["source_body"]["external_score_image_pointers"]
+    assert all(node.get("corresp") == "#dbnl-eva005evan01-1806-witness" for node in root.xpath(".//*[@xml:id[starts-with(., 'l741-source-element-')]]", namespaces=NS))
+    unresolved = [json.loads(line) for line in candidate.member_bytes("unresolved.jsonl").splitlines()]
+    assert len(unresolved) == 5
+    assert all(item["id"] != "dbnl-score-image-payloads" for item in unresolved)
+    assert len(root.xpath("/t:TEI/t:teiHeader/t:encodingDesc/t:editorialDecl/t:correction/t:p", namespaces=NS)) == 3
+    assert candidate.member_bytes("README.source.md") == source_manifest.authority_path("source-attribution-readme").read_bytes()
+
+
+@pytest.mark.parametrize(
+    ("label", "mutate"),
+    [
+        ("source-text", lambda tree: setattr(tree.xpath(".//t:l", namespaces=NS)[0], "text", (tree.xpath(".//t:l", namespaces=NS)[0].text or "") + " MUTATION")),
+        ("page-label", lambda tree: tree.xpath(".//t:pb", namespaces=NS)[0].set("n", "MUTATED")),
+        ("tune-song-link", lambda tree: tree.xpath(".//t:interp", namespaces=NS)[0].set("n", "mutated-tune-or-song-id")),
+        ("index-entry", lambda tree: setattr(tree.xpath(".//t:table/t:row/t:cell", namespaces=NS)[0], "text", "MUTATED INDEX ENTRY")),
+        ("score-target", lambda tree: tree.xpath(".//t:graphic", namespaces=NS)[0].set("url", "mutated-score.gif")),
+        ("score-target-base", lambda tree: tree.xpath(".//t:graphic", namespaces=NS)[0].set(f"{{{XML_NS}}}base", "https://example.invalid/")),
+    ],
+)
+def test_p5_valid_source_feature_mutations_are_rejected(candidate_bundle, tmp_path: Path, label, mutate) -> None:
+    source_manifest, candidate, _report = candidate_bundle
+    changed = _reseal(candidate, tmp_path, label, mutate)
+    assert _p5_valid(changed), f"{label} mutation must remain P5-valid to exercise the source oracle"
+    with pytest.raises(ValueError, match="candidate"):
+        _oracle(source_manifest, changed)

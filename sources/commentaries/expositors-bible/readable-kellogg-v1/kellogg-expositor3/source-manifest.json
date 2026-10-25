@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib035-readable-kellogg-expositor3-v1",
+  "work_id": "expositors-bible--samuel-h-kellogg",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/kellogg_expositor3.xml",
+      "role": "primary-source",
+      "bytes": 1241956,
+      "sha256": "bab7fb79a99d3e07a81ccd4bac77ad6d9274884378e179d71ce4db36ef315284"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-kellogg-v1/kellogg-expositor3/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 682,
+      "sha256": "b97d0226f16a584acca7f7647ea57bcaad79b2df95ba5ffb38bf928a975b4b7d"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-kellogg-v1/kellogg-expositor3/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 915,
+      "sha256": "fda4772fe48819993be1746d552b16433f2f1e08e304f1ef151007c2f1d9138d"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-kellogg-v1/kellogg-expositor3/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 808,
+      "sha256": "48630db065b3bd7f0d5292a42089a9c92d7c312ea9ef8377bd557db8c0a65426"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-kellogg-v1/kellogg-expositor3/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1810,
+      "sha256": "577c85843e1c89623a90b1037df5aeb8762e5717230d24320aad012139c024dc"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib035-readable-kellogg-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_kellogg.py",
+    "implementation_sha256": "20448f1323f62748c57458b090dd818ee4f16a9322219e4ac5e8060340c6737f"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib035-readable-kellogg-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_kellogg_oracle.py",
+    "implementation_sha256": "7a782710b07cf0632eede0f154c68d0a23458a7bd5a9f60d3e32bca4207266a0",
+    "import_closure_sha256": "7a782710b07cf0632eede0f154c68d0a23458a7bd5a9f60d3e32bca4207266a0"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

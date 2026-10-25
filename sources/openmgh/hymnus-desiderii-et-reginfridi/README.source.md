@@ -1,0 +1,5 @@
+# Electronic source for hymnus-desiderii-et-reginfridi
+
+The retained text source is `raw/openmgh/bsb00000753/tei/bsb00000753.xml` (SHA-256 `550c090dad42988c5a8c95adc3328a3b5ef93dcfeaa8f91354fe6a03995f9b27`). Its ZIP is acquisition packaging, not another text witness. This work selects the complete second `div type=part` within the Desiderii carrier in bsb00000753. Its 43 native children retain the title highlight, 38 line markers, two column spans, and matching closing anchors in source order. The preceding prose part remains outside this hymn. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/hymnus-desiderii-et-reginfridi/README.md` and bind both exact hashes through `public_notices`.

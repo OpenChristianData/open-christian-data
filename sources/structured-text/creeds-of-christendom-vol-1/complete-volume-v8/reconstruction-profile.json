@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-lib029-reconstruction-profile-v1",
+  "profile_id": "lib029-ccel-complete-volume-v8",
+  "version": 1,
+  "source_set_authority": "retained-source-set",
+  "source_root_environment": "OCD_RETAINED_RAW_ROOT",
+  "work_order": [
+    "creeds-of-christendom-vol-1"
+  ],
+  "selected_div1_ids": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "vii",
+    "viii",
+    "ix",
+    "x",
+    "xi",
+    "xii"
+  ],
+  "projection": {
+    "scope": "complete twelve-division retained volume in source order",
+    "excluded_div1_ids": [],
+    "unknown_elements": "seg with explicit thml-{source-name} type",
+    "source_text": "preserved exactly as direct text and child tails",
+    "source_attributes": "projected only where a TEI destination is explicit and otherwise retained in the crosswalk",
+    "paratext": {
+      "front": [
+        "i",
+        "ii"
+      ],
+      "body": [
+        "iii",
+        "iv",
+        "v",
+        "vi",
+        "vii",
+        "viii",
+        "ix",
+        "x"
+      ],
+      "back": [
+        "xi",
+        "xii"
+      ]
+    }
+  },
+  "works": [
+    {
+      "work_id": "creeds-of-christendom-vol-1",
+      "title": "The Creeds of Christendom, Vol. I: The History of Creeds",
+      "author": "Philip Schaff",
+      "contributors": [
+        "Christian Classics Ethereal Library (digital edition)"
+      ],
+      "source_url": "https://www.ccel.org/ccel/schaff/creeds1.xml",
+      "source_edition": "Christian Classics Ethereal Library (CCEL) ThML edition; original New York: Harper & Brothers, 1877.",
+      "source_sha256": "450960af42f600534f15429546e0a00696a9fbfc4ea32df55545ef5a02c491e7"
+    }
+  ],
+  "requirements": [
+    "exact-retained-source-hash-and-member-order",
+    "explicit-selected-div1-scope-and-excluded-boundaries",
+    "complete-selected-source-element-and-attribute-accounting",
+    "exact-direct-text-and-child-tail-preservation",
+    "deterministic-TEI-identities-and-order",
+    "TEI-P5-validation",
+    "source-accountability-schema-validation",
+    "nonaccepted-human-review-and-publication-boundary",
+    "complete-front-body-back-source-envelope"
+  ]
+}

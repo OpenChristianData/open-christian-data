@@ -1,0 +1,25 @@
+{
+  "contract": "ocd-strong-pg45283-validation-policy-v9",
+  "required_checks": [
+    "exact-source-binding",
+    "volume-specific-edition-imprint-and-original-publication-date-separation",
+    "complete-independent-line-and-byte-accounting",
+    "ordered-readable-line-transcription",
+    "source-derived-standalone-part-chapter-section-heading-structure",
+    "source-indented-contents-hierarchy-and-wrapped-entry-accounting",
+    "contents-derived-body-heading-hierarchy-and-wrapped-heading-accounting",
+    "source-native-body-heading-hierarchy",
+    "explicit-transcriber-notes-and-cover-art-placeholder",
+    "balanced-underscore-emphasis-across-physical-lines",
+    "four-source-quoted-mottos-are-mapped-as-epigraphs",
+    "citation-and-page-reference-semantics-remain-uninferred",
+    "neutral-source-sequence-containers-preserve-unheaded-groups",
+    "scripture-index-book-headings-group-related-reference-entries",
+    "scripture-and-apocryphal-index-book-headings-group-related-reference-entries",
+    "tei-p5-schema-validation",
+    "omission-duplication-reorder-invention-and-heading-demotion-mutation-rejection",
+    "fresh-process-byte-reproduction"
+  ],
+  "version": 9,
+  "work_id": "strong-systematic-theology-vol-3"
+}

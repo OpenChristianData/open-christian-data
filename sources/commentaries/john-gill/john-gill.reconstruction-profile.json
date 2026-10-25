@@ -1,0 +1,96 @@
+{
+  "contract": "ocd-helloao-john-gill-profile-v1",
+  "profile_id": "helloao-john-gill-complete-retained-json-v1",
+  "version": 1,
+  "work_id": "john-gill",
+  "source_root": "raw/helloao_local/api/c/john-gill",
+  "scope": {
+    "member_count": 1191,
+    "total_bytes": 54866016,
+    "metadata_members": [
+      "books.json",
+      "profiles.json"
+    ],
+    "book_count": 66,
+    "chapter_count": 1189,
+    "commentary_occurrence_count": 28300,
+    "book_introduction_count": 66,
+    "chapter_introduction_present_count": 1186,
+    "chapter_introduction_absent_count": 3,
+    "chapter_introduction_absent_paths": [
+      "ZEP/1.json",
+      "ZEP/2.json",
+      "ZEP/3.json"
+    ],
+    "null_previous_link_paths": [
+      "GEN/1.json"
+    ],
+    "null_next_link_paths": [
+      "REV/22.json"
+    ],
+    "nonmonotonic_chapters": [
+      "1KI/22.json",
+      "1SA/18.json",
+      "2CO/3.json",
+      "EXO/32.json",
+      "EZK/18.json",
+      "EZK/5.json",
+      "HAB/1.json",
+      "ISA/9.json",
+      "JER/39.json",
+      "JHN/11.json",
+      "JHN/3.json",
+      "JOB/35.json",
+      "JON/1.json",
+      "JOS/14.json",
+      "NUM/32.json",
+      "PSA/21.json",
+      "PSA/90.json",
+      "REV/1.json",
+      "ROM/15.json"
+    ],
+    "duplicate_occurrence_numbers": []
+  },
+  "fidelity_policy": {
+    "book_order": "books.json array order, unchanged",
+    "chapter_order": "the retained book metadata chapter sequence, unchanged",
+    "occurrence_order": "each retained chapter.content array order, unchanged",
+    "occurrence_identity": "retained book, chapter, and array ordinal; verse number is not a unique key",
+    "content": "each sole occurrence content string is preserved byte-for-codepoint; every literal double-newline becomes an ordered TEI paragraph boundary, and no heading semantics are inferred without a pinned source structure inventory",
+    "book_introductions": "all retained book introduction strings are represented",
+    "chapter_introductions": "1186 retained strings are represented and three absent properties remain absent",
+    "chapter_envelopes": "all retained links and numberOfVerses values are represented, including null links",
+    "metadata": "retained commentary, profile, book, chapter, envelope, and occurrence metadata are the authority",
+    "forbidden_transformations": [
+      "sort occurrence numbers or arrays",
+      "merge or deduplicate occurrences",
+      "infer verse ranges or occurrence ranges",
+      "add Bible or BSB verse text",
+      "modernize or silently correct source wording",
+      "replace retained metadata with source-config metadata",
+      "change the retained textDirection marker",
+      "merge an alternate witness"
+    ]
+  },
+  "identity_and_rights_policy": {
+    "retained_title": "John Gill Bible Commentary",
+    "configured_title": "John Gill's Exposition of the Entire Bible",
+    "author": "John Gill",
+    "author_evidence": "retained commentary id john-gill and retained John Gill website link",
+    "retained_language": "eng",
+    "retained_text_direction": "rtl",
+    "retained_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "retained_license_notes": null,
+    "configured_license": "cc0-1.0",
+    "configured_helloao_license": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "edition": null,
+    "original_publication_year": null,
+    "alternate_witness_disposition": "none supplied"
+  },
+  "candidate_model": {
+    "candidate_status": "nonaccepted",
+    "accepted_ir": "not_accepted",
+    "publication": "not_ready",
+    "human_decision": null
+  }
+}

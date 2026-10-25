@@ -1,0 +1,43 @@
+{
+  "contract": "ocd-npnf2-lib048-reconstruction-profile-v2",
+  "profile_id": "npnf2-lib048-fifteen-work-v2",
+  "version": 2,
+  "assigned_roots": [
+    ["npnf206", "v", "jerome-letters"],
+    ["npnf206", "vi.i", "jerome-life-of-paulus"],
+    ["npnf206", "vi.ii", "jerome-life-of-hilarion"],
+    ["npnf206", "vi.iii", "jerome-life-of-malchus"],
+    ["npnf206", "vi.iv", "jerome-dialogue-against-luciferians"],
+    ["npnf206", "vi.v", "jerome-perpetual-virginity-of-mary"],
+    ["npnf206", "vi.vi", "jerome-against-jovinianus"],
+    ["npnf206", "vi.vii", "jerome-against-vigilantius"],
+    ["npnf206", "vi.viii", "jerome-to-pammachius-against-john-of-jerusalem"],
+    ["npnf206", "vi.ix", "jerome-against-pelagians"],
+    ["npnf209", "ii", "hilary-of-poitiers-select-works"],
+    ["npnf209", "iii", "john-of-damascus-orthodox-faith"],
+    ["npnf212", "ii", "leo-the-great-letters-and-sermons"],
+    ["npnf212", "iii", "gregory-the-great-pastoral-rule-and-epistles"],
+    ["npnf213", "ii", "gregory-the-great-selected-epistles"]
+  ],
+  "assigned_census": {
+    "elements": 53294,
+    "attributes": 115741,
+    "text_nodes": 39394,
+    "tail_nodes": 39005,
+    "characters": 7718481,
+    "non_ascii_characters": 48481,
+    "notes": 10138,
+    "page_breaks": 1542,
+    "scripture_refs": 7082
+  },
+  "requirements": [
+    "exact-retained-member-hashes",
+    "exact-assigned-root-order-and-complete-subtrees",
+    "exact-elements-attributes-text-tails-comments-and-processing-instructions",
+    "complete-shell-title-page-preface-sibling-and-index-accounting",
+    "exact-retained-metadata-rights-and-source-level-credit-evidence",
+    "exact-source-image-byte-hash-and-placement",
+    "current-image-supplemental-historical-snapshot-unknown",
+    "all-fifteen-works-nonaccepted-and-publication-not-ready"
+  ]
+}

@@ -1,20 +1,8 @@
-"""
-add_token_counts.py
--------------------
-Post-processing script: computes token_count (cl100k_base) for all JSON records
-in data/ that have tokenizable text. Idempotent -- safe to re-run after new data
-is added.
+"""Report token counts for an independently verified selected v2 release.
 
-Supported schema types and text extraction rules:
-  commentary        -- tokenize commentary_text
-  catechism_qa      -- tokenize "Q: {question} A: {answer}"
-  doctrinal_document -- tokenize all content/content_with_proofs fields in units tree (recursive)
-  devotional        -- tokenize concatenated content_blocks
-  prayer            -- tokenize concatenated content_blocks
-  bible_text        -- tokenize verse text field
-
-Usage:
-  py -3 build/scripts/add_token_counts.py [--dry-run]
+Pass --root, --release and --selection; --encoding defaults to cl100k_base.
+Release rows are never modified. Historical data enrichment requires the first
+argument --legacy-data; its --dry-run option and writer obligations still apply.
 """
 
 import argparse
@@ -22,9 +10,16 @@ import glob
 import json
 import logging
 import os
+from pathlib import Path
 import statistics
 import sys
 import time
+
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+from ocd_kernel.lib.schema_enums import resolve_schema_path  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Config
@@ -44,11 +39,6 @@ LOG_FILE = os.path.join(
 )
 
 ENCODING_NAME = "cl100k_base"
-
-SCHEMAS_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "schemas", "v1",
-)
 
 # Maps each supported schema_type to its JSON Schema file. Used by the
 # pre-flight check to confirm token_count is an allowed field before any
@@ -84,17 +74,13 @@ def setup_logging() -> None:
 # tiktoken setup
 # ---------------------------------------------------------------------------
 
-try:
-    import tiktoken
-except ImportError:
-    print("ERROR: tiktoken is not installed. Run: py -3 -m pip install tiktoken")
-    sys.exit(1)
 
 
 def count_tokens(text):
     """Return token count for the given text string using cl100k_base."""
     if not text:
         return 0
+    import tiktoken
     # tiktoken caches the encoding internally after the first call
     return len(tiktoken.get_encoding(ENCODING_NAME).encode(text))
 
@@ -109,10 +95,9 @@ def preflight_schema_check():
     """
     failed = []
     for schema_type, filename in SCHEMA_FILES.items():
-        path = os.path.join(SCHEMAS_DIR, filename)
         try:
-            with open(path, encoding="utf-8") as fh:
-                content = fh.read()
+            path = resolve_schema_path(filename)
+            content = path.read_text(encoding="utf-8")
             if '"token_count"' not in content:
                 failed.append(schema_type)
                 log.error(
@@ -121,12 +106,12 @@ def preflight_schema_check():
                     schema_type,
                     path,
                 )
-        except FileNotFoundError:
+        except FileNotFoundError as exc:
             failed.append(schema_type)
             log.error(
-                "Pre-flight FAIL: schema file not found: %s. "
-                "Create the schema or update SCHEMA_FILES in this script.",
-                path,
+                "Pre-flight FAIL: schema '%s' could not be read: %s",
+                schema_type,
+                exc,
             )
     return failed
 
@@ -333,7 +318,7 @@ def process_file(path, dry_run):
 # ---------------------------------------------------------------------------
 
 
-def main():
+def legacy_main(argv: list[str] | None = None) -> int:
     setup_logging()
     parser = argparse.ArgumentParser(
         description="Add token_count fields to Open Christian Data JSON records."
@@ -343,7 +328,7 @@ def main():
         action="store_true",
         help="Report changes without modifying any files.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.dry_run:
         log.info("=== DRY RUN -- no files will be modified ===")
@@ -450,5 +435,19 @@ def main():
         log.info("[%s] No mismatches or errors.", mode)
 
 
+    return 1 if errors or total_mismatches else 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0] == "--legacy-data":
+        return legacy_main(arguments[1:])
+    from build.tools.report_release_stats import main as report_main
+
+    if not any(value == "--encoding" or value.startswith("--encoding=") for value in arguments):
+        arguments.extend(["--encoding", ENCODING_NAME])
+    return report_main(arguments)
+
+
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

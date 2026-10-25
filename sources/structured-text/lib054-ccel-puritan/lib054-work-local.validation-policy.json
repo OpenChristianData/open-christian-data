@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-lib054-work-local-validation-policy-v1",
+  "scope": "one exact retained CCEL ThML XML member, its complete body, and its present header",
+  "status": "nonaccepted",
+  "required_checks": [
+    "source-and-acquisition-byte-binding",
+    "work-specific-source-boundary",
+    "complete-header-inventory",
+    "complete-body-node-crosswalk",
+    "readable-nested-divisions-headings-paragraphs-notes-inline",
+    "source-order-direct-text-tail-and-attachment",
+    "work-local-fragment-targets",
+    "tei-p5-xsd",
+    "independent-source-first-oracle",
+    "separate-extraction-provenance-rights-and-human-review"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "policy_id": "watson-theological-institutes-ia-validation-v1",
+  "oracle_id": "ocd-watson-theological-institutes-ia-independent-oracle",
+  "rules": [
+    "Independently bind all nine retained source files per volume by exact bytes and SHA-256.",
+    "Reconcile every scandata leaf against its retained JP2; all 1070 access-format leaves map to PDFs/OCR OBJECTs, unique scan-only leaves 306/307 add two text pages, and every other non-access image has an explicit disposition.",
+    "Bind the local Tesseract v5.5.0.20241111 derived OCR witness to volume II JP2 leaf images 306/307, preserve uncorrected wording, and verify its exact place between access-format leaves 305 and 308.",
+    "Check every OCR paragraph, line, source ID, heading role, page type, printed label, front/body/back placement, and facsimile PDF target against the actual readable TEI.",
+    "Validate the TEI P5 XSD and challenge omission, duplication, order, wording, volume, page-target, and section mutations.",
+    "Reconstruct in a fresh process and compare candidate member bytes; keep unresolved scan/wording and deleted-leaf gaps visible."
+  ],
+  "separate_decisions": [
+    "scan-level textual fidelity",
+    "human acceptance",
+    "rights clearance",
+    "publication"
+  ]
+}

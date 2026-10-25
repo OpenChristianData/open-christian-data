@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0",
+  "work_id": "private-devotions-several-occasions",
+  "title": "Private devotions for several occasions, ordinary and extraordinary",
+  "creators": [
+    {
+      "name": "Allestree, Richard, 1619-1681.",
+      "role": "attributed author",
+      "evidence": [
+        "raw/tcp/high-range/A75019/A75019.xml#teiHeader/fileDesc/sourceDesc/biblFull/notesStmt/note[1]"
+      ]
+    }
+  ],
+  "evidence": [
+    "raw/tcp/high-range/A75019/A75019.xml",
+    "raw/tcp/high-range/A75019/acquisition-receipt.json"
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "tcp-english",
+      "language": "en",
+      "editions": [
+        {
+          "edition_id": "a75019-1660",
+          "title": "TCP A75019 transcription of London 1660 printing",
+          "language": "en",
+          "category": "prayer",
+          "acquisition_ids": [
+            "a75019-tcp-tei-20260923"
+          ]
+        }
+      ]
+    }
+  ]
+}

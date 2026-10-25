@@ -1,0 +1,14 @@
+{
+  "contract": "ocd-37c-300-profile-v1",
+  "ticket_id": "37c-300",
+  "work_id": "sum-of-saving-knowledge",
+  "source_sha256": "6aa4907f6994d61ce3afeeea9b063cabf667b087185bc1cf7f7fd71fc19fee83",
+  "column_dispositions": [
+    "represented-contents", "represented-preface", "represented-introductory-text",
+    "excluded-back-navigation", "excluded-empty-spacer", "represented-practical-use",
+    "excluded-back-navigation", "excluded-empty-spacer", "represented-warrants",
+    "excluded-back-navigation", "excluded-empty-spacer", "represented-evidences",
+    "excluded-back-navigation"
+  ],
+  "scope_note": "From the exact retained provider HTML, preserve all six populated work-text columns as readable TEI, including headings, paragraphs, ordered list, links, emphasis, line breaks, order and text attachment. Explicitly exclude only the four Back to the Top navigation columns and three empty spacers. The HTML shell, one in-content comment and support script remain bound by the complete retained-source hash and are not represented as work text. The generated JSON projection is not used as authority. Work identity, textual form, edition, authorship, parts, witness authority and rights remain unresolved."
+}

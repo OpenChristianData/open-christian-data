@@ -1,0 +1,108 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "george-whitefield-sermons-retained-cohort-ccel-pg77041",
+  "ticket_id": "LIB-060",
+  "work_id": "george-whitefield-sermons",
+  "retained_source_path": "raw/ccel/whitefield_sermons.xml",
+  "source_members": [
+    {
+      "name": "retained-ccel-xml",
+      "path": "raw/ccel/whitefield_sermons.xml",
+      "bytes": 2046222,
+      "sha256": "cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec",
+      "role": "primary-source"
+    },
+    {
+      "name": "retained-project-gutenberg-text",
+      "path": "raw/gutenberg/sermons/whitefield/pg77041.txt",
+      "bytes": 896665,
+      "sha256": "b952725e8731399d4fd7fbe319aa9f57660d887f7cc6dd3937da91754e4ce08e",
+      "role": "primary-source"
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-ccel-xml",
+      "path": "raw/ccel/whitefield_sermons.xml",
+      "role": "primary-source",
+      "bytes": 2046222,
+      "sha256": "cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec"
+    },
+    {
+      "name": "retained-project-gutenberg-text",
+      "path": "raw/gutenberg/sermons/whitefield/pg77041.txt",
+      "role": "primary-source",
+      "bytes": 896665,
+      "sha256": "b952725e8731399d4fd7fbe319aa9f57660d887f7cc6dd3937da91754e4ce08e"
+    },
+    {
+      "name": "legacy-route-observation",
+      "path": "sources/sermons/george-whitefield-sermons/config.json",
+      "role": "routing-observation-not-edition-or-rights-authority",
+      "bytes": 1945,
+      "sha256": "25895a0e6fcf0ce6daaa4a214656857ecd7d85cc5073ebf55cc8a69bdebb8e16"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/sermons/george-whitefield-sermons/george-whitefield-sermons.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 5166,
+      "sha256": "6064c766ccf251e4baaec32a53588b58b439e17ff500819526eb50f9c888c296"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/sermons/george-whitefield-sermons/george-whitefield-sermons.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 3000,
+      "sha256": "7d3c1a9f05c4408854d084ba2b7e6fd5072d3bcad422f4dc552b9c9fee3922bc"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/sermons/george-whitefield-sermons/README.source.md",
+      "role": "source-attribution",
+      "bytes": 1614,
+      "sha256": "64bff8f3755912aed2a32c7d9f14848880122938b0d355f6e5d16133255c85ad"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/sermons/george-whitefield-sermons/george-whitefield-sermons.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1209,
+      "sha256": "b0f3072c6eabaae7fe4603c93550f335aae2d55f20225ace241873cfdb5f0de5"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib060-george-whitefield-retained-cohort-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/george_whitefield_sermons_reconstruction.py",
+    "implementation_sha256": "7c18ae726aaa8fe933849f6eec396eb657ebada0830d356b0f9899cdc95c5536"
+  },
+  "producer_import_closure_sha256": "0d95cc44a8b4283dcef1a22088cbaa48ddfa92a6c8828ebefc08ebb2a17a33b7",
+  "validator": {
+    "id": "ocd-lib060-george-whitefield-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/george_whitefield_sermons_oracle.py",
+    "implementation_sha256": "a5583d9b75aa22fcce502b342817026bedf069afb6f51f1a959bb9e27af17e68",
+    "import_closure_sha256": "80df888ccb72e2881a46557c2a2436e2aba8b25da1521c383515903fd7fddc0c"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

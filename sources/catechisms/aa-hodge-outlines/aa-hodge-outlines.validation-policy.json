@@ -1,0 +1,41 @@
+{
+  "contract": "ocd-aa-hodge-outlines-validation-policy-v1",
+  "oracle_id": "ocd-aa-hodge-outlines-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "publication_authorized": false,
+  "ocr_cleanup_performed": false,
+  "candidate_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "required_counts": {
+    "source_bytes": 1976207,
+    "physical_lines": 37553,
+    "represented_lines": 37553,
+    "question_candidates": 1107,
+    "chapter_candidates": 85,
+    "omitted_lines": 0,
+    "duplicated_lines": 0
+  },
+  "forbidden_answer_paths": [
+    "data/catechisms/aa-hodge-outlines.json",
+    "ir",
+    "raw",
+    "reports",
+    "exports"
+  ],
+  "requirements": [
+    "read the exact external witness independently",
+    "represent every LF-terminated physical line once and in source order",
+    "preserve exact UTF-8 OCR text without cleanup or Unicode normalization",
+    "validate TEI directly against the pinned TEI P5 XSD",
+    "validate candidate manifest and source accountability directly against pinned JSON schemas",
+    "reject omission, duplication, reorder, invention, text, crosswalk, metadata, provenance, and evidence drift",
+    "keep textual, edition, rights, acceptance, and publication decisions unresolved"
+  ]
+}

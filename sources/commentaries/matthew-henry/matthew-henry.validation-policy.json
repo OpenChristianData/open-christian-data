@@ -1,0 +1,57 @@
+{
+  "contract": "ocd-helloao-matthew-henry-validation-policy-v1",
+  "policy_id": "helloao-matthew-henry-complete-retained-json-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_counts": {
+    "source_members": 1169,
+    "source_bytes": 41160630,
+    "books": 65,
+    "chapters": 1167,
+    "commentary_occurrences": 4124,
+    "book_introductions": 65,
+    "chapter_introductions_present": 1156,
+    "chapter_introductions_absent": 11,
+    "introduction_only_chapters": 9
+  },
+  "required_unresolved_ids": [
+    "matthew-henry-rights-config-drift",
+    "matthew-henry-edition-and-authorship-identity",
+    "matthew-henry-retained-text-direction-anomaly",
+    "matthew-henry-retained-coverage-gaps-and-empty-targets"
+  ],
+  "forbidden_import_prefixes": [
+    "build.parsers.helloao_commentary",
+    "build.tei.helloao_matthew_henry_reconstruction",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "checks": [
+    "all-1169-source-member-path-byte-and-sha256-bindings",
+    "candidate-package-integrity",
+    "exact-65-book-and-1167-retained-chapter-order",
+    "exact-SNG-MAT-JON-and-ISA-retained-coverage-gaps",
+    "exact-65-book-introductions",
+    "exact-1156-present-and-11-absent-chapter-introductions",
+    "exact-nine-introduction-only-chapters",
+    "exact-4124-commentary-occurrence-order-number-and-text",
+    "preserve-EZK-40-nonmonotonic-order",
+    "preserve-both-EZK-40-verse-1-occurrences",
+    "exact-8861-object-and-61093-field-accounting-with-key-order",
+    "reject-inferred-ranges-and-Bible-text-injection",
+    "retained-PDM-and-config-CC0-drift",
+    "retained-rtl-anomaly",
+    "exact-bind-all-unresolved-question-evidence-consequence-and-escalation-fields",
+    "tei-p5-xsd",
+    "producer-independent-import-closure"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "authorities": [
+    {
+      "bytes": 9066837,
+      "name": "scan-pdf",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/scan.pdf",
+      "role": "primary-source",
+      "sha256": "54f06da00f0a06d40d182878f052ddc9fdf974471cff0131b181820c4759605f"
+    },
+    {
+      "bytes": 2477872,
+      "name": "ocr-xml",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/ocr.xml",
+      "role": "ocr-witness",
+      "sha256": "526f72ce0effd71dbda6086262b5b6f91988817ad8707c287c209996eeb59691"
+    },
+    {
+      "bytes": 194194,
+      "name": "ocr-txt",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/ocr.txt",
+      "role": "comparison-witness",
+      "sha256": "f5133b7b42cadb4df608b244e303be52c7e2da43cf36d4d7d15ed1ec5811a056"
+    },
+    {
+      "bytes": 2544479,
+      "name": "abbyy-ocr",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/abbyy.xml.gz",
+      "role": "alternate-ocr-witness",
+      "sha256": "2e16c3e3203b5d8ca26acd8dfd4881318fae088ec1708eb32d4c4220527f8c69"
+    },
+    {
+      "bytes": 137515,
+      "name": "scandata",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/scandata.xml",
+      "role": "source-scan-map",
+      "sha256": "87f175c836259be3b086695e6bbecb4c748d5669e127929d5cbb655a80c4ca0c"
+    },
+    {
+      "bytes": 32983,
+      "name": "metadata",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/metadata.json",
+      "role": "provider-metadata",
+      "sha256": "b47228f50529365e1de154e6b72ed6efc5d2816bd9bf5c2eae3ed4bc3741a948"
+    },
+    {
+      "bytes": 5522,
+      "name": "member-inventory",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/member-inventory.tsv",
+      "role": "provider-inventory",
+      "sha256": "aa72711cf6ec492fa3f93ea7b257dacec90aa925e1169f3c109c00fe77169e1a"
+    },
+    {
+      "bytes": 14604,
+      "name": "acquisition-receipt",
+      "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/acquisition-receipt.json",
+      "role": "acquisition-evidence",
+      "sha256": "243f3093ca4c73a3a78e2c11a7e5ba0cb6c0e4e5bcf6a06a9e2b07dce47f99d3"
+    },
+    {
+      "name": "scan-grounded-correction-map",
+      "path": "sources/structured-text/robertson-keywords-1906/scan-corrections.v1.json",
+      "role": "scan-grounded-visual-collation-map",
+      "bytes": 66395,
+      "sha256": "daae2e720baa6ce75ff971206ae585d0de61b8cb9ae22e2eb22e584c63a7e5ba"
+    },
+    {
+      "bytes": 6830,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/robertson-keywords-1906/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "977544858fcd1d8798fc537eabea2fc0e0cd6092ea1f3fbe393949e785ac256b"
+    },
+    {
+      "bytes": 3036,
+      "name": "validation-policy",
+      "path": "sources/structured-text/robertson-keywords-1906/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a6e93f2f28f4e4df1e0065d3988bf0976d723c40a082f11b57d8bac29886c8d5"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "canonical-work-identity",
+      "path": "library/works/robertson-keywords-in-the-teaching-of-jesus/work.json",
+      "role": "canonical-work-identity",
+      "bytes": 1404,
+      "sha256": "3152a2760ed58989fef0c158dcba8e477140bdfa4efac7b03e0dfd7de572a1df"
+    },
+    {
+      "name": "retained-source-member-set",
+      "path": "library/works/robertson-keywords-in-the-teaching-of-jesus/forms/keywords-english/editions/keywords-1906-abps/source-member-set.json",
+      "role": "retained-source-member-set",
+      "bytes": 4061,
+      "sha256": "aec25de98625d4d7ce8e4b998921b5aa5a0fc671fb86ba4dd92d5fd833bdddc8"
+    },
+    {
+      "name": "canonical-acquisition",
+      "path": "library/works/robertson-keywords-in-the-teaching-of-jesus/forms/keywords-english/editions/keywords-1906-abps/acquisitions/keywords-1906-ia-keywordsinteachi01robe.json",
+      "role": "canonical-acquisition",
+      "bytes": 5452,
+      "sha256": "271161e71a06e4c72a1aff38e54387cf448aae37aa2f44c5869d4f1c6f3aef13"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-robertson-keywords-1906-ia-scan-indexed-ocr",
+    "implementation_path": "build/tei/robertson_keywords_1906_ia.py",
+    "implementation_sha256": "c490f69dee49f5fc1fee52cdbb6fd7267bcc5e47e57739843978259d1867151c",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ia-keywordsinteachi01robe",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-robertson-keywords-1906-ia-independent-oracle",
+    "implementation_path": "build/tei/robertson_keywords_1906_ia_oracle.py",
+    "implementation_sha256": "2acecc98b8e750bb924c5b538e52ab09ae906a211c09efc72bc91daaa62143ca",
+    "import_closure_sha256": "2a9e436e75f085f63c5b4100b67d021d9f2b7aad3358757b45e29fd6d0f3d38f",
+    "version": "2"
+  },
+  "work_id": "robertson-keywords-in-the-teaching-of-jesus",
+  "textual_form_id": "keywords-english",
+  "edition_id": "keywords-1906-abps",
+  "acquisition_id": "keywords-1906-ia-keywordsinteachi01robe"
+}

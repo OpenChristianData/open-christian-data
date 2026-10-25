@@ -1,0 +1,111 @@
+{
+  "authorities": [
+    {
+      "bytes": 1152629,
+      "name": "calcom07.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom07.xml",
+      "role": "primary-source",
+      "sha256": "98657e5ee3b1564e7d16729a8fd4fc73b1f46439f02e750fdbe700488fc33879"
+    },
+    {
+      "bytes": 8839,
+      "name": "commentaries.xml",
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "role": "shared-context-source",
+      "sha256": "d5167554c4c40ac2ba320e9ec75afd2565001e0f5f84b0245832b7bfa183b08f"
+    },
+    {
+      "bytes": 355130,
+      "name": "calvin-title-selection-profile",
+      "path": "sources/commentaries/calvin/calvin-commentaries-title-selection-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "98ca44ed9ca890eaeea398ee4690ae0d8f145fcb60c4194421e448a13d5e4b38"
+    },
+    {
+      "bytes": 3555,
+      "name": "title-validation-policy",
+      "path": "sources/commentaries/calvin/calvin-joshua.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "c080232f1ea108ecec4d342d0f9f41db8a6039f74e4bd43757c10c51672e1a57"
+    },
+    {
+      "bytes": 1852,
+      "name": "title-accountability-schema",
+      "path": "sources/commentaries/calvin/calvin-joshua.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "5d5bcb423541a6fe7c5e263df8caa1853d5148103dc9d61f4560cb5c40aa6d2c"
+    },
+    {
+      "bytes": 1199,
+      "name": "title-source-readme",
+      "path": "sources/commentaries/calvin/README.calvin-joshua.source.md",
+      "role": "source-attribution",
+      "sha256": "ff1c5e776be80b266764fb124fa305da62b4dca74665034349ac8390031507c0"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 24058,
+      "name": "collection-source-manifest",
+      "path": "sources/commentaries/calvin/calvin-commentaries.source-manifest.storage-topology-rebind-20261003.json",
+      "role": "collection-source-manifest",
+      "sha256": "714a8d4410a7533547042c766c745829312a09f2ebf08f1b024e6fc626ec05d6"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-calvin-joshua-title-selection",
+    "implementation_path": "build/tei/calvin_joshua_reconstruction.py",
+    "implementation_sha256": "ec25703f21cd41e6ba55dc1f36bcde0a56ac1f87aedf058d54a60cd6e3589dad",
+    "version": "1"
+  },
+  "derived_from": {
+    "aggregate_tei_sha256": "2fb07bc8bfdd394c5921b4f62172e3f635e41604798987fa11e8b658cd5ea59e",
+    "candidate_package_manifest_sha256": "362d54b139f8581ba51dbbbfb6771365604f1a2c5d6794f98736f49bbaddab80",
+    "source_manifest_path": "sources/commentaries/calvin/calvin-commentaries.source-manifest.storage-topology-rebind-20261003.json",
+    "source_manifest_sha256": "714a8d4410a7533547042c766c745829312a09f2ebf08f1b024e6fc626ec05d6",
+    "validation_sidecar_sha256": "137ba9f5a291c6c5fef458c518759f6c247a0e2e0f81716d646fe322e3c71c42"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "owner": "LIB-010",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "276933c30c4c4b3af37e00af11fa347ec26a82b2ee1b94b6b4ba8a585f77103d",
+  "scope": {
+    "historical_container_identity_only": true,
+    "members": [
+      "calcom07.xml"
+    ],
+    "shared_context": [
+      "commentaries.xml"
+    ],
+    "title": "Commentary on Joshua"
+  },
+  "source_id": "calvin-commentaries-retained-ccel-thml",
+  "ticket_id": "37c-092",
+  "title_profile_sha256": "98ca44ed9ca890eaeea398ee4690ae0d8f145fcb60c4194421e448a13d5e4b38",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-calvin-joshua-source-oracle",
+    "implementation_path": "build/tei/calvin_joshua_oracle.py",
+    "implementation_sha256": "3473ce2824e7ee2dfaa87860930aa82a7309b392d6ea13b00d306a2ad9819aae",
+    "import_closure_sha256": "29d6971f72629ec59942b9bde55c539e906fafa54a12dc0a8d50aeff8005d488",
+    "version": "1"
+  },
+  "work_id": "calvin-commentaries"
+}

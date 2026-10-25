@@ -1,0 +1,116 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "eebo-tcp-a26892-pinned-tei-p5",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/A26892.xml",
+      "role": "primary-source",
+      "bytes": 9504938,
+      "sha256": "1b90e060921164cb2486d938c653640537cb710e8b1889c48a0e10f5e515035e"
+    },
+    {
+      "name": "source-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/A26892.xml.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 929,
+      "sha256": "cc225d8b0111e41b2634a2484f9d04bd7eb9a1a100379b92822638d177857fdb"
+    },
+    {
+      "name": "upstream-readme",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/README.upstream.md",
+      "role": "source-rights-and-version-evidence",
+      "bytes": 91021,
+      "sha256": "cc1028ec01adb240704f77244d4925951095eb6b91270f543bb1b9d2c7833d4f"
+    },
+    {
+      "name": "upstream-cc0-license",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/LICENSE.CC0-1.0.txt",
+      "role": "source-rights-evidence",
+      "bytes": 6555,
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+    },
+    {
+      "name": "upstream-cc0-license-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/LICENSE.CC0-1.0.txt.http-headers.txt",
+      "role": "source-rights-retrieval-evidence",
+      "bytes": 924,
+      "sha256": "2bca163d63a53703dbccf40cf7169769e025f874b726b0ac185cd4e23501437f"
+    },
+    {
+      "name": "upstream-readme-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/README.upstream.md.http-headers.txt",
+      "role": "source-rights-version-retrieval-evidence",
+      "bytes": 926,
+      "sha256": "9e3c431f97be6a7534638b0674d936d6f0016022198acdeea3e80f0735e66ee8"
+    },
+    {
+      "name": "upstream-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/upstream-commit.json",
+      "role": "source-version-evidence",
+      "bytes": 98243,
+      "sha256": "b40420be1878bbab914cebc10b60cb1582a49a2742712088e822e4e6563e201b"
+    },
+    {
+      "name": "upstream-contents",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/upstream-contents.json",
+      "role": "source-member-inventory-evidence",
+      "bytes": 2204,
+      "sha256": "341bfc39e55edc03b88b1b0885334fa0bfebff0491f9a9b8a89d87a10d64762c"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/baxter-christian-directory/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1417,
+      "sha256": "f3ba4285a1a3d7382732472dea31eb971ac97d3248442112e30c6bca001aaeb2"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/baxter-christian-directory/baxter-christian-directory.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1429,
+      "sha256": "ce164c7661087ecabdf28fa2b05ba4ab756e5259d50352ba03ad61aa27525054"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/baxter-christian-directory/baxter-christian-directory.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 3977,
+      "sha256": "3f8f37861095094a93e69fc74057ec8c36e9f7b06ee17d4420638316cfd991d4"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-eebo-tcp-a26892-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/baxter_christian_directory_reconstruction.py",
+    "implementation_sha256": "9d0e887cbffb65a89f7748be075e765098bd4ae415d2e4860c95fb57bed5258e"
+  },
+  "validator": {
+    "id": "ocd-eebo-tcp-a26892-exact-source-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/baxter_christian_directory_oracle.py",
+    "implementation_sha256": "0568e1c24c97b0ababa3984a3727dd2f1283f2c0dc9418a599dfa686cb53725d",
+    "import_closure_sha256": "6cf5b177848cd702678415457e421287732f07dd61aa72b5e90cf5c01c1bc830"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

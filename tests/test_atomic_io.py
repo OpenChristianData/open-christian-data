@@ -80,6 +80,34 @@ def _sync_lock_error() -> OSError:
     return exc
 
 
+@pytest.mark.parametrize("failures", [1, 4])
+def test_directory_promotion_retries_preserve_contents(tmp_path: Path, monkeypatch, failures):
+    source, destination = tmp_path / "stage", tmp_path / "published"
+    source.mkdir()
+    (source / "master.xml").write_bytes(b"unchanged master")
+    real_replace = os.replace
+    attempts = 0
+
+    def locked_replace(src, dst):
+        nonlocal attempts
+        attempts += 1
+        if attempts <= failures:
+            raise _sync_lock_error()
+        real_replace(src, dst)
+
+    monkeypatch.setattr(atomic_io.os, "replace", locked_replace)
+    monkeypatch.setattr(atomic_io.time, "sleep", lambda _delay: None)
+    if failures == 4:
+        with pytest.raises(OSError):
+            atomic_io._replace_with_retry(source, destination)
+        assert attempts == 4 and not destination.exists()
+        assert (source / "master.xml").read_bytes() == b"unchanged master"
+    else:
+        atomic_io._replace_with_retry(source, destination)
+        assert attempts == 2 and not source.exists()
+        assert (destination / "master.xml").read_bytes() == b"unchanged master"
+
+
 def test_write_json_atomic_retries_on_sync_lock_then_succeeds(tmp_path: Path, monkeypatch):
     """write_json_atomic retries os.replace on transient sync-lock errors."""
     from unittest.mock import patch

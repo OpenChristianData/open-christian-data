@@ -35,3 +35,17 @@ Source: https://github.com/scrollmapper/bible_databases
 Note: The Berean Standard Bible text distributed in this project is CC0
 (https://berean.bible/licensing.htm). The MIT license above applies to the
 Scrollmapper database format and tooling, not to the BSB text itself.
+
+## TEI validation test excerpts
+
+Two reference excerpts used by the software tests come from Project Gutenberg,
+which lists their underlying texts as public domain in the United States:
+
+- [The American Missionary, January 1882](https://www.gutenberg.org/ebooks/57445).
+  Digitization by Joshua Hutchinson, KarenD and the Distributed Proofreaders
+  team, using scans supplied by Cornell University Digital Collections.
+- [Missionary Survey](https://www.gutenberg.org/ebooks/13360), by Roland Allen
+  and Thomas Cochrane. Digitization by Ted Garvin, Josephine Paolucci and the
+  Distributed Proofreaders team.
+
+The test manifest records the sources and hashes of these excerpts.

@@ -1,0 +1,12 @@
+# First Epitaph for Georgius (from Epitaphium senioris Georgii triplex)
+
+Source: retained openMGH electronic witness bsb00000720, supplied by Monumenta Germaniae Historica (MGH) and Bayerische Staatsbibliothek, Munich (BSB), from the DFG-supported digital MGH project. Printed edition: Lantbert von Deutz, Vita Heribert. Miracula Heriberti. Gedichte. Liturgische Texte, edited by Bernhard Vogel, Hannover: Hahn, 2001, MGH Scriptores rerum Germanicarum 73.
+
+This derivative faithfully represents the entire first six-line epitaph for Georgius, with the literal numbered shared triplex heading preserved once as collection context. EPITAPHIUM SENIORIS GEORGII TRIPLEX is the shared collection context for three independent complete six-line epitaphs. This TEI represents the entire first epitaph only, preserving the literal numbered shared heading once as context; it does not represent the entire triplex. ALIUD introduces another epitaph and TERTIUM a third, each with its own complete wording and closing. The precise first-poem display title is editorial metadata, not invented source wording. The source spellings, six physical line markers, attributes, and line order remain exact. No neighboring poem text or invented first-poem heading is added.
+
+The source specifies Creative Commons Attribution 4.0 International for annotations added by MGH and BSB. It states no claim to rights in the underlying text, which it believes public domain. This is a source statement, not independently recorded rights clearance. Please credit Monumenta Germaniae Historica and Bayerische Staatsbibliothek when distributing this derivative.
+
+Independent print comparison, human visual review, rights clearance, and publication authorization are not recorded. The verified artifact is private and offline; no publication has occurred.
+## OpenMGH license and changes
+
+openMGH provides its TEI-XML resources and the annotations added by the Monumenta Germaniae Historica (MGH) and the Bavarian State Library (Bayerische Staatsbibliothek, BSB) under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). openMGH states that the underlying medieval text is free from copyright. Source: [openMGH](https://www.mgh.de/en/digital-mgh/openmgh). OCD reprocessed the source TEI/XML into an accepted TEI master and this public record, changing the source encoding and structure for this dataset.

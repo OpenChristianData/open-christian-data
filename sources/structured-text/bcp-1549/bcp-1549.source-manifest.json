@@ -1,0 +1,556 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-073",
+  "work_id": "bcp-1549",
+  "source_id": "bcp-1549-retained-justus-html",
+  "scope": {
+    "kind": "complete-retained-html-expression",
+    "edition": "The Book of Common Prayer (1549)",
+    "source_kind": "justus",
+    "source_root": "raw/bcp-full-text/bcp-1549",
+    "member_count": 34,
+    "excluded_members": []
+  },
+  "source_bundle": {
+    "members": 34,
+    "bytes": 1560188,
+    "sha256": "44132f54ad31d2ccf9efe37c6acdc1072782e8c08c7fc1129572c682f05eef04"
+  },
+  "source_members": [
+    {
+      "name": "Ashwednesday_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Ashwednesday_1549.htm",
+      "bytes": 26156,
+      "sha256": "64ff2c402f9d2b0f8aca64a0d3bc05a41982dea77dfb0fd4264bec6168d66fa6"
+    },
+    {
+      "name": "BCP_1549&52_Intro.htm",
+      "path": "raw/bcp-full-text/bcp-1549/BCP_1549&52_Intro.htm",
+      "bytes": 29090,
+      "sha256": "661cb6f32c7111e10bb6644ec96346f246a4e760ed6689910dfc2106a087bbaa"
+    },
+    {
+      "name": "BCP_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/BCP_1549.htm",
+      "bytes": 20360,
+      "sha256": "a00f7f7b56c7507c89f0b04484815d0eac8c3177fc379bf1b8eb94985994229f"
+    },
+    {
+      "name": "Baptism_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Baptism_1549.htm",
+      "bytes": 49657,
+      "sha256": "34ee24c0b710a08f1ae51aecf7235e8bcca8b49a053d90fae2a2cccc9b6f01fe"
+    },
+    {
+      "name": "Bishops_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Bishops_1549.htm",
+      "bytes": 33971,
+      "sha256": "26408a715e81ce0ef65b2ffac81ca9b99d468da087f9e0e9113365e30a49cb36"
+    },
+    {
+      "name": "Burial_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Burial_1549.htm",
+      "bytes": 37001,
+      "sha256": "ac5dcd33aaa8eb191d2442b52185ccc4b2a1fc9733351a2938bdcfe033bf3cbd"
+    },
+    {
+      "name": "Communion_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Communion_1549.htm",
+      "bytes": 82695,
+      "sha256": "3cab1b756da36a1345f6a88520f5250d8154e48bf463490c397fb09e692163bc"
+    },
+    {
+      "name": "Confirmation_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Confirmation_1549.htm",
+      "bytes": 25184,
+      "sha256": "43696df85ba87616473d8dd2c39dd91bbdf7cb590b86eb1c1794feb25e50220c"
+    },
+    {
+      "name": "Deacons_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Deacons_1549.htm",
+      "bytes": 57449,
+      "sha256": "c86109f816f23c70515650aea42966b7782625d09f714b2f37fd35e0d3c88568"
+    },
+    {
+      "name": "Evensong_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Evensong_1549.htm",
+      "bytes": 18760,
+      "sha256": "b8d041c9623b987df519cd745e97ebd58f9791dbbe31b09442c70f7238c3ac49"
+    },
+    {
+      "name": "Kalendar_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Kalendar_1549.htm",
+      "bytes": 111713,
+      "sha256": "453f555073da890f15a902abb1fbb3cc5d74a25cef57503986ec55fcd3ff6bdc"
+    },
+    {
+      "name": "Litany_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Litany_1549.htm",
+      "bytes": 25399,
+      "sha256": "38866263b848611dd23115db3218e38dcc2145ff8db19b43f3baa7dae7dba7df"
+    },
+    {
+      "name": "Marriage_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Marriage_1549.htm",
+      "bytes": 31540,
+      "sha256": "550a4edc877d9ab00996fa12d27c8d6789a90a7a1a621fcf31611ba09b9870a2"
+    },
+    {
+      "name": "Matins_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Matins_1549.htm",
+      "bytes": 27593,
+      "sha256": "f11d00e096a9c61b597b9f6a8b6f007c6ec88e760bd85dc2997a373f5c16a0aa"
+    },
+    {
+      "name": "Of_Ceremonies_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Of_Ceremonies_1549.htm",
+      "bytes": 16911,
+      "sha256": "4594c5d0d33ebf391f332ea528879ba971e14caf9588dfed040e5bc1f1dee72b"
+    },
+    {
+      "name": "Ordinal_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Ordinal_1549.htm",
+      "bytes": 111413,
+      "sha256": "0c91943b257df988e5ba4b818347618ea536889f908d699bbeff20315b0cef74"
+    },
+    {
+      "name": "Priests_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Priests_1549.htm",
+      "bytes": 43864,
+      "sha256": "303f8734e514df4a623f1c95a73d7f71f588fb7b0738aece5075b2b5fb0dc7c4"
+    },
+    {
+      "name": "Purification_Women_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Purification_Women_1549.htm",
+      "bytes": 8504,
+      "sha256": "8c72382e8c061cd863d9b44bfb88b62c96b9af5226fe7c1ba352daa59dbcf27b"
+    },
+    {
+      "name": "Reading_EasterWeek_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Reading_EasterWeek_1549.htm",
+      "bytes": 39441,
+      "sha256": "bc9554591f87f368fb563cbbc0044683658920989d099240e5b5dbbadf3df5d5"
+    },
+    {
+      "name": "Readings_Advent_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Advent_1549.htm",
+      "bytes": 31139,
+      "sha256": "61fa21f2b7834af55091cb2626933c90f11480abea874ed80676f5dbdffac124"
+    },
+    {
+      "name": "Readings_Ascension&Whitsuntide_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Ascension&Whitsuntide_1549.htm",
+      "bytes": 39908,
+      "sha256": "81ecdf498cc1b1f3c2279b3ce035af304afea454cf01d7901f363c5c1ee9bf9b"
+    },
+    {
+      "name": "Readings_EasterSeason_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_EasterSeason_1549.htm",
+      "bytes": 33771,
+      "sha256": "51521d921a81e375a18050d61a6882531f5af9685af4a2a78f0b613f4d1a7100"
+    },
+    {
+      "name": "Readings_Epiphany_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Epiphany_1549.htm",
+      "bytes": 64739,
+      "sha256": "62b976c83e03f3c45bc931617b68dbf777049227a6927bba864f114e03b55230"
+    },
+    {
+      "name": "Readings_HolyWeek_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_HolyWeek_1549.htm",
+      "bytes": 87490,
+      "sha256": "73eb59ee68b6b2da5fd81d43758978bd1bb6a820f0b3b5b29790d06cd12977c0"
+    },
+    {
+      "name": "Readings_Lent_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Lent_1549.htm",
+      "bytes": 64994,
+      "sha256": "acd61261f8fc3e9c355ebed9d4eb261e73f1d5689bcd82494e5a8d6053ab2f77"
+    },
+    {
+      "name": "Readings_SaintsA_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_SaintsA_1549.htm",
+      "bytes": 74411,
+      "sha256": "242187c9abc2923a308de6c52693ca9cacb98a8729423d2b7f658e38dc5ad776"
+    },
+    {
+      "name": "Readings_SaintsB_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_SaintsB_1549.htm",
+      "bytes": 65713,
+      "sha256": "c5c3e946051fb2314bef38c7f9bb4c979328feb2433803ce20e64e33dea272f5"
+    },
+    {
+      "name": "Readings_TrinityA_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityA_1549.htm",
+      "bytes": 60524,
+      "sha256": "d33acbad93facd6692251e33bafc1cf5c15f50cd7e2b87fbaf4133909ef1cce8"
+    },
+    {
+      "name": "Readings_TrinityB_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityB_1549.htm",
+      "bytes": 51804,
+      "sha256": "4427a08fc5ff5ead8a3d3121b4a12e2fb11b712e2b7b2c29b19462582373a6a4"
+    },
+    {
+      "name": "Readings_TrinityC_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityC_1549.htm",
+      "bytes": 56749,
+      "sha256": "37b9c855d0b0f7443df3e1e39b39d906bbdb1b21d2cff4d06010a0a1a2d7b1ac"
+    },
+    {
+      "name": "Readings_Xmas_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Xmas_1549.htm",
+      "bytes": 55514,
+      "sha256": "01e5d55a7a31bf3cfb1a389cd5006354570a826a86f69d6468fa41fe9587bb6c"
+    },
+    {
+      "name": "Visitation_Sick_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Visitation_Sick_1549.htm",
+      "bytes": 42703,
+      "sha256": "abd2bf63d35b981c3fd5c501aa14c122b3d573f83fc3b7591fa34dfa93ef4b76"
+    },
+    {
+      "name": "collects_epistles_gospels_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/collects_epistles_gospels_1549.htm",
+      "bytes": 16762,
+      "sha256": "9454ac3bc61ac8b52196d4f9da3d03b8bb106f788f5bd82fccdc3b42b830212e"
+    },
+    {
+      "name": "front_matter_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/front_matter_1549.htm",
+      "bytes": 17266,
+      "sha256": "7aac7a560de391852f25d510123ccbaf8fc2398b749805430b1531f46b3ccae5"
+    }
+  ],
+  "source_order": {
+    "member_order": "lexical retained HTML path order",
+    "event_order": "source loader event order across retained members"
+  },
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "bcp-1549",
+    "retained_source_sha256": "44132f54ad31d2ccf9efe37c6acdc1072782e8c08c7fc1129572c682f05eef04",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "structured-text/bcp-1549.json",
+        "legacy_source_sha256": "ac5811a09428c821772967d1dc6bc21fb191263af3c50bc375df7221141716a3"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "Ashwednesday_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Ashwednesday_1549.htm",
+      "role": "primary-source",
+      "bytes": 26156,
+      "sha256": "64ff2c402f9d2b0f8aca64a0d3bc05a41982dea77dfb0fd4264bec6168d66fa6"
+    },
+    {
+      "name": "Baptism_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Baptism_1549.htm",
+      "role": "primary-source",
+      "bytes": 49657,
+      "sha256": "34ee24c0b710a08f1ae51aecf7235e8bcca8b49a053d90fae2a2cccc9b6f01fe"
+    },
+    {
+      "name": "BCP_1549&52_Intro.htm",
+      "path": "raw/bcp-full-text/bcp-1549/BCP_1549&52_Intro.htm",
+      "role": "primary-source",
+      "bytes": 29090,
+      "sha256": "661cb6f32c7111e10bb6644ec96346f246a4e760ed6689910dfc2106a087bbaa"
+    },
+    {
+      "name": "BCP_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/BCP_1549.htm",
+      "role": "primary-source",
+      "bytes": 20360,
+      "sha256": "a00f7f7b56c7507c89f0b04484815d0eac8c3177fc379bf1b8eb94985994229f"
+    },
+    {
+      "name": "Bishops_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Bishops_1549.htm",
+      "role": "primary-source",
+      "bytes": 33971,
+      "sha256": "26408a715e81ce0ef65b2ffac81ca9b99d468da087f9e0e9113365e30a49cb36"
+    },
+    {
+      "name": "Burial_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Burial_1549.htm",
+      "role": "primary-source",
+      "bytes": 37001,
+      "sha256": "ac5dcd33aaa8eb191d2442b52185ccc4b2a1fc9733351a2938bdcfe033bf3cbd"
+    },
+    {
+      "name": "collects_epistles_gospels_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/collects_epistles_gospels_1549.htm",
+      "role": "primary-source",
+      "bytes": 16762,
+      "sha256": "9454ac3bc61ac8b52196d4f9da3d03b8bb106f788f5bd82fccdc3b42b830212e"
+    },
+    {
+      "name": "Communion_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Communion_1549.htm",
+      "role": "primary-source",
+      "bytes": 82695,
+      "sha256": "3cab1b756da36a1345f6a88520f5250d8154e48bf463490c397fb09e692163bc"
+    },
+    {
+      "name": "Confirmation_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Confirmation_1549.htm",
+      "role": "primary-source",
+      "bytes": 25184,
+      "sha256": "43696df85ba87616473d8dd2c39dd91bbdf7cb590b86eb1c1794feb25e50220c"
+    },
+    {
+      "name": "Deacons_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Deacons_1549.htm",
+      "role": "primary-source",
+      "bytes": 57449,
+      "sha256": "c86109f816f23c70515650aea42966b7782625d09f714b2f37fd35e0d3c88568"
+    },
+    {
+      "name": "Evensong_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Evensong_1549.htm",
+      "role": "primary-source",
+      "bytes": 18760,
+      "sha256": "b8d041c9623b987df519cd745e97ebd58f9791dbbe31b09442c70f7238c3ac49"
+    },
+    {
+      "name": "front_matter_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/front_matter_1549.htm",
+      "role": "primary-source",
+      "bytes": 17266,
+      "sha256": "7aac7a560de391852f25d510123ccbaf8fc2398b749805430b1531f46b3ccae5"
+    },
+    {
+      "name": "Kalendar_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Kalendar_1549.htm",
+      "role": "primary-source",
+      "bytes": 111713,
+      "sha256": "453f555073da890f15a902abb1fbb3cc5d74a25cef57503986ec55fcd3ff6bdc"
+    },
+    {
+      "name": "Litany_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Litany_1549.htm",
+      "role": "primary-source",
+      "bytes": 25399,
+      "sha256": "38866263b848611dd23115db3218e38dcc2145ff8db19b43f3baa7dae7dba7df"
+    },
+    {
+      "name": "Marriage_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Marriage_1549.htm",
+      "role": "primary-source",
+      "bytes": 31540,
+      "sha256": "550a4edc877d9ab00996fa12d27c8d6789a90a7a1a621fcf31611ba09b9870a2"
+    },
+    {
+      "name": "Matins_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Matins_1549.htm",
+      "role": "primary-source",
+      "bytes": 27593,
+      "sha256": "f11d00e096a9c61b597b9f6a8b6f007c6ec88e760bd85dc2997a373f5c16a0aa"
+    },
+    {
+      "name": "Of_Ceremonies_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Of_Ceremonies_1549.htm",
+      "role": "primary-source",
+      "bytes": 16911,
+      "sha256": "4594c5d0d33ebf391f332ea528879ba971e14caf9588dfed040e5bc1f1dee72b"
+    },
+    {
+      "name": "Ordinal_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Ordinal_1549.htm",
+      "role": "primary-source",
+      "bytes": 111413,
+      "sha256": "0c91943b257df988e5ba4b818347618ea536889f908d699bbeff20315b0cef74"
+    },
+    {
+      "name": "Priests_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Priests_1549.htm",
+      "role": "primary-source",
+      "bytes": 43864,
+      "sha256": "303f8734e514df4a623f1c95a73d7f71f588fb7b0738aece5075b2b5fb0dc7c4"
+    },
+    {
+      "name": "Purification_Women_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Purification_Women_1549.htm",
+      "role": "primary-source",
+      "bytes": 8504,
+      "sha256": "8c72382e8c061cd863d9b44bfb88b62c96b9af5226fe7c1ba352daa59dbcf27b"
+    },
+    {
+      "name": "Reading_EasterWeek_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Reading_EasterWeek_1549.htm",
+      "role": "primary-source",
+      "bytes": 39441,
+      "sha256": "bc9554591f87f368fb563cbbc0044683658920989d099240e5b5dbbadf3df5d5"
+    },
+    {
+      "name": "Readings_Advent_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Advent_1549.htm",
+      "role": "primary-source",
+      "bytes": 31139,
+      "sha256": "61fa21f2b7834af55091cb2626933c90f11480abea874ed80676f5dbdffac124"
+    },
+    {
+      "name": "Readings_Ascension&Whitsuntide_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Ascension&Whitsuntide_1549.htm",
+      "role": "primary-source",
+      "bytes": 39908,
+      "sha256": "81ecdf498cc1b1f3c2279b3ce035af304afea454cf01d7901f363c5c1ee9bf9b"
+    },
+    {
+      "name": "Readings_EasterSeason_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_EasterSeason_1549.htm",
+      "role": "primary-source",
+      "bytes": 33771,
+      "sha256": "51521d921a81e375a18050d61a6882531f5af9685af4a2a78f0b613f4d1a7100"
+    },
+    {
+      "name": "Readings_Epiphany_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Epiphany_1549.htm",
+      "role": "primary-source",
+      "bytes": 64739,
+      "sha256": "62b976c83e03f3c45bc931617b68dbf777049227a6927bba864f114e03b55230"
+    },
+    {
+      "name": "Readings_HolyWeek_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_HolyWeek_1549.htm",
+      "role": "primary-source",
+      "bytes": 87490,
+      "sha256": "73eb59ee68b6b2da5fd81d43758978bd1bb6a820f0b3b5b29790d06cd12977c0"
+    },
+    {
+      "name": "Readings_Lent_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Lent_1549.htm",
+      "role": "primary-source",
+      "bytes": 64994,
+      "sha256": "acd61261f8fc3e9c355ebed9d4eb261e73f1d5689bcd82494e5a8d6053ab2f77"
+    },
+    {
+      "name": "Readings_SaintsA_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_SaintsA_1549.htm",
+      "role": "primary-source",
+      "bytes": 74411,
+      "sha256": "242187c9abc2923a308de6c52693ca9cacb98a8729423d2b7f658e38dc5ad776"
+    },
+    {
+      "name": "Readings_SaintsB_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_SaintsB_1549.htm",
+      "role": "primary-source",
+      "bytes": 65713,
+      "sha256": "c5c3e946051fb2314bef38c7f9bb4c979328feb2433803ce20e64e33dea272f5"
+    },
+    {
+      "name": "Readings_TrinityA_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityA_1549.htm",
+      "role": "primary-source",
+      "bytes": 60524,
+      "sha256": "d33acbad93facd6692251e33bafc1cf5c15f50cd7e2b87fbaf4133909ef1cce8"
+    },
+    {
+      "name": "Readings_TrinityB_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityB_1549.htm",
+      "role": "primary-source",
+      "bytes": 51804,
+      "sha256": "4427a08fc5ff5ead8a3d3121b4a12e2fb11b712e2b7b2c29b19462582373a6a4"
+    },
+    {
+      "name": "Readings_TrinityC_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_TrinityC_1549.htm",
+      "role": "primary-source",
+      "bytes": 56749,
+      "sha256": "37b9c855d0b0f7443df3e1e39b39d906bbdb1b21d2cff4d06010a0a1a2d7b1ac"
+    },
+    {
+      "name": "Readings_Xmas_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Readings_Xmas_1549.htm",
+      "role": "primary-source",
+      "bytes": 55514,
+      "sha256": "01e5d55a7a31bf3cfb1a389cd5006354570a826a86f69d6468fa41fe9587bb6c"
+    },
+    {
+      "name": "Visitation_Sick_1549.htm",
+      "path": "raw/bcp-full-text/bcp-1549/Visitation_Sick_1549.htm",
+      "role": "primary-source",
+      "bytes": 42703,
+      "sha256": "abd2bf63d35b981c3fd5c501aa14c122b3d573f83fc3b7591fa34dfa93ef4b76"
+    },
+    {
+      "name": "work-config",
+      "path": "sources/structured-text/bcp-1549/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 927,
+      "sha256": "6a43cbc9da210f031619b6f14b348d6454302143286eb1fe8abbb58ff8b53cc5"
+    },
+    {
+      "name": "bcp1549-profile",
+      "path": "sources/structured-text/bcp-1549/bcp-1549.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 584,
+      "sha256": "57ce0f5a742e3f6a42ce262d2066808e87400303cb288c55d2eaa9e21fbe6461"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/bcp-1549/bcp-1549.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 546,
+      "sha256": "f1bf292b7492acad7f9a52005d614062ad36e1184470090d97075d48f89ed135"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/bcp-1549/bcp-1549.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 771,
+      "sha256": "d4639f7e9ce5f6d8b7f81d4dc047b995ddcf07aabb42ee12d5cad33deb610c24"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "bcp1549-producer",
+      "path": "build/tei/bcp_1549_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "bytes": 5177,
+      "sha256": "614ae7dc19ec21f7f749abd32e872d24b1669e535452963d0ad60e05dbe46eff"
+    },
+    {
+      "name": "bcp1549-oracle",
+      "path": "build/tei/bcp_1549_oracle.py",
+      "role": "supporting-validator-implementation",
+      "bytes": 5245,
+      "sha256": "5d8222e4c6da750ce7602e42f7b02d9c3bcb763fb9be79484b9837d1f2f170f4"
+    }
+  ],
+  "converter": {
+    "id": "ocd-bcp-1549-retained-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bcp_1549_reconstruction.py",
+    "implementation_sha256": "614ae7dc19ec21f7f749abd32e872d24b1669e535452963d0ad60e05dbe46eff"
+  },
+  "validator": {
+    "id": "ocd-bcp-1549-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bcp_1549_oracle.py",
+    "implementation_sha256": "5d8222e4c6da750ce7602e42f7b02d9c3bcb763fb9be79484b9837d1f2f170f4",
+    "import_closure_sha256": "192bc1f43b806961d2a3d1a971515c1d1f8e6db97aaf14e0c187c089c335baf3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

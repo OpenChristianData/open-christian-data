@@ -1,0 +1,70 @@
+{
+  "attribute_rules": {
+    "class": {"disposition": "@rend", "source_tags": ["l", "p", "span"], "tei_attribute": "rend"},
+    "href": {"disposition": "@facs", "source_tags": ["pb"], "tei_attribute": "facs"},
+    "id": {"disposition": "@xml:id-and-source-accountability", "source_tags": ["div", "div1", "div2", "div3", "h1", "h2", "h3", "l", "note", "p", "pb", "scripRef", "span", "verse"]},
+    "lang": {"disposition": "@xml:lang", "method": "declared-language-code-map", "source_tags": ["span"], "tei_attribute": "xml:lang", "value_map": {"DE": "de", "EL": "grc", "FR": "fr", "HE": "he", "LA": "la"}},
+    "n": {"disposition": "@n", "source_tags": ["note", "pb"], "tei_attribute": "n"},
+    "next": {"disposition": "source-accountability-only", "source_tags": ["div1", "div2", "div3"]},
+    "osisRef": {"disposition": "@target", "source_tags": ["scripRef"], "tei_attribute": "target"},
+    "passage": {"disposition": "@cRef", "source_tags": ["scripRef"], "tei_attribute": "cRef"},
+    "parsed": {"disposition": "source-accountability-only", "source_tags": ["scripRef"]},
+    "prev": {"disposition": "source-accountability-only", "source_tags": ["div1", "div2", "div3"]},
+    "progress": {"disposition": "source-accountability-only", "source_tags": ["div1", "div2", "div3"]},
+    "style": {"disposition": "@rend", "source_tags": ["div", "h1", "h2", "h3", "hr", "span"], "tei_attribute": "rend"},
+    "title": {"disposition": "source-accountability-only", "source_tags": ["div1", "div2", "div3", "div"]},
+    "version": {"disposition": "source-accountability-only", "source_tags": ["scripRef"]}
+  },
+  "contract": "ocd-37c204-validation-policy-v1",
+  "forbidden_oracle_imports": [
+    "build.tei.hodge_systematic_theology_vol_2_reconstruction",
+    "build.parsers.ccel_hodge_systematic",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei"
+  ],
+  "policy_id": "hodge-systematic-theology-vol-2-ccel-content-roots-v1",
+  "projection": {
+    "derived_attributes": {
+      "div_type_template": "source-{source_tag}",
+      "milestone_unit": "separator",
+      "plain_span_type": "source-span",
+      "source_tag_rend": {"h1": "", "h2": "", "h3": "", "i": "italic"}
+    },
+    "language_span_tag": "foreign",
+    "tag_map": {
+      "div": "quote",
+      "div1": "div",
+      "div2": "div",
+      "div3": "div",
+      "h1": "head",
+      "h2": "head",
+      "h3": "head",
+      "hr": "milestone",
+      "i": "hi",
+      "l": "l",
+      "note": "note",
+      "p": "p",
+      "pb": "pb",
+      "scripRef": "ref",
+      "span": "seg",
+      "verse": "lg"
+    },
+    "xml_id_template": "hodge-systematic-theology-vol-2-feature-{ordinal:06d}"
+  },
+  "required_checks": [
+    "strict-source-member-id-hash-and-byte-length-binding",
+    "complete-five-root-envelope-and-assigned-subtree-accounting",
+    "complete-source-element-attribute-direct-text-and-tail-accounting",
+    "tei-p5-schema-validation",
+    "independent-source-to-tei-comparison-with-no-producer-or-legacy-converter-imports",
+    "deterministic-fresh-process-reconstruction",
+    "text-structure-attribute-provenance-and-accounting-mutations-rejected"
+  ],
+  "source_id": "ocd-37c204-hodge-systematic-theology-vol-2-ccel-theology2",
+  "tei_topology": {
+    "body_attributes": {"xml:id": "hodge-systematic-theology-vol-2-body"},
+    "root_attributes": {"xml:id": "hodge-systematic-theology-vol-2-candidate"}
+  },
+  "version": 1,
+  "work_id": "hodge-systematic-theology-vol-2"
+}

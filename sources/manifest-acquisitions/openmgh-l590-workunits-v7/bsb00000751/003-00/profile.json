@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "e4b5e24b38733009acb72ee248336b09c9d1b80e38303c008317b171a3200a87",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 2421328,
+  "member_inventory_sha256": "79fb7e8cf3d21bf3b1504e67024e618135c691a251623851be78598605d8ecd6",
+  "member_name": "bsb00000751.xml",
+  "member_sha256": "a33fd966810db4657f4e03ceb94431615e8d24c2a3bbd183d9a9dc287cd88d8b",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (II) (MGH SS rer. Merov. 4)",
+  "source_id": "bsb00000751",
+  "work_linkage": {
+    "archive_sha256": "e4b5e24b38733009acb72ee248336b09c9d1b80e38303c008317b171a3200a87",
+    "candidate_first_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00199_23",
+    "candidate_last_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00216_8",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "miracula-sancti-austrigisili-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/miracula-sancti-austrigisili/forms/miracula-sancti-austrigisili-openmgh-retained/editions/miracula-sancti-austrigisili-openmgh-electronic/acquisitions/miracula-sancti-austrigisili-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "d93cf06b5bf0364ebedd815910d7bd632788237eeb3df4c863929ecdf083b3ec",
+        "archive_sha256": "e4b5e24b38733009acb72ee248336b09c9d1b80e38303c008317b171a3200a87",
+        "edition_id": "miracula-sancti-austrigisili-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00208_22",
+        "last_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00216_8",
+        "member_sha256": "a33fd966810db4657f4e03ceb94431615e8d24c2a3bbd183d9a9dc287cd88d8b",
+        "textual_form_id": "miracula-sancti-austrigisili-openmgh-retained",
+        "work_id": "miracula-sancti-austrigisili",
+        "work_sidecar_path": "library/works/miracula-sancti-austrigisili/work.json",
+        "work_sidecar_sha256": "35083de15a1909b8d800ff851077048e2d5514aeef7ee42c09331471b540ee4a"
+      },
+      {
+        "acquisition_id": "vita-sancti-austrigisili-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-austrigisili/forms/vita-sancti-austrigisili-openmgh-retained/editions/vita-sancti-austrigisili-openmgh-electronic/acquisitions/vita-sancti-austrigisili-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "b9e5a6ed5bf8cfbc552c38dd67021554fe9480aa8c960605258e8ca92374741a",
+        "archive_sha256": "e4b5e24b38733009acb72ee248336b09c9d1b80e38303c008317b171a3200a87",
+        "edition_id": "vita-sancti-austrigisili-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00199_23",
+        "last_locator": "raw/openmgh/bsb00000751/tei/bsb00000751.xml#bsb00000751_00208_21",
+        "member_sha256": "a33fd966810db4657f4e03ceb94431615e8d24c2a3bbd183d9a9dc287cd88d8b",
+        "textual_form_id": "vita-sancti-austrigisili-openmgh-retained",
+        "work_id": "vita-sancti-austrigisili",
+        "work_sidecar_path": "library/works/vita-sancti-austrigisili/work.json",
+        "work_sidecar_sha256": "62471dfc4edb509a0b0230898f36bfbd2bc77df95e99fed6c7880a21a158fae5"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "miracula-sancti-austrigisili",
+      "vita-sancti-austrigisili"
+    ],
+    "source_id": "bsb00000751",
+    "source_member_sha256": "a33fd966810db4657f4e03ceb94431615e8d24c2a3bbd183d9a9dc287cd88d8b",
+    "source_path": "raw/openmgh/bsb00000751/tei/bsb00000751.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 3,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Austrigisili ep. Biturigi",
+    "title": "Vita Austrigisili ep. Biturigi"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 4: Passiones vitaeque sanctorum aevi Merovingici (II)"
+  ]
+}

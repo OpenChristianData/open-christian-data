@@ -1,0 +1,64 @@
+{
+  "contract": "ocd-westminster-shorter-catechism-validation-policy-v1",
+  "oracle_id": "ocd-westminster-shorter-catechism-independent-oracle",
+  "oracle_version": "2",
+  "candidate_status": "nonaccepted",
+  "candidate_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "required_counts": {
+    "witnesses": 3,
+    "groups_per_witness": 107,
+    "metadata": 13,
+    "number_labels": 321,
+    "questions": 321,
+    "answers": 321,
+    "proof_groups": 107,
+    "observations": 1083,
+    "proof_reference_occurrences": 401,
+    "question_exact_agreements": 79,
+    "answer_exact_agreements": 22,
+    "html_elements": 1044,
+    "html_attributes": 1038,
+    "html_nonempty_text_carriers": 645,
+    "html_comments": 22,
+    "html_outer_evidence_paragraphs": 26
+  },
+  "rights_statement": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "creeds": "Creeds.json README supplies Unlicense evidence and does not name the WSC among its eight exceptions",
+    "theologai": "TheologAI ISC license covers software and does not establish historical-document redistribution rights",
+    "westminster_standard": "The cached page carries a 2016 copyright footer and no retained text or proof-apparatus license",
+    "worldwide_status": "unresolved; human rights review is required before acceptance or publication"
+  },
+  "forbidden_import_prefixes": [
+    "build.tei.westminster_shorter_catechism_reconstruction",
+    "build.reconstruction.westminster_shorter_catechism_wave",
+    "build.reconstruction.westminster_shorter_catechism_verifier",
+    "build.parsers.westminster_witnesses",
+    "build.parsers.westminster_standard_parser",
+    "build.parsers.wsc_parser"
+  ],
+  "forbidden_answer_paths": [
+    "data/catechisms/westminster-shorter-catechism.json",
+    "config/reconstruction/cases/aw09-westminster-shorter-catechism-v1.json",
+    "config/reconstruction/cases/aw09-westminster-shorter-catechism-v2.json",
+    ".scratch/ocd-adaptive-reconstruction-waves"
+  ],
+  "requirements": [
+    "independently parse all three retained source formats",
+    "bind all 1083 source observations exactly once with zero omission or duplication",
+    "bind all 401 ordered proof occurrences to exact question, occurrence, raw text, and OSIS",
+    "reject the obsolete 400-reference projection and the Q37 Job omission",
+    "preserve witness identity, disagreement, ordering, and attachment",
+    "independently bind every parsed HTML element, attribute, nonempty text carrier, and comment, retaining all non-question/proof carriers as outer evidence only",
+    "preserve exact localized metadata, rights uncertainty, README, and nonacceptance",
+    "validate TEI P5 XSD and the exact six-member package",
+    "bind the real recursive repository-local oracle closure and reject runtime shadows"
+  ]
+}

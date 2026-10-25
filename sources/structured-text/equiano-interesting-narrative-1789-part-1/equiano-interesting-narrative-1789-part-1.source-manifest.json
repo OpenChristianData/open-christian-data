@@ -1,0 +1,144 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ecco-tcp-k053415-001-pinned-ets",
+  "authorities": [
+    {
+      "name": "retained-ets-xml",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/K053415.001.xml",
+      "role": "primary-source",
+      "bytes": 255331,
+      "sha256": "5c56b75866f4ad20acee1308c92c1fd8e87e89acd29f897ed402a21b6b62010f"
+    },
+    {
+      "name": "retained-ecco-header",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/K053415.001.hdr",
+      "role": "source-identity-edition-evidence",
+      "bytes": 2653,
+      "sha256": "539000c64ac3583e0a439dcd23b964fae5aac42b88b52c50c333ba805a1b7f6e"
+    },
+    {
+      "name": "upstream-cc0-license",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/LICENSE.CC0-1.0.txt",
+      "role": "source-rights-evidence",
+      "bytes": 6555,
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+    },
+    {
+      "name": "acquisition-session",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/acquisition-session.json",
+      "role": "source-acquisition-and-receipt-evidence",
+      "bytes": 4967,
+      "sha256": "f7031ce7ab931f734ce6a24c2a832934ab0c9391806ed5e1de03216b3c152aea"
+    },
+    {
+      "name": "upstream-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/upstream-commit.json",
+      "role": "source-version-evidence",
+      "bytes": 1253631,
+      "sha256": "c6f85f9cce8bfaac51b20f50986dddaf147bb77842e27ebba3a88742a383f0c9"
+    },
+    {
+      "name": "upstream-xml-blob",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/upstream-xml-blob.json",
+      "role": "source-blob-evidence",
+      "bytes": 352103,
+      "sha256": "277923dc052425c6e62c7f721b3c0e119e32edc3b35cca2b6078a4bd90e91954"
+    },
+    {
+      "name": "upstream-header-blob",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/upstream-header-blob.json",
+      "role": "source-header-blob-evidence",
+      "bytes": 3965,
+      "sha256": "3cabd773620cbcc3715653c288d6260c4fe6323ba4c5db15501ee97dc356ba47"
+    },
+    {
+      "name": "upstream-license-blob",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/upstream-license-blob.json",
+      "role": "source-rights-version-evidence",
+      "bytes": 9339,
+      "sha256": "b29626fbdeae671413b80e803204b59bc071dcb88b7248fdbcecbe949ef74e99"
+    },
+    {
+      "name": "michigan-iiif-manifest",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/michigan-iiif-manifest.json",
+      "role": "source-identity-live-evidence",
+      "bytes": 324050,
+      "sha256": "7aaf7aa0d32cc5d7514c5f57ca8e2a89db78d4c7236f420d090922c717a37d3a"
+    },
+    {
+      "name": "umich-live-response-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/umich-item.live-http-headers.redacted.txt",
+      "role": "source-identity-live-response-evidence",
+      "bytes": 1994,
+      "sha256": "13233f40eaed499640c6489f269d0c4e14fd509ed054f58a0067d041c756685b"
+    },
+    {
+      "name": "umich-archived-item",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/umich-item.wayback-20251127134721.html",
+      "role": "source-identity-archival-snapshot-evidence",
+      "bytes": 150694,
+      "sha256": "94b01aa90107f8a0ee493cb3eed4cf782412b813430153db6e98596cd5ec66ee"
+    },
+    {
+      "name": "two-part-identity-resolution",
+      "path": "sources/structured-text/equiano-interesting-narrative-1789-part-1/equiano-interesting-narrative-1789-parts.identity-resolution.json",
+      "role": "source-identity-resolution-evidence",
+      "bytes": 3141,
+      "sha256": "ef41c25c59a37bd261249ffdcd468ed567865a28feb55583b3b763dbf5145d53"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/equiano-interesting-narrative-1789-part-1/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 3378,
+      "sha256": "3f8ecd70c45bb70e3e169c4289d4fe2d177c83845965b04ff80198bd1d044cc4"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/equiano-interesting-narrative-1789-part-1/equiano-interesting-narrative-1789-part-1.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2675,
+      "sha256": "e9dcac9c76d66caad900304c97dda31b0293288c1447d49763ad433ec519ea05"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/equiano-interesting-narrative-1789-part-1/equiano-interesting-narrative-1789-part-1.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 7257,
+      "sha256": "9b10cc0097cb8d4820ffefd01871be458a251ec5511eed0e03345719c7a967a9"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-ecco-tcp-k053415-001-ets-to-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/equiano_interesting_narrative_1789_part_1_reconstruction.py",
+    "implementation_sha256": "08086f5b293061c95936f62989ad9d25e28c1c4feb69d0f296393779b7ad1635"
+  },
+  "validator": {
+    "id": "ocd-ecco-tcp-k053415-001-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/equiano_interesting_narrative_1789_part_1_oracle.py",
+    "implementation_sha256": "b1a8c9497a1c27a2278bfd61238838ebd35675cafddb7503c25b710324d56c57",
+    "import_closure_sha256": "0df1ae309d95a68dac87c8b60ecab64d613a3bdd9800f23c5144cd2893ebbb4d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

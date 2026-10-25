@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-lib016-hastings-reconstruction-profile-v1",
+  "profile_id": "lib016-hastings-five-member-whole-work-v1",
+  "work_id": "hastings-dictionary-of-the-bible",
+  "aggregate": {
+    "definition": "five retained UTF-8 member bytes concatenated in lexicographic filename order with no separator",
+    "bytes": 44374718,
+    "sha256": "1cd0f245927973e5f84db7bad42c71aa1dfb259e5aad026a40dd5f0d6238f7a7",
+    "member_count": 5
+  },
+  "encoding": {"name": "UTF-8", "errors": "strict", "line_separator": "LF", "normalization": "none"},
+  "coverage": {"members": 5, "source_bytes": 44374718, "represented_bytes": 44374718, "physical_lines": 902993, "represented_lines": 902993, "omitted_members": 0, "duplicated_members": 0, "invented_separator_bytes": 0},
+  "structure": {"identity": "reference", "representation": "one verbatim OCR text node per retained member with literal LF boundaries preserved", "article_segmentation": "none"},
+  "extra_volume": {"filename": "b24749163_0005_djvu.txt", "physical_lines": 217888, "latin_letters": 0, "greek_classified_characters": 4057175, "status": "source-bound-re-ocr-required", "silent_correction": false},
+  "source_identity": {"editor": "James Hastings", "title": "Dictionary of the Bible", "volumes_i_iv": "Scribner/T. & T. Clark 1911 reprint", "extra_volume": "1909 Extra Volume"},
+  "derived_json": {"status": "partial-diagnostic-only", "source_authority": false}
+}

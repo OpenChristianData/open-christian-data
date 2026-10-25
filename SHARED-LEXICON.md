@@ -2,7 +2,15 @@
 
 The NSH OCR-pipeline vocabulary (“Layer 1”) moved to the EzraOCR repo: `../EzraOCR/docs/NSH_LEXICON.md`.
 
-Canonical vocabulary for the rearchitected OCD pipeline. Glossary only — no rationale, no schema sketches, no implementation detail. For those, see `plans/2026-05-14-multi-source-rearchitecture.md` (rearchitecture design) and `docs/adr/` (architecture decisions).
+This glossary retains vocabulary from the May 2026 multi-source design alongside
+current pipeline terms. The rendering catalogs under `data/`, reconciliation,
+modernization, transliteration and Phase 1 language fields below describe that
+historical contract; they are not required stages or fields of current v2
+releases. Current identity, source-script preservation, acceptance and public
+row definitions come from [the library pipeline specification](docs/OCD_LIBRARY_PIPELINE_SPEC.md)
+and `schemas/v2/`. In particular, historical Latin-only export rules do not
+authorize transliterating current source text. Design history remains in
+`plans/2026-05-14-multi-source-rearchitecture.md` and `docs/adr/`.
 
 Update this file when terms resolve or change. Never let two terms in the codebase refer to the same concept; never let one term refer to two concepts.
 
@@ -11,6 +19,11 @@ Update this file when terms resolve or change. Never let two terms in the codeba
 ---
 
 ## Core data terms
+
+The identifier and rendering definitions in this section describe the historical
+multi-source design. Current work, textual-form, edition and acquisition IDs
+follow `schemas/v2/` and validated library sidecars; do not construct current IDs
+from the historical slash-path examples below.
 
 **Work** — The intellectual content of a text. Identified by author + work slug (e.g. `wesley/notes-on-the-bible`). The work is eternal; it does not change.
 
@@ -62,21 +75,23 @@ Update this file when terms resolve or change. Never let two terms in the codeba
 
 ## Pipeline stages
 
-The pipeline has **eight stages**: `Fetch → Parse → Reconcile → Transliterate → Check → Modernise → Check → Publish`. Check appears at two gates — once after Transliterate (gates Modernise) and once after Modernise (gates Publish); same stage, same Checkers, same Reviewer UI, applied at two points. Transliterate is mandatory; Modernise is optional per work. See locked plan §"The pipeline, end to end".
+The forward reconstruction architecture is `Acquire and freeze → Inventory → Reconstruct TEI → Verify → Review → Accept → Project → Publish`. Historical JSON-native migration dispositions remain dated evidence. New text contributions follow the maintained source-to-TEI workflow; retained legacy `data/` files do not establish current TEI acceptance.
 
-**Fetch** — Acquires raw bytes for each rendering. Inputs: rendering ID + source URL. Outputs: cached raw bytes (local-only).
+**Acquire and freeze** — Retains the exact authorized source carriers with hashes, locators, acquisition time, source boundary, rights evidence, and explicit gaps. OCR production and source-image correction belong to EzraOCR; OCD consumes its versioned faithful-TEI handoff.
 
-**Parse** — Per-rendering parser converts raw bytes into a per-rendering JSON in the universal block-sequence shape.
+**Inventory** — Accounts for the retained carrier's files, pages, ordered content, structural features, and missing or unsupported scope before interpretation.
 
-**Reconcile** — Aligns N renderings of one edition (within-edition only) and produces a single reconciled record with two-level attestation and disagreement records. Preserves source-faithful bytes in every block (including non-Latin script). Implemented as an *anchor graph*: shared annotations (verse refs, terms, dates, section paths) across renderings become high-confidence alignment anchors that split each rendering into windows; within-window blocks are aligned by text similarity, block-type match, and position. See locked plan §"The Reconcile stage in depth".
+**Reconstruct TEI** — For a family selected for reconstruction, builds one candidate faithful TEI P5 IR plus evidence, rights, coverage, variants, relationships, and unresolved claims. JSON can be source evidence, adapter working state, or a declared projection inside that path; explicitly JSON-native families remain source-native rather than being pointlessly re-encoded.
 
-**Transliterate** — Mandatory stage between Reconcile and the first Check. Writes Latin-script bytes into `original_text` for every block while preserving the source's original-language bytes exactly in `language_segments[].original_script`. Rule-driven via per-language transliteration rulesets at `build/lib/modernisation/rulesets/transliteration/<lang>.yaml`; editorial overrides follow the same audit pattern as Modernise. No-op for blocks with no non-Latin script. The first Check validates post-Transliterate state.
+**Verify** — Runs deterministic gates and independent recomputation against the exact source and candidate bytes. Builder reports do not certify themselves.
 
-**Modernise** — Optional stage that produces a modernised-spelling sibling record from a Reviewer-clean post-Transliterate record. Rule-driven (per-language YAML rulesets) plus editorial (judgement calls). When skipped, only the `original` config publishes; Transliterate has already produced the consumer-facing Latin-script text.
+**Review** — Presents source, readable candidate, exact TEI, evidence, and consequential questions at stable anchors. Human decisions are immutable attributed events, not edits that silently replace evidence.
 
-**Check** — Existing Checkers run against reconciled records and modernised siblings; flag blocks for Reviewer adjudication.
+**Accept** — Performs the separate authority transition from verified candidate to accepted master under an explicit policy and receipt. Candidate/report storage does not become accepted authority merely because an artifact exists there.
 
-**Publish** — Two-step: (1) **Local export** (Phase 1) — `build/tools/export_hf_dataset.py` produces a HuggingFace dataset artefact under `exports/` (gitignored) with two configs (`original`, `modernised`) and the dataset card. (2) **Remote push** (Phase 3 soft-launch) — `build/tools/upload_huggingface.py` invokes `huggingface-cli` to push the artefact to the dataset repo. Manually invoked.
+**Project** — Derives reading, search, API, JSONL, AI, or other views from the accepted master and records normalization or loss. A projection is never source or accepted-master authority.
+
+**Publish** — Makes an explicitly authorized release available externally. The current offline export command is `build/scripts/export_huggingface.py --root <root> --selection <original-selection.json> --output <fresh-release-directory>`; it derives and independently verifies selected rows from accepted TEI and sidecars. A successful offline export does not authorize upload. Historical upload commands and live release context are documented in `docs/huggingface-publishing.md`. `build/tools/export_hf_dataset.py` remains a separate original/modernised projection experiment, not the current multi-category release assembler.
 
 ---
 
@@ -94,10 +109,6 @@ The pipeline has **eight stages**: `Fetch → Parse → Reconcile → Transliter
 
 **Retry queue** — The store for transient-failure recovery. (Formerly "dead-letter".)
 
-**Reviewer UI** — The HTML output of `render_review_html`. Extended with a split-pane scan view, per-disagreement adjudication affordances, structural-disagreement affordances, and per-modernisation accept/override controls.
-
-**Review patch** — A JSON file emitted by the Reviewer UI carrying accumulated Reviewer decisions (audit entries, catalog deltas, workbench deltas, tool-version stamp). Schema: `schemas/v1/review_patch.schema.json`. The Reviewer UI cannot write directly to disk from a `file://` URL; `build/tools/apply_review_patch.py` is the CLI that validates a patch and applies it to `review/audit.jsonl`, `catalog.json`, and workbench files. `build/tools/inspect_review_patch.py` shows you what would change without applying. See ADR-0012 (amended 2026-05-16).
-
 ---
 
 ## Catalogs & storage
@@ -108,13 +119,15 @@ The pipeline has **eight stages**: `Fetch → Parse → Reconcile → Transliter
 
 **Lexicon work** — A reference work (lexicon, concordance, grammar, theological dictionary) modelled as a first-class work under `data/lexicon/<author>/<slug>/<edition>/`. Has its own rendering catalog and renderings just like commentaries or other works. Phase 1 lexicon works: Liddell-Scott (`grc`), BDB (`hbo`), Lewis & Short (`la`); ship with `catalog.json`, local public-domain rendering bytes, and a build-time-generated `_index.json` for Reviewer raw-search. Reconciled-lexicon records (Reconcile run over the lexicon itself) are out of Phase 1 scope per ADR-0008 bucket 2. Not to be confused with the Layer-2 language-detection word lists at `build/lib/lexicons/<lang>.py` (different artefact; same word).
 
-**Per-language reference resource registry** — A YAML file at `build/lib/reference_resources/<lang>.yaml` mapping a language code to one or more lexicon work-handles. Consumed by the Reviewer UI when adjudicating disagreements in a target language. Phase 1 entry shape: `work_handle`, `resource_type`, `scope_note`. Schema-validated (language code in ADR-0010 active set; `resource_type` in `{lexicon, concordance, grammar, theological_dictionary}` whitelist; every `work_handle` resolves to an existing `data/lexicon/<author>/<slug>/<edition>/catalog.json`; Phase 1 minimum entries for `grc` → Liddell-Scott, `hbo` → BDB, `la` → Lewis & Short).
-
-**The dataset** — `data/` directory; the published records.
+**The dataset** — A specific versioned collection of records. Retained legacy
+JSON lives in `data/`; current offline releases derive category rows from
+accepted TEI and sidecars. Neither population implies acceptance of the other.
 
 **Lookup table** (`data/lookup/`) — Non-record reference data used by build-time pipelines. Distinct from `data/lexicon/` (lexicon works) and from `data/<resource-type>/` (reconciled records). Example: `data/lookup/archaic_forms_en.json` (388 archaic-form → modern-form entries consumed by Modernise; moved from `data/lexicon/` in Phase 1 per R15).
 
-**Release** — `exports/`; HuggingFace publication artefacts. Regenerable; gitignored.
+**Release** — A selected offline build under `exports/releases/`, containing
+public rows and private verification receipts. External publication is a
+separate authorized action; existence of a release does not establish it.
 
 **Metadata block** — The metadata header at the top of a record.
 
@@ -150,11 +163,19 @@ The pipeline has **eight stages**: `Fetch → Parse → Reconcile → Transliter
 
 ## Surfaces
 
-**HuggingFace dataset** — `openchristiandata/open-christian-data` on HuggingFace. Two configs: `original`, `modernised`. Consumer-facing only.
+**Hugging Face dataset** — An externally published dataset. Current offline
+library releases use public category configurations. The historical
+`original`/`modernised` experiment is a separate export contract.
 
-**Public GitHub** — `OpenChristianData/open-christian-data` on GitHub. The dataset + build pipeline + schemas + tests + Reviewer machinery + workbench / change log / audit log / retry queue. Done work.
+**Public GitHub** — The separately published repository mirror. Its contents are
+selected by the public-mirror tool and publication rules; completing or privately
+committing work does not make it public. Historical public repository references
+do not define the current private checkout's publication scope.
 
-**Local-only** — Scans, per-rendering parses, drafts, prompts, `LAST_SESSION_*.md`, generated reports, HuggingFace export artefacts, raw source caches, working notes. Gitignored. Local working files.
+**Local-only** — Material retained outside publication, such as scans, raw
+source caches and generated release artifacts. This does not mean every such
+file is Git-ignored: plans, prompts and work records may be tracked privately
+under the repository's filing and publication rules.
 
 ---
 

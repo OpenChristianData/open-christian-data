@@ -1,0 +1,32 @@
+{
+  "contract": "ocd-lib025-native-reference-unit-proposal-v1",
+  "status": "unexecuted-isolated-proposal",
+  "work_category": "reference-entries",
+  "public_category": "reference_entries",
+  "row_format": "ocd-native-reference-unit-v1",
+  "whole_authored_works": 1,
+  "source_page_units": 11680,
+  "encyclopedia_entries": 11632,
+  "encyclopedia_indexes": 48,
+  "unavailable_source_registers": 1,
+  "expected_rows": 11681,
+  "selection": "Every direct body division in exact source order. Numeric source URLs have one actual h1 and produce encyclopedia-entry; the landing page and 47 letter indexes retain their actual h1 as source_title and headword=null; the separate unavailable-source-members division retains its actual heading and headword=null.",
+  "article_url_pattern": "https://www.newadvent.org/cathen/[0-9]{5}[a-z]\\.htm",
+  "body_counts": {"div":491999,"ab":167166,"milestone":33332,"head":43768,"hi":220159,"ref":1008151,"list":1988,"item":11349,"table":11813,"row":12863,"cell":17975,"seg":197800,"lb":27050,"quote":1052,"figure":320,"graphic":311,"figDesc":320,"spanGrp":1,"span":1,"anchor":2,"gap":26,"desc":26,"g":1,"p":155303},
+  "public_native_kind_map": {
+    "div":"division","ab":"source-block","milestone":"source-marker","head":"heading","hi":"emphasis","ref":"source-reference","list":"list","item":"list-item","table":"table","row":"table-row","cell":"table-cell","seg":"segment","lb":"line-break","quote":"quotation-block","figure":"figure","graphic":"image-reference","figDesc":"figure-description","spanGrp":"source-block","span":"source-marker","anchor":"anchor","gap":"gap","desc":"description","g":"glyph","p":"paragraph"
+  },
+  "public_native_attributes": "Retain CSS/rendition, source HTML tag/attributes, meaningful TEI roles and language; map every TEI xml:id to an injective public alias. Local target/from/to pointers use the same alias only when the actual ID exists; unbound source literals remain explicitly qualified. Retain all original fields in private per-unit event digests. Do not copy TEI xml:id values into public annotations.",
+  "special_semantics": {
+    "spanGrp_span": "Exactly one block-spanning emphasis range remains as source-block/source-marker with source_role and explicit aliased from/to fields in source_annotations. Never coerce it into an ordinary inline hi or drop the range.",
+    "table_cells": "Preserve ordered rows/cells, label-cell role, cols and rows as source_column_count/source_row_count with literal HTML attributes and CSS. Do not flatten the table into definition strings.",
+    "graphics": "Keep every actual image-reference and figure description. Retained data URIs remain source-bound; nine missing images retain explicit gap descriptions. Undisplayed retained assets remain support evidence rather than invented displayed graphics.",
+    "g": "Keep the literal source glyph U+0017 carrier reference and visible glyph; no control-character modernization.",
+    "publisher_citations": "Preserve source citation/transcription/approbation paragraphs in structured content. Article-local Volumes 1-17 are not row order, inferred edition identities or a Volume I scope.",
+    "unavailable_register": "Retain all seventeen global failure entries and their source URLs, including the six evidence refs unaffected by the seven content-link repairs."
+  },
+  "plain_text_policy": "Human-readable convenience text follows source text/tail order, with documented block/row/cell delimiters and normalized whitespace. Native mixed content is the complete public structured representation; private event digests account for fields withheld from public rows.",
+  "required_schema_change": "Add an exact-work native reference-unit branch to reference-entries.schema.json. Preserve the existing dictionary/reference-entry branch unchanged. New branch uses category=reference_entries, row_format, unit_kind, actual source_title, nullable headword for index/register, native structure, locator and ordinary provenance. This schema and the supported reader/assembler/streaming-browser route require root review and a released shared-code window.",
+  "no_schema_change_needed_for": "Existing native-content kinds and attributes already express the observed grammar using source_role/source_annotations for the cross-block range; no global native-content enum change is proposed.",
+  "closed_gate_status": "Not projected, schema-valid, independently verified or accepted. Proposed maintained opt-in must validate actual acceptance first and admit only the exact reviewed work/form/edition/master/header/acquisition/runtime."
+}

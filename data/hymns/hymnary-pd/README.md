@@ -1,85 +1,13 @@
-# Hymnary.org Public Domain Hymns
+# Hymnary.org selected public-domain-instance export
 
-A collection of **34,904** public-domain hymn texts, sourced directly from
-[Hymnary.org](https://hymnary.org) at Calvin University.
+Hymnary.org at Calvin University provided this oldest-PD-instances export for inclusion in Open Christian Data, received April 22, 2026. The retained acquisition record describes each record as the oldest known public-domain hymnal instance for that hymn text and labels this specific export public domain. This provider designation supports the selected United States public-domain release of this exact supplied collection. It is not a claim about every resource on Hymnary.org or an independent rights determination for every underlying text, translation, edition, or jurisdiction.
 
-## Credit
+**Provider credit and requested acknowledgment:** link to [Hymnary.org](https://hymnary.org) when using this dataset. Application developers are encouraged to [submit their projects through Hymnary's contact page](https://hymnary.org/contact). No contact has been sent as part of this preparation.
 
-This dataset was provided by Hymnary.org for inclusion in Open Christian Data.
-**If you build something using this dataset, please:**
+The accepted retained CSV contains **34,895 source records**, with eight fields in original order. The historical generated collection has 34,904 entries and is a separate artifact, not reconstruction authority. The CSV is the textual source; its ZIP is only a transport package. This collection is a supplied export, not a claim to complete or critically edited hymn editions.
 
-1. **Link back to [https://hymnary.org](https://hymnary.org)** in your application
-   or publication.
-2. **Submit your application to Hymnary at
-   [https://hymnary.org/contact](https://hymnary.org/contact)** — they love seeing
-   what people build with their data.
+All author and date strings remain provider-supplied values, including blanks, uncertain wording, and dates of later hymnals. A later hymnal printing date does not establish when its hymn text or translation originated. The source contains 31,796 records with literal hymnal years before 1931 and 3,099 records with later or uncertain hymnal years; this census is not newly verified publication dating or a row-level legal review. The provider's selected-export designation covers the supplied collection, rather than being inferred from those dates.
 
-## Contents
+The faithful reconstruction preserves original spelling, source order, empty fields, repeated titles, line breaks, and literal backslashes. Seven nonstandard quotation occurrences remain unresolved. Fifteen XML-forbidden source controls are represented by visible labeled glyph placeholders. No stanza divisions, author identities, or publication dates have been inferred or corrected.
 
-- `collection.json` — single OCD `hymn_collection` file, ~48.6 MB
-- Each record represents the **oldest known public-domain hymnal instance** of a
-  given hymn text
-
-## Coverage
-
-| Field | Coverage |
-|---|---|
-| Total entries | 34,904 |
-| Has author name | 86% (29,786 / 34,904) |
-| Has author birth year | 65% |
-| Has hymn-written year | 19% |
-| Has hymnal publication year | 100% (less 13 missing) |
-| English | 87% (~30,089) |
-| Non-English (`mul`) | 13% (~4,815) — German, Norwegian, Danish, Polish, Spanish, Arabic |
-
-## Schema
-
-Validates against
-[`schemas/v1/hymn_collection.schema.json`](../../../schemas/v1/hymn_collection.schema.json).
-
-Each entry has:
-
-```json
-{
-  "entry_id": "abba-lieber-vater-hore",
-  "collection_id": "hymnary-pd",
-  "title": "Abba, lieber Vater, höre",
-  "author": "Schmolck, Benjamin, 1672-1737",
-  "author_birth_year": 1672,
-  "author_death_year": 1737,
-  "year_written": null,
-  "stanzas": ["1 Abba, lieber Vater, höre,\\n...", "2 ...", "..."],
-  "language": "mul",
-  "hymnal_title": "Evang.-Lutherisches Gesangbuch",
-  "hymnal_year": 1872,
-  "word_count": 261,
-  "token_count": 463
-}
-```
-
-### Notes on the data
-
-- **`stanzas`** — hymn text split on blank lines. Numbered stanzas, refrains, and
-  choruses are separate strings within the array.
-- **`language`** — `en` if the title and opening text contain no non-ASCII
-  letters; `mul` otherwise (covers all non-English content). Typographic
-  punctuation like curly quotes is ignored, so English hymns with `heav'n`
-  are correctly classified as `en`.
-- **`author`** — raw string from Hymnary, may contain multiple authors separated
-  by `;`. For multi-author entries, `author_birth_year` and `author_death_year`
-  are `null`.
-- **`entry_id`** — kebab-case, unique within the collection. When the same title
-  appears multiple times (~2,056 such titles, mostly different hymns sharing a
-  name), the slug is disambiguated with the first author surname, then the
-  hymnal year, then a numeric counter.
-
-## License
-
-- **Hymn texts** — public domain (Hymnary.org provided only PD content)
-- **OCD curation and metadata** — CC0-1.0
-
-## Provenance
-
-- Source: Hymnary.org export (`oldest_pd_instances.csv`), 2026-04-22
-- Parser: [`build/parsers/hymnary_pd.py`](../../../build/parsers/hymnary_pd.py)
-- Tests: [`tests/test_hymnary_pd.py`](../../../tests/test_hymnary_pd.py) (39 tests, TDD)
+The website's [general copyright information](https://hymnary.org/copyright) describes both public-domain and reserved resources. That general notice does not replace the specific supplied-export designation; it also does not grant use of other website text, tunes, images, or resources. The selected release makes no worldwide clearance claim.

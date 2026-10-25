@@ -1,0 +1,105 @@
+{
+  "contract": "watson-ten-commandments-source-accountability-v1",
+  "schema": "watson-ten-commandments.source-accountability.schema.json",
+  "profile_id": "watson-ten-commandments-ccel-thml-v1",
+  "source_scope": "Complete single retained ThML member and every direct ThML.body node in source order.",
+  "source_member": {
+    "path": "raw/ccel/watson/commandments.xml",
+    "bytes": 1100623,
+    "sha256": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6",
+    "disposition": "included as the sole retained source member"
+  },
+  "member_census": [
+    {
+      "path": "raw/ccel/watson/commandments.xml",
+      "bytes": 1100623,
+      "sha256": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6",
+      "decision": "include",
+      "reason": "The exact retained source member named by 37c-318 and LIB-056; it contains the complete six-division ThML work scope."
+    }
+  ],
+  "excluded_member_count": 0,
+  "carrier_inventory": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "Title Page", "disposition": "selected-work", "selection_role": "body", "tei_region": "front"},
+    {"position": 1, "native_id": "iii", "source_tag": "div1", "source_title": "Introduction", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 2, "native_id": "iv", "source_tag": "div1", "source_title": "2. The Ten Commandments", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 3, "native_id": "v", "source_tag": "div1", "source_title": "3. The Law and Sin", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 4, "native_id": "vi", "source_tag": "div1", "source_title": "4. The Way of Salvation", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 6, "native_id": "vii", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back"}
+  ],
+  "body_node_sequence": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "Title Page", "disposition": "selected-work", "selection_role": "body", "tei_region": "front", "node_kind": "carrier"},
+    {"position": 1, "native_id": "iii", "source_tag": "div1", "source_title": "Introduction", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 2, "native_id": "iv", "source_tag": "div1", "source_title": "2. The Ten Commandments", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 3, "native_id": "v", "source_tag": "div1", "source_title": "3. The Law and Sin", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 4, "native_id": "vi", "source_tag": "div1", "source_title": "4. The Way of Salvation", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 5, "kind": "comment", "path": "/ThML/ThML.body/comment()[1]", "text": " added reason=\"AutoIndexing\" ", "tail": "\n    ", "disposition": "accounted-source-body-wrapper"},
+    {"position": 6, "native_id": "vii", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back", "node_kind": "carrier"},
+    {"position": 7, "kind": "comment", "path": "/ThML/ThML.body/comment()[2]", "text": " /added ", "tail": "\n\n  ", "disposition": "accounted-source-body-wrapper"}
+  ],
+  "document_shell": {
+    "xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "root_name": "ThML",
+    "prolog": [
+      {"kind": "processing-instruction", "path": null, "text": "type=\"text/xml\"\n    href=\"http://www.ccel.org/ss/thml.html.xsl\" ", "tail": "", "disposition": "accounted-source-document-shell", "target": "xml-stylesheet"},
+      {"kind": "processing-instruction", "path": null, "text": "type=\"text/xsl\"\n    href=\"http://www.ccel.org/ss/thml.html.xsl\" ", "tail": "", "disposition": "accounted-source-document-shell", "target": "xml-stylesheet"},
+      {"kind": "comment", "path": null, "text": " Copyright Christian Classics Ethereal Library ", "tail": "", "disposition": "accounted-source-document-shell"}
+    ],
+    "epilog": [],
+    "comments_and_processing_instructions": [
+      {"kind": "comment", "path": "/ThML/ThML.body/comment()[1]", "text": " added reason=\"AutoIndexing\" ", "tail": "\n    ", "disposition": "accounted-outside-selected-content"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[1]/comment()[1]", "text": " added reason=\"insertIndex\" class=\"scripRef\" ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[1]/comment()[2]", "text": " Start of automatically inserted scripRef index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[1]/comment()[3]", "text": " End of scripRef index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[1]/comment()[4]", "text": " /added ", "tail": "\n\n\n      ", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[2]/comment()[1]", "text": " added reason=\"insertIndex\" class=\"foreign\" ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[2]/comment()[2]", "text": " Start of automatically inserted foreign index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[2]/comment()[3]", "text": " End of foreign index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[6]/div2[2]/comment()[4]", "text": " /added ", "tail": "\n\n      ", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/comment()[2]", "text": " /added ", "tail": "\n\n  ", "disposition": "accounted-outside-selected-content"}
+    ],
+    "head_children": [
+      {"position": 0, "tag": "generalInfo", "attributes": {}, "text_sha256": "2524418980a9cd68bedc6aa75fb15d761c72da331e122dbebebe5d51f92b9fd9", "disposition": "reproduced-in-source-readme"},
+      {"position": 1, "tag": "printSourceInfo", "attributes": {}, "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6", "disposition": "reproduced-in-source-readme"},
+      {"position": 2, "tag": "electronicEdInfo", "attributes": {}, "text_sha256": "af0778cf5fb22de2311a193cb12d6ae456212d41495a04e483ccba2dd4cf2a29", "disposition": "reproduced-in-source-readme"},
+      {"position": 3, "tag": "style", "attributes": {"type": "text/css"}, "text_sha256": "cb5a439cf71532fee9cecc906ed6ed832ca94dd8ae864950a07c137bad33a510", "disposition": "represented-in-tei-encodingDesc"},
+      {"position": 4, "tag": "style", "attributes": {"type": "text/xcss"}, "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "disposition": "accounted-empty-source-stylesheet"}
+    ]
+  },
+  "selected_feature_count": 5275,
+  "selected_feature_counts": {
+    "a": 1863,
+    "div": 2,
+    "div1": 6,
+    "div2": 25,
+    "h1": 2,
+    "h2": 6,
+    "h3": 24,
+    "insertIndex": 2,
+    "li": 210,
+    "p": 1296,
+    "scripRef": 1627,
+    "span": 211,
+    "ul": 1
+  },
+  "selected_comment_count": 8,
+  "document_comment_count": 10,
+  "source_claims": [
+    {"source_path": "/ThML/ThML.head/generalInfo", "text_sha256": "2524418980a9cd68bedc6aa75fb15d761c72da331e122dbebebe5d51f92b9fd9", "excerpt": "divides his commentary into four sections", "interpretation": "Provider editorial description used only as structural context."},
+    {"source_path": "/ThML/ThML.head/printSourceInfo", "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6", "excerpt": "1692", "interpretation": "Retained source statement; not an adopted edition date or print-exemplar identification."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/publisherID", "text_sha256": "efaccac7d39eb66bdc41072c5b7c62d8a159bd8cdbe0eec7e3647f6f1481dd88", "excerpt": "ccel", "interpretation": "Source electronic publisher identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/authorID", "text_sha256": "3f8d40ad6a1d0038b8c334303fe06e70df25a1b78220855f6acc3aec951ffb3b", "excerpt": "watson", "interpretation": "Source electronic author identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bookID", "text_sha256": "5eba70209409cc69e20fff11fb2d9e9d02753e6c525fe82d3a721c3ec4e53b44", "excerpt": "commandments", "interpretation": "Source book identifier shared with workID."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/workID", "text_sha256": "5eba70209409cc69e20fff11fb2d9e9d02753e6c525fe82d3a721c3ec4e53b44", "excerpt": "commandments", "interpretation": "Source work identifier shared with bookID."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bkgID", "text_sha256": "b68497be2ff53feb2a448e70ece4453f10ba7a3ae99f5865ecb26f1471efd23e", "excerpt": "ten_commandments_(watson)", "interpretation": "Source electronic catalog identifier; not adopted as a print-edition assertion."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Title", "text_sha256": "c1f2c1aa8d7fc7d024f6c36397fd2cf36539fbadb3c7fae2c3dda04252611d7e", "excerpt": "The Ten Commandments", "interpretation": "Primary source title metadata."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Creator[@sub=\"Author\"][@scheme=\"short-form\"]", "text_sha256": "cab245e8a8b4f7d59882e6ca0d32f9fbf0aa787be3baec8ca84a8434e5d18d1b", "excerpt": "Thomas Watson", "interpretation": "Primary source author metadata, corroborated by title-page heading."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Publisher", "text_sha256": "dae1fe0ff1c3fb937f1149c497794c6abce42aad2e0a72a3f9b8c064ed64d306", "excerpt": "Christian Classics Ethereal Library", "interpretation": "Provider metadata statement."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Date[@sub=\"Created\"]", "text_sha256": "7f7d2ad40f4632b1d43d7646cd7248d5f78ab16fe1faa107e06ab70cde8b89e4", "excerpt": "2000-07-09", "interpretation": "Electronic metadata date, not composition or print date."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Identifier[@scheme=\"URL\"]", "text_sha256": "4e1330148d07e9fceb8b0b36b89bd9258a1623e97954046152e5dcff9383ebec", "excerpt": "/ccel/watson/commandments.html", "interpretation": "Embedded HTML identifier kept distinct from the configured XML acquisition URL."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Language[@scheme=\"ISO639-3\"]", "text_sha256": "82fe032bd9337b5dfb99b28717cf8651daac73f2d319e6d6213544660b961ee7", "excerpt": "eng", "interpretation": "Source electronic-language metadata."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Rights", "text_sha256": "f6960be1b71d602352d7d9de76a564f54f3dab550b23fa5674049f842116ca55", "excerpt": "Public Domain", "interpretation": "Provider rights statement, not project rights clearance."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h3", "text_sha256": "e9a373d85803aae2ae8ff0d0e014bb6a5897ae14d772827223b2c09dab1a62d2", "excerpt": "First published as part at A Body of Practical Divinity, 1692", "interpretation": "Source title-page statement; not proof of exact print exemplar or lineage."}
+  ]
+}

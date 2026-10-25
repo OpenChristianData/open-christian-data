@@ -1,0 +1,24 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "barnes-crosswire-sword-v1.1",
+  "ticket_id": "37c-066",
+  "work_id": "barnes-nt-notes",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "authorities": [
+    {"name": "retained-archive", "path": "raw/sword_modules/Barnes.zip", "role": "acquisition-container", "bytes": 5812827, "sha256": "9e8edc0333875c214124371b3862df118ad3a76ade7753cb2faeed3484615baf"},
+    {"name": "retained-verse-index", "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czv", "role": "primary-source", "bytes": 82460, "sha256": "edd2d46416db52595af44811a49940527bba208bd6b73b7c30f480c21d63edae"},
+    {"name": "retained-compressed-data", "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czz", "role": "primary-source", "bytes": 6018995, "sha256": "d26ada7eba82d4c0c24c18ad8d8a520c1dfd5761e2bdc8161c6888bc665ea40a"},
+    {"name": "retained-block-index", "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czs", "role": "primary-source", "bytes": 3120, "sha256": "a39f80ec47d108a43fda634c1234fc03827f32eac1636d614c01b424dfcf6302"},
+    {"name": "retained-module-config", "path": "raw/sword_modules/Barnes/mods.d/barnes.conf", "role": "source-description", "bytes": 437, "sha256": "6895f7186042c5624117973892bc22dc27fa31a21e9f4fbb217793e8b5df9a5f"},
+    {"name": "work-config", "path": "sources/commentaries/barnes/config.json", "role": "source-description", "bytes": 1489, "sha256": "98a3b002f40562c99bc9a1dc2cdee827e69604776d846201d8447dcd50ab19a5"},
+    {"name": "reconstruction-profile", "path": "sources/barnes-nt-notes/barnes-nt-notes.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 6342, "sha256": "38005e5915cb6b463f05424968defcc19c56ce98569d11a1621678c3da1164f1"},
+    {"name": "validation-policy", "path": "sources/barnes-nt-notes/barnes-nt-notes.validation-policy.json", "role": "independent-validation-policy", "bytes": 1970, "sha256": "2a2ce3f5c2fcdb79a90c4a3e358f4facefe7cb3be0416c9a18ec031e1244e8b5"},
+    {"name": "source-readme", "path": "sources/barnes-nt-notes/README.source.md", "role": "source-attribution", "bytes": 1949, "sha256": "138f2dcacc2e92f5ee275e085785820c855eaf9f06e3546a10195e726fe186fd"},
+    {"name": "source-accountability-schema", "path": "sources/barnes-nt-notes/barnes-nt-notes.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 4401, "sha256": "68eebc3b357dc33539d111497cbe4a2a939902bf4f8d4d91c594654c0c605395"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {"id": "ocd-barnes-sword-zcom-to-tei", "version": "2", "callable": "_convert", "implementation_path": "build/tei/barnes_nt_notes_reconstruction.py", "implementation_sha256": "c8afe42c396768fcd0ecd7c96d74ecad88a8aa0ce1847f5fa6a21cc9e1a71c8e"},
+  "validator": {"id": "ocd-barnes-independent-zcom-slot-oracle", "version": "2", "callable": "_oracle", "implementation_path": "build/tei/barnes_nt_notes_oracle.py", "implementation_sha256": "f8a3faa0c992371ed78bccbe0d5ad07e25f9de9d6f5fabe2de9ea8b44afae5f8", "import_closure_sha256": "b782d801db8fcad21aa9da2f8ac28aec2fc58d5f3f5033fd1b9f7445fe152883"},
+  "package_schema": {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+}

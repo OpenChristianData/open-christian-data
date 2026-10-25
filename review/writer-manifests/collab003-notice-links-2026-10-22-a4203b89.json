@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "build/tools/replay_notice_link_amendments.py@v1.0.0",
+  "writer_identity": "notice_link_amendment",
+  "run_id": "collab003-notice-links-2026-10-22-a4203b89",
+  "started_at": "2026-10-22T04:35:58.212940+00:00",
+  "data_paths": [
+    "data/doctrinal-documents/council-of-orange/README.md",
+    "data/structured-text/edwards-freedom-of-the-will/README.md"
+  ],
+  "checksums": {
+    "data/doctrinal-documents/council-of-orange/README.md": {
+      "before_sha256": "6b2cc9e451cbfd1ceb761be78fa0c4ebd2741d62984316ab9d88ae088ae4fe0c",
+      "after_sha256": "e41c306a1ab02ee2d6d37431af63dbbcf1a3cadab6f2f0363850b3b25cfc4cc5"
+    },
+    "data/structured-text/edwards-freedom-of-the-will/README.md": {
+      "before_sha256": "53133897392d99c9196aa55804b685141d75ffc7c02bf77490045c5c2b341bfe",
+      "after_sha256": "67e562ae7a566b8dc1a34e5be2f329c65fc23004334ed5e398c7cfdd1a4bdd75"
+    }
+  },
+  "expected_delta_counts": {
+    "data/doctrinal-documents/council-of-orange/README.md": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    },
+    "data/structured-text/edwards-freedom-of-the-will/README.md": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    ""
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

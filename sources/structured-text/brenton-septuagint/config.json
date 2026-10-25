@@ -1,0 +1,44 @@
+{
+  "resource_id": "brenton-septuagint",
+  "title": "The Septuagint Version of the Old Testament, According to the Vatican Text, Translated into English",
+  "display_title": "Brenton Septuagint Translation",
+  "translator": "Sir Lancelot Charles Lee Brenton",
+  "language": "en",
+  "license": "public-domain",
+  "source_url": "https://ebible.org/eng-Brenton/",
+  "source_details_url": "https://ebible.org/find/details.php?all=1&id=eng-Brenton",
+  "source_download_url": "https://ebible.org/Scriptures/eng-Brenton_usfm.zip",
+  "source_format": "eBible USFM authority package with USFX comparison carrier",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-3/21/brenton-septuagint/archive/eng-Brenton_usfm.zip",
+  "source_root": "raw/clean-ready-acquisition-to-tei/master-3/21/brenton-septuagint/source/usfm",
+  "comparison_source_file": "raw/clean-ready-acquisition-to-tei/master-3/21/brenton-septuagint/archive/eng-Brenton_usfx.zip",
+  "comparison_source_root": "raw/clean-ready-acquisition-to-tei/master-3/21/brenton-septuagint/source/usfx",
+  "retrieved_at_utc": "2026-08-31T03:06:06Z",
+  "source_files_dated": "2025-12-12",
+  "generated_html_dated": "2026-08-08",
+  "source_edition": "Corrected eBible eng-Brenton / ENGBRE electronic edition of Brenton's public-domain English Septuagint",
+  "authority": {
+    "archive_bytes": 1438240,
+    "archive_sha256": "93496ef23f7ff2427c32f5d353089dee73e82975ab92c80a00663fb333c57e32",
+    "member_count": 63,
+    "member_inventory_sha256": "2a8580e1772b746c3c25b1291db9aaf706accba1523313c5d84f1a1477ff6ca7",
+    "usfm_file_count": 60,
+    "textual_book_count": 53,
+    "paratext_file_count": 7
+  },
+  "comparison_carrier": {
+    "archive_bytes": 1546249,
+    "archive_sha256": "aba8effdddb0bf3084dc9a2041e644f79fddb18c97bcf60b94a01abb5d7adea5",
+    "member_count": 8,
+    "member_inventory_sha256": "f1bbe0372ce03bc59a131a8d4ae3208b3d4da975ce4fb03a2526558e28add7a2"
+  },
+  "rendering_witness": {
+    "role": "Official eBible all-in-one generated PDF rendering witness; not transformation authority",
+    "path": "raw/clean-ready-acquisition-to-tei/master-3/21/brenton-septuagint/witness/eng-Brenton_all.pdf",
+    "bytes": 9327868,
+    "pages": 1379,
+    "sha256": "98f34c4743aefa861a8bac84741ab5c39f2b8595a5c2bee0579de19a3f17c96a"
+  },
+  "candidate_status": "nonaccepted",
+  "notes": "Provisional net-new edition/expression candidate. Preserve the exact 60-member USFM sequence: 53 source-defined textual books and seven source-defined paratext members (abbreviations, 1870 introduction, Books of the Apocrypha overview, Jeremiah concordance table, 1844 preface, errata, appendix). The official PDF is generated from the electronic edition and is a rendering witness only; no independent historical print scan is claimed or projected."
+}

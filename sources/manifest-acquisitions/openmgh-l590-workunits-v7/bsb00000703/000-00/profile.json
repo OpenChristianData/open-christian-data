@@ -1,0 +1,62 @@
+{
+  "archive_sha256": "d81bb3a385abbfdef024dc9ad5013646c2b65b2f410158f7fc9fe17e3846d02e",
+  "boundary_evidence": {
+    "body_head_count": 0,
+    "chapter_21_anchor": "bsb00000703_00097_22",
+    "declared_work_n": "Vita Anskarii",
+    "page_81_boundary_reason": "The page marker sits inside the sole div[@type=work] and is followed by prose and a numbered chapter, with no new top-level work or head; page number alone does not establish a separate work identity.",
+    "page_81_chapter_start": "bsb00000703_00081_22: 1. Cum imperator Hludowicus regni Francorum",
+    "page_81_line_texts": [
+      "bsb00000703_00081_17: Scripturi vitam cum omni semper veneratione memo-",
+      "bsb00000703_00081_18: randi Rimberti pontificis, quae offitii eius primitus occasio",
+      "bsb00000703_00081_19: fuerit, aut quem ad hoc institutorem vel conversationis pro-",
+      "bsb00000703_00081_20: fectum habuerit, seu qualiter ad hoc electus deinceps vixe-",
+      "bsb00000703_00081_21: rit, in quantum haec comperimus, fideliter enarramus."
+    ],
+    "page_81_marker": "bsb00000703_00081",
+    "separate_work_identity_status": "unresolved",
+    "source_member_sha256": "44517a090c08145812fb06f6bfc9d693363acaefa667e9c4857380bdb4b08f7c",
+    "source_title_statement": "MGH SS rer. Germ. 55: Vita Anskarii auctore Rimberto [Anhang: Vita Rimberti]",
+    "top_level_work_count": 1,
+    "transition_before_chapter_21": "bsb00000703_00097_20-21: ad quam nos lectorem mittentes, coeptum opus de vita domni Rimberti consummare debemus."
+  },
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 461915,
+  "member_inventory_sha256": "17044d7ff9f05ed359cbc1ca9b21ed7d24e92d8ea315782855c083a4d3e25c26",
+  "member_name": "bsb00000703.xml",
+  "member_sha256": "44517a090c08145812fb06f6bfc9d693363acaefa667e9c4857380bdb4b08f7c",
+  "receipt_edition": "Vita Anskarii auctore Rimberto [Anhang: Vita Rimberti] (MGH SS rer. Germ. 55)",
+  "source_id": "bsb00000703",
+  "work_linkage": {
+    "acquisition_id": "vita-anskarii-auctore-rimberto-openmgh-acquired",
+    "acquisition_sidecar_path": "library/works/vita-anskarii-auctore-rimberto/forms/vita-anskarii-auctore-rimberto-openmgh-retained/editions/vita-anskarii-auctore-rimberto-openmgh-electronic/acquisitions/vita-anskarii-auctore-rimberto-openmgh-acquired.json",
+    "acquisition_sidecar_sha256": "3d8fd5a2c68b8bc5163c279bec579b13064f1c8c06b038fdd75a4af35dca4fca",
+    "archive_sha256": "d81bb3a385abbfdef024dc9ad5013646c2b65b2f410158f7fc9fe17e3846d02e",
+    "candidate_first_locator": "raw/openmgh/bsb00000703/tei/bsb00000703.xml#bsb00000703_00013_1",
+    "candidate_last_locator": "raw/openmgh/bsb00000703/tei/bsb00000703.xml#bsb00000703_00100_17",
+    "edition_id": "vita-anskarii-auctore-rimberto-openmgh-electronic",
+    "first_locator": "raw/openmgh/bsb00000703/tei/bsb00000703.xml#bsb00000703_00013_1",
+    "last_locator": "raw/openmgh/bsb00000703/tei/bsb00000703.xml#bsb00000703_00100_17",
+    "source_id": "bsb00000703",
+    "source_member_sha256": "44517a090c08145812fb06f6bfc9d693363acaefa667e9c4857380bdb4b08f7c",
+    "source_path": "raw/openmgh/bsb00000703/tei/bsb00000703.xml",
+    "status": "exact",
+    "textual_form_id": "vita-anskarii-auctore-rimberto-openmgh-retained",
+    "work_id": "vita-anskarii-auctore-rimberto",
+    "work_sidecar_path": "library/works/vita-anskarii-auctore-rimberto/work.json",
+    "work_sidecar_sha256": "b537b9e874dbcaa96e8fd46200e3d14df465967b35a7d5d08223c9a80fdfe168"
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 0,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Anskarii",
+    "title": "Vita Anskarii"
+  },
+  "xml_titles": [
+    "MGH SS rer. Germ. 55: Vita Anskarii auctore Rimberto [Anhang: Vita Rimberti]"
+  ]
+}

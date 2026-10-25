@@ -1,6 +1,12 @@
 # ADR-0005: HuggingFace publishes one dataset with two configs
 
-**Status:** Accepted (2026-05-15)
+**Status:** Superseded (2026-08-31)
+
+**Superseded by:** `docs/OCD_LIBRARY_PIPELINE_SPEC.md`. OCD still uses one
+Hugging Face repository, but the approved configurations now describe textual
+form (`bible`, `commentary`, `quotations`, and so on). Original spelling is the
+faithful product; modernized spelling is only a possible future product and is
+not an automatic second configuration.
 
 ## Context
 

@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import html
+from pathlib import Path
 import re
+
+from lxml import etree
 
 XML_SAFE_ENTITIES = {"&amp;", "&lt;", "&gt;", "&quot;", "&apos;"}
 _EXTRA_ENTITIES = {
@@ -38,6 +41,29 @@ def preprocess_thml(raw_bytes: bytes) -> str:
         text = raw_bytes.decode("cp1252", errors="replace")
     text = re.sub(r"<!DOCTYPE\s[^[>]*(?:\[[^\]]*\])?>", "", text, flags=re.DOTALL)
     return re.sub(r"&[A-Za-z][A-Za-z0-9]*;", _replace_entity, text)
+
+
+def display_path(path: Path) -> str:
+    """Return a stable repository-relative path when the path is below cwd."""
+
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(Path.cwd().resolve()).as_posix()
+    except ValueError:
+        return resolved.as_posix()
+
+
+def parse_thml(xml_path: Path) -> etree._Element:
+    """Preprocess and strictly parse one retained CCEL ThML document."""
+
+    prepared = preprocess_thml(xml_path.read_bytes()).encode("utf-8")
+    parser = etree.XMLParser(huge_tree=True, resolve_entities=False)
+    try:
+        return etree.fromstring(prepared, parser=parser)
+    except etree.XMLSyntaxError as exc:
+        raise ValueError(
+            f"Could not parse ThML XML at {display_path(xml_path)}: {exc}"
+        ) from exc
 
 
 def get_all_text(elem) -> str:

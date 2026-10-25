@@ -1,0 +1,109 @@
+{
+  "authorities": [
+    {
+      "bytes": 2243559,
+      "name": "retained-hodge-vol-1",
+      "path": "raw/ccel/hodge/theology1.xml",
+      "role": "primary-source",
+      "sha256": "f01ffb5235657a0b21f56a1a4eb7ef95b836ba9d907f9acd1402e8a6fe450fc6"
+    },
+    {
+      "bytes": 1275,
+      "name": "work-config",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-1/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "57e49b10d98927a54e289d580f80daa84cf0007b65d3d3db472792f980f70725"
+    },
+    {
+      "bytes": 275,
+      "name": "witness-inventory",
+      "path": "sources/hodge-systematic-theology-vol-1/witnesses.json",
+      "role": "witness-inventory-evidence",
+      "sha256": "873d14e76c887bb7b3613fb70be024ecf6b238c0c3d91502c8ef4f31dec090e6"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 2795,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-1/hodge-systematic-theology-vol-1.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "d94445080cc721a6e4761bb8df0ea6f59e93633f74b5303339a68113371bdf60"
+    },
+    {
+      "bytes": 3879,
+      "name": "validation-policy",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-1/hodge-systematic-theology-vol-1.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "0d97da93a6af1477f3336998612408e523356e643d0e2cf76031a5085730f805"
+    },
+    {
+      "bytes": 1594,
+      "name": "attribution-readme",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-1/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "9d55bdf5f82b69ccd703d800cc52cc6355bf2b7cf5ad80142fced9992ed70eb5"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-37c203-hodge-systematic-theology-vol-1-to-tei",
+    "implementation_path": "build/tei/hodge_systematic_theology_vol_1_reconstruction.py",
+    "implementation_sha256": "9264dc896d6d7d08e228a40dbf792ddaadbb5e9f4343b2695c1fa8602f1327ca",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "assigned_roots_in_source_order": [
+      [
+        "hodge-vol-1",
+        "iii",
+        "hodge-systematic-theology-vol-1"
+      ],
+      [
+        "hodge-vol-1",
+        "iv",
+        "hodge-systematic-theology-vol-1"
+      ]
+    ],
+    "excluded_top_level_roots": [
+      "i",
+      "ii",
+      "v"
+    ],
+    "kind": "complete-source-subtrees",
+    "source_member": "retained-hodge-vol-1"
+  },
+  "source_id": "ocd-37c203-hodge-systematic-theology-vol-1-ccel-theology1",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-37c203-hodge-systematic-theology-vol-1-oracle",
+    "implementation_path": "build/tei/hodge_systematic_theology_vol_1_oracle.py",
+    "implementation_sha256": "d17f31b6347028d2f8db169606d6994bfdef6549be4ca187f52a0a3799e5fd04",
+    "import_closure_sha256": "5940485582cb6cd7e2ca0151bfe864bf0a144b2e623800e43d6895ebf33d71ab",
+    "version": "1"
+  }
+}

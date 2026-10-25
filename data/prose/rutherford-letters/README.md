@@ -1,0 +1,7 @@
+# Source and rights: Rutherford, complete Bonar letters
+
+This complete electronic witness comes from [Project Gutenberg ebook 42557](https://www.gutenberg.org/ebooks/42557), a Bonar-edited third edition containing 365 numbered letters, historical front matter, and apparatus. Project Gutenberg credits Colin Bell, Julia Neufeld, and the Online Distributed Proofreading Team. The historical Rutherford letters and Bonar edition text are public domain in the United States. The retained Gutenberg preface, footer, license and trademark references follow the [full Project Gutenberg License](https://www.gutenberg.org/policy/license.html).
+
+This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the terms of the Project Gutenberg License included with this eBook or online at www.gutenberg.org. If you are not located in the United States, you will have to check the laws of the country where you are located before using this ebook.
+
+The [original HTML ZIP](https://www.gutenberg.org/cache/epub/42557/pg42557-h.zip) is available without charge. Image references remain in the retained text structure, but image pixels are not distributed in the selected rows. This electronic-source reconstruction was not collated against a separate Bonar print copy. The older CCEL/Martin edition is not part of this selection. Rights outside the United States require separate assessment.

@@ -1,0 +1,11 @@
+# George Whitefield Works: retained source, volumes I–III
+
+This edition selects the three complete Project Gutenberg electronic witnesses to volumes I, II, and III of *The Works of the Reverend George Whitefield, M.A.* (1771). The printed title identifies six volumes; volumes IV–VI are outside this retained selection. These are works by George Whitefield, not the separate Tyerman biography.
+
+- Volume I: [PG68976](https://www.gutenberg.org/ebooks/68976). Source credit: Brian Wilson, Heather Clark and the Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive)
+- Volume II: [PG71140](https://www.gutenberg.org/ebooks/71140). Source credit: Richard Hulse, Brian Wilson, Heather Clark and the Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive)
+- Volume III: [PG73012](https://www.gutenberg.org/ebooks/73012). Source credit: Brian Wilson, Richard Hulse and the Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive/American Libraries.)
+
+The retained acquisition binds each original ZIP, primary HTML and extracted support file separately. The exact three-volume member set and its 19 files are recorded in the accepted source manifest. Seven image files are retained with the source; nine image references occur in the TEI. The TEI reconstruction preserves all three volumes, their front and back matter, links, tables, image references, language fields, and abbreviation expansions. The private offline dataset projects three whole volume text rows and retains source structure separately; it does not package image binaries in the public-row output.
+
+The source and accepted edition establish this electronic selection only. Editor attribution, physical print collation, human review, broader rights clearance, and public publication are separate. The complete retained Project Gutenberg License is reproduced in the selected data notice at `data/structured-text/george-whitefield-works/README.md` ([open notice](../../../data/structured-text/george-whitefield-works/README.md)).

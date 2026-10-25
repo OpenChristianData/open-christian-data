@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/reconstruction/candidate-package-v1.schema.json",
+  "title": "OCD nonaccepted reconstruction candidate manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "status",
+    "source_id",
+    "source_manifest",
+    "converter",
+    "package_schema",
+    "members"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-candidate-package-v1"},
+    "status": {"const": "nonaccepted"},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_manifest": {"$ref": "#/$defs/pathDigest"},
+    "converter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "callable", "implementation_path", "implementation_sha256"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "callable": {"type": "string", "minLength": 1},
+        "implementation_path": {"type": "string", "minLength": 1},
+        "implementation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "package_schema": {"$ref": "#/$defs/pathDigest"},
+    "members": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "bytes", "sha256"],
+        "properties": {
+          "name": {
+            "enum": [
+              "README.source.md",
+              "content.tei.xml",
+              "provenance.json",
+              "source-accountability.json",
+              "unresolved.jsonl"
+            ]
+          },
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pathDigest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

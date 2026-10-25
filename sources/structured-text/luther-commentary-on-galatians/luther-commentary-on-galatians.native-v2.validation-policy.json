@@ -1,0 +1,19 @@
+{
+  "contract": "ocd-luther-galatians-pg1549-native-validation-policy-v2",
+  "version": 2,
+  "work_id": "luther-commentary-on-galatians",
+  "forbidden_import_prefixes": ["build.tei.luther_galatians_native_v2_reconstruction"],
+  "required_checks": [
+    "exact-retained-source-manifest-and-work-config-binding",
+    "complete-byte-and-physical-line-accounting-including-gutenberg-envelope",
+    "ordered-six-chapter-and-all-literal-verse-carrier-check-without-invented-verse-identities",
+    "assignment-217-carrier-count-semantics-retained-as-open-discrepancy",
+    "independent-readable-tei-to-source-line-comparison",
+    "native-safe-ab-type-and-original-kind-subtype-for-all-9144-ab-lines",
+    "tei-p5-schema-validation",
+    "candidate-package-integrity-and-validation-sidecar",
+    "source-content-omission-reordering-and-invention-mutations-rejected",
+    "fresh-process-deterministic-candidate-reproduction"
+  ],
+  "separate_decisions": ["human-acceptance", "rights-clearance", "release-selection", "publication"]
+}

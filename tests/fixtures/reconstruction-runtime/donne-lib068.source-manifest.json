@@ -1,0 +1,105 @@
+{
+  "authorities": [
+    {
+      "bytes": 427543,
+      "name": "retained-text",
+      "path": "raw/gutenberg/pg23772.txt",
+      "role": "primary-source",
+      "sha256": "f1f2b08f2dcfe9f6618bb8031a5d055b5d58e30f80a399ff866d5b205b1773b7"
+    },
+    {
+      "bytes": 17076,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "198612c3b931e0397d1fbfb9fe3a25b7bfeb26e3d6e23efb2a5fc25700278b74"
+    },
+    {
+      "bytes": 1791,
+      "name": "validation-policy",
+      "path": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "f38d038eefba92a09c2b4c412179e7432e64512ff56e3902336d257f76bc5ffc"
+    },
+    {
+      "bytes": 3765,
+      "name": "source-attribution-readme",
+      "path": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.README.source.md",
+      "role": "source-attribution",
+      "sha256": "3764aa833530a5330d3c05991317744e6ddb222610359984a71101321504c71d"
+    },
+    {
+      "bytes": 2865,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "9f947833219938c5eaaaf5da788168bf93efc095ae74646c8293572780929db5"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 4609,
+      "name": "lib068-source-letters",
+      "path": "build/tei/lib068_source_letters.py",
+      "role": "implementation-support",
+      "sha256": "b6d40ad199c8014894ad0efe087e369c0001f999aea21c967da82d7352e52e36"
+    },
+    {
+      "bytes": 7655,
+      "name": "lib068-source-letters-oracle",
+      "path": "build/tei/lib068_source_letters_oracle.py",
+      "role": "implementation-support",
+      "sha256": "1d7a668960c4beb604d80338ce256e905fff752c5ecc906673a90608c5bdbdb0"
+    },
+    {
+      "bytes": 50814,
+      "name": "lib068-literary-blocks",
+      "path": "build/tei/lib068_literary_blocks.py",
+      "role": "implementation-support",
+      "sha256": "3ec4dc1ff80497e7bd09dadcda44220c3e712d693fe295499a30a4965705ae50"
+    },
+    {
+      "bytes": 64455,
+      "name": "lib068-literary-blocks-oracle",
+      "path": "build/tei/lib068_literary_blocks_oracle.py",
+      "role": "implementation-support",
+      "sha256": "bdfe6332ca732da6c9735545e75160b4fdaf19ca9913f995d17cdca4bb78d40c"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib068-source-local-retained-text-to-tei",
+    "implementation_path": "build/tei/lib068_source_local.py",
+    "implementation_sha256": "ebbf7bc269eec9504d0d8e19dddcd7ade986d9a382103003e8ca8e4acbe289a8",
+    "version": "2"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "gutenberg-pg23772-retained",
+  "ticket_id": "LIB-068",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib068-source-local-independent-oracle",
+    "implementation_path": "build/tei/lib068_source_local_oracle.py",
+    "implementation_sha256": "2eafbefc25696486712f54996c449e4b5be639731cae0b734ef3ac353f1d7fb6",
+    "import_closure_sha256": "5529420ddf864067e05eb93389b8abfbb1661d7f2dabc41664633fe5a5361d86",
+    "version": "2"
+  },
+  "work_id": "donne-devotions-upon-emergent-occasions"
+}

@@ -1,0 +1,334 @@
+{
+  "authorities": [
+    {
+      "bytes": 2378890,
+      "name": "retained-source",
+      "path": "raw/gutenberg/42557/completion-20261023/html/pg42557-images.html",
+      "role": "primary-source",
+      "sha256": "1c9b597162a0ea5adc3ac79f89423a6ed789f074559fa0ff381e4d79709fdd72"
+    },
+    {
+      "bytes": 1080,
+      "name": "profile",
+      "path": "sources/structured-text/rutherford-pg42557/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "e2a517dd3935f85f08eb871d2335f8d6bf72473e74b22e4474a0003d9042cd6d"
+    },
+    {
+      "bytes": 665,
+      "name": "policy",
+      "path": "sources/structured-text/rutherford-pg42557/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "847db71ca81b0dd047d3929386cd884ea3a37cde692366b748dcd0b1a8eceb7b"
+    },
+    {
+      "bytes": 914,
+      "name": "readme",
+      "path": "sources/structured-text/rutherford-pg42557/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "9ce2c45b340736804adc2b7c055e9573b02df855d72ff9179d3eae8df420301f"
+    },
+    {
+      "bytes": 4601,
+      "name": "producer-implementation",
+      "path": "build/tei/rutherford_pg42557_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "4ed155a08932789d2fc284d68d4a1525b8650c4df93645dea38613ef59792bf8"
+    },
+    {
+      "bytes": 13958,
+      "name": "producer-helper",
+      "path": "build/tei/tyerman_pg_html.py",
+      "role": "supporting-converter-helper",
+      "sha256": "5791349176ad12a48b600901a9defbbb8921d4f1ffbdf13b40b93a41d904c61a"
+    },
+    {
+      "bytes": 5717,
+      "name": "oracle-implementation",
+      "path": "build/tei/rutherford_pg42557_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "344bf0d70aa450d6c9be3c9cc6c1ed4e508fda47754b5d5a5440283b125493ba"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 24140,
+      "name": "provider-support-0",
+      "path": "raw/gutenberg/42557/completion-20261023/catalog.html",
+      "role": "bibliographic-rights-evidence",
+      "sha256": "425a92639de994e3e6a8c32c0a6879729399be77e640e0e8418528c3a8de2e22"
+    },
+    {
+      "bytes": 1705667,
+      "name": "provider-support-1",
+      "path": "raw/gutenberg/42557/completion-20261023/pg42557-h.zip",
+      "role": "supporting-package",
+      "sha256": "cff7001b8d56a03ad5c831e23889a6cdd2ad864bf982d4bbd98404010f6dbad6"
+    },
+    {
+      "bytes": 32478,
+      "name": "provider-support-2",
+      "path": "raw/gutenberg/42557/completion-20261023/license.html",
+      "role": "bibliographic-rights-evidence",
+      "sha256": "8a5137aecb0911dc0700e4ff636834326f6eade4beb997229269658a5ccd82f7"
+    },
+    {
+      "bytes": 47167,
+      "name": "retained-asset-1",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/coverpage.jpg",
+      "role": "referenced-media",
+      "sha256": "f3ff9e22ab7ccca1cfe5d95615ec67b18642eb102a3a665fbfbb98cc8382b51c"
+    },
+    {
+      "bytes": 124590,
+      "name": "retained-asset-2",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_frontispiece.jpg",
+      "role": "referenced-media",
+      "sha256": "3ceda6f536c2b55bbd4d6669f2e64128c4c0150a8107b4e5193793fce1f2ba03"
+    },
+    {
+      "bytes": 1591,
+      "name": "retained-asset-3",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcw.jpg",
+      "role": "referenced-media",
+      "sha256": "066fcc60136ddc24c9a7a30844e2d730c3eab577cd95d491c6b7644a764d55c9"
+    },
+    {
+      "bytes": 109724,
+      "name": "retained-asset-4",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_007.jpg",
+      "role": "referenced-media",
+      "sha256": "8c371ea3df9f4c4833e3f98374d3adb7345a550c627986dfd7a7910f83c32b03"
+    },
+    {
+      "bytes": 72849,
+      "name": "retained-asset-5",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_010.jpg",
+      "role": "referenced-media",
+      "sha256": "3c1857eebe8359cd2a520b6eea41d8f0aa37c49d1a4dd56fd4b8e6a57346ecb7"
+    },
+    {
+      "bytes": 16492,
+      "name": "retained-asset-6",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_014.jpg",
+      "role": "referenced-media",
+      "sha256": "5ae5e6b97b9db8724c1fd930b23a19fc69bb15dce904851b386820676feb8c92"
+    },
+    {
+      "bytes": 14220,
+      "name": "retained-asset-7",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_022.jpg",
+      "role": "referenced-media",
+      "sha256": "bccb76c003d91025ed83571d41163c65510f051e18677a687fb5160adb852eaa"
+    },
+    {
+      "bytes": 15429,
+      "name": "retained-asset-8",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_023.jpg",
+      "role": "referenced-media",
+      "sha256": "0a03aa4856eace7cf723faf6e8c19fbd6b5b00e9bcf11d8223e8cdd6b90d48bd"
+    },
+    {
+      "bytes": 1527,
+      "name": "retained-asset-9",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcw2.jpg",
+      "role": "referenced-media",
+      "sha256": "f69386999aa3bc803153b1ebeadad826fdb156b4afa197e80290364a8d001cde"
+    },
+    {
+      "bytes": 1548,
+      "name": "retained-asset-10",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcm.jpg",
+      "role": "referenced-media",
+      "sha256": "b27e98414be62df8cb7defc67dc6043322d49f5d2540c10a7c59e04fb04d9c1b"
+    },
+    {
+      "bytes": 12365,
+      "name": "retained-asset-11",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_036.jpg",
+      "role": "referenced-media",
+      "sha256": "696925b19b88860ec4a2576185f574022fc0377b7fe78a41811a9d1fb9f31e8f"
+    },
+    {
+      "bytes": 29294,
+      "name": "retained-asset-12",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_044.jpg",
+      "role": "referenced-media",
+      "sha256": "3da17e64aa1779ab53ac600fc99a99e6b4e31b364374fecc5d39c9b5463de336"
+    },
+    {
+      "bytes": 1550,
+      "name": "retained-asset-13",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcl.jpg",
+      "role": "referenced-media",
+      "sha256": "a009078afa0534b2e944f442a658908ebe07e3d658cbe8e9a4ae979226b78520"
+    },
+    {
+      "bytes": 1484,
+      "name": "retained-asset-14",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcb.jpg",
+      "role": "referenced-media",
+      "sha256": "e4df865a602aacd6769d8472178e4a8bd745f13289d91b02afd5f2d32f26e49f"
+    },
+    {
+      "bytes": 1510,
+      "name": "retained-asset-15",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcd.jpg",
+      "role": "referenced-media",
+      "sha256": "78eccf23707c6c49ce1967f1af5f23608d49319e812ee611e7b6c1577a99da23"
+    },
+    {
+      "bytes": 1707,
+      "name": "retained-asset-16",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dch.jpg",
+      "role": "referenced-media",
+      "sha256": "2bd8f092c54f6d909e71920bec6cc39061a4ff92e7bc0e63bc0f788cacc586e3"
+    },
+    {
+      "bytes": 1560,
+      "name": "retained-asset-17",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcr.jpg",
+      "role": "referenced-media",
+      "sha256": "7290a422a48d3624f8df3372ad0db247dbfcbe3243fd3c1e67086af1d2bda58c"
+    },
+    {
+      "bytes": 1565,
+      "name": "retained-asset-18",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcn.jpg",
+      "role": "referenced-media",
+      "sha256": "e191d17998646782e271ba1c5d9ac65d3f336388a849e95c4faf317d7c49da52"
+    },
+    {
+      "bytes": 16038,
+      "name": "retained-asset-19",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_158.jpg",
+      "role": "referenced-media",
+      "sha256": "c32e84f93783df7b13ec0742329218278f6b51efaa898f3b5ceaef15f4103850"
+    },
+    {
+      "bytes": 72928,
+      "name": "retained-asset-20",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_170.jpg",
+      "role": "referenced-media",
+      "sha256": "df74e70306e327945587a880fe0dd8bc196f4742ff1565c1a1d29154a49cb39c"
+    },
+    {
+      "bytes": 102468,
+      "name": "retained-asset-21",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_206.jpg",
+      "role": "referenced-media",
+      "sha256": "cc5ee66618bc2e8ebb745cb9f631d29d867c92fd23919f28ac47431643be9a4d"
+    },
+    {
+      "bytes": 39621,
+      "name": "retained-asset-22",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_224.jpg",
+      "role": "referenced-media",
+      "sha256": "12fd1575c33df053348807dba84bf8645413e7f03697e52d5bffe22c80d1630d"
+    },
+    {
+      "bytes": 38285,
+      "name": "retained-asset-23",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_234.jpg",
+      "role": "referenced-media",
+      "sha256": "19a278e216ef16c2337ac09eb0277c8c92cbcbfe8d58e7129ef79a3ca1a75a35"
+    },
+    {
+      "bytes": 1511,
+      "name": "retained-asset-24",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcg.jpg",
+      "role": "referenced-media",
+      "sha256": "87d62b59d485f568d62eb01c867434047211622b64903706783355368ed63176"
+    },
+    {
+      "bytes": 1504,
+      "name": "retained-asset-25",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dct.jpg",
+      "role": "referenced-media",
+      "sha256": "fa7b1b696a98cc4ea5c79891b9930243668eac068e20fbe2cbff6f3a2efa5cd8"
+    },
+    {
+      "bytes": 1599,
+      "name": "retained-asset-26",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/dcs.jpg",
+      "role": "referenced-media",
+      "sha256": "8d172b3e61f96fb8a9a034f8449b0a3e420a6a27b1a0d117023679e5f4b866f1"
+    },
+    {
+      "bytes": 103619,
+      "name": "retained-asset-27",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/full.jpg",
+      "role": "referenced-media",
+      "sha256": "e7109df8b93811b7d630d567fc10653a36e86fb81f1f104bea684482c70f2e06"
+    },
+    {
+      "bytes": 27416,
+      "name": "retained-asset-28",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/thumbnail.jpg",
+      "role": "referenced-media",
+      "sha256": "1badb47e2766b8f160939b849e6f230f14abd5e6c90a5b6816c35575cd3318cb"
+    },
+    {
+      "bytes": 37780,
+      "name": "retained-asset-29",
+      "path": "raw/gutenberg/42557/completion-20261023/html/images/image_692.jpg",
+      "role": "referenced-media",
+      "sha256": "7644e259d25e06ae3cbcc9459e8b0c986d7fb8834acc506281b6356f18624bb1"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-rutherford-pg42557-complete-html-to-tei",
+    "implementation_path": "build/tei/rutherford_pg42557_reconstruction.py",
+    "implementation_sha256": "4ed155a08932789d2fc284d68d4a1525b8650c4df93645dea38613ef59792bf8",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-complete-historical-electronic-edition",
+    "source_url": "https://www.gutenberg.org/ebooks/42557"
+  },
+  "source_bundle": {
+    "bytes": 2378890,
+    "members": 1,
+    "sha256": "1c9b597162a0ea5adc3ac79f89423a6ed789f074559fa0ff381e4d79709fdd72"
+  },
+  "source_id": "rutherford-bonar-pg42557-complete-html",
+  "source_members": [
+    {
+      "bytes": 2378890,
+      "logical_name": "pg42557-images.html",
+      "name": "pg42557-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/42557/completion-20261023/html/pg42557-images.html",
+      "sha256": "1c9b597162a0ea5adc3ac79f89423a6ed789f074559fa0ff381e4d79709fdd72"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-rutherford-pg42557-independent-html-reader",
+    "implementation_path": "build/tei/rutherford_pg42557_oracle.py",
+    "implementation_sha256": "344bf0d70aa450d6c9be3c9cc6c1ed4e508fda47754b5d5a5440283b125493ba",
+    "import_closure_sha256": "13cd4adcffd55a1fbe7991da2efbdce9e65401f1d567efa5edc13f32cf56058f",
+    "version": "1"
+  },
+  "work_id": "rutherford-letters"
+}

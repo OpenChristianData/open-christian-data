@@ -1,5 +1,14 @@
 # ADR-0019: The intermediate representation (IR) is TEI
 
+> **Evidence-first customization update (2026-08-31):** This ADR deliberately
+> deferred a constrained OCD customization until real TEI material existed. The
+> repository now has enough real masters and candidates to assess the vocabulary in
+> use. `docs/OCD_LIBRARY_PIPELINE_SPEC.md` advances that deferred work: standardize
+> equivalent concepts, preserve genuine source variation, and permit documented
+> extensions rather than forcing every text into one rigid category template. The
+> exact ODD/Schematron/registry combination remains an evidence-led implementation
+> decision.
+
 **Status:** Accepted (2026-07-01)
 
 ## Context

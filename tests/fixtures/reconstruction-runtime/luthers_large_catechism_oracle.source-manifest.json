@@ -1,0 +1,115 @@
+{
+  "authorities": [
+    {
+      "bytes": 288656,
+      "name": "retained-source",
+      "path": "raw/gutenberg/pg1722.txt",
+      "role": "primary-source",
+      "sha256": "0e5df44eea431ef1ebaf222b2802a2fd61cbe1468bea0923085bc95797dc0b43"
+    },
+    {
+      "bytes": 1610,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/luthers-large-catechism/luthers-large-catechism.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "0eb8eece9b1de77db3ddfa81574cd4fce3df151a476929baef7f9365e150725d"
+    },
+    {
+      "bytes": 1054,
+      "name": "validation-policy",
+      "path": "sources/structured-text/luthers-large-catechism/luthers-large-catechism.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "f941b1177c3dc18aee7c140220995107c8faec9601274e11d47e2cb8af02923b"
+    },
+    {
+      "bytes": 1271,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/luthers-large-catechism/luthers-large-catechism.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "b85ebc33bce4d4ca40f846b949e495c2e4d8d42fa04944f2f0de2b64b34ee2e0"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 934,
+      "name": "source-readme",
+      "path": "sources/structured-text/luthers-large-catechism/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "7ac37ef832155594f1d5a9ed9f4c2e836e82b9b4e7913657599a4a5043f9e4be"
+    },
+    {
+      "bytes": 12236,
+      "name": "producer-implementation",
+      "path": "build/tei/luthers_large_catechism_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "d002f0aadf5eea8b584032b7b4113ff3f75ec4140688fdee65dd0c78bfcf29c5"
+    },
+    {
+      "bytes": 11719,
+      "name": "oracle-implementation",
+      "path": "build/tei/luthers_large_catechism_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "be88aba8ffaf64279065f3eb8f9b2c0d567fd3df6f2197a564630f5fca145e23"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib077-luthers-large-catechism-to-tei",
+    "implementation_path": "build/tei/luthers_large_catechism_reconstruction.py",
+    "implementation_sha256": "d002f0aadf5eea8b584032b7b4113ff3f75ec4140688fdee65dd0c78bfcf29c5",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-retained-gutenberg-member",
+    "represented_lines": 4886,
+    "source_url": "https://www.gutenberg.org/ebooks/1722",
+    "title": "Martin Luther's Large Catechism, translated by Bente and Dau",
+    "unrepresented_members": []
+  },
+  "source_bundle": {
+    "bytes": 288656,
+    "members": 1,
+    "sha256": "0e5df44eea431ef1ebaf222b2802a2fd61cbe1468bea0923085bc95797dc0b43"
+  },
+  "source_id": "luthers-large-catechism-retained-project-gutenberg-1722",
+  "source_members": [
+    {
+      "bytes": 288656,
+      "lines": 4886,
+      "logical_name": "pg1722.txt",
+      "name": "pg1722.txt",
+      "order": 1,
+      "path": "raw/gutenberg/pg1722.txt",
+      "sha256": "0e5df44eea431ef1ebaf222b2802a2fd61cbe1468bea0923085bc95797dc0b43"
+    }
+  ],
+  "ticket_id": "LIB-077",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib077-luthers-large-catechism-independent-oracle",
+    "implementation_path": "build/tei/luthers_large_catechism_oracle.py",
+    "implementation_sha256": "be88aba8ffaf64279065f3eb8f9b2c0d567fd3df6f2197a564630f5fca145e23",
+    "import_closure_sha256": "4add231e2ebca9176db67f5bccd4a1a22a241b391c82f764f82be1bb73954c55",
+    "version": "1"
+  },
+  "work_id": "luthers-large-catechism"
+}

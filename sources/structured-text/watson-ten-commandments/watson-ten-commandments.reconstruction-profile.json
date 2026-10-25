@@ -1,0 +1,173 @@
+{
+  "contract": "selected-thml-profile-v1",
+  "profile_id": "watson-ten-commandments-ccel-thml-v1",
+  "work_id": "watson-ten-commandments",
+  "acquisition_path": "library/works/watson-ten-commandments/forms/watson-ten-commandments-english/editions/watson-ten-commandments-ccel-thml/acquisitions/watson-ten-commandments-ccel-retained.json",
+  "source_member": {
+    "path": "raw/ccel/watson/commandments.xml",
+    "bytes": 1100623,
+    "sha256": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6"
+  },
+  "source_identity": {
+    "publisherID": "ccel",
+    "authorID": "watson",
+    "bookID": "commandments",
+    "workID": "commandments",
+    "DC.Title": "The Ten Commandments",
+    "DC.Creator[Author,short-form]": "Thomas Watson",
+    "DC.Language[ISO639-3]": "eng"
+  },
+  "work_boundary": {
+    "disposition": "one-work",
+    "basis": [
+      "The electronic-edition metadata assigns the same bookID and workID, commandments, and one DC.Title, The Ten Commandments.",
+      "All six top-level div1 carriers occur in the same retained ThML.body and follow one source prev/next sequence.",
+      "The source generalInfo describes four sections; the ordered Introduction, Ten Commandments, Law and Sin, and Way of Salvation divisions correspond to that four-section description.",
+      "The first carrier is a title page and the final carrier is Indexes; neither is classified as a separate work."
+    ],
+    "middle_divisions": [
+      {"native_id": "iii", "source_title": "Introduction", "section_order": 1},
+      {"native_id": "iv", "source_title": "2. The Ten Commandments", "section_order": 2},
+      {"native_id": "v", "source_title": "3. The Law and Sin", "section_order": 3},
+      {"native_id": "vi", "source_title": "4. The Way of Salvation", "section_order": 4}
+    ]
+  },
+  "carrier_dispositions": [
+    {"position": 0, "native_id": "i", "source_title": "Title Page", "selection_role": "body", "tei_region": "front", "disposition": "selected-work"},
+    {"position": 1, "native_id": "iii", "source_title": "Introduction", "selection_role": "body", "tei_region": "body", "disposition": "selected-work"},
+    {"position": 2, "native_id": "iv", "source_title": "2. The Ten Commandments", "selection_role": "body", "tei_region": "body", "disposition": "selected-work"},
+    {"position": 3, "native_id": "v", "source_title": "3. The Law and Sin", "selection_role": "body", "tei_region": "body", "disposition": "selected-work"},
+    {"position": 4, "native_id": "vi", "source_title": "4. The Way of Salvation", "selection_role": "body", "tei_region": "body", "disposition": "selected-work"},
+    {"position": 6, "native_id": "vii", "source_title": "Indexes", "selection_role": "back", "tei_region": "back", "disposition": "selected-work"}
+  ],
+  "source_body_sequence": [
+    {"position": 0, "kind": "div1", "native_id": "i", "source_title": "Title Page"},
+    {"position": 1, "kind": "div1", "native_id": "iii", "source_title": "Introduction"},
+    {"position": 2, "kind": "div1", "native_id": "iv", "source_title": "2. The Ten Commandments"},
+    {"position": 3, "kind": "div1", "native_id": "v", "source_title": "3. The Law and Sin"},
+    {"position": 4, "kind": "div1", "native_id": "vi", "source_title": "4. The Way of Salvation"},
+    {"position": 5, "kind": "comment", "source_path": "/ThML/ThML.body/comment()[1]", "disposition": "accounted-only source wrapper marker; index content remains selected"},
+    {"position": 6, "kind": "div1", "native_id": "vii", "source_title": "Indexes"},
+    {"position": 7, "kind": "comment", "source_path": "/ThML/ThML.body/comment()[2]", "disposition": "accounted-only source wrapper marker; index content remains selected"}
+  ],
+  "feature_census": {
+    "selected_element_count": 5275,
+    "selected_tag_counts": {
+      "a": 1863,
+      "div": 2,
+      "div1": 6,
+      "div2": 25,
+      "h1": 2,
+      "h2": 6,
+      "h3": 24,
+      "insertIndex": 2,
+      "li": 210,
+      "p": 1296,
+      "scripRef": 1627,
+      "span": 211,
+      "ul": 1
+    },
+    "selected_comment_count": 8,
+    "body_wrapper_comment_count": 2,
+    "in_root_comment_count": 10,
+    "prolog_comment_count": 1,
+    "prolog_processing_instruction_count": 2
+  },
+  "heading_policy": {
+    "source_heading_counts": {"h1": 2, "h2": 6, "h3": 24},
+    "tei_mapping": {
+      "h1": "TEI head; original ThML tag and exact text remain in source-accountability features",
+      "h2": "TEI head; original ThML tag and exact text remain in source-accountability features",
+      "h3": "TEI head with type=thml-h3; original ThML tag and exact text remain in source-accountability features"
+    },
+    "division_title_rule": {
+      "source_attribute": "div@title",
+      "disposition": "Retain as source navigation metadata in the complete source-feature ledger.",
+      "when_direct_heading_exists": "Map the direct source h1, h2, or h3 headings only; do not synthesize a TEI head from div@title.",
+      "when_no_direct_heading_exists": "Preserve div@title as a synthetic TEI head.",
+      "source_derived_synthetic_heads_suppressed": 7
+    }
+  },
+  "navigation_attribute_disposition": {
+    "source_attributes": ["id", "title", "prev", "next", "progress"],
+    "rule": "Every selected element retains its exact source attributes in source-accountability.features. Native IDs bind selection and links; prev, next, and progress remain source navigation metadata rather than body prose."
+  },
+  "source_statements": [
+    {
+      "source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h3",
+      "text_sha256": "e9a373d85803aae2ae8ff0d0e014bb6a5897ae14d772827223b2c09dab1a62d2",
+      "excerpt": "First published as part at A Body of Practical Divinity, 1692",
+      "interpretation": "Retained title-page statement; not proof of a specific print exemplar or lineage."
+    },
+    {
+      "source_path": "/ThML/ThML.head/printSourceInfo",
+      "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6",
+      "excerpt": "1692",
+      "interpretation": "Source metadata statement only; not adopted as an edition date."
+    },
+    {
+      "source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Date[@sub=\"Created\"]",
+      "text_sha256": "7f7d2ad40f4632b1d43d7646cd7248d5f78ab16fe1faa107e06ab70cde8b89e4",
+      "excerpt": "2000-07-09",
+      "interpretation": "Electronic-edition metadata date; not a composition or print date."
+    },
+    {
+      "source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Identifier[@scheme=\"URL\"]",
+      "text_sha256": "4e1330148d07e9fceb8b0b36b89bd9258a1623e97954046152e5dcff9383ebec",
+      "excerpt": "/ccel/watson/commandments.html",
+      "interpretation": "Embedded electronic identifier, kept distinct from the legacy configured .xml acquisition locator."
+    },
+    {
+      "source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Rights",
+      "text_sha256": "f6960be1b71d602352d7d9de76a564f54f3dab550b23fa5674049f842116ca55",
+      "excerpt": "Public Domain",
+      "interpretation": "Provider metadata statement; not project rights clearance."
+    },
+    {
+      "source_path": "/ThML/ThML.head/generalInfo",
+      "text_sha256": "2524418980a9cd68bedc6aa75fb15d761c72da331e122dbebebe5d51f92b9fd9",
+      "excerpt": "divides his commentary into four sections",
+      "interpretation": "Provider editorial description used as corroborating structural context, not a bibliographic identity claim."
+    }
+  ],
+  "legacy_config_boundary": [
+    "Do not promote config.json original_publication_year into an edition or print-exemplar date.",
+    "Do not promote config.json source_edition into a verified print-lineage assertion.",
+    "Do not promote config.json download_date, permission note, or license label into acquisition-date or rights-clearance evidence.",
+    "The retained bytes still contain a DOCTYPE, notes, indexes, and no unresolved XML entity nodes; do not rely on legacy config notes about transformed entities, removed DOCTYPE, or excluded footnotes."
+  ],
+  "candidate_questions": [
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-edition-witness-lineage",
+      "scope": "edition-witness",
+      "question": "Which print exemplar, if any, underlies this electronic CCEL witness?",
+      "evidence_boundary": "The retained 1692 statements do not identify a specific print exemplar or establish transcription lineage.",
+      "technical_disposition": "No print date or containing-source claim is asserted; this does not block the nonaccepted technical candidate."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-rights-clearance",
+      "scope": "rights",
+      "question": "What independent rights evidence governs later acceptance or publication?",
+      "evidence_boundary": "The retained DC.Rights value is a source statement, not project clearance.",
+      "technical_disposition": "No rights, release, or publication state is changed by this candidate."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-tenth-commandment-heading-presentation",
+      "scope": "raw/ccel/watson/commandments.xml#iv.x",
+      "question": "Does later visual review support presenting the source navigation title and h3 as separate headings?",
+      "evidence_boundary": "The source div2 title is 2.10 The Tenth Commandment; its h3 is 2.10The Tenth Commandment.",
+      "technical_disposition": "Both source values are preserved without normalization; visual review remains pending."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-indexes-presentation",
+      "scope": "raw/ccel/watson/commandments.xml#vii",
+      "question": "Does the exact source/candidate pair present both complete indexes as intended?",
+      "evidence_boundary": "The full Indexes division and all source index entries are selected; its two outer auto-index wrapper comments are separately accounted.",
+      "technical_disposition": "Source and TEI mechanical comparison passes; CVW visual review remains pending."
+    }
+  ]
+}

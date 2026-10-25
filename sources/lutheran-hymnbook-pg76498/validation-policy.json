@@ -1,0 +1,79 @@
+{
+  "contract": "ocd-pg76498-hymnbook-validation-policy-v1",
+  "source_id": "pg76498-lcms-abridged-1927",
+  "readme_sha256": "cd5baa281a563104a3a3bd8a8dc96192ead84155eb2aae553201b2592c2661f4",
+  "accountability": {
+    "contract": "ocd-lutheran-hymnbook-pg76498-accountability-v1",
+    "projection": "complete-source-html-to-tei-v1",
+    "source_path": "raw/gutenberg/76498/pg76498-h.zip",
+    "source_member": "pg76498-images.html",
+    "omitted_html_carriers": 0,
+    "duplicated_html_carriers": 0,
+    "unresolved_source_ids": 0,
+    "unresolved_internal_links": 0,
+    "hymns": 594,
+    "stanzas": 3270,
+    "verse_lines": 17412,
+    "page_milestones": 592,
+    "footnotes": 4,
+    "body_images": 1,
+    "representation": "Full ordered source body, including PG header/footer/license; page labels represented by pb n/rend and ZIP images retained as governed source assets"
+  },
+  "provenance": {
+    "contract": "ocd-pg76498-hymnbook-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "title": "Evangelical Lutheran Hymn-Book: Abridged Edition",
+      "corporate_author": "Lutheran Church—Missouri Synod",
+      "source_printing_date": "1927",
+      "publisher": "Concordia Publishing House",
+      "gutenberg_ebook": "76498"
+    },
+    "source": {
+      "path": "raw/gutenberg/76498/pg76498-h.zip",
+      "bytes": 461780,
+      "sha256": "37de1a88d36166c86377e7451ccaabd6e870259b3089c2eb01f2abbe3b67a2c5",
+      "html_member": "pg76498-images.html",
+      "provider_page": "https://www.gutenberg.org/ebooks/76498"
+    },
+    "rights": {
+      "provider_label": "public domain in USA",
+      "source_notices": "retained in full body and source readme",
+      "broader_review": "pending"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "human_textual_acceptance": false,
+      "visual_comparison_complete": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "pg76498-print-collation",
+      "status": "unresolved",
+      "question": "Will a human compare this Project Gutenberg HTML text and illustration with the 1927 print witness?",
+      "evidence": "The retained ZIP is an HTML eBook with image assets, not a verified print facsimile."
+    },
+    {
+      "id": "pg76498-rights",
+      "status": "unresolved",
+      "question": "Will maintainers clear distribution rights for every intended jurisdiction and image use?",
+      "evidence": "Project Gutenberg labels the item public domain in the USA; wider rights are a separate decision."
+    },
+    {
+      "id": "pg76498-acceptance",
+      "status": "unresolved",
+      "question": "Will maintainers complete CVW visual review, textual acceptance, and publication authorization?",
+      "evidence": "P5 and source conservation are technical evidence only."
+    }
+  ],
+  "required": [
+    "exact retained ZIP/member identity and full ordered carrier profile",
+    "594 complete continuous numbered hymns plus all liturgical, prayer, chant, doxology, index and provider text",
+    "all 592 page markers, 4 footnotes and body illustration reference",
+    "1,286 source IDs and 1,445 fragment refs resolved uniquely to intended carriers",
+    "independent token-based source oracle, P5 XSD, deterministic clean reproduction",
+    "separate nonaccepted review state and pending visual/human/rights/publication decisions"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "contract": "ocd-lib025-newadvent-link-reconciliation-v1",
+  "work_id": "catholic-encyclopedia-vol01",
+  "mappings": [
+    {
+      "source_url": "https://www.newadvent.org/cathen/13548b.htm",
+      "target_url": "https://www.newadvent.org/cathen/13554b.htm",
+      "index_url": "https://www.newadvent.org/cathen/s.htm",
+      "index_title": "Schools",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/01036b.htm",
+          "label": "schools"
+        }
+      ],
+      "rationale": "The retained source label matches the retained S index entry Schools, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/11327b.htm",
+      "target_url": "https://www.newadvent.org/cathen/11527b.htm",
+      "index_url": "https://www.newadvent.org/cathen/p.htm",
+      "index_title": "Passion of Jesus Christ",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/11618c.htm",
+          "label": "passion of Christ"
+        },
+        {
+          "page_url": "https://www.newadvent.org/cathen/13295a.htm",
+          "label": "passion of Christ"
+        }
+      ],
+      "rationale": "Both retained source labels match the retained P index entry Passion of Jesus Christ, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/04735b.htm",
+      "target_url": "https://www.newadvent.org/cathen/04375b.htm",
+      "index_url": "https://www.newadvent.org/cathen/c.htm",
+      "index_title": "Cornelius",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/08042a.htm",
+          "label": "Cornelius"
+        }
+      ],
+      "rationale": "The retained source label matches the retained C index entry Cornelius, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/01202d.htm",
+      "target_url": "https://www.newadvent.org/cathen/01212d.htm",
+      "index_url": "https://www.newadvent.org/cathen/a-ce.htm",
+      "index_title": "Agnellus, Andreas, of Ravenna",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/09224a.htm",
+          "label": "AGNELLUS OF RAVENNA"
+        }
+      ],
+      "rationale": "The retained source label identifies the retained A–CE index entry Agnellus, Andreas, of Ravenna, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/06188a.htm",
+      "target_url": "https://www.newadvent.org/cathen/01688a.htm",
+      "index_url": "https://www.newadvent.org/cathen/a.htm",
+      "index_title": "Arch",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/10551a.htm",
+          "label": "arches"
+        }
+      ],
+      "rationale": "The retained source label matches the retained A index entry Arch, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/02580b.htm",
+      "target_url": "https://www.newadvent.org/cathen/02480b.htm",
+      "index_url": "https://www.newadvent.org/cathen/b.htm",
+      "index_title": "Benjamin",
+      "source_occurrences": [
+        {
+          "page_url": "https://www.newadvent.org/cathen/02532d.htm",
+          "label": "Benjamin"
+        }
+      ],
+      "rationale": "The retained source label matches the retained B index entry Benjamin, which links to this retained article. The requested source href returned 404 and is not an indexed article entry."
+    }
+  ],
+  "unmapped": [
+    {
+      "source_url": "https://www.newadvent.org/cathen/01300a.htm",
+      "rationale": "The retained A index identifies this unavailable route as Alexandria, Councils of, while the Egypt article links from Diocese of Alexandria. The conflicting evidence does not support substituting a diocese article or claiming the indexed text is present."
+    },
+    {
+      "source_url": "https://www.newadvent.org/cathen/14580x.htm",
+      "rationale": "This unavailable route is an unindexed generic theology/theological cross-link. The retained Dogmatic Theology article is not an evidence-backed equivalent target."
+    }
+  ]
+}

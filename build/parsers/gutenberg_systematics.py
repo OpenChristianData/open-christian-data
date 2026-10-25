@@ -50,6 +50,7 @@ import hashlib
 import json
 import re
 import sys
+import tempfile
 import time
 import traceback
 import urllib.request  # standards: download only
@@ -471,7 +472,8 @@ WORK_CONFIG = [
         "author_id": "luther-martin",
         "author_birth_year": 1483,
         "author_death_year": 1546,
-        "pub_year": 1937,
+        # March 1937 dates the proposal to prepare this translation, not publication.
+        "pub_year": None,
         "work_kind": "treatise",
         "tradition": ["lutheran"],
         "tradition_notes": (
@@ -2001,6 +2003,63 @@ def build_catechism_qa_meta(cfg: dict, source_hash: str) -> dict:
 # ---------------------------------------------------------------------------
 # Source config writers
 # ---------------------------------------------------------------------------
+
+
+def refresh_galatians_config_binding() -> dict[str, str]:
+    """Refresh only the 37c-244 publication-year field and its manifest digest.
+
+    Preserves acquisition metadata and all other bytes. Requires a valid current
+    manifest; interrupted pairs fail closed under SourceManifest verification.
+    This does not refresh existing candidates or metadata evidence sidecars.
+    """
+    from ocd_kernel.reconstruction.contract import SourceManifest
+
+    slug = "luther-commentary-on-galatians"
+    cfg = next(item for item in WORK_CONFIG if item["slug"] == slug)
+    if cfg["pub_year"] is not None:
+        raise ValueError("Galatians config-only correction requires an unset producer year")
+    directory = REPO_ROOT / "sources" / "structured-text" / slug
+    manifest_path = directory / f"{slug}.source-manifest.json"
+    manifest = SourceManifest.load(manifest_path, repository_root=REPO_ROOT)
+    config_path = directory / "config.json"
+    if manifest.record.get("work_id") != slug or manifest.authority_path("source-config") != config_path.resolve():
+        raise ValueError("Galatians source-config identity mismatch")
+    old_config = config_path.read_bytes()
+    old_manifest = manifest_path.read_bytes()
+    config = json.loads(old_config)
+    if config.get("resource_id") != slug or "original_publication_year" not in config:
+        raise ValueError("Galatians config identity or year field missing")
+    if config["original_publication_year"] not in (1937, None):
+        raise ValueError("Unexpected Galatians publication year; refusing overwrite")
+    before = hashlib.sha256(old_config).hexdigest()
+    if config["original_publication_year"] is None:
+        return {"config_sha256": before, "manifest_sha256": manifest.sha256}
+    new_config, count = re.subn(rb'("original_publication_year"\s*:\s*)1937(?=\s*[,}])', rb'\g<1>null', old_config)
+    expected = dict(config, original_publication_year=cfg["pub_year"])
+    if count != 1 or json.loads(new_config) != expected or len(new_config) != len(old_config):
+        raise ValueError("Config-only correction exceeded the permitted field change")
+    after = hashlib.sha256(new_config).hexdigest()
+    if old_manifest.count(before.encode("ascii")) != 1:
+        raise ValueError("Source-config digest is not uniquely bound")
+    new_manifest = old_manifest.replace(before.encode("ascii"), after.encode("ascii"))
+    # Stage both outputs before replacing either; restore config on manifest-write failure.
+    with tempfile.TemporaryDirectory(prefix=".galatians-config-", dir=directory) as temporary:
+        stage = Path(temporary)
+        staged_config = stage / "config.json"
+        staged_manifest = stage / "manifest.json"
+        rollback = stage / "config-before.json"
+        staged_config.write_bytes(new_config)
+        staged_manifest.write_bytes(new_manifest)
+        rollback.write_bytes(old_config)
+        manifest.verify()
+        staged_config.replace(config_path)
+        try:
+            staged_manifest.replace(manifest_path)
+        except OSError:
+            rollback.replace(config_path)
+            raise
+    verified = SourceManifest.load(manifest_path, repository_root=REPO_ROOT)
+    return {"config_sha256": after, "manifest_sha256": verified.sha256}
 
 
 def write_source_config(cfg: dict, source_hash: str) -> None:

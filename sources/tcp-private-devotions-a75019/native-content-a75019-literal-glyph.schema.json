@@ -1,0 +1,1010 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/native-content.schema.json",
+  "title": "Ordered native mixed content",
+  "description": "Source-native nested carriers and text/tail order; category context and private node accounting are separate.",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "text"
+      ],
+      "properties": {
+        "kind": {
+          "const": "text"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "attributes",
+        "content"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "division",
+            "paragraph",
+            "heading",
+            "quotation",
+            "quotation-block",
+            "speech",
+            "speaker",
+            "verse-group",
+            "verse-line",
+            "list",
+            "list-item",
+            "embedded-text",
+            "body",
+            "front-matter",
+            "back-matter",
+            "opening",
+            "closing",
+            "salutation",
+            "emphasis",
+            "glyph",
+            "gap",
+            "description",
+            "page-break",
+            "line-break",
+            "column-break",
+            "bibliographic-label",
+            "note",
+            "segment",
+            "uncertain-text",
+            "foreign-text",
+            "expansion",
+            "abbreviation",
+            "expanded-text",
+            "argument",
+            "trailer",
+            "postscript",
+            "signature",
+            "dateline",
+            "date",
+            "epigraph",
+            "source-reference",
+            "figure",
+            "abbreviated-text",
+            "abbreviation-choice",
+            "correction-choice",
+            "original-text",
+            "corrected-text",
+            "supplied-expansion",
+            "horizontal-rule",
+            "index-marker",
+            "image-reference",
+            "figure-description",
+            "source-block",
+            "word-segment",
+            "source-marker",
+            "table",
+            "table-row",
+            "table-cell",
+            "person-name",
+            "work-title",
+            "anchor",
+            "label",
+            "page-furniture",
+            "generator-placeholder"
+          ]
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "break_mode": {
+              "type": "string"
+            },
+            "extent": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string"
+            },
+            "place": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "certainty": {
+              "type": "string"
+            },
+            "reference": {
+              "type": "string"
+            },
+            "style": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "when": {
+              "type": "string"
+            },
+            "source_target": {
+              "type": "string"
+            },
+            "canonical_reference": {
+              "type": "string"
+            },
+            "source_annotations": {
+              "type": "string"
+            },
+            "subtype": {
+              "type": "string"
+            },
+            "css_style": {
+              "type": "string"
+            },
+            "rendition": {
+              "type": "string"
+            },
+            "whitespace": {
+              "type": "string",
+              "enum": [
+                "default",
+                "preserve"
+              ]
+            },
+            "columns": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            },
+            "source_row_count": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            },
+            "source_column_count": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            },
+            "source_version": {
+              "type": "string"
+            },
+            "source_anchor": {
+              "type": "string",
+              "pattern": "^Pg[A-Za-z0-9]+$"
+            },
+            "index_name": {
+              "enum": [
+                "toc",
+                "pdf",
+                "globalSubject"
+              ]
+            },
+            "responsibility": {
+              "type": "string"
+            },
+            "anchored": {
+              "type": "string"
+            },
+            "authority_key": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "source_role": {
+              "type": "string"
+            },
+            "lemma": {
+              "type": "string"
+            },
+            "row_span": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            }
+          }
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "speech"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "const": "speaker"
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ]
+                },
+                "minContains": 1,
+                "maxContains": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "speaker"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "x-ocd-native-content": {
+    "version": "ocd-native-content-v1",
+    "elements": {
+      "div": {
+        "kind": "division",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "type": "type",
+          "n": "number",
+          "corresp": null,
+          "ana": "source_annotations",
+          "source": null,
+          "prev": null,
+          "next": null,
+          "rend": "style",
+          "style": "css_style",
+          "xml:space": "whitespace",
+          "subtype": "subtype"
+        }
+      },
+      "p": {
+        "kind": "paragraph",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "corresp": null,
+          "rend": "style",
+          "ana": "source_annotations",
+          "rendition": "rendition",
+          "style": "css_style",
+          "xml:space": "whitespace"
+        }
+      },
+      "head": {
+        "kind": "heading",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "type": "type",
+          "subtype": "subtype",
+          "corresp": null,
+          "ana": "source_annotations",
+          "n": "number",
+          "rend": "style",
+          "xml:space": "whitespace"
+        }
+      },
+      "q": {
+        "kind": "quotation",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "rend": "style"
+        }
+      },
+      "quote": {
+        "kind": "quotation-block",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "ana": "source_annotations",
+          "type": "type",
+          "rend": "style",
+          "n": "number",
+          "xml:space": "whitespace"
+        }
+      },
+      "sp": {
+        "kind": "speech",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "speaker": {
+        "kind": "speaker",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "lg": {
+        "kind": "verse-group",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "type": "type",
+          "n": "number",
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "l": {
+        "kind": "verse-line",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "n": "number",
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "list": {
+        "kind": "list",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "type": "type",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "item": {
+        "kind": "list-item",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "floatingText": {
+        "kind": "embedded-text",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "type": "type"
+        }
+      },
+      "body": {
+        "kind": "body",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "front": {
+        "kind": "front-matter",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "back": {
+        "kind": "back-matter",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "opener": {
+        "kind": "opening",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "closer": {
+        "kind": "closing",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "salute": {
+        "kind": "salutation",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "hi": {
+        "kind": "emphasis",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "rend": "style",
+          "corresp": null,
+          "ana": "source_annotations",
+          "style": "css_style"
+        }
+      },
+      "g": {
+        "kind": "glyph",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "ref": "reference"
+        }
+      },
+      "gap": {
+        "kind": "gap",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "reason": "reason",
+          "extent": "extent",
+          "ana": "source_annotations",
+          "n": "number",
+          "resp": null,
+          "rend": "style"
+        }
+      },
+      "desc": {
+        "kind": "description",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "pb": {
+        "kind": "page-break",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "facs": null,
+          "rendition": null,
+          "rend": null,
+          "ana": "source_annotations",
+          "corresp": null
+        }
+      },
+      "lb": {
+        "kind": "line-break",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "break": "break_mode",
+          "corresp": null,
+          "type": "type",
+          "n": "number",
+          "ana": "source_annotations",
+          "rend": "style"
+        }
+      },
+      "space": {
+        "kind": "line-break",
+        "attributes": {
+          "xml:id": null,
+          "type": "type",
+          "unit": "unit",
+          "quantity": "extent",
+          "n": "number",
+          "subtype": "subtype"
+        }
+      },
+      "cb": {
+        "kind": "column-break",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "type": "type",
+          "n": "number",
+          "spanTo": "source_target"
+        }
+      },
+      "bibl": {
+        "kind": "bibliographic-label",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null
+        }
+      },
+      "note": {
+        "kind": "note",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "place": "place",
+          "type": "type",
+          "ana": "source_annotations",
+          "corresp": null,
+          "rend": "style",
+          "anchored": "anchored",
+          "resp": "responsibility",
+          "xml:space": "whitespace"
+        }
+      },
+      "seg": {
+        "kind": "segment",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "type": "type",
+          "rend": "style",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rendition": "rendition",
+          "style": "css_style",
+          "subtype": "subtype"
+        }
+      },
+      "unclear": {
+        "kind": "uncertain-text",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "reason": "reason",
+          "cert": "certainty",
+          "rend": "style",
+          "resp": "responsibility"
+        }
+      },
+      "foreign": {
+        "kind": "foreign-text",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "rend": "style"
+        }
+      },
+      "expan": {
+        "kind": "expansion",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "am": {
+        "kind": "abbreviation",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "ex": {
+        "kind": "expanded-text",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "argument": {
+        "kind": "argument",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "trailer": {
+        "kind": "trailer",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "postscript": {
+        "kind": "postscript",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "signed": {
+        "kind": "signature",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "dateline": {
+        "kind": "dateline",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "date": {
+        "kind": "date",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "when": "when",
+          "corresp": null,
+          "type": "type"
+        }
+      },
+      "epigraph": {
+        "kind": "epigraph",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language"
+        }
+      },
+      "ref": {
+        "kind": "source-reference",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "type": "type",
+          "target": "source_target",
+          "cRef": "canonical_reference",
+          "corresp": null,
+          "subtype": "subtype",
+          "ana": "source_annotations",
+          "n": "number",
+          "rend": "style",
+          "source": "source_version"
+        }
+      },
+      "figure": {
+        "kind": "figure",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null,
+          "ana": "source_annotations",
+          "n": "number",
+          "type": "type"
+        }
+      },
+      "abbr": {
+        "kind": "abbreviated-text",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": null,
+          "corresp": null,
+          "rend": "style",
+          "type": "type",
+          "ana": "source_annotations"
+        }
+      },
+      "milestone": {
+        "kind": "horizontal-rule",
+        "attributes": {
+          "xml:id": null,
+          "unit": null,
+          "n": "number",
+          "ana": "source_annotations",
+          "corresp": null,
+          "style": "css_style",
+          "rend": "style",
+          "xml:lang": "language",
+          "subtype": "subtype",
+          "type": "type"
+        }
+      },
+      "index": {
+        "kind": "index-marker",
+        "attributes": {
+          "xml:id": null,
+          "indexName": "index_name",
+          "n": "number"
+        }
+      },
+      "choice": {
+        "kind": "abbreviation-choice",
+        "attributes": {}
+      },
+      "sic": {
+        "kind": "original-text",
+        "attributes": {}
+      },
+      "corr": {
+        "kind": "corrected-text",
+        "attributes": {}
+      },
+      "divGen": {
+        "kind": "generator-placeholder",
+        "attributes": {
+          "type": "type"
+        }
+      },
+      "emph": {
+        "kind": "emphasis",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null
+        }
+      },
+      "graphic": {
+        "kind": "image-reference",
+        "attributes": {
+          "url": "source_target",
+          "xml:id": null,
+          "corresp": null,
+          "ana": "source_annotations",
+          "n": "number"
+        }
+      },
+      "figDesc": {
+        "kind": "figure-description",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "corresp": null
+        }
+      },
+      "ab": {
+        "kind": "source-block",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "xml:space": "whitespace",
+          "type": "type",
+          "subtype": "subtype",
+          "n": "number",
+          "ana": "source_annotations",
+          "rend": "style",
+          "corresp": null
+        }
+      },
+      "w": {
+        "kind": "word-segment",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "lemma": "lemma",
+          "corresp": "source_target"
+        }
+      },
+      "anchor": {
+        "kind": "anchor",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "rend": "source_annotations",
+          "corresp": null,
+          "n": "number",
+          "subtype": "subtype",
+          "type": "type"
+        }
+      },
+      "table": {
+        "kind": "table",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "type": "type",
+          "n": "number",
+          "rows": "source_row_count",
+          "cols": "source_column_count",
+          "corresp": null,
+          "ana": "source_annotations",
+          "rend": "style",
+          "style": "css_style"
+        }
+      },
+      "row": {
+        "kind": "table-row",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "role": "source_role",
+          "corresp": null,
+          "ana": "source_annotations"
+        }
+      },
+      "cell": {
+        "kind": "table-cell",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "role": "source_role",
+          "corresp": null,
+          "ana": "source_annotations",
+          "cols": "columns",
+          "rend": "style",
+          "style": "css_style",
+          "rows": "row_span"
+        }
+      },
+      "name": {
+        "kind": "person-name",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "key": "authority_key",
+          "ana": "source_annotations",
+          "corresp": null,
+          "n": "number"
+        }
+      },
+      "title": {
+        "kind": "work-title",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "key": "authority_key"
+        }
+      },
+      "label": {
+        "kind": "label",
+        "attributes": {
+          "xml:id": null,
+          "xml:lang": "language",
+          "n": "number",
+          "type": "type",
+          "rend": "source_annotations"
+        }
+      },
+      "fw": {
+        "kind": "page-furniture",
+        "attributes": {
+          "xml:id": null,
+          "type": "type"
+        }
+      }
+    },
+    "glyphs": {
+      "char:EOLhyphen": "{-}",
+      "char:EOLunhyphen": "{+}",
+      "char:punc": "{.}",
+      "char:abque": "{que}",
+      "char:cmbAbbrStroke": "̄"
+    },
+    "source_declared_glyphs": {
+      "#U0x2014": "—",
+      "char:V": "Ʋ"
+    },
+    "generator_types": [
+      "pgheader",
+      "encodingDesc",
+      "toc",
+      "footnotes",
+      "pgfooter"
+    ],
+    "index_names": [
+      "toc",
+      "pdf",
+      "globalSubject"
+    ],
+    "glyph_authority": {
+      "sha256": "f4acf5c10f6201c81e1c01dfd4e6e7c3c6b10ed9c1352c5808522ad06d63e9af",
+      "upstream_commit": "c8ff5cf9a08a7b003032bf63f6b91cabec4254bb",
+      "mapping_types": {
+        "char:EOLhyphen": "default",
+        "char:EOLunhyphen": "default",
+        "char:punc": "default",
+        "char:abque": "default",
+        "char:cmbAbbrStroke": "Arial Unicode MS"
+      }
+    },
+    "text_omissions": [
+      "note",
+      "page-break",
+      "column-break",
+      "source-marker",
+      "anchor",
+      "page-furniture",
+      "generator-placeholder"
+    ],
+    "block_boundaries": [
+      "paragraph",
+      "heading",
+      "division",
+      "verse-group",
+      "list",
+      "list-item",
+      "embedded-text",
+      "opening",
+      "closing",
+      "salutation",
+      "epigraph",
+      "argument",
+      "trailer",
+      "postscript",
+      "signature",
+      "dateline",
+      "figure",
+      "horizontal-rule",
+      "source-block",
+      "table",
+      "table-row",
+      "table-cell"
+    ],
+    "reference_semantics": "Literal source target and cRef strings; not resolved, rebased, or authorized as navigable links.",
+    "milestone_kinds": {
+      "horizontal-rule": "horizontal-rule",
+      "rule": "horizontal-rule",
+      "separator": "horizontal-rule",
+      "source-rule": "horizontal-rule",
+      "source-text-break": "source-marker",
+      "column_group": "source-marker",
+      "physical-volume": "source-marker",
+      "insertIndex": "source-marker",
+      "scripContext": "source-marker",
+      "source-insert-index": "source-marker",
+      "scripCom": "source-marker"
+    },
+    "source_projection_evidence": {
+      "contract": "ThML-source-projection-v1",
+      "container": "standOff/list[@type=source-projection]",
+      "fields": [
+        "source_key",
+        "source_element",
+        "source_attributes",
+        "source_parent_key",
+        "source_ordinal"
+      ],
+      "source_heading_rendition": "Literal nonempty source class/style; preserved without CSS interpretation.",
+      "source_fidelity": "Exact retained-source fidelity remains a separate independent oracle gate; the private receipt accounts the projection evidence and ordered prolog comments."
+    },
+    "source_block_types": [
+      "source-block",
+      "source-inline-container",
+      "source-pre",
+      "sword-slot",
+      "source-whitespace-line",
+      "source-whitespace",
+      "source-figure-placeholder",
+      "source-heading",
+      "source-line-gap",
+      "wrapper",
+      "answer",
+      "question",
+      "content",
+      "blank",
+      "marker",
+      "question-continuation",
+      "reference",
+      "poetry",
+      "verse"
+    ]
+  }
+}

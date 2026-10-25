@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://openchristiandata.org/sources/structured-text/lib054-ccel-puritan/lib054.source-accountability.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["contract","schema","profile_id","source_member_count","excluded_member_count","retained_family_member_count","work_count","source_bytes","feature_count","qualified_attribute_count","comment_count","processing_instruction_count","processing_instruction_source_count","doctype_declaration_count","omitted_feature_count","duplicate_feature_count","member_census","crosswalk","non_element_events"],
+  "properties":{
+    "contract":{"const":"ocd-ccel-puritan-lib054-source-accountability-v1"},
+    "schema":{"const":"lib054.source-accountability.schema.json"},
+    "profile_id":{"const":"lib054-ten-retained-ccel-xml-v1"},
+    "source_member_count":{"const":10},"excluded_member_count":{"const":5},"retained_family_member_count":{"const":15},"work_count":{"const":10},"source_bytes":{"const":5244468},"feature_count":{"const":14065},"qualified_attribute_count":{"const":0},"comment_count":{"const":44},"processing_instruction_count":{"const":6},"processing_instruction_source_count":{"const":3},"doctype_declaration_count":{"const":8},"omitted_feature_count":{"const":0},"duplicate_feature_count":{"const":0},
+    "member_census":{"type":"object"},"crosswalk":{"type":"array","minItems":14065,"maxItems":14065,"items":{"type":"object"}},
+    "non_element_events":{"type":"array","minItems":58,"maxItems":58,"items":{"type":"object","additionalProperties":false,"required":["work_id","source_event_ordinal","kind","lexical","sha256"],"properties":{"work_id":{"type":"string"},"source_event_ordinal":{"type":"integer","minimum":1},"kind":{"enum":["comment","pi","doctype"]},"lexical":{"type":"string"},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}}
+  }
+}

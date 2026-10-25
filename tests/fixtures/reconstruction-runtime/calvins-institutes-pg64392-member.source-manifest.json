@@ -1,0 +1,93 @@
+{
+  "authorities": [
+    {
+      "bytes": 2134850,
+      "name": "retained-volume-2",
+      "path": "raw/gutenberg/pg64392.txt",
+      "role": "primary-source",
+      "sha256": "3d79335bbb231773d1cbf849f4f7dd67e52f8773091416ba765da3ade0fefb31"
+    },
+    {
+      "bytes": 3432,
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/calvins-institutes-pg64392-member.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3d8063dabc46a4ac2a5fbf8cebce2ce6302f8cfa5f0906a87e2c12fc8eb821fa"
+    },
+    {
+      "bytes": 2166,
+      "name": "validation-policy",
+      "path": "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "c02f71bfef5f47b2421d684918827777ca4725099235c1f5ef59a38584f03b78"
+    },
+    {
+      "bytes": 2585,
+      "name": "source-accountability-schema",
+      "path": "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "cffafbf06e0a7ea98a8b77e59c39d2dd53134edfb880ab990a0bd512cd1b252c"
+    },
+    {
+      "bytes": 168,
+      "name": "work-identity-config",
+      "path": "sources/calvins-institutes/pg64392-member/config.json",
+      "role": "work-identity-config",
+      "sha256": "b69d73b14bc4ac32e31c130913b7982a4143a73bbebdf81b49b37ce503124f12"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "catalog_claim_lineage": {
+    "claim_count": 1,
+    "claims": [
+      {
+        "legacy_source_sha256": "130c2fe1000bc2aed944a0ea8263eac31f2a74d979c192238c91dc7f0a2fb807",
+        "source_path": "structured-text/calvins-institutes.json"
+      }
+    ],
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "retained_source_sha256": "3d79335bbb231773d1cbf849f4f7dd67e52f8773091416ba765da3ade0fefb31",
+    "work_id": "calvins-institutes"
+  },
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-calvins-institutes-pg64392-member-gutenberg-to-tei",
+    "implementation_path": "build/tei/calvins_institutes_pg64392_member_reconstruction.py",
+    "implementation_sha256": "c335a3a8336187ad6c5d57b298aca259e8dec8d16ac9b13d6f4065fdd26190e6",
+    "version": "1"
+  },
+  "expression_scope": {
+    "boundary": "Project Gutenberg volume II only: Book III chapter XIV onward, Book IV, retained notes, principal-matters index, Scripture Index, wrappers, and licenses.",
+    "included_members": [
+      "raw/gutenberg/pg64392.txt"
+    ],
+    "status": "partial"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "calvins-institutes-project-gutenberg-pg64392-member-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-calvins-institutes-independent-pg64392-member-oracle",
+    "implementation_path": "build/tei/calvins_institutes_pg64392_member_oracle.py",
+    "implementation_sha256": "767ad0013467faf5c986c7d1a7b47f4e9454b402234bb9eacf79759535baf5fe",
+    "import_closure_sha256": "6566a4c9925954e0636b76d5fed4ea73c127d7312c9d9b6e1bdfa523a4e7e8ff",
+    "version": "1"
+  }
+}

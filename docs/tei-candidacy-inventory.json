@@ -12,12 +12,20 @@
   "scope": "Production dataset parsers, source configs, dataset envelopes, and TEI/census artifacts in this repository. The EzraOCR NSH pipeline is excluded.",
   "excluded_parsers": [
     {
+      "path": "build/parsers/bcp_1662_source_receipt.py",
+      "reason": "Shared retained-source receipt verifier for the two BCP producers; it emits no dataset family."
+    },
+    {
       "path": "build/parsers/_framework.py",
       "reason": "Shared parser helpers; it emits no dataset family."
     },
     {
       "path": "build/parsers/ia_schaff_herzog_census.py",
       "reason": "Read-only source census helper; it emits no production dataset envelope."
+    },
+    {
+      "path": "build/parsers/westminster_witnesses.py",
+      "reason": "Shared Westminster witness parser; reconstruction builders consume it, but it emits no production dataset envelope."
     }
   ],
   "excluded_source_configs": [
@@ -33,6 +41,89 @@
     }
   ],
   "entries": [
+    {
+      "id": "reconstruction-work-identity-bindings",
+      "label": "Source-to-TEI reconstruction work identity bindings",
+      "classification": "do-not-migrate",
+      "config_rules": [
+        {
+          "path_glob": "sources/**/config.json",
+          "field_in": {
+            "contract": [
+              "ocd-reconstruction-work-identity-v1",
+              "ocd-lib063-source-identity-v1",
+              "ocd-lib064-source-identity-v1"
+            ]
+          }
+        },
+        {
+          "path_glob": "sources/commentaries/expositors-bible/lib033/**/config.json",
+          "field_in": {
+            "work_id": [
+              "expositors-bible--alexander-maclaren",
+              "expositors-bible--alfred-plummer",
+              "expositors-bible--andrew-harper",
+              "expositors-bible--frederic-w-farrar",
+              "expositors-bible--g-g-findlay"
+            ]
+          }
+        },
+        {
+          "path_glob": "sources/calvins-institutes/pg64392-member/config.json"
+        }
+      ],
+      "evidence": [
+        "plans/2026-08-26-whole-library-faithful-tei-completion/07-orchestration-tracker.md",
+        "ocd_kernel/reconstruction/contract.py",
+        "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.source-manifest.json"
+      ],
+      "priority": 0,
+      "owning_batch": "whole-library-faithful-tei-completion",
+      "notes": "These exact configs bind source-local reconstruction evidence, including WorkCatalog identity bindings and the retained Calvin volume-II member route. They are routing evidence for already active nonaccepted TEI reconstruction, not production dataset-parser families to migrate again."
+    },
+    {
+      "id": "clean-ready-direct-tei-candidates",
+      "label": "Clean-ready direct source-to-TEI candidate configs",
+      "classification": "tei-now",
+      "tei_status": "proven-provisional",
+      "config_rules": [
+        {
+          "path_glob": "sources/structured-text/american-missionary-volume-36-1882/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/american-missionary-volume-37-1883/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/anderson-1864-new-testament/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/brenton-septuagint/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/calvins-institutes-beveridge-1846/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/locke-reasonableness-christianity/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/original-douay-rheims/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/revised-version-with-apocrypha/config.json"
+        },
+        {
+          "path_glob": "sources/structured-text/stillingfleet-origines-sacrae/config.json"
+        }
+      ],
+      "evidence": [
+        ".scratch/clean-ready-acquisition-to-tei/issues/00-GATE-RELEASE.md",
+        ".scratch/clean-ready-acquisition-to-tei/root/41-frozen-scope-accounting.md",
+        ".scratch/clean-ready-acquisition-to-tei/root/42-review-master-5-american-missionary-volume-37.md"
+      ],
+      "priority": 0,
+      "owning_batch": "clean-ready-acquisition-to-tei",
+      "notes": "These exact configs have technically reviewed direct source-to-TEI candidate routes. Every candidate remains provisional and nonaccepted; this inventory classification does not write canonical data or IR, establish WorkCatalog authority, record human acceptance, or authorize publication."
+    },
     {
       "id": "ccel-thml",
       "label": "CCEL ThML works",
@@ -193,6 +284,9 @@
       ],
       "evidence": [
         "docs/FORMAT_STATE_MAP.md#2--standard-ebooks",
+        "build/tools/reconstruct_candidate.py",
+        "sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.source-manifest.json",
+        "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
         "build/tei/se_to_tei.py",
         "ir/augustine/city-of-god.standard-ebooks.tei.xml",
         "ir/bunyan/pilgrims-progress.standard-ebooks.tei.xml",
@@ -202,7 +296,7 @@
       ],
       "priority": 2,
       "owning_batch": "05",
-      "notes": "City of God, Bunyan, and Kempis prove nested sections, endnotes, bridgeheads, verse/song/poem blocks, lists, front/back matter, and semantic inline markup. The other six XHTML configs are deferred pending separate scope decisions and gates."
+      "notes": "Bunyan and Kempis now have direct exact-manifest reconstruction successors through build/tools/reconstruct_candidate.py. Their deterministic six-member packages are XSD-valid and completely source-accounted, but nonaccepted and human-review-required. City and the committed Bunyan/Kempis TEI, census, HF, and viewer artifacts remain frozen compatibility evidence. Other XHTML configs remain separate scope decisions."
     },
     {
       "id": "bcp-liturgy",
@@ -294,6 +388,8 @@
       "evidence": [
         "docs/FORMAT_STATE_MAP.md#5--gutenberg-plain-text",
         "build/parsers/gutenberg_theology.py",
+        "build/tools/reconstruct_candidate.py",
+        "sources/calvins-institutes/calvins-institutes.source-manifest.json",
         "build/tei/gutenberg_to_tei.py",
         "sources/structured-text/augustine-confessions/config.json",
         "ir/calvin/calvins-institutes.gutenberg.tei.xml",
@@ -304,7 +400,7 @@
       "proof_works": ["calvins-institutes.gutenberg"],
       "ir_globs": ["ir/calvin/calvins-institutes.gutenberg.tei.xml"],
       "census_globs": ["ir/census/calvins-institutes.gutenberg.census.json"],
-      "notes": "Calvin's two-volume rendering proves a bounded TEI path for true underscore emphasis, front matter, and explicit Project Gutenberg work boundaries. The apparatus is per-volume: Vol. I has 2,016 sequential parenthetical refs resolving to its 2,016 note bodies; Vol. II has 1,489 refs resolving to 1,490 note bodies, leaving one body unreferenced. Confessions pg3296 is apparatus-free for this purpose and Luther's Large Catechism pg1722 is too low-yield; other marked works remain deferred pending per-work census."
+      "notes": "Calvin's exact two-witness manifest plus the generic runner now produces a deterministic, XSD-valid, completely source-accounted nonaccepted candidate. It preserves four logical books across five physical divisions, 80 chapters, 65 introductions/arguments, both indexes, the volume boundary, and both note systems including unreferenced note 1473. The committed TEI/census/HF/viewer artifacts and old converter remain frozen compatibility evidence pending durable review binding and safe retirement; other witnesses remain work-by-work."
     },
     {
       "id": "ia-ocr-general",
@@ -383,7 +479,7 @@
       ],
       "priority": 7,
       "owning_batch": "06",
-      "notes": "Batch 06 evidence-only: 10 general text/PDF parser routes are heterogeneous and no family-wide raw count is valid. Census and ingest work-by-work. Preserve raw OCR without inventing correction quality; English prose and Greek/Hebrew-heavy works retain the MANIFEST quality split."
+      "notes": "Batch 06 evidence-only: 10 general text/PDF parser routes are heterogeneous and no family-wide raw count is valid. Census and ingest work-by-work. Preserve raw OCR without inventing correction quality; OCR-GOOD/OCR-RAW are triage labels only, not digital correction or publication eligibility. Keep every uncorrected OCR text out of public releases until EzraOCR corrects it against the exact witness and OCD accepted-text/release checks pass."
     },
     {
       "id": "ia-fisher-marrow",
@@ -393,21 +489,43 @@
       "data_globs": ["data/structured-text/fisher-marrow-of-modern-divinity.json"],
       "ir_globs": ["ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml"],
       "census_globs": ["ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json"],
+      "candidate_generation": {
+        "manifest": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json",
+        "runner": "build/tools/reconstruct_candidate.py",
+        "acceptance_status": "nonaccepted",
+        "human_review_required": true,
+        "publication_status": "not-authorized"
+      },
+      "legacy_frozen_evidence": [
+        "build/tei/ia_fisher_marrow_to_tei.py",
+        "ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json",
+        "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml",
+        "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.viewer-dialogue.png",
+        "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl",
+        "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl.loss.json"
+      ],
       "config_rules": [
         {"path_glob": "sources/structured-text/fisher-marrow-of-modern-divinity/config.json"}
       ],
       "evidence": [
         "docs/IA_BATCH06_EVIDENCE.md",
         "docs/FORMAT_STATE_MAP.md#6--internet-archive-ocr--ia_fisher_marrow--marrow-of-modern-divinity",
+        "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json",
+        "build/tools/reconstruct_candidate.py",
+        "build/tei/fisher_marrow_reconstruction.py",
+        "build/tei/fisher_marrow_oracle.py",
         "build/parsers/ia_fisher_marrow.py",
         "build/tei/ia_fisher_marrow_to_tei.py",
+        "ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json",
         "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml",
+        "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.viewer-dialogue.png",
         "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl",
+        "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl.loss.json",
         "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt"
       ],
       "priority": 3,
       "owning_batch": "06",
-      "notes": "Raw-to-TEI migration is complete for the bounded Fisher witness. The census records 2 parts, 4 chapters, 8 commandments, 41 structural sections, 6 synopsis lines, 455 high-confidence dialogue labels, 0 Greek/Hebrew code points, and 0 page breaks; RelaxNG and the projection loss ledger pass, with the campaign-wide caveat that a ledger PASS alone does not prove text delivery. The existing structured-text JSON remains a downstream legacy projection, not conversion input."
+      "notes": "The current candidate-generation route is the accepted Fisher source manifest plus the family-neutral candidate runner. It reconstructs the exact retained London / Thomas Tegg and Son / 1837 witness into a deterministic, XSD-valid, completely source-accounted six-member package. The package remains nonaccepted, requires human review, and is not authorized for publication. The existing structured-text JSON, converter, census, TEI, viewer image, HF projection, and loss receipt remain frozen compatibility evidence for current canonical, CVW, speaker, and ledger consumers; they are not outputs of the successor and have not migrated. Durable review binding and TEI-to-Hugging-Face or canonical migration remain future work."
     },
     {
       "id": "ia-hastings-dictionary",
@@ -671,7 +789,9 @@
       "classification": "json-native",
       "parsers": ["build/parsers/church_fathers.py"],
       "data_globs": ["data/church-fathers/*.json"],
-      "config_rules": [],
+      "config_rules": [
+        {"path_glob": "sources/structured-text/church-fathers-quotations/config.json"}
+      ],
       "evidence": [
         "build/parsers/church_fathers.py",
         "raw/Commentaries-Database",

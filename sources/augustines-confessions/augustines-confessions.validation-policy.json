@@ -1,0 +1,14 @@
+{
+  "policy_id": "augustines-confessions-pg3296-validation-policy-v1",
+  "oracle_id": "ocd-augustines-confessions-independent-source-oracle",
+  "source_accountability_schema": "augustines-confessions.source-accountability.schema.json",
+  "rules": [
+    "Bind the complete retained UTF-8 file by exact byte count and SHA-256.",
+    "Account for each physical line, byte range, line terminator, source class, and disposition in source order.",
+    "Require exactly 13 BOOK headings in the retained order I through XIII.",
+    "Preserve the standalone terminal doxology at source line 9367 as the Book XIII paragraph with text 'GRATIAS TIBI DOMINE' and TEI rend='align-center'; its 25 leading spaces encode centered layout, not paragraph padding.",
+    "Compare every emitted paragraph and book head with an independent source traversal; reject omission, duplication, reorder, invention, or metadata drift.",
+    "Validate TEI P5 and candidate package bindings; reproduce identical package bytes in a fresh process."
+  ],
+  "separate_decisions": ["edition and imprint identity", "rights clearance", "human textual acceptance", "release selection", "publication authorization"]
+}

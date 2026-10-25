@@ -1,0 +1,96 @@
+[
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.source-manifest.json",
+    "manifest_sha256": "8b6f6a68360e9af7f830f8086c442c3a1cb56dcbe7ac09e4c6648db6124103f0",
+    "name": "charnock_vol2_native_v2",
+    "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.source-manifest.json",
+    "original_profile": {
+      "bytes": 847,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "30b80bcdde80d8ba948b8a735dd638811f5170e0e37d7b0f1a30ab7bf50e2238"
+    },
+    "original_readme": {
+      "bytes": 1026,
+      "name": "attribution-readme",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "82470e0acbd7aac352928e248b9d6bce9e11f54a8a999d36a6471772cbced834"
+    },
+    "original_receipt_sha256": "5179359637711976e1797425252d952166478525b009e63376dac6abdfcb5ed0",
+    "original_sha256": "a8c8b177d62e97421aca934953f9c7f7f4a1949d8156429da2f6fc14db9a6a7b",
+    "original_stage": "D:\\Library\\Open Christian Data\\candidate-reviews\\c2-s4",
+    "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved",
+    "producer_closure": [
+      {
+        "path": "build/tei/charnock_gutenberg_native_v2_reconstruction.py",
+        "sha256": "8d628751f764febcd2594bd211b3a9b7f9c7743fc02498e974e5a3b874d96fa2"
+      },
+      {
+        "path": "ocd_kernel/lib/path_io.py",
+        "sha256": "ace1648a7ae64713a4c3450a1cca8fa3b2f896f9cce68775083649c0930eeaa3"
+      },
+      {
+        "path": "ocd_kernel/lib/storage_topology.py",
+        "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+      },
+      {
+        "path": "ocd_kernel/reconstruction/contract.py",
+        "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+      }
+    ],
+    "producer_closure_sha256": "168e277b5696778d25cda853fe1e160c2e9f7e817508b0a4615f09f4a730ca69",
+    "profile": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.reconstruction-profile.json",
+    "profile_sha256": "d886ef5b25cbc1f4a7cb67dcf0e767c362da80651f7d5e81ece25ad4cf7d176a",
+    "validator_closure_sha256": "44e7d044f7857e953c91fd0fce40a8fdecc17f39dab2c90995e4ebe1539c2ce2",
+    "work_id": "charnock-existence-attributes-vol-2"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.source-manifest.json",
+    "manifest_sha256": "4274f758087986949fc9acefb4cabb354f7260d21127c3d3c35d144af44f7f6d",
+    "name": "luther_galatians_native_v2",
+    "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.source-manifest.json",
+    "original_profile": {
+      "bytes": 2483,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "e3873e762639b86afb1fdbb16365f5a26cad23129a1be0df86f050120e712bed"
+    },
+    "original_readme": {
+      "bytes": 585,
+      "name": "attribution-readme",
+      "path": "sources/structured-text/luther-commentary-on-galatians/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "fd9eb7d6fb2686f84afe6658ff04f51417b16c15bb6ac40611dde21185aa320b"
+    },
+    "original_receipt_sha256": "23ee5b72a0dd2f3011f22791a0f6d838263580a9e106390284beb914b48a9b6f",
+    "original_sha256": "d07b98ed01ce9ed3a2437c006b39049e6a402ae58848f70df6e6679aba553a5c",
+    "original_stage": "D:\\Library\\Open Christian Data\\candidate-reviews\\luther-galatians-native-v2-s4",
+    "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved",
+    "producer_closure": [
+      {
+        "path": "build/tei/luther_galatians_native_v2_reconstruction.py",
+        "sha256": "674f400b85ef4aa959695b4127a668e319a7cc3f850b432dfb9acae9a4d885d5"
+      },
+      {
+        "path": "ocd_kernel/lib/path_io.py",
+        "sha256": "ace1648a7ae64713a4c3450a1cca8fa3b2f896f9cce68775083649c0930eeaa3"
+      },
+      {
+        "path": "ocd_kernel/lib/storage_topology.py",
+        "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+      },
+      {
+        "path": "ocd_kernel/reconstruction/contract.py",
+        "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+      }
+    ],
+    "producer_closure_sha256": "4fd030543dce89e679ab7c1e38adfb6635b318bfc506f10f445ffd86952faede",
+    "profile": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.reconstruction-profile.json",
+    "profile_sha256": "9443a678d8631fa85d0e2bd382dfeea76ff4a93fdaf22bb0fb91f8f17cc89e50",
+    "validator_closure_sha256": "2ef757209e00e7742c84025f55bc52500fe3c4242dc7eadecfab99792fa96cd0",
+    "work_id": "luther-commentary-on-galatians"
+  }
+]

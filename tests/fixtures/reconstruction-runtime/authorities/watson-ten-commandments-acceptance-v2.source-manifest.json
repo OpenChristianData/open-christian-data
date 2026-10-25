@@ -1,0 +1,187 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "37c-318-watson-ten-commandments-retained-thml",
+  "work_id": "watson-ten-commandments",
+  "authorities": [
+    {
+      "path": "raw/ccel/watson/commandments.xml",
+      "name": "retained-source",
+      "role": "primary-source",
+      "bytes": 1100623,
+      "sha256": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6"
+    },
+    {
+      "path": "library/works/watson-ten-commandments/work.json",
+      "name": "work",
+      "role": "work-identity-config",
+      "bytes": 1051,
+      "sha256": "8b5d47614a5b4c63c1d533ce1ead2f78c7009b63b92400f8fda94c1333f1637e"
+    },
+    {
+      "path": "library/works/watson-ten-commandments/forms/watson-ten-commandments-english/editions/watson-ten-commandments-ccel-thml/acquisitions/watson-ten-commandments-ccel-retained.json",
+      "name": "acquisition",
+      "role": "acquisition-selection-authority",
+      "bytes": 2185,
+      "sha256": "b4b77c910cdaabbafedcb1d34d5556801ab975d0e70b210775c9df5f2ae03fc7"
+    },
+    {
+      "path": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.reconstruction-profile.json",
+      "name": "profile",
+      "role": "complete-source-feature-profile",
+      "bytes": 10028,
+      "sha256": "f6a58a220de092b9cc74359efd5df4122cd39c5c1ce73681c3ea7c5d473b659c"
+    },
+    {
+      "path": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.validation-policy.json",
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "bytes": 2268,
+      "sha256": "4d2e11d7653fffc752c13f4fc1511606d9f049f16acf7053fd5aecebfe75d913"
+    },
+    {
+      "path": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.source-accountability.json",
+      "name": "source-accountability",
+      "role": "source-completeness-accountability",
+      "bytes": 11733,
+      "sha256": "fb147f7ad7d8fea851e18620a3c59eb33175d0a48fefc3f883a5e4d1655f3492"
+    },
+    {
+      "path": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.source-accountability.schema.json",
+      "name": "source-accountability-schema",
+      "role": "work-local-accountability-schema",
+      "bytes": 7338,
+      "sha256": "c99335bca173aeb4376903f72552b92124ae9c2794165e52c61b64f3cc1e4f67"
+    },
+    {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "path": "ocd_kernel/library/source_selection.py",
+      "name": "producer-source-selection",
+      "role": "implementation-dependency",
+      "bytes": 12218,
+      "sha256": "bd2a537c43a2177c62174700cac410293e24d576883a6f7625afda1944c77133"
+    },
+    {
+      "path": "ocd_kernel/tei/writer.py",
+      "name": "producer-tei-writer",
+      "role": "implementation-dependency",
+      "bytes": 4314,
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    },
+    {
+      "path": "build/tei/selected_thml.py",
+      "name": "selected-thml-base-converter",
+      "role": "implementation-dependency",
+      "bytes": 17353,
+      "sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"
+    },
+    {
+      "path": "build/tei/selected_thml_oracle.py",
+      "name": "selected-thml-base-oracle-helper",
+      "role": "implementation-dependency",
+      "bytes": 9621,
+      "sha256": "983936eff2c1ebfe4c0a837dbeb807800bb78af8c2cb1bd797fc52af41047790"
+    },
+    {
+      "path": "ocd_kernel/tei/selected_thml_check.py",
+      "name": "closure-1",
+      "role": "implementation-dependency",
+      "bytes": 29169,
+      "sha256": "4340426af9f0b979983ad412eb6a84f6fd75df1e91dbefdefa0f4da41800b3f9"
+    },
+    {
+      "path": "ocd_kernel/library/acquisitions.py",
+      "name": "closure-2",
+      "role": "implementation-dependency",
+      "bytes": 23932,
+      "sha256": "d5cbf9e221134feef2b117d852fa4c611f8e652131c77a6418ba27ae3be05896"
+    },
+    {
+      "path": "ocd_kernel/library/identities.py",
+      "name": "closure-3",
+      "role": "implementation-dependency",
+      "bytes": 17421,
+      "sha256": "cb08ec6962d532f8662988054481e2e3be04ed15a3edcabb3f4c20f75221f8b4"
+    },
+    {
+      "path": "ocd_kernel/library/_common.py",
+      "name": "closure-4",
+      "role": "implementation-dependency",
+      "bytes": 3850,
+      "sha256": "09698570fdc464e68a5769a1b8d6e7a32f9f1d64cf76d65135c9815a98f1a185"
+    },
+    {
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "name": "closure-5",
+      "role": "implementation-dependency",
+      "bytes": 3942,
+      "sha256": "f56814fad76e4b6e85a98f199a256cecdfbd1d27afbe60c303e3f78794666285"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "name": "closure-6",
+      "role": "implementation-dependency",
+      "bytes": 25076,
+      "sha256": "a3cdf8daa9d67725a22995584a2a99ba796fc4c7578058496f1f9d6bad401ac5"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "name": "closure-7",
+      "role": "implementation-dependency",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "path": "ocd_kernel/tei/validate.py",
+      "name": "closure-8",
+      "role": "implementation-dependency",
+      "bytes": 1385,
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"
+    },
+    {
+      "path": "schemas/v2/acquisition.schema.json",
+      "name": "closure-9",
+      "role": "implementation-dependency",
+      "bytes": 4993,
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "path": "schemas/v2/work.schema.json",
+      "name": "closure-10",
+      "role": "implementation-dependency",
+      "bytes": 6206,
+      "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+    }
+  ],
+  "converter": {
+    "id": "ocd-watson-ten-commandments-selected-thml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/structured-text/watson-ten-commandments/watson_ten_commandments_reconstruction.py",
+    "implementation_sha256": "54792378e385915428fce65f11a6e4016d84246bce44a4f32853c9ab3257d3fa"
+  },
+  "validator": {
+    "id": "ocd-watson-ten-commandments-selected-thml-independent-check",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "sources/structured-text/watson-ten-commandments/watson_ten_commandments_oracle.py",
+    "implementation_sha256": "dc73009d4e45c5e291b08843012625e2c97412d59ef8060b6ee5b63761d6d034",
+    "import_closure_sha256": "f5b44250ae24217adf3a1a2143cbf3b5b7225fafd31894d58661af66d10f1bfc"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

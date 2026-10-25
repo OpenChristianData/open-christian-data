@@ -1,0 +1,96 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "asv-scrollmapper-retained-json",
+  "work_id": "asv",
+  "authorities": [
+    {
+      "name": "asv-source",
+      "path": "raw/bible_databases/formats/json/ASV.json",
+      "role": "primary-source",
+      "bytes": 8558631,
+      "sha256": "0851e73ac46ae7ccaf1a8bb44beb359295df5eca04a578ea4d448eb7a641f9ae"
+    },
+    {
+      "name": "asv-config",
+      "path": "sources/bible-text/asv/config.json",
+      "role": "work-identity-config",
+      "bytes": 822,
+      "sha256": "367042aeb8458ae39c5d22d8815bf3ab4720565bade05616a52d69303607bcb3"
+    },
+    {
+      "name": "asv-profile",
+      "path": "sources/bible-text/asv/asv.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 887,
+      "sha256": "38d0a1a074fec17a88420f4c8e89c5b05ceba42922a1a0ad10437cdd45278f79"
+    },
+    {
+      "name": "asv-policy",
+      "path": "sources/bible-text/asv/asv.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 789,
+      "sha256": "adc4143a4985fc66b72dea6d48b038b92f6949f03eb6024fcf7208b92d8dc45c"
+    },
+    {
+      "name": "asv-readme",
+      "path": "sources/bible-text/asv/asv-source-readme.md",
+      "role": "source-attribution-and-rights-evidence",
+      "bytes": 1500,
+      "sha256": "e9b8ed02e19ca4ed06cf1beef4bd35d191a8883e5aadd01b21fbe3d98c73a4cb"
+    },
+    {
+      "name": "asv-unresolved",
+      "path": "sources/bible-text/asv/asv-unresolved.jsonl",
+      "role": "unresolved-source-questions",
+      "bytes": 551,
+      "sha256": "a154f1279f10172a4c1004b9f1c6e243a114be7989a77fc376f506d642f06850"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib023-asv-json-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/asv_reconstruction.py",
+    "implementation_sha256": "81c8ae67d9c1ecf58ba97244adad8d69f44a2a879635eff001adb9dd890ad823"
+  },
+  "validator": {
+    "id": "ocd-lib023-asv-independent-oracle",
+    "version": "1",
+    "callable": "oracle",
+    "implementation_path": "build/tei/asv_oracle.py",
+    "implementation_sha256": "995fb9c9a37a0e3ec45e5fbabc6adc38176f9ac95d500e6e06e6445a507407be",
+    "import_closure_sha256": "d7b1b0906dbaab8c7dbc3fe130488e8d5f9045174303f289365a333c174e6c60"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

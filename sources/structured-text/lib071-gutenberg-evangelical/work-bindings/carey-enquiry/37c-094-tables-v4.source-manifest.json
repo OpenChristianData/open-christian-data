@@ -1,0 +1,120 @@
+{
+  "authorities": [
+    {
+      "bytes": 77,
+      "name": "work-identity",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/carey-enquiry/config.json",
+      "role": "work-identity",
+      "sha256": "4dac05ef547346cb417dd69cbfe9e8160d2eee454fd995bdc5ec1c7ad30dcc98"
+    },
+    {
+      "bytes": 6575,
+      "name": "ticket-scope",
+      "path": "plans/2026-08-31-sample-first-library-verification/issues/37c-094-carey-enquiry.md",
+      "role": "ticket-scope",
+      "sha256": "ad1325e353c01e3581dfe5f09c463ccc20b2aacdce7382e2c8b25a6a558e3c5a"
+    },
+    {
+      "bytes": 117568,
+      "name": "primary-source",
+      "path": "raw/gutenberg/pg11449.txt",
+      "role": "primary-source",
+      "sha256": "6dc07e5606be5a0032d6583fa5b663a81ed0971a5d9d1f267cfc14959aa602c0"
+    },
+    {
+      "bytes": 1122,
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/carey-enquiry/37c-094.README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "ec5219d87a050ef142e11567ac7af0414018e3e7f05e63851f638459569d875c"
+    },
+    {
+      "bytes": 27519,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/carey-enquiry/37c-094-tables-v3.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "2c4b3765537d04daa21017c6fac421ef8aeeab236e878a6c27e4ae0d1e1889d3"
+    },
+    {
+      "bytes": 3128,
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/carey-enquiry/37c-094-tables-v3.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "d2d2b3835a4995175d7bfea23b20e9c5d3185983d4a41f40b52559a86dd90d82"
+    },
+    {
+      "bytes": 6881,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/carey-enquiry/37c-094-tables-v3.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "c903afb5c117047cc1a6537c8f7698f73ed838be2256de3ab1e5b27f014ddbd3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 65181,
+      "name": "converter-implementation",
+      "path": "build/tei/gutenberg_evangelical_lib071_selected_reconstruction.py",
+      "role": "source-converter-implementation",
+      "sha256": "2940b4339b118a7f77fc546c3e9fe884a5f0d9754d0525356de0ed1a2b2b899a"
+    },
+    {
+      "bytes": 105647,
+      "name": "oracle-implementation",
+      "path": "build/tei/gutenberg_proofread_selected_oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "b42e48bef11f21cabafacb153fd3adb187874bd82130b57b2e1a855283bbad2e"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib071-selected-proofread-text-to-tei",
+    "implementation_path": "build/tei/gutenberg_evangelical_lib071_selected_reconstruction.py",
+    "implementation_sha256": "2940b4339b118a7f77fc546c3e9fe884a5f0d9754d0525356de0ed1a2b2b899a",
+    "version": "4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "retained_source_path": "raw/gutenberg/pg11449.txt",
+  "source_id": "gutenberg-37c-094-pg11449",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "ticket_id": "37c-094",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-gutenberg-selected-proofread-independent-oracle",
+    "implementation_path": "build/tei/gutenberg_proofread_selected_oracle.py",
+    "implementation_sha256": "b42e48bef11f21cabafacb153fd3adb187874bd82130b57b2e1a855283bbad2e",
+    "import_closure_sha256": "f920300e134caab0e58ce29456b89d85257926a1b14a97ce0a403881f4a934eb",
+    "version": "3"
+  },
+  "work_id": "carey-enquiry"
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<teiHeader><fileDesc><titleStmt><title>Synthetic mutation control</title></titleStmt><publicationStmt><p>Private review person, C:/private/path, source hash stays private.</p></publicationStmt><sourceDesc><p>Synthetic control derived from observed TEI variation; no real acceptance.</p></sourceDesc></fileDesc></teiHeader>
+<text><front><div type="title-page"><head>Title page</head><p>Printed title</p></div></front><body>
+<div type="chapter" xml:id="chapter"><head>A <hi rend="small-caps">Heading</hi></head>
+<p xml:id="p1">Alpha <hi rend="italic"><hi rend="bold">beta</hi></hi><note xml:id="n1" place="foot" n="1"><p>First note.</p><p>Second paragraph.</p></note> gamma.<ref type="note" target="#n1">1</ref> <ref type="note" target="#n2">2</ref></p>
+<div type="subsection" xml:id="selected"><head>Subdivision</head><p xml:id="p2">co<lb break="no"/>operate<lb/>again <hi rend="superscript">1</hi>⁄<hi rend="subscript">2</hi>.</p><p xml:id="p3" xml:lang="la">Amen.<note xml:id="n2" place="end">Outside the first row.</note></p></div>
+</div></body></text></TEI>

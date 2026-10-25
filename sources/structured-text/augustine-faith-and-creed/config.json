@@ -6,7 +6,11 @@
   "author_birth_year": 354,
   "author_death_year": 430,
   "contributors": [
-    "Philip Schaff (series editor)"
+    {
+      "name": "Philip Schaff",
+      "role": "editor",
+      "note": "Retain volume-level editor context; represent work/group credits at their printed scope."
+    }
   ],
   "original_publication_year": 393,
   "language": "en",
@@ -25,7 +29,7 @@
   "source_edition": "Nicene and Post-Nicene Fathers, Series 1. Philip Schaff (ed.). New York: Christian Literature Publishing Co., 1886-1889.",
   "source_hash": "sha256:410f240f8105bb6097316a54a867fa5a4ae02c0d3d03606aefc2df71f5bfc455",
   "source_type": "ccel_thml",
-  "translator": "Philip Schaff (ed.), 1886",
+  "translator": "S. D. F. Salmond",
   "download_date": "2026-04-23",
   "output_file": "data/structured-text/augustine-faith-and-creed.json",
   "clearance_date": "2026-04-01",

@@ -1,0 +1,31 @@
+{
+  "contract": "ocd-ccel-puritan-lib054-profile-v1",
+  "profile_id": "lib054-ten-retained-ccel-xml-v1",
+  "version": 1,
+  "works": [
+    {"work_id":"baxter-call-to-unconverted","title":"A Call to the Unconverted","author":"Richard Baxter","authority_name":"source-baxter-unconverted","source_path":"raw/ccel/baxter/unconverted.xml","source_url":"https://www.ccel.org/ccel/baxter/unconverted.xml","bytes":351122,"sha256":"6e615176e913936a25457ad8f485ec5204f05a7f05397c2850fdae558b2e84a0","element_count":1545},
+    {"work_id":"baxter-reformed-pastor","title":"The Reformed Pastor","author":"Richard Baxter","authority_name":"source-baxter-pastor","source_path":"raw/ccel/baxter/pastor.xml","source_url":"https://www.ccel.org/ccel/baxter/pastor.xml","bytes":507161,"sha256":"a747146c22fe37acdd6018455ebb40dd2b6b7eb7ddaf309d261857a43ba31ea5","element_count":905},
+    {"work_id":"baxter-saints-rest","title":"The Saints' Everlasting Rest","author":"Richard Baxter","authority_name":"source-baxter-saints-rest","source_path":"raw/ccel/baxter/saints_rest.xml","source_url":"https://www.ccel.org/ccel/baxter/saints_rest.xml","bytes":693140,"sha256":"b848aab1b45c721bd06ce02c30795e2e03f72594677feb9ec8c986c4853cb69f","element_count":1068},
+    {"work_id":"boston-crook-in-the-lot","title":"The Crook in the Lot","author":"Thomas Boston","authority_name":"source-boston-crook","source_path":"raw/ccel/boston/crook.xml","source_url":"https://www.ccel.org/ccel/boston/crook.xml","bytes":253194,"sha256":"64cc81b01e511b788450d2a6389ede6629e35bdbb5c8429452bfc68a78ad1732","element_count":885},
+    {"work_id":"bunyan-grace-abounding","title":"Grace Abounding to the Chief of Sinners","author":"John Bunyan","authority_name":"source-bunyan-grace","source_path":"raw/ccel/bunyan/grace.xml","source_url":"https://www.ccel.org/ccel/bunyan/grace.xml","bytes":288853,"sha256":"21dba22cf36ddec4399091313ce74e826152ea62232f10e6182365496102e2c0","element_count":915},
+    {"work_id":"bunyan-holy-war","title":"The Holy War","author":"John Bunyan","authority_name":"source-bunyan-holy-war","source_path":"raw/ccel/bunyan/holy_war.xml","source_url":"https://www.ccel.org/ccel/bunyan/holy_war.xml","bytes":589114,"sha256":"0e85699e7ba7d78073c5321533f19e0dd287a14375d3481cc4dbd5d936f8007a","element_count":1346},
+    {"work_id":"butler-analogy-of-religion","title":"The Analogy of Religion","author":"Joseph Butler","authority_name":"source-butler-analogy","source_path":"raw/ccel/butler/analogy.xml","source_url":"https://www.ccel.org/ccel/butler/analogy.xml","bytes":789299,"sha256":"1e075db3555e003b2338f7317d9eecb0aaa8e800462f3a41485c95bdb2eff0e7","element_count":2393},
+    {"work_id":"edwards-distinguishing-marks","title":"The Distinguishing Marks of a Work of the Spirit of God","author":"Jonathan Edwards","authority_name":"source-edwards-distinguishing","source_path":"raw/ccel/edwards/distinguishing_marks.xml","source_url":"https://www.ccel.org/ccel/edwards/works2.xml#vii","bytes":205076,"sha256":"a2d8ff387fd51a02eaa073eda9581fd45f46f2d93b35c19f6fb9747b695d3b1f","element_count":466},
+    {"work_id":"edwards-freedom-of-the-will","title":"Freedom of the Will","author":"Jonathan Edwards","authority_name":"source-edwards-will","source_path":"raw/ccel/edwards/will.xml","source_url":"https://www.ccel.org/ccel/edwards/will.xml","bytes":652890,"sha256":"c710571e9f6993e732e7fab88a1c60f2f9c62770a16c32729d3559a18c4e9600","element_count":1419},
+    {"work_id":"edwards-history-of-redemption","title":"A History of the Work of Redemption","author":"Jonathan Edwards","authority_name":"source-edwards-history","source_path":"raw/ccel/edwards/history_of_redemption.xml","source_url":"https://www.ccel.org/ccel/edwards/works1.xml#xii","bytes":914619,"sha256":"301b521eaeae8f2077767cc107626ba8ca7a02f7b53dde5aafcb18a56b5ebeeb","element_count":3123}
+  ],
+  "excluded_members": [
+    {"path":"raw/ccel/edwards/affections.xml","bytes":1183960,"sha256":"2ffd4300ada5d0cc5b3929ed5b61ed0e1053042a065419ee35943facc79738ce","reason":"excluded: exact retained authority for edwards-religious-affections, assigned to LIB-055"},
+    {"path":"raw/ccel/edwards/brainerd.xml","bytes":1400423,"sha256":"11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e","reason":"excluded: exact retained authority for edwards-life-of-brainerd, assigned to LIB-055"},
+    {"path":"raw/ccel/edwards/sermons.xml","bytes":1264311,"sha256":"28c99ca7cb837b2e7d04bb8781982ad826b888233fe0b60598c374e00305de80","reason":"excluded: exact retained authority for edwards-select-sermons, assigned to LIB-055"},
+    {"path":"raw/ccel/edwards/works1.xml","bytes":10121726,"sha256":"d39d31233027c469e6d96b11f0642bed5732fddca3fd40358a0f0806c47d0303","reason":"excluded: unclaimed retained container volume from which the LIB-054 history_of_redemption.xml fragment was extracted"},
+    {"path":"raw/ccel/edwards/works2.xml","bytes":11183187,"sha256":"bb5273b35e77ce98d1edb12e5e4d3d5c1ebd9f9b00a0a6536b1be19e9e6932d2","reason":"excluded: unclaimed retained container volume behind the LIB-054 distinguishing_marks.xml fragment and LIB-055 brainerd.xml fragment"}
+  ],
+  "family_directories": ["raw/ccel/baxter","raw/ccel/boston","raw/ccel/bunyan","raw/ccel/butler","raw/ccel/edwards"],
+  "unresolved": [
+    {"id":"lib054-derived-edwards-fragments","status":"unresolved","scope":"edwards-distinguishing-marks and edwards-history-of-redemption","reason":"The retained authorities are locally reserialized extracts without ThML headers; their exact extraction provenance from works1.xml and works2.xml is not independently verified."},
+    {"id":"lib054-incomplete-rights-statements","status":"unresolved","scope":"six retained authorities","reason":"Two extracts have no ThML header and four full witnesses carry empty DC.Rights; technical fidelity cannot fill missing rights statements."},
+    {"id":"lib054-print-edition-collation","status":"unresolved","scope":"all ten works","reason":"No retained witness was collated against a print copy; exact edition identity remains a human question."},
+    {"id":"lib054-human-acceptance-publication","status":"unresolved","scope":"candidate corpus","reason":"Technical validation is not human textual or rights acceptance and does not authorize publication."}
+  ]
+}

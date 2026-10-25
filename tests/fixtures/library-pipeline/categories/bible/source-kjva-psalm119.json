@@ -1,0 +1,2473 @@
+{
+  "fixture_id": "kjva-psalm119",
+  "edition": "King James Version with Apocrypha",
+  "source_url": "ocd-source:raw/bible_databases/formats/json/KJVA.json",
+  "source_path": "raw/bible_databases/formats/json/KJVA.json",
+  "source_sha256": "b927f4a0601de39b1636ebb71162ab1bf8ddbad66a55f50603011697e46060d5",
+  "retained_source_sha256": "b927f4a0601de39b1636ebb71162ab1bf8ddbad66a55f50603011697e46060d5",
+  "source_selector": {
+    "book_index": 19,
+    "book_name": "Psalms",
+    "chapter_index": 119,
+    "chapter_number": 119
+  },
+  "translation": "KJVA: King James Version (1769) with Strongs Numbers and Morphology and CatchWords, including Apocrypha (without glosses)",
+  "book_osis": "Ps",
+  "versification": "source-native:KJVA.json",
+  "raw_envelope": {
+    "top_level_keys": [
+      "translation",
+      "books"
+    ],
+    "translation": "KJVA: King James Version (1769) with Strongs Numbers and Morphology and CatchWords, including Apocrypha (without glosses)",
+    "book_count": 80,
+    "chapter_count": 1371,
+    "verse_count": 36819,
+    "book_census": [
+      {
+        "index": 1,
+        "name": "Genesis",
+        "chapter_count": 50,
+        "verse_count": 1533
+      },
+      {
+        "index": 2,
+        "name": "Exodus",
+        "chapter_count": 40,
+        "verse_count": 1213
+      },
+      {
+        "index": 3,
+        "name": "Leviticus",
+        "chapter_count": 27,
+        "verse_count": 859
+      },
+      {
+        "index": 4,
+        "name": "Numbers",
+        "chapter_count": 36,
+        "verse_count": 1288
+      },
+      {
+        "index": 5,
+        "name": "Deuteronomy",
+        "chapter_count": 34,
+        "verse_count": 959
+      },
+      {
+        "index": 6,
+        "name": "Joshua",
+        "chapter_count": 24,
+        "verse_count": 658
+      },
+      {
+        "index": 7,
+        "name": "Judges",
+        "chapter_count": 21,
+        "verse_count": 618
+      },
+      {
+        "index": 8,
+        "name": "Ruth",
+        "chapter_count": 4,
+        "verse_count": 85
+      },
+      {
+        "index": 9,
+        "name": "I Samuel",
+        "chapter_count": 31,
+        "verse_count": 810
+      },
+      {
+        "index": 10,
+        "name": "II Samuel",
+        "chapter_count": 24,
+        "verse_count": 695
+      },
+      {
+        "index": 11,
+        "name": "I Kings",
+        "chapter_count": 22,
+        "verse_count": 816
+      },
+      {
+        "index": 12,
+        "name": "II Kings",
+        "chapter_count": 25,
+        "verse_count": 719
+      },
+      {
+        "index": 13,
+        "name": "I Chronicles",
+        "chapter_count": 29,
+        "verse_count": 942
+      },
+      {
+        "index": 14,
+        "name": "II Chronicles",
+        "chapter_count": 36,
+        "verse_count": 822
+      },
+      {
+        "index": 15,
+        "name": "Ezra",
+        "chapter_count": 10,
+        "verse_count": 280
+      },
+      {
+        "index": 16,
+        "name": "Nehemiah",
+        "chapter_count": 13,
+        "verse_count": 406
+      },
+      {
+        "index": 17,
+        "name": "Esther",
+        "chapter_count": 10,
+        "verse_count": 167
+      },
+      {
+        "index": 18,
+        "name": "Job",
+        "chapter_count": 42,
+        "verse_count": 1070
+      },
+      {
+        "index": 19,
+        "name": "Psalms",
+        "chapter_count": 150,
+        "verse_count": 2461
+      },
+      {
+        "index": 20,
+        "name": "Proverbs",
+        "chapter_count": 31,
+        "verse_count": 915
+      },
+      {
+        "index": 21,
+        "name": "Ecclesiastes",
+        "chapter_count": 12,
+        "verse_count": 222
+      },
+      {
+        "index": 22,
+        "name": "Song of Solomon",
+        "chapter_count": 8,
+        "verse_count": 117
+      },
+      {
+        "index": 23,
+        "name": "Isaiah",
+        "chapter_count": 66,
+        "verse_count": 1292
+      },
+      {
+        "index": 24,
+        "name": "Jeremiah",
+        "chapter_count": 52,
+        "verse_count": 1364
+      },
+      {
+        "index": 25,
+        "name": "Lamentations",
+        "chapter_count": 5,
+        "verse_count": 154
+      },
+      {
+        "index": 26,
+        "name": "Ezekiel",
+        "chapter_count": 48,
+        "verse_count": 1273
+      },
+      {
+        "index": 27,
+        "name": "Daniel",
+        "chapter_count": 12,
+        "verse_count": 357
+      },
+      {
+        "index": 28,
+        "name": "Hosea",
+        "chapter_count": 14,
+        "verse_count": 197
+      },
+      {
+        "index": 29,
+        "name": "Joel",
+        "chapter_count": 3,
+        "verse_count": 73
+      },
+      {
+        "index": 30,
+        "name": "Amos",
+        "chapter_count": 9,
+        "verse_count": 146
+      },
+      {
+        "index": 31,
+        "name": "Obadiah",
+        "chapter_count": 1,
+        "verse_count": 21
+      },
+      {
+        "index": 32,
+        "name": "Jonah",
+        "chapter_count": 4,
+        "verse_count": 48
+      },
+      {
+        "index": 33,
+        "name": "Micah",
+        "chapter_count": 7,
+        "verse_count": 105
+      },
+      {
+        "index": 34,
+        "name": "Nahum",
+        "chapter_count": 3,
+        "verse_count": 47
+      },
+      {
+        "index": 35,
+        "name": "Habakkuk",
+        "chapter_count": 3,
+        "verse_count": 56
+      },
+      {
+        "index": 36,
+        "name": "Zephaniah",
+        "chapter_count": 3,
+        "verse_count": 53
+      },
+      {
+        "index": 37,
+        "name": "Haggai",
+        "chapter_count": 2,
+        "verse_count": 38
+      },
+      {
+        "index": 38,
+        "name": "Zechariah",
+        "chapter_count": 14,
+        "verse_count": 211
+      },
+      {
+        "index": 39,
+        "name": "Malachi",
+        "chapter_count": 4,
+        "verse_count": 55
+      },
+      {
+        "index": 40,
+        "name": "I Esdras",
+        "chapter_count": 9,
+        "verse_count": 448
+      },
+      {
+        "index": 41,
+        "name": "II Esdras",
+        "chapter_count": 16,
+        "verse_count": 874
+      },
+      {
+        "index": 42,
+        "name": "Tobit",
+        "chapter_count": 14,
+        "verse_count": 244
+      },
+      {
+        "index": 43,
+        "name": "Judith",
+        "chapter_count": 16,
+        "verse_count": 339
+      },
+      {
+        "index": 44,
+        "name": "Additions to Esther",
+        "chapter_count": 16,
+        "verse_count": 117
+      },
+      {
+        "index": 45,
+        "name": "Wisdom",
+        "chapter_count": 19,
+        "verse_count": 436
+      },
+      {
+        "index": 46,
+        "name": "Sirach",
+        "chapter_count": 51,
+        "verse_count": 1392
+      },
+      {
+        "index": 47,
+        "name": "Baruch",
+        "chapter_count": 6,
+        "verse_count": 213
+      },
+      {
+        "index": 48,
+        "name": "Prayer of Azariah",
+        "chapter_count": 1,
+        "verse_count": 68
+      },
+      {
+        "index": 49,
+        "name": "Susanna",
+        "chapter_count": 1,
+        "verse_count": 64
+      },
+      {
+        "index": 50,
+        "name": "Bel and the Dragon",
+        "chapter_count": 1,
+        "verse_count": 42
+      },
+      {
+        "index": 51,
+        "name": "Prayer of Manasses",
+        "chapter_count": 1,
+        "verse_count": 1
+      },
+      {
+        "index": 52,
+        "name": "I Maccabees",
+        "chapter_count": 16,
+        "verse_count": 924
+      },
+      {
+        "index": 53,
+        "name": "II Maccabees",
+        "chapter_count": 15,
+        "verse_count": 555
+      },
+      {
+        "index": 54,
+        "name": "Matthew",
+        "chapter_count": 28,
+        "verse_count": 1071
+      },
+      {
+        "index": 55,
+        "name": "Mark",
+        "chapter_count": 16,
+        "verse_count": 678
+      },
+      {
+        "index": 56,
+        "name": "Luke",
+        "chapter_count": 24,
+        "verse_count": 1151
+      },
+      {
+        "index": 57,
+        "name": "John",
+        "chapter_count": 21,
+        "verse_count": 879
+      },
+      {
+        "index": 58,
+        "name": "Acts",
+        "chapter_count": 28,
+        "verse_count": 1007
+      },
+      {
+        "index": 59,
+        "name": "Romans",
+        "chapter_count": 16,
+        "verse_count": 433
+      },
+      {
+        "index": 60,
+        "name": "I Corinthians",
+        "chapter_count": 16,
+        "verse_count": 437
+      },
+      {
+        "index": 61,
+        "name": "II Corinthians",
+        "chapter_count": 13,
+        "verse_count": 257
+      },
+      {
+        "index": 62,
+        "name": "Galatians",
+        "chapter_count": 6,
+        "verse_count": 149
+      },
+      {
+        "index": 63,
+        "name": "Ephesians",
+        "chapter_count": 6,
+        "verse_count": 155
+      },
+      {
+        "index": 64,
+        "name": "Philippians",
+        "chapter_count": 4,
+        "verse_count": 104
+      },
+      {
+        "index": 65,
+        "name": "Colossians",
+        "chapter_count": 4,
+        "verse_count": 95
+      },
+      {
+        "index": 66,
+        "name": "I Thessalonians",
+        "chapter_count": 5,
+        "verse_count": 89
+      },
+      {
+        "index": 67,
+        "name": "II Thessalonians",
+        "chapter_count": 3,
+        "verse_count": 47
+      },
+      {
+        "index": 68,
+        "name": "I Timothy",
+        "chapter_count": 6,
+        "verse_count": 113
+      },
+      {
+        "index": 69,
+        "name": "II Timothy",
+        "chapter_count": 4,
+        "verse_count": 83
+      },
+      {
+        "index": 70,
+        "name": "Titus",
+        "chapter_count": 3,
+        "verse_count": 46
+      },
+      {
+        "index": 71,
+        "name": "Philemon",
+        "chapter_count": 1,
+        "verse_count": 25
+      },
+      {
+        "index": 72,
+        "name": "Hebrews",
+        "chapter_count": 13,
+        "verse_count": 303
+      },
+      {
+        "index": 73,
+        "name": "James",
+        "chapter_count": 5,
+        "verse_count": 108
+      },
+      {
+        "index": 74,
+        "name": "I Peter",
+        "chapter_count": 5,
+        "verse_count": 105
+      },
+      {
+        "index": 75,
+        "name": "II Peter",
+        "chapter_count": 3,
+        "verse_count": 61
+      },
+      {
+        "index": 76,
+        "name": "I John",
+        "chapter_count": 5,
+        "verse_count": 105
+      },
+      {
+        "index": 77,
+        "name": "II John",
+        "chapter_count": 1,
+        "verse_count": 13
+      },
+      {
+        "index": 78,
+        "name": "III John",
+        "chapter_count": 1,
+        "verse_count": 14
+      },
+      {
+        "index": 79,
+        "name": "Jude",
+        "chapter_count": 1,
+        "verse_count": 25
+      },
+      {
+        "index": 80,
+        "name": "Revelation of John",
+        "chapter_count": 22,
+        "verse_count": 404
+      }
+    ]
+  },
+  "selected_chapter_native_unit_count": 176,
+  "raw_outside_scope_count": 36643,
+  "selected_units": [
+    {
+      "label": "1",
+      "text": " Blessed are the undefiled in the way, who walk in the law of the Lord."
+    },
+    {
+      "label": "2",
+      "text": "Blessed are they that keep his testimonies, and that seek him with the whole heart."
+    },
+    {
+      "label": "3",
+      "text": "They also do no iniquity: they walk in his ways."
+    }
+  ],
+  "native_units": [
+    {
+      "selector": "books[18].chapters[118].verses[0]",
+      "label": "1",
+      "selected": true,
+      "text_sha256": "034b77fde85a728fc515a45971b56e2a17221f37579b1f9e288268c342a958d4",
+      "text": " Blessed are the undefiled in the way, who walk in the law of the Lord."
+    },
+    {
+      "selector": "books[18].chapters[118].verses[1]",
+      "label": "2",
+      "selected": true,
+      "text_sha256": "5d7ca7250b9854cc1bde90993cb6605fd3399f78a05131cf1790c7cd162c843b",
+      "text": "Blessed are they that keep his testimonies, and that seek him with the whole heart."
+    },
+    {
+      "selector": "books[18].chapters[118].verses[2]",
+      "label": "3",
+      "selected": true,
+      "text_sha256": "631fd357d4444598401a7a65fab4acbb8a31120b26fef0a06cad39d1680fb75a",
+      "text": "They also do no iniquity: they walk in his ways."
+    },
+    {
+      "selector": "books[18].chapters[118].verses[3]",
+      "label": "4",
+      "selected": false,
+      "text_sha256": "b43da9776af2a051c3ce0108787b14cb0925f3143b8d8545b3f4f83972c1fd97"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[4]",
+      "label": "5",
+      "selected": false,
+      "text_sha256": "fd9300130010ee61d5a3072fa1aece0e3bd84dd374d0476e9eff838a3a08b327"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[5]",
+      "label": "6",
+      "selected": false,
+      "text_sha256": "6ad2fa38dd28ebc78914720c05ca5384eea7dc8a36a44a5e2e592c20564e376c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[6]",
+      "label": "7",
+      "selected": false,
+      "text_sha256": "4c999351e91ec26217aeab99aeb23562ea435cc39f676d24aaef7856df39fc9e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[7]",
+      "label": "8",
+      "selected": false,
+      "text_sha256": "cbdd306a1da0794d778789b2bf5fba934a1b0ff08dc408f7c8be6825dfa0173c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[8]",
+      "label": "9",
+      "selected": false,
+      "text_sha256": "63d11335652e0b0c0085ee27480d660ffe53ec6fea24735234bb5ff9340662a4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[9]",
+      "label": "10",
+      "selected": false,
+      "text_sha256": "6dcae92860d8d5536a6143f8aa072149c66dca7769a292025fb54a9823074492"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[10]",
+      "label": "11",
+      "selected": false,
+      "text_sha256": "f5a2a3a5c475dfbf6951ceeaad83bc0c0792fd163674c2ffa5c1ee3312e603ce"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[11]",
+      "label": "12",
+      "selected": false,
+      "text_sha256": "6f3db346e39770d084a1b84ecf0cd1ff9f7186e5cb5342b9c60b7f96836493dd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[12]",
+      "label": "13",
+      "selected": false,
+      "text_sha256": "b261c29df25eae5051991d87c4f23d931ba2621d544a1ad2e4551a32838bee18"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[13]",
+      "label": "14",
+      "selected": false,
+      "text_sha256": "8535ce47afedd8b6da07d36511d36141812ab9e76ccb8c64095b7fe2d0a55c26"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[14]",
+      "label": "15",
+      "selected": false,
+      "text_sha256": "234ee22a9c1d97f031df3e6f77deda6c595997d50533e4a97909a86a7d2304fb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[15]",
+      "label": "16",
+      "selected": false,
+      "text_sha256": "9fae51f1fc78b51c4d0ce1b6e430af40400a38355c7bc8f9beb657ed2d3de739"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[16]",
+      "label": "17",
+      "selected": false,
+      "text_sha256": "44655554daaf5f1768941240d749aa5d46e397efa1be0f8b48a5ae35d7064283"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[17]",
+      "label": "18",
+      "selected": false,
+      "text_sha256": "3b73c6f3bbf870549ff20ce6d95b61e3965956d4cf0f0b87e3eeeb9b68a823ae"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[18]",
+      "label": "19",
+      "selected": false,
+      "text_sha256": "efe44b4d133045f0f06dc5371afbe58d4868c46db1da992ecb4d0ddac0548312"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[19]",
+      "label": "20",
+      "selected": false,
+      "text_sha256": "941e40ffbdb8c02c00ad6cb4b3c91d5c4a6d92e5766a286dccaed87ae661802f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[20]",
+      "label": "21",
+      "selected": false,
+      "text_sha256": "cb847178baaefc51a8d24bcdd9463d048754956d89f015b58973ff39e514cfc7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[21]",
+      "label": "22",
+      "selected": false,
+      "text_sha256": "9e0ee2932ee396c7cbfeea15f7cd0b48208ec4983f010c4818323a3785e5be09"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[22]",
+      "label": "23",
+      "selected": false,
+      "text_sha256": "50576a0d6678901d41037dd559ed9698a42b891db2d7d6ad51377c4b790d4f8f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[23]",
+      "label": "24",
+      "selected": false,
+      "text_sha256": "9505959a85e439457fb06d850ec6cec03227c6fa7e27a5ad3fbffe8c9255b450"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[24]",
+      "label": "25",
+      "selected": false,
+      "text_sha256": "1a2c84d18801ae993ca98c833226ac63c90bcbf1549ef253d6fb7e28172635e3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[25]",
+      "label": "26",
+      "selected": false,
+      "text_sha256": "b3c3ded4f1d3909357aa705a417733003b732022220f8c8b04e6227625dd648b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[26]",
+      "label": "27",
+      "selected": false,
+      "text_sha256": "84182302991aadb7cf03ef4b79f104fb137ecffcd1d1cf38b5c4cd5699f6ae96"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[27]",
+      "label": "28",
+      "selected": false,
+      "text_sha256": "90fc099e4553ea95a0beb021cb468d4c1ab7f3702225e992189cbb4a0accea89"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[28]",
+      "label": "29",
+      "selected": false,
+      "text_sha256": "7288a0afebb6fac26525c9de46640c922ccf193497a713ec7731d3fb6c5db176"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[29]",
+      "label": "30",
+      "selected": false,
+      "text_sha256": "e61e2285398345e965a5112df22c82edeb33a2cb1c08d3cc2b515b016864cf4b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[30]",
+      "label": "31",
+      "selected": false,
+      "text_sha256": "b78a503de6dc8d29c72454aa4ea1890aae7678ee348468bdaa1f42042b2c14f4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[31]",
+      "label": "32",
+      "selected": false,
+      "text_sha256": "d748721f04dfffd58fcf3b0ccbc97c36ff541145ad0728045ec276b4e722c5e4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[32]",
+      "label": "33",
+      "selected": false,
+      "text_sha256": "83b528dc8838a0f04d47635d9f1adff980b6ceaab16d5108ea6f14e36ff25280"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[33]",
+      "label": "34",
+      "selected": false,
+      "text_sha256": "e5f937d73142df80abea5b293aeb025f6d4d6afec0daa21502cb335f385351d1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[34]",
+      "label": "35",
+      "selected": false,
+      "text_sha256": "3401b9a08fb6bbb23e3320202873990be3f5095e654b39e39851ed45fc508f74"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[35]",
+      "label": "36",
+      "selected": false,
+      "text_sha256": "8e01292af5b66dd611e8f4a4572f3e18a89e8f7edb8508231c0194ed0921c59f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[36]",
+      "label": "37",
+      "selected": false,
+      "text_sha256": "2efc4892d90fb3ce18c4cd5bb617f1df91a01d37d5420d791d22dfb6fc850707"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[37]",
+      "label": "38",
+      "selected": false,
+      "text_sha256": "566f106c0ece6bd42abdf02e755ef1a16eb1327b2fe16b1b052aaa3756f09478"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[38]",
+      "label": "39",
+      "selected": false,
+      "text_sha256": "68e8728adac32239ec438dffbebee909e588e77452eb04bfaa64afda8472a8f3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[39]",
+      "label": "40",
+      "selected": false,
+      "text_sha256": "e04d8f7209e1af66d8a2d68f091e078213ae17816b7371b9ceda7d2b78150401"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[40]",
+      "label": "41",
+      "selected": false,
+      "text_sha256": "2c6d4aaa1605c4d340c00769e58b1eb3eca9ffc6e9361251376908fc6f363303"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[41]",
+      "label": "42",
+      "selected": false,
+      "text_sha256": "300d395b46a7e4db49b7850d10c2958fdc29e95a923849e4bf4bbeae187b7951"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[42]",
+      "label": "43",
+      "selected": false,
+      "text_sha256": "0f1b4f6fe1f51f94b677db454a6cf676dba889a41b1bf9ad46dd930ada76b3a2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[43]",
+      "label": "44",
+      "selected": false,
+      "text_sha256": "f10f21b880edd0076d1e3fd9f3434fb79a9c31203e3138dde50819f253c76d33"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[44]",
+      "label": "45",
+      "selected": false,
+      "text_sha256": "4bc4b1d93de761f5b80af754131c3ab1d51c1cd6b580e5cadc90975e799519e6"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[45]",
+      "label": "46",
+      "selected": false,
+      "text_sha256": "8f463b6a9851ac65b333d5bde91c2d22065e9255270195ae057a23473f9047b8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[46]",
+      "label": "47",
+      "selected": false,
+      "text_sha256": "f7ea3529ef4ebf3e4fed0ead69e37cbdce61229308e7be53d0120120ac692ea3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[47]",
+      "label": "48",
+      "selected": false,
+      "text_sha256": "75d5fbde1f4b17a4930e4376be4c571f179332e3207f2ad1529c1c190b4970d1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[48]",
+      "label": "49",
+      "selected": false,
+      "text_sha256": "750ac62ad2bd769e08952e8e037461216afa521b7569124105333ea890f2164d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[49]",
+      "label": "50",
+      "selected": false,
+      "text_sha256": "8430cc0844f6456fc4fd29b715f9797961bcf545a7633cf838097f35add52a30"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[50]",
+      "label": "51",
+      "selected": false,
+      "text_sha256": "66b10df73a31f93167b5c999d476b3923220d8862bde27fcc54bcda544fb124e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[51]",
+      "label": "52",
+      "selected": false,
+      "text_sha256": "397f182012c83f841fb78dd0b8aa6a753ae53894a2224cdf2509c315361b634e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[52]",
+      "label": "53",
+      "selected": false,
+      "text_sha256": "a755e4864a66a477741bb458e472b20ce8d175f0af576a094116d364df3c43ea"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[53]",
+      "label": "54",
+      "selected": false,
+      "text_sha256": "9d1d3c214e44bee37187aac910f02f25d592e18887a7307afe9e84da2d386f19"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[54]",
+      "label": "55",
+      "selected": false,
+      "text_sha256": "f48c796d9c2aa90a5e2a0ac2400b333fbbeab638ce4f71e82d133ffe159bf566"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[55]",
+      "label": "56",
+      "selected": false,
+      "text_sha256": "d9e2c492e359b6a5cfa838534e534fec44809a759bd0c5c6b9cf0daf900bb3f7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[56]",
+      "label": "57",
+      "selected": false,
+      "text_sha256": "99922510c32f2a02f4a06e0e9050c299b6c813afb86619cc2d3829caced055ea"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[57]",
+      "label": "58",
+      "selected": false,
+      "text_sha256": "085e7d391715b555f8d1ebef0db888a0df2425873d565408b06472aa4d7e16a2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[58]",
+      "label": "59",
+      "selected": false,
+      "text_sha256": "2e3d6bc729b959064309a674a171ae52b0520e2e7f7a403df63a11ae9b0ba3d3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[59]",
+      "label": "60",
+      "selected": false,
+      "text_sha256": "bc1b3466810c68b4122cd0942b61013f6fe26393072ee5da69bac8d1854e7be3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[60]",
+      "label": "61",
+      "selected": false,
+      "text_sha256": "e5828538c99f9c0d75ac3389cfda6bb86daa31bde9d087b21c663fac40773d38"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[61]",
+      "label": "62",
+      "selected": false,
+      "text_sha256": "5b72411b2b1dca6b61fca78464d70dcf3d4c80124f90289368cf383d5a1bcc4d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[62]",
+      "label": "63",
+      "selected": false,
+      "text_sha256": "ba1124cf8535a908b05a02b8a92ed5c212ab64b8aa7c2bfabd60d8e6ba81fbad"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[63]",
+      "label": "64",
+      "selected": false,
+      "text_sha256": "d4cd32441231bf0dac5018fc7e6e1f37acc0d85ff74cbe604063fe715146e290"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[64]",
+      "label": "65",
+      "selected": false,
+      "text_sha256": "cb3ac9413dc0eedbabfd1e1727e9eac9d5fa6bfcbbf0ed565ec8db12ccec9242"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[65]",
+      "label": "66",
+      "selected": false,
+      "text_sha256": "8df089577dc136119e548b439690c5b7c05355672d508efe2cc81691756547e0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[66]",
+      "label": "67",
+      "selected": false,
+      "text_sha256": "00bab6435485e6f43fb42e0022be4317ac0657d9626e0b9ae4ac6942d123dd3e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[67]",
+      "label": "68",
+      "selected": false,
+      "text_sha256": "8d20b76ae4fc6a2596ae936e66a7b5c2fa98d16174962c9e6cddf33566d4ac5b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[68]",
+      "label": "69",
+      "selected": false,
+      "text_sha256": "68ee262d1b05479ba51f1f391c463d0edcec2048e80450ba2d3ab6729f1a7d69"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[69]",
+      "label": "70",
+      "selected": false,
+      "text_sha256": "b3f6b2817cb5eaf03be74da1d7438feec4ab97ae7130d19706f692797b130858"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[70]",
+      "label": "71",
+      "selected": false,
+      "text_sha256": "a4ae251999d0c330708f5da9742106f7df8ad2589fb03ab19cd67199c48dc806"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[71]",
+      "label": "72",
+      "selected": false,
+      "text_sha256": "443c59cf5b39d57bd1c21910a9f3fdab1fc034287542def67adac2ab14910b43"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[72]",
+      "label": "73",
+      "selected": false,
+      "text_sha256": "0ca1507d54a5c6985ad99692cd36aeae6e55cc1c51c60dd2d15a0c69eaf44cf0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[73]",
+      "label": "74",
+      "selected": false,
+      "text_sha256": "0cd969daadde24ba4e623ffc757fad509516769280feeffcdc626b7bfb0173b9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[74]",
+      "label": "75",
+      "selected": false,
+      "text_sha256": "2ee175ee06b622f0a980e490c72ef9f94029e14a544bcc48dd94716d54b61dbc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[75]",
+      "label": "76",
+      "selected": false,
+      "text_sha256": "af401b90a4e8ab8a3255966bd6ceade2bc0a6d9c23fd975dec150a896bc67ddb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[76]",
+      "label": "77",
+      "selected": false,
+      "text_sha256": "fae7c0d01d4860ce13dc3fb81f602c4603f844406b8272268af444f84e290ea1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[77]",
+      "label": "78",
+      "selected": false,
+      "text_sha256": "88843e980800448bc29853eedea430bf2bf86cb17830f0c5384d99d01025103c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[78]",
+      "label": "79",
+      "selected": false,
+      "text_sha256": "f0f37466eccd50b5d7a070363761038d627db703c12e38c1f97713d1a9ded9fb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[79]",
+      "label": "80",
+      "selected": false,
+      "text_sha256": "9662eab46568da637029c4f8fbcc02ab8f3c090930f6c820974882065624f5ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[80]",
+      "label": "81",
+      "selected": false,
+      "text_sha256": "ab4452e362266753fcff6e809080c5b8f8277f2d0bd1900ee5e7667591a853ef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[81]",
+      "label": "82",
+      "selected": false,
+      "text_sha256": "77f2732c7cce11521a976ba493eaf5ed72443eb81da357eae01787c909d7a541"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[82]",
+      "label": "83",
+      "selected": false,
+      "text_sha256": "412e9ed0321a80ca82e421cd7f70ab86e774e8f6229fe80135dbd2e250be63de"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[83]",
+      "label": "84",
+      "selected": false,
+      "text_sha256": "b71c38ea33c6670d98b3c6af204958ca09d3aa42592a6a21aa614c4f83dff7e5"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[84]",
+      "label": "85",
+      "selected": false,
+      "text_sha256": "c5ddf0457370902c050f1149b638de9e33ba6d74605e768fb943abf8211ff9d4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[85]",
+      "label": "86",
+      "selected": false,
+      "text_sha256": "26c3b0235f25d13a3a617eeda12e0e53c1f4cac0493b5e691de24600b326a8e3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[86]",
+      "label": "87",
+      "selected": false,
+      "text_sha256": "ac0b2cf2aba630bb9e758bfeba71c0e024c9402b7593ae702088aa14eadad2d7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[87]",
+      "label": "88",
+      "selected": false,
+      "text_sha256": "190f6ae09a6c48c0b1131ca44f36b4eb4631aab66e106db0c02db90796ae183d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[88]",
+      "label": "89",
+      "selected": false,
+      "text_sha256": "d76bf3bd7d79a3d0d8bb4be47eaeb6e07d5797b1a034fb5c8aca0ef97084ef4a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[89]",
+      "label": "90",
+      "selected": false,
+      "text_sha256": "569f58e2a92bef8e96f1de13f2016441b8d399d24655d7479b139514b34ac542"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[90]",
+      "label": "91",
+      "selected": false,
+      "text_sha256": "101078a8ec6116a950caf58e41f6b5d0b7f6a901d26a530e4c000e35b9fc42c9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[91]",
+      "label": "92",
+      "selected": false,
+      "text_sha256": "64756732a66fcd71f3c7e36b441e2c835cdcff6c03e84817af766a6ccda4b3da"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[92]",
+      "label": "93",
+      "selected": false,
+      "text_sha256": "51354a2e050ffac7a038d905d4cc51cafaf454be610216e3035007de22e7966a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[93]",
+      "label": "94",
+      "selected": false,
+      "text_sha256": "047882d59b2cb887bbb649a2039b9d9068d88db1e47bf638a1b43d07d8da3fc9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[94]",
+      "label": "95",
+      "selected": false,
+      "text_sha256": "54fb87703b90b0b1e6ede7658f087de07ecf43d218384d82879b2de4853db7aa"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[95]",
+      "label": "96",
+      "selected": false,
+      "text_sha256": "7d05142dfb0fa6d973929929f48eed47a39029c20aec973989c19992374a6f12"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[96]",
+      "label": "97",
+      "selected": false,
+      "text_sha256": "b2df5106809e9585c31302e4c9cb1408f0dda909e54ae052a3104df5f2605679"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[97]",
+      "label": "98",
+      "selected": false,
+      "text_sha256": "bd35cddb081ef5117ad453c7920061730fcb3bca9da5e43e5872ec5de22bb4bf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[98]",
+      "label": "99",
+      "selected": false,
+      "text_sha256": "2e160397f5eda848a53d72f647d6a68f9de75c650283ea3a2b148d2dcfe231c8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[99]",
+      "label": "100",
+      "selected": false,
+      "text_sha256": "1fda0c9ad351630c1a6a40c6b9334caa1610bb3c54a62a919b4c09d2f479e1c5"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[100]",
+      "label": "101",
+      "selected": false,
+      "text_sha256": "032d96ba60e67b4cb52497068835c9ce11304337965c6e1b32477dc346dd3cef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[101]",
+      "label": "102",
+      "selected": false,
+      "text_sha256": "074300ea4c35970e384d6c015fb17987c11ba3af5cd064e385ebf0432a9d3a34"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[102]",
+      "label": "103",
+      "selected": false,
+      "text_sha256": "006def672aaf7cdf53b4a9c9f37b54968bde4f75acc92e98740388304657b82b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[103]",
+      "label": "104",
+      "selected": false,
+      "text_sha256": "629d08eacadc61262f5e33974502936768ea0e5cc81ea7284877dae88b2061f9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[104]",
+      "label": "105",
+      "selected": false,
+      "text_sha256": "d78fee8512b4ec22105697cf8137c0e0fb36958e25683e4f51aed9018fd54df4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[105]",
+      "label": "106",
+      "selected": false,
+      "text_sha256": "4e114937827fbf23e006fb04a66c423340ae3d1346e51008316b372384c71828"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[106]",
+      "label": "107",
+      "selected": false,
+      "text_sha256": "6fe08944e47a511edb8544a2eab209bf68ff4b3fd2de8273a9e4d6b65b6ba29a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[107]",
+      "label": "108",
+      "selected": false,
+      "text_sha256": "0c37c1d537087d50fd02ccdc132dbb624f45903df4e3d8be8762f9e8e9d2c5f9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[108]",
+      "label": "109",
+      "selected": false,
+      "text_sha256": "3a6fe2bc073a70b742ecc40fabb129638192fbd84ab1491e99856ded28535bb8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[109]",
+      "label": "110",
+      "selected": false,
+      "text_sha256": "6bd353f6eb24cd1ca84d5e7498b8a5f0b4d1a347359d085f79c72782cb2e9daf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[110]",
+      "label": "111",
+      "selected": false,
+      "text_sha256": "88056ecd53be22949444f23091d7849015a4553e1b78928d59ea82ff95b7b053"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[111]",
+      "label": "112",
+      "selected": false,
+      "text_sha256": "c58dfefd48dfb096a4104a3d8467ada38f26f2137059b387cd27081f77cf9890"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[112]",
+      "label": "113",
+      "selected": false,
+      "text_sha256": "b7d36c48eabeb0b377b4ead5a55c39573c0a59c483235c5a17ae0dd69aa55b30"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[113]",
+      "label": "114",
+      "selected": false,
+      "text_sha256": "73f807ced304892fbbeee5ed326f73633c037e12fc71e865759c1834f8243507"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[114]",
+      "label": "115",
+      "selected": false,
+      "text_sha256": "0a73e9290210b54e100c61fd067a7d2171acf086c9645a1af7e1bf26c69109dd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[115]",
+      "label": "116",
+      "selected": false,
+      "text_sha256": "4667a1d51d9b94c3f3e725765398ba29a200544d01506782014d1ac292cdb0dc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[116]",
+      "label": "117",
+      "selected": false,
+      "text_sha256": "954cdedf839c2e34e0c7063d018800727e80b0b247feeb85820bcf3c4c59213d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[117]",
+      "label": "118",
+      "selected": false,
+      "text_sha256": "8625a2d087502a6cbb64605de7f5fb898d4e3b229b17d5b368731ac858161d90"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[118]",
+      "label": "119",
+      "selected": false,
+      "text_sha256": "f935d9685efeb21b5676fb081462d20585bc788d284c202fea2ce6e5feea0db2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[119]",
+      "label": "120",
+      "selected": false,
+      "text_sha256": "2c74a6239ba3c5f4f654d9f479db269e1c66cf64b6f47450ca30e97c99baba0b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[120]",
+      "label": "121",
+      "selected": false,
+      "text_sha256": "6cddca68a544a5b1c9658d0057ce68bdd07dca8ae575d9d15e6d2c1cd6cc117f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[121]",
+      "label": "122",
+      "selected": false,
+      "text_sha256": "ea032d9dbf7a251bb07736a872be61b89f5843d7189eef8cf5b6757f21cbb6e8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[122]",
+      "label": "123",
+      "selected": false,
+      "text_sha256": "0dc2094f7ac4d96787fa25d64cac799972ba8e605cdfa327eb2ef2a371b99a28"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[123]",
+      "label": "124",
+      "selected": false,
+      "text_sha256": "5e3ced575518367f69adc87181d92e6f7bc5c62da90d435d9a1baa74df3005d0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[124]",
+      "label": "125",
+      "selected": false,
+      "text_sha256": "89d34aac75fa6ee6a3dea9d8f41c55112fe66e43ae719814c35cd397199a53ef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[125]",
+      "label": "126",
+      "selected": false,
+      "text_sha256": "17821c5438ac54999b1bcd65c50b38320ae3c3141c295c52a5cf16cf4a709acf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[126]",
+      "label": "127",
+      "selected": false,
+      "text_sha256": "3801eddc9f91b7d0843aa591e84dd134ac31cd0828bc96a1aef0c798544799b4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[127]",
+      "label": "128",
+      "selected": false,
+      "text_sha256": "094c8f223b8f844e261c9fa3c8cf4eaa57b6b1a82bc366aaf507df233a869613"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[128]",
+      "label": "129",
+      "selected": false,
+      "text_sha256": "24e01d84149e801a50d6fa3ca8011073c20a6a0d53f407249a58a9953d9dc0ee"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[129]",
+      "label": "130",
+      "selected": false,
+      "text_sha256": "ab185147e66ee4d5cc2f7c1d3cebd898c822898e73e209721366a7bd92ec2a2c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[130]",
+      "label": "131",
+      "selected": false,
+      "text_sha256": "3f6a55e962111697039fbafe9b0106d565d2cf162898e2571041d1d822796d65"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[131]",
+      "label": "132",
+      "selected": false,
+      "text_sha256": "b5afdd576a7940397a64bcb0824ca136d8c5a901ff46f8034cf6bb534d738737"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[132]",
+      "label": "133",
+      "selected": false,
+      "text_sha256": "9faad6f59543bee576413988f337d9aafef1f40e13d6f4652feb9ae160dfc16e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[133]",
+      "label": "134",
+      "selected": false,
+      "text_sha256": "0a9ef4fd1c8f081e117cdda8dd28fe36a5d3ae361e69a82917045fb8bd0e608a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[134]",
+      "label": "135",
+      "selected": false,
+      "text_sha256": "eae133a5c5458a0eb324e1f933c3d7f1a95f915444fde421c9d214a7f2736a0f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[135]",
+      "label": "136",
+      "selected": false,
+      "text_sha256": "a10de54cec509defbd350cf3f676e8beaf4ef3d09110aaa55488c3a33d04d263"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[136]",
+      "label": "137",
+      "selected": false,
+      "text_sha256": "de09297a9886b9b44817e1896febeb5a9324a6954c578b8589579cf5c8166d5c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[137]",
+      "label": "138",
+      "selected": false,
+      "text_sha256": "d3a3152a2644af82e6f8324bcef55ea2027f1082e0b567068f0439e463fa98fc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[138]",
+      "label": "139",
+      "selected": false,
+      "text_sha256": "06e99ac027876863f464c8c8039c5ecc7f44909ea6e54d447145bb64c8dc233a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[139]",
+      "label": "140",
+      "selected": false,
+      "text_sha256": "f39f9ffb8c75a3719af06ab855b8622acdbb4b052fb7da83e19dd4951645c8de"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[140]",
+      "label": "141",
+      "selected": false,
+      "text_sha256": "9348670d3cc5fa8462ee5f1de06661280763d91d0d99b7624b83f490cd0e3b0c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[141]",
+      "label": "142",
+      "selected": false,
+      "text_sha256": "4d16f0088d29a5997e0ff28b41565376cf038f81e550ed28e8835286c0a2267f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[142]",
+      "label": "143",
+      "selected": false,
+      "text_sha256": "c2b7abfd0f2bcad6e764dbf5b95b12b851766ef1be9eea46441c70a190a4a3ba"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[143]",
+      "label": "144",
+      "selected": false,
+      "text_sha256": "ce2b8eda4093b469b232c150940f66bb59e37dc6a61ebdebbc66cf3c4d3b51ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[144]",
+      "label": "145",
+      "selected": false,
+      "text_sha256": "1bc4841329a26b40f21cb00efc2fe5df8341a5a68059aaaf922da788205a2fe8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[145]",
+      "label": "146",
+      "selected": false,
+      "text_sha256": "d47c6f0234ad371a5b5f485baeeeab1d718870d9d4e2a36c4f0ba2822dedb01a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[146]",
+      "label": "147",
+      "selected": false,
+      "text_sha256": "03b71639870dfc280365e67c7391c8643a909da490df91a99020e23b6e6b1bfd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[147]",
+      "label": "148",
+      "selected": false,
+      "text_sha256": "6d99778deab608711436f8f069b877a6d5b5e9b0da2661124148b4ce88d06ff6"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[148]",
+      "label": "149",
+      "selected": false,
+      "text_sha256": "adba3474401bae09a80a39246dca53a2b445101e1cfc68733b39774993f48387"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[149]",
+      "label": "150",
+      "selected": false,
+      "text_sha256": "aba83083f25a3beb3b5fbe71dd81e3cc4b573be01efce5b251670bc8b54a584c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[150]",
+      "label": "151",
+      "selected": false,
+      "text_sha256": "911b099b494367a001124a51237be9db08e7212ac77ed0debd470f9780a54259"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[151]",
+      "label": "152",
+      "selected": false,
+      "text_sha256": "95ce347a32b63ed530281b86bfc067afcd5d61014b68adacd8aac36176835e1c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[152]",
+      "label": "153",
+      "selected": false,
+      "text_sha256": "7cb719169fe38ce4e7c6950155c81b97f6fda6865a71cdccaabd9ca6f86f8284"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[153]",
+      "label": "154",
+      "selected": false,
+      "text_sha256": "0b431db55ced7fc6f8f229d2f4964c59e5dabdffab3d46e1cf2587f708290ba2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[154]",
+      "label": "155",
+      "selected": false,
+      "text_sha256": "b0382e025dcc73a4f73c66124d5978ef85121c7349bb15ceda28290bf508b406"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[155]",
+      "label": "156",
+      "selected": false,
+      "text_sha256": "74affad66bfc9f03e769a6f4a30d0d6029c92d3f8e42953b30985fc336cbd74e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[156]",
+      "label": "157",
+      "selected": false,
+      "text_sha256": "41a0338c033b023aaa981691b19e1d5b7a03cad329331f72b661e81bd8e9d9c1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[157]",
+      "label": "158",
+      "selected": false,
+      "text_sha256": "73133828c6346fc13ca16288d65353456002cc955077bdbb7ab2115791aeb78a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[158]",
+      "label": "159",
+      "selected": false,
+      "text_sha256": "478fd562c9ffb79c8826cc36e441473c793c197f805a2b7fdc09ebe1bdf86acf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[159]",
+      "label": "160",
+      "selected": false,
+      "text_sha256": "a32e3e697844238758d336a211edf5e158de9452cc1178e648c536198b517025"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[160]",
+      "label": "161",
+      "selected": false,
+      "text_sha256": "7ea2de28bc0acd2ceeb8226c860635f20062712ab58ef1ad1e7f6f63090c1b5d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[161]",
+      "label": "162",
+      "selected": false,
+      "text_sha256": "9d622df05fa9f7eff31fa1ca4b3270a7540d33efc70eee7376e32f254fc5aed2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[162]",
+      "label": "163",
+      "selected": false,
+      "text_sha256": "5becb83cd6c8360fd3b1f511fbe7d357d6d2434306470e0508961af79da86364"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[163]",
+      "label": "164",
+      "selected": false,
+      "text_sha256": "63038995513b226536add5358ce46545b8ea67957a0c0168d8ecac69542df8d0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[164]",
+      "label": "165",
+      "selected": false,
+      "text_sha256": "425c545f979dd2514b7933827f9aa70d5646e6eab24416f49d5eced5966d00f3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[165]",
+      "label": "166",
+      "selected": false,
+      "text_sha256": "059de7d1f26d3cab4d31de5545678eae0989069f1f4fe988e390daf61afb90ba"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[166]",
+      "label": "167",
+      "selected": false,
+      "text_sha256": "cf6da0bfe0bacf464a544d9f7c3aeb065f04af407289ae011ecbe38de81f78c7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[167]",
+      "label": "168",
+      "selected": false,
+      "text_sha256": "f0083f7539b0f610364f561b663515c82f7f4deb8a8524ba8d4ea5ed1bc5626f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[168]",
+      "label": "169",
+      "selected": false,
+      "text_sha256": "bcbbb18cb758fdcef4add1013b36d3dd621fcec27ec11c90a281c868c7e1d1ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[169]",
+      "label": "170",
+      "selected": false,
+      "text_sha256": "24fc088a95c04b8cfb2118471e30e51b5d7cf90a6e5e746dfc2f68a49f39068f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[170]",
+      "label": "171",
+      "selected": false,
+      "text_sha256": "7c14e42206c7ec4d99f50f7e4f489f532bdb638690c09a3380ab9b24989a5629"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[171]",
+      "label": "172",
+      "selected": false,
+      "text_sha256": "d301a461c41c302f4322becde29a7908ac48e80cd2036e05a0737044b706dc66"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[172]",
+      "label": "173",
+      "selected": false,
+      "text_sha256": "27299a9bab4cf2756330f9f6249343f728d5be98057216b2507921a310abf077"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[173]",
+      "label": "174",
+      "selected": false,
+      "text_sha256": "88b92ca58156b785551e0ad3582d17fe1212cab7794a6d5efd09219d3d167967"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[174]",
+      "label": "175",
+      "selected": false,
+      "text_sha256": "54b4c82acb7398b0e54b5f4f88a27a3cd89bd28dc569d5ca436e8e307b7df43b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[175]",
+      "label": "176",
+      "selected": false,
+      "text_sha256": "0de390b29b9a5673260ab1531f74d5b3e927348b244989e8a97a689c96c75518"
+    }
+  ],
+  "outside_scope": [
+    {
+      "selector": "books[18].chapters[118].verses[3]",
+      "label": "4",
+      "text_sha256": "b43da9776af2a051c3ce0108787b14cb0925f3143b8d8545b3f4f83972c1fd97"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[4]",
+      "label": "5",
+      "text_sha256": "fd9300130010ee61d5a3072fa1aece0e3bd84dd374d0476e9eff838a3a08b327"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[5]",
+      "label": "6",
+      "text_sha256": "6ad2fa38dd28ebc78914720c05ca5384eea7dc8a36a44a5e2e592c20564e376c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[6]",
+      "label": "7",
+      "text_sha256": "4c999351e91ec26217aeab99aeb23562ea435cc39f676d24aaef7856df39fc9e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[7]",
+      "label": "8",
+      "text_sha256": "cbdd306a1da0794d778789b2bf5fba934a1b0ff08dc408f7c8be6825dfa0173c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[8]",
+      "label": "9",
+      "text_sha256": "63d11335652e0b0c0085ee27480d660ffe53ec6fea24735234bb5ff9340662a4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[9]",
+      "label": "10",
+      "text_sha256": "6dcae92860d8d5536a6143f8aa072149c66dca7769a292025fb54a9823074492"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[10]",
+      "label": "11",
+      "text_sha256": "f5a2a3a5c475dfbf6951ceeaad83bc0c0792fd163674c2ffa5c1ee3312e603ce"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[11]",
+      "label": "12",
+      "text_sha256": "6f3db346e39770d084a1b84ecf0cd1ff9f7186e5cb5342b9c60b7f96836493dd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[12]",
+      "label": "13",
+      "text_sha256": "b261c29df25eae5051991d87c4f23d931ba2621d544a1ad2e4551a32838bee18"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[13]",
+      "label": "14",
+      "text_sha256": "8535ce47afedd8b6da07d36511d36141812ab9e76ccb8c64095b7fe2d0a55c26"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[14]",
+      "label": "15",
+      "text_sha256": "234ee22a9c1d97f031df3e6f77deda6c595997d50533e4a97909a86a7d2304fb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[15]",
+      "label": "16",
+      "text_sha256": "9fae51f1fc78b51c4d0ce1b6e430af40400a38355c7bc8f9beb657ed2d3de739"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[16]",
+      "label": "17",
+      "text_sha256": "44655554daaf5f1768941240d749aa5d46e397efa1be0f8b48a5ae35d7064283"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[17]",
+      "label": "18",
+      "text_sha256": "3b73c6f3bbf870549ff20ce6d95b61e3965956d4cf0f0b87e3eeeb9b68a823ae"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[18]",
+      "label": "19",
+      "text_sha256": "efe44b4d133045f0f06dc5371afbe58d4868c46db1da992ecb4d0ddac0548312"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[19]",
+      "label": "20",
+      "text_sha256": "941e40ffbdb8c02c00ad6cb4b3c91d5c4a6d92e5766a286dccaed87ae661802f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[20]",
+      "label": "21",
+      "text_sha256": "cb847178baaefc51a8d24bcdd9463d048754956d89f015b58973ff39e514cfc7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[21]",
+      "label": "22",
+      "text_sha256": "9e0ee2932ee396c7cbfeea15f7cd0b48208ec4983f010c4818323a3785e5be09"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[22]",
+      "label": "23",
+      "text_sha256": "50576a0d6678901d41037dd559ed9698a42b891db2d7d6ad51377c4b790d4f8f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[23]",
+      "label": "24",
+      "text_sha256": "9505959a85e439457fb06d850ec6cec03227c6fa7e27a5ad3fbffe8c9255b450"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[24]",
+      "label": "25",
+      "text_sha256": "1a2c84d18801ae993ca98c833226ac63c90bcbf1549ef253d6fb7e28172635e3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[25]",
+      "label": "26",
+      "text_sha256": "b3c3ded4f1d3909357aa705a417733003b732022220f8c8b04e6227625dd648b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[26]",
+      "label": "27",
+      "text_sha256": "84182302991aadb7cf03ef4b79f104fb137ecffcd1d1cf38b5c4cd5699f6ae96"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[27]",
+      "label": "28",
+      "text_sha256": "90fc099e4553ea95a0beb021cb468d4c1ab7f3702225e992189cbb4a0accea89"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[28]",
+      "label": "29",
+      "text_sha256": "7288a0afebb6fac26525c9de46640c922ccf193497a713ec7731d3fb6c5db176"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[29]",
+      "label": "30",
+      "text_sha256": "e61e2285398345e965a5112df22c82edeb33a2cb1c08d3cc2b515b016864cf4b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[30]",
+      "label": "31",
+      "text_sha256": "b78a503de6dc8d29c72454aa4ea1890aae7678ee348468bdaa1f42042b2c14f4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[31]",
+      "label": "32",
+      "text_sha256": "d748721f04dfffd58fcf3b0ccbc97c36ff541145ad0728045ec276b4e722c5e4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[32]",
+      "label": "33",
+      "text_sha256": "83b528dc8838a0f04d47635d9f1adff980b6ceaab16d5108ea6f14e36ff25280"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[33]",
+      "label": "34",
+      "text_sha256": "e5f937d73142df80abea5b293aeb025f6d4d6afec0daa21502cb335f385351d1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[34]",
+      "label": "35",
+      "text_sha256": "3401b9a08fb6bbb23e3320202873990be3f5095e654b39e39851ed45fc508f74"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[35]",
+      "label": "36",
+      "text_sha256": "8e01292af5b66dd611e8f4a4572f3e18a89e8f7edb8508231c0194ed0921c59f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[36]",
+      "label": "37",
+      "text_sha256": "2efc4892d90fb3ce18c4cd5bb617f1df91a01d37d5420d791d22dfb6fc850707"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[37]",
+      "label": "38",
+      "text_sha256": "566f106c0ece6bd42abdf02e755ef1a16eb1327b2fe16b1b052aaa3756f09478"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[38]",
+      "label": "39",
+      "text_sha256": "68e8728adac32239ec438dffbebee909e588e77452eb04bfaa64afda8472a8f3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[39]",
+      "label": "40",
+      "text_sha256": "e04d8f7209e1af66d8a2d68f091e078213ae17816b7371b9ceda7d2b78150401"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[40]",
+      "label": "41",
+      "text_sha256": "2c6d4aaa1605c4d340c00769e58b1eb3eca9ffc6e9361251376908fc6f363303"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[41]",
+      "label": "42",
+      "text_sha256": "300d395b46a7e4db49b7850d10c2958fdc29e95a923849e4bf4bbeae187b7951"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[42]",
+      "label": "43",
+      "text_sha256": "0f1b4f6fe1f51f94b677db454a6cf676dba889a41b1bf9ad46dd930ada76b3a2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[43]",
+      "label": "44",
+      "text_sha256": "f10f21b880edd0076d1e3fd9f3434fb79a9c31203e3138dde50819f253c76d33"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[44]",
+      "label": "45",
+      "text_sha256": "4bc4b1d93de761f5b80af754131c3ab1d51c1cd6b580e5cadc90975e799519e6"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[45]",
+      "label": "46",
+      "text_sha256": "8f463b6a9851ac65b333d5bde91c2d22065e9255270195ae057a23473f9047b8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[46]",
+      "label": "47",
+      "text_sha256": "f7ea3529ef4ebf3e4fed0ead69e37cbdce61229308e7be53d0120120ac692ea3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[47]",
+      "label": "48",
+      "text_sha256": "75d5fbde1f4b17a4930e4376be4c571f179332e3207f2ad1529c1c190b4970d1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[48]",
+      "label": "49",
+      "text_sha256": "750ac62ad2bd769e08952e8e037461216afa521b7569124105333ea890f2164d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[49]",
+      "label": "50",
+      "text_sha256": "8430cc0844f6456fc4fd29b715f9797961bcf545a7633cf838097f35add52a30"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[50]",
+      "label": "51",
+      "text_sha256": "66b10df73a31f93167b5c999d476b3923220d8862bde27fcc54bcda544fb124e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[51]",
+      "label": "52",
+      "text_sha256": "397f182012c83f841fb78dd0b8aa6a753ae53894a2224cdf2509c315361b634e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[52]",
+      "label": "53",
+      "text_sha256": "a755e4864a66a477741bb458e472b20ce8d175f0af576a094116d364df3c43ea"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[53]",
+      "label": "54",
+      "text_sha256": "9d1d3c214e44bee37187aac910f02f25d592e18887a7307afe9e84da2d386f19"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[54]",
+      "label": "55",
+      "text_sha256": "f48c796d9c2aa90a5e2a0ac2400b333fbbeab638ce4f71e82d133ffe159bf566"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[55]",
+      "label": "56",
+      "text_sha256": "d9e2c492e359b6a5cfa838534e534fec44809a759bd0c5c6b9cf0daf900bb3f7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[56]",
+      "label": "57",
+      "text_sha256": "99922510c32f2a02f4a06e0e9050c299b6c813afb86619cc2d3829caced055ea"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[57]",
+      "label": "58",
+      "text_sha256": "085e7d391715b555f8d1ebef0db888a0df2425873d565408b06472aa4d7e16a2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[58]",
+      "label": "59",
+      "text_sha256": "2e3d6bc729b959064309a674a171ae52b0520e2e7f7a403df63a11ae9b0ba3d3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[59]",
+      "label": "60",
+      "text_sha256": "bc1b3466810c68b4122cd0942b61013f6fe26393072ee5da69bac8d1854e7be3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[60]",
+      "label": "61",
+      "text_sha256": "e5828538c99f9c0d75ac3389cfda6bb86daa31bde9d087b21c663fac40773d38"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[61]",
+      "label": "62",
+      "text_sha256": "5b72411b2b1dca6b61fca78464d70dcf3d4c80124f90289368cf383d5a1bcc4d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[62]",
+      "label": "63",
+      "text_sha256": "ba1124cf8535a908b05a02b8a92ed5c212ab64b8aa7c2bfabd60d8e6ba81fbad"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[63]",
+      "label": "64",
+      "text_sha256": "d4cd32441231bf0dac5018fc7e6e1f37acc0d85ff74cbe604063fe715146e290"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[64]",
+      "label": "65",
+      "text_sha256": "cb3ac9413dc0eedbabfd1e1727e9eac9d5fa6bfcbbf0ed565ec8db12ccec9242"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[65]",
+      "label": "66",
+      "text_sha256": "8df089577dc136119e548b439690c5b7c05355672d508efe2cc81691756547e0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[66]",
+      "label": "67",
+      "text_sha256": "00bab6435485e6f43fb42e0022be4317ac0657d9626e0b9ae4ac6942d123dd3e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[67]",
+      "label": "68",
+      "text_sha256": "8d20b76ae4fc6a2596ae936e66a7b5c2fa98d16174962c9e6cddf33566d4ac5b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[68]",
+      "label": "69",
+      "text_sha256": "68ee262d1b05479ba51f1f391c463d0edcec2048e80450ba2d3ab6729f1a7d69"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[69]",
+      "label": "70",
+      "text_sha256": "b3f6b2817cb5eaf03be74da1d7438feec4ab97ae7130d19706f692797b130858"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[70]",
+      "label": "71",
+      "text_sha256": "a4ae251999d0c330708f5da9742106f7df8ad2589fb03ab19cd67199c48dc806"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[71]",
+      "label": "72",
+      "text_sha256": "443c59cf5b39d57bd1c21910a9f3fdab1fc034287542def67adac2ab14910b43"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[72]",
+      "label": "73",
+      "text_sha256": "0ca1507d54a5c6985ad99692cd36aeae6e55cc1c51c60dd2d15a0c69eaf44cf0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[73]",
+      "label": "74",
+      "text_sha256": "0cd969daadde24ba4e623ffc757fad509516769280feeffcdc626b7bfb0173b9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[74]",
+      "label": "75",
+      "text_sha256": "2ee175ee06b622f0a980e490c72ef9f94029e14a544bcc48dd94716d54b61dbc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[75]",
+      "label": "76",
+      "text_sha256": "af401b90a4e8ab8a3255966bd6ceade2bc0a6d9c23fd975dec150a896bc67ddb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[76]",
+      "label": "77",
+      "text_sha256": "fae7c0d01d4860ce13dc3fb81f602c4603f844406b8272268af444f84e290ea1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[77]",
+      "label": "78",
+      "text_sha256": "88843e980800448bc29853eedea430bf2bf86cb17830f0c5384d99d01025103c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[78]",
+      "label": "79",
+      "text_sha256": "f0f37466eccd50b5d7a070363761038d627db703c12e38c1f97713d1a9ded9fb"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[79]",
+      "label": "80",
+      "text_sha256": "9662eab46568da637029c4f8fbcc02ab8f3c090930f6c820974882065624f5ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[80]",
+      "label": "81",
+      "text_sha256": "ab4452e362266753fcff6e809080c5b8f8277f2d0bd1900ee5e7667591a853ef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[81]",
+      "label": "82",
+      "text_sha256": "77f2732c7cce11521a976ba493eaf5ed72443eb81da357eae01787c909d7a541"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[82]",
+      "label": "83",
+      "text_sha256": "412e9ed0321a80ca82e421cd7f70ab86e774e8f6229fe80135dbd2e250be63de"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[83]",
+      "label": "84",
+      "text_sha256": "b71c38ea33c6670d98b3c6af204958ca09d3aa42592a6a21aa614c4f83dff7e5"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[84]",
+      "label": "85",
+      "text_sha256": "c5ddf0457370902c050f1149b638de9e33ba6d74605e768fb943abf8211ff9d4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[85]",
+      "label": "86",
+      "text_sha256": "26c3b0235f25d13a3a617eeda12e0e53c1f4cac0493b5e691de24600b326a8e3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[86]",
+      "label": "87",
+      "text_sha256": "ac0b2cf2aba630bb9e758bfeba71c0e024c9402b7593ae702088aa14eadad2d7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[87]",
+      "label": "88",
+      "text_sha256": "190f6ae09a6c48c0b1131ca44f36b4eb4631aab66e106db0c02db90796ae183d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[88]",
+      "label": "89",
+      "text_sha256": "d76bf3bd7d79a3d0d8bb4be47eaeb6e07d5797b1a034fb5c8aca0ef97084ef4a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[89]",
+      "label": "90",
+      "text_sha256": "569f58e2a92bef8e96f1de13f2016441b8d399d24655d7479b139514b34ac542"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[90]",
+      "label": "91",
+      "text_sha256": "101078a8ec6116a950caf58e41f6b5d0b7f6a901d26a530e4c000e35b9fc42c9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[91]",
+      "label": "92",
+      "text_sha256": "64756732a66fcd71f3c7e36b441e2c835cdcff6c03e84817af766a6ccda4b3da"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[92]",
+      "label": "93",
+      "text_sha256": "51354a2e050ffac7a038d905d4cc51cafaf454be610216e3035007de22e7966a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[93]",
+      "label": "94",
+      "text_sha256": "047882d59b2cb887bbb649a2039b9d9068d88db1e47bf638a1b43d07d8da3fc9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[94]",
+      "label": "95",
+      "text_sha256": "54fb87703b90b0b1e6ede7658f087de07ecf43d218384d82879b2de4853db7aa"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[95]",
+      "label": "96",
+      "text_sha256": "7d05142dfb0fa6d973929929f48eed47a39029c20aec973989c19992374a6f12"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[96]",
+      "label": "97",
+      "text_sha256": "b2df5106809e9585c31302e4c9cb1408f0dda909e54ae052a3104df5f2605679"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[97]",
+      "label": "98",
+      "text_sha256": "bd35cddb081ef5117ad453c7920061730fcb3bca9da5e43e5872ec5de22bb4bf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[98]",
+      "label": "99",
+      "text_sha256": "2e160397f5eda848a53d72f647d6a68f9de75c650283ea3a2b148d2dcfe231c8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[99]",
+      "label": "100",
+      "text_sha256": "1fda0c9ad351630c1a6a40c6b9334caa1610bb3c54a62a919b4c09d2f479e1c5"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[100]",
+      "label": "101",
+      "text_sha256": "032d96ba60e67b4cb52497068835c9ce11304337965c6e1b32477dc346dd3cef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[101]",
+      "label": "102",
+      "text_sha256": "074300ea4c35970e384d6c015fb17987c11ba3af5cd064e385ebf0432a9d3a34"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[102]",
+      "label": "103",
+      "text_sha256": "006def672aaf7cdf53b4a9c9f37b54968bde4f75acc92e98740388304657b82b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[103]",
+      "label": "104",
+      "text_sha256": "629d08eacadc61262f5e33974502936768ea0e5cc81ea7284877dae88b2061f9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[104]",
+      "label": "105",
+      "text_sha256": "d78fee8512b4ec22105697cf8137c0e0fb36958e25683e4f51aed9018fd54df4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[105]",
+      "label": "106",
+      "text_sha256": "4e114937827fbf23e006fb04a66c423340ae3d1346e51008316b372384c71828"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[106]",
+      "label": "107",
+      "text_sha256": "6fe08944e47a511edb8544a2eab209bf68ff4b3fd2de8273a9e4d6b65b6ba29a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[107]",
+      "label": "108",
+      "text_sha256": "0c37c1d537087d50fd02ccdc132dbb624f45903df4e3d8be8762f9e8e9d2c5f9"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[108]",
+      "label": "109",
+      "text_sha256": "3a6fe2bc073a70b742ecc40fabb129638192fbd84ab1491e99856ded28535bb8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[109]",
+      "label": "110",
+      "text_sha256": "6bd353f6eb24cd1ca84d5e7498b8a5f0b4d1a347359d085f79c72782cb2e9daf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[110]",
+      "label": "111",
+      "text_sha256": "88056ecd53be22949444f23091d7849015a4553e1b78928d59ea82ff95b7b053"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[111]",
+      "label": "112",
+      "text_sha256": "c58dfefd48dfb096a4104a3d8467ada38f26f2137059b387cd27081f77cf9890"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[112]",
+      "label": "113",
+      "text_sha256": "b7d36c48eabeb0b377b4ead5a55c39573c0a59c483235c5a17ae0dd69aa55b30"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[113]",
+      "label": "114",
+      "text_sha256": "73f807ced304892fbbeee5ed326f73633c037e12fc71e865759c1834f8243507"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[114]",
+      "label": "115",
+      "text_sha256": "0a73e9290210b54e100c61fd067a7d2171acf086c9645a1af7e1bf26c69109dd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[115]",
+      "label": "116",
+      "text_sha256": "4667a1d51d9b94c3f3e725765398ba29a200544d01506782014d1ac292cdb0dc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[116]",
+      "label": "117",
+      "text_sha256": "954cdedf839c2e34e0c7063d018800727e80b0b247feeb85820bcf3c4c59213d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[117]",
+      "label": "118",
+      "text_sha256": "8625a2d087502a6cbb64605de7f5fb898d4e3b229b17d5b368731ac858161d90"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[118]",
+      "label": "119",
+      "text_sha256": "f935d9685efeb21b5676fb081462d20585bc788d284c202fea2ce6e5feea0db2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[119]",
+      "label": "120",
+      "text_sha256": "2c74a6239ba3c5f4f654d9f479db269e1c66cf64b6f47450ca30e97c99baba0b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[120]",
+      "label": "121",
+      "text_sha256": "6cddca68a544a5b1c9658d0057ce68bdd07dca8ae575d9d15e6d2c1cd6cc117f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[121]",
+      "label": "122",
+      "text_sha256": "ea032d9dbf7a251bb07736a872be61b89f5843d7189eef8cf5b6757f21cbb6e8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[122]",
+      "label": "123",
+      "text_sha256": "0dc2094f7ac4d96787fa25d64cac799972ba8e605cdfa327eb2ef2a371b99a28"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[123]",
+      "label": "124",
+      "text_sha256": "5e3ced575518367f69adc87181d92e6f7bc5c62da90d435d9a1baa74df3005d0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[124]",
+      "label": "125",
+      "text_sha256": "89d34aac75fa6ee6a3dea9d8f41c55112fe66e43ae719814c35cd397199a53ef"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[125]",
+      "label": "126",
+      "text_sha256": "17821c5438ac54999b1bcd65c50b38320ae3c3141c295c52a5cf16cf4a709acf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[126]",
+      "label": "127",
+      "text_sha256": "3801eddc9f91b7d0843aa591e84dd134ac31cd0828bc96a1aef0c798544799b4"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[127]",
+      "label": "128",
+      "text_sha256": "094c8f223b8f844e261c9fa3c8cf4eaa57b6b1a82bc366aaf507df233a869613"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[128]",
+      "label": "129",
+      "text_sha256": "24e01d84149e801a50d6fa3ca8011073c20a6a0d53f407249a58a9953d9dc0ee"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[129]",
+      "label": "130",
+      "text_sha256": "ab185147e66ee4d5cc2f7c1d3cebd898c822898e73e209721366a7bd92ec2a2c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[130]",
+      "label": "131",
+      "text_sha256": "3f6a55e962111697039fbafe9b0106d565d2cf162898e2571041d1d822796d65"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[131]",
+      "label": "132",
+      "text_sha256": "b5afdd576a7940397a64bcb0824ca136d8c5a901ff46f8034cf6bb534d738737"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[132]",
+      "label": "133",
+      "text_sha256": "9faad6f59543bee576413988f337d9aafef1f40e13d6f4652feb9ae160dfc16e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[133]",
+      "label": "134",
+      "text_sha256": "0a9ef4fd1c8f081e117cdda8dd28fe36a5d3ae361e69a82917045fb8bd0e608a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[134]",
+      "label": "135",
+      "text_sha256": "eae133a5c5458a0eb324e1f933c3d7f1a95f915444fde421c9d214a7f2736a0f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[135]",
+      "label": "136",
+      "text_sha256": "a10de54cec509defbd350cf3f676e8beaf4ef3d09110aaa55488c3a33d04d263"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[136]",
+      "label": "137",
+      "text_sha256": "de09297a9886b9b44817e1896febeb5a9324a6954c578b8589579cf5c8166d5c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[137]",
+      "label": "138",
+      "text_sha256": "d3a3152a2644af82e6f8324bcef55ea2027f1082e0b567068f0439e463fa98fc"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[138]",
+      "label": "139",
+      "text_sha256": "06e99ac027876863f464c8c8039c5ecc7f44909ea6e54d447145bb64c8dc233a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[139]",
+      "label": "140",
+      "text_sha256": "f39f9ffb8c75a3719af06ab855b8622acdbb4b052fb7da83e19dd4951645c8de"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[140]",
+      "label": "141",
+      "text_sha256": "9348670d3cc5fa8462ee5f1de06661280763d91d0d99b7624b83f490cd0e3b0c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[141]",
+      "label": "142",
+      "text_sha256": "4d16f0088d29a5997e0ff28b41565376cf038f81e550ed28e8835286c0a2267f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[142]",
+      "label": "143",
+      "text_sha256": "c2b7abfd0f2bcad6e764dbf5b95b12b851766ef1be9eea46441c70a190a4a3ba"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[143]",
+      "label": "144",
+      "text_sha256": "ce2b8eda4093b469b232c150940f66bb59e37dc6a61ebdebbc66cf3c4d3b51ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[144]",
+      "label": "145",
+      "text_sha256": "1bc4841329a26b40f21cb00efc2fe5df8341a5a68059aaaf922da788205a2fe8"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[145]",
+      "label": "146",
+      "text_sha256": "d47c6f0234ad371a5b5f485baeeeab1d718870d9d4e2a36c4f0ba2822dedb01a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[146]",
+      "label": "147",
+      "text_sha256": "03b71639870dfc280365e67c7391c8643a909da490df91a99020e23b6e6b1bfd"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[147]",
+      "label": "148",
+      "text_sha256": "6d99778deab608711436f8f069b877a6d5b5e9b0da2661124148b4ce88d06ff6"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[148]",
+      "label": "149",
+      "text_sha256": "adba3474401bae09a80a39246dca53a2b445101e1cfc68733b39774993f48387"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[149]",
+      "label": "150",
+      "text_sha256": "aba83083f25a3beb3b5fbe71dd81e3cc4b573be01efce5b251670bc8b54a584c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[150]",
+      "label": "151",
+      "text_sha256": "911b099b494367a001124a51237be9db08e7212ac77ed0debd470f9780a54259"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[151]",
+      "label": "152",
+      "text_sha256": "95ce347a32b63ed530281b86bfc067afcd5d61014b68adacd8aac36176835e1c"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[152]",
+      "label": "153",
+      "text_sha256": "7cb719169fe38ce4e7c6950155c81b97f6fda6865a71cdccaabd9ca6f86f8284"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[153]",
+      "label": "154",
+      "text_sha256": "0b431db55ced7fc6f8f229d2f4964c59e5dabdffab3d46e1cf2587f708290ba2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[154]",
+      "label": "155",
+      "text_sha256": "b0382e025dcc73a4f73c66124d5978ef85121c7349bb15ceda28290bf508b406"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[155]",
+      "label": "156",
+      "text_sha256": "74affad66bfc9f03e769a6f4a30d0d6029c92d3f8e42953b30985fc336cbd74e"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[156]",
+      "label": "157",
+      "text_sha256": "41a0338c033b023aaa981691b19e1d5b7a03cad329331f72b661e81bd8e9d9c1"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[157]",
+      "label": "158",
+      "text_sha256": "73133828c6346fc13ca16288d65353456002cc955077bdbb7ab2115791aeb78a"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[158]",
+      "label": "159",
+      "text_sha256": "478fd562c9ffb79c8826cc36e441473c793c197f805a2b7fdc09ebe1bdf86acf"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[159]",
+      "label": "160",
+      "text_sha256": "a32e3e697844238758d336a211edf5e158de9452cc1178e648c536198b517025"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[160]",
+      "label": "161",
+      "text_sha256": "7ea2de28bc0acd2ceeb8226c860635f20062712ab58ef1ad1e7f6f63090c1b5d"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[161]",
+      "label": "162",
+      "text_sha256": "9d622df05fa9f7eff31fa1ca4b3270a7540d33efc70eee7376e32f254fc5aed2"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[162]",
+      "label": "163",
+      "text_sha256": "5becb83cd6c8360fd3b1f511fbe7d357d6d2434306470e0508961af79da86364"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[163]",
+      "label": "164",
+      "text_sha256": "63038995513b226536add5358ce46545b8ea67957a0c0168d8ecac69542df8d0"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[164]",
+      "label": "165",
+      "text_sha256": "425c545f979dd2514b7933827f9aa70d5646e6eab24416f49d5eced5966d00f3"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[165]",
+      "label": "166",
+      "text_sha256": "059de7d1f26d3cab4d31de5545678eae0989069f1f4fe988e390daf61afb90ba"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[166]",
+      "label": "167",
+      "text_sha256": "cf6da0bfe0bacf464a544d9f7c3aeb065f04af407289ae011ecbe38de81f78c7"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[167]",
+      "label": "168",
+      "text_sha256": "f0083f7539b0f610364f561b663515c82f7f4deb8a8524ba8d4ea5ed1bc5626f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[168]",
+      "label": "169",
+      "text_sha256": "bcbbb18cb758fdcef4add1013b36d3dd621fcec27ec11c90a281c868c7e1d1ff"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[169]",
+      "label": "170",
+      "text_sha256": "24fc088a95c04b8cfb2118471e30e51b5d7cf90a6e5e746dfc2f68a49f39068f"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[170]",
+      "label": "171",
+      "text_sha256": "7c14e42206c7ec4d99f50f7e4f489f532bdb638690c09a3380ab9b24989a5629"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[171]",
+      "label": "172",
+      "text_sha256": "d301a461c41c302f4322becde29a7908ac48e80cd2036e05a0737044b706dc66"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[172]",
+      "label": "173",
+      "text_sha256": "27299a9bab4cf2756330f9f6249343f728d5be98057216b2507921a310abf077"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[173]",
+      "label": "174",
+      "text_sha256": "88b92ca58156b785551e0ad3582d17fe1212cab7794a6d5efd09219d3d167967"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[174]",
+      "label": "175",
+      "text_sha256": "54b4c82acb7398b0e54b5f4f88a27a3cd89bd28dc569d5ca436e8e307b7df43b"
+    },
+    {
+      "selector": "books[18].chapters[118].verses[175]",
+      "label": "176",
+      "text_sha256": "0de390b29b9a5673260ab1531f74d5b3e927348b244989e8a97a689c96c75518"
+    }
+  ],
+  "outside_scope_count": 173,
+  "native_unit_count": 176,
+  "verses": [
+    {
+      "label": "1",
+      "text": " Blessed are the undefiled in the way, who walk in the law of the Lord."
+    },
+    {
+      "label": "2",
+      "text": "Blessed are they that keep his testimonies, and that seek him with the whole heart."
+    },
+    {
+      "label": "3",
+      "text": "They also do no iniquity: they walk in his ways."
+    }
+  ],
+  "normalization": {
+    "text": "collapse runs of whitespace and trim outer whitespace for TEI/public rows",
+    "source_bytes": "retained verbatim in the source hash and selected-unit text"
+  }
+}

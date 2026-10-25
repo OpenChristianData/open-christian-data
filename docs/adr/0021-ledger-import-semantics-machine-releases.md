@@ -1,5 +1,7 @@
 # ADR-0021: Ledger import semantics for machine-released corrections
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-07-04). Specializes ADR-0014 into the decision ledger; touches
 `decision-event-v1`. Ratified by the maintainer before the first live ledger mint (batch 02).
 

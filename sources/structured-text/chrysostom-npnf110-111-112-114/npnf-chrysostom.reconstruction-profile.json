@@ -1,0 +1,25 @@
+{
+  "contract": "ocd-npnf-chrysostom-reconstruction-profile-v1",
+  "profile_id": "npnf-chrysostom-110-111-112-114-seven-work-v1",
+  "version": 1,
+  "source_members": [
+    {"name": "npnf110", "path": "raw/ccel/npnf1/npnf110.xml", "bytes": 3956654, "sha256": "e110c98b1f444147bf7baf79e46e56ae6c6a1f0b2983e6fc52f2356fac7f858f", "assigned_div1": ["iii"]},
+    {"name": "npnf111", "path": "raw/ccel/npnf1/npnf111.xml", "bytes": 5349065, "sha256": "46072a7fefb80b4b7ea68544b46c13fc1785bd29d99834fd2f867f8aa5e14f08", "assigned_div1": ["vi", "vii"]},
+    {"name": "npnf112", "path": "raw/ccel/npnf1/npnf112.xml", "bytes": 3253154, "sha256": "b8b345e060625cdf495e888322d88e922f66e686863e818a978204c5f564a4dd", "assigned_div1": ["iv", "v"]},
+    {"name": "npnf114", "path": "raw/ccel/npnf1/npnf114.xml", "bytes": 4728349, "sha256": "b130406978fbceb7bcd0774b0e8b09905f35a020a2300c1baf02f314a2d5a70a", "assigned_div1": ["iv", "v"]}
+  ],
+  "assigned_work_count": 7,
+  "assigned_feature_count": 58867,
+  "assigned_attribute_count": 155252,
+  "assigned_text_node_count": 43635,
+  "assigned_tail_node_count": 49691,
+  "assigned_character_count": 10468284,
+  "assigned_non_ascii_character_count": 192872,
+  "assigned_feature_counts": {"br": 20, "div1": 7, "div2": 381, "div3": 3, "i": 2299, "note": 9477, "p": 22428, "pb": 2027, "scripCom": 367, "scripRef": 11490, "span": 10364, "sup": 4},
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "excluded_index_comment_count": 110,
+  "document_shell": {"source_doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">", "pre_root_comments_per_member": 2, "candidate_doctype": null, "candidate_root_siblings": 0},
+  "apparatus_division_ids": {"npnf110": ["iii.i", "iii.ii", "iii.iii"], "npnf111": ["vii.i", "vii.ii"], "npnf112": ["iv.i"], "npnf114": ["iv.i", "iv.ii", "v.i", "v.ii", "v.iii", "v.iv"]},
+  "requirements": ["exact-depth-first-source-order", "exact-hierarchy-direct-text-and-tail-text", "all-source-attributes-accounted", "all-division-titles-projected", "notes-page-breaks-scripture-references-scripture-commentary-language-spans-and-inline-rendition-preserved", "exact-four-member-shell-front-index-and-comment-accounting", "retained-apparatus-preserved", "retained-contributor-roles-localized-per-work", "all-seven-works-remain-nonaccepted-and-publication-not-ready"]
+}

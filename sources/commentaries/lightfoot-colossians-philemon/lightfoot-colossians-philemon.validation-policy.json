@@ -1,0 +1,18 @@
+{
+  "policy_id": "lightfoot-colossians-philemon-policy-v3",
+  "oracle_id": "ocd-lightfoot-colossians-philemon-source-to-tei-oracle",
+  "oracle_version": "3",
+  "rules": [
+    "derive the complete structural inventory from the pinned retained source and profile",
+    "Account for the file-initial UTF-8 BOM in the first physical line's raw bytes and offset, but exclude that encoding marker from readable TEI text.",
+    "require one ordered TEI source-line seg or head leaf for every decoded source line with exact IDs, text, and byte crosswalk",
+    "require native p, head, note, label, table, and semantic role units for source paragraphs, headings, footnotes, parallel readings, scripture, paraphrase, lemma, apparatus, commentary, index, and license coverage",
+    "retain repeated range occurrences and page-context continuations without invented verse joins",
+    "preserve the two parallel-reading blocks as provisional source-linear native tables with ordered one-cell rows and retained blank lines; do not claim page-image column geometry",
+    "reject omission, duplication, reorder, arbitrary source-line blocks, flattened native structures, moved children or attachments, and invented text",
+    "derive source typography intervals independently; require exact actual hi coverage, roles, source offsets and resolvable fragment links before unwrapping a private clone; preserve literal exceptions and every original ref/seg carrier",
+    "keep candidate nonaccepted and leave rights, visual comparison, human acceptance, canonical data/IR, and publication unresolved",
+    "Resolve 761 genuine numeric footnote calls; preserve the source year [1550] at line3804 and scripture verse [24] at line18346 as literal exceptions. Check each actual ref text and source offset; reject unexplained citation-like bracket contexts.",
+    "Derive the three post-commentary essay boundaries from the source contents and actual title anchors; keep the Laodiceans manuscript, text/apparatus and history units inside the Laodicea essay. Preserve the exact Greek/English boundary at line13183."
+  ]
+}

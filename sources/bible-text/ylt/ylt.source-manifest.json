@@ -1,0 +1,147 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ylt-retained-json",
+  "work_id": "ylt",
+  "source_selection": {
+    "authority": "ylt-source",
+    "json_pointer": "",
+    "selected_root_fields": [
+      "/translation",
+      "/books"
+    ],
+    "selection": "the complete single retained JSON document"
+  },
+  "authorities": [
+    {
+      "name": "ylt-source",
+      "path": "raw/bible_databases/formats/json/YLT.json",
+      "role": "primary-source",
+      "bytes": 8382339,
+      "sha256": "d55ef42dae715c4fc5d00049011b818a42a99e0ff419f5f08bc37cea0b4f12e3"
+    },
+    {
+      "name": "ylt-config",
+      "path": "sources/bible-text/ylt/config.json",
+      "role": "work-identity-config",
+      "bytes": 837,
+      "sha256": "2e2d2fea04cc61482c86420c02f054fd844585917f23833d96b49626c76ebf6b"
+    },
+    {
+      "name": "ylt-profile",
+      "path": "sources/bible-text/ylt/ylt.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8488,
+      "sha256": "6a88a3a6e5909c8d27b2aa8ab8555db85e1156a78af128ac812c12bbd9d60539"
+    },
+    {
+      "name": "ylt-policy",
+      "path": "sources/bible-text/ylt/ylt.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 9187,
+      "sha256": "7a77a9fe4a20bbaf7a3e61c11579b2247da37d340f9d371b69c485d3fdb77abf"
+    },
+    {
+      "name": "ylt-accountability-schema",
+      "path": "sources/bible-text/ylt/ylt.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 6339,
+      "sha256": "c6dcb9dfe52e12d41bba0b9a910deec8a8d00f610744db5de6a35029362e3662"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "candidate-cli",
+      "path": "build/tools/reconstruct_candidate.py",
+      "role": "route-runtime-dependency",
+      "bytes": 9970,
+      "sha256": "51611d99341c0491448308fa00514beb4f97cab5a60a298168d8e66dad1ab6dd"
+    },
+    {
+      "name": "build-package-init",
+      "path": "build/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "route-runtime-dependency",
+      "bytes": 25076,
+      "sha256": "a3cdf8daa9d67725a22995584a2a99ba796fc4c7578058496f1f9d6bad401ac5"
+    },
+    {
+      "name": "reconstruction-verifier",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "route-runtime-dependency",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "name": "destination-policy",
+      "path": "ocd_kernel/reconstruction/destination_policy.py",
+      "role": "route-runtime-dependency",
+      "bytes": 11952,
+      "sha256": "ee294573f23f61a2db7312411a6ec2434fb2dd86357dfa915b0447e20d8e23f9"
+    },
+    {
+      "name": "kernel-init",
+      "path": "ocd_kernel/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 50,
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    },
+    {
+      "name": "reconstruction-init",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 475,
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib023-ylt-json-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/ylt_reconstruction.py",
+    "implementation_sha256": "6c6b283086747c6fd1af73a8bc27f9f8012a6cfb37dfb7cc2fe749172f39e556"
+  },
+  "validator": {
+    "id": "ocd-lib023-ylt-independent-oracle",
+    "version": "1",
+    "callable": "oracle",
+    "implementation_path": "build/tei/ylt_oracle.py",
+    "implementation_sha256": "8286eb1340347beb2f1c179ca586a486bb6b18e7dd47e7bfd7f2cb67fb64f06c",
+    "import_closure_sha256": "27ac396d64e4e98a267730eb537f2b0c07cc5d96137bc1dac576a1c15040e859"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

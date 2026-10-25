@@ -1,0 +1,134 @@
+{
+  "ticket_id": "LIB-013",
+  "work_id": "treasury-of-david",
+  "title": "The Treasury of David",
+  "verdict": "BLOCKED",
+  "status": "blocked",
+  "technical_acceptance": false,
+  "human_acceptance": false,
+  "publication_authorized": false,
+  "publication_ready": false,
+  "tei_candidate_created": false,
+  "census_completed_at_utc": "2026-08-30T19:54:10Z",
+  "frozen_source_claim": {
+    "algorithm": "sha256",
+    "digest": "79318b93c5a07ac2df94bd43b50c6fd4604e41f83cdebcb1ce7dfeb4e6c7a82b",
+    "source_map": "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md",
+    "source_map_line": 1034,
+    "exact_retained_raw_matches": 0
+  },
+  "durable_raw_census": {
+    "root": "D:/Library/Open Christian Data/raw",
+    "scope": "Every current file, including hidden files and files below .git metadata directories, was read and hashed with SHA-256.",
+    "files": 71803,
+    "bytes": 13592411421,
+    "hash_errors": 0,
+    "exact_frozen_claim_matches": 0,
+    "text_metadata_claim_search": {
+      "extensions": [
+        ".conf",
+        ".csv",
+        ".json",
+        ".jsonl",
+        ".md",
+        ".txt",
+        ".xml"
+      ],
+      "matches": 0
+    }
+  },
+  "retained_source_cohort": {
+    "root": "D:/Library/Open Christian Data/raw/ccel/treasury-of-david",
+    "files": 3,
+    "bytes": 41165853,
+    "members": [
+      {
+        "path": "D:/Library/Open Christian Data/raw/ccel/treasury-of-david/treasury-of-david-vol1.pdf",
+        "bytes": 39188190,
+        "sha256": "fefc52729c41f6183f328980e4827baa6a17a924ee5f7d9a9bfe0742995b890e",
+        "format": "PDF 1.5",
+        "pages": 508,
+        "role": "retained OCR scan",
+        "frozen_claim_match": false
+      },
+      {
+        "path": "D:/Library/Open Christian Data/raw/ccel/treasury-of-david/markdown/_extraction_report.json",
+        "bytes": 1029,
+        "sha256": "637e13b36702a2c42a611d14cef75be4147eea855ae791f506800a572c9186a4",
+        "format": "strict UTF-8 JSON",
+        "role": "derived extraction report",
+        "frozen_claim_match": false
+      },
+      {
+        "path": "D:/Library/Open Christian Data/raw/ccel/treasury-of-david/markdown/treasury-of-david-vol1.md",
+        "bytes": 1976634,
+        "sha256": "c01e0283ab92c4dd1c5fdba3a0e3750f2118dd613c6ba6f0988d7390a4609d35",
+        "format": "strict UTF-8 Markdown",
+        "role": "derived OCR text",
+        "frozen_claim_match": false
+      }
+    ]
+  },
+  "archive_and_module_census": {
+    "zip_archives": 63,
+    "zip_members": 531724,
+    "zip_read_errors": 0,
+    "zip_member_name_matches_for_treasury_or_spurgeon": 0,
+    "sword_module_files": 34,
+    "sword_module_bytes": 68141558,
+    "sword_module_content_matches_for_treasury_of_david": 0
+  },
+  "edition_identity": {
+    "retained_provider": "Internet Archive",
+    "embedded_source_url": "https://archive.org/details/treasuryofdavidc0000spur",
+    "embedded_title": "The treasury of David : containing an original exposition of the book of Psalms ; a collection of illustrative extracts from the whole range of literature ; a series of homiletical hints upon almost every verse, and lists of writers upon each psalm",
+    "author": "C. H. Spurgeon",
+    "publisher": "Funk & Wagnalls",
+    "publication_year": 1882,
+    "volume": "III",
+    "coverage": "Psalms 53-78",
+    "identity_markers": [
+      "The title page says Vol. III.",
+      "The title page says Psalm LIII. to LXXVIII.",
+      "The title page says New York: Funk & Wagnalls, 1882.",
+      "The final library marker identifies BS1430 .S6 1882 / vol [3]."
+    ],
+    "filename_discrepancy": "The retained filename says treasury-of-david-vol1.pdf, but the embedded title page and library marker identify Volume III.",
+    "ocr_vs_ccel_resolution": "The retained authority candidate is an Internet Archive OCR scan stored beneath a ccel directory. It is not a CCEL-native text or module. The storage namespace does not establish source identity.",
+    "complete_work_identity": "This retained witness is only Volume III of the seven-volume work and cannot by itself represent all 150 Psalms."
+  },
+  "derived_json_diagnostic": {
+    "authority_status": "diagnostic only; not retained source authority",
+    "files": [
+      {
+        "path": "data/commentaries/treasury-of-david/_manifest.json",
+        "bytes": 510,
+        "sha256": "9f73a201ee6ea742d08ec67843957cec06d932e03ed8c7adaf077c4203c9fe3d"
+      },
+      {
+        "path": "data/commentaries/treasury-of-david/psalms.json",
+        "bytes": 1566543,
+        "sha256": "6f4cc496852169b0d60e996ed2d4fea57c362f5c17f3156ef71bbc317ccdf062"
+      }
+    ],
+    "finding": "The derived psalms.json repeats the frozen source claim and the Internet Archive Volume III provenance, but neither derived file nor any retained cohort member has the claimed digest. The derived claim does not prove that the claimed source bytes are retained."
+  },
+  "blocker": {
+    "category": "exact-source-identity-and-retention",
+    "detail": "The exact frozen SHA-256 claim is absent from the complete durable raw store. The only retained Treasury of David scan has a different digest and is specifically the partial 1882 Funk & Wagnalls Volume III witness. No relevant ZIP member or SWORD module resolves the claim. Reconstruction cannot bind to the frozen authority without changing source identity.",
+    "owner": "project maintainer and source acquisition",
+    "next_action": "Locate or reacquire the exact bytes whose SHA-256 is 79318b93c5a07ac2df94bd43b50c6fd4604e41f83cdebcb1ce7dfeb4e6c7a82b and verify their edition and volume identity. If those bytes cannot be recovered, make an explicit source-authority decision before revising the frozen claim or selecting a replacement witness.",
+    "reopening_condition": "Reopen when an exact retained member matches the frozen SHA-256 and its edition identity is verified, or when the project maintainer explicitly authorizes a frozen source-claim revision bound to a newly retained, fully identified witness cohort."
+  },
+  "protected_state": {
+    "canonical_data_modified": false,
+    "canonical_ir_modified": false,
+    "retained_raw_modified": false,
+    "reports_or_exports_modified": false,
+    "frozen_maps_or_tickets_modified": false,
+    "shared_verifier_modified": false,
+    "existing_config_modified": false,
+    "witnesses_modified": false,
+    "staged_or_committed": false
+  }
+}

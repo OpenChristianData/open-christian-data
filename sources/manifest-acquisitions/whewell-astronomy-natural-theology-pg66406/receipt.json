@@ -1,0 +1,68 @@
+{
+  "contract": "ocd-retained-source-acquisition-v1",
+  "work_id": "whewell-astronomy-natural-theology",
+  "source_id": "whewell-astronomy-natural-theology-pg66406-html",
+  "status": "retained-source-only",
+  "retrieved_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "title": "Astronomy and General Physics Considered with Reference to Natural Theology",
+  "creator": "William Whewell",
+  "edition": "Philadelphia: Carey, Lea & Blanchard, 1833; Bridgewater Treatise III",
+  "source_url": "https://www.gutenberg.org/ebooks/66406",
+  "download_url": "https://www.gutenberg.org/cache/epub/66406/pg66406-h.zip",
+  "rights_and_copying_conditions": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally.",
+  "retained_scope_note": "Complete specified treatise and notes; identified as the 1833 Philadelphia edition.",
+  "original_archive": {
+    "path": "raw/gutenberg/66406/pg66406-h.zip",
+    "bytes": 381966,
+    "sha256": "6afe53a9fbaff42ce70df1f5f30c4986a88cfa3a19656ea7fa50146272fe90f7",
+    "format": "ZIP"
+  },
+  "archive_inventory": {
+    "member_count": 2,
+    "total_uncompressed_bytes": 807308,
+    "canonical_inventory_sha256": "1b3050c1268f36df7c53b4b118f9537cafe3b46e663b3505741d139318a2fc8c",
+    "members": [
+      {
+        "name": "pg66406-images.html",
+        "bytes": 633574,
+        "sha256": "c67fa21c98ffffaeec945046bfc888bcc6fb9b699e2462b86b4aec67299572f2",
+        "kind": "file"
+      },
+      {
+        "name": "images/cover.jpg",
+        "bytes": 173734,
+        "sha256": "8dd392d52a7676a2522e448bcc34e6f81946c8093e3fdbbf97f5bdd4d15206cb",
+        "kind": "file"
+      }
+    ]
+  },
+  "source_page_accessed_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "identity_basis": "Archived clean-ready research bundle plus the primary source page/repository metadata and the retained source title/header; see source-local README for edition-specific notes.",
+  "source_manifest_path": "sources/manifest-acquisitions/whewell-astronomy-natural-theology-pg66406/source-manifest.json",
+  "acquisition_route": "Original ZIP retained byte-for-byte at the configured durable raw store; all ZIP members inventoried and hashed without modifying or flattening the package.",
+  "rights_evidence": {
+    "rights_statement_url": "https://www.gutenberg.org/ebooks/66406",
+    "copying_terms_url": "https://www.gutenberg.org/license",
+    "summary": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally."
+  },
+  "source_local_readme_path": "sources/manifest-acquisitions/whewell-astronomy-natural-theology-pg66406/README.source.md",
+  "source_local_readme_sha256": "0926e986cd37d1c1badb907d7d2a6ff4350d72d464cc493179e77dc5683c513e",
+  "identity_and_digital_correctness_evidence": [
+    {
+      "authority": "archived edition and acquisition research; CLEAN-READY row 14",
+      "path": "plans/_archive/2026-09-05-clean-ready-acquisition-to-tei/originals/research-evidence/open-christian-data-christian-apologetics-evidences-research.md",
+      "finding": "Complete treatise and notes for the specified Bridgewater Treatise III edition."
+    },
+    {
+      "authority": "Project Gutenberg official ebook record",
+      "url": "https://www.gutenberg.org/ebooks/66406",
+      "finding": "record confirms ebook ID, item title, creator/editor/translator roles and U.S. rights status"
+    },
+    {
+      "authority": "retained original HTML archive",
+      "path": "raw/gutenberg/66406/pg66406-h.zip",
+      "finding": "complete downloaded HTML ZIP preserved; main HTML member contains source start/end markers and license notice; all members have independent length and SHA-256 inventory"
+    }
+  ],
+  "acquisition_method": "HTTPS retrieval of the exact upstream ZIP URL; package retained unchanged and inventoried locally."
+}

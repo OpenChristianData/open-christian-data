@@ -1,0 +1,20 @@
+{
+  "contract": "ocd-npnf-chrysostom-validation-policy-v1",
+  "policy_id": "npnf-chrysostom-110-111-112-114-seven-work-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "required_assigned_work_count": 7,
+  "required_feature_count": 58867,
+  "required_attribute_count": 155252,
+  "required_text_node_count": 43635,
+  "required_tail_node_count": 49691,
+  "required_character_count": 10468284,
+  "required_non_ascii_character_count": 192872,
+  "required_excluded_index_comment_count": 110,
+  "required_table_census": {"tables": 0, "rows": 0, "cells": 0},
+  "tei_header": {"root_xml_id": "npnf-chrysostom-lib043", "body_xml_id": "npnf-chrysostom-assigned-body", "title": "NPNF First Series Chrysostom volumes X, XI, XII, and XIV — seven assigned works", "author": "John Chrysostom", "publisher": "Open Christian Data", "availability_status": "restricted", "source_url": "https://www.ccel.org/ccel/schaff/", "print_source": "Retained NPNF First Series title matter for volumes X, XI, XII, and XIV; T&T Clark and Wm. B. Eerdmans title statements with CCEL print-source metadata; no print collation performed", "rights_statement": "The retained CCEL headers state Public Domain. CCEL permits parsing its ThML; do not sell CCEL files or derivatives of CCEL formatting. Attribution is included in README.source.md. Human acceptance and publication remain absent."},
+  "checks": ["source-authority-hash-and-four-member-binding", "exact-seven-div1-scope-and-retained-order", "complete-feature-attribute-text-tail-character-and-nonascii-crosswalk", "exact-hierarchy-title-note-page-break-reference-scripture-commentary-language-and-rendition-preservation", "omission-duplication-reorder-and-invention-detection", "exact-member-shell-front-index-comment-inclusion-and-exclusion-accounting", "exact-retained-apparatus", "exact-xml-prolog-no-doctype-no-root-siblings-and-namespace-inventory", "tei-p5-xsd", "source-accountability-json-schema", "retained-metadata-rights-attribution-and-localized-config-conflicts", "exact-readme-unresolved-and-nonacceptance-evidence-bytes", "candidate-package-integrity-and-current-bindings", "producer-independent-complete-first-party-import-closure"],
+  "forbidden_oracle_imports": ["build.tei.npnf_chrysostom_reconstruction", "build.tei.npnf103_reconstruction", "build.tei.npnf105_reconstruction", "build.lib.ccel_thml", "build.tei.thml_to_tei", "build.tei.ccel_work_config"]
+}

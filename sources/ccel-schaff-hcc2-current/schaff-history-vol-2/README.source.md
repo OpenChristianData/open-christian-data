@@ -1,0 +1,21 @@
+# History of the Christian Church, volume 2: retained source and current release disposition
+
+The October 13, 2026 public-text disposition and complete downloader-visible credit are at `data/prose/schaff-history-vol-2/README.md`. Bind this source note and that data notice together in the selected release. Current selected row license: `Public domain (United States): historical Philip Schaff volume 2 text and historical apparatus; factual electronic-source credits retained; CCEL files and formatting excluded`.
+
+The historical private-preparation limitations in the retained earlier audit below are superseded for this exact public scope by the current data notice. Source identity, accepted-master scope, historical metadata qualifications, and excluded layers remain authoritative. Public distribution is limited to the exact supported scope; no worldwide rights opinion or new grant over a provider's reserved material is asserted.
+
+## Retained earlier reconstruction and private-preparation audit
+
+# History of the Christian Church, volume II: source and data credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/hcc2.html). Philip Schaff is the retained author; CCEL is the electronic publisher. The electronic header names `whp` as transcriber and Wendy Huang as markup contributor. Tim Perrine is credited only for the CCEL Staff Writer description. The opening endnote credits Philip Schaff, History of the Christian Church (Oak Harbor, WA: Logos Research Systems, Inc.) 1997, followed by The Electronic Bible Society, Dallas, TX, 1998, for comparison, correction and emendation according to the 1910 Charles Scribner's Sons edition. These literal statements do not establish independent print collation.
+
+The retained header states firstPublished1882, Third edition, revised, electronic creation2002-11-27 and Public Domain. Its prolog states Copyright Christian Classics Ethereal Library. These are retained source claims, not an independent worldwide rights decision. CCEL permission allows parsing ThML/XML for text, reserves its files/formatting rights, prohibits selling CCEL files or derivatives of their formatting, and requests publication credit. The maintained release carries this permission restriction visibly.
+
+Complete retained CCEL hcc2.xml volume II: all six ordered body roots i Title Page, ii Preface to the Third Edition Revised, iii Fifth Edition, iv Preface to the Second Edition, v Second Period: Ante-Nicene Christianity, and vi Indexes with all eight index divisions. All 26,948 native source elements, 26,741 body elements, 1,593 notes, 57 subject-index markers, five unclear carriers, seven bold and 42 superscript carriers are represented with exact mixed text, tails, source parents, order, IDs and ordered attributes. All 2,164 native language annotations are retained literally. Full retained electronic header and the one copyright prolog comment remain represented. No source-body exclusion, new work IDs, corrected reading or invented print completion; one existing volume identity and one TEI. No image elements occur in this retained textual member. Literal source edition-history and rights statements are evidence, not independent print equivalence or rights clearance.
+
+Carry visible credit to `data/prose/schaff-history-vol-2/README.md`. Human textual/visual acceptance, print equivalence, rights clearance and publication remain separate.
+
+## Bounded private United States disposition — 2026-10-12
+
+This selection applies only to the existing accepted volume 2 under its own source and acceptance identity. The own header expressly says Public Domain. The retained opening note credits Logos 1997 and Electronic Bible Society 1998 comparison, correction, and emendation against 1910 Scribner. Its 6 accepted units and historical author Philip Schaff remain source-defined; the short modern source-history note is credited and retained. The source-specific historical layer supports private United States text preparation under the retained CCEL underlying-text permission. This does not assert independent exact print collation, global rights, or public-upload authority. Carry the current visible credit and qualifications in `data/prose/schaff-history-vol-2/README.md`.

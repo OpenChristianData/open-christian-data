@@ -1,0 +1,33 @@
+{
+  "checks": [
+    "Verify all eight retained source/evidence members, the scan-grounded correction map, and every source-manifest authority by exact bytes and SHA-256.",
+    "Reconcile all 138 scandata leaves; explicitly exclude Color Card leaves 0 and 137 and align all 136 access leaves with PDF pages and DjVuXML OBJECTs.",
+    "Independently reconcile every source paragraph, line and word carrier; compare every scan correction, marginal heading, contents row, column assignment, paratext item, and explicit source disposition with its exact retained OCR carriers and coordinates.",
+    "Check the full 1-136 scan-page review coverage, one complete titled work in one TEI, front/body/back placement, seven chapter boundaries, index/bibliography/appended-matter boundaries, reading order, page labels, and PDF facsimile targets.",
+    "Preserve the empty line on page 2 paragraph 2 and all six zero-word pages; verify the cover and accession annotations, ambiguous handwriting, and barcode graphic receive their explicit source disposition without invented text.",
+    "Verify the seven-row page-13 table of contents, scan-grounded marginal headings, two-column structure on pages 126-132, page-134 preservation label, and page-136 printed barcode label/number.",
+    "Validate readable TEI against the bound TEI P5 XSD and candidate package schema.",
+    "Reject source-relevant mutations for altered correction-map binding, changed corrected text, omitted or duplicated headings, changed contents rows, broken column placement, omitted source-disposition notes, reordered or reworded pages, changed facsimile targets, moved back matter, missing empty carriers, and altered accounting.",
+    "Reproduce all five candidate members in separate clean processes from different working directories and compare exact bytes."
+  ],
+  "limitations": [
+    "Every access-format scan page is covered by a visual-review entry, but the review is not a glyph-by-glyph transcription of all OCR words. Only scan-verified corrections are applied; untouched OCR may retain unobserved recognition errors.",
+    "Six no-word source pages are represented as explicit gaps; image-only text is not transcribed.",
+    "The OCR witness and correction map are common evidence for converter and oracle; the oracle independently checks their source-carrier bindings and output, but does not make an independent blind transcription of every printed word.",
+    "Rights clearance, human acceptance, integration, and publication are separate unresolved decisions."
+  ],
+  "oracle_id": "ocd-robertson-keywords-1906-ia-independent-oracle",
+  "policy_id": "robertson-keywords-1906-ia-validation-v2",
+  "provenance": {
+    "identity": {
+      "author": "A. T. Robertson",
+      "date": "1906",
+      "edition": "American Baptist Publication Society, Philadelphia, 1906",
+      "title": "Keywords in the Teaching of Jesus"
+    },
+    "source": {
+      "bytes": 9066837,
+      "sha256": "54f06da00f0a06d40d182878f052ddc9fdf974471cff0131b181820c4759605f"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "contract": "ocd-apostolic-tradition-validation-policy-v1",
+  "work_id": "apostolic-tradition",
+  "candidate_status": "nonaccepted",
+  "human_acceptance_required": true,
+  "publication_authorized": false,
+  "checks": [
+    "exact-work-edition-acquisition-and-retained-source-binding",
+    "complete-archive-member-order-size-crc-and-sha256-census",
+    "complete-document-shell-head-and-body-profile-binding",
+    "ordered-body-element-text-tail-and-attribute-mapping",
+    "seven-book-section-and-frontmatter-backmatter-boundary-preservation",
+    "printed-page-marker-count-and-source-label-preservation",
+    "local-fragment-closure-footnote-and-internal-link-preservation",
+    "body-cover-reference-and-head-only-spine-support-binding",
+    "source-accountability-schema-and-package-member-contract",
+    "tei-p5-schema-validation",
+    "omission-duplication-reordering-invention-wrong-source-and-attribute-mutation-rejection",
+    "fresh-process-byte-determinism",
+    "rights-edition-identity-human-acceptance-and-publication-decisions-remain-separate"
+  ],
+  "unresolved": [
+    {
+      "id": "apostolic-tradition-edition-rights",
+      "kind": "rights",
+      "status": "hold",
+      "owner": "authorized-rights-reviewer",
+      "detail": "The title page states Copyright 1934, Cambridge University Press and a 1962 reprint by arrangement, while Project Gutenberg states public domain in the USA. Research findings do not change the recorded hold or authorize publication."
+    },
+    {
+      "id": "apostolic-tradition-physical-edition-witness",
+      "kind": "edition-identity",
+      "status": "unresolved",
+      "owner": "project-maintainer",
+      "detail": "The retained Gutenberg text reproduces an edition with both 1934 and 1962 statements; the exact physical copy/transcription witness is not independently identified by the retained HTML alone."
+    },
+    {
+      "id": "apostolic-tradition-human-acceptance",
+      "kind": "acceptance",
+      "status": "unresolved",
+      "owner": "project-maintainer",
+      "detail": "No human textual verification or acceptance decision is recorded by candidate generation or mechanical validation."
+    }
+  ],
+  "provenance": {
+    "work_id": "apostolic-tradition",
+    "edition_id": "apostolic-tradition-gutenberg-electronic",
+    "acquisition_id": "apostolic-tradition-gutenberg-acquired",
+    "source_id": "apostolic-tradition-gutenberg-retained",
+    "provider": "Project Gutenberg",
+    "provider_record": "https://www.gutenberg.org/ebooks/61614",
+    "source_path": "raw/gutenberg/61614/html/pg61614-images.html",
+    "source_sha256": "820d396c5f69ff601cf2264cb8ed352765c49809a69fda8f616b746e07b9cd05",
+    "archive_path": "raw/gutenberg/61614/pg61614-h.zip",
+    "archive_sha256": "72a7ceef6b4145b08f1131a58a9ae2e5665b4e4c06f7fce01d56cd77879fabc7",
+    "rights_status": "hold; no publication clearance"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "policy_id": "otterbein-pg16455-retained-html-policy-v1",
+  "oracle_id": "ocd-otterbein-pg16455-independent-html-oracle-v1",
+  "schema": "otterbein-pg16455.source-accountability.schema.json",
+  "rules": [
+    "bind the complete retained source HTML, acquisition ZIP, cover, acquisition sidecar, acquisition receipt and extracted-member inventory by exact path, length and SHA-256",
+    "independently parse source HTML with Python HTMLParser and compare the complete decoded body text stream in order against actual TEI body text",
+    "verify all source HTML body elements, comments, classes, IDs, links, and attributes have explicit source-accountability dispositions",
+    "verify exactly 548 numbered hymn divisions, all source stanza groups, source hymn order, title/header linkage, 394 page-marker comments and 588 ordered links",
+    "verify each local reference resolves to the source-attested target and that no target is invented or duplicated",
+    "validate actual candidate bytes against vendored TEI P5 XSD and the source-accountability JSON Schema",
+    "reject source, scope, identity, omitted, duplicated, reordered, invented, text, attribute, link-target, provenance, and unresolved-disposition mutations",
+    "reproduce the complete six-member candidate and validation sidecar byte-for-byte in two fresh processes"
+  ],
+  "required_unresolved_ids": [
+    "otterbein-print-collation",
+    "otterbein-page-image-comparison",
+    "otterbein-source-anomaly-h186",
+    "otterbein-source-anomaly-h469-h470",
+    "otterbein-rights-review",
+    "otterbein-human-acceptance",
+    "otterbein-publication-decision"
+  ],
+  "human_review": ["print collation","page-image comparison","rights","textual acceptance","publication"]
+}

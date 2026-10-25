@@ -1,0 +1,44 @@
+{
+  "contract": "ocd-lib087-hymnary-csv-preservation-policy-v1",
+  "work_id": "hymnary-pd",
+  "archive_path": "raw/hymnary-pd/oldest_pd_instances.csv.zip",
+  "archive_sha256": "727bb1bee930547352b5fcdd3d9800f158ee156a168c866c2ee50b2472bac475",
+  "csv_member": "oldest_pd_instances.csv",
+  "csv_sha256": "09ab6edd41a96c205e1d171e36173cc9c28c32aa6809156c6bd10eeeba24a18b",
+  "encoding": "UTF-8; leading BOM is explicit encoding support, not title text",
+  "data_rows": 34895,
+  "columns": [
+    "Title",
+    "Full text",
+    "Author name",
+    "Author birth",
+    "Author death",
+    "Year written",
+    "Hymnal title",
+    "Hymnal publication year"
+  ],
+  "row_order": "Exact retained CSV order; duplicate titles and records remain distinct source rows. No deduplication, filtering, language inference, year coercion or spelling correction.",
+  "csv_syntax": "Decode ordinary CSV doubled quotes. Preserve every backslash. Preserve a lone quote after a backslash as literal source content only where it cannot terminate a field; record each occurrence. No global escapechar.",
+  "anomalous_quote_byte_offsets": [
+    18709623,
+    28601826,
+    28601942,
+    28601959,
+    28602078,
+    29668164,
+    29668176
+  ],
+  "editorial_disposition": "The seven anomalous quote characters and their backslashes remain literal. Intended quote escaping is unresolved, not silently corrected.",
+  "xml_controls": {
+    "U+0008": 7,
+    "U+000F": 1,
+    "U+0010": 7
+  },
+  "xml_control_representation": "TEI g references to charDecl entries identify exact original codepoints and positions. Visible labels disclose source-control anomalies; decoding g restores the original character. Intended readings remain unresolved.",
+  "line_endings": "Each source CRLF, CR or LF maps to lb with its exact ending type; consecutive breaks preserve blank lines. Other text including tabs and Unicode characters remains exact.",
+  "metadata": "Preserve all eight source columns as source assertions without promoting uncertain dates, people or language to new catalog metadata. Reconcile existing META sidecars separately.",
+  "excluded_archive_members": {
+    "__MACOSX/._oldest_pd_instances.csv": "AppleDouble resource-fork support. Preserve its member hash and byte length; not hymn text."
+  },
+  "status": "source-preservation-policy; candidate generation, complete independent TEI oracle and review pending"
+}

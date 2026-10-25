@@ -1,0 +1,81 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-anf01-irenaeus-against-heresies",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/anf/anf01.xml",
+      "role": "primary-source",
+      "bytes": 4511814,
+      "sha256": "8012ea0e35b497d2fbd783f9d4fd7b3a27d98c6dc66fd427b50d7312e6dd45af"
+    },
+    {
+      "name": "existing-source-config",
+      "path": "sources/structured-text/irenaeus-against-heresies/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1409,
+      "sha256": "f06a6be78c75d3a2f7d9c7b6134aa0dff898ce862bf90ed60c98220000eb937d"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/puritan-irenaeus-against-heresies.README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1055,
+      "sha256": "c57b269aacf1dbdf70401867cf2721d233174227d1e0be80a4400b926da9d20a"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/irenaeus-against-heresies/irenaeus-against-heresies.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2481,
+      "sha256": "111deb03f3de77532be9830605eadec1557ecf00b0c2b155dc24279d810ebb78"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/irenaeus-against-heresies/irenaeus-against-heresies.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1379,
+      "sha256": "1c29efd3ad1b977bdf7497c3000390148e498d51a576a1fc419d94ae99e228ba"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/irenaeus-against-heresies/irenaeus-against-heresies.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 4315,
+      "sha256": "51f17ceb80c8e930d5ed9212a2c0497fa78183fc54d5d99109ae8ae9c977d7a9"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-anf01-irenaeus-against-heresies-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/irenaeus_against_heresies_reconstruction.py",
+    "implementation_sha256": "ce9bbcf7c173a02873084afcc30e2329c84da5d1ba192c4cc463f01390abef31"
+  },
+  "validator": {
+    "id": "ocd-anf01-irenaeus-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/irenaeus_against_heresies_oracle.py",
+    "implementation_sha256": "c4f63bc0838a06b12e57b92b711a1c27f07d0bc0317b4fad84a4ac8bfa0756bb",
+    "import_closure_sha256": "65145cb0e226b6c01ea39b267f2f4f6c818e1ad04b6a2198c6d5a01ef35e67d2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

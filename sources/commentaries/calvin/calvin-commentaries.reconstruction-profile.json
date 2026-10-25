@@ -1,0 +1,544 @@
+{
+  "author": "John Calvin",
+  "contract": "ocd-calvin-commentaries-profile-v1",
+  "element_counts": {
+    "DC": 46,
+    "DC.Contributor": 91,
+    "DC.Coverage": 45,
+    "DC.Creator": 452,
+    "DC.Date": 46,
+    "DC.Description": 46,
+    "DC.Format": 46,
+    "DC.Identifier": 135,
+    "DC.Language": 46,
+    "DC.Publisher": 137,
+    "DC.Relation": 45,
+    "DC.Rights": 46,
+    "DC.Source": 225,
+    "DC.Subject": 319,
+    "DC.Title": 133,
+    "DC.Type": 46,
+    "ThML": 46,
+    "ThML.body": 46,
+    "ThML.head": 46,
+    "a": 70464,
+    "added": 20,
+    "authorID": 46,
+    "b": 57987,
+    "bkgID": 46,
+    "bookID": 46,
+    "br": 5349,
+    "center": 2,
+    "cite": 4,
+    "comments": 92,
+    "copyLocation": 45,
+    "description": 46,
+    "div": 13498,
+    "div1": 767,
+    "div2": 4808,
+    "div3": 2114,
+    "div4": 78,
+    "editorialComments": 46,
+    "electronicEdInfo": 46,
+    "firstPublished": 46,
+    "generalInfo": 46,
+    "h1": 50,
+    "h2": 259,
+    "h3": 3,
+    "hr": 3,
+    "i": 114332,
+    "image": 90,
+    "img": 11,
+    "insertIndex": 258,
+    "li": 20296,
+    "link": 45,
+    "name": 1429,
+    "note": 17283,
+    "p": 134409,
+    "printSourceInfo": 46,
+    "property": 1833,
+    "pubHistory": 46,
+    "published": 46,
+    "publisherID": 46,
+    "revisionHistory": 46,
+    "scripCom": 14052,
+    "scripRef": 24787,
+    "selector": 723,
+    "series": 46,
+    "span": 34932,
+    "status": 46,
+    "style": 92,
+    "sup": 741,
+    "table": 4926,
+    "td": 34845,
+    "tr": 20175,
+    "ul": 170,
+    "unclear": 9,
+    "version": 46,
+    "workID": 46
+  },
+  "formatting_only_tags": [
+    "col",
+    "colgroup",
+    "property",
+    "selector",
+    "style"
+  ],
+  "member_census": {
+    "excluded": 0,
+    "included": 46,
+    "retained_family_total": 46
+  },
+  "lexical_events": {
+    "comments": 369,
+    "doctype_declarations": 36,
+    "processing_instructions": 20
+  },
+  "lexical_event_disposition": {
+    "comments": "accounted-not-represented",
+    "doctype_declarations": "accounted-not-represented",
+    "processing_instructions": "accounted-not-represented"
+  },
+  "members": [
+    {
+      "body_division_count": 1,
+      "bytes": 8839,
+      "kind": "catalogue",
+      "main_title": "Calvin's Commentaries�Complete",
+      "name": "commentaries.xml",
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "sha256": "d5167554c4c40ac2ba320e9ec75afd2565001e0f5f84b0245832b7bfa183b08f"
+    },
+    {
+      "body_division_count": 30,
+      "bytes": 1760992,
+      "kind": "component",
+      "main_title": "Commentary on Genesis - Volume 1",
+      "name": "calcom01.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom01.xml",
+      "sha256": "4b700a5aa4f799f9363cc232cde85409a4f2ff58ebba6c82d9c4830ba83c7b33"
+    },
+    {
+      "body_division_count": 29,
+      "bytes": 1633371,
+      "kind": "component",
+      "main_title": "Commentary on Genesis - Volume 2",
+      "name": "calcom02.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom02.xml",
+      "sha256": "fa675fccdbe4d1ad0e555069e0c00c46d732974cc1989b1ca3df87bb073f0663"
+    },
+    {
+      "body_division_count": 7,
+      "bytes": 1961516,
+      "kind": "component",
+      "main_title": "Harmony of the Law - Volume 1",
+      "name": "calcom03.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom03.xml",
+      "sha256": "5f153f44091059eff0d75451785cee7e3d0d9e63edecee645fe7b1b7c1dcaf53"
+    },
+    {
+      "body_division_count": 6,
+      "bytes": 2127111,
+      "kind": "component",
+      "main_title": "Harmony of the Law - Volume 2",
+      "name": "calcom04.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom04.xml",
+      "sha256": "d0af9b325ea95e6fec6cd69e7cb67e660379868cfed63006424e147e086db721"
+    },
+    {
+      "body_division_count": 8,
+      "bytes": 2122727,
+      "kind": "component",
+      "main_title": "Harmony of the Law - Volume 3",
+      "name": "calcom05.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom05.xml",
+      "sha256": "228608eda64658283ba7672b84267f0a62615eec37abe72c2128ede9fce9ee7c"
+    },
+    {
+      "body_division_count": 4,
+      "bytes": 1611118,
+      "kind": "component",
+      "main_title": "Harmony of the Law - Volume 4",
+      "name": "calcom06.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom06.xml",
+      "sha256": "de96d1361801c31a76db343b05fe227664184aeefeb365b895d1ecf3e7592ad6"
+    },
+    {
+      "body_division_count": 29,
+      "bytes": 1152629,
+      "kind": "component",
+      "main_title": "Commentary on Joshua",
+      "name": "calcom07.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom07.xml",
+      "sha256": "98657e5ee3b1564e7d16729a8fd4fc73b1f46439f02e750fdbe700488fc33879"
+    },
+    {
+      "body_division_count": 43,
+      "bytes": 2199058,
+      "kind": "component",
+      "main_title": "Commentary on Psalms - Volume 1",
+      "name": "calcom08.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom08.xml",
+      "sha256": "d536c3aef54fbece4f8411ee9e76279333c97cd321ce1fc99241da17ea917586"
+    },
+    {
+      "body_division_count": 34,
+      "bytes": 1640391,
+      "kind": "component",
+      "main_title": "Commentary on Psalms - Volume 2",
+      "name": "calcom09.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom09.xml",
+      "sha256": "ed4df1781f8f4fcc5c192adae0702a198f19176e2ae5e4790b34b5780971a591"
+    },
+    {
+      "body_division_count": 29,
+      "bytes": 1801480,
+      "kind": "component",
+      "main_title": "Commentary on Psalms - Volume 3",
+      "name": "calcom10.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom10.xml",
+      "sha256": "7663f8e936be7b2f896a01e146ac30e03884f6edc04f3fc65d2b97bb51f99070"
+    },
+    {
+      "body_division_count": 30,
+      "bytes": 1731132,
+      "kind": "component",
+      "main_title": "Commentary on Psalms - Volume 4",
+      "name": "calcom11.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom11.xml",
+      "sha256": "ba8b446e8df7599db0e8088704f5c108fab17a873f34df75f7449eb79b13d6ea"
+    },
+    {
+      "body_division_count": 37,
+      "bytes": 1724469,
+      "kind": "component",
+      "main_title": "Commentary on Psalms - Volume 5",
+      "name": "calcom12.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom12.xml",
+      "sha256": "53e9f7cb53092c67c71ed3f6b0bf6f625f0fcdc4b4f4272327c8939fb9e4b3de"
+    },
+    {
+      "body_division_count": 26,
+      "bytes": 2106254,
+      "kind": "component",
+      "main_title": "Commentary on Isaiah - Volume 1",
+      "name": "calcom13.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom13.xml",
+      "sha256": "f87ca5809cf9d52d8a4dd90bca1453254f8d6518a1668f7af1418865cfd80043"
+    },
+    {
+      "body_division_count": 23,
+      "bytes": 1592692,
+      "kind": "component",
+      "main_title": "Commentary on Isaiah - Volume 2",
+      "name": "calcom14.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom14.xml",
+      "sha256": "d4875806cb10179dd4ec51d38260c8d85150ac3272c38916858b06c25905c00d"
+    },
+    {
+      "body_division_count": 20,
+      "bytes": 1671753,
+      "kind": "component",
+      "main_title": "Commentary on Isaiah - Volume 3",
+      "name": "calcom15.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom15.xml",
+      "sha256": "5470801c8e4f73adb79bc425d586298c79ec45ddb1f4ee69bebff0b2163a76dc"
+    },
+    {
+      "body_division_count": 21,
+      "bytes": 1507464,
+      "kind": "component",
+      "main_title": "Commentary on Isaiah - Volume 4",
+      "name": "calcom16.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom16.xml",
+      "sha256": "14f5e0b5fb890e04a18d0907e3d9303d3bc7a5f91bc6958d13ee7fbe5dcb683c"
+    },
+    {
+      "body_division_count": 21,
+      "bytes": 1816285,
+      "kind": "component",
+      "main_title": "Commentary on Jeremiah and Lamentations - Volume 1",
+      "name": "calcom17.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom17.xml",
+      "sha256": "798e2868501737dbad1257ada4cc88415384bd0513dc89f5c3bd662108435b78"
+    },
+    {
+      "body_division_count": 13,
+      "bytes": 1545485,
+      "kind": "component",
+      "main_title": "Commentary on Jeremiah and Lamentations - Volume 2",
+      "name": "calcom18.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom18.xml",
+      "sha256": "2c7989b0bef3b1d9b5a8d5c977eb409d1ba7f515643f4f01a52a7bc0bb3dd5f9"
+    },
+    {
+      "body_division_count": 14,
+      "bytes": 1591008,
+      "kind": "component",
+      "main_title": "Commentary on Jeremiah and Lamentations - Volume 3",
+      "name": "calcom19.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom19.xml",
+      "sha256": "bdde519e98338ce70f1ebf26efc3040e57b716ef15ecb88af529095df0ae6249"
+    },
+    {
+      "body_division_count": 21,
+      "bytes": 2096932,
+      "kind": "component",
+      "main_title": "Commentary on Jeremiah and Lamentations - Volume 4",
+      "name": "calcom20.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom20.xml",
+      "sha256": "1fb1279732e1ec3820a9458094b74074c4146c8bb0f72ad4b775fd9cad1a3b00"
+    },
+    {
+      "body_division_count": 5,
+      "bytes": 1903789,
+      "kind": "component",
+      "main_title": "Commentary on Jeremiah and Lamentations - Volume 5",
+      "name": "calcom21.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom21.xml",
+      "sha256": "2cf559a316f8dd267805ea332e66c62300a45baf5c579bb105cd1ecc6fa8727b"
+    },
+    {
+      "body_division_count": 18,
+      "bytes": 1281225,
+      "kind": "component",
+      "main_title": "Commentary on Ezekiel - Volume 1",
+      "name": "calcom22.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom22.xml",
+      "sha256": "e1f87bee30d0c44206811f55508b83e30df6b4738c665c3e3e473646bcd4a8a0"
+    },
+    {
+      "body_division_count": 15,
+      "bytes": 1506195,
+      "kind": "component",
+      "main_title": "Commentary on Ezekiel - Volume 2",
+      "name": "calcom23.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom23.xml",
+      "sha256": "545b547bdaea2b48492da3530a4e369806c20dc734d13691014cac24e44970e9"
+    },
+    {
+      "body_division_count": 15,
+      "bytes": 1389618,
+      "kind": "component",
+      "main_title": "Commentary on Daniel - Volume 1",
+      "name": "calcom24.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom24.xml",
+      "sha256": "852e065780ef1969630ce55d7310c8df1029ab4e303d3b7efbf05626b84a2496"
+    },
+    {
+      "body_division_count": 13,
+      "bytes": 1438004,
+      "kind": "component",
+      "main_title": "Commentary on Daniel - Volume 2",
+      "name": "calcom25.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom25.xml",
+      "sha256": "a0d0e8a8afc1027bbd960a5ee6a6dfbefee08a5cb60fbcc74b1a1780bb0041e0"
+    },
+    {
+      "body_division_count": 24,
+      "bytes": 1537578,
+      "kind": "component",
+      "main_title": "Commentary on Hosea",
+      "name": "calcom26.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom26.xml",
+      "sha256": "fa11e0f55eb5228fb048abc3a79c93c03d877604274bf7a137ed68149dcb4ee5"
+    },
+    {
+      "body_division_count": 8,
+      "bytes": 1505639,
+      "kind": "component",
+      "main_title": "Commentary on Joel, Amos, Obadiah",
+      "name": "calcom27.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom27.xml",
+      "sha256": "706711217a3b7e0bf3698bf855f5675371e41faf82bd6369874ff5051c94c171"
+    },
+    {
+      "body_division_count": 7,
+      "bytes": 1689113,
+      "kind": "component",
+      "main_title": "Commentary on Jonah, Micah, Nahum",
+      "name": "calcom28.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom28.xml",
+      "sha256": "b88752f77e187112a3f920aa82e9aaa125f32765a9843daf3c94290f3dd44a67"
+    },
+    {
+      "body_division_count": 7,
+      "bytes": 1239178,
+      "kind": "component",
+      "main_title": "Commentary on Habakkuk, Zephaniah, Haggai",
+      "name": "calcom29.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom29.xml",
+      "sha256": "11295fba3e70f79968a46a1a499e7daef96d51e20552a517f1ae919d630d2054"
+    },
+    {
+      "body_division_count": 6,
+      "bytes": 2105095,
+      "kind": "component",
+      "main_title": "Commentary on Zechariah, Malachi",
+      "name": "calcom30.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom30.xml",
+      "sha256": "90e826641081bd15d455a799da7f60574d4394d884de75d6f351ade0d1763ab8"
+    },
+    {
+      "body_division_count": 10,
+      "bytes": 1924843,
+      "kind": "component",
+      "main_title": "Commentary on Matthew, Mark, Luke - Volume 1",
+      "name": "calcom31.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom31.xml",
+      "sha256": "4989da59aa4b29fd076d95bae451def22de137db54bd7c52eb070f544913b428"
+    },
+    {
+      "body_division_count": 3,
+      "bytes": 1874608,
+      "kind": "component",
+      "main_title": "Commentary on Matthew, Mark, Luke - Volume 2",
+      "name": "calcom32.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom32.xml",
+      "sha256": "a6a0045ee9a75603a35142bdcfa2fdeac79a9d867ea32b1e16cbc47a8c0d6681"
+    },
+    {
+      "body_division_count": 3,
+      "bytes": 1423641,
+      "kind": "component",
+      "main_title": "Commentary on Matthew, Mark, Luke - Volume 3",
+      "name": "calcom33.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom33.xml",
+      "sha256": "28cecf1fe7cdf9837f6760f8febb9bea5cee08ead5950596fa4dac1dfb4a98af"
+    },
+    {
+      "body_division_count": 18,
+      "bytes": 1452233,
+      "kind": "component",
+      "main_title": "Commentary on John - Volume 1",
+      "name": "calcom34.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom34.xml",
+      "sha256": "69f6362ccb18d6e09c8c4aae165179b8dc4838ae19b268b3a3787fb6ed37c39a"
+    },
+    {
+      "body_division_count": 12,
+      "bytes": 979783,
+      "kind": "component",
+      "main_title": "Commentary on John - Volume 2",
+      "name": "calcom35.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom35.xml",
+      "sha256": "d4681c28a63055fa04fcd4883f8f9acf0e2614086bdfe40c0fd303bf26ddd035"
+    },
+    {
+      "body_division_count": 21,
+      "bytes": 1667294,
+      "kind": "component",
+      "main_title": "Commentary on Acts - Volume 1",
+      "name": "calcom36.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom36.xml",
+      "sha256": "b48725d5eb77240b1bc4e5918d7141387811e9e2916e19f210a3cc75e6886af1"
+    },
+    {
+      "body_division_count": 17,
+      "bytes": 1304211,
+      "kind": "component",
+      "main_title": "Commentary on Acts - Volume 2",
+      "name": "calcom37.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom37.xml",
+      "sha256": "a1ca28543d1700c301dfb9e72e9fa8646febd1575e76ae0bc91ddb95a871bf34"
+    },
+    {
+      "body_division_count": 22,
+      "bytes": 2269410,
+      "kind": "component",
+      "main_title": "Commentary on Romans",
+      "name": "calcom38.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom38.xml",
+      "sha256": "83f148d977bb0e02928d209dd4cb2b19ebea440dd9c5e85fe3e73131fb53289c"
+    },
+    {
+      "body_division_count": 22,
+      "bytes": 1767435,
+      "kind": "component",
+      "main_title": "Commentary on Corinthians - Volume 1",
+      "name": "calcom39.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom39.xml",
+      "sha256": "176ef9aa57b3973664dcf65d4ca12c1b7b319e51e8df7c270d237d6ad1aed012"
+    },
+    {
+      "body_division_count": 20,
+      "bytes": 1698566,
+      "kind": "component",
+      "main_title": "Commentary on Corinthians - Volume 2",
+      "name": "calcom40.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom40.xml",
+      "sha256": "62b7b8c27c058d259cc4dc63564970ead43d516beeb9225b83a01c6d02fa1db2"
+    },
+    {
+      "body_division_count": 7,
+      "bytes": 1250834,
+      "kind": "component",
+      "main_title": "Commentary on Galatians and Ephesians",
+      "name": "calcom41.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom41.xml",
+      "sha256": "fac8c754eb4291391a28e94f9e285c40f9a5dfc43326f63a3438f65f9aa9aefd"
+    },
+    {
+      "body_division_count": 8,
+      "bytes": 1370466,
+      "kind": "component",
+      "main_title": "Commentary on Philippians, Colossians, and Thessalonians",
+      "name": "calcom42.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom42.xml",
+      "sha256": "51096062bcf518040d5384f2597331b6e96dece4d0aaf2e5dda64c262dd921d2"
+    },
+    {
+      "body_division_count": 8,
+      "bytes": 1219919,
+      "kind": "component",
+      "main_title": "Commentary on Timothy, Titus, Philemon",
+      "name": "calcom43.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom43.xml",
+      "sha256": "b5cdb241085c0eea44aa29388d88a53d2940ee0910cd43c39182f4a0c581528b"
+    },
+    {
+      "body_division_count": 22,
+      "bytes": 1443756,
+      "kind": "component",
+      "main_title": "Commentary on Hebrews",
+      "name": "calcom44.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom44.xml",
+      "sha256": "b3bc9df38e418bc26ec525e01e9a4f59a41ca0b8f9c52ede49d880f0eac59827"
+    },
+    {
+      "body_division_count": 10,
+      "bytes": 1603776,
+      "kind": "component",
+      "main_title": "Commentaries on the Catholic Epistles",
+      "name": "calcom45.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom45.xml",
+      "sha256": "61ee8f73bf8a3f274bdf599c20631874a1070d489edf9fd659d572bfb20b1d1f"
+    }
+  ],
+  "profile_id": "calvin-commentaries-retained-ccel-thml-v1",
+  "source_bytes": 74248915,
+  "source_census": {
+    "attributes": 912249,
+    "characters": 51274609,
+    "comments": 369,
+    "doctype_declarations": 36,
+    "elements": 583805,
+    "processing_instructions": 20,
+    "tail_nodes": 449460,
+    "text_nodes": 471791
+  },
+  "represented_element_count": 581157,
+  "formatting_only_excluded_element_count": 2648,
+  "unsupported_element_count": 0,
+  "formatting_only_counts": {
+    "col": 0,
+    "colgroup": 0,
+    "property": 1833,
+    "selector": 723,
+    "style": 92
+  },
+  "source_member_set_sha256": "2ed1ca9ee905b3cb709bbe9b8dd800e1ed8c78eba4146945b4e8924ad8efa235",
+  "title": "Calvin's Collected Commentaries",
+  "version": 1,
+  "work_id": "calvin-commentaries"
+}

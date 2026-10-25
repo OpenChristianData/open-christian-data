@@ -1,0 +1,31 @@
+{
+  "contract": "ocd-lib071-validation-policy-v1",
+  "policy_id": "lib071-ten-retained-utf8-text-witnesses-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["manifest.json","content.tei.xml","source-accountability.json","provenance.json","unresolved.jsonl","README.source.md"],
+  "required_work_count": 10,
+  "required_source_member_count": 10,
+  "required_adjacent_member_count": 49,
+  "checks": [
+    "exact retained source hashes and work order",
+    "complete adjacent retained-member census",
+    "precise evidence-backed dispositions for wrong-witness unassigned and unmapped adjacent members",
+    "independent physical-line read and byte reassembly",
+    "omission duplication reorder and invention detection",
+    "TEI P5 XSD",
+    "source-accountability JSON schema",
+    "source-local Project Gutenberg license and Internet Archive credit notice",
+    "localized edition uncertainty",
+    "candidate package integrity and current authority bindings",
+    "complete closed TEI tree metadata element and attribute equality",
+    "complete closed provenance tree and canonical byte equality",
+    "producer-independent complete first-party import closure"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.gutenberg_evangelical_lib071_reconstruction",
+    "build.parsers.gutenberg_evangelical",
+    "build.lib.pg_inline_markup"
+  ]
+}

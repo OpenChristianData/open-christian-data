@@ -1,0 +1,9 @@
+# Systematic Theology, Vol. 1 — retained source evidence
+
+This source-specific candidate is reconstructed from the retained Project Gutenberg plain-text witness `raw/gutenberg/pg44035.txt`, Project Gutenberg eBook #44035, **Systematic Theology (Volume 1 of 3)**. The witness identifies Augustus Hopkins Strong as author and identifies the printed source as the revised and enlarged 1907 Judson Press edition. The retained member is one UTF-8 plain-text file, 1,862,247 bytes, SHA-256 `2e397c9b34b9e2881abbb6185d893014736c6eed8ffe4c4bac1d9a53efee0261`, with 30,931 CRLF records.
+
+The volume scope is the text between the Project Gutenberg start and end markers (source lines 26–30,580). The title page, contents, preface, four named parts, twelve chapter divisions, and 159 body heading blocks corroborated by the contents are represented in the TEI hierarchy. The 159 headings are nested as 56 sections, 67 subsections, and 36 subsubsections; wrapped heading lines remain ordered source-line carriers. Every nonblank source line in that range is carried by a source-line node with a stable source line ID. Blank separators and the Project Gutenberg metadata, license, and donation envelope are retained in `source-accountability.json` as evidence-only records; they are not silently discarded.
+
+The existing structured-text JSON projection is historical parser output. It strips some inline emphasis and tags numeric note anchors, so it is not used as the TEI wording authority. This candidate is nonaccepted and `publication:not_ready`. The Project Gutenberg wrapper states a United States basis and directs users to check local law; this evidence does not establish worldwide rights clearance, human acceptance, promotion, or publication authorization.
+
+Source URL: http://www.gutenberg.org/cache/epub/44035/pg44035.txt

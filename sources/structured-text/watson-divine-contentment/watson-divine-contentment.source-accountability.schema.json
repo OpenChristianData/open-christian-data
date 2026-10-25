@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/37c-316/watson-divine-contentment.source-accountability.schema.json",
+  "contract": "ocd-watson-source-accountability-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "work_id", "source_member", "source_selection_sha256", "source_envelope", "document_shell", "feature_census", "features", "source_completeness_gap"],
+  "properties": {
+    "contract": {"const": "ocd-watson-source-accountability-v1"},
+    "work_id": {"const": "watson-divine-contentment"},
+    "source_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {"path": {"const": "raw/ccel/watson/contentment.xml"}, "bytes": {"const": 293615}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+    },
+    "source_selection_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "source_envelope": {"type": "array", "minItems": 17, "items": {"type": "object", "additionalProperties": false, "required": ["position", "native_id", "source_tag", "source_title", "tei_region", "disposition"], "properties": {"position": {"type": "integer", "minimum": 0}, "native_id": {"type": "string", "minLength": 1}, "source_tag": {"const": "div1"}, "source_title": {"type": "string"}, "progress": {"type": ["string", "null"]}, "prev": {"type": ["string", "null"]}, "next": {"type": ["string", "null"]}, "tei_region": {"enum": ["front", "body", "back"]}, "disposition": {"const": "represented-present-carrier"}}}},
+    "document_shell": {"type": "object"},
+    "feature_census": {"type": "object"},
+    "features": {"type": "array", "minItems": 1319, "items": {"type": "object", "required": ["ordinal", "source_selector", "parent_selector", "child_position", "source_tag", "attributes", "text", "tail", "disposition", "tei_id"], "additionalProperties": true}},
+    "source_completeness_gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "expected_chapters", "absent_native_ids", "evidence_selector", "disposition"],
+      "properties": {"contract": {"const": "ocd-source-completeness-gap-v1"}, "expected_chapters": {"const": ["VI", "VII"]}, "absent_native_ids": {"const": ["ix", "x"]}, "evidence_selector": {"type": "string"}, "disposition": {"type": "string"}}
+    }
+  }
+}

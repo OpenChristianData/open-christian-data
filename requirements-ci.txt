@@ -1,16 +1,19 @@
 # CI-only dependencies — subset of requirements.txt
 # pymupdf4llm is intentionally excluded: it is only used by the PDF extraction
-# pipeline (build/extract_pdf.py, build/lib/pdf_normalizer.py) and is not
-# imported by validate.py or any test file. Excluding it keeps CI fast and
-# avoids native-library install issues on ubuntu-latest.
+# pipeline (build/extract_pdf.py, build/lib/pdf_normalizer.py). CVW's bounded
+# PDF previews use PyMuPDF directly, so its renderer tests include that engine.
 beautifulsoup4==4.14.3
+html5lib==1.1
 datasets==4.8.5
+pyarrow==25.0.0
 jsonschema==4.26.0
+jsonschema-rs==0.57.1
 lxml==6.0.2
 Pillow==12.0.0
+PyMuPDF==1.27.2.2
 pytest
 pytest-xdist==3.8.0
-pytesseract==0.3.13
+filelock==4.2.4
 PyYAML==6.0.3
 remotezip==0.12.3
 requests==2.32.5

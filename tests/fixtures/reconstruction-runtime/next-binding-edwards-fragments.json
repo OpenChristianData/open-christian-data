@@ -1,0 +1,14 @@
+[
+  {
+    "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-distinguishing-marks/lib054-edwards-fragment.source-manifest.json",
+    "original_sha256": "6ff4502d3efecbef3081ad7d42854506e5247ddca1ddb31308b35098fe0cf150",
+    "manifest": "tests/fixtures/reconstruction-runtime/edwards-distinguishing-marks-fragment.source-manifest.json",
+    "preservation_test": "tests/test_lib054_edwards_fragments.py::test_runtime_manifest_preserves_complete_original_record"
+  },
+  {
+    "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-history-of-redemption/lib054-edwards-fragment.source-manifest.json",
+    "original_sha256": "5d31a9cad607b8902abf73de96ab028dff12206e55b26a1610bc1ae534e461f0",
+    "manifest": "tests/fixtures/reconstruction-runtime/edwards-history-of-redemption-fragment.source-manifest.json",
+    "preservation_test": "tests/test_lib054_edwards_fragments.py::test_runtime_manifest_preserves_complete_original_record"
+  }
+]

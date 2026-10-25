@@ -1,0 +1,15 @@
+# Source and rights preparation — The Epistle of Ignatius to Polycarp
+
+The accepted electronic text is reconstructed from the retained extracted HTML for [Project Gutenberg eBook 77576](https://www.gutenberg.org/ebooks/77576), *The Writings of the Apostolic Fathers* (T. & T. Clark, Edinburgh, 1870). The acquired ZIP is its package container. This constituent preserves shorter and longer Greek readings, a Syriac recension, its shared manuscript notice, and 80 source footnotes. It is distinct from Polycarp's own epistle and martyrdom elsewhere in the volume.
+
+The volume title page names Alexander Roberts and James Donaldson as editors and lists Roberts, Donaldson, and Frederick Crombie as volume translators. Its preface attributes the translation to the editors except the *Similitudes of Hermas*, translated by Crombie. Roberts and Donaldson are the supported collective attribution for this epistle; the source does not identify which editor translated it. The electronic edition credits David King and the Online Proofreading Team at PGDP and identifies Internet Archive images as source scans.
+
+The human-visible data notice is `data/structured-text/pg77576-ignatius-polycarp/README.md`. It carries the complete retained Project Gutenberg License, the original-format link, and qualified source and rights statements. The Gutenberg catalog reports United States public-domain status; jurisdiction-specific rights for the translation and electronic transcription, human verification, print collation, and public publication remain separate.
+
+## Current item-specific rights disposition — October 9, 2026
+
+Target `pg77576-ignatius-polycarp--pg77576-ignatius-polycarp-pg77576-edition` matches the acceptance, acquisition and master bytes reviewed in `reports/_logs/first-publication-rights-inputs-20261008-v1/project-gutenberg-target-review-20261008.json` (review SHA-256 `cf2811c0bf4e2cc00bad6cefdd87fb09f6757153e33d7da6a5b1fb1fe185a4fd`). Current acceptance SHA-256: `bb304d019a640ef590c6307668b110ad9dcc1600c26beb67eadc47d5930eaefe`; master SHA-256: `e923e6e0d4b98007680da16bf8e2de69c5ac18146f5f5ec50dcab2795e3063f5`; textual source SHA-256: `ca58049f2ee7c62c8c34dffb6badfdb910ab698748f8decc9d9b978e7972e507`.
+
+The supported route is **Public domain (United States and Australia); 1870 historical text, translation, and notes only**, limited to this source-titled constituent and its linked historical notes. This supersedes the preliminary unassessed-rights statement only for the selected 1870 literary text, translation and textual edition in these two territories. It does not clear new digital-transcription matter, images, modern additions, worldwide use or the whole eBook package. Preserve existing source/editor/translator credits and all scope/authenticity qualifications.
+
+Bind and carry the complete current human-visible notice at `data/structured-text/pg77576-ignatius-polycarp/README.md`, including its unaltered retained Gutenberg License, prominent notice, and original-format access link. Final projection/release checks and publication authorization remain separate.

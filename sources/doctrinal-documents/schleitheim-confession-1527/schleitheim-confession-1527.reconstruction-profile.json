@@ -1,0 +1,31 @@
+{
+  "contract": "ocd-schleitheim-confession-retained-html-reconstruction-profile-v1",
+  "profile_id": "schleitheim-confession-retained-html-v1",
+  "ticket_id": "LIB-083",
+  "identity": {
+    "title": "The Schleitheim Confession",
+    "author": "Swiss Brethren",
+    "language": "en",
+    "original_language": "de",
+    "expression_status": "English translation hosted by anabaptists.org",
+    "edition_status": "Rod and Staff Publishers, Sixth Printing, 1985; human review required",
+    "acceptance_status": "nonaccepted"
+  },
+  "source_scope": {
+    "path": "raw/anabaptists.org/schleitheim-confession-1527.html",
+    "bytes": 21064,
+    "sha256": "5a7f3b112e2bd074c9eb8626fd58d13086870ebb0be52a3036781ce9077f3750",
+    "article_count": 7,
+    "article_word_count": 2341,
+    "closing_imprint_word_count": 11,
+    "work_word_count": 2352,
+    "contents_item_count": 7,
+    "source_segment_count": 5
+  },
+  "reading_policy": "Represent the title, publication imprint, adoption and subtitle text, introduction, seven-item contents list, all seven article headings and paragraphs, and the three-line closing imprint in source order. Account explicitly for page-container bytes, the post-terminal typed-by and history-link context, and later site chrome. Preserve the retained translation; do not modernize or silently repair wording.",
+  "rights": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "translation": "Hosted translation attribution and redistribution status require human review.",
+    "worldwide_status": "human identity, textual, and rights review required before acceptance or publication"
+  }
+}

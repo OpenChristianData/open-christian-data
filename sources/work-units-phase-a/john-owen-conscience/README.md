@@ -1,0 +1,1 @@
+Phase A per-work candidate pilot. Selection authority lives in the acquisition. Work and containing-source metadata are directly retained-source-attested. Translator allocation for Spirit and Letter remains unassigned. Owen source credit and edition history remain in the candidate README; rights are unresolved. Neither declaration authorizes acceptance or publication.

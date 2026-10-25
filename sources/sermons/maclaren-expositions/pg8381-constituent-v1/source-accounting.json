@@ -1,0 +1,72 @@
+{
+  "acquisition": {
+    "path": "library/works/maclaren-expositions/forms/maclaren-expositions-pg-retained-en/editions/maclaren-expositions-pg-fifteen-volume-cohort/acquisitions/maclaren-expositions-11-pg8381-acquired.json",
+    "sha256": "69d1bd260b0362a5b9f2ec611ed680d5d75d15042f919574eaf564891bd8e1d2"
+  },
+  "candidate": {
+    "path": "sources/sermons/maclaren-expositions/pg8381-constituent-v1/content.tei.xml",
+    "role": "nonaccepted-volume-candidate",
+    "sha256": "d133a2018beb100f44c39c0a6ca8de17f5c882d31d4e63344c9372ea42405e90"
+  },
+  "checks": {
+    "all_candidate_text_and_tails_accounted": true,
+    "focused_mutation_tests_passed": 7,
+    "fresh_process_byte_reproduction": true,
+    "invented_paragraph_mutation_rejected": true,
+    "physical_lines_once_in_order": 12244,
+    "source_derived_paragraph_ownership": true,
+    "toc_entries_to_exposition_divisions": 45
+  },
+  "claims_excluded": [
+    "human review",
+    "print-edition lineage",
+    "rights clearance",
+    "accepted master",
+    "release selection",
+    "publication"
+  ],
+  "contract": "maclaren-pg8381-constituent-accounting-v1",
+  "current_acquisition_id": "maclaren-expositions-11-pg8381-acquired",
+  "current_edition_id": "maclaren-expositions-pg-fifteen-volume-cohort",
+  "current_textual_form_id": "maclaren-expositions-pg-retained-en",
+  "edition_mapping": "Current edition still groups 15 PG files; a single-acquisition PG 8381 constituent edition requires review and sidecar transition before acceptance.",
+  "oracle": {
+    "path": "build/tei/maclaren_pg8381_constituent_oracle_v1.py",
+    "sha256": "21053a3adb6a92982d6134c48e5455d12c242041c824eddff30d113f30483611"
+  },
+  "producer": {
+    "path": "build/tei/maclaren_pg8381_constituent_v1.py",
+    "sha256": "33cf040d7707911016ab20e0a5aca74a29fc92491b0211dddf77fdfc46dd9581"
+  },
+  "source": {
+    "bytes": 731722,
+    "lines": 12244,
+    "path": "raw/gutenberg/sermons/maclaren/pg8381.txt",
+    "role": "extracted-text-authority",
+    "sha256": "9666a51d24dfcfff7b23d2ddfb2e2fe143a1b742f8951143a9fbde2c67f26841"
+  },
+  "source_regions": [
+    {
+      "first_line": 1,
+      "last_line": 155,
+      "role": "electronic-front-and-contents"
+    },
+    {
+      "first_line": 156,
+      "last_line": 11880,
+      "role": "45-source-attested-expositions"
+    },
+    {
+      "first_line": 11881,
+      "last_line": 12244,
+      "role": "volume-end-and-gutenberg-license"
+    }
+  ],
+  "status": "nonaccepted",
+  "validation": {
+    "path": "sources/sermons/maclaren-expositions/pg8381-constituent-v1/validation.json",
+    "result": "independent-oracle-and-pinned-TEI-P5-XSD-pass",
+    "sha256": "5a42acc05e6596b6deb5d4e51c205126fce611b0fd3d1f7959c184c198d00ae2"
+  },
+  "work_id": "maclaren-expositions"
+}

@@ -1,0 +1,46 @@
+{
+  "contract": "ocd-reconstruction-work-identity-v1",
+  "work_id": "flavel-method-of-grace",
+  "status": "observed-only",
+  "source_record": {
+    "DC.Title": "The Method of Grace in the Gospel Redemption",
+    "DC.Creator": [
+      {
+        "sub": "Author",
+        "value": "John Flavel"
+      },
+      {
+        "scheme": "file-as",
+        "sub": "Author",
+        "value": "Flavel, John (c. 1630-1691)"
+      }
+    ],
+    "DC.Publisher": "Grand Rapids, MI: Christian Classics Ethereal Library",
+    "DC.Date": {
+      "sub": "Created",
+      "value": "2000-07-09"
+    },
+    "DC.Type": "Text.Monograph",
+    "DC.Format": {
+      "scheme": "IMT",
+      "value": "text/html"
+    },
+    "DC.Identifier": {
+      "scheme": "URL",
+      "value": "/ccel/flavel/grace.html"
+    },
+    "DC.Language": {
+      "scheme": "ISO639-3",
+      "value": "eng"
+    },
+    "DC.Rights": ""
+  },
+  "unresolved": {
+    "work_boundary": "The source title and retained document scope are observed; equivalence to the catalog work boundary is not independently settled.",
+    "textual_form_and_translator": "The source records language eng and no translator field; revision or translation identity is unresolved.",
+    "edition_and_publication_history": "The electronic-header Created date and title-page print statements are distinct observations; no single edition or original-publication claim is adopted.",
+    "parts": "The retained XML has 39 ordered top-level div1 carriers, including 35 sermon-labeled divisions; no authoritative volume/part map is established.",
+    "witness_claim": "The exact retained CCEL XML member is bound; the print transcription witness and proofreading history are unknown.",
+    "rights_clearance": "The project permission record permits parsing and limits use of CCEL formatting; publication rights are not cleared by this route."
+  }
+}

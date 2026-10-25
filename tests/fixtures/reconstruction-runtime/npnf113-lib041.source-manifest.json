@@ -1,0 +1,215 @@
+{
+  "authorities": [
+    {
+      "bytes": 4441248,
+      "name": "npnf113-retained-xml",
+      "path": "raw/ccel/npnf1/npnf113.xml",
+      "role": "primary-source",
+      "sha256": "d62c7c82b262c738739090ffaf5473aa5a76dbadf62ebee0dccac8c4a7db4762"
+    },
+    {
+      "bytes": 2731,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3fccce199713eab2c6bf5b9640a2c9b7564fef3296aa99db5dfcb13a6850fced"
+    },
+    {
+      "bytes": 1191,
+      "name": "validation-policy",
+      "path": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "212eeafebed85a071351a15e8ea2af9cefedb6d3e57148db5326645753e687ac"
+    },
+    {
+      "bytes": 3429,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "1c164afea9ff8ee8e977d028c9577196de8abceab99854f1e3aa981a66e39dae"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-rights-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 35741,
+      "name": "work-ticket-map",
+      "path": "tests/fixtures/reconstruction-runtime/npnf113-lib041.work-ticket-map.md",
+      "role": "campaign-map-evidence",
+      "sha256": "34e1ce0c692ea72971a7615ba87e949be8c15d4bd1affb57353b39ccc8e9baf7"
+    },
+    {
+      "bytes": 138768,
+      "name": "source-ticket-map",
+      "path": "tests/fixtures/reconstruction-runtime/npnf113-lib041.source-ticket-map.md",
+      "role": "campaign-map-evidence",
+      "sha256": "eced464d3b241373ef751e7e1116722229304bf75ee3d785ccd02a958697a0e4"
+    },
+    {
+      "bytes": 13115,
+      "name": "ticket-ledger",
+      "path": "plans/2026-08-26-whole-library-faithful-tei-completion/03-ticket-ledger.md",
+      "role": "campaign-map-evidence",
+      "sha256": "93c9e62456044e9feb151046297c4777ac6f4c8b06b213bfd2d5e97c60629d74"
+    },
+    {
+      "bytes": 3564,
+      "name": "lib041-ticket",
+      "path": "plans/2026-08-26-whole-library-faithful-tei-completion/tickets/library/041-reconstruct-and-review-npnf-first-series-cohort-4.md",
+      "role": "ticket-evidence",
+      "sha256": "5b57f664b235cb9e9754377cca737c112d57246f9c27cdfa792f2f08762b7a64"
+    },
+    {
+      "bytes": 1275,
+      "name": "oracle-import-closure",
+      "path": "tests/fixtures/reconstruction-runtime/npnf113-lib041.oracle-import-closure.json",
+      "role": "validator-import-closure",
+      "sha256": "7344925afdc39046e277756707a9d859e1b888cae9d6cb4245d8412432c2fef4"
+    },
+    {
+      "bytes": 50,
+      "name": "runtime-kernel-init",
+      "path": "ocd_kernel/__init__.py",
+      "role": "runtime-dependency",
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    },
+    {
+      "bytes": 475,
+      "name": "runtime-reconstruction-init",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "role": "runtime-dependency",
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    },
+    {
+      "bytes": 26591,
+      "name": "runtime-reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "runtime-dependency",
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    },
+    {
+      "bytes": 1573,
+      "name": "chrysostom-commentary-on-galatians-config",
+      "path": "sources/structured-text/chrysostom-commentary-on-galatians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "b5c1e9058c4e421a9d045ee09f90961ffe9c5611b98943f10c3c8f1d2cafcadc"
+    },
+    {
+      "bytes": 1588,
+      "name": "chrysostom-homilies-on-1-thessalonians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-1-thessalonians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "ef35f360208b357fa13a3fcfa818331918043a8b5566c4e28a52607b71514fa9"
+    },
+    {
+      "bytes": 1562,
+      "name": "chrysostom-homilies-on-1-timothy-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-1-timothy/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "ae89481e9a989803cb1dca09779197c768a1bc94807d31ff66d37ae4caa8a7f3"
+    },
+    {
+      "bytes": 1589,
+      "name": "chrysostom-homilies-on-2-thessalonians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-2-thessalonians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "9f4fcb7a969ba5b36038530e37c7e55d25078163cbf4ff722960db2e10f22927"
+    },
+    {
+      "bytes": 1563,
+      "name": "chrysostom-homilies-on-2-timothy-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-2-timothy/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "326bf3ba67be53745d2b168ddd2903656314d9e4449119c78186967d2b3545c0"
+    },
+    {
+      "bytes": 1569,
+      "name": "chrysostom-homilies-on-colossians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-colossians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "db4cba3036722322f677d07fd4bf9ef459cbe0939e4819793c7c68f1589156a9"
+    },
+    {
+      "bytes": 1567,
+      "name": "chrysostom-homilies-on-ephesians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-ephesians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "f35e0984592c4c6e8d9ab4ec1e6394d1ff86db286c61d5e48fe19db519065da4"
+    },
+    {
+      "bytes": 1555,
+      "name": "chrysostom-homilies-on-philemon-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-philemon/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "c241999b35d41e020c5b262d47dd96bf5194181f8173e857720558be680dc0af"
+    },
+    {
+      "bytes": 1572,
+      "name": "chrysostom-homilies-on-philippians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-philippians/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "786971cfec91b78c75441dc1100a96bc37a40a0d5bbefbae66eb81fe0d177892"
+    },
+    {
+      "bytes": 1546,
+      "name": "chrysostom-homilies-on-titus-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-titus/config.json",
+      "role": "local-route-and-catalog-evidence",
+      "sha256": "1b0fe873b950546f8ae93b2d2ff3e1c56bd020dc82a4d11468f362a47f0a5b55"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib041-npnf113-ten-work-to-tei",
+    "implementation_path": "build/tei/npnf113_lib041_reconstruction.py",
+    "implementation_sha256": "9383cec3fbd2561e29e1ee7f15f2167280049375859508c4ebe93ef15d7ce57a",
+    "version": "21"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ccel-npnf113-lib041-ten-work-retained-xml",
+  "ticket": "LIB-041",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib041-npnf113-source-to-tei-oracle",
+    "implementation_path": "build/tei/npnf113_lib041_oracle.py",
+    "implementation_sha256": "880ba8bc3ff9697092b82686d0831a6151eeab2df2f8f4ebe360134bc658b8bd",
+    "import_closure_sha256": "7344925afdc39046e277756707a9d859e1b888cae9d6cb4245d8412432c2fef4",
+    "version": "21"
+  }
+}

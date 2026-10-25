@@ -1,0 +1,103 @@
+{
+  "builder_version": "ocd-pipe-014a-fixture-builder-v1",
+  "status": "source-bound-offline-fixtures",
+  "category": "reference_entries",
+  "identity_status": "Explicit fixture-only IDs and bounded source selectors; no accepted master, canonical identity, human acceptance, rights clearance, publication, or release claim is made.",
+  "fixtures": [
+    {
+      "fixture_id": "fixture-eastons-bible-dictionary",
+      "title": "Easton's Bible Dictionary",
+      "tei_file": "eastons-a-aaron.tei.xml",
+      "source_file": "source-eastons-a-aaron.json",
+      "source_path": "raw/bible_dictionaries/eastons.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Easton's Bible Dictionary.jsonl",
+      "source_sha256": "978e09fdb66e9c6b722085f868c0cc84030df9e15c6188a06390f3822888082a",
+      "retained_sha256": "978e09fdb66e9c6b722085f868c0cc84030df9e15c6188a06390f3822888082a",
+      "source_unit_count": 3963,
+      "selected_source_units": [
+        "line-000001",
+        "line-000002"
+      ],
+      "selected_terms": [
+        "A",
+        "Aaron"
+      ],
+      "scope": "Selected source terms A, Aaron; all other retained JSONL entries are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-eastons-bible-dictionary",
+        "textual_form_id": "fixture-eastons-bible-dictionary-en",
+        "edition_id": "fixture-eastons-1897"
+      },
+      "edition_title": "Easton's Bible Dictionary",
+      "entry_kind": "dictionary-entry",
+      "rows": 2,
+      "source_excerpt_sha256": "f6513bc10f9e77f4a1b25417fbc608937c1e7f4e48b9369cf54e0f0ba862526f",
+      "tei_sha256": "c73457815c800b4ac2ecaf959653a047cb993227e5925e38aaae453e0d8fab2f",
+      "retained_source_filename": "eastons.jsonl"
+    },
+    {
+      "fixture_id": "fixture-smiths-bible-dictionary",
+      "title": "Smith's Bible Dictionary",
+      "tei_file": "smiths-a-aaron.tei.xml",
+      "source_file": "source-smiths-a-aaron.json",
+      "source_path": "raw/bible_dictionaries/smiths.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Smith's Bible Dictionary.jsonl",
+      "source_sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d",
+      "retained_sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d",
+      "source_unit_count": 4560,
+      "selected_source_units": [
+        "line-000001",
+        "line-000003"
+      ],
+      "selected_terms": [
+        "A",
+        "Aaron"
+      ],
+      "scope": "Selected source terms A, Aaron; all other retained JSONL entries are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-smiths-bible-dictionary",
+        "textual_form_id": "fixture-smiths-bible-dictionary-en",
+        "edition_id": "fixture-smiths-1863"
+      },
+      "edition_title": "Smith's Bible Dictionary",
+      "entry_kind": "dictionary-entry",
+      "rows": 2,
+      "source_excerpt_sha256": "14a7cc367d82d29b6534d8bcdf8b8adff0e107236b24194c82fa8f5b39af645b",
+      "tei_sha256": "b3a55f1794d4a10d6d6e23198c464fa6efae6eca7981a6fd7ed1a04633da3a80",
+      "retained_source_filename": "smiths.jsonl"
+    },
+    {
+      "fixture_id": "fixture-hitchcocks-bible-names",
+      "title": "Hitchcock's Bible Names Dictionary",
+      "tei_file": "hitchcocks-aaron-abaddon.tei.xml",
+      "source_file": "source-hitchcocks-aaron-abaddon.json",
+      "source_path": "raw/bible_dictionaries/hitchcocks.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Hitchcock's Bible Names Dictionary.jsonl",
+      "source_sha256": "e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
+      "retained_sha256": "e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
+      "source_unit_count": 2622,
+      "selected_source_units": [
+        "line-000001",
+        "line-000002"
+      ],
+      "selected_terms": [
+        "Aaron",
+        "Abaddon"
+      ],
+      "scope": "Selected source terms Aaron, Abaddon; all other retained JSONL entries are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-hitchcocks-bible-names",
+        "textual_form_id": "fixture-hitchcocks-bible-names-en",
+        "edition_id": "fixture-hitchcock-1869"
+      },
+      "edition_title": "Hitchcock's Bible Names Dictionary",
+      "entry_kind": "dictionary-entry",
+      "rows": 2,
+      "source_excerpt_sha256": "3818074172d52981a0870bdddac03feaf4b946ff4b5a1002a74e1f7c0faf55dc",
+      "tei_sha256": "b391d74358d28188e32f63ee14f715f106b714af94767a70d10cf6ae81be3c6b",
+      "retained_source_filename": "hitchcocks.jsonl"
+    }
+  ],
+  "source_unit_count": 11145,
+  "selected_unit_count": 6
+}

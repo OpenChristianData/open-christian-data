@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-retained-source-acquisition-v1",
+  "work_id": "christianity-freethought-scepticism-faith",
+  "source_id": "magee-bradlaugh-pg64503-html",
+  "status": "retained-source-only",
+  "retrieved_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "title": "Christianity in Relation to Freethought, Scepticism, and Faith: Three Discourses by the Bishop of Peterborough with Special Replies by Mr. C. Bradlaugh",
+  "creator": "William Connor Magee and Charles Bradlaugh",
+  "edition": "[London]: Austin & Co., [1873]",
+  "source_url": "https://www.gutenberg.org/ebooks/64503",
+  "download_url": "https://www.gutenberg.org/cache/epub/64503/pg64503-h.zip",
+  "rights_and_copying_conditions": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally.",
+  "retained_scope_note": "Complete three-discourse and reply unit; Project Gutenberg credits transcription from the 1873 Austin and Co. edition.",
+  "original_archive": {
+    "path": "raw/gutenberg/64503/pg64503-h.zip",
+    "bytes": 250810,
+    "sha256": "51170884b80dd2688908804aaef45f8092c25c5c1a417904d43db0950bafef91",
+    "format": "ZIP"
+  },
+  "archive_inventory": {
+    "member_count": 2,
+    "total_uncompressed_bytes": 399302,
+    "canonical_inventory_sha256": "12fec6c566f36d7db2d4e22ae516b465515e9578eaf89c43f41cae2d8763bf89",
+    "members": [
+      {
+        "name": "pg64503-images.html",
+        "bytes": 225242,
+        "sha256": "c06edbd836f2e5202af42771a4f24609b2d296a9d59d9b6b384bf3f24ffd595c",
+        "kind": "file"
+      },
+      {
+        "name": "images/cover.jpg",
+        "bytes": 174060,
+        "sha256": "e4f17d9cd5a7f73a56b774798657c33fc9e98d39c76b8f4d31d589d0683bd7b9",
+        "kind": "file"
+      }
+    ]
+  },
+  "rights_evidence": {
+    "rights_statement_url": "https://www.gutenberg.org/ebooks/64503",
+    "copying_terms_url": "https://www.gutenberg.org/license",
+    "summary": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally."
+  },
+  "supporting_local_files": [
+    {
+      "path": "sources/manifest-acquisitions/magee-freethought-scepticism-faith-pg64503/receipt.json",
+      "role": "acquisition-receipt",
+      "bytes": 4797,
+      "sha256": "89822974b654731d471f69a1e8835e96d98a3208f52bdab0fe66b39d3a28459f"
+    },
+    {
+      "path": "sources/manifest-acquisitions/magee-freethought-scepticism-faith-pg64503/README.source.md",
+      "role": "source-local-attribution-and-scope",
+      "bytes": 1795,
+      "sha256": "06a460c7c3d9e066c87b0afe321b6140bffbcde0a26bced1bbb172c2af85bb0a"
+    }
+  ],
+  "identity_and_digital_correctness_evidence": [
+    {
+      "authority": "archived edition and acquisition research; CLEAN-READY row 12",
+      "path": "plans/_archive/2026-09-05-clean-ready-acquisition-to-tei/originals/research-evidence/open-christian-data-christian-apologetics-evidences-research.md",
+      "finding": "Complete three-discourse and reply unit; proofread text retains speaker and response boundaries."
+    },
+    {
+      "authority": "Project Gutenberg official ebook record",
+      "url": "https://www.gutenberg.org/ebooks/64503",
+      "finding": "record confirms ebook ID, item title, creator/editor/translator roles and U.S. rights status"
+    },
+    {
+      "authority": "retained original HTML archive",
+      "path": "raw/gutenberg/64503/pg64503-h.zip",
+      "finding": "complete downloaded HTML ZIP preserved; main HTML member contains source start/end markers and license notice; all members have independent length and SHA-256 inventory"
+    }
+  ]
+}

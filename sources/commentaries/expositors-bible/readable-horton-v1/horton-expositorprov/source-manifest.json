@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib035-readable-horton-expositorprov-v1",
+  "work_id": "expositors-bible--robert-f-horton",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/horton_expositorprov.xml",
+      "role": "primary-source",
+      "bytes": 1144079,
+      "sha256": "a7372596c60d053b539e957c01d29a54269da5c25b094cd7b373cb7e834e122d"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-horton-v1/horton-expositorprov/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1221,
+      "sha256": "c0400d863d71aa76292078ccd8ba9d54c0eae30014cc7212afa6171c6e8e6dc1"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-horton-v1/horton-expositorprov/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2242,
+      "sha256": "00c76c22148bb5442478e995f036b53e7432798081e274e8b5015a567b4d01c0"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-horton-v1/horton-expositorprov/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 917,
+      "sha256": "084f3743e06395e473dbcbdb55eca66d2ae29d382402ab452b531a6fd8f00f1b"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-horton-v1/horton-expositorprov/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1906,
+      "sha256": "6065e642242889526a3a7192f02e13c4f91965cd671639f3c71b008c845adc84"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib035-readable-horton-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_horton.py",
+    "implementation_sha256": "550ae5c6115e580f5d88fae37b74c08ed6a22666fef372eb68210071960b1247"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib035-readable-horton-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_horton_oracle.py",
+    "implementation_sha256": "1ee14ca77407bf1652c370d827de1e6a237eb45067792a9f5abe70a0ec2a8931",
+    "import_closure_sha256": "1ee14ca77407bf1652c370d827de1e6a237eb45067792a9f5abe70a0ec2a8931"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

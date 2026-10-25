@@ -1,0 +1,141 @@
+{
+  "authorities": [
+    {
+      "bytes": 84,
+      "name": "work-identity",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/config.json",
+      "role": "work-identity",
+      "sha256": "14d177d6d5dafd225386a1a9f0967dfe354509da8dd0bc3e2887a5fc6fb84a70"
+    },
+    {
+      "bytes": 8101,
+      "name": "ticket-scope",
+      "path": "plans/2026-08-31-sample-first-library-verification/issues/37c-136-drummond-natural-law.md",
+      "role": "ticket-scope",
+      "sha256": "edaf5b0776b9d0e50a6206dd7fe2aeda153774c9972f4e54c774ddcab380fa42"
+    },
+    {
+      "bytes": 566707,
+      "name": "primary-source",
+      "path": "raw/gutenberg/pg23334.txt",
+      "role": "primary-source",
+      "sha256": "e13875abb98d6818ef2c9adbdce89a194368e082194881dcbf1e0c32a3c22333"
+    },
+    {
+      "bytes": 1070,
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "63954e5ad55289177e85498567eac62ae4a0a0d49c1173f86202d5aee7fb8f9b"
+    },
+    {
+      "bytes": 5922,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "857afef2b088ba876bad6e3579c6f2f47cf531f3aaa693bc1fb421f390b6ec96"
+    },
+    {
+      "bytes": 2855,
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "5259e4d105a2bf7cc7b6e8229b0b37da5b75bb1d5786f0a95dec1923e0a34466"
+    },
+    {
+      "bytes": 4423,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "79217a0c3ad9d3dee6554493bb0bf25fca01ba91b3fe3a1e0f15697e93ef7b6f"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 65181,
+      "name": "converter-implementation",
+      "path": "build/tei/gutenberg_evangelical_lib071_selected_reconstruction.py",
+      "role": "source-converter-implementation",
+      "sha256": "2940b4339b118a7f77fc546c3e9fe884a5f0d9754d0525356de0ed1a2b2b899a"
+    },
+    {
+      "bytes": 105647,
+      "name": "oracle-implementation",
+      "path": "build/tei/gutenberg_proofread_selected_oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "b42e48bef11f21cabafacb153fd3adb187874bd82130b57b2e1a855283bbad2e"
+    },
+    {
+      "bytes": 20763,
+      "name": "note-map",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.note-map.json",
+      "role": "source-located-footnote-map",
+      "sha256": "020a3b625a558b7e4358ed563a93d7269fffe695657777413ff998494e6ecefa"
+    },
+    {
+      "bytes": 6431,
+      "name": "drummond-converter-implementation",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.note-reconstruction.py",
+      "role": "source-converter-implementation",
+      "sha256": "18e7f23dcf1cdfe101dcdb554980be7bfb457753f1edf7711582740bc99e0de7"
+    },
+    {
+      "bytes": 15238,
+      "name": "drummond-oracle-implementation",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.note-oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "a6e150c223c200f01b4fc0597080b419ca2b72b00342438b2a776f6221a87693"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-drummond-pg23334-notes-to-tei",
+    "implementation_path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.note-reconstruction.py",
+    "implementation_sha256": "18e7f23dcf1cdfe101dcdb554980be7bfb457753f1edf7711582740bc99e0de7",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "retained_source_path": "raw/gutenberg/pg23334.txt",
+  "source_id": "gutenberg-37c-136-pg23334",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "ticket_id": "37c-136",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-drummond-pg23334-note-oracle",
+    "implementation_path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-natural-law/37c-136.note-oracle.py",
+    "implementation_sha256": "a6e150c223c200f01b4fc0597080b419ca2b72b00342438b2a776f6221a87693",
+    "import_closure_sha256": "59725efbe7fc80f06f732d4aca4735769ce745e1f0f7d89f4992d1f8b472b5c0",
+    "version": "1"
+  },
+  "work_id": "drummond-natural-law"
+}

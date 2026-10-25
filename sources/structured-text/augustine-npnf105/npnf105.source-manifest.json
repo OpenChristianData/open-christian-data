@@ -1,0 +1,45 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf105-retained-xml",
+  "authorities": [
+    {"name": "npnf105-retained-xml", "path": "raw/ccel/npnf1/npnf105.xml", "role": "primary-source", "bytes": 4501690, "sha256": "224f0e6a188ddfe691c1433c8db9a883755a9f030b71fede644d4af6c18ee63f"},
+    {"name": "source-local-attribution-readme", "path": "sources/structured-text/augustine-npnf105/README.md", "role": "source-attribution-readme", "bytes": 2073, "sha256": "6cbafd0355183dd5cd8f3f8ce679307ba32fb80f0ca371b41450f1beef9b0b7b"},
+    {"name": "augustine-merits-forgiveness-sins-config", "path": "sources/structured-text/augustine-merits-forgiveness-sins/config.json", "role": "local-metadata-claim-evidence", "bytes": 1433, "sha256": "2cd0f2a24d170f9dfb1c02870aa02927b28a1ba3e63231f7d774fcb637777c7f"},
+    {"name": "augustine-spirit-and-letter-config", "path": "sources/structured-text/augustine-spirit-and-letter/config.json", "role": "local-metadata-claim-evidence", "bytes": 1381, "sha256": "fcedce4d78f4a8423ca223343c307ec08151ed59a2aeee31cccbb007311c2927"},
+    {"name": "augustine-nature-and-grace-config", "path": "sources/structured-text/augustine-nature-and-grace/config.json", "role": "local-metadata-claim-evidence", "bytes": 1370, "sha256": "ec14084807c0e986d4b5a9e2ac20f1ca1064b0ce336cdd613e00dbd6c6ab91e0"},
+    {"name": "augustine-perfection-in-righteousness-config", "path": "sources/structured-text/augustine-perfection-in-righteousness/config.json", "role": "local-metadata-claim-evidence", "bytes": 1417, "sha256": "7e83f40e9f58c48f727fd639dd4cc9033f376ac326648775ff7e2386722d983f"},
+    {"name": "augustine-proceedings-of-pelagius-config", "path": "sources/structured-text/augustine-proceedings-of-pelagius/config.json", "role": "local-metadata-claim-evidence", "bytes": 1391, "sha256": "7e9d4f08a327116799ad951430884fd76caedaae52d47edbf2cfe8761b567aa9"},
+    {"name": "augustine-grace-of-christ-original-sin-config", "path": "sources/structured-text/augustine-grace-of-christ-original-sin/config.json", "role": "local-metadata-claim-evidence", "bytes": 1418, "sha256": "dc58f0320307295daab5924c7be06b9a3b3c552c4d5087987312e5f03a917aa9"},
+    {"name": "augustine-marriage-and-concupiscence-config", "path": "sources/structured-text/augustine-marriage-and-concupiscence/config.json", "role": "local-metadata-claim-evidence", "bytes": 1389, "sha256": "c079cfdcf9670f1f8be35170211330b4348a843343ed3aeda795c40c00ee2d6b"},
+    {"name": "augustine-soul-and-its-origin-config", "path": "sources/structured-text/augustine-soul-and-its-origin/config.json", "role": "local-metadata-claim-evidence", "bytes": 1383, "sha256": "e63303041d44d7998db67ce775be3ce693e5fe5e0241059af16de13e789e9be3"},
+    {"name": "augustine-against-two-letters-pelagians-config", "path": "sources/structured-text/augustine-against-two-letters-pelagians/config.json", "role": "local-metadata-claim-evidence", "bytes": 1429, "sha256": "08d18638db020f340c47e8877ae730095a80755b63dff3d85a004074cbbd44cc"},
+    {"name": "augustine-grace-and-free-will-config", "path": "sources/structured-text/augustine-grace-and-free-will/config.json", "role": "local-metadata-claim-evidence", "bytes": 1379, "sha256": "14ff5e591d2cf4e05d49f0f98810eac59916b011ae513078ff2f909cf5e35074"},
+    {"name": "augustine-rebuke-and-grace-config", "path": "sources/structured-text/augustine-rebuke-and-grace/config.json", "role": "local-metadata-claim-evidence", "bytes": 1386, "sha256": "b4100089acef36459fdb5cb23bd697110fe66ffb632d5bea7cd810b10fca650e"},
+    {"name": "augustine-predestination-of-saints-config", "path": "sources/structured-text/augustine-predestination-of-saints/config.json", "role": "local-metadata-claim-evidence", "bytes": 1418, "sha256": "1fcf8ff2d8033c90476bca7f5d74db5a5c1da6146a75381e119927baa0b11cf9"},
+    {"name": "ccel-permission-evidence", "path": "sources/structured-text/athanasius-on-the-incarnation/ccel-permission.md", "role": "source-rights-evidence", "bytes": 1604, "sha256": "0bf59cb9f186a8414aa845bad7cf2fd632c480a35e8dbbb2e10ad80f5daf6595"},
+    {"name": "reconstruction-profile", "path": "sources/structured-text/augustine-npnf105/npnf105.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 1775, "sha256": "4b9b8b16b9340a80a46d12418475521dcce45d446c7db77f1323b672da45df57"},
+    {"name": "validation-policy", "path": "sources/structured-text/augustine-npnf105/npnf105.validation-policy.json", "role": "independent-validation-policy", "bytes": 1942, "sha256": "956af10cf76ba46c61e3edc6eb36f3f13ecdf018f142a05a846b162cf79128a7"},
+    {"name": "source-accountability-schema", "path": "sources/structured-text/augustine-npnf105/npnf105.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 3590, "sha256": "df22d1d59c6b4bb647ec354ece6ccc4fba0a83463b163c7ed4849fe6f42f46c1"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {
+    "id": "ocd-npnf105-assigned-works-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf105_reconstruction.py",
+    "implementation_sha256": "f6e135403faa08bb1c51c85199dc59c32972e27d928c633fecdd7dd91c0ad4f4"
+  },
+  "validator": {
+    "id": "ocd-npnf105-source-to-tei-oracle",
+    "version": "7",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf105_oracle.py",
+    "implementation_sha256": "390f2a2fc3f6f3df7d9c71f17fe4190c8aa54021f8d285d52adeeb404e535e87",
+    "import_closure_sha256": "e151828e2a35de830df9fb0a2727125ed5926d678ed238cfdd0f72cb5fa1ef14"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

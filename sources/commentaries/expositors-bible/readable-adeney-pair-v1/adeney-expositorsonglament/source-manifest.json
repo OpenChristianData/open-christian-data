@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib036-readable-adeney-adeney-expositorsonglament-v1",
+  "work_id": "expositors-bible--walter-f-adeney",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/adeney_expositorsonglament.xml",
+      "role": "primary-source",
+      "bytes": 681347,
+      "sha256": "9244919b587a0efedcb30669ba8790d88acecbba6fc14a43094985614cd7f239"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-adeney-pair-v1/adeney-expositorsonglament/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 768,
+      "sha256": "723f0f019a95ab477ebe98c2d421f05577946264a4d37550458a3b4a8850d5c1"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-adeney-pair-v1/adeney-expositorsonglament/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1009,
+      "sha256": "909e546ee3d2cf2d1e44f51ef6408b06752d81dae7beff7e3d5415e61d4e00b4"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-adeney-pair-v1/adeney-expositorsonglament/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 856,
+      "sha256": "fb7078f36503bdf7762bdedb4132f7b5ba485b6f156cb37c0214d13e18cf0ed7"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-adeney-pair-v1/adeney-expositorsonglament/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1917,
+      "sha256": "ee3fb2b2aab6cb099117576766db353f01cecd742dd9f435945850e470fa8d68"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib036-readable-adeney-pair-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib036_readable_adeney_pair.py",
+    "implementation_sha256": "6351aac854be89e70ce1b4839123eec9fdb6f3c92de672965cf3b6793496e3df"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib036-readable-adeney-pair-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib036_readable_adeney_pair_oracle.py",
+    "implementation_sha256": "36f6d060be7aad3d27079b44558d4a8d7b2c810895959a22319c34009307115d",
+    "import_closure_sha256": "36f6d060be7aad3d27079b44558d4a8d7b2c810895959a22319c34009307115d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

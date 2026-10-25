@@ -1,0 +1,120 @@
+{
+  "ticket": "09",
+  "wave": 5,
+  "slug": "aquinas-summa-theologica-four-parts",
+  "identity_status": "one-provisional-four-component-source-upgrade-no-workcatalog-write",
+  "release_gate": {
+    "path": ".scratch/clean-ready-acquisition-to-tei/issues/00-GATE-RELEASE.md",
+    "reauthorization_observed_sha256": "98017c72f57caac497d374687db9a0c78c3e498053e5092451f6cb7447ff9982",
+    "append_only_sha256_at_packet_build": "c18994a462fef1dc8a89de4f49c9278419c9f65e7ba1b4797152d02d5a786088",
+    "issued_utc": "2026-08-31T06:40:34Z",
+    "ticket_issue_path": ".scratch/clean-ready-acquisition-to-tei/issues/09-summa-theologica-corrected-four-part-source.md",
+    "ticket_issue_sha256": "3419ead2da7894c225ed0881f94f957f581ebdee9ade8cf336edddc2ff3470d3"
+  },
+  "acquisition": {
+    "method": "curl -L --fail against each official Project Gutenberg landing page, RDF record, and HTML ZIP URL",
+    "retrieved_utc": "2026-08-31T06:44:13Z/2026-08-31T06:44:52Z",
+    "raw_lane": "raw/clean-ready-acquisition-to-tei/master-1/09/aquinas-summa-theologica-four-parts",
+    "initial_partial_files": "The pre-reauthorization landing page, landing headers, and empty ZIP-header file were verified and completed/superseded in place by successful exact retrieval; the final 24-file manifest below is authoritative.",
+    "header_privacy": "Landing response headers retain transient Project Gutenberg session-cookie evidence. Cookie values are not reproduced in this receipt or other summaries."
+  },
+  "components": [
+    {
+      "order": 1,
+      "project_gutenberg_id": 17611,
+      "landing_url": "https://www.gutenberg.org/ebooks/17611",
+      "archive_url": "https://www.gutenberg.org/cache/epub/17611/pg17611-h.zip",
+      "rdf_url": "https://www.gutenberg.org/ebooks/17611.rdf",
+      "archive_last_modified": "2026-08-07T20:05:03Z",
+      "issued": "2006-01-26",
+      "rights": "Public domain in the USA.",
+      "questions": 119,
+      "semantic_articles": 584,
+      "terminal": "I, Q.119, Art.2; id07860"
+    },
+    {
+      "order": 2,
+      "project_gutenberg_id": 17897,
+      "landing_url": "https://www.gutenberg.org/ebooks/17897",
+      "archive_url": "https://www.gutenberg.org/cache/epub/17897/pg17897-h.zip",
+      "rdf_url": "https://www.gutenberg.org/ebooks/17897.rdf",
+      "archive_last_modified": "2026-08-07T23:21:55Z",
+      "issued": "2006-03-01",
+      "rights": "Public domain in the USA.",
+      "questions": 114,
+      "semantic_articles": 619,
+      "terminal": "I-II, Q.114, Art.10; id08135"
+    },
+    {
+      "order": 3,
+      "project_gutenberg_id": 18755,
+      "landing_url": "https://www.gutenberg.org/ebooks/18755",
+      "archive_url": "https://www.gutenberg.org/cache/epub/18755/pg18755-h.zip",
+      "rdf_url": "https://www.gutenberg.org/ebooks/18755.rdf",
+      "archive_last_modified": "2026-08-08T09:58:00Z",
+      "issued": "2006-07-04",
+      "rights": "Public domain in the USA.",
+      "questions": 189,
+      "semantic_articles": 917,
+      "terminal": "II-II, Q.189, Art.10; id12081"
+    },
+    {
+      "order": 4,
+      "project_gutenberg_id": 19950,
+      "landing_url": "https://www.gutenberg.org/ebooks/19950",
+      "archive_url": "https://www.gutenberg.org/cache/epub/19950/pg19950-h.zip",
+      "rdf_url": "https://www.gutenberg.org/ebooks/19950.rdf",
+      "archive_last_modified": "2026-08-08T19:13:47Z",
+      "issued": "2006-11-28",
+      "rights": "Public domain in the USA.",
+      "questions": 90,
+      "semantic_articles": 549,
+      "terminal": "III, Q.90, Art.4; id07408"
+    }
+  ],
+  "retained_files": [
+    {"path":"pg17611-h.zip","bytes":970488,"sha256":"b6be70214af36764dad9b853df29cf4d62bff3ef25d8241551f78e9b27936c90"},
+    {"path":"pg17611-h.zip.headers.txt","bytes":217,"sha256":"8c11c12014b94e68fdd946a178c7ee5dae4940e2b9c06d53f65ec8516dbd340b"},
+    {"path":"pg17611.landing.headers.txt","bytes":400,"sha256":"d4d5be509ce53938a0910a61a65d08b91541e9005b9da6285f7b5ed1a9e350b5"},
+    {"path":"pg17611.landing.html","bytes":23960,"sha256":"afc88f64313b63d9cc4dc5f35841fb17d0b04ca81d7ed0412c7d00af5dd83319"},
+    {"path":"pg17611.rdf","bytes":17866,"sha256":"42ef5318e7b71505bd14d7d5d43e42083b43ee87329847605caaca908938d3a5"},
+    {"path":"pg17611.rdf.headers.txt","bytes":558,"sha256":"aa42a0cb4b87b6372f8d49c6440aa4db3cbe78783dd7bc001e38f734584334d5"},
+    {"path":"pg17897-h.zip","bytes":979217,"sha256":"7b2a630f7231148ae18cba649b3c444aee8eab1bbc08b6be04ab39cabe0fd0c6"},
+    {"path":"pg17897-h.zip.headers.txt","bytes":217,"sha256":"d6e8188e64f147d6619fd9c371ddd0fae28eda82541a8dec7a4c90e57e7b0817"},
+    {"path":"pg17897.landing.headers.txt","bytes":400,"sha256":"3ff191f30eb158071595ba2576a2868f9bd75cd3eddde5e101ab2540c326d087"},
+    {"path":"pg17897.landing.html","bytes":23843,"sha256":"7e65c023238e09a4ea52012fe05554002239bdc65571406a2efa49cde86e3946"},
+    {"path":"pg17897.rdf","bytes":17817,"sha256":"0a212dcba8b763ce59d34ca30ec1a14048d19422b600911198d9daabc37b6769"},
+    {"path":"pg17897.rdf.headers.txt","bytes":558,"sha256":"e31cca207fb783dd86cb70ac8766e80e0509af909bccc0719e28050a9b9394be"},
+    {"path":"pg18755-h.zip","bytes":1436272,"sha256":"8ae600c9cbb255f1de07b05f1c4369bbc6aa5be4336e3f5f49ca94624fb21907"},
+    {"path":"pg18755-h.zip.headers.txt","bytes":218,"sha256":"473f49664eac0cfc9d195e93db56c71c9ee88eb2745db31c4980ef76a0a7d86e"},
+    {"path":"pg18755.landing.headers.txt","bytes":400,"sha256":"eb71b2147d4615ed3c2fbfe065e93ece498672edeb8f287d914e2cf49a3292fd"},
+    {"path":"pg18755.landing.html","bytes":23855,"sha256":"17f8277cf245695820a415ba18ebd16cae7cece486ef6d0e63a4a5f06f357154"},
+    {"path":"pg18755.rdf","bytes":19683,"sha256":"91ea9b151d966d4872ebd63a845f1185ad13874a9823bd88ad4c1669e8d60dcc"},
+    {"path":"pg18755.rdf.headers.txt","bytes":558,"sha256":"74619f1023f5cc99d6b3ccc9ffd5ad54f781edf4cf38beeee148b23b0e648b08"},
+    {"path":"pg19950-h.zip","bytes":949369,"sha256":"72d2beb64627945f33ca276cbeafdab9da0738d79f5a0737abba0f446dc47bf4"},
+    {"path":"pg19950-h.zip.headers.txt","bytes":217,"sha256":"4eb700b0f14ee0cac74038beb889c952f173e3ac7be942418867873ee2f1e2ed"},
+    {"path":"pg19950.landing.headers.txt","bytes":400,"sha256":"7cbaf56dfad42c5a8943a9a15c36cd94c7a3aa816a2f4a424accbb640edb29ea"},
+    {"path":"pg19950.landing.html","bytes":23722,"sha256":"8d55305b4ae817f214db7f896daa82db1011f668fc394d515d7c24742b322c0e"},
+    {"path":"pg19950.rdf","bytes":17764,"sha256":"5a11826a613189e91de65c51162be690143e6cd2be0be239b20b6cb05d90140d"},
+    {"path":"pg19950.rdf.headers.txt","bytes":558,"sha256":"edc378cfeb9d676e0b2fe2d7cd56b963a99a65a4bcaf6a14efb4817b56a6d466"}
+  ],
+  "archive_members": [
+    {"archive":"pg17611-h.zip","path":"pg17611-images.html","bytes":3090576,"sha256":"48421f1cb257f450c16844168f5cbb5f328b7825a9387ef670b81b53c3403195"},
+    {"archive":"pg17611-h.zip","path":"17611-cover.png","bytes":90753,"sha256":"0bc69c6d6e7d52bf7e2c485b21bfae3be427941f2edf682e057197555508b337"},
+    {"archive":"pg17897-h.zip","path":"pg17897-images.html","bytes":3088562,"sha256":"669cecdd59450d256650be9d6af3f2577926af19276f16eef80e4b986bb8fc93"},
+    {"archive":"pg17897-h.zip","path":"17897-cover.png","bytes":94137,"sha256":"505dfd73997b1d48adaffdaf1555ca3dc55eb5d86e85c2671e57e500f2bd86f0"},
+    {"archive":"pg18755-h.zip","path":"pg18755-images.html","bytes":4485697,"sha256":"c1fa4ed1dbaa01c9cb3658d9eec0241b51a1848c4f84bf779734ba4d2935ef18"},
+    {"archive":"pg18755-h.zip","path":"18755-cover.png","bytes":92370,"sha256":"b72d9e8129b561760fc452548118f2a8f3d3768d020ba1c10d74e9b94516a6e6"},
+    {"archive":"pg19950-h.zip","path":"pg19950-images.html","bytes":2927390,"sha256":"2115def3be1b02480329147caddde90cd16d378db1e13c427f904aa12fba9671"},
+    {"archive":"pg19950-h.zip","path":"19950-cover.png","bytes":79282,"sha256":"f7527d6010df92e034f512a7f31ef12b060ed5a35ba418dfde1298c80d2d9e5c"}
+  ],
+  "canonical_listing_sha256": "3b12abbc39fe1435d04917ad4e3c864f7973ab9826d1370cbc7f0f7f591aff9e",
+  "rights_boundary": {
+    "official_statement": "Public domain in the USA.",
+    "jurisdiction_warning_retained": true,
+    "project_gutenberg_trademark_and_license_distinct": true,
+    "human_rights_acceptance": "not-performed"
+  },
+  "canonical_mutation": false,
+  "human_acceptance": "not-performed"
+}

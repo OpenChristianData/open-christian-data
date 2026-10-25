@@ -2,14 +2,16 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
+import subprocess
 
-import jsonschema
 import pytest
 from lxml import etree
 
-from build.tei.check_ledger_v2 import check_receipt_v2
+from build.tei.check_ledger import check_receipt
 from build.tei.project_hf import _record_divs, project_file
+from ocd_kernel.lib.git_artifact import CanonicalGitArtifactError
 from ocd_kernel.tei.normalization import normalize
 from ocd_kernel.tei.projection_profile import (
     TARGET_FIELD_DEFINITIONS,
@@ -31,6 +33,42 @@ def _sha256(path: Path) -> str:
 
 def _sha256_text(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _junction(link: Path, target: Path) -> None:
+    subprocess.run(
+        ["cmd.exe", "/d", "/c", "mklink", "/J", str(link), str(target)],
+        check=True,
+        capture_output=True,
+    )
+
+
+def _commit_projection_fixture(
+    repo_root: Path,
+    tei_path: Path,
+    *,
+    autocrlf: bool = False,
+) -> None:
+    relative_tei = tei_path.relative_to(repo_root).as_posix()
+    (repo_root / ".gitattributes").write_text(
+        f"{relative_tei} text eol=lf\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    for arguments in (
+        ("init",),
+        ("config", "user.email", "ticket01@example.invalid"),
+        ("config", "user.name", "Ticket 01 Test"),
+        ("config", "core.autocrlf", "true" if autocrlf else "false"),
+        ("add", "."),
+        ("commit", "-m", "fixture"),
+    ):
+        subprocess.run(
+            ["git", *arguments],
+            check=True,
+            cwd=repo_root,
+            capture_output=True,
+        )
 
 
 def _receipt_fixture(tmp_path: Path, *, unknown: bool = False) -> Path:
@@ -69,7 +107,6 @@ def _receipt_fixture(tmp_path: Path, *, unknown: bool = False) -> Path:
         + "\n",
         encoding="utf-8",
     )
-    tree = etree.parse(str(tei_path))
     target_element = "m1" if unknown else "h1"
     target_text = "text" if unknown else "beta"
     child_target = {
@@ -201,6 +238,265 @@ def _projected_fixture(
     return receipt, receipt_path, records
 
 
+@pytest.mark.parametrize(
+    ("autocrlf", "checkout_newline"),
+    ((False, b"\n"), (True, b"\r\n")),
+    ids=("lf-host", "crlf-host"),
+)
+def test_strict_checker_uses_committed_git_bytes_across_host_eol_configurations(
+    tmp_path: Path,
+    autocrlf: bool,
+    checkout_newline: bytes,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="canonical-crlf",
+    )
+    tei_path = tmp_path / "ir" / "canonical-crlf.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path, autocrlf=autocrlf)
+    canonical_bytes = subprocess.run(
+        ["git", "show", "HEAD:ir/canonical-crlf.demo.tei.xml"],
+        check=True,
+        cwd=tmp_path,
+        capture_output=True,
+    ).stdout
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    receipt["ir"]["sha256"] = hashlib.sha256(canonical_bytes).hexdigest()
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    tei_path.write_bytes(canonical_bytes.replace(b"\n", checkout_newline))
+
+    assert check_receipt(receipt_path, repo_root=tmp_path) == []
+
+
+def test_strict_checker_reports_lexical_escape_without_traceback(tmp_path: Path) -> None:
+    receipt_path = _receipt_fixture(tmp_path)
+    receipt = json.loads(receipt_path.read_bytes())
+    receipt["ir"]["path"] = "../escaped.tei.xml"
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
+
+    assert len(errors) == 1
+    assert "IR path is outside the repository" in errors[0]
+
+
+def test_strict_checker_rejects_nested_directory_as_repository_root(
+    tmp_path: Path,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="nested-repository-root",
+    )
+    tei_path = tmp_path / "ir" / "nested-repository-root.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path)
+
+    errors = check_receipt(receipt_path, repo_root=tmp_path / "ir")
+
+    assert len(errors) == 1
+    assert "repository root" in errors[0]
+    assert "top-level" in errors[0]
+
+
+@pytest.mark.parametrize(
+    ("autocrlf", "checkout_newline"),
+    ((False, b"\n"), (True, b"\r\n")),
+    ids=("lf-host", "crlf-host"),
+)
+def test_projector_binds_committed_git_bytes_across_host_eol_configurations(
+    tmp_path: Path,
+    autocrlf: bool,
+    checkout_newline: bytes,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="projector-canonical-crlf",
+    )
+    tei_path = tmp_path / "ir" / "projector-canonical-crlf.demo.tei.xml"
+    output_path = tmp_path / "projector-canonical-crlf.jsonl"
+    _commit_projection_fixture(tmp_path, tei_path, autocrlf=autocrlf)
+    canonical_bytes = subprocess.run(
+        ["git", "show", "HEAD:ir/projector-canonical-crlf.demo.tei.xml"],
+        check=True,
+        cwd=tmp_path,
+        capture_output=True,
+    ).stdout
+    tei_path.write_bytes(canonical_bytes.replace(b"\n", checkout_newline))
+
+    receipt = project_file(
+        tei_path,
+        output_path,
+        receipt_path=receipt_path,
+        repo_root=tmp_path,
+    )
+
+    assert receipt["ir"]["sha256"] == hashlib.sha256(canonical_bytes).hexdigest()
+
+
+def test_strict_checker_rejects_worktree_mutation_against_git(
+    tmp_path: Path,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="canonical-mutation",
+    )
+    tei_path = tmp_path / "ir" / "canonical-mutation.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path)
+    tei_path.write_bytes(tei_path.read_bytes().replace(b"beta", b"gamma"))
+
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
+
+    assert any("canonical Git identity mismatch" in error for error in errors)
+
+
+def test_projector_rejects_worktree_mutation_against_git(tmp_path: Path) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="projector-canonical-mutation",
+    )
+    tei_path = tmp_path / "ir" / "projector-canonical-mutation.demo.tei.xml"
+    output_path = tmp_path / "projector-canonical-mutation.jsonl"
+    _commit_projection_fixture(tmp_path, tei_path)
+    original_output = output_path.read_bytes()
+    original_receipt = receipt_path.read_bytes()
+    tei_path.write_bytes(tei_path.read_bytes().replace(b"beta", b"gamma"))
+
+    with pytest.raises(
+        CanonicalGitArtifactError,
+        match="canonical Git identity mismatch",
+    ):
+        project_file(
+            tei_path,
+            output_path,
+            receipt_path=receipt_path,
+            repo_root=tmp_path,
+        )
+
+    assert output_path.read_bytes() == original_output
+    assert receipt_path.read_bytes() == original_receipt
+
+
+def test_strict_checker_rejects_unauthorized_committed_receipt_mutation(
+    tmp_path: Path,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="receipt-mutation",
+    )
+    tei_path = tmp_path / "ir" / "receipt-mutation.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path)
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    receipt["projection"]["generated_at"] = "2099-01-01T00:00:00Z"
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
+
+    assert any("unauthorized committed receipt change" in error for error in errors)
+
+
+def test_strict_checker_rejects_dirty_receipt_formatting_without_rebind(
+    tmp_path: Path,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="receipt-formatting",
+    )
+    tei_path = tmp_path / "ir" / "receipt-formatting.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path)
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    canonical_ir = subprocess.run(
+        ["git", "show", "HEAD:ir/receipt-formatting.demo.tei.xml"],
+        check=True,
+        cwd=tmp_path,
+        capture_output=True,
+    ).stdout
+    receipt["ir"]["sha256"] = hashlib.sha256(canonical_ir).hexdigest()
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    subprocess.run(
+        ["git", "add", receipt_path.name],
+        check=True,
+        cwd=tmp_path,
+        capture_output=True,
+    )
+    subprocess.run(
+        ["git", "commit", "-m", "bind canonical IR"],
+        check=True,
+        cwd=tmp_path,
+        capture_output=True,
+    )
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
+
+    assert any("unauthorized committed receipt change" in error for error in errors)
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows junction regression")
+def test_strict_checker_rejects_resolved_junction_alias(
+    tmp_path: Path,
+) -> None:
+    _, receipt_path, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="junction-alias",
+    )
+    tei_path = tmp_path / "ir" / "junction-alias.demo.tei.xml"
+    canonical_bytes = tei_path.read_bytes().replace(b"\r\n", b"\n")
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    receipt["ir"]["sha256"] = hashlib.sha256(canonical_bytes).hexdigest()
+    receipt_path.write_text(
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    alias = tmp_path / "alias-ir"
+    alias.mkdir()
+    (alias / tei_path.name).write_bytes(canonical_bytes)
+    _commit_projection_fixture(tmp_path, tei_path)
+    tei_path.unlink()
+    (tmp_path / "ir").rmdir()
+    linked = tmp_path / "ir"
+    try:
+        subprocess.run(
+            ["cmd", "/c", "mklink", "/J", str(linked), str(alias)],
+            check=True,
+            capture_output=True,
+        )
+    except subprocess.CalledProcessError as error:
+        pytest.skip(f"junction creation unavailable: {error}")
+    try:
+        errors = check_receipt(receipt_path, repo_root=tmp_path)
+        assert any("reparse" in error or "symlink" in error for error in errors)
+    finally:
+        os.rmdir(linked)
+
+
 def test_v2_schema_uses_five_dispositions_and_exact_targets() -> None:
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     assert schema["properties"]["receipt_schema"]["const"] == "loss-receipt-v2"
@@ -221,6 +517,37 @@ def test_v2_schema_uses_five_dispositions_and_exact_targets() -> None:
     assert TARGET_FIELD_DEFINITIONS["title_path"].requires_item_index is True
     assert TARGET_FIELD_DEFINITIONS["speeches"].value_kind == "structured-array-item"
     assert TARGET_FIELD_DEFINITIONS["speeches"].requires_item_index is True
+
+
+def test_every_committed_receipt_ir_is_explicitly_pinned_to_lf() -> None:
+    receipt_paths = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", "HEAD"],
+        check=True,
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    ).stdout.splitlines()
+    ir_paths = sorted(
+        json.loads((REPO_ROOT / path).read_text(encoding="utf-8"))["ir"]["path"]
+        for path in receipt_paths
+        if path.endswith(".loss.json")
+    )
+
+    actual = {
+        path: subprocess.run(
+            ["git", "check-attr", "eol", "--", path],
+            check=True,
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        for path in ir_paths
+    }
+
+    assert len(ir_paths) == 15
+    assert actual == {path: f"{path}: eol: lf" for path in ir_paths}
 
 
 def test_normalization_vectors_are_shared_and_conformant() -> None:
@@ -246,7 +573,36 @@ def test_dropped_ancestor_rule_includes_note_pb_and_drop_div() -> None:
 
 def test_strict_checker_accepts_an_independently_constructed_v2_receipt(tmp_path: Path) -> None:
     receipt_path = _receipt_fixture(tmp_path)
-    assert check_receipt_v2(receipt_path, repo_root=tmp_path) == []
+    assert check_receipt(receipt_path, repo_root=tmp_path) == []
+
+
+@pytest.mark.skipif(os.name != "nt", reason="requires a Windows junction")
+def test_projector_rejects_untracked_junction_alias_to_committed_ir(
+    tmp_path: Path,
+) -> None:
+    _, _, _ = _projected_fixture(
+        tmp_path,
+        '<p xml:id="p1">Alpha beta.</p>',
+        stem="junction-source",
+    )
+    tei_path = tmp_path / "ir" / "junction-source.demo.tei.xml"
+    _commit_projection_fixture(tmp_path, tei_path)
+    alias_root = tmp_path / "alias-ir"
+    _junction(alias_root, tmp_path / "ir")
+    try:
+        alias = alias_root / tei_path.name
+        assert alias.absolute() != tei_path.absolute()
+        assert alias.resolve(strict=True) == tei_path.resolve(strict=True)
+
+        with pytest.raises(CanonicalGitArtifactError, match="reparse|symlink"):
+            project_file(
+                alias,
+                tmp_path / "junction-output.jsonl",
+                receipt_path=tmp_path / "junction-output.loss.json",
+                repo_root=tmp_path,
+            )
+    finally:
+        os.rmdir(alias_root)
 
 
 def test_strict_checker_rejects_missing_span_endpoint(tmp_path: Path) -> None:
@@ -257,13 +613,13 @@ def test_strict_checker_rejects_missing_span_endpoint(tmp_path: Path) -> None:
             del node["targets"][0]["char_end"]
             break
     receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
-    errors = check_receipt_v2(receipt_path, repo_root=tmp_path)
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
     assert any("schema:" in error or "target set mismatch" in error for error in errors)
 
 
 def test_strict_checker_rejects_unknown_text_bearing_element(tmp_path: Path) -> None:
     receipt_path = _receipt_fixture(tmp_path, unknown=True)
-    errors = check_receipt_v2(receipt_path, repo_root=tmp_path)
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
     assert any("unknown TEI element fails closed" in error for error in errors)
 
 
@@ -396,7 +752,7 @@ def test_b03c_table_cells_are_independent_blocks_and_pass_strict_checker(
         stem="b03c-table",
     )
 
-    assert check_receipt_v2(receipt_path, repo_root=tmp_path) == []
+    assert check_receipt(receipt_path, repo_root=tmp_path) == []
     assert len(records) == 1
     assert records[0]["text"] == "Alpha cell.\n\nBeta cell."
     for local, expected_count in {"table": 1, "row": 2, "cell": 2}.items():
@@ -417,7 +773,7 @@ def test_b03c_list_items_are_independent_blocks_and_pass_strict_checker(
         stem="b03c-list",
     )
 
-    assert check_receipt_v2(receipt_path, repo_root=tmp_path) == []
+    assert check_receipt(receipt_path, repo_root=tmp_path) == []
     assert len(records) == 1
     assert records[0]["text"] == "First item.\n\nSecond item."
     for local, expected_count in {"list": 1, "item": 2}.items():
@@ -433,7 +789,7 @@ def test_b03c_lb_projects_as_newline_and_passes_strict_checker(tmp_path: Path) -
         stem="b03c-lb",
     )
 
-    assert check_receipt_v2(receipt_path, repo_root=tmp_path) == []
+    assert check_receipt(receipt_path, repo_root=tmp_path) == []
     assert len(records) == 1
     assert records[0]["text"] == "You,\nWhat"
     assert "You,What" not in records[0]["text"]
@@ -449,7 +805,7 @@ def test_b03c_structural_cell_direct_text_fails_closed(tmp_path: Path) -> None:
         stem="b03c-bare-cell",
     )
 
-    errors = check_receipt_v2(receipt_path, repo_root=tmp_path)
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
     assert any("structural element has unmapped direct text" in error for error in errors)
 
 
@@ -460,7 +816,7 @@ def test_b03c_sp_direct_text_fails_closed(tmp_path: Path) -> None:
         stem="b03c-sp-direct-text",
     )
 
-    errors = check_receipt_v2(receipt_path, repo_root=tmp_path)
+    errors = check_receipt(receipt_path, repo_root=tmp_path)
     assert errors, "strict checker silently accepted direct text on <sp>"
 
 
@@ -495,6 +851,7 @@ def test_head_only_div_gets_a_record_when_it_governs_none() -> None:
 
 
 @pytest.mark.slow
+@pytest.mark.requires_local_artifacts
 def test_every_committed_receipt_is_v2_and_passes_the_strict_checker() -> None:
     """The gate: pin all 15 committed receipts to strict v2.
 
@@ -510,7 +867,7 @@ def test_every_committed_receipt_is_v2_and_passes_the_strict_checker() -> None:
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         relative = receipt_path.relative_to(REPO_ROOT).as_posix()
         assert receipt["receipt_schema"] == "loss-receipt-v2", f"{relative} is not v2"
-        errors = check_receipt_v2(receipt_path, repo_root=REPO_ROOT)
+        errors = check_receipt(receipt_path, repo_root=REPO_ROOT)
         if errors:
             failures[relative] = errors[:5]
     assert not failures, f"strict v2 rejected committed receipts: {failures}"

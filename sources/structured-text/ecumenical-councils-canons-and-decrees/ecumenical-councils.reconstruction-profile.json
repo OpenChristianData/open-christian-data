@@ -1,0 +1,122 @@
+{
+  "contract": "ocd-37c137-reconstruction-profile-v1",
+  "profile_id": "ecumenical-councils-canons-and-decrees-npnf2-seven-roots-v1",
+  "version": 1,
+  "source_member": {
+    "key": "npnf214",
+    "path": "raw/ccel/npnf2/npnf214.xml",
+    "bytes": 3196008,
+    "sha256": "4ae3cb29edcb7b8e58bb9246049243c464b6839f88f6730f98b80122770b9bb4"
+  },
+  "assigned_roots": [
+    [
+      "npnf214",
+      "vii",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "ix",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "x",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "xi",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "xii",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "xiii",
+      "ecumenical-councils-canons-and-decrees"
+    ],
+    [
+      "npnf214",
+      "xvi",
+      "ecumenical-councils-canons-and-decrees"
+    ]
+  ],
+  "assigned_census": {
+    "elements": 7502,
+    "attributes": 14097,
+    "text_nodes": 5803,
+    "tail_nodes": 6027,
+    "characters": 1182705,
+    "non_ascii_characters": 15505,
+    "notes": 257,
+    "page_breaks": 312,
+    "scripture_refs": 57
+  },
+  "source_envelope": {
+    "top_level_div1_count": 18,
+    "top_level_div1_ids_in_order": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "vii",
+      "viii",
+      "ix",
+      "x",
+      "xi",
+      "xii",
+      "xiii",
+      "xiv",
+      "xv",
+      "xvi",
+      "xvii",
+      "xviii"
+    ],
+    "assigned_top_level_div1_ids_in_source_order": [
+      "vii",
+      "ix",
+      "x",
+      "xi",
+      "xii",
+      "xiii",
+      "xvi"
+    ],
+    "excluded_top_level_div1_ids": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "viii",
+      "xiv",
+      "xv",
+      "xvii",
+      "xviii"
+    ],
+    "assigned_root_titles": {
+      "vii": "The First Ecumenical Council:\u00a0 The First Council of Nice.",
+      "ix": "The Second Ecumenical Council:\u00a0 The First Council of Constantinople.",
+      "x": "The Third Ecumenical Council:\u00a0 The Council of Ephesus.",
+      "xi": "The Fourth Ecumenical Council.\u00a0 The Council of Chalcedon.",
+      "xii": "The Fifth Ecumenical Council.\u00a0 The Second Council of Constantinople.",
+      "xiii": "The Sixth Ecumenical Council.\u00a0 The Third Council of Constantinople.",
+      "xvi": "The Seventh Ecumenical Council.\u00a0 The Second Council of Nice."
+    }
+  },
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "exact-seven-root-order-and-complete-subtrees",
+    "exact-elements-attributes-text-tails-and-source-attribute-accounting",
+    "complete-title-page-preface-introduction-local-canon-appendix-and-index-accounting",
+    "exact-retained-metadata-rights-and-source-level-credit-evidence",
+    "one-nonaccepted-work-with-seven-source-root-bindings-and-publication-not-ready"
+  ],
+  "scope_boundary": "This candidate represents only complete subtrees rooted at vii, ix, x, xi, xii, xiii, and xvi in retained source order. Title pages, preface, introductions, the local-council canons rooted at viii, Trullo and provincial-council material rooted at xiv and xv, appendix material rooted at xvii, and indexes rooted at xviii remain source-accounted outside the assigned work projection."
+}

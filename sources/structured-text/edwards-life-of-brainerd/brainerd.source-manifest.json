@@ -1,0 +1,95 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "edwards-life-of-brainerd",
+  "ticket": "37c-141",
+  "owner_route": "LIB-055",
+  "status": "entry-local-technical-review",
+  "identity": {
+    "work_id": "edwards-life-of-brainerd",
+    "title": "The Life of David Brainerd",
+    "author": "Jonathan Edwards",
+    "textual_form": "English prose source witness",
+    "edition": "CCEL ThML edition (sourced via CCEL.org). Extracted from works2 volume. Edwards' memoir of the missionary David Brainerd (1718-1747).",
+    "parts": [
+      "selected div1 id=ix"
+    ],
+    "witnesses": [
+      "raw/ccel/edwards/brainerd.xml"
+    ],
+    "translator": null,
+    "original_publication_year": 1749
+  },
+  "scope": {
+    "selector": "ThML/ThML.body/div1[@id='ix']",
+    "selected_source_path": "ThML[1]/ThML.body[1]/div1[1]",
+    "selected_source_id": "ix",
+    "member_count": 1,
+    "member_order": [
+      "raw/ccel/edwards/brainerd.xml"
+    ],
+    "boundary": "Complete selected div1 subtree in source order, including headings, inline tags, notes, page breaks, and scripture references."
+  },
+  "authorities": [
+    {
+      "name": "source",
+      "role": "primary-source",
+      "path": "raw/ccel/edwards/brainerd.xml",
+      "bytes": 1400423,
+      "sha256": "11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e"
+    },
+    {
+      "name": "work-config",
+      "role": "work-config",
+      "path": "sources/structured-text/edwards-life-of-brainerd/config.json",
+      "bytes": 1501,
+      "sha256": "8cfb478526dbd4f854a170334f21e134dfc281fcbf4a3792ddd7fc9331568d30"
+    },
+    {
+      "name": "feature-profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/structured-text/edwards-life-of-brainerd/brainerd.source-feature-profile.json",
+      "bytes": 4755,
+      "sha256": "5c2dfe364f1b2b122f0ef9ea27fbd9ef652694359011dbbed057dff182ef8247"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/structured-text/edwards-life-of-brainerd/brainerd.independent-validation-policy.json",
+      "bytes": 4339,
+      "sha256": "6d9b7e510aff0ba8cf8a85e05a0970c2636222b6c7bb13dc85014f134135cb41"
+    }
+  ],
+  "converter": {
+    "id": "edwards-brainerd-source-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/structured-text/edwards-life-of-brainerd/brainerd_converter.py",
+    "implementation_sha256": "ba163881a97594b357dc91ac83c5448ce59ad8b23471ee2ee5f42c7579e20d5f"
+  },
+  "validator": {
+    "id": "edwards-brainerd-independent-oracle",
+    "version": "1",
+    "callable": "validate",
+    "implementation_path": "sources/structured-text/edwards-life-of-brainerd/brainerd_oracle.py",
+    "implementation_sha256": "f4d8a0bbf76c8b37768624deae246264de69d06796d3b1af14ca153a9af4a0e8",
+    "import_closure_sha256": "b65c35f9f88da41fbe6b4c1369e518c06403b39d93e32d6f327d7cb0eba657ee"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

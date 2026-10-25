@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-37c236-validation-policy-v1",
+  "work_id": "jps",
+  "source_member": "raw/bible_databases/formats/json/JPS.json",
+  "source_selector": "/books",
+  "source_label_selector": "/translation",
+  "unknown_source_fields": "reject",
+  "duplicate_json_keys": "reject",
+  "source_order": "preserve physical array order at every level",
+  "text_normalization": "none; exact JSON verse strings only",
+  "empty_text": "preserve all 19 explicit empty-string verse carriers as present empty TEI ab nodes and source-accountability fields",
+  "parent_attachment": "each book, chapter, and verse remains attached to its exact source parent and ordinal",
+  "unexpected_tei_nodes_attributes_or_text": "reject",
+  "source_accounting": "every semantic scalar plus every ordered array boundary; explicit empty text remains distinguished by its verse node and source field record",
+  "independence": "oracle independently decodes and recursively enumerates retained JSON, then inspects the actual lxml TEI tree; it does not import producer code or mapping/traversal helpers",
+  "shared_dependencies": [
+    "Python UTF-8 JSON decoding and SHA-256 primitives",
+    "the family-neutral SourceManifest binding contract",
+    "MechanicalFacts final attestation assembly only"
+  ],
+  "corroboration": "compare exact retained bytes and JSON pointers with actual TEI node order, parentage, attributes, and text; source-bound hashes and explicit 39/929/23213/19 counts are independently checked",
+  "schema": "TEI P5 vendored tei_all.xsd with its bound XML and TEI-X imports",
+  "downstream_segmentation": "the 39 data/bible-text/jps files are read-only legacy projection evidence; they are never consumed as source or TEI authority",
+  "mutations": [
+    "omit_book",
+    "omit_chapter",
+    "omit_verse_including_empty_carrier",
+    "duplicate_verse",
+    "reorder_siblings",
+    "move_verse_to_wrong_parent",
+    "invent_verse_or_text",
+    "change_book_or_chapter_label",
+    "change_numbering",
+    "change_nonempty_text_or_whitespace",
+    "erase_explicit_empty_carrier",
+    "unknown_source_field",
+    "duplicate_source_key",
+    "stale_source_binding",
+    "metadata_or_rights_drift"
+  ],
+  "not_established_by_this_route": [
+    "bibliographic work identity beyond the retained translation marker",
+    "textual-form or edition identity, date, contributor, or print-edition completeness",
+    "rights clearance or applicability of the repository-level MIT license to the JPS text",
+    "human acceptance, accepted IR, publication, or deployment",
+    "candidate package reproducibility or CVW visual review before coordinator handoff"
+  ]
+}

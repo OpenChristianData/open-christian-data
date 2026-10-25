@@ -1,0 +1,84 @@
+{
+  "contract": "ocd-kjva-independent-validation-policy-v1",
+  "work_id": "kjva",
+  "source_member": {
+    "path": "raw/bible_databases/formats/json/KJVA.json",
+    "sha256": "b927f4a0601de39b1636ebb71162ab1bf8ddbad66a55f50603011697e46060d5"
+  },
+  "json_contract": {
+    "duplicate_keys": "reject",
+    "root_keys_in_order": ["translation", "books"],
+    "object_key_orders": {
+      "book": ["name", "chapters"],
+      "chapter": ["chapter", "verses"],
+      "verse": ["verse", "text"]
+    },
+    "unknown_or_missing_keys": "reject",
+    "array_order": "preserve exact source order; no sorting or deduplication",
+    "empty_arrays": "reject and account separately",
+    "chapter_and_verse_numbers": "positive consecutive JSON integers; booleans are not integers",
+    "text": "nonempty strings preserved exactly; no trimming, markup parsing, or Unicode normalization",
+    "field_states": ["missing", "null", "empty_string", "zero_integer", "false_boolean", "empty_array"],
+    "special_text_examples": ["</title>", "[but]"],
+    "required_boundary_whitespace": {"leading": 23, "trailing": 1466}
+  },
+  "candidate": {
+    "title": "King James Version with Apocrypha",
+    "publication_notice": "Nonaccepted reconstruction candidate for review; publication is not authorized.",
+    "source_note": "The complete retained JSON member is the input envelope for this technical route, not evidence of a complete print edition or an independently resolved bibliographic witness. Edition and publication dates are unresolved; none is asserted here.",
+    "scope": "Complete 80-book ordered retained JSON envelope; no complete physical edition, rights, acceptance, or release claim.",
+    "readme": "# KJVA retained-source candidate\n\nThis is a nonaccepted technical reconstruction candidate for the complete ordered envelope of raw/bible_databases/formats/json/KJVA.json (SHA-256 b927f4a0601de39b1636ebb71162ab1bf8ddbad66a55f50603011697e46060d5). The provider label is preserved as source text; its embedded year is not asserted as an edition or publication date. Physical-edition completeness, bibliographic witness, rights, human acceptance, and publication remain unresolved or unassessed.\n",
+    "unresolved": [
+      {"id": "edition-witness", "status": "unresolved", "question": "Identify and verify the bibliographic and edition witness represented by this retained JSON; do not infer an edition date from its provider label."},
+      {"id": "physical-completeness", "status": "unassessed", "question": "Determine whether this complete JSON envelope corresponds to a complete physical print edition and verify its textual boundaries."},
+      {"id": "rights", "status": "not-assessed", "question": "Assess source provenance, attribution instructions, and rights before any release decision."},
+      {"id": "human-review", "status": "pending", "question": "Complete independent source and TEI review before considering human acceptance."}
+    ]
+  },
+  "runtime": {
+    "lxml": "6.0.2",
+    "libxml2_runtime": "2.11.9",
+    "libxml2_compiled": "2.11.9",
+    "jsonschema": "4.26.0"
+  },
+  "schema": {
+    "tei_p5": {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    "tei_xml_import": {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    "tei_teix_import": {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    "candidate_package": {
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  },
+  "route_dependencies": {
+    "candidate_cli": "build/tools/reconstruct_candidate.py",
+    "build_package_init": "build/__init__.py",
+    "producer": "build/tei/kjva_reconstruction.py",
+    "oracle": "build/tei/kjva_oracle.py",
+    "contract": "ocd_kernel/reconstruction/contract.py",
+    "verifier": "ocd_kernel/reconstruction/verifier.py",
+    "destination_policy": "ocd_kernel/reconstruction/destination_policy.py",
+    "oracle_import_closure": [
+      "ocd_kernel/__init__.py",
+      "ocd_kernel/reconstruction/__init__.py",
+      "ocd_kernel/reconstruction/contract.py",
+      "ocd_kernel/reconstruction/verifier.py"
+    ]
+  },
+  "independence": {
+    "producer_and_oracle_are_separate_kjva_modules": true,
+    "oracle_imports_producer": false,
+    "oracle_derives_accounting_from_exact_source_bytes": true,
+    "shared_infrastructure": ["Python JSON decoder", "manifest-bound candidate contract", "TEI XSD dependencies"]
+  },
+  "mutation_cases_rejected": ["omission", "reordering", "invention"]
+}

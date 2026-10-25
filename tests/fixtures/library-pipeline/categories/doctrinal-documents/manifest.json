@@ -1,0 +1,97 @@
+{
+  "builder_version": "ocd-pipe-013b-fixture-builder-v1",
+  "status": "source-bound-offline-fixtures",
+  "category": "doctrinal_documents",
+  "identity_status": "Explicit fixture-only IDs and bounded source selectors; no accepted master, canonical identity, human acceptance, rights clearance, publication, or release claim is made.",
+  "fixtures": [
+    {
+      "fixture_id": "fixture-westminster-confession",
+      "title": "Westminster Confession of Faith",
+      "shape": "wcf",
+      "tei_file": "westminster-confession.tei.xml",
+      "source_file": "source-westminster-confession.json",
+      "source_path": "raw/Creeds.json/creeds/westminster_confession_of_faith.json",
+      "source_url": "https://archive.org/details/humbleadviceofas00west/mode/2up",
+      "source_sha256": "4928211669741404df4d824d109db0d745869b8d9a175274b64fb640b332dc6b",
+      "retained_sha256": "4928211669741404df4d824d109db0d745869b8d9a175274b64fb640b332dc6b",
+      "source_unit_count": 172,
+      "selected_source_units": [
+        "1.1",
+        "1.2"
+      ],
+      "scope": "Chapter 1 sections 1 and 2; all other retained source sections are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-westminster-confession",
+        "textual_form_id": "fixture-westminster-confession-en",
+        "edition_id": "fixture-wcf-1647"
+      },
+      "edition_title": "Westminster Confession of Faith",
+      "document_kind": "confession",
+      "rows": 2,
+      "source_excerpt_sha256": "ab9fcd4aa2becdc86cbd7147634299de2a904bf8bfdadbc2b34041a23529363a",
+      "tei_sha256": "6f4a528ef8b847d3e5914b44db4570a653f28d25d49a536c98f7d358f091a512",
+      "source_file_sha256": "1e4e85167b4e92d404bf787dbacadb68911c8e034fe4c0b64ca885c406153eee",
+      "retained_source_filename": "westminster_confession_of_faith.json"
+    },
+    {
+      "fixture_id": "fixture-canons-of-dort",
+      "title": "Canons of Dort",
+      "shape": "dort",
+      "tei_file": "canons-of-dort.tei.xml",
+      "source_file": "source-canons-of-dort.json",
+      "source_path": "raw/Creeds.json/creeds/canons_of_dort.json",
+      "source_url": "http://apostles-creed.org/wp-content/uploads/2014/07/canons-of-dort.pdf",
+      "source_sha256": "4f00bc17a45b6a3843b773f5b28830b8016e4acce6681895266afadd6371196b",
+      "retained_sha256": "4f00bc17a45b6a3843b773f5b28830b8016e4acce6681895266afadd6371196b",
+      "source_unit_count": 93,
+      "selected_source_units": [
+        "1.A1",
+        "1.A2"
+      ],
+      "scope": "Chapter 1 sections A1 and A2; all other retained source sections are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-canons-of-dort",
+        "textual_form_id": "fixture-canons-of-dort-en",
+        "edition_id": "fixture-dort-1619"
+      },
+      "edition_title": "Canons of Dort",
+      "document_kind": "confession",
+      "rows": 2,
+      "source_excerpt_sha256": "6df05ec409d29b7c30585ab27d17dc820e86b3f01efb665d5dcd955f813b8640",
+      "tei_sha256": "baaa637949dd693afb770c693ceb27db9f7a97465252ed612179ec0d0faff3c5",
+      "source_file_sha256": "cb1a2196ec99620ec277f4605df428e37976c77931ad85f4c3fb916b598711d4",
+      "retained_source_filename": "canons_of_dort.json"
+    },
+    {
+      "fixture_id": "fixture-nicene-creed",
+      "title": "Nicene Creed",
+      "shape": "nicene",
+      "tei_file": "nicene-creed.tei.xml",
+      "source_file": "source-nicene-creed.json",
+      "source_path": "raw/Creeds.json/creeds/nicene_creed.json",
+      "source_url": "http://www.onthewing.org/user/Creed_Nicene.pdf",
+      "source_sha256": "b5f49141ce15a08d82921eb4860e22d3f2a312faf16628e092382e75a1561469",
+      "retained_sha256": "b5f49141ce15a08d82921eb4860e22d3f2a312faf16628e092382e75a1561469",
+      "source_unit_count": 5,
+      "selected_source_units": [
+        "paragraph-000001",
+        "paragraph-000002"
+      ],
+      "scope": "The first two source paragraphs; later creed paragraphs are outside this bounded fixture.",
+      "identity": {
+        "work_id": "fixture-nicene-creed",
+        "textual_form_id": "fixture-nicene-creed-en",
+        "edition_id": "fixture-nicene-381"
+      },
+      "edition_title": "Nicene Creed",
+      "document_kind": "creed",
+      "rows": 2,
+      "source_excerpt_sha256": "e4f4385062fd7d36af307ecb85f186cdc5af367f91bba2d00023f7c9e482d513",
+      "tei_sha256": "7f50a8cf07be7cf0613da3b8aa52ae4e81177d9dc723d64137508b33f1e1a39f",
+      "source_file_sha256": "92a2e6221f320cfe1e28417987d349fa34951bf031d449d5f81c3d30d199f4fb",
+      "retained_source_filename": "nicene_creed.json"
+    }
+  ],
+  "source_unit_count": 270,
+  "selected_unit_count": 6
+}

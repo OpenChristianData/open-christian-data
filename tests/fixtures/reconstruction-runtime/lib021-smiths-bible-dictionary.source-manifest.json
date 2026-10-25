@@ -1,0 +1,392 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "jwbickel-bible-dictionaries-smiths-jsonl",
+  "ticket_id": "LIB-021",
+  "work_id": "smiths-bible-dictionary",
+  "source_order": {
+    "ticket_order": 3,
+    "raw_manifest_order": 3,
+    "raw_manifest_path": "raw/bible_dictionaries/manifest.json"
+  },
+  "source_order_members": [
+    {
+      "source_id": "jwbickel-bible-dictionaries-eastons-jsonl",
+      "local_filename": "eastons.jsonl",
+      "hf_filename": "Easton's Bible Dictionary.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Easton's Bible Dictionary.jsonl",
+      "download_date": "2026-03-30T08:32:28Z",
+      "raw_manifest_order": 1,
+      "ticket_id": "LIB-021",
+      "work_id": "eastons-bible-dictionary",
+      "bytes": 2690740,
+      "sha256": "978e09fdb66e9c6b722085f868c0cc84030df9e15c6188a06390f3822888082a",
+      "records": 3963,
+      "definition_blocks": 7464,
+      "block_count_min": 1,
+      "block_count_max": 27,
+      "term_characters": 30624,
+      "definition_characters": 2497386,
+      "duplicate_terms": [
+        {
+          "term": "Kadesh",
+          "occurrences": 2
+        },
+        {
+          "term": "Salmon",
+          "occurrences": 2
+        }
+      ],
+      "exact_keys": [
+        "definitions",
+        "term"
+      ],
+      "blank_lines": 0,
+      "line_ending": "LF",
+      "ends_with_newline": true,
+      "disposition": "exclude",
+      "reason": "Outside this work route; retained by its separate LIB-021 work route for eastons-bible-dictionary."
+    },
+    {
+      "source_id": "jwbickel-bible-dictionaries-hitchcocks-jsonl",
+      "local_filename": "hitchcocks.jsonl",
+      "hf_filename": "Hitchcock's Bible Names Dictionary.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Hitchcock's Bible Names Dictionary.jsonl",
+      "download_date": "2026-03-30T08:32:31Z",
+      "raw_manifest_order": 2,
+      "ticket_id": "LIB-021",
+      "work_id": "hitchcocks-bible-names-dictionary",
+      "bytes": 164940,
+      "sha256": "e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
+      "records": 2622,
+      "definition_blocks": 2622,
+      "block_count_min": 1,
+      "block_count_max": 1,
+      "term_characters": 17563,
+      "definition_characters": 58229,
+      "duplicate_terms": [
+        {
+          "term": "Abel",
+          "occurrences": 2
+        },
+        {
+          "term": "Eli",
+          "occurrences": 2
+        },
+        {
+          "term": "Noah",
+          "occurrences": 2
+        },
+        {
+          "term": "Rahab",
+          "occurrences": 2
+        }
+      ],
+      "exact_keys": [
+        "definitions",
+        "term"
+      ],
+      "blank_lines": 0,
+      "line_ending": "LF",
+      "ends_with_newline": true,
+      "disposition": "exclude",
+      "reason": "Outside this work route; retained by its separate LIB-021 work route for hitchcocks-bible-names-dictionary."
+    },
+    {
+      "source_id": "jwbickel-bible-dictionaries-smiths-jsonl",
+      "local_filename": "smiths.jsonl",
+      "hf_filename": "Smith's Bible Dictionary.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Smith's Bible Dictionary.jsonl",
+      "download_date": "2026-03-30T08:32:35Z",
+      "raw_manifest_order": 3,
+      "ticket_id": "LIB-021",
+      "work_id": "smiths-bible-dictionary",
+      "bytes": 2919477,
+      "sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d",
+      "records": 4560,
+      "definition_blocks": 5362,
+      "block_count_min": 1,
+      "block_count_max": 6,
+      "term_characters": 36340,
+      "definition_characters": 2718707,
+      "duplicate_terms": [],
+      "exact_keys": [
+        "definitions",
+        "term"
+      ],
+      "blank_lines": 0,
+      "line_ending": "LF",
+      "ends_with_newline": true,
+      "disposition": "include",
+      "reason": "Assigned LIB-021 work member; retain every non-empty JSONL record and every definitions block in source order."
+    },
+    {
+      "source_id": "jwbickel-bible-dictionaries-torreys-jsonl",
+      "local_filename": "torreys.jsonl",
+      "hf_filename": "TorreysTopicalTextbook.jsonl",
+      "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/TorreysTopicalTextbook.jsonl",
+      "download_date": "2026-03-30T08:32:38Z",
+      "raw_manifest_order": 4,
+      "ticket_id": "LIB-022",
+      "work_id": "torreys-topical-textbook",
+      "bytes": 1036596,
+      "sha256": "8211c20290e951f60e21187e3bdaea639c8cf59343675b6518c6c17423906a1c",
+      "records": 623,
+      "definition_blocks": 23549,
+      "block_count_min": 2,
+      "block_count_max": 215,
+      "term_characters": 8314,
+      "definition_characters": 915386,
+      "duplicate_terms": [
+        {
+          "term": "Communion With God",
+          "occurrences": 2
+        },
+        {
+          "term": "Early Rising",
+          "occurrences": 2
+        }
+      ],
+      "exact_keys": [
+        "definitions",
+        "term"
+      ],
+      "blank_lines": 0,
+      "line_ending": "LF",
+      "ends_with_newline": true,
+      "disposition": "exclude",
+      "reason": "Outside LIB-021; assigned to LIB-022 topical-reference scope."
+    }
+  ],
+  "retained_member_census": {
+    "dataset_manifest_sha256": "3438b540e27f767ae4f0172a18ff466ed2d4ab5aed73a1b4af9755f92e52c37b",
+    "retained": [
+      {
+        "source_id": "jwbickel-bible-dictionaries-smiths-jsonl",
+        "local_filename": "smiths.jsonl",
+        "hf_filename": "Smith's Bible Dictionary.jsonl",
+        "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Smith's Bible Dictionary.jsonl",
+        "download_date": "2026-03-30T08:32:35Z",
+        "raw_manifest_order": 3,
+        "ticket_id": "LIB-021",
+        "work_id": "smiths-bible-dictionary",
+        "bytes": 2919477,
+        "sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d",
+        "records": 4560,
+        "definition_blocks": 5362,
+        "block_count_min": 1,
+        "block_count_max": 6,
+        "term_characters": 36340,
+        "definition_characters": 2718707,
+        "duplicate_terms": [],
+        "exact_keys": [
+          "definitions",
+          "term"
+        ],
+        "blank_lines": 0,
+        "line_ending": "LF",
+        "ends_with_newline": true,
+        "disposition": "include",
+        "reason": "Assigned LIB-021 work member; retain every non-empty JSONL record and every definitions block in source order."
+      }
+    ],
+    "excluded": [
+      {
+        "source_id": "jwbickel-bible-dictionaries-eastons-jsonl",
+        "local_filename": "eastons.jsonl",
+        "hf_filename": "Easton's Bible Dictionary.jsonl",
+        "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Easton's Bible Dictionary.jsonl",
+        "download_date": "2026-03-30T08:32:28Z",
+        "raw_manifest_order": 1,
+        "ticket_id": "LIB-021",
+        "work_id": "eastons-bible-dictionary",
+        "bytes": 2690740,
+        "sha256": "978e09fdb66e9c6b722085f868c0cc84030df9e15c6188a06390f3822888082a",
+        "records": 3963,
+        "definition_blocks": 7464,
+        "block_count_min": 1,
+        "block_count_max": 27,
+        "term_characters": 30624,
+        "definition_characters": 2497386,
+        "duplicate_terms": [
+          {
+            "term": "Kadesh",
+            "occurrences": 2
+          },
+          {
+            "term": "Salmon",
+            "occurrences": 2
+          }
+        ],
+        "exact_keys": [
+          "definitions",
+          "term"
+        ],
+        "blank_lines": 0,
+        "line_ending": "LF",
+        "ends_with_newline": true,
+        "disposition": "exclude",
+        "reason": "Outside this work route; retained by its separate LIB-021 work route for eastons-bible-dictionary."
+      },
+      {
+        "source_id": "jwbickel-bible-dictionaries-hitchcocks-jsonl",
+        "local_filename": "hitchcocks.jsonl",
+        "hf_filename": "Hitchcock's Bible Names Dictionary.jsonl",
+        "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Hitchcock's Bible Names Dictionary.jsonl",
+        "download_date": "2026-03-30T08:32:31Z",
+        "raw_manifest_order": 2,
+        "ticket_id": "LIB-021",
+        "work_id": "hitchcocks-bible-names-dictionary",
+        "bytes": 164940,
+        "sha256": "e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
+        "records": 2622,
+        "definition_blocks": 2622,
+        "block_count_min": 1,
+        "block_count_max": 1,
+        "term_characters": 17563,
+        "definition_characters": 58229,
+        "duplicate_terms": [
+          {
+            "term": "Abel",
+            "occurrences": 2
+          },
+          {
+            "term": "Eli",
+            "occurrences": 2
+          },
+          {
+            "term": "Noah",
+            "occurrences": 2
+          },
+          {
+            "term": "Rahab",
+            "occurrences": 2
+          }
+        ],
+        "exact_keys": [
+          "definitions",
+          "term"
+        ],
+        "blank_lines": 0,
+        "line_ending": "LF",
+        "ends_with_newline": true,
+        "disposition": "exclude",
+        "reason": "Outside this work route; retained by its separate LIB-021 work route for hitchcocks-bible-names-dictionary."
+      },
+      {
+        "source_id": "jwbickel-bible-dictionaries-torreys-jsonl",
+        "local_filename": "torreys.jsonl",
+        "hf_filename": "TorreysTopicalTextbook.jsonl",
+        "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/TorreysTopicalTextbook.jsonl",
+        "download_date": "2026-03-30T08:32:38Z",
+        "raw_manifest_order": 4,
+        "ticket_id": "LIB-022",
+        "work_id": "torreys-topical-textbook",
+        "bytes": 1036596,
+        "sha256": "8211c20290e951f60e21187e3bdaea639c8cf59343675b6518c6c17423906a1c",
+        "records": 623,
+        "definition_blocks": 23549,
+        "block_count_min": 2,
+        "block_count_max": 215,
+        "term_characters": 8314,
+        "definition_characters": 915386,
+        "duplicate_terms": [
+          {
+            "term": "Communion With God",
+            "occurrences": 2
+          },
+          {
+            "term": "Early Rising",
+            "occurrences": 2
+          }
+        ],
+        "exact_keys": [
+          "definitions",
+          "term"
+        ],
+        "blank_lines": 0,
+        "line_ending": "LF",
+        "ends_with_newline": true,
+        "disposition": "exclude",
+        "reason": "Outside LIB-021; assigned to LIB-022 topical-reference scope."
+      }
+    ]
+  },
+  "producer_import_closure_sha256": "df8438add88ab718af87068655b145ff3303c59001efb58935b1d2c34bd4e459",
+  "authorities": [
+    {
+      "name": "jwbickel-bible-dictionaries-smiths-jsonl",
+      "path": "raw/bible_dictionaries/smiths.jsonl",
+      "role": "primary-source",
+      "bytes": 2919477,
+      "sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d"
+    },
+    {
+      "name": "jwbickel-bible-dictionaries-manifest",
+      "path": "raw/bible_dictionaries/manifest.json",
+      "role": "source-manifest",
+      "bytes": 1712,
+      "sha256": "3438b540e27f767ae4f0172a18ff466ed2d4ab5aed73a1b4af9755f92e52c37b"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/smiths-bible-dictionary/README.md",
+      "role": "source-attribution",
+      "bytes": 1465,
+      "sha256": "ba5253fef3e5217f1ba45ce25005de5a5d172ea2a01dc95d91a21e5da0ce528c"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/lib021-smiths-bible-dictionary.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 13647,
+      "sha256": "7cce03fae51f7a42f3c8b48e944ca560f00bf0ddb5b20a7f31a5f73529d0c807"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/smiths-bible-dictionary/smiths-bible-dictionary.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 3311,
+      "sha256": "28d6944e3158c864c6127574b90810d38b943d1452178342309a1c3c069fadd4"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/smiths-bible-dictionary/smiths-bible-dictionary.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 3533,
+      "sha256": "79c5e29f0b21ab72ca6c4fda60a7ff2217b18883c33d2a09c9760bd634f16246"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib021-bible-dictionaries-jsonl-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bible_dictionaries_reconstruction.py",
+    "implementation_sha256": "a5d02075c89fe2be01c7d88132ab6cd9a79ce824be539573137b13dd2d43307f"
+  },
+  "validator": {
+    "id": "ocd-lib021-bible-dictionaries-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bible_dictionaries_oracle.py",
+    "implementation_sha256": "2b83251ecb0a26f8cc62170b27fe7698c715cc79277f2e8da65af8bc65a35036",
+    "import_closure_sha256": "62836bdf7eeb85a5a1703b9e4706fbcb23deee426024115640aacbb1c37f8aa4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

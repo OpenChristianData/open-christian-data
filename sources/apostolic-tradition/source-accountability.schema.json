@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/apostolic-tradition-source-accountability-v1.schema.json",
+  "title": "Apostolic Tradition source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "work_id",
+    "edition_id",
+    "acquisition_id",
+    "source_sha256",
+    "source_archive_sha256",
+    "candidate_sha256",
+    "document_shell",
+    "body_inventory",
+    "mapping"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-apostolic-tradition-source-accountability-v1"},
+    "work_id": {"const": "apostolic-tradition"},
+    "edition_id": {"const": "apostolic-tradition-gutenberg-electronic"},
+    "acquisition_id": {"const": "apostolic-tradition-gutenberg-acquired"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "document_shell": {"type": "object"},
+    "body_inventory": {"type": "object"},
+    "mapping": {"type": "object"}
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/bcp-1662/bcp-1662.source-accountability.schema.json",
+  "title": "BCP 1662 complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "parser", "source_bundle", "observation_counts", "image_alt_counts", "alternative_counts", "comment_count", "document_count", "omitted_observation_count", "duplicate_observation_count", "crosswalk"],
+  "properties": {
+    "contract": {"type": "string", "minLength": 1},
+    "schema": {"type": "string", "minLength": 1},
+    "profile_id": {"type": "string", "minLength": 1},
+    "parser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["implementation_family", "module", "decode", "convert_charrefs", "observation_fingerprint_sha256", "observation_identity", "observations"],
+      "properties": {
+        "implementation_family": {"type": "string", "minLength": 1},
+        "module": {"type": "string", "minLength": 1},
+        "decode": {"type": "string", "minLength": 1},
+        "convert_charrefs": {"type": "boolean"},
+        "observation_fingerprint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "observation_identity": {"type": "string", "minLength": 1},
+        "observations": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    },
+    "source_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["members", "bytes", "sha256"],
+      "properties": {
+        "members": {"type": "integer", "minimum": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "observation_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "elements", "attributes", "text"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 1},
+        "elements": {"type": "integer", "minimum": 0},
+        "attributes": {"type": "integer", "minimum": 0},
+        "text": {"type": "integer", "minimum": 0}
+      }
+    },
+    "image_alt_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text_bearing", "navigation"],
+      "properties": {"text_bearing": {"type": "integer", "minimum": 0}, "navigation": {"type": "integer", "minimum": 0}}
+    },
+    "alternative_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["genuine", "legacy_recall"],
+      "properties": {"genuine": {"type": "integer", "minimum": 0}, "legacy_recall": {"type": "integer", "minimum": 0}}
+    },
+    "comment_count": {"type": "integer", "minimum": 0},
+    "document_count": {"type": "integer", "minimum": 1},
+    "omitted_observation_count": {"type": "integer", "minimum": 0},
+    "duplicate_observation_count": {"type": "integer", "minimum": 0},
+    "crosswalk": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["observation_id", "member", "source_anchor", "byte_start", "source_order", "kind", "name", "value", "value_sha256", "disposition", "reason_code", "tei_selector", "semantic_role"],
+        "properties": {
+          "observation_id": {"type": "string", "pattern": "^bcp-observation-[0-9a-f]{24}$"},
+          "member": {"type": "string", "minLength": 1},
+          "source_anchor": {"type": "string", "minLength": 1},
+          "byte_start": {"type": "integer", "minimum": 0},
+          "source_order": {"type": "integer", "minimum": 1},
+          "kind": {"enum": ["element", "attribute", "text"]},
+          "name": {"type": ["string", "null"]},
+          "value": {"type": "string"},
+          "value_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "disposition": {"enum": ["represented", "evidence-only"]},
+          "reason_code": {"type": ["string", "null"]},
+          "tei_selector": {"type": ["string", "null"]},
+          "semantic_role": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Cross-work onboarding policy
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 This policy covers transfer of matrix priors when a second Open Christian Data
 work onboards. The planned tool is `build/tools/onboard_cross_work_priors.py`.
 Implementation is deferred until the second-work activation trigger.

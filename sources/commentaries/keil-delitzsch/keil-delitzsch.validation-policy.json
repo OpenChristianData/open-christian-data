@@ -1,0 +1,54 @@
+{
+  "contract": "ocd-helloao-keil-delitzsch-validation-policy-v1",
+  "policy_id": "helloao-keil-delitzsch-complete-retained-json-to-tei-v1",
+  "version": 1,
+  "work_id": "keil-delitzsch",
+  "candidate_status": "nonaccepted",
+  "required_counts": {
+    "source_members": 911,
+    "source_bytes": 47103116,
+    "books": 39,
+    "chapters": 909,
+    "commentary_occurrences": 6516,
+    "book_introductions": 39,
+    "chapter_introductions_present": 394,
+    "chapter_introductions_absent": 515
+  },
+  "required_unresolved_ids": [
+    "keil-delitzsch-retained-vs-configured-title",
+    "keil-delitzsch-config-cc0-vs-retained-pdm",
+    "keil-delitzsch-configured-source-endpoint",
+    "keil-delitzsch-retained-rtl-anomaly",
+    "keil-delitzsch-edition-and-original-date"
+  ],
+  "required_checks": [
+    "bind all 911 retained members by normalized path, byte count, and SHA-256",
+    "verify the ocd-source-member-set-v1 canonical JSON digest including retained-#### names",
+    "preserve the exact 39-book and 909-chapter source order",
+    "preserve all 6516 occurrence records, ordinals, numbers, types, and text",
+    "preserve all 39 book introductions including zero-chapter SNG",
+    "preserve 394 present chapter introductions and 515 absent properties",
+    "preserve the exact eleven retained chapter gaps without invention",
+    "preserve exact global previous next and self navigation across gaps and book boundaries",
+    "preserve the three nonmonotonic occurrence sequences",
+    "preserve both distinct ISA 38 number-21 occurrences",
+    "preserve the EZK 6 ordinal-2 empty string as an explicit empty-string carrier",
+    "reject inferred ranges and Bible or BSB verse text",
+    "localize retained PDM and configured CC0 drift",
+    "localize retained title and configured 1861-1875 bibliographic narrative",
+    "localize the retained English rtl marker",
+    "keep the candidate nonaccepted and publication-not-ready",
+    "require the exact XML declaration <?xml version='1.0' encoding='UTF-8'?> followed by LF and reject all lexical shell drift",
+    "validate TEI P5 against the retained source structure",
+    "validate with an independently implemented oracle and literal import closure",
+    "verify the exact catalog-claim lineage bridge for 38 current WorkCatalog claims",
+    "exact-source-double-newline-paragraph-segmentation-and-pinned-book-introduction-headings"
+  ],
+  "forbidden_import_prefixes": [
+    "build.parsers.helloao_commentary",
+    "build.tei.helloao_keil_delitzsch_reconstruction",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ]
+}

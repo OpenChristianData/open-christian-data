@@ -1,0 +1,63 @@
+{
+  "contract": "ocd-lib061-reconstruction-profile-v1",
+  "profile_id": "lib061-church-fathers-quotations-member-tree-v1",
+  "version": 1,
+  "source_envelope": {
+    "path": "sources/structured-text/church-fathers-quotations/source-member-equality.json",
+    "contract": "ocd-source-member-equality-v1",
+    "archive_logical_name": "Commentaries-Database.tar",
+    "archive_bytes": 132531712,
+    "archive_sha256": "5a4ba3ef4bfd168cdaf4cd6bcc4e8cc655c90da97bfe5abf3e6fe9338d86fbe6",
+    "member_count": 59021,
+    "regular_file_count": 58682,
+    "directory_count": 339,
+    "toml_file_count": 58675,
+    "primary_member_rule": "every retained .toml member",
+    "rights_member": "./LICENSE"
+  },
+  "hierarchy": "recovered archive order -> source member path -> commentary record order -> TOML field order",
+  "metadata": "all retained metadata.toml objects",
+  "records": "all retained commentary array-of-table objects",
+  "expected_census": {
+    "metadata_objects": 335,
+    "commentary_files": 58340,
+    "commentary_records": 70194,
+    "field_occurrences": {
+      "append_to_author_name": 6750,
+      "author": 12,
+      "content": 11,
+      "context": 6,
+      "default_year": 335,
+      "location": 8,
+      "quote": 70194,
+      "source_title": 67945,
+      "source_url": 67945,
+      "text": 26,
+      "time": 440,
+      "wiki": 335,
+      "work": 8
+    },
+    "field_type_occurrences": {
+      "append_to_author_name": {"string": 6750},
+      "author": {"string": 12},
+      "content": {"string": 11},
+      "context": {"string": 6},
+      "default_year": {"integer": 335},
+      "location": {"string": 8},
+      "quote": {"string": 70194},
+      "source_title": {"string": 67945},
+      "source_url": {"string": 67945},
+      "text": {"string": 26},
+      "time": {"integer": 440},
+      "wiki": {"string": 335},
+      "work": {"string": 8}
+    }
+  },
+  "catalog_claim_scope": {
+    "work_id": "church-fathers-quotations",
+    "stored_output_count": 325,
+    "association": "catalog_claim_lineage+exact_id",
+    "authority_boundary": "derived-output claims remain separate from retained TOML source text"
+  },
+  "status": "nonaccepted"
+}

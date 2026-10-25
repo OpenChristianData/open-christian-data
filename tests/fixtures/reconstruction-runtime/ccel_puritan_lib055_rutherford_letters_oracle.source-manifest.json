@@ -1,0 +1,133 @@
+{
+  "authorities": [
+    {
+      "bytes": 285570,
+      "name": "retained-source",
+      "path": "raw/ccel/rutherford/letters.xml",
+      "role": "primary-source",
+      "sha256": "33fda0ccc68d7e35aec2dbe6abd366ca55e81c8a116973c9ed69e3becede6ebf"
+    },
+    {
+      "bytes": 82,
+      "name": "identity",
+      "path": "sources/structured-text/rutherford-letters/lib055/work-identity.json",
+      "role": "work-identity-config",
+      "sha256": "aa04a6454396ea706124ca3a60efceb4aef66614359294c0d75ec5475d04e656"
+    },
+    {
+      "bytes": 3116,
+      "name": "profile",
+      "path": "sources/structured-text/rutherford-letters/lib055/source-feature-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "a69c999668b103e5fc6c2c006d1851ede1976ddfa611cb4e4c0ee7ac038c031e"
+    },
+    {
+      "bytes": 4107,
+      "name": "policy",
+      "path": "sources/structured-text/rutherford-letters/lib055/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a62293cb848d2d9e25b34597c763fe59abb88611ed25d5b8ecefd1bd18183e8d"
+    },
+    {
+      "bytes": 615,
+      "name": "source-readme",
+      "path": "sources/structured-text/rutherford-letters/lib055/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "f6bd633794ec47450ffba4dc25de743ed82cc0224b45d8b532c8e746cc1f22c9"
+    },
+    {
+      "bytes": 1321,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/rutherford-letters/lib055/source-accountability.schema.json",
+      "role": "work-local-accountability-schema",
+      "sha256": "5161d2884013a22acb4630c9a2f4d89d0da2202b1183080c486df1d9579b14ff"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "rutherford-letters-lib055-source-to-tei",
+    "implementation_path": "build/tei/ccel_puritan_lib055_rutherford_letters_reconstruction.py",
+    "implementation_sha256": "5ad85f1e79c50b4d7abd8e6c8ce96758b89cbdf17b8158e9ac057fd5da585a2f",
+    "version": "1"
+  },
+  "identity": {
+    "edition": null,
+    "original_publication_year": null,
+    "parts": null,
+    "source_record_metadata": {
+      "creator": "Samuel Rutherford",
+      "language": "eng",
+      "title": "Letters of Samuel Rutherford"
+    },
+    "textual_form": null,
+    "translator": null,
+    "unresolved": {
+      "edition_witness": "The entry config edition claim is legacy evidence only; retained bytes do not independently establish a print witness.",
+      "parts": "The six source carriers are preserved without adopting constituent-part semantics.",
+      "rights": "The retained DC.Rights field is empty; project rights clearance is unresolved.",
+      "textual_form": "The retained provider header does not establish a translator or revision.",
+      "work_boundary": "The retained source title is A Selection from his Letters and its complete envelope includes support matter; exact catalog boundary remains unresolved."
+    },
+    "witness_claim": null,
+    "work_id": "rutherford-letters"
+  },
+  "owner_route": "LIB-055",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "boundary": "Complete retained ThML root, including full header and document shell and all six ordered ThML.body/div1 subtrees; no neighboring work or member is included.",
+    "explicit_exclusions": [
+      {
+        "reason": "presentation-only column wrapper; children are separately accounted and no reading content is omitted",
+        "source_selector": "ThML.body/table/colgroup"
+      },
+      {
+        "reason": "presentation-only column declaration; accounted in the source ledger",
+        "source_selector": "ThML.body/table/colgroup/col"
+      }
+    ],
+    "member_count": 1,
+    "member_order": [
+      "raw/ccel/rutherford/letters.xml"
+    ],
+    "selected_source_path": "ThML[1]",
+    "selector": "ThML[1] (complete retained document envelope)",
+    "top_level_div1_ids": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi"
+    ]
+  },
+  "source_id": "rutherford-letters-lib055-retained-thml",
+  "status": "entry-local-technical-candidate",
+  "ticket": "37c-267",
+  "validator": {
+    "callable": "_oracle",
+    "id": "rutherford-letters-lib055-independent-source-oracle",
+    "implementation_path": "build/tei/ccel_puritan_lib055_rutherford_letters_oracle.py",
+    "implementation_sha256": "40fbc713d56cd8d5fcf341d7c16007ce9b7522bd7e66c4c42411d0be09fbb6ae",
+    "import_closure_sha256": "69ee32a33866637a60525dfccf0dfb57973d4e3fe4a0c176519f72f301b4d1d9",
+    "version": "1"
+  },
+  "work_id": "rutherford-letters"
+}

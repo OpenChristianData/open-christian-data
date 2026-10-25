@@ -1,0 +1,117 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "westminster-shorter-catechism-three-retained-witnesses",
+  "producer_import_closure_sha256": "ae2b04e8087386be7fd120c4610726ca1681a060eb48fdde2d0971a0c762d57b",
+  "authorities": [
+    {
+      "name": "creeds-wsc",
+      "path": "raw/Creeds.json/creeds/westminster_shorter_catechism.json",
+      "role": "primary-source",
+      "bytes": 32442,
+      "sha256": "0a569c527fb4332448b5b853ff0dd6c3d6b5dd6abb8c5a746d58d9172886ffc6"
+    },
+    {
+      "name": "theologai-wsc",
+      "path": "raw/TheologAI/data/historical-documents/westminster-shorter-catechism.json",
+      "role": "primary-source",
+      "bytes": 31139,
+      "sha256": "89547581ed26576d2ab595894d7b21ac12e78a66d96e251b419ed023856283de"
+    },
+    {
+      "name": "westminster-standard-wsc",
+      "path": "raw/westminster-standard-org/westminster-shorter-catechism.html",
+      "role": "primary-source",
+      "bytes": 98505,
+      "sha256": "8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a"
+    },
+    {
+      "name": "creeds-readme",
+      "path": "raw/Creeds.json/README.md",
+      "role": "rights-evidence",
+      "bytes": 8871,
+      "sha256": "caa2a135ceb89bdea2baf411bcb2897b03c34d24473de7c43ca373c9d9008bef"
+    },
+    {
+      "name": "theologai-readme",
+      "path": "raw/TheologAI/README.md",
+      "role": "rights-evidence",
+      "bytes": 36726,
+      "sha256": "1f00454aa2be25c5b2c702878c671042b5b64a260dade323bb1db7623135cd1f"
+    },
+    {
+      "name": "theologai-license",
+      "path": "raw/TheologAI/LICENSE",
+      "role": "rights-evidence",
+      "bytes": 768,
+      "sha256": "757a501a3a9e69ff464efc40596ddeb6c322c4db4be80ada63d3c8171bde38c4"
+    },
+    {
+      "name": "local-source-config",
+      "path": "sources/catechisms/westminster-shorter-catechism/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1606,
+      "sha256": "408335d74a50989be73188d1e14146dee34d3ae2fb40362e0b3b0a49fe8016f7"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/westminster-shorter-catechism.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3425,
+      "sha256": "3ae822020a1b0777a811d85088245aac27939f0aea1463b7262454840c8908f8"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 4899,
+      "sha256": "526f9001dbd5a4c153f89e66f17a05a475296c7f882b4f4dbe99211954ba1c42"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2913,
+      "sha256": "cc114989e1efb22d2799affdae0acc3a2a5dfec211c380c1d7c040bf98eaccb7"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "outer-html-profile",
+      "path": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.outer-html-profile.json",
+      "role": "complete-source-carrier-profile",
+      "bytes": 3053,
+      "sha256": "5f189f831467abb6b5e0f0005eb28b8c618e4b0e065178c72ae423c00a59ae74"
+    }
+  ],
+  "converter": {
+    "id": "ocd-westminster-shorter-catechism-three-witnesses-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/westminster_shorter_catechism_reconstruction.py",
+    "implementation_sha256": "7656975fc98faa6adc6797cafb3c672088307a8f20006b468730c2b56c68d991"
+  },
+  "validator": {
+    "id": "ocd-westminster-shorter-catechism-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/westminster_shorter_catechism_oracle.py",
+    "implementation_sha256": "f9431ca8df1b1abb621defcf314d9416033eaef5430bef03d1b77f1d81d48ac4",
+    "import_closure_sha256": "318f8845dcc78fb690d63500f6dc2ee007043f8bdad863af75ffaba981d696b7"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

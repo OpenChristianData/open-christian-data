@@ -1,0 +1,559 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "category",
+    "language",
+    "text",
+    "representation_revision",
+    "locator",
+    "provenance",
+    "notes",
+    "references"
+  ],
+  "properties": {
+    "work_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "textual_form_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "edition_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "category": {
+      "const": "prose"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-zA-Z]{2,8}(-[a-zA-Z0-9]{1,8})*$"
+    },
+    "text": {
+      "type": "string"
+    },
+    "representation_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Item-level terms assigned by the release selection; applies only to this selected text."
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "text_part",
+        "part_titles",
+        "divisions",
+        "paragraph"
+      ],
+      "properties": {
+        "kind": {
+          "const": "paragraph"
+        },
+        "text_part": {
+          "enum": [
+            "front",
+            "body",
+            "back"
+          ]
+        },
+        "part_titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "divisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "order",
+              "type",
+              "titles"
+            ],
+            "properties": {
+              "order": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "titles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edition_title"
+      ],
+      "properties": {
+        "edition_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_credit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution_note": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Explicit additional attribution context, distinct from source-provider credit."
+        },
+        "original_language": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]+)*$"
+        },
+        "work_kind": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "place",
+          "label"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "place": {
+            "enum": [
+              "foot",
+              "end",
+              "unspecified"
+            ]
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "resolution",
+          "target_record_id",
+          "target_note",
+          "source_note"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "resolution": {
+            "enum": [
+              "in-projection",
+              "outside-projection",
+              "external"
+            ]
+          },
+          "target_record_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_note": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "source_note": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "source_target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scripture": {
+            "$ref": "#/$defs/explicit_scripture_target"
+          },
+          "normalization_status": {
+            "enum": [
+              "explicit-target-syntax",
+              "unsupported-explicit-target"
+            ]
+          },
+          "source_role": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/public-row.schema.json",
+  "title": "Provisional common envelope with closed prose locator",
+  "description": "TEI-004 provisional mapping. Further categories require an explicit schema branch; not an arbitrary metadata map.",
+  "x-ocd-projection-policy": {
+    "version": "3",
+    "tei_namespace": "http://www.tei-c.org/ns/1.0",
+    "text_parts": [
+      "front",
+      "body",
+      "back"
+    ],
+    "carrier_parents": [
+      "body",
+      "front",
+      "back",
+      "div"
+    ],
+    "container_elements": [
+      "text",
+      "front",
+      "body",
+      "back",
+      "div"
+    ],
+    "scope_elements": [
+      "text",
+      "body",
+      "div"
+    ],
+    "block_parent_elements": [
+      "text",
+      "front",
+      "body",
+      "back",
+      "div"
+    ],
+    "allowed_elements": [
+      "text",
+      "front",
+      "body",
+      "back",
+      "div",
+      "head",
+      "p",
+      "note",
+      "hi",
+      "seg",
+      "foreign",
+      "ref",
+      "ptr",
+      "pb",
+      "lb",
+      "anchor"
+    ],
+    "allowed_attributes": {
+      "div": [
+        "type",
+        "n"
+      ],
+      "head": [
+        "type"
+      ],
+      "hi": [
+        "rend"
+      ],
+      "note": [
+        "place",
+        "n"
+      ],
+      "ref": [
+        "type",
+        "target",
+        "cRef"
+      ],
+      "ptr": [
+        "type",
+        "target"
+      ],
+      "pb": [
+        "n"
+      ],
+      "lb": [
+        "break"
+      ],
+      "anchor": []
+    },
+    "division_types": {
+      "excluded_paratext": [
+        "title-page",
+        "half-title-page",
+        "copyright-page",
+        "imprint",
+        "colophon"
+      ],
+      "unsupported_prose": [
+        "sermon",
+        "service",
+        "collect",
+        "dictionary-entry"
+      ],
+      "supported_prose": [
+        "work",
+        "part",
+        "book",
+        "chapter",
+        "section",
+        "subsection",
+        "letter",
+        "preface",
+        "foreword",
+        "introduction",
+        "prologue",
+        "dedication",
+        "notes"
+      ]
+    },
+    "rendering": {
+      "paragraph_element": "p",
+      "heading_element": "head",
+      "division_element": "div",
+      "note_element": "note",
+      "line_break_element": "lb",
+      "script_element": "hi",
+      "reference_elements": [
+        "ref",
+        "ptr"
+      ],
+      "omitted_elements": [
+        "note",
+        "pb",
+        "anchor",
+        "ptr"
+      ],
+      "milestone_elements": [
+        "pb",
+        "lb",
+        "anchor",
+        "ptr"
+      ],
+      "break_no_value": "no"
+    },
+    "script": {
+      "styles": [
+        "superscript",
+        "subscript"
+      ],
+      "maps": {
+        "superscript": {
+          "0": "⁰",
+          "1": "¹",
+          "2": "²",
+          "3": "³",
+          "4": "⁴",
+          "5": "⁵",
+          "6": "⁶",
+          "7": "⁷",
+          "8": "⁸",
+          "9": "⁹",
+          "+": "⁺",
+          "-": "⁻",
+          "−": "⁻",
+          "=": "⁼",
+          "(": "⁽",
+          ")": "⁾"
+        },
+        "subscript": {
+          "0": "₀",
+          "1": "₁",
+          "2": "₂",
+          "3": "₃",
+          "4": "₄",
+          "5": "₅",
+          "6": "₆",
+          "7": "₇",
+          "8": "₈",
+          "9": "₉",
+          "+": "₊",
+          "-": "₋",
+          "−": "₋",
+          "=": "₌",
+          "(": "₍",
+          ")": "₎"
+        }
+      },
+      "safe_punctuation": [
+        ".",
+        ",",
+        ":",
+        ";",
+        "/",
+        "⁄",
+        "%",
+        "‰",
+        "′",
+        "″",
+        "'",
+        "\""
+      ],
+      "allow_whitespace": true
+    },
+    "warning_reasons": {
+      "styling": "styling-to-plain-text",
+      "script": "script-character-rendering",
+      "language_span": "language-span-to-plain-text",
+      "segmentation": "segmentation-to-plain-text",
+      "milestone": "milestone-omitted",
+      "line_break_omitted": "line-break-omitted",
+      "line_break_space": "line-break-to-space",
+      "note": "note-extracted"
+    }
+  },
+  "$defs": {
+    "explicit_scripture_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "normalized",
+        "kind",
+        "start",
+        "end",
+        "derivation"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "book",
+            "chapter",
+            "verse",
+            "range"
+          ]
+        },
+        "start": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "book",
+            "chapter",
+            "verse"
+          ],
+          "properties": {
+            "book": {
+              "type": "string",
+              "minLength": 1
+            },
+            "chapter": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "verse": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "end": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "book",
+            "chapter",
+            "verse"
+          ],
+          "properties": {
+            "book": {
+              "type": "string",
+              "minLength": 1
+            },
+            "chapter": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "verse": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "derivation": {
+          "const": "explicit-target-syntax-v1"
+        }
+      }
+    }
+  }
+}

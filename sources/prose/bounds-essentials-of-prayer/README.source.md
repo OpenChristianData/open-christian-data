@@ -1,0 +1,11 @@
+# The Essentials of Prayer: retained source notice
+
+Complete retained CCEL electronic witness raw/ccel/bounds/essentials.xml (one acquired XML file).
+
+Retained XML SHA-256: `9a23ce9261e2cc5606ff6e14b01eb9dbc830128097539d57d123f7997bebf218`. Include human-visible source credit at `data/prose/bounds-essentials-of-prayer/README.md`. Retained primary volume header and signed preface supply bibliography and translator attribution; separate permission evidence is `docs/sources/ccel-permission.md`. No source acquisition or master rewrite.
+
+## Historical-text disposition for private United States preparation
+
+The selected historical layer is Edward M. Bounds's Essentials of Prayer, including Homer W. Hodge's historical foreword and editorial work, corroborated by the 1925 Fleming H. Revell published volume. Its publication lineage is 1925; the [primary source or institutional historical record](https://www.gutenberg.org/ebooks/73271) supports that bounded historical-layer identification. Exact retained source and master bindings are unchanged. An uncertain printing year remains uncertain, and no full physical print collation or complete unabridged original is asserted. The corroborating Gutenberg witness is not newly acquired or substituted; its electronic transcriber credits are not assigned to the retained CCEL text. This current historical-text-only private disposition supersedes the earlier generic hold. Existing named and unnamed contributor roles, source qualifications, and accepted scope remain authoritative.
+
+The [United States Copyright Office duration guidance](https://www.copyright.gov/circs/circ15a.pdf) supports the expired term of these identified pre-1931 published historical text layers, including their historical editorial apparatus. This conclusion concerns those historical layers; it does not date or clear modern electronic descriptions, formatting, support images, or other modern creative additions. The maintained projection excludes electronic header descriptions. Credit CCEL.org, preserve the preceding exact contributor credits and provider permission, and retain CCEL's restrictions on selling its files or derivatives of its formatting. No CC0, worldwide clearance, or public deployment is asserted.

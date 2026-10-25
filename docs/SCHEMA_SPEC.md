@@ -1,5 +1,12 @@
 # Open Christian Data -- Schema Specification
 
+> **Contract scope (September 11, 2026):** This is the retained legacy JSON
+> schema reference. It does not define the current v2 library or public rows.
+> Use [OCD_LIBRARY_PIPELINE_SPEC.md](OCD_LIBRARY_PIPELINE_SPEC.md),
+> `schemas/v2/`, and the active ticket ledger for the replacement contracts.
+> Existing v1 schemas remain authoritative for their retained callers; their
+> fields and historical proposals below do not authorize new v2 fields.
+
 **Version:** 2.1.0
 **Date:** 2026-03-27
 **Status:** Revised -- incorporates Codex red team findings, standards research, ML/LLM infrastructure additions
@@ -355,8 +362,8 @@ For: Westminster Shorter, Westminster Larger, Heidelberg, Keach's, Baptist, Henr
 | Field | Type | Required | Notes |
 |-------|------|----------|-------|
 | `document_id` | string | Yes | Kebab-case |
-| `item_id` | string | Yes | String -- handles `"1"`, `"1a"`, `"1b"` |
-| `sort_key` | integer | Yes | Numeric for ordering |
+| `item_id` | string | Yes | Exact source label, including attested placeholders or trailing whitespace |
+| `sort_key` | integer | Yes | Source order for sorting; do not infer order from or normalize `item_id` |
 | `question` | string | Yes | |
 | `answer` | string | Yes | Plain text |
 | `answer_with_proofs` | string/null | No | With `[N]` markers |

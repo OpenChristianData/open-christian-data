@@ -1,0 +1,25 @@
+{
+  "contract": "ocd-anne-a22076-first-policy-v1",
+  "mapping": "Use the complete retained /TEI/text/group/text[1] as the direct TEI/text of the first-work candidate, preserving its complete front, body, trailer, and back. Preserve the source header as evidence of TCP/print provenance. Account for /TEI/text/group/text[2] as out-of-work retained source matter without claiming physical binding placement. Do not merge it with the first work or alter A22095.",
+  "provenance": {
+    "work_id": "anne-askew-first-examinacyon",
+    "edition_id": "anne-askew-first-examinacyon-tcp-electronic",
+    "acquisition_id": "anne-askew-first-examinacyon-tcp-acquired",
+    "source_id": "tcp-A22076",
+    "source_path": "raw/tcp/high-range/A22076/A22076.xml",
+    "source_sha256": "211a2c0d5029ca1dc6622b419fea356a0bba0ee28a363bd8c4e28331b3b6f92a",
+    "selection": "/TEI/text/group/text[1]",
+    "out_of_work_source_matter": "/TEI/text/group/text[2]",
+    "physical_fragment_placement": "unverified",
+    "tcp_credit": "Text Creation Partnership, Early English Books Online Text Creation Partnership, item A22076",
+    "tcp_license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "human_verification": "not recorded",
+    "publication": "not authorized"
+  },
+  "unresolved": [
+    {"id": "image-60-placement", "status": "open", "question": "The physical/copy-level origin of image 60 is unverified; it does not alter the source-attested first-text work boundary."},
+    {"id": "print-collation", "status": "open", "question": "No direct comparison against the British Library terminal page images has been performed."},
+    {"id": "human-verification", "status": "open", "question": "No human editorial verification has been recorded."},
+    {"id": "publication", "status": "open", "question": "Publication remains a separate user decision."}
+  ]
+}

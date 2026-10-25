@@ -1,0 +1,23 @@
+# History of the Christian Church, volume 6: retained source and current release disposition
+
+The October 13, 2026 public-text disposition and complete downloader-visible credit are at `data/prose/schaff-history-vol-6/README.md`. Bind this source note and that data notice together in the selected release. Current selected row license: `Public domain (United States): historical David S. Schaff volume 6 text and historical apparatus; factual electronic-source credits retained; CCEL files and formatting excluded`.
+
+The historical private-preparation limitations in the retained earlier audit below are superseded for this exact public scope by the current data notice. Source identity, accepted-master scope, historical metadata qualifications, and excluded layers remain authoritative. Public distribution is limited to the exact supported scope; no worldwide rights opinion or new grant over a provider's reserved material is asserted.
+
+## Retained earlier reconstruction and private-preparation audit
+
+# History of the Christian Church, volume VI: source and data credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/hcc6.html). The title page gives the umbrella History of the Christian Church byline PHILIP SCHAFF, also named in DC.Creator, then separately identifies VOLUME VI, THE MIDDLE AGES, From BONIFACE VIII., 1294 to the Protestant Reformation, 1517, by DAVID S. SCHAFF, D.D. Both literal credits are preserved with their source locations; Philip Schaff is not substituted for the volume-specific byline. CCEL is the electronic publisher; whp is named as transcriber and Wendy Huang as markup contributor. Tim Perrine is credited only for the CCEL Staff Writer description.
+
+The opening note attributes comparison, correction and emendation according to the 1910 Charles Scribner's Sons edition to The Electronic Bible Society, Dallas, TX, 1998. Literal source wording is retained, including its punctuation; this is not an independent print-collation claim. The header records firstPublished1882 and electronic creation2002-11-27; the printed published and DC.Rights fields are blank. No public-domain claim is inferred from those blank fields. Two inert prolog comments retain stylesheet text and Copyright Christian Classics Ethereal Library.
+
+CCEL permission allows parsing ThML/XML for text, reserves its files/formatting rights, prohibits selling CCEL files or derivatives of their formatting, and requests publication credit. This maintained release carries the permission restriction visibly. These source statements are evidence, not independent worldwide rights clearance.
+
+Complete retained CCEL hcc6.xml volume VI: all four ordered body roots i Title Page, ii Preface, iii History of the Christian Church Volume VI with Introductory Survey and ten native chapters, and iv Indexes with all six native index divisions. All 7,754 native source elements, 7,654 body elements, 1,353 notes, six subject-index markers, one unclear carrier, 270 literal language annotations, 14 literal CSS declarations and all ordered source class attributes are conserved with exact mixed text, tails, native parents, order and IDs. Full retained source header and two inert prolog comments are represented. No body exclusion, silent reading correction, new work IDs or invented print completion; one existing volume identity and one TEI. No image elements occur in this retained textual member. Literal source edition-history, title/byline and copyright statements are source evidence, not independent print equivalence or rights clearance.
+
+Carry visible credit to `data/prose/schaff-history-vol-6/README.md`. Human textual/visual acceptance, print equivalence, rights clearance and publication remain separate.
+
+## Bounded private United States disposition — 2026-10-12
+
+This selection applies only to the existing accepted volume 6 under its own source and acceptance identity. The own DC.Rights and printed-publication fields are blank; inherited firstPublished 1882 is series metadata, not this volume's print date. The own title page identifies David S. Schaff as volume author under the Philip Schaff series byline. The opening note credits Electronic Bible Society 1998 comparison, correction, and emendation against 1910 Scribner. Its 4 accepted units and historical author David S. Schaff remain source-defined; the short modern source-history note is credited and retained. The source-specific historical layer supports private United States text preparation under the retained CCEL underlying-text permission. This does not assert independent exact print collation, global rights, or public-upload authority. Carry the current visible credit and qualifications in `data/prose/schaff-history-vol-6/README.md`.

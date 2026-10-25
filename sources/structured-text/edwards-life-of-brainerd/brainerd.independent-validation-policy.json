@@ -1,0 +1,86 @@
+{
+  "contract": "edwards-brainerd-independent-validation-policy-v1",
+  "work_id": "edwards-life-of-brainerd",
+  "source_scope": {
+    "selector": "ThML/ThML.body/div1[@id='ix']",
+    "selected_source_path": "ThML[1]/ThML.body[1]/div1[1]",
+    "selected_source_id": "ix",
+    "member_policy": "Exactly one retained XML member; no archive siblings are in scope."
+  },
+  "supported_source_tags": [
+    "div1",
+    "div2",
+    "div3",
+    "div4",
+    "div5",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "p",
+    "i",
+    "b",
+    "note",
+    "pb",
+    "scripRef"
+  ],
+  "source_to_tei": {
+    "div1": "div",
+    "div2": "div",
+    "div3": "div",
+    "div4": "div",
+    "div5": "div",
+    "h1": "p",
+    "h2": "p",
+    "h3": "p",
+    "h4": "p",
+    "h5": "p",
+    "h6": "p",
+    "p": "p",
+    "i": "hi",
+    "b": "hi",
+    "note": "note",
+    "pb": "pb",
+    "scripRef": "ref"
+  },
+  "source_attribute_policy": "Every source attribute is retained exactly in source-accountability.json. TEI uses only standard attributes for source type, numbering, rendition, page facsimile, and scripture target; no foreign tracking attributes are introduced.",
+  "text_policy": "Preserve source element text, child order, child tails, full descendant text hashes, source IDs where present, and deterministic TEI IDs where source IDs are absent.",
+  "unresolved_records": [
+    {
+      "contract": "ocd-unresolved-evidence-v1",
+      "category": "edition-identity",
+      "status": "unresolved",
+      "claim": "The retained witness is the CCEL ThML extraction of works2 div1 id=ix for Jonathan Edwards's The Life of David Brainerd; this lane does not establish the precise original print-edition witness or any translation/revision relationship.",
+      "evidence": "sources/structured-text/edwards-life-of-brainerd/config.json sha256 8cfb478526dbd4f854a170334f21e134dfc281fcbf4a3792ddd7fc9331568d30; raw/ccel/edwards/brainerd.xml sha256 11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e",
+      "impact": "The candidate is bound to the retained CCEL bytes, but it is not a collation against an original print edition and must not infer a translator or revision history.",
+      "owner": "LIB-055",
+      "reopening_condition": "Provide an owner-approved exact primary edition or translation witness and update the entry-local manifest identity and scope before regenerating and revalidating."
+    },
+    {
+      "contract": "ocd-unresolved-evidence-v1",
+      "category": "rights-and-publication",
+      "status": "unresolved",
+      "claim": "The current work config records a public-domain license, but rights clearance and publication authorization are outside this technical lane.",
+      "evidence": "sources/structured-text/edwards-life-of-brainerd/config.json records license=public-domain; no separate rights clearance or publication authorization is bound by this entry-local manifest.",
+      "impact": "The candidate remains nonaccepted and not authorized for public publication.",
+      "owner": "LIB-055",
+      "reopening_condition": "Complete the project rights and publication review for this exact witness and candidate package before any accepted-master or public-mirror action."
+    },
+    {
+      "contract": "ocd-unresolved-evidence-v1",
+      "category": "visual-and-human-review",
+      "status": "unresolved",
+      "claim": "Mechanical source and TEI checks do not establish human acceptance or visual fidelity.",
+      "evidence": "37c-141 issue status states that visual review is not yet admitted; this entry-local candidate has no human acceptance record.",
+      "impact": "The candidate may be handed off for review but is not an accepted reconstruction.",
+      "owner": "LIB-055",
+      "reopening_condition": "When the current catalog route admits this exact source/candidate pair, perform bounded native visual review and record human acceptance or rework."
+    }
+  ],
+  "independence": {
+    "source_reader": "brainerd_oracle.py independently parses the retained source and reconstructs source carrier facts; it does not import brainerd_converter.py.",
+    "shared_dependency": "Only the lxml parser, the repository TEI schema, and the family-neutral mechanical attestation helper are shared dependencies; source enumeration and mapping comparisons are independently implemented."
+  }
+}

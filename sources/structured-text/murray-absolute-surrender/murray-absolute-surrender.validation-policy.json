@@ -1,0 +1,54 @@
+{
+  "contract": "ocd-murray-absolute-surrender-validation-policy-v1",
+  "policy_id": "murray-absolute-surrender-independent-thml-policy-v1",
+  "work_id": "murray-absolute-surrender",
+  "source_id": "murray-absolute-surrender-retained-thml",
+  "provenance": {
+    "identity": {
+      "title": "Absolute Surrender",
+      "author": "Andrew Murray"
+    },
+    "source": {
+      "bytes": 217645,
+      "sha256": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d"
+    }
+  },
+  "required_source_member_count": 1,
+  "required_source_element_count": 954,
+  "required_source_attribute_count": 1167,
+  "required_body_element_count": 890,
+  "required_unmapped_feature_count": 0,
+  "required_duplicate_feature_count": 0,
+  "require_candidate_status": "nonaccepted",
+  "require_current_source_manifest": true,
+  "require_complete_member_set": true,
+  "require_exact_source_feature_crosswalk": true,
+  "require_independent_source_and_tei_enumeration": true,
+  "require_tei_p5_schema_validation": true,
+  "forbidden_import_prefixes": [
+    "build.tei.murray_absolute_surrender_reconstruction",
+    "build.tei.thml_to_tei"
+  ],
+  "source_only_dispositions": [
+    "source-header-accountability-only",
+    "presentation-metadata-accountability-only",
+    "non-element-event-byte-bound-only"
+  ],
+  "human_decision_status": "not-recorded",
+  "rights_status": "unreviewed",
+  "publication_status": "not-authorized",
+  "visual_review_scope": {
+    "method": "systematic sample across every top-level division plus targeted inline/index exceptions",
+    "required_exact_pair": true,
+    "unlinked_compare": true,
+    "record_reached_and_inspected_separately": true,
+    "minimum_visual_loci": 16,
+    "loci": [
+      "title page opening and transcription attestation",
+      "each of the nine address divisions: first, middle, and final visible text areas in the declared page sample",
+      "scripture-reference inline treatment and neighboring prose",
+      "verse-group and line grouping in addresses ii, ix, and x",
+      "index division xi, both entry text and source links"
+    ]
+  }
+}

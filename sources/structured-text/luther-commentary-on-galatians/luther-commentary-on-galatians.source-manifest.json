@@ -1,0 +1,33 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "luther-commentary-on-galatians-pg1549-retained",
+  "work_id": "luther-commentary-on-galatians",
+  "authorities": [
+    {"name": "source-config", "path": "sources/structured-text/luther-commentary-on-galatians/config.json", "bytes": 1428, "sha256": "b8dd74d7ddfbe5461b5905e23addfe2d231cb719310a7af4c02bc265cd7360e6", "role": "source-identity-and-rights-config"},
+    {"name": "retained-source", "path": "raw/gutenberg/pg1549.txt", "bytes": 504403, "sha256": "ed00941bbe9e65b12c6619ea8a756ac053c44ec0a0c88761a83b8dff8d9a59bd", "role": "primary-source"},
+    {"name": "reconstruction-profile", "path": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.reconstruction-profile.json", "bytes": 2051, "sha256": "546bb14481cfb584557ca0e52f8f95beb3cc6c55d797a7a34eb9c716b74f9b24", "role": "complete-source-feature-profile"},
+    {"name": "validation-policy", "path": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.validation-policy.json", "bytes": 933, "sha256": "8cf16fcddda96c2788e4fb07ac2ba9db47c264574d74851919c4ed1289f5f4b9", "role": "independent-validation-policy"},
+    {"name": "attribution-readme", "path": "sources/structured-text/luther-commentary-on-galatians/README.source.md", "bytes": 585, "sha256": "fd9eb7d6fb2686f84afe6658ff04f51417b16c15bb6ac40611dde21185aa320b", "role": "source-attribution-evidence"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f", "role": "tei-validation-schema"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3", "role": "candidate-package-schema"}
+  ],
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-luther-galatians-pg1549-line-faithful-tei",
+    "implementation_path": "build/tei/luther_galatians_reconstruction.py",
+    "implementation_sha256": "0f2ba4e8a0806db78853fe355976eb0217041eaef0f2825dfcc9e2a81cd76c6d",
+    "version": "1"
+  },
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-luther-galatians-pg1549-independent-source-oracle",
+    "implementation_path": "build/tei/luther_galatians_oracle.py",
+    "implementation_sha256": "d285a48a67826d5c01e4dfbb1fdf8021bc395b5e221c5e89c0c3ad43d5bbe4c5",
+    "import_closure_sha256": "11efc735d746d34b7b16df885e481500467ebc6fd391936ada1fc6fddb0b8ae3",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

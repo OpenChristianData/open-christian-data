@@ -1,0 +1,109 @@
+{
+  "contract": "watson-beatitudes-reconstruction-profile-v1",
+  "profile_id": "watson-beatitudes-retained-thml-route-v1",
+  "work_id": "watson-beatitudes",
+  "scope": {
+    "retained_member": "raw/ccel/watson/beatitudes.xml",
+    "selection_id": "watson-beatitudes-all-direct-div1-route-envelope-v1",
+    "rule": "Select every direct ThML.body div1 carrier in source order. This is a complete technical envelope only; it does not decide the work, part, edition, or witness boundary.",
+    "expected_carrier_count": 25,
+    "expected_selected_feature_count": 4953
+  },
+  "source_element_map": {
+    "a": "ref",
+    "cite": "title",
+    "div": "div",
+    "div1": "div",
+    "div2": "div",
+    "div3": "div",
+    "em": "hi",
+    "h1": "head",
+    "h2": "head",
+    "h3": "head",
+    "i": "hi",
+    "insertIndex": "milestone",
+    "li": "item",
+    "name": "name",
+    "note": "note",
+    "ol": "list",
+    "p": "p",
+    "pb": "pb",
+    "scripCom": "milestone",
+    "scripContext": "milestone",
+    "scripRef": "ref",
+    "span": "seg",
+    "ul": "list"
+  },
+  "custom_element_rules": {
+    "scripCom": {
+      "expected_occurrences": 13,
+      "tei_element": "milestone",
+      "tei_unit": "scripCom",
+      "tei_type_from_source_attribute": "type",
+      "passage_from_source_attribute": "passage",
+      "osis_reference_from_source_attribute": "osisRef",
+      "tei_semantics": "Represent the empty source marker as an empty TEI milestone at the same block-flow position; map the passage to n and OSIS reference to corresp.",
+      "other_source_attributes": "Retain exact name and value in source-accountability.features; parsed is not promoted as independent authority."
+    },
+    "ol": {
+      "expected_occurrences": 1,
+      "tei_element": "list",
+      "tei_type": "ordered",
+      "children": "Preserve the exact source child sequence; li maps to item."
+    }
+  },
+  "feature_policy": {
+    "element_ids": "Assign deterministic TEI xml:id values src-1 through src-N in selected source preorder and record a one-to-one source path, native id, source tag, and full source attribute map for every selected element.",
+    "text_and_order": "Preserve source element text, tail, child order, nested source elements, and source comments within selected carriers.",
+    "navigation": "Keep source ids, titles, prev, next, and progress exact in the feature ledger; do not reinterpret navigation attributes as body prose.",
+    "unselected_body_wrapper_comments": "Account in document_shell and body_node_sequence; do not silently discard."
+  },
+  "identity_boundary": [
+    "The work id and exact title are route bindings supported by this issue and the retained DC.Title; the title-page/header envelope is not a settled work boundary.",
+    "Form and edition identifiers are operational route labels only. The textual form, translation status, print lineage, exact edition, constituent parts, and witness scope remain unresolved.",
+    "The source DC.Language value is an electronic-source observation; no original-language claim is added.",
+    "Provider dates and rights statements are not promoted to adopted edition dates, project rights clearance, acceptance, release, or publication."
+  ],
+  "candidate_questions": [
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-beatitudes-work-boundary",
+      "scope": "work-identity",
+      "question": "Which title-page, reader matter, numbered sections, appendix, and index carriers belong to the cataloged work or to distinct supporting works?",
+      "evidence_boundary": "The retained member contains 25 ordered div1 carriers; complete-envelope selection is not a semantic work decision.",
+      "technical_disposition": "Retain all carrier evidence in this route slice and defer semantic partitioning."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-beatitudes-textual-form",
+      "scope": "textual-form",
+      "question": "What textual form or translation status does this retained English ThML witness represent?",
+      "evidence_boundary": "The retained DC.Language is an electronic-source statement and does not settle original language or translation history.",
+      "technical_disposition": "Use only route-local language and form labels; leave textual-form identity unresolved."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-beatitudes-edition-witness-lineage",
+      "scope": "edition-witness",
+      "question": "Which print exemplar, if any, underlies this electronic CCEL witness?",
+      "evidence_boundary": "The retained 1660 source statement does not identify an exact print exemplar or establish transcription lineage.",
+      "technical_disposition": "Assert no print date, edition identity, or witness lineage."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-beatitudes-constituent-parts",
+      "scope": "part-identity",
+      "question": "Are the reader matter, appendix, and indexes parts of one work or separate works and paratext?",
+      "evidence_boundary": "Their source order and carrier boundaries are observable; their catalog relationships are not decided by this route slice.",
+      "technical_disposition": "Preserve the complete carrier envelope and defer part relationships."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-beatitudes-rights-clearance",
+      "scope": "rights",
+      "question": "What independent rights evidence governs later acceptance or publication?",
+      "evidence_boundary": "The retained DC.Rights value is a source statement, not project rights clearance.",
+      "technical_disposition": "No rights, release, or publication state is changed by this route slice."
+    }
+  ]
+}

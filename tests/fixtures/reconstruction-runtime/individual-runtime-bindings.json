@@ -1,0 +1,146 @@
+[
+  {
+    "original": "sources/commentaries/adam-clarke/adam-clarke.source-manifest.json",
+    "original_sha256": "3d19421ee017b2801169352fc8f4fe1412492ab67b5041ab67828481d3412a3c",
+    "manifest": "tests/fixtures/reconstruction-runtime/adam-clarke.source-manifest.json",
+    "preservation_test": "tests/test_helloao_adam_clarke_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_dependencies"
+  },
+  {
+    "original": "sources/structured-text/luther-bondage-of-the-will/luther-bondage-of-the-will.source-manifest.json",
+    "original_sha256": "42a53a7b637804c4a218f3853988f89f4b261c0aa1c569af7c4fed3d3f8aeb50",
+    "manifest": "tests/fixtures/reconstruction-runtime/luther-bondage-of-the-will.source-manifest.json",
+    "preservation_test": "tests/test_luther_bondage_covenanter_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_shared_runtime_closures"
+  },
+  {
+    "original": "sources/structured-text/augustine-npnf105/npnf105.source-manifest.json",
+    "original_sha256": "fc1824fc52a968aff16cdfe42246a1f69fa3d3e2cd659d82aefbbf98dfd50d12",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf105.source-manifest.json",
+    "preservation_test": "tests/test_npnf105_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/structured-text/lib052-john-owen/john-owen-lib052.source-manifest.json",
+    "original_sha256": "ccd09869a9f1c04d01b21c43c3393393156bca2239ef2207e8bc2209585b1a15",
+    "manifest": "tests/fixtures/reconstruction-runtime/john-owen-lib052.source-manifest.json",
+    "preservation_test": "tests/test_john_owen_lib052_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/spurgeon-mtp/spurgeon-mtp.source-manifest.json",
+    "original_sha256": "12ccaf17790f0916048a679c3bb985efa5221f9c424ae9c3ec10101eda1c8e7a",
+    "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-mtp.source-manifest.json",
+    "preservation_test": "tests/test_spurgeon_mtp_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_changed_dependencies"
+  },
+  {
+    "original": "sources/commentaries/matthew-henry/matthew-henry.source-manifest.json",
+    "original_sha256": "7a84ba161a902cf66e03b245486f1a4fd08eb13f87137bac92d4d36283fc8f64",
+    "manifest": "tests/fixtures/reconstruction-runtime/matthew-henry.source-manifest.json",
+    "preservation_test": "tests/test_helloao_matthew_henry_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_closure"
+  },
+  {
+    "original": "sources/commentaries/keil-delitzsch/keil-delitzsch.source-manifest.json",
+    "original_sha256": "f64fa4be7be388d830f0d87555dd7398b2721c4d3d2436d466a51c281ad5c4c1",
+    "manifest": "tests/fixtures/reconstruction-runtime/keil-delitzsch.source-manifest.json",
+    "preservation_test": "tests/test_helloao_keil_delitzsch_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_closure"
+  },
+  {
+    "original": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.source-manifest.json",
+    "original_sha256": "4d102bed9eb7be4fec5ea08493fdf382597a6164cea3d0bf18fdaf82c26614a9",
+    "manifest": "tests/fixtures/reconstruction-runtime/westminster-shorter-catechism.source-manifest.json",
+    "preservation_test": "tests/test_westminster_shorter_catechism_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_shared_runtime_closures"
+  },
+  {
+    "original": "sources/structured-text/ambrose-npnf210/npnf-ambrose.source-manifest.json",
+    "original_sha256": "aa813a1d02f13b7a706c08010bf5d779728998d2dec7fe4568159c8c792ade09",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf-ambrose.source-manifest.json",
+    "preservation_test": "tests/test_npnf_ambrose_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_storage_closure"
+  },
+  {
+    "original": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
+    "original_sha256": "a667dffbc5880dc1dc8996bb62d39e915bc8c7f5073b4219162f88ae03fe7c14",
+    "manifest": "tests/fixtures/reconstruction-runtime/imitation-of-christ.source-manifest.json",
+    "preservation_test": "tests/test_imitation_of_christ_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_shared_runtime_closures"
+  },
+  {
+    "original": "sources/strong-systematic-theology-vol-2/strong-systematic-theology-vol-2.source-manifest.l374-v2.json",
+    "original_sha256": "bc1ef4f02f95798c753d0ee582a8f3103e1769f0a7409bf62708fcd5a2873970",
+    "manifest": "tests/fixtures/reconstruction-runtime/strong-vol2.source-manifest.json",
+    "preservation_test": "tests/test_strong_systematic_theology_vol_2_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_shared_runtime_closures"
+  },
+  {
+    "original": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.source-manifest.json",
+    "original_sha256": "9f65b4c6fb61c59750e8d1b06d0a590f78915764bd8bf355edc1459dfea8c5cf",
+    "manifest": "tests/fixtures/reconstruction-runtime/athanasius-table.source-manifest.json",
+    "preservation_test": "tests/test_athanasius_table_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/structured-text/newman-apologia-pro-vita-sua/LIB-068.source-manifest.json",
+    "original_sha256": "96f40195fb09c8767a445ed862e670c6658819f69683f40e5f46c45f022d75ae",
+    "manifest": "tests/fixtures/reconstruction-runtime/newman-lib068.source-manifest.json",
+    "preservation_test": "tests/test_lib068_source_letters_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.source-manifest.json",
+    "original_sha256": "99dded2c8e17b37b2c8ce0f0eb19ca4bc87fe1a152deda4605030f3e32b0bbce",
+    "manifest": "tests/fixtures/reconstruction-runtime/donne-lib068.source-manifest.json",
+    "preservation_test": "tests/test_lib068_source_letters_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/brooks-precious-remedies/LIB-014.source-manifest.json",
+    "original_sha256": "50674e8b7041f5bd27c8f623a5a0100bc25bef0533e20fd7e3961401a14a711a",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib014-brooks-precious-remedies.source-manifest.json",
+    "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
+  },
+  {
+    "original": "sources/burroughs-rare-jewel-contentment/LIB-014.source-manifest.json",
+    "original_sha256": "eeb2fe5b7c82eb30a26e99ddbe08e2dd401ba1eed7156c3da17648975760d0f1",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib014-burroughs-rare-jewel-contentment.source-manifest.json",
+    "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
+  },
+  {
+    "original": "sources/gurnall-complete-armour/LIB-014.source-manifest.json",
+    "original_sha256": "9ff4e8ec7d51367d31c8d3c6eacf354f999532819ea8bbdd7be3622a001ceb98",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib014-gurnall-complete-armour.source-manifest.json",
+    "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
+  },
+  {
+    "original": "sources/sibbes-bruised-reed/LIB-014.source-manifest.json",
+    "original_sha256": "8ad3a3db9e17ae25d1ef9f03463106fa7d3ac34df8bf72454fed90aee080af2f",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib014-sibbes-bruised-reed.source-manifest.json",
+    "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
+  },
+  {
+    "original": "sources/structured-text/augustine-npnf104-lib038/lib038.source-manifest.json",
+    "original_sha256": "ed840ce819c1062cd4ffee4de310c1f359b973105402a817a060275525dcd1e5",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf104-lib038.source-manifest.json",
+    "preservation_test": "tests/test_lib038_runtime_manifests.py::test_runtime_fixture_preserves_original_authorities_and_only_updates_live_closures"
+  },
+  {
+    "original": "sources/structured-text/augustine-expositions-on-psalms/lib038.source-manifest.json",
+    "original_sha256": "41cc46dcf5908307df2ab1014b0593e3b3ed8a7207f1dadac0084c406bc3900a",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf108-lib038.source-manifest.json",
+    "preservation_test": "tests/test_lib038_runtime_manifests.py::test_runtime_fixture_preserves_original_authorities_and_only_updates_live_closures"
+  },
+  {
+    "original": "sources/doctrinal-documents/directory-for-family-worship/directory-for-family-worship.source-manifest.json",
+    "original_sha256": "558e0d6d68d54ced1dea9b2462f8bf1946cd6c937698f3fb17e6fba4811abc1b",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib089-directory-for-family-worship.source-manifest.json",
+    "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "original": "sources/doctrinal-documents/solemn-league-and-covenant/solemn-league-and-covenant.source-manifest.json",
+    "original_sha256": "54595805211178d1ea87e88dca489f331fb349103aaca4c1ee096ad7eb8b72b1",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib089-solemn-league-and-covenant.source-manifest.json",
+    "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "original": "sources/doctrinal-documents/directory-for-publick-worship/directory-for-publick-worship.source-manifest.json",
+    "original_sha256": "415dfe2c793512f6cd4014d77e72464b07a6deb0eee71e0fb2f504f6d9ef3d24",
+    "manifest": "tests/fixtures/reconstruction-runtime/lib089-directory-for-publick-worship.source-manifest.json",
+    "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "original": "sources/manifest-acquisitions/wikisource-chrysostom-l594/source-manifest-complete.json",
+    "original_sha256": "02ca0f37157f49f29a9d80e8b4e9d84f3e268d06293e077d3d833d14ab5192d3",
+    "manifest": "tests/fixtures/reconstruction-runtime/wikisource-l594-complete.source-manifest.json",
+    "preservation_test": "tests/test_wikisource_l594_complete.py::test_runtime_manifest_preserves_the_complete_source_record"
+  }
+]

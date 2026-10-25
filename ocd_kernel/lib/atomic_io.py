@@ -26,6 +26,8 @@ SchemaValidationError on failure.
 
 from __future__ import annotations
 
+from ocd_kernel.lib.path_io import io_path
+
 import json
 import os
 import socket
@@ -66,7 +68,7 @@ def _replace_with_retry(src: Path, dst: Path) -> None:
     """
     for delay in (*_SYNC_RETRY_DELAYS, None):
         try:
-            os.replace(src, dst)
+            os.replace(io_path(src), io_path(dst))
             return
         except OSError as exc:
             if delay is not None and _is_sync_lock_error(exc):
@@ -124,7 +126,7 @@ def write_json_atomic(
     is not called so the existing file remains the canonical version.
     """
     target = Path(target_path)
-    target.parent.mkdir(parents=True, exist_ok=True)
+    io_path(target.parent).mkdir(parents=True, exist_ok=True)
 
     text = json.dumps(payload, indent=indent, ensure_ascii=False, sort_keys=False)
     # Re-parse and validate. Re-parsing catches the rare case where a custom
@@ -134,13 +136,13 @@ def write_json_atomic(
 
     tmp = target.with_name(target.name + f".tmp-{os.getpid()}-{int(time.time_ns())}")
     try:
-        tmp.write_text(text + "\n", encoding="utf-8")
+        io_path(tmp).write_text(text + "\n", encoding="utf-8")
         _replace_with_retry(tmp, target)
     except Exception:
         # Best-effort cleanup of the temp file; do not mask the original error.
         try:
-            if tmp.exists():
-                tmp.unlink()  # standards: log/temp rotation
+            if io_path(tmp).exists():
+                io_path(tmp).unlink()  # standards: log/temp rotation
         except OSError:
             pass
         raise
@@ -180,7 +182,7 @@ def _pid_alive(pid: int) -> bool:
 
 def _read_lock_metadata(lock_path: Path) -> LockMetadata | None:
     try:
-        text = lock_path.read_text(encoding="utf-8")
+        text = io_path(lock_path).read_text(encoding="utf-8")
     except FileNotFoundError:
         return None
     except OSError:
@@ -226,7 +228,7 @@ def acquire_jsonl_lock(
     stale locks require manual intervention and raise ``LockBrokenError``.
     """
     target = Path(target_path)
-    target.parent.mkdir(parents=True, exist_ok=True)
+    io_path(target.parent).mkdir(parents=True, exist_ok=True)
     lock_path = target.with_name(target.name + ".lock")
 
     deadline = time.monotonic() + acquire_timeout
@@ -235,7 +237,7 @@ def acquire_jsonl_lock(
 
     while True:
         try:
-            fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            fd = os.open(io_path(lock_path), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
         except FileExistsError:
             existing = _read_lock_metadata(lock_path)
             if existing is not None and _lock_age_seconds(existing) > stale_threshold:
@@ -246,7 +248,7 @@ def acquire_jsonl_lock(
                     )
                 if not _pid_alive(existing.pid):
                     try:
-                        lock_path.unlink()  # standards: log/temp rotation
+                        io_path(lock_path).unlink()  # standards: log/temp rotation
                     except FileNotFoundError:
                         pass
                     if on_stale_break is not None:
@@ -275,7 +277,7 @@ def acquire_jsonl_lock(
         yield lock_path
     finally:
         try:
-            lock_path.unlink()  # standards: log/temp rotation
+            io_path(lock_path).unlink()  # standards: log/temp rotation
         except FileNotFoundError:
             pass
 
@@ -308,13 +310,13 @@ def append_jsonl_atomic(
         stale_threshold=stale_threshold,
         on_stale_break=on_stale_break,
     ):
-        pre_size = target.stat().st_size if target.exists() else 0
-        with open(target, "ab") as fh:
+        pre_size = io_path(target).stat().st_size if io_path(target).exists() else 0
+        with io_path(target).open("ab") as fh:
             fh.write(text.encode("utf-8") + b"\n")
             fh.flush()
             os.fsync(fh.fileno())
         # Defence in depth: re-read the appended line and re-validate.
-        with open(target, "rb") as fh:
+        with io_path(target).open("rb") as fh:
             fh.seek(pre_size)
             appended = fh.read()
         try:
@@ -323,7 +325,7 @@ def append_jsonl_atomic(
             validate_payload(on_disk, line_schema)
         except (SchemaValidationError, json.JSONDecodeError, UnicodeDecodeError) as exc:
             # Unwind: truncate back to pre_size.
-            with open(target, "rb+") as fh:
+            with io_path(target).open("rb+") as fh:
                 fh.truncate(pre_size)
             raise SchemaValidationError(
                 f"appended line failed post-write validation; unwound: {exc}"

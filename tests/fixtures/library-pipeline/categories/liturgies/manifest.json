@@ -1,0 +1,171 @@
+{
+  "ticket": "PIPE-011",
+  "status": "nonaccepted source-bound offline fixture",
+  "source_root": "raw/bcp-full-text/bcp-1662",
+  "source_url": "https://www.eskimo.com/~lhowell/bcp1662/",
+  "source_descriptor_sha256": "136c451dc677a282c09a60048a055af742a0ffaa9a9c8f29bc9f754f71e74097",
+  "source_files": [
+    {
+      "path": "raw/bcp-full-text/bcp-1662/daily__morning.html",
+      "sha256": "7902d0a48ace50a15688d392e3092e92cbd40525e6fd3829d89ffe69d8c791f3",
+      "service": "morning"
+    },
+    {
+      "path": "raw/bcp-full-text/bcp-1662/daily__evening.html",
+      "sha256": "92332f64f3eb270119acf547bff0bf3fc56249f9baec0112e1dd6c94b02ccc4c",
+      "service": "evening"
+    }
+  ],
+  "source_unit_count": 2,
+  "selected_units": [
+    {
+      "id": "bcp1662-morning",
+      "source_path": "raw/bcp-full-text/bcp-1662/daily__morning.html",
+      "source_sha256": "7902d0a48ace50a15688d392e3092e92cbd40525e6fd3829d89ffe69d8c791f3",
+      "title": "Morning Prayer",
+      "step_count": 22,
+      "step_ids": [
+        "bcp1662-morning-rubric-1",
+        "bcp1662-morning-opening-choice",
+        "bcp1662-morning-sp-1",
+        "bcp1662-morning-stage-1",
+        "bcp1662-morning-sp-2",
+        "bcp1662-morning-absolution-rubric",
+        "bcp1662-morning-absolution",
+        "bcp1662-morning-people-answer",
+        "bcp1662-morning-branch",
+        "bcp1662-morning-branch-rubric",
+        "bcp1662-morning-lord-prayer-rubric",
+        "bcp1662-morning-lord-prayer",
+        "bcp1662-morning-stage-2",
+        "bcp1662-morning-sp-3",
+        "bcp1662-morning-sp-4",
+        "bcp1662-morning-sp-5",
+        "bcp1662-morning-sp-6",
+        "bcp1662-morning-stage-3",
+        "bcp1662-morning-sp-7",
+        "bcp1662-morning-sp-8",
+        "bcp1662-morning-sp-9",
+        "bcp1662-morning-sp-10"
+      ]
+    },
+    {
+      "id": "bcp1662-evening",
+      "source_path": "raw/bcp-full-text/bcp-1662/daily__evening.html",
+      "source_sha256": "92332f64f3eb270119acf547bff0bf3fc56249f9baec0112e1dd6c94b02ccc4c",
+      "title": "Evening Prayer",
+      "step_count": 21,
+      "step_ids": [
+        "bcp1662-evening-rubric-1",
+        "bcp1662-evening-opening-choice",
+        "bcp1662-evening-sp-1",
+        "bcp1662-evening-stage-1",
+        "bcp1662-evening-sp-2",
+        "bcp1662-evening-absolution-rubric",
+        "bcp1662-evening-absolution",
+        "bcp1662-evening-branch",
+        "bcp1662-evening-branch-rubric",
+        "bcp1662-evening-lord-prayer-rubric",
+        "bcp1662-evening-lord-prayer",
+        "bcp1662-evening-stage-2",
+        "bcp1662-evening-sp-3",
+        "bcp1662-evening-sp-4",
+        "bcp1662-evening-sp-5",
+        "bcp1662-evening-sp-6",
+        "bcp1662-evening-stage-3",
+        "bcp1662-evening-sp-7",
+        "bcp1662-evening-sp-8",
+        "bcp1662-evening-sp-9",
+        "bcp1662-evening-sp-10"
+      ]
+    }
+  ],
+  "counts": {
+    "source_services": 2,
+    "selected_steps": 43,
+    "selected_alternatives_per_service": 11,
+    "selected_stanzas": 0,
+    "selected_lines": 0
+  },
+  "source_notes": [
+    {
+      "text": "The sentence about the collect from Trinity 21 is new in the 1992 edition.",
+      "source_path": "raw/bcp-full-text/bcp-1662/daily__morning.html",
+      "visibility": "HTML comment retained as source metadata; not spoken text"
+    },
+    {
+      "text": "The sentence about the collect from Trinity 21 is new in the 1992 edition.",
+      "source_path": "raw/bcp-full-text/bcp-1662/daily__evening.html",
+      "visibility": "HTML comment retained as source metadata; not spoken text"
+    }
+  ],
+  "source_qualification": "The fixture uses the source pages' 1662 form, while the source itself marks the Trinity 21 conditional sentence as new in the 1992 edition; the edition title retains that qualification.",
+  "selection_ledger": [
+    {
+      "source_path": "daily__morning.html",
+      "disposition": "selected-contiguous-office-opening",
+      "scope": "opening rubric and all 11 sentences, confession, absolution, people-answer rubric, conditional collect instruction, Lord's Prayer, and opening responses through the Gloria/Praise response",
+      "step_count": 22
+    },
+    {
+      "source_path": "daily__evening.html",
+      "disposition": "selected-contiguous-office-opening",
+      "scope": "opening rubric and all 11 sentences, confession, absolution, conditional collect instruction, Lord's Prayer, and opening responses through the Gloria/Praise response",
+      "step_count": 21
+    }
+  ],
+  "excluded_units": [
+    {
+      "source_path": "daily__morning.html",
+      "reason": "remaining office text after selected Gloria/Praise response, including Psalms, lessons, and collects",
+      "disposition": "outside-scope-unprojected"
+    },
+    {
+      "source_path": "daily__evening.html",
+      "reason": "remaining office text after selected Gloria/Praise response, including Psalms, lessons, and collects",
+      "disposition": "outside-scope-unprojected"
+    },
+    {
+      "source_path": "both selected pages",
+      "reason": "HTML comments, presentational tags, links, and image layout are not carried as public row fields",
+      "disposition": "represented-or-excluded-by-policy"
+    }
+  ],
+  "unsupported": [],
+  "mapping": {
+    "service": "daily__morning.html and daily__evening.html page headings",
+    "speech": "source prose fragments with explicit Minister/Priest/Answer or Congregation role from surrounding service rubric",
+    "rubric": "source italic/rubric prose mapped to p@rend=rubric or stage",
+    "branch": "source If no priest be present conditional instruction retained at its source position as div@type=branch; the following Lord's Prayer rubric and prayer remain common sequence after the branch",
+    "alternative": "all 11 source-listed sentences retained as one choice with source citation labels",
+    "absolution": "source Absolution rubric and complete Absolution prayer retained before the conditional branch",
+    "lord_prayer": "source Lord's Prayer rubric and complete prayer retained as common post-branch sequence",
+    "section": "three in-order sibling div@type=section wrappers are transparent grouping for TEI validity and do not create rows",
+    "response": "Answer rows retain corresp to the immediately preceding source prompt",
+    "public_ids": "service_id, step_id, branch.id, and response_to use the first 20 hex characters of SHA-256 over the source XML ID; raw IDs remain in private anchors and inventory while locators retain source-readable order and titles"
+  },
+  "files": {
+    "retained.xml": "f29c7c3724269bd116070b5647de7c95211be90bd3fee7aee36fa6d678d3ae40",
+    "master.tei.xml": "fe1acb788222f5a7e0e291c271400ee4736b29d4b8f35b565ba288c70a17f457"
+  },
+  "context": {
+    "identity": {
+      "work_id": "fixture-bcp1662-daily-office",
+      "textual_form_id": "fixture-bcp1662-service-text",
+      "edition_id": "fixture-bcp1662-daily-office-edition"
+    },
+    "language": "en",
+    "representation_revision": "fixture-v1",
+    "edition_title": "The Book of Common Prayer (1662 form; CCEL witness includes a sentence marked new in 1992)",
+    "source_url": "https://www.eskimo.com/~lhowell/bcp1662/",
+    "source_sha256": "136c451dc677a282c09a60048a055af742a0ffaa9a9c8f29bc9f754f71e74097",
+    "retained_sha256": "f29c7c3724269bd116070b5647de7c95211be90bd3fee7aee36fa6d678d3ae40"
+  },
+  "limits": [
+    "The fixture is a bounded source witness for the two Daily Office opening services; remaining BCP pages are outside this ticket slice.",
+    "The HTML source uses image drop caps and presentational markup; image ALT text is restored into source-visible prose and layout is recorded as policy-excluded detail.",
+    "The source includes the exact note that the Trinity 21 sentence is new in the 1992 edition; the visible conditional sentence is retained as a branch and the note is retained as metadata rather than spoken text.",
+    "Morning has a source people-answer rubric; Evening does not, so the two service step counts intentionally differ.",
+    "Technical evidence does not establish human acceptance, rights clearance, publication, or release authorization."
+  ]
+}

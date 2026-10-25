@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "hastings-dictionary-of-the-bible",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "hastings-dictionary-of-the-bible",
+    "retained_source_sha256": "997d3b2ee21ce47e747811c826e05456964cac318f4846bc346b3b790d6e57c8",
+    "claim_count": 1,
+    "claims": [
+      {"source_path": "reference/hastings-dictionary-of-the-bible.json", "legacy_source_sha256": "1cd0f245927973e5f84db7bad42c71aa1dfb259e5aad026a40dd5f0d6238f7a7"}
+    ]
+  },
+  "authorities": [
+    {"name": "retained-member-01", "path": "raw/ia/hastings-dictionary/b24749163_0005_djvu.txt", "durable_path": "D:/Library/Open Christian Data/raw/ia/hastings-dictionary/b24749163_0005_djvu.txt", "filename": "b24749163_0005_djvu.txt", "role": "primary-source", "order": 1, "bytes": 11778287, "sha256": "b99bc2dc36d90eb7c1bd8ae3f4d630230013e57b6fa4c910b2e12fc3fd8c4b08", "physical_lines": 217888},
+    {"name": "retained-member-02", "path": "raw/ia/hastings-dictionary/DictionaryOfTheBibleV1_djvu.txt", "durable_path": "D:/Library/Open Christian Data/raw/ia/hastings-dictionary/DictionaryOfTheBibleV1_djvu.txt", "filename": "DictionaryOfTheBibleV1_djvu.txt", "role": "primary-source", "order": 2, "bytes": 7786046, "sha256": "7a7bf16bf9a32891e62ab6dce4948ba9cee16bdfa4633fa7111a6e24b0ec8403", "physical_lines": 166219},
+    {"name": "retained-member-03", "path": "raw/ia/hastings-dictionary/DictionaryOfTheBibleV2_djvu.txt", "durable_path": "D:/Library/Open Christian Data/raw/ia/hastings-dictionary/DictionaryOfTheBibleV2_djvu.txt", "filename": "DictionaryOfTheBibleV2_djvu.txt", "role": "primary-source", "order": 3, "bytes": 7917100, "sha256": "0a814cb444e7c03c1f9818a3847aab2f62fd4fd8a753cff500709f400599740e", "physical_lines": 166344},
+    {"name": "retained-member-04", "path": "raw/ia/hastings-dictionary/DictionaryOfTheBibleV3_djvu.txt", "durable_path": "D:/Library/Open Christian Data/raw/ia/hastings-dictionary/DictionaryOfTheBibleV3_djvu.txt", "filename": "DictionaryOfTheBibleV3_djvu.txt", "role": "primary-source", "order": 4, "bytes": 7718997, "sha256": "1269c783b46a54143722e27d41b8b23d8b6221e93cb8f6c78f3e0aa364b5711f", "physical_lines": 162721},
+    {"name": "retained-member-05", "path": "raw/ia/hastings-dictionary/DictionaryOfTheBibleV4_djvu.txt", "durable_path": "D:/Library/Open Christian Data/raw/ia/hastings-dictionary/DictionaryOfTheBibleV4_djvu.txt", "filename": "DictionaryOfTheBibleV4_djvu.txt", "role": "primary-source", "order": 5, "bytes": 9174288, "sha256": "958a011508170ddfc59f110e3087f2fd5bee9dda25c2216974778a974202997a", "physical_lines": 189821},
+    {"name": "work-identity-config", "path": "sources/reference/hastings-dictionary-of-the-bible/config.json", "role": "work-identity-config", "bytes": 1905, "sha256": "72fa2720f5ab5599ad446aed096d3b5118b42d5a1beb45e92a4b7fdd85fd61d0"},
+    {"name": "source-readme", "path": "sources/hastings-dictionary-of-the-bible/LIB-016/README.source.md", "role": "local-source-readme", "bytes": 1414, "sha256": "ed022b160f930c5c5e1a9071f54d3592c2e07226faa9f6523884e2ebb26a793b"},
+    {"name": "reconstruction-profile", "path": "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 1421, "sha256": "7944df495284171c244560859cb40d2c111a428eee72b414bd13798b90a2564b"},
+    {"name": "source-accountability-schema", "path": "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 1930, "sha256": "0f1f404cceb5cc2c380d116f2e38f4f6995bcd85dfbd34ad7440129d319e20f9"},
+    {"name": "validation-policy", "path": "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.validation-policy.json", "role": "independent-validation-policy", "bytes": 1144, "sha256": "34b820f3adb59cbfae3ef503351be3211421253218eeeedfef4d19998aad30c8"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "tei-p5-xsd-teix", "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd", "role": "tei-validation-schema-dependency", "bytes": 2202, "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"},
+    {"name": "tei-p5-xsd-xml", "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd", "role": "tei-validation-schema-dependency", "bytes": 2359, "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {"id": "ocd-lib016-hastings-dictionary-lossless-ocr-to-tei", "version": "1", "callable": "_convert", "implementation_path": "build/tei/lib016_hastings_dictionary_reconstruction.py", "implementation_sha256": "ed9bfe958ceb5dec4c464d03b9b3ac3072b23972e67c607f5be5282fffffe9db"},
+  "validator": {"id": "ocd-lib016-hastings-independent-oracle", "version": "1", "callable": "_oracle", "implementation_path": "build/tei/lib016_hastings_dictionary_oracle.py", "implementation_sha256": "92e0f2a78e0291b4b93fcb671a37b1d7fbcbe99e6870a7f2c5ed567889be4b17", "import_closure_sha256": "92e0f2a78e0291b4b93fcb671a37b1d7fbcbe99e6870a7f2c5ed567889be4b17"},
+  "package_schema": {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+  "lineage": {
+    "initial_sealed_hashes": {
+      "build/tei/lib016_hastings_dictionary_oracle.py": "73bd5e9fb3bcacc85a6d132c187cd537f85c4cc032b32c747863afe3225feefb",
+      "build/tei/lib016_hastings_dictionary_reconstruction.py": "7d919f56f3819c5a8bdf4f484d8296ae484f13cb9a90b76ccc5a8e4e2c4a3d55",
+      "sources/hastings-dictionary-of-the-bible/LIB-016/README.source.md": "ed022b160f930c5c5e1a9071f54d3592c2e07226faa9f6523884e2ebb26a793b",
+      "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.reconstruction-profile.json": "7944df495284171c244560859cb40d2c111a428eee72b414bd13798b90a2564b",
+      "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.source-accountability.schema.json": "0f1f404cceb5cc2c380d116f2e38f4f6995bcd85dfbd34ad7440129d319e20f9",
+      "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.source-manifest.json": "74b9a36d1bc4d61a8e40a815caf5b438bd309e3870ea19d461782f19dea805b5",
+      "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.validation-policy.json": "34b820f3adb59cbfae3ef503351be3211421253218eeeedfef4d19998aad30c8",
+      "tests/test_lib016_hastings_dictionary_reconstruction_contract.py": "6c2ea17c81e4071829464bad98bcd6afaae95d4d3063f02b583b1c17b1706fc9"
+    },
+    "schema_rebase": {
+      "from": {"bytes": 2244, "sha256": "eab839cd9f2cbce22fb86f5e8928488b8c91a41f5f83820bb9430dc81fa5c421"},
+      "to": {"bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+    }
+  }
+}

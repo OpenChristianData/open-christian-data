@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 1910769,
+  "member_inventory_sha256": "b8e5206e379c7927b1675d337acab067fb202ed2524c2463996279c90f105d28",
+  "member_name": "bsb00000752.xml",
+  "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (III) (MGH SS rer. Merov. 5)",
+  "source_id": "bsb00000752",
+  "work_linkage": {
+    "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+    "candidate_first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00192_34",
+    "candidate_last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00214_35",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "conversio-othgerii-militis-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/conversio-othgerii-militis/forms/conversio-othgerii-militis-openmgh-retained/editions/conversio-othgerii-militis-openmgh-electronic/acquisitions/conversio-othgerii-militis-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "c834d1500ad22d0aa1182032080c5c9b7c14b32768a98d5192395683834ae206",
+        "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+        "edition_id": "conversio-othgerii-militis-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00212_1",
+        "last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00214_35",
+        "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+        "textual_form_id": "conversio-othgerii-militis-openmgh-retained",
+        "work_id": "conversio-othgerii-militis",
+        "work_sidecar_path": "library/works/conversio-othgerii-militis/work.json",
+        "work_sidecar_sha256": "a807e60cb6ccbb94fc5098f2bd4ed4ddc08d0d99c9bc454255b6d227a6e86369"
+      },
+      {
+        "acquisition_id": "vita-sancti-faronis-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-faronis/forms/vita-sancti-faronis-openmgh-retained/editions/vita-sancti-faronis-openmgh-electronic/acquisitions/vita-sancti-faronis-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "97838189459e7c7009b34e954d9dfdc5038fbb912e75baf63d00516b49398868",
+        "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+        "edition_id": "vita-sancti-faronis-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00192_34",
+        "last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00211_4",
+        "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+        "textual_form_id": "vita-sancti-faronis-openmgh-retained",
+        "work_id": "vita-sancti-faronis",
+        "work_sidecar_path": "library/works/vita-sancti-faronis/work.json",
+        "work_sidecar_sha256": "52a0fec012c7636a0bd737b5c182477a933ad6920b1f2d1e321e24fe810abb52"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "conversio-othgerii-militis",
+      "vita-sancti-faronis"
+    ],
+    "source_id": "bsb00000752",
+    "source_member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+    "source_path": "raw/openmgh/bsb00000752/tei/bsb00000752.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 8,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Faronis ep. Meldensis",
+    "title": "Vita Faronis ep. Meldensis"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 5: Passiones vitaeque sanctorum aevi Merovingici (III)"
+  ]
+}

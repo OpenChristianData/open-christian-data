@@ -1,0 +1,186 @@
+{
+  "acquisition_id": "gutenberg-37311",
+  "authorities": [
+    {
+      "bytes": 678474,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/37311/pg37311-h.zip",
+      "role": "primary-source",
+      "sha256": "3c58e8a24bc0d55078f8d72c332699e2a2ace2f1266da4f4419a7b7c5d263f24"
+    },
+    {
+      "bytes": 550224,
+      "name": "extracted-html",
+      "path": "raw/gutenberg/37311/html/pg37311-images.html",
+      "role": "source-extraction",
+      "sha256": "31b093b2e49a4ed732062bef521f2e545781b523b4066921b903e78ccf899926"
+    },
+    {
+      "bytes": 74538,
+      "name": "cover-image",
+      "path": "raw/gutenberg/37311/html/images/cover.jpg",
+      "role": "source-media",
+      "sha256": "f60c0f12c228e0ca1cb99a6866b3c4a0717381304542dc82ff2563c87fa92103"
+    },
+    {
+      "bytes": 211378,
+      "name": "title-illustration",
+      "path": "raw/gutenberg/37311/html/images/illus.jpg",
+      "role": "source-media",
+      "sha256": "4bb57a302a98998c01407b2cd3fd555adbeccf4cdb6ca15ab71e34435836a1ee"
+    },
+    {
+      "bytes": 200931,
+      "name": "end-image",
+      "path": "raw/gutenberg/37311/html/images/end.jpg",
+      "role": "source-media",
+      "sha256": "51de4010e3478339fa25aa969eeeb6067fbb6236e4495febd4194b597cbe766c"
+    },
+    {
+      "bytes": 1347,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/37311/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "a72c930e85844597a5e5ec568b218cda92f059a7b3effffc977dbbfc30c86231"
+    },
+    {
+      "bytes": 396,
+      "name": "member-inventory",
+      "path": "raw/gutenberg/37311/member-inventory.tsv",
+      "role": "source-member-inventory",
+      "sha256": "5dc3fae0f99a6dbcba32000fac35dc172dab775300416faeaf25f94720c67ec3"
+    },
+    {
+      "bytes": 612,
+      "name": "retained-source-readme",
+      "path": "raw/gutenberg/37311/README.md",
+      "role": "source-acquisition-note",
+      "sha256": "669e7d8ba303e340ef9ff2391f3e5c979b81035ee9605c2b9e5b699439fc9b76"
+    },
+    {
+      "bytes": 2118,
+      "name": "edition-identity",
+      "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/edition-identity.json",
+      "role": "edition-identity-evidence",
+      "sha256": "857bd8aaf3abe802c86bc2f44bfabe0f30be51941dce35c28f56312913f379bb"
+    },
+    {
+      "bytes": 2457,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "59429d05495c5b9ea1dc8f6a0b6252dcf042062260e89974c1c01cf44b88f0b1"
+    },
+    {
+      "bytes": 3624,
+      "name": "base-profile",
+      "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/base-profile.json",
+      "role": "source-unit-boundary-profile",
+      "sha256": "f4b916b5efaef39f3e2a2b8bc2e9604e3dd585d84c3d7ca5c56d5df9f6e32510"
+    },
+    {
+      "bytes": 1689,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "0c66e03da7dbba4f5d430409117c6c45d7cb5f36aa068b8539149d3449c4f0fe"
+    },
+    {
+      "bytes": 995,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/README.source.md",
+      "role": "source-attribution-and-scope-statement",
+      "sha256": "94c44e42ca882ec5308bb9a189b05b83e1989c56eef16c5950311476004dc13f"
+    },
+    {
+      "bytes": 1664,
+      "name": "work-sidecar",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/57e3ccfe3844-john-woolman-journal-other-writings-work.json",
+      "role": "work-catalog-identity",
+      "sha256": "57e3ccfe3844292b0d8640480ba84aacefcfad7b3adcef83029e22ce71c2f842"
+    },
+    {
+      "bytes": 3476,
+      "name": "acquisition-sidecar",
+      "path": "library/works/john-woolman-journal-other-writings/forms/english/editions/everyman-402-1910-electronic/acquisitions/gutenberg-37311.json",
+      "role": "work-acquisition-identity",
+      "sha256": "e4f08719e67b3f961d1c09a0236adf6a15277b1e3978cf08b52ead20c456293c"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 14201,
+      "name": "converter-implementation",
+      "path": "build/tei/woolman_37311_reconstruction.py",
+      "role": "implementation-dependency",
+      "sha256": "badfc0f35a8148daa3b43902940461bd9cd0366e83a3bb257241a9fe4a5ae318"
+    },
+    {
+      "bytes": 20280,
+      "name": "oracle-implementation",
+      "path": "build/tei/woolman_37311_oracle.py",
+      "role": "implementation-dependency",
+      "sha256": "308f357bfbc100f8b275ce09e2356475ed1a7e4e17439c1c3b5f4a8889efe76f"
+    },
+    {
+      "bytes": 2709,
+      "name": "runner-implementation",
+      "path": "build/tei/woolman_37311_runner.py",
+      "role": "candidate-generation-runner",
+      "sha256": "c97cca3bae4d5579ced73c719f4c2ca8148b71f4e9afdf370495e73aab795c07"
+    },
+    {
+      "bytes": 4055,
+      "name": "challenge-implementation",
+      "path": "build/tei/woolman_37311_challenge.py",
+      "role": "mutation-challenge-runner",
+      "sha256": "2505b0def6e3b64e9ab1d54e69d0e38f614269a4150af0ebf072925c8a92b78c"
+    }
+  ],
+  "candidate_status": "nonaccepted",
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-woolman-pg37311-direct-one-root",
+    "implementation_path": "build/tei/woolman_37311_reconstruction.py",
+    "implementation_sha256": "badfc0f35a8148daa3b43902940461bd9cd0366e83a3bb257241a9fe4a5ae318",
+    "version": "2"
+  },
+  "ebook_id": "37311",
+  "edition_id": "everyman-402-1910-electronic",
+  "identity_evidence": {
+    "path": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/edition-identity.json",
+    "sha256": "857bd8aaf3abe802c86bc2f44bfabe0f30be51941dce35c28f56312913f379bb"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope_id": "pg37311-woolman-complete-volume-v5",
+  "selection_mode": "complete-volume",
+  "source_id": "pg37311-woolman-everyman-402-1910-retained",
+  "tei_document_count": 1,
+  "textual_form_id": "english",
+  "top_level_work_count": 1,
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-woolman-pg37311-one-root-independent-oracle",
+    "implementation_path": "build/tei/woolman_37311_oracle.py",
+    "implementation_sha256": "308f357bfbc100f8b275ce09e2356475ed1a7e4e17439c1c3b5f4a8889efe76f",
+    "import_closure_sha256": "a217c67a2c376fe7f7bd0bdcb95894db1362cc446856a624c89230524753ef9d",
+    "version": "1"
+  },
+  "work_id": "john-woolman-journal-other-writings"
+}

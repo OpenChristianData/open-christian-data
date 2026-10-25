@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://openchristiandata.org/pilgrims-progress.source-accountability.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["contract","schema","source_members","xml_member_count","non_xml_member_count","xml_observation_count","element_count","attribute_count","text_count","represented_count","evidence_only_count","ordered_dispositions_sha256","omitted_count","duplicate_count","observations","non_xml_dispositions","sections","feature_inventory","semantic_bindings"],
+  "properties":{
+    "contract":{"const":"ocd-pilgrims-progress-source-accountability-v1"},
+    "schema":{"const":"pilgrims-progress.source-accountability.schema.json"},
+    "source_members":{"type":"array","minItems":26,"maxItems":26},
+    "xml_member_count":{"const":19},
+    "non_xml_member_count":{"const":7},
+    "xml_observation_count":{"const":31735},
+    "element_count":{"const":12091},
+    "attribute_count":{"const":9241},
+    "text_count":{"const":10403},
+    "represented_count":{"const":30783},
+    "evidence_only_count":{"const":952},
+    "ordered_dispositions_sha256":{"const":"707617f01555273f5613f21f76eef80790aee12e5b691b998183e8917060e381"},
+    "omitted_count":{"const":0},
+    "duplicate_count":{"const":0},
+    "observations":{"type":"array","minItems":31735,"maxItems":31735,"items":{"type":"object","additionalProperties":false,"required":["member","kind","path","name","value_sha256","observation_id","disposition"],"properties":{"member":{"type":"string"},"kind":{"enum":["element","attribute","text"]},"path":{"type":"string"},"name":{"type":"string"},"value_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"observation_id":{"type":"string"},"disposition":{"enum":["represented","evidence-only"]}}}},
+    "non_xml_dispositions":{"type":"array","minItems":7,"maxItems":7},
+    "sections":{"type":"array","minItems":11,"maxItems":11},
+    "feature_inventory":{"type":"object"},
+    "semantic_bindings":{"type":"object","additionalProperties":false,"required":["notes","verse","inline","toc","image_strings","cite_occurrences","distinct_cite_strings","metadata_claims","rights_claims"],"properties":{"notes":{"type":"array","minItems":1010,"maxItems":1010},"verse":{"type":"array","minItems":95,"maxItems":95},"inline":{"type":"array"},"toc":{"type":"array","minItems":13,"maxItems":13},"image_strings":{"type":"array","minItems":18,"maxItems":18},"cite_occurrences":{"type":"array","minItems":771,"maxItems":771},"distinct_cite_strings":{"type":"array","minItems":156,"maxItems":156},"metadata_claims":{"type":"object"},"rights_claims":{"type":"object","additionalProperties":false,"required":["candidate_status","source_member","source_path","retained_opf_text","underlying_scope","contributor_scope","worldwide_clearance"],"properties":{"candidate_status":{"const":"nonaccepted"},"source_member":{"const":"src/epub/content.opf"},"source_path":{"type":"string"},"retained_opf_text":{"type":"string"},"underlying_scope":{"const":"believed-US-public-domain-worldwide-uncertain"},"contributor_scope":{"const":"CC0-1.0-dedication"},"worldwide_clearance":{"const":false}}}}}
+  }
+}

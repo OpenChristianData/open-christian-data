@@ -1,0 +1,19 @@
+# John of Damascus — Exposition of the Orthodox Faith
+
+Source: [Christian Classics Ethereal Library](https://www.ccel.org/ccel/schaff/npnf209.html), *Nicene and Post-Nicene Fathers*, Second Series, volume IX, Hilary of Poitiers and John of Damascus. Series editors: Philip Schaff and Henry Wace. John's retained title page credits translation to S. D. F. Salmond, Principal of the Free Church College, Aberdeen.
+
+This derivative contains the complete retained John edition: title page, Note, Prologue, and all four books of An Exact Exposition of the Orthodox Faith, with14/30/29/27chapters (100total), through the complete Amen closing. It preserves native divisions/headings, paragraphs, inline Greek and formatting, all notes at their original attachments, literal scripture references, and source page links. Hilary's independently titled work, shared volume title/context, and volume indexes remain outside John's readable text. OCD reused the independently checked prior reconstruction body, created a source-bound TEI master, and projected its native ordered content to JSONL and Arrow.
+
+The retained electronic header states Public Domain and gives printSourceInfo as Edinburgh: T&T Clark,1898. Earlier inherited metadata stated1899; this conflicting historical claim remains in the retained evidence, while current edition descriptions use the literal1898 header statement. No independent print-date adjudication or source collation is claimed.
+
+This private offline technical rehearsal does not establish visual review, human acceptance, print collation, independent rights clearance, global release selection or publication authorization. The electronic rights statement is preserved as source evidence.
+
+Sourced via CCEL.org. Retained CCEL permission explicitly permits parsing ThML/XML files for text. CCEL copyright applies to its files and formatting, not the underlying public-domain texts. Restriction: do not sell CCEL files or derivatives of their formatting. The provider permission and electronic Public Domain statement remain separate from independent rights clearance and public publication authorization.
+
+## Current item disposition — October 9, 2026
+
+Item: Exposition of the Orthodox Faith; electronic edition `john-of-damascus-orthodox-faith-ccel-npnf209-electronic`.
+
+Row license: **Public domain (United States); identified historical text and apparatus only**. Territory assessed: United States only. Historical textual scope: Edinburgh: T&T Clark, 1898. This is not a CC0 dedication or worldwide clearance. No geographic access controls are configured; this decision supports the private offline rehearsal and does not authorize unrestricted global publication.
+
+This item-specific disposition supersedes the earlier preliminary statement that no row license was assigned or that this same historical-text route still awaited its term/projection assessment. It preserves all existing credits and restrictions. Sourced via CCEL.org. The retained project permission allows parsing underlying public-domain text; do not sell CCEL files or derivatives of their formatting. The assessed output reconstructs historical wording and apparatus in Open Christian Data structure; it excludes electronic source headers, CSS stylesheets, image pixels, modern staff descriptions and creative modern additions. Neutral semantic structure and opaque source class identifiers are not a license to reproduce CCEL stylesheets or reserved presentation. Existing source-local translator, editor, transcriber and markup credits remain in force; volume-level credits are not newly allocated to a child work. For a modern reprint/electronic base, this decision covers only the explicitly identified historical text and historical apparatus, not separate rights in modern additions or the source electronic files.

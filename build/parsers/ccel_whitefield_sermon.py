@@ -1,12 +1,12 @@
 """ccel_whitefield_sermon.py
-Parser for George Whitefield's Selected Sermons from CCEL ThML XML.
+Parser for George Whitefield's selected sermons from retained source witnesses.
 
 Parses whitefield_sermons.xml (already cached at raw/ccel/whitefield_sermons.xml)
-into a single OCD sermon JSON file with 59 sermons (CCEL source only).
-Run build/scripts/add_pg_whitefield_sermons.py afterward to append 2 PG-unique sermons
-(total = 61).
+and the two supplementary sermons in Project Gutenberg #77041 into one OCD
+sermon JSON file with 61 sermons.
 
-Source: https://www.ccel.org/ccel/whitefield/sermons.xml (ThML XML, public domain)
+Primary source: https://www.ccel.org/ccel/whitefield/sermons.xml
+Supplementary source: https://www.gutenberg.org/ebooks/77041
 CCEL permission confirmed 2026-04-01 (Quincy).
 
 XML structure (differs from Wesley -- pre-inspected 2026-04-12):
@@ -55,19 +55,22 @@ CONFIG_PATH = (
     REPO_ROOT / "sources" / "sermons" / "george-whitefield-sermons" / "config.json"
 )
 
-RAW_FILE = RAW_DIR / "whitefield_sermons.xml"
+CCEL_RAW_FILE = RAW_DIR / "whitefield_sermons.xml"
+PG_RAW_FILE = (
+    REPO_ROOT / "raw" / "gutenberg" / "sermons" / "whitefield" / "pg77041.txt"
+)
 OUTPUT_FILE = OUTPUT_DIR / "george-whitefield-sermons.json"
 LOG_FILE = Path(__file__).resolve().parent / "ccel_whitefield_sermon.log"
 
 COLLECTION_ID = "george-whitefield-sermons"
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v2.0.0"
 
 # div1 ids that are NOT sermons (title page and Table of Contents)
 SKIP_IDS = {"i", "ii"}
 
-# Expected sermon count after skipping non-sermon div1s
-EXPECTED_COUNT = 59
+# Expected combined sermon count: 59 CCEL entries plus two PG supplements.
+EXPECTED_COUNT = 61
 
 # HTML entities that ThML uses but are not valid XML without the external DTD.
 THML_ENTITY_MAP = {
@@ -466,10 +469,134 @@ def parse_entries(
 
 
 # ---------------------------------------------------------------------------
+# Project Gutenberg supplement
+# ---------------------------------------------------------------------------
+
+def _clean_pg_italic(text: str) -> str:
+    """Remove Project Gutenberg underscore italic markers."""
+    return re.sub(r"_([^_]+)_", r"\1", text)
+
+
+def _extract_pg_paragraphs(raw_lines: list[str]) -> list[str]:
+    """Extract body paragraphs from one PG #77041 sermon slice."""
+    paragraphs: list[str] = []
+    current: list[str] = []
+
+    for line in raw_lines:
+        stripped = line.strip()
+        if not stripped:
+            if current:
+                paragraph = _clean_pg_italic(" ".join(current))
+                paragraph = re.sub(r"  +", " ", paragraph).strip()
+                if paragraph:
+                    paragraphs.append(paragraph)
+                current = []
+            continue
+
+        if len(line) == len(line.lstrip(" ")):
+            current.append(stripped)
+
+    if current:
+        paragraph = _clean_pg_italic(" ".join(current))
+        paragraph = re.sub(r"  +", " ", paragraph).strip()
+        if paragraph:
+            paragraphs.append(paragraph)
+
+    return paragraphs
+
+
+def _find_pg_sermon_heading(lines: list[str], numeral: str) -> int:
+    """Find the body heading, ignoring the earlier table-of-contents entry."""
+    matches = [
+        index
+        for index, line in enumerate(lines)
+        if line.strip() == f"SERMON {numeral}."
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected one body heading for SERMON {numeral}, found {len(matches)}"
+        )
+    return matches[0]
+
+
+def _find_pg_finis(lines: list[str], start: int) -> int:
+    for index in range(start + 1, len(lines)):
+        if lines[index].strip() == "FINIS.":
+            return index
+    raise ValueError("Project Gutenberg source has no FINIS marker after SERMON LIX")
+
+
+def _supplement_entry(
+    *,
+    sermon_id: str,
+    title: str,
+    primary_reference: str,
+    paragraphs: list[str],
+    source: dict,
+) -> dict:
+    if not paragraphs:
+        raise ValueError(f"Project Gutenberg sermon {sermon_id} has no body paragraphs")
+    source_hash = source["source_hash"]
+    return {
+        "collection_id": COLLECTION_ID,
+        "sermon_id": sermon_id,
+        "series": None,
+        "title": title,
+        "primary_reference": {"raw": primary_reference, "osis": []},
+        "primary_reference_text": None,
+        "content_blocks": paragraphs,
+        "date_preached": None,
+        "location": None,
+        "word_count": sum(len(paragraph.split()) for paragraph in paragraphs),
+        "provenance": {
+            "source_url": source["url"],
+            "source_credit": "Project Gutenberg",
+            "notes": (
+                f"Extracted from {source['edition']}; retained source "
+                f"{source_hash}, acquired {source['download_date']}. This sermon is "
+                "absent from the primary CCEL witness."
+            ),
+        },
+    }
+
+
+def parse_pg_supplement(pg_path: Path, source: dict) -> list[dict]:
+    """Parse the two PG #77041 sermons absent from the CCEL witness."""
+    lines = pg_path.read_text(encoding="utf-8").splitlines()
+    lviii_start = _find_pg_sermon_heading(lines, "LVIII")
+    lix_start = _find_pg_sermon_heading(lines, "LIX")
+    lix_end = _find_pg_finis(lines, lix_start)
+    if not lviii_start < lix_start < lix_end:
+        raise ValueError("Project Gutenberg sermon boundaries are out of order")
+
+    return [
+        _supplement_entry(
+            sermon_id="60",
+            title="Peter's Denial of his Lord",
+            primary_reference="Matthew 26:75",
+            paragraphs=_extract_pg_paragraphs(lines[lviii_start + 1 : lix_start]),
+            source=source,
+        ),
+        _supplement_entry(
+            sermon_id="61",
+            title="The True Way of Beholding the Lamb of God",
+            primary_reference="John 1:35-36",
+            paragraphs=_extract_pg_paragraphs(lines[lix_start + 1 : lix_end]),
+            source=source,
+        ),
+    ]
+
+
+# ---------------------------------------------------------------------------
 # Quality reporting
 # ---------------------------------------------------------------------------
 
-def report_quality(entries: list, logger: logging.Logger) -> bool:
+def report_quality(
+    entries: list,
+    logger: logging.Logger,
+    *,
+    expected_count: int = EXPECTED_COUNT,
+) -> bool:
     """
     Print quality statistics and warn on suspicious entries.
     Returns True if output is safe to write, False if a blocking issue is found.
@@ -486,7 +613,7 @@ def report_quality(entries: list, logger: logging.Logger) -> bool:
     ok = True
 
     sorted_words = sorted(words)
-    print(f"  Entry count:  {total} (expected {EXPECTED_COUNT})")
+    print(f"  Entry count:  {total} (expected {expected_count})")
     print(
         f"  Word count:   min={min(words)} "
         f"median={sorted_words[total // 2]} "
@@ -496,10 +623,10 @@ def report_quality(entries: list, logger: logging.Logger) -> bool:
     print(f"  Untitled:     {untitled}/{total} entries")
 
     logger.info("Quality: count=%d expected=%d no_ref=%d untitled=%d",
-                total, EXPECTED_COUNT, no_ref, untitled)
+                total, expected_count, no_ref, untitled)
 
-    if total != EXPECTED_COUNT:
-        msg = f"Expected {EXPECTED_COUNT} sermons, got {total} -- blocking write"
+    if total != expected_count:
+        msg = f"Expected {expected_count} sermons, got {total} -- blocking write"
         print(f"  WARNING: {msg}")
         logger.warning(msg)
         ok = False
@@ -571,8 +698,61 @@ def report_quality(entries: list, logger: logging.Logger) -> bool:
 # Metadata builder
 # ---------------------------------------------------------------------------
 
-def build_meta(config: dict, data_hash: str, processing_date: str) -> dict:
-    """Build the meta envelope from source config."""
+def _verify_pinned_source(path: Path, source: dict, label: str) -> str:
+    """Return the source SHA-256 after checking it against source authority."""
+    if not path.is_file():
+        raise FileNotFoundError(f"{label} not found: {path}")
+    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+    expected = source["source_hash"]
+    if expected != f"sha256:{actual}":
+        raise ValueError(
+            f"{label} hash mismatch: expected {expected}, got sha256:{actual}"
+        )
+    return actual
+
+
+def _primary_source(config: dict) -> dict:
+    """Return the config's single primary-source declaration as one object."""
+    return {
+        "bundle_member": config["source_bundle_member"],
+        "url": config["source_url"],
+        "format": config["source_format"],
+        "edition": config["source_edition"],
+        "download_date": config["download_date"],
+        "source_hash": config["source_hash"],
+    }
+
+
+def _bundle_source_hash(config: dict, source_hashes: dict[str, str]) -> str:
+    """Hash the canonical manifest of every source member in this collection."""
+    members = {
+        config["source_bundle_member"]: source_hashes["primary"],
+        config["supplementary_source"]["bundle_member"]: source_hashes["supplementary"],
+    }
+    manifest = json.dumps(
+        members,
+        ensure_ascii=True,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(manifest).hexdigest()
+
+
+def build_meta(
+    config: dict,
+    bundle_hash: str,
+    source_hashes: dict[str, str],
+    processing_date: str,
+) -> dict:
+    """Build a collection envelope that declares both retained witnesses."""
+    primary = _primary_source(config)
+    supplementary = config["supplementary_source"]
+    component_note = (
+        f" Source bundle members: {primary['bundle_member']}="
+        f"sha256:{source_hashes['primary']}; {supplementary['bundle_member']}="
+        f"sha256:{source_hashes['supplementary']}. The collection source_hash is the "
+        "SHA-256 of the canonical JSON member-to-hash manifest."
+    )
     return {
         "id": config["resource_id"],
         "title": config["title"],
@@ -592,19 +772,87 @@ def build_meta(config: dict, data_hash: str, processing_date: str) -> dict:
         "schema_version": SCHEMA_VERSION,
         "completeness": "full",
         "provenance": {
-            "source_url": config["source_url"],
-            "source_format": config["source_format"],
-            "source_edition": config["source_edition"],
-            "download_date": processing_date,
-            "source_hash": f"sha256:{data_hash}",
+            "source_url": primary["url"],
+            "source_format": f"{primary['format']}; {supplementary['format']}",
+            "source_edition": f"{primary['edition']}; {supplementary['edition']}",
+            "download_date": max(
+                primary["download_date"],
+                supplementary["download_date"],
+            ),
+            "source_hash": f"sha256:{bundle_hash}",
             "processing_method": "automated",
             "processing_script_version": (
                 f"build/parsers/ccel_whitefield_sermon.py@{SCRIPT_VERSION}"
             ),
             "processing_date": processing_date,
-            "notes": config.get("notes"),
+            "notes": (config.get("notes") or "") + component_note,
         },
     }
+
+
+def build_collection(
+    *,
+    ccel_path: Path,
+    pg_path: Path,
+    config_path: Path,
+    processing_date: str,
+    logger: logging.Logger,
+) -> dict:
+    """Build the complete 61-sermon collection from both retained witnesses."""
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    validate_config_enums(config, "sermon")
+    primary = _primary_source(config)
+    supplementary = config["supplementary_source"]
+    source_hashes = {
+        "primary": _verify_pinned_source(ccel_path, primary, "CCEL source"),
+        "supplementary": _verify_pinned_source(
+            pg_path, supplementary, "Project Gutenberg source"
+        ),
+    }
+
+    ccel_entries, _, _ = parse_entries(ccel_path, logger)
+    entries = [*ccel_entries, *parse_pg_supplement(pg_path, supplementary)]
+    if [entry["sermon_id"] for entry in entries] != [
+        str(number) for number in range(1, EXPECTED_COUNT + 1)
+    ]:
+        raise ValueError("Whitefield sermon IDs are not the exact ordered range 1-61")
+    if not report_quality(entries, logger):
+        raise ValueError("Whitefield collection quality checks failed")
+
+    bundle_hash = _bundle_source_hash(config, source_hashes)
+    return {
+        "meta": build_meta(
+            config,
+            bundle_hash,
+            source_hashes,
+            processing_date,
+        ),
+        "data": entries,
+    }
+
+
+def write_collection(
+    *,
+    ccel_path: Path,
+    pg_path: Path,
+    config_path: Path,
+    output_path: Path,
+    processing_date: str,
+    logger: logging.Logger,
+) -> dict:
+    """Build and write the complete collection to an explicit output path."""
+    output = build_collection(
+        ccel_path=ccel_path,
+        pg_path=pg_path,
+        config_path=config_path,
+        processing_date=processing_date,
+        logger=logger,
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8", newline="\n") as output_file:
+        json.dump(output, output_file, ensure_ascii=False, indent=2)
+        output_file.write("\n")
+    return output
 
 
 # ---------------------------------------------------------------------------
@@ -613,7 +861,7 @@ def build_meta(config: dict, data_hash: str, processing_date: str) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Parse Whitefield Selected Sermons from CCEL ThML XML"
+        description="Parse the complete retained Whitefield sermon collection"
     )
     parser.add_argument(
         "--dry-run",
@@ -630,15 +878,17 @@ def main() -> None:
         print(f"ERROR: Config not found: {CONFIG_PATH}")
         logger.error("Config not found: %s", CONFIG_PATH)
         sys.exit(1)
-    with open(CONFIG_PATH, encoding="utf-8") as f:
-        config = json.load(f)
+    config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     validate_config_enums(config, "sermon")
 
-    if not RAW_FILE.exists():
-        print(f"ERROR: Raw XML file not found: {RAW_FILE}")
-        print("The file should already be cached. Check raw/ccel/whitefield_sermons.xml.")
-        logger.error("Raw XML not found: %s", RAW_FILE)
-        sys.exit(1)
+    for source_label, source_path in (
+        ("CCEL XML", CCEL_RAW_FILE),
+        ("Project Gutenberg text", PG_RAW_FILE),
+    ):
+        if not source_path.exists():
+            print(f"ERROR: {source_label} not found: {source_path}")
+            logger.error("%s not found: %s", source_label, source_path)
+            sys.exit(1)
 
     print(f"Source:  {config['title']}")
     print(f"Author:  {config['author']}")
@@ -647,13 +897,16 @@ def main() -> None:
         print("Mode:    dry-run (first 3 sermons, no write)")
     print()
 
-    entries, skipped, errors = parse_entries(RAW_FILE, logger, dry_run=args.dry_run)
-    print()
-
-    ok = report_quality(entries, logger)
-    print()
-
     if args.dry_run:
+        _verify_pinned_source(
+            CCEL_RAW_FILE,
+            _primary_source(config),
+            "CCEL source",
+        )
+        entries, _, _ = parse_entries(CCEL_RAW_FILE, logger, dry_run=True)
+        print()
+        report_quality(entries, logger, expected_count=3)
+        print()
         elapsed = time.time() - start_time
         print("--- Sample entries (dry-run, first 2 shown) ---")
         for entry in entries[:2]:
@@ -668,30 +921,21 @@ def main() -> None:
         logger.info("Dry-run complete. No files written.")
         return
 
-    # Block write if quality checks failed (prevents a broken output file)
-    if not ok:
-        print("ERROR: Quality checks failed -- output not written. Fix the parser and re-run.")
-        logger.error("Quality check failed -- output not written.")
-        sys.exit(1)
-
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    data_bytes = json.dumps(entries, ensure_ascii=False, sort_keys=True).encode("utf-8")
-    data_hash = hashlib.sha256(data_bytes).hexdigest()
-
-    meta = build_meta(config, data_hash, processing_date)
-    output = {"meta": meta, "data": entries}
-
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    output = write_collection(
+        ccel_path=CCEL_RAW_FILE,
+        pg_path=PG_RAW_FILE,
+        config_path=CONFIG_PATH,
+        output_path=OUTPUT_FILE,
+        processing_date=processing_date,
+        logger=logger,
+    )
 
     size_kb = OUTPUT_FILE.stat().st_size / 1024
     elapsed = time.time() - start_time
 
     summary = (
-        f"Wrote {len(entries)} sermons "
-        f"({skipped} skipped, {errors} errors) -> {OUTPUT_FILE} "
+        f"Wrote {len(output['data'])} sermons -> {OUTPUT_FILE} "
         f"({size_kb:.0f} KB, {elapsed:.1f}s)"
     )
     print(summary)

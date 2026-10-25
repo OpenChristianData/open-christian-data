@@ -1,0 +1,80 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "pg70790-coppens-source-native-v2",
+  "ticket_id": "L793",
+  "work_id": "charles-coppens-spiritual-exercises-adaptation",
+  "edition_id": "charles-coppens-exercises-1916-pg70790",
+  "acquisition_id": "pg70790-retained-zip",
+  "authorities": [
+    {
+      "name": "retained-archive",
+      "path": "raw/gutenberg/70790/pg70790-h.zip",
+      "role": "primary-source",
+      "bytes": 1596270,
+      "sha256": "fdfcd5228a14f985fff53cb1bddca74574cee04daca68400b0b11a66a81fcedf"
+    },
+    {
+      "name": "source-feature-profile",
+      "path": "sources/manifest-acquisitions/coppens-pg70790-source-native-v2/profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 6063,
+      "sha256": "0dc0b57390983a41c90b9485dbaa8bfd467853947045ee75bde671ab07aa255f"
+    },
+    {
+      "name": "source-notice",
+      "path": "sources/manifest-acquisitions/coppens-pg70790-source-native-v2/README.source.md",
+      "role": "source-notice",
+      "bytes": 1162,
+      "sha256": "1065cf0b82a371170bf4da958defa27d69b9195c7ac320337dd7ef20cca1f904"
+    },
+    {
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/coppens-pg70790-source-native-v2/policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 3305,
+      "sha256": "5122adbef68df34454d986be21c53f64b8250a10090502fe04813494e295fda4"
+    },
+    {
+      "name": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "source_members": [
+    {
+      "name": "retained-archive",
+      "path": "raw/gutenberg/70790/pg70790-h.zip",
+      "bytes": 1596270,
+      "sha256": "fdfcd5228a14f985fff53cb1bddca74574cee04daca68400b0b11a66a81fcedf",
+      "role": "primary-source"
+    }
+  ],
+  "converter": {
+    "id": "ocd-coppens-pg70790-source-native-v2",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/coppens_pg70790_source_native_v2.py",
+    "implementation_sha256": "7fc10f3ac37627c1292b596ab7cc613786452ae895010333718f2c9e6735439a"
+  },
+  "validator": {
+    "id": "ocd-coppens-pg70790-source-native-v2-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/coppens_pg70790_source_native_v2_oracle.py",
+    "implementation_sha256": "5ed696c65836312a92548271617308b3390167bf3c7ab180550d93ecf341523f",
+    "import_closure_sha256": "546aba3a605a29180e1aab6463e454b271193844b80933f1b01bf2b95e012e53"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

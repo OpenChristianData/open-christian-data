@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-city-of-god-validation-policy-v1",
+  "oracle": "producer-independent source recount plus exact package projection",
+  "required_status": "nonaccepted",
+  "required_members": ["README.source.md","content.tei.xml","manifest.json","provenance.json","source-accountability.json","unresolved.jsonl"],
+  "tei_xsd": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+  "source_counts": {"standard_members":46,"standard_observations":58815,"ccel_observations":88276,"print_members":15,"print_bytes":237821801},
+  "structure": {"books":22,"chapters":661,"prefaces":4,"aligned_units":665},
+  "forbidden_runtime_import_prefixes": ["build.reconstruction.city_of_god","build.reconstruction.inventories","cvw_app","reports","data","ir"],
+  "forbidden_claims": ["accepted","canonical","worldwide public domain","cleared for publication"]
+}

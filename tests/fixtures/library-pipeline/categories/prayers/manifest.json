@@ -1,0 +1,52 @@
+{
+  "ticket": "PIPE-015B",
+  "status": "nonaccepted source-bound prayer examples",
+  "cases": [
+    {
+      "name": "collects",
+      "tei_file": "collects.tei.xml",
+      "retained_file": "collects.retained.json",
+      "files": {
+        "collects.tei.xml": "e9b8e1a0c1e3ae2a16f4aef9fc7d0b103b0b0ac9d98d4dca330ee56f0e526697",
+        "collects.retained.json": "e758f16d01cba27e3df495d476c2c7860823f8f82734e84c1c82851487698053"
+      },
+      "context": {
+        "identity": {
+          "work_id": "fixture-bcp-prayers",
+          "textual_form_id": "fixture-bcp-retained-english",
+          "edition_id": "fixture-bcp-retained-html"
+        },
+        "language": "en",
+        "representation_revision": "fixture-v1",
+        "edition_title": "Book of Common Prayer — retained HTML fixture"
+      }
+    },
+    {
+      "name": "suffrages",
+      "tei_file": "suffrages.tei.xml",
+      "retained_file": "suffrages.retained.json",
+      "files": {
+        "suffrages.tei.xml": "7cc6cb4ab6596cfe2964d509d94e2a022abacb7adc9317abd89524a14aca6519",
+        "suffrages.retained.json": "9a3e2e7d4fde50b0a5e51feeeace81ac0b9fee4f834dbc5e8871eeb837c252ab"
+      },
+      "context": {
+        "identity": {
+          "work_id": "fixture-bcp-prayers",
+          "textual_form_id": "fixture-bcp-retained-english",
+          "edition_id": "fixture-bcp-retained-html"
+        },
+        "language": "en",
+        "representation_revision": "fixture-v1",
+        "edition_title": "Book of Common Prayer — retained HTML fixture"
+      }
+    }
+  ],
+  "limits": [
+    "Three complete selected source units; not whole-office or whole-collection coverage.",
+    "Two heading-delimited prayers and one complete twelve-line suffrage paragraph preserve actual source boundaries.",
+    "Drop-capital image alt text restores its printed initial; strong and italic emphasis remain TEI hi and are reported when projected to plain text.",
+    "Speaker labels remain literal. Answer lines refer to their immediately preceding printed petition.",
+    "The unheaded suffrage unit receives no invented title. Office comes from its actual source page title.",
+    "No subjective audience, theme, human acceptance, rights, or publication assertion."
+  ]
+}

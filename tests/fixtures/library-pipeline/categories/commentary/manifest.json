@@ -1,0 +1,65 @@
+{
+  "schema_version": "ocd-commentary-fixtures-v1",
+  "category": "commentary",
+  "fixture_count": 3,
+  "native_unit_count": 40,
+  "selected_unit_count": 8,
+  "outside_scope_unit_count": 32,
+  "excluded_source_scope_unit_count": 1,
+  "excluded_tei_unit_count": 0,
+  "fixtures": [
+    {
+      "fixture_id": "adam-clarke-zep-1",
+      "source_path": "raw/helloao_local/api/c/adam-clarke/ZEP/1.json",
+      "source_sha256": "992cfd6477a2054c5648f8265c8790f67700745e3b1e83ac53e03323136c826a",
+      "retained_source_sha256": "992cfd6477a2054c5648f8265c8790f67700745e3b1e83ac53e03323136c826a",
+      "tei_path": "tests/fixtures/library-pipeline/categories/commentary/adam-clarke-zep-1.tei.xml",
+      "tei_sha256": "cdd5ef326f62aa3f5313abb7d2162068cd5fb4b036695150b97dd385c653b156",
+      "native_unit_count": 18,
+      "selected_unit_count": 3,
+      "outside_scope_count": 15,
+      "source_scope_exclusion_count": 0,
+      "selected_selectors": [
+        "book.introduction",
+        "chapter.content[2]",
+        "chapter.content[3]"
+      ],
+      "scope_id": "adam-clarke-zep---selection"
+    },
+    {
+      "fixture_id": "adam-clarke-2ch-6",
+      "source_path": "raw/helloao_local/api/c/adam-clarke/2CH/6.json",
+      "source_sha256": "116a58f87269850e0188bb7c4aeb356960aace590b354a29b12f66cf8793912f",
+      "retained_source_sha256": "116a58f87269850e0188bb7c4aeb356960aace590b354a29b12f66cf8793912f",
+      "tei_path": "tests/fixtures/library-pipeline/categories/commentary/adam-clarke-2ch-6.tei.xml",
+      "tei_sha256": "aedd1acc223f304dec86067db49dd46d1fdca0752d59254d2d9b61ad27a0b76d",
+      "native_unit_count": 10,
+      "selected_unit_count": 2,
+      "outside_scope_count": 8,
+      "source_scope_exclusion_count": 1,
+      "selected_selectors": [
+        "chapter.introduction",
+        "chapter.content[10]"
+      ],
+      "scope_id": "adam-clarke--ch---selection"
+    },
+    {
+      "fixture_id": "matthew-henry-gen-1",
+      "source_path": "raw/helloao_local/api/c/matthew-henry/GEN/1.json",
+      "source_sha256": "472c602ccf212d90aa68aec6c2029c6c0376f2fdffa95ebaeee2f02bc7ad251a",
+      "retained_source_sha256": "472c602ccf212d90aa68aec6c2029c6c0376f2fdffa95ebaeee2f02bc7ad251a",
+      "tei_path": "tests/fixtures/library-pipeline/categories/commentary/matthew-henry-gen-1.tei.xml",
+      "tei_sha256": "6b0ece69095f5f9d8e6b9fc4d20d2c9eab339be188d29c47d162f820e1a8937a",
+      "native_unit_count": 12,
+      "selected_unit_count": 3,
+      "outside_scope_count": 9,
+      "source_scope_exclusion_count": 0,
+      "selected_selectors": [
+        "book.introduction",
+        "chapter.introduction",
+        "chapter.content[1]"
+      ],
+      "scope_id": "matthew-henry-gen---selection"
+    }
+  ]
+}

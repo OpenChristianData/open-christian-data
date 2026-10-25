@@ -1,0 +1,9 @@
+{
+  "contract": "ocd-lib062-westminster-larger-catechism-validation-policy-v1",
+  "policy_id": "lib062-westminster-larger-catechism-standard-package-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_package_members": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "checks": ["literal-retained-source-byte-binding", "packet-and-adjacent-witness-binding", "complete-accountability-crosswalk", "tei-p5-xsd", "candidate-package-integrity", "mutation-rejection", "fresh-process-determinism", "producer-independent-oracle", "workcatalog-exact-id-and-catalog-claim-lineage"],
+  "forbidden_oracle_imports": ["build.tei.lib062_westminster_larger_catechism_reconstruction"]
+}

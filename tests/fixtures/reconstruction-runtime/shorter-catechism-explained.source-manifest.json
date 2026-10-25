@@ -1,0 +1,151 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-285",
+  "work_id": "shorter-catechism-explained",
+  "source_id": "creeds-json-lib062-shorter-catechism-explained-retained-json",
+  "scope": {
+    "kind": "complete-retained-json-member",
+    "edition": "The Assembly's Shorter Catechism Explained",
+    "source_kind": "Creeds.json retained JSON",
+    "source_root": "raw/Creeds.json/creeds/shorter_catechism_explained.json",
+    "member_count": 1,
+    "excluded_members": []
+  },
+  "source_bundle": {
+    "members": 1,
+    "bytes": 1323591,
+    "sha256": "90aea411d973c7c43af89df2520f8f08c57d97643f33a135c5473aa931479b7d"
+  },
+  "source_members": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/shorter_catechism_explained.json",
+      "bytes": 1323591,
+      "sha256": "90aea411d973c7c43af89df2520f8f08c57d97643f33a135c5473aa931479b7d"
+    }
+  ],
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "shorter-catechism-explained",
+    "retained_source_sha256": "90aea411d973c7c43af89df2520f8f08c57d97643f33a135c5473aa931479b7d",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "catechisms/shorter-catechism-explained.json",
+        "legacy_source_sha256": "39c8617aad4fe9091652051d0f468da5b55b2c04688bc9c5c9f49c3e6fed9e3f"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/shorter_catechism_explained.json",
+      "role": "primary-source",
+      "bytes": 1323591,
+      "sha256": "90aea411d973c7c43af89df2520f8f08c57d97643f33a135c5473aa931479b7d"
+    },
+    {
+      "name": "source-packet",
+      "path": "sources/shorter-catechism-explained/LIB-062.packet.json",
+      "role": "source-packet",
+      "bytes": 2579,
+      "sha256": "b536bdf242dd20a589d48504fb3cf43d13c80318ec92a0487660ac9169d7382c"
+    },
+    {
+      "name": "source-config",
+      "path": "sources/shorter-catechism-explained/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 932,
+      "sha256": "2ce668fca7a00e56b39438a0015030b3c5036f179bb1db65a45fafe8a72f342d"
+    },
+    {
+      "name": "source-readme",
+      "path": "raw/Creeds.json/README.md",
+      "role": "rights-evidence",
+      "bytes": 8871,
+      "sha256": "caa2a135ceb89bdea2baf411bcb2897b03c34d24473de7c43ca373c9d9008bef"
+    },
+    {
+      "name": "witness-inventory",
+      "path": "sources/shorter-catechism-explained/witnesses.json",
+      "role": "witness-inventory",
+      "bytes": 271,
+      "sha256": "1d55e8c162c5cfcb846b57de1a0a5ed71d8763094e188b287fc09ed610053870"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/shorter-catechism-explained/shorter-catechism-explained.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1756,
+      "sha256": "781c1d99a2c9f73f056af55dc37a3726718fb48c3d9cf261d9cad5f13c5c1fcd"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/shorter-catechism-explained/shorter-catechism-explained.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1806,
+      "sha256": "9ceabec2c66f4c6878e7b5d5a146bcf71d4c8e780068f712fa47fed39fe70c83"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/shorter-catechism-explained/shorter-catechism-explained.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1281,
+      "sha256": "56b858e9faa98accff7d0c2fa5219e8354d4ba905c085e5f2087e833a0639800"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "ticket-producer",
+      "path": "build/tei/lib062_shorter_catechism_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "bytes": 6495,
+      "sha256": "7ac821058fdb391d3cb3a76ffb7a4fe87320ac5287f97c7c3443be2ff4174955"
+    },
+    {
+      "name": "ticket-oracle",
+      "path": "build/tei/lib062_shorter_catechism_oracle.py",
+      "role": "supporting-validator-implementation",
+      "bytes": 22048,
+      "sha256": "bdae730ecbf91ea123dc4e15c74c63a13de56435edc0ffcd84747400e81fdec4"
+    },
+    {
+      "name": "shared-lib062-route",
+      "path": "build/tei/lib062_json_catechisms_reconstruction.py",
+      "role": "supporting-route-implementation",
+      "bytes": 49335,
+      "sha256": "a13e40ab8dcfd616c7ac89ff726a252bd984cc3068a29a14c207b1325d8f1c4d"
+    }
+  ],
+  "converter": {
+    "id": "ocd-creeds-json-lib062-shorter-catechism-explained-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lib062_shorter_catechism_reconstruction.py",
+    "implementation_sha256": "7ac821058fdb391d3cb3a76ffb7a4fe87320ac5287f97c7c3443be2ff4174955"
+  },
+  "validator": {
+    "id": "ocd-creeds-json-lib062-shorter-catechism-explained-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lib062_shorter_catechism_oracle.py",
+    "implementation_sha256": "bdae730ecbf91ea123dc4e15c74c63a13de56435edc0ffcd84747400e81fdec4",
+    "import_closure_sha256": "07ff5f5d5198fdd1ca2802951bf4d2384126b998f0e38541b8ce7ee5622d9df1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

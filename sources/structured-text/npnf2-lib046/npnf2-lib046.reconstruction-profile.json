@@ -1,0 +1,47 @@
+{
+  "contract": "ocd-npnf2-reconstruction-profile-v1",
+  "profile_id": "basil-of-caesarea-npnf2-three-work-v1",
+  "version": 1,
+  "source_member": {
+    "key": "npnf208",
+    "path": "raw/ccel/npnf2/npnf208.xml",
+    "bytes": 3303323,
+    "sha256": "95cf3dafefccec80e0949a03c7f1f605da293302d0dc7a8bd62a4e711a0c5532"
+  },
+  "assigned_roots": [
+    ["npnf208", "vii", "basil-of-caesarea-on-the-holy-spirit"],
+    ["npnf208", "viii", "basil-of-caesarea-hexaemeron"],
+    ["npnf208", "ix", "basil-of-caesarea-letters"]
+  ],
+  "assigned_census": {
+    "elements": 14341,
+    "attributes": 30629,
+    "text_nodes": 10388,
+    "tail_nodes": 10481,
+    "characters": 1733532,
+    "non_ascii_characters": 41065,
+    "notes": 2592,
+    "page_breaks": 326,
+    "scripture_refs": 1281
+  },
+  "source_envelope": {
+    "top_level_div1_count": 10,
+    "top_level_div1_ids_in_order": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
+    "assigned_top_level_div1_ids_in_order": ["vii", "viii", "ix"],
+    "excluded_top_level_div1_ids": ["i", "ii", "iii", "iv", "v", "vi", "x"],
+    "assigned_root_titles": {
+      "vii": "De Spiritu Sancto.",
+      "viii": "The Hexæmeron.",
+      "ix": "The Letters."
+    }
+  },
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "exact-assigned-root-order-and-complete-subtrees",
+    "exact-elements-attributes-text-tails-and-source-attribute-accounting",
+    "complete-title-page-preface-prolegomena-sibling-and-index-accounting",
+    "exact-retained-metadata-rights-and-source-level-credit-evidence",
+    "three-works-nonaccepted-and-publication-not-ready"
+  ],
+  "scope_boundary": "This candidate represents only complete subtrees rooted at vii, viii, and ix in retained source order. Title pages, preface, genealogical and chronological matter, prolegomena, and indexes remain source-accounted outside the assigned work projection; this family receipt does not review the other LIB-046 works."
+}

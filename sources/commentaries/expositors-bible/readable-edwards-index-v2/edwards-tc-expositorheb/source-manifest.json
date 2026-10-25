@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib035-readable-edwards-index-edwards-tc-expositorheb-v2",
+  "work_id": "expositors-bible--thomas-charles-edwards",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/edwards_tc_expositorheb.xml",
+      "role": "primary-source",
+      "bytes": 584922,
+      "sha256": "6da565a2393cb74c75f98589650072f05e0f9780855b5472fe6954810f926fb3"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-edwards-index-v2/edwards-tc-expositorheb/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 889,
+      "sha256": "c43eb292b444305481b4cdf42eb71f5d06c2b8459c8b33acb460f38a032f73d9"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-edwards-index-v2/edwards-tc-expositorheb/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1927,
+      "sha256": "73c44ffb68283a2e5e8c433e3ba3c70ada9b2d7bcf7b03b618b7d498a2af77a4"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-edwards-index-v2/edwards-tc-expositorheb/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 980,
+      "sha256": "9f536001fbbc973e97494b1552397520645474693ac37afb1bd1de7e29f1cf69"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-edwards-index-v2/edwards-tc-expositorheb/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1815,
+      "sha256": "3598775db2883c5f48bbc0e0e74b6863944af24a15ead8b8d475b91406f98e0b"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib035-readable-edwards-index-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_edwards_index_v2.py",
+    "implementation_sha256": "1e3c98143761cc93504e5eb742f10f369287ee1d1429da323e78572780b6dd85"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib035-readable-edwards-index-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib035_readable_edwards_index_v2_oracle.py",
+    "implementation_sha256": "b1db68c5781374df3e68856f2f2b55aa7a91175d9cfe461b53b5ceba781f79b4",
+    "import_closure_sha256": "b1db68c5781374df3e68856f2f2b55aa7a91175d9cfe461b53b5ceba781f79b4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

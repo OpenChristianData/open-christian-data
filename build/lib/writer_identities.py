@@ -41,6 +41,7 @@ _REGISTERED: dict[str, str] = {
     "meta_patch_schaff_contributors": "tool",
     "ccel_robertson_parser": "parser",
     "bcp_full_text_parser": "parser",
+    "bcp1662_parser": "parser",
     "gutenberg_commentary_parser": "parser",
     "gutenberg_inline_markup_parser": "parser",
     "schleitheim_confession_parser": "parser",
@@ -61,6 +62,10 @@ _REGISTERED: dict[str, str] = {
     "bible_dictionaries_parser": "parser",
     "sword_commentary_parser": "parser",
     "westminster_standard_parser": "parser",
+    "ccel_npnf1_parser": "parser",
+    "standard_ebooks_parser": "parser",
+    "notice_link_amendment": "tool",
+    "baxter_notice_correction": "tool",
 }
 
 

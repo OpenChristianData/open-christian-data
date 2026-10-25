@@ -1,0 +1,113 @@
+{
+  "authorities": [
+    {
+      "bytes": 92499,
+      "name": "retained-html",
+      "path": "raw/westminster-standard-org/form-of-church-government.html",
+      "role": "primary-source",
+      "sha256": "d5b31994e9ce43e7828ff65f3ac758e8974b0396d6ba03f991c785b8d92a3ac4"
+    },
+    {
+      "bytes": 1362,
+      "name": "work-config",
+      "path": "sources/doctrinal-documents/form-of-church-government/config.json",
+      "role": "work-configuration",
+      "sha256": "100a12101c0e4727a3da4fc9d53fc5d0c71c57d6e381b32f519fb464bfb97c40"
+    },
+    {
+      "bytes": 269,
+      "name": "witness-inventory",
+      "path": "sources/form-of-church-government/witnesses.json",
+      "role": "witness-inventory",
+      "sha256": "9e1bc5140fd17b289e8e38ee57109d1526a44859645de490b86afa36440599fa"
+    },
+    {
+      "bytes": 9366,
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/form-of-church-government/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "ffbee42abdf320decc57ca803d0c3eeab21b1c3cc0211081c7c1039d6178dd73"
+    },
+    {
+      "bytes": 1568,
+      "name": "family-member-census",
+      "path": "sources/doctrinal-documents/directory-for-family-worship/LIB-089.family-member-census.json",
+      "role": "family-scope-census",
+      "sha256": "9e73825470a82f9b90268e992d2d5c38f39301fc2f95fa5b2a8110a14ec054a7"
+    },
+    {
+      "bytes": 2488,
+      "name": "publick-worship-blocker",
+      "path": "sources/doctrinal-documents/directory-for-publick-worship/LIB-089.blocker.json",
+      "role": "family-scope-blocker",
+      "sha256": "12dd454bf190e880016a36cfdfa97d501ac957cfc6e07a01a1d05d47e1e9b4e0"
+    },
+    {
+      "bytes": 2133,
+      "name": "source-attribution-readme",
+      "path": "sources/doctrinal-documents/form-of-church-government/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "0721779abd15c86f111b21bc565ef7c222b74ec736ea30c1ffda3865ab9c2163"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 3023,
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/form-of-church-government/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a7e98bbed1ab3a039f73735e577e97f707704d676f693d954c7fb83d5e9f7fff"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib089-form-church-comment-preserving-html-to-tei",
+    "implementation_path": "build/tei/lib089_form_church_comments_reconstruction.py",
+    "implementation_sha256": "8d8c7396518d4faf9005574f74ae4f3093b63d823e20d6c2c2fb2a0aa8a21ba6",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "463d2c17c42e58b7148d7476af0b1696eb68a0e5c923fbc2eebc5106d5eac2db",
+  "retained_source_path": "raw/westminster-standard-org/form-of-church-government.html",
+  "source_id": "thewestminsterstandard-org-form-of-church-government-retained-html",
+  "ticket_id": "LIB-089",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib089-form-church-independent-comment-oracle",
+    "implementation_path": "build/tei/lib089_form_church_comments_oracle.py",
+    "implementation_sha256": "8e4f884c2d55c7625594848bb9ca10a9b328a8d63af7dc7c39100c39e849f93f",
+    "import_closure_sha256": "56929f6f7979102300197ee645aed8d0e288a8d1eb8e17f538f1ac3e367c1dca",
+    "version": "1"
+  },
+  "work_id": "form-of-church-government"
+}

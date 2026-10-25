@@ -1,0 +1,131 @@
+{
+  "authorities": [
+    {
+      "bytes": 5705,
+      "name": "owner-ticket",
+      "path": "plans/2026-08-26-whole-library-faithful-tei-completion/tickets/library/058-reconstruct-and-review-schaff-history-of-the-christian-church.md",
+      "role": "owner-route-evidence",
+      "sha256": "cee64908188a9c86227af51a72bde715bcb18f9ff61f545009e55ae6f6bd5abd"
+    },
+    {
+      "bytes": 35741,
+      "name": "owner-work-map",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/34e1ce0c692e-02-work-ticket-map.md",
+      "role": "owner-route-evidence",
+      "sha256": "34e1ce0c692ea72971a7615ba87e949be8c15d4bd1affb57353b39ccc8e9baf7"
+    },
+    {
+      "bytes": 138768,
+      "name": "owner-source-map",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/eced464d3b24-05-source-ticket-map.md",
+      "role": "owner-route-evidence",
+      "sha256": "eced464d3b241373ef751e7e1116722229304bf75ee3d785ccd02a958697a0e4"
+    },
+    {
+      "bytes": 3630817,
+      "name": "primary-source",
+      "path": "raw/ccel/schaff/hcc1.xml",
+      "role": "primary-source",
+      "sha256": "0a2a7cc56e2d00c791eeaacd5516a292a855426c3a8ceb8d5eeef6eeb49e3d09"
+    },
+    {
+      "bytes": 6829,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/schaff-history-vol-1/schaff-history-vol-1.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "288d3b7e091a37292a6c429d47e02fe3fe33da7ac437d21f3194c73a0908c95c"
+    },
+    {
+      "bytes": 4833,
+      "name": "validation-policy",
+      "path": "sources/structured-text/schaff-history-vol-1/schaff-history-vol-1.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "ce83ef6f63d06a076f704059745d0cb2dbc9edd4a57516daebfd5e872e6bfd89"
+    },
+    {
+      "bytes": 6104,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/schaff-history-vol-1/schaff-history-vol-1.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "sha256": "347c8a35c71052407825015ef6406f6514d46e7ccefa2bc4a227d94d134e6996"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "schaff-history-vol-1-thml-producer",
+    "implementation_path": "build/tei/schaff_history_vol_1_reconstruction.py",
+    "implementation_sha256": "c9820a44b1400850befbc687f804be1d56a3ec5aa8846ee686608799d26fd1bb",
+    "version": "1"
+  },
+  "member_selection": {
+    "identity_status": "source-member-bound; edition and textual-form claims unresolved",
+    "integral_support_root": "/ThML/ThML.body/div1[@id='ii']",
+    "primary_work_root": "/ThML/ThML.body/div1[@id='i']",
+    "selected_body_roots": [
+      {
+        "id": "i",
+        "ordinal": 1,
+        "tag": "div1",
+        "title": "Apostolic Christianity"
+      },
+      {
+        "id": "ii",
+        "ordinal": 2,
+        "tag": "div1",
+        "title": "Indexes"
+      }
+    ],
+    "selector": "/ThML/ThML.body/*",
+    "source_member": "raw/ccel/schaff/hcc1.xml"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "route_boundary": {
+    "candidate_status": "nonaccepted",
+    "canonical_data_or_ir_written": false,
+    "publication": "not_ready",
+    "rights_status": "unresolved"
+  },
+  "source_id": "ccel-schaff-hcc1-thml",
+  "ticket_id": "LIB-058",
+  "validator": {
+    "callable": "_oracle",
+    "id": "schaff-history-vol-1-independent-source-checker",
+    "implementation_path": "build/tei/schaff_history_vol_1_oracle.py",
+    "implementation_sha256": "be0bc466fc3c90c8a4dc2fc5313e6cf6ccb6c434992f0db3f52c44ffd48accac",
+    "import_closure_sha256": "9f41e6a6c2e294f62574229cbe9c1937d30d8730ce417e2d5053e27903e7f44c",
+    "version": "1"
+  },
+  "work_id": "schaff-history-vol-1"
+}

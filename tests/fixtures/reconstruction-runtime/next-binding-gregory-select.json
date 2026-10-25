@@ -1,0 +1,10 @@
+[
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/gregory-select-letters.source-manifest.json",
+    "original": "sources/structured-text/gregory-of-nazianzus-select-letters/gregory-select-letters.source-manifest.json",
+    "original_sha256": "580a785f5842ba47e8eed12b0b847a017250b063733f94ad55f5af0aaa790b7a",
+    "preservation_test": "tests/test_gregory_select_runtime_manifest.py::test_complete_historical_record_preserved",
+    "retained_package_sha256": "250fb3d30e67a437c71b5af4c5649289e6f717be9a2fae8ab59f3b1e28343655",
+    "work_id": "gregory-of-nazianzus-select-letters"
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "contract": "watson-lords-prayer-source-accountability-v1",
+  "schema": "watson-lords-prayer.source-accountability.schema.json",
+  "profile_id": "watson-lords-prayer-retained-thml-route-v1",
+  "source_scope": "Complete single retained ThML member and every direct ThML.body div1 carrier in source order.",
+  "source_member": {
+    "path": "raw/ccel/watson/prayer.xml",
+    "bytes": 1376060,
+    "sha256": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca",
+    "disposition": "included as the sole retained source member"
+  },
+  "member_census": [
+    {
+      "path": "raw/ccel/watson/prayer.xml",
+      "bytes": 1376060,
+      "sha256": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca",
+      "decision": "include",
+      "reason": "The exact retained source member named by 37c-317 and LIB-056; it is the sole retained ThML source member in this route slice."
+    }
+  ],
+  "excluded_member_count": 0,
+  "carrier_inventory": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "Title Page", "disposition": "selected-work", "selection_role": "body", "tei_region": "front"},
+    {"position": 1, "native_id": "ii", "source_tag": "div1", "source_title": "Contents", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 2, "native_id": "iii", "source_tag": "div1", "source_title": "The Preface to the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 3, "native_id": "iv", "source_tag": "div1", "source_title": "The First Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 4, "native_id": "v", "source_tag": "div1", "source_title": "The Second Petition in the Lord’s Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 5, "native_id": "vi", "source_tag": "div1", "source_title": "The Third Petition in the Lord’s Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 6, "native_id": "vii", "source_tag": "div1", "source_title": "The Fourth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 7, "native_id": "viii", "source_tag": "div1", "source_title": "The Fifth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 8, "native_id": "ix", "source_tag": "div1", "source_title": "The Sixth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 9, "native_id": "x", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back"}
+  ],
+  "body_node_sequence": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "Title Page", "disposition": "selected-work", "selection_role": "body", "tei_region": "front", "node_kind": "carrier"},
+    {"position": 1, "native_id": "ii", "source_tag": "div1", "source_title": "Contents", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 2, "native_id": "iii", "source_tag": "div1", "source_title": "The Preface to the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 3, "native_id": "iv", "source_tag": "div1", "source_title": "The First Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 4, "native_id": "v", "source_tag": "div1", "source_title": "The Second Petition in the Lord’s Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 5, "native_id": "vi", "source_tag": "div1", "source_title": "The Third Petition in the Lord’s Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 6, "native_id": "vii", "source_tag": "div1", "source_title": "The Fourth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 7, "native_id": "viii", "source_tag": "div1", "source_title": "The Fifth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 8, "native_id": "ix", "source_tag": "div1", "source_title": "The Sixth Petition in the Lord's Prayer", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 9, "native_id": "x", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back", "node_kind": "carrier"}
+  ],
+  "document_shell": {
+    "xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "root_name": "ThML",
+    "prolog": [
+      {"kind": "comment", "path": null, "text": " Copyright Christian Classics Ethereal Library ", "tail": "", "disposition": "accounted-source-document-shell"}
+    ],
+    "epilog": [],
+    "comments_and_processing_instructions": [],
+    "head_children": [
+      {"position": 0, "tag": "generalInfo", "attributes": {}, "text_sha256": "255ab745e82283ce61729b74110ba3da60ab564c7c9b80dd2d309733a0ef13e5", "disposition": "reproduced-in-source-readme"},
+      {"position": 1, "tag": "printSourceInfo", "attributes": {}, "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6", "disposition": "reproduced-in-source-readme"},
+      {"position": 2, "tag": "electronicEdInfo", "attributes": {}, "text_sha256": "c4f9273621c43c23324391e28e8395475bd9bc76652af7fc85557fc88e4181b3", "disposition": "reproduced-in-source-readme"},
+      {"position": 3, "tag": "style", "attributes": {"type": "text/css"}, "text_sha256": "026866e459af1df5619c0936d43741617e1409e594bcd450c5d7135e9f24f059", "disposition": "represented-in-tei-encodingDesc"},
+      {"position": 4, "tag": "style", "attributes": {"type": "text/xcss"}, "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "disposition": "accounted-empty-source-stylesheet"}
+    ]
+  },
+  "selected_feature_count": 6723,
+  "selected_feature_counts": {
+    "a": 2456,
+    "div": 3,
+    "div1": 10,
+    "div2": 2,
+    "h1": 2,
+    "h2": 10,
+    "h3": 1,
+    "insertIndex": 2,
+    "li": 325,
+    "p": 1547,
+    "scripRef": 2024,
+    "span": 340,
+    "ul": 1
+  },
+  "selected_comment_count": 0,
+  "document_comment_count": 0,
+  "source_claims": [
+    {"source_path": "/ThML/ThML.head/generalInfo", "text_sha256": "255ab745e82283ce61729b74110ba3da60ab564c7c9b80dd2d309733a0ef13e5", "excerpt": "third volume of Watson's series", "interpretation": "Provider editorial description used only as structural context; it does not settle the work boundary."},
+    {"source_path": "/ThML/ThML.head/printSourceInfo", "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6", "excerpt": "1692", "interpretation": "Retained source statement; not an adopted edition date or print-exemplar identification."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/publisherID", "text_sha256": "efaccac7d39eb66bdc41072c5b7c62d8a159bd8cdbe0eec7e3647f6f1481dd88", "excerpt": "ccel", "interpretation": "Source electronic publisher identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/authorID", "text_sha256": "3f8d40ad6a1d0038b8c334303fe06e70df25a1b78220855f6acc3aec951ffb3b", "excerpt": "watson", "interpretation": "Source electronic author identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bookID", "text_sha256": "25fe36108392295ccc168f7c3572ee59b65d673db877db8ecae595e7735145d6", "excerpt": "prayer", "interpretation": "Source electronic book identifier; not a settled constituent-work boundary."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/workID", "text_sha256": "25fe36108392295ccc168f7c3572ee59b65d673db877db8ecae595e7735145d6", "excerpt": "prayer", "interpretation": "Source electronic work identifier; not an independent edition or parts decision."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bkgID", "text_sha256": "09fef7a06922cb796913b3008072cf87be86d105b8c78f126d314929e7c0adcc", "excerpt": "lords_prayer_(watson)", "interpretation": "Source electronic catalog identifier; not adopted as print-edition evidence."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Title", "text_sha256": "06d674e09dce4e5bc20b382f3fc28964358a83cce9910a876d2c35d1ad5953cf", "excerpt": "The Lord's Prayer", "interpretation": "Primary retained-source title observation and route label."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Creator[@sub=\"Author\"][@scheme=\"short-form\"]", "text_sha256": "cab245e8a8b4f7d59882e6ca0d32f9fbf0aa787be3baec8ca84a8434e5d18d1b", "excerpt": "Thomas Watson", "interpretation": "Primary retained-source author observation, corroborated by title-page text."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Publisher", "text_sha256": "dae1fe0ff1c3fb937f1149c497794c6abce42aad2e0a72a3f9b8c064ed64d306", "excerpt": "Christian Classics Ethereal Library", "interpretation": "Provider metadata statement."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Date[@sub=\"Created\"]", "text_sha256": "7f7d2ad40f4632b1d43d7646cd7248d5f78ab16fe1faa107e06ab70cde8b89e4", "excerpt": "2000-07-09", "interpretation": "Electronic metadata date, not composition or print date."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Identifier[@scheme=\"URL\"]", "text_sha256": "3ff7a6db69a4446a1bba861f6525b53d6973aa44853734cee6214b3d190fd473", "excerpt": "/ccel/watson/prayer.html", "interpretation": "Embedded electronic identifier, kept distinct from the XML acquisition locator."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Language[@scheme=\"ISO639-3\"]", "text_sha256": "82fe032bd9337b5dfb99b28717cf8651daac73f2d319e6d6213544660b961ee7", "excerpt": "eng", "interpretation": "Electronic-source language metadata; no original-language claim is added."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h1", "text_sha256": "6ea3b13100bcedd5e89f437bbc7c21fc7e7a78c182b2d260d7e5bbf4bb8d11b3", "excerpt": "The Lord", "interpretation": "Retained title-page heading; work and edition identity remain separately unresolved."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h3", "text_sha256": "5e6f3eaa19a1ad38ba4f2f816360e94ff060174a1fab1237750f38cb0a71506a", "excerpt": "First published as part of A Body of Practical Divinity, 1692", "interpretation": "Retained title-page statement; it does not prove an exact print exemplar, containing-work relation, or witness lineage."}
+  ]
+}

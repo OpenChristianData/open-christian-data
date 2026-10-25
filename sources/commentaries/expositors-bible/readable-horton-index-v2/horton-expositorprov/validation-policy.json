@@ -1,0 +1,30 @@
+{
+  "contract": "ocd-expositors-lib035-readable-horton-index-validation-policy-v2",
+  "member_id": "horton-expositorprov",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "retained-source-hash",
+    "complete-root-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "comment-order-and-disposition",
+    "tei-p5",
+    "stock-native-projection-and-independent-verification",
+    "table-row-cell-spans-and-source-classes",
+    "image-reference-alt-title-and-missing-asset-accounting",
+    "source-index-div-not-quotation"
+  ],
+  "oracle_import_closure": [
+    "build/tei/expositors_bible_lib035_readable_horton_index_v2_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.expositors_bible_lib035_readable_horton_index_v2"
+  ]
+}

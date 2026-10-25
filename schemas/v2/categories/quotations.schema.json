@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/quotations.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "language",
+    "text",
+    "representation_revision",
+    "provenance",
+    "category",
+    "locator",
+    "citation"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "allOf": [
+        {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "category": {
+      "const": "quotations"
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "number",
+        "heading",
+        "paragraph"
+      ],
+      "properties": {
+        "kind": {
+          "const": "quotation"
+        },
+        "number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "heading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "author",
+        "work",
+        "locus"
+      ],
+      "properties": {
+        "author": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locus": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-quotations-bounded-v2",
+    "unit_type": "quotation",
+    "elements": {
+      "TEI": [
+        "teiHeader",
+        "text"
+      ],
+      "teiHeader": [
+        "fileDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title"
+      ],
+      "title": [],
+      "publicationStmt": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p"
+      ],
+      "text": [
+        "body"
+      ],
+      "body": [
+        "div"
+      ],
+      "div": [
+        "head",
+        "cit"
+      ],
+      "head": [
+        "hi"
+      ],
+      "cit": [
+        "quote",
+        "bibl"
+      ],
+      "quote": [
+        "hi"
+      ],
+      "bibl": [
+        "author",
+        "title",
+        "ref"
+      ],
+      "author": [],
+      "ref": [],
+      "hi": [],
+      "p": [
+        "hi"
+      ]
+    },
+    "attributes": {
+      "TEI": [],
+      "div": [
+        "type",
+        "n",
+        "xml:id"
+      ],
+      "hi": [
+        "rend"
+      ],
+      "ref": [
+        "type"
+      ],
+      "cit": [
+        "n"
+      ]
+    },
+    "renditions": [
+      "italic",
+      "small-caps"
+    ],
+    "warning_reasons": [
+      "typography-in-readable-text"
+    ],
+    "exclusion_reasons": [
+      "header-metadata"
+    ],
+    "header_elements": {
+      "teiHeader": [
+        "fileDesc",
+        "revisionDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title",
+        "author"
+      ],
+      "title": [],
+      "author": [],
+      "publicationStmt": [
+        "p",
+        "publisher",
+        "availability"
+      ],
+      "publisher": [],
+      "availability": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p",
+        "bibl"
+      ],
+      "p": [],
+      "bibl": [
+        "ptr",
+        "idno",
+        "note"
+      ],
+      "ptr": [],
+      "idno": [],
+      "note": [],
+      "revisionDesc": [
+        "change"
+      ],
+      "change": []
+    },
+    "header_attributes": {
+      "availability": [
+        "status"
+      ],
+      "ptr": [
+        "target"
+      ],
+      "idno": [
+        "type"
+      ],
+      "note": [
+        "type"
+      ],
+      "change": [
+        "xml:id",
+        "when"
+      ]
+    }
+  }
+}

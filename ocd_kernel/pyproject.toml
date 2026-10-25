@@ -9,6 +9,7 @@ description = "Shared kernel utilities for Open Christian Data"
 requires-python = ">=3.11"
 dependencies = [
   "jsonschema",
+  "jsonschema-rs==0.57.1",
   "lxml",
   "PyYAML",
   "remotezip",
@@ -22,6 +23,7 @@ include = ["ocd_kernel*"]
 [tool.setuptools.package-data]
 "ocd_kernel.lib.lexicons" = ["data/*.json"]
 "ocd_kernel.lib.source_transliteration_lexicons" = ["*.yaml"]
+"ocd_kernel.reconstruction" = ["schemas/*.json"]
 "ocd_kernel.tei" = [
   "vendor/VERSION.txt",
   "vendor/SPIKE_NOTES.md",

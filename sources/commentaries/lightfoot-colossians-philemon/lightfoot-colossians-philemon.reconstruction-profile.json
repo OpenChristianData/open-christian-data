@@ -1,0 +1,206 @@
+{
+  "profile_id": "lightfoot-colossians-philemon-v3",
+  "source_scope": {
+    "external_path": "D:/Library/Open Christian Data/raw/gutenberg/commentary/lightfoot-colossians-philemon/pg50857.txt",
+    "bytes": 1511463,
+    "sha256": "a97cb49964906a2c158a0444cfdc3b0daf13261620c919a90f1333a98ac0b913",
+    "encoding": "UTF-8 with BOM; CRLF source line endings",
+    "line_count": 26185,
+    "complete": true
+  },
+  "line_representation": {
+    "leaf": "one TEI source-line seg per decoded source line, with source heading lines as head leaves",
+    "identity": "source line number, byte span, raw-line SHA-256, and exact visible text",
+    "formatting": "Exact source delimiters remain readable; source-supported typography receives native hi spans with source coordinates. Cross-line and split spans resolve to a real first-fragment ID. No normalization or inferred verse joins."
+  },
+  "envelope_regions": [
+    {
+      "id": "lightfoot-region-preamble",
+      "type": "gutenberg-preamble",
+      "start_line": 1,
+      "end_line": 29
+    },
+    {
+      "id": "lightfoot-region-transcriber-note",
+      "type": "transcriber-note",
+      "start_line": 30,
+      "end_line": 74
+    },
+    {
+      "id": "lightfoot-region-title-page",
+      "type": "title-page",
+      "start_line": 75,
+      "end_line": 159
+    },
+    {
+      "id": "lightfoot-region-preface",
+      "type": "preface",
+      "start_line": 160,
+      "end_line": 219
+    },
+    {
+      "id": "lightfoot-region-contents",
+      "type": "contents",
+      "start_line": 220,
+      "end_line": 262
+    },
+    {
+      "id": "lightfoot-region-colossians-introduction",
+      "type": "colossians-introduction",
+      "start_line": 263,
+      "end_line": 10813
+    },
+    {
+      "id": "lightfoot-region-colossians-frontmatter",
+      "type": "colossians-text-frontmatter",
+      "start_line": 10814,
+      "end_line": 10859
+    },
+    {
+      "id": "lightfoot-region-colossians-commentary",
+      "type": "colossians-text-commentary",
+      "start_line": 10860,
+      "end_line": 18352
+    },
+    {
+      "id": "lightfoot-region-colossians-apparatus",
+      "type": "colossians-apparatus",
+      "start_line": 18353,
+      "end_line": 22120
+    },
+    {
+      "id": "lightfoot-region-philemon-introduction",
+      "type": "philemon-introduction",
+      "start_line": 22121,
+      "end_line": 23594
+    },
+    {
+      "id": "lightfoot-region-philemon-frontmatter",
+      "type": "philemon-text-frontmatter",
+      "start_line": 23595,
+      "end_line": 23615
+    },
+    {
+      "id": "lightfoot-region-philemon-commentary",
+      "type": "philemon-text-commentary",
+      "start_line": 23616,
+      "end_line": 24498
+    },
+    {
+      "id": "lightfoot-region-additions",
+      "type": "additions-and-corrections",
+      "start_line": 24499,
+      "end_line": 24586
+    },
+    {
+      "id": "lightfoot-region-index",
+      "type": "index",
+      "start_line": 24587,
+      "end_line": 25784
+    },
+    {
+      "id": "lightfoot-region-colophon-note",
+      "type": "colophon-and-transcriber-note",
+      "start_line": 25785,
+      "end_line": 25834
+    },
+    {
+      "id": "lightfoot-region-gutenberg-end",
+      "type": "gutenberg-end-envelope",
+      "start_line": 25835,
+      "end_line": 25862
+    },
+    {
+      "id": "lightfoot-region-gutenberg-license",
+      "type": "gutenberg-license",
+      "start_line": 25863,
+      "end_line": 26185
+    }
+  ],
+  "source_native_features": {
+    "colossians_range_occurrences": 106,
+    "philemon_range_occurrences": 14,
+    "range_labels_are_occurrences": true,
+    "range_continuation_example": {
+      "marker_line": 10918,
+      "continuation_lines": [
+        10920,
+        10921
+      ],
+      "next_scripture_line": 10923,
+      "rule": "retain page-context carrier; do not infer a joined verse unit"
+    },
+    "footnote_heads": 759,
+    "footnote_numbers_missing_from_heads": [
+      177,
+      299
+    ],
+    "sidenote_markers": 677,
+    "sidenote_distinct_marker_lines": 676,
+    "sidenote_start_occurrences": 453,
+    "sidenote_inline_occurrences": 224,
+    "sidenote_cross_line_markers": 150,
+    "dash_separator_lines": 136,
+    "illustration_placeholders": 1,
+    "gutenberg_start_markers": 1,
+    "gutenberg_end_markers": 1,
+    "greek_carrier_lines": 231,
+    "paraphrase_carrier_lines": 188,
+    "lemma_carrier_lines": 87,
+    "apparatus_carrier_lines": 11,
+    "commentary_carrier_lines": 6552,
+    "footnote_reference_attachments": 761,
+    "footnote_reference_literal_exceptions": 2,
+    "mixed_source_lines": 1,
+    "mixed_source_line_parts": 2,
+    "post_commentary_essays": 3
+  },
+  "mapping": {
+    "range_occurrence": "source range heading plus source-native scripture, optional paraphrase, lemma annotation, critical apparatus band, and commentary spans until the next heading or region end",
+    "paragraph": "contiguous nonblank source lines become TEI p blocks with exact source-line seg leaves",
+    "heading": "source-located display headings and range heads become native TEI head source-line leaves; footnote markers use native note label leaves because the bundled P5 content model does not allow note/head",
+    "footnote": "Footnote N becomes a native TEI note with a label source-line leaf and indented body p blocks, excluding trailing blank lines",
+    "sidenote": "literal [Sidenote: ...] spans, including source line continuation segments",
+    "apparatus": "critical Greek reading bands remain distinct apparatus child units; Various Readings, Laodiceans manuscript/capitula, Laodiceans text/apparatus, and notes/history are separate source regions",
+    "lemma": "source-separated Greek lemma plus gloss/annotation spans remain distinct lemma child units",
+    "parallel_reading": "the source's prose wrapper contains two provisional source-linear native TEI tables: lines 18466-18474 and 18481-18485, with blank source lines retained in one ordered cell per source row; page-image column geometry remains unresolved",
+    "footnote_reference": "All 761 genuine source calls link to the unique retained Footnote definition. The year [1550] at line3804 and scripture verse [24] at line18346 remain literal. Actual reference text and character offsets must match the source.",
+    "mixed_source_line": "line 13183 is retained as one source line with exact inline parts: the Greek prefix is marked scripture-text and the English suffix commentary; no verse join is inferred",
+    "index_and_license": "retained as envelope regions with exact source-line leaves",
+    "typography": "Independent source interval coverage governs underscore italics and Greek emphasis, double-equals uncial, the explicit blackletter example, generic equals emphasis, superscript and subscript notation. Literal exceptions remain source-located. Actual hi intervals and links are checked before a private clone is normalized for structural checks. Per-line parts[].id values identify source-only intervals, not necessarily XML elements; actual fragments may subdivide them. Each whole span ID resolves to a real first XML fragment.",
+    "post_commentary_essays": [
+      {
+        "id": "lightfoot-various-readings",
+        "contents_line": 246,
+        "start_line": 18353,
+        "end_line": 19107
+      },
+      {
+        "id": "lightfoot-meaning-of-pleroma",
+        "contents_line": 248,
+        "start_line": 19108,
+        "end_line": 20276
+      },
+      {
+        "id": "lightfoot-epistle-from-laodicea",
+        "contents_line": 250,
+        "start_line": 20277,
+        "end_line": 22120,
+        "children": [
+          "lightfoot-laodiceans-mss-capitula",
+          "lightfoot-laodiceans-text-apparatus",
+          "lightfoot-laodiceans-notes-history"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Greek/paraphrase/lemma/apparatus/commentary labels are source-layout carriers established by bounded lexical/layout rules and source-located exceptions; they remain open to human review.",
+    "Repeated range labels are not deduplicated and no semantic verse joins are inferred.",
+    "The two parallel-reading tables preserve source order and blank lines in provisional one-cell rows; original page-image columns have not been established.",
+    "The mixed source line at 13183 is split only at the exact retained Greek/English boundary and remains a source-layout interpretation pending human review.",
+    "The candidate does not establish rights, human textual acceptance, visual source comparison, or publication authorization.",
+    "Two numeric brackets remain source-located literals: year [1550] at line3804 and scripture verse [24] at line18346; all other numeric bracket calls are source-resolved and checked at exact character offsets.",
+    "The three mixed-script underscore spans and two generic equals-emphasis spans preserve emphasis while their exact printed font remains unresolved."
+  ]
+}

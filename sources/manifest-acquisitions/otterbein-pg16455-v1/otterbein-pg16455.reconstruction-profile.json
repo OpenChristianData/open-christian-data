@@ -1,0 +1,36 @@
+{
+  "profile_id": "otterbein-pg16455-retained-html-v1",
+  "identity": {
+    "work_id": "otterbein-hymnal",
+    "textual_form_id": "otterbein-hymnal-gutenberg-retained",
+    "edition_id": "otterbein-hymnal-gutenberg-electronic",
+    "acquisition_id": "otterbein-hymnal-gutenberg-acquired",
+    "work_title": "The Otterbein Hymnal: For Use in Public and Social Worship",
+    "source_title": "The Otterbein Hymnal",
+    "creator_statement": "Prepared by Edmund S. Lorenz",
+    "publication_statement": "Dayton, Ohio: United Brethren Publishing House, 1892"
+  },
+  "scope": "The complete single retained Project Gutenberg HTML member for PG 16455, including its electronic header and license footer, title page, front matter, contents, all hymns in source order, and first-line index. The ZIP package and cover are separately inventoried support members. This is one complete titled hymnal work represented by exactly one TEI document.",
+  "member_census": [
+    {"path":"raw/gutenberg/16455/html/pg16455-images.html","role":"primary-source","decision":"include","reason":"Canonical acquisition sidecar identifies this exact extracted HTML as the principal retained textual source."},
+    {"path":"raw/gutenberg/16455/pg16455-h.zip","role":"acquisition-package","decision":"account-only","reason":"Retained container for the extracted source and cover; it is not a second textual witness."},
+    {"path":"raw/gutenberg/16455/html/16455-cover.png","role":"support-media","decision":"account-only","reason":"Retained archive cover; the selected HTML contains no body image reference to it."}
+  ],
+  "work_boundary": {
+    "top_level_complete_works": 1,
+    "evidence": "The retained title page identifies one hymnal; its 548 numbered hymn blocks are contained by the named hymnal and the first-line index points back to those blocks. Front matter, contents, hymns, indexes, and the Gutenberg wrapper remain within this single edition.",
+    "unresolved_boundaries": []
+  },
+  "feature_floor": [
+    "exact retained member and byte identity",
+    "complete HTML document shell, head metadata, comments, body order, attributes, text and tails accounted",
+    "one TEI document for one complete top-level titled work",
+    "548 source-identified hymns in order, with hymn numbers and source headings",
+    "all source stanza groups and line paragraphs retained in place",
+    "all 394 PG page-marker comments retained as page milestones at their source positions",
+    "all 588 links retained in source order with local targets closed",
+    "front matter, title page, contents, first-line index, Gutenberg header and license footer represented",
+    "retained cover explicitly accounted as support, with no visual-equivalence claim",
+    "nonaccepted candidate, rights, visual collation, print comparison and human decisions remain unresolved"
+  ]
+}

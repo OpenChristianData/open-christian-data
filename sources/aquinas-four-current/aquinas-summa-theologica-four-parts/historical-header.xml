@@ -1,0 +1,121 @@
+<teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Summa Theologica: Four Corrected English Components</title>
+        <author>Thomas Aquinas</author>
+        <respStmt>
+          <resp>translated by</resp>
+          <name>Fathers of the English Dominican Province</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Open Christian Data</publisher>
+        <date when="2026-08-31">2026</date>
+        <availability status="free">
+          <licence target="https://www.gutenberg.org/policy/license.html">Project Gutenberg records each retained component as public domain in the USA; Project Gutenberg trademark and redistribution terms remain distinct and jurisdiction-dependent.</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="source-pg17611">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part I (Prima Pars)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">17611</idno>
+          </bibl>
+          <bibl xml:id="source-pg17897">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part I-II (Pars Prima Secundae)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">17897</idno>
+          </bibl>
+          <bibl xml:id="source-pg18755">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part II-II (Secunda Secundae)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">18755</idno>
+          </bibl>
+          <bibl xml:id="source-pg19950">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part III (Tertia Pars)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">19950</idno>
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>Every non-wrapper retained HTML content unit is projected exactly once and bound by source ID. Project Gutenberg header and license wrappers are retained separately and excluded from the candidate text. No print pagination or omitted formula is reconstructed.</p>
+        <p>The electronic edition documents added dedication, contents, prologues, question and article numbering; Latin-referenced and transcription corrections; absent print pagination and headers; omitted repetitive article formula; normalized Bible citation numerals; inline bracketed print footnotes; transliterated Greek; and altered emphasis and quotation conventions.</p>
+      </projectDesc>
+      <classDecl>
+        <taxonomy xml:id="summa-analysis-categories">
+          <category xml:id="objection">
+            <catDesc>Source paragraph is an objection.</catDesc>
+          </category>
+          <category xml:id="sed-contra">
+            <catDesc>Source paragraph is the counter-statement.</catDesc>
+          </category>
+          <category xml:id="respondeo">
+            <catDesc>Source paragraph is the principal answer.</catDesc>
+          </category>
+          <category xml:id="reply">
+            <catDesc>Source paragraph is a reply to an objection.</catDesc>
+          </category>
+          <category xml:id="inquiry">
+            <catDesc>Source paragraph is a numbered question inquiry.</catDesc>
+          </category>
+          <category xml:id="source-article-heading-mislabeled">
+            <catDesc>Source marks an article start as a duplicate question heading.</catDesc>
+          </category>
+          <category xml:id="electronic-editorial-insertion">
+            <catDesc>Material is an electronic-edition insertion between source questions.</catDesc>
+          </category>
+          <category xml:id="source-question-heading-omitted">
+            <catDesc>Source omits the question-number heading; boundary is recovered from the retained sequence and article labels.</catDesc>
+          </category>
+          <category xml:id="source-article-heading-omitted">
+            <catDesc>Source omits a one-article heading; boundary is recovered from the retained question structure.</catDesc>
+          </category>
+          <category xml:id="source-article-number-omitted">
+            <catDesc>Source article label omits its number.</catDesc>
+          </category>
+          <category xml:id="source-article-label-mismatch">
+            <catDesc>Literal source article number conflicts with semantic position.</catDesc>
+          </category>
+          <category xml:id="source-question-label-mismatch">
+            <catDesc>Literal source question number conflicts with the current question.</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="en">English</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-31">Created deterministic, nonaccepted ticket-09 TEI candidate.</change>
+    </revisionDesc>
+  </teiHeader>

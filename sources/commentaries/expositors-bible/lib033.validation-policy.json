@@ -1,0 +1,69 @@
+{
+  "contract": "ocd-expositors-bible-lib033-validation-policy-v2",
+  "policy_id": "lib033-complete-retained-xml-to-tei-v2",
+  "version": 2,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_source_members": 12,
+  "required_excluded_members": 35,
+  "required_retained_family_members": 47,
+  "required_work_ids": [
+    "expositors-bible--alexander-maclaren",
+    "expositors-bible--alfred-plummer",
+    "expositors-bible--andrew-harper",
+    "expositors-bible--frederic-w-farrar",
+    "expositors-bible--g-g-findlay"
+  ],
+  "required_feature_count": 67869,
+  "required_source_bytes": 12439067,
+  "required_namespace_attribute_collision_count": 10,
+  "required_unresolved_ids": [
+    "lib033-print-edition-collation-not-performed",
+    "lib033-rights-and-publication-review",
+    "lib033-retained-inventory-47-vs-legacy-48",
+    "lib033-maclaren-colphm-source-author-spelling"
+  ],
+  "forbidden_import_prefixes": [
+    "build.tei.expositors_bible_lib033_reconstruction",
+    "build.parsers.ccel_expositors_bible",
+    "build.lib.ccel_thml",
+    "ocd_kernel.bible_refs",
+    "ocd_kernel.lib.bible_refs"
+  ],
+  "checks": [
+    "source-authority-digests",
+    "exact-twelve-member-lineage",
+    "complete-forty-seven-member-family-census",
+    "exact-retained-bytes-decoded-from-accountability-or-tei",
+    "findlay-nested-source-derived-tei",
+    "independent-xml-element-order-hierarchy-attributes-and-text",
+    "five-frozen-work-identities",
+    "legacy-ten-claim-lineage-with-two-maclaren-member-explanation",
+    "candidate-package-schema",
+    "source-accountability-schema",
+    "exact-candidate-source-id",
+    "exact-canonical-candidate-manifest",
+    "type-strict-canonical-json-members",
+    "closed-provenance-object",
+    "exact-unresolved-records-and-order",
+    "exact-candidate-readme",
+    "closed-tei-element-structure",
+    "recursive-exact-tei-qname-attributes-text-tail-and-order",
+    "namespace-qualified-source-attributes",
+    "tei-p5-xsd",
+    "rights-and-attribution",
+    "localized-unresolved-ledger",
+    "producer-independent-transitive-import-closure"
+  ],
+  "scope_notes": {
+    "recursive-exact-tei-qname-attributes-text-tail-and-order": "For the two Findlay members, the independent check compares the retained source-body carrier hierarchy, source-child order, direct text, tails, and projected attributes while permitting attributed transparent compatibility wrappers; the other ten members retain exact diagnostic-tree comparison.",
+    "evidence-only-envelope": "Findlay envelope and metadata features remain exact retained-source and feature-ledger evidence-only rows with null selectors; source title attributes without a projected head remain on their source feature rows without a separate readable projection or fabricated attribute selector."
+  }
+}

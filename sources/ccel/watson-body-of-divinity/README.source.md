@@ -1,0 +1,9 @@
+# A Body of Divinity: retained CCEL source and data notice
+
+The selected human-visible data credit and bounded rights notice is `data/structured-text/watson-body-of-divinity/README.md`. Carry that notice into the private release package and any separately authorized public deliverable.
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/watson/divinity.html). The accepted electronic member remains the complete retained ThML body, with ten source-ordered divisions; its accepted source and master are unchanged. The source header names Thomas Watson as author, Jon Van Hofwegen for **Markup**, and declares **Public Domain**. The CCEL staff description by Kathleen O'Bannon is outside the selected text. The body includes the C. H. Spurgeon memoir and the source-labeled automatically inserted Scripture reference index.
+
+The selected records preserve every accepted readable word, source link, reference label and target. Only CCEL presentation classes are removed or mapped to semantic index roles, with exact private inverse accounting; the mechanical source index is disclosed, not claimed as printed historical apparatus. No image, stylesheet, staff description or source file formatting enters selected public rows. The source's blank print publication field supplies no print year or print-equivalence claim.
+
+The retained provider public-domain declaration, [CCEL policy](https://ccel.org/about/copyright.html), and the project's [CCEL permission record](../../../docs/sources/ccel-permission.md) support qualified private United States historical-text preparation. CCEL reserves its files and formatting and prohibits selling those files or formatting derivatives. Credit CCEL as the source; preserve author, markup, and memoir attribution. No CC0, worldwide-clearance, or public-deployment claim is made. The selected data notice above governs delivery.

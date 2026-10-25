@@ -24,6 +24,7 @@ import re
 import time
 import tomllib
 import unicodedata
+from dataclasses import dataclass
 from datetime import datetime, timezone
 import sys
 from pathlib import Path
@@ -32,19 +33,24 @@ _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
-from build.lib._generated_enums import CHURCH_FATHERS__META__PROVENANCE__PROCESSING_METHOD
+from build.lib._generated_enums import (  # noqa: E402
+    CHURCH_FATHERS__META__PROVENANCE__PROCESSING_METHOD,
+)
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib.parser_logging import configure_logging as _shared_setup_logging
 RAW_DIR = REPO_ROOT / "raw" / "Commentaries-Database"
 OUTPUT_DIR = REPO_ROOT / "data" / "church-fathers"
 BOOK_CODES_PATH = REPO_ROOT / "build" / "bible_data" / "osis_book_codes.json"
-
+SOURCE_TITLE_CORRECTIONS_PATH = (
+    REPO_ROOT / "sources" / "church-fathers" / "source-title-corrections.json"
+)
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v1.3.0"
 SOURCE_REPO = "https://github.com/HistoricalChristianFaith/Commentaries-Database"
 # Date the Commentaries-Database git clone was downloaded to raw/Commentaries-Database/.
 # Update this if the raw data is re-cloned from the upstream repo.
@@ -57,6 +63,7 @@ assert "automated" in CHURCH_FATHERS__META__PROVENANCE__PROCESSING_METHOD, "inva
 SOURCE_SLUG_MAX_LEN = 50   # source title slug
 RAW_REF_SLUG_MAX_LEN = 40  # raw ref slug (non-canonical books only)
 LOG_FILE = Path(__file__).with_suffix(".log")
+
 
 # ---------------------------------------------------------------------------
 # Correction layer
@@ -73,6 +80,49 @@ LOG_FILE = Path(__file__).with_suffix(".log")
 #   Key: source author_dir.name  Value: target author_dir.name
 #   Source author generates no output file; all entries appear under the target.
 # ---------------------------------------------------------------------------
+
+PACIAN_PATERIUS_STEMS = (
+    "Exodus 3_2",
+    "Exodus 5_20",
+    "Exodus 8_26",
+    "Exodus 20_24",
+    "Exodus 26_19",
+    "Exodus 26_32",
+    "Exodus 33_21",
+    "Exodus 34_7",
+    "Leviticus 1_6",
+    "Leviticus 6_9",
+    "Leviticus 7_3",
+    "Leviticus 7_33",
+    "Leviticus 13_57",
+    "Leviticus 19_23",
+    "Numbers 6_18",
+    "Numbers 7_89",
+    "Numbers 8_7",
+    "Numbers 8_24",
+    "Numbers 9_8",
+    "Numbers 10_2",
+    "Numbers 10_29",
+    "Numbers 19_15",
+    "Numbers 24_15",
+    "Numbers 24_21",
+    "Numbers 32_4",
+    "Numbers 35_28",
+)
+ISIDORE_OF_SEVILLE_REROUTE_STEMS = tuple(
+    f"Luke {reference.replace('.', '_')}"
+    for reference in (
+        "6.1",
+        "6.43",
+        "7.24",
+        "8.1",
+        "9.10",
+        "10.3",
+        "12.41",
+        "18.31",
+        "24.25",
+    )
+)
 
 ENTRY_CORRECTIONS: dict = {
     # --- Verse tag fixes ---
@@ -102,6 +152,12 @@ ENTRY_CORRECTIONS: dict = {
     ("Cyprian", "1 Peter 5_5"): {"action": "exclude"},
     # <10 words, truncated/garbled, attribution not possible (UPSTREAM_BUGS.md 2026-04-15)
     ("Tatian the Assyrian", "Mark 9_48"): {"action": "exclude"},
+    # These 26 Pentateuch records are not supported as Pacian's work. Exclude
+    # them until the retained source carries a verified attribution.
+    **{
+        ("Pacian of Barcelona", stem): {"action": "exclude"}
+        for stem in PACIAN_PATERIUS_STEMS
+    },
 
     # --- Rerouting: suppress from source, inject into target ---
     # Synopsis Scripturae Sacrae (CPG 2249), >=6th century; CPG 2249; Roger Pearse blog 2018-09-18
@@ -111,6 +167,16 @@ ENTRY_CORRECTIONS: dict = {
     # Catena Aurea on Mark labels these PSEUDO-JEROME; Aquinas Catena Aurea Mark Ch1.html / Ch15.html
     ("Jerome", "Mark 1_11"): {"action": "reroute", "target": "Pseudo-Jerome"},
     ("Jerome", "Mark 15_32"): {"action": "reroute", "target": "Pseudo-Jerome"},
+    **{
+        ("Isidore of Seville", stem): {
+            "action": "reroute",
+            "target": "Isidore of Pelusium",
+        }
+        for stem in ISIDORE_OF_SEVILLE_REROUTE_STEMS
+    },
+    # This block names Vigilius of Thapsus in its own text and duplicates part
+    # of Vigilius's retained Matthew 1:1 Catena block. Do not emit a second copy.
+    ("Athanasius of Alexandria", "Matthew 1_1"): {"action": "exclude"},
 }
 
 # When processing a target author, also pull these TOMLs from their original source dirs.
@@ -126,6 +192,10 @@ REROUTE_INJECT: dict = {
         ("Jerome", "Mark 1_11"),
         ("Jerome", "Mark 15_32"),
     ],
+    "Isidore of Pelusium": [
+        ("Isidore of Seville", stem)
+        for stem in ISIDORE_OF_SEVILLE_REROUTE_STEMS
+    ],
 }
 
 # Redirect an entire author's TOML directory to a different target author.
@@ -137,6 +207,31 @@ REROUTE_AUTHOR: dict = {
     # All commentaries uploaded under "Remigius of Rheims" are actually by
     # Remigius of Auxerre (841-908) -- a Carolingian naming collision at ingest.
     "Remigius of Rheims": "Remigius of Auxerre",
+}
+
+# These retained directories are the New Testament books themselves, not
+# historical authors. Their commentary records are Old Testament quotations
+# carried by the named New Testament book, so the directory identity is the
+# source work. This is parser semantics, not a post-parse metadata patch.
+NT_BOOK_SOURCE_TITLES = {
+    "Romans": "The Epistle to the Romans",
+    "Matthew": "The Gospel According to Matthew",
+    "Acts": "The Acts of the Apostles",
+    "Hebrews": "The Epistle to the Hebrews",
+    "Mark": "The Gospel According to Mark",
+    "Luke": "The Gospel According to Luke",
+    "1 Corinthians": "The First Epistle to the Corinthians",
+    "2 Corinthians": "The Second Epistle to the Corinthians",
+    "Galatians": "The Epistle to the Galatians",
+    "Ephesians": "The Epistle to the Ephesians",
+    "James": "The Epistle of James",
+    "Revelation": "The Revelation of John",
+    "1 Peter": "The First Epistle of Peter",
+    "John": "The Gospel According to John",
+    "Philippians": "The Epistle to the Philippians",
+    "2 Peter": "The Second Epistle of Peter",
+    "Jude": "The Epistle of Jude",
+    "1 Timothy": "The First Epistle to Timothy",
 }
 
 # Prepended to the provenance.notes field for specific authors.
@@ -189,6 +284,52 @@ _FILENAME_RE = re.compile(r"^(.+)\s+(\d+)_(.+)$")
 _SLUG_STRIP_RE = re.compile(r"[^\w\s-]")
 _SLUG_SPACE_RE = re.compile(r"[\s]+")
 _SLUG_HYPHEN_RE = re.compile(r"-+")
+_SOURCE_TITLE_SMALL_WORDS = frozenset(
+    {
+        "a", "an", "the", "and", "but", "or", "nor", "so", "yet",
+        "at", "by", "from", "in", "into", "of", "off", "on", "onto",
+        "out", "over", "to", "up", "with", "as", "vs",
+    }
+)
+_ROMAN_NUMERAL_CHARS = frozenset("IVXLCDM")
+
+
+@dataclass(frozen=True)
+class SourceTitleCorrection:
+    quote_sha256: str
+    source_title: str
+    confidence: str
+    evidence_reference: str
+
+
+def _validate_source_title_correction_carrier(
+    source_path: str,
+    block_index: int,
+    block: dict,
+    correction: SourceTitleCorrection,
+) -> None:
+    quote = (block.get("quote") or "").strip()
+    if not quote:
+        raise ValueError(
+            f"Source-title correction binds an empty quote: {source_path} "
+            f"block {block_index}"
+        )
+    actual_quote_sha256 = _quote_sha256(quote)
+    if actual_quote_sha256 != correction.quote_sha256:
+        raise ValueError(
+            f"Retained quote changed for source-title correction {source_path} "
+            f"block {block_index}: {actual_quote_sha256} != "
+            f"{correction.quote_sha256}"
+        )
+    retained_title = _normalize_source_title(
+        (block.get("source_title") or "").strip()
+    )
+    if retained_title and retained_title != correction.source_title:
+        raise ValueError(
+            f"Retained title contradicts source-title correction for {source_path} "
+            f"block {block_index}: {retained_title!r} != "
+            f"{correction.source_title!r}"
+        )
 
 
 def _ascii_safe(s: str) -> str:
@@ -216,6 +357,163 @@ def slugify(s: str, max_len: int = 60) -> str:
     s = _SLUG_HYPHEN_RE.sub("-", s)
     s = s.strip("-")
     return s[:max_len].rstrip("-")
+
+
+def _normalize_source_title(source_title: str) -> str:
+    """Normalize all-uppercase source metadata to the accepted display form."""
+    if (
+        not source_title
+        or not any(character.isalpha() for character in source_title)
+        or source_title != source_title.upper()
+    ):
+        return source_title
+
+    normalized_tokens: list[str] = []
+    for index, token in enumerate(source_title.split()):
+        start = 0
+        while start < len(token) and not token[start].isalpha():
+            start += 1
+        end = len(token)
+        while end > start and not token[end - 1].isalpha():
+            end -= 1
+        prefix = token[:start]
+        core = token[start:end]
+        suffix = token[end:]
+        if not core:
+            normalized_tokens.append(token)
+        elif (
+            1 <= len(core) <= 7
+            and core.isalpha()
+            and all(character in _ROMAN_NUMERAL_CHARS for character in core)
+        ):
+            normalized_tokens.append(token)
+        elif index > 0 and core.lower() in _SOURCE_TITLE_SMALL_WORDS:
+            normalized_tokens.append(prefix + core.lower() + suffix)
+        else:
+            normalized_tokens.append(prefix + core[0].upper() + core[1:].lower() + suffix)
+    return " ".join(normalized_tokens)
+
+
+def _quote_sha256(quote: str) -> str:
+    return hashlib.sha256(quote.encode("utf-8")).hexdigest()
+
+
+def _load_source_title_corrections(
+    path: Path,
+) -> dict[tuple[str, int], SourceTitleCorrection]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("authority_kind") != "retained-source-title-corrections":
+        raise ValueError(f"Unexpected source-title correction authority: {path}")
+    records = payload.get("records")
+    if not isinstance(records, list) or not records:
+        raise ValueError(f"Source-title corrections must be a nonempty list: {path}")
+
+    corrections: dict[tuple[str, int], SourceTitleCorrection] = {}
+    required = {
+        "source_path",
+        "block_index",
+        "quote_sha256",
+        "source_title",
+        "confidence",
+        "evidence_reference",
+    }
+    for record in records:
+        if not isinstance(record, dict) or set(record) != required:
+            raise ValueError(f"Invalid source-title correction record: {record!r}")
+        source_path = record["source_path"]
+        block_index = record["block_index"]
+        if (
+            not isinstance(source_path, str)
+            or not source_path.startswith("raw/Commentaries-Database/")
+            or Path(source_path).is_absolute()
+            or ".." in Path(source_path).parts
+            or not isinstance(block_index, int)
+            or block_index < 0
+        ):
+            raise ValueError(f"Unsafe source-title correction locator: {record!r}")
+        correction = SourceTitleCorrection(
+            quote_sha256=record["quote_sha256"],
+            source_title=record["source_title"],
+            confidence=record["confidence"],
+            evidence_reference=record["evidence_reference"],
+        )
+        if (
+            not re.fullmatch(r"[0-9a-f]{64}", correction.quote_sha256)
+            or not correction.source_title.strip()
+            or correction.source_title
+            != _normalize_source_title(correction.source_title)
+            or correction.confidence != "HIGH"
+            or not correction.evidence_reference.strip()
+        ):
+            raise ValueError(f"Invalid source-title correction claim: {record!r}")
+        locator = (source_path, block_index)
+        if locator in corrections:
+            raise ValueError(f"Duplicate source-title correction locator: {locator!r}")
+        carrier_path = REPO_ROOT / source_path
+        try:
+            carrier_payload = tomllib.loads(
+                carrier_path.read_text(encoding="utf-8")
+            )
+        except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+            raise ValueError(
+                f"Cannot read source-title correction carrier {source_path}: {exc}"
+            ) from exc
+        blocks = carrier_payload.get("commentary")
+        if not isinstance(blocks, list) or block_index >= len(blocks):
+            raise ValueError(
+                f"Missing source-title correction block: {source_path} "
+                f"block {block_index}"
+            )
+        block = blocks[block_index]
+        if not isinstance(block, dict):
+            raise ValueError(
+                f"Invalid source-title correction block: {source_path} "
+                f"block {block_index}"
+            )
+        _validate_source_title_correction_carrier(
+            source_path, block_index, block, correction
+        )
+        corrections[locator] = correction
+    return corrections
+
+
+SOURCE_TITLE_CORRECTIONS = _load_source_title_corrections(
+    SOURCE_TITLE_CORRECTIONS_PATH
+)
+
+
+def _resolve_source_title(
+    path: Path,
+    block_index: int,
+    block: dict,
+    effective_author_name: str,
+) -> str:
+    retained_title = _normalize_source_title(
+        (block.get("source_title") or "").strip()
+    )
+    source_path = path.relative_to(REPO_ROOT).as_posix()
+    correction = SOURCE_TITLE_CORRECTIONS.get((source_path, block_index))
+    if correction is not None:
+        _validate_source_title_correction_carrier(
+            source_path, block_index, block, correction
+        )
+        return correction.source_title
+
+    directory_title = NT_BOOK_SOURCE_TITLES.get(path.parent.name)
+    if directory_title is None:
+        return retained_title
+    if effective_author_name != path.parent.name:
+        raise ValueError(
+            f"New Testament source-directory identity mismatch for {source_path}: "
+            f"effective author {effective_author_name!r} != {path.parent.name!r}"
+        )
+    if retained_title and retained_title != directory_title:
+        raise ValueError(
+            f"Retained title contradicts New Testament source-directory "
+            f"identity for {source_path} block {block_index}: "
+            f"{retained_title!r} != {directory_title!r}"
+        )
+    return directory_title
 
 
 def author_to_slug(name: str) -> str:
@@ -363,10 +661,10 @@ def build_entry(
     book_osis: str,
     block: dict,
     entry_id: str,
+    source_title: str,
 ) -> dict:
     """Build one church_fathers data entry from a [[commentary]] block."""
     quote = (block.get("quote") or "").strip()
-    source_title = (block.get("source_title") or "").strip()
     source_url = (block.get("source_url") or "").strip()
     attribution_note = (block.get("append_to_author_name") or "").strip() or None
     context = (block.get("context") or "").strip() or None
@@ -526,13 +824,15 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
             empty_files += 1
             continue
 
-        for block in blocks:
+        for block_index, block in enumerate(blocks):
             quote = (block.get("quote") or "").strip()
             if not quote:
                 empty_quotes += 1
                 continue
 
-            source_title = (block.get("source_title") or "").strip()
+            source_title = _resolve_source_title(
+                tf, block_index, block, author_name
+            )
             source_slug = slugify(source_title, max_len=SOURCE_SLUG_MAX_LEN) if source_title else "unknown"
 
             if book_osis:
@@ -563,7 +863,7 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
             entry = build_entry(
                 author_slug, author_name,
                 book_name, ch1, v1, ch2, v2,
-                book_osis, block, entry_id,
+                book_osis, block, entry_id, source_title,
             )
             entries.append(entry)
 
@@ -700,13 +1000,7 @@ def process_author(author_dir: Path, dry_run: bool = False) -> dict:
 
 
 def setup_logging() -> None:
-    """Configure file + console logging."""
-    fh = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.INFO)
-    logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh],
-                        format="%(levelname)s: %(message)s")
+    return _shared_setup_logging(LOG_FILE=LOG_FILE)
 
 
 def main() -> None:
@@ -841,6 +1135,9 @@ def main() -> None:
         print("Top 20 authors by quote count:")
         for rank, s in enumerate(top20, 1):
             print(f"  {rank:2d}. {_ascii_safe(s['author'])}: {s['entries']} quotes")
+
+    if author_exceptions:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

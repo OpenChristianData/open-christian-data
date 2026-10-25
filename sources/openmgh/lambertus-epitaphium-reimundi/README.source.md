@@ -1,0 +1,5 @@
+# Electronic source for lambertus-epitaphium-reimundi
+
+The exact retained textual witness is `raw/openmgh/bsb00000720/tei/bsb00000720.xml` (SHA-256 `2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5`). The retained ZIP is an acquisition package, not another text witness. The selected electronic poem is child 123 through 130 of the volume's Carmina block, including internal page break `bsb00000720_00273` at child 126. The shared Carmina heading and adjacent poems are not part of this work. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/lambertus-epitaphium-reimundi/README.md` and bind both exact hashes through `public_notices`.

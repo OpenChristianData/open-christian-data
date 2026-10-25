@@ -1,5 +1,7 @@
 # ADR-0017: Front/back matter enters the NSH OCR pipeline, tagged by edition section
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 Status: accepted (2026-06-20)
 
 ## Context

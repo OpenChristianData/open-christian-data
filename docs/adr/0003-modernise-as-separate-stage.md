@@ -1,5 +1,7 @@
 # ADR-0003: Transliterate and Modernise as separate pipeline stages
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15; amended 2026-05-16 to split Transliterate out of Modernise)
 
 ## Context

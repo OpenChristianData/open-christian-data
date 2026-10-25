@@ -1,0 +1,53 @@
+{
+  "contract": "ocd-npnf2-reconstruction-profile-v1",
+  "profile_id": "gregory-of-nazianzus-select-letters-npnf2-v1",
+  "version": 1,
+  "source_member": {
+    "key": "npnf207",
+    "path": "raw/ccel/npnf2/npnf207.xml",
+    "bytes": 4247548,
+    "sha256": "3ac73f4179c0b7d6e66e6fea04ae572e64c0e4a80e8fa38980b40366c8a13928"
+  },
+  "assigned_roots": [
+    ["npnf207", "iv", "gregory-of-nazianzus-select-letters"]
+  ],
+  "assigned_census": {
+    "elements": 892,
+    "attributes": 2663,
+    "text_nodes": 634,
+    "tail_nodes": 660,
+    "characters": 204374,
+    "non_ascii_characters": 1326,
+    "notes": 89,
+    "page_breaks": 47,
+    "scripture_refs": 62
+  },
+  "complete_document_census": {
+    "elements": 29789,
+    "attributes": 61308,
+    "text_nodes": 22880,
+    "tail_nodes": 21128,
+    "characters": 2647282,
+    "non_ascii_characters": 65980,
+    "notes": 4782,
+    "page_breaks": 515,
+    "scripture_refs": 3392
+  },
+  "source_envelope": {
+    "top_level_div1_count": 5,
+    "top_level_div1_ids_in_order": ["i", "ii", "iii", "iv", "v"],
+    "assigned_top_level_div1_ids_in_order": ["iv"],
+    "excluded_top_level_div1_ids": ["i", "ii", "iii", "v"],
+    "assigned_root_title": "Select Letters of Saint Gregory Nazianzen.",
+    "direct_div2_ids_in_order": ["iv.i", "iv.ii", "iv.iii", "iv.iv"]
+  },
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "exact-assigned-root-order-and-complete-subtree",
+    "exact-elements-attributes-text-tails-and-source-attribute-accounting",
+    "complete-title-page-preface-sibling-and-index-accounting",
+    "retained-volume-editor-and-work-translation-credit-evidence",
+    "nonaccepted-and-publication-not-ready"
+  ],
+  "scope_boundary": "This candidate represents only the complete subtree rooted at div1 id iv in retained source order. The source header and the sibling title page, catechetical lectures, Gregory orations, and indexes remain explicitly accounted outside the assigned work projection."
+}

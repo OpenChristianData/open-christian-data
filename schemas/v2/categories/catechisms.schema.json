@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/catechisms.schema.json",
+  "title": "OCD catechism question and answer row",
+  "description": "Catechism rows retain source-numbered Q/A units or complete source-native transcriptions with explicit line-level Q/A indexing and surrounding material.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "category",
+    "language",
+    "text",
+    "representation_revision",
+    "provenance",
+    "locator"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "category": {
+      "const": "catechisms"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text",
+      "minLength": 1
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "item_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(?:[0-9]+[A-Za-z]*|\\?)$"
+    },
+    "sort_key": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer": {
+      "type": "string"
+    },
+    "question_with_proofs": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer_with_proofs": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "proofs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proof"
+      }
+    },
+    "group": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sub_questions": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subquestion"
+          }
+        }
+      ]
+    },
+    "locator": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/locator"
+        },
+        {
+          "$ref": "#/$defs/native_locator"
+        }
+      ]
+    },
+    "content_format": {
+      "const": "ocd-native-content-v1"
+    },
+    "structure": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "ocd://schemas/v2/native-content.schema.json"
+      }
+    },
+    "source_line_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "question_answers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/native_question_answer"
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "osis"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "osis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "references"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "subquestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "question",
+        "answer",
+        "proofs"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "pattern": "^[0-9]+[A-Za-z]* ?$"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proofs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/proof"
+          }
+        }
+      }
+    },
+    "division": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "type",
+        "number",
+        "titles"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "text_part",
+        "part_titles",
+        "divisions",
+        "question",
+        "source_order"
+      ],
+      "properties": {
+        "kind": {
+          "const": "question"
+        },
+        "text_part": {
+          "enum": [
+            "front",
+            "body",
+            "back"
+          ]
+        },
+        "part_titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "divisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/division"
+          }
+        },
+        "question": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "source_order": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "native_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "text_part",
+        "unit"
+      ],
+      "properties": {
+        "kind": {
+          "const": "source-transcription"
+        },
+        "text_part": {
+          "const": "body"
+        },
+        "unit": {
+          "type": "integer",
+          "const": 1
+        }
+      }
+    },
+    "native_line": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "role",
+        "text"
+      ],
+      "properties": {
+        "number": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "role": {
+          "enum": [
+            "question",
+            "question-continuation",
+            "answer"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "native_question_answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_order",
+        "source_number",
+        "question_lines",
+        "answer_lines"
+      ],
+      "properties": {
+        "source_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]+\\.$"
+        },
+        "question_lines": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/native_line"
+          }
+        },
+        "answer_lines": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/native_line"
+          }
+        }
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-catechisms-bounded-v3",
+    "public_category": "catechisms",
+    "unit_type": "question",
+    "subquestion_types": [
+      "subquestion",
+      "sub-question"
+    ],
+    "proof_container": "proofs",
+    "unsupported_behavior": "Visible unsupported structure is rejected and accounted for; it is never silently flattened.",
+    "native_profile": "ocd-catechisms-source-transcription-v1; full nested source lines, question-answer pointers, and wrapper retained"
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "content_format"
+        ]
+      },
+      "then": {
+        "required": [
+          "content_format",
+          "structure",
+          "source_line_count",
+          "question_answers"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "item_id"
+              ]
+            },
+            {
+              "required": [
+                "sort_key"
+              ]
+            },
+            {
+              "required": [
+                "question"
+              ]
+            },
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answer_with_proofs"
+              ]
+            },
+            {
+              "required": [
+                "proofs"
+              ]
+            },
+            {
+              "required": [
+                "group"
+              ]
+            },
+            {
+              "required": [
+                "sub_questions"
+              ]
+            }
+          ]
+        },
+        "properties": {
+          "locator": {
+            "$ref": "#/$defs/native_locator"
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "item_id",
+          "sort_key",
+          "question",
+          "answer",
+          "answer_with_proofs",
+          "proofs",
+          "group",
+          "sub_questions"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "structure"
+              ]
+            },
+            {
+              "required": [
+                "source_line_count"
+              ]
+            },
+            {
+              "required": [
+                "question_answers"
+              ]
+            }
+          ]
+        },
+        "properties": {
+          "locator": {
+            "$ref": "#/$defs/locator"
+          }
+        },
+        "if": {
+          "properties": {
+            "answer": {
+              "const": ""
+            }
+          },
+          "required": [
+            "answer"
+          ]
+        },
+        "then": {
+          "properties": {
+            "answer_with_proofs": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "answer_with_proofs"
+          ]
+        }
+      }
+    }
+  ]
+}

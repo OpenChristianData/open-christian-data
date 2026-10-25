@@ -1,6 +1,8 @@
 # OCD Architecture Orientation
 
-**Date:** 2026-07-01
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
+**Date:** 2026-07-22
 **Scope:** The Open Christian Data **dataset** is the project. The OCR pipeline is a capability the dataset needs for its hardest source class — texts that survive only as page scans or uncorrected OCR. Its first and largest target, the Schaff-Herzog Encyclopedia (NSH), grew subproject-sized in its own right, but it is not a separate project: it manufactures faithful text that enters the dataset like any other source.
 **Purpose:** Orient a cold session on what the architecture is *for*, and record the central decision: **the intermediate representation (IR) is TEI** ([ADR-0019](adr/0019-ir-is-tei.md)). No implementation, no `data/` edits. Supersedes the 2026-06-22 and earlier 2026-07-01 drafts, which mis-scoped the project and mis-recommended a bespoke JSON format.
 
@@ -10,9 +12,16 @@
 
 ## Telos — why the project exists
 
-Open Christian Data produces **faithful, machine-readable reproductions of public-domain Christian texts and makes them freely available online** — a correct digital copy anyone can use. Its reason for existing is the class of texts that are public domain in principle but have **no correct free digital edition**: works surviving only as page scans or as uncorrected OCR (Migne's Patrologia, patristics beyond ANF/NPNF, the Schaff-Herzog stub volumes). The pipeline exists to turn those into faithful, verifiable text.
+OCD aims to be a single unified collection of publicly available Christian resources. Our aim is to
+collate as many high quality Christian works and resources as are available for distribution into a
+unified dataset for the public good. Starting initially with a focus on works of historic significance
+in the public domain. The production pipeline exists to turn those works into faithful, verifiable
+text while preserving the rights and provenance of every source layer.
 
-Audiences: researchers, Bible-software developers, and anyone building on public-domain Christian texts. Everything below — the IR, verification, standardization — serves that end: the most accurate re-representation of the original text and authorial intent, made durable and openly reusable.
+Audiences: researchers, Bible-software developers, and anyone building on the current public-domain
+profile or a future rights-compatible OCD release. Everything below — the IR, verification,
+standardization — serves that end: the most accurate re-representation of the original text and
+authorial intent, made durable with the source rights and obligations visible.
 
 ---
 

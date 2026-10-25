@@ -1,0 +1,171 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-087",
+  "work_id": "bsb",
+  "source_id": "ocd-37c087-bsb-retained-native-json-v1",
+  "scope": {
+    "kind": "complete-json-document",
+    "assigned_work": "bsb",
+    "source_member": "retained-bsb-json",
+    "top_level_keys_in_order": [
+      "translation",
+      "books"
+    ],
+    "assigned_book_names_in_source_order": [
+      "Genesis",
+      "Exodus",
+      "Leviticus",
+      "Numbers",
+      "Deuteronomy",
+      "Joshua",
+      "Judges",
+      "Ruth",
+      "I Samuel",
+      "II Samuel",
+      "I Kings",
+      "II Kings",
+      "I Chronicles",
+      "II Chronicles",
+      "Ezra",
+      "Nehemiah",
+      "Esther",
+      "Job",
+      "Psalms",
+      "Proverbs",
+      "Ecclesiastes",
+      "Song of Solomon",
+      "Isaiah",
+      "Jeremiah",
+      "Lamentations",
+      "Ezekiel",
+      "Daniel",
+      "Hosea",
+      "Joel",
+      "Amos",
+      "Obadiah",
+      "Jonah",
+      "Micah",
+      "Nahum",
+      "Habakkuk",
+      "Zephaniah",
+      "Haggai",
+      "Zechariah",
+      "Malachi",
+      "Matthew",
+      "Mark",
+      "Luke",
+      "John",
+      "Acts",
+      "Romans",
+      "I Corinthians",
+      "II Corinthians",
+      "Galatians",
+      "Ephesians",
+      "Philippians",
+      "Colossians",
+      "I Thessalonians",
+      "II Thessalonians",
+      "I Timothy",
+      "II Timothy",
+      "Titus",
+      "Philemon",
+      "Hebrews",
+      "James",
+      "I Peter",
+      "II Peter",
+      "I John",
+      "II John",
+      "III John",
+      "Jude",
+      "Revelation of John"
+    ],
+    "excluded_top_level_fields": [],
+    "excluded_source_members": [],
+    "derived_segmentation": "The 66 files under data/bible-text/bsb/ are downstream per-book segmentation and are not retained source members or TEI authority."
+  },
+  "source_order": {
+    "primary_source_members": [
+      "retained-bsb-json"
+    ],
+    "book_list_order": "retained JSON books list order",
+    "chapter_list_order": "retained JSON chapters list order",
+    "verse_list_order": "retained JSON verses list order"
+  },
+  "authorities": [
+    {
+      "name": "retained-bsb-json",
+      "path": "raw/bible_databases/formats/json/BSB.json",
+      "role": "primary-source",
+      "bytes": 8304051,
+      "sha256": "73ca9ea1e36041bbbbd077738b250e266192669819117326516f871804872dac"
+    },
+    {
+      "name": "work-config",
+      "path": "sources/bible-text/bsb/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1180,
+      "sha256": "409d4e38f3314aee15cf9d1941e5bb267c7cb2482190e003b4cb56cdcbeb657f"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/bible-text/bsb/bsb.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3531,
+      "sha256": "9ede5cc213d8d5ec58ce1c2979950b4d2fbf2da6a678a5425573516406fa59e1"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/bible-text/bsb/bsb.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1479,
+      "sha256": "916124c525e581324668c0738c49fdca3aba051672788fcebf6ecfc89fe170aa"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/bible-text/bsb/bsb.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 2913,
+      "sha256": "9ea2d59bdc65193422e9cc47f1a3a0c643475f379e033e416c85c0a6c333e416"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/bible-text/bsb/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 909,
+      "sha256": "3c76556d0410c1b4fdb56918321d02f326fe8d9d2d3fac9154ca6630e3f4e0ae"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-37c087-bsb-json-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bsb_reconstruction.py",
+    "implementation_sha256": "a70534f4ed3f7ac0cdab1455425a1a8646eb167a100a7f20e18f807991f8a9d6"
+  },
+  "validator": {
+    "id": "ocd-37c087-bsb-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bsb_oracle.py",
+    "implementation_sha256": "f1938831dc7d97a89f8d342a40267ede765c184a3d1f7a4c4d75d70be0727e52",
+    "import_closure_sha256": "569356535bac308dff7cabab7bc364706a55f43a676f5f3ee231f29fc95d6027"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

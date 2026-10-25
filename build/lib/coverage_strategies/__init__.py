@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import importlib
+from . import entry_inventory, none, scriptural_canon
 from typing import Any
 
 
@@ -10,7 +10,11 @@ class CoverageStrategyError(ValueError):
     """Raised when a coverage strategy configuration is invalid."""
 
 
-_REGISTRY: dict[str, Any] = {}
+_REGISTRY: dict[str, Any] = {
+    "entry_inventory": entry_inventory,
+    "none": none,
+    "scriptural_canon": scriptural_canon,
+}
 
 ALLOWED_PAIRS: dict[tuple[str, str], bool] = {
     ("commentary", "scriptural_canon"): True,
@@ -18,18 +22,6 @@ ALLOWED_PAIRS: dict[tuple[str, str], bool] = {
     ("encyclopedia", "entry_inventory"): True,
     ("encyclopedia", "scriptural_canon"): False,
 }
-
-
-def register(name: str, strategy_module: Any) -> None:
-    """Register a strategy module after validating its applicability contract."""
-    applies_to = getattr(strategy_module, "APPLIES_TO_RESOURCE_TYPES", None)
-    if not isinstance(applies_to, list) or not applies_to:
-        raise CoverageStrategyError(f"{name}: APPLIES_TO_RESOURCE_TYPES must be a non-empty list")
-    for resource_type in applies_to:
-        if not isinstance(resource_type, str) or not resource_type:
-            raise CoverageStrategyError(f"{name}: APPLIES_TO_RESOURCE_TYPES values must be strings")
-        validate_pair(resource_type, name)
-    _REGISTRY[name] = strategy_module
 
 
 def dispatch(resource_type: str, strategy_name: str, parameters: dict[str, Any], record: dict) -> list[dict]:
@@ -40,7 +32,6 @@ def dispatch(resource_type: str, strategy_name: str, parameters: dict[str, Any],
 
 def register_record_strategy(resource_type: str, strategy_name: str, parameters: dict[str, Any]) -> Any:
     """Validate a record's strategy config and return the registered module."""
-    _ensure_default_strategies_registered()
     validate_pair(resource_type, strategy_name)
     if strategy_name != "none":
         validate_parameter_provenance(parameters)
@@ -77,9 +68,3 @@ def validate_parameter_provenance(parameters: dict[str, Any]) -> None:
             raise CoverageStrategyError(f"coverage parameter {parameter_name!r} has invalid provenance.path")
 
 
-def _ensure_default_strategies_registered() -> None:
-    if _REGISTRY:
-        return
-    for strategy_name in ("scriptural_canon", "entry_inventory", "none"):
-        module = importlib.import_module(f"{__name__}.{strategy_name}")
-        register(strategy_name, module)

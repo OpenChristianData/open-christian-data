@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-npnf2-validation-policy-v1",
+  "policy_id": "gregory-of-nazianzus-select-letters-npnf2-v1",
+  "version": 1,
+  "forbidden_oracle_imports": [
+    "build.tei.npnf2_lib046_gregory_select_letters_reconstruction",
+    "build.parsers.ccel_npnf2"
+  ],
+  "projection": {
+    "tag_map": {
+      "div1": "div",
+      "div2": "div",
+      "div3": "div",
+      "div4": "div",
+      "i": "hi",
+      "note": "note",
+      "p": "p",
+      "pb": "pb",
+      "scripRef": "ref",
+      "span": "seg",
+      "sup": "hi",
+      "hr": "milestone",
+      "img": "ref",
+      "a": "ref"
+    },
+    "attribute_rules": {
+      "id": "deterministic xml:id plus exact source-accountability row",
+      "title": "first child head on division elements",
+      "n": "@n on division, note, and page-break elements",
+      "type": "@type on non-work division elements",
+      "class": "@rend on paragraph and span elements",
+      "place": "@place on note elements",
+      "href": "@facs on page-break elements",
+      "passage": "@cRef on scripture-reference elements",
+      "osisRef": "@target on scripture-reference elements",
+      "other": "exact source-accountability row, not silently discarded"
+    },
+    "identity": "Preorder source-element ordinal and source id form the deterministic TEI xml:id; source order, direct text, tail text, child order, and all source attributes are checked independently."
+  },
+  "checks": [
+    "source-member-identity-and-complete-document-census",
+    "assigned-root-and-div2-order",
+    "source-to-TEI-preorder-crosswalk",
+    "omission-duplication-order-attachment-and-invention-rejection",
+    "tei-p5-xsd-validation",
+    "fresh-process-different-working-directory-byte-determinism"
+  ]
+}

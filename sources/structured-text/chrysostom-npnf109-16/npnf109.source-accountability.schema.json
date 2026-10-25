@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "schema", "profile_id", "source_scope", "source_members",
+    "document_accounting", "member_accounting", "source_census",
+    "assigned_work_count", "feature_count", "attribute_count", "feature_counts",
+    "omitted_feature_count", "duplicate_feature_count", "unresolved_feature_count",
+    "table_census", "excluded_index_comment_count", "division_accounting", "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-npnf109-source-accountability-v1"},
+    "schema": {"const": "npnf109.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf109-16-work-v1"},
+    "source_scope": {"type": "string", "minLength": 1},
+    "source_members": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/sourceMember"}},
+    "document_accounting": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/document"}},
+    "member_accounting": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/memberAccounting"}},
+    "source_census": {"$ref": "#/$defs/sourceCensus"},
+    "assigned_work_count": {"const": 16},
+    "feature_count": {"const": 7723},
+    "attribute_count": {"const": 19877},
+    "feature_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "table_census": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tables", "rows", "cells"],
+      "properties": {"tables": {"const": 0}, "rows": {"const": 0}, "cells": {"const": 0}}
+    },
+    "excluded_index_comment_count": {"const": 2},
+    "division_accounting": {"type": "array", "minItems": 103, "maxItems": 103, "items": {"$ref": "#/$defs/division"}},
+    "crosswalk": {"type": "array", "minItems": 7723, "maxItems": 7723, "items": {"$ref": "#/$defs/crosswalk"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}},
+    "sourceMember": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "path", "bytes", "sha256", "disposition"],
+      "properties": {
+        "name": {"const": "npnf109"}, "path": {"const": "raw/ccel/npnf1/npnf109.xml"},
+        "bytes": {"const": 3017592}, "sha256": {"const": "6d0887393b4d197d7784cbea989aeb422d7e38f55711b4c4d4af85e3de680175"},
+        "disposition": {"type": "string", "minLength": 1}
+      }
+    },
+    "comment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordinal", "text", "text_sha256", "tail", "tail_sha256"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1}, "text": {"type": "string"},
+        "text_sha256": {"$ref": "#/$defs/sha256"}, "tail": {"type": "string"},
+        "tail_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "document": {
+      "type": "object", "additionalProperties": false,
+      "required": ["member", "xml_declaration", "standalone", "doctype", "pre_root_comment_count", "pre_root_comments", "pre_root_processing_instructions", "post_root_nodes", "root_tag", "root_attributes", "root_namespace_declarations", "assigned_comment_count", "assigned_processing_instruction_count", "excluded_index_comment_count"],
+      "properties": {
+        "member": {"const": "npnf109"}, "xml_declaration": {"type": "string"},
+        "standalone": {"const": false}, "doctype": {"type": "string", "minLength": 1},
+        "pre_root_comment_count": {"const": 2},
+        "pre_root_comments": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/comment"}},
+        "pre_root_processing_instructions": {"type": "array", "maxItems": 0},
+        "post_root_nodes": {"type": "array", "maxItems": 0}, "root_tag": {"const": "ThML"},
+        "root_attributes": {"$ref": "#/$defs/stringMap"}, "root_namespace_declarations": {"$ref": "#/$defs/stringMap"},
+        "assigned_comment_count": {"const": 0}, "assigned_processing_instruction_count": {"const": 0},
+        "excluded_index_comment_count": {"const": 2}
+      }
+    },
+    "memberAccounting": {
+      "type": "object", "additionalProperties": false,
+      "required": ["member", "assigned_div1", "assigned_work_ids", "excluded_div1", "disposition"],
+      "properties": {
+        "member": {"const": "npnf109"},
+        "assigned_div1": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "string"}},
+        "assigned_work_ids": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "string"}},
+        "excluded_div1": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}},
+        "disposition": {"type": "string", "minLength": 1}
+      }
+    },
+    "census": {
+      "type": "object", "additionalProperties": false,
+      "required": ["elements", "attributes", "text_nodes", "tail_nodes", "characters", "non_ascii_characters"],
+      "properties": {
+        "elements": {"type": "integer", "minimum": 0}, "attributes": {"type": "integer", "minimum": 0},
+        "text_nodes": {"type": "integer", "minimum": 0}, "tail_nodes": {"type": "integer", "minimum": 0},
+        "characters": {"type": "integer", "minimum": 0}, "non_ascii_characters": {"type": "integer", "minimum": 0}
+      }
+    },
+    "sourceCensus": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_document", "assigned_scope", "excluded_shell_front_and_indexes"],
+      "properties": {
+        "complete_document": {"$ref": "#/$defs/census"},
+        "assigned_scope": {"$ref": "#/$defs/census"},
+        "excluded_shell_front_and_indexes": {"$ref": "#/$defs/census"}
+      }
+    },
+    "division": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["member", "level", "ordinal", "source_xml_id", "title", "disposition", "work_id", "child_div2_count"],
+          "properties": {
+            "member": {"const": "npnf109"}, "level": {"const": "div1"}, "ordinal": {"type": "integer", "minimum": 1},
+            "source_xml_id": {"type": "string"}, "title": {"type": "string"}, "disposition": {"type": "string"},
+            "work_id": {"type": ["string", "null"]}, "child_div2_count": {"type": "integer", "minimum": 0}
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["level", "ordinal", "source_xml_id", "parent_div1_id", "title", "disposition", "work_id"],
+          "properties": {
+            "level": {"const": "div2"}, "ordinal": {"type": "integer", "minimum": 1}, "source_xml_id": {"type": "string"},
+            "parent_div1_id": {"type": "string"}, "title": {"type": "string"}, "disposition": {"type": "string"}, "work_id": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "attributeDisposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_attribute", "source_value", "destination", "method"],
+      "properties": {"source_attribute": {"type": "string"}, "source_value": {"type": "string"}, "destination": {"type": "string"}, "method": {"type": "string"}}
+    },
+    "crosswalk": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordinal", "feature_id", "member", "work_id", "source_selector", "source_tag", "source_xml_id", "source_attributes", "text_present", "text_sha256", "tail_present", "tail_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_child_ordinal", "tei_attributes", "attribute_dispositions", "tei_selector", "parent_feature_id", "source_title_head", "disposition"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1}, "feature_id": {"type": "string"}, "member": {"const": "npnf109"},
+        "work_id": {"type": "string"}, "source_selector": {"type": "string"}, "source_tag": {"type": "string"},
+        "source_xml_id": {"type": ["string", "null"]}, "source_attributes": {"$ref": "#/$defs/stringMap"},
+        "text_present": {"type": "boolean"}, "text_sha256": {"$ref": "#/$defs/sha256"}, "tail_present": {"type": "boolean"},
+        "tail_sha256": {"$ref": "#/$defs/sha256"}, "tei_tag": {"type": "string"}, "tei_xml_id": {"type": "string"},
+        "tei_parent_id": {"type": "string"}, "tei_child_ordinal": {"type": "integer", "minimum": 1},
+        "tei_attributes": {"$ref": "#/$defs/stringMap"},
+        "attribute_dispositions": {"type": "array", "items": {"$ref": "#/$defs/attributeDisposition"}},
+        "tei_selector": {"type": "string"}, "parent_feature_id": {"type": ["string", "null"]},
+        "source_title_head": {"type": ["string", "null"]}, "disposition": {"const": "represented"}
+      }
+    }
+  }
+}

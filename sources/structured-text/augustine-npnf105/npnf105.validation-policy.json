@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-npnf105-validation-policy-v1",
+  "policy_id": "npnf105-assigned-div1-x-through-xxi-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_assigned_work_count": 12,
+  "required_feature_count": 16648,
+  "required_comment_count": 4,
+  "tei_header": {
+    "root_xml_id": "npnf105-lib004",
+    "body_xml_id": "npnf105-assigned-body",
+    "title": "NPNF1-05. St. Augustine: Anti-Pelagian Writings — assigned works x–xxi",
+    "author": "Augustine of Hippo",
+    "publisher": "Open Christian Data",
+    "availability_status": "restricted",
+    "rights_statement": "The retained CCEL header states Public Domain. CCEL permits parsing this ThML; do not sell CCEL files or derivatives of their formatting. Attribution is included in README.source.md.",
+    "source_url": "https://www.ccel.org/ccel/schaff/npnf105.html",
+    "print_source": "New York: Christian Literature Publishing Co., 1886 (retained title-page statement; no print collation)"
+  },
+  "checks": [
+    "source-authority-hash-and-member-binding",
+    "exact-div1-scope-and-work-order",
+    "complete-feature-and-attribute-crosswalk",
+    "exact-hierarchy-text-tail-and-comment-preservation",
+    "omission-duplication-reorder-and-invention-detection",
+    "tei-p5-xsd",
+    "source-accountability-json-schema",
+    "complete-tei-root-and-header-structure",
+    "retained-metadata-and-rights",
+    "retained-contributor-roles-and-partial-translator-allocation",
+    "candidate-package-integrity-and-closure-state",
+    "producer-independent-import-closure"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.npnf105_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

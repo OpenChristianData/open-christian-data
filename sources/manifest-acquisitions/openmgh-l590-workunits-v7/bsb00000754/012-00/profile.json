@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 883489,
+  "member_inventory_sha256": "5ec464434799f2e8b14de35c72630c54889685a373ce4a8b7761846dc641f18d",
+  "member_name": "bsb00000754.xml",
+  "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (V) (MGH SS rer. Merov. 7)",
+  "source_id": "bsb00000754",
+  "work_linkage": {
+    "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+    "candidate_first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00382_1",
+    "candidate_last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00438_14",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "translatio-sancti-germani-parisiaci-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/translatio-sancti-germani-parisiaci/forms/translatio-sancti-germani-parisiaci-openmgh-retained/editions/translatio-sancti-germani-parisiaci-openmgh-electronic/acquisitions/translatio-sancti-germani-parisiaci-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "def06121403d0059bfed9e59aa44ca73fd4153fe6c89dddd09bdab4e754ad3ef",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "translatio-sancti-germani-parisiaci-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00432_14",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00438_14",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "translatio-sancti-germani-parisiaci-openmgh-retained",
+        "work_id": "translatio-sancti-germani-parisiaci",
+        "work_sidecar_path": "library/works/translatio-sancti-germani-parisiaci/work.json",
+        "work_sidecar_sha256": "56421f56a0e864c5f842dd43e64466e6164f4bb8f8972008c5d5bf76eada9b86"
+      },
+      {
+        "acquisition_id": "vita-sancti-germani-parisiaci-fortunati-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-germani-parisiaci-fortunati/forms/vita-sancti-germani-parisiaci-fortunati-openmgh-retained/editions/vita-sancti-germani-parisiaci-fortunati-openmgh-electronic/acquisitions/vita-sancti-germani-parisiaci-fortunati-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "87ab6dbb14a0114cdba82e749eac1aa2f55075a40b12ea5c4c27439e8071c1cb",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "vita-sancti-germani-parisiaci-fortunati-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00382_1",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00428_13",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "vita-sancti-germani-parisiaci-fortunati-openmgh-retained",
+        "work_id": "vita-sancti-germani-parisiaci-fortunati",
+        "work_sidecar_path": "library/works/vita-sancti-germani-parisiaci-fortunati/work.json",
+        "work_sidecar_sha256": "55970092a86f4b1320ed30b43df378dc92fcb6c6abb6b70b57aff23974d531d2"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "translatio-sancti-germani-parisiaci",
+      "vita-sancti-germani-parisiaci-fortunati"
+    ],
+    "source_id": "bsb00000754",
+    "source_member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+    "source_path": "raw/openmgh/bsb00000754/tei/bsb00000754.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 12,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Germani",
+    "title": "Vita Germani"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 7: Passiones vitaeque sanctorum aevi Merovingici (V)"
+  ]
+}

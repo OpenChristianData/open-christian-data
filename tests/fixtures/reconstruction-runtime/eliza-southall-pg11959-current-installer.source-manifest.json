@@ -1,0 +1,122 @@
+{
+  "authorities": [
+    {
+      "bytes": 310352,
+      "name": "retained-source",
+      "path": "raw/gutenberg/11959/html/pg11959-images.html",
+      "role": "primary-source",
+      "sha256": "04d3f87170c6019ff21a56b0c90c73d92806ca4b0af39ed38bf8c20f4c1a0f93"
+    },
+    {
+      "bytes": 214757,
+      "name": "retained-package",
+      "path": "raw/gutenberg/11959/pg11959-h.zip",
+      "role": "supporting-package",
+      "sha256": "18ef1fc35b9aadbec59ebf46b82f5f59c1b7bb5276274fa5560701fb12014caf"
+    },
+    {
+      "bytes": 102307,
+      "name": "retained-cover",
+      "path": "raw/gutenberg/11959/html/11959-cover.png",
+      "role": "unreferenced-support",
+      "sha256": "d1ccba2492e736fe51728349dfa6183563e53d3f7c3a12c9138253fc06e3ddb2"
+    },
+    {
+      "bytes": 1197,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/eliza-southall-pg11959/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "d2c9248fc447d7975acfd1cf500af21d24277d34e02fbd4c0c408ca5130bb216"
+    },
+    {
+      "bytes": 813,
+      "name": "validation-policy",
+      "path": "sources/structured-text/eliza-southall-pg11959/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "120c89f48c01ffbddce77a59e916ddb6f8b16bc345754e5a18c34447f39de1ba"
+    },
+    {
+      "bytes": 1423,
+      "name": "source-readme",
+      "path": "sources/structured-text/eliza-southall-pg11959/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "a42da68aaa891d163ff076f61ea268be57304b39b81951a49a1d8fdc89f319e4"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 10761,
+      "name": "producer-implementation",
+      "path": "build/tei/eliza_southall_pg11959_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "bb5e87eb7567036802ecb0931e8b018b916a3dd142e1e6910f6d9b373ec7a3d9"
+    },
+    {
+      "bytes": 10707,
+      "name": "oracle-implementation",
+      "path": "build/tei/eliza_southall_pg11959_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "f75bccfd5afd77b37e2a9c720fbe2be52417e29376f6fdb5f3e556503d12aefa"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-eliza-southall-pg11959-extracted-html-to-tei",
+    "implementation_path": "build/tei/eliza_southall_pg11959_reconstruction.py",
+    "implementation_sha256": "bb5e87eb7567036802ecb0931e8b018b916a3dd142e1e6910f6d9b373ec7a3d9",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "flattened_structural_wrappers": 0,
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "package_cover_role": "unreferenced support",
+    "represented_body_elements": 1362,
+    "source_url": "https://www.gutenberg.org/ebooks/11959",
+    "title": "A Brief Memoir with Portions of the Diary, Letters, and Other Remains of Eliza Southall",
+    "unrepresented_body_elements": 0
+  },
+  "source_bundle": {
+    "bytes": 310352,
+    "members": 1,
+    "sha256": "04d3f87170c6019ff21a56b0c90c73d92806ca4b0af39ed38bf8c20f4c1a0f93"
+  },
+  "source_id": "eliza-southall-pg11959-current-extracted-html",
+  "source_members": [
+    {
+      "bytes": 310352,
+      "logical_name": "pg11959-images.html",
+      "name": "pg11959-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/11959/html/pg11959-images.html",
+      "sha256": "04d3f87170c6019ff21a56b0c90c73d92806ca4b0af39ed38bf8c20f4c1a0f93"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-eliza-southall-pg11959-independent-html-oracle",
+    "implementation_path": "build/tei/eliza_southall_pg11959_oracle.py",
+    "implementation_sha256": "f75bccfd5afd77b37e2a9c720fbe2be52417e29376f6fdb5f3e556503d12aefa",
+    "import_closure_sha256": "70374e8ce35f9bbdd70724bca73a86ee819966deb298e262003863f72fd68183",
+    "version": "1"
+  },
+  "work_id": "eliza-southall-brief-memoir"
+}

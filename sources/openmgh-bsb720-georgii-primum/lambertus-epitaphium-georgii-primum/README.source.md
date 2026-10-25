@@ -1,0 +1,7 @@
+# First Epitaph for Georgius (from Epitaphium senioris Georgii triplex): retained openMGH source
+
+This reconstruction reuses the retained electronic bsb00000720 witness supplied by Monumenta Germaniae Historica (MGH) and Bayerische Staatsbibliothek, Munich (BSB). The source identifies the DFG-supported digital MGH project. Its print bibliography identifies Lantbert von Deutz, Vita Heribert. Miracula Heriberti. Gedichte. Liturgische Texte, edited by Bernhard Vogel, Hannover: Hahn, 2001, MGH Scriptores rerum Germanicarum 73.
+
+The complete first six-line epitaph is represented with its literal shared numbered collection heading; the other two epitaphs remain separately owned source content. EPITAPHIUM SENIORIS GEORGII TRIPLEX is the shared collection context for three independent complete six-line epitaphs. This TEI represents the entire first epitaph only, preserving the literal numbered shared heading once as context; it does not represent the entire triplex. ALIUD introduces another epitaph and TERTIUM a third, each with its own complete wording and closing. The precise first-poem display title is editorial metadata, not invented source wording.
+
+The source assigns CC BY 4.0 to MGH/BSB annotations and states that it claims no rights in the text itself, believed to be public domain. This records the source statement; independent rights clearance and publication authorization are unrecorded. Derivatives should credit MGH and BSB. The human-visible data notice is `data/poetry/lambertus-epitaphium-georgii-primum/README.md`.

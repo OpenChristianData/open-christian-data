@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 883489,
+  "member_inventory_sha256": "5ec464434799f2e8b14de35c72630c54889685a373ce4a8b7761846dc641f18d",
+  "member_name": "bsb00000754.xml",
+  "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (V) (MGH SS rer. Merov. 7)",
+  "source_id": "bsb00000754",
+  "work_linkage": {
+    "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+    "candidate_first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00056_27",
+    "candidate_last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00090_17",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "vita-sancti-eucherii-aurelianensis-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-eucherii-aurelianensis/forms/vita-sancti-eucherii-aurelianensis-openmgh-retained/editions/vita-sancti-eucherii-aurelianensis-openmgh-electronic/acquisitions/vita-sancti-eucherii-aurelianensis-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "639beae5ee17625d2b79762e7cea0328e3d797e1ad28c6bbc0df898150a9a887",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "vita-sancti-eucherii-aurelianensis-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00056_27",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00063_27",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "vita-sancti-eucherii-aurelianensis-openmgh-retained",
+        "work_id": "vita-sancti-eucherii-aurelianensis",
+        "work_sidecar_path": "library/works/vita-sancti-eucherii-aurelianensis/work.json",
+        "work_sidecar_sha256": "ca0cde0ca99b88a9aac7d461d04314ce3bb651f277d9534dc639f210b63f87d3"
+      },
+      {
+        "acquisition_id": "vita-sancti-rigoberti-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-rigoberti/forms/vita-sancti-rigoberti-openmgh-retained/editions/vita-sancti-rigoberti-openmgh-electronic/acquisitions/vita-sancti-rigoberti-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "87f65fa42b14a193956a8c73b805d6a69aed866a4df2e227c535612b7fb92205",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "vita-sancti-rigoberti-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00068_19",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00071_28",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "vita-sancti-rigoberti-openmgh-retained",
+        "work_id": "vita-sancti-rigoberti",
+        "work_sidecar_path": "library/works/vita-sancti-rigoberti/work.json",
+        "work_sidecar_sha256": "437b6f26306ae74796689973d9573107d10ed476cfbea31768f86317a322d3f6"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "vita-sancti-eucherii-aurelianensis",
+      "vita-sancti-rigoberti"
+    ],
+    "source_id": "bsb00000754",
+    "source_member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+    "source_path": "raw/openmgh/bsb00000754/tei/bsb00000754.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 2,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Eucherii",
+    "title": "Vita Eucherii"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 7: Passiones vitaeque sanctorum aevi Merovingici (V)"
+  ]
+}

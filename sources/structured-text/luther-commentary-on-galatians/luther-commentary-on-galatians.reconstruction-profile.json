@@ -1,0 +1,43 @@
+{
+  "contract": "ocd-luther-galatians-pg1549-profile-v1",
+  "version": 1,
+  "work_id": "luther-commentary-on-galatians",
+  "source_id": "luther-commentary-on-galatians-pg1549-retained",
+  "producer_import_closure_sha256": "ded3415b0c8408c7c48172c81982838af89efd38ef35bde4c7b135883a815a38",
+  "source_scope": {
+    "path": "raw/gutenberg/pg1549.txt",
+    "bytes": 504403,
+    "sha256": "ed00941bbe9e65b12c6619ea8a756ac053c44ec0a0c88761a83b8dff8d9a59bd",
+    "physical_lines": 9150,
+    "encoding": "UTF-8 with BOM",
+    "line_ending": "CRLF"
+  },
+  "envelope": {
+    "header_and_start_marker_lines": [1, 29],
+    "work_lines": [30, 8799],
+    "end_marker_and_footer_lines": [8800, 9150],
+    "chapter_heading_lines": [166, 1410, 2935, 5181, 6703, 8250]
+  },
+  "assignment_target_217": "The assignment specifies 217 repeated carriers; the exact retained source scan identifies 216 singular VERSE and 14 plural VERSES carrier lines. Preserve all literal occurrences; count semantics remain unresolved.",
+  "required_counts": {
+    "physical_lines": 9150,
+    "blank_lines": 1576,
+    "whitespace_only_lines": 8,
+    "nonblank_lines": 7566,
+    "chapter_count": 6,
+    "chapter_heading_lines": [166, 1410, 2935, 5181, 6703, 8250],
+    "singular_verse_carrier_count": 216,
+    "plural_verse_carrier_count": 14,
+    "verse_carrier_count": 230,
+    "represented_lines": 9150,
+    "unrepresented_lines": 0
+  },
+  "mapping": {
+    "line_identity": "physical source line number; never a verse identity",
+    "chapter_identity": "the six literal CHAPTER headings in source order",
+    "verse_carriers": "retain literal VERSE/VERSES line content and occurrence order; do not parse a verse-number attribute",
+    "blank_lines": "represented as empty source-line carriers to retain physical positions",
+    "transport": "remove only UTF-8 BOM and CRLF record terminators from displayed line text; preserve their bytes and positions in source accountability",
+    "envelope": "retain Gutenberg header, start marker, work text, end marker, and footer in order"
+  }
+}

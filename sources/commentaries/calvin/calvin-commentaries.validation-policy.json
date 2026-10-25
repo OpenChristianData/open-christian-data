@@ -1,0 +1,112 @@
+{
+  "contract": "ocd-calvin-commentaries-validation-policy-v1",
+  "policy_id": "calvin-commentaries-retained-ccel-thml-policy-v1",
+  "oracle_id": "ocd-calvin-commentaries-independent-source-oracle",
+  "schema": "calvin-commentaries.source-accountability.schema.json",
+  "rules": [
+    "bind the exact 46-member retained CCEL ThML/XML source cohort and source-member-set digest",
+    "account every retained member with include or exclude disposition; no retained member is silently skipped",
+    "account every retained source element, source attribute, direct text, tail text, parent selector, and child ordinal",
+    "exclude only the declared formatting-only tags style, selector, property, colgroup, and col and account their exact counts",
+    "account retained comments, processing instructions, and doctype declarations as non-TEI lexical events",
+    "preserve the non-formatting source text stream and source element selector order in TEI",
+    "validate source accountability JSON against the ticket-local schema and candidate TEI against TEI P5",
+    "independently reread retained source bytes and compare candidate accountability, mapped selectors, and text stream",
+    "reject generated data as source authority and retain the SWORD package only as a comparison witness",
+    "fresh-process and different-CWD candidate bytes must be deterministic",
+    "technical candidate evidence does not imply human acceptance, rights clearance, canonical IR, or publication"
+  ],
+  "required_primary_source_members": 46,
+  "required_source_member_bytes": 74248915,
+  "required_source_member_set_sha256": "2ed1ca9ee905b3cb709bbe9b8dd800e1ed8c78eba4146945b4e8924ad8efa235",
+  "required_source_element_count": 583805,
+  "required_represented_element_count": 581157,
+  "required_formatting_only_excluded_element_count": 2648,
+  "required_unsupported_element_count": 0,
+  "formatting_only_tags": ["col", "colgroup", "property", "selector", "style"],
+  "human_review": [
+    "identity",
+    "edition and witness",
+    "component translator metadata",
+    "rights",
+    "editorial and structural interpretation",
+    "textual acceptance",
+    "publication"
+  ],
+  "provenance": {
+    "contract": "ocd-calvin-commentaries-candidate-provenance-v1",
+    "status": "nonaccepted",
+    "ticket_id": "37c-092",
+    "owner": "LIB-010",
+    "work_id": "calvin-commentaries",
+    "source_id": "calvin-commentaries-retained-ccel-thml",
+    "title": "Calvin's Collected Commentaries",
+    "source_authority": "retained CCEL ThML/XML cohort",
+    "source_member_count": 46,
+    "source_bytes": 74248915,
+    "source_member_set_sha256": "2ed1ca9ee905b3cb709bbe9b8dd800e1ed8c78eba4146945b4e8924ad8efa235",
+    "source_format": "CCEL ThML/XML",
+    "comparison_witness": {
+      "path": "raw/sword_modules/CalvinCommentaries.zip",
+      "sha256": "df66fc8c03537499ad006d069481d2c95b600887cdbd6ce75ec5d264b573192a",
+      "role": "comparison-witness-only"
+    },
+    "candidate_boundary": {
+      "technical_validation_status": "candidate-pending-validation",
+      "human_acceptance_status": "unresolved",
+      "rights_status": "unresolved",
+      "publication_status": "not-authorized",
+      "canonical_data_or_ir_written": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "calvin-identity-review",
+      "status": "unresolved",
+      "kind": "identity",
+      "detail": "Human review must confirm the bounded Calvin's Collected Commentaries work and creator identity."
+    },
+    {
+      "id": "calvin-edition-witness-review",
+      "status": "unresolved",
+      "kind": "edition-witness",
+      "detail": "Human review must reconcile the retained catalogue's 1578 and Baker/1996 claims with the component witnesses and legacy metadata."
+    },
+    {
+      "id": "calvin-translator-metadata-review",
+      "status": "unresolved",
+      "kind": "editorial-metadata",
+      "detail": "Component translator credits and source spelling variants remain source-bound evidence, not a resolved collection-level metadata decision."
+    },
+    {
+      "id": "calvin-sword-acts-review",
+      "status": "unresolved",
+      "kind": "comparison-witness",
+      "detail": "The SWORD About list omits Acts although the retained CCEL cohort includes calcom36.xml and calcom37.xml."
+    },
+    {
+      "id": "calvin-rights-review",
+      "status": "unresolved",
+      "kind": "rights",
+      "detail": "Source-reported Public Domain statements require human rights review before publication."
+    },
+    {
+      "id": "calvin-editorial-structure-review",
+      "status": "unresolved",
+      "kind": "editorial",
+      "detail": "The source-to-TEI mapping preserves source text and selectors but does not resolve editorial meaning of all ThML presentation conventions."
+    },
+    {
+      "id": "calvin-textual-acceptance",
+      "status": "unresolved",
+      "kind": "acceptance",
+      "detail": "Technical validation and visual inspection are not human textual acceptance."
+    },
+    {
+      "id": "calvin-publication-review",
+      "status": "unresolved",
+      "kind": "publication",
+      "detail": "This candidate is not publication-ready or publication-authorized."
+    }
+  ]
+}

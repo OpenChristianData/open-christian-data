@@ -1,0 +1,133 @@
+{
+  "contract": "ocd-schaff-history-vol-1-reconstruction-profile-v1",
+  "profile_id": "schaff-history-vol-1-retained-thml-v1",
+  "ticket_id": "LIB-058",
+  "work_id": "schaff-history-vol-1",
+  "source_id": "ccel-schaff-hcc1-thml",
+  "primary_source": {
+    "path": "raw/ccel/schaff/hcc1.xml",
+    "bytes": 3630817,
+    "sha256": "0a2a7cc56e2d00c791eeaacd5516a292a855426c3a8ceb8d5eeef6eeb49e3d09",
+    "format": "ThML XML",
+    "root_element": "ThML",
+    "book_id": "hcc1",
+    "work_id": "hcc1",
+    "publisher_id": "ccel"
+  },
+  "identity": {
+    "title": "History of the Christian Church, Volume I: Apostolic Christianity. A.D. 1-100",
+    "author": "Philip Schaff",
+    "digital_source": "CCEL electronic edition",
+    "provider": "Christian Classics Ethereal Library",
+    "textual_form": "unresolved",
+    "print_edition": "unresolved",
+    "rights_status": "unresolved",
+    "rights_evidence": "The retained DC.Rights element states Public Domain; this source statement is preserved as evidence only and does not establish a human rights decision or publication authorization.",
+    "legacy_config_used_as_authority": false,
+    "retained_source_statements": {
+      "first_published": "1882",
+      "print_source_info": "Revised edition",
+      "electronic_publisher": "CCEL",
+      "electronic_created": "2002-11-26",
+      "language": "eng"
+    }
+  },
+  "owner_route": {
+    "owner_ticket": "LIB-058",
+    "work_map": "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md",
+    "source_map": "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md",
+    "source_map_claim": "schaff-history-vol-1 is assigned to LIB-058 with the retained hcc1.xml SHA-256 above.",
+    "member_selection_basis": "The frozen owner/source map binds this named work to the exact retained hcc1 member; its hcc1 bookID/workID and Volume I title agree. The sibling Indexes root is retained as integral source support, not treated as a separate work.",
+    "stored_file_count_used_as_boundary": false
+  },
+  "selection": {
+    "source_member": "raw/ccel/schaff/hcc1.xml",
+    "selector": "/ThML/ThML.body/*",
+    "selected_body_roots": [
+      {
+        "tag": "div1",
+        "id": "i",
+        "ordinal": 1,
+        "title": "Apostolic Christianity"
+      },
+      {
+        "tag": "div1",
+        "id": "ii",
+        "ordinal": 2,
+        "title": "Indexes"
+      }
+    ],
+    "work_boundary": {
+      "primary_root": "/ThML/ThML.body/div1[@id='i']",
+      "integral_support_root": "/ThML/ThML.body/div1[@id='ii']",
+      "note": "The source-native Indexes root is retained as part of this complete one-member volume envelope; it is not assigned a second work ID."
+    },
+    "disposition": "Include the complete ThML document, including its header, direct source front matter, three prefaces, Contents, Addenda, twelve chapters, the sibling eight-division Indexes root, notes, links, and the full source envelope. No source body division is excluded.",
+    "omitted_body_division_count": 0
+  },
+  "source_envelope": {
+    "xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "external_dtd_loaded": false,
+    "root_children_in_order": [
+      "ThML.head",
+      "ThML.body"
+    ],
+    "root_text": "\n",
+    "top_level_comments": [
+      {
+        "ordinal": 1,
+        "sha256": "b8eb991d9b8863a7cbda0bdbfbfa6f13c436fd847a96c44ee0b5eb6aea459113",
+        "characters": 169
+      },
+      {
+        "ordinal": 2,
+        "sha256": "6cc9330433be785320a54f46590d5426618b5d8224832f30e1df333511812bf3",
+        "characters": 56
+      },
+      {
+        "ordinal": 3,
+        "sha256": "b404201dd31cb6ceb3ae290c9bf6b0bc2cd87854a9c2a0ee8a3970d98fa16446",
+        "characters": 47
+      }
+    ],
+    "active_processing_instructions": 0,
+    "in_root_comments_processing_instructions_or_entity_nodes": 0
+  },
+  "division_counts": {
+    "div": 16,
+    "div1": 2,
+    "div2": 25,
+    "div3": 102,
+    "div4": 0,
+    "div5": 0,
+    "div6": 0
+  },
+  "heading_counts": {
+    "h1": 1,
+    "h2": 8,
+    "h3": 0,
+    "h4": 1,
+    "h5": 0,
+    "h6": 1
+  },
+  "division_semantics": {
+    "div1_roots": "The first contains direct title/front matter, three prefaces, Contents, Addenda, and twelve chapters; the second contains eight named indexes.",
+    "div2": "Five front/support divisions and twelve chapters under div1 id=i; eight index divisions under div1 id=ii.",
+    "div3": "Content sections nested under the chapter and front/support divisions.",
+    "div4_through_div6": "Counted explicitly; absent in this retained XML.",
+    "h3_through_h6": "Counted explicitly; h3 and h5 are absent; one h4 and one h6 are retained source headings. CSS style declarations mentioning headings are retained as header data and are not headings."
+  },
+  "projection": {
+    "source_element_carriers": "Map every source XML element one-to-one to a TEI content element and an xml:id-linked standOff record with stable source key, original local name, ordered original attributes, parent key, and one-based element-child ordinal.",
+    "heading_carriers": "A source h1-h6 that is the leading element child of a source division maps to TEI head; a later or otherwise non-leading source heading maps to TEI ab type=source-hN so source order remains schema-valid. The original heading tag, attributes, parent, and ordinal remain exact in standOff.",
+    "division_subtype_tokens": "Source division @type values are retained verbatim in standOff; the TEI @subtype projection replaces whitespace runs with hyphens because TEI subtype is token-valued.",
+    "schema_order_wrappers": "After a source division child, each maximal run of following non-division siblings is grouped in a TEI div type=source-order-wrapper when required by the bundled schema; exact source parent and ordinal remain in the standOff record and wrappers add no source text.",
+    "mixed_content": "Preserve each source element's text and tail verbatim; do not normalize spelling, punctuation, or Unicode.",
+    "source_header": "Retain the complete ThML.head tree as structured, tagged TEI header content; expose supported title and author fields separately in titleStmt.",
+    "source_body": "Retain the complete ThML.body tree, including all source divisions, headings, indexes, notes, links, verse, lists, and empty anchors.",
+    "doctype": "Record the exact external DOCTYPE in TEI header metadata; never fetch its external subset.",
+    "comments": "Retain the exact three leading XML comments as comments preceding the TEI root.",
+    "rights": "Preserve the retained DC.Rights string Public Domain as source evidence only; do not treat it as a human rights decision or publication authorization."
+  }
+}

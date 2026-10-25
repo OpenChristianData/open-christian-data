@@ -1,0 +1,84 @@
+{
+  "contract": "ocd-baxter-christian-directory-validation-policy-v2",
+  "source_id": "eebo-tcp-a26892-pinned-tei-p5",
+  "readme_sha256": "f3ba4285a1a3d7382732472dea31eb971ac97d3248442112e30c6bca001aaeb2",
+  "accountability": {
+    "contract": "ocd-baxter-christian-directory-accountability-v1",
+    "projection": "exact-source-bytes-v1",
+    "source_path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/A26892.xml",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "content.tei.xml is byte-identical to the retained TEI P5 source; all elements, attributes, text, tails, whitespace, and encoding details remain present"
+  },
+  "provenance": {
+    "contract": "ocd-baxter-christian-directory-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "tcp_id": "A26892",
+      "author": "Baxter, Richard, 1615-1691.",
+      "title": "A Christian Directory",
+      "publication_place": "London",
+      "publisher": "Printed by Robert White for Nevill Simmons",
+      "date": "1673",
+      "wing": "B1219",
+      "estc": "R21847",
+      "eebo_image_set": "64451"
+    },
+    "source": {
+      "landing_url": "https://name.umdl.umich.edu/A26892.0001.001",
+      "repository_url": "https://github.com/textcreationpartnership/A26892",
+      "download_url": "https://raw.githubusercontent.com/textcreationpartnership/A26892/559e610f2df537005ba76168fa0d0076d1e325b7/A26892.xml",
+      "commit": "559e610f2df537005ba76168fa0d0076d1e325b7",
+      "retrieved_utc": "2026-08-31T00:26:02Z",
+      "bytes": 9504938,
+      "sha256": "1b90e060921164cb2486d938c653640537cb710e8b1889c48a0e10f5e515035e"
+    },
+    "rights": {
+      "keyboarded_and_encoded_edition": "CC0 1.0 Universal",
+      "page_images_and_supplementary_files": "not covered by the waiver and not retained",
+      "attribution_request": "TCP respectfully requests credit to the original source",
+      "human_rights_review": "required"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "canonical_write": false,
+      "human_textual_acceptance": false,
+      "edition_acceptance": false,
+      "editorial_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "baxter-a26892-imperfect-print-witness",
+      "status": "unresolved",
+      "question": "How should later review treat the portrait absent from the filmed witness?",
+      "evidence": "The retained sourceDesc says the film lacks the portrait; no image is distributed or invented."
+    },
+    {
+      "id": "baxter-a26892-keying-and-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate the TCP transcription against the 1673 print witness?",
+      "evidence": "TCP reports sampled proofreading and light structural encoding; this route preserves but does not independently collate it."
+    },
+    {
+      "id": "baxter-a26892-human-rights-editorial-publication",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept the text, edition, rights scope, editorial treatment, and publication?",
+      "evidence": "Exact-byte reconstruction and technical validation provide no such acceptance or authorization."
+    }
+  ],
+  "required": [
+    "exact retained byte length and SHA-256",
+    "A26892, Richard Baxter, and 1673 identity in retained TEI header",
+    "candidate content.tei.xml byte-identical to retained A26892.xml",
+    "complete independently recomputed element, attribute, text, and tail census",
+    "TEI P5 validity against the vendored tei_all.xsd",
+    "exact deterministic provenance, accountability, unresolved ledger, and README bytes",
+    "complete candidate manifest authority bindings and nonaccepted status",
+    "CC0 keyboarded-and-encoded-text scope distinct from excluded page images",
+    "TCP attribution request retained in README.source.md",
+    "no silent omission, duplication, normalization, or invention"
+  ]
+}

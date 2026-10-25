@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-accountability.schema.json",
+  "title": "Fisher Marrow complete retained-line accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "source_scope", "source_sha256", "source_bytes", "line_count", "newline_count", "represented_count", "evidence_only_count", "excluded_count", "omitted_count", "duplicate_count", "page_marker_candidate_count", "false_running_header_content_count", "high_confidence_speaker_count", "section_boundary_speaker_count", "rejected_paragraph_continuation_speaker_like_count", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-fisher-marrow-source-accountability-v1"},
+    "schema": {"const": "fisher-marrow.source-accountability.schema.json"},
+    "profile_id": {"const": "fisher-marrow-complete-line-accountability-v1"},
+    "source_scope": {"const": "complete retained 1087403-byte OCR witness"},
+    "source_sha256": {"const": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3"},
+    "source_bytes": {"const": 1087403},
+    "line_count": {"const": 22946},
+    "newline_count": {"const": 22945},
+    "represented_count": {"const": 22946},
+    "evidence_only_count": {"const": 0},
+    "excluded_count": {"const": 0},
+    "omitted_count": {"const": 0},
+    "duplicate_count": {"const": 0},
+    "page_marker_candidate_count": {"const": 170},
+    "false_running_header_content_count": {"const": 16},
+    "high_confidence_speaker_count": {"const": 455},
+    "section_boundary_speaker_count": {"const": 24},
+    "rejected_paragraph_continuation_speaker_like_count": {"const": 9},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 22946,
+      "maxItems": 22946,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["feature_id", "line", "byte_start", "byte_end", "has_lf", "text", "text_sha256", "record_sha256", "region", "kind", "disposition", "tei_tag", "tei_xml_id", "tei_selector", "extraction"],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^fisher-line-[0-9]{5}$"},
+          "line": {"type": "integer", "minimum": 1, "maximum": 22946},
+          "byte_start": {"type": "integer", "minimum": 0},
+          "byte_end": {"type": "integer", "minimum": 0},
+          "has_lf": {"type": "boolean"},
+          "text": {"type": "string"},
+          "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "region": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["blank-line", "text-line", "heading-line", "dialogue-line", "section-boundary-dialogue-line", "page-marker-candidate", "false-running-header-content", "inline-uncertainty-line"]},
+          "disposition": {"const": "represented"},
+          "tei_tag": {"enum": ["ab", "head", "sp", "div"]},
+          "tei_xml_id": {"type": "string", "pattern": "^fisher-line-[0-9]{5}$"},
+          "tei_selector": {"type": "string", "pattern": "^#fisher-line-[0-9]{5}$"},
+          "extraction": {"enum": ["element-text", "speaker-plus-paragraph", "section-heading-plus-speaker-paragraph"]}
+        }
+      }
+    }
+  }
+}

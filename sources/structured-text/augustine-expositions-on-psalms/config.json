@@ -6,7 +6,11 @@
   "author_birth_year": 354,
   "author_death_year": 430,
   "contributors": [
-    "A. Cleveland Coxe (editor, 1847)",
+    {
+      "name": "A. Cleveland Coxe",
+      "role": "editor",
+      "note": "Edited with brief annotations and condensed the six-volume Oxford translation."
+    },
     "Philip Schaff (series editor)"
   ],
   "original_publication_year": 391,
@@ -26,7 +30,7 @@
   "source_edition": "Nicene and Post-Nicene Fathers, Series 1. Philip Schaff (ed.). New York: Christian Literature Publishing Co., 1886-1889.",
   "source_hash": "sha256:87b60e90917e69f03c75955517fc996a0e6d22dc9862365b45c308e70e5bf784",
   "source_type": "ccel_thml",
-  "translator": "Philip Schaff (ed.), 1886",
+  "translator": "",
   "download_date": "2026-04-23",
   "output_file": "data/structured-text/augustine-expositions-on-psalms.json",
   "clearance_date": "2026-04-01",

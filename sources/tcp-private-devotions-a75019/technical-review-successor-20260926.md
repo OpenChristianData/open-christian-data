@@ -1,0 +1,7 @@
+# Current-binding technical review successor: private-devotions-several-occasions
+
+The prior tcp-private-devotions-a75019-v2 package remains immutable. Its source TEI, accounting, provenance, unresolved ledger, and attribution README are byte-identical to the current tcp-private-devotions-a75019-v3 package. The source-to-TEI change is the validator import-closure binding after `ocd_kernel/reconstruction/contract.py` began using the supported storage-topology resolver.
+
+Current source manifest: `sources/tcp-private-devotions-a75019/source-manifest-v2.json`, SHA-256 `5336fa779dcec7e19905afd9405ea43592109a95f53821fab7d50d9a61c8dcd4`. Current package: `D:/Library/Open Christian Data/candidate-reviews/manifest-acquisition-20260923/tcp-private-devotions-a75019-v3`, manifest SHA-256 `c606c6554e6ae3f6cf225c21899139474c6887d9835b084bdee732fd770f92ee`; TEI SHA-256 `800bae82b44a6c45ef3d49af85e1e0dd046ace2741055a078acc9be808d69aec`; validation sidecar SHA-256 `40f8ef59c843511635a8ad6888c8603b6d347e509f29bc3f6de5c162037d48fc`, pass with zero findings. Fresh-process reproduction at `tcp-private-devotions-a75019-v3-reproduction` matches all seven package/validation files byte for byte. Focused successor suite `tests/test_l788_l789_binding_successors.py` passed 10/10, exit 0, including four source-grounded mutations for each work.
+
+This is a nonaccepted source-to-TEI technical candidate. Human acceptance, print collation, broader rights clearance, publication, and canonical integration remain separate.

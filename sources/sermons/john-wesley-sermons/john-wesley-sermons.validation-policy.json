@@ -1,0 +1,55 @@
+{
+  "contract": "ocd-john-wesley-sermons-validation-policy-v1",
+  "policy_id": "37c-235-john-wesley-sermons-source-bound-v1",
+  "version": 1,
+  "provenance": {
+    "identity": {"title": "Sermons on Several Occasions", "author": "John Wesley"},
+    "source": {"path": "raw/ccel/wesley_sermons.xml", "bytes": 4340943, "sha256": "70f4b1d44754ae01889c52aeeb6a1b6f92b9444d016cef35f4c0b40e33ea375a"},
+    "candidate_boundary": {"status": "nonaccepted", "publication": "not-authorized", "canonical_write": false}
+  },
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "candidate_generation_owner": "coordinator",
+  "source_member_count": 1,
+  "required_candidate_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "source_claims": {
+    "whole_member": true,
+    "complete_witness_set": false,
+    "edition_identity_resolved": false,
+    "work_boundary_resolved": false,
+    "part_mapping_resolved": false,
+    "rights_cleared": false,
+    "human_acceptance": "not_performed"
+  },
+  "required_checks": [
+    "manifest-binds-exact-retained-member-and-current-bytes",
+    "complete-ordered-xml-envelope-and-source-carrier-accounting",
+    "all-source-attributes-direct-text-and-child-tails-crosswalked",
+    "all-fragment-links-resolve-to-unique-source-identities",
+    "unknown-source-tags-use-explicit-named-fallback",
+    "tei-p5-schema-validation",
+    "full-retained-source-in-memory-projection-validates-against-manifest-pinned-tei-p5-schema",
+    "later-heading-carriers-preserve-source-order-inline-content-and-identities-without-new-divisions",
+    "source-accountability-schema-validation",
+    "independent-oracle-uses-distinct-stdlib-xml-source-traversal",
+    "omission-duplication-reordering-text-and-link-mutations-rejected",
+    "fresh-process-candidate-reproduction-and-byte-comparison",
+    "coordinator-owned-candidate-generation-and-destination"
+  ],
+  "not_claimed_by_source_route_tests": [
+    "full-source-candidate-generation",
+    "full-source-independent-candidate-oracle-pass",
+    "candidate-mutation-rejection",
+    "clean-process-byte-reproduction",
+    "cvw-admission-or-visual-review",
+    "edition-or-work-identity-resolution",
+    "rights-clearance-human-acceptance-or-publication"
+  ]
+}

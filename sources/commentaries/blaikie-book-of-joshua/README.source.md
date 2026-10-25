@@ -1,0 +1,7 @@
+# Source record: The Book of Joshua
+
+The accepted scope is W. G. Blaikie's complete *The Book of Joshua*, in *The Expositor's Bible*, edited by William Robertson Nicoll. Its retained CCEL ThML source is `raw/ccel/expositors-bible/blaikie_expositorjosh.xml` (823,168 bytes; SHA-256 `7a2be4c01ca4ed8ecf37aa6905a161c126ac8cc4752e00448126ae363d2139b3`). The source title page identifies London, Hodder and Stoughton, 1893. The source's `DC.Rights` field is empty.
+
+The retained CCEL permission note dated April 1, 2026 allows parsing its ThML/XML for text, describes CCEL's claimed rights as covering its files and formatting rather than underlying public-domain texts, and prohibits selling CCEL files or derivatives of their formatting. That general note is not an item-specific rights grant. CCEL's current [copyright policy](https://www.ccel.org/about/copyright.html) says some editions include protected additions, requests contact before republishing CCEL works or using them commercially, and says rights vary by country. Do not infer worldwide rights from the print date or the blank source field.
+
+For downstream release accounting, use `data/commentaries/blaikie-book-of-joshua/README.md`. Its source credit does not clear redistribution of the exact electronic representation. The item remains held from public text selection pending an output-specific and territory-specific rights disposition.

@@ -1,5 +1,7 @@
 # ADR-0018: LLM Review may propose unattested readings via the L3 composed-reading path
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-06-25)
 
 ## Context

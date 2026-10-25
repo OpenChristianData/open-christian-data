@@ -1,0 +1,62 @@
+{
+  "contract":"ocd-lib030-reconstruction-profile-v3",
+  "profile_id":"lib030-ccel-thml-complete-document-v3",
+  "version":3,
+  "source_set_authority":"retained-source-set",
+  "source_root_environment":"OCD_RETAINED_RAW_ROOT",
+  "work_order":["spurgeons-morning-evening"],
+  "projection":{
+    "scope":"complete retained XML byte envelope and every parsed document node",
+    "document_envelope":"XML declaration, public doctype, interstitial padding, three pre-root comments, root byte region, and terminal padding are independently inventoried",
+    "source_head":"all ThML.head metadata, editorial history, rights, source attribution, contact details, and both style representations are readable in the TEI front transcription; principal metadata is also projected semantically into teiHeader",
+    "source_body":"every ThML.body descendant is projected in document order as readable TEI with stable source-to-target accounting",
+    "unknown_elements":"fail closed",
+    "source_text":"visible direct text and child tails are preserved exactly; structural whitespace remains bound in the complete node crosswalk and raw byte regions",
+    "source_attributes":"meaningful body attributes are projected to TEI linking, reference, numbering, type, subtype, rendition, or milestone attributes; every attribute remains exact in the crosswalk",
+    "document_containers":"ThML is represented by the TEI document; ThML.head by teiHeader plus front transcription; ThML.body by TEI text/body"
+  },
+  "source_feature_census":{
+    "retained_bytes":2136777,
+    "document_nodes":13824,
+    "elements":13821,
+    "pre_root_comments":3,
+    "processing_instructions":0,
+    "attributes":27125,
+    "head_nodes":73,
+    "body_nodes":13747,
+    "body_projection_nodes":13746,
+    "source_xml_id_occurrences":9178,
+    "source_xml_id_unique_values":8444,
+    "source_duplicate_xml_id_values":734,
+    "source_duplicate_xml_id_extra_occurrences":734,
+    "internal_source_references":2591,
+    "references_to_duplicate_source_ids":2564,
+    "semantic_index_containers":2,
+    "centered_front_matter_containers":1
+  },
+  "works":[
+    {
+      "work_id":"spurgeons-morning-evening",
+      "title":"Morning and Evening: Daily Readings",
+      "author":"C. H. Spurgeon",
+      "contributors":[],
+      "source_url":"https://www.ccel.org/ccel/spurgeon/morneve.xml",
+      "source_edition":"CCEL digitization of Morning and Evening: Daily Readings (1865).",
+      "source_sha256":"3512797ae879d4fdbdcde90e5ebc04299e501658fd8fb6c09977c2e2648ad0a4"
+    }
+  ],
+  "requirements":[
+    "exact-retained-source-hash-member-order-and-byte-envelope",
+    "complete-document-node-attribute-text-tail-and-topology-accounting",
+    "all-duplicate-source-id-alias-carriers-retained-with-fragments-resolved-to-first-document-order-occurrence",
+    "readable-source-head-metadata-editorial-rights-attribution-and-style-transcription",
+    "readable-deterministic-ThML-body-projection",
+    "independent-minidom-source-carrier-ledger-and-policy-driven-candidate-projection-audit",
+    "omission-duplication-reordering-misattachment-invention-wrong-source-unknown-feature-and-every-distinct-projection-family-mutations-go-red",
+    "all-734-duplicate-id-values-and-all-2564-references-to-duplicate-identifiers-are-independently-reconciled-to-first-document-order-targets",
+    "TEI-P5-validation",
+    "source-accountability-schema-validation",
+    "cross-process-and-cross-cwd-determinism",
+    "nonaccepted-human-review-rights-and-publication-boundary"
+  ]
+}

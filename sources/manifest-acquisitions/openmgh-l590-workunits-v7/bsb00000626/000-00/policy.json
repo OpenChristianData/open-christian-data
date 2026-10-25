@@ -1,0 +1,26 @@
+{
+  "contract": "ocd-openmgh-l590-workunit-policy-v3",
+  "mapping": "Extract one source-declared top-level work per TEI and preserve source markup. Split BSB720 Carmina only at bsb00000720_00274_12: the preceding poem remains in Gedichte; Liturgische Texte begins at Laudate, pueri, dominum. Retain page marker bsb00000720_00274 in the after segment. BSB703 remains one source-declared Vita Anskarii division; its header appendix label and narrative transition do not supply a separate top-level title boundary.",
+  "provenance": {
+    "catalog_url": "https://www.mgh.de/en/digital-mgh/openmgh/mgh-editions-in-openmgh",
+    "credit": "MGH and Bayerische Staatsbibliothek",
+    "rights": "Official openMGH catalog applies CC BY 4.0 to digital text, TEI and annotations; cite MGH and Bayerische Staatsbibliothek. Medieval edited texts themselves are copyright-free.",
+    "source_id": "bsb00000626",
+    "source_url": "https://data.mgh.de/openmgh/bsb00000626.zip",
+    "status": "nonaccepted-candidate"
+  },
+  "unresolved": [
+    {
+      "detail": "Side-by-side page-image comparison and print-edition completeness are not established by exact digital TEI byte conservation.",
+      "kind": "print-collation"
+    },
+    {
+      "detail": "Human editorial review, rights clearance, canonical integration and publication remain open.",
+      "kind": "acceptance"
+    },
+    {
+      "detail": "No unique exact current work/acquisition sidecar join is established for this source division. Current-sidecar audit status: unlinked; overlapping work IDs: none. The source-bound TEI remains technically valid; identity linkage is unresolved.",
+      "kind": "work-linkage"
+    }
+  ]
+}

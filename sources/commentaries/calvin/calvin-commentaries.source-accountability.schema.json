@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/source-to-tei/calvin-commentaries-source-accountability-v1.schema.json",
+  "title": "Calvin's Collected Commentaries complete retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "profile_id",
+    "work_id",
+    "source_id",
+    "source_member_set_sha256",
+    "source_bytes",
+    "source_census",
+    "element_counts",
+    "lexical_events",
+    "lexical_event_disposition",
+    "member_census",
+    "members",
+    "features",
+    "represented_element_count",
+    "formatting_only_excluded_element_count",
+    "unsupported_element_count",
+    "formatting_only_counts"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-calvin-commentaries-source-accountability-v1"},
+    "profile_id": {"const": "calvin-commentaries-retained-ccel-thml-v1"},
+    "work_id": {"const": "calvin-commentaries"},
+    "source_id": {"const": "calvin-commentaries-retained-ccel-thml"},
+    "source_member_set_sha256": {"const": "2ed1ca9ee905b3cb709bbe9b8dd800e1ed8c78eba4146945b4e8924ad8efa235"},
+    "source_bytes": {"const": 74248915},
+    "source_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["elements", "attributes", "text_nodes", "tail_nodes", "characters", "comments", "processing_instructions", "doctype_declarations"],
+      "properties": {
+        "elements": {"const": 583805},
+        "attributes": {"const": 912249},
+        "text_nodes": {"const": 471791},
+        "tail_nodes": {"const": 449460},
+        "characters": {"const": 51274609},
+        "comments": {"const": 369},
+        "processing_instructions": {"const": 20},
+        "doctype_declarations": {"const": 36}
+      }
+    },
+    "element_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "lexical_events": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comments", "processing_instructions", "doctype_declarations"],
+      "properties": {"comments": {"const": 369}, "processing_instructions": {"const": 20}, "doctype_declarations": {"const": 36}}
+    },
+    "lexical_event_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comments", "processing_instructions", "doctype_declarations"],
+      "properties": {
+        "comments": {"const": "accounted-not-represented"},
+        "processing_instructions": {"const": "accounted-not-represented"},
+        "doctype_declarations": {"const": "accounted-not-represented"}
+      }
+    },
+    "member_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["included", "excluded", "retained_family_total"],
+      "properties": {"included": {"const": 46}, "excluded": {"const": 0}, "retained_family_total": {"const": 46}}
+    },
+    "members": {
+      "type": "array",
+      "minItems": 46,
+      "maxItems": 46,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "path", "kind", "bytes", "sha256", "decision", "reason", "main_title", "body_division_count", "element_count", "represented_element_count", "formatting_only_excluded_element_count", "unsupported_element_count", "lexical_events"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["catalogue", "component"]},
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "decision": {"const": "include"},
+          "reason": {"type": "string", "minLength": 1},
+          "main_title": {"type": "string"},
+          "body_division_count": {"type": "integer", "minimum": 0},
+          "element_count": {"type": "integer", "minimum": 1},
+          "represented_element_count": {"type": "integer", "minimum": 0},
+          "formatting_only_excluded_element_count": {"type": "integer", "minimum": 0},
+          "unsupported_element_count": {"const": 0},
+          "lexical_events": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["comments", "processing_instructions", "doctype_declarations"],
+            "properties": {"comments": {"type": "integer", "minimum": 0}, "processing_instructions": {"type": "integer", "minimum": 0}, "doctype_declarations": {"type": "integer", "minimum": 0}}
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "minItems": 583805,
+      "maxItems": 583805,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["feature_id", "member", "source_selector", "source_qname", "source_attributes", "source_direct_text", "source_tail_text", "source_parent_selector", "source_child_ordinal", "disposition"],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^calvin-commentaries-feature-[0-9]{6}$"},
+          "member": {"type": "string", "minLength": 1},
+          "source_selector": {"type": "string", "pattern": "^/"},
+          "source_qname": {"type": "string", "minLength": 1},
+          "source_attributes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["qname", "value"],
+              "properties": {"qname": {"type": "string", "minLength": 1}, "value": {"type": "string"}}
+            }
+          },
+          "source_direct_text": {"type": "string"},
+          "source_tail_text": {"type": "string"},
+          "source_parent_selector": {"type": ["string", "null"]},
+          "source_child_ordinal": {"type": "integer", "minimum": 1},
+          "disposition": {"enum": ["represented", "formatting-only-excluded"]}
+        }
+      }
+    },
+    "represented_element_count": {"const": 581157},
+    "formatting_only_excluded_element_count": {"const": 2648},
+    "unsupported_element_count": {"const": 0},
+    "formatting_only_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["col", "colgroup", "property", "selector", "style"],
+      "properties": {"col": {"const": 0}, "colgroup": {"const": 0}, "property": {"const": 1833}, "selector": {"const": 723}, "style": {"const": 92}}
+    }
+  }
+}

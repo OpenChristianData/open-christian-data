@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0",
+  "work_id": "augustine-spirit-and-letter",
+  "title": "A Treatise on the Spirit and the Letter.",
+  "creators": [
+    {
+      "name": "Augustine of Hippo",
+      "role": "author",
+      "evidence": [
+        "raw/ccel/npnf1/npnf105.xml"
+      ]
+    }
+  ],
+  "evidence": [
+    "raw/ccel/npnf1/npnf105.xml#xi",
+    "raw/ccel/npnf1/npnf105.xml#ii-p2",
+    "raw/ccel/npnf1/npnf105.xml#ii-p3",
+    "raw/ccel/npnf1/npnf105.xml#ii-p7",
+    "raw/ccel/npnf1/npnf105.xml#ii-p9",
+    "raw/ccel/npnf1/npnf105.xml#ii-p10",
+    "raw/ccel/npnf1/npnf105.xml#ix-p14",
+    "raw/ccel/npnf1/npnf105.xml#iii-p15",
+    "raw/ccel/npnf1/npnf105.xml#iii-p74"
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "augustine-spirit-and-letter-english",
+      "language": "en",
+      "editions": [
+        {
+          "edition_id": "augustine-spirit-and-letter-ccel",
+          "title": "A Treatise on the Spirit and the Letter.",
+          "language": "en",
+          "category": "prose",
+          "acquisition_ids": [
+            "augustine-spirit-and-letter-retained"
+          ],
+          "containing_source": {
+            "title": "NPNF1-05. St. Augustine: Anti-Pelagian Writings",
+            "locator": "raw/ccel/npnf1/npnf105.xml",
+            "evidence": [
+              "raw/ccel/npnf1/npnf105.xml#ThML.head"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

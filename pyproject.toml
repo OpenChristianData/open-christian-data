@@ -1,15 +1,15 @@
 [tool.pytest.ini_options]
-testpaths = ["tests", "build/parsers/tests"]
+testpaths = ["tests", "build/parsers/tests", "cvw_app/tests"]
 python_files = ["test_*.py"]
 addopts = ["--import-mode=importlib", "--tb=short"]
 norecursedirs = ["_tmp*", "_pytest*", ".*"]
 # Keep temp dirs out of the project tree so Codex sandbox ACLs don't orphan them.
-# tmp_path_retention_policy=none: delete tmp_path dirs immediately after each test.
-# cache_dir inside .tmp/: the pytest 9 atomic-rename staging area (pytest-cache-files-*)
-# lands in .tmp/ (hidden to gbrain, already gitignored) instead of the repo root.
-tmp_path_retention_policy = "none"
-cache_dir = ".tmp/.pytest_cache"
+# Remove successful per-test copies promptly; retain no completed test sessions.
+tmp_path_retention_policy = "failed"
+tmp_path_retention_count = 0
 markers = [
     "slow: corpus-integrity and subprocess tests; skip with '-m \"not slow\"' for fast iteration",
-    "requires_local_artifacts: tests that need generated or untracked local corpus artefacts",
+    "lib084_candidate_local: bounded LIB-084 source or candidate checks that do not traverse the complete retained corpus",
+    "lib084_oracle_e2e: LIB-084 complete-corpus oracle and resealed candidate checks",
+    "requires_local_artifacts: tests that need local raw sources, accepted masters, or private historical evidence",
 ]

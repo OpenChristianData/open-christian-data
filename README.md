@@ -1,173 +1,116 @@
 <h1 align="center">Open Christian Data</h1>
 
-<p align="center"><strong>Repository of Public Domain Christian Texts</strong></p>
+<p align="center"><strong>Repository of Christian Texts</strong></p>
 
 [![CI](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenChristianData/open-christian-data/actions/workflows/ci.yml)
 
 ## What is Open Christian Data?
 
-Open Christian Data (OCD) aims to be the single unified collection of all public domain Christian text. It exists to bring this collection together from across the internet and to structure it in a useful format for public use.
+OCD aims to be a single unified collection of publicly available Christian
+resources. Our aim is to collate as many high quality Christian works and
+resources as are available for distribution into a unified dataset for the
+public good. Starting initially with a focus on works of historic significance
+in the public domain.
 
 Most public domain Christian literature beyond the Bible is scattered across scanned books, old websites, specialist file formats, and separate digitization projects. Even when a text is online, it may not be available as part of a collection in which its author, work, edition, structure, and source history are clearly preserved. We stand on the shoulders of the faithful saints who have come before to build on their work and stay true to their ethos that information about Christianity and historical Christian texts should be freely and widely available to all. Many of those who have come before, we believe, forged their work in this spirit and dreamed of a project like this one day existing, and we hope to honor and carry on those dreams. We believe advances in AI have made this project possible on a scale that has never been possible before.
 
-The original goal of the project was to make a dataset for AI use, which you can find [on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data), and that is still a primary goal of the project. However development on that project raised at least three issues to resolve that lead to a larger project with expanded usefulness:
+The project began as a dataset for AI use, which you can find [on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data). That remains a primary goal. Building it raised three questions that led to a larger project:
 
 1. How do you verify that the text is a faithful copy of its source?
-2. How do you verify that the text is a faithful copy of the original published work itself? This raises the issue of both text structure and formatting of the original published work but also the accuracy of the text to the original work. Seeing as both provide information to a true scholar of the text, both issues come into view.
-3. How do you ensure the text is usable for AI? It has to be public domain with no rights attached, aligned in any case with the motivating spirit of this project which is the public good. This work is produced in the hopes that it will be useful in ways the producers can not even yet envision.
+2. How do you verify that the text is a faithful copy of the original published work? The words matter, and so do the structure and formatting. Both help a serious reader understand the text.
+3. Is the text usable for AI? Given the changing legal landscape, we decided
+   it is essential to maintain proper acknowledgment and a chain of provenance
+   with respect to copyright for all texts, while leaving decisions around
+   copyright for any use of the data in the hands of the user. The project
+   records the rights status of the work, edition, transcription, and source
+   layer.
 
-Code can only take you so far and is not human friendly for review, so we determined it useful and necessary to have an intermediate step that we normalized all text into so that it can be visually verified. It then became obvious that this work will incidentally produce useful renderings of the texts in human readable formats that can be useful for purposes beyond the original intended purpose of the project.
+## v1.0.0 — The De-slop release
 
-**Current Release: V0.2.0:**
+We've rebuilt the pipeline from the ground up and reprocessed every work in this release, making substantial corrections along the way. We did this so you can have much more confidence in the data you download.
 
-**Nearly 150 million words of Christian texts across 12 categories, including 363 books.** The collection also includes 34,904 hymns, 5,297 sermons, nine Bible translations, and extensive commentary and reference material.
+The release brings together **852 works in 881 copies, containing more than 153 million words**. The [collection catalogue](docs/WORK_CATALOG.md) lists every work, with authors, publication details, sources, and reuse terms.
+
+[Download the TEI master copies](https://github.com/OpenChristianData/open-christian-data/releases/download/v1.0.0/open-christian-data-v1.0.0-tei.zip) or use the [13 category downloads on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data/tree/v1.0.0). See the [release notes](docs/releases/v1.0.0.md) for the changes and download details.
 
 ## How the collection is made
 
-1. **Find a reliable source.** We identify a particular work and edition, find the best available copy, and confirm that the text can be included in a public domain collection.
-2. **Create an accurate digital text.** Some sources are already digital and can be carefully parsed. Others survive only as scanned books and must be transcribed using OCR and then corrected against the page images. The aim is to reproduce the text and structure of the chosen edition faithfully.
-3. **Keep the work intact.** We record who wrote and contributed to the work, which edition or translation is represented, how the work is divided, and where the text came from. Books remain books, sermons remain sermons, hymns remain hymns, and commentaries remain connected to the Bible passages they discuss.
-4. **Build a verifiable master copy.** The project is moving each work into a shared intermediate representation (IR) using the Text Encoding Initiative (TEI) standard. This master copy preserves more of the work than any one published format and can be rendered as a readable page so that people can compare it with the original source and correct errors.
-5. **Publish useful versions.** The texts, provenance, developing TEI representations, and visual verification tools live in this GitHub project. From the master text we can produce simpler versions for particular uses, including the JSON dataset published on Hugging Face for AI training and development.
+We start with a particular text and carefully make a faithful copy. We keep that copy in TEI, an XML format for books and other texts. It can hold the whole work, including headings, paragraphs, verse, notes, and references.
 
-## Where the collection is published
+Our [Corpus Verification Workbench (CVW)](cvw_app/README.md) lets agents compare a copy with its source side by side, so they can check the words and layout and correct their work.
 
-This GitHub repository is the home of the texts in all their forms, their source history, and the tools used to build and check them.
+The dataset downloads are built from the master copies. When we correct a copy, we rebuild its downloads too.
 
-The [Open Christian Data dataset on Hugging Face](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data) is the home of the AI-focused dataset publication. It presents the collection as downloadable JSON records organized by format, making it straightforward to use for model training, evaluation, retrieval, and other computational work.
+![A source text becomes a faithful TEI master copy and then downloadable text. Agents use CVW to compare the source and copy visually and make corrections.](docs/images/collection-process.svg)
 
-## Current collection
+For a visual tour of the programs and workflow, open [the project guide](docs/PROJECT_GUIDE.html) in a browser. Point at a box for a short explanation.
 
-The collection currently includes books, Bible translations, commentaries, topical indexes, devotionals, sermons, doctrinal documents, catechisms, prayers, hymns, dictionaries and encyclopedias, and scripture-linked quotations from the Church Fathers. The Hugging Face publication divides some long works into smaller passages so they can be searched, retrieved, and used in AI systems.
+## Get the texts
 
-Counts below are generated from current `data/` by:
+| What you want | Where to find it |
+|---|---|
+| Browse the works and editions | [Collection catalogue](docs/WORK_CATALOG.md) |
+| Whole texts in TEI XML | [TEI master copies ZIP](https://github.com/OpenChristianData/open-christian-data/releases/download/v1.0.0/open-christian-data-v1.0.0-tei.zip), with a separate file for every edition |
+| Text records for training, search, or analysis | [Hugging Face dataset](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data) — JSONL downloads and typed Arrow files |
+| A bibliography to use in other tools | [CSV](docs/WORK_CATALOG.csv) or [MODS XML](docs/WORK_CATALOG.mods.xml) |
+| Source credits and reuse terms | [Source notices](docs/SOURCE_NOTICES.md) |
 
-```bash
-py -3 build/tools/count_dataset_records.py
+The collection includes books, Bible translations, commentaries, sermons, creeds, catechisms, prayers, hymns, poetry, dictionaries, and other Christian writing. A work can itself be a collection of sermons, letters, or hymns.
+
+### Load the dataset
+
+```python
+from datasets import load_dataset
+
+texts = load_dataset(
+    "OpenChristianDataOrg/open-christian-data",
+    name="prose",
+    split="train",
+    revision="v1.0.0",
+    streaming=True,
+)
+print(next(iter(texts))["text"])
 ```
 
-| Category                                     | What the collection contains                                                                                                     |
-| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Books and long-form works                    | 288 works, including theology, church history, treatises, and devotional classics, divided into 259,198 passages for publication |
-| Bible translations                           | 9 translations containing 282,395 verses                                                                                         |
-| Commentaries                                 | 34 commentaries containing 115,069 entries                                                                                       |
-| Dictionaries and encyclopedias               | 6 dictionaries and encyclopedias containing 25,682 entries                                                                       |
-| Topical Bibles and indexes                   | *Nave's Topical Bible* and *Torrey's New Topical Textbook*, containing 5,945 topics                                              |
-| Devotionals                                  | 2 devotionals containing 1,464 readings                                                                                          |
-| Sermons                                      | 5,297 sermons from 7 collections                                                                                                 |
-| Creeds, confessions, and doctrinal documents | 33 documents published as 1,314 articles and clauses                                                                             |
-| Catechisms                                   | 15 catechisms containing 3,509 questions and answers                                                                             |
-| Prayers and liturgies                        | 4 sources containing 205 prayers and collects                                                                                    |
-| Hymns                                        | 34,904 hymn texts                                                                                                                |
-| Church Fathers quotations                    | 70,164 scripture-linked quotations                                                                                               |
+JSONL files contain one record per line. Depending on the category, a record can be a Bible verse, a passage, a hymn, a question and answer, or a reference entry. Each record includes the work and edition IDs used in the catalogue. Hugging Face loading uses typed Arrow files to keep the text values intact.
 
-The Hugging Face files contain 805,146 downloadable records. That is a technical loading statistic: depending on the category, a record may be a verse, passage, sermon, hymn, question and answer, prayer, quotation, or reference entry. The generated work catalog and metadata audit live at [`docs/WORK_CATALOG.md`](docs/WORK_CATALOG.md). A browser-friendly review surface is available at [`docs/WORK_CATALOG.html`](docs/WORK_CATALOG.html).
+**Updating from an earlier release?** Category names and fields have changed. Follow the [migration guide](https://huggingface.co/datasets/OpenChristianDataOrg/open-christian-data/blob/v1.0.0/releases/v1.0.0-migration.md).
 
-Examples include *An Exposition of the Old and New Testament*, *The Metropolitan Tabernacle Pulpit*, *The Catholic Encyclopedia*, *Nave's Topical Bible*, *The City of God*, *Institutes of the Christian Religion*, and editions of *The Book of Common Prayer*.
+## Contributing
 
-## Data format
+We'd love to collaborate with people who want to work on the project. Help us add texts, check copies against their sources, improve the catalogue, or develop the tools. We'd also like to hear your ideas and what you're building with the collection.
 
-Each resource is a JSON file with a metadata envelope and a data array:
+Start with [CONTRIBUTING.md](CONTRIBUTING.md), look through the [acquisition and research list](docs/ACQUISITIONS.md), or [open an issue](https://github.com/OpenChristianData/open-christian-data/issues). You can also reach us at [openchristiandata@gmail.com](mailto:openchristiandata@gmail.com).
 
-```json
-{
-  "meta": {
-    "id": "matthew-henry-complete",
-    "author": "Matthew Henry",
-    "license": "cc0-1.0",
-    "schema_type": "commentary",
-    "verse_text_source": "BSB",
-    "verse_reference_standard": "OSIS",
-    "provenance": { ... }
-  },
-  "data": [
-    {
-      "entry_id": "matthew-henry-complete.Ezek.1.1-3",
-      "book": "Ezekiel",
-      "book_osis": "Ezek",
-      "chapter": 1,
-      "verse_range": "1-3",
-      "verse_range_osis": "Ezek.1.1-Ezek.1.3",
-      "verse_text": "In the thirtieth year, on the fifth day of the fourth month...",
-      "commentary_text": "The circumstances of the vision which Ezekiel saw...",
-      "summary": null,
-      "summary_review_status": "withheld",
-      "cross_references": [],
-      "word_count": 2042
-    }
-  ]
-}
+## Tools and formats
+
+The [text contribution guide](docs/TEXT_CONTRIBUTIONS.md) explains how to prepare and check a text with the project's tools. The [Corpus Verification Workbench](cvw_app/README.md) provides visual comparison. See [CONTRIBUTING.md](CONTRIBUTING.md) for software setup and a small test you can run.
+
+```text
+build/         source parsers, reconstruction and release tools
+ocd_kernel/    shared text, metadata, validation and release code
+cvw_app/       visual verification workbench
+schemas/       data and document contracts
+tests/         tests and small example collections
+docs/          guides, catalogue and source notices
+sources/       source descriptions and credits
+data/          older JSON files retained for existing users
 ```
 
-## Schema
+The v1.0.0 TEI masters are supplied as a release download. The older JSON files under `data/` use the previous format; use the versioned downloads above for v1.0.0.
 
-All verse references use OSIS format (`Gen.1.1`, `Rom.9.1-Rom.9.5`). TypeScript types are in `schemas/types.ts`.
+### Schema
 
-Schema definitions live in two places. Dataset-specific schemas are in `schemas/v1/`; schemas shared with the project's OCR repository are in `ocd_kernel/schemas/v1/`. Resolve either by name with `resolve_schema_path()` from `ocd_kernel.lib.schema_enums` rather than hardcoding a directory, and read enum values from `build.lib._generated_enums` rather than redeclaring them. Allowed values for `tradition`, `era`, `audience`, and `work_kind` are documented in [`docs/SCHEMA_SPEC.md`](docs/SCHEMA_SPEC.md).
+The [schemas](schemas/v2/) describe what software can expect in each kind of record. A Bible verse, a hymn and a reference entry need different fields. Work and edition IDs connect those records to the catalogue. Scripture references use OSIS labels such as `Gen.1.1` and `Rom.9.1-Rom.9.5`.
 
-## Repository structure
 
-```
-data/
-  bible-text/
-    bsb/                      # book-scoped Bible text resources
-  church-fathers/             # source-scoped verse-reference quotation resources
-  commentaries/
-    matthew-henry/            # book-scoped files for one commentary work
-    calvin/                   # book-scoped files for one commentary collection
-    expositors-bible/         # work/author-scoped commentary files
-    ...
-  doctrinal-documents/        # creeds, confessions, and statements
-  structured-text/            # theology, devotion, church history, and related works
-    augustine-*.json
-    john-owen-*.json
-    schaff-history-vol-*.json
-    calvins-institutes.json
-    ...
-  sermons/
-    spurgeon-mtp/
-    maclaren-expositions.json
-    john-wesley-sermons.json
-    ...
-  catechisms/
-    westminster-shorter-catechism.json
-    westminster-larger-catechism.json
-    heidelberg-catechism.json
-    ...
-  devotionals/
-    spurgeons-morning-evening/morning-evening.json
-    daily-light/daily-light.json
-  hymns/
-    hymnary-pd/collection.json  # hymn texts provided by Hymnary.org
-  prayers/
-    bcp-1662/collects.json
-    bcp-1928/collects.json
-    andrewes-private-devotions/prayers.json
-    didache/prayers.json
-  reference/
-    schaff-herzog-encyclopedia.json
-    eastons-bible-dictionary.json
-    smiths-bible-dictionary.json
-    hitchcocks-bible-names-dictionary.json
-    torreys-topical-textbook.json
-  topical-reference/
-    naves/naves-topical-bible.json
-  authors/
-    registry.json             # author registry shared across resources
-  lexicon/                    # historical English lexicon used by checking
-                              # tools (see data/lexicon/README.md)
-schemas/
-  v1/                         # dataset JSON schemas (one per record type)
-  types.ts                    # TypeScript types
-ocd_kernel/
-  schemas/v1/                 # shared schemas used across the project's repos
-build/
-  parsers/                    # One parser per source type
-  validate.py                 # Schema + structural validation
-sources/                      # config.json per resource (source URLs, provenance)
-```
+<details>
+<summary>Older JSON examples and parser commands</summary>
 
-## Usage
+The following examples work with the older repository data.
+
+The following example reads retained legacy JSON. For current offline releases,
+use the generated release card and [reader instructions](docs/LIBRARY_CONSUMER_CUTOVER.md).
 
 ```python
 import json
@@ -184,14 +127,25 @@ valley = [e for e in resource["data"] if "37" in e["verse_range_osis"]]
 
 ## Running the pipeline
 
+Current library browsing and selected offline release assembly use:
+
+```bash
+py -3 build/tools/report_library.py
+py -3 build/scripts/export_huggingface.py --root <root> --selection <original-selection.json> --output <fresh-release-directory>
+```
+
+The release assembler requires accepted TEI and sidecars. It does not publish.
+The commands below maintain retained legacy data and do not establish current
+library or release acceptance:
+
 ```bash
 # Validate a data file
-py -3 build/validate.py data/bible-text/bsb/genesis.json
-py -3 build/validate.py data/commentaries/matthew-henry/ezekiel.json
-py -3 build/validate.py data/devotionals/spurgeons-morning-evening/morning-evening.json
+py -3 -m build.validate data/bible-text/bsb/genesis.json
+py -3 -m build.validate data/commentaries/matthew-henry/ezekiel.json
+py -3 -m build.validate data/devotionals/spurgeons-morning-evening/morning-evening.json
 
 # Validate everything
-py -3 build/validate.py --all
+py -3 -m build.validate --all
 
 # Generate BSB bible text (all 66 books from local raw/bible_databases/BSB.json)
 py -3 build/parsers/bsb_bible_text.py --dry-run
@@ -263,6 +217,22 @@ Requires Python 3.11 or newer; CI runs 3.12. Install dependencies with `pip inst
 
 Most parsers and `build/validate.py` need only the standard library. The extra dependencies are narrow: `jsonschema` for schema validation, `beautifulsoup4` for the HTML sources, `pymupdf4llm` for the PDF sources, and `datasets` with `huggingface_hub` for publishing to Hugging Face.
 
+### Older schema details
+
+Normalized scripture references use OSIS format (`Gen.1.1`,
+`Rom.9.1-Rom.9.5`); current rows also preserve printed labels and unsupported
+explicit targets. `schemas/types.ts` describes the retained legacy types.
+
+The current offline library pipeline uses `schemas/v2/` for work, acquisition, acceptance, and public category contracts. Its rows derive from accepted TEI and validated sidecars; see the [pipeline specification](docs/OCD_LIBRARY_PIPELINE_SPEC.md). Existing `schemas/v1/` and `ocd_kernel/schemas/v1/` definitions remain available for historical dataset and source-review contracts. For those contracts, resolve schemas by name with `resolve_schema_path()` from `ocd_kernel.lib.schema_enums` and use generated enum values. The [legacy schema reference](docs/SCHEMA_SPEC.md) describes fields such as `tradition`, `era`, and `audience`; their presence there does not include them in the new public model.
+
+### Historical summary fields
+
+Retained legacy entries may have empty `summary` and `key_quote` fields with
+`summary_review_status: "withheld"`. These historical fields do not belong to
+the current v2 public model and do not imply a planned enrichment stage.
+
+</details>
+
 ## Sources
 
 The collection depends on the work of libraries, archives, digitization
@@ -277,38 +247,10 @@ them about your project through [their contact page](https://hymnary.org/contact
 Many books and other texts were **sourced via
 [CCEL.org](https://www.ccel.org/)**.
 
-The [principal-source and acknowledgment ledger](docs/SOURCES.md) maps sources
-to the material represented in the release, records requested credit and legal
-notices, distinguishes old works from modern digitizations and databases, and
-documents unresolved rights questions. Specific source and edition information
-also travels with individual records. See [Third-Party Notices](THIRD_PARTY_NOTICES.md)
-and the [licensing policy](docs/LICENSING.md) for additional detail.
-
-## Contributing
-
-The most useful contribution is adding a new source — a public-domain text that isn't yet in the dataset.
-
-**Adding a new source:**
-
-1. Establish the rights of the exact work, translation, edition, transcription, and source file; an author's death date alone is not enough
-2. Identify the source format (Project Gutenberg, CCEL ThML, SWORD module, Standard Ebooks, HTML, PDF)
-3. Create a parser in `build/parsers/<name>.py` — see existing parsers for patterns; shared utilities live in `build/lib/`
-4. Add source metadata in `sources/<type>/<slug>/config.json`
-5. Write tests in `tests/test_<name>.py` (required — the pre-commit hook will block a commit without them)
-6. Run `py -3 build/validate.py --all` to confirm 0 errors
-7. Open a PR
-
-**Schema and enum values** are documented in `docs/SCHEMA_SPEC.md`. Read it before writing a parser — it defines allowed values for `tradition`, `era`, `audience`, `work_kind`, and the reference object format.
-
-**Data quality fixes** (wrong section splits, missing entries, OCR errors) go directly in the relevant parser and its test file.
-
-## Summaries
-
-Each entry has `summary` and `key_quote` fields. These are `null` and `summary_review_status: "withheld"` — they ship empty rather than unreviewed. Summaries will be generated and added incrementally as they're reviewed.
+The [source notices](docs/SOURCE_NOTICES.md) give the credits and reuse terms for every copy in v1.0.0. The [historical source and acknowledgment ledger](docs/SOURCES.md) covers the earlier collection. See [Third-Party Notices](THIRD_PARTY_NOTICES.md) and the [licensing policy](docs/LICENSING.md) for additional detail.
 
 ## License
 
-- **Published dataset** (Hugging Face): [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — intended for unrestricted reuse; see the [source and acknowledgment ledger](docs/SOURCES.md) for source-specific rights and open follow-up.
-- **Everything else** (code, schemas, intermediate data, tooling): [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free for non-commercial use with attribution; commercial use requires a license.
+The texts have their own reuse terms. See each record's `license`, the [source notices](docs/SOURCE_NOTICES.md), and the [data terms](docs/DATA_TERMS.md). Public-domain status, CC0, the Unlicense, CC BY, and CC BY-SA remain distinct where they apply.
 
-For commercial licensing: openchristiandata@gmail.com
+The project's code, schemas, and tooling are licensed under [CC BY-NC 4.0](LICENSE). For commercial licensing of the software, contact [openchristiandata@gmail.com](mailto:openchristiandata@gmail.com).

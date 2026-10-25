@@ -1,0 +1,87 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "creeds-json-lib063-abstract-of-principles-retained-json",
+  "work_id": "abstract-of-principles",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "abstract-of-principles",
+    "retained_source_sha256": "3fcb6447826ccbbf3b8b2c23bacc769f6ad0df8b5449f2a0c7925623afed242c",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "doctrinal-documents/abstract-of-principles.json",
+        "legacy_source_sha256": "000787d0fa72b203d6cf12b75f1deecf330c73649d77d0a3ddcadeb2d35b5f63"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/abstract_of_principles.json",
+      "role": "primary-source",
+      "bytes": 10312,
+      "sha256": "3fcb6447826ccbbf3b8b2c23bacc769f6ad0df8b5449f2a0c7925623afed242c"
+    },
+    {
+      "name": "source-config",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/abstract-of-principles/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 147,
+      "sha256": "a2faac734c82813749d7c16279d10e52575424eb2de652ba518868514f54e243"
+    },
+    {
+      "name": "rights-readme",
+      "path": "raw/Creeds.json/README.md",
+      "role": "rights-evidence",
+      "bytes": 8871,
+      "sha256": "caa2a135ceb89bdea2baf411bcb2897b03c34d24473de7c43ca373c9d9008bef"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/lib063.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 19930,
+      "sha256": "26a1d1495eb1111365ee21259640de7a32f70964af221475d7d653bbd8abef26"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/lib063.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1461,
+      "sha256": "9ffcdda9e42afd91035ecab80cd6f92c3e5a92b06ee827c4d0d3981a3325bf15"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "converter": {
+    "id": "ocd-creeds-json-lib063-retained-member-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/creeds_json_lib063_reconstruction.py",
+    "implementation_sha256": "1ef1fbda7c10fcb5753fdeda3ab988a050aceb84695870f9baf8d9c6a13decf4"
+  },
+  "validator": {
+    "id": "ocd-creeds-json-lib063-retained-byte-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/creeds_json_lib063_oracle.py",
+    "implementation_sha256": "acbaf5fbb63e3f6e98c1b494d5fb99464b07eb926accd3725a335af0034db82d",
+    "import_closure_sha256": "3f5676c0d4ced42284ea1e04de23330eb4e76deada8771f6b56f837615f16a65"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

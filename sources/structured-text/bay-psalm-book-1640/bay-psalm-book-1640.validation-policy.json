@@ -1,0 +1,55 @@
+{
+  "contract": "ocd-tcp-n00001-exact-source-policy-v1",
+  "source_id": "tcp-N00001",
+  "accountability": {
+    "contract": "ocd-tcp-n00001-source-accountability-v1",
+    "source_path": "raw/tcp/high-range/N00001/N00001.xml",
+    "projection": "exact-source-bytes-v1",
+    "selection": "/TEI",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "Complete retained N00001 TEI P5 member, including its full header, front, five body books, back matter, page markers, notes, original spelling, encoded characters, verse lines, table, source-coded gaps, text, and tails"
+  },
+  "provenance": {
+    "contract": "ocd-tcp-n00001-provenance-v1",
+    "status": "nonaccepted",
+    "work_id": "bay-psalm-book-1640",
+    "textual_form_id": "bay-psalm-book-1640-tcp-retained",
+    "edition_id": "bay-psalm-book-1640-tcp-electronic",
+    "acquisition_id": "bay-psalm-book-1640-tcp-acquired",
+    "tcp_id": "N00001",
+    "source_path": "raw/tcp/high-range/N00001/N00001.xml",
+    "source_sha256": "3016f74bcce71ffa67f7b87e55db64ffcd54a28ad29899251582d2e784a6df7e",
+    "download_url": "https://raw.githubusercontent.com/textcreationpartnership/N00001/master/N00001.xml",
+    "source_terms": "The retained TCP header declares the Phase I keyboarded and encoded text public domain/CC0 and requests due credit to the original source.",
+    "rights_status": "unassessed",
+    "credit_notice_status": "prepared",
+    "canonical_write": false,
+    "publication_authorized": false
+  },
+  "unresolved": [
+    {
+      "id": "bay-psalm-n00001-print-collation",
+      "status": "unresolved",
+      "question": "Will the retained TCP electronic witness be collated with the underlying Readex page images or another exact print witness?",
+      "evidence": "The acquired one-member scope contains no page images; encoded page markers and final matter cannot establish print-image fidelity."
+    },
+    {
+      "id": "bay-psalm-n00001-human-review",
+      "status": "unresolved",
+      "question": "Will a human separately review the whole work and decide acceptance, rights, and publication status?",
+      "evidence": "Exact-byte conservation, TEI P5 validation, and agent technical checks do not supply those decisions."
+    }
+  ],
+  "required": [
+    "complete retained TEI source byte equality",
+    "full element, attribute, text, and tail census",
+    "front, five body books, and back matter",
+    "all 1032 source-coded gaps and 294 page markers",
+    "verse, note, table, and final-matter feature checks",
+    "TEI P5 validity",
+    "human-visible prepared TCP credit notice with rights unassessed",
+    "nonaccepted package status"
+  ]
+}

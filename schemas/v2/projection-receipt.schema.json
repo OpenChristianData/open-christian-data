@@ -1,0 +1,291 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "mapping_version",
+    "master_sha256",
+    "scope_id",
+    "identity",
+    "authority",
+    "output_sha256",
+    "row_count",
+    "anchors",
+    "inventory",
+    "references",
+    "warnings",
+    "exclusions",
+    "independent_check",
+    "assembler_version",
+    "book_codes_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "mapping_version": {
+      "const": "ocd-common-prose-provisional-v4"
+    },
+    "master_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "scope_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id"
+      ],
+      "properties": {
+        "work_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "textual_form_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "edition_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "output_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "row_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "record_id",
+          "tei_path",
+          "text_sha256"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tei_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "inventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tei_path",
+          "disposition",
+          "attributes",
+          "text_sha256",
+          "tail_sha256"
+        ],
+        "properties": {
+          "tei_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "enum": [
+              "private-header",
+              "outside-scope",
+              "excluded-paratext",
+              "row-content",
+              "locator-heading",
+              "structure",
+              "excluded-heading"
+            ]
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "tail_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tei_path",
+          "original_target",
+          "resolution",
+          "target_record_id",
+          "target_note",
+          "source_note"
+        ],
+        "properties": {
+          "tei_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "original_target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolution": {
+            "enum": [
+              "in-projection",
+              "outside-projection",
+              "external"
+            ]
+          },
+          "target_record_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_note": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "source_note": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tei_path",
+          "reason"
+        ],
+        "properties": {
+          "tei_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tei_path",
+          "reason"
+        ],
+        "properties": {
+          "tei_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "independent_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "errors"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "pass",
+            "fail"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assembler_version": {
+      "const": "ocd-correspondence-assembler-provisional-v1"
+    },
+    "book_codes_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/projection-receipt.schema.json",
+  "title": "Private TEI-004 correspondence receipt"
+}

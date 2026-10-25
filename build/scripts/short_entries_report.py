@@ -1,19 +1,19 @@
-"""short_entries_report.py
-Scan all commentary JSON files and report entries under a word count threshold.
-Outputs ASCII-safe text suitable for Windows console.
+"""Report short commentary rows from a verified selected v2 release.
 
-Usage:
-    py -3 build/scripts/short_entries_report.py
-    py -3 build/scripts/short_entries_report.py --threshold 10
-    py -3 build/scripts/short_entries_report.py --commentary adam-clarke
+Pass --root, --release and --selection. Historical directory scanning requires
+--legacy-data as the first argument and retains its old --commentary option.
 """
 
 import argparse
+import hashlib
 import json
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data" / "commentaries"
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 
 def ascii_safe(text, max_len=120):
@@ -41,11 +41,11 @@ def scan_commentary(commentary_dir, threshold):
     return results
 
 
-def main():
+def legacy_main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Report short commentary entries")
     parser.add_argument("--threshold", type=int, default=20, help="Word count threshold (default: 20)")
     parser.add_argument("--commentary", help="Scan only this commentary ID")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.commentary:
         dirs = [DATA_DIR / args.commentary]
@@ -105,5 +105,67 @@ def main():
         grand_short, grand_total, args.threshold, pct))
 
 
+    return 0
+
+
+def short_release_entries(root: Path, release: Path, selection: dict, threshold: int, work_id: str | None = None) -> dict:
+    from build.tools.report_release_stats import release_statistics
+    from ocd_kernel.library._common import PipelineError
+
+    if threshold < 0:
+        raise ValueError("threshold must be nonnegative")
+    report_path = release / "internal" / "release-report.json"
+    report_bytes = report_path.read_bytes()
+    release_statistics(root, release, selection)
+    if report_path.read_bytes() != report_bytes:
+        raise PipelineError("release report changed during verification")
+    report = json.loads(report_bytes)
+    configurations = [item for item in report["configurations"] if item["category"] == "commentary"]
+    if not configurations:
+        raise PipelineError("selected release contains no commentary configuration")
+    short = []
+    total = 0
+    for config in configurations:
+        content = (release / config["path"]).read_bytes()
+        if hashlib.sha256(content).hexdigest() != config["sha256"]:
+            raise PipelineError("commentary rows changed after verification")
+        for line in content.decode("utf-8").splitlines():
+            row = json.loads(line)
+            if work_id is not None and row["work_id"] != work_id:
+                continue
+            total += 1
+            count = len(row["text"].split())
+            if count < threshold:
+                short.append({"work_id": row["work_id"], "record_id": row["record_id"],
+                              "word_count": count, "preview": ascii_safe(row["text"])})
+    if work_id is not None and total == 0:
+        raise PipelineError(f"selected release contains no commentary rows for work {work_id!r}")
+    return {"status": "pass", "release_report_sha256": hashlib.sha256(report_bytes).hexdigest(),
+            "category": "commentary", "threshold": threshold, "total_records": total,
+            "short_records": short, "counting_rule": "Unicode whitespace-delimited tokens in verified public text"}
+
+
+def main(argv: list[str] | None = None) -> int:
+    from ocd_kernel.library._common import PipelineError
+    from ocd_kernel.release.selection import load_release_selection
+
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0] == "--legacy-data":
+        return legacy_main(arguments[1:])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--release", type=Path, required=True)
+    parser.add_argument("--selection", type=Path, required=True)
+    parser.add_argument("--threshold", type=int, default=20)
+    parser.add_argument("--work-id")
+    args = parser.parse_args(arguments)
+    try:
+        result = short_release_entries(args.root, args.release, load_release_selection(args.selection), args.threshold, args.work_id)
+    except (PipelineError, OSError, ValueError) as exc:
+        parser.error(str(exc))
+    print(json.dumps(result, ensure_ascii=True, indent=2))
+    return 0
+
+
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -1,0 +1,115 @@
+{
+  "authorities": [
+    {
+      "bytes": 140639,
+      "name": "retained-tei-p5",
+      "path": "raw/tcp/high-range/N18328/N18328.xml",
+      "role": "primary-source",
+      "sha256": "2f5d266ebf91471784de4a7f95cd47ac3fd806b908a1589d97f47c10a1069871"
+    },
+    {
+      "bytes": 2093,
+      "name": "acquisition-receipt",
+      "path": "raw/tcp/high-range/N18328/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "sha256": "b78a983859017356aa950dc00a19eb73b1c50d203a43290067914aa046dce6c6"
+    },
+    {
+      "bytes": 101,
+      "name": "member-inventory",
+      "path": "raw/tcp/high-range/N18328/member-inventory.tsv",
+      "role": "source-member-inventory-evidence",
+      "sha256": "eb83bb794e8af9771ad0b9d99fbd99cada52df10503ca639b258ae50e0c63b19"
+    },
+    {
+      "bytes": 1069,
+      "name": "source-credit",
+      "path": "library/works/convicts-visitor/SOURCE_CREDIT.md",
+      "role": "source-local-attribution-readme",
+      "sha256": "de8b53b454a2f117045acd47472ec2c701a961f074ba21a18ee68d61bbca36c4"
+    },
+    {
+      "bytes": 1026,
+      "name": "reconstruction-profile",
+      "path": "sources/convicts-visitor/n18328.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "12842b61b809947a02586337c1516b661842653ae93830a428fef16d74ff6d06"
+    },
+    {
+      "bytes": 1433,
+      "name": "validation-policy",
+      "path": "sources/convicts-visitor/n18328.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "6ef3fe45e928b0929c8c5fc008dce081a9fed34476d186a83ff4ab688e895828"
+    },
+    {
+      "bytes": 2800,
+      "name": "candidate-generator",
+      "path": "build/tei/convicts_visitor_n18328_candidate.py",
+      "role": "converter-dependency",
+      "sha256": "534b24fa8286f8ba62d38d760cd14a9ed403a7f5171ba9acf7cc1aa7f1df1431"
+    },
+    {
+      "bytes": 6003,
+      "name": "source-comparison",
+      "path": "build/tei/convicts_visitor_n18328_check.py",
+      "role": "converter-dependency",
+      "sha256": "4343bcff9beb8ac4b06445c8773ec57c61aa9f96fb9050b3b9175b7b0d03dfa3"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 782,
+      "name": "work-identity",
+      "path": "library/works/convicts-visitor/work.json",
+      "role": "work-identity-config",
+      "sha256": "a1f7f664004280f62b3380eb1274f7c237de6b211c7105bab720bf25e984a1c8"
+    },
+    {
+      "bytes": 2003,
+      "name": "acquisition-selection",
+      "path": "library/works/convicts-visitor/forms/convicts-visitor-tcp-retained/editions/convicts-visitor-tcp-electronic/acquisitions/convicts-visitor-tcp-acquired.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "c926684dcdf437b166b6f105f1ba426b317d09226687ab61a4b456f23a0abf91"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-convicts-n18328-complete-electronic",
+    "implementation_path": "build/tei/convicts_visitor_n18328_package.py",
+    "implementation_sha256": "a7a854f87ab44a4f170715c9b94bcf4817024425de86a70343d96a18722a36e9",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "tcp-N18328",
+  "source_selection": {
+    "authority": "retained-tei-p5",
+    "scope": "complete retained N18328 electronic XML member",
+    "selection": "/TEI/text"
+  },
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-convicts-n18328-independent-complete-xml",
+    "implementation_path": "build/tei/convicts_visitor_n18328_package_oracle.py",
+    "implementation_sha256": "ca8b2e84b043c55461dbe21a46618b3e0f848768fb8e180a652ab31aa4d78962",
+    "import_closure_sha256": "2a57c56382345d8fd83052e4d4e5bac2f1e54c4be53bdafffca8c014604bd049",
+    "version": "1"
+  },
+  "work_id": "convicts-visitor"
+}

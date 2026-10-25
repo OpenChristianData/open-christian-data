@@ -1,0 +1,108 @@
+{
+  "acquisition_id": "pg61883-retained-zip",
+  "authorities": [
+    {
+      "bytes": 612061,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/61883/pg61883-h.zip",
+      "role": "primary-source",
+      "sha256": "c3e9023f2c0e1065e4f2601c21b791ef50f94f1acb31ef4c61880b7592a3ff19"
+    },
+    {
+      "bytes": 265673,
+      "name": "retained-html",
+      "path": "raw/gutenberg/61883/html/pg61883-images.html",
+      "role": "source-document",
+      "sha256": "d20d19476609c1c24d7d939dd995e4eab5d784d72947533320abe475c7f391f3"
+    },
+    {
+      "bytes": 1348,
+      "name": "retained-acquisition-receipt",
+      "path": "raw/gutenberg/61883/acquisition-receipt.json",
+      "role": "acquisition-receipt",
+      "sha256": "8cd62ebcc25eec0be52ac59141900d35abdd66e7a45bae1e1e36dd4488a34e45"
+    },
+    {
+      "bytes": 1869,
+      "name": "retained-member-inventory",
+      "path": "raw/gutenberg/61883/member-inventory.tsv",
+      "role": "source-member-inventory",
+      "sha256": "9bb77f10ee9dbcf69a37aa54f857df17bce01edef45d474f58c328b90a8a6d2f"
+    },
+    {
+      "bytes": 3213,
+      "name": "predecessor-source-manifest",
+      "path": "sources/manifest-acquisitions/moody-prevailing-prayer-pg61883-v2/source-manifest.json",
+      "role": "bound-predecessor-source-manifest",
+      "sha256": "e19272848a7ea966abe9126f396de2d76416e90877663e40762163b7d4e01645"
+    },
+    {
+      "bytes": 18153,
+      "name": "work-profile",
+      "path": "sources/manifest-acquisitions/moody-prevailing-prayer-pg61883-v3/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "45df4d350de44400a25090c81d6b648dc70808e3eee81a334faf0d76f520ff32"
+    },
+    {
+      "bytes": 1587,
+      "name": "validation-policy",
+      "path": "sources/manifest-acquisitions/moody-prevailing-prayer-pg61883-v3/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "1eac0d1f6064fed4ad2c9dd6221bb032c0acc904b362a0b41720028570339430"
+    },
+    {
+      "bytes": 963,
+      "name": "source-notice",
+      "path": "sources/manifest-acquisitions/moody-prevailing-prayer-pg61883-v3/README.source.md",
+      "role": "source-attribution",
+      "sha256": "28f4026f07f10c76eb08a334c9b522bfafde305a4f934a5aefba656d60423d3d"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-moody-prevailing-prayer-pg61883-v3",
+    "implementation_path": "build/tei/moody_prevailing_prayer_61883_v3_reconstruction.py",
+    "implementation_sha256": "ef24130de0c13b19b47da5132cf536f75558bbe8235cf5bf884633eac9216041",
+    "version": "1"
+  },
+  "edition_id": "d-l-moody-prevailing-prayer-pg61883",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "pg61883-moody-complete-title-v3",
+  "source_members": [
+    {
+      "bytes": 612061,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/61883/pg61883-h.zip",
+      "role": "primary-source",
+      "sha256": "c3e9023f2c0e1065e4f2601c21b791ef50f94f1acb31ef4c61880b7592a3ff19"
+    }
+  ],
+  "ticket_id": "L793",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-moody-prevailing-prayer-pg61883-independent-v3",
+    "implementation_path": "build/tei/moody_prevailing_prayer_61883_v3_reconstruction.py",
+    "implementation_sha256": "ef24130de0c13b19b47da5132cf536f75558bbe8235cf5bf884633eac9216041",
+    "import_closure_sha256": "fb448f3fbd1b210ee97fd26b645310e9f492d94d215e41d2f877e5aa1d981fd7",
+    "version": "1"
+  },
+  "work_id": "d-l-moody-prevailing-prayer"
+}

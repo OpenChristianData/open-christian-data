@@ -1,0 +1,108 @@
+{
+  "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+  "boundary_evidence": {
+    "following_incipit": "Laudate, pueri, dominum.",
+    "following_label": "PSALMUS:",
+    "following_source_line": "PSALMUS: Laudate, pueri, dominum.",
+    "line_id": "bsb00000720_00274_12",
+    "preceding_text": "monstra placavit",
+    "source_member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+    "source_title_statement": "MGH SS rer. Germ. 73: Lantbert von Deutz, Vita Heribert. Miracula Heriberti. Gedichte. Liturgische Texte"
+  },
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 405383,
+  "member_inventory_sha256": "c278130096d9cee92f67fb2ba94d75b9794456646601cbd19ba1288d2aa3df10",
+  "member_name": "bsb00000720.xml",
+  "member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+  "receipt_edition": "Lantbert von Deutz, Vita Heribert. Miracula Heriberti. Gedichte. Liturgische Texte (MGH SS rer. Germ. 73)",
+  "source_id": "bsb00000720",
+  "work_linkage": {
+    "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+    "candidate_first_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00274_12",
+    "candidate_last_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00304_5",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "heribertus-christi-hodierna-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/heribertus-christi-hodierna/forms/heribertus-christi-hodierna-openmgh-retained/editions/heribertus-christi-hodierna-openmgh-electronic/acquisitions/heribertus-christi-hodierna-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "0bc1bf01cc9f6ef0f07cdab66182697e085aedc7dabff6d9307f02f90d9db12a",
+        "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+        "edition_id": "heribertus-christi-hodierna-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00291_1",
+        "last_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00293_9",
+        "member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+        "textual_form_id": "heribertus-christi-hodierna-openmgh-retained",
+        "work_id": "heribertus-christi-hodierna",
+        "work_sidecar_path": "library/works/heribertus-christi-hodierna/work.json",
+        "work_sidecar_sha256": "6b7fcb169cb16d3b83ffc3ec8fefb45020501d03d28d30c0e1df800eaa9a506c"
+      },
+      {
+        "acquisition_id": "heribertus-hymnus-iambici-metri-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/heribertus-hymnus-iambici-metri/forms/heribertus-hymnus-iambici-metri-openmgh-retained/editions/heribertus-hymnus-iambici-metri-openmgh-electronic/acquisitions/heribertus-hymnus-iambici-metri-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "ff31108fa07b7e1e4a00837c4963bf19c99fc72a77daa66ed3d3467b4ad57da1",
+        "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+        "edition_id": "heribertus-hymnus-iambici-metri-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00289_10",
+        "last_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00290_17",
+        "member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+        "textual_form_id": "heribertus-hymnus-iambici-metri-openmgh-retained",
+        "work_id": "heribertus-hymnus-iambici-metri",
+        "work_sidecar_path": "library/works/heribertus-hymnus-iambici-metri/work.json",
+        "work_sidecar_sha256": "4e0ca4b7fc482fe69f4c60606f9edec6784b345acc762674bbebada3b6694a2d"
+      },
+      {
+        "acquisition_id": "heribertus-hymnus-saffici-metri-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/heribertus-hymnus-saffici-metri/forms/heribertus-hymnus-saffici-metri-openmgh-retained/editions/heribertus-hymnus-saffici-metri-openmgh-electronic/acquisitions/heribertus-hymnus-saffici-metri-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "a48a37acace15fd4a5ab3ac7a076f4379a1ae4e5d5d4988b75b3489002c0b546",
+        "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+        "edition_id": "heribertus-hymnus-saffici-metri-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00288_13",
+        "last_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00289_9",
+        "member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+        "textual_form_id": "heribertus-hymnus-saffici-metri-openmgh-retained",
+        "work_id": "heribertus-hymnus-saffici-metri",
+        "work_sidecar_path": "library/works/heribertus-hymnus-saffici-metri/work.json",
+        "work_sidecar_sha256": "420b825d06c57d810f5b87b710196386337c842fdc895fa74bbf39567c1df157"
+      },
+      {
+        "acquisition_id": "sequentia-de-sancto-lamberto-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/sequentia-de-sancto-lamberto/forms/sequentia-de-sancto-lamberto-openmgh-retained/editions/sequentia-de-sancto-lamberto-openmgh-electronic/acquisitions/sequentia-de-sancto-lamberto-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "30541cf3b846559520692922ac444375c272d776a8bdb77606b9526c2d32e5c9",
+        "archive_sha256": "d4399d2e138f4c4f4dfb27a21294b71fa66a76b7b96e427ee0867055472f0dcd",
+        "edition_id": "sequentia-de-sancto-lamberto-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00302_5",
+        "last_locator": "raw/openmgh/bsb00000720/tei/bsb00000720.xml#bsb00000720_00304_5",
+        "member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+        "textual_form_id": "sequentia-de-sancto-lamberto-openmgh-retained",
+        "work_id": "sequentia-de-sancto-lamberto",
+        "work_sidecar_path": "library/works/sequentia-de-sancto-lamberto/work.json",
+        "work_sidecar_sha256": "fa88f3758c28379f0205293f2583014f8d8e8f24ea2c6a89cd3b2951c72f9b52"
+      }
+    ],
+    "overlapping_sidecar_count": 4,
+    "overlapping_work_ids": [
+      "heribertus-christi-hodierna",
+      "heribertus-hymnus-iambici-metri",
+      "heribertus-hymnus-saffici-metri",
+      "sequentia-de-sancto-lamberto"
+    ],
+    "source_id": "bsb00000720",
+    "source_member_sha256": "2a096d80ae17e4f701fdce91585d77afb5d69e385167a46f45173e887dc38ce5",
+    "source_path": "raw/openmgh/bsb00000720/tei/bsb00000720.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": "bsb00000720_00274_12",
+    "anchor_tag": "lb",
+    "ordinal": 2,
+    "part": 1,
+    "side": "after",
+    "source_n": "Carmina",
+    "title": "Liturgische Texte"
+  },
+  "xml_titles": [
+    "MGH SS rer. Germ. 73: Lantbert von Deutz, Vita Heribert. Miracula Heriberti. Gedichte. Liturgische Texte"
+  ]
+}

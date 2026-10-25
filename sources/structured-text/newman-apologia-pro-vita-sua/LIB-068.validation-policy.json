@@ -1,0 +1,29 @@
+{
+  "policy_id": "lib068-newman-apologia-pro-vita-sua-policy-v2",
+  "oracle_id": "ocd-lib068-source-local-independent-oracle",
+  "schema": "LIB-068.source-accountability.schema.json",
+  "rules": [
+    "exact retained source bytes and SHA-256",
+    "exact one-member include census with no excluded retained members",
+    "exact 14174-line sequence including blank and terminal empty lines",
+    "direct TEI P5 XSD and source-accountability schema validation",
+    "reject source, member, manifest, metadata, TEI, provenance, and unresolved-scope drift",
+    "fresh-process and different-CWD byte determinism",
+    "source-grounded literary inventory with independent critical heading discovery",
+    "actual TEI division ancestry, heading range, paragraph boundaries and retained source-footnote blocks",
+    "reject flattening or moving literary divisions even with identical text",
+    "independent whole-source emphasis character spans and local numeric note attachment",
+    "independent embedded-document fields, paragraph spacing and source attachment",
+    "independent verse, stanza, table, list and illustration-placeholder relationships before actual-carrier normalization",
+    "preserve exact source text and inline markup across any checked table column fragments"
+  ],
+  "required_unresolved_ids": [
+    "newman-apologia-pro-vita-sua-projection-review",
+    "newman-apologia-pro-vita-sua-identity-review",
+    "newman-apologia-pro-vita-sua-edition-witness-review",
+    "newman-apologia-pro-vita-sua-rights-review",
+    "newman-apologia-pro-vita-sua-editorial-review",
+    "newman-apologia-pro-vita-sua-textual-acceptance-review",
+    "newman-apologia-pro-vita-sua-publication-review"
+  ]
+}

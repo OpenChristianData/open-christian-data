@@ -1,0 +1,7 @@
+# Adalbert and Bernald, Second Letter to Bernard: retained-source notice
+
+The retained text authority is `raw/openmgh/bsb00000829/tei/bsb00000829.xml`, SHA-256 `cb35385e4e4ba87f80a002452a527527866322af7ccea7f23f366735e46df989`. The source-bound accepted master is the complete native section in division 1, part 2, zero-based section index 3, from `bsb00000829_00055_25` through `bsb00000829_00066_33`. The download ZIP is retained packaging; other sections, shared matter, and the separate fragment remain in the retained source.
+
+The Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB), request visible attribution in copies and derivative versions. The source applies CC BY 4.0 to their added digital MGH annotations and states the providers' belief that the underlying text is public domain. This does not establish jurisdiction-wide rights clearance. The source publication statement and print bibliography remain in the accepted master.
+
+The human-visible source/data attribution and licensing caveat is at `data/prose/adalbert-and-bernald-letter-to-bernard-2/README.md`. The one-work offline selection binds this source notice and that data README by hash, and includes the data notice in the generated public dataset card. Work-local release evidence and closeout are at `library/works/adalbert-and-bernald-letter-to-bernard-2/publication/offline-release-20261001/`; the execution script is in its parent publication directory. These deliverables do not record human review, rights clearance, global release selection, or publication.

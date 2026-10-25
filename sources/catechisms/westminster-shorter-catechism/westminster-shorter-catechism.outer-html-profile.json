@@ -1,0 +1,87 @@
+{
+  "contract": "ocd-westminster-shorter-catechism-outer-html-profile-v1",
+  "authority": {
+    "path": "raw/westminster-standard-org/westminster-shorter-catechism.html",
+    "bytes": 98505,
+    "sha256": "8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a"
+  },
+  "classification_policy": {
+    "assigned_content": "Each of the 107 p elements whose direct b child begins with Q., each immediately following proof p, and all carriers descended from those 214 paragraphs. These carriers support the existing separate Westminster Standard question, answer, and proof-group projection.",
+    "outer_evidence_only": "Every other parsed HTML element, attribute, nonempty text carrier, and comment. Retain its exact carrier-stream identity and class counts as evidence; do not project page shell, navigation, scripts, styles, images, footer, copyright, electronic boilerplate, or other unassigned material as catechism work text.",
+    "unexpected_carrier": "Fail closed. A new, missing, reordered, or changed carrier requires an explicit profile and producer/oracle review; totals alone cannot authorize it."
+  },
+  "census": {
+    "parser": "lxml.html.fromstring",
+    "paragraph_classes": {
+      "assigned_questions": 107,
+      "assigned_proof_groups": 107,
+      "outer_evidence_only": 26
+    },
+    "elements": {
+      "total": 1044,
+      "by_disposition": {
+        "assigned-content": 647,
+        "outer-evidence-only": 397
+      },
+      "by_tag": {
+        "a": 96,
+        "b": 215,
+        "body": 1,
+        "br": 109,
+        "div": 105,
+        "em": 108,
+        "form": 1,
+        "h1": 1,
+        "h2": 1,
+        "head": 1,
+        "header": 2,
+        "html": 1,
+        "i": 16,
+        "img": 3,
+        "input": 1,
+        "li": 20,
+        "link": 30,
+        "meta": 30,
+        "nav": 1,
+        "noscript": 1,
+        "p": 240,
+        "script": 35,
+        "span": 8,
+        "style": 11,
+        "title": 1,
+        "ul": 6
+      },
+      "stream_sha256": "582c300c6e8716f53ed25fd7c1906b3a3c2617b7f7519fa9a0b2ac98d4868b36"
+    },
+    "attributes": {
+      "total": 1038,
+      "by_disposition": {
+        "assigned-content": 215,
+        "outer-evidence-only": 823
+      },
+      "stream_sha256": "d8e0884a9b79123f83c7544d1edfa39683a7ed6761c670749462e1fc6f8f235e"
+    },
+    "nonempty_text_carriers": {
+      "total": 645,
+      "by_disposition": {
+        "assigned-content": 538,
+        "outer-evidence-only": 107
+      },
+      "stream_sha256": "7a08caf97793d36a0dfde3c40a5254108be912670c82e3d5d005a84ff93f81a8"
+    },
+    "comments": {
+      "total": 22,
+      "by_disposition": {
+        "outer-evidence-only": 22
+      },
+      "stream_sha256": "e30a2821b24c071c9daabe361198986cd57e84ceea46ed8b3f1334e556151b89"
+    }
+  },
+  "boundaries": {
+    "textual_and_edition_acceptance": "unresolved; no retained authority selects or reconciles a provider reading",
+    "rights_clearance": false,
+    "human_acceptance": false,
+    "canonical_promotion_authorized": false,
+    "publication_authorized": false
+  }
+}

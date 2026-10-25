@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:TEI xmlns:ns0="http://www.tei-c.org/ns/1.0" xml:id="tei003-augustine-standard-ebooks-metadata-matter">
+  <ns0:teiHeader>
+    <ns0:fileDesc>
+      <ns0:titleStmt><ns0:title>The City of God</ns0:title>
+        <ns0:author>Augustine of Hippo</ns0:author>
+        <ns0:respStmt>
+          <ns0:resp>translator</ns0:resp>
+          <ns0:name>Marcus Dods</ns0:name>
+        </ns0:respStmt>
+        <ns0:respStmt>
+          <ns0:resp>translator</ns0:resp>
+          <ns0:name>George Wilson</ns0:name>
+        </ns0:respStmt>
+        <ns0:respStmt>
+          <ns0:resp>translator</ns0:resp>
+          <ns0:name>J. J. Smith</ns0:name>
+        </ns0:respStmt>
+      </ns0:titleStmt>
+      <ns0:publicationStmt><ns0:publisher>Open Christian Data</ns0:publisher>
+        <ns0:availability status="free">
+          <ns0:p>Public domain source text prepared for Open Christian Data.</ns0:p>
+        </ns0:availability>
+      </ns0:publicationStmt>
+      <ns0:sourceDesc>
+        <ns0:bibl>
+          <ns0:title>City of God Standard Ebooks metadata member</ns0:title>
+          <ns0:idno type="sha256">498a98666d7b884ed07e4e5f29085578c7a4a068a7f5bdc5609bbf0f844f4f41</ns0:idno>
+          <ns0:ptr target="ocd-source:raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/titlepage.xhtml"/>
+          <ns0:note type="source-location">XHTML titlepage member; selected front/titlepage division</ns0:note>
+        </ns0:bibl>
+        <ns0:bibl>
+          <ns0:title>City of God Standard Ebooks metadata member</ns0:title>
+          <ns0:idno type="sha256">7db359baf1cfe66375efeddc5a84d5b3da855d50e8b67a60e578cc12c058e928</ns0:idno>
+          <ns0:ptr target="ocd-source:raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/preface.xhtml"/>
+          <ns0:note type="source-location">XHTML preface member; selected trailer under the preface</ns0:note>
+        </ns0:bibl>
+        <ns0:bibl>
+          <ns0:title>City of God Standard Ebooks metadata member</ns0:title>
+          <ns0:idno type="sha256">556683dc00e926d965e505606c02e5b97ce7d03abea99bc1ce1d867f3e2b0920</ns0:idno>
+          <ns0:ptr target="ocd-source:raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/colophon.xhtml"/>
+          <ns0:note type="source-location">XHTML colophon member; selected back/colophon division</ns0:note>
+        </ns0:bibl>
+        <ns0:bibl>
+          <ns0:title>City of God Standard Ebooks metadata member</ns0:title>
+          <ns0:idno type="sha256">d07c76023355a3f86a1b24bf4c9f9ed61d10015446786bd4861d4c5c3a8abf10</ns0:idno>
+          <ns0:ptr target="ocd-source:raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/uncopyright.xhtml"/>
+          <ns0:note type="source-location">XHTML uncopyright member; selected paragraph with emph</ns0:note>
+        </ns0:bibl>
+      </ns0:sourceDesc>
+    </ns0:fileDesc>
+    <ns0:revisionDesc>
+      <ns0:change xml:id="tei003-augustine-metadata-v1" when="2026-09-07">TEI-003 provisional metadata-matter derivative; wrapper/header only.</ns0:change>
+    </ns0:revisionDesc>
+  </ns0:teiHeader>
+  <ns0:text>
+    <ns0:front><ns0:div xml:id="titlepage" type="titlepage">
+        <ns0:head>The City of God</ns0:head>
+        <ns0:p>By <ns0:hi rend="bold" ana="z3998:author z3998:personal-name">Augustine of Hippo</ns0:hi>.</ns0:p>
+        <ns0:p>Translated by <ns0:hi rend="bold" ana="z3998:personal-name z3998:translator">Marcus Dods</ns0:hi>, <ns0:hi rend="bold" ana="z3998:personal-name z3998:translator">George Wilson</ns0:hi>, and <ns0:hi rend="bold" ana="z3998:personal-name z3998:translator"><ns0:abbr ana="z3998:given-name">J. J.</ns0:abbr> Smith</ns0:hi>.</ns0:p>
+      </ns0:div>
+      <ns0:div xml:id="tei003-augustine-metadata-preface" type="preface"><ns0:head>Editor’s Preface</ns0:head>
+        <ns0:p>“Rome having been stormed and sacked by the Goths under Alaric their king,<ns0:note place="end" n="1" xml:id="note-1" corresp="#noteref-1"><ns0:p><ns0:abbr ana="se:era z3998:initialism">AD</ns0:abbr> 410. </ns0:p></ns0:note> the worshippers of false gods, or pagans, as we commonly call them, made an attempt to attribute this calamity to the Christian religion, and began to blaspheme the true God with even more than their wonted bitterness and acerbity. It was this which kindled my zeal for the house of God, and prompted me to undertake the defence of the city of God against the charges and misrepresentations of its assailants. This work was in my hands for several years, owing to the interruptions occasioned by many other affairs which had a prior claim on my attention, and which I could not defer. However, this great undertaking was at last completed in twenty-two books. Of these, the first five refute those who fancy that the polytheistic worship is necessary in order to secure worldly prosperity, and that all these overwhelming calamities have befallen us in consequence of its prohibition. In the following five books I address myself to those who admit that such calamities have at all times attended, and will at all times attend, the human race, and that they constantly recur in forms more or less disastrous, varying only in the scenes, occasions, and persons on whom they light, but, while admitting this, maintain that the worship of the gods is advantageous for the life to come. In these ten books, then, I refute these two opinions, which are as groundless as they are antagonistic to the Christian religion.</ns0:p>
+        <ns0:trailer>The Editor.<ns0:hi rend="bold">Glasgow</ns0:hi>, 1871.</ns0:trailer>
+      </ns0:div></ns0:front>
+      <ns0:body>
+      <ns0:div xml:id="tei003-augustine-metadata-body-context" type="section"><ns0:head>Metadata-matter excerpt</ns0:head><ns0:p>The selected front and back matter are the bounded coverage target; main body content is intentionally omitted from this derivative.</ns0:p></ns0:div></ns0:body>
+  <ns0:back><ns0:div xml:id="colophon" type="colophon">
+        <ns0:head>Colophon</ns0:head>
+        <ns0:p><ns0:hi rend="italic" ana="se:name.publication.book">The City of God</ns0:hi><ns0:lb/> was published in <ns0:date when="0426">426</ns0:date> by<ns0:lb/><ns0:hi rend="bold" ana="z3998:personal-name">Augustine of Hippo</ns0:hi>.<ns0:lb/> It was translated from Latin in <ns0:date>1871</ns0:date> by<ns0:lb/><ns0:hi rend="bold" ana="z3998:personal-name">Marcus Dods</ns0:hi>, <ns0:hi rend="bold" ana="z3998:personal-name">George Wilson</ns0:hi>, and <ns0:hi rend="bold" ana="z3998:personal-name"><ns0:abbr ana="z3998:given-name">J. J.</ns0:abbr> Smith</ns0:hi>.</ns0:p>
+        <ns0:p>This ebook was produced for<ns0:lb/><ns0:ref target="https://standardebooks.org/">Standard Ebooks</ns0:ref><ns0:lb/> by<ns0:lb/><ns0:hi rend="bold" ana="z3998:personal-name">Devin O’Bannon</ns0:hi>,<ns0:lb/> and is based on transcriptions produced in <ns0:date>2014</ns0:date> by<ns0:lb/><ns0:hi rend="bold" ana="z3998:personal-name">Douglas <ns0:abbr ana="z3998:given-name">L.</ns0:abbr> Alley, <ns0:seg ana="z3998:ordinal z3998:roman">III</ns0:seg></ns0:hi>, <ns0:hi rend="bold" ana="z3998:personal-name">Charlene Taylor</ns0:hi>, <ns0:hi rend="bold" ana="z3998:personal-name">Joe <ns0:abbr ana="z3998:surname">C.</ns0:abbr></ns0:hi> and <ns0:ref target="https://www.pgdp.net/">Distributed Proofreaders</ns0:ref><ns0:lb/> for<ns0:lb/><ns0:ref target="https://standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith#transcriptions">Project Gutenberg</ns0:ref><ns0:lb/> and on digital scans from the<ns0:lb/><ns0:ref target="https://standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith#page-scans">Internet Archive</ns0:ref>.</ns0:p>
+        <ns0:p>The cover page is adapted from<ns0:lb/><ns0:hi rend="italic" ana="se:name.visual-art.painting">The Last Judgment</ns0:hi>,<ns0:lb/> a painting completed between <ns0:date>1436</ns0:date> and <ns0:date>1438</ns0:date> by<ns0:lb/><ns0:ref target="https://en.wikipedia.org/wiki/Jan_van_Eyck">Jan van Eyck</ns0:ref>.<ns0:lb/> The cover and title pages feature the<ns0:lb/><ns0:hi rend="bold" ana="se:name.visual-art.typeface">League Spartan</ns0:hi> and <ns0:hi rend="bold" ana="se:name.visual-art.typeface">Sorts Mill Goudy</ns0:hi><ns0:lb/> typefaces created in <ns0:date>2014</ns0:date> and <ns0:date>2009</ns0:date> by<ns0:lb/><ns0:ref target="https://www.theleagueofmoveabletype.com/">The League of Moveable Type</ns0:ref>.</ns0:p>
+        <ns0:p>The first edition of this ebook was released on<ns0:lb/><ns0:date when="2026-01-03T20:46:11Z">January 3, 2026, 8:46 <ns0:abbr>p.m.</ns0:abbr></ns0:date><ns0:lb/> You can check for updates to this ebook, view its revision history, or download it for different ereading systems at<ns0:lb/><ns0:ref target="https://standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith">standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith</ns0:ref>.</ns0:p>
+        <ns0:p>The volunteer-driven Standard Ebooks project relies on readers like you to submit typos, corrections, and other improvements. Anyone can contribute at <ns0:ref target="https://standardebooks.org/">standardebooks.org</ns0:ref>.</ns0:p>
+      </ns0:div>
+      <ns0:div xml:id="tei003-augustine-metadata-uncopyright" type="copyright-page"><ns0:p>Copyright pages exist to tell you that you <ns0:emph>can’t</ns0:emph> do something. Unlike them, this Uncopyright page exists to tell you that the writing and artwork in this ebook are believed to be in the United States public domain; that is, they are believed to be free of copyright restrictions in the United States. The United States public domain represents our collective cultural heritage, and items in it are free for anyone in the United States to do almost anything at all with, without having to get permission.</ns0:p>
+        </ns0:div></ns0:back>
+    </ns0:text>
+</ns0:TEI>

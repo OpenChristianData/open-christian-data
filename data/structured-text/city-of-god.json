@@ -7,13 +7,17 @@
     "author_death_year": 430,
     "contributors": [
       {
-        "name": "Marcus Dods"
+        "name": "Marcus Dods",
+        "role": "translator",
+        "note": "Translator, annotator, and writer of the preface in the Standard Ebooks package"
       },
       {
-        "name": "George Wilson"
+        "name": "George Wilson",
+        "role": "translator"
       },
       {
-        "name": "J. J. Smith"
+        "name": "J. J. Smith",
+        "role": "translator"
       }
     ],
     "original_publication_year": 426,
@@ -30,16 +34,27 @@
     "schema_type": "structured_text",
     "schema_version": "2.1.0",
     "completeness": "full",
+    "expression_id": "augustine-city-of-god-dods-en",
+    "digital_witness_id": "city-of-god-standard-ebooks",
+    "witness_role": "preferred-reading-transformation",
+    "related_witness_ids": [
+      "city-of-god-ccel-npnf102"
+    ],
+    "segmentation_basis": "Standard Ebooks XHTML files are selected and flattened by the direct structured-text parser; its record boundaries are parser-specific rather than source-neutral.",
     "provenance": {
       "source_url": "https://github.com/standardebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
       "source_format": "XHTML",
       "source_edition": "Standard Ebooks edition, Marcus Dods translation (CC0 editorial work, public domain text)",
-      "download_date": "2026-03-28",
-      "source_hash": "sha256:dc8c0acb98fde2f99aec763e68bb6bf91703cfcae47deeeefdf2e9dea71d9fb9",
+      "download_date": "2026-07-21",
+      "source_hash": "sha256:142c8b3af9e674a56908d041a7b8d6859d293adbc4d070dbfd39b006e3dd2949",
+      "source_hash_scope": "selected-xhtml-source-manifest-v1",
+      "source_revision": "7ec3a325a495cb791581d06f1c0fed14d2576ff0",
+      "source_revision_type": "git-commit-sha1",
+      "generated_content_hash": "sha256:dc8c0acb98fde2f99aec763e68bb6bf91703cfcae47deeeefdf2e9dea71d9fb9",
       "processing_method": "automated",
       "processing_script_version": "build/parsers/standard_ebooks.py@v1.0.0",
-      "processing_date": "2026-03-28",
-      "notes": "22 books grouped into Part 1 (Books 1-10) and Part 2 (Books 11-22). part-1.xhtml and part-2.xhtml are containers with no body content."
+      "processing_date": "2026-07-21",
+      "notes": "22 books grouped into Part 1 (Books 1-10) and Part 2 (Books 11-22). part-1.xhtml and part-2.xhtml are containers with no body content. Preferred reading and transformation input for the related Dods-family expression; CCEL npnf102 remains a verification, collation, and apparatus witness. The retained checkout was fast-forwarded to the exact official upstream master revision verified and acquired on 2026-07-21."
     }
   },
   "data": {

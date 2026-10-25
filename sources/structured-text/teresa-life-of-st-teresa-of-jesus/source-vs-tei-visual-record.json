@@ -1,0 +1,90 @@
+{
+  "work": {
+    "slug": "teresa-life-of-st-teresa-of-jesus",
+    "title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+    "project_gutenberg_id": 8120,
+    "retained_witness": "Third Edition Enlarged, London and New York, 1904"
+  },
+  "retained_source": {
+    "archive": "pg8120-h.zip",
+    "archive_sha256": "92b3442c0b2c04c206152c41b698bd464899ac078c2660afa83c2c751b17d274",
+    "html_member": "pg8120-images.html",
+    "html_member_sha256": "9aeeb297ddcd83e801b9782fd7c376af845491e3fd2a941a85530b0214ad3e74"
+  },
+  "tei_candidate": {
+    "artifact": "candidate.tei.xml",
+    "bytes": 1534223,
+    "sha256": "ca8c31af54fd82baaf01d2860a07e41895452623f53fe8663dab60d9fb51e1ff"
+  },
+  "capture_methods": {
+    "source": "The exact retained pg8120-images.html ZIP member was extracted to a bounded work-local runtime and captured with headless Playwright at 1280 by 1800 pixels using source structural or unique-text anchors.",
+    "tei": "The unchanged retained TEI candidate was rendered with build/tools/tei_viewer_screenshot.py and the repository CETEIcean verification viewer."
+  },
+  "tei_render_probe": {
+    "paragraphs": 2405,
+    "source_text_paragraphs": 2403,
+    "tei_header_paragraphs": 2,
+    "note_references": 730,
+    "end_notes": 730,
+    "dangling_references": 0,
+    "ceteicean_upgraded": true
+  },
+  "comparisons": [
+    {
+      "region": "opening-title-translator-editor-edition-and-contents",
+      "source_anchor": "h1",
+      "source_artifact": "visual/source/source.opening.png",
+      "source_bytes": 138024,
+      "source_sha256": "db6d3efd0ef759804120aaa73ce9c00b97e8773888c3cae1059aec3a023d30c4",
+      "tei_artifact": "visual/candidate.opening.png",
+      "tei_bytes": 238134,
+      "tei_sha256": "2e182495dfbf6ff74dc38beb6e937ba46facad82db4f27ce776760d88bb8284a",
+      "observation": "Both sides visibly retain the Transcriber's Note, re-imprimatur, full title, David Lewis translator credit, Third Edition Enlarged statement, Benedict Zimmerman credit, London and New York publishers, MCMIV date, and Contents. The Project Gutenberg redistribution wrapper visible on the source side is deliberately excluded. The shared verification viewer is structural rather than a facsimile and renders the source table and contents compactly.",
+      "result": "pass"
+    },
+    {
+      "region": "chapter-xx-transition-and-opening",
+      "source_anchor": "id l20.0 plus unique first sentence",
+      "source_artifact": "visual/source/source.middle.png",
+      "source_bytes": 308448,
+      "source_sha256": "bd1ff64dcd361e3f69f6aec4771b79a3e178c577583b18e9ca73163d46beff69",
+      "tei_artifact": "visual/candidate.middle.png",
+      "tei_bytes": 256473,
+      "tei_sha256": "c9630a6a44c63afc64ac417d2614d91948f2ef24e41268876a8a4b2a0ad5035f",
+      "observation": "Both sides show the end of Chapter XIX, its twelve gathered notes, the Chapter XX heading, the union-and-rapture summary, and the same opening paragraphs and note references in the same order.",
+      "result": "pass"
+    },
+    {
+      "region": "terminal-index-entry",
+      "source_anchor": "paragraph containing Zeal, indiscreet",
+      "source_artifact": "visual/source/source.ending.png",
+      "source_bytes": 267302,
+      "source_sha256": "5d226a63323ff9ea3120fcdff882464c5c5eb05707ec04cd60dd52d444f5468a",
+      "tei_artifact": "visual/candidate.ending.png",
+      "tei_bytes": 247767,
+      "tei_sha256": "750ed5ca9ab4d27854dcb6d4be57e969da4a556025841142aabd7b93b4492d95",
+      "observation": "Both sides visibly retain the terminal Index through Ybanez, Yepes, and the final Zeal, indiscreet entry. The source then displays Project Gutenberg's footer, which is deliberately excluded; the verification viewer instead displays its generated global end-note section below the text, a viewer presentation behavior rather than a candidate reorder.",
+      "result": "pass"
+    },
+    {
+      "region": "source-hebrew-labeled-iota-and-latin-note",
+      "source_anchor": "span lang=he",
+      "source_artifact": "visual/source/source.language.png",
+      "source_bytes": 251265,
+      "source_sha256": "d02c5d519844a9af0feebe280fbcae2427deca14fcb8d10e8038d983ece12e4f",
+      "tei_artifact": "visual/candidate.language.png",
+      "tei_bytes": 208267,
+      "tei_sha256": "8799f8f89ca2d8e06fdef02e94c6ead56311a379a8ea340d0be231a9faf384fa",
+      "observation": "Both sides show the St. Matthew v. 18 note with Iota unum aut unus apex non praeteribit a lege and its surrounding italic Latin notes. The exact source labels only Iota as Hebrew; the TEI preserves that xml:lang=he mark rather than silently correcting the source's linguistic classification. CETEIcean numbers the rendered global note as 596.",
+      "result": "pass"
+    }
+  ],
+  "electronic_source_limitations": {
+    "printed_page_milestones": 0,
+    "page_image_facsimile": false,
+    "cover_only": true,
+    "visual_consequence": "No source page pair can be shown and no print pages are invented; the required comparison uses the exact retained structured HTML against the deterministic TEI rendering."
+  },
+  "verdict": "technical-source-versus-tei-spot-comparison-passed",
+  "human_acceptance": "not-performed"
+}

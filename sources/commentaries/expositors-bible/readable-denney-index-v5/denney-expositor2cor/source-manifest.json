@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib034-readable-denney-index-denney-expositor2cor-v5",
+  "work_id": "expositors-bible--james-denney",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/denney_expositor2cor.xml",
+      "role": "primary-source",
+      "bytes": 787234,
+      "sha256": "afdf1cb907eb7d79f2f20582dd8d5e96a84614c253bb193903cc1cac76d16bc7"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-denney-index-v5/denney-expositor2cor/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 936,
+      "sha256": "3e2d838db9ae1361dbfefd7975ce02939929d48d20db1b060202a91e1c782748"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-denney-index-v5/denney-expositor2cor/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1248,
+      "sha256": "75a8c580035b29d86a8a4557cdb1637b74468408a8d1e590885e861a03ff5ec3"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-denney-index-v5/denney-expositor2cor/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 898,
+      "sha256": "fbd3fba1c600846ed812376fc2d98af608b0bd92ccf2afe840339f16aff27662"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-denney-index-v5/denney-expositor2cor/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1912,
+      "sha256": "bca12d5c6122421feea494f4baaa502244b3e2bf4a5d5e63f50499c6cfa32d54"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib034-readable-denney-index-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_denney_index_v2.py",
+    "implementation_sha256": "9d009071a417aaac0b482bcc9dd3355de139ace2eaddd5d68db973aef2361623"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib034-readable-denney-index-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_denney_index_v2_oracle.py",
+    "implementation_sha256": "9f43627b04cf586935f7ab317e5be9b51664e3b4b75abb8c063b2c9b6738fcfb",
+    "import_closure_sha256": "9f43627b04cf586935f7ab317e5be9b51664e3b4b75abb8c063b2c9b6738fcfb"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

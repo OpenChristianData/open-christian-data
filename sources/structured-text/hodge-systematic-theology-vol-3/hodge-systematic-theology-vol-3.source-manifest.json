@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ocd-37c205-hodge-systematic-theology-vol-3-ccel-theology3",
+  "authorities": [
+    {"name":"retained-hodge-vol-3","path":"raw/ccel/hodge/theology3.xml","role":"primary-source","bytes":3102428,"sha256":"aeb92566e8ce5019f6f43c56585538c67bafcea177d9d6f1df286006f24dda54"},
+    {"name":"work-config","path":"sources/structured-text/hodge-systematic-theology-vol-3/config.json","role":"identity-claims-not-adopted","bytes":1275,"sha256":"089b923679f316b3aafbb63ed4f95ea956abbaf00437fe74f21019f31b44aeb8"},
+    {"name":"permission-evidence","path":"docs/sources/ccel-permission.md","role":"source-permission-evidence","bytes":1629,"sha256":"e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"},
+    {"name":"profile","path":"sources/structured-text/hodge-systematic-theology-vol-3/hodge-systematic-theology-vol-3.reconstruction-profile.json","role":"complete-source-feature-profile","bytes":918,"sha256":"100ebac2496677082d7e9a56605669fe3f05828cf23a33f1c37ce5856ddbe943"},
+    {"name":"policy","path":"sources/structured-text/hodge-systematic-theology-vol-3/hodge-systematic-theology-vol-3.validation-policy.json","role":"independent-validation-policy","bytes":627,"sha256":"7b862ff2dff6659c6a51c7ca12d51e4435b778c439da4893ac9a6a51d005ddc3"},
+    {"name":"tei-p5-xsd","path":"ocd_kernel/tei/vendor/xsd/tei_all.xsd","role":"tei-validation-schema","bytes":1108622,"sha256":"2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name":"candidate-package-schema","path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","role":"candidate-package-schema","bytes":2173,"sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {"callable":"_convert","id":"ocd-37c205-hodge-vol-3","implementation_path":"build/tei/hodge_systematic_theology_vol_3_reconstruction.py","implementation_sha256":"7afc8a9d3b8f90a3b6af2986639310271d511030d89b0305bccba45dfd5a4b62","version":"1"},
+  "validator": {"callable":"_oracle","id":"ocd-37c205-hodge-vol-3-independent-check","implementation_path":"build/tei/hodge_systematic_theology_vol_3_oracle.py","implementation_sha256":"25307fe50dd247979016b8df1e503eae97031d89ad4659c1af50a9c670d0dca3","import_closure_sha256":"25307fe50dd247979016b8df1e503eae97031d89ad4659c1af50a9c670d0dca3","version":"1"},
+  "package_schema":{"path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+  "scope":{"kind":"complete-source-document-body-roots","source_member":"retained-hodge-vol-3","roots_in_source_order":["i","ii","iii","iv","v"]}
+}

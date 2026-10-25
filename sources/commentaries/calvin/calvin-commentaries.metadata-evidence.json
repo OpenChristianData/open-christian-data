@@ -1,0 +1,131 @@
+{
+  "contract": "ocd-calvin-commentaries-metadata-evidence-v1",
+  "ticket_id": "37c-092",
+  "owner": "LIB-010",
+  "work_id": "calvin-commentaries",
+  "title": "Calvin's Collected Commentaries",
+  "source_authority": {
+    "description": "A retained CCEL ThML/XML collection consisting of one catalogue XML file and forty-five component XML files.",
+    "catalogue": {
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "locator": "ThML.head/generalInfo; ThML.body/div1[@id='i']",
+      "evidence": [
+        "The catalogue describes Calvin's Commentaries as complete.",
+        "Its component links enumerate calcom01.xml through calcom45.xml.",
+        "The retained catalogue states firstPublished=1578, pubHistory=1847 (Calvin Society), and a Baker, 1996 print source.",
+        "The retained catalogue states DC.Rights=Public Domain and DC.Language=eng."
+      ]
+    },
+    "components": {
+      "path_pattern": "raw/ccel/calvin-commentaries/calcomNN.xml",
+      "member_range": "calcom01.xml-calcom45.xml",
+      "component_scope": [
+        "calcom01-calcom02: Genesis",
+        "calcom03-calcom06: Harmony of the Law",
+        "calcom07: Joshua",
+        "calcom08-calcom12: Psalms",
+        "calcom13-calcom16: Isaiah",
+        "calcom17-calcom21: Jeremiah and Lamentations",
+        "calcom22-calcom23: Ezekiel",
+        "calcom24-calcom25: Daniel",
+        "calcom26-calcom30: Minor Prophets",
+        "calcom31-calcom33: Harmony of Matthew, Mark, and Luke",
+        "calcom34-calcom35: John",
+        "calcom36-calcom37: Acts",
+        "calcom38: Romans",
+        "calcom39-calcom40: Corinthians",
+        "calcom41: Galatians and Ephesians",
+        "calcom42: Philippians, Colossians, and Thessalonians",
+        "calcom43: Timothy, Titus, and Philemon",
+        "calcom44: Hebrews",
+        "calcom45: Catholic Epistles"
+      ],
+      "metadata_locator": "ThML.head/DC; ThML.body/div1",
+      "evidence": [
+        "Each retained component parses as ThML and carries DC metadata.",
+        "The component title pages and metadata carry translator credits by component; they do not support one collection-wide translator field.",
+        "calcom01.xml states that the text was translated from the original Latin and compared with the French edition by Rev. John King.",
+        "All retained components state DC.Rights=Public Domain and DC.Language=eng."
+      ]
+    }
+  },
+  "edition_and_witness_evidence": [
+    {
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "locator": "ThML.body/div1[@id='i']/printSourceInfo",
+      "claim": "The collection catalogue identifies a 1578 first publication, 1847 Calvin Society publication history, and Baker Book House, 1996 as the print source.",
+      "disposition": "retained-source-fact"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/calcom01.xml",
+      "locator": "ThML.head/DC and ThML.body/div1[@id='i']",
+      "claim": "The first retained component identifies Commentary on Genesis - Volume 1, Rev. John King as translator, and a Baker Book House, 1996 print source; its title page says translated from the original Latin and compared with the French edition.",
+      "disposition": "retained-source-fact"
+    },
+    {
+      "path": "raw/sword_modules/CalvinCommentaries/mods.d/calvincommentaries.conf",
+      "locator": "SourceType, Encoding, CompressType, BlockType, About, SwordVersionDate, Version",
+      "claim": "The SWORD package is a CrossWire OSIS zCom comparison witness, version 1.1 dated 2022-08-01, converted by Luke Plant from CCEL, with Feature=NoParagraphs.",
+      "disposition": "comparison-witness-only"
+    }
+  ],
+  "acquisition_evidence": [
+    {
+      "path": "raw/ccel/calvin-commentaries/calvin-commentaries.manifest.json",
+      "locator": "manifest members and source URLs",
+      "claim": "The retained CCEL acquisition manifest records the catalogue and forty-five component downloads, their byte sizes and hashes, and source-reported Public Domain statements.",
+      "disposition": "acquisition-record"
+    },
+    {
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "locator": "copyLocation/link metadata",
+      "claim": "The retained XML identifies the CCEL collection source and links the component records.",
+      "disposition": "retained-source-fact"
+    },
+    {
+      "path": "raw/sword_modules/CalvinCommentaries.zip",
+      "locator": "zip member set and SHA-256 recorded in the ticket manifest",
+      "claim": "The SWORD archive is retained as a separately hashed comparison witness, not as the reconstruction source.",
+      "disposition": "comparison-witness-only"
+    }
+  ],
+  "known_conflicts_and_limits": [
+    {
+      "id": "config-original-year-conflict",
+      "path": "sources/commentaries/calvin/config.json",
+      "claim": "The existing work config says original_publication_year=1551, while the retained CCEL catalogue says firstPublished=1578.",
+      "disposition": "unresolved-human-metadata-review"
+    },
+    {
+      "id": "sword-about-omits-acts",
+      "path": "raw/sword_modules/CalvinCommentaries/mods.d/calvincommentaries.conf",
+      "claim": "The SWORD About list omits Acts even though the retained CCEL cohort includes calcom36.xml and calcom37.xml for Acts.",
+      "disposition": "unresolved-comparison-witness-discrepancy"
+    },
+    {
+      "id": "sword-no-paragraphs",
+      "path": "raw/sword_modules/CalvinCommentaries/mods.d/calvincommentaries.conf",
+      "claim": "Feature=NoParagraphs marks a known structural loss in the SWORD projection; it is not used as the source-bound TEI authority.",
+      "disposition": "accounted-structural-limit"
+    },
+    {
+      "id": "translator-credits-vary",
+      "path": "raw/ccel/calvin-commentaries/calcom01.xml through calcom45.xml",
+      "claim": "Translator metadata varies by component and includes source spelling variants; this candidate preserves the source facts without collapsing them to one translator.",
+      "disposition": "unresolved-editorial-metadata-review"
+    },
+    {
+      "id": "rights-not-independent-clearance",
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml and component DC metadata",
+      "claim": "Public Domain is a source-reported statement retained as evidence; it is not an independent rights clearance or publication authorization.",
+      "disposition": "unresolved-rights-review"
+    }
+  ],
+  "generated_data_boundary": {
+    "excluded_paths": [
+      "data/commentaries/calvin/*.json",
+      "data/structured-text/calvin-commentaries.json"
+    ],
+    "reason": "Existing generated projections are comparison or lineage inputs only and are not source authority for this reconstruction."
+  }
+}

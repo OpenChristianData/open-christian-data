@@ -1,0 +1,103 @@
+{
+  "contract": "ocd-helloao-jamieson-fausset-brown-profile-v1",
+  "profile_id": "helloao-jamieson-fausset-brown-complete-retained-json-v1",
+  "version": 1,
+  "work_id": "jamieson-fausset-brown",
+  "source_root": "raw/helloao_local/api/c/jamieson-fausset-brown",
+  "scope": {
+    "member_count": 1189,
+    "total_bytes": 22377675,
+    "metadata_members": [
+      "books.json",
+      "profiles.json"
+    ],
+    "book_count": 66,
+    "chapter_count": 1187,
+    "commentary_occurrence_count": 17056,
+    "book_introduction_count": 66,
+    "chapter_introduction_present_count": 1178,
+    "chapter_introduction_absent_count": 9,
+    "introduction_only_chapter_count": 101,
+    "suspected_mojibake_sequence_count": 539,
+    "suspected_mojibake_carrier_count": 374,
+    "suspected_mojibake_source_member_count": 229,
+    "suspected_mojibake_affected_carriers": {
+      "book_introductions": {
+        "sequence_count": 85,
+        "carrier_count": 33
+      },
+      "chapter_introductions": {
+        "sequence_count": 53,
+        "carrier_count": 39
+      },
+      "commentary_occurrences": {
+        "sequence_count": 401,
+        "carrier_count": 302
+      }
+    },
+    "retained_chapter_gaps": {
+      "MRK": [15],
+      "PSA": [146]
+    },
+    "nonmonotonic_chapters": [
+      "HEB/13.json"
+    ],
+    "duplicate_verse_occurrences": {
+      "HEB/13.json": [7]
+    }
+  },
+  "fidelity_policy": {
+    "book_order": "books.json order, unchanged",
+    "chapter_order": "retained numeric chapter-path order within books.json book order, unchanged",
+    "occurrence_order": "chapter.content array order, unchanged",
+    "occurrence_identity": "book, chapter, retained array ordinal; verse number is not a unique key",
+    "content": "each sole chapter.content[].content string is preserved byte-for-codepoint; every literal double-newline becomes an ordered TEI paragraph boundary, and only source spans pinned by the source structure inventory become commentary-section/head blocks",
+    "book_introductions": "all 66 retained book introduction strings are represented",
+    "chapter_introductions": "1178 retained strings are represented; nine absent JSON properties remain absent",
+    "suspected_mojibake": "all 539 localized sequences in 374 semantic text carriers are preserved byte-for-codepoint; editorial normalization requires exact source or correction authority for each affected reading",
+    "introduction_only_chapters": "all 101 retained chapters with an introduction and empty content array remain present",
+    "all_fields": "retained commentary and book objects plus every chapter envelope field are preserved in source-accountability.json; textual fields are represented in TEI",
+    "forbidden": [
+      "sorting commentary occurrences by verse number",
+      "merging duplicate verse-number occurrences",
+      "inferring verse ranges",
+      "injecting Bible or BSB verse text",
+      "inventing MRK/15.json or PSA/146.json",
+      "turning absent chapter introductions into null or empty values",
+      "silently applying config metadata in place of retained witness metadata",
+      "silently normalizing suspected mojibake without exact source or correction authority"
+    ]
+  },
+  "identity_and_rights_policy": {
+    "retained_title": "Jamieson-Fausset-Brown Bible Commentary",
+    "retained_language": "eng",
+    "retained_text_direction": "rtl",
+    "retained_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "config_license_drift": "cc0-1.0",
+    "edition": null,
+    "author_statement": null,
+    "original_publication_year": null,
+    "config_bibliographic_disposition": "diagnostic evidence only; not substituted for absent retained-witness edition and author metadata"
+  },
+  "candidate_model": {
+    "document_shell": {
+      "xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>\n",
+      "doctype": null,
+      "pre_root_nodes": 0,
+      "post_root_nodes": 0
+    },
+    "member_names": [
+      "manifest.json",
+      "content.tei.xml",
+      "source-accountability.json",
+      "provenance.json",
+      "unresolved.jsonl",
+      "README.source.md"
+    ],
+    "status": "nonaccepted",
+    "accepted_ir": "not_accepted",
+    "human_review": "required",
+    "unresolved_record_count": 4,
+    "publication": "not_ready"
+  }
+}

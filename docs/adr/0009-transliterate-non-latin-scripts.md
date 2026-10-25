@@ -1,5 +1,7 @@
 # ADR-0009: Transliterate non-Latin scripts in both HF configs; original-script bytes preserved per segment
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15); amended 2026-05-16 (R14 — `language_segments[].language` enum reduced to the Phase 1 active set per ADR-0010 amended)
 
 ## Context

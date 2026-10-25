@@ -1,0 +1,102 @@
+{
+  "authorities": [
+    {
+      "bytes": 217645,
+      "name": "retained-source",
+      "path": "raw/ccel/murray/surrender.xml",
+      "role": "primary-source",
+      "sha256": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d"
+    },
+    {
+      "bytes": 1493,
+      "name": "work-identity-config",
+      "path": "sources/structured-text/murray-absolute-surrender/config.json",
+      "role": "work-identity-config",
+      "sha256": "f2198b4cf014b92d04b2e5bf89348d6676dead2069ad00610163ee0f6a963b54"
+    },
+    {
+      "bytes": 8685,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "77ac30b325f7d0a534fc0d281dd6901901441c3590b50cdfaacccfbc9ba4d427"
+    },
+    {
+      "bytes": 2087,
+      "name": "validation-policy",
+      "path": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "00da2ddb6f262ce0cfc9ae9e9a3a51b1013a168d0f7219e1ed2e2668544f9b3b"
+    },
+    {
+      "bytes": 5106,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "0f9a858141441dba6740025d0cc40a42636f0f9d20bf059b9b2e17ff3ad2f27a"
+    },
+    {
+      "bytes": 57085,
+      "name": "source-metadata-sidecar",
+      "path": "metadata/source-evidence/catalog/murray-absolute-surrender.json",
+      "role": "source-metadata-evidence",
+      "sha256": "f9dc0b4944521c57a1725b54da64fb758e88403037f1d27f55fba1457da18d73"
+    },
+    {
+      "bytes": 590,
+      "name": "data-attribution-readme",
+      "path": "tests/fixtures/reconstruction-runtime/law-serious-call.law-serious-call-data-attribution.md",
+      "role": "source-attribution-readme",
+      "sha256": "8feeeccb58e1bb0d29a95bdf58388898af7391ed7424801eb16c0529436df017"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 474,
+      "name": "oracle-closure-policy",
+      "path": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.oracle-import-closure-policy.json",
+      "role": "validator-import-closure-policy",
+      "sha256": "7cb93d42189d21ae8fa20a5b8f1a967523a2c8ab0add93919483fe9abc420927"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-murray-absolute-surrender-retained-thml-to-tei",
+    "implementation_path": "build/tei/murray_absolute_surrender_reconstruction.py",
+    "implementation_sha256": "ace6df3c64826580719495938d4145471b8ade91527efc32c56299e8ea15b4b0",
+    "version": "1"
+  },
+  "expression_scope": {
+    "boundary": "complete retained ThML document, including header and body",
+    "exclusions": [],
+    "primary_member_count": 1,
+    "status": "complete"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "murray-absolute-surrender-retained-thml",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-murray-absolute-surrender-independent-thml-oracle",
+    "implementation_path": "build/tei/murray_absolute_surrender_oracle.py",
+    "implementation_sha256": "c8a98fbe987e2cd9de1893d0e7f200c469c2ba804c876d9f79b8e9026150cba7",
+    "import_closure_sha256": "f118cb490a123aadafe4ddd6e82341216e666a2ef7fab47f503853667a3be050",
+    "version": "1"
+  },
+  "work_id": "murray-absolute-surrender"
+}

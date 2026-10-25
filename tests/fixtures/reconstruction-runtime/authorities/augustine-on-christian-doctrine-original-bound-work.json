@@ -1,0 +1,33 @@
+{
+  "schema_version": "2.0",
+  "work_id": "augustine-on-christian-doctrine",
+  "title": "On Christian Doctrine",
+  "creators": [
+    {
+      "name": "Augustine",
+      "role": "author",
+      "evidence": ["raw/ccel/npnf1/npnf102.xml#v"]
+    }
+  ],
+  "evidence": ["raw/ccel/npnf1/npnf102.xml#v"],
+  "textual_forms": [
+    {
+      "textual_form_id": "augustine-on-christian-doctrine-english",
+      "language": "en",
+      "editions": [
+        {
+          "edition_id": "augustine-on-christian-doctrine-ccel-retained",
+          "title": "NPNF1-02. St. Augustine's City of God and Christian \nDoctrine",
+          "language": "en",
+          "category": "prose",
+          "acquisition_ids": ["augustine-on-christian-doctrine-retained"],
+          "containing_source": {
+            "title": "NPNF1-02. St. Augustine's City of God and Christian \nDoctrine",
+            "locator": "raw/ccel/npnf1/npnf102.xml",
+            "evidence": ["raw/ccel/npnf1/npnf102.xml#ThML.head"]
+          }
+        }
+      ]
+    }
+  ]
+}

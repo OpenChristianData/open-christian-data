@@ -1,0 +1,236 @@
+{
+  "authorities": [
+    {
+      "bytes": 1120523,
+      "name": "retained-source",
+      "path": "raw/ccel/watson/beatitudes.xml",
+      "role": "primary-source",
+      "sha256": "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837"
+    },
+    {
+      "bytes": 1944,
+      "name": "work",
+      "path": "library/works/watson-beatitudes/work.json",
+      "role": "work-identity-config",
+      "sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"
+    },
+    {
+      "bytes": 3991,
+      "name": "acquisition",
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"
+    },
+    {
+      "bytes": 5771,
+      "name": "profile",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "25b26bc95facd440052f8568c1dbc615dd2d31b4365118fe63404caf2fdbceb2"
+    },
+    {
+      "bytes": 2247,
+      "name": "policy",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "1be29785364723270dc1d36f5d6aca00865ade1f1fe41ccb4dc19644ce76a43f"
+    },
+    {
+      "bytes": 4012,
+      "name": "source-accountability",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.json",
+      "role": "source-completeness-accountability",
+      "sha256": "aea93b8305aa976fdcecbbce152ae119ae3cfcc104de1f526b52369513822dd8"
+    },
+    {
+      "bytes": 3317,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.schema.json",
+      "role": "work-local-accountability-schema",
+      "sha256": "c427084f7381355f6c9339e8201d102067403f8b30618cb43fd7f5e0115ca56d"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 4554,
+      "name": "work-specific-producer",
+      "path": "sources/structured-text/watson-beatitudes/watson_beatitudes_reconstruction.py",
+      "role": "implementation",
+      "sha256": "419f3532feef6174acfd8ff863c0f7044622d21dd6434890b797e8f14975b968"
+    },
+    {
+      "bytes": 33619,
+      "name": "work-specific-oracle",
+      "path": "sources/structured-text/watson-beatitudes/watson_beatitudes_oracle.py",
+      "role": "implementation",
+      "sha256": "6dc00660c57e008755d7029ffbb0990db25bd8702db517edfa6b52c12c5e60b8"
+    },
+    {
+      "bytes": 17353,
+      "name": "shared-selected-thml-producer",
+      "path": "build/tei/selected_thml.py",
+      "role": "implementation-dependency",
+      "sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"
+    },
+    {
+      "bytes": 26782,
+      "name": "closure-acquisitions",
+      "path": "ocd_kernel/library/acquisitions.py",
+      "role": "implementation-dependency",
+      "sha256": "d890b1f0faef4f5307edef89a3ba19a0ea79e640156483894c849a1b9a7e87b5"
+    },
+    {
+      "bytes": 19473,
+      "name": "closure-identities",
+      "path": "ocd_kernel/library/identities.py",
+      "role": "implementation-dependency",
+      "sha256": "64a3ab0a835ea2cb84defbb8bc56de6bb417f8278569cf9ebfb5bb022108a4bb"
+    },
+    {
+      "bytes": 3970,
+      "name": "closure-library-common",
+      "path": "ocd_kernel/library/_common.py",
+      "role": "implementation-dependency",
+      "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"
+    },
+    {
+      "bytes": 12279,
+      "name": "closure-source-selection",
+      "path": "ocd_kernel/library/source_selection.py",
+      "role": "implementation-dependency",
+      "sha256": "e95968090550c80fb3f337043808a40ca3eb398cb4577a2b0234bf65710f5bf4"
+    },
+    {
+      "bytes": 4223,
+      "name": "closure-storage-topology",
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "role": "implementation-dependency",
+      "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"
+    },
+    {
+      "bytes": 4314,
+      "name": "closure-tei-writer",
+      "path": "ocd_kernel/tei/writer.py",
+      "role": "implementation-dependency",
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    },
+    {
+      "bytes": 25905,
+      "name": "closure-reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "implementation-dependency",
+      "sha256": "a9bdd045183a870fe981b7fabd23111ecb43ccae592fbdb9ab049fce1ed7f74b"
+    },
+    {
+      "bytes": 6014,
+      "name": "closure-reconstruction-verifier",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "implementation-dependency",
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "bytes": 1385,
+      "name": "closure-tei-validator",
+      "path": "ocd_kernel/tei/validate.py",
+      "role": "implementation-dependency",
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"
+    },
+    {
+      "bytes": 6206,
+      "name": "closure-work-schema",
+      "path": "schemas/v2/work.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+    },
+    {
+      "bytes": 4993,
+      "name": "closure-acquisition-schema",
+      "path": "schemas/v2/acquisition.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "bytes": 2173,
+      "name": "closure-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1944,
+      "name": "closure-work",
+      "path": "library/works/watson-beatitudes/work.json",
+      "role": "implementation-dependency",
+      "sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"
+    },
+    {
+      "bytes": 3991,
+      "name": "closure-acquisition",
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json",
+      "role": "implementation-dependency",
+      "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"
+    },
+    {
+      "bytes": 5771,
+      "name": "closure-profile",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.reconstruction-profile.json",
+      "role": "implementation-dependency",
+      "sha256": "25b26bc95facd440052f8568c1dbc615dd2d31b4365118fe63404caf2fdbceb2"
+    },
+    {
+      "bytes": 2247,
+      "name": "closure-policy",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.validation-policy.json",
+      "role": "implementation-dependency",
+      "sha256": "1be29785364723270dc1d36f5d6aca00865ade1f1fe41ccb4dc19644ce76a43f"
+    },
+    {
+      "bytes": 4012,
+      "name": "closure-source-accountability",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.json",
+      "role": "implementation-dependency",
+      "sha256": "aea93b8305aa976fdcecbbce152ae119ae3cfcc104de1f526b52369513822dd8"
+    },
+    {
+      "bytes": 3317,
+      "name": "closure-accountability-schema",
+      "path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "c427084f7381355f6c9339e8201d102067403f8b30618cb43fd7f5e0115ca56d"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-watson-beatitudes-selected-thml-route",
+    "implementation_path": "sources/structured-text/watson-beatitudes/watson_beatitudes_reconstruction.py",
+    "implementation_sha256": "419f3532feef6174acfd8ff863c0f7044622d21dd6434890b797e8f14975b968",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "37c-314-watson-beatitudes-retained-thml-route",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-watson-beatitudes-independent-source-walk",
+    "implementation_path": "sources/structured-text/watson-beatitudes/watson_beatitudes_oracle.py",
+    "implementation_sha256": "6dc00660c57e008755d7029ffbb0990db25bd8702db517edfa6b52c12c5e60b8",
+    "import_closure_sha256": "de9252a4f5d6f18cee4814083810ef1c47ee603eab1bea75ab233c0f83ff6e41",
+    "version": "1"
+  },
+  "work_id": "watson-beatitudes"
+}

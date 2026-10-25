@@ -1,0 +1,67 @@
+{
+  "contract": "ocd-lib040-validation-policy-v1",
+  "policy_id": "lib040-npnf101-vi-vii-npnf106-v-vii-npnf107-iii-v-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "required_assigned_work_count": 8,
+  "required_feature_count": 45301,
+  "required_attribute_count": 120046,
+  "required_text_node_count": 38719,
+  "required_tail_node_count": 39094,
+  "required_character_count": 8559314,
+  "candidate_document": {
+    "xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>",
+    "doctype": null,
+    "root_xml_id": "lib040-candidate",
+    "root_namespace": "http://www.tei-c.org/ns/1.0",
+    "root_children": ["teiHeader", "text"],
+    "text_children": ["body"],
+    "body_xml_id": "lib040-assigned-body",
+    "root_sibling_count": 0
+  },
+  "tei_header": {
+    "generated_scope_title": "LIB-040 administrative scope: eight assigned work roots from retained NPNF First Series volumes 1, 6, and 7",
+    "generated_scope_title_type": "generated",
+    "cohort_author": null,
+    "retained_editor": "Philip Schaff",
+    "electronic_publisher": "Grand Rapids, MI: Christian Classics Ethereal Library",
+    "print_publication_statement": "New York: Christian Literature Publishing Co., 1886",
+    "rights_statement": "Public Domain",
+    "publication_notice": "publication:not_ready; human textual acceptance absent."
+  },
+  "intended_work_catalog_state": {
+    "retained_source": "manifest_bound",
+    "tei_candidate": "verified",
+    "validation": "verified",
+    "human_review": "required",
+    "accepted_ir": "not_accepted",
+    "blocker": null,
+    "publication": "not_ready"
+  },
+  "checks": [
+    "exact-three-member-retained-authority-and-eight-config-bindings",
+    "exact-eight-work-root-scope-and-retained-order",
+    "complete-feature-attribute-text-tail-and-character-crosswalk",
+    "omission-duplication-reorder-and-invention-detection",
+    "exact-source-shell-and-excluded-scope-accounting",
+    "exact-candidate-prolog-root-header-text-body-and-non-element-topology",
+    "tei-p5-xsd",
+    "source-accountability-json-schema",
+    "retained-metadata-rights-attribution-and-uninterpreted-print-statement",
+    "exact-readme-unresolved-and-nonacceptance-evidence-bytes",
+    "candidate-package-integrity-and-current-source-profile-policy-schema-bindings",
+    "producer-independent-oracle-and-complete-first-party-import-closure",
+    "fresh-process-complete-path-set-and-per-file-byte-determinism",
+    "ordinary-work-catalog-exact-complete-verified-route"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.npnf1_lib040_reconstruction",
+    "build.tei.npnf103_reconstruction",
+    "build.tei.npnf105_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

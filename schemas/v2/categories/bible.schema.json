@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/bible.schema.json",
+  "title": "OCD Bible public row",
+  "description": "One row is one source-defined Bible verse occurrence. Edition labels and versification remain visible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "category",
+    "language",
+    "text",
+    "representation_revision",
+    "locator",
+    "provenance",
+    "notes",
+    "references",
+    "versification"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "category": {
+      "const": "bible"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "notes": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"
+    },
+    "references": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"
+    },
+    "versification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "book",
+        "book_osis",
+        "chapter",
+        "verse",
+        "versification",
+        "source_order"
+      ],
+      "properties": {
+        "kind": {
+          "const": "verse"
+        },
+        "book": {
+          "type": "string",
+          "minLength": 1
+        },
+        "book_osis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verse": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "verse_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "versification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reference": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+        },
+        "reference_origin": {
+          "const": "tei-verse-components"
+        },
+        "reference_status": {
+          "enum": [
+            "unsupported-verse-components",
+            "normalized-verse-components"
+          ]
+        },
+        "chapter_label": {
+          "const": "0"
+        },
+        "native_chapter_policy": {
+          "const": "source-native-zero-chapter-v1"
+        },
+        "witness": {
+          "type": "string",
+          "enum": [
+            "US",
+            "Cth"
+          ],
+          "description": "Exact named source witness within the accepted Open English Bible edition."
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "chapter": {
+              "minimum": 1
+            }
+          },
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "chapter_label"
+                ]
+              },
+              {
+                "required": [
+                  "native_chapter_policy"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "required": [
+            "chapter_label",
+            "native_chapter_policy",
+            "reference_status"
+          ],
+          "properties": {
+            "chapter": {
+              "const": 0
+            },
+            "versification": {
+              "const": "source-native:original-douay-rheims-v1.0"
+            },
+            "reference_status": {
+              "const": "unsupported-verse-components"
+            }
+          },
+          "not": {
+            "required": [
+              "reference"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-bible-bounded-v2",
+    "unit_type": "verse",
+    "source_rule": "A verse carrier has an explicit book identity, chapter, verse label, and edition versification.",
+    "supported_carriers": [
+      "ab",
+      "p",
+      "seg",
+      "verse",
+      "div[@type='verse']"
+    ],
+    "unsupported_behavior": "Visible unsupported structure raises an unsupported-visible diagnostic; it is never silently flattened or renumbered.",
+    "source_zero_chapter": "Explicit bible_native_chapter_policy source-native-zero-chapter-v1 with closed source-native:original-douay-rheims-v1.0 permits only exact native chapter label0; no normalized reference is inferred."
+  },
+  "allOf": [
+    {
+      "then": {
+        "properties": {
+          "versification": {
+            "const": "source-native:original-douay-rheims-v1.0"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "locator": {
+            "properties": {
+              "chapter": {
+                "const": 0
+              }
+            }
+          }
+        },
+        "required": [
+          "locator"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "edition_id": {
+            "const": "oeb-2025-6-us-cth"
+          }
+        },
+        "required": [
+          "edition_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "locator": {
+            "required": [
+              "witness"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "locator": {
+            "not": {
+              "required": [
+                "witness"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

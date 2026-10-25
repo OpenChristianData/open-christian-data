@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/reference-entries.schema.json",
+  "title": "OCD reference entry row",
+  "description": "Existing bounded reference-entry rows plus an exact-work source-native Catholic Encyclopedia unit branch.",
+  "oneOf": [
+    {
+      "title": "OCD reference entry row",
+      "description": "A closed row retaining a source headword, definition blocks, source-attested cross-references, and entry locator.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "category",
+        "language",
+        "representation_revision",
+        "text",
+        "entry_id",
+        "source_entry_id",
+        "entry_kind",
+        "headword",
+        "alternate_terms",
+        "definition_blocks",
+        "cross_references",
+        "source_order",
+        "locator",
+        "provenance"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "category": {
+          "const": "reference_entries"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text",
+          "minLength": 1
+        },
+        "entry_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_entry_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entry_kind": {
+          "enum": [
+            "dictionary-entry",
+            "encyclopedia-entry",
+            "entry"
+          ]
+        },
+        "headword": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternate_terms": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "definition_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "cross_references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cross_reference"
+          }
+        },
+        "source_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "locator": {
+          "$ref": "#/$defs/locator"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "representation_revision",
+        "text",
+        "provenance",
+        "category",
+        "row_format",
+        "unit_kind",
+        "source_title",
+        "headword",
+        "structure",
+        "locator"
+      ],
+      "properties": {
+        "work_id": {
+          "const": "catholic-encyclopedia-vol01"
+        },
+        "textual_form_id": {
+          "const": "catholic-encyclopedia-vol01-retained-en"
+        },
+        "edition_id": {
+          "const": "catholic-encyclopedia-vol01-retained-electronic"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "reference_entries"
+        },
+        "row_format": {
+          "const": "ocd-native-reference-unit-v1"
+        },
+        "unit_kind": {
+          "enum": [
+            "encyclopedia-entry",
+            "encyclopedia-index",
+            "unavailable-source-register"
+          ]
+        },
+        "source_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "headword": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "structure": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "ocd://schemas/v2/native-content.schema.json"
+          }
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "unit"
+          ],
+          "properties": {
+            "kind": {
+              "const": "native-reference-unit"
+            },
+            "text_part": {
+              "const": "body"
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "unit_kind": {
+                "const": "encyclopedia-entry"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "headword": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "headword": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "cross_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "target_term"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_term": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "division": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "type",
+        "number",
+        "titles"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "text_part",
+        "part_titles",
+        "divisions",
+        "headword",
+        "entry_order"
+      ],
+      "properties": {
+        "kind": {
+          "const": "reference-entry"
+        },
+        "text_part": {
+          "enum": [
+            "front",
+            "body",
+            "back"
+          ]
+        },
+        "part_titles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "divisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/division"
+          }
+        },
+        "headword": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entry_order": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-reference-entries-native-unit-v4",
+    "public_category": "reference_entries",
+    "private_receipt_anchors": [
+      "xml_id",
+      "tei_path",
+      "source_order"
+    ],
+    "unsupported_behavior": "Visible unsupported structure is rejected and accounted for; it is never silently flattened.",
+    "original_branch_preserved": true,
+    "new_branch_scope": "Exact Catholic Encyclopedia work/form/edition; source-defined article, index or failure register with complete native structure.",
+    "backward_compatible_extension": "Existing bounded-v3 branch, definitions, private_receipt_anchors and unsupported_behavior retained; no historical completion is rewritten."
+  }
+}

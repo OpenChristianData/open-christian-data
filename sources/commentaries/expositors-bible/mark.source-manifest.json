@@ -1,0 +1,81 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-chadwick-mark-whole-thml",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/chadwick_mark.xml",
+      "role": "primary-source",
+      "bytes": 912510,
+      "sha256": "1bbe36d072f96184a6d6c46a13d0b0b4e6c395f02efd5e769dc87e2d6fcf4bf2"
+    },
+    {
+      "name": "source-config",
+      "path": "sources/commentaries/expositors-bible/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 2695,
+      "sha256": "593007a726debe119fc91056d6a6c06c22ad8f0d1f5e010a83b5b585b1a0631f"
+    },
+    {
+      "name": "ccel-permission",
+      "path": "sources/commentaries/expositors-bible/ccel-permission.md",
+      "role": "exact-source-permission",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/mark.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 4389,
+      "sha256": "950fdc473e39497d31a43d07e230757b3ed24d1cc072352481a966e28b06c5a2"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/mark.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1758,
+      "sha256": "a89161738bd46b4fc7b6ea94666d69532ac6041929b2137b4067aa2f1bed1ee4"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/mark.source-accountability.schema.json",
+      "role": "mark-family-complete-accountability-schema",
+      "bytes": 3266,
+      "sha256": "a4dfe3b0bdb0568f3c9522136fb7a98f3a69007399225accd0f23ee1f8f5ecbe"
+    }
+  ],
+  "converter": {
+    "id": "ocd-mark-thml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/mark_reconstruction.py",
+    "implementation_sha256": "2a8917dd7cb5786131eb5fc04f25129b049ab2e53e579bf2361b30191e403e93"
+  },
+  "validator": {
+    "id": "ocd-mark-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/mark_oracle.py",
+    "implementation_sha256": "27921ad6a333dae70ce4b9c9e0ae0838e6bb34dc47aaad450b35064761a5c528",
+    "import_closure_sha256": "86e8d24402f6cb8bbdd7bff405306b837a46a74970ea57ffa8ae7d1937fb0f44"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

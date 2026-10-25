@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-jan-hus-wikisource-validation-policy-v1",
+  "capture_contract": "ocd-wikisource-expanded-render-capture-v1",
+  "ignored_elements": ["link", "meta", "script", "style"],
+  "ignored_classes": ["__nop", "mw-cite-backlink", "mw-empty-elt", "ws-noexport", "wst-dhr", "wst-header-back-arrow", "wst-header-forward-arrow"],
+  "pagebreak_rule": "Map every source data-page-index to one TEI pb in source order; direct Page renders receive their page number from the exact Page title.",
+  "footnote_rule": "Preserve each visible [n] marker as a TEI ref to its section-scoped note; omit only the MediaWiki backlink arrow and preserve note wording and inline markup.",
+  "transcription_rule": "Do not modernize, correct, silently normalize, or infer wording. Preserve HTML text order, paragraphs, lists, tables, emphasis, references, and the retained printer mark.",
+  "untranscribed_positions": [1, 2, 3, 4, 10, 52, 352, 357, 358, 359, 360],
+  "rights_rule": "Carry contributor attribution and CC BY-SA/GFDL terms separately from the 1915 edition's source-reported US public-domain status. Do not assert worldwide rights clearance."
+}

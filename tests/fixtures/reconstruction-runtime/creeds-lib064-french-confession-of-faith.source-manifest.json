@@ -1,0 +1,87 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "creeds-json-lib064-french-confession-of-faith-retained-json",
+  "work_id": "french-confession-of-faith",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "french-confession-of-faith",
+    "retained_source_sha256": "a914a7c1ceeef71168f4b675e4cfda1667c89c77e78b106cf2090bd3bf1face2",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "doctrinal-documents/french-confession-of-faith.json",
+        "legacy_source_sha256": "4ca75e060660b89d48943d9f361f8aaf337eb790ef6fe3282b865ded455be054"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/french_confession_of_faith.json",
+      "role": "primary-source",
+      "bytes": 33574,
+      "sha256": "a914a7c1ceeef71168f4b675e4cfda1667c89c77e78b106cf2090bd3bf1face2"
+    },
+    {
+      "name": "source-config",
+      "path": "sources/doctrinal-documents/lib064-creeds-json/french-confession-of-faith/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 155,
+      "sha256": "3f5bb4226692e241a3513fc493dde04ce178a289d4ef5349b5519fe4b17036ec"
+    },
+    {
+      "name": "rights-readme",
+      "path": "raw/Creeds.json/README.md",
+      "role": "rights-evidence",
+      "bytes": 8871,
+      "sha256": "caa2a135ceb89bdea2baf411bcb2897b03c34d24473de7c43ca373c9d9008bef"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/lib064-creeds-json/lib064.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 22043,
+      "sha256": "2b0abb87e25f09d2536c918a8f5a3e2dcb0403ec81e90a18d94ea89832a049d3"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/lib064-creeds-json/lib064.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1461,
+      "sha256": "642e6715b64b71aaa7aec06ff01577b585a28934f987554f505734217a7e1718"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "converter": {
+    "id": "ocd-creeds-json-lib064-retained-member-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/creeds_json_lib064_reconstruction.py",
+    "implementation_sha256": "4d249b03139756d731ebbe6d7e770b2bcc92da993060f7a84827da5e0615380f"
+  },
+  "validator": {
+    "id": "ocd-creeds-json-lib064-retained-byte-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/creeds_json_lib064_oracle.py",
+    "implementation_sha256": "537d8994d0c520fe77b8fe94b34e5d1351deaebdfa7d08790893c32b789e4b6c",
+    "import_closure_sha256": "16d6aef8b48d3d640b2eb7d43ff263498f26364d2000878d6672ce89d449f103"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

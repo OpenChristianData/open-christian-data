@@ -1,0 +1,69 @@
+{
+  "contract": "ocd-lib058-reconstruction-profile-v1",
+  "profile_id": "lib058-schaff-history-vol-2-retained-ccel-thml-v1",
+  "work_id": "schaff-history-vol-2",
+  "title": "History of the Christian Church, Vol. 2: Ante-Nicene Christianity, A.D. 100-325",
+  "creator": "Philip Schaff",
+  "contributor_statement": "Christian Classics Ethereal Library (electronic witness); retained header identifies Philip Schaff and Electronic Bible Society source statements.",
+  "source_url": "https://www.ccel.org/ccel/schaff/hcc2.xml",
+  "source_sha256": "edcfba700eb5e33cd662ec801589184dd665885cceca96114d891467c0f85942",
+  "source_bytes": 3181903,
+  "physical_lines": 48343,
+  "source_member": {
+    "path": "raw/ccel/schaff/hcc2.xml",
+    "bytes": 3181903,
+    "sha256": "edcfba700eb5e33cd662ec801589184dd665885cceca96114d891467c0f85942"
+  },
+  "source_envelope": {
+    "encoding": "UTF-8",
+    "line_framing": "LF; final line has no line ending",
+    "root": "ThML",
+    "head": "ThML.head",
+    "body": "ThML.body",
+    "body_top_level_ids": ["i", "ii", "iii", "iv", "v", "vi"]
+  },
+  "source_structure": {
+    "root": "ThML",
+    "head": "ThML.head",
+    "body": "ThML.body",
+    "body_top_level": [
+      {"id": "i", "type": null, "source_line": 362, "elements": 41},
+      {"id": "ii", "type": "Preface", "source_line": 432, "elements": 13},
+      {"id": "iii", "type": "Preface", "source_line": 472, "elements": 16},
+      {"id": "iv", "type": "Preface", "source_line": 507, "elements": 107},
+      {"id": "v", "type": null, "source_line": 725, "elements": 19861},
+      {"id": "vi", "type": null, "source_line": 44938, "elements": 6702}
+    ],
+    "content_div2": 15,
+    "content_chapters": 13,
+    "content_div3": 202,
+    "index_div2": 8,
+    "tag_counts": {
+      "DC": 1, "DC.Contributor": 2, "DC.Creator": 2, "DC.Date": 1, "DC.Description": 1, "DC.Format": 1,
+      "DC.Identifier": 1, "DC.Language": 1, "DC.Publisher": 1, "DC.Rights": 1, "DC.Source": 1, "DC.Subject": 4,
+      "DC.Title": 2, "DC.Type": 1, "ThML": 1, "ThML.body": 1, "ThML.head": 1, "a": 3131, "attr": 3,
+      "authorID": 1, "b": 7, "bkgID": 1, "bookID": 1, "br": 1138, "comments": 1, "description": 1, "div": 23,
+      "div1": 6, "div2": 23, "div3": 202, "editorialComments": 1, "electronicEdInfo": 1, "firstPublished": 1,
+      "generalInfo": 1, "h1": 1, "h2": 8, "h3": 12, "h4": 1, "i": 1621, "index": 57, "insertIndex": 8,
+      "l": 144, "li": 2258, "name": 2759, "note": 1593, "p": 6542, "printSourceInfo": 1, "property": 104,
+      "pubHistory": 1, "published": 1, "publisherID": 1, "revisionHistory": 1, "scripRef": 714, "selector": 53,
+      "series": 1, "span": 6382, "status": 1, "style": 2, "sup": 42, "unclear": 5, "ul": 6, "verse": 62, "version": 1,
+      "workID": 1
+    }
+  },
+  "structure_policy": {
+    "line_carrier": "tei:ab-or-head",
+    "line_container": "one tei:div per physical source line",
+    "source_topology": "retained in profile and independently recomputed from the XML tree",
+    "text_rule": "verbatim UTF-8 source line after removing only LF transport framing",
+    "uncertain_structure": "retain line carrier and mark candidate boundary unresolved"
+  },
+  "scope": {
+    "status": "complete-retained-source-expression",
+    "candidate_status": "nonaccepted",
+    "represented": "all 48,343 retained physical lines and the complete parsed ThML source topology",
+    "unrepresented": "none",
+    "human_review": "required"
+  }
+}
+

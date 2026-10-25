@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/aa-hodge-outlines-source-accountability-v1",
+  "title": "A. A. Hodge Outlines source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "source_sha256", "counts", "crosswalk_sha256", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-aa-hodge-outlines-source-accountability-v1"},
+    "profile_id": {"const": "aa-hodge-outlines-whole-work-v1"},
+    "source_sha256": {"const": "a81808d5a9d2037d3c1d0706de960fb13c175d3581dd131c7d505493df51fee5"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_bytes", "physical_lines", "represented_lines", "question_candidates", "chapter_candidates", "omitted_lines", "duplicated_lines"],
+      "properties": {
+        "source_bytes": {"const": 1976207},
+        "physical_lines": {"const": 37553},
+        "represented_lines": {"const": 37553},
+        "question_candidates": {"const": 1107},
+        "chapter_candidates": {"const": 85},
+        "omitted_lines": {"const": 0},
+        "duplicated_lines": {"const": 0}
+      }
+    },
+    "crosswalk_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 37553,
+      "maxItems": 37553,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "line_number", "byte_start", "byte_end", "bytes", "sha256", "role", "status", "target"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^hodge-line-[0-9]{6}$"},
+          "line_number": {"type": "integer", "minimum": 1, "maximum": 37553},
+          "byte_start": {"type": "integer", "minimum": 0},
+          "byte_end": {"type": "integer", "minimum": 1, "maximum": 1976207},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "role": {"enum": ["source-line", "question-candidate", "chapter-candidate"]},
+          "status": {"const": "represented"},
+          "target": {"type": "string", "pattern": "^#hodge-line-[0-9]{6}$"}
+        }
+      }
+    }
+  }
+}

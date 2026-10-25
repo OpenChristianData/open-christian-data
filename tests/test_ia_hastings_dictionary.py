@@ -1,3 +1,4 @@
+import hashlib
 import importlib
 import json
 import sys
@@ -15,6 +16,16 @@ from build.lib._generated_enums import (
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PARSER_DIR = REPO_ROOT / "build" / "parsers"
 OUTPUT_FILE = REPO_ROOT / "data" / "reference" / "hastings-dictionary-of-the-bible.json"
+ABEL_SOURCE_FILE = (
+    REPO_ROOT
+    / "raw"
+    / "ia"
+    / "hastings-dictionary"
+    / "DictionaryOfTheBibleV1_djvu.txt"
+)
+ABEL_FIDELITY_FIXTURE = (
+    REPO_ROOT / "tests" / "fixtures" / "hastings" / "abel_ocr_fidelity.json"
+)
 
 # Vols 1-4 parsed; Vol 5 (British Library scan) skipped — OCR uses Greek Unicode homoglyphs
 # for Latin characters throughout, making it unreadable to the standard heading detector.
@@ -84,6 +95,105 @@ def test_output_populates_related_terms_for_see_stub():
     )
 
     assert entry["related_terms"] == ["Gauleb", "Sea of"]
+
+
+@pytest.mark.raw_required(ABEL_SOURCE_FILE)
+def test_abel_retained_ocr_blocks_and_markers_are_exactly_preserved():
+    """Pin the source facts that the retired broad-pass lane uniquely carried."""
+    expected = json.loads(ABEL_FIDELITY_FIXTURE.read_text(encoding="utf-8"))
+    assert expected["source_path"] == ABEL_SOURCE_FILE.relative_to(REPO_ROOT).as_posix()
+    source_lines = ABEL_SOURCE_FILE.read_text(encoding="utf-8").splitlines()
+    entry_start = expected["entry_line_start"]
+    entry_end = expected["entry_line_end"]
+
+    assert source_lines[entry_start - 1].strip() == "ABEL"
+    assert source_lines[expected["next_entry_line"] - 1].strip().startswith("ABEL  (")
+
+    selected_lf_slice = "\n".join(source_lines[entry_start - 1 : entry_end]) + "\n"
+    assert hashlib.sha256(selected_lf_slice.encode("utf-8")).hexdigest() == expected[
+        "selected_lf_slice_sha256"
+    ]
+
+    actual_blocks = []
+    block_start = None
+    block_lines = []
+    for line_number, line in enumerate(
+        source_lines[entry_start:entry_end], start=entry_start + 1
+    ):
+        if line.strip():
+            block_start = block_start or line_number
+            block_lines.append(line)
+        elif block_lines:
+            actual_blocks.append(
+                {
+                    "line_start": block_start,
+                    "line_end": line_number - 1,
+                    "text": " ".join(" ".join(block_lines).split()),
+                }
+            )
+            block_start = None
+            block_lines = []
+    if block_lines:
+        actual_blocks.append(
+            {
+                "line_start": block_start,
+                "line_end": entry_end,
+                "text": " ".join(" ".join(block_lines).split()),
+            }
+        )
+
+    expected_blocks = [
+        {key: block[key] for key in ("line_start", "line_end", "text")}
+        for block in expected["blocks"]
+    ]
+    assert actual_blocks == expected_blocks
+    assert [block["role"] for block in expected["blocks"]] == [
+        "opening_ocr",
+        "definition_ocr",
+        "source_marker",
+        "contributor_marker",
+    ]
+    uncertainty = expected["uncertainty_treatment"]
+    assert uncertainty == {
+        "status": "scan-backed correction unresolved",
+        "projection_policy": "OCR retained verbatim after whitespace-only joining",
+        "silent_correction": False,
+        "visible_errors": ["8eeCAIN", "nock"],
+    }
+    definition_ocr = expected["blocks"][1]["text"]
+    assert all(error in definition_ocr for error in uncertainty["visible_errors"])
+
+
+@pytest.mark.raw_required(OUTPUT_FILE)
+def test_abel_ordinary_output_still_has_known_block_and_boundary_loss():
+    """Characterize current loss without treating the ordinary JSON as faithful TEI."""
+    expected = json.loads(ABEL_FIDELITY_FIXTURE.read_text(encoding="utf-8"))
+    output = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+    matches = [
+        entry
+        for entry in output["data"]
+        if entry.get("entry_id") == "hastings.abel"
+    ]
+    assert len(matches) == 1
+
+    actual_blocks = matches[0]["definition_blocks"]
+    expected_blocks = [block["text"] for block in expected["blocks"]]
+    assert actual_blocks != expected_blocks
+    assert actual_blocks[:4] != expected_blocks
+
+    source_definition = expected_blocks[1]
+    ordinary_text = " ".join(actual_blocks)
+    lost_clauses = (
+        "the idea of the short-lived or possibly the shepherd",
+        "the spirit of true piety which was expressed in his",
+        "the Jewish consciousness of the enduring division of mankind",
+    )
+    assert all(clause in source_definition for clause in lost_clauses)
+    assert all(clause not in ordinary_text for clause in lost_clauses)
+
+    # The next, distinct ABEL place entry is currently swallowed into the
+    # person entry instead of remaining outside its source boundary.
+    assert any(block.startswith("ABEL (^sy), ' meadow.'") for block in actual_blocks)
 
 
 # ---------------------------------------------------------------------------

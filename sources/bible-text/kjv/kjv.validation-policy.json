@@ -1,0 +1,38 @@
+{
+  "contract": "ocd-37c239-validation-policy-v1",
+  "policy_id": "kjv-native-json-complete-v1",
+  "oracle_id": "ocd-37c239-kjv-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "required_counts": {
+    "top_level_fields": 2,
+    "books": 66,
+    "chapters": 1189,
+    "verses": 31102,
+    "nonempty_verses": 31102,
+    "empty_verses": 0,
+    "crosswalk_rows": 32359
+  },
+  "source_order": "top-level JSON key order, book list order, chapter list order, verse list order, and source numeric order are authoritative",
+  "meaningful_features": [
+    "translation marker",
+    "66 named book boundaries",
+    "chapter boundaries and ordinal numbers",
+    "verse boundaries and ordinal numbers",
+    "exact verse text"
+  ],
+  "mutation_claims": [
+    "omit a book, chapter, or verse",
+    "duplicate or reorder a book, chapter, or verse",
+    "change verse text or source marker",
+    "change a book/chapter/verse identifier or boundary attribute",
+    "invent a TEI carrier or source-accountability row",
+    "drift source, profile, policy, or manifest bindings"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.kjv_reconstruction",
+    "build.parsers.bible_text_translations",
+    "build.parsers.bsb_bible_text"
+  ],
+  "determinism": "Two fresh candidate-tool processes must produce identical package member sets and bytes from the same current manifest and source."
+}

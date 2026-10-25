@@ -1,0 +1,97 @@
+{
+  "contract": "ocd-tcp-a23804-independent-validation-policy-v1",
+  "source_id": "tcp-A23804",
+  "identity": {
+    "work_id": "whole-duty-of-prayer",
+    "textual_form_id": "whole-duty-of-prayer-tcp-retained",
+    "edition_id": "whole-duty-of-prayer-tcp-electronic",
+    "acquisition_id": "whole-duty-of-prayer-tcp-acquired"
+  },
+  "scope": "Complete retained single-member TCP A23804 TEI P5 witness: preserve the header, nested text group, complete front/body/back, internal title pages, source gaps, glyphs, page-break and facsimile references, text, tails, and attributes. Candidate content is the exact source XML byte stream; no source material is added, normalized, split, or excluded. One complete top-level titled work produces one TEI document.",
+  "profile_sha256": "73dc31eff40cea6d6e8cc911251efd7becb5be61e12ab6fd2b36af50c7236fbb",
+  "accountability": {
+    "contract": "ocd-tcp-a23804-source-accountability-v1",
+    "source_path": "raw/tcp/high-range/A23804/A23804.xml",
+    "source_member_set": [
+      {
+        "position": 1,
+        "path": "raw/tcp/high-range/A23804/A23804.xml",
+        "bytes": 242909,
+        "sha256": "4ce798180f8b9ef8c9b9cd9200b50a9c324ab858c7aad07d1e7d22931ee2a5f1",
+        "inventory_line": "A23804.xml\t242909\t4ce798180f8b9ef8c9b9cd9200b50a9c324ab858c7aad07d1e7d22931ee2a5f1"
+      }
+    ],
+    "retained_member_count": 1,
+    "candidate_tei_document_count": 1,
+    "complete_source_scope": "Complete retained single-member TCP A23804 TEI P5 witness: preserve the header, nested text group, complete front/body/back, internal title pages, source gaps, glyphs, page-break and facsimile references, text, tails, and attributes. Candidate content is the exact source XML byte stream; no source material is added, normalized, split, or excluded. One complete top-level titled work produces one TEI document.",
+    "work_boundary": {
+      "decision": "one complete work in one TEI document",
+      "evidence": [
+        "one retained TEI root with one titleStmt/title matching the current work sidecar",
+        "one top-level TEI text containing one grouped work text with front, body, and back",
+        "the TCP source note identifies the additional-devotions title page as internal matter on pages [139]-164"
+      ],
+      "internal_matter": "The special title page for Additional devotions for several occasions remains in the body of the same work and is not split into another TEI."
+    },
+    "transformation": "none; candidate TEI preserves the complete retained source member byte-for-byte",
+    "omitted_source_members": [],
+    "duplicated_source_members": [],
+    "source_gap_disposition": "All source-encoded gap elements are preserved unchanged.",
+    "source_page_and_facs_disposition": "All source-encoded page-break and facsimile pointer attributes are preserved unchanged; no image bytes are claimed.",
+    "status": "complete-source-member-preserved"
+  },
+  "provenance": {
+    "contract": "ocd-tcp-a23804-provenance-v1",
+    "status": "nonaccepted",
+    "source_id": "tcp-A23804",
+    "provider": "Text Creation Partnership",
+    "source_path": "raw/tcp/high-range/A23804/A23804.xml",
+    "source_bytes": 242909,
+    "source_sha256": "4ce798180f8b9ef8c9b9cd9200b50a9c324ab858c7aad07d1e7d22931ee2a5f1",
+    "source_url": "https://raw.githubusercontent.com/textcreationpartnership/A23804/master/A23804.xml",
+    "retrieved_utc": "2026-09-23T06:48:17.890626Z",
+    "identity": {
+      "work_id": "whole-duty-of-prayer",
+      "textual_form_id": "whole-duty-of-prayer-tcp-retained",
+      "edition_id": "whole-duty-of-prayer-tcp-electronic",
+      "acquisition_id": "whole-duty-of-prayer-tcp-acquired"
+    },
+    "source_attribution": "The TCP Phase I header requests due credit and attribution to the original source; see the work-local SOURCE_CREDIT.md.",
+    "text_rights_scope": "The retained receipt records the TCP Phase I CC0 1.0 Universal statement for the keyboarded and encoded text. No page-image rights are claimed; broader rights status remains unresolved.",
+    "candidate_relation": "Exact copy of the complete retained XML TEI member; no lexical or structural transformation.",
+    "acceptance_status": "nonaccepted",
+    "publication_authorized": false
+  },
+  "unresolved": [
+    {
+      "id": "a23804-print-collation",
+      "status": "unresolved",
+      "scope": "edition comparison",
+      "question": "Has this keyboarded witness been collated against the print exemplar?",
+      "evidence": "The retained acquisition has one XML member and no page images; candidate fidelity is byte preservation of that member."
+    },
+    {
+      "id": "a23804-human-decision",
+      "status": "unresolved",
+      "scope": "human review and acceptance",
+      "question": "Will a human separately decide textual, identity, and acceptance questions?",
+      "evidence": "This package records technical source-to-TEI evidence only and remains nonaccepted."
+    },
+    {
+      "id": "a23804-rights-publication",
+      "status": "unresolved",
+      "scope": "rights and publication",
+      "question": "What broader rights disposition and publication decision will be made?",
+      "evidence": "The package preserves only the source's text-layer terms and attribution request; no broader rights or publication status is set."
+    }
+  ],
+  "required": [
+    "exact retained source identity, size, and SHA-256 binding",
+    "complete declared one-member acquisition accounting",
+    "one top-level complete titled work represented by exactly one candidate TEI",
+    "preservation of source header, front/body/back, notes, gaps, page references, glyphs, attributes, order, and text",
+    "independent source census and byte comparison",
+    "TEI P5 XSD validation",
+    "nonaccepted candidate status and source-visible credit"
+  ]
+}

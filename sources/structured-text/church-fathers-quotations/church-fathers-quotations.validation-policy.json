@@ -1,0 +1,44 @@
+{
+  "contract": "ocd-lib061-validation-policy-v1",
+  "policy_id": "lib061-church-fathers-quotations-policy-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "source_envelope": {
+    "contract": "ocd-source-member-equality-v1",
+    "archive_member_count": 59021,
+    "regular_file_count": 58682,
+    "directory_count": 339,
+    "toml_file_count": 58675,
+    "metadata_object_count": 335,
+    "commentary_file_count": 58340,
+    "commentary_record_count": 70194,
+    "missing_member_count": 0,
+    "mismatch_count": 0
+  },
+  "checks": [
+    "source-manifest-current-contract-and-primary-member-set",
+    "recovered-archive-member-order-and-byte-equality-envelope",
+    "complete-extracted-tree-member-and-extra-file-accounting",
+    "all-retained-TOML-parsing-and-field-order-type-value-crosswalk",
+    "metadata-object-and-commentary-record-completeness",
+    "source-accountability-json-schema",
+    "strict-tei-p5-xsd",
+    "candidate-package-integrity-and-current-bindings",
+    "producer-independent-fresh-process-oracle",
+    "explicit-catalog-claim-lineage-and-exact-work-id"
+  ],
+  "lifecycle": {
+    "human_review": "required-not-accepted",
+    "rights_review": "required",
+    "publication": "not_ready"
+  }
+}

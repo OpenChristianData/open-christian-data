@@ -1,0 +1,94 @@
+{
+  "contract": "ocd-hammon-address-to-negroes-validation-policy-v1",
+  "source_id": "evans-tcp-n15943-pinned-tei-p5",
+  "readme_sha256": "a6122ad6ac8c23654124679692ab06e0194bd3030690b7606500403ed54fddbf",
+  "accountability": {
+    "contract": "ocd-hammon-address-to-negroes-accountability-v1",
+    "projection": "exact-source-bytes-v1",
+    "source_path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/N15943.xml",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "content.tei.xml is byte-identical to the retained TEI P5 source; TCP identifiers, source-defined divisions, attributes, text, tails, whitespace, typography, page anchors, gaps, encoded characters, and paratext remain present"
+  },
+  "provenance": {
+    "contract": "ocd-hammon-address-to-negroes-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "tcp_id": "N15943",
+      "author": "Hammon, Jupiter, 1711-ca. 1800.",
+      "title": "An address to the Negroes in the state of New-York, by Jupiter Hammon, servant of John Lloyd, Jun, Esq; of the manor of Queen's Village, Long-Island. ; [Four lines from Acts]",
+      "publication_place": "New-York",
+      "publisher": "Printed by Carroll and Patterson no. 32, Maiden-Lane",
+      "date": "1787",
+      "evans": "20400",
+      "image_set": "20400"
+    },
+    "source": {
+      "landing_url": "https://name.umdl.umich.edu/N15943.0001.001",
+      "landing_capture": "Wayback snapshot 2025-01-11 because the live route returned a Cloudflare challenge on 2026-08-31",
+      "repository_url": "https://github.com/textcreationpartnership/N15943",
+      "download_url": "https://raw.githubusercontent.com/textcreationpartnership/N15943/541a6a41bd35466692aa2576e700caad27347330/N15943.xml",
+      "commit": "541a6a41bd35466692aa2576e700caad27347330",
+      "retrieved_utc": "2026-08-31T02:44:18Z",
+      "bytes": 38600,
+      "sha256": "ebb9de5f026fd7f4d455c077785f01464ce3632ae38c310c2cbdd4689e63e875"
+    },
+    "rights": {
+      "keyboarded_and_encoded_edition": "CC0 1.0 Universal",
+      "vendor_page_images": "excluded, not redistributed, and not claimed under the text waiver",
+      "attribution_request": "TCP respectfully requests credit and attribution to the original source",
+      "human_rights_review": "required"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "canonical_write": false,
+      "human_textual_acceptance": false,
+      "identity_acceptance": false,
+      "edition_acceptance": false,
+      "rights_acceptance": false,
+      "editorial_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "hammon-n15943-keying-gap-and-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate the sampled-proofread TCP transcription and its blotted-word gap against the 1787 print witness?",
+      "evidence": "TCP reports sampled proofreading; this route preserves every retained reading and the explicit gap but performs no print collation."
+    },
+    {
+      "id": "hammon-n15943-live-item-page",
+      "status": "unresolved",
+      "question": "Will a later human identity review refresh the live Michigan item page after its Cloudflare challenge is no longer blocking access?",
+      "evidence": "The live redirect and challenge headers are retained with ephemeral cookies redacted; the current official TCP repository, TEI header, and dated 2025-01-11 archive snapshot support the provisional identity."
+    },
+    {
+      "id": "hammon-n15943-vendor-images-and-facsimile-links",
+      "status": "unresolved",
+      "question": "How should later review resolve the source's unknown: facsimile targets without redistributing commercial Readex/Newsbank scans?",
+      "evidence": "The pinned XML preserves 20 page milestones with unknown: facsimile identifiers; vendor scans are deliberately excluded."
+    },
+    {
+      "id": "hammon-n15943-human-identity-rights-editorial-publication",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept the text, identity, edition, rights scope, editorial treatment, canonical status, and publication?",
+      "evidence": "Exact-byte reconstruction and technical validation provide no such acceptance or authorization."
+    }
+  ],
+  "required": [
+    "exact retained byte length and SHA-256",
+    "N15943, Jupiter Hammon, Evans 20400, New-York, Carroll and Patterson, and 1787 identity in the retained TEI header",
+    "candidate content.tei.xml byte-identical to retained N15943.xml",
+    "complete independently recomputed element, attribute, text, and tail census",
+    "TEI P5 validity against the vendored tei_all.xsd",
+    "exact deterministic provenance, accountability, unresolved ledger, and README bytes",
+    "complete candidate manifest authority bindings and nonaccepted status",
+    "title page, African Society dedication, public notice, main address, four division types, 20 page milestones, 84 encoded characters, one blotted-word gap, numbered counsel, quotations, emphasis, datelines, signatures, and FINIS preserved",
+    "CC0 keyboarded-and-encoded-text scope distinct from excluded vendor page images",
+    "dated archive provenance distinct from live Michigan item-page evidence",
+    "TCP attribution request retained in README.source.md",
+    "no silent omission, duplication, normalization, modernization, or invention"
+  ]
+}

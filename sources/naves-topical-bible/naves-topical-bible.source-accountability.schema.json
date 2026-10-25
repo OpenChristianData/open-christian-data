@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "ticket_id", "work_id", "source_id", "transformation_source_set", "source_members", "archive", "binary_census", "observation_counts", "blocks", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-naves-topical-bible-source-accountability-v2"},
+    "schema": {"const": "sources/naves-topical-bible/naves-topical-bible.source-accountability.schema.json"},
+    "profile_id": {"const": "naves-topical-bible-crosswire-sword-v3"},
+    "ticket_id": {"const": "LIB-009"},
+    "work_id": {"const": "naves-topical-bible"},
+    "source_id": {"const": "crosswire-nave-sword-v3"},
+    "transformation_source_set": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "members", "sha256"],
+      "properties": {
+        "contract": {"const": "ocd-source-member-set-v1"},
+        "sha256": {"const": "8c5cf1cc42248214ba0d9e0fda51c99925b9a06760a71dd2a33a5750e09afc6d"},
+        "members": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "path", "bytes", "sha256"],
+            "properties": {
+              "name": {"enum": ["dict-dat", "dict-idx", "dict-zdt", "dict-zdx"]},
+              "path": {"type": "string", "minLength": 1},
+              "bytes": {"type": "integer", "minimum": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "source_members": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "bytes", "sha256", "role", "status"],
+        "properties": {
+          "path": {"type": "string"}, "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "role": {"type": "string"}, "status": {"const": "accounted"}
+        }
+      }
+    },
+    "archive": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "bytes", "sha256", "role", "member_count", "matching_members", "extra_members", "members"],
+      "properties": {
+        "path": {"const": "raw/naves_topical/Nave.zip"}, "bytes": {"const": 1300879},
+        "sha256": {"const": "52d9b7cde04c2abb5187ae804bcb97d93c7344a1358539f50ebc178ac0c945f0"},
+        "role": {"const": "acquisition-container-not-second-witness"},
+        "member_count": {"const": 5}, "matching_members": {"const": 5}, "extra_members": {"const": 0},
+        "members": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["ordinal", "name", "bytes", "compressed_bytes", "crc32", "compress_type", "flag_bits", "dos_timestamp", "external_attributes"],
+            "properties": {
+              "ordinal": {"type": "integer", "minimum": 1, "maximum": 5},
+              "name": {"type": "string", "minLength": 1},
+              "bytes": {"type": "integer", "minimum": 1},
+              "compressed_bytes": {"type": "integer", "minimum": 1},
+              "crc32": {"type": "string", "pattern": "^[0-9a-f]{8}$"},
+              "compress_type": {"const": 8}, "flag_bits": {"const": 2056},
+              "dos_timestamp": {"const": "2021-03-11T10:26:32"},
+              "external_attributes": {"const": 0}
+            }
+          }
+        }
+      }
+    },
+    "binary_census": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index_entries", "unique_dictionary_keys", "duplicate_key_occurrences", "compressed_blocks", "compressed_payload_bytes", "zlib_stream_bytes", "allocation_padding_count", "allocation_padding_bytes", "allocation_padding_sha256", "compressed_separator_bytes", "uncompressed_bytes", "payload_bytes", "payload_body_bytes", "terminal_nul_count", "terminal_nul_bytes", "terminal_nul_sha256", "block_overhead_bytes", "block_count_field_bytes", "descriptor_table_bytes", "dict_idx_record_bytes", "dictionary_key_bytes", "dict_pointer_bytes", "key_pointer_delimiter_bytes", "dict_outer_separator_bytes", "unique_payloads", "pointer_coverage", "key_payload_name_differences", "dictionary_keys_sha256", "payload_sha256s_sha256", "index_pointer_sequence_sha256", "compressed_block_census_sha256", "source_markup_counts"],
+      "properties": {
+        "index_entries": {"const": 5322}, "unique_dictionary_keys": {"const": 5320}, "duplicate_key_occurrences": {"const": 2},
+        "compressed_blocks": {"const": 178}, "compressed_payload_bytes": {"const": 1424650}, "zlib_stream_bytes": {"const": 1242378},
+        "allocation_padding_count": {"const": 178}, "allocation_padding_bytes": {"const": 182272}, "allocation_padding_sha256": {"const": "5f70bf18a086007016e948b04aed3b82103a36be1dbb6bf6835c5ddc3fdfbba0"},
+        "compressed_separator_bytes": {"const": 356},
+        "uncompressed_bytes": {"const": 4615804}, "payload_bytes": {"const": 4572516}, "payload_body_bytes": {"const": 4567194},
+        "terminal_nul_count": {"const": 5322}, "terminal_nul_bytes": {"const": 5322}, "terminal_nul_sha256": {"const": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"},
+        "block_overhead_bytes": {"const": 43288}, "block_count_field_bytes": {"const": 712}, "descriptor_table_bytes": {"const": 42576},
+        "dict_idx_record_bytes": {"const": 42576}, "dictionary_key_bytes": {"const": 40116}, "dict_pointer_bytes": {"const": 42576}, "key_pointer_delimiter_bytes": {"const": 10644}, "dict_outer_separator_bytes": {"const": 10644},
+        "unique_payloads": {"const": 5322}, "pointer_coverage": {"const": "all-physical-payloads-exactly-once"}, "key_payload_name_differences": {"const": 5},
+        "dictionary_keys_sha256": {"const": "802b3f43132923b38a7a38b709d3a0a4cca4f8a9c791fa56958068c86c96bf6a"},
+        "payload_sha256s_sha256": {"const": "118aabcfd5daebba8d6c27661f6806e0ab8293b492c98a74a4880510c76c5580"},
+        "index_pointer_sequence_sha256": {"const": "468b1733e3902c61d22abb67409b819d662aeb87ea8874ea5cbfcd2e8368de88"},
+        "compressed_block_census_sha256": {"const": "c6e7dee58b7a6031a5017e74bdc58505fe6ac4f22777a4127be9c57db7dafad1"},
+        "source_markup_counts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["entryFree", "def", "lb", "ref_osisRef", "ref_target", "list", "item"],
+          "properties": {"entryFree": {"const": 5322}, "def": {"const": 5322}, "lb": {"const": 17018}, "ref_osisRef": {"const": 77935}, "ref_target": {"const": 4368}, "list": {"const": 2346}, "item": {"const": 12361}}
+        }
+      }
+    },
+    "observation_counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dictionary_keys", "readable_payload_bodies", "terminal_nuls_disposed", "represented", "structural_controls", "disposed", "unexplained", "duplicate"],
+      "properties": {"dictionary_keys": {"const": 5322}, "readable_payload_bodies": {"const": 5322}, "terminal_nuls_disposed": {"const": 5322}, "represented": {"const": 10644}, "structural_controls": {"const": 27500}, "disposed": {"const": 5322}, "unexplained": {"const": 0}, "duplicate": {"const": 0}}
+    },
+    "blocks": {
+      "type": "array", "minItems": 178, "maxItems": 178,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["block", "zdx_record_offset", "zdx_record_bytes", "zdx_record_sha256", "zdt_offset", "compressed_bytes", "compressed_sha256", "zlib_stream_bytes", "zlib_stream_sha256", "allocation_padding_bytes", "allocation_padding_sha256", "zdt_separator_offset", "zdt_separator_bytes", "zdt_separator_sha256", "uncompressed_bytes", "uncompressed_sha256", "entry_count", "count_field_bytes", "count_field_sha256", "descriptor_table_bytes", "descriptor_table_sha256", "payload_bytes"],
+        "properties": {
+          "block": {"type": "integer", "minimum": 0, "maximum": 177}, "zdx_record_offset": {"type": "integer", "minimum": 0}, "zdx_record_bytes": {"const": 8}, "zdx_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "zdt_offset": {"type": "integer", "minimum": 0},
+          "compressed_bytes": {"type": "integer", "minimum": 1}, "compressed_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "zlib_stream_bytes": {"type": "integer", "minimum": 1}, "zlib_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "allocation_padding_bytes": {"const": 1024}, "allocation_padding_sha256": {"const": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"},
+          "zdt_separator_offset": {"type": "integer", "minimum": 0}, "zdt_separator_bytes": {"const": 2}, "zdt_separator_sha256": {"const": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"},
+          "uncompressed_bytes": {"type": "integer", "minimum": 1}, "uncompressed_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "entry_count": {"type": "integer", "minimum": 1}, "count_field_bytes": {"const": 4}, "count_field_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "descriptor_table_bytes": {"type": "integer", "minimum": 8}, "descriptor_table_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "payload_bytes": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array", "minItems": 5322, "maxItems": 5322,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["ordinal", "dictionary_key", "dictionary_key_bytes", "dictionary_key_sha256", "dict_idx_offset", "dict_idx_bytes", "dict_idx_sha256", "dict_dat_offset", "dict_record_bytes", "key_pointer_delimiter_offset", "key_pointer_delimiter_bytes", "key_pointer_delimiter_sha256", "pointer_offset", "pointer_bytes", "pointer_sha256", "outer_separator_offset", "outer_separator_bytes", "outer_separator_sha256", "block", "entry_in_block", "payload_offset", "payload_bytes", "payload_sha256", "payload_body_bytes", "payload_body_sha256", "terminal_nul_bytes", "terminal_nul_sha256", "terminal_nul_disposition", "payload_n", "osis_refs", "cross_refs", "target", "dictionary_key_target", "status"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1, "maximum": 5322}, "dictionary_key": {"type": "string", "minLength": 1},
+          "dictionary_key_bytes": {"type": "integer", "minimum": 1}, "dictionary_key_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "dict_idx_offset": {"type": "integer", "minimum": 0}, "dict_idx_bytes": {"const": 8}, "dict_idx_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "dict_dat_offset": {"type": "integer", "minimum": 0}, "dict_record_bytes": {"type": "integer", "minimum": 1},
+          "key_pointer_delimiter_offset": {"type": "integer", "minimum": 0}, "key_pointer_delimiter_bytes": {"const": 2}, "key_pointer_delimiter_sha256": {"const": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"},
+          "pointer_offset": {"type": "integer", "minimum": 0}, "pointer_bytes": {"const": 8}, "pointer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "outer_separator_offset": {"type": "integer", "minimum": 0}, "outer_separator_bytes": {"const": 2}, "outer_separator_sha256": {"const": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"},
+          "block": {"type": "integer", "minimum": 0, "maximum": 177}, "entry_in_block": {"type": "integer", "minimum": 0},
+          "payload_offset": {"type": "integer", "minimum": 0}, "payload_bytes": {"type": "integer", "minimum": 1},
+          "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "payload_n": {"type": "string", "minLength": 1},
+          "payload_body_bytes": {"type": "integer", "minimum": 1}, "payload_body_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "terminal_nul_bytes": {"const": 1}, "terminal_nul_sha256": {"const": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"}, "terminal_nul_disposition": {"const": "required-binary-format-terminator"},
+          "osis_refs": {"type": "integer", "minimum": 0}, "cross_refs": {"type": "integer", "minimum": 0},
+          "target": {"type": "string", "pattern": "^#naves-topical-bible-entry-[0-9]{5}$"}, "dictionary_key_target": {"type": "string", "minLength": 1}, "status": {"const": "represented-with-terminal-control-disposition"}
+        }
+      }
+    }
+  }
+}

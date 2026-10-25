@@ -1,0 +1,227 @@
+{
+  "ticket": "07",
+  "wave": 3,
+  "slug": "teresa-life-of-st-teresa-of-jesus",
+  "sealed_utc": "2026-08-31T03:03:00Z",
+  "release": {
+    "work": "Teresa of Avila, The Life of St. Teresa of Jesus, translated by David Lewis, Project Gutenberg 8120, 1904 witness",
+    "wave_3_release_gate_sha256": "0b7c23c99123434fd6ae8faa2c9cfff42666a6c8666510b37e7d6878afc0cad2",
+    "current_append_only_gate_sha256": "9e338eb7006682df9795b15a58f9ddabfed7f4871114ead95888794243cf309a",
+    "held": [
+      "tickets 08-13"
+    ]
+  },
+  "raw_artifacts": [
+    {
+      "path": "landing.headers.txt",
+      "bytes": 400,
+      "sha256": "7f9a8e706bfea361ab64230dec573d1ae509d980e75b11d6c486071e0eeebdbd"
+    },
+    {
+      "path": "landing.html",
+      "bytes": 24185,
+      "sha256": "fd7876cd5eced2fb90d0a22b2d763129e77088836cab7fd0e8a65a8540fc4e0f"
+    },
+    {
+      "path": "pg8120-h.zip",
+      "bytes": 518525,
+      "sha256": "92b3442c0b2c04c206152c41b698bd464899ac078c2660afa83c2c751b17d274"
+    },
+    {
+      "path": "pg8120-h.zip.headers.txt",
+      "bytes": 217,
+      "sha256": "8a5e7f9d78a00a1238f6a712f9564580433158850b0c7c48622393400a927881"
+    },
+    {
+      "path": "pg8120.rdf",
+      "bytes": 21570,
+      "sha256": "a57d6a97b67df5a32ed9023f501a5e02654421950b217d4f0f80a0f8399c922f"
+    },
+    {
+      "path": "pg8120.rdf.headers.txt",
+      "bytes": 554,
+      "sha256": "c440cfc2e379eb39c865b919fc242a6a4ffb5a32235755e95ab219b813751aac"
+    }
+  ],
+  "archive_members": [
+    {
+      "path": "pg8120-images.html",
+      "bytes": 1301386,
+      "sha256": "9aeeb297ddcd83e801b9782fd7c376af845491e3fd2a941a85530b0214ad3e74"
+    },
+    {
+      "path": "8120-cover.png",
+      "bytes": 87300,
+      "sha256": "bf20cc07794aa2d1f6b350758dd7d7c7135a4759754f7058276d10be88ae04b6"
+    }
+  ],
+  "worktree_artifacts": [
+    {
+      "path": "build/tei/teresa_life_of_st_teresa_of_jesus.py",
+      "bytes": 34305,
+      "sha256": "2ff5f698748d3a9aafe191238fbe1412f76c8d8971086a10490e18bab6f2a385"
+    },
+    {
+      "path": "tests/test_teresa_life_of_st_teresa_of_jesus.py",
+      "bytes": 5048,
+      "sha256": "13ba50418d9c2703e3eb5af75b8ff2f49f727b2427a6c5a1de06d78ea593e95d"
+    },
+    {
+      "path": "sources/structured-text/teresa-life-of-st-teresa-of-jesus/config.json",
+      "bytes": 1871,
+      "sha256": "1fd6adbc3479834726b975fe0cf613384da4ffec25cd35ad8a36e7963af29350"
+    },
+    {
+      "path": "sources/structured-text/teresa-life-of-st-teresa-of-jesus/README.md",
+      "bytes": 3422,
+      "sha256": "6268c0e0196910ee6a778c193472b85d871f214b5f617cae0bc6bfe1c56ec9de"
+    },
+    {
+      "path": "sources/structured-text/teresa-life-of-st-teresa-of-jesus/acquisition-receipt.json",
+      "bytes": 4063,
+      "sha256": "bbbd0dfbf1083f6fc8c1c690a6f69fae791dd270028d71dffc21dbbb684bfd53"
+    },
+    {
+      "path": "sources/structured-text/teresa-life-of-st-teresa-of-jesus/source-vs-tei-visual-record.json",
+      "bytes": 5206,
+      "sha256": "95617c0549c343ad03dbedd65aeab9ac2bdeb7f6c6268e0175c3dd3ec63306c5"
+    }
+  ],
+  "report_artifacts": [
+    {
+      "path": "candidate.tei.xml",
+      "bytes": 1534223,
+      "sha256": "ca8c31af54fd82baaf01d2860a07e41895452623f53fe8663dab60d9fb51e1ff"
+    },
+    {
+      "path": "accounting.json",
+      "bytes": 3080,
+      "sha256": "79e1e862dad6e8201f976f3e217d5ed65dc01d2fa173235a59f41795ea428980"
+    },
+    {
+      "path": "determinism/candidate.tei.xml",
+      "bytes": 1534223,
+      "sha256": "ca8c31af54fd82baaf01d2860a07e41895452623f53fe8663dab60d9fb51e1ff"
+    },
+    {
+      "path": "determinism/accounting.json",
+      "bytes": 3080,
+      "sha256": "79e1e862dad6e8201f976f3e217d5ed65dc01d2fa173235a59f41795ea428980"
+    },
+    {
+      "path": "acquisition-receipt.json",
+      "bytes": 4063,
+      "sha256": "bbbd0dfbf1083f6fc8c1c690a6f69fae791dd270028d71dffc21dbbb684bfd53"
+    },
+    {
+      "path": "source-vs-tei-visual-record.json",
+      "bytes": 5206,
+      "sha256": "95617c0549c343ad03dbedd65aeab9ac2bdeb7f6c6268e0175c3dd3ec63306c5"
+    },
+    {
+      "path": "visual/candidate.opening.png",
+      "bytes": 238134,
+      "sha256": "2e182495dfbf6ff74dc38beb6e937ba46facad82db4f27ce776760d88bb8284a"
+    },
+    {
+      "path": "visual/candidate.middle.png",
+      "bytes": 256473,
+      "sha256": "c9630a6a44c63afc64ac417d2614d91948f2ef24e41268876a8a4b2a0ad5035f"
+    },
+    {
+      "path": "visual/candidate.ending.png",
+      "bytes": 247767,
+      "sha256": "750ed5ca9ab4d27854dcb6d4be57e969da4a556025841142aabd7b93b4492d95"
+    },
+    {
+      "path": "visual/candidate.language.png",
+      "bytes": 208267,
+      "sha256": "8799f8f89ca2d8e06fdef02e94c6ead56311a379a8ea340d0be231a9faf384fa"
+    },
+    {
+      "path": "visual/source/source.opening.png",
+      "bytes": 138024,
+      "sha256": "db6d3efd0ef759804120aaa73ce9c00b97e8773888c3cae1059aec3a023d30c4"
+    },
+    {
+      "path": "visual/source/source.middle.png",
+      "bytes": 308448,
+      "sha256": "bd1ff64dcd361e3f69f6aec4771b79a3e178c577583b18e9ca73163d46beff69"
+    },
+    {
+      "path": "visual/source/source.ending.png",
+      "bytes": 267302,
+      "sha256": "5d226a63323ff9ea3120fcdff882464c5c5eb05707ec04cd60dd52d444f5468a"
+    },
+    {
+      "path": "visual/source/source.language.png",
+      "bytes": 251265,
+      "sha256": "d02c5d519844a9af0feebe280fbcae2427deca14fcb8d10e8038d983ece12e4f"
+    }
+  ],
+  "validation": {
+    "tei_p5_relaxng_valid": true,
+    "tei_relaxng_sha256": "a4edf351a10fc634016aa64331f3f75daba26107331574bfee61633aa77531c4",
+    "source_visible_text_sha256": "f90f701e32b054a5bc4b52ae060e94126eb1c5883b732a17e392f82a5ed7f3bb",
+    "tei_visible_text_sha256": "f90f701e32b054a5bc4b52ae060e94126eb1c5883b732a17e392f82a5ed7f3bb",
+    "candidate_deterministic": true,
+    "accounting_deterministic": true,
+    "paragraphs": 2403,
+    "life_chapters": 40,
+    "relations": 11,
+    "note_references": 730,
+    "note_bodies": 730,
+    "internal_links": 2166,
+    "language_marks": 300,
+    "spanish_marks": 95,
+    "latin_marks": 191,
+    "french_marks": 13,
+    "hebrew_marks": 1,
+    "abbreviations": 529,
+    "citations": 337,
+    "small_elements": 772,
+    "italic_or_emphasis_elements": 50,
+    "larger_elements": 59,
+    "block_quotations": 3,
+    "tables": 1,
+    "description_lists": 1,
+    "description_items": 20,
+    "line_breaks": 24,
+    "typographic_breaks": 112,
+    "printed_page_milestones": 0,
+    "ceteicean_render": {
+      "paragraphs": 2405,
+      "source_text_paragraphs": 2403,
+      "tei_header_paragraphs": 2,
+      "note_references": 730,
+      "end_notes": 730,
+      "dangling_references": 0,
+      "upgraded": true
+    }
+  },
+  "electronic_source_limitations": {
+    "page_images": "cover only; no page-image facsimile",
+    "print_page_milestones": "none encoded; none invented",
+    "transcriber_interventions_retained": true
+  },
+  "tests": {
+    "command": "py -3 -m pytest -p no:cacheprovider tests/test_teresa_life_of_st_teresa_of_jesus.py -q --basetemp <unique strict child of PYTEST_DEBUG_TEMPROOT>",
+    "result": "4 passed in 41.97s",
+    "basetemp_removed": true,
+    "py_compile_passed": true
+  },
+  "mutations": {
+    "canonical_data": false,
+    "canonical_ir": false,
+    "workcatalog": false,
+    "schemas": false,
+    "kernel": false,
+    "shared_viewer": false,
+    "commit": false,
+    "push": false,
+    "acceptance": false,
+    "publication": false
+  },
+  "verdict": "technical-packet-complete-pending-root-review",
+  "human_acceptance": "not-performed"
+}

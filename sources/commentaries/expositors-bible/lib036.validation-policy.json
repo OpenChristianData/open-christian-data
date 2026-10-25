@@ -1,0 +1,64 @@
+{
+  "contract": "ocd-expositors-bible-lib036-validation-policy-v1",
+  "policy_id": "lib036-complete-current-claim-xml-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_source_members": 8,
+  "required_excluded_members": 39,
+  "required_retained_family_members": 47,
+  "required_work_ids": [
+    "expositors-bible--w-h-bennett",
+    "expositors-bible--walter-f-adeney",
+    "expositors-bible--william-g-blaikie",
+    "expositors-bible--william-milligan"
+  ],
+  "required_feature_count": 27273,
+  "required_source_bytes": 6867234,
+  "required_namespace_attribute_collision_count": 161,
+  "required_unresolved_ids": [
+    "lib036-print-edition-collation-not-performed",
+    "lib036-rights-and-publication-review",
+    "lib036-retained-inventory-47-vs-legacy-48",
+    "lib036-author-label-variants"
+  ],
+  "forbidden_import_prefixes": [
+    "build.tei.expositors_bible_lib036_reconstruction",
+    "build.parsers.ccel_expositors_bible",
+    "build.lib.ccel_thml",
+    "ocd_kernel.bible_refs",
+    "ocd_kernel.lib.bible_refs"
+  ],
+  "checks": [
+    "source-authority-digests",
+    "exact-eight-member-lineage",
+    "complete-forty-seven-member-family-census",
+    "exact-retained-bytes-decoded-from-tei",
+    "independent-xml-element-order-hierarchy-attributes-and-text",
+    "four-frozen-work-identities",
+    "legacy-eight-claim-lineage",
+    "candidate-package-schema",
+    "source-accountability-schema",
+    "exact-candidate-source-id",
+    "exact-canonical-candidate-manifest",
+    "type-strict-canonical-json-members",
+    "closed-provenance-object",
+    "exact-unresolved-records-and-order",
+    "exact-candidate-readme",
+    "closed-tei-element-structure",
+    "recursive-exact-tei-qname-attributes-text-tail-and-order",
+    "namespace-qualified-source-attributes",
+    "tei-p5-xsd",
+    "rights-and-attribution",
+    "localized-unresolved-ledger",
+    "producer-independent-transitive-import-closure"
+  ]
+}
+

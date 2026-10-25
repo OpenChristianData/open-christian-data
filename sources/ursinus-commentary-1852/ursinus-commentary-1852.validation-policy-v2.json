@@ -1,0 +1,46 @@
+{
+  "contract": "ocd-ursinus-independent-validation-policy-v2",
+  "oracle_id": "ocd-ursinus-1852-independent-source-oracle-v7",
+  "rules": [
+    "Require the exact IA commdrza00ursi identity and all eight pinned retained-envelope member hashes.",
+    "Require the candidate primary-source authority set to equal the five retained_files bound by the acquisition sidecar; bind receipt, metadata, inventory, and reconstruction dependencies as support authorities.",
+    "Independently account for all 720 PDF/OCR pages, 722 scandata leaves, two explicitly excluded color cards, 16 empty OCR pages, all ordered paragraphs and lines, and 436 source-derived contents rows.",
+    "Require one TEI root, one text element, and one body division for the single source-titled commentary represented by duplicate manifest rows L427 and L468.",
+    "Independently transcribe and verify scan-layout structures on leaves 205, 489, 529, 552, 578, 613, and 639, including the comparison-table column headings and thirteen row pairings on leaf 489; bind each graph node to its exact OCR paragraph carriers and retained scan figure.",
+    "Reconcile every TEI page, line, paragraph, contents row, and source-layout link to independent source-derived expectations; verify every external facsimile URI resolves to the retained scan.pdf bytes.",
+    "Validate the TEI against the bound TEI P5 XSD and Relax NG schemas and source-accountability against its bound JSON Schema.",
+    "Preserve OCR readings and bind the comprehensive OCR-to-scan collation gap; do not infer missing text or convert technical validation into human acceptance, rights clearance, or publication authorization.",
+    "Require current declared work, state snapshot, edition, and acquisition sidecars to bind the candidate; reproduce the sealed package and validation from fresh processes."
+  ],
+  "oracle_import_closure": [
+    "build/__init__.py",
+    "build/tei/__init__.py",
+    "build/tei/ursinus_heidelberg_1852_v3_oracle.py",
+    "build/tei/ursinus_heidelberg_1852_v3_reconstruction_oracle.py",
+    "ocd_kernel/__init__.py",
+    "ocd_kernel/reconstruction/__init__.py",
+    "ocd_kernel/reconstruction/contract.py",
+    "ocd_kernel/reconstruction/verifier.py"
+  ],
+  "runtime_dependencies": {
+    "PyMuPDF": "1.27.2.2",
+    "lxml": "6.0.2",
+    "jsonschema": "4.26.0"
+  },
+  "unresolved_fidelity_gaps": [
+    {
+      "id": "ursinus-1852-ocr-scan-collation",
+      "kind": "transcription-fidelity",
+      "scope": "All 720 retained OCR pages",
+      "statement": "Provider OCR spelling and transcription have not been comprehensively proofread against every retained scan page. Preserve OCR readings without silent correction.",
+      "evidence": ["ocr.xml", "ocr.txt", "scan.pdf"],
+      "disposition": "Candidate preserves the retained OCR witness and page/paragraph/line order; comprehensive glyph-level scan collation remains open."
+    }
+  ],
+  "explicit_exclusions": [
+    "Human textual acceptance",
+    "Rights determination or clearance",
+    "Publication or release authorization",
+    "OCR correction without source-image evidence"
+  ]
+}

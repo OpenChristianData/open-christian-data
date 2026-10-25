@@ -1,0 +1,26 @@
+[
+  {
+    "original": "sources/standard-ebooks/george-macdonald_unspoken-sermons/george-macdonald-unspoken-sermons.source-manifest.json",
+    "original_sha256": "100218d485d87e14a01cd57948203734cdfcc03f9ba72932ec55075f0030274e",
+    "manifest": "tests/fixtures/reconstruction-runtime/se-george-macdonald-unspoken-sermons.source-manifest.json",
+    "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
+  },
+  {
+    "original": "sources/standard-ebooks/g-k-chesterton_heretics/heretics.source-manifest.json",
+    "original_sha256": "2f77d059adad2dffff9c494c5ba3f710e346d893e87e64092a7f5eaae3ccdd6a",
+    "manifest": "tests/fixtures/reconstruction-runtime/se-heretics.source-manifest.json",
+    "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
+  },
+  {
+    "original": "sources/standard-ebooks/g-k-chesterton_orthodoxy/orthodoxy.source-manifest.json",
+    "original_sha256": "17792505207b050087dd56904f0d9ece42379737ad07080e18f5822daf909200",
+    "manifest": "tests/fixtures/reconstruction-runtime/se-orthodoxy.source-manifest.json",
+    "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
+  },
+  {
+    "original": "sources/standard-ebooks/g-k-chesterton_the-everlasting-man/the-everlasting-man.source-manifest.json",
+    "original_sha256": "c3b25d1af7fc600ae07c5b3efea71efbbb3cacafe2bcdba950332bfe2472a8a2",
+    "manifest": "tests/fixtures/reconstruction-runtime/se-the-everlasting-man.source-manifest.json",
+    "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
+  }
+]

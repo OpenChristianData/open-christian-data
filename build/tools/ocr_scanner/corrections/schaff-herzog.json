@@ -1,0 +1,6341 @@
+{
+  "source_id": "schaff-herzog",
+  "corrections": [
+    {
+      "bad": "THE0T0K0S",
+      "good": "THEOTOKOS",
+      "reason": "digit_in_letter",
+      "approved_by": "bootstrap_manual",
+      "approved_at": "2026-04-22",
+      "candidate_id": "bootstrap-1"
+    },
+    {
+      "bad": "THE0T0K08",
+      "good": "THEOTOKOS",
+      "reason": "digit_in_letter",
+      "approved_by": "bootstrap_manual",
+      "approved_at": "2026-04-22",
+      "candidate_id": "bootstrap-2"
+    },
+    {
+      "bad": "THE ATINES",
+      "good": "THEATINES",
+      "reason": "apparent_space_insertion",
+      "approved_by": "bootstrap_manual",
+      "approved_at": "2026-04-22",
+      "candidate_id": "bootstrap-3"
+    },
+    {
+      "bad": "Mo7Uantsmu8",
+      "good": "Mo7UantsmuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-80826"
+    },
+    {
+      "bad": "COUNTER REFORMATION",
+      "good": "COUNTERREFORMATION",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-80976"
+    },
+    {
+      "bad": "8chen",
+      "good": "Schen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-91852"
+    },
+    {
+      "bad": "15ten",
+      "good": "ISten",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-112235"
+    },
+    {
+      "bad": "16ten",
+      "good": "I6ten",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-112241"
+    },
+    {
+      "bad": "practica1",
+      "good": "practicaI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-244944"
+    },
+    {
+      "bad": "52rr",
+      "good": "S2rr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-309259"
+    },
+    {
+      "bad": "8vo",
+      "good": "Svo",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-479623"
+    },
+    {
+      "bad": "PUBLIUS",
+      "good": "PUB LIUS",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1078281"
+    },
+    {
+      "bad": "r8le",
+      "good": "rSle",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1170335"
+    },
+    {
+      "bad": "MONBAN8",
+      "good": "MONBANS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1192260"
+    },
+    {
+      "bad": "truth11",
+      "good": "truthII",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1227504"
+    },
+    {
+      "bad": "term8",
+      "good": "termS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1227674"
+    },
+    {
+      "bad": "8eat",
+      "good": "Seat",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1230505"
+    },
+    {
+      "bad": "CHRONICON",
+      "good": "CHRON ICON",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1235707"
+    },
+    {
+      "bad": "Chri8tianu8",
+      "good": "ChriStianuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1235977"
+    },
+    {
+      "bad": "oe88",
+      "good": "oeSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1240895"
+    },
+    {
+      "bad": "andthe1",
+      "good": "andtheI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1241742"
+    },
+    {
+      "bad": "throu8h",
+      "good": "throuSh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1246639"
+    },
+    {
+      "bad": "8tato",
+      "good": "Stato",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1269319"
+    },
+    {
+      "bad": "religio8U8f",
+      "good": "religioSUSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1271303"
+    },
+    {
+      "bad": "Churching1",
+      "good": "ChurchingI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1271856"
+    },
+    {
+      "bad": "8unday",
+      "good": "Sunday",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1271917"
+    },
+    {
+      "bad": "8eptnageeima",
+      "good": "Septnageeima",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1271923"
+    },
+    {
+      "bad": "CIB0RIUM",
+      "good": "CIBORIUM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1273912"
+    },
+    {
+      "bad": "8acrament",
+      "good": "Sacrament",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1292264"
+    },
+    {
+      "bad": "17ten",
+      "good": "I7ten",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1297714"
+    },
+    {
+      "bad": "My8ticismu8",
+      "good": "MySticismuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1299262"
+    },
+    {
+      "bad": "A8Bt",
+      "good": "ASBt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1299757"
+    },
+    {
+      "bad": "Apostles1",
+      "good": "ApostlesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1321036"
+    },
+    {
+      "bad": "Littre1",
+      "good": "LittreI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1342198"
+    },
+    {
+      "bad": "1DD",
+      "good": "IDD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1343430"
+    },
+    {
+      "bad": "1DD",
+      "good": "IDD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1343806"
+    },
+    {
+      "bad": "1DD",
+      "good": "IDD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1344065"
+    },
+    {
+      "bad": "circum8criptionist",
+      "good": "circumScriptionist",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1347484"
+    },
+    {
+      "bad": "Abbe1",
+      "good": "AbbeI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1349969"
+    },
+    {
+      "bad": "8Ucn",
+      "good": "SUcn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1351114"
+    },
+    {
+      "bad": "8tate",
+      "good": "State",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1352496"
+    },
+    {
+      "bad": "abominak8",
+      "good": "abominakS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1354240"
+    },
+    {
+      "bad": "Jesuits1",
+      "good": "JesuitsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1362599"
+    },
+    {
+      "bad": "vQla8e",
+      "good": "vQlaSe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1366925"
+    },
+    {
+      "bad": "crusaders1",
+      "good": "crusadersI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1373642"
+    },
+    {
+      "bad": "Reformers1",
+      "good": "ReformersI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1376294"
+    },
+    {
+      "bad": "C05SIST0RIAL",
+      "good": "COSSISTORIAL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1378127"
+    },
+    {
+      "bad": "COR5WALLIS",
+      "good": "CORSWALLIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1389854"
+    },
+    {
+      "bad": "Apolloniu8",
+      "good": "ApolloniuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1389922"
+    },
+    {
+      "bad": "ATHA5ASE",
+      "good": "ATHASASE",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1394640"
+    },
+    {
+      "bad": "Pre8byterianism",
+      "good": "PreSbyterianism",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1412556"
+    },
+    {
+      "bad": "days1",
+      "good": "daysI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1422921"
+    },
+    {
+      "bad": "Chosroe8",
+      "good": "ChosroeS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1429742"
+    },
+    {
+      "bad": "NATHA5AEL",
+      "good": "NATHASAEL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1437803"
+    },
+    {
+      "bad": "years1",
+      "good": "yearsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1445820"
+    },
+    {
+      "bad": "mayor1",
+      "good": "mayorI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1454070"
+    },
+    {
+      "bad": "Daille1",
+      "good": "DailleI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1456605"
+    },
+    {
+      "bad": "saints1",
+      "good": "saintsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1457862"
+    },
+    {
+      "bad": "According1",
+      "good": "AccordingI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1458161"
+    },
+    {
+      "bad": "resume1",
+      "good": "resumeI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1468036"
+    },
+    {
+      "bad": "iP80",
+      "good": "iPSO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1494658"
+    },
+    {
+      "bad": "DEFHHT0R",
+      "good": "DEFHHTOR",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1497623"
+    },
+    {
+      "bad": "Pretm8",
+      "good": "PretmS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1498783"
+    },
+    {
+      "bad": "THADDJEU8",
+      "good": "THADDJEUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1510503"
+    },
+    {
+      "bad": "philo8ophia",
+      "good": "philoSophia",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1511946"
+    },
+    {
+      "bad": "Descartes1",
+      "good": "DescartesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1512919"
+    },
+    {
+      "bad": "deu8",
+      "good": "deuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1518243"
+    },
+    {
+      "bad": "DIAC0HIC0H",
+      "good": "DIACOHICOH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1520170"
+    },
+    {
+      "bad": "8ariaf",
+      "good": "Sariaf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1545852"
+    },
+    {
+      "bad": "employed1",
+      "good": "employedI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1547038"
+    },
+    {
+      "bad": "Convert1",
+      "good": "ConvertI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1554455"
+    },
+    {
+      "bad": "Jesuits1",
+      "good": "JesuitsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1561172"
+    },
+    {
+      "bad": "Ab8olutheit",
+      "good": "AbSolutheit",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1567364"
+    },
+    {
+      "bad": "8acri",
+      "good": "Sacri",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1572002"
+    },
+    {
+      "bad": "Part8tnu8f",
+      "good": "PartStnuSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1576128"
+    },
+    {
+      "bad": "8dence",
+      "good": "Sdence",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1580643"
+    },
+    {
+      "bad": "philo8ophische",
+      "good": "philoSophische",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1582018"
+    },
+    {
+      "bad": "philo8ophie",
+      "good": "philoSophie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1582077"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1585330"
+    },
+    {
+      "bad": "bl05",
+      "good": "blOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1588963"
+    },
+    {
+      "bad": "bl05",
+      "good": "blOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1589102"
+    },
+    {
+      "bad": "8ur",
+      "good": "Sur",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1605746"
+    },
+    {
+      "bad": "Th0",
+      "good": "ThO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1606618"
+    },
+    {
+      "bad": "DT71IGAL",
+      "good": "DT7IIGAL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1608414"
+    },
+    {
+      "bad": "TIM0TH7",
+      "good": "TIMOTH7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1623482"
+    },
+    {
+      "bad": "Wort8",
+      "good": "WortS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1637027"
+    },
+    {
+      "bad": "8chichte",
+      "good": "Schichte",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1639448"
+    },
+    {
+      "bad": "alio8",
+      "good": "alioS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1644946"
+    },
+    {
+      "bad": "19Ui",
+      "good": "I9Ui",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1658709"
+    },
+    {
+      "bad": "IH20Y",
+      "good": "IH2OY",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1670259"
+    },
+    {
+      "bad": "WB8",
+      "good": "WBS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1672185"
+    },
+    {
+      "bad": "8tate",
+      "good": "State",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1673092"
+    },
+    {
+      "bad": "8arim",
+      "good": "Sarim",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1675452"
+    },
+    {
+      "bad": "S3r8tem",
+      "good": "S3rStem",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1683322"
+    },
+    {
+      "bad": "8ea",
+      "good": "Sea",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1683489"
+    },
+    {
+      "bad": "Nou8",
+      "good": "NouS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1687467"
+    },
+    {
+      "bad": "CORDAT8",
+      "good": "CORDATS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1691762"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1698213"
+    },
+    {
+      "bad": "S3r8tem",
+      "good": "S3rStem",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1703152"
+    },
+    {
+      "bad": "0ie",
+      "good": "Oie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1706071"
+    },
+    {
+      "bad": "iou8",
+      "good": "iouS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1707904"
+    },
+    {
+      "bad": "5ew",
+      "good": "Sew",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1708275"
+    },
+    {
+      "bad": "blo89m",
+      "good": "bloS9m",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1711429"
+    },
+    {
+      "bad": "17Vi",
+      "good": "I7Vi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1711851"
+    },
+    {
+      "bad": "8ah",
+      "good": "Sah",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1723237"
+    },
+    {
+      "bad": "5tr",
+      "good": "Str",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1728419"
+    },
+    {
+      "bad": "K5nigsberg",
+      "good": "KSnigsberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1729128"
+    },
+    {
+      "bad": "K5nigsberg",
+      "good": "KSnigsberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1729411"
+    },
+    {
+      "bad": "8or",
+      "good": "Sor",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1731131"
+    },
+    {
+      "bad": "magi8ter",
+      "good": "magiSter",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1742173"
+    },
+    {
+      "bad": "L5he",
+      "good": "LShe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1757701"
+    },
+    {
+      "bad": "L5he",
+      "good": "LShe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1760792"
+    },
+    {
+      "bad": "da5rs",
+      "good": "daSrs",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1767866"
+    },
+    {
+      "bad": "0eN",
+      "good": "OeN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1769020"
+    },
+    {
+      "bad": "(TU^",
+      "good": "OTU^",
+      "reason": "ligature_bracket",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1776721"
+    },
+    {
+      "bad": "83mod",
+      "good": "S3mod",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1776812"
+    },
+    {
+      "bad": "i0Mf",
+      "good": "iOMf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1786893"
+    },
+    {
+      "bad": "h3rpothe8is",
+      "good": "h3rpotheSis",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1797126"
+    },
+    {
+      "bad": "6E0RG",
+      "good": "6EORG",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1798270"
+    },
+    {
+      "bad": "15dd",
+      "good": "ISdd",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1821145"
+    },
+    {
+      "bad": "G5ttingen",
+      "good": "GSttingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1823148"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1836762"
+    },
+    {
+      "bad": "CiB8ARii78",
+      "good": "CiBSARii7S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1847457"
+    },
+    {
+      "bad": "K6nig8berg",
+      "good": "K6nigSberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1860167"
+    },
+    {
+      "bad": "SDD8",
+      "good": "SDDS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1864892"
+    },
+    {
+      "bad": "8ie",
+      "good": "Sie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1868245"
+    },
+    {
+      "bad": "pddaoogi8che9",
+      "good": "pddaoogiSche9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1874498"
+    },
+    {
+      "bad": "Je8tu",
+      "good": "JeStu",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1875714"
+    },
+    {
+      "bad": "DA5IEL",
+      "good": "DASIEL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1879857"
+    },
+    {
+      "bad": "lo8ophy",
+      "good": "loSophy",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1880758"
+    },
+    {
+      "bad": "Au8zug",
+      "good": "AuSzug",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1888312"
+    },
+    {
+      "bad": "K5mer",
+      "good": "KSmer",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1888385"
+    },
+    {
+      "bad": "tdt0n",
+      "good": "tdtOn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1890440"
+    },
+    {
+      "bad": "EXCYCLOPEDIA",
+      "good": "EX CYCLOPEDIA",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1892854"
+    },
+    {
+      "bad": "1SS8",
+      "good": "ISSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1894203"
+    },
+    {
+      "bad": "A88ociation8",
+      "good": "ASSociationS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1897097"
+    },
+    {
+      "bad": "09Bmral",
+      "good": "O9Bmral",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1902142"
+    },
+    {
+      "bad": "SA5CTA",
+      "good": "SASCTA",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1906689"
+    },
+    {
+      "bad": "Fu888tapfen",
+      "good": "FuSSStapfen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1909420"
+    },
+    {
+      "bad": "8ame",
+      "good": "Same",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1927993"
+    },
+    {
+      "bad": "TI0R8",
+      "good": "TIORS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1930783"
+    },
+    {
+      "bad": "onc0",
+      "good": "oncO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1931539"
+    },
+    {
+      "bad": "SI6ISM0HD",
+      "good": "SI6ISMOHD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1938604"
+    },
+    {
+      "bad": "wa8",
+      "good": "waS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1950492"
+    },
+    {
+      "bad": "IS48",
+      "good": "IS4S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1965183"
+    },
+    {
+      "bad": "8ic",
+      "good": "Sic",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1968879"
+    },
+    {
+      "bad": "Tmctahi8",
+      "good": "TmctahiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1979870"
+    },
+    {
+      "bad": "8acr6e",
+      "good": "Sacr6e",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1980452"
+    },
+    {
+      "bad": "conci4me8",
+      "good": "conci4meS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1981644"
+    },
+    {
+      "bad": "Z5ckler",
+      "good": "ZSckler",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1986202"
+    },
+    {
+      "bad": "GEOR6I0S",
+      "good": "GEOR6IOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1986612"
+    },
+    {
+      "bad": "Catalogu8",
+      "good": "CataloguS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-1988703"
+    },
+    {
+      "bad": "Amerikanisch4iUheri8che",
+      "good": "Amerikanisch4iUheriSche",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2002814"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2005915"
+    },
+    {
+      "bad": "Da8",
+      "good": "DaS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2009983"
+    },
+    {
+      "bad": "H0LLE7",
+      "good": "HOLLE7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2010775"
+    },
+    {
+      "bad": "6L0RU",
+      "good": "6LORU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2016438"
+    },
+    {
+      "bad": "GI088CB",
+      "good": "GIOSSCB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2016668"
+    },
+    {
+      "bad": "POCRATE8",
+      "good": "POCRATES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2019219"
+    },
+    {
+      "bad": "traduit8",
+      "good": "traduitS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2029713"
+    },
+    {
+      "bad": "J0HA1IN",
+      "good": "JOHAIIN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2031061"
+    },
+    {
+      "bad": "th0",
+      "good": "thO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2040394"
+    },
+    {
+      "bad": "8tatJhalUr",
+      "good": "StatJhalUr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2054229"
+    },
+    {
+      "bad": "(GRAUMAH1C",
+      "good": "OGRAUMAH1C",
+      "reason": "ligature_bracket",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2057689"
+    },
+    {
+      "bad": "(GRAHDMOHT),",
+      "good": "OGRAHDMOHT),",
+      "reason": "ligature_bracket",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2057700"
+    },
+    {
+      "bad": "terscheidung8lehren",
+      "good": "terscheidungSlehren",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2060859"
+    },
+    {
+      "bad": "procere8",
+      "good": "procereS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2070971"
+    },
+    {
+      "bad": "mero8",
+      "good": "meroS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2083981"
+    },
+    {
+      "bad": "po8",
+      "good": "poS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2086806"
+    },
+    {
+      "bad": "homoiu8io8",
+      "good": "homoiuSioS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2091563"
+    },
+    {
+      "bad": "Oro1",
+      "good": "OroI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2094519"
+    },
+    {
+      "bad": "GE0R6",
+      "good": "GEOR6",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2097807"
+    },
+    {
+      "bad": "8criptorwn",
+      "good": "Scriptorwn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2103107"
+    },
+    {
+      "bad": "I8AAC",
+      "good": "ISAAC",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2107682"
+    },
+    {
+      "bad": "J0HAHH",
+      "good": "JOHAHH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2113464"
+    },
+    {
+      "bad": "813-S36.",
+      "good": "813-S 36.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2113980"
+    },
+    {
+      "bad": "J0HAHH",
+      "good": "JOHAHH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2114028"
+    },
+    {
+      "bad": "far1",
+      "good": "farI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2117218"
+    },
+    {
+      "bad": "pressivenes8",
+      "good": "pressivenesS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2124513"
+    },
+    {
+      "bad": "HAMATH.",
+      "good": "HA MATH.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2127342"
+    },
+    {
+      "bad": "8ocial",
+      "good": "Social",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2139573"
+    },
+    {
+      "bad": "HOB ART",
+      "good": "HOBART",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2145435"
+    },
+    {
+      "bad": "gente8",
+      "good": "genteS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2146848"
+    },
+    {
+      "bad": "8torie",
+      "good": "Storie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2148465"
+    },
+    {
+      "bad": "LUD WIG",
+      "good": "LUDWIG",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2150799"
+    },
+    {
+      "bad": "THEODOSIU8",
+      "good": "THEODOSIUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2152060"
+    },
+    {
+      "bad": "1SS9",
+      "good": "ISS9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2154319"
+    },
+    {
+      "bad": "English1",
+      "good": "EnglishI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2154378"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2156968"
+    },
+    {
+      "bad": "FRA5CIS",
+      "good": "FRASCIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2160798"
+    },
+    {
+      "bad": "8tdndnis",
+      "good": "Stdndnis",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2162598"
+    },
+    {
+      "bad": "8ystem",
+      "good": "System",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2168667"
+    },
+    {
+      "bad": "According1",
+      "good": "AccordingI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2184348"
+    },
+    {
+      "bad": "8econd",
+      "good": "Second",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2189934"
+    },
+    {
+      "bad": "J0HA5N",
+      "good": "JOHASN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2189999"
+    },
+    {
+      "bad": "GE0R6",
+      "good": "GEOR6",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2193157"
+    },
+    {
+      "bad": "8outom",
+      "good": "Soutom",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2194838"
+    },
+    {
+      "bad": "T0PH0RUS",
+      "good": "TOPHORUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2203597"
+    },
+    {
+      "bad": "Commentariu8",
+      "good": "CommentariuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2207861"
+    },
+    {
+      "bad": "LUD WIG",
+      "good": "LUDWIG",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2209269"
+    },
+    {
+      "bad": "HEKRICIA5S",
+      "good": "HEKRICIASS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2209997"
+    },
+    {
+      "bad": "LUD WIG",
+      "good": "LUDWIG",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2213673"
+    },
+    {
+      "bad": "Hi8torien",
+      "good": "HiStorien",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2221575"
+    },
+    {
+      "bad": "HARDT.",
+      "good": "HARD T.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2222039"
+    },
+    {
+      "bad": "ne8s",
+      "good": "neSs",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2227689"
+    },
+    {
+      "bad": "im0",
+      "good": "imO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2237159"
+    },
+    {
+      "bad": "WILLEM",
+      "good": "WILL EM",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2237187"
+    },
+    {
+      "bad": "Moses1",
+      "good": "MosesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2238698"
+    },
+    {
+      "bad": "HELDUI5",
+      "good": "HELDUIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2259426"
+    },
+    {
+      "bad": "ter8uehungen",
+      "good": "terSuehungen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2259787"
+    },
+    {
+      "bad": "J0HA5N",
+      "good": "JOHASN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2261290"
+    },
+    {
+      "bad": "J0HANN",
+      "good": "JOHANN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2277846"
+    },
+    {
+      "bad": "extera8f",
+      "good": "exteraSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2288068"
+    },
+    {
+      "bad": "8ee",
+      "good": "See",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2292749"
+    },
+    {
+      "bad": "Rene1",
+      "good": "ReneI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2293000"
+    },
+    {
+      "bad": "MISSI0HS",
+      "good": "MISSIOHS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2303432"
+    },
+    {
+      "bad": "old1",
+      "good": "oldI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2313526"
+    },
+    {
+      "bad": "Athanasiu8",
+      "good": "AthanasiuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2331622"
+    },
+    {
+      "bad": "Years1",
+      "good": "YearsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2335231"
+    },
+    {
+      "bad": "808tom",
+      "good": "SOStom",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2337176"
+    },
+    {
+      "bad": "Saints1",
+      "good": "SaintsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2339331"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2340871"
+    },
+    {
+      "bad": "vinist8",
+      "good": "vinistS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2350038"
+    },
+    {
+      "bad": "de1",
+      "good": "deI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2356000"
+    },
+    {
+      "bad": "SBLINA",
+      "good": "SB LINA",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2364456"
+    },
+    {
+      "bad": "Moses1",
+      "good": "MosesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2371214"
+    },
+    {
+      "bad": "WOLL ASTON",
+      "good": "WOLLASTON",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2372714"
+    },
+    {
+      "bad": "HYMN0L0GY",
+      "good": "HYMNOLOGY",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2373597"
+    },
+    {
+      "bad": "8arah",
+      "good": "Sarah",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2378964"
+    },
+    {
+      "bad": "8.-1S.",
+      "good": "8.-1 S.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2380336"
+    },
+    {
+      "bad": "H61ar",
+      "good": "H6Iar",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2383852"
+    },
+    {
+      "bad": "86gu",
+      "good": "S6gu",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2384823"
+    },
+    {
+      "bad": "Bj5rn",
+      "good": "BjSrn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2384957"
+    },
+    {
+      "bad": "8piritu",
+      "good": "Spiritu",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2397217"
+    },
+    {
+      "bad": "Wellhau8enf",
+      "good": "WellhauSenf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2410123"
+    },
+    {
+      "bad": "Chryso8tom",
+      "good": "ChrysoStom",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2411488"
+    },
+    {
+      "bad": "ALI8T8",
+      "good": "ALISTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2413253"
+    },
+    {
+      "bad": "8impson",
+      "good": "Simpson",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2426933"
+    },
+    {
+      "bad": "ANDERS",
+      "good": "AND ERS",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2429936"
+    },
+    {
+      "bad": "8panish",
+      "good": "Spanish",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2437341"
+    },
+    {
+      "bad": "F61ioien",
+      "good": "F6Iioien",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2443804"
+    },
+    {
+      "bad": "enthounasmo8f",
+      "good": "enthounasmoSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2448317"
+    },
+    {
+      "bad": "joume3r8",
+      "good": "joume3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2453996"
+    },
+    {
+      "bad": "Tk0",
+      "good": "TkO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2456566"
+    },
+    {
+      "bad": "1PTBRP0LATI0II8",
+      "good": "IPTBRPOLATIOIIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2456627"
+    },
+    {
+      "bad": "TBSTA-",
+      "good": "TB STA-",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2456633"
+    },
+    {
+      "bad": "ENC5YCL0PEDIA",
+      "good": "ENCSYCLOPEDIA",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2475544"
+    },
+    {
+      "bad": "8pain",
+      "good": "Spain",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2494673"
+    },
+    {
+      "bad": "6IAC0M0",
+      "good": "6IACOMO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2511132"
+    },
+    {
+      "bad": "8imilariy",
+      "good": "Similariy",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2515853"
+    },
+    {
+      "bad": "8oul",
+      "good": "Soul",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2533804"
+    },
+    {
+      "bad": "K0nig9",
+      "good": "KOnig9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2538330"
+    },
+    {
+      "bad": "ju8",
+      "good": "juS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2555928"
+    },
+    {
+      "bad": "zx87tothe",
+      "good": "zxS7tothe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2556625"
+    },
+    {
+      "bad": "Tk0",
+      "good": "TkO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2557215"
+    },
+    {
+      "bad": "8oteriology",
+      "good": "Soteriology",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2579337"
+    },
+    {
+      "bad": "ao8",
+      "good": "aoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2614660"
+    },
+    {
+      "bad": "pre8b3rters",
+      "good": "preSb3rters",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2615294"
+    },
+    {
+      "bad": "ite8",
+      "good": "iteS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2627001"
+    },
+    {
+      "bad": "8T0RT",
+      "good": "STORT",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2637805"
+    },
+    {
+      "bad": "8eeU",
+      "good": "SeeU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2647419"
+    },
+    {
+      "bad": "3rear8",
+      "good": "3rearS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2653964"
+    },
+    {
+      "bad": "61ite",
+      "good": "6Iite",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2668140"
+    },
+    {
+      "bad": "tUditfertioufi09Uhn",
+      "good": "tUditfertioufiO9Uhn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2682904"
+    },
+    {
+      "bad": "ANDREAS",
+      "good": "AN DREAS",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2693368"
+    },
+    {
+      "bad": "hiblicu8f",
+      "good": "hiblicuSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2695964"
+    },
+    {
+      "bad": "8isi",
+      "good": "Sisi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2696684"
+    },
+    {
+      "bad": "Qi5ttingen",
+      "good": "QiSttingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2706239"
+    },
+    {
+      "bad": "Magdalenu8",
+      "good": "MagdalenuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2709201"
+    },
+    {
+      "bad": "60TTHARD",
+      "good": "6OTTHARD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2718391"
+    },
+    {
+      "bad": "8acramentiSf",
+      "good": "SacramentiSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2721441"
+    },
+    {
+      "bad": "Lif0",
+      "good": "LifO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2725279"
+    },
+    {
+      "bad": "17SS",
+      "good": "I7SS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2725756"
+    },
+    {
+      "bad": "IK0",
+      "good": "IKO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2732618"
+    },
+    {
+      "bad": "5is",
+      "good": "Sis",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2732746"
+    },
+    {
+      "bad": "G5ttingen",
+      "good": "GSttingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2745178"
+    },
+    {
+      "bad": "8chichte",
+      "good": "Schichte",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2747726"
+    },
+    {
+      "bad": "bi8",
+      "good": "biS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2747747"
+    },
+    {
+      "bad": "9O09nannU",
+      "good": "9OO9nannU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2750061"
+    },
+    {
+      "bad": "K5gel",
+      "good": "KSgel",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2756939"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2757954"
+    },
+    {
+      "bad": "aiA8",
+      "good": "aiAS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2757961"
+    },
+    {
+      "bad": "183is",
+      "good": "IS3is",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2768308"
+    },
+    {
+      "bad": "89fi",
+      "good": "S9fi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2777069"
+    },
+    {
+      "bad": "iou8",
+      "good": "iouS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2777443"
+    },
+    {
+      "bad": "Beitrag0",
+      "good": "BeitragO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2778312"
+    },
+    {
+      "bad": "8ur",
+      "good": "Sur",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2778444"
+    },
+    {
+      "bad": "ehtB09",
+      "good": "ehtBO9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2781716"
+    },
+    {
+      "bad": "ZABi1unu6liliil",
+      "good": "ZABiIunu6liliil",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2787306"
+    },
+    {
+      "bad": "8ur",
+      "good": "Sur",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2787783"
+    },
+    {
+      "bad": "190Q-01.",
+      "good": "190 Q-01.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2792602"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2793833"
+    },
+    {
+      "bad": "0mm",
+      "good": "Omm",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2798511"
+    },
+    {
+      "bad": "14W-1602.",
+      "good": "14 W-1602.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2800151"
+    },
+    {
+      "bad": "ARI8TB",
+      "good": "ARISTB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2812267"
+    },
+    {
+      "bad": "ehritUich0",
+      "good": "ehritUichO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2812537"
+    },
+    {
+      "bad": "60TTHARD",
+      "good": "6OTTHARD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2815048"
+    },
+    {
+      "bad": "Da8",
+      "good": "DaS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2815197"
+    },
+    {
+      "bad": "B5mer",
+      "good": "BSmer",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2823564"
+    },
+    {
+      "bad": "90ureea",
+      "good": "9Oureea",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2829261"
+    },
+    {
+      "bad": "Philologu8",
+      "good": "PhilologuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2842198"
+    },
+    {
+      "bad": "83magogue",
+      "good": "S3magogue",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2843776"
+    },
+    {
+      "bad": "Braun9ekweioi9ch0",
+      "good": "Braun9ekweioi9chO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2845886"
+    },
+    {
+      "bad": "no8",
+      "good": "noS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2855827"
+    },
+    {
+      "bad": "THE0L06ICI",
+      "good": "THEOLO6ICI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2880206"
+    },
+    {
+      "bad": "5ie6en",
+      "good": "Sie6en",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2883606"
+    },
+    {
+      "bad": "pra3rer8",
+      "good": "pra3rerS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2887698"
+    },
+    {
+      "bad": "kurio8",
+      "good": "kurioS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2891928"
+    },
+    {
+      "bad": "6Ue8ten",
+      "good": "6UeSten",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2909257"
+    },
+    {
+      "bad": "banli4pi0",
+      "good": "banli4piO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2910275"
+    },
+    {
+      "bad": "V03rage",
+      "good": "VO3rage",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2922043"
+    },
+    {
+      "bad": "nn8StB",
+      "good": "nnSStB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2937543"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2937673"
+    },
+    {
+      "bad": "ph3r8ical",
+      "good": "ph3rSical",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2937688"
+    },
+    {
+      "bad": "ati8",
+      "good": "atiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2951673"
+    },
+    {
+      "bad": "8ch6nen",
+      "good": "Sch6nen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2957381"
+    },
+    {
+      "bad": "0e9ehiehit",
+      "good": "Oe9ehiehit",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2957485"
+    },
+    {
+      "bad": "da3r8",
+      "good": "da3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2961713"
+    },
+    {
+      "bad": "90or",
+      "good": "9Oor",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2968275"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2968422"
+    },
+    {
+      "bad": "G5ttingen",
+      "good": "GSttingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2968998"
+    },
+    {
+      "bad": "3rear8",
+      "good": "3rearS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2972892"
+    },
+    {
+      "bad": "th0",
+      "good": "thO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2975281"
+    },
+    {
+      "bad": "opu8t",
+      "good": "opuSt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2980465"
+    },
+    {
+      "bad": "PALATH",
+      "good": "PA LATH",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2984025"
+    },
+    {
+      "bad": "AN6EL0",
+      "good": "AN6ELO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2986088"
+    },
+    {
+      "bad": "8ein",
+      "good": "Sein",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2987487"
+    },
+    {
+      "bad": "GB0R6B",
+      "good": "GBOR6B",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2987543"
+    },
+    {
+      "bad": "R0FFE7",
+      "good": "ROFFE7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-2988715"
+    },
+    {
+      "bad": "no8",
+      "good": "noS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3004809"
+    },
+    {
+      "bad": "Pap8t8",
+      "good": "PapStS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3016233"
+    },
+    {
+      "bad": "8eu",
+      "good": "Seu",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3019555"
+    },
+    {
+      "bad": "83rstem",
+      "good": "S3rstem",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3023506"
+    },
+    {
+      "bad": "Germanicu8",
+      "good": "GermanicuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3024260"
+    },
+    {
+      "bad": "8eeker9",
+      "good": "Seeker9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3024952"
+    },
+    {
+      "bad": "0ie",
+      "good": "Oie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3024962"
+    },
+    {
+      "bad": "0ie",
+      "good": "Oie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3030320"
+    },
+    {
+      "bad": "8US",
+      "good": "SUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3030882"
+    },
+    {
+      "bad": "Monoph3rsit68",
+      "good": "Monoph3rsit6S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3036677"
+    },
+    {
+      "bad": "8iane",
+      "good": "Siane",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3037107"
+    },
+    {
+      "bad": "MA6DALE1IE",
+      "good": "MA6DALEIIE",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3067192"
+    },
+    {
+      "bad": "111AD7",
+      "good": "IIIAD7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3067984"
+    },
+    {
+      "bad": "MA80RAH",
+      "good": "MASORAH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3068053"
+    },
+    {
+      "bad": "ho8tia",
+      "good": "hoStia",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3069735"
+    },
+    {
+      "bad": "S3rnmiachu8",
+      "good": "S3rnmiachuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3077754"
+    },
+    {
+      "bad": "matheseo8",
+      "good": "matheseoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3087369"
+    },
+    {
+      "bad": "Typu8",
+      "good": "TypuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3098590"
+    },
+    {
+      "bad": "eo8",
+      "good": "eoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3099331"
+    },
+    {
+      "bad": "8candalum",
+      "good": "Scandalum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3126351"
+    },
+    {
+      "bad": "Kemphi0",
+      "good": "KemphiO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3128725"
+    },
+    {
+      "bad": "pre8b3rterial",
+      "good": "preSb3rterial",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3146416"
+    },
+    {
+      "bad": "GE0R6",
+      "good": "GEOR6",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3149342"
+    },
+    {
+      "bad": "mite8",
+      "good": "miteS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3150704"
+    },
+    {
+      "bad": "JBA5",
+      "good": "JBAS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3157655"
+    },
+    {
+      "bad": "CHRI8TIANB",
+      "good": "CHRISTIANB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3166037"
+    },
+    {
+      "bad": "lS48",
+      "good": "lS4S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3173615"
+    },
+    {
+      "bad": "S5ft",
+      "good": "SSft",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3176154"
+    },
+    {
+      "bad": "0te",
+      "good": "Ote",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3179829"
+    },
+    {
+      "bad": "0te",
+      "good": "Ote",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3180331"
+    },
+    {
+      "bad": "AUOUST",
+      "good": "AU OUST",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3183445"
+    },
+    {
+      "bad": "THAEU8",
+      "good": "THAEUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3183827"
+    },
+    {
+      "bad": "0te",
+      "good": "Ote",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3186111"
+    },
+    {
+      "bad": "8eriaHo",
+      "good": "SeriaHo",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3186479"
+    },
+    {
+      "bad": "8topford",
+      "good": "Stopford",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3201861"
+    },
+    {
+      "bad": "CLB8IASTICAL",
+      "good": "CLBSIASTICAL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3237200"
+    },
+    {
+      "bad": "8UU",
+      "good": "SUU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3240736"
+    },
+    {
+      "bad": "8tone",
+      "good": "Stone",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3241153"
+    },
+    {
+      "bad": "8emUi8che",
+      "good": "SemUiSche",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3257428"
+    },
+    {
+      "bad": "Hippol3rtu8",
+      "good": "Hippol3rtuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3265887"
+    },
+    {
+      "bad": "13ii",
+      "good": "I3ii",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3274516"
+    },
+    {
+      "bad": "MI88IOKB",
+      "good": "MISSIOKB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3276791"
+    },
+    {
+      "bad": "Catechi8mu8",
+      "good": "CatechiSmuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3276973"
+    },
+    {
+      "bad": "lConothelit08",
+      "good": "lConothelitOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3286573"
+    },
+    {
+      "bad": "Le8",
+      "good": "LeS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3288492"
+    },
+    {
+      "bad": "8ur",
+      "good": "Sur",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3292634"
+    },
+    {
+      "bad": "18ihne",
+      "good": "ISihne",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3303555"
+    },
+    {
+      "bad": "8en8U8",
+      "good": "SenSUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3323779"
+    },
+    {
+      "bad": "th0",
+      "good": "thO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3324211"
+    },
+    {
+      "bad": "3iathematic8",
+      "good": "3iathematicS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3329822"
+    },
+    {
+      "bad": "Drb88",
+      "good": "DrbSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3330223"
+    },
+    {
+      "bad": "6E0RG",
+      "good": "6EORG",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3336541"
+    },
+    {
+      "bad": "6E0RG",
+      "good": "6EORG",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3337484"
+    },
+    {
+      "bad": "Ball3ma8keagh",
+      "good": "Ball3maSkeagh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3352746"
+    },
+    {
+      "bad": "no8",
+      "good": "noS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3355563"
+    },
+    {
+      "bad": "8vfi",
+      "good": "Svfi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3364047"
+    },
+    {
+      "bad": "8unt",
+      "good": "Sunt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3369244"
+    },
+    {
+      "bad": "1r6tte",
+      "good": "Ir6tte",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3370145"
+    },
+    {
+      "bad": "HATURAL",
+      "good": "HAT URAL",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3375024"
+    },
+    {
+      "bad": "(IS4S);",
+      "good": "OIS4S);",
+      "reason": "ligature_bracket",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3382945"
+    },
+    {
+      "bad": "OANISATION8",
+      "good": "OANISATIONS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3391863"
+    },
+    {
+      "bad": "BBB8",
+      "good": "BBBS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3391907"
+    },
+    {
+      "bad": "b3rter8",
+      "good": "b3rterS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3404145"
+    },
+    {
+      "bad": "EVA1I6BLICAL",
+      "good": "EVAII6BLICAL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3410327"
+    },
+    {
+      "bad": "16ee",
+      "good": "I6ee",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3430450"
+    },
+    {
+      "bad": "tu8",
+      "good": "tuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3441902"
+    },
+    {
+      "bad": "LIST8",
+      "good": "LISTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3443464"
+    },
+    {
+      "bad": "NIC0DEMX7S",
+      "good": "NICODEMX7S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3443474"
+    },
+    {
+      "bad": "t4tfieh1ng",
+      "good": "t4tfiehIng",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3444991"
+    },
+    {
+      "bad": "8a3rs",
+      "good": "Sa3rs",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3445295"
+    },
+    {
+      "bad": "TractatiL8",
+      "good": "TractatiLS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3449971"
+    },
+    {
+      "bad": "h3rpothe8is",
+      "good": "h3rpotheSis",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3454286"
+    },
+    {
+      "bad": "19tk",
+      "good": "I9tk",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3455094"
+    },
+    {
+      "bad": "REUOIO08",
+      "good": "REUOIOOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3463301"
+    },
+    {
+      "bad": "ab8oliUa",
+      "good": "abSoliUa",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3485457"
+    },
+    {
+      "bad": "8ed",
+      "good": "Sed",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3492673"
+    },
+    {
+      "bad": "CkTi8Ulijk4iUerairi9che",
+      "good": "CkTiSUlijk4iUerairi9che",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3506479"
+    },
+    {
+      "bad": "OPERATUM",
+      "good": "OPERA TUM",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3511025"
+    },
+    {
+      "bad": "sa3r8",
+      "good": "sa3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3518495"
+    },
+    {
+      "bad": "69-Z38",
+      "good": "69-Z 38",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3524262"
+    },
+    {
+      "bad": "(COrUanM",
+      "good": "OCOrUanM",
+      "reason": "ligature_bracket",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3535498"
+    },
+    {
+      "bad": "8cnplorum",
+      "good": "Scnplorum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3547710"
+    },
+    {
+      "bad": "19lh",
+      "good": "I9lh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3552544"
+    },
+    {
+      "bad": "GRE60RIUS",
+      "good": "GRE6ORIUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3561966"
+    },
+    {
+      "bad": "8oe",
+      "good": "Soe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3562531"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3592938"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3593765"
+    },
+    {
+      "bad": "5ri",
+      "good": "Sri",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3596918"
+    },
+    {
+      "bad": "Para5let",
+      "good": "ParaSlet",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3597748"
+    },
+    {
+      "bad": "trH09",
+      "good": "trHO9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3600924"
+    },
+    {
+      "bad": "16ll",
+      "good": "I6ll",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3605129"
+    },
+    {
+      "bad": "Deu8",
+      "good": "DeuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3606517"
+    },
+    {
+      "bad": "8ur",
+      "good": "Sur",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3612284"
+    },
+    {
+      "bad": "45--A7.",
+      "good": "45--A 7.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3630394"
+    },
+    {
+      "bad": "tu8",
+      "good": "tuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3631848"
+    },
+    {
+      "bad": "0rigeni8f",
+      "good": "OrigeniSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3631850"
+    },
+    {
+      "bad": "C8EL",
+      "good": "CSEL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3631871"
+    },
+    {
+      "bad": "mona0tie",
+      "good": "monaOtie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3657621"
+    },
+    {
+      "bad": "16ib",
+      "good": "I6ib",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3659641"
+    },
+    {
+      "bad": "60TTL0B",
+      "good": "6OTTLOB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3662419"
+    },
+    {
+      "bad": "j8ocux2",
+      "good": "jSocux2",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3674013"
+    },
+    {
+      "bad": "Km0i",
+      "good": "KmOi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3675207"
+    },
+    {
+      "bad": "PELE6.",
+      "good": "PELE 6.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3682098"
+    },
+    {
+      "bad": "Exercicio8",
+      "good": "ExercicioS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3691731"
+    },
+    {
+      "bad": "PERGAM06",
+      "good": "PERGAMO6",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3693197"
+    },
+    {
+      "bad": "anagno9ei8",
+      "good": "anagno9eiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3693589"
+    },
+    {
+      "bad": "83rrians",
+      "good": "S3rrians",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3708006"
+    },
+    {
+      "bad": "60BBLINXTS",
+      "good": "6OBBLINXTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3710362"
+    },
+    {
+      "bad": "8JB",
+      "good": "SJB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3720082"
+    },
+    {
+      "bad": "mo0t",
+      "good": "moOt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3722904"
+    },
+    {
+      "bad": "L0fben",
+      "good": "LOfben",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733206"
+    },
+    {
+      "bad": "8AXUXL",
+      "good": "SAXUXL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733531"
+    },
+    {
+      "bad": "FBAK0I8",
+      "good": "FBAKOIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733607"
+    },
+    {
+      "bad": "JA1CB8",
+      "good": "JAICBS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733621"
+    },
+    {
+      "bad": "STLVE8TEB",
+      "good": "STLVESTEB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733642"
+    },
+    {
+      "bad": "B0X7SSET",
+      "good": "BOX7SSET",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3733881"
+    },
+    {
+      "bad": "0HBI8T",
+      "good": "OHBIST",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3734057"
+    },
+    {
+      "bad": "0LX7F",
+      "good": "OLX7F",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3734240"
+    },
+    {
+      "bad": "OX78TAV",
+      "good": "OX7STAV",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3734769"
+    },
+    {
+      "bad": "GX78T",
+      "good": "GX7ST",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3734860"
+    },
+    {
+      "bad": "CHABLE8",
+      "good": "CHABLES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735025"
+    },
+    {
+      "bad": "0HBI8T0F",
+      "good": "OHBISTOF",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735113"
+    },
+    {
+      "bad": "008TEBZEE",
+      "good": "OOSTEBZEE",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735161"
+    },
+    {
+      "bad": "PIEB80N",
+      "good": "PIEBSON",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735248"
+    },
+    {
+      "bad": "EBNEST",
+      "good": "EB NEST",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735443"
+    },
+    {
+      "bad": "BT7D0LF",
+      "good": "BT7DOLF",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3735546"
+    },
+    {
+      "bad": "1609-164S.",
+      "good": "1609-164 S.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3736338"
+    },
+    {
+      "bad": "Berlm7l882",
+      "good": "Berlm7lSS2",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3738607"
+    },
+    {
+      "bad": "185fih69",
+      "good": "ISSfih69",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3739215"
+    },
+    {
+      "bad": "Berlinri887",
+      "good": "BerlinriSS7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3739697"
+    },
+    {
+      "bad": "8econd",
+      "good": "Second",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3740230"
+    },
+    {
+      "bad": "pen1",
+      "good": "penI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3740853"
+    },
+    {
+      "bad": "full1",
+      "good": "fullI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3740897"
+    },
+    {
+      "bad": "8ul",
+      "good": "Sul",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3742826"
+    },
+    {
+      "bad": "8uggdli",
+      "good": "Suggdli",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3742853"
+    },
+    {
+      "bad": "BiolioU0a",
+      "good": "BiolioUOa",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3763228"
+    },
+    {
+      "bad": "6REG0R",
+      "good": "6REGOR",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3768199"
+    },
+    {
+      "bad": "Ver8dhnung",
+      "good": "VerSdhnung",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3778020"
+    },
+    {
+      "bad": "83rmbol8",
+      "good": "S3rmbolS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3778784"
+    },
+    {
+      "bad": "IS89",
+      "good": "ISS9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3780345"
+    },
+    {
+      "bad": "Bo68etti",
+      "good": "Bo6Setti",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3783955"
+    },
+    {
+      "bad": "0ent",
+      "good": "Oent",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3787143"
+    },
+    {
+      "bad": "So1",
+      "good": "SoI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3788197"
+    },
+    {
+      "bad": "06nsult",
+      "good": "O6nsult",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3793217"
+    },
+    {
+      "bad": "Olauben89dtze",
+      "good": "OlaubenS9dtze",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3795830"
+    },
+    {
+      "bad": "E88ay",
+      "good": "ESSay",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3797266"
+    },
+    {
+      "bad": "Hergenr5ther",
+      "good": "HergenrSther",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3800259"
+    },
+    {
+      "bad": "emplo3anent8",
+      "good": "emplo3anentS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3808368"
+    },
+    {
+      "bad": "D5llinger",
+      "good": "DSllinger",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3810386"
+    },
+    {
+      "bad": "Th0",
+      "good": "ThO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3814610"
+    },
+    {
+      "bad": "metaph3r8ical",
+      "good": "metaph3rSical",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3816092"
+    },
+    {
+      "bad": "Th0",
+      "good": "ThO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3816487"
+    },
+    {
+      "bad": "8aM",
+      "good": "SaM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3817766"
+    },
+    {
+      "bad": "Kreuz8chtde",
+      "good": "KreuzSchtde",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3819115"
+    },
+    {
+      "bad": "m3r8teries",
+      "good": "m3rSteries",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3820211"
+    },
+    {
+      "bad": "K5nigsberg",
+      "good": "KSnigsberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3822706"
+    },
+    {
+      "bad": "erudUo8",
+      "good": "erudUoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3823436"
+    },
+    {
+      "bad": "8an",
+      "good": "San",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3825179"
+    },
+    {
+      "bad": "fa88ung",
+      "good": "faSSung",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3827738"
+    },
+    {
+      "bad": "Chim5h",
+      "good": "ChimSh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3829825"
+    },
+    {
+      "bad": "S5ien",
+      "good": "SSien",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3833083"
+    },
+    {
+      "bad": "83mod",
+      "good": "S3mod",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3844214"
+    },
+    {
+      "bad": "id8",
+      "good": "idS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3845246"
+    },
+    {
+      "bad": "Khl3r8ty",
+      "good": "Khl3rSty",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3845690"
+    },
+    {
+      "bad": "J5nk5ping",
+      "good": "JSnkSping",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3850491"
+    },
+    {
+      "bad": "perfecHoni8f",
+      "good": "perfecHoniSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3854232"
+    },
+    {
+      "bad": "cu8to8",
+      "good": "cuStoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3881267"
+    },
+    {
+      "bad": "8mt",
+      "good": "Smt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3881396"
+    },
+    {
+      "bad": "ye8ha",
+      "good": "yeSha",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3890794"
+    },
+    {
+      "bad": "9alu8",
+      "good": "9aluS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3891024"
+    },
+    {
+      "bad": "3rear8",
+      "good": "3rearS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3894415"
+    },
+    {
+      "bad": "17SM",
+      "good": "I7SM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3894719"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3899777"
+    },
+    {
+      "bad": "ra3r8",
+      "good": "ra3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3902181"
+    },
+    {
+      "bad": "da3r8",
+      "good": "da3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3904330"
+    },
+    {
+      "bad": "8anctif3ring",
+      "good": "Sanctif3ring",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3906487"
+    },
+    {
+      "bad": "8APHIR9",
+      "good": "SAPHIR9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3911222"
+    },
+    {
+      "bad": "di8",
+      "good": "diS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3917212"
+    },
+    {
+      "bad": "8olift6dsr",
+      "good": "Solift6dsr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3924687"
+    },
+    {
+      "bad": "J0HA5N",
+      "good": "JOHASN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3927636"
+    },
+    {
+      "bad": "J0HA5N",
+      "good": "JOHASN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3930701"
+    },
+    {
+      "bad": "8ck6nsU",
+      "good": "Sck6nsU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3931456"
+    },
+    {
+      "bad": "J0HA1I5",
+      "good": "JOHAIIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3931666"
+    },
+    {
+      "bad": "J0HA1I5",
+      "good": "JOHAIIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3932071"
+    },
+    {
+      "bad": "GE0R6",
+      "good": "GEOR6",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3932073"
+    },
+    {
+      "bad": "g3anna8ium",
+      "good": "g3annaSium",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3933882"
+    },
+    {
+      "bad": "liche8",
+      "good": "licheS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3939773"
+    },
+    {
+      "bad": "Pol3rthei8m",
+      "good": "Pol3rtheiSm",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3941864"
+    },
+    {
+      "bad": "SehUiermaeh0r",
+      "good": "SehUiermaehOr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3945278"
+    },
+    {
+      "bad": "mu8",
+      "good": "muS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3947604"
+    },
+    {
+      "bad": "70HAllN",
+      "good": "7OHAllN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3953114"
+    },
+    {
+      "bad": "K5nigsberg",
+      "good": "KSnigsberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3953465"
+    },
+    {
+      "bad": "Olo88ana",
+      "good": "OloSSana",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3964365"
+    },
+    {
+      "bad": "8ohi",
+      "good": "Sohi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3969151"
+    },
+    {
+      "bad": "83rstem",
+      "good": "S3rstem",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3979685"
+    },
+    {
+      "bad": "8oilU",
+      "good": "SoilU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3983290"
+    },
+    {
+      "bad": "8et",
+      "good": "Set",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3990223"
+    },
+    {
+      "bad": "8eaU",
+      "good": "SeaU",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3992429"
+    },
+    {
+      "bad": "namiko8f",
+      "good": "namikoSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-3992960"
+    },
+    {
+      "bad": "SBCESSION",
+      "good": "SB CESSION",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4003768"
+    },
+    {
+      "bad": "SECRECT",
+      "good": "SEC RECT",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4007465"
+    },
+    {
+      "bad": "Philo8ophie",
+      "good": "PhiloSophie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4007944"
+    },
+    {
+      "bad": "0pu8",
+      "good": "OpuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4013458"
+    },
+    {
+      "bad": "Religion9ge8ckichte",
+      "good": "Religion9geSckichte",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4024005"
+    },
+    {
+      "bad": "GB0R6B",
+      "good": "GBOR6B",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4024828"
+    },
+    {
+      "bad": "A8S3rrians",
+      "good": "ASS3rrians",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4028657"
+    },
+    {
+      "bad": "18de",
+      "good": "ISde",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4032842"
+    },
+    {
+      "bad": "T5ls",
+      "good": "TSls",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4032902"
+    },
+    {
+      "bad": "Pol3rne8ian",
+      "good": "Pol3rneSian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4040864"
+    },
+    {
+      "bad": "83rnod",
+      "good": "S3rnod",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4042040"
+    },
+    {
+      "bad": "8eHn",
+      "good": "SeHn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4045069"
+    },
+    {
+      "bad": "ASH- LEY",
+      "good": "ASH-LEY",
+      "reason": "apparent_space_insertion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4054444"
+    },
+    {
+      "bad": "0ie",
+      "good": "Oie",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4058418"
+    },
+    {
+      "bad": "83mod",
+      "good": "S3mod",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4059952"
+    },
+    {
+      "bad": "A8S3rrian",
+      "good": "ASS3rrian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4066448"
+    },
+    {
+      "bad": "6EMBL0UX",
+      "good": "6EMBLOUX",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4072571"
+    },
+    {
+      "bad": "BDWARD",
+      "good": "BD WARD",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4074271"
+    },
+    {
+      "bad": "ALEXAN-",
+      "good": "ALEX AN-",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4074274"
+    },
+    {
+      "bad": "81khi",
+      "good": "SIkhi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4075973"
+    },
+    {
+      "bad": "h3rmn8",
+      "good": "h3rmnS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4075986"
+    },
+    {
+      "bad": "8itu",
+      "good": "Situ",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4079299"
+    },
+    {
+      "bad": "9ancti8f",
+      "good": "9anctiSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4079318"
+    },
+    {
+      "bad": "PhUo8ophumena",
+      "good": "PhUoSophumena",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4084710"
+    },
+    {
+      "bad": "B3rBantine8",
+      "good": "B3rBantineS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4106385"
+    },
+    {
+      "bad": "189S-1900.",
+      "good": "189 S-1900.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4118273"
+    },
+    {
+      "bad": "G5ttingen",
+      "good": "GSttingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4121723"
+    },
+    {
+      "bad": "th0",
+      "good": "thO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4123515"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4123766"
+    },
+    {
+      "bad": "Da8",
+      "good": "DaS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4139789"
+    },
+    {
+      "bad": "PisH8",
+      "good": "PisHS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4150322"
+    },
+    {
+      "bad": "0od",
+      "good": "Ood",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4150486"
+    },
+    {
+      "bad": "0dm",
+      "good": "Odm",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4150745"
+    },
+    {
+      "bad": "TOLOOT",
+      "good": "TO LOOT",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4151775"
+    },
+    {
+      "bad": "hospiU8",
+      "good": "hospiUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4155974"
+    },
+    {
+      "bad": "80citi8",
+      "good": "SOcitiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4156029"
+    },
+    {
+      "bad": "80RCBRT",
+      "good": "SORCBRT",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4156800"
+    },
+    {
+      "bad": "wa3r8",
+      "good": "wa3rS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4157323"
+    },
+    {
+      "bad": "60othsa3ring",
+      "good": "6Oothsa3ring",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4157484"
+    },
+    {
+      "bad": "nou8f",
+      "good": "nouSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4162625"
+    },
+    {
+      "bad": "ko8",
+      "good": "koS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4162786"
+    },
+    {
+      "bad": "S0X7TH",
+      "good": "SOX7TH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4164213"
+    },
+    {
+      "bad": "86Ck",
+      "good": "S6Ck",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4168749"
+    },
+    {
+      "bad": "ih0",
+      "good": "ihO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4168759"
+    },
+    {
+      "bad": "8Uny",
+      "good": "SUny",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4168796"
+    },
+    {
+      "bad": "1559at",
+      "good": "ISS9at",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4178286"
+    },
+    {
+      "bad": "th0",
+      "good": "thO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4190416"
+    },
+    {
+      "bad": "3rear8",
+      "good": "3rearS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4197125"
+    },
+    {
+      "bad": "Cx5ttingeii",
+      "good": "CxSttingeii",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4200553"
+    },
+    {
+      "bad": "8tM",
+      "good": "StM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4200615"
+    },
+    {
+      "bad": "N5rdlingen",
+      "good": "NSrdlingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4205248"
+    },
+    {
+      "bad": "Da8",
+      "good": "DaS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4205291"
+    },
+    {
+      "bad": "8chichteder",
+      "good": "Schichteder",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4206137"
+    },
+    {
+      "bad": "ofJe9U8",
+      "good": "ofJe9US",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4206612"
+    },
+    {
+      "bad": "iiii0iiean",
+      "good": "iiiiOiiean",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4208812"
+    },
+    {
+      "bad": "ex0ge8is",
+      "good": "exOgeSis",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4215587"
+    },
+    {
+      "bad": "8tud3riDg",
+      "good": "Stud3riDg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4215961"
+    },
+    {
+      "bad": "HIST0R7",
+      "good": "HISTOR7",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4219216"
+    },
+    {
+      "bad": "St5ssel",
+      "good": "StSssel",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4236514"
+    },
+    {
+      "bad": "G6t1ingen",
+      "good": "G6tIingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4238067"
+    },
+    {
+      "bad": "8azon",
+      "good": "Sazon",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4241563"
+    },
+    {
+      "bad": "Z5ckler",
+      "good": "ZSckler",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4243544"
+    },
+    {
+      "bad": "90RMAH",
+      "good": "9ORMAH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4244664"
+    },
+    {
+      "bad": "91SSSS",
+      "good": "9ISSSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4245857"
+    },
+    {
+      "bad": "Brufw0eh9d",
+      "good": "BrufwOeh9d",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4248201"
+    },
+    {
+      "bad": "6B0RGB",
+      "good": "6BORGB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4249944"
+    },
+    {
+      "bad": "pre8b3rters",
+      "good": "preSb3rters",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4258883"
+    },
+    {
+      "bad": "as89mbled",
+      "good": "asS9mbled",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4259648"
+    },
+    {
+      "bad": "8ue9orum",
+      "good": "Sue9orum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4261922"
+    },
+    {
+      "bad": "0iuiiiiufc",
+      "good": "Oiuiiiiufc",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4264728"
+    },
+    {
+      "bad": "teh0",
+      "good": "tehO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4266450"
+    },
+    {
+      "bad": "bipartUu8",
+      "good": "bipartUuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4266592"
+    },
+    {
+      "bad": "inacnptian8f",
+      "good": "inacnptianSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4272160"
+    },
+    {
+      "bad": "8inoe",
+      "good": "Sinoe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4281150"
+    },
+    {
+      "bad": "po8e",
+      "good": "poSe",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4293283"
+    },
+    {
+      "bad": "toHu8",
+      "good": "toHuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4297774"
+    },
+    {
+      "bad": "3rear8",
+      "good": "3rearS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4299446"
+    },
+    {
+      "bad": "J5ns",
+      "good": "JSns",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4302174"
+    },
+    {
+      "bad": "k5ping",
+      "good": "kSping",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4304482"
+    },
+    {
+      "bad": "C0XFE88ION",
+      "good": "COXFESSION",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4321272"
+    },
+    {
+      "bad": "8acramenH8f",
+      "good": "SacramenHSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4326706"
+    },
+    {
+      "bad": "I11AGB8",
+      "good": "IIIAGBS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4328961"
+    },
+    {
+      "bad": "di5",
+      "good": "diS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4332916"
+    },
+    {
+      "bad": "STNCBLLX78",
+      "good": "STNCBLLX7S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4335754"
+    },
+    {
+      "bad": "STNCRSTI8TIC",
+      "good": "STNCRSTISTIC",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4335893"
+    },
+    {
+      "bad": "CONTRO-",
+      "good": "CONTR O-",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4340602"
+    },
+    {
+      "bad": "PRESBYTEIUA5",
+      "good": "PRESBYTEIUAS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4343030"
+    },
+    {
+      "bad": "As83rrian",
+      "good": "AsS3rrian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4345789"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4351317"
+    },
+    {
+      "bad": "Bmtu0",
+      "good": "BmtuO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4353094"
+    },
+    {
+      "bad": "8aari",
+      "good": "Saari",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4356084"
+    },
+    {
+      "bad": "b3ra8us",
+      "good": "b3raSus",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4358486"
+    },
+    {
+      "bad": "83rmbolical",
+      "good": "S3rmbolical",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4358818"
+    },
+    {
+      "bad": "kolpo8",
+      "good": "kolpoS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4362597"
+    },
+    {
+      "bad": "BMI6DI0",
+      "good": "BMI6DIO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4366957"
+    },
+    {
+      "bad": "8izth",
+      "good": "Sizth",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4370006"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4385477"
+    },
+    {
+      "bad": "N5rdlingen",
+      "good": "NSrdlingen",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4386325"
+    },
+    {
+      "bad": "061dm",
+      "good": "O6Idm",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4386556"
+    },
+    {
+      "bad": "fu8",
+      "good": "fuS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4390584"
+    },
+    {
+      "bad": "ik0",
+      "good": "ikO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4392386"
+    },
+    {
+      "bad": "Roman8f",
+      "good": "RomanSf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4394163"
+    },
+    {
+      "bad": "metaph3r8ical",
+      "good": "metaph3rSical",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4394473"
+    },
+    {
+      "bad": "8a3ring",
+      "good": "Sa3ring",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4397883"
+    },
+    {
+      "bad": "8tatioB9",
+      "good": "StatioB9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4399390"
+    },
+    {
+      "bad": "8ignif3ring",
+      "good": "Signif3ring",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4405690"
+    },
+    {
+      "bad": "TE5",
+      "good": "TES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4406387"
+    },
+    {
+      "bad": "M5rB",
+      "good": "MSrB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4410837"
+    },
+    {
+      "bad": "QUINTU8",
+      "good": "QUINTUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4411741"
+    },
+    {
+      "bad": "t88Jh",
+      "good": "tSSJh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4415635"
+    },
+    {
+      "bad": "t88Jh",
+      "good": "tSSJh",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4416123"
+    },
+    {
+      "bad": "posae8aoi35",
+      "good": "posaeSaoi3S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4418751"
+    },
+    {
+      "bad": "nau8",
+      "good": "nauS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4421427"
+    },
+    {
+      "bad": "ft41",
+      "good": "ft4I",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4446709"
+    },
+    {
+      "bad": "Boekmi0r",
+      "good": "BoekmiOr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4452111"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4459040"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4463756"
+    },
+    {
+      "bad": "Pre8b3rterian",
+      "good": "PreSb3rterian",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4466694"
+    },
+    {
+      "bad": "C3iarl68",
+      "good": "C3iarl6S",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4482307"
+    },
+    {
+      "bad": "8extH9",
+      "good": "SextH9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4483632"
+    },
+    {
+      "bad": "de8",
+      "good": "deS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4484920"
+    },
+    {
+      "bad": "D5llinger",
+      "good": "DSllinger",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4495362"
+    },
+    {
+      "bad": "18SS",
+      "good": "ISSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4495665"
+    },
+    {
+      "bad": "Die8",
+      "good": "DieS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4510419"
+    },
+    {
+      "bad": "IG58",
+      "good": "IGSS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4510628"
+    },
+    {
+      "bad": "Apo8iolorum",
+      "good": "ApoSiolorum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4519101"
+    },
+    {
+      "bad": "2Si51",
+      "good": "2SiSI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4524406"
+    },
+    {
+      "bad": "641HJ39",
+      "good": "64IHJ39",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4525573"
+    },
+    {
+      "bad": "1ms",
+      "good": "Ims",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4530033"
+    },
+    {
+      "bad": "Illu9tratum8",
+      "good": "Illu9tratumS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4535889"
+    },
+    {
+      "bad": "lessofi5",
+      "good": "lessofiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4546841"
+    },
+    {
+      "bad": "3ishop8",
+      "good": "3ishopS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4549139"
+    },
+    {
+      "bad": "C0LP0RTA6B",
+      "good": "COLPORTA6B",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4551392"
+    },
+    {
+      "bad": "Tb0",
+      "good": "TbO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4551415"
+    },
+    {
+      "bad": "8ooi0tftMi",
+      "good": "SooiOtftMi",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4552152"
+    },
+    {
+      "bad": "861-8M.",
+      "good": "861-8 M.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4567376"
+    },
+    {
+      "bad": "BEL8HEIM",
+      "good": "BELSHEIM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4576823"
+    },
+    {
+      "bad": "AN8TEIN",
+      "good": "ANSTEIN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4576920"
+    },
+    {
+      "bad": "B0NWET8CH",
+      "good": "BONWETSCH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577085"
+    },
+    {
+      "bad": "FRANT8",
+      "good": "FRANTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577122"
+    },
+    {
+      "bad": "00N8TANTIN",
+      "good": "OONSTANTIN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577246"
+    },
+    {
+      "bad": "DIE8TEL",
+      "good": "DIESTEL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577348"
+    },
+    {
+      "bad": "AUGUSTU8",
+      "good": "AUGUSTUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577380"
+    },
+    {
+      "bad": "HLN8CHIU8",
+      "good": "HLNSCHIUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577726"
+    },
+    {
+      "bad": "08WALD",
+      "good": "OSWALD",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577765"
+    },
+    {
+      "bad": "KAUTZ8CH",
+      "good": "KAUTZSCH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4577931"
+    },
+    {
+      "bad": "I8LD0R",
+      "good": "ISLDOR",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578232"
+    },
+    {
+      "bad": "CHRI8T0F",
+      "good": "CHRISTOF",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578309"
+    },
+    {
+      "bad": "RUEEGG",
+      "good": "RUE EGG",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578441"
+    },
+    {
+      "bad": "RY88EL",
+      "good": "RYSSEL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578474"
+    },
+    {
+      "bad": "8CHMIDT",
+      "good": "SCHMIDT",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578571"
+    },
+    {
+      "bad": "CHARLE8",
+      "good": "CHARLES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578583"
+    },
+    {
+      "bad": "T7HLH0BN",
+      "good": "T7HLHOBN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578815"
+    },
+    {
+      "bad": "AR8DALB",
+      "good": "ARSDALB",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578824"
+    },
+    {
+      "bad": "DOUWE8",
+      "good": "DOUWES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4578832"
+    },
+    {
+      "bad": "Origen1",
+      "good": "OrigenI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4581501"
+    },
+    {
+      "bad": "BI0GBAPHICAL",
+      "good": "BIOGBAPHICAL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4581798"
+    },
+    {
+      "bad": "XX11",
+      "good": "XXII",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4581958"
+    },
+    {
+      "bad": "JT8",
+      "good": "JTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4582020"
+    },
+    {
+      "bad": "8kHch",
+      "good": "SkHch",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4583067"
+    },
+    {
+      "bad": "euchari8t",
+      "good": "euchariSt",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4584054"
+    },
+    {
+      "bad": "TROAS.",
+      "good": "TR OAS.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4603855"
+    },
+    {
+      "bad": "8ummary",
+      "good": "Summary",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4606292"
+    },
+    {
+      "bad": "JOHAHHES",
+      "good": "JOHAHH ES",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4609421"
+    },
+    {
+      "bad": "MORITZ",
+      "good": "MO RITZ",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4609708"
+    },
+    {
+      "bad": "8eminary",
+      "good": "Seminary",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4610430"
+    },
+    {
+      "bad": "NICOLAUS",
+      "good": "NICOLA US",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4610843"
+    },
+    {
+      "bad": "TANU8",
+      "good": "TANUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4610849"
+    },
+    {
+      "bad": "TUEBINGEN",
+      "good": "TUE BINGEN",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4610861"
+    },
+    {
+      "bad": "8tbiam",
+      "good": "Stbiam",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4616433"
+    },
+    {
+      "bad": "UHBELIEF.",
+      "good": "UH BELIEF.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4631091"
+    },
+    {
+      "bad": "follower8",
+      "good": "followerS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4634139"
+    },
+    {
+      "bad": "0bvious",
+      "good": "Obvious",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4637693"
+    },
+    {
+      "bad": "1a2rMltd1",
+      "good": "Ia2rMltdI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4637912"
+    },
+    {
+      "bad": "as8urance",
+      "good": "asSurance",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4637914"
+    },
+    {
+      "bad": "widows1",
+      "good": "widowsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4656330"
+    },
+    {
+      "bad": "UH1VKRSALISTS",
+      "good": "UHIVKRSALISTS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4657109"
+    },
+    {
+      "bad": "K5nigBberg",
+      "good": "KSnigBberg",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4662006"
+    },
+    {
+      "bad": "8ource",
+      "good": "Source",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4664449"
+    },
+    {
+      "bad": "CHALDEES.",
+      "good": "CHALDEE S.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4665708"
+    },
+    {
+      "bad": "8ammd",
+      "good": "Sammd",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4671007"
+    },
+    {
+      "bad": "8amud",
+      "good": "Samud",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4671019"
+    },
+    {
+      "bad": "8teffens",
+      "good": "Steffens",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4695137"
+    },
+    {
+      "bad": "delegates1",
+      "good": "delegatesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4703494"
+    },
+    {
+      "bad": "6eS8ion",
+      "good": "6eSSion",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4703672"
+    },
+    {
+      "bad": "VENA5TIUS",
+      "good": "VENASTIUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4713220"
+    },
+    {
+      "bad": "Vergerio8",
+      "good": "VergerioS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4717506"
+    },
+    {
+      "bad": "bishops1",
+      "good": "bishopsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4723583"
+    },
+    {
+      "bad": "8aron",
+      "good": "Saron",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4729800"
+    },
+    {
+      "bad": "Apostles1",
+      "good": "ApostlesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4746574"
+    },
+    {
+      "bad": "Apostles1",
+      "good": "ApostlesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4746641"
+    },
+    {
+      "bad": "Jesus1",
+      "good": "JesusI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4746746"
+    },
+    {
+      "bad": "Di88ertations",
+      "good": "DiSSertations",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4746927"
+    },
+    {
+      "bad": "Carpocrate8",
+      "good": "CarpocrateS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4753169"
+    },
+    {
+      "bad": "Apostles1",
+      "good": "ApostlesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4757345"
+    },
+    {
+      "bad": "O8sertionum",
+      "good": "OSsertionum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4763512"
+    },
+    {
+      "bad": "Inl839hewenttoStettenmWurttembergas",
+      "good": "InlS39hewenttoStettenmWurttembergas",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4772162"
+    },
+    {
+      "bad": "dents1",
+      "good": "dentsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4775032"
+    },
+    {
+      "bad": "euchari8tic",
+      "good": "euchariStic",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4778034"
+    },
+    {
+      "bad": "Buddeus1",
+      "good": "BuddeusI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4778566"
+    },
+    {
+      "bad": "ess1",
+      "good": "essI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4779688"
+    },
+    {
+      "bad": "8tates",
+      "good": "States",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4790461"
+    },
+    {
+      "bad": "j0hn",
+      "good": "jOhn",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4793410"
+    },
+    {
+      "bad": "Peasants1",
+      "good": "PeasantsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4801064"
+    },
+    {
+      "bad": "8unday",
+      "good": "Sunday",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4805708"
+    },
+    {
+      "bad": "Aphori8morum",
+      "good": "AphoriSmorum",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4812910"
+    },
+    {
+      "bad": "Strauss1",
+      "good": "StraussI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4825992"
+    },
+    {
+      "bad": "Years1",
+      "good": "YearsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4831451"
+    },
+    {
+      "bad": "David1",
+      "good": "DavidI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4831706"
+    },
+    {
+      "bad": "FRA1IZ",
+      "good": "FRAIIZ",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4833646"
+    },
+    {
+      "bad": "J0HANN",
+      "good": "JOHANN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4840301"
+    },
+    {
+      "bad": "GANSF0RT",
+      "good": "GANSFORT",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4840306"
+    },
+    {
+      "bad": "ani8m",
+      "good": "aniSm",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4849740"
+    },
+    {
+      "bad": "Rous1",
+      "good": "RousI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4851200"
+    },
+    {
+      "bad": "ance8and",
+      "good": "anceSand",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4857635"
+    },
+    {
+      "bad": "years1",
+      "good": "yearsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4858081"
+    },
+    {
+      "bad": "ER1IEST",
+      "good": "ERIIEST",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4872714"
+    },
+    {
+      "bad": "SH1",
+      "good": "SHI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4873580"
+    },
+    {
+      "bad": "Lord19",
+      "good": "LordI9",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4876817"
+    },
+    {
+      "bad": "Williams1",
+      "good": "WilliamsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4888200"
+    },
+    {
+      "bad": "tion8",
+      "good": "tionS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4892085"
+    },
+    {
+      "bad": "resultles8",
+      "good": "resultlesS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4895624"
+    },
+    {
+      "bad": "LEI6HT0N",
+      "good": "LEI6HTON",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4898292"
+    },
+    {
+      "bad": "Anacephalo3osi8",
+      "good": "Anacephalo3osiS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4900033"
+    },
+    {
+      "bad": "8orefc",
+      "good": "Sorefc",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4901275"
+    },
+    {
+      "bad": "WI5FRID",
+      "good": "WISFRID",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4902717"
+    },
+    {
+      "bad": "inquisitors1",
+      "good": "inquisitorsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4908682"
+    },
+    {
+      "bad": "J0HA5N",
+      "good": "JOHASN",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4917797"
+    },
+    {
+      "bad": "W611ner",
+      "good": "W6IIner",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4917919"
+    },
+    {
+      "bad": "8tudien",
+      "good": "Studien",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4921847"
+    },
+    {
+      "bad": "11SL",
+      "good": "IISL",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4921923"
+    },
+    {
+      "bad": "Abbe1",
+      "good": "AbbeI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4926012"
+    },
+    {
+      "bad": "sacre1",
+      "good": "sacreI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4926322"
+    },
+    {
+      "bad": "8cbool",
+      "good": "Scbool",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4939614"
+    },
+    {
+      "bad": "community11",
+      "good": "communityII",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4945992"
+    },
+    {
+      "bad": "8eapegoatf",
+      "good": "Seapegoatf",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4953423"
+    },
+    {
+      "bad": "Jeroboam11",
+      "good": "JeroboamII",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4956245"
+    },
+    {
+      "bad": "8tede",
+      "good": "Stede",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4958656"
+    },
+    {
+      "bad": "preachers1",
+      "good": "preachersI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4962174"
+    },
+    {
+      "bad": "J0HH",
+      "good": "JOHH",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4962519"
+    },
+    {
+      "bad": "8ufficienHa",
+      "good": "SufficienHa",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4970605"
+    },
+    {
+      "bad": "8ufficienHa",
+      "good": "SufficienHa",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4975374"
+    },
+    {
+      "bad": "8an",
+      "good": "San",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4981303"
+    },
+    {
+      "bad": "cafeteria11",
+      "good": "cafeteriaII",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-4996043"
+    },
+    {
+      "bad": "martyria1",
+      "good": "martyriaI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5003420"
+    },
+    {
+      "bad": "Judas1",
+      "good": "JudasI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5005200"
+    },
+    {
+      "bad": "wn0",
+      "good": "wnO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5006254"
+    },
+    {
+      "bad": "5SO",
+      "good": "SSO",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5023228"
+    },
+    {
+      "bad": "Z0R0ASTRIANISM",
+      "good": "ZOROASTRIANISM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5025274"
+    },
+    {
+      "bad": "Patroclus1",
+      "good": "PatroclusI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5037161"
+    },
+    {
+      "bad": "au8",
+      "good": "auS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5051329"
+    },
+    {
+      "bad": "Moses1",
+      "good": "MosesI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5052975"
+    },
+    {
+      "bad": "M0N0PHYSITISM",
+      "good": "MONOPHYSITISM",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5056243"
+    },
+    {
+      "bad": "8outh",
+      "good": "South",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5061079"
+    },
+    {
+      "bad": "years1",
+      "good": "yearsI",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5067350"
+    },
+    {
+      "bad": "CON8PECTU8",
+      "good": "CONSPECTUS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5068552"
+    },
+    {
+      "bad": "JAME8",
+      "good": "JAMES",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5069271"
+    },
+    {
+      "bad": "I.-UI.",
+      "good": "I.-U I.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5071186"
+    },
+    {
+      "bad": "GU8TAV",
+      "good": "GUSTAV",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5071770"
+    },
+    {
+      "bad": "I.-IU.",
+      "good": "I.-I U.",
+      "reason": "apparent_space_deletion",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5072032"
+    },
+    {
+      "bad": "FRANCI8",
+      "good": "FRANCIS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5073637"
+    },
+    {
+      "bad": "bl05",
+      "good": "blOS",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5074052"
+    },
+    {
+      "bad": "VW9QM1DOIV",
+      "good": "VW9QMIDOIV",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5074119"
+    },
+    {
+      "bad": "8iaUr",
+      "good": "SiaUr",
+      "reason": "digit_in_letter",
+      "approved_by": "hf+gemini_llm_triage",
+      "approved_at": "2026-04-28T22:37:12",
+      "candidate_id": "cand-5075761"
+    }
+  ]
+}

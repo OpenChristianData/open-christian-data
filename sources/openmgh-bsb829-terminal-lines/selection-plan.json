@@ -1,0 +1,36 @@
+{
+  "contract": "ocd-openmgh-bsb829-terminal-lines-selection-v1",
+  "source_path": "raw/openmgh/bsb00000829/tei/bsb00000829.xml",
+  "source_sha256": "cb35385e4e4ba87f80a002452a527527866322af7ccea7f23f366735e46df989",
+  "frozen_batch_sha256": "6623a27ea9998fbd9fad1379eafa3fc6b58d887ad00b8b42b92f5441e86cf947",
+  "prior_held_plan_sha256": "d059fcb476c7de305242f8118db97c513475b20a64d07a34a533e003c4bf62d0",
+  "selection_rule": "Begin at the work's first declared lb. Include complete source children through the last declared lb and all subsequent children on that final line. Stop immediately before the next lb, which starts a different numbered section or letter. Preserve all element attributes, text, and tails without editing source words.",
+  "works": [
+    {
+      "work_id": "beno-letter-to-roman-church-fathers",
+      "division": 6,
+      "first_id": "bsb00000829_00381_24",
+      "last_line_id": "bsb00000829_00388_32",
+      "next_line_id": "bsb00000829_00388_33",
+      "first_child_index": 237,
+      "last_line_child_index": 730,
+      "last_selected_child_index": 731,
+      "next_line_child_index": 732,
+      "terminal_word_ids": ["w6347", "w6348"],
+      "scope_note": "Numbered Gesta section II ends with the complete word in-centore and the words miserabiliter effusus. Section III begins at the next line and remains outside this work."
+    },
+    {
+      "work_id": "bruno-of-segni-letter-to-st-george-brothers",
+      "division": 15,
+      "first_id": "bsb00000829_00573_7",
+      "last_line_id": "bsb00000829_00573_18",
+      "next_line_id": "bsb00000829_00573_21",
+      "first_child_index": 74,
+      "last_line_child_index": 90,
+      "last_selected_child_index": 91,
+      "next_line_child_index": 92,
+      "terminal_word_ids": ["w8355", "w8356"],
+      "scope_note": "The third Bruno letter ends with the complete word osten-distis and its closing clause. The separately addressed fourth letter starts at the next lb; the declared locator for that next line is a boundary marker, not content of this work."
+    }
+  ]
+}

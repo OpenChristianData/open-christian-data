@@ -1,0 +1,73 @@
+{
+  "profile_id": "barnes-sword-nt-v1",
+  "work_id": "barnes-nt-notes",
+  "source_id": "barnes-crosswire-sword-v1.1",
+  "source_scope": {
+    "archive": "raw/sword_modules/Barnes.zip",
+    "archive_sha256": "9e8edc0333875c214124371b3862df118ad3a76ade7753cb2faeed3484615baf",
+    "members": [
+      {"path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czv", "bytes": 82460, "sha256": "edd2d46416db52595af44811a49940527bba208bd6b73b7c30f480c21d63edae"},
+      {"path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czz", "bytes": 6018995, "sha256": "d26ada7eba82d4c0c24c18ad8d8a520c1dfd5761e2bdc8161c6888bc665ea40a"},
+      {"path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czs", "bytes": 3120, "sha256": "a39f80ec47d108a43fda634c1234fc03827f32eac1636d614c01b424dfcf6302"},
+      {"path": "raw/sword_modules/Barnes/mods.d/barnes.conf", "bytes": 437, "sha256": "6895f7186042c5624117973892bc22dc27fa31a21e9f4fbb217793e8b5df9a5f"}
+    ],
+    "expected_slots": 8246,
+    "expected_empty_slots": 783,
+    "expected_nonempty_slots": 7463,
+    "invalid_utf8_carrier_count": 60,
+    "additional_xml_incompatible_carrier_count": 76,
+    "total_gap_carrier_count": 136
+  },
+  "mapping": {
+    "all_index_slots": "Emit one ordered TEI ab for every source BZV slot; preserve its numeric source identity and map its SWORD KJV key position without asserting print-volume boundaries.",
+    "valid_utf8": "Preserve text order and map only source-evidenced ThML: i to hi rend=italic, br to lb, scripRef to ref type=scripture with passage retained literally in n and version retained literally in subtype, and blockquote to quote type=block. Derive each Bible position only from the retained module configuration, SWORD KJV key order, and the bound KJV canon table; never infer it from carrier text or generated Bible JSON. Keep unknown tags and unsupported attributes visible as escaped source markup and list them in source-accountability.json.",
+    "empty": "Emit an explicit empty-source-slot marker.",
+    "invalid_utf8_and_xml_controls": "Emit a TEI gap and retain exact original bytes as hex and SHA-256 in source-accountability.json; do not replacement-decode or discard controls.",
+    "archive_and_index_material": "Bind archive, index, compressed data, block index, module config, block lengths, and every carrier range by digest/accounting.",
+    "bible_positions": {
+      "scheme": "ocd-barnes-sword-kjv-position-v1",
+      "versification": "KJV",
+      "versification_rule": "Use the retained Barnes module's Versification value; when absent, CrossWire SWORD zCom uses its KJV default.",
+      "position_order": "Module heading; New Testament heading; then, for each KJV New Testament book in canon order, its book heading followed by each chapter heading and every verse in order.",
+      "tei_attributes": "Keep @n as the zero-based source slot; encode each stable position in TEI @subtype as kind:key. Keys are module-heading, testament.2, the OSIS book code, OSIS-book.chapter, and OSIS-book.chapter.verse for module, testament, book, chapter, and verse positions respectively.",
+      "expected_counts": {"module-heading": 1, "testament-heading": 1, "book-heading": 27, "chapter-heading": 260, "verse": 7957},
+      "position_stream": "SHA-256 over UTF-8 lines '<zero-based slot> TAB <kind> TAB <key>', joined with LF and no trailing LF.",
+      "position_stream_sha256": "3359e0c5027e8a534959fe042d14ff20d62ae1c599167ec2763e0002a2357955",
+      "books": [
+        {"osis": "Matt", "chapter_verse_counts": [25,23,17,25,48,34,29,34,38,42,30,50,58,36,39,28,27,35,30,34,46,46,39,51,46,75,66,20]},
+        {"osis": "Mark", "chapter_verse_counts": [45,28,35,41,43,56,37,38,50,52,33,44,37,72,47,20]},
+        {"osis": "Luke", "chapter_verse_counts": [80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53]},
+        {"osis": "John", "chapter_verse_counts": [51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25]},
+        {"osis": "Acts", "chapter_verse_counts": [26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31]},
+        {"osis": "Rom", "chapter_verse_counts": [32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27]},
+        {"osis": "1Cor", "chapter_verse_counts": [31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24]},
+        {"osis": "2Cor", "chapter_verse_counts": [24,17,18,18,21,18,16,24,15,18,33,21,14]},
+        {"osis": "Gal", "chapter_verse_counts": [24,21,29,31,26,18]},
+        {"osis": "Eph", "chapter_verse_counts": [23,22,21,32,33,24]},
+        {"osis": "Phil", "chapter_verse_counts": [30,30,21,23]},
+        {"osis": "Col", "chapter_verse_counts": [29,23,25,18]},
+        {"osis": "1Thess", "chapter_verse_counts": [10,20,13,18,28]},
+        {"osis": "2Thess", "chapter_verse_counts": [12,17,18]},
+        {"osis": "1Tim", "chapter_verse_counts": [20,15,16,16,25,21]},
+        {"osis": "2Tim", "chapter_verse_counts": [18,26,17,22]},
+        {"osis": "Titus", "chapter_verse_counts": [16,15,15]},
+        {"osis": "Phlm", "chapter_verse_counts": [25]},
+        {"osis": "Heb", "chapter_verse_counts": [14,18,19,16,14,20,28,13,28,39,40,29,25]},
+        {"osis": "Jas", "chapter_verse_counts": [27,26,18,17,20]},
+        {"osis": "1Pet", "chapter_verse_counts": [25,25,22,19,14]},
+        {"osis": "2Pet", "chapter_verse_counts": [21,22,18]},
+        {"osis": "1John", "chapter_verse_counts": [10,29,24,21,21]},
+        {"osis": "2John", "chapter_verse_counts": [13]},
+        {"osis": "3John", "chapter_verse_counts": [14]},
+        {"osis": "Jude", "chapter_verse_counts": [25]},
+        {"osis": "Rev", "chapter_verse_counts": [20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21]}
+      ]
+    }
+  },
+  "unresolved": [
+    "60 invalid-UTF-8 carriers and 76 further XML-incompatible carriers cannot be emitted as readable TEI characters from this retained binary module without a source-local resolution.",
+    "Four blockquote starts in three valid carriers have no close within their BZV slot; TEI closes each quote at that slot boundary and source-accountability.json records the open source structure.",
+    "Print edition, original textual form, and volume boundaries are not adopted from the module label.",
+    "Human acceptance, rights clearance, release, and publication remain separate decisions."
+  ]
+}

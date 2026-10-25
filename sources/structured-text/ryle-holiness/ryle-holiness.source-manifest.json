@@ -1,0 +1,33 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ryle-holiness-retained-ccel-thml",
+  "authorities": [
+    {"name": "retained-ryle-holiness", "path": "raw/ccel/ryle/holiness.xml", "role": "primary-source", "bytes": 1302437, "sha256": "20f9c4a6eb9109c5981a37b580376ed02f1bc93ac98dd047ac6d0578ff3521c8"},
+    {"name": "work-config", "path": "sources/structured-text/ryle-holiness/config.json", "role": "local-metadata-claim-evidence", "bytes": 1117, "sha256": "72fba8d9be8dc5eb54f4a13b7b971f92243ed1342f6bf898c97c051d03eef763"},
+    {"name": "source-local-readme", "path": "sources/structured-text/ryle-holiness/README.source.md", "role": "source-attribution-readme", "bytes": 836, "sha256": "7c71f8ed7a90ff55dfebf256a178fbb2f1cb73cc6ea82009644c6a2b34cc6f5e"},
+    {"name": "reconstruction-profile", "path": "sources/structured-text/ryle-holiness/ryle-holiness.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 3015, "sha256": "27818e5deb94d580f2c2446560104ce8ee6acee3185fb50f5904955a966bd081"},
+    {"name": "validation-policy", "path": "sources/structured-text/ryle-holiness/ryle-holiness.validation-policy.json", "role": "independent-validation-policy", "bytes": 3638, "sha256": "b2b60cae282703f6e115a3263a16a9dfe3b72851358ed6794054a5502c771715"},
+    {"name": "source-accountability-schema", "path": "sources/structured-text/ryle-holiness/ryle-holiness.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 2472, "sha256": "fbc74ee49e9f5402c121306f7ab3ded8e79c0a6685dd00d9992022d7432147ee"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {
+    "id": "ocd-ryle-holiness-retained-ccel-thml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ryle_holiness_reconstruction.py",
+    "implementation_sha256": "7ee0f10f3cbf4ba6b202010991592dbfdd77c1280c0a3edac45517a06004bd99"
+  },
+  "validator": {
+    "id": "ocd-ryle-holiness-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/ryle_holiness_oracle.py",
+    "implementation_sha256": "13a4cc4abfd175987a3df5b176da78e5463f7f79ac02b4555a0d2048d7f68aad",
+    "import_closure_sha256": "d4206c727e65a6c14fe81f6c220bc0d86fd3626b459ea5502e266d924efbc68c"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

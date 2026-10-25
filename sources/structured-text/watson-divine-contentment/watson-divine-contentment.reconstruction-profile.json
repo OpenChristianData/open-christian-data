@@ -1,0 +1,142 @@
+{
+  "contract": "watson-complete-present-thml-profile-v1",
+  "profile_id": "37c-316-watson-divine-contentment-complete-present-thml-v1",
+  "work_id": "watson-divine-contentment",
+  "acquisition_path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acquisitions/watson-divine-contentment-ccel-retained.json",
+  "source_member": {
+    "path": "raw/ccel/watson/contentment.xml",
+    "bytes": 293615,
+    "sha256": "767ed95de4c4c990480670084e8dd1ac16b6c61d50b864e8b0202e528a076d7b"
+  },
+  "work_boundary": {
+    "disposition": "one-retained-member-bound-to-one-work",
+    "basis": [
+      "The retained ThML header identifies publisherID ccel, authorID watson, bookID contentment, workID contentment, one DC.Title, Thomas Watson as author, and language eng.",
+      "The retained member is raw/ccel/watson/contentment.xml; its exact path, byte count, and SHA-256 are bound by the acquisition and source manifest.",
+      "The retained directory contains neighboring Watson files, but no neighboring file is inferred into this work's envelope.",
+      "All 17 present top-level body carriers are represented; absent expected identifiers ix and x remain an explicit source-completeness gap."
+    ],
+    "sole_member": "raw/ccel/watson/contentment.xml"
+  },
+  "source_quality": {
+    "classification": "unassessed",
+    "basis": "The route supplies mechanical structural conversion only; no proofreading or textual correction is claimed.",
+    "textual_correction_performed": false,
+    "candidate_limit": "Present retained source features are mapped without editorial emendation; human review remains separate."
+  },
+  "present_top_level_carriers": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix"],
+  "carrier_disposition": "represented-present-carrier",
+  "feature_census": {
+    "elements": 1319,
+    "attributes": 2569,
+    "text_utf8_bytes": 39886,
+    "tail_utf8_bytes": 181830,
+    "body_elements": 1270,
+    "represented_elements": 1270,
+    "head_elements": 47,
+    "tag_counts": {
+      "DC": 1,
+      "DC.Creator": 2,
+      "DC.Date": 1,
+      "DC.Format": 1,
+      "DC.Identifier": 1,
+      "DC.Language": 1,
+      "DC.Publisher": 1,
+      "DC.Rights": 1,
+      "DC.Source": 2,
+      "DC.Subject": 6,
+      "DC.Title": 1,
+      "DC.Type": 1,
+      "ThML": 1,
+      "ThML.body": 1,
+      "ThML.head": 1,
+      "a": 307,
+      "authorID": 1,
+      "b": 50,
+      "bkgID": 1,
+      "bookID": 1,
+      "br": 12,
+      "comments": 1,
+      "description": 1,
+      "div": 2,
+      "div1": 17,
+      "div2": 1,
+      "electronicEdInfo": 1,
+      "generalInfo": 1,
+      "h1": 2,
+      "h2": 18,
+      "h3": 13,
+      "h4": 13,
+      "i": 182,
+      "insertIndex": 1,
+      "note": 1,
+      "p": 353,
+      "printSourceInfo": 1,
+      "property": 3,
+      "pubHistory": 1,
+      "published": 1,
+      "publisherID": 1,
+      "scripRef": 305,
+      "selector": 1,
+      "series": 1,
+      "style": 2,
+      "version": 1,
+      "workID": 1
+    },
+    "attribute_counts": {
+      "class": 659,
+      "element": 1,
+      "href": 307,
+      "id": 633,
+      "name": 3,
+      "n": 1,
+      "next": 18,
+      "osisRef": 283,
+      "parsed": 283,
+      "passage": 305,
+      "prev": 18,
+      "progress": 16,
+      "scheme": 12,
+      "style": 3,
+      "sub": 3,
+      "title": 18,
+      "type": 3,
+      "value": 3
+    }
+  },
+  "source_envelope_gap": {
+    "expected_chapters": ["VI", "VII"],
+    "expected_native_ids_absent_from_body": ["ix", "x"],
+    "evidence": [
+      "The Original Table of Contents (div1 id=iii) lists Chapter VI, SHEWING THE NATURE OF CONTENTMENT, and Chapter VII, REASONS PRESSING TO HOLY CONTENTMENT.",
+      "The retained ThML.body has no div1 carriers ix or x."
+    ],
+    "disposition": "unresolved source completeness gap; do not infer missing content from another witness"
+  },
+  "candidate_questions": [
+    {
+      "id": "watson-missing-chapters-vi-vii",
+      "scope": "source-completeness",
+      "question": "Can an authoritative retained member or edition witness supply the Chapter VI and VII text named by the retained table of contents?",
+      "technical_disposition": "Unresolved; this candidate supplies no inferred replacement text."
+    },
+    {
+      "id": "watson-source-quality",
+      "scope": "source-quality",
+      "question": "What evidence establishes whether the retained digital text is proofread?",
+      "technical_disposition": "Unassessed; no textual correction is performed."
+    },
+    {
+      "id": "watson-edition-witness-lineage",
+      "scope": "edition-witness",
+      "question": "Which exact print exemplar underlies this electronic witness?",
+      "technical_disposition": "Unresolved; no exact print exemplar or lineage is adopted."
+    },
+    {
+      "id": "watson-rights-clearance",
+      "scope": "rights",
+      "question": "What independent rights evidence governs later acceptance or publication?",
+      "technical_disposition": "Separate human and rights gate; no project clearance is claimed."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Retained source and downstream attribution
+
+# Basil of Caesarea — Letters
+
+This text is sourced via CCEL.org: [Christian Classics Ethereal Library](https://www.ccel.org/ccel/schaff/npnf208.html), *Nicene and Post-Nicene Fathers*, Second Series, volume VIII, Basil: Letters and Select Works. Printed containing-volume translation with notes is credited to the Rev. Blomfield Jackson; series editors are Philip Schaff and Henry Wace. The retained printSourceInfo states Edinburgh: T&T Clark, 1895. These are containing-volume credits; no separate per-letter translator allocation or print collation is inferred.
+
+The derivative preserves the complete source-native Letters collection: Introduction plus 356 further carriers. These include 353 individually numbered carriers and three grouped editorial notices for labels 316–319, 330–333 and 361–365. Those notices remain notices; this edition does not contain 366 full translated letter texts. Incoming letters, doubtful/spurious attributions, source editorial judgments, complete wording, notes and their attachments, Greek, page links and native reference annotations remain unchanged. Eleven spans retain both their literal source class and right-to-left direction. Electronic passage/OSIS reference parsing and versification are not independently corrected or asserted correct. Separately titled On the Holy Spirit and Hexaemeron and the shared volume context/indexes remain outside the Letters body. OCD reconstructed the collection as one TEI and projected native ordered content into JSONL and Arrow.
+
+The retained electronic header states Public Domain for the text. Separate retained CCEL permission evidence permits text parsing, reserves CCEL file and formatting rights, and restricts selling CCEL files or derivatives of their formatting. These distinct layers are preserved as evidence; they do not establish independent rights clearance or suitability for a selected public release profile. Visible attribution follows the retained instruction to say sourced via CCEL.org.
+
+This private offline technical rehearsal does not establish visual review, human acceptance, print collation, independent rights clearance, global release selection or publication authorization.
+
+Retained XML SHA-256: `95cf3dafefccec80e0949a03c7f1f605da293302d0dc7a8bd62a4e711a0c5532`. Accepted master SHA-256: `ccfc47691032fae9b7f1fb6db86522d181d64eae7daee4fa916f722554da2737`. Exact selection `/ThML/ThML.body/div1[@id='ix']`, all 357 direct div2 carriers and 8,726 original elements. All source attributes, direct text/tails and source-to-readable mappings are bound in source-node-accountability.json. The original stylesheet and complete electronic header remain in the immutable retained source; the master preserves class tokens and direction without redistributing a newly inferred stylesheet. Historical LIB046 source mapping and child-scope evidence are preserved; old cohort validation/acceptance receipts are not reused.
+
+Human-visible data-path credit: `data/structured-text/basil-of-caesarea-letters/README.md`. Separate retained permission evidence: `docs/sources/ccel-permission.md`. No new acquisition occurred.

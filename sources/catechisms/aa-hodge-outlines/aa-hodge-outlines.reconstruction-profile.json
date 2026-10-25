@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-aa-hodge-outlines-reconstruction-profile-v1",
+  "profile_id": "aa-hodge-outlines-whole-work-v1",
+  "work_id": "aa-hodge-outlines",
+  "source": {
+    "durable_path": "D:/Library/Open Christian Data/raw/gutenberg/outlinesoftheolo1879hodg_djvu.txt",
+    "logical_path": "raw/gutenberg/outlinesoftheolo1879hodg_djvu.txt",
+    "bytes": 1976207,
+    "sha256": "a81808d5a9d2037d3c1d0706de960fb13c175d3581dd131c7d505493df51fee5",
+    "physical_lines": 37553,
+    "terminal_lf": true
+  },
+  "encoding": {
+    "name": "UTF-8",
+    "errors": "strict",
+    "line_separator": "LF",
+    "normalization": "none"
+  },
+  "coverage": {
+    "physical_lines": 37553,
+    "represented_lines": 37553,
+    "omitted_lines": 0,
+    "duplicated_lines": 0
+  },
+  "structure": {
+    "identity": "catechism_qa",
+    "representation": "verbatim OCR source lines with noneditorial candidate annotations",
+    "question_candidate_pattern": "^[\\t ]*([0-9]+)\\.[\\t ]+",
+    "question_candidates": 1107,
+    "chapter_candidate_pattern": "^[\\t ]*CHAPTER[\\t ]+",
+    "chapter_candidates": 85,
+    "warning": "Candidate annotations include OCR and front/back-matter false positives and are not accepted Q&A segmentation."
+  },
+  "diagnostic_fixture": {
+    "path": "tests/fixtures/gutenberg_systematics/aa_hodge_q7_span.txt",
+    "checkout_bytes": 1630,
+    "checkout_sha256": "6711666f19ca7c869c0e6601f40f5bb03ab02280976c2292c99fa9ee70e36034",
+    "source_span_lines": "16538-16567",
+    "source_span_lf_bytes": 1630,
+    "source_span_lf_sha256": "6711666f19ca7c869c0e6601f40f5bb03ab02280976c2292c99fa9ee70e36034",
+    "whole_work_acceptance": false
+  },
+  "handoff": {
+    "page_census_status": "unavailable",
+    "page_census_reason": "The retained DjVuTXT witness has no retained page-boundary markers.",
+    "ocr_correction_status": "not-performed",
+    "returned_text_identity": "byte-identical pass-through of the retained OCR witness"
+  }
+}

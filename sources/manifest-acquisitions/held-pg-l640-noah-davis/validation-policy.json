@@ -1,0 +1,19 @@
+{
+  "authority": "Exact retained Project Gutenberg 20005 ZIP, ordered member inventory, and extracted HTML/image bytes.",
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "Retained ZIP hash, ZIP CRC test, exact member order/size/CRC/SHA-256, extracted-member byte equality, and inventory equality.",
+    "Complete HTML source-member length/hash, complete body element/tag census, source ID uniqueness, and exact work-boundary title/contents/end-marker assertions.",
+    "Independent source-order crosswalk for every body element, parent, attributes, text, tail, and subtree text; explicit accounting for the flattened tbody wrapper.",
+    "One TEI root and one source-title titleStmt; full body text equality; source-node ID/tag/hierarchy/tail/inline order; linked image path/alt/dimensions; local fragment-link closure; source rendition/class/style mapping.",
+    "Candidate package schema, TEI P5 XSD, source-accountability sidecar, provenance, attribution README, source-manifest and exact retained sidecar bindings.",
+    "Reject baseline-valid changes that omit a body carrier, change source order or text, substitute the church image target, or change a source link target.",
+    "Two isolated CPython processes regenerate the candidate and validation receipt byte-identically from current-main source and authorities."
+  ],
+  "contract": "ocd-manifest-pg-l640-noah-davis-validation-policy-v1",
+  "human_acceptance": "separate; pending",
+  "omitted_body_elements": 0,
+  "print_collation": "separate; not performed",
+  "rights_and_publication": "separate; rights pending / publication not authorized",
+  "source_scope": "One complete retained HTML body for the title-page named 1859 Noah Davis volume, including instructed supplemental components."
+}

@@ -1,0 +1,77 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "anabaptists-org-schleitheim-confession-1527-retained-html",
+  "ticket_id": "LIB-083",
+  "work_id": "schleitheim-confession-1527",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "authorities": [
+    {
+      "name": "retained-html",
+      "path": "raw/anabaptists.org/schleitheim-confession-1527.html",
+      "role": "primary-source",
+      "bytes": 21064,
+      "sha256": "5a7f3b112e2bd074c9eb8626fd58d13086870ebb0be52a3036781ce9077f3750"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/schleitheim-confession-1527/schleitheim-confession-1527.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1630,
+      "sha256": "eebb425a7e53c8bf91b858edf7c962494a5048a28e6998c9063b4bccbdf54f87"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/schleitheim-confession-1527/schleitheim-confession-1527.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1371,
+      "sha256": "6385923434e4f2c53b3f50bf719ab388771ea4d0a0aebe6d88b71a87ede0f440"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/doctrinal-documents/schleitheim-confession-1527/README.md",
+      "role": "source-attribution",
+      "bytes": 906,
+      "sha256": "bb5c3ee2db5a86c76bf4d4be2ce6aea33e61e615c27f28a78408e4699ddb4669"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/doctrinal-documents/schleitheim-confession-1527/schleitheim-confession-1527.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 2206,
+      "sha256": "53a7c1ea7c236578547cc2eea4c7f0af7493ddfa2a6671b50c5fe7680c22cfa3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-schleitheim-confession-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/schleitheim_confession_reconstruction.py",
+    "implementation_sha256": "1d587361ea70c0eadc6f4bc120f4862540789b15b34d29770105f99daae05f94"
+  },
+  "validator": {
+    "id": "ocd-schleitheim-confession-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/schleitheim_confession_oracle.py",
+    "implementation_sha256": "8094397aff3c05c3e2578855508769144093c740ec4102a1eff444b3a5330ee8",
+    "import_closure_sha256": "c56965807b2a1e8ac7ad061277816e5830359cc5d2aa8cfb08439defc9cf49af"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

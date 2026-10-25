@@ -84,7 +84,7 @@ def setup_logging():
 # ---------------------------------------------------------------------------
 
 def extract_meta_fields(meta):
-    """Pull the seven inline fields from a file's meta block."""
+    """Pull publication metadata, keeping witness and identity boundaries explicit."""
     provenance = meta.get("provenance") or {}
     return {
         "_source_id": meta.get("id"),
@@ -94,6 +94,19 @@ def extract_meta_fields(meta):
         "_schema_type": meta.get("schema_type"),
         "_license": meta.get("license"),
         "_source_url": provenance.get("source_url"),
+        "_source_edition": provenance.get("source_edition"),
+        "_expression_id": meta.get("expression_id"),
+        "_digital_witness_id": meta.get("digital_witness_id"),
+        "_witness_role": meta.get("witness_role"),
+        "_related_witness_ids": meta.get("related_witness_ids") or [],
+        "_segmentation_basis": meta.get("segmentation_basis"),
+        "_source_hash": provenance.get("source_hash"),
+        "_source_hash_scope": provenance.get("source_hash_scope"),
+        "_source_revision": provenance.get("source_revision"),
+        "_source_revision_type": provenance.get("source_revision_type"),
+        "_generated_content_hash": provenance.get("generated_content_hash"),
+        "_acquired_on": provenance.get("download_date"),
+        "_processed_on": provenance.get("processing_date"),
     }
 
 
@@ -472,5 +485,54 @@ def run_export():
         logging.info("Export complete. [DONE]")
 
 
+def main(argv=None):
+    """Current offline export uses accepted TEI and the original v2 selection.
+
+    The functions above are historical diagnostics pending PIPE-023 retirement.
+    """
+    import argparse
+    if str(PROJECT_ROOT) not in sys.path:
+        sys.path.insert(0, str(PROJECT_ROOT))
+    from ocd_kernel.library._common import PipelineError, load_json
+    from ocd_kernel.release.assemble import assemble_release_v2
+    from ocd_kernel.release.selection import load_release_selection
+
+    parser = argparse.ArgumentParser(description="Build an offline v2 release with independent pre-promotion verification from accepted TEI.")
+    parser.add_argument("--root", type=Path, required=True)
+    choice = parser.add_mutually_exclusive_group(required=True)
+    choice.add_argument("--selection", type=Path)
+    choice.add_argument("--profile", type=Path, help="derive current selection from a library-owned publication profile")
+    parser.add_argument("--release-id", help="identity for a profile-derived build; defaults to the destination name")
+    reuse = parser.add_mutually_exclusive_group()
+    reuse.add_argument("--previous-release", type=Path, help="reuse bound projections from a prior ready candidate")
+    reuse.add_argument("--resume-stage", type=Path, help="recover checked editions read-only into a fresh stage")
+    parser.add_argument("--resume-progress", type=Path, help="original progress journal for a legacy stage without checkpoints")
+    parser.add_argument("--evidence-dir", type=Path, help="private progress/evidence directory; defaults beside output")
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args(argv)
+    try:
+        if args.profile is not None:
+            print("Resolving publication profile and retained-source bindings...", file=sys.stderr, flush=True)
+            selection = None
+        else:
+            if args.previous_release is not None or args.resume_stage is not None:
+                raise PipelineError("projection reuse requires --profile input bindings")
+            selection = load_release_selection(args.selection)
+        evidence = args.evidence_dir or args.output.absolute().parent / f".{args.output.name}-evidence"
+        assembled = assemble_release_v2(args.root, args.output, selection=selection,
+                                       profile_path=args.profile, previous_release=args.previous_release,
+                                       reader_check=True, evidence_dir=evidence, release_id=args.release_id,
+                                       resume_stage=args.resume_stage, resume_progress=args.resume_progress)
+        verified = load_json(args.output / "internal/checks/independent-check.json")
+    except (PipelineError, OSError, ValueError) as exc:
+        parser.error(str(exc))
+    result = {"release_id": assembled["release_id"], "assembly": assembled["status"],
+              "verification": verified["status"], "errors": verified.get("errors", []),
+              "verification_basis": "independent authority and both reader modes before promotion",
+              "publication": "not-performed"}
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if assembled["status"] == verified["status"] == "pass" else 1
+
+
 if __name__ == "__main__":
-    run_export()
+    raise SystemExit(main())

@@ -1,0 +1,462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/reconstruction/lightfoot-colossians-philemon-source-accountability-v3.schema.json",
+  "title": "Lightfoot source accountability v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "profile_id",
+    "source_sha256",
+    "source_bytes",
+    "line_count",
+    "newline_count",
+    "represented_count",
+    "evidence_only_count",
+    "omitted_count",
+    "duplicate_count",
+    "reordered_count",
+    "crosswalk",
+    "structural_units",
+    "line_features",
+    "feature_counts",
+    "range_occurrences",
+    "sidenote_markers",
+    "footnote_references",
+    "footnote_reference_exceptions",
+    "typography"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-lightfoot-colossians-philemon-source-accountability-v3"
+    },
+    "profile_id": {
+      "const": "lightfoot-colossians-philemon-v3"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_bytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "line_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "newline_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "represented_count": {
+      "const": 26185
+    },
+    "evidence_only_count": {
+      "const": 0
+    },
+    "omitted_count": {
+      "const": 0
+    },
+    "duplicate_count": {
+      "const": 0
+    },
+    "reordered_count": {
+      "const": 0
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 26185,
+      "maxItems": 26185,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line",
+          "byte_start",
+          "byte_end",
+          "source_sha256",
+          "tei_id",
+          "text"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "byte_start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "byte_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "tei_id": {
+            "type": "string",
+            "pattern": "^lightfoot-line-[0-9]{6}$"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "structural_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "start_line",
+          "end_line",
+          "parent"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "parent": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "n": {
+            "type": "string"
+          },
+          "ordinal": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "line_features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line",
+          "ana"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ana": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "feature_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "range_occurrences": {
+      "type": "array",
+      "minItems": 120,
+      "maxItems": 120,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "work",
+          "ordinal",
+          "label",
+          "start_line",
+          "end_line",
+          "separator_lines",
+          "greek_line_count",
+          "paraphrase_line_count",
+          "commentary_line_count",
+          "footnote_heads",
+          "sidenote_markers"
+        ]
+      }
+    },
+    "sidenote_markers": {
+      "type": "array",
+      "minItems": 677,
+      "maxItems": 677,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "start_line",
+          "start_char",
+          "end_line",
+          "end_char",
+          "same_line"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "start_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_char": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_char": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "same_line": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "footnote_references": {
+      "type": "array",
+      "minItems": 761,
+      "maxItems": 761,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line",
+          "start_char",
+          "end_char",
+          "number",
+          "target",
+          "target_start_line"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_char": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_char": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^#lightfoot-footnote-[0-9]{4}$"
+          },
+          "target_start_line": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "footnote_reference_exceptions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line",
+          "start_char",
+          "end_char",
+          "token",
+          "reason"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_char": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_char": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "token": {
+            "type": "string",
+            "pattern": "^\\[[0-9]+\\]$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spans",
+        "literal_caret_markers"
+      ],
+      "properties": {
+        "spans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "rend",
+              "syntax",
+              "start_line",
+              "end_line",
+              "start_char",
+              "end_char",
+              "text",
+              "parts"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "rend": {
+                "type": "string"
+              },
+              "syntax": {
+                "type": "string"
+              },
+              "start_line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "end_line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "start_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "text": {
+                "type": "string"
+              },
+              "parts": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "line",
+                    "start_char",
+                    "end_char",
+                    "text",
+                    "n"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "line": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "start_char": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end_char": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "n": {
+                      "type": "string"
+                    },
+                    "corresp": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "literal_caret_markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "line",
+              "start_char",
+              "end_char",
+              "token"
+            ],
+            "properties": {
+              "line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "start_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "token": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

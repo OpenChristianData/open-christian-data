@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-kempis-title-page">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>The Imitation of Christ title page</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>The Imitation of Christ title page</title>
+          <idno type="sha256">bdefa927eb04c6f4fc5af4dccd8511d4f0cd8cae8b96b4062a31109a32c2477e</idno>
+          <ptr target="ocd-source:raw/standard_ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/src/epub/text/titlepage.xhtml"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; canonical title-page type.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-kempis-title-page-selection">
+        <div type="title-page" xml:id="titlepage">
+          <head>The Imitation of Christ</head>
+          <p>By <hi rend="bold">Thomas à Kempis</hi>.</p>
+          <p>Translated by <hi rend="bold">William Benham</hi>.</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

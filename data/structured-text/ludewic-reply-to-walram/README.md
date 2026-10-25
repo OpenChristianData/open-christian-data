@@ -1,0 +1,10 @@
+# Count Ludewic reply to Walram of Naumburg
+
+Source: Monumenta Germaniae Historica (MGH) and Bavarian State Library, Munich (BSB), [openMGH electronic MGH Ldl 2](https://www.dmgh.de/mgh_ldl_2/index.htm). The retained volume bibliography credits Ernst Dümmler and gives Hannover: Hahn, 1892. These volume-level statements do not establish print equivalence or a stronger allocation to this child letter.
+
+The retained electronic header licenses the annotations added by MGH and BSB in the digital MGH project under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), and does not claim rights in the underlying text, which it believes to be public domain. Credit MGH and BSB when distributing a copy or derivative version. This preparation preserves that source credit and licensing statement. The source context identifies Count Ludewic as sender and says Herrand of Halberstadt dictated the reply. Final rights disposition and publication authorization remain separate.
+
+This is the complete quoted Ludewic reply delimited by its salutation and closing in the electronic witness. Surrounding narrative and Walram's letter are separate and excluded. Native inline style, page and line markers, split-word annotations, and their exact mixed content are retained. Nine native word carriers have empty text; their lemma and links remain exact, with no guessed reading filled. Human verification, visual review and print collation remain unresolved.
+## OpenMGH license and changes
+
+openMGH provides its TEI-XML resources and the annotations added by the Monumenta Germaniae Historica (MGH) and the Bavarian State Library (Bayerische Staatsbibliothek, BSB) under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). openMGH states that the underlying medieval text is free from copyright. Source: [openMGH](https://www.mgh.de/en/digital-mgh/openmgh). OCD reprocessed the source TEI/XML into an accepted TEI master and this public record, changing the source encoding and structure for this dataset.

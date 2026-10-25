@@ -1,0 +1,89 @@
+{
+  "authorities": [
+    {
+      "bytes": 46793,
+      "name": "publisher-xml",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/publisher-xml.xml",
+      "role": "primary-source",
+      "sha256": "565fc043dc91c024a146832a7474d51a8f3e99a260ce1cda263ce9a0d80a09cf"
+    },
+    {
+      "bytes": 985170,
+      "name": "publisher-pdf",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/publisher-pdf.pdf",
+      "role": "comparison-witness",
+      "sha256": "768d7cb4aca541873d27c5c07ec61448687c6ec713555c34cd4a921f7c30fca5"
+    },
+    {
+      "bytes": 2034,
+      "name": "acquisition-receipt",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/receipt.json",
+      "role": "acquisition-receipt",
+      "sha256": "35599404371afa5545ac6dcfda9af5dc041f2458a3e68c88f1b7a42b5c58d863"
+    },
+    {
+      "bytes": 3601,
+      "name": "feature-profile",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3192f80f6557c2b0c0544e058adad41bc123e27e5aab40e012eeb1ed2b3303d5"
+    },
+    {
+      "bytes": 801,
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "be4d7905c71e4229e47f0ef758ba7d052478ee4479caceac95a40c7914fdd642"
+    },
+    {
+      "bytes": 620,
+      "name": "source-readme",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a5-pentecostal-church-growth-in-nigeria-amid-roman-catholicism/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "2a0402bc6bfb890b157736635b6703dea0c1d86efa64ca10dca5d8237ff6220f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-ajops-jats-article-to-tei",
+    "implementation_path": "build/tei/ajops_jats_to_tei_v3.py",
+    "implementation_sha256": "b32de1d9bcbd9ab3ce98177380b0b8ef8fedce688977c6d6f00eec114ad24302",
+    "version": "3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "307257c240c8949424fb443ba48b4eb6505d73f4fcca2e5cb37956c50be593b7",
+  "source_id": "ajops-v1-2024-a5-retained-publisher-jats-and-pdf",
+  "source_selection": {
+    "authority": "publisher-xml",
+    "scope_cutoff": "2026-07-22",
+    "selection": "Complete publisher JATS article XML; exact publisher PDF retained as comparison witness; no alternate edition."
+  },
+  "ticket_id": "MANIFEST-ACQUISITION-20260925",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-ajops-jats-article-independent-source-census-oracle",
+    "implementation_path": "build/tei/ajops_jats_oracle_v3.py",
+    "implementation_sha256": "581e41b2100719b2bfd8cb83c29dfa9bf2842710f4ae622e846ed96fb725d7c1",
+    "import_closure_sha256": "5b2ea8723671df39dba08e6fdb0c743bedda8e67c7b50da4b086a77a85ebc330",
+    "version": "3"
+  },
+  "work_id": "ajops-v1-2024-a5"
+}

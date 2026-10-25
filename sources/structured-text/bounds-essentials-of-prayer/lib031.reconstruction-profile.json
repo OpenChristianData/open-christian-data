@@ -1,0 +1,47 @@
+{
+  "contract": "ocd-lib031-reconstruction-profile-v1",
+  "profile_id": "lib031-ccel-thml-cohort-v1",
+  "version": 1,
+  "source_set_authority": "retained-source-set",
+  "source_root_environment": "OCD_RETAINED_RAW_ROOT",
+  "work_order": [
+    "bounds-essentials-of-prayer",
+    "bounds-necessity-of-prayer",
+    "bounds-power-through-prayer",
+    "bounds-prayer-and-praying-men",
+    "bounds-purpose-in-prayer",
+    "bounds-reality-of-prayer",
+    "bounds-weapon-of-prayer",
+    "finney-lectures-on-revivals",
+    "finney-systematic-theology",
+    "pascal-pensees"
+  ],
+  "projection": {
+    "scope": "ThML.body descendants in document order",
+    "unknown_elements": "seg with explicit thml-{source-name} type",
+    "source_text": "preserved exactly as direct text and child tails",
+    "source_attributes": "projected only where a TEI destination is explicit and otherwise retained in the crosswalk"
+  },
+  "works": [
+    {"work_id":"bounds-essentials-of-prayer","title":"The Essentials of Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/essentials.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1925.","source_sha256":"9a23ce9261e2cc5606ff6e14b01eb9dbc830128097539d57d123f7997bebf218"},
+    {"work_id":"bounds-necessity-of-prayer","title":"The Necessity of Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/necessity.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1929.","source_sha256":"ce64dd0f86d175fc470e955c69c6fdf3ef0a2d1ec8f2741a42ea1ba9ba780f93"},
+    {"work_id":"bounds-power-through-prayer","title":"Power Through Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/power.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Marshall Brothers, London, 1907.","source_sha256":"3db594d5db6ed1051807e9135a9cc186db79bb0e29320b80d6e1a08ab747d130"},
+    {"work_id":"bounds-prayer-and-praying-men","title":"Prayer and Praying Men","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/prayingmen.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1921.","source_sha256":"cb76e71624d98570f49ec2d98db7e559f66826b81474227eb69cda088b171996"},
+    {"work_id":"bounds-purpose-in-prayer","title":"Purpose in Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/purpose.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1920.","source_sha256":"ca459b635fbf8503985fada4e4e477966d68035a4a526d20f8e77800ae958158"},
+    {"work_id":"bounds-reality-of-prayer","title":"The Reality of Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/reality.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1924.","source_sha256":"4105d0e12a05c8217a966ca372b16f5451ab0c0f4dd2ad8dc749f987fe6c91c1"},
+    {"work_id":"bounds-weapon-of-prayer","title":"The Weapon of Prayer","author":"E.M. Bounds","contributors":[],"source_url":"https://www.ccel.org/ccel/bounds/weapon.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: Fleming H. Revell, 1931.","source_sha256":"f67928a78e0a6d773e7a45fecb66adf918ca2a11de20175bb083d0e13f6f5bc5"},
+    {"work_id":"finney-lectures-on-revivals","title":"Lectures on Revivals of Religion","author":"Charles G. Finney","contributors":[],"source_url":"https://www.ccel.org/ccel/finney/revivals.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: New York, 1835.","source_sha256":"71f8d0b30cb520520c91aa685b41754cc02ea05046a74edf3c243abbe3e7169c"},
+    {"work_id":"finney-systematic-theology","title":"Systematic Theology","author":"Charles G. Finney","contributors":[],"source_url":"https://www.ccel.org/ccel/finney/theology.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Based on the 1878 revised edition (Oberlin, Ohio).","source_sha256":"bfcc322104b1407352721ba4b2ff74b4dae0c69784d717f72eb98baec1ef8e57"},
+    {"work_id":"pascal-pensees","title":"Pensées","author":"Blaise Pascal","contributors":[{"name":"W.F. Trotter","role":"translator"}],"source_url":"https://www.ccel.org/ccel/pascal/pensees.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). English translation by W.F. Trotter, first published 1910.","source_sha256":"37033b976d68c6efe1524ad2bfaf3da7f6c0f4ef94bd5d4228585390207938ff"}
+  ],
+  "requirements": [
+    "exact-retained-source-hash-and-member-order",
+    "complete-ThML.body-element-and-attribute-accounting",
+    "exact-direct-text-and-child-tail-preservation",
+    "deterministic-TEI-identities-and-order",
+    "TEI-P5-validation",
+    "source-accountability-schema-validation",
+    "nonaccepted-human-review-and-publication-boundary"
+  ]
+}
+

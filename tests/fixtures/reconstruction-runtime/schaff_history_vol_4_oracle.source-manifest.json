@@ -1,0 +1,131 @@
+{
+  "authorities": [
+    {
+      "bytes": 5705,
+      "name": "owner-ticket",
+      "path": "plans/2026-08-26-whole-library-faithful-tei-completion/tickets/library/058-reconstruct-and-review-schaff-history-of-the-christian-church.md",
+      "role": "owner-route-evidence",
+      "sha256": "cee64908188a9c86227af51a72bde715bcb18f9ff61f545009e55ae6f6bd5abd"
+    },
+    {
+      "bytes": 35741,
+      "name": "owner-work-map",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/34e1ce0c692e-02-work-ticket-map.md",
+      "role": "owner-route-evidence",
+      "sha256": "34e1ce0c692ea72971a7615ba87e949be8c15d4bd1affb57353b39ccc8e9baf7"
+    },
+    {
+      "bytes": 138768,
+      "name": "owner-source-map",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/eced464d3b24-05-source-ticket-map.md",
+      "role": "owner-route-evidence",
+      "sha256": "eced464d3b241373ef751e7e1116722229304bf75ee3d785ccd02a958697a0e4"
+    },
+    {
+      "bytes": 2351867,
+      "name": "primary-source",
+      "path": "raw/ccel/schaff/hcc4.xml",
+      "role": "primary-source",
+      "sha256": "7a4b158f20983c50fac6542e1904a24e611f52dba7f293fc4831e2d3030364d6"
+    },
+    {
+      "bytes": 2962,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/schaff-history-vol-4-readable/schaff-history-vol-4.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "6d3349fed64a40bbc209be233f8fde81353bc023aa0ab9426334f87e1b753c1f"
+    },
+    {
+      "bytes": 4866,
+      "name": "validation-policy",
+      "path": "sources/structured-text/schaff-history-vol-4-readable/schaff-history-vol-4.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "505227e4cc4098ca1dd3393939b10590f2158602c8b5c8ca4378ef86c9528530"
+    },
+    {
+      "bytes": 6398,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/schaff-history-vol-4-readable/schaff-history-vol-4.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "sha256": "d0f436e5c717ceffab631f562e83cf875e0875eeeb6842e8588720e36c81a821"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "schaff-history-vol-4-thml-producer",
+    "implementation_path": "build/tei/schaff_history_vol_4_reconstruction.py",
+    "implementation_sha256": "96f0a38fd0553f9b3a52ac28639f6b7ef404ccf769972ef0a45fc38eda14af53",
+    "version": "1"
+  },
+  "member_selection": {
+    "identity_status": "source-member-bound; edition and textual-form claims unresolved",
+    "integral_support_root": "/ThML/ThML.body/div1[@id='ii']",
+    "primary_work_root": "/ThML/ThML.body/div1[@id='i']",
+    "selected_body_roots": [
+      {
+        "id": "i",
+        "ordinal": 1,
+        "tag": "div1",
+        "title": "Mediaeval Christianity"
+      },
+      {
+        "id": "ii",
+        "ordinal": 2,
+        "tag": "div1",
+        "title": "Indexes"
+      }
+    ],
+    "selector": "/ThML/ThML.body/*",
+    "source_member": "raw/ccel/schaff/hcc4.xml"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "route_boundary": {
+    "candidate_status": "nonaccepted",
+    "canonical_data_or_ir_written": false,
+    "publication": "not_ready",
+    "rights_status": "unresolved"
+  },
+  "source_id": "ccel-schaff-hcc4-thml",
+  "ticket_id": "LIB-058",
+  "validator": {
+    "callable": "_oracle",
+    "id": "schaff-history-vol-4-independent-source-checker",
+    "implementation_path": "build/tei/schaff_history_vol_4_oracle.py",
+    "implementation_sha256": "91eadc0c9b5d2e3937c75440db4b66db3b3bfee5f0f60e1bf740df636e2a373b",
+    "import_closure_sha256": "18d216a9b6499f4b2f1c580a24562f5c71d8ae04def91c0ed6429369f0164849",
+    "version": "1"
+  },
+  "work_id": "schaff-history-vol-4"
+}

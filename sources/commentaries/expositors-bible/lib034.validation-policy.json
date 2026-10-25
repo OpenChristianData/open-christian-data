@@ -1,0 +1,67 @@
+{
+  "contract": "ocd-expositors-bible-lib034-validation-policy-v1",
+  "policy_id": "lib034-complete-current-claim-xml-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_source_members": 10,
+  "required_excluded_members": 37,
+  "required_retained_family_members": 47,
+  "required_work_ids": [
+    "expositors-bible--g-t-stokes",
+    "expositors-bible--george-adam-smith",
+    "expositors-bible--h-c-g-moule",
+    "expositors-bible--henry-burton",
+    "expositors-bible--j-monro-gibson",
+    "expositors-bible--j-rawson-lumby",
+    "expositors-bible--james-denney",
+    "expositors-bible--john-skinner"
+  ],
+  "required_feature_count": 47636,
+  "required_source_bytes": 9480629,
+  "required_namespace_attribute_collision_count": 48,
+  "required_unresolved_ids": [
+    "lib034-print-edition-collation-not-performed",
+    "lib034-rights-and-publication-review",
+    "lib034-retained-inventory-47-vs-legacy-48",
+    "lib034-author-label-variants"
+  ],
+  "forbidden_import_prefixes": [
+    "build.tei.expositors_bible_lib034_reconstruction",
+    "build.parsers.ccel_expositors_bible",
+    "build.lib.ccel_thml",
+    "ocd_kernel.bible_refs",
+    "ocd_kernel.lib.bible_refs"
+  ],
+  "checks": [
+    "source-authority-digests",
+    "exact-ten-member-lineage",
+    "complete-forty-seven-member-family-census",
+    "exact-retained-bytes-decoded-from-tei",
+    "independent-xml-element-order-hierarchy-attributes-and-text",
+    "eight-frozen-work-identities",
+    "legacy-ten-claim-lineage",
+    "candidate-package-schema",
+    "source-accountability-schema",
+    "exact-candidate-source-id",
+    "exact-canonical-candidate-manifest",
+    "type-strict-canonical-json-members",
+    "closed-provenance-object",
+    "exact-unresolved-records-and-order",
+    "exact-candidate-readme",
+    "closed-tei-element-structure",
+    "recursive-exact-tei-qname-attributes-text-tail-and-order",
+    "namespace-qualified-source-attributes",
+    "tei-p5-xsd",
+    "rights-and-attribution",
+    "localized-unresolved-ledger",
+    "producer-independent-transitive-import-closure"
+  ]
+}

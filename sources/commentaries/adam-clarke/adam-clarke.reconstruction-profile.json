@@ -1,0 +1,101 @@
+{
+  "contract": "ocd-helloao-adam-clarke-profile-v1",
+  "profile_id": "helloao-adam-clarke-complete-retained-json-v1",
+  "version": 1,
+  "work_id": "adam-clarke",
+  "source_root": "raw/helloao_local/api/c/adam-clarke",
+  "scope": {
+    "member_count": 856,
+    "total_bytes": 28421263,
+    "metadata_members": [
+      "books.json",
+      "profiles.json"
+    ],
+    "book_count": 57,
+    "chapter_count": 854,
+    "commentary_occurrence_count": 13318,
+    "book_introduction_count": 57,
+    "chapter_introduction_present_count": 831,
+    "chapter_introduction_absent_count": 23,
+    "missing_canonical_books": [
+      "DEU",
+      "JDG",
+      "PSA",
+      "PRO",
+      "ECC",
+      "JER",
+      "JOL",
+      "MAL",
+      "MAT"
+    ],
+    "nonmonotonic_chapters": [
+      "1CO/16.json",
+      "2CO/13.json",
+      "2KI/25.json",
+      "2SA/14.json",
+      "GAL/5.json",
+      "HEB/8.json",
+      "PHP/3.json",
+      "ZEC/4.json"
+    ],
+    "duplicate_verse_occurrences": {
+      "2SA/14.json": [27]
+    }
+  },
+  "fidelity_policy": {
+    "book_order": "books.json order, unchanged",
+    "chapter_order": "book metadata chapter sequence, unchanged",
+    "occurrence_order": "chapter.content array order, unchanged",
+    "occurrence_identity": "book, chapter, retained array ordinal; verse number is not a unique key",
+    "content": "each sole chapter.content[].content string is preserved byte-for-codepoint in one TEI paragraph",
+    "book_introductions": "all retained book introduction strings are represented",
+    "chapter_introductions": "831 retained strings are represented; 23 absent JSON properties remain absent",
+    "forbidden": [
+      "sorting commentary occurrences by verse number",
+      "merging duplicate verse-number occurrences",
+      "inferring verse ranges",
+      "injecting Bible or BSB verse text",
+      "inventing the nine absent canonical books",
+      "treating the retained 57-book witness as a complete 66-book Bible",
+      "merging the separate 1836 scan witness"
+    ]
+  },
+  "identity_and_rights_policy": {
+    "retained_title": "Adam Clarke Bible Commentary",
+    "retained_language": "eng",
+    "retained_text_direction": "rtl",
+    "retained_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "config_license_drift": "cc0-1.0",
+    "edition": null,
+    "original_publication_year": null,
+    "alternate_witness_id": "clarke-1836-tegg-vol-ii-archive-org",
+    "alternate_witness_disposition": "identity evidence only; not merged with the HelloAO JSON witness"
+  },
+  "canonical_editorial_correction_boundary": {
+    "ledger_authority": "canonical-editorial-correction-ledger",
+    "writer_receipt_authority": "canonical-editorial-correction-writer-receipt",
+    "correction_id": "correction_13dda1f028ab491e",
+    "retained_source_path": "raw/helloao_local/api/c/adam-clarke/2JN/1.json",
+    "retained_occurrence_ordinal": 9,
+    "retained_occurrence_number": 9,
+    "retained_reading": "hath",
+    "canonical_record_path": "data/commentaries/adam-clarke/2-john.json",
+    "canonical_entry_id": "adam-clarke.2John.1.9",
+    "canonical_field_path": "commentary_text",
+    "canonical_display_reading": "has",
+    "disposition": "separate-display-layer-editorial-correction-not-applied-to-retained-source-tei"
+  },
+  "candidate_model": {
+    "member_names": [
+      "manifest.json",
+      "content.tei.xml",
+      "source-accountability.json",
+      "provenance.json",
+      "unresolved.jsonl",
+      "README.source.md"
+    ],
+    "status": "nonaccepted",
+    "accepted_ir": "not_accepted",
+    "publication": "not_ready"
+  }
+}

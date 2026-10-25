@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "artifact": "visual/candidate.opening.png",
+      "observation": "The rendered opening visibly contains the source Transcriber's Notes, sixth-edition title and author, dedication, printed pages v-ix, the 1878 preface, and the first-edition advertisement. Greek and italic type render legibly.",
+      "region": "opening-and-title",
+      "result": "pass",
+      "sha256": "2a049e9ad536a8947cfba2141811a7d419740cfe498fe6b8081c04eb0c2b46e3"
+    },
+    {
+      "artifact": "visual/candidate.middle.png",
+      "observation": "The representative middle transition visibly preserves the preceding footnote group, page 323 boundary, Chapter VII heading, application subtitle, continuity-of-principles section, numbered subsection, italics, and page 324 boundary.",
+      "region": "representative-middle-transition",
+      "result": "pass",
+      "sha256": "f10af55b88ae1944c1b79e0464ee5b1445f4d2837ae1475ebca742a39c654580"
+    },
+    {
+      "artifact": "visual/candidate.ending.png",
+      "observation": "The rendered ending visibly contains the closing argument through THE END, page 445, the final linked footnote, and the full final Transcriber's Notes correction apparatus beginning with blank-page observations and source corrections.",
+      "region": "ending-and-final-apparatus",
+      "result": "pass",
+      "sha256": "f14232b5a8ebbdf19a298ef6c63f3d233878c5e4d0828ff083707b931f43bc84"
+    },
+    {
+      "artifact": "visual/candidate.greek.png",
+      "observation": "Greek glyphs, italics, correction evidence, and the associated numbered footnote list render legibly in the unusual-feature viewport; programmatic accounting separately verifies all 26 Greek spans retain transliteration metadata.",
+      "region": "unusual-greek-and-notes",
+      "result": "pass",
+      "sha256": "cefd425e5d5f53d3a886eb61299aecaa70a03f07e6919c8490caf76ece47b377"
+    }
+  ],
+  "candidate_sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1",
+  "human_acceptance": "not performed; this is lightweight technical visual spot verification only",
+  "render_probe": {
+    "ceteicean_elements_upgraded": true,
+    "dangling_note_references": 0,
+    "end_notes": 400,
+    "note_references": 401,
+    "paragraphs": 1526
+  },
+  "verdict": "technical visual spot verification passed",
+  "viewer": "build/tools/tei_viewer_screenshot.py using the repository CETEIcean verification viewer"
+}

@@ -1,0 +1,42 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf210-ambrose-retained-xml",
+  "authorities": [
+    {"name": "retained-thml", "path": "raw/ccel/npnf2/npnf210.xml", "role": "primary-source", "bytes": 3837030, "sha256": "c6f1a9d66653852d8b743c84a613c72c521dfb1b05602f0a2eff400c17665ee8"},
+    {"name": "source-local-attribution-readme", "path": "sources/structured-text/ambrose-npnf210/README.md", "role": "source-attribution-readme", "bytes": 1527, "sha256": "a459e735d52487fbebb45fe58c699623594390247be84acdbd92b0e10caf517e"},
+    {"name": "ambrose-concerning-repentance-config", "path": "sources/structured-text/ambrose-of-milan-concerning-repentance/config.json", "role": "local-metadata-claim-evidence", "bytes": 2224, "sha256": "b6520a21dc5b3b131c4b8ea5fcc90c725b4337504b8a779111c85bd4e09c0fca", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-concerning-virgins-config", "path": "sources/structured-text/ambrose-of-milan-concerning-virgins/config.json", "role": "local-metadata-claim-evidence", "bytes": 2225, "sha256": "73c3182395c065abf68f16a51668a795d441f96da06ee9e21737c5b7da08af52", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-concerning-widows-config", "path": "sources/structured-text/ambrose-of-milan-concerning-widows/config.json", "role": "local-metadata-claim-evidence", "bytes": 2222, "sha256": "a2b6501df93a28004f2c6fd44c1f5e7b0d355cae9d4406fdca1d855d6b95b814", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-exposition-faith-config", "path": "sources/structured-text/ambrose-of-milan-exposition-of-christian-faith/config.json", "role": "local-metadata-claim-evidence", "bytes": 2252, "sha256": "6b30fd628c5026518b277763e66f1293873a91a7de178a1b1771ed1c31322384", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-letters-config", "path": "sources/structured-text/ambrose-of-milan-letters/config.json", "role": "local-metadata-claim-evidence", "bytes": 2210, "sha256": "d35bb2a7849b8b71cff8700f6027c595025e2032b973528499cf3fcc5d0b986e", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-duties-config", "path": "sources/structured-text/ambrose-of-milan-on-duties-of-clergy/config.json", "role": "local-metadata-claim-evidence", "bytes": 2226, "sha256": "75e135eb4dd077045918eb613693dfabcf189b6657421b6398597dfd81a07542", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-holy-spirit-config", "path": "sources/structured-text/ambrose-of-milan-on-holy-spirit/config.json", "role": "local-metadata-claim-evidence", "bytes": 2207, "sha256": "9db31d3338ac82d63e539d293f6e7bfb073953a560b274dc6a7fbffbc8c7f6ac", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-mysteries-config", "path": "sources/structured-text/ambrose-of-milan-on-mysteries/config.json", "role": "local-metadata-claim-evidence", "bytes": 2201, "sha256": "8d73bc24b3afa8bd422db3058e6fb9509764a70b0f3d164fff41025caba3d2da", "byte_mode": "exact-bytes-v1" },
+    {"name": "ambrose-satyrus-config", "path": "sources/structured-text/ambrose-of-milan-on-satyrus/config.json", "role": "local-metadata-claim-evidence", "bytes": 2228, "sha256": "05470b76df38ce182fab317efc94f586ce044d09deee8acaac4738ec11b1fd38", "byte_mode": "exact-bytes-v1" },
+    {"name": "ccel-permission", "path": "sources/structured-text/athanasius-on-the-incarnation/ccel-permission.md", "role": "source-rights-evidence", "bytes": 1604, "sha256": "0bf59cb9f186a8414aa845bad7cf2fd632c480a35e8dbbb2e10ad80f5daf6595"},
+    {"name": "reconstruction-profile", "path": "sources/structured-text/ambrose-npnf210/npnf-ambrose.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 2632, "sha256": "2a08a1f331e688fd3043762b8019dddf266567a68325042077a32ede5bc282da"},
+    {"name": "validation-policy", "path": "sources/structured-text/ambrose-npnf210/npnf-ambrose.validation-policy.json", "role": "independent-validation-policy", "bytes": 2816, "sha256": "82e5cf52eb3cf0732a93ec87467f98b6225f532e3c27f7976e30b3bc7b8107f9"},
+    {"name": "source-accountability-schema", "path": "sources/structured-text/ambrose-npnf210/npnf-ambrose.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 5549, "sha256": "2ed0b65362ed17243ebefa7376e13828800a7ecb39b4ec4ecf31956c832bf92e"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {
+    "id": "ocd-npnf210-ambrose-assigned-works-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf_ambrose_reconstruction.py",
+    "implementation_sha256": "8f6564b02abb398776ad91ea2fa5e61df08c4898d5a7e6397f4998ead12c1554"
+  },
+  "validator": {
+    "id": "ocd-npnf-ambrose-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf_ambrose_oracle.py",
+    "implementation_sha256": "5600e62b67cc6ad0fcfa75073d74a4b7899bd8990cae20b8f2934547fb2577f7",
+    "import_closure_sha256": "58865712a0e3a78dbbd8ca6120f0428c2753fe7ec27fd17c4bc073139edc23e8"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

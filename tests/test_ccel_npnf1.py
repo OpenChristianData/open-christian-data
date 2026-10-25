@@ -9,6 +9,7 @@ Covers key correctness invariants for NPNF1 Augustine and Chrysostom volumes:
   - Batch B (Chrysostom) homily-count assertions against actual XML
 """
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -17,6 +18,20 @@ from xml.etree import ElementTree as ET
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+NPNF110_SOURCE_FILE = REPO_ROOT / "raw" / "ccel" / "npnf1" / "npnf110.xml"
+NPNF110_OUTPUT_FILE = (
+    REPO_ROOT
+    / "data"
+    / "structured-text"
+    / "chrysostom-homilies-on-matthew.json"
+)
+NPNF110_GREEK_FIXTURE = (
+    REPO_ROOT
+    / "tests"
+    / "fixtures"
+    / "ccel_npnf1"
+    / "npnf110_homily1_greek_inline.json"
+)
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
@@ -25,6 +40,7 @@ from build.parsers.ccel_npnf1 import (  # noqa: E402
     _CONTENT_DIV_TYPES,
     _EDITORIAL_TITLE_PATTERNS,
     _DIV_TYPE_MAP,
+    _SKIP_TAGS,
     VOLUME_CONFIG,
     BATCH_B_VOLS,
     clean_text,
@@ -350,3 +366,95 @@ def test_chrysostom_top_section_counts(slug, expected):
     assert len(sections) == expected, (
         f"{slug}: expected {expected} top sections, got {len(sections)}"
     )
+
+
+@pytest.mark.raw_required(NPNF110_SOURCE_FILE)
+def test_npnf110_homily1_preserves_all_greek_inline_boundaries_and_locations():
+    """Pin every Homily 1 Greek span without retaining broad-pass machinery."""
+    expected = json.loads(NPNF110_GREEK_FIXTURE.read_text(encoding="utf-8"))
+    assert expected["source_path"] == NPNF110_SOURCE_FILE.relative_to(REPO_ROOT).as_posix()
+    source_bytes = NPNF110_SOURCE_FILE.read_bytes()
+    assert hashlib.sha256(source_bytes).hexdigest() == expected["source_sha256"]
+
+    root = ET.fromstring(source_bytes)
+
+    def local_name(element):
+        return element.tag.rsplit("}", 1)[-1]
+
+    homilies = [
+        element
+        for element in root.iter()
+        if local_name(element) == "div2"
+        and element.get("id") == expected["division_id"]
+    ]
+    assert len(homilies) == 1
+    homily = homilies[0]
+    assert homily.get("title") == expected["division_title"]
+    assert homily.get("type") == "Homily"
+
+    parent_by_child = {child: parent for parent in homily.iter() for child in parent}
+    actual_occurrences = []
+    for element in homily.iter():
+        if element.get("lang") != expected["language"]:
+            continue
+        parent = parent_by_child[element]
+        assert local_name(element) == "span"
+        assert local_name(parent) == "p"
+        ancestor = parent
+        ancestor_tags = []
+        while ancestor is not homily:
+            ancestor_tags.append(local_name(ancestor))
+            ancestor = parent_by_child[ancestor]
+        assert "note" in ancestor_tags
+        locator = (
+            f"div2#{homily.get('id')}/p#{parent.get('id')}/"
+            f"span#{element.get('id')}"
+        )
+        actual_occurrences.append(
+            [locator, " ".join("".join(element.itertext()).split())]
+        )
+
+    assert actual_occurrences == expected["occurrences"]
+    assert len(actual_occurrences) == 37
+    assert len({locator for locator, _text in actual_occurrences}) == 37
+
+
+def test_npnf110_ordinary_output_still_omits_homily1_greek_note_spans():
+    """Pin the current JSON loss so an improved route requires deliberate review."""
+    expected = json.loads(NPNF110_GREEK_FIXTURE.read_text(encoding="utf-8"))
+    output = json.loads(NPNF110_OUTPUT_FILE.read_text(encoding="utf-8"))
+    homilies = [
+        section
+        for section in output["data"]["sections"]
+        if section.get("title") == expected["division_title"]
+    ]
+    assert len(homilies) == 1
+    homily = homilies[0]
+
+    output_text = json.dumps(output, ensure_ascii=False)
+    assert all(text not in output_text for _locator, text in expected["occurrences"])
+    assert all(
+        locator not in output_text for locator, _text in expected["occurrences"]
+    )
+    assert "note" in _SKIP_TAGS
+    assert "notes" not in homily
+    assert all(isinstance(block, str) for block in homily["content_blocks"])
+
+    language_boundary_keys = {
+        "lang",
+        "xml:lang",
+        "inline_language",
+        "inline_language_spans",
+        "language_spans",
+    }
+
+    def nested_keys(value):
+        if isinstance(value, dict):
+            for key, child in value.items():
+                yield key
+                yield from nested_keys(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from nested_keys(child)
+
+    assert language_boundary_keys.isdisjoint(nested_keys(homily))

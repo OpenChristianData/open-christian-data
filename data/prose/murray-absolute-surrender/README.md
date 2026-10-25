@@ -1,0 +1,11 @@
+# Absolute Surrender and Other Addresses: selected text, rights, and source credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/murray/surrender.html).
+
+The eleven ordered source units contain the title, nine addresses, and factual scripture index. The retained title says Moody Press, Chicago, 1895, and credits Claude King for scanning and correction in September 1999, expressly stating that this text is in public domain. The electronic header also labels this lightly language-edited witness Public Domain and records added scripture references. This disposition relies on that witness-specific declaration for its electronic text; it does not pretend every edit has been collated against an 1895 printing. Credit Andrew Murray, Claude King, and CCEL. Tim Perrine's modern staff summary and source CSS are excluded. The conflicting inherited Marshall Brothers, London catalog assertion is not adopted. Scripture labels remain as supplied, without certifying normalized Bible mappings.
+
+Selected row license: `Public domain (United States): historical Andrew Murray text; provider-designated Public Domain Claude King electronic transcription, with factual scripture references; CCEL files and formatting excluded`.
+
+The release distributes the selected underlying text, not CCEL's electronic file, stylesheet, cover art, staff description, or website. OCD's retained April 1, 2026 permission from CCEL distinguishes extraction of underlying public-domain text from rights reserved in CCEL files and formatting. Keep the credit **sourced via CCEL.org** with these records. CCEL's restrictions on selling its files or derivatives of its formatting remain applicable to those materials; this release does not grant rights in them. See [CCEL's policy](https://www.ccel.org/about/copyright.html).
+
+This October 13, 2026 disposition replaces the earlier private-preparation qualification for this exact selected text scope. Public-domain status here is qualified to the United States, not a CC0 dedication or a claim of worldwide clearance. The historical text, translation, electronic source, and excluded modern material remain distinct. The source witness is not claimed to be collated to an exact print exemplar.

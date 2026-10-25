@@ -297,7 +297,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main(argv: list[str] | None = None) -> int:
+def historical_main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         stats = collect_stats(args.exports_dir, args.encoding)
@@ -320,6 +320,15 @@ def main(argv: list[str] | None = None) -> int:
     except (FileNotFoundError, RuntimeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
+
+
+def main(argv: list[str] | None = None) -> int:
+    """Current CLI requires a verified v2 release and original selection.
+
+    Legacy helpers above remain historical diagnostics pending PIPE-023.
+    """
+    from build.tools.report_release_stats import main as verified_main
+    return verified_main(argv)
 
 
 if __name__ == "__main__":

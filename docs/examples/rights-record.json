@@ -1,0 +1,28 @@
+{
+  "schema_version": "2.1",
+  "record_id": "bounds-selected-us-20261013",
+  "work_id": "bounds-power-through-prayer",
+  "edition_id": "bounds-power-through-prayer-ccel-thml-electronic",
+  "scope": "selected-text",
+  "subject": {
+    "id": "bounds-power-through-prayer-historical-selected-text",
+    "path": "docs/examples/rights-subject.json",
+    "sha256": "181f68aba6b30ec1741959dc2a37e13fef5a373bddcd5136dcdf3b28e4bc7e65"
+  },
+  "rights_status": "public-domain",
+  "jurisdictions": [
+    "US"
+  ],
+  "license_ids": [],
+  "basis": "statutory-assessment",
+  "condition": "unconditional",
+  "evidence": [
+    {
+      "path": "reports/_logs/huggingface-v1.0.0-20261013/rights-resolution-candidate.json",
+      "sha256": "c15dd75e8e96e7dee725b13f1698b1cd16b40acf7c1ff78457618c5a378c9fb1",
+      "pointer": "/decisions/0"
+    }
+  ],
+  "assessed_by": "Existing October 13 decision, encoded by metadata implementation",
+  "assessed_on": "2026-10-14"
+}

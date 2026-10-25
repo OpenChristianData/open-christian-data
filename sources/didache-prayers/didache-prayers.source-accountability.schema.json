@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "work_id", "source_id", "source_bytes", "source_sha256", "chapter_count", "row_count", "verse_count", "footnote_count", "side_label_count", "unsupported_constructs", "omitted_count", "duplicate_count", "unresolved_count"],
+  "properties": {
+    "contract": {"const": "ocd-didache-prayers-source-accountability-v1"}, "profile_id": {"const": "didache-prayers-retained-wikisource-v1"}, "work_id": {"const": "didache-prayers"}, "source_id": {"type": "string"}, "source_bytes": {"const": 23668}, "source_sha256": {"const": "9ba0420fc2f1ef3d960335c100e31f8edbe7343b7fc5eab66dcce075744db764"}, "chapter_count": {"const": 16}, "row_count": {"const": 30}, "verse_count": {"const": 100}, "footnote_count": {"const": 10}, "side_label_count": {"const": 30}, "unsupported_constructs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "omitted_count": {"const": 0}, "duplicate_count": {"const": 0}, "unresolved_count": {"const": 3}
+  }
+}

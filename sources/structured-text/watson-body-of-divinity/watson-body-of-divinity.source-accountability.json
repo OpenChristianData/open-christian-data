@@ -1,0 +1,105 @@
+{
+  "contract": "watson-body-of-divinity-source-accountability-v1",
+  "schema": "watson-body-of-divinity.source-accountability.schema.json",
+  "profile_id": "watson-body-of-divinity-retained-thml-route-v1",
+  "source_scope": "Complete single retained ThML member and every direct ThML.body div1 carrier in source order.",
+  "source_member": {
+    "path": "raw/ccel/watson/divinity.xml",
+    "bytes": 1327340,
+    "sha256": "4d51224997805193f13058ccf5fa84a6652bc41570283956cbcbe1300e1f815a",
+    "disposition": "included as the sole retained source member"
+  },
+  "member_census": [
+    {
+      "path": "raw/ccel/watson/divinity.xml",
+      "bytes": 1327340,
+      "sha256": "4d51224997805193f13058ccf5fa84a6652bc41570283956cbcbe1300e1f815a",
+      "decision": "include",
+      "reason": "The exact retained member named by 37c-315 and LIB-056; it is the sole retained ThML source member in this route slice."
+    }
+  ],
+  "excluded_member_count": 0,
+  "carrier_inventory": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "A Body of Divinity ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 1, "native_id": "iii", "source_tag": "div1", "source_title": "Brief Memoir Of Thomas Watson ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 2, "native_id": "iv", "source_tag": "div1", "source_title": "1. A Preliminary Discourse To Catechising ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 3, "native_id": "v", "source_tag": "div1", "source_title": "2. Introduction ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 4, "native_id": "vi", "source_tag": "div1", "source_title": "3. God and his creation ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 5, "native_id": "vii", "source_tag": "div1", "source_title": "4. The fall ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 6, "native_id": "viii", "source_tag": "div1", "source_title": "5. The covenant of grace and its mediator ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 7, "native_id": "ix", "source_tag": "div1", "source_title": "6. The application of redemption ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 8, "native_id": "x", "source_tag": "div1", "source_title": "7. Death and the last day ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body"},
+    {"position": 10, "native_id": "xi", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back"}
+  ],
+  "body_node_sequence": [
+    {"position": 0, "native_id": "i", "source_tag": "div1", "source_title": "A Body of Divinity ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 1, "native_id": "iii", "source_tag": "div1", "source_title": "Brief Memoir Of Thomas Watson ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 2, "native_id": "iv", "source_tag": "div1", "source_title": "1. A Preliminary Discourse To Catechising ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 3, "native_id": "v", "source_tag": "div1", "source_title": "2. Introduction ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 4, "native_id": "vi", "source_tag": "div1", "source_title": "3. God and his creation ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 5, "native_id": "vii", "source_tag": "div1", "source_title": "4. The fall ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 6, "native_id": "viii", "source_tag": "div1", "source_title": "5. The covenant of grace and its mediator ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 7, "native_id": "ix", "source_tag": "div1", "source_title": "6. The application of redemption ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 8, "native_id": "x", "source_tag": "div1", "source_title": "7. Death and the last day ", "disposition": "selected-work", "selection_role": "body", "tei_region": "body", "node_kind": "carrier"},
+    {"position": 9, "kind": "comment", "path": "/ThML/ThML.body/comment()[1]", "text": " added reason=\"AutoIndexing\" ", "tail": "\n    ", "disposition": "accounted-source-body-wrapper"},
+    {"position": 10, "native_id": "xi", "source_tag": "div1", "source_title": "Indexes", "disposition": "selected-work", "selection_role": "back", "tei_region": "back", "node_kind": "carrier"},
+    {"position": 11, "kind": "comment", "path": "/ThML/ThML.body/comment()[2]", "text": " /added ", "tail": "\n\n\n\n  ", "disposition": "accounted-source-body-wrapper"}
+  ],
+  "document_shell": {
+    "xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "root_name": "ThML",
+    "prolog": [
+      {"kind": "processing-instruction", "path": null, "text": "type=\"text/xml\"\n    href=\"http://www.ccel.org/ss/thml.html.xsl\" ", "tail": "", "disposition": "accounted-source-document-shell", "target": "xml-stylesheet"},
+      {"kind": "processing-instruction", "path": null, "text": "type=\"text/xsl\"\n    href=\"http://www.ccel.org/ss/thml.html.xsl\" ", "tail": "", "disposition": "accounted-source-document-shell", "target": "xml-stylesheet"},
+      {"kind": "comment", "path": null, "text": " Copyright Christian Classics Ethereal Library ", "tail": "", "disposition": "accounted-source-document-shell"}
+    ],
+    "epilog": [],
+    "comments_and_processing_instructions": [
+      {"kind": "comment", "path": "/ThML/ThML.body/comment()[1]", "text": " added reason=\"AutoIndexing\" ", "tail": "\n    ", "disposition": "accounted-outside-selected-content"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[10]/div2/comment()[1]", "text": " added reason=\"insertIndex\" class=\"scripRef\" ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[10]/div2/comment()[2]", "text": " Start of automatically inserted scripRef index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[10]/div2/comment()[3]", "text": " End of scripRef index ", "tail": "\n", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/div1[10]/div2/comment()[4]", "text": " /added ", "tail": "\n\n\n      ", "disposition": "preserved-in-tei"},
+      {"kind": "comment", "path": "/ThML/ThML.body/comment()[2]", "text": " /added ", "tail": "\n\n\n\n  ", "disposition": "accounted-outside-selected-content"}
+    ],
+    "head_children": [
+      {"position": 0, "tag": "generalInfo", "attributes": {}, "text_sha256": "da34c80ae98d390d5aaf4b4dd82e42fd01a0f27a785b555d045e0ed1cf44fe7c", "disposition": "reproduced-in-source-readme"},
+      {"position": 1, "tag": "printSourceInfo", "attributes": {}, "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "disposition": "reproduced-in-source-readme"},
+      {"position": 2, "tag": "electronicEdInfo", "attributes": {}, "text_sha256": "eeefc7399aa3245bf0fa5b80663e0c8813df826b21fae5a886707d64cd65ecb7", "disposition": "reproduced-in-source-readme"}
+    ]
+  },
+  "selected_feature_count": 5861,
+  "selected_feature_counts": {
+    "a": 2070,
+    "div": 1,
+    "div1": 10,
+    "div2": 42,
+    "h1": 2,
+    "h2": 13,
+    "h3": 39,
+    "insertIndex": 1,
+    "p": 1658,
+    "scripRef": 2025
+  },
+  "selected_comment_count": 4,
+  "document_comment_count": 6,
+  "source_claims": [
+    {"source_path": "/ThML/ThML.head/generalInfo", "text_sha256": "da34c80ae98d390d5aaf4b4dd82e42fd01a0f27a785b555d045e0ed1cf44fe7c", "excerpt": "series of sermons on the Westminster Catechism", "interpretation": "Provider editorial description used only as structural context; it does not settle the work boundary."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/publisherID", "text_sha256": "efaccac7d39eb66bdc41072c5b7c62d8a159bd8cdbe0eec7e3647f6f1481dd88", "excerpt": "ccel", "interpretation": "Source electronic publisher identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/authorID", "text_sha256": "3f8d40ad6a1d0038b8c334303fe06e70df25a1b78220855f6acc3aec951ffb3b", "excerpt": "watson", "interpretation": "Source electronic author identifier."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bookID", "text_sha256": "50ed8fe12fef011334a45e58998ffe412c3c9727613f8beeca24feb3dd63cdde", "excerpt": "divinity", "interpretation": "Source electronic book identifier; not a settled constituent-work boundary."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/workID", "text_sha256": "50ed8fe12fef011334a45e58998ffe412c3c9727613f8beeca24feb3dd63cdde", "excerpt": "divinity", "interpretation": "Source electronic work identifier; not an independent edition or parts decision."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/bkgID[1]", "text_sha256": "3e6f9019734f1580f47f7e112fd26041611820dcb8157275256e35a675673008", "excerpt": "body_of_divinity_(watson)", "interpretation": "Source electronic catalog identifier; not adopted as print-edition evidence."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Title", "text_sha256": "aa712ca136c3d1943987dbbf367afed122a792bc1850fd4d6bf5766fc869c6d3", "excerpt": "A Body of Divinity", "interpretation": "Primary retained-source title observation and route label."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Creator[@sub=\"Author\"][@scheme=\"short-form\"]", "text_sha256": "cab245e8a8b4f7d59882e6ca0d32f9fbf0aa787be3baec8ca84a8434e5d18d1b", "excerpt": "Thomas Watson", "interpretation": "Primary retained-source author observation, corroborated by title-page text."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Publisher", "text_sha256": "1ecf5d4ccd74c2ebebbe49fca7c70ba78f1fecbf8b748b0d6a44e2f56f2e1d88", "excerpt": "Christian Classics Ethereal Library", "interpretation": "Provider metadata statement."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Date[@sub=\"Created\"]", "text_sha256": "aa354edd404c0cd8d77fedad7e76a1e5ebdd96d8522ce40e0bc95c3c8214ddbe", "excerpt": "2002-07-17", "interpretation": "Electronic metadata date, not composition or print date."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Identifier[@scheme=\"URL\"]", "text_sha256": "60e5b6109dfcfaf715beb827e279e9084033e9bb7ec61ab6fbd939063f21ad1e", "excerpt": "/ccel/watson/divinity.html", "interpretation": "Embedded electronic identifier, kept distinct from the XML acquisition locator."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Language[@scheme=\"ISO639-3\"]", "text_sha256": "82fe032bd9337b5dfb99b28717cf8651daac73f2d319e6d6213544660b961ee7", "excerpt": "eng", "interpretation": "Electronic-source language metadata; no original-language claim is added."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC/DC.Rights", "text_sha256": "f6960be1b71d602352d7d9de76a564f54f3dab550b23fa5674049f842116ca55", "excerpt": "Public Domain", "interpretation": "Provider rights statement, not project rights clearance."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h1", "text_sha256": "aa712ca136c3d1943987dbbf367afed122a792bc1850fd4d6bf5766fc869c6d3", "excerpt": "A Body of Divinity", "interpretation": "Retained title-page heading; work/edition identity remains separately unresolved."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h3", "text_sha256": "e1c48c4ec942131cd78b180c9efc83c312415a3d0f319c2695d60effb52c3501", "excerpt": "Contained In Sermons Upon The Westminster Assembly's Catechism", "interpretation": "Retained title-page statement; it is not used to infer a containing work or print lineage."},
+    {"source_path": "/ThML/ThML.body/div1[@id=\"i\"]/h2", "text_sha256": "6cb023ae9d8d7179cd6b4c641b2813de05ef1dce5c9919300bfa7282f72c35a5", "excerpt": "By Thomas Watson", "interpretation": "Retained title-page author statement."}
+  ]
+}

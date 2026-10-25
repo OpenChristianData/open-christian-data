@@ -16,12 +16,12 @@ from ocd_kernel.lib.schema_enums import resolve_schema_path
 SCHEMA_DIR = Path(__file__).resolve().parents[2] / "schemas" / "v1"
 RECONCILED_SCHEMA = json.loads(resolve_schema_path("reconciled_record").read_text(encoding="utf-8"))
 ME_SCHEMA = RECONCILED_SCHEMA["$defs"]["match_explanation"]
+jsonschema.Draft202012Validator.check_schema(ME_SCHEMA)
+ME_VALIDATOR = jsonschema.Draft202012Validator(ME_SCHEMA)
 
 
 def _validate(instance):
-    jsonschema.validate(instance=instance, schema=ME_SCHEMA, resolver=jsonschema.RefResolver(
-        base_uri=RECONCILED_SCHEMA.get("$id", ""), referrer=RECONCILED_SCHEMA
-    ))
+    ME_VALIDATOR.validate(instance)
 
 
 def _rejects(instance):

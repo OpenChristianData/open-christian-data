@@ -14,8 +14,19 @@
   "era": "modern",
   "audience": "lay",
   "license": "public-domain",
+  "source_bundle_member": "ccel_whitefield_sermons.xml",
   "source_url": "https://www.ccel.org/ccel/whitefield/sermons.xml",
   "source_format": "ThML XML",
   "source_edition": "CCEL digitization; posthumous collected edition (1771)",
-  "notes": "59 selected sermons. Whitefield died 1770 -- text is public domain. ThML source from CCEL. CCEL permission confirmed 2026-04-01 (Quincy). Note: osisRef is not populated in CCEL's Whitefield source; scripture refs are parsed from first-paragraph free text."
+  "download_date": "2026-04-12",
+  "source_hash": "sha256:cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec",
+  "supplementary_source": {
+    "bundle_member": "pg77041.txt",
+    "url": "https://www.gutenberg.org/ebooks/77041",
+    "format": "Project Gutenberg UTF-8 plain text",
+    "edition": "The Works of the Reverend George Whitefield, Volume 6 (1771), Project Gutenberg #77041",
+    "download_date": "2026-04-17",
+    "source_hash": "sha256:b952725e8731399d4fd7fbe319aa9f57660d887f7cc6dd3937da91754e4ce08e"
+  },
+  "notes": "The primary CCEL witness supplies sermons 1-59. Sermons 60-61 ('Peter's Denial of his Lord'; 'The True Way of Beholding the Lamb of God') come from Project Gutenberg #77041, Works Volume 6 (1771), and are absent from the CCEL Selected Sermons witness. Whitefield died 1770, so both source texts are public domain. CCEL permission was confirmed 2026-04-01 (Quincy). CCEL osisRef values are empty; scripture references there are parsed from first-paragraph free text."
 }

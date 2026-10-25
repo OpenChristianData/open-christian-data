@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/bede-gutenberg-source-accountability-v1.schema.json",
+  "title": "Bede Gutenberg source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "work_id", "edition_id", "acquisition_id", "source_sha256", "source_archive_sha256", "candidate_sha256", "selection", "source_members", "provider_header_and_footer", "head_and_css", "cover_image", "literary_parts", "continuation", "footnote_count", "printed_page_marker_count"],
+  "properties": {
+    "contract": {"const": "ocd-bede-gutenberg-accountability-v1"},
+    "work_id": {"const": "bede-ecclesiastical-history-of-england"},
+    "edition_id": {"const": "bede-ecclesiastical-history-of-england-gutenberg-electronic"},
+    "acquisition_id": {"const": "bede-ecclesiastical-history-of-england-gutenberg-acquired"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "selection": {"type": "string", "minLength": 1},
+    "source_members": {"type": "array", "minItems": 2, "maxItems": 2},
+    "provider_header_and_footer": {"type": "string"},
+    "head_and_css": {"type": "string"},
+    "cover_image": {"type": "string"},
+    "literary_parts": {"const": ["front", "body", "back"]},
+    "continuation": {"type": "string"},
+    "footnote_count": {"const": 1081},
+    "printed_page_marker_count": {"const": 465}
+  }
+}

@@ -1,4 +1,7 @@
 # Logos vs OCD — Strategy Document
+
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 Created: June 2026
 Based on: Full Logos tier inventory extraction + patristic copyright analysis
 

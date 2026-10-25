@@ -1,0 +1,149 @@
+{
+  "contract": "ocd-37c236-reconstruction-profile-v1",
+  "profile_id": "jps-retained-json-complete-v1",
+  "version": 1,
+  "work_id": "jps",
+  "source_member": {
+    "name": "jps-source",
+    "path": "raw/bible_databases/formats/json/JPS.json",
+    "bytes": 6374024,
+    "sha256": "cb698cfbf2e97843dd4357b725c96ac6e9b2f3f23c5e3e3f6a3cdb5912ca183a"
+  },
+  "source_selector": {
+    "document": "raw/bible_databases/formats/json/JPS.json",
+    "content_pointer": "/books",
+    "content_selection": "every ordered array item; no subset",
+    "source_label_pointer": "/translation",
+    "source_label_value": "JPS: Jewish Publication Society Old Testament",
+    "work_or_edition_identity_claim": "not established by this marker"
+  },
+  "source_envelope": {
+    "top_level_keys_in_order": ["translation", "books"],
+    "book_count": 39,
+    "chapter_count": 929,
+    "verse_carrier_count": 23213,
+    "nonempty_text_count": 23194,
+    "empty_text_count": 19,
+    "empty_text_carriers": [
+      "Exodus 20:24",
+      "Exodus 20:25",
+      "Exodus 20:26",
+      "Leviticus 6:22",
+      "Deuteronomy 5:31",
+      "Deuteronomy 5:32",
+      "Deuteronomy 5:33",
+      "I Samuel 20:42",
+      "I Kings 22:43",
+      "Malachi 3:19",
+      "Malachi 3:20",
+      "Malachi 3:21",
+      "Malachi 3:22",
+      "Malachi 3:23",
+      "Malachi 3:24",
+      "Psalms 64:10",
+      "Psalms 70:6",
+      "Psalms 81:1",
+      "I Chronicles 12:4"
+    ],
+    "book_chapters_in_source_order": [
+      ["Genesis", 50], ["Exodus", 40], ["Leviticus", 27], ["Numbers", 36],
+      ["Deuteronomy", 34], ["Joshua", 24], ["Judges", 21], ["I Samuel", 31],
+      ["II Samuel", 24], ["I Kings", 22], ["II Kings", 25], ["Isaiah", 66],
+      ["Jeremiah", 52], ["Ezekiel", 48], ["Hosea", 14], ["Joel", 4],
+      ["Amos", 9], ["Obadiah", 1], ["Jonah", 4], ["Micah", 7],
+      ["Nahum", 3], ["Habakkuk", 3], ["Zephaniah", 3], ["Haggai", 2],
+      ["Zechariah", 14], ["Malachi", 3], ["Psalms", 150], ["Job", 42],
+      ["Proverbs", 31], ["Ruth", 4], ["Song of Solomon", 8], ["Ecclesiastes", 12],
+      ["Lamentations", 5], ["Esther", 10], ["Daniel", 12], ["Ezra", 10],
+      ["Nehemiah", 13], ["I Chronicles", 29], ["II Chronicles", 36]
+    ],
+    "object_shapes_in_order": {
+      "root": ["translation", "books"],
+      "book": ["name", "chapters"],
+      "chapter": ["chapter", "verses"],
+      "verse": ["verse", "text"]
+    },
+    "ordering": "physical array order; child identity remains qualified by its source parent and ordinal",
+    "text": "retain each JSON string exactly; empty string is a present verse carrier, not an omitted record"
+  },
+  "mapping": {
+    "translation": "teiHeader/fileDesc/titleStmt/title as the exact source label only",
+    "book.name": "one body div[@type=book] per /books item; exact name in a head",
+    "chapter.chapter": "one nested div[@type=chapter] per source chapter; exact number in @n",
+    "verse.verse": "one nested ab[@type=verse] per verse object; exact number in @n",
+    "verse.text": "exact JSON string as ab character data; empty strings retain an empty ab carrier",
+    "derived_xml_ids": "ordinal source-location identifiers only; not editorial identifiers"
+  },
+  "normalization": {
+    "verse_text": "none",
+    "book_names": "none in TEI; retain I/II source spellings exactly",
+    "unsupported_fields": "reject unknown fields and duplicate JSON keys",
+    "json_syntax": "JSON punctuation and indentation are structural syntax, not textual carriers"
+  },
+  "enclosing_repository": {
+    "root": "raw/bible_databases",
+    "non_git_file_count_observed": 223,
+    "selected_primary_source_members": ["raw/bible_databases/formats/json/JPS.json"],
+    "bound_support_material": [
+      {"path": "raw/bible_databases/LICENSE", "role": "repository-level license evidence", "sha256": "65891ef7ad6c5f16335a68cf35c95376ee767706289a024c37d3ab4e352fba16"},
+      {"path": "raw/bible_databases/README.md", "role": "repository translation-label context", "sha256": "79ddcdb7fc49015d3bd9b602f50000339112a9a8372c8e5db13ae5b18d72002f"},
+      {"path": "raw/bible_databases/INSPECTION_REPORT.md", "role": "repository-level license-scope warning, not JPS-specific authority", "sha256": "b57c35fe4a704e4e2b21c949dbdd9f85cbdc0b35fbd7c5f6d0c372104e448f80"}
+    ],
+    "other_sibling_files_excluded_from_this_work_route": 219,
+    "exclusion_reason": "The selected source is the exact single JSON document above. No recursive sibling files are interpreted as JPS textual members; repository-wide license and identity-context files are separately bound as support evidence. Siblings remain retained and unchanged."
+  },
+  "downstream_segmentation_observation": {
+    "path_pattern": "data/bible-text/jps/*.json",
+    "file_count": 39,
+    "record_count_observed": 23194,
+    "role": "read-only legacy projection census; not source authority and not consumed by the TEI producer",
+    "source_order_crosswalk": [
+      ["Genesis", "Genesis", "data/bible-text/jps/genesis.json"],
+      ["Exodus", "Exodus", "data/bible-text/jps/exodus.json"],
+      ["Leviticus", "Leviticus", "data/bible-text/jps/leviticus.json"],
+      ["Numbers", "Numbers", "data/bible-text/jps/numbers.json"],
+      ["Deuteronomy", "Deuteronomy", "data/bible-text/jps/deuteronomy.json"],
+      ["Joshua", "Joshua", "data/bible-text/jps/joshua.json"],
+      ["Judges", "Judges", "data/bible-text/jps/judges.json"],
+      ["I Samuel", "1 Samuel", "data/bible-text/jps/1-samuel.json"],
+      ["II Samuel", "2 Samuel", "data/bible-text/jps/2-samuel.json"],
+      ["I Kings", "1 Kings", "data/bible-text/jps/1-kings.json"],
+      ["II Kings", "2 Kings", "data/bible-text/jps/2-kings.json"],
+      ["Isaiah", "Isaiah", "data/bible-text/jps/isaiah.json"],
+      ["Jeremiah", "Jeremiah", "data/bible-text/jps/jeremiah.json"],
+      ["Ezekiel", "Ezekiel", "data/bible-text/jps/ezekiel.json"],
+      ["Hosea", "Hosea", "data/bible-text/jps/hosea.json"],
+      ["Joel", "Joel", "data/bible-text/jps/joel.json"],
+      ["Amos", "Amos", "data/bible-text/jps/amos.json"],
+      ["Obadiah", "Obadiah", "data/bible-text/jps/obadiah.json"],
+      ["Jonah", "Jonah", "data/bible-text/jps/jonah.json"],
+      ["Micah", "Micah", "data/bible-text/jps/micah.json"],
+      ["Nahum", "Nahum", "data/bible-text/jps/nahum.json"],
+      ["Habakkuk", "Habakkuk", "data/bible-text/jps/habakkuk.json"],
+      ["Zephaniah", "Zephaniah", "data/bible-text/jps/zephaniah.json"],
+      ["Haggai", "Haggai", "data/bible-text/jps/haggai.json"],
+      ["Zechariah", "Zechariah", "data/bible-text/jps/zechariah.json"],
+      ["Malachi", "Malachi", "data/bible-text/jps/malachi.json"],
+      ["Psalms", "Psalms", "data/bible-text/jps/psalms.json"],
+      ["Job", "Job", "data/bible-text/jps/job.json"],
+      ["Proverbs", "Proverbs", "data/bible-text/jps/proverbs.json"],
+      ["Ruth", "Ruth", "data/bible-text/jps/ruth.json"],
+      ["Song of Solomon", "Song of Solomon", "data/bible-text/jps/song-of-solomon.json"],
+      ["Ecclesiastes", "Ecclesiastes", "data/bible-text/jps/ecclesiastes.json"],
+      ["Lamentations", "Lamentations", "data/bible-text/jps/lamentations.json"],
+      ["Esther", "Esther", "data/bible-text/jps/esther.json"],
+      ["Daniel", "Daniel", "data/bible-text/jps/daniel.json"],
+      ["Ezra", "Ezra", "data/bible-text/jps/ezra.json"],
+      ["Nehemiah", "Nehemiah", "data/bible-text/jps/nehemiah.json"],
+      ["I Chronicles", "1 Chronicles", "data/bible-text/jps/1-chronicles.json"],
+      ["II Chronicles", "2 Chronicles", "data/bible-text/jps/2-chronicles.json"]
+    ]
+  },
+  "identity_and_rights": {
+    "catalog_id_use": "jps is the assigned route label only",
+    "edition": "unresolved; no edition date or print-edition completeness asserted",
+    "rights": "unresolved; local-config claims are not adopted; repository-level MIT notice and varying-translation warning are bound as evidence only",
+    "acceptance": "not asserted",
+    "publication": "not authorized"
+  }
+}

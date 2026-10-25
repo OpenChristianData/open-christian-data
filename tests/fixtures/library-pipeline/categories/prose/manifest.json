@@ -1,0 +1,172 @@
+{
+  "status": "source-bound-offline-fixtures",
+  "fixtures": [
+    {
+      "id": "augustine-chapters",
+      "shape": "chaptered",
+      "title": "Augustine, City of God, Book I, chapters I-II",
+      "tei_file": "augustine-chapters.tei.xml",
+      "tei_sha256": "ff0c9bd01a214d70b204cb4850a99c0a2d84f7e816ac4e7bdae95890c97c65cf",
+      "retained_excerpt_file": "augustine-chapters.thml.xml",
+      "retained_excerpt_sha256": "b1e545129d162c79900e141906f443cbab4fb709da3e6a60b42418b0ead0f1b1",
+      "upstream_tei": {
+        "path": "ir/augustine/city-of-god.ccel-npnf102.tei.xml",
+        "sha256": "1f69679dd4ecafdc3f509c0216186864278a97d03aaadcade8fa8d69df475211"
+      },
+      "retained_source": {
+        "path": "raw/ccel/npnf1/npnf102.xml",
+        "sha256": "b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a",
+        "selected_source_ids": [
+          "iv.ii.ii",
+          "iv.ii.iii"
+        ]
+      },
+      "source_paragraph_ids": [
+        "iv.ii.ii-p1",
+        "iv.ii.ii-p2",
+        "iv.ii.iii-p1",
+        "iv.ii.iii-p2",
+        "iv.ii.iii-p4",
+        "iv.ii.iii-p5",
+        "iv.ii.iii-p7",
+        "iv.ii.iii-p8",
+        "iv.ii.iii-p9",
+        "iv.ii.iii-p10",
+        "iv.ii.iii-p11",
+        "iv.ii.iii-p13",
+        "iv.ii.iii-p14",
+        "iv.ii.iii-p15",
+        "iv.ii.iii-p17"
+      ],
+      "source_paragraph_count": 15,
+      "context": {
+        "identity": {
+          "work_id": "fixture-augustine-chapters",
+          "textual_form_id": "fixture-english-prose",
+          "edition_id": "fixture-augustine-chapters-ccel"
+        },
+        "language": "en",
+        "representation_revision": "pipe012b-fixture-v1",
+        "edition_title": "Augustine, City of God, Book I, chapters I-II"
+      },
+      "identity_status": "Explicit test-context IDs; title and retained-source selectors identify the real work. No new canonical registry identity or human acceptance is claimed.",
+      "scope": "Bounded native excerpt; all material outside the named source divisions is outside this fixture. Original selected div and paragraph IDs are preserved."
+    },
+    {
+      "id": "athanasius-sections",
+      "shape": "sectioned",
+      "title": "Athanasius, On the Incarnation, opening section",
+      "tei_file": "athanasius-sections.tei.xml",
+      "tei_sha256": "478f81af3cfcff5bab1880d6d67db59a9534c6bb596b01c8f6d653fbd0b87e55",
+      "retained_excerpt_file": "athanasius-sections.thml.xml",
+      "retained_excerpt_sha256": "d16a6d825621cde9b93c5ed54489521895b9b9e44098b38bd61c437b927faafa",
+      "upstream_tei": {
+        "path": "tests/fixtures/library-pipeline/library/works/athanasius-on-the-incarnation/forms/athanasius-on-the-incarnation-prose/editions/ccel-npnf204/master.tei.xml",
+        "sha256": "478f81af3cfcff5bab1880d6d67db59a9534c6bb596b01c8f6d653fbd0b87e55"
+      },
+      "retained_source": {
+        "path": "raw/ccel/npnf2/npnf204.xml",
+        "sha256": "bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652",
+        "selected_source_ids": [
+          "vii.ii.i"
+        ]
+      },
+      "source_paragraph_ids": [
+        "vii.ii.i-p1",
+        "vii.ii.i-p2",
+        "vii.ii.i-p3",
+        "vii.ii.i-p4"
+      ],
+      "source_paragraph_count": 4,
+      "context": {
+        "identity": {
+          "work_id": "fixture-athanasius-sections",
+          "textual_form_id": "fixture-english-prose",
+          "edition_id": "fixture-athanasius-sections-ccel"
+        },
+        "language": "en",
+        "representation_revision": "pipe012b-fixture-v1",
+        "edition_title": "Athanasius, On the Incarnation, opening section"
+      },
+      "identity_status": "Explicit test-context IDs; title and retained-source selectors identify the real work. No new canonical registry identity or human acceptance is claimed.",
+      "scope": "Bounded native excerpt; all material outside the named source divisions is outside this fixture. Original selected div and paragraph IDs are preserved."
+    },
+    {
+      "id": "boethius-unsectioned",
+      "shape": "unsectioned",
+      "title": "Whether Father, Son, and Holy Spirit may be Substantially Predicated of the Divinity",
+      "tei_file": "boethius-unsectioned.tei.xml",
+      "tei_sha256": "96e2c1ab2b406dc763e4da0b0b9c7e33467cf17c64ec518e3e7cbac1cfdb4251",
+      "retained_excerpt_file": "boethius-unsectioned.thml.xml",
+      "retained_excerpt_sha256": "856179b8dd217a549c617efc2bd28dac677a8900fb9a81e0acafe3f2de12f85f",
+      "retained_source": {
+        "path": "raw/ccel/boethius/tracts.xml",
+        "sha256": "406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8",
+        "selected_source_ids": [
+          "iv.ii"
+        ]
+      },
+      "source_paragraph_xpath": "/div2/p[@id='iv.ii-p11' or @id='iv.ii-p17']",
+      "source_paragraph_ids": [
+        "iv.ii-p11",
+        "iv.ii-p17"
+      ],
+      "source_paragraph_count": 2,
+      "complete_source_direct_paragraph_ids": [
+        "iv.ii-p1",
+        "iv.ii-p2",
+        "iv.ii-p3",
+        "iv.ii-p4",
+        "iv.ii-p5",
+        "iv.ii-p6",
+        "iv.ii-p7",
+        "iv.ii-p8",
+        "iv.ii-p9",
+        "iv.ii-p10",
+        "iv.ii-p11",
+        "iv.ii-p12",
+        "iv.ii-p13",
+        "iv.ii-p16",
+        "iv.ii-p17",
+        "iv.ii-p18",
+        "iv.ii-p19"
+      ],
+      "excluded_source_paragraph_ids": [
+        "iv.ii-p1",
+        "iv.ii-p2",
+        "iv.ii-p3",
+        "iv.ii-p4",
+        "iv.ii-p5",
+        "iv.ii-p6",
+        "iv.ii-p7",
+        "iv.ii-p8",
+        "iv.ii-p9",
+        "iv.ii-p10",
+        "iv.ii-p12",
+        "iv.ii-p13",
+        "iv.ii-p16",
+        "iv.ii-p18",
+        "iv.ii-p19"
+      ],
+      "complete_work_nested_divisions": 0,
+      "context": {
+        "identity": {
+          "work_id": "fixture-boethius-tractate-two",
+          "textual_form_id": "fixture-stewart-rand-english",
+          "edition_id": "fixture-ccel-boethius-1918"
+        },
+        "language": "en",
+        "representation_revision": "pipe012b-fixture-v1",
+        "edition_title": "Boethius, Theological Tractates; Stewart and Rand, 1918"
+      },
+      "identity_status": "Source-local tractate iv.ii is exact; pipeline IDs explicitly test-only. No canonical registry identity or acceptance is inferred.",
+      "scope": "Two complete native paragraphs (positions 11 and 15 of 17 direct source paragraphs), kept in original order. All other paragraphs explicitly excluded from this small fixture; the retained excerpt includes the complete unsectioned tractate.",
+      "fixture_mapping": [
+        "Source div2 iv.ii identifies one complete tractate with no internal division, represented by div type=work; no sections are manufactured.",
+        "Exact source title attribute becomes work head.",
+        "Selected source p IDs, text, tails and order unchanged.",
+        "Source sync becomes TEI anchor retaining original ID; its full type/value attributes remain in the retained complete-work excerpt. No source wording is changed."
+      ]
+    }
+  ]
+}

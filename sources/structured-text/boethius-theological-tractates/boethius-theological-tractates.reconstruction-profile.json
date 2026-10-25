@@ -1,0 +1,59 @@
+{
+  "contract": "ocd-boethius-theological-tractates-reconstruction-profile-v1",
+  "profile_id": "boethius-theological-tractates-div1-iv-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/boethius/tracts.xml",
+    "bytes": 162005,
+    "sha256": "406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8"
+  },
+  "source_document": {
+    "xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "div1_ids": ["i", "ii", "iii", "iv", "v"]
+  },
+  "selected_scope": {
+    "div1_id": "iv",
+    "div2_ids": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v"],
+    "excluded_sibling_div1_ids": ["i", "ii", "iii", "v"],
+    "source_byte_start": 17385,
+    "source_byte_end": 152896,
+    "source_byte_count": 135511,
+    "source_bytes_sha256": "10a2a8b84ff2fe5a1ba613181b39be1c5eb3d62032fd31977c78e8b6232db664"
+  },
+  "feature_count": 778,
+  "attribute_count": 1208,
+  "feature_counts": {
+    "b": 3,
+    "div1": 1,
+    "div2": 5,
+    "h2": 1,
+    "h3": 1,
+    "i": 188,
+    "note": 59,
+    "p": 297,
+    "pb": 64,
+    "scripRef": 1,
+    "span": 60,
+    "sup": 1,
+    "sync": 88,
+    "unclear": 9
+  },
+  "selected_itertext_utf8_bytes": 108891,
+  "selected_itertext_sha256": "a9d1e8b78b3b301d0087159173b6c56ec49ddf2162b9dd4d5c6b92cec8365328",
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "requirements": [
+    "exact-five-tract-member-census",
+    "exact-depth-first-element-order",
+    "exact-direct-text-and-tail-text",
+    "every-source-attribute-accounted",
+    "raw-byte-span-and-subtree-digest-per-element",
+    "exact-sibling-div1-exclusion-accounting",
+    "direct-source-accountability-json-schema",
+    "direct-tei-p5-xsd",
+    "producer-independent-oracle",
+    "nonaccepted-candidate-and-publication-boundaries",
+    "fresh-process-different-cwd-determinism"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib036-readable-milligan-index-milligan-expositorrev-v2",
+  "work_id": "expositors-bible--william-milligan",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/milligan_expositorrev.xml",
+      "role": "primary-source",
+      "bytes": 880454,
+      "sha256": "f62dde4b76052bfbdb14c02fd79e173ad66aa38c6df454292ac2d06e65ae8e0a"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-milligan-index-v2/milligan-expositorrev/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 714,
+      "sha256": "98e3977df470f31fc6fbaab0c15c77d30ed5622322c1829242ba309f8f07d7f5"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-milligan-index-v2/milligan-expositorrev/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1113,
+      "sha256": "575152c2eb78bc9f5f9f03f501e7bc3ed34faa86e1827ba7ec5d50fbd5ea372f"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-milligan-index-v2/milligan-expositorrev/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 905,
+      "sha256": "ab536f6be98a58ebe49823a320e310929ea8fb03827a4227f79c181dc6fd33bb"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-milligan-index-v2/milligan-expositorrev/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1915,
+      "sha256": "de4fe38897bce8cd6bc68dde037d8d1a5a4c6aee937fa1e34a3af8d8da9858ca"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib036-readable-milligan-index-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib036_readable_milligan_index_v2.py",
+    "implementation_sha256": "0cb5452009c0d9b68d02ac35aede2313e7919b2f4e9bdea570cd9e12a3bba4a9"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib036-readable-milligan-index-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib036_readable_milligan_index_v2_oracle.py",
+    "implementation_sha256": "50e727aead4aba8f6a111a7fb9936d6cef55d25f3ae8fa5815f8d4a4601261ee",
+    "import_closure_sha256": "50e727aead4aba8f6a111a7fb9936d6cef55d25f3ae8fa5815f8d4a4601261ee"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

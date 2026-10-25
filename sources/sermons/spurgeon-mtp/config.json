@@ -8,13 +8,13 @@
   "contributors": [
     {
       "name": "Emmett O'Donnell",
-      "role": "transcriber",
+      "role": "manuscript editor",
       "affiliation": "SpurgeonGems (spurgeongems.org)",
       "url": "http://www.spurgeongems.org/"
     },
     {
       "name": "Benry Yip",
-      "role": "digitizer",
+      "role": "designer",
       "affiliation": "The Kingdom Collective",
       "url": "https://thekingdomcollective.com/spurgeon/"
     }
@@ -29,6 +29,6 @@
   "license": "public-domain",
   "source_url": "https://thekingdomcollective.com/spurgeon/",
   "source_format": "HTML",
-  "source_edition": "The Kingdom Collective digitization (Emmett O'Donnell transcription from SpurgeonGems PDFs, HTML parsing by Benry Yip)",
-  "notes": "Spurgeon died 1892 -- texts are public domain in all jurisdictions. The Kingdom Collective hosts approximately 3,000 of the 3,563 total MTP sermons. robots.txt returns 404 (no file exists on this domain). No ToS found. Site appears dormant since 2014 but pages remain live on Netlify. GitHub source repo bjcy/tcs.sc is 404 (deleted). Source URL is the only accessible version. Output split into per-chunk files (sermons-<start>-<end>.json, 100 sermons per file) to stay under GitHub's 100 MB file-size limit."
+  "source_edition": "Retained Kingdom Collective HTML sermon pages.",
+  "notes": "Spurgeon died in 1892; the underlying sermons are public domain. Retained primary wording says the collection was \"transcribed from manuscripts edited by Emmett O'Donnell\" and states \"Designed by Benry Yip.\" It does not identify the transcriber or digitizer; those responsibilities remain unresolved. Legacy canonical JSON is an aid outside this campaign, not candidate authority, and remains untouched under the protected-path rule. Output is split into per-chunk files (sermons-<start>-<end>.json, 100 sermons per file) to stay under GitHub's 100 MB file-size limit."
 }

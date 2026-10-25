@@ -1,0 +1,7 @@
+# Jarena Lee — retained Project Gutenberg 66953 HTML
+
+The text authority is the exact extracted `raw/gutenberg/66953/html/pg66953-images.html` from [Project Gutenberg ebook 66953](https://www.gutenberg.org/ebooks/66953). Its ZIP is the acquisition package. All four ZIP members match retained extracted files: HTML, unreferenced cover, referenced frontispiece, and referenced title-page detail. The body uses the frontispiece once and the title-page detail twice. The frontispiece caption, including its printed illustrator and printer attributions, remains next to the image in the readable TEI.
+
+The retained electronic header credits Jarena Lee as author and Alfred M. Hoffy as illustrator. The title page says “Revised and corrected from the Original Manuscript, written by herself” and prints Philadelphia, 1849. The electronic header separately says original publication was in 1836. This candidate binds the retained electronic witness and does not assert equivalence between those print states or audit individual revisions. The journal ends with the author's postscript and “FINIS”; no separately titled work follows before the Project Gutenberg footer.
+
+The candidate preserves the full decoded HTML body as readable TEI, including the Project Gutenberg provider header and footer/license. The HTML head provides metadata evidence. Jurisdictional rights, human textual acceptance, print collation, and publication authorization remain separate decisions.

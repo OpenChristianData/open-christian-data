@@ -1,0 +1,74 @@
+{
+  "authorities": [
+    {
+      "bytes": 1275,
+      "name": "source-config",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "5c11a27edfc451e59e9f8c685ccadeadf0846dd500361c14426d1c3017862112"
+    },
+    {
+      "bytes": 3949934,
+      "name": "retained-source",
+      "path": "raw/gutenberg/pg53527.txt",
+      "role": "primary-source",
+      "sha256": "7edb772fb0147fe69e884b4b7f1feb71d96525f86e5be8c9a8e3eefa33626888"
+    },
+    {
+      "bytes": 554,
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-2.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "b7786fa9fc345d7c2c0214081563ffdb2f998c4de38d32c89d5cecf8932e2de7"
+    },
+    {
+      "bytes": 1658,
+      "name": "validation-policy",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "f862028b32ddfa3b8626eeaca8b9a1466f38e7d83da051e91d6b7f4d5df1962b"
+    },
+    {
+      "bytes": 1026,
+      "name": "attribution-readme",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/charnock-existence-attributes-vol-2.README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "82470e0acbd7aac352928e248b9d6bce9e11f54a8a999d36a6471772cbced834"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-charnock-pg53527-partitioned-volume-to-tei",
+    "implementation_path": "build/tei/charnock_gutenberg_reconstruction.py",
+    "implementation_sha256": "d70f98a1211da913f9741d7844352ae896ae2648c303e51cc3d77d39e2e58cea",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "charnock-existence-attributes-vol-2-pg53527-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-charnock-pg53527-independent-partition-oracle",
+    "implementation_path": "build/tei/charnock_gutenberg_oracle.py",
+    "implementation_sha256": "0a12dcbaa9fb16a996b27c4bbdf691add8a50e999e1cfc480599a4e730d2f622",
+    "import_closure_sha256": "cadfc6e21a866438290df8e80769004e970564cb27d582483a69afd4b2ca0abb",
+    "version": "1"
+  }
+}

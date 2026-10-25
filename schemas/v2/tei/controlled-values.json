@@ -1,0 +1,66 @@
+{
+  "schema_version": "ocd-tei-controlled-values-provisional-0.3",
+  "status": "provisional",
+  "adoption_requirement": "Robbie explicit approval plus later real-fixture conformance",
+  "lexical_rule": "lowercase-kebab-case",
+  "contexts": [
+    {
+      "context": "div/@type",
+      "values": [
+        "work",
+        "part",
+        "book",
+        "chapter",
+        "section",
+        "subsection",
+        "sermon",
+        "service",
+        "collect",
+        "letter",
+        "preface",
+        "foreword",
+        "introduction",
+        "prologue",
+        "dedication",
+        "notes",
+        "title-page",
+        "half-title-page",
+        "copyright-page",
+        "imprint",
+        "colophon",
+        "dictionary-entry"
+      ]
+    },
+    {
+      "context": "note/@place",
+      "values": ["foot", "end"]
+    },
+    {
+      "context": "ref/@type",
+      "values": ["note", "scripture"]
+    },
+    {
+      "context": "list/@type",
+      "values": ["ordered", "bulleted"]
+    },
+    {
+      "context": "hi/@rend",
+      "values": ["italic", "bold", "superscript", "subscript", "small-caps"]
+    },
+    {
+      "context": "idno/@type",
+      "values": [
+        "ocd-work-id",
+        "ocd-textual-form-id",
+        "ocd-edition-id",
+        "ocd-acquisition-id",
+        "sha256",
+        "git-commit-sha1"
+      ]
+    },
+    {
+      "context": "head/@type",
+      "values": ["headword"]
+    }
+  ]
+}

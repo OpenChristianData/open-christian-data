@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-spurgeon-primary-references">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Spurgeon sermon primary-reference excerpts</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Spurgeon sermon primary-reference excerpts</title>
+          <idno type="sha256">39a99f4d95ebe439d6fb232dd9d3b226039848a97fa14792d6dbf8f5698f0699</idno>
+          <ptr target="ocd-source:raw/spurgeon_sermons/html/1.html"/>
+        </bibl>
+        <bibl>
+          <title>Spurgeon sermon primary-reference excerpts</title>
+          <idno type="sha256">67d27cc11b0e10b937f519a40a79fd4fd405e6b2e5c6e1311384b800f3d5b068</idno>
+          <ptr target="ocd-source:raw/spurgeon_sermons/html/15.html"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; wrapper only.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-spurgeon-primary-references-selection"><quote xml:id="spurgeon-mtp-1-quote-1" type="primary-reference">
+          <p xml:id="spurgeon-mtp-1-quote-1-p-1">“I am the Lord, I change not; therefore you sons of Jacob are not consumed.”</p>
+          <p xml:id="spurgeon-mtp-1-quote-1-p-2">
+            <ref type="scripture" cRef="Mal.3.6">Malachi 3:6</ref>
+          </p>
+        </quote>
+        <list xml:id="spurgeon-mtp-1-list-1" type="ordered" rend="a">
+          <item xml:id="spurgeon-mtp-1-list-1-item-1">
+            <p xml:id="spurgeon-mtp-1-list-1-item-1-p">First of all, we have set before us the doctrine of THE IMMUTABILITY OF GOD. “I am God, I change not.” Here I shall attempt to expound, or rather to enlarge the thought and then afterwards to bring a few arguments to prove its truth.</p>
+          </item>
+        </list>
+        <quote xml:id="spurgeon-mtp-15-quote-1" type="primary-reference">
+          <p xml:id="spurgeon-mtp-15-quote-1-p-1">“I have written to him the great things of My Law, but they were counted as a strange thing.”</p>
+          <p xml:id="spurgeon-mtp-15-quote-1-p-2">
+            <ref type="scripture" cRef="Hos.8.12">Hosea 8:12</ref>
+          </p>
+        </quote>
+        </div>
+    </body>
+  </text>
+</TEI>

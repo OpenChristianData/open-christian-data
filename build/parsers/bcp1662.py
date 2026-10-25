@@ -38,7 +38,6 @@ Usage:
 """
 
 import argparse
-import hashlib
 import json
 import logging
 import re
@@ -53,12 +52,18 @@ if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.config_validation import validate_config_enums  # noqa: E402
+from build.lib import writer_manifest  # noqa: E402
+from build.parsers.bcp_1662_source_receipt import (  # noqa: E402
+    SOURCE_HASH_SCOPE as BCP_1662_SOURCE_HASH_SCOPE,
+    verified_source_member_set_sha256,
+)
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib.parser_logging import configure_logging as _shared_setup_logging
 RAW_DIR = REPO_ROOT / "raw" / "bcp1662"
 OUTPUT_DIR = REPO_ROOT / "data" / "prayers" / "bcp-1662"
 CONFIG_PATH = REPO_ROOT / "sources" / "prayers" / "bcp-1662-collects" / "config.json"
@@ -83,7 +88,7 @@ CRAWL_DELAY_SECONDS = 2
 
 COLLECTION_ID = "bcp-1662-collects"
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v1.1.0"
 
 
 # ---------------------------------------------------------------------------
@@ -432,26 +437,14 @@ def build_meta(config: dict, source_hash: str, processing_date: str) -> dict:
                 f"build/parsers/bcp1662.py@{SCRIPT_VERSION}"
             ),
             "processing_date": processing_date,
-            "notes": config.get("notes"),
+            "notes": (
+                f"{config.get('notes') or ''} "
+                f"The source_hash identifies {BCP_1662_SOURCE_HASH_SCOPE}; it "
+                "does not establish rights clearance, human acceptance, or "
+                "publication authorization."
+            ).strip(),
         },
     }
-
-
-# ---------------------------------------------------------------------------
-# Combined hash helper
-# ---------------------------------------------------------------------------
-
-def compute_combined_hash(filenames: list) -> str:
-    """
-    SHA-256 of the concatenated raw bytes of all source files (in list order).
-    Provides a single stable hash representing the complete source download.
-    """
-    hasher = hashlib.sha256()
-    for filename in filenames:
-        path = RAW_DIR / filename
-        if path.exists():
-            hasher.update(path.read_bytes())
-    return hasher.hexdigest()
 
 
 # ---------------------------------------------------------------------------
@@ -507,13 +500,35 @@ def parse_all_pages(dry_run: bool = False) -> tuple:
 
 
 def setup_logging() -> None:
-    """Configure file + console logging."""
-    fh = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.INFO)
-    logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh],
-                        format="%(levelname)s: %(message)s")
+    return _shared_setup_logging(LOG_FILE=LOG_FILE)
+
+
+def _write_output_with_manifest(output: dict) -> None:
+    """Write the collects output and its registered writer manifest together."""
+    previous = json.loads(OUTPUT_FILE.read_text(encoding="utf-8")) if OUTPUT_FILE.exists() else None
+    before = {"data": previous["data"]} if previous is not None else None
+    after = {"data": output["data"]}
+    entries_changed, fields_changed = writer_manifest.diff_counts(
+        before,
+        after,
+        key=lambda item: item["prayer_id"],
+    )
+    with writer_manifest.run(
+        writer_identity="bcp1662_parser",
+        writer_version=f"build/parsers/bcp1662.py@{SCRIPT_VERSION}",
+        data_paths=[OUTPUT_FILE],
+        repo_root=REPO_ROOT,
+        manifests_dir=REPO_ROOT / "review" / "writer-manifests",
+    ) as manifest_run:
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        with OUTPUT_FILE.open("w", encoding="utf-8", newline="\n") as fh:
+            json.dump(output, fh, ensure_ascii=False, indent=2)
+            fh.write("\n")
+        manifest_run.record_delta(
+            OUTPUT_FILE,
+            entries_changed=entries_changed,
+            fields_changed=fields_changed,
+        )
 
 
 def main() -> None:
@@ -591,15 +606,16 @@ def main() -> None:
 
     # Build output
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    source_hash = compute_combined_hash([fn for fn, _ in SOURCE_PAGES])
+    source_hash = verified_source_member_set_sha256(
+        REPO_ROOT,
+        member_kind="calendar-part",
+        logical_names=[filename for filename, _ in SOURCE_PAGES],
+    )
     meta = build_meta(config, source_hash, processing_date)
     output = {"meta": meta, "data": records}
 
     # Write output
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as fh:
-        json.dump(output, fh, ensure_ascii=False, indent=2)
-        fh.write("\n")
+    _write_output_with_manifest(output)
 
     size_kb = OUTPUT_FILE.stat().st_size / 1024
     elapsed = time.time() - start_time

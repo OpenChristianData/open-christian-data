@@ -1,5 +1,7 @@
 # Codex Schema Review Prompt
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 Paste this entire document into Codex for an independent schema review.
 
 ---

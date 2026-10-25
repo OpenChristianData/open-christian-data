@@ -1,0 +1,129 @@
+{
+  "authorities": [
+    {
+      "bytes": 51665,
+      "name": "retained-source",
+      "path": "raw/gutenberg/17826/html/pg17826-images.html",
+      "role": "primary-source",
+      "sha256": "77c37c8f661ab0f9a28be58d46e48592ed0a979d169a22aab2634e471528e1a7"
+    },
+    {
+      "bytes": 27606,
+      "name": "referenced-image",
+      "path": "raw/gutenberg/17826/html/images/image_01.jpg",
+      "role": "referenced-image-support",
+      "sha256": "338defe78365ba25b3cc15f4af5bd540fd2061f57ad81fe26254a68d4f601133"
+    },
+    {
+      "bytes": 78761,
+      "name": "unreferenced-cover",
+      "path": "raw/gutenberg/17826/html/17826-cover.png",
+      "role": "unreferenced-cover-support",
+      "sha256": "7e3890c39817bcb2c8cfe19f9294917abfbb07f82c98999ec33882c3a525b160"
+    },
+    {
+      "bytes": 125412,
+      "name": "retained-package",
+      "path": "raw/gutenberg/17826/pg17826-h.zip",
+      "role": "supporting-package",
+      "sha256": "00a50c38e59a0b46de7a1c8e97c9e73343fc00d9fffe944b32ec8cc7443b2345"
+    },
+    {
+      "bytes": 1013,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/old-elizabeth-pg17826/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "0ad74c227265e010e88e13dcb0c409f7da2c5b5d5a7954efed38589da68d7b05"
+    },
+    {
+      "bytes": 833,
+      "name": "validation-policy",
+      "path": "sources/structured-text/old-elizabeth-pg17826/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "3e00364dd6b56ce4dabcb174737817e6837dbf1e7c0994ca92c7442a8599b890"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1198,
+      "name": "source-readme",
+      "path": "sources/structured-text/old-elizabeth-pg17826/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "5b9699976a61c657a7a7e23a91c035df2072d625c7e23c9462f4a2e1819e8401"
+    },
+    {
+      "bytes": 10077,
+      "name": "producer-implementation",
+      "path": "build/tei/old_elizabeth_pg17826_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "d32fd6a5f16bfda378c328c05e77ee0a0e17c4328361459816d2a116eee09a52"
+    },
+    {
+      "bytes": 11315,
+      "name": "oracle-implementation",
+      "path": "build/tei/old_elizabeth_pg17826_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "d7fc5721022a066254924165721d8270028eab310532731d5f42288dee00250d"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-old-elizabeth-pg17826-extracted-html-to-tei",
+    "implementation_path": "build/tei/old_elizabeth_pg17826_reconstruction.py",
+    "implementation_sha256": "d32fd6a5f16bfda378c328c05e77ee0a0e17c4328361459816d2a116eee09a52",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "package_cover_role": "unreferenced support",
+    "referenced_image": "images/image_01.jpg",
+    "represented_body_elements": 186,
+    "source_url": "https://www.gutenberg.org/ebooks/17826",
+    "title": "Memoir of Old Elizabeth, A Coloured Woman",
+    "unrepresented_body_elements": 0
+  },
+  "source_bundle": {
+    "bytes": 51665,
+    "members": 1,
+    "sha256": "77c37c8f661ab0f9a28be58d46e48592ed0a979d169a22aab2634e471528e1a7"
+  },
+  "source_id": "old-elizabeth-pg17826-current-extracted-html",
+  "source_members": [
+    {
+      "bytes": 51665,
+      "logical_name": "pg17826-images.html",
+      "name": "pg17826-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/17826/html/pg17826-images.html",
+      "sha256": "77c37c8f661ab0f9a28be58d46e48592ed0a979d169a22aab2634e471528e1a7"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-old-elizabeth-pg17826-independent-extracted-html-oracle",
+    "implementation_path": "build/tei/old_elizabeth_pg17826_oracle.py",
+    "implementation_sha256": "d7fc5721022a066254924165721d8270028eab310532731d5f42288dee00250d",
+    "import_closure_sha256": "510647e625d6bab23cae105756fe6f4124a2ae3ba9df2a67f789b79689d4c100",
+    "version": "1"
+  },
+  "work_id": "old-elizabeth-memoir"
+}

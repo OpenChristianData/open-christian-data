@@ -40,6 +40,7 @@ from build.lib.text_layers import (  # noqa: E402
     build_single_field_layers,
 )
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib.parser_logging import configure_logging as _shared_setup_logging
 
 # Lazy-load OSIS existence validator (requires build/bible_data/verse_index.json).
 # Falls back to None gracefully if not available; refs are kept unfiltered in that case.
@@ -782,13 +783,7 @@ def update_manifest(config: dict, data_dir: Path, book_stats: list) -> None:
 
 
 def setup_logging() -> None:
-    """Configure file + console logging."""
-    fh = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.INFO)
-    logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh],
-                        format="%(levelname)s: %(message)s")
+    return _shared_setup_logging(LOG_FILE=LOG_FILE)
 
 
 def main() -> None:

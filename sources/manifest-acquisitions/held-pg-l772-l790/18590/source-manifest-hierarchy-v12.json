@@ -1,0 +1,88 @@
+{
+  "authorities": [
+    {
+      "bytes": 769261,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/18590/pg18590-h.zip",
+      "role": "primary-source",
+      "sha256": "8b663097982c52d82370c96ce44d9ffa804963a4fde9802f2d4dd2ef2ac63325"
+    },
+    {
+      "bytes": 1760552,
+      "name": "extracted-html",
+      "path": "raw/gutenberg/18590/html/pg18590-images.html",
+      "role": "source-extraction",
+      "sha256": "62421bc56b576afeecfca98f51032863753ba8fd545bebccced556963e5ac1bf"
+    },
+    {
+      "bytes": 1348,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/18590/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "8687d7309737b26780d23edbe8252101d5228589302f069e059627e57b258de9"
+    },
+    {
+      "bytes": 601,
+      "name": "member-inventory",
+      "path": "raw/gutenberg/18590/member-inventory.tsv",
+      "role": "source-member-inventory",
+      "sha256": "d78edde7f8eb3f1321558c1b79aacae2738ec10a3ed9ce4dd3cbb7363195db5d"
+    },
+    {
+      "bytes": 2939,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/held-pg-l772-l790/18590/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "15da307b65c4da90d316827e5805ef3bbb7419a7fbc50dd37566e616d9bafbf3"
+    },
+    {
+      "bytes": 1533,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/held-pg-l772-l790/18590/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "51bdbd04b5938c9710939e0b6f73fa25e3790c62fa084acc5d43ab747358e292"
+    },
+    {
+      "bytes": 611,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/held-pg-l772-l790/18590/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "4585a6893089714a1a28a35637d7914501e414d5a5c84b1618ddf7e3f293ad03"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-manifest-pg-l772-l790-editions-to-tei-hierarchy",
+    "implementation_path": "build/tei/manifest_pg_l772_l790.py",
+    "implementation_sha256": "5e54d5a7d78d46fce9e25b5e05ac7723611f853c54e1f7717f57aa2946bcf427",
+    "version": "11"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "pg18590-l772-l790-retained-witness",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-manifest-pg-l772-l790-independent-oracle",
+    "implementation_path": "build/tei/manifest_pg_l772_l790_oracle.py",
+    "implementation_sha256": "ca8ce0a59f4129689ee36e79b302a672acd7a29a382594311a387bfb0eed9adc",
+    "import_closure_sha256": "5a4b1d1055b36578ef14efc49a2f37070ed65267a3c5ccbd53a1f020792fc0f4",
+    "version": "12"
+  }
+}

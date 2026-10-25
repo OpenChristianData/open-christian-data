@@ -15,11 +15,19 @@ Corrections covered (all documented in UPSTREAM_BUGS.md):
 
 import json
 from pathlib import Path
+import sys
 
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CHURCH_FATHERS_DIR = REPO_ROOT / "data" / "church-fathers"
+pytestmark = pytest.mark.requires_local_artifacts
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _load_retained_parser():
+    global church_fathers
+    from build.parsers import church_fathers
 
 
 # ---------------------------------------------------------------------------
@@ -345,3 +353,339 @@ class TestRemigiusReroute:
         entries = _load("remigius-of-auxerre")
         wrong = [e["entry_id"] for e in entries if e.get("author") != "Remigius of Auxerre"]
         assert not wrong, f"Entries with wrong author: {wrong[:5]}"
+
+
+def _replay_author(tmp_path: Path, monkeypatch, author_name: str) -> list[dict]:
+    monkeypatch.setattr(church_fathers, "OUTPUT_DIR", tmp_path)
+    stats = church_fathers.process_author(church_fathers.RAW_DIR / author_name)
+    assert stats["status"] == "ok"
+    slug = church_fathers.author_to_slug(author_name)
+    return json.loads((tmp_path / f"{slug}.json").read_text(encoding="utf-8"))["data"]
+
+
+def test_parser_applies_source_verified_title_correction(tmp_path, monkeypatch):
+    """A retained-source locator may carry independently recorded research."""
+    entries = _replay_author(tmp_path, monkeypatch, "Alexander of Alexandria")
+    entry = next(
+        item
+        for item in entries
+        if item["entry_id"]
+        == "alexander-of-alexandria.1Cor.2.9.epistles-on-the-arian-heresy-i5"
+    )
+    assert entry["source_title"] == "Epistles on the Arian Heresy, I.5"
+
+
+def test_parser_extracts_retained_inline_source_citation(tmp_path, monkeypatch):
+    entries = _replay_author(tmp_path, monkeypatch, "Ephrem the Syrian")
+    entry = next(
+        item
+        for item in entries
+        if item["entry_id"]
+        == "ephrem-the-syrian.Job.2.11.commentary-on-job-211"
+    )
+    assert entry["source_title"] == "Commentary on Job 2:11"
+
+
+def test_parser_derives_new_testament_book_source_titles(tmp_path, monkeypatch):
+    """Book directories define their work title without a post-parse patch."""
+    total_entries = 0
+    for author_name, expected_title in church_fathers.NT_BOOK_SOURCE_TITLES.items():
+        entries = _replay_author(tmp_path, monkeypatch, author_name)
+        assert entries
+        assert {entry["source_title"] for entry in entries} == {expected_title}
+        total_entries += len(entries)
+
+    assert total_entries == 300
+
+
+def test_new_testament_book_source_title_rejects_retained_conflict():
+    path = church_fathers.RAW_DIR / "Romans" / "Genesis 1_1.toml"
+    block = {"quote": "Retained quotation", "source_title": "Different Work"}
+
+    with pytest.raises(
+        ValueError,
+        match="Retained title contradicts New Testament source-directory identity",
+    ):
+        church_fathers._resolve_source_title(path, 0, block, "Romans")
+
+
+def test_new_testament_book_source_title_rejects_effective_author_mismatch():
+    path = church_fathers.RAW_DIR / "Romans" / "Genesis 1_1.toml"
+    block = {"quote": "Retained quotation", "source_title": ""}
+
+    with pytest.raises(
+        ValueError,
+        match="New Testament source-directory identity mismatch",
+    ):
+        church_fathers._resolve_source_title(path, 0, block, "Different Author")
+
+
+def test_source_title_corrections_bind_exact_retained_blocks():
+    """Every correction must remain independently bound to retained source bytes."""
+    assert church_fathers.SOURCE_TITLE_CORRECTIONS
+    for locator, correction in church_fathers.SOURCE_TITLE_CORRECTIONS.items():
+        source_path, block_index = locator
+        path = REPO_ROOT / source_path
+        blocks = church_fathers.load_toml_file(path)
+        block = blocks[block_index]
+        quote = (block.get("quote") or "").strip()
+        assert church_fathers._quote_sha256(quote) == correction.quote_sha256
+        retained_title = church_fathers._normalize_source_title(
+            (block.get("source_title") or "").strip()
+        )
+        assert not retained_title or retained_title == correction.source_title
+        assert correction.confidence == "HIGH"
+        assert correction.evidence_reference
+
+
+def test_source_title_authority_is_the_reviewed_forward_only_boundary():
+    locators = set(church_fathers.SOURCE_TITLE_CORRECTIONS)
+    identity_changed = {
+        ("raw/Commentaries-Database/Andreas of Caesarea/2 Thessalonians 1_8.toml", 0),
+        ("raw/Commentaries-Database/Callistus I of Rome/Romans 3_3.toml", 0),
+        ("raw/Commentaries-Database/Pope Anterus/Ephesians 4_29.toml", 0),
+    }
+    remigius = {
+        (f"raw/Commentaries-Database/Remigius of Rheims/{stem}.toml", 0)
+        for stem in (
+            "Mark 5_20",
+            "Matthew 13_9",
+            "Matthew 15_11",
+            "Matthew 15_31",
+            "Matthew 16_28",
+            "Matthew 17_9",
+            "Matthew 24_41",
+            "Matthew 3_3",
+            "Matthew 8_13",
+        )
+    }
+    rabanus = {
+        (f"raw/Commentaries-Database/Rabanus Maurus/Matthew {reference}.toml", 0)
+        for reference in (
+            "4_4",
+            "4_22",
+            "5_19",
+            "9_35",
+            "10_4",
+            "11_24",
+            "14_12",
+            "15_31",
+            "19_22",
+            "20_19",
+            "26_35",
+            "26_38",
+        )
+    }
+
+    assert len(locators) == 406
+    assert identity_changed | remigius | rabanus <= locators
+    assert not any("/Erasmus of Rotterdam/" in path for path, _ in locators)
+    assert not any("/Thietland of Einsiedeln/" in path for path, _ in locators)
+
+    for source_path, _block_index in locators:
+        path = Path(source_path)
+        source_author = path.parent.name
+        correction = church_fathers.ENTRY_CORRECTIONS.get(
+            (source_author, path.stem)
+        )
+        assert correction is None or correction["action"] != "exclude"
+        if source_author in church_fathers.REROUTE_AUTHOR:
+            target = church_fathers.REROUTE_AUTHOR[source_author]
+            assert (church_fathers.RAW_DIR / target).is_dir()
+
+
+def test_source_title_correction_rejects_retained_quote_drift():
+    locator, correction = next(iter(church_fathers.SOURCE_TITLE_CORRECTIONS.items()))
+    source_path, block_index = locator
+    path = REPO_ROOT / source_path
+    blocks = church_fathers.load_toml_file(path)
+    changed = dict(blocks[block_index])
+    changed["quote"] = f"{changed['quote']} drift"
+
+    with pytest.raises(ValueError, match="Retained quote changed"):
+        church_fathers._resolve_source_title(
+            path, block_index, changed, path.parent.name
+        )
+
+    assert correction.source_title
+
+
+def _write_source_title_authority(
+    tmp_path: Path,
+    monkeypatch,
+    *,
+    source_path: str = "raw/Commentaries-Database/Test Author/Test 1_1.toml",
+    block_index: int = 0,
+    quote_sha256: str | None = None,
+    retained_title: str = "",
+) -> Path:
+    repo_root = tmp_path / "repo"
+    monkeypatch.setattr(church_fathers, "REPO_ROOT", repo_root)
+    carrier_path = repo_root / source_path
+    carrier_path.parent.mkdir(parents=True, exist_ok=True)
+    carrier_path.write_text(
+        "[[commentary]]\n"
+        'quote = "Exact retained quotation"\n'
+        f'source_title = "{retained_title}"\n',
+        encoding="utf-8",
+    )
+    record = {
+        "source_path": source_path,
+        "block_index": block_index,
+        "quote_sha256": quote_sha256
+        or church_fathers._quote_sha256("Exact retained quotation"),
+        "source_title": "Verified Work",
+        "confidence": "HIGH",
+        "evidence_reference": "test evidence",
+    }
+    authority_path = tmp_path / "source-title-corrections.json"
+    authority_path.write_text(
+        json.dumps(
+            {
+                "authority_kind": "retained-source-title-corrections",
+                "records": [record],
+            }
+        ),
+        encoding="utf-8",
+    )
+    return authority_path
+
+
+def test_source_title_authority_rejects_missing_carrier(tmp_path, monkeypatch):
+    authority_path = _write_source_title_authority(tmp_path, monkeypatch)
+    (tmp_path / "repo" / "raw").rename(tmp_path / "repo" / "raw-missing")
+
+    with pytest.raises(ValueError, match="Cannot read source-title correction carrier"):
+        church_fathers._load_source_title_corrections(authority_path)
+
+
+def test_source_title_authority_rejects_missing_block(tmp_path, monkeypatch):
+    authority_path = _write_source_title_authority(
+        tmp_path, monkeypatch, block_index=1
+    )
+
+    with pytest.raises(ValueError, match="Missing source-title correction block"):
+        church_fathers._load_source_title_corrections(authority_path)
+
+
+def test_source_title_authority_rejects_quote_drift(tmp_path, monkeypatch):
+    authority_path = _write_source_title_authority(
+        tmp_path, monkeypatch, quote_sha256="0" * 64
+    )
+
+    with pytest.raises(ValueError, match="Retained quote changed"):
+        church_fathers._load_source_title_corrections(authority_path)
+
+
+def test_source_title_authority_rejects_retained_title_conflict(
+    tmp_path, monkeypatch
+):
+    authority_path = _write_source_title_authority(
+        tmp_path, monkeypatch, retained_title="Different Work"
+    )
+
+    with pytest.raises(ValueError, match="Retained title contradicts"):
+        church_fathers._load_source_title_corrections(authority_path)
+
+
+def test_cli_exits_nonzero_when_an_author_fails(monkeypatch, capsys):
+    monkeypatch.setattr(church_fathers, "setup_logging", lambda: None)
+    monkeypatch.setattr(
+        church_fathers,
+        "process_author",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(
+            ValueError("source authority drift")
+        ),
+    )
+    monkeypatch.setattr(sys, "argv", ["church_fathers.py", "--author", "Romans"])
+
+    with pytest.raises(SystemExit) as exc_info:
+        church_fathers.main()
+
+    assert exc_info.value.code == 1
+    output = capsys.readouterr().out
+    assert "source authority drift" in output
+    assert "AUTHORS WITH EXCEPTIONS" in output
+
+
+def test_parser_normalizes_retained_all_caps_source_titles(tmp_path, monkeypatch):
+    """Parser output owns display normalization; no post-parse titlecase pass exists."""
+    monkeypatch.setattr(church_fathers, "OUTPUT_DIR", tmp_path)
+
+    stats = church_fathers.process_author(church_fathers.RAW_DIR / "Abba Poemen")
+
+    assert stats["status"] == "ok"
+    generated = json.loads(
+        (tmp_path / "abba-poemen.json").read_text(encoding="utf-8")
+    )
+    entry = next(
+        item
+        for item in generated["data"]
+        if item["entry_id"] == "abba-poemen.2Tim.2.20.sayings-of-the-fathers-100"
+    )
+    assert entry["source_title"] == "Sayings of the Fathers 100"
+
+
+def test_current_parser_excludes_paterius_records_from_pacian(tmp_path, monkeypatch):
+    entries = _replay_author(tmp_path, monkeypatch, "Pacian of Barcelona")
+    ids = _id_set(entries)
+    removed_ids = {
+        f"pacian-of-barcelona.{book}.{reference}.unknown"
+        for book, references in {
+            "Exod": ("3.2", "5.20", "8.26", "20.24", "26.19", "26.32", "33.21", "34.7"),
+            "Lev": ("1.6", "6.9", "7.3", "7.33", "13.57", "19.23"),
+            "Num": (
+                "6.18", "7.89", "8.7", "8.24", "9.8", "10.2", "10.29",
+                "19.15", "24.15", "24.21", "32.4", "35.28",
+            ),
+        }.items()
+        for reference in references
+    }
+    assert len(removed_ids) == 26
+    assert ids.isdisjoint(removed_ids)
+
+
+def test_current_parser_reroutes_isidore_of_seville_records(
+    tmp_path, monkeypatch
+):
+    seville = _replay_author(tmp_path, monkeypatch, "Isidore of Seville")
+    pelusium = _replay_author(tmp_path, monkeypatch, "Isidore of Pelusium")
+    source_ids = {
+        f"isidore-of-seville.Luke.{reference}.unknown"
+        for reference in (
+            "6.1", "6.43", "7.24", "8.1", "9.10", "10.3", "12.41",
+            "18.31", "24.25",
+        )
+    }
+    target_ids = {
+        entry_id.replace("isidore-of-seville.", "isidore-of-pelusium.").replace(
+            ".unknown", ".catena-aurea-by-aquinas"
+        )
+        for entry_id in source_ids
+    }
+    assert _id_set(seville).isdisjoint(source_ids)
+    assert target_ids <= _id_set(pelusium)
+    assert all(
+        entry["author"] == "Isidore of Pelusium"
+        and entry["source_title"] == "Catena Aurea by Aquinas"
+        for entry in pelusium
+        if entry["entry_id"] in target_ids
+    )
+
+
+def test_current_parser_excludes_athanasius_duplicate_of_vigilius(
+    tmp_path, monkeypatch
+):
+    athanasius = _replay_author(tmp_path, monkeypatch, "Athanasius of Alexandria")
+    vigilius = _replay_author(tmp_path, monkeypatch, "Vigilius of Thapsus")
+    source_id = "athanasius-of-alexandria.Matt.1.1.unknown"
+    assert source_id not in _id_set(athanasius)
+    assert "vigilius-of-thapsus.Matt.1.1.unknown" not in _id_set(vigilius)
+    target = next(
+        entry
+        for entry in vigilius
+        if entry["entry_id"]
+        == "vigilius-of-thapsus.Matt.1.1.catena-aurea-by-aquinas"
+    )
+    assert target["author"] == "Vigilius of Thapsus"
+    assert "The audaciousness of this most insane error" in target["quote"]

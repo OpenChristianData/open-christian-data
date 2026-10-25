@@ -1,0 +1,102 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-lib032-retained-thml-source-set",
+  "authorities": [
+    {
+      "name": "wesley-plain-account-source",
+      "path": "raw/ccel/wesley/perfection.xml",
+      "role": "primary-source",
+      "bytes": 228042,
+      "sha256": "2c6d835621077e8002c86a4a3cfd0613c604d56626110d3d77d5e43c50dfab9b"
+    },
+    {
+      "name": "wesley-plain-account-identity",
+      "path": "sources/structured-text/wesley-plain-account/config.json",
+      "role": "work-identity-config",
+      "bytes": 1262,
+      "sha256": "349dfbb5db7b34497693ab9e93615882229fba9543fe579a7f3f711e611b0c04"
+    },
+    {
+      "name": "retained-source-set",
+      "path": "sources/structured-text/wesley-plain-account/lib032-retained-source-set.json",
+      "role": "source-member-census",
+      "bytes": 600,
+      "sha256": "fd456e3cc41c70adeaf12b6285ba851d10d35b251bdc3dee0dfb6b1934cf07fc"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/wesley-plain-account/lib032.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1354,
+      "sha256": "b8a90cfe5555dc0fbdba5b9d54fe65d59c815485807f45a1349956bb6d4b5d76"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/wesley-plain-account/lib032.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 956,
+      "sha256": "85b9ab4e7721ea4519508dc8febcadc392b8a84b6eb3302f551e520d56b33e56"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/wesley-plain-account/lib032.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 5274,
+      "sha256": "70a6d8f41258ad17145870da675ed6a70aab1f9dcd4f24b8ada1897fd8a80a40"
+    },
+    {
+      "name": "provenance-schema",
+      "path": "sources/structured-text/wesley-plain-account/lib032.provenance.schema.json",
+      "role": "complete-provenance-schema",
+      "bytes": 2206,
+      "sha256": "a4b911302c65807cf7e4356653f6fc1a33b7f28b905ba849a04c16f0d7e5454b"
+    },
+    {
+      "name": "unresolved-schema",
+      "path": "sources/structured-text/wesley-plain-account/lib032.unresolved.schema.json",
+      "role": "complete-unresolved-schema",
+      "bytes": 584,
+      "sha256": "012eb2f18cd561c586b78ef472ae1b8ecaf441fb3ae5bf81a4d30459079b8754"
+    },
+    {
+      "name": "source-attribution",
+      "path": "sources/structured-text/wesley-plain-account/lib032-source-attribution.md",
+      "role": "source-attribution-and-rights-evidence",
+      "bytes": 734,
+      "sha256": "ab631f67443bad53a78e530f3533afd2aa42705e507321b59056b30f0f7fc73c"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib032-wesley-plain-account-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/wesley_plain_account_reconstruction.py",
+    "implementation_sha256": "659103b0f3060e5fa3a3681c445b848c38dec40b6834661b967c6152905b46a0"
+  },
+  "validator": {
+    "id": "ocd-lib032-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/wesley_plain_account_oracle.py",
+    "implementation_sha256": "a0e28fabd8166ef6e35cf73c7dd9dce582859d5d202e9a744cc4c8e2e0b935d0",
+    "import_closure_sha256": "42c1843f7ee74eb25a6a7010842a2271aa1d65e3347f46fb85627da67aded717"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

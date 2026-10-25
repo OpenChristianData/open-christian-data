@@ -1,0 +1,13 @@
+# Retained source: The Life and Times of the Rev. Samuel Wesley, M.A.
+
+One complete authored biography by L. Tyerman, published in 1866, from the already retained Project Gutenberg eBook 67980. This successor preserves the exact original six-member v4 package and source authorities as historical lineage. It repairs the existing TEI; it does not acquire another text.
+
+Credits: KD Weeks, Brian Wilson, and the Online Distributed Proofreading Team at https://www.pgdp.net. The retained provider credits source images to The Internet Archive/American Libraries. Attribution to L. Tyerman and Project Gutenberg, the entire structured provider license footer, provider credits, transcriber notices, and all source wording remain represented. The source states public domain in the USA; people outside the United States must check applicable local laws. Technical validation is not rights clearance, human acceptance, or publication authorization.
+
+The actual primary title and provider creator control the biography identity. The conflicting HTML title that names John and Charles Wesley is preserved as located metadata. All twenty chapters, appendices A-C, name index, 361 footnotes, and transcriber notes remain in source order.
+
+The 63 literal correction tooltips, 52 span language attributes, actual presentation classes and column styles are preserved. Both graphic payloads are exact retained JPEGs, embedded without a network request. Each corresp URN names its retained archive SHA and member; provider dcterms.source remains separate metadata and supplies no assumed network base. Empty image alt attributes remain explicitly empty.
+
+All 23 head children, root/head/body fields, literal prolog and document suffix, and the ppgen comment at HTML root child 3 are visible source administration. The comment is not provider footer content. An independent lexical reader corroborates the entire source tree after declared HTML newline normalization and exactly five document-formatting recovery differences. Whitespace-only table/list leading fields are explicitly located and dispositioned. Table-section wrappers are located and accounted for; the inherited native grammar flattens those formatting wrappers while preserving row/column order and exact declared whitespace joins.
+
+The full repaired actual object is checked against the retained source. The separate byte inverse restores the verified original header/footer baseline and reverses observed carrier attributes; byte inversion alone does not establish repaired footer fidelity. Browser CSS, print-page visual fidelity, and human review remain open. This is a nonaccepted candidate; canonical installation is a separate reviewed action.

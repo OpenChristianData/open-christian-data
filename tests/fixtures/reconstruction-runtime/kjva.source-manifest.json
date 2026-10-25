@@ -1,0 +1,131 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "kjva-retained-json",
+  "work_id": "kjva",
+  "authorities": [
+    {
+      "name": "kjva-source",
+      "path": "raw/bible_databases/formats/json/KJVA.json",
+      "role": "primary-source",
+      "bytes": 10082833,
+      "sha256": "b927f4a0601de39b1636ebb71162ab1bf8ddbad66a55f50603011697e46060d5"
+    },
+    {
+      "name": "kjva-config",
+      "path": "sources/bible-text/kjva/config.json",
+      "role": "work-identity-config",
+      "bytes": 840,
+      "sha256": "10cadf63fd7a8c1dde21a7c4754876f5ae7fdd0b9e216489a52c8ce74db7de94"
+    },
+    {
+      "name": "kjva-profile",
+      "path": "sources/bible-text/kjva/kjva.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 7933,
+      "sha256": "1f2be2109d07d20ffb4df6b6f41348576c38096ce3c1bb382808b2e4d63d6a51"
+    },
+    {
+      "name": "kjva-policy",
+      "path": "sources/bible-text/kjva/kjva.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 4818,
+      "sha256": "45564e7e37e9c390d607ed0e356125894060f857d028dbbab5dc577d2e6d1acb"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "candidate-cli",
+      "path": "build/tools/reconstruct_candidate.py",
+      "role": "route-runtime-dependency",
+      "bytes": 10911,
+      "sha256": "442aeb07cee8f45ac58af250bbb3c243808b67eee56ae1ea166e7e64cd820a0d"
+    },
+    {
+      "name": "build-package-init",
+      "path": "build/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "route-runtime-dependency",
+      "bytes": 26591,
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    },
+    {
+      "name": "reconstruction-verifier",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "route-runtime-dependency",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "name": "destination-policy",
+      "path": "ocd_kernel/reconstruction/destination_policy.py",
+      "role": "route-runtime-dependency",
+      "bytes": 12244,
+      "sha256": "4a08def48889862ac06ad269efd60a2250f0f034f285e372330a08c902236f84"
+    },
+    {
+      "name": "kernel-init",
+      "path": "ocd_kernel/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 50,
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    },
+    {
+      "name": "reconstruction-init",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 475,
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib023-kjva-json-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/kjva_reconstruction.py",
+    "implementation_sha256": "5f187da88ebcd1d493d0085b1c4eb174fb8ebd9e906cc9eeaa71c733e904dcb5"
+  },
+  "validator": {
+    "id": "ocd-lib023-kjva-independent-oracle",
+    "version": "1",
+    "callable": "oracle",
+    "implementation_path": "build/tei/kjva_oracle.py",
+    "implementation_sha256": "a81bfeffcc352d84d54eecb0bb3e6143df9f45b6a54640f79fdb6f54df4cee45",
+    "import_closure_sha256": "d7b1b0906dbaab8c7dbc3fe130488e8d5f9045174303f289365a333c174e6c60"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

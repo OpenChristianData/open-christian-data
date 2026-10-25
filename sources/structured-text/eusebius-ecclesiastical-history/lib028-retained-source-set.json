@@ -1,0 +1,14 @@
+{
+  "contract": "ocd-lib028-retained-source-set-v1",
+  "family": "CCEL Schaff NPNF second series adjacent retained XML members",
+  "enumerated_directory": "D:/Library/Open Christian Data/raw/ccel/schaff",
+  "enumeration_pattern": "npnf2*.xml",
+  "members": [
+    {"name": "npnf201.xml", "bytes": 5624937, "sha256": "da92679dcdd452c10dab212ee4168be1d37f89f758dae8301821a96d49a261c9", "disposition": "include", "reason": "LIB-028 exact roots div1 iii and iv"},
+    {"name": "npnf202.xml", "bytes": 3292641, "sha256": "0139e8dcea6d40c3b1a5e046f3d45bdf6d1b30c503461d7f29f60309b4f2015c", "disposition": "include", "reason": "LIB-028 exact roots div1 ii and iii"},
+    {"name": "npnf203.xml", "bytes": 4264937, "sha256": "f2683481bded09cf90369589dd40330e231c83e6dbd4cb1aec730c9b90f9ec3a", "disposition": "include", "reason": "LIB-028 exact root div1 iv"}
+  ],
+  "unaccounted_members": 0,
+  "source_fetch_performed": false,
+  "durable_raw_repair_performed": false
+}

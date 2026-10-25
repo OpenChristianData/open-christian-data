@@ -1,0 +1,29 @@
+"""Create Watson-only candidate/proof recipe from the frozen Farrar baseline."""
+from pathlib import Path
+import re
+ROOT=Path(__file__).resolve().parents[2]
+if __name__ == '__main__':
+    path=ROOT/'build/tei/watson_retained_native_oracle.py';oracle=path.read_text(encoding='utf-8')
+    needle=" if account['root_ids_in_order']!=root_ids or account['root_disposition']!=expected_regions:raise ValueError('Source root/region accounting differs')"
+    assert oracle.count(needle)==1
+    oracle=oracle.replace(needle,needle+"\n broken=[dict(source_path=r['source_path'],source_id=r['source_attributes'].get('id'),href=r['source_attributes']['href']) for r in source_records if r['source_tag']=='a' and r['source_attributes'].get('href','').startswith('#') and r['source_attributes']['href'][1:] not in source_ids]\n if account['broken_local_links']!=broken:raise ValueError('Exact source unresolved fragment-link census differs')")
+    path.write_text(oracle,encoding='utf-8',newline='\n')
+    target=ROOT/'build/tools/prepare_watson_retained_candidates.py'
+    if target.exists():raise FileExistsError('Preserve Watson proof recipe')
+    s=(ROOT/'build/tools/prepare_farrar_retained_candidates.py').read_text(encoding='utf-8').replace('Farrar','Watson').replace('farrar','watson').replace('frederic-w-watson','r-a-watson').replace('20261003-v2','20261003-v1').replace('37c-151-existing-watson','37c-existing-watson')
+    s=s.replace('ORACLE_IMPORTS,PRODUCER_IMPORTS,_p5_schema','ORACLE_IMPORTS,PRODUCER_IMPORTS,_p5_schema,expected_profile,expected_policy,verified_lineage')
+    begin=s.index('  (ROOT/profile).write_bytes(');end=s.index('  auth=[',begin)
+    s=s[:begin]+"  (ROOT/profile).write_bytes(canonical(expected_profile(member,direct)))\n  (ROOT/policy).write_bytes(canonical(expected_policy(member,direct)))\n"+s[end:]
+    needle='  record=dict(contract='
+    index=s.index(needle)
+    s=s[:index]+"  auth += [authority('composite-producer-lineage',LOG/'retained-producer-lineage.json','current-composite-producer-lineage'),authority('work-boundary-review',LOG/'complete-work-boundary-review.json','complete-authored-work-boundary-evidence'),authority('boundary-reviewer','build/tools/watson_boundary_review.py','independent-boundary-review-implementation'),authority('original-profile','sources/commentaries/expositors-bible/lib035.reconstruction-profile.json','historical-correction-annotation-authority')]\n  auth += [authority('lineage-'+r['role'],r['path'],'immutable-retained-producer-lineage-input') for r in verified_lineage()['inputs']]\n"+s[index:]
+    begin=s.index(' cases=[');end=s.index(' for label,selector,field in cases:',begin)
+    s=s[:begin]+''' cases=[('paragraph-text','.//t:text//t:p','text'),('source-tail','.//t:text//t:ref','tail'),('literal-link-target','.//t:text//t:ref[@target]','target'),('query-url-context','.//t:text//t:ref[@xml:base]','{http://www.w3.org/XML/1998/namespace}base'),('note-label','.//t:text//t:note[@n]','n'),('inline-rend','.//t:text//t:hi[@rend]','rend'),('source-heading','.//t:text//t:p[@rend="source-h2"]','text'),('commentary-type','.//t:text//t:milestone[@type]','type'),('source-head-field','.//t:note[@type="retained-source-head-field"]','text'),('literal-prolog','.//t:note[@type="retained-exact-source-prolog"]','text'),('visible-admin-comment','.//t:note[@type="retained-source-body-comment"]','text'),('native-navigation','.//t:text//t:div[@next]','next'),('missing-toc-gap','.//t:text//t:div[@ana]','ana'),('body-xml-space','.//t:text','{http://www.w3.org/XML/1998/namespace}space')]
+ if member=='watson-ra-expositor7':cases += [('table-summary','.//t:text//t:table[@n]','n'),('table-cell-alignment','.//t:text//t:cell[@rend]','rend')]
+ else:cases += [('note-anchoring','.//t:text//t:note[@anchored]','anchored'),('Scripture-passage-label','.//t:text//t:ref[@n]','n'),('verse-line','.//t:text//t:l','text')]
+'''+s[end:]
+    s=s.replace("  elif label=='preformatted-space':node.set(field,'default')", "  elif label=='body-xml-space':node.set(field,'default' if node.get(field)=='preserve' else 'preserve')")
+    s=s.replace(" account=json.loads(package.member_bytes('source-accountability.json'));next(r for r in account['features'] if r['source_tag']=='tbody')['source_attributes']['class']='CHALLENGE';reject('source-wrapper-attribute',raw,canonical(account))", " account=json.loads(package.member_bytes('source-accountability.json'));next(r for r in account['features'] if r['source_tag']=='p')['source_attributes']['class']='CHALLENGE';reject('source-attribute-ledger',raw,canonical(account))\n account=json.loads(package.member_bytes('source-accountability.json'));account['source_navigation_gaps'][0]['value']='CHALLENGE';reject('unresolved-navigation-ledger',raw,canonical(account))\n if member=='watson-ra-expositorjob':\n  account=json.loads(package.member_bytes('source-accountability.json'));account['historical_text_corrections'][0]['start']+=1;reject('prior-correction-source-position',raw,canonical(account))\n if member!='watson-ra-expositor7':\n  tree=etree.fromstring(raw);groups=tree.xpath('.//t:text//t:lg',namespaces=ns);origin=next(n for n in groups if len(n.findall('t:l',namespaces=ns))>1);line=origin.find('t:l',namespaces=ns);target=next(n for n in groups if n is not origin and origin not in n.iterancestors() and n not in origin.iterancestors());origin.remove(line);target.append(line);reject('same-text-line-attachment',etree.tostring(tree,encoding='UTF-8',xml_declaration=True))\n if len(results)!=EXPECTED_MUTATIONS[member]:raise ValueError('Watson finite mutation count differs '+str(len(results)))")
+    s=s.replace("CANDIDATES=Path(","EXPECTED_MUTATIONS={'watson-ra-expositor7':24,'watson-ra-expositorjob':27,'watson-ra-expositornum':26}\nCANDIDATES=Path(")
+    target.write_text(s,encoding='utf-8',newline='\n')
+    print('Watson proof recipe authored; final code review precedes full candidate generation')

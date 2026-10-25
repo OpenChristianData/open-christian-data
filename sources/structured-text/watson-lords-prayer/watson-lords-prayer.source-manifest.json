@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "37c-317-watson-lords-prayer-retained-thml-route",
+  "work_id": "watson-lords-prayer",
+  "authorities": [
+    {"path": "raw/ccel/watson/prayer.xml", "name": "retained-source", "role": "primary-source", "bytes": 1376060, "sha256": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca"},
+    {"path": "library/works/watson-lords-prayer/work.json", "name": "work", "role": "work-identity-config", "bytes": 1239, "sha256": "54b952e4f4b29056eba5e64a898e5609b9873adf9561468a22fa3c6024150ff8"},
+    {"path": "library/works/watson-lords-prayer/forms/watson-lords-prayer-route-source-form/editions/watson-lords-prayer-retained-thml-route/acquisitions/watson-lords-prayer-retained-source.json", "name": "acquisition", "role": "acquisition-selection-authority", "bytes": 2895, "sha256": "1ca151c9abefb4c5d5c894aa36286c7593009bbd9ee0717059daac826963bcb3"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.reconstruction-profile.json", "name": "profile", "role": "complete-source-feature-profile", "bytes": 10562, "sha256": "680fc6e88f827c5111b9afaf396050b1457adf7e83628ac94d14e16db684a40c"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.validation-policy.json", "name": "policy", "role": "independent-validation-policy", "bytes": 2546, "sha256": "0e484b15b35e39fe251897cc2284994ec1a481b9b9505842fe5e7cea5e01b5f4"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.source-accountability.json", "name": "source-accountability", "role": "source-completeness-accountability", "bytes": 11164, "sha256": "89e1b7b1c1a2c1e8e8da332fbe983b6ae7d2c04b2a52a0a254bed4bb3d06331a"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.source-accountability.schema.json", "name": "source-accountability-schema", "role": "work-local-accountability-schema", "bytes": 6770, "sha256": "05be288119effce3c164bea22641214b154b72efb57e30e57f5175aa98b86c59"},
+    {"path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "name": "tei-schema", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "name": "package-schema", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson_lords_prayer_reconstruction.py", "name": "work-specific-producer", "role": "implementation", "bytes": 2752, "sha256": "4f60b0d65103755b53579fdbd6311285f7f04a05d0322cf5509b154c66149e2f"},
+    {"path": "sources/structured-text/watson-lords-prayer/watson_lords_prayer_oracle.py", "name": "work-specific-oracle", "role": "implementation", "bytes": 2301, "sha256": "a3455e652f5e11b50d190ffefd3ca93eb51202955577e7f0a496a278df4f9326"},
+    {"path": "build/tei/selected_thml.py", "name": "selected-thml-base-converter", "role": "implementation-dependency", "bytes": 17353, "sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"},
+    {"path": "build/tei/selected_thml_oracle.py", "name": "selected-thml-base-oracle-helper", "role": "implementation-dependency", "bytes": 9621, "sha256": "983936eff2c1ebfe4c0a837dbeb807800bb78af8c2cb1bd797fc52af41047790"},
+    {"path": "ocd_kernel/tei/selected_thml_check.py", "name": "closure-1", "role": "implementation-dependency", "bytes": 30210, "sha256": "cca02607edb3659ad40ec3facc656ac3b1e6ef6bb4f25c25a74d8713b4774b3a"},
+    {"path": "ocd_kernel/library/acquisitions.py", "name": "closure-2", "role": "implementation-dependency", "bytes": 23828, "sha256": "7c292292ca41b0e24fb249ae5f6e676273f84427d9ecad1b883190bc26bc5beb"},
+    {"path": "ocd_kernel/library/identities.py", "name": "closure-3", "role": "implementation-dependency", "bytes": 18945, "sha256": "2297e93b3770a399b2412c210ff563f281efec257c175fcef4a998a9a5294637"},
+    {"path": "ocd_kernel/library/_common.py", "name": "closure-4", "role": "implementation-dependency", "bytes": 3970, "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"},
+    {"path": "ocd_kernel/lib/storage_topology.py", "name": "closure-5", "role": "implementation-dependency", "bytes": 4223, "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"},
+    {"path": "ocd_kernel/reconstruction/contract.py", "name": "closure-6", "role": "implementation-dependency", "bytes": 25905, "sha256": "a9bdd045183a870fe981b7fabd23111ecb43ccae592fbdb9ab049fce1ed7f74b"},
+    {"path": "ocd_kernel/reconstruction/verifier.py", "name": "closure-7", "role": "implementation-dependency", "bytes": 6014, "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"},
+    {"path": "ocd_kernel/tei/validate.py", "name": "closure-8", "role": "implementation-dependency", "bytes": 1385, "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"},
+    {"path": "schemas/v2/acquisition.schema.json", "name": "closure-9", "role": "implementation-dependency", "bytes": 4993, "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"},
+    {"path": "schemas/v2/work.schema.json", "name": "closure-10", "role": "implementation-dependency", "bytes": 6206, "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"}
+  ],
+  "converter": {
+    "id": "ocd-watson-lords-prayer-selected-thml-route",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/structured-text/watson-lords-prayer/watson_lords_prayer_reconstruction.py",
+    "implementation_sha256": "4f60b0d65103755b53579fdbd6311285f7f04a05d0322cf5509b154c66149e2f"
+  },
+  "validator": {
+    "id": "ocd-watson-lords-prayer-selected-thml-independent-check",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "sources/structured-text/watson-lords-prayer/watson_lords_prayer_oracle.py",
+    "implementation_sha256": "a3455e652f5e11b50d190ffefd3ca93eb51202955577e7f0a496a278df4f9326",
+    "import_closure_sha256": "c7a6a2ff3bb4fc0860206a44d4be13914303208dff830a9d9c14779e5d566265"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

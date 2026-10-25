@@ -1,5 +1,7 @@
 # Open Christian Data -- Schema Red Team Brief
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Purpose:** Review these 13 schema designs against real data samples. Propose your own schema designs based on the data. Find structural flaws, missing fields, wrong assumptions, unnecessary complexity, and better alternatives. Be adversarial.
 
 **Context:** This project processes public domain Christian literature into structured, machine-readable datasets (JSON, SQLite, Parquet) for developers and AI training. All data is CC0/public domain. Published on GitHub and HuggingFace.

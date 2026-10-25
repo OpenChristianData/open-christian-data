@@ -1,0 +1,61 @@
+{
+  "contract": "ocd-lib087-hymnary-source-profile-v1",
+  "work_id": "hymnary-pd",
+  "identity": {
+    "catalog_id": "hymnary-pd",
+    "title": "Public Domain Hymns (Hymnary.org)",
+    "source_url": "https://hymnary.org",
+    "retained_scope": "Entire oldest_pd_instances.csv member in exact row/column order, plus accounted ZIP support member."
+  },
+  "archive_sha256": "727bb1bee930547352b5fcdd3d9800f158ee156a168c866c2ee50b2472bac475",
+  "csv_sha256": "09ab6edd41a96c205e1d171e36173cc9c28c32aa6809156c6bd10eeeba24a18b",
+  "archive_members": [
+    {
+      "name": "oldest_pd_instances.csv",
+      "bytes": 36381819,
+      "sha256": "09ab6edd41a96c205e1d171e36173cc9c28c32aa6809156c6bd10eeeba24a18b"
+    },
+    {
+      "name": "__MACOSX/._oldest_pd_instances.csv",
+      "bytes": 244,
+      "sha256": "3a11d2c63dc6d6e2d4b702572b05e020a67aacc0e810f80fbf43c83b63381d36"
+    }
+  ],
+  "data_rows": 34895,
+  "columns": [
+    "Title",
+    "Full text",
+    "Author name",
+    "Author birth",
+    "Author death",
+    "Year written",
+    "Hymnal title",
+    "Hymnal publication year"
+  ],
+  "data_fields": 279160,
+  "empty_fields_by_column": [
+    0,
+    0,
+    5107,
+    10039,
+    10237,
+    25798,
+    0,
+    0
+  ],
+  "line_endings": {
+    "CRLF": 995517,
+    "LF": 40972
+  },
+  "controls": {
+    "U+0008": 7,
+    "U+0010": 7,
+    "U+000F": 1
+  },
+  "ordered_field_sha256": "7f4277b9257e9dab3aa83060f000fd5e86c57f611c42b18b172be6a499bf6e86",
+  "source_header_disposition": "Represent all eight header labels; BOM is separately accounted encoding support.",
+  "source_row_disposition": "Represent every row including duplicate/empty titles; no filters, deduplication or corrections.",
+  "support_disposition": {
+    "__MACOSX/._oldest_pd_instances.csv": "AppleDouble resource-fork support. Preserve its member hash and byte length; not hymn text."
+  }
+}

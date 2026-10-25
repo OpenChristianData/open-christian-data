@@ -1,0 +1,7 @@
+# On the Predestination of the Saints: source and data credits
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/npnf105.html), Nicene and Post-Nicene Fathers, Series 1, volume 5. The retained electronic source header states Public Domain and gives New York: Christian Literature Publishing Co., 1886. Robert Ernest Wallis translated both books according to the retained Edinburgh preface. Philip Schaff is volume editor; the volume credits Benjamin B. Warfield as translation reviser and introduction author. These statements do not establish print-edition equivalence.
+
+This preparation includes the entire source-defined two-book work: its title page, Book I with 43 chapters, and Book II, separately titled On the Gift of Perseverance, with its own title page, introduction and 68 chapters. The retained opening explicitly identifies it as the second book of On the Predestination of the Saints. The shared Contents says One Book; that discrepant reading is recorded as outside-work context without correcting the body or contents. Source notes, alternate-title discussion, references, page markers and native spelling are preserved. Shared volume matter and sibling works are excluded.
+
+Retained CCEL permission evidence permits parsing ThML; do not sell CCEL files or derivatives of CCEL formatting. The source header's Public Domain statement and this parsing permission are retained provider statements, not independent rights clearance. Human/visual review, print comparison, final rights disposition and public publication remain separate.

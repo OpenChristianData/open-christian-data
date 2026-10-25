@@ -1,0 +1,31 @@
+{
+  "resource_id": "calvins-institutes-beveridge-1846",
+  "title": "The Institutes of the Christian Religion",
+  "author": "John Calvin",
+  "author_id": "john-calvin",
+  "language": "en",
+  "original_language": "la",
+  "tradition": [
+    "reformed"
+  ],
+  "era": "reformation",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "systematic-theology",
+  "translator": "Henry Beveridge",
+  "source_url": "https://oll.libertyfund.org/titles/calvin-the-institutes-of-the-christian-religion",
+  "source_format": "Online Library of Liberty EPUB, text-based eBook PDF, and facsimile PDF",
+  "source_edition": "Edinburgh: Calvin Translation Society, 1846; two volumes in one; OLL electronic edition.",
+  "source_hash": "sha256:4a7bfc603c2e9f460c4b48a12389f3ec9b0ef00f8864416d0fcd87168813d0d1",
+  "source_type": "online_library_of_liberty_epub_with_facsimile",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-1/08/calvins-institutes-beveridge-1846/calvin-the-institutes-of-the-christian-religion.epub",
+  "source_members": [
+    "Calvin_0038.html",
+    "Calvin_0038_EBk_v6.0.pdf",
+    "0038_Bk.pdf",
+    "facsimile-general-index-p691-704.pypdf-6.10.0.json"
+  ],
+  "processing_script": "build/tei/calvins_institutes_beveridge_1846.py",
+  "output_file": "reports/clean-ready-acquisition-to-tei/master-1/08/calvins-institutes-beveridge-1846/candidate.tei.xml",
+  "notes": "The exact retained OLL EPUB supplies the complete four-book, eighty-chapter electronic transcription and the primary visible-text digest. The electronic EPUB and eBook PDF omit the facsimile General Index at printed pages 691-704. Those fourteen pages are retained separately from the facsimile as low-certainty, page-bounded embedded searchable-text extraction; they are not claimed as exact human transcription and are excluded from the EPUB digest. No existing John Allen source, converter, IR, catalog, schema, kernel, or viewer artifact is modified."
+}

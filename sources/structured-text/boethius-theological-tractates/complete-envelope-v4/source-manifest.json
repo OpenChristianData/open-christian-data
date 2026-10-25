@@ -1,0 +1,81 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-boethius-tracts-complete-envelope-retained-xml-v4",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/boethius/tracts.xml",
+      "role": "primary-source",
+      "bytes": 162005,
+      "sha256": "406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8"
+    },
+    {
+      "name": "local-source-config",
+      "path": "sources/structured-text/boethius-theological-tractates/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1584,
+      "sha256": "fc0bb523c9f1f04a01e3e7c24401badb6193e287fcce8460b919653f1b2e512b"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/boethius-theological-tractates/complete-envelope-v4/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 946,
+      "sha256": "e4fc44e085b5ac2fbdfd1a35378cb64688b35db417a67b34d5b1e9405bbbf4d4"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/boethius-theological-tractates/complete-envelope-v4/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1107,
+      "sha256": "e492066e9ea6a0ee23a5879027c6cb58fa9f3a1d204255d03883e651339efb74"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/boethius-theological-tractates/complete-envelope-v4/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 831,
+      "sha256": "82bcfe7b30df5fa1dfce54a709b82d459f0f8bb20b17196819d841955fa72fdf"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/boethius-theological-tractates/complete-envelope-v4/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1601,
+      "sha256": "bfedd435611b3a47253ce593f83e92796b27491d686c175396cfbf338242e4a1"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-boethius-complete-envelope-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/boethius_complete_envelope.py",
+    "implementation_sha256": "3b31dac94468f31efcc389a62a56e6dd22c48e0afc782701504302bb783826dd"
+  },
+  "validator": {
+    "id": "ocd-boethius-complete-envelope-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/boethius_complete_envelope_oracle.py",
+    "implementation_sha256": "d07c931d3de117a0dc1ebbab0adfae0423a7bc1ba55bf8bfa2b1086b36a17d79",
+    "import_closure_sha256": "d07c931d3de117a0dc1ebbab0adfae0423a7bc1ba55bf8bfa2b1086b36a17d79"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

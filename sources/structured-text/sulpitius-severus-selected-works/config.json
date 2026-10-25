@@ -5,7 +5,18 @@
   "author_id": "sulpitius-severus",
   "author_birth_year": 363,
   "author_death_year": 425,
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Alexander Roberts",
+      "role": "translator",
+      "note": "The retained title-page credit names Rev. Alexander Roberts as translator, with preface, and notes; no translator year is asserted from the retained title-page credit or historical config string."
+    },
+    {
+      "name": "Philip Schaff",
+      "role": "editor",
+      "note": "The retained NPNF-211 volume editor header names Philip Schaff; series-editor scope is not asserted."
+    }
+  ],
   "original_publication_year": 1894,
   "language": "en",
   "original_language": "lat",
@@ -23,7 +34,7 @@
   "source_hash": "sha256:4ca2fa69fc584c8a697884454a3d95453b044e7548b48ff44a1d95605741a5b2",
   "source_type": "ccel_thml",
   "source_file": "raw/ccel/npnf2/npnf211.xml",
-  "translator": "Alexander Roberts, James Donaldson, and contributors (translators/editors), 1894; Philip Schaff and Henry Wace (series editors)",
+  "translator": "Alexander Roberts",
   "download_date": "2026-05-05",
   "output_file": "data/structured-text/sulpitius-severus-selected-works.json",
   "clearance_date": "2026-04-01",

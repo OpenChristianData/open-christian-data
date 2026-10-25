@@ -1,0 +1,2599 @@
+{
+  "contract": "ocd-robertson-keywords-scan-correction-map-v1",
+  "source_id": "ia-keywordsinteachi01robe",
+  "work_id": "robertson-keywords-in-the-teaching-of-jesus",
+  "scan_authority": {
+    "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/scan.pdf",
+    "sha256": "54f06da00f0a06d40d182878f052ddc9fdf974471cff0131b181820c4759605f"
+  },
+  "ocr_authority": {
+    "path": "raw/internet-archive/keywords-in-the-teaching-of-jesus/keywordsinteachi01robe/ocr.xml",
+    "sha256": "526f72ce0effd71dbda6086262b5b6f91988817ad8707c287c209996eeb59691"
+  },
+  "method": "Use only readings verified in the retained scan. Keep DjVuXML immutable. Every selector is expanded by the converter and recorded with the exact raw WORD text and coords in source-accountability.json. Do not use comparison OCR or ABBYY as reading text.",
+  "replacements": [
+    {
+      "id": "title-page-author-initials",
+      "page_ordinal": 7,
+      "paragraph": 5,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "ATT. ",
+      "scan_reading": "A. T. ",
+      "rationale": "The scan title page clearly prints A. T. Robertson; the OCR token ATT. is a recognition error."
+    },
+    {
+      "id": "title-page-publisher-american",
+      "page_ordinal": 7,
+      "paragraph": 14,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "Smetican ",
+      "scan_reading": "American ",
+      "rationale": "The scan title page clearly prints American Baptist Publication Society."
+    },
+    {
+      "id": "title-page-publisher-baptist",
+      "page_ordinal": 7,
+      "paragraph": 14,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "3Bapttet ",
+      "scan_reading": "Baptist ",
+      "rationale": "The scan title page clearly prints American Baptist Publication Society."
+    },
+    {
+      "id": "title-page-publisher-publication",
+      "page_ordinal": 7,
+      "paragraph": 14,
+      "line": 1,
+      "word": 3,
+      "ocr_form": "publication ",
+      "scan_reading": "Publication ",
+      "rationale": "The scan title page clearly prints American Baptist Publication Society."
+    },
+    {
+      "id": "copyright-colophon-from",
+      "page_ordinal": 8,
+      "paragraph": 9,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "from ",
+      "scan_reading": "From ",
+      "rationale": "The scan colophon begins with a capital F."
+    },
+    {
+      "id": "copyright-colophon-the",
+      "page_ordinal": 8,
+      "paragraph": 9,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "tbe ",
+      "scan_reading": "the ",
+      "rationale": "The scan colophon clearly reads the Society's own Press."
+    },
+    {
+      "id": "copyright-colophon-press",
+      "page_ordinal": 8,
+      "paragraph": 9,
+      "line": 1,
+      "word": 5,
+      "ocr_form": "press",
+      "scan_reading": "Press",
+      "rationale": "The scan colophon capitalizes Press."
+    },
+    {
+      "id": "dedication-to",
+      "page_ordinal": 9,
+      "paragraph": 2,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "Go",
+      "scan_reading": "To",
+      "rationale": "The dedication page clearly prints To."
+    },
+    {
+      "id": "preface-folio-viii",
+      "page_ordinal": 12,
+      "paragraph": 1,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "Vlll ",
+      "scan_reading": "viii ",
+      "rationale": "The scan folio is lowercase Roman numeral viii; OCR substitutes lowercase l characters."
+    },
+    {
+      "id": "body-p17-remove-stray-m",
+      "page_ordinal": 17,
+      "paragraph": 2,
+      "line": 1,
+      "word": 3,
+      "ocr_form": "M ",
+      "scan_reading": "",
+      "rationale": "No printed M appears after the question mark in the retained scan."
+    },
+    {
+      "id": "body-p20-john-5-39-number",
+      "page_ordinal": 20,
+      "paragraph": 6,
+      "line": 1,
+      "word": 4,
+      "ocr_form": "5 ",
+      "scan_reading": "5:",
+      "rationale": "The scan reads (John 5:39)."
+    },
+    {
+      "id": "body-p20-john-5-39-dot",
+      "page_ordinal": 20,
+      "paragraph": 6,
+      "line": 1,
+      "word": 5,
+      "ocr_form": ". ",
+      "scan_reading": "",
+      "rationale": "The scan reads (John 5:39)."
+    },
+    {
+      "id": "body-p20-john-5-39-closing",
+      "page_ordinal": 20,
+      "paragraph": 6,
+      "line": 1,
+      "word": 6,
+      "ocr_form": "3gy    ",
+      "scan_reading": "39). ",
+      "rationale": "The scan reads (John 5:39)."
+    },
+    {
+      "id": "body-p20-capital-in",
+      "page_ordinal": 20,
+      "paragraph": 6,
+      "line": 1,
+      "word": 7,
+      "ocr_form": "in ",
+      "scan_reading": "In ",
+      "rationale": "The printed sentence starts In the Old Testament God is the Father..."
+    },
+    {
+      "id": "margin-heading-p22-loss",
+      "page_ordinal": 22,
+      "paragraph": 7,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "^oss, ",
+      "scan_reading": "loss, ",
+      "rationale": "The scan text after the marginal heading reads 'Father. When Thomas was at a loss, this was the answer.'"
+    },
+    {
+      "id": "margin-heading-p22-this",
+      "page_ordinal": 22,
+      "paragraph": 7,
+      "line": 1,
+      "word": 3,
+      "ocr_form": "*^s ",
+      "scan_reading": "this ",
+      "rationale": "The scan text after the marginal heading reads 'Father. When Thomas was at a loss, this was the answer.'"
+    },
+    {
+      "id": "margin-heading-p22-the",
+      "page_ordinal": 22,
+      "paragraph": 7,
+      "line": 1,
+      "word": 5,
+      "ocr_form": "t'ie ",
+      "scan_reading": "the ",
+      "rationale": "The scan text after the marginal heading reads 'Father. When Thomas was at a loss, this was the answer.'"
+    },
+    {
+      "id": "body-p33-john-11-25",
+      "page_ordinal": 33,
+      "paragraph": 2,
+      "line": 15,
+      "word": 2,
+      "ocr_form": "n ",
+      "scan_reading": "11 ",
+      "rationale": "The scan citation is John 11:25."
+    },
+    {
+      "id": "body-p48-first",
+      "page_ordinal": 48,
+      "paragraph": 4,
+      "line": 2,
+      "word": 9,
+      "ocr_form": "firgt ",
+      "scan_reading": "first ",
+      "rationale": "The scan clearly reads first."
+    },
+    {
+      "id": "body-p49-infirmity-hyphen",
+      "page_ordinal": 49,
+      "paragraph": 5,
+      "line": 1,
+      "word": 9,
+      "ocr_form": "in- ",
+      "scan_reading": "in-",
+      "rationale": "The scan line-breaks the printed word as in- / firmity."
+    },
+    {
+      "id": "body-p49-infirmity-ending",
+      "page_ordinal": 49,
+      "paragraph": 5,
+      "line": 1,
+      "word": 10,
+      "ocr_form": "g.",
+      "scan_reading": "firmity.",
+      "rationale": "The scan line-breaks the printed word as in- / firmity."
+    },
+    {
+      "id": "body-p60-the",
+      "page_ordinal": 60,
+      "paragraph": 8,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "t'ie ",
+      "scan_reading": "the ",
+      "rationale": "The scan clearly reads the."
+    },
+    {
+      "id": "body-p66-in",
+      "page_ordinal": 66,
+      "paragraph": 6,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "*n ",
+      "scan_reading": "in ",
+      "rationale": "The scan body reads in a true sense the kingdom."
+    },
+    {
+      "id": "body-p66-the",
+      "page_ordinal": 66,
+      "paragraph": 6,
+      "line": 1,
+      "word": 6,
+      "ocr_form": "^e ",
+      "scan_reading": "the ",
+      "rationale": "The scan body reads in a true sense the kingdom."
+    },
+    {
+      "id": "body-p80-matt-reference-open",
+      "page_ordinal": 80,
+      "paragraph": 2,
+      "line": 8,
+      "word": 4,
+      "ocr_form": "(Matt  ",
+      "scan_reading": "(Matt. ",
+      "rationale": "The retained scan reads the reference as (Matt. 8:11)."
+    },
+    {
+      "id": "body-p80-matt-reference-number",
+      "page_ordinal": 80,
+      "paragraph": 2,
+      "line": 8,
+      "word": 5,
+      "ocr_form": "g ",
+      "scan_reading": "8:",
+      "rationale": "The retained scan reads the reference as (Matt. 8:11)."
+    },
+    {
+      "id": "body-p80-matt-reference-dot",
+      "page_ordinal": 80,
+      "paragraph": 2,
+      "line": 8,
+      "word": 6,
+      "ocr_form": ". ",
+      "scan_reading": "",
+      "rationale": "The retained scan reads the reference as (Matt. 8:11); this OCR punctuation carrier is not printed."
+    },
+    {
+      "id": "body-p80-matt-reference-close",
+      "page_ordinal": 80,
+      "paragraph": 2,
+      "line": 8,
+      "word": 7,
+      "ocr_form": "Il}     ",
+      "scan_reading": "11)     ",
+      "rationale": "The retained scan reads the reference as (Matt. 8:11)."
+    },
+    {
+      "id": "body-p86-impossible",
+      "page_ordinal": 86,
+      "paragraph": 2,
+      "line": 4,
+      "word": 7,
+      "ocr_form": "imposible ",
+      "scan_reading": "impossible ",
+      "rationale": "The retained scan clearly reads impossible."
+    },
+    {
+      "id": "body-p99-meum",
+      "page_ordinal": 99,
+      "paragraph": 2,
+      "line": 20,
+      "word": 2,
+      "ocr_form": "rneum, ",
+      "scan_reading": "meum, ",
+      "rationale": "The retained scan reads between meum and tuum."
+    },
+    {
+      "id": "body-p99-tuum",
+      "page_ordinal": 99,
+      "paragraph": 2,
+      "line": 20,
+      "word": 4,
+      "ocr_form": "tuutn. ",
+      "scan_reading": "tuum. ",
+      "rationale": "The retained scan reads between meum and tuum."
+    },
+    {
+      "id": "body-p118-will",
+      "page_ordinal": 118,
+      "paragraph": 5,
+      "line": 1,
+      "word": 4,
+      "ocr_form": "wTill ",
+      "scan_reading": "will ",
+      "rationale": "The retained scan clearly reads will."
+    },
+    {
+      "id": "topical-index-lazarus-page",
+      "page_ordinal": 130,
+      "paragraph": 11,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "HI.",
+      "scan_reading": "111.",
+      "rationale": "The scan entry is Lazarus, 111.; these are page digits, not letters."
+    },
+    {
+      "id": "bibliography-wendt",
+      "page_ordinal": 131,
+      "paragraph": 5,
+      "line": 4,
+      "word": 1,
+      "ocr_form": "Weudt, ",
+      "scan_reading": "Wendt, ",
+      "rationale": "The scan bibliography clearly prints Wendt."
+    },
+    {
+      "id": "bibliography-moorhouse-date",
+      "page_ordinal": 131,
+      "paragraph": 8,
+      "line": 1,
+      "word": 2,
+      "ocr_form": "1S91.",
+      "scan_reading": "1891.",
+      "rationale": "The scan bibliography clearly prints 1891."
+    },
+    {
+      "id": "bibliography-stalker-date",
+      "page_ordinal": 131,
+      "paragraph": 28,
+      "line": 2,
+      "word": 1,
+      "ocr_form": "1S99.",
+      "scan_reading": "1899.",
+      "rationale": "The scan bibliography clearly prints Stalker's date as 1899."
+    },
+    {
+      "id": "bibliography-eschatologischen",
+      "page_ordinal": 132,
+      "paragraph": 5,
+      "line": 1,
+      "word": 3,
+      "ocr_form": "Eschatologuchen ",
+      "scan_reading": "Eschatologischen ",
+      "rationale": "The scan clearly prints the German adjective Eschatologischen."
+    },
+    {
+      "id": "back-cover-barcode-number",
+      "page_ordinal": 136,
+      "paragraph": 5,
+      "line": 1,
+      "word": 1,
+      "ocr_form": "00D115D17fi3",
+      "scan_reading": "00011501783",
+      "rationale": "The scan label visibly reads 00011501783; preserve this nonliterary catalog number as paratext."
+    }
+  ],
+  "marginal_headings": [
+    {
+      "id": "margin-heading-p16-god-is-the-father",
+      "page_ordinal": 16,
+      "printed_page": "12",
+      "scan_reading": "God is the Father",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p17-the-father-of-jesus",
+      "page_ordinal": 17,
+      "printed_page": "13",
+      "scan_reading": "The Father of Jesus",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 10
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p18-the-father-of-all-who-believe-in-jesus",
+      "page_ordinal": 18,
+      "printed_page": "14",
+      "scan_reading": "The Father of All who Believe in Jesus",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p19-but-in-one-sense-god-is-the-father-of-all-men",
+      "page_ordinal": 19,
+      "printed_page": "15",
+      "scan_reading": "But in One Sense God is the Father of all Men",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 9,
+          "last_word": 11
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 6,
+          "first_word": 6,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The final word Men has no identifiable OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p20-the-old-testament-view-of-the-father",
+      "page_ordinal": 20,
+      "printed_page": "16",
+      "scan_reading": "The Old Testament View of the Father",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "ment View of has no matching OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p21-the-new-light-from-jesus-about-the-father",
+      "page_ordinal": 21,
+      "printed_page": "17",
+      "scan_reading": "The New Light from Jesus about the Father",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 10
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 6,
+          "last_word": 6
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p22-the-way-to-know-the-father",
+      "page_ordinal": 22,
+      "printed_page": "18",
+      "scan_reading": "The Way to Know the Father",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p23-the-fathers-yearning-for-the-sinner",
+      "page_ordinal": 23,
+      "printed_page": "19",
+      "scan_reading": "The Father's Yearning for the Sinner",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 8,
+          "last_word": 8
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p23-the-fathers-effort-to-save-the-sinner",
+      "page_ordinal": 23,
+      "printed_page": "19",
+      "scan_reading": "The Father's Effort to Save the Sinner",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 4,
+          "first_word": 5,
+          "last_word": 6
+        },
+        {
+          "paragraph": 4,
+          "line": 5,
+          "first_word": 8,
+          "last_word": 10
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p24-a-welcome-for-the-repentant-sinner",
+      "page_ordinal": 24,
+      "printed_page": "20",
+      "scan_reading": "A Welcome for the Repentant Sinner",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 6,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p25-the-father-as-judge",
+      "page_ordinal": 25,
+      "printed_page": "21",
+      "scan_reading": "The Father as Judge",
+      "target_paragraph": 21,
+      "carriers": [
+        {
+          "paragraph": 21,
+          "line": 1,
+          "first_word": 9,
+          "last_word": 12
+        },
+        {
+          "paragraph": 22,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p26-what-about-the-character-of-the-father",
+      "page_ordinal": 26,
+      "printed_page": "22",
+      "scan_reading": "What about the Character of the Father?",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p27-the-father-is-present-in-his-world",
+      "page_ordinal": 27,
+      "printed_page": "23",
+      "scan_reading": "The Father is Present in His World",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 10
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 9
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p27-the-father-dwells-in-his-children",
+      "page_ordinal": 27,
+      "printed_page": "23",
+      "scan_reading": "The Father Dwells in His Children",
+      "target_paragraph": 7,
+      "carriers": [
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 8,
+          "line": 2,
+          "first_word": 9,
+          "last_word": 11
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p29-the-sons-egoism",
+      "page_ordinal": 29,
+      "printed_page": "25",
+      "scan_reading": "The Son's Egoism",
+      "target_paragraph": 7,
+      "carriers": [
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 7,
+          "line": 2,
+          "first_word": 9,
+          "last_word": 10
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Egoism has no usable OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p30-the-pre-incarnate-state-of-jesus",
+      "page_ordinal": 30,
+      "printed_page": "26",
+      "scan_reading": "The Pre-incarnate State of Jesus",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p31-christ-s-relation-to-the-father",
+      "page_ordinal": 31,
+      "printed_page": "27",
+      "scan_reading": "Christ’s Relation to the Father",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 7,
+          "last_word": 7
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 8,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Relation to the has no OCR carriers."
+      ]
+    },
+    {
+      "id": "margin-heading-p32-the-divinity-of-jesus",
+      "page_ordinal": 32,
+      "printed_page": "28",
+      "scan_reading": "The Divinity of Jesus",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "of Jesus has no distinct OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p34-jesus-connection-with-mankind",
+      "page_ordinal": 34,
+      "printed_page": "30",
+      "scan_reading": "Jesus’ Connection with Mankind",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Connection has no identifiable OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p36-the-messianic-self-consciousness-of-jesus",
+      "page_ordinal": 36,
+      "printed_page": "32",
+      "scan_reading": "The Messianic Self-Consciousness of Jesus",
+      "target_paragraph": 17,
+      "carriers": [
+        {
+          "paragraph": 17,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 18,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 19,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p37-jesus-conception-of-his-mission",
+      "page_ordinal": 37,
+      "printed_page": "33",
+      "scan_reading": "Jesus’ Conception of His Mission",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 7,
+          "last_word": 7
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Conception of His Mission is collapsed into one garbled carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p38-christ-s-love-for-the-world",
+      "page_ordinal": 38,
+      "printed_page": "34",
+      "scan_reading": "Christ’s Love for the World",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 4
+        },
+        {
+          "paragraph": 7,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p39-jesus-teaching-and-the-old-testament",
+      "page_ordinal": 39,
+      "printed_page": "35",
+      "scan_reading": "Jesus’ Teaching and the Old Testament",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "ing and the has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p40-the-current-teaching",
+      "page_ordinal": 40,
+      "printed_page": "36",
+      "scan_reading": "The Current Teaching",
+      "target_paragraph": 2,
+      "carriers": [
+        {
+          "paragraph": 2,
+          "line": 4,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Teaching has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p40-the-sense-of-authority-in-jesus",
+      "page_ordinal": 40,
+      "printed_page": "36",
+      "scan_reading": "The Sense of Authority in Jesus",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p41-the-knowledge-of-jesus",
+      "page_ordinal": 41,
+      "printed_page": "37",
+      "scan_reading": "The Knowledge of Jesus",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 4,
+          "last_word": 5
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p42-the-central-thought-of-jesus",
+      "page_ordinal": 42,
+      "printed_page": "38",
+      "scan_reading": "The Central Thought of Jesus",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Jesus has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p46-the-reality-of-sin",
+      "page_ordinal": 46,
+      "printed_page": "42",
+      "scan_reading": "The Reality of Sin",
+      "target_paragraph": 2,
+      "carriers": [
+        {
+          "paragraph": 2,
+          "line": 4,
+          "first_word": 1,
+          "last_word": 3
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Sin has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p48-the-origin-of-sin",
+      "page_ordinal": 48,
+      "printed_page": "44",
+      "scan_reading": "The Origin of Sin",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p49-the-nature-of-sin",
+      "page_ordinal": 49,
+      "printed_page": "45",
+      "scan_reading": "The Nature of Sin",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 3,
+          "last_word": 5
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Sin has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p53-the-penalty-of-sin",
+      "page_ordinal": 53,
+      "printed_page": "49",
+      "scan_reading": "The Penalty of Sin",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The title carrier is merged; of Sin has no separate OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p55-the-remedy-for-sin",
+      "page_ordinal": 55,
+      "printed_page": "51",
+      "scan_reading": "The Remedy for Sin",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 6,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "for Sin has no separate OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p61-the-origin-of-the-term",
+      "page_ordinal": 61,
+      "printed_page": "57",
+      "scan_reading": "The Origin of the Term",
+      "target_paragraph": 26,
+      "carriers": [
+        {
+          "paragraph": 26,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 8
+        },
+        {
+          "paragraph": 26,
+          "line": 2,
+          "first_word": 8,
+          "last_word": 10
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p63-various-senses-of-the-word",
+      "page_ordinal": 63,
+      "printed_page": "59",
+      "scan_reading": "Various Senses of the Word",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 8
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 4,
+          "last_word": 6
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p64-the-popular-jewish-idea-of-the-kingdom",
+      "page_ordinal": 64,
+      "printed_page": "60",
+      "scan_reading": "The Popular Jewish Idea of the Kingdom",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p66-when-did-the-kingdom-begin",
+      "page_ordinal": 66,
+      "printed_page": "62",
+      "scan_reading": "When Did the Kingdom Begin?",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p67-what-sort-of-a-kingdom-is-it",
+      "page_ordinal": 67,
+      "printed_page": "63",
+      "scan_reading": "What Sort of a Kingdom Is It?",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 7,
+          "last_word": 8
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 8
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p71-how-does-one-enter-the-king-dom",
+      "page_ordinal": 71,
+      "printed_page": "67",
+      "scan_reading": "How Does One Enter the King-dom?",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 10,
+          "last_word": 11
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 8
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 4,
+          "last_word": 4
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The scan heading is interleaved with body prose; title tokens are removed from body order and represented as a margin note."
+      ]
+    },
+    {
+      "id": "margin-heading-p74-is-the-king-dom-present-or-future",
+      "page_ordinal": 74,
+      "printed_page": "70",
+      "scan_reading": "Is the King-dom Present or Future?",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p75-the-gradual-growth-of-the-kingdom",
+      "page_ordinal": 75,
+      "printed_page": "71",
+      "scan_reading": "The Gradual Growth of the Kingdom",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Growth of has no recoverable OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p77-the-permanence-of-the-kingdom",
+      "page_ordinal": 77,
+      "printed_page": "73",
+      "scan_reading": "The Permanence of the Kingdom",
+      "target_paragraph": 8,
+      "carriers": [
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 8,
+          "line": 2,
+          "first_word": 7,
+          "last_word": 9
+        },
+        {
+          "paragraph": 9,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 7
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p78-the-final-victory-of-the-kingdom",
+      "page_ordinal": 78,
+      "printed_page": "74",
+      "scan_reading": "The Final Victory of the Kingdom",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 5
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Victory of the is materially garbled in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p80-a-cosmopolitan-kingdom",
+      "page_ordinal": 80,
+      "printed_page": "76",
+      "scan_reading": "A Cosmopolitan Kingdom",
+      "target_paragraph": 2,
+      "carriers": [
+        {
+          "paragraph": 2,
+          "line": 7,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 2,
+          "line": 8,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p83-the-theme-of-the-sermon-on-the-mount",
+      "page_ordinal": 83,
+      "printed_page": "79",
+      "scan_reading": "The Theme of the Sermon on the Mount",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 8
+        },
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 5
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p84-the-significance-of-christ-s-teaching-about-righteousness",
+      "page_ordinal": 84,
+      "printed_page": "80",
+      "scan_reading": "The Significance of Christ’s Teaching About Righteousness",
+      "target_paragraph": 9,
+      "carriers": [
+        {
+          "paragraph": 9,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 10,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 11,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 12,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The has no recoverable OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p85-contrast-of-christ-s-teaching-with-that-of-the-scribes",
+      "page_ordinal": 85,
+      "printed_page": "81",
+      "scan_reading": "Contrast of Christ’s Teaching with that of the Scribes",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 8
+        },
+        {
+          "paragraph": 3,
+          "line": 6,
+          "first_word": 7,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 7,
+          "first_word": 6,
+          "last_word": 6
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The first word and the following of have no clean OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p86-the-righteousness-of-the-pharisee",
+      "page_ordinal": 86,
+      "printed_page": "82",
+      "scan_reading": "The Righteousness of the Pharisee",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p89-the-sadducees-and-righteousness",
+      "page_ordinal": 89,
+      "printed_page": "85",
+      "scan_reading": "The Sadducees and Righteousness",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 8
+        },
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 5,
+          "last_word": 6
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Righteousness is garbled in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p90-christ-s-conception-of-righteousness",
+      "page_ordinal": 90,
+      "printed_page": "86",
+      "scan_reading": "Christ’s Conception of Righteousness",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Righteousness is represented by overlapping/uncertain OCR carriers."
+      ]
+    },
+    {
+      "id": "margin-heading-p95-varying-standards-of-righteousness",
+      "page_ordinal": 95,
+      "printed_page": "91",
+      "scan_reading": "Varying Standards of Righteousness",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 7
+        },
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 6
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p95-our-hope-for-attaining-to-christ-s-righteousness",
+      "page_ordinal": 95,
+      "printed_page": "91",
+      "scan_reading": "Our Hope for Attaining to Christ’s Righteousness",
+      "target_paragraph": 7,
+      "carriers": [
+        {
+          "paragraph": 7,
+          "line": 4,
+          "first_word": 9,
+          "last_word": 11
+        },
+        {
+          "paragraph": 7,
+          "line": 5,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 9,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Attaining is garbled in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p97-the-place-of-the-holy-spirit-in-christ-s-teaching",
+      "page_ordinal": 97,
+      "printed_page": "93",
+      "scan_reading": "The Place of the Holy Spirit in Christ’s Teaching",
+      "target_paragraph": 8,
+      "carriers": [
+        {
+          "paragraph": 8,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 8
+        },
+        {
+          "paragraph": 9,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 10,
+          "line": 1,
+          "first_word": 3,
+          "last_word": 5
+        },
+        {
+          "paragraph": 11,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The Place of the Holy Spirit in Christ’s Teaching"
+      ]
+    },
+    {
+      "id": "margin-heading-p98-not-a-new-doctrine",
+      "page_ordinal": 98,
+      "printed_page": "94",
+      "scan_reading": "Not a New Doctrine",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p99-the-personality-of-the-holy-spirit",
+      "page_ordinal": 99,
+      "printed_page": "95",
+      "scan_reading": "The Personality of the Holy Spirit",
+      "target_paragraph": 2,
+      "carriers": [
+        {
+          "paragraph": 2,
+          "line": 4,
+          "first_word": 6,
+          "last_word": 6
+        },
+        {
+          "paragraph": 2,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 9
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Personality of is not cleanly recoverable in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p100-relation-to-the-father",
+      "page_ordinal": 100,
+      "printed_page": "96",
+      "scan_reading": "Relation to the Father",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 4
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p101-relation-of-the-holy-spirit-to-jesus",
+      "page_ordinal": 101,
+      "printed_page": "97",
+      "scan_reading": "Relation of the Holy Spirit to Jesus",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 7,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 7,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Holy Spirit has no separate legible OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p104-our-apprehension-of-christ-is-by-the-spirit",
+      "page_ordinal": 104,
+      "printed_page": "100",
+      "scan_reading": "Our Apprehension of Christ is by the Spirit",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 6,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 4
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p105-the-apostolic-teaching",
+      "page_ordinal": 105,
+      "printed_page": "101",
+      "scan_reading": "The Apostolic Teaching",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 4,
+          "last_word": 4
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p108-the-spirit-and-the-world",
+      "page_ordinal": 108,
+      "printed_page": "104",
+      "scan_reading": "The Spirit and the World",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The Spirit has no recoverable title carrier; only fragments for and the World remain."
+      ]
+    },
+    {
+      "id": "margin-heading-p110-the-spirit-and-the-christian",
+      "page_ordinal": 110,
+      "printed_page": "106",
+      "scan_reading": "The Spirit and the Christian",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 4
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The heading is wholly mangled in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p111-the-spirit-the-power-in-christianity",
+      "page_ordinal": 111,
+      "printed_page": "107",
+      "scan_reading": "The Spirit the Power in Christianity",
+      "target_paragraph": 2,
+      "carriers": [
+        {
+          "paragraph": 2,
+          "line": 16,
+          "first_word": 9,
+          "last_word": 10
+        },
+        {
+          "paragraph": 2,
+          "line": 17,
+          "first_word": 9,
+          "last_word": 9
+        }
+      ],
+      "unrepresented_scan_words": [
+        "the Power in Christianity has no legible separate OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p113-a-voice-from-heaven",
+      "page_ordinal": 113,
+      "printed_page": "109",
+      "scan_reading": "A Voice from Heaven",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 4,
+          "first_word": 6,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Heaven has no OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p114-reality-of-the-future-life",
+      "page_ordinal": 114,
+      "printed_page": "110",
+      "scan_reading": "Reality of the Future Life",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p115-the-future-life-is-everlasting",
+      "page_ordinal": 115,
+      "printed_page": "111",
+      "scan_reading": "The Future Life is Everlasting",
+      "target_paragraph": 3,
+      "carriers": [
+        {
+          "paragraph": 3,
+          "line": 4,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 3,
+          "line": 5,
+          "first_word": 8,
+          "last_word": 8
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Life is has no recoverable title carrier; Everlasting is garbled."
+      ]
+    },
+    {
+      "id": "margin-heading-p116-the-real-life-is-ahead",
+      "page_ordinal": 116,
+      "printed_page": "112",
+      "scan_reading": "The Real Life is Ahead",
+      "target_paragraph": 12,
+      "carriers": [
+        {
+          "paragraph": 12,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 13,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p117-the-future-life-conditioned-by-this-life",
+      "page_ordinal": 117,
+      "printed_page": "113",
+      "scan_reading": "The Future Life Conditioned by this Life",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 11
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 7,
+          "last_word": 9
+        }
+      ],
+      "unrepresented_scan_words": [
+        "The Future Life is garbled/unrecoverable in OCR."
+      ]
+    },
+    {
+      "id": "margin-heading-p118-future-punishment-is-not-corrective",
+      "page_ordinal": 118,
+      "printed_page": "114",
+      "scan_reading": "Future Punishment is not Corrective",
+      "target_paragraph": 5,
+      "carriers": [
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Punishment is has no independent OCR carrier."
+      ]
+    },
+    {
+      "id": "margin-heading-p120-the-judgment",
+      "page_ordinal": 120,
+      "printed_page": "116",
+      "scan_reading": "The Judgment",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p121-the-fact-of-hell",
+      "page_ordinal": 121,
+      "printed_page": "117",
+      "scan_reading": "The Fact of Hell",
+      "target_paragraph": 4,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 11
+        },
+        {
+          "paragraph": 4,
+          "line": 2,
+          "first_word": 6,
+          "last_word": 8
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p122-the-ground-of-eternal-life",
+      "page_ordinal": 122,
+      "printed_page": "118",
+      "scan_reading": "The Ground of Eternal Life",
+      "target_paragraph": 6,
+      "carriers": [
+        {
+          "paragraph": 6,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        },
+        {
+          "paragraph": 7,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ]
+    },
+    {
+      "id": "margin-heading-p123-christ-s-picture-of-heaven",
+      "page_ordinal": 123,
+      "printed_page": "119",
+      "scan_reading": "Christ’s Picture of Heaven",
+      "target_paragraph": 16,
+      "carriers": [
+        {
+          "paragraph": 16,
+          "line": 1,
+          "first_word": 8,
+          "last_word": 9
+        },
+        {
+          "paragraph": 17,
+          "line": 1,
+          "first_word": 6,
+          "last_word": 7
+        }
+      ],
+      "unrepresented_scan_words": [
+        "Christ’s Picture of Heaven"
+      ]
+    }
+  ],
+  "tables_of_contents": [
+    {
+      "id": "table-of-contents-p13",
+      "page_ordinal": 13,
+      "source_title": {
+        "paragraph": 1,
+        "line": 1
+      },
+      "rows": [
+        {
+          "chapter": "I",
+          "title": "God the Father",
+          "page": "11",
+          "chapter_carrier": {
+            "paragraph": 2,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 3,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 3
+          },
+          "page_carrier": {
+            "paragraph": 3,
+            "line": 1,
+            "first_word": 4,
+            "last_word": 4
+          }
+        },
+        {
+          "chapter": "II",
+          "title": "The Son",
+          "page": "25",
+          "chapter_carrier": {
+            "paragraph": 4,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 4,
+            "line": 2,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "page_carrier": {
+            "paragraph": 4,
+            "line": 2,
+            "first_word": 3,
+            "last_word": 3
+          }
+        },
+        {
+          "chapter": "III",
+          "title": "Sin",
+          "page": "41",
+          "chapter_carrier": {
+            "paragraph": 5,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 5,
+            "line": 2,
+            "first_word": 1,
+            "last_word": 1
+          },
+          "page_carrier": {
+            "paragraph": 5,
+            "line": 2,
+            "first_word": 2,
+            "last_word": 2
+          }
+        },
+        {
+          "chapter": "IV",
+          "title": "The Kingdom",
+          "page": "56",
+          "chapter_carrier": {
+            "paragraph": 6,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 6,
+            "line": 2,
+            "first_word": 1,
+            "last_word": 3
+          },
+          "page_carrier": {
+            "paragraph": 6,
+            "line": 2,
+            "first_word": 3,
+            "last_word": 3
+          }
+        },
+        {
+          "chapter": "V",
+          "title": "Righteousness",
+          "page": "78",
+          "chapter_carrier": {
+            "paragraph": 7,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 7,
+            "line": 2,
+            "first_word": 1,
+            "last_word": 1
+          },
+          "page_carrier": {
+            "paragraph": 7,
+            "line": 2,
+            "first_word": 2,
+            "last_word": 2
+          }
+        },
+        {
+          "chapter": "VI",
+          "title": "The Holy Spirit",
+          "page": "93",
+          "chapter_carrier": {
+            "paragraph": 8,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 8,
+            "line": 2,
+            "first_word": 1,
+            "last_word": 3
+          },
+          "page_carrier": {
+            "paragraph": 8,
+            "line": 2,
+            "first_word": 4,
+            "last_word": 4
+          }
+        },
+        {
+          "chapter": "VII",
+          "title": "The Future Life",
+          "page": "109",
+          "chapter_carrier": {
+            "paragraph": 9,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 2
+          },
+          "entry_carrier": {
+            "paragraph": 10,
+            "line": 1,
+            "first_word": 1,
+            "last_word": 3
+          },
+          "page_carrier": {
+            "paragraph": 10,
+            "line": 1,
+            "first_word": 4,
+            "last_word": 4
+          }
+        }
+      ],
+      "footer_carrier": {
+        "paragraph": 11,
+        "line": 1,
+        "first_word": 1,
+        "last_word": 1
+      },
+      "rationale": "The scan has seven chapter/title/page rows. OCR concatenates each page number into its title and misreads the first page number 11 as n.",
+      "header_carriers": [
+        {
+          "role": "page-column-label",
+          "selector": {
+            "paragraph": 2,
+            "line": 1,
+            "first_word": 3,
+            "last_word": 3
+          },
+          "scan_reading": "PAGE"
+        }
+      ]
+    }
+  ],
+  "column_layout_pages": [
+    {
+      "page_ordinal": 126,
+      "kind": "scripture-index",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 127,
+      "kind": "scripture-index",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 128,
+      "kind": "scripture-index",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 129,
+      "kind": "topical-index",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 130,
+      "kind": "topical-index",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 131,
+      "kind": "bibliography",
+      "columns": 2
+    },
+    {
+      "page_ordinal": 132,
+      "kind": "bibliography",
+      "columns": 2
+    }
+  ],
+  "carrier_gaps": [
+    {
+      "id": "title-page-handwritten-inscription",
+      "page_ordinal": 7,
+      "carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "description": "Pencil inscription is not printed prose and is not read confidently; preserve as an explicit paratext gap."
+    },
+    {
+      "id": "copyright-page-handwritten-marks",
+      "page_ordinal": 8,
+      "carriers": [
+        {
+          "paragraph": 1,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 2,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "description": "Handwritten ownership/catalog marks are partly legible but not confidently transcribed; keep them out of printed prose."
+    },
+    {
+      "id": "dedication-handwritten-margin",
+      "page_ordinal": 9,
+      "carriers": [
+        {
+          "paragraph": 1,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 2
+        }
+      ],
+      "description": "Handwritten left-margin annotation is illegible in the retained scan."
+    },
+    {
+      "id": "pencil-mark-p135",
+      "page_ordinal": 135,
+      "carriers": [
+        {
+          "paragraph": 1,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "description": "Faint pencil notation is not read confidently; do not retain the OCR guess as prose."
+    },
+    {
+      "id": "barcode-graphics-p136",
+      "page_ordinal": 136,
+      "carriers": [
+        {
+          "paragraph": 1,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 21
+        },
+        {
+          "paragraph": 2,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 10
+        },
+        {
+          "paragraph": 3,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 14
+        }
+      ],
+      "description": "OCR noise over the barcode bars and dark cover is nontextual; the adjacent printed label and number are transcribed separately from the scan."
+    }
+  ],
+  "paratext": [
+    {
+      "id": "library-and-preservation-marks-p134",
+      "page_ordinal": 134,
+      "scan_reading": "MAY 21 1906\nDeacidified using the Bookkeeper process\nNeutralizing agent: Magnesium Oxide\nTreatment Date: June 2005\nPreservationTechnologies\nA WORLD LEADER IN PAPER PRESERVATION\n111 Thompson Park Drive\nCranberry Township, PA 16066\n(724) 779-2111",
+      "source_carriers": [
+        {
+          "paragraph": 1,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 2,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 5
+        },
+        {
+          "paragraph": 2,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 4
+        },
+        {
+          "paragraph": 2,
+          "line": 3,
+          "first_word": 1,
+          "last_word": 4
+        },
+        {
+          "paragraph": 3,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        },
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 6
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 6
+        },
+        {
+          "paragraph": 5,
+          "line": 2,
+          "first_word": 1,
+          "last_word": 4
+        },
+        {
+          "paragraph": 5,
+          "line": 3,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ],
+      "rationale": "The retained scan clearly shows this copyright date stamp and paper-preservation label. These repository and conservation marks are preserved as page paratext rather than book prose; the original OCR remains unchanged."
+    },
+    {
+      "id": "library-of-congress-barcode-label",
+      "page_ordinal": 136,
+      "label": "LIBRARY OF CONGRESS",
+      "barcode": "00011501783",
+      "source_carriers": [
+        {
+          "paragraph": 4,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 3
+        },
+        {
+          "paragraph": 5,
+          "line": 1,
+          "first_word": 1,
+          "last_word": 1
+        }
+      ]
+    }
+  ],
+  "explicit_gaps": [
+    {
+      "id": "handwriting-p7",
+      "page_ordinal": 7,
+      "description": "Handwritten inscription on title page; do not treat as printed prose or infer unreadable wording."
+    },
+    {
+      "id": "handwriting-p8",
+      "page_ordinal": 8,
+      "description": "Handwritten copyright-entry/class marks and marginal catalog marks; retain as uncertain paratext rather than normalize OCR guesses."
+    },
+    {
+      "id": "handwriting-p9",
+      "page_ordinal": 9,
+      "description": "Illegible handwritten annotation along the left edge of the dedication page."
+    },
+    {
+      "id": "zero-word-pages",
+      "page_ordinals": [
+        3,
+        4,
+        6,
+        10,
+        14,
+        133
+      ],
+      "description": "The retained OCR has no WORD carriers on these six access pages; preserve page carriers and do not infer image-only text."
+    },
+    {
+      "id": "empty-line-p2",
+      "page_ordinal": 2,
+      "paragraph": 2,
+      "line": 1,
+      "description": "The retained OCR line has no WORD element; preserve the empty line carrier."
+    },
+    {
+      "id": "p135-handwriting",
+      "page_ordinal": 135,
+      "description": "Faint pencil marks are not read confidently; preserve an explicit uncertain paratext gap."
+    },
+    {
+      "id": "p136-barcode-bars",
+      "page_ordinal": 136,
+      "description": "The barcode graphic itself has no textual transcription; OCR noise is represented as a graphic gap while the clear printed label and number are recorded as paratext."
+    },
+    {
+      "id": "cover-library-shelfmark-p1",
+      "page_ordinal": 1,
+      "disposition": "nonliterary-exclusion",
+      "description": "A handwritten library shelfmark is visible on the front-cover label; it is excluded from the literary reading text and remains available in the bound scan."
+    },
+    {
+      "id": "copyright-library-fields-p2",
+      "page_ordinal": 2,
+      "disposition": "nonliterary-exclusion",
+      "description": "Handwritten class and book numbers in the library accession fields are excluded from the literary reading text and remain visible in the bound scan."
+    }
+  ],
+  "visual_review": {
+    "contract": "ocd-robertson-keywords-visual-page-review-v1",
+    "source_pdf_sha256": "54f06da00f0a06d40d182878f052ddc9fdf974471cff0131b181820c4759605f",
+    "coverage": [
+      {
+        "pdf_pages": [
+          1,
+          15
+        ],
+        "reviewer": "technical owner",
+        "scope": "All opening pages visually inspected for cover/title, copyright and accession material, dedication, preface, contents, the first chapter boundary, and source-carrier discrepancies."
+      },
+      {
+        "pdf_pages": [
+          16,
+          67
+        ],
+        "reviewer": "independent reviewer",
+        "scope": "Every page visually inspected; margin-head locations and scan-confirmed OCR defects were mapped to exact source carriers."
+      },
+      {
+        "pdf_pages": [
+          68,
+          68
+        ],
+        "reviewer": "technical owner",
+        "scope": "Ordinary body page visually inspected; no special layout or scan/OCR discrepancy found."
+      },
+      {
+        "pdf_pages": [
+          69,
+          125
+        ],
+        "reviewer": "independent reviewer",
+        "scope": "Every page visually inspected; margin-head locations and scan-confirmed OCR defects were mapped to exact source carriers."
+      },
+      {
+        "pdf_pages": [
+          126,
+          136
+        ],
+        "reviewer": "technical owner",
+        "scope": "Every back-matter page visually inspected for index and bibliography headings, two-column structure, printed folios, paratext, and scan-confirmed OCR defects."
+      }
+    ],
+    "limitation": "This full page-coverage pass is not a glyph-by-glyph transcription of every OCR word; only scan-verified corrections are applied, and genuine ambiguous or image-only features remain explicit."
+  },
+  "text_review": {
+    "authority": "reviewed-authored-text-fields"
+  }
+}

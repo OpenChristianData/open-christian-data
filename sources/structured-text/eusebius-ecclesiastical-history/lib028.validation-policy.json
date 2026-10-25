@@ -1,0 +1,50 @@
+{
+  "contract": "ocd-lib028-validation-policy-v1",
+  "policy_id": "lib028-five-church-histories-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "tei_topology": {
+    "root_attributes": {"xml:id": "lib028-ccel-church-histories"},
+    "body_attributes": {"xml:id": "lib028-five-work-body"},
+    "header_c14n_sha256": "9cbb963f151a1d405937994ef65877f757b49d7a97a47700a1e45ed1e739dc4a"
+  },
+  "projection": {
+    "tag_map": {"div1": "div", "div2": "div", "div3": "div", "div4": "div", "p": "p", "note": "note", "i": "hi", "span": "seg", "pb": "pb", "scripRef": "ref", "sup": "hi", "sub": "hi", "br": "lb", "table": "table", "tr": "row", "td": "cell"},
+    "language_span_tag": "foreign",
+    "xml_id_template": "lib028-{source_key}-{ordinal:06d}-{source_id}",
+    "inline_wrapper_id_template": "lib028-inline-wrapper-{ordinal:06d}",
+    "direct_div_inline_tags": ["ref", "seg", "foreign", "hi"],
+    "attribute_rules": {
+      "id": {"source_tags": ["div1", "div2", "div3", "div4", "p", "note", "i", "span", "pb", "scripRef", "sup", "sub", "br", "table", "tr", "td"]},
+      "n": {"source_tags": ["div1", "div2", "div3", "div4", "note", "pb"], "tei_attribute": "n", "disposition": "@n"},
+      "type": {"source_tags": ["div1", "div2", "div3", "div4"], "tei_attribute": "type", "except_work_root": true, "disposition": "@type"},
+      "class": {"source_tags": ["p", "span"], "tei_attribute": "rend", "disposition": "@rend"},
+      "style": {"source_tags": ["p"], "tei_attribute": "rend", "disposition": "@rend"},
+      "place": {"source_tags": ["note"], "tei_attribute": "place", "disposition": "@place"},
+      "href": {"source_tags": ["pb"], "tei_attribute": "facs", "disposition": "@facs"},
+      "passage": {"source_tags": ["scripRef"], "tei_attribute": "cRef", "disposition": "@cRef"},
+      "osisRef": {"source_tags": ["scripRef"], "tei_attribute": "target", "disposition": "@target"},
+      "lang": {"source_tags": ["span"], "tei_attribute": "xml:lang", "value_map": {"EL": "grc", "HE": "he", "LA": "la"}, "disposition": "@xml:lang", "method": "declared-language-code-map"},
+      "dir": {"source_tags": ["span"], "tei_attribute": "rend", "append_prefix": " direction:", "disposition": "@rend"},
+      "title": {"source_tags": ["div1", "div2", "div3", "div4"], "disposition": "child::head[1]"}
+    },
+    "derived_attributes": {
+      "division_type_template": "source-{source_tag}",
+      "by_source_tag": [
+        {"source_tag": "i", "attributes": {"rend": "italic"}},
+        {"source_tag": "sup", "attributes": {"rend": "superscript"}},
+        {"source_tag": "sub", "attributes": {"rend": "subscript"}},
+        {"source_tag": "scripRef", "attributes": {"type": "scripture"}}
+      ],
+      "plain_span_attributes": {"type": "source-span"}
+    }
+  },
+  "forbidden_oracle_imports": [
+    "build.tei.lib028_reconstruction",
+    "build.tei.npnf2_lib048_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

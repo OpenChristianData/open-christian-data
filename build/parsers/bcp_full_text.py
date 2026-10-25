@@ -35,6 +35,11 @@ if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib import writer_manifest  # noqa: E402
+from build.parsers.bcp_1662_source_receipt import (  # noqa: E402
+    SOURCE_HASH_SCOPE as BCP_1662_SOURCE_HASH_SCOPE,
+    verified_source_member_set_sha256,
+)
 
 # ---------------------------------------------------------------------------
 # Config
@@ -50,7 +55,7 @@ USER_AGENT = (
 )
 CRAWL_DELAY_SECONDS = 2
 SCHEMA_VERSION = "2.1.0"
-SCRIPT_VERSION = "v1.0.0"
+SCRIPT_VERSION = "v1.1.0"
 SCRIPT_REL_PATH = "build/parsers/bcp_full_text.py"
 MIN_FETCHED_WORDS = 40
 ERROR_PAGE_PATTERNS = (
@@ -418,7 +423,8 @@ def _hash_cached_files(edition_slug: str, cache_names: list) -> str:
 
 def _build_record(edition_slug: str, cfg: dict, sections: list, source_hash: str) -> dict:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    return {
+    bcp_1662 = edition_slug == "bcp-1662"
+    record = {
         "meta": {
             "id": edition_slug,
             "title": cfg["title"],
@@ -429,7 +435,7 @@ def _build_record(edition_slug: str, cfg: dict, sections: list, source_hash: str
             "license": "public-domain",
             "schema_type": "structured_text",
             "schema_version": SCHEMA_VERSION,
-            "completeness": "full",
+            "completeness": "partial" if bcp_1662 else "full",
             "provenance": {
                 "source_url": cfg["base_url"],
                 "source_format": "HTML",
@@ -440,8 +446,14 @@ def _build_record(edition_slug: str, cfg: dict, sections: list, source_hash: str
                 "processing_script_version": SCRIPT_VERSION,
                 "processing_date": today,
                 "notes": (
-                    "Public domain liturgical text. "
-                    "Rubrics and stage directions preserved as prose paragraphs."
+                    "Retained mixed living transcription; partial expression only. "
+                    "Provider identity, edition identity, rights clearance, human "
+                    "acceptance, and publication authorization remain unresolved."
+                    if bcp_1662
+                    else (
+                        "Public domain liturgical text. "
+                        "Rubrics and stage directions preserved as prose paragraphs."
+                    )
                 ),
             },
         },
@@ -451,6 +463,39 @@ def _build_record(edition_slug: str, cfg: dict, sections: list, source_hash: str
             "sections": sections,
         },
     }
+    if bcp_1662:
+        record["meta"]["provenance"]["source_hash_scope"] = (
+            BCP_1662_SOURCE_HASH_SCOPE
+        )
+    return record
+
+
+def _write_bcp_1662_record(out_path: Path, record: dict) -> None:
+    """Write the BCP 1662 structured-text record with its data-run receipt."""
+    previous = json.loads(out_path.read_text(encoding="utf-8")) if out_path.exists() else None
+    before = {"data": [previous]} if previous is not None else None
+    after = {"data": [record]}
+    entries_changed, fields_changed = writer_manifest.diff_counts(
+        before,
+        after,
+        key=lambda item: item["meta"]["id"],
+    )
+    with writer_manifest.run(
+        writer_identity="bcp_full_text_parser",
+        writer_version=f"{SCRIPT_REL_PATH}@{SCRIPT_VERSION}",
+        data_paths=[out_path],
+        repo_root=REPO_ROOT,
+        manifests_dir=REPO_ROOT / "review" / "writer-manifests",
+    ) as manifest_run:
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = out_path.with_suffix(".tmp")
+        tmp_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp_path.replace(out_path)
+        manifest_run.record_delta(
+            out_path,
+            entries_changed=entries_changed,
+            fields_changed=fields_changed,
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -505,7 +550,14 @@ def parse_edition(edition_slug: str, dry_run: bool = False, force: bool = False)
         logging.error("%s: no sections produced -- aborting", edition_slug)
         return 0
 
-    source_hash = _hash_cached_files(edition_slug, fetched_names)
+    if edition_slug == "bcp-1662":
+        source_hash = "sha256:" + verified_source_member_set_sha256(
+            REPO_ROOT,
+            member_kind="service",
+            logical_names=fetched_names,
+        )
+    else:
+        source_hash = _hash_cached_files(edition_slug, fetched_names)
     record = _build_record(edition_slug, cfg, sections, source_hash)
 
     print(f"{edition_slug}: {len(sections)} sections")
@@ -513,10 +565,13 @@ def parse_edition(edition_slug: str, dry_run: bool = False, force: bool = False)
         return len(sections)
 
     out_path = OUTPUT_DIR / f"{edition_slug}.json"
-    tmp_path = out_path.with_suffix(".tmp")
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
-    tmp_path.replace(out_path)
+    if edition_slug == "bcp-1662":
+        _write_bcp_1662_record(out_path, record)
+    else:
+        tmp_path = out_path.with_suffix(".tmp")
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp_path.replace(out_path)
     logging.info("Wrote %s", out_path)
     return len(sections)
 

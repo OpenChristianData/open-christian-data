@@ -1,0 +1,201 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "asv-scrollmapper-retained-json-reviewed-header-v2",
+  "work_id": "asv",
+  "authorities": [
+    {
+      "name": "asv-source",
+      "path": "raw/bible_databases/formats/json/ASV.json",
+      "role": "primary-source",
+      "bytes": 8558631,
+      "sha256": "0851e73ac46ae7ccaf1a8bb44beb359295df5eca04a578ea4d448eb7a641f9ae"
+    },
+    {
+      "name": "asv-config",
+      "path": "sources/bible-text/asv/config.json",
+      "role": "work-identity-config",
+      "bytes": 822,
+      "sha256": "367042aeb8458ae39c5d22d8815bf3ab4720565bade05616a52d69303607bcb3"
+    },
+    {
+      "name": "asv-profile",
+      "path": "sources/bible-text/asv/asv-reviewed-header-v2.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1210,
+      "sha256": "153d2d360d91abce2f0ceec85d05291cbce12b7d6a302e931be52499b8c1f4bb"
+    },
+    {
+      "name": "asv-policy",
+      "path": "sources/bible-text/asv/asv-reviewed-header-v2.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1099,
+      "sha256": "c9b5046b6b4d965958606229f73086d06c37b016e96bc2b8805c0cc6401840ac"
+    },
+    {
+      "name": "asv-readme",
+      "path": "sources/bible-text/asv/asv-reviewed-header-v2.source.md",
+      "role": "source-attribution-and-scope",
+      "bytes": 1927,
+      "sha256": "d95b0212038c651ed483755d1ae44e1762a0dec6879d10bc2b5d1db827c0bf5a"
+    },
+    {
+      "name": "asv-unresolved",
+      "path": "sources/bible-text/asv/asv-reviewed-header-v2.unresolved.jsonl",
+      "role": "unresolved-source-questions",
+      "bytes": 1245,
+      "sha256": "620b8307fcd33d451c94a1636f9158aae6ed9f9d2126a5a3b26f5937dee1ada5"
+    },
+    {
+      "name": "asv-prior-source-manifest",
+      "path": "sources/bible-text/asv/asv.source-manifest.json",
+      "role": "prior-source-manifest",
+      "bytes": 3498,
+      "sha256": "eaa7251d12cf0d4873685682164c145c9773c07b61a1603b9daf1a21d1620d5f"
+    },
+    {
+      "name": "asv-acquisition",
+      "path": "library/works/asv/forms/english-asv/editions/retained-json/acquisitions/scrollmapper-retained-json.json",
+      "role": "source-acquisition-evidence",
+      "bytes": 984,
+      "sha256": "d7231352668d21b96a46f6572bf9e93353ca3f5a239d7a64886c0201b305e4a8"
+    },
+    {
+      "name": "asv-work",
+      "path": "library/works/asv/work.json",
+      "role": "canonical-work-identity",
+      "bytes": 728,
+      "sha256": "30a588b44e657ca5a2ded6046b9ef36946183f39776c32c773a1a5d44a428efe"
+    },
+    {
+      "name": "asv-current-research-manifest",
+      "path": "research/MANIFEST.md",
+      "role": "current-source-work-context",
+      "bytes": 106914,
+      "sha256": "80b3adabc27105eb533bf3138b39d214cc15251e544f3b296ea124dd85a14016"
+    },
+    {
+      "name": "asv-current-worklist",
+      "path": "plans/2026-09-23-acquisition-manifest-source-to-tei/WORKLIST.md",
+      "role": "current-ticket-crosswalk-context",
+      "bytes": 202797,
+      "sha256": "75477dda6078b30849fd0075ac6507fcfa3b28a87919e6bb08ca8f4ddae5ba8a"
+    },
+    {
+      "name": "asv-prior-profile",
+      "path": "sources/bible-text/asv/asv.reconstruction-profile.json",
+      "role": "prior-profile-context",
+      "bytes": 887,
+      "sha256": "38d0a1a074fec17a88420f4c8e89c5b05ceba42922a1a0ad10437cdd45278f79"
+    },
+    {
+      "name": "asv-prior-policy",
+      "path": "sources/bible-text/asv/asv.validation-policy.json",
+      "role": "prior-policy-context",
+      "bytes": 789,
+      "sha256": "adc4143a4985fc66b72dea6d48b038b92f6949f03eb6024fcf7208b92d8dc45c"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "asv-base-converter",
+      "path": "build/tei/asv_reconstruction.py",
+      "role": "source-converter-dependency",
+      "bytes": 5611,
+      "sha256": "81c8ae67d9c1ecf58ba97244adad8d69f44a2a879635eff001adb9dd890ad823"
+    },
+    {
+      "name": "header-binding-helper",
+      "path": "ocd_kernel/tei/reviewed_integration.py",
+      "role": "source-transform-dependency",
+      "bytes": 5617,
+      "sha256": "804082e5e5cf95296c729af77149f3b174a864bf32ff03297125352326f4dd56"
+    },
+    {
+      "name": "header-binding-common",
+      "path": "ocd_kernel/library/_common.py",
+      "role": "source-transform-dependency",
+      "bytes": 4909,
+      "sha256": "f25a86bb45274d8880eacd37162ececa54ff0ef6979a17cb78d3459e752fd98c"
+    },
+    {
+      "name": "asv-base-oracle",
+      "path": "build/tei/asv_oracle.py",
+      "role": "independent-oracle-dependency",
+      "bytes": 10434,
+      "sha256": "995fb9c9a37a0e3ec45e5fbabc6adc38176f9ac95d500e6e06e6445a507407be"
+    },
+    {
+      "name": "oracle-contract-module",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "independent-oracle-dependency",
+      "bytes": 25076,
+      "sha256": "a3cdf8daa9d67725a22995584a2a99ba796fc4c7578058496f1f9d6bad401ac5"
+    },
+    {
+      "name": "oracle-verifier-module",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "independent-oracle-dependency",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "name": "oracle-package-init",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "role": "independent-oracle-dependency",
+      "bytes": 475,
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    },
+    {
+      "name": "oracle-kernel-init",
+      "path": "ocd_kernel/__init__.py",
+      "role": "independent-oracle-dependency",
+      "bytes": 50,
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib223-asv-reviewed-header-json-to-tei",
+    "version": "2",
+    "callable": "convert",
+    "implementation_path": "build/tei/asv_reviewed_header_v2.py",
+    "implementation_sha256": "969d49d4b90a7bc30bd70f30fd9dc58cfaf28c75410be75d068b62a4c8421f11"
+  },
+  "validator": {
+    "id": "ocd-lib223-asv-reviewed-header-independent-oracle",
+    "version": "2",
+    "callable": "oracle",
+    "implementation_path": "build/tei/asv_reviewed_header_v2_oracle.py",
+    "implementation_sha256": "299b40d8052319ae6d81203dbddaca926f5700496ea0dbd048df0f2497abc3e8",
+    "import_closure_sha256": "5d6c1c64ebd1931fd6ca259c55aba355b438ae6f6ae17c9356a04ce00e02ffb0"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

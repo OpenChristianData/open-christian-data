@@ -1,5 +1,7 @@
 # Source availability — known-not-on-CCEL index
 
+> **Dated source probes.** Availability and parser observations below belong to the recorded checks. Recheck the exact public source before choosing a new route; an old URL failure is not a permanent source exclusion. Current text work follows the [contribution workflow](TEXT_CONTRIBUTIONS.md).
+
 A running list of works that are NOT available on CCEL and require alternative sources (Internet Archive, Google Books, manual transcription). Confirmed by URL probing or absence from CCEL author pages.
 
 | Work | Author | Year | CCEL status | Alternative |

@@ -1,19 +1,9 @@
-"""audit_data_accuracy.py
-Runs automated accuracy checks across all OCD data files and writes a structured report.
+"""Report verified-release integrity and explicit accuracy-check coverage.
 
-This script only reads data -- it never modifies any data file.
-
-Usage:
-    py -3 build/tools/audit_data_accuracy.py
-    py -3 build/tools/audit_data_accuracy.py --category bible-text
-    py -3 build/tools/audit_data_accuracy.py --category commentaries
-
-Output:
-    build/tools/data_accuracy_report.md   (human-readable)
-    build/tools/data_accuracy_report.json (machine-readable)
-    build/tools/audit_data_accuracy.log   (run log)
-
-Exit code: always 0 (reporting tool, not a gate).
+Current usage requires --root, --release and --selection. The report separates
+verified release integrity from historical heuristics that have not been run.
+Historical reports require --legacy-data first and retain their old semantics.
+Neither mode establishes source fidelity or authorizes publication.
 """
 
 import argparse
@@ -1270,7 +1260,7 @@ def write_json_report(findings, files_scanned, entries_scanned, generated_at):
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
+def legacy_main(argv: list[str] | None = None):
     parser = argparse.ArgumentParser(
         description="Run data accuracy checks across OCD data files."
     )
@@ -1279,7 +1269,7 @@ def main():
         metavar="NAME",
         help="Audit one category only (e.g. bible-text, commentaries, catechisms)",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(
@@ -1392,8 +1382,90 @@ def main():
     print(f"JSON report: {REPORT_JSON_PATH}")
 
     logging.info("=== audit_data_accuracy.py done ===")
-    sys.exit(0)
+    return 0
+
+
+def public_text_findings(row: dict) -> list[dict]:
+    """Advisory observations only; source spellings and normalization are preserved."""
+    text = row["text"]
+    identity = {"work_id": row["work_id"], "record_id": row["record_id"], "category": row["category"]}
+    findings = [{**identity, "check": "ocr_pattern", "pattern": name, "context": context}
+                for name, context in _scan_ocr_artifacts(text)]
+    for match in MOJIBAKE_RE.finditer(text):
+        findings.append({**identity, "check": "possible_mojibake", "offset": match.start(),
+                         "context": text[max(0, match.start() - 20):match.end() + 20]})
+    if not unicodedata.is_normalized("NFC", text):
+        findings.append({**identity, "check": "non_nfc", "reason": "Source text retained; normalization requires separate authority."})
+    return findings
+
+
+def release_accuracy(root: Path, release: Path, selection: dict) -> dict:
+    from build.tools.report_release_stats import release_statistics
+    from ocd_kernel.library._common import PipelineError
+    report_path = release / "internal/release-report.json"
+    report_bytes = report_path.read_bytes()
+    statistics = release_statistics(root, release, selection)
+    if report_path.read_bytes() != report_bytes:
+        raise PipelineError("release report changed during verification")
+    findings = []
+    rows_scanned = 0
+    word_counts = defaultdict(list)
+    for config in json.loads(report_bytes)["configurations"]:
+        content = (release / config["path"]).read_bytes()
+        if hashlib.sha256(content).hexdigest() != config["sha256"]:
+            raise PipelineError("release rows changed after verification")
+        for line in content.decode("utf-8").splitlines():
+            row = json.loads(line)
+            rows_scanned += 1
+            findings.extend(public_text_findings(row))
+            word_counts[row["category"]].append(len(row["text"].split()))
+    return {
+        "status": "incomplete",
+        "release_id": statistics["release_id"],
+        "release_integrity": {"status": "pass", "authority": statistics["authority"],
+                              "configurations": statistics["configurations"], "total": statistics["total"]},
+        "public_text_checks": {"rows_scanned": rows_scanned, "findings": findings,
+                               "status": "observations" if findings else "no_patterns_found",
+                               "scope": "OCR patterns, possible mojibake and NFC; advisory, no source correction"},
+        "word_count_distributions": [
+            {"category": category, "records": len(counts), "minimum": min(counts),
+             "maximum": max(counts), "median": median(counts),
+             "counting_rule": "Unicode whitespace-delimited public text tokens"}
+            for category, counts in sorted(word_counts.items())
+        ],
+        "unsupported_checks": [
+            {"check": "word_count_outlier_thresholds", "reason": "Historical schema thresholds are not calibrated to current row shapes; descriptive distributions are provided without a quality verdict."},
+        ],
+        "historical_only_checks": [
+            {"check": "historical_expected_counts", "reason": "Old canon totals and provenance-note counts are not current selected-source scope."},
+            {"check": "canon_verse_continuity", "reason": "Canon and versification are not inferred from category names or a partial release."},
+            {"check": "historical_sentinels", "reason": "Hard-coded old resource sentinels do not identify current accepted editions."},
+            {"check": "stored_token_count_consistency", "reason": "Current rows do not contain historical stored token_count values."},
+        ],
+        "limits": ["Integrity verification does not establish source accuracy.",
+                   "Historical heuristics are explicitly unexecuted, not passing.",
+                   "No old JSON is used to fill missing current fields."],
+    }
+
+
+def main(argv: list[str] | None = None) -> int:
+    from ocd_kernel.library._common import PipelineError
+    from ocd_kernel.release.selection import load_release_selection
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0] == "--legacy-data":
+        return legacy_main(arguments[1:])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--release", type=Path, required=True)
+    parser.add_argument("--selection", type=Path, required=True)
+    args = parser.parse_args(arguments)
+    try:
+        result = release_accuracy(args.root, args.release, load_release_selection(args.selection))
+    except (PipelineError, OSError, ValueError) as exc:
+        parser.error(str(exc))
+    print(json.dumps(result, ensure_ascii=True, indent=2))
+    return 0 if result["status"] == "pass" else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

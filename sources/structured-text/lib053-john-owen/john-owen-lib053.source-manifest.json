@@ -1,0 +1,96 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "john-owen-lib053-one-retained-ccel-xml",
+  "work_id": "john-owen-worship",
+  "authorities": [
+    {
+      "name": "worship-source",
+      "path": "raw/ccel/owen/worship.xml",
+      "role": "primary-source",
+      "bytes": 841339,
+      "sha256": "88c1fee9f8907222dbef6bcc4fa9bed469b72d8c445bb9a605403af62829e1d3"
+    },
+    {
+      "name": "john-owen-worship-identity",
+      "path": "sources/structured-text/lib053-john-owen/work-bindings/john-owen-worship/config.json",
+      "role": "work-identity-config",
+      "bytes": 90,
+      "sha256": "e8d5ba0e2dda88b64e9b7f9165794d455c3b3e3861912f2e10f738fdbb1d0223"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib053-john-owen/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 902,
+      "sha256": "321c895f5c39af706c55872a882df4734a5bfd6711b0af4c1020f3cae9a185dc"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8327,
+      "sha256": "63383b772b02484d352e7c7fa89df1c179a11dbb4689efebd13f0a7d915146f0"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 410,
+      "sha256": "9a28f013ca60133dd5014c5f65e902ff24e5d37666ef42beaa3365a11c8ed46d"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2516,
+      "sha256": "bee1e5bfbdd6d266a97fcba851bd4eadbf0e6e024f4cc11ad6deec52b40e47b7"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-p5-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-p5-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-john-owen-lib053-retained-xml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/john_owen_lib053_reconstruction.py",
+    "implementation_sha256": "3fd2687c19187eb163433eddcf26a7aaca5aaa2f5a6919c0548adc16ff7a206b"
+  },
+  "validator": {
+    "id": "ocd-john-owen-lib053-retained-xml-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/john_owen_lib053_oracle.py",
+    "implementation_sha256": "6390b644c92487e0a9fc1c08d97bad815826ca4663763934e9c22110d23dc450",
+    "import_closure_sha256": "9e0c023139fe26f1ec395b658f9a82dc842a349977a6aa805915113d0db45abe"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

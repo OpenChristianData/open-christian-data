@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-retained-source-set-v1",
+  "storage": "durable retained raw root; resolve OCD_RETAINED_RAW_ROOT or the approved raw topology",
+  "census": {"included":10,"excluded":0,"basis":"all ten ticket-assigned CCEL ThML witnesses are present, byte-pinned, and suitable for complete ThML.body reconstruction"},
+  "members": [
+    {"work_id":"bounds-essentials-of-prayer","logical_path":"ccel/bounds/essentials.xml","bytes":222408,"sha256":"9a23ce9261e2cc5606ff6e14b01eb9dbc830128097539d57d123f7997bebf218","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-necessity-of-prayer","logical_path":"ccel/bounds/necessity.xml","bytes":197907,"sha256":"ce64dd0f86d175fc470e955c69c6fdf3ef0a2d1ec8f2741a42ea1ba9ba780f93","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-power-through-prayer","logical_path":"ccel/bounds/power.xml","bytes":135898,"sha256":"3db594d5db6ed1051807e9135a9cc186db79bb0e29320b80d6e1a08ab747d130","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-prayer-and-praying-men","logical_path":"ccel/bounds/prayingmen.xml","bytes":216455,"sha256":"cb76e71624d98570f49ec2d98db7e559f66826b81474227eb69cda088b171996","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-purpose-in-prayer","logical_path":"ccel/bounds/purpose.xml","bytes":220855,"sha256":"ca459b635fbf8503985fada4e4e477966d68035a4a526d20f8e77800ae958158","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-reality-of-prayer","logical_path":"ccel/bounds/reality.xml","bytes":200537,"sha256":"4105d0e12a05c8217a966ca372b16f5451ab0c0f4dd2ad8dc749f987fe6c91c1","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"bounds-weapon-of-prayer","logical_path":"ccel/bounds/weapon.xml","bytes":236717,"sha256":"f67928a78e0a6d773e7a45fecb66adf918ca2a11de20175bb083d0e13f6f5bc5","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"finney-lectures-on-revivals","logical_path":"ccel/finney/revivals.xml","bytes":1260523,"sha256":"71f8d0b30cb520520c91aa685b41754cc02ea05046a74edf3c243abbe3e7169c","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"finney-systematic-theology","logical_path":"ccel/finney/theology.xml","bytes":2199279,"sha256":"bfcc322104b1407352721ba4b2ff74b4dae0c69784d717f72eb98baec1ef8e57","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"},
+    {"work_id":"pascal-pensees","logical_path":"ccel/pascal/pensees.xml","bytes":732500,"sha256":"37033b976d68c6efe1524ad2bfaf3da7f6c0f4ef94bd5d4228585390207938ff","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"}
+  ]
+}

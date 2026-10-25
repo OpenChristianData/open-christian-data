@@ -1,0 +1,116 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "work_id": "bede-ecclesiastical-history-of-england",
+  "edition_id": "bede-ecclesiastical-history-of-england-gutenberg-electronic",
+  "acquisition_id": "bede-ecclesiastical-history-of-england-gutenberg-acquired",
+  "source_id": "bede-ecclesiastical-history-of-england-gutenberg-retained",
+  "source_selection": {
+    "authority": "retained-html",
+    "selection": "The unique div.tei-text is the complete literary edition, preserving its front/body/back order. Provider wrapper and HTML head remain retained support."
+  },
+  "authorities": [
+    {
+      "name": "retained-html",
+      "path": "raw/gutenberg/38326/html/pg38326-images.html",
+      "role": "primary-source",
+      "bytes": 2838642,
+      "sha256": "39e6c22c2f13902cf6d394b98a43f7e2dd83f02e878da620c879e22805719fbb"
+    },
+    {
+      "name": "retained-archive",
+      "path": "raw/gutenberg/38326/pg38326-h.zip",
+      "role": "acquisition-container",
+      "bytes": 578331,
+      "sha256": "97221f5e78b47a022f3f2e9be79db30127485e63a8096d8a29fada32e6ca88c8"
+    },
+    {
+      "name": "cover-image",
+      "path": "raw/gutenberg/38326/html/38326-cover.png",
+      "role": "source-support",
+      "bytes": 74200,
+      "sha256": "fec61832548a3392f92d60f27f94dc5d3f2ce1d780e6d4ec3bda59e8eea3f497"
+    },
+    {
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/38326/acquisition-receipt.json",
+      "role": "acquisition-receipt",
+      "bytes": 1877,
+      "sha256": "130aabcfae0ab7363de92c8c2436bbc3c054fe414f5b99c7589d8a13446cfeb5"
+    },
+    {
+      "name": "work-sidecar",
+      "path": "library/works/bede-ecclesiastical-history-of-england/work.json",
+      "role": "work-identity-config",
+      "bytes": 648,
+      "sha256": "4989d74995a5a44b1e22055ff7e0a065f12b70da517ff1a92dd2a2e9d40b79f6"
+    },
+    {
+      "name": "acquisition-sidecar",
+      "path": "library/works/bede-ecclesiastical-history-of-england/forms/bede-ecclesiastical-history-of-england-gutenberg-retained/editions/bede-ecclesiastical-history-of-england-gutenberg-electronic/acquisitions/bede-ecclesiastical-history-of-england-gutenberg-acquired.json",
+      "role": "acquisition-selection-authority",
+      "bytes": 2172,
+      "sha256": "3f1b518265c1f4f071b37a9895e1d3c57030174ccb87ed21b101d9e5d6f3833e"
+    },
+    {
+      "name": "source-readme",
+      "path": "sources/bede-ecclesiastical-history-of-england/README.source.md",
+      "role": "source-attribution",
+      "bytes": 1754,
+      "sha256": "645fdd0e399aeca346b474d9cfd73df655073560d4b1c7b88a931b10e01693c8"
+    },
+    {
+      "name": "source-profile",
+      "path": "sources/bede-ecclesiastical-history-of-england/profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1628,
+      "sha256": "ac939aa53bb5883e2c523a58471e507a381117928d2cb0a34f174d552727a460"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/bede-ecclesiastical-history-of-england/policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1455,
+      "sha256": "de451ec5e584dcb138e44c254265e4f18f769c09bab98d2a48153e919717e15c"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/bede-ecclesiastical-history-of-england/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1585,
+      "sha256": "d8d3a4b0678bc4599ea3eeecfb104c30ab6dd17302dc7768ec1678bd52273f24"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-bede-gutenberg-38326-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/bede-ecclesiastical-history-of-england/reconstruct.py",
+    "implementation_sha256": "65f9754e0eeca7684bc7300e65abf8aedf4935faa35f620b7e3988f12bf1a580"
+  },
+  "validator": {
+    "id": "ocd-bede-gutenberg-independent-html-reader",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "sources/bede-ecclesiastical-history-of-england/oracle.py",
+    "implementation_sha256": "9eae3424bf8db6b631f7b69c423924c6c5189948745062292ca55ca9be16f9b1",
+    "import_closure_sha256": "289671d56ec4e712e87873d7f9066ca49c2e04b9d3c31cec0df0c57177474f3e"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,17 @@
+# Source-bound scope and downstream attribution
+
+# Against the Heathen — retained NPNF2-04 edition
+
+This text is sourced via CCEL.org: [Christian Classics Ethereal Library](https://www.ccel.org/ccel/schaff/npnf204.html), *Nicene and Post-Nicene Fathers*, Second Series, volume IV, *Athanasius: Select Works and Letters*. The retained title pages credit Philip Schaff and Henry Wace with editorial supervision and Archibald Robertson with editing, prolegomena, indices, and tables. The electronic printSourceInfo states New York: Christian Literature Publishing Co., 1892; the retained title page also names T&T Clark and Wm. B. Eerdmans, without establishing a reprint date.
+
+The volume preface describes revisions of earlier Oxford Library of the Fathers translations and notes, including Cardinal Newman's contributions, with changes explained in the retained introductions and notes. The editorial preface credits the Rev. J. H. Lupton with reading translations throughout. No single work-specific translator is allocated here beyond the literal retained credits and notes. These volume and portion-specific credits do not imply a single translator for every included text.
+
+The complete source-native division titled Against the Heathen. (Contra Gentes.) is retained as this one accepted work. Its introduction, nested parts, notes, and source editorial judgments remain within that scope. Independently titled neighboring works and the shared title pages, editorial front matter, prolegomena, and indexes remain outside its body. OCD projects the unchanged accepted TEI into native ordered JSONL and Arrow content. Notes and page markers remain in structure; the readable text field omits them. Native electronic reference annotations remain evidence and are not independently asserted to have correct parsing or versification. Historical source notes about an earlier nonaccepted candidate remain historical and are not current release-readiness receipts.
+
+The retained electronic DC.Rights states Public Domain for the text and DC.Source names Logos Inc. Separate retained CCEL permission evidence permits text parsing, reserves CCEL file and formatting rights, and restricts selling CCEL files or derivatives of their formatting. These provider statements are distinct evidence, not independent rights clearance or publication authorization. Visible attribution follows the retained instruction to say sourced via CCEL.org.
+
+This private offline technical rehearsal does not establish visual review, human acceptance, print collation, independent rights clearance, global release selection, or publication authorization.
+
+Retained source: `raw/ccel/npnf2/npnf204.xml`, SHA-256 `bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652`. Exact selector `/ThML/ThML.body/div1[@id='vi']`, containing 886 native elements. Accepted master SHA-256 `5a0b48273f94e162eba01e4243f997dd5956d0ab4ab64b67f97cb03e474b6e1c` and acceptance SHA-256 `d2285511f2dba163290f3fc42212cc9088d955f6eacb9bb5e248c92c5ee52364` remain unchanged. Existing source-bound acceptance and its technical evidence are reused; no old receipt is promoted to a claim of new source reconstruction. Source/data notice SHA bindings are in publication/private-offline-20261001-v1/selection.json. Separate permission evidence: `docs/sources/ccel-permission.md`. No acquisition occurred.
+
+Human-visible data-path attribution is at `data/structured-text/athanasius-against-the-heathen/README.md`.

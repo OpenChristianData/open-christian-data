@@ -1,0 +1,82 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "lib072-wilberforce-practical-view-retained-pg",
+  "work_id": "wilberforce-practical-view",
+  "authorities": [
+    {
+      "name": "wilberforce-practical-view-source",
+      "path": "raw/gutenberg/pg25709.txt",
+      "role": "primary-source",
+      "bytes": 659285,
+      "sha256": "995ff74ac2c819b526d4874878507bb85e1141f7e5b35a388c44846a963d6c96"
+    },
+    {
+      "name": "work-binding",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/config.json",
+      "role": "work-identity-config",
+      "bytes": 90,
+      "sha256": "66798f56180f22047039fe110f175a3f1bb2aef2d027980ea638045ae1d76d66"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1635,
+      "sha256": "33c2f3264076c31425545412d504b0a06af2e29a700789a1b9cd83e3812d29c2"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8421,
+      "sha256": "b5c905a129c376f505bc7ae205d5a7eea9c0eb94c499cd0fbe31e52b5a5136e9"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1505,
+      "sha256": "c74d5055170e65d5cc2e0154017589021a8f4d73e8d20adc67ecbcc387b379c5"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1748,
+      "sha256": "63ddb1d86c062295829baefb425236a47a99c6286c287dc596103e373485c00a"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib072-retained-texts-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/gutenberg_evangelical_lib072_reconstruction.py",
+    "implementation_sha256": "5005ea24a7a735dd47c11bc2202e5b054f6da42d3c063934659d7940dd7869b7"
+  },
+  "validator": {
+    "id": "ocd-lib072-retained-text-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/gutenberg_evangelical_lib072_oracle.py",
+    "implementation_sha256": "aa86b6f8339cc94ff6423e2effb9c89fd8899f94942ac5e24d10608cf23c9ece",
+    "import_closure_sha256": "3dcd6889a01598d3f3cd2ef5c89718b64fe7f71f57b1eb792d3170119a77833d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

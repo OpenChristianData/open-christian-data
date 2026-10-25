@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/commentaries/expositors-bible/mark.source-accountability.schema.json",
+  "title": "Expositor's Bible Mark complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_scope",
+    "source_sha256",
+    "feature_count",
+    "attribute_disposition_count",
+    "deliberately_excluded_attribute_count",
+    "omitted_feature_count",
+    "unresolved_feature_count",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-mark-source-accountability-v1"},
+    "schema": {"const": "mark.source-accountability.schema.json"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "source_scope": {"const": "complete ThML.body"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "feature_count": {"const": 2405},
+    "attribute_disposition_count": {"type": "integer", "minimum": 0},
+    "deliberately_excluded_attribute_count": {"type": "integer", "minimum": 0},
+    "omitted_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 2405,
+      "maxItems": 2405,
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_id",
+          "source_selector",
+          "source_tag",
+          "source_xml_id",
+          "attributes",
+          "direct_text",
+          "tail_text",
+          "direct_text_sha256",
+          "tail_text_sha256",
+          "tei_tag",
+          "tei_xml_id",
+          "tei_parent_id",
+          "tei_child_ordinal",
+          "tei_attributes",
+          "attribute_dispositions",
+          "disposition",
+          "tei_selector",
+          "assertion"
+        ],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^mark-feature-[0-9]{5}$"},
+          "source_selector": {"type": "string", "minLength": 1},
+          "source_tag": {"type": "string", "minLength": 1},
+          "source_xml_id": {"type": ["string", "null"]},
+          "attributes": {"type": "object"},
+          "direct_text": {"type": "string"},
+          "tail_text": {"type": "string"},
+          "direct_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tail_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tei_tag": {"type": "string", "minLength": 1},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "tei_parent_id": {"type": "string", "minLength": 1},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "attribute_dispositions": {"type": "array"},
+          "disposition": {"const": "represented"},
+          "tei_selector": {"type": "string", "pattern": "^#.+"},
+          "assertion": {
+            "type": "object",
+            "required": [
+              "id",
+              "profile",
+              "role",
+              "layer",
+              "status",
+              "asserted_by",
+              "method",
+              "evidence",
+              "subject",
+              "destination"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

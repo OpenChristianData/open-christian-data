@@ -1,0 +1,64 @@
+{
+  "status": "nonaccepted complete sixteen-line poem",
+  "source_path": "raw/ccel/owen/poema.xml",
+  "source_sha256": "959031f365b8396edacf22e8e1ae15211fa64ed50396edffd8a7f1c6583a2a53",
+  "source_bytes": 11637,
+  "source_sections": [
+    {
+      "id": "i.i",
+      "title": "Title.",
+      "sha256": "26f69e7eab028b81cb4506ec71503650e3a1f7bfdedd983f96baccfe9a01252b",
+      "disposition": "outside-poem-scope"
+    },
+    {
+      "id": "i.ii",
+      "title": "Prefatory note.",
+      "sha256": "8d5f96099db71178031ae8a5936fa8fc679eeae7410cfa209702fb0de9721403",
+      "disposition": "outside-poem-scope"
+    },
+    {
+      "id": "i.iii",
+      "title": "Dedication.",
+      "sha256": "5d169cae1ff37c2c71ce748f3cb28096120a0608e0b4a31e5f2e993b61136a1b",
+      "disposition": "outside-poem-scope"
+    },
+    {
+      "id": "i.iv",
+      "title": "Poema.",
+      "sha256": "920a54d582930ec7b6e4d70af3cd2f48a4ba3eac2e99ce1c8cf1583bffd37282",
+      "disposition": "selected-complete-poem-section"
+    },
+    {
+      "id": "ii.i",
+      "title": "Latin Words and Phrases",
+      "sha256": "9d09114b031392bfd313995b6f2f0521fd01429202208d700c7f81c1f59c68fa",
+      "disposition": "outside-poem-scope"
+    }
+  ],
+  "source_poem_count": 1,
+  "title": "Ad Protectorem.",
+  "line_count": 16,
+  "files": {
+    "owen.tei.xml": "a48cff7c68d1ac20e1af7e36785fed89e07244ae242f5cc3566515eaf41125d7",
+    "owen.retained.xml": "920a54d582930ec7b6e4d70af3cd2f48a4ba3eac2e99ce1c8cf1583bffd37282"
+  },
+  "context": {
+    "identity": {
+      "work_id": "fixture-owen-poema",
+      "textual_form_id": "fixture-owen-poema-latin",
+      "edition_id": "fixture-ccel-owen-poema"
+    },
+    "language": "la",
+    "representation_revision": "fixture-v1",
+    "edition_title": "Poema — retained Owen witness",
+    "source_url": "https://www.ccel.org/ccel/owen/poema.html",
+    "source_sha256": "959031f365b8396edacf22e8e1ae15211fa64ed50396edffd8a7f1c6583a2a53",
+    "retained_sha256": "920a54d582930ec7b6e4d70af3cd2f48a4ba3eac2e99ce1c8cf1583bffd37282"
+  },
+  "mapping": [
+    "One complete native verse group remains one poem row.",
+    "Source LA becomes TEI la; small caps remain hi.",
+    "Native title remains head; source attribution and page evidence remain header metadata.",
+    "Electronic header, dedication, prefatory note and index remain explicitly outside poem text."
+  ]
+}

@@ -1,11 +1,13 @@
 # Spurgeon MTP Missing Sermons — Primary Source Research
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Date:** 2026-04-13  
-**Status:** COMPLETE — 3 sermons added (708, 1698, 3032). 13 entries classified as intentional gaps. Total: 3,550 entries in `data/sermons/spurgeon-mtp.json`. See `data/sermons/MANIFEST.md` for full gap documentation.
+**Status:** COMPLETE — 3 supplemental alternate-source witnesses added (708, 1698, 3032). 13 entries remain classified as intentional gaps. The retained source root has 3,551 files: 3,547 primary Kingdom Collective HTML sermons, 3 supplemental alternate-source HTML witnesses, and 1 `request_log.csv`. The numeric-witness union is 3,550, while the current split JSON/TEI route covers only the 3,547 primary sermons. See `data/sermons/MANIFEST.md` for full gap documentation.
 
-**Context:** The Kingdom Collective (thekingdomcollective.com/spurgeon/) hosts 3,547 of the 3,563 MTP sermon numbers. The following 16 numbers returned HTTP 404 and have no cached HTML. These are confirmed site gaps (verified manually), not parser errors.
+**Context:** The Kingdom Collective (thekingdomcollective.com/spurgeon/) hosts 3,547 primary HTML sermons among the 3,563 MTP sermon numbers. Three additional alternate-source HTML witnesses (708, 1698, 3032) are retained outside that primary route; the remaining 13 numbers returned HTTP 404 and have no cached HTML. These are confirmed site gaps (verified manually), not parser errors.
 
-**Missing sermon numbers:**  
+**Original Kingdom Collective gaps (16 numbers; 3 now have supplemental witnesses):**
 8, 40, 42, 62, 67, 82, 142, 155, 269, 270, 298, 332, 390, 708, 1698, 3032
 
 ---

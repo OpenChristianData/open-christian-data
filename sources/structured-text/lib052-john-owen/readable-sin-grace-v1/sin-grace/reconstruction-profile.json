@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-owen-lib052-sin-grace-readable-profile-v1",
+  "member_id": "sin-grace",
+  "work_id": "john-owen-sin-grace",
+  "source": {
+    "path": "raw/ccel/owen/sin_grace.xml",
+    "bytes": 237618,
+    "sha256": "f5d5d1f26e38f78f5cf370eb529d9f0198517a20b168bb1087da0ae7dee62039"
+  },
+  "source_title": "A Treatise of the Dominion of Sin and Grace",
+  "source_author": "John Owen",
+  "root_disposition": {
+    "front": [],
+    "body": [
+      "i"
+    ],
+    "back": [
+      "ii"
+    ]
+  },
+  "source_root_ids_in_order": [
+    "i",
+    "ii"
+  ],
+  "element_count": 1070,
+  "comment_count": 0,
+  "duplicate_source_ids": [
+    {
+      "id": "i.x-p5.3",
+      "occurrences": 2,
+      "nodes": "two distinct scripRef quotations; no local href targets the duplicate",
+      "tei_mapping": "source-occurrence-1 and source-occurrence-2 suffixes; original id retained in accounting"
+    }
+  ],
+  "broken_local_links": [],
+  "source_carriers": {
+    "argument": "textual chapter argument to p@rend=source-argument",
+    "name": "source title to name@key",
+    "cite": "source title to hi@n with citation rendition",
+    "scripContext": "version to milestone@n with unit scripContext",
+    "hr": "source class to milestone@rend"
+  },
+  "scope": "complete one retained CCEL ThML electronic edition: treatise and indexes",
+  "electronic_publisher": "CCEL publisherID ccel",
+  "print_source": "The Banner of Truth Trust, Edinburgh, 1965",
+  "electronic_base_rights": "AGES Digital Library base text asserted in editorialComments; rights unresolved",
+  "human_acceptance": "absent"
+}

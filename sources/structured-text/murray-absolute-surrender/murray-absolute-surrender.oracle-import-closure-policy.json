@@ -1,0 +1,10 @@
+{
+  "contract": "ocd-validator-import-closure-policy-v1",
+  "validator_id": "ocd-murray-absolute-surrender-independent-thml-oracle",
+  "forbidden_import_prefixes": [
+    "build.tei.murray_absolute_surrender_reconstruction",
+    "build.tei.thml_to_tei"
+  ],
+  "dynamic_execution_names": ["eval", "exec", "__import__"],
+  "closure_algorithm": "recursive repository-local Python import closure, sorted by repository-relative path, each member sha256, canonical JSON SHA-256"
+}

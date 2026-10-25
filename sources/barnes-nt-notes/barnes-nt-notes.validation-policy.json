@@ -1,0 +1,16 @@
+{
+  "policy_id": "barnes-sword-nt-validation-v1",
+  "oracle_id": "ocd-barnes-independent-zcom-slot-oracle",
+  "source_accountability_schema": "barnes-nt-notes.source-accountability.schema.json",
+  "rules": [
+    "Pin the retained Barnes archive, all indexed data members, and module configuration by exact byte count and SHA-256.",
+    "Independently traverse the BZV index and decompressed BZS blocks; account for each ordered slot and exact byte slice.",
+    "Independently derive all 8,246 SWORD positions from the retained module's Versification value (or the SWORD KJV default) and the bound KJV NT canon table; compare every TEI @subtype position token and accountability position. Never derive a position from carrier text, generated Bible JSON, or neighboring payloads.",
+    "Preserve UTF-8 text in order; map only source-evidenced ThML i, br, scripRef, and blockquote elements to semantic TEI. Preserve passage and version values literally; leave unknown tags and unsupported attributes visibly escaped and explicitly accounted.",
+    "Represent empty slots explicitly and invalid UTF-8 or XML-incompatible bytes with auditable gaps and exact hex evidence; retain the existing 136 gap identities and bytes.",
+    "Independently traverse the retained ThML carrier text and compare every text and mapped-element event with readable TEI; verify explicit unknown-markup records and source structural warnings.",
+    "Validate TEI P5, exact candidate bindings, source accounting, slot order, and package reproduction; bind the ticket-local oracle module while exercising the shared reconstruction contract as the current runtime dependency.",
+    "Reject omission, duplication, reordering, changed text, changed ThML semantics or attributes, changed byte evidence, and hidden source gaps."
+  ],
+  "separate_decisions": ["textual form and edition", "parts/volume identity", "rights clearance", "human acceptance", "release selection", "publication authorization"]
+}

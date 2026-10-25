@@ -1,0 +1,18 @@
+{
+  "profile_id": "lib068-taylor-holy-living-retained-text-v1",
+  "identity": {
+    "work_title": "The Rule and Exercises of Holy Living",
+    "source_title": "Holy Living",
+    "creator_statement": "Taylor, Jeremy (1613-1667)",
+    "retained_edition_statement": "CCEL retained plain-text export; the existing source config associates a Philadelphia: J. W. Bradley, 1860 edition, but edition identity remains unresolved.",
+    "source_url": "https://www.ccel.org/ccel/t/taylor/holy_living/cache/holy_living.txt"
+  },
+  "rights": {
+    "retained_statement": "No explicit license or rights statement occurs in the retained plain-text export.",
+    "status": "Human rights review required before publication."
+  },
+  "scope": "The complete sole retained LIB-068 CCEL plain-text member, including CCEL metadata, front matter, complete text, source-generated link apparatus, blank lines, and terminal LF.",
+  "member_census": [{"path": "raw/ccel/taylor-holy-living.txt", "decision": "include", "reason": "The sole frozen LIB-068 retained primary-source member for this work."}],
+  "excluded_members": [],
+  "feature_floor": ["exact retained member identity", "exact LF-delimited line count and order", "exact physical-line text including indentation and blank lines", "CCEL metadata and source-generated link apparatus", "nonaccepted candidate and unresolved human decisions"]
+}

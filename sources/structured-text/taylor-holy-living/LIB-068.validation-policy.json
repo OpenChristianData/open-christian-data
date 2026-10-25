@@ -1,0 +1,7 @@
+{
+  "policy_id": "lib068-taylor-holy-living-policy-v1",
+  "oracle_id": "ocd-lib068-source-local-independent-oracle",
+  "schema": "LIB-068.source-accountability.schema.json",
+  "rules": ["exact retained source bytes and SHA-256", "exact one-member include census with no excluded retained members", "exact 14613-line sequence including blank and terminal empty lines", "direct TEI P5 XSD and source-accountability schema validation", "reject source, member, manifest, metadata, TEI, provenance, and unresolved-scope drift", "fresh-process and different-CWD byte determinism"],
+  "required_unresolved_ids": ["taylor-holy-living-projection-review", "taylor-holy-living-identity-review", "taylor-holy-living-edition-witness-review", "taylor-holy-living-rights-review", "taylor-holy-living-editorial-review", "taylor-holy-living-textual-acceptance-review", "taylor-holy-living-publication-review"]
+}

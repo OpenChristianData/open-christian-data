@@ -1,0 +1,75 @@
+{
+  "authorities": [
+    {
+      "bytes": 1555,
+      "name": "source-config",
+      "path": "sources/structured-text/strong-systematic-theology-vol-3/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "f0ae2782f9f3f7279b2012896e4559adb3a3327d37826bf8bbc4841707b9a60c"
+    },
+    {
+      "bytes": 1868543,
+      "name": "retained-source",
+      "path": "raw/gutenberg/pg45283.txt",
+      "role": "primary-source",
+      "sha256": "103dc623072326111214078015dfbe8cb8f97197cba6e5e6faffede8bb1a20fe"
+    },
+    {
+      "bytes": 220661,
+      "name": "reconstruction-profile",
+      "path": "sources/strong-systematic-theology-vol-3/strong-systematic-theology-vol-3.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "7bbd9a38820564da259a455ca7736f8c73b9568dcb7fa8bad2153b28661e9646"
+    },
+    {
+      "bytes": 1236,
+      "name": "validation-policy",
+      "path": "sources/strong-systematic-theology-vol-3/strong-systematic-theology-vol-3.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "b599dc479779d0681d7f7200b260b2ba5cb2bdf89697d58ab9bd3691037ac0bf"
+    },
+    {
+      "bytes": 3499,
+      "name": "attribution-readme",
+      "path": "sources/strong-systematic-theology-vol-3/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "aeb815163297e3834aa05cecab17b8edc8d77e2ffa7d1173c06e0fb343761faf"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-strong-pg45283-volume-3-structured-transcription",
+    "implementation_path": "build/tei/strong_systematic_theology_vol_3_reconstruction.py",
+    "implementation_sha256": "600fb57c2ea35e6209aabdd87d836ed9200f211064fd92742d5ebd43985879e6",
+    "version": "9"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "strong-systematic-theology-vol-3-pg45283-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-strong-pg45283-independent-structure-oracle",
+    "implementation_path": "build/tei/strong_systematic_theology_vol_3_oracle.py",
+    "implementation_sha256": "df1d45b4eb12060ea67a445023971dd1a4b336be91ec383573fe534cd7d2303e",
+    "import_closure_sha256": "21317ddbe7eb6324e055c90dba30ff035c4afa1b5d195b05f762000f38702aed",
+    "version": "9"
+  },
+  "work_id": "strong-systematic-theology-vol-3"
+}

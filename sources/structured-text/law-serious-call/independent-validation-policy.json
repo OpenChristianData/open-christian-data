@@ -1,0 +1,130 @@
+{
+  "contract": "ocd-law-serious-call-independent-validation-policy-v1",
+  "policy_id": "law-serious-call-whole-retained-thml-validation-v1",
+  "work_id": "law-serious-call",
+  "source_id": "law-serious-call-retained-thml",
+  "scope": {
+    "source_path": "raw/ccel/law/serious_call.xml",
+    "source_sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd",
+    "source_bytes": 807207,
+    "selector": "/ThML[1]",
+    "member_count": 1,
+    "disposition": "complete-whole-retained-member"
+  },
+  "provenance": {
+    "identity": {
+      "title": "A Serious Call to a Devout and Holy Life",
+      "author": "William Law",
+      "edition": "CCEL ThML edition (sourced via CCEL.org)."
+    },
+    "source": {
+      "path": "raw/ccel/law/serious_call.xml",
+      "bytes": 807207,
+      "sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd"
+    },
+    "metadata_sidecar": {
+      "path": "metadata/source-evidence/catalog/law-serious-call.json",
+      "sha256": "ad1c29f90b6da4995324ca76da415de9582b3fa6462b128ed4b2364ba3d96c90"
+    }
+  },
+  "checks": [
+    "source-member-hash-and-complete-envelope",
+    "all-source-element-carriers-and-attributes-reconciled",
+    "body-text-order-and-nesting-preserved",
+    "all-notes-and-scripture-references-preserved",
+    "ordinary-links-and-prev-next-edges-preserved; exactly-two-declared-source-navigation-targets-remain-absent",
+    "source-header-metadata-and-presentation-rules-retained",
+    "source-comment-preserved-and-external-doctype-disclosed",
+    "date-conflict-retained-without-adjudication",
+    "tei-p5-xsd-validation",
+    "candidate-package-and-evidence-schema-validation",
+    "meaningful-resealed-candidate-mutations-rejected",
+    "independent-second-process-package-reproduction"
+  ],
+  "source_navigation": {
+    "verification_allowance": "permitted-with-exactly-the-declared-source-target-absent-edges",
+    "permitted_unresolved_edge_ids": [
+      "navigation-prev-toc-title-page",
+      "navigation-next-toc-acknowledgements"
+    ],
+    "all_other_edges": "must-resolve-within-complete-retained-member-and-remain-in-tei-prev-next"
+  },
+  "separation": {
+    "candidate_status": "nonaccepted",
+    "human_acceptance": "not-decided",
+    "rights_clearance": "not-decided",
+    "publication": "not-authorized",
+    "canonical_promotion": "not-performed"
+  },
+  "unresolved": [
+    {
+      "id": "original-publication-date-conflict",
+      "status": "unresolved",
+      "claims": [
+        {
+          "value": "1729",
+          "source_locator": "/ThML[1]/ThML.body[1]/div1[1]/p[@id='i-p25']"
+        },
+        {
+          "value": "1729",
+          "source_locator": "/ThML[1]/ThML.body[1]/div1[@id='xxvi']/p[@id='xxvi-p11']"
+        },
+        {
+          "value": "1729",
+          "source_locator": "/ThML[1]/ThML.body[1]/div1[@id='xxvi']/p[@id='xxvi-p28']"
+        },
+        {
+          "value": "1729",
+          "source_locator": "/ThML[1]/ThML.body[1]/div1[@id='xxvi']/p[@id='xxvi-p69']"
+        },
+        {
+          "value": "1728",
+          "source_locator": "/ThML[1]/ThML.body[1]/div1[@id='xxvii']/p[@id='xxvii-p17']"
+        }
+      ],
+      "disposition": "preserve-all-claims-do-not-select-a-date",
+      "owner": "metadata-review",
+      "reopening_condition": "work-specific primary-edition evidence reconciles the title-page and appendix claims"
+    },
+    {
+      "id": "underlying-print-edition-identity",
+      "status": "unresolved",
+      "disposition": "CCEL-ThML-witness-is-identified-but-its-underlying-print-edition-is-not-established-by-this-route",
+      "owner": "metadata-review",
+      "reopening_condition": "work-specific retained or reviewed primary-edition evidence is available"
+    },
+    {
+      "id": "navigation-prev-toc-title-page",
+      "status": "unresolved",
+      "category": "source-navigation-edge",
+      "source_sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd",
+      "selector": "/ThML[1]/ThML.body[1]/div1[1]",
+      "direction": "prev",
+      "raw_target": "toc",
+      "carrier_id": "i",
+      "disposition": "source-target-absent",
+      "owner": "source-evidence-maintainer",
+      "reopening_condition": "An exact retained witness or primary-source record identifies the destination of this source assertion; rebind and independently reverify without inventing an ID or redirecting to a generated navigation title."
+    },
+    {
+      "id": "navigation-next-toc-acknowledgements",
+      "status": "unresolved",
+      "category": "source-navigation-edge",
+      "source_sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd",
+      "selector": "/ThML[1]/ThML.body[1]/div1[30]",
+      "direction": "next",
+      "raw_target": "toc",
+      "carrier_id": "xxx",
+      "disposition": "source-target-absent",
+      "owner": "source-evidence-maintainer",
+      "reopening_condition": "An exact retained witness or primary-source record identifies the destination of this source assertion; rebind and independently reverify without inventing an ID or redirecting to a generated navigation title."
+    },
+    {
+      "id": "rights-clearance",
+      "status": "not-decided",
+      "disposition": "preserve-CCEL-attribution-and-no-sale-terms-for-human-review",
+      "owner": "rights-review",
+      "reopening_condition": "a human rights review records a scoped decision"
+    }
+  ]
+}

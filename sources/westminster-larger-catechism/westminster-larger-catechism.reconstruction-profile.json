@@ -1,0 +1,39 @@
+{
+  "contract": "ocd-lib062-westminster-larger-catechism-profile-v1",
+  "work_id": "westminster-larger-catechism",
+  "packet_path": "sources/westminster-larger-catechism/LIB-062.packet.json",
+  "packet_sha256": "24bf384f8ce656a3717acb7e8832a523cd97bdf9de473ef35a5557d25f713077",
+  "authority_path": "raw/Creeds.json/creeds/westminster_larger_catechism.json",
+  "authority_raw_sha256": "0b98df0c7e80f652c660c5bcdf7606793c41c07f7e6cf445698c8ee69d7b3fb1",
+  "authority_normalized_utf8_sha256": "755274a3ba67aa840021dcefde55e357851a95f87daab52bcd2407d131d7cab5",
+  "profile": {
+    "accountable_leaf_count": 4432,
+    "data_record_count": 196,
+    "metadata_keys": ["Title", "AlternativeTitles", "Year", "Authors", "Location", "OriginalLanguage", "OriginStory", "SourceUrl", "SourceAttribution", "CreedFormat"],
+    "proof_group_count": 1303,
+    "proofless_record_count": 0,
+    "question_with_proofs_count": 0,
+    "recursive_key_counts": {"AlternativeTitles": 1, "Answer": 196, "AnswerWithProofs": 196, "Authors": 1, "CreedFormat": 1, "Data": 1, "Id": 1303, "Location": 1, "Metadata": 1, "Number": 196, "OriginStory": 1, "OriginalLanguage": 1, "Proofs": 196, "Question": 196, "References": 1303, "SourceAttribution": 1, "SourceUrl": 1, "Title": 1, "Year": 1},
+    "reference_count": 2333,
+    "row_key_shapes": [["Number", "Question", "Answer", "AnswerWithProofs", "Proofs"]],
+    "subquestion_count": 0
+  },
+  "structural_policy": {
+    "grouping": "preserve only source-exposed nested structures; do not invent Lord days, sections, or parts",
+    "ordering": "Data array order and every nested array order are authoritative; Number and Id values are verbatim labels",
+    "preserve": ["Number", "Question", "Answer", "AnswerWithProofs when present", "Proofs/Id", "Proofs/References", "explicit empty Proofs arrays"]
+  },
+  "accountability_contract": {
+    "duplicate_leaf_count": 0,
+    "leaf_model": "every scalar plus every explicit empty dict or list; metadata array elements are distinct leaves",
+    "omitted_leaf_count": 0,
+    "require_every_recursive_key": true,
+    "require_every_scalar_leaf": true,
+    "schema_equivalent": "oracle-enforced exact JSON-pointer/value/TEI-target crosswalk"
+  },
+  "excluded_adjacent_witness": {
+    "path": "raw/TheologAI/data/historical-documents/westminster-larger-catechism.json",
+    "raw_sha256": "9436365592771274bd4eb5b0d86605a47a5f3c34acbacaf45bf05f73a1cd48a0",
+    "disposition": "excluded-adjacent-witness-no-human-source-choice"
+  }
+}

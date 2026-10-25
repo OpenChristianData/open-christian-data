@@ -1,0 +1,47 @@
+{
+  "contract": "rutherford-letters-independent-validation-policy-v1",
+  "work_id": "rutherford-letters",
+  "scope": "The sole primary member is the complete retained ThML document. Preserve its complete header and document-shell inventory, all six ordered top-level div1 roots, every supported body descendant, and explicit colgroup/col presentation dispositions.",
+  "body_policy": "Every supported body element is projected once in source order to standard TEI. Exact direct text, child order, source IDs, mapped attributes, and tails are checked independently. Source div titles may produce a source-derived TEI head when no matching direct heading exists.",
+  "attribute_policy": "Every source element attribute is recorded exactly in source-accountability.json. Readable attributes are mapped to TEI where supported; navigation attributes and presentation-only column declarations remain source-accountability evidence.",
+  "shell_policy": "Record the XML declaration, external DOCTYPE identifiers, prolog/epilog nodes, processing instructions, comments, and complete ThML.head element inventory. The external DTD is never fetched.",
+  "metadata_policy": "Preserve provider-record title, creator, publisher, created date, language, subjects, description, source and rights fields as source observations. Do not infer the print edition, original publication date, translator, rights clearance, or canonical constituent-part boundary.",
+  "supported_body_tags": ["a", "br", "div", "div1", "div2", "h1", "h2", "insertIndex", "p", "scripRef", "table", "td", "th", "tr"],
+  "unresolved_records": [
+    {
+      "question_id": "rutherford-letters-work-boundary",
+      "status": "unresolved",
+      "question": "Does this retained CCEL record represent exactly the cataloged standalone work or a broader selection/supporting envelope?",
+      "evidence": "The retained provider title is A Selection from his Letters and the complete source contains title, contents, foreword, letters, glossary, and indexes; that does not independently settle the catalog boundary.",
+      "next_action": "Resolve from primary-source or reviewed owner evidence; keep the candidate nonaccepted."
+    },
+    {
+      "question_id": "rutherford-letters-textual-form",
+      "status": "unresolved",
+      "question": "Which textual form, revision, or translation is represented by this retained English member?",
+      "evidence": "The retained header supplies language eng and provider metadata but no work-specific translator or revision statement.",
+      "next_action": "Leave textual-form and translator identity unasserted pending work-specific evidence."
+    },
+    {
+      "question_id": "rutherford-letters-edition-witness",
+      "status": "unresolved",
+      "question": "Which print edition or electronic witness lineage underlies this CCEL member?",
+      "evidence": "The entry config carries an edition claim, but the current retained member and its provider header do not independently establish a print imprint or collation.",
+      "next_action": "Preserve the config claim as legacy evidence only and do not promote it to resolved edition or witness identity."
+    },
+    {
+      "question_id": "rutherford-letters-parts",
+      "status": "unresolved",
+      "question": "How do the six source carriers relate to constituent works, support matter, or segmentation?",
+      "evidence": "The source exposes six ordered div1 carriers; their source boundaries are known but their catalog-part semantics are not independently decided here.",
+      "next_action": "Keep the complete source-native carrier envelope and defer semantic part decisions."
+    },
+    {
+      "question_id": "rutherford-letters-rights",
+      "status": "unresolved",
+      "question": "Are rights and publication conditions cleared for this reconstructed candidate?",
+      "evidence": "The retained DC.Rights field is empty and CCEL attribution guidance is not a project rights-clearance decision.",
+      "next_action": "Keep rights clearance, acceptance, and publication authorization separate from technical reconstruction."
+    }
+  ]
+}

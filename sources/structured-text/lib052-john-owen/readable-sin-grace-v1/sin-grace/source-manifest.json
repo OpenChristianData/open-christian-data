@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-owen-lib052-readable-sin-grace-v1",
+  "work_id": "john-owen-sin-grace",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/owen/sin_grace.xml",
+      "role": "primary-source",
+      "bytes": 237618,
+      "sha256": "f5d5d1f26e38f78f5cf370eb529d9f0198517a20b168bb1087da0ae7dee62039"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/lib052-john-owen/readable-sin-grace-v1/sin-grace/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1308,
+      "sha256": "ab568d3b3ab402dbe7364c35895269d0a103eb9a6848675f9908b19a4abe5f11"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib052-john-owen/readable-sin-grace-v1/sin-grace/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1625,
+      "sha256": "257d84c9d3a3decefd3500bf26ef78201909a4267af7243f06a89a61473a338a"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib052-john-owen/readable-sin-grace-v1/sin-grace/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 884,
+      "sha256": "2bc2e8d0bce215f1d66a9088c2cad3a1adc4745cf04ead861a102be66b399404"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib052-john-owen/readable-sin-grace-v1/sin-grace/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1889,
+      "sha256": "27379681112f57e28b889ec7e61abb37885b328923343b17ad522dc50b848197"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-owen-lib052-sin-grace-readable-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/owen_lib052_sin_grace_readable.py",
+    "implementation_sha256": "8c0d31387ae02217af453a5f964ac01d4ebd74881158e13d37f92360e01b9be3"
+  },
+  "validator": {
+    "id": "ocd-owen-lib052-sin-grace-readable-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/owen_lib052_sin_grace_readable_oracle.py",
+    "implementation_sha256": "b8b35cd193e275f93c09ff0f20c3b39d64e069fa8f7f6917043dc88ccddc36b6",
+    "import_closure_sha256": "b8b35cd193e275f93c09ff0f20c3b39d64e069fa8f7f6917043dc88ccddc36b6"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "ticket": "08",
+  "wave": 4,
+  "slug": "calvins-institutes-beveridge-1846",
+  "identity_status": "source-edition-upgrade-distinct-beveridge-expression-no-workcatalog-write",
+  "work": {
+    "title": "The Institutes of the Christian Religion",
+    "author": "John Calvin",
+    "translator": "Henry Beveridge",
+    "oll_citation": "Edinburgh: Calvin Translation Society, 1846; two volumes in one",
+    "retained_electronic_witness": "OLL current EPUB and text-based eBook plus facsimile"
+  },
+  "release_gate": {
+    "path": ".scratch/clean-ready-acquisition-to-tei/issues/00-GATE-RELEASE.md",
+    "current_append_only_sha256": "7fcb72a127169c0829b3192df32f6f0a84ca5b19295709ecdd3fc8a072120f25",
+    "issued_utc": "2026-08-31T03:31:00Z",
+    "ticket_issue_path": ".scratch/clean-ready-acquisition-to-tei/issues/08-calvins-institutes-beveridge-edition.md",
+    "ticket_issue_sha256": "03387371e30576b1572c1138555169ca68627b2df3ff3398d489e01cbb76d720",
+    "root_gate_sha256": {
+      "04-identity-reconciliation.md": "e92afaff9a2d589b3d85a234196734bb4a87d0c6902f32d684a93cb728196803",
+      "05-live-campaign-and-map-gate.md": "a7a8597ef9dcb4c0765ac3f966f1585506327d57c40e204abcc9231b52108346",
+      "06-minimal-acquisition-and-isolation-contract.md": "4c559d8fb859e65fd76e2dbb5d55c471129987368a98369ac8d65172143fd11f"
+    }
+  },
+  "acquisition": {
+    "method": "blocked-page recovery: archived OLL title metadata plus curl -L --fail against direct official OLL S3 download URLs",
+    "archived_title_timestamp": "2026-02-26T20:34:39Z",
+    "retrieved_utc": "2026-08-31T03:34:52Z/2026-08-31T03:36:15Z",
+    "raw_lane": "raw/clean-ready-acquisition-to-tei/master-1/08/calvins-institutes-beveridge-1846",
+    "header_redaction": "Only x-archive-orig-set-cookie and set-cookie values in the Wayback response were replaced by [redacted-session-cookie-at-acquisition]."
+  },
+  "retained_files": [
+    {
+      "path": "calvin-the-institutes-of-the-christian-religion.epub",
+      "bytes": 1594912,
+      "sha256": "4a7bfc603c2e9f460c4b48a12389f3ec9b0ef00f8864416d0fcd87168813d0d1",
+      "last_modified": "2020-06-01T19:29:44Z",
+      "etag": "967f94bfebc44c2b5c9df4b05939853a",
+      "s3_version_id": "khIQMFEkFxB5GfR74uAdborl7fLoA8do"
+    },
+    {
+      "path": "Calvin_0038_EBk_v6.0.pdf",
+      "bytes": 4209367,
+      "pages": 1137,
+      "sha256": "8015510ce3c79ddf086ce3bd5f117c2cc0244410d98f7a87dbc05c9e725d6e75",
+      "last_modified": "2020-06-01T19:29:44Z",
+      "etag": "2182cb3cd7a3c5494da597594767ca1e",
+      "s3_version_id": "uuF3k.CJGXrMkKoTq9kovx1wtDRto2XP"
+    },
+    {
+      "path": "0038_Bk.pdf",
+      "bytes": 104898478,
+      "pages": 1311,
+      "sha256": "bfb1cde92d58eadabb068eb7b11ee0bfd13bcb4c5b0a6c8993f4ce5712c1cc4c",
+      "last_modified": "2020-06-01T19:29:42Z",
+      "etag": "42fcffe60d9c1b6509246da06eaf4a68-7",
+      "s3_version_id": "SPtqdXntUvm_doR8j2813Eg0cSxy9iUW"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.html",
+      "bytes": 24067,
+      "sha256": "6b1c2ae3b73b012ffdce769b97f2297629a500ab18ce4b00cc9176ae63cf1ad8"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.http-body.gz",
+      "bytes": 5454,
+      "sha256": "2b756faf4977306ae4cde90e6bf2b9cd75b2b5e30a5da023d290814c8e01a98f"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.headers.txt",
+      "bytes": 2792,
+      "sha256": "e51d0935c04f8b1d89c9ae8a0a7ab7c238f5a2c3ea248fdacc3c3c256bc1a10e"
+    },
+    {
+      "path": "facsimile-general-index-p691-704.pypdf-6.10.0.json",
+      "bytes": 98865,
+      "sha256": "03099add1e81f17f7a834570d48651ed57d3e9c1a5a991581d6adeb934a35fe3"
+    }
+  ],
+  "epub_identity": {
+    "files": 14,
+    "book_member": "Calvin_0038.html",
+    "book_member_bytes": 4973706,
+    "book_member_sha256": "43409edd7da6a1db1478f5c8b3740d3d747b01b5daea47ef1d143a217ada72cb",
+    "crc_test": "passed"
+  },
+  "source_evidence": {
+    "archived_title_author": "John Calvin",
+    "archived_title_translator": "Henry Beveridge",
+    "archived_citation": "Edinburgh: Calvin Translation Society, 1846",
+    "archived_extent": "2 vols. in 1",
+    "rights_statement": "The text is in the public domain.",
+    "facsimile_title_observation": "The title page visibly identifies Calvin and Beveridge but does not itself print OLL's 1846 citation.",
+    "facsimile_terminal_observation": "PDF page 1311 / printed page 704 ends with ZEPHYRINUS and ZIPPORAH."
+  },
+  "observed_source_census": {
+    "books": 4,
+    "chapters": 80,
+    "book_arguments": 4,
+    "chapter_argument_openers": 71,
+    "section_divisions": 2822,
+    "paragraphs": 3970,
+    "linked_note_references": 660,
+    "linked_note_bodies": 660,
+    "internal_links": 3865,
+    "tables": 67,
+    "captions": 65,
+    "list_items": 135,
+    "epub_page_milestones": 1290,
+    "page_processing_instructions": 13,
+    "facsimile_general_index_pages": 14
+  },
+  "electronic_source_reconciliation": {
+    "additions": [
+      "Wm. B. Eerdmans title and imprint matter",
+      "Introduction by the Rev. John Murray",
+      "OLL page labels and navigation metadata"
+    ],
+    "omission": "Facsimile General Index, printed pages 691-704",
+    "normalization": "EPUB entity decoding to Unicode; source whitespace retained in TEI nodes and collapsed only for digest comparison; no wording, spelling, punctuation, capitalization, or source page values modernized.",
+    "facsimile_index_status": "Uncorrected embedded searchable-text extraction from pypdf 6.10.0, page bounded and cert=low; not exact human transcription."
+  },
+  "excluded_authorities": [
+    "Project Gutenberg 45001 and 64392 (John Allen translation)",
+    "incomplete Wikisource Beveridge transcription",
+    "CCEL transcription layer",
+    "Sacred Texts transcription layer"
+  ],
+  "canonical_mutation": false,
+  "human_acceptance": "not-performed"
+}

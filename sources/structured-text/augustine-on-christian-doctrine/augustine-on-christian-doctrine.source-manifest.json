@@ -1,0 +1,145 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "37c-048-augustine-on-christian-doctrine-retained-thml",
+  "work_id": "augustine-on-christian-doctrine",
+  "authorities": [
+    {
+      "path": "raw/ccel/npnf1/npnf102.xml",
+      "name": "retained-source",
+      "role": "primary-source",
+      "bytes": 4137798,
+      "sha256": "b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a"
+    },
+    {
+      "path": "library/works/augustine-on-christian-doctrine/work.json",
+      "name": "work",
+      "role": "work-identity-config",
+      "bytes": 1017,
+      "sha256": "82f0ee961194f1d334963572b72ee4210ffe6a8f9a2ad4a2b6a42c6ae363d92f"
+    },
+    {
+      "path": "library/works/augustine-on-christian-doctrine/forms/augustine-on-christian-doctrine-english/editions/augustine-on-christian-doctrine-ccel-retained/acquisitions/augustine-on-christian-doctrine-retained.json",
+      "name": "acquisition",
+      "role": "acquisition-selection-authority",
+      "bytes": 1684,
+      "sha256": "ab93a335f33ad9e7ed10d3bf7b332037b01412e6d316533c546605a3cf840b7d"
+    },
+    {
+      "path": "sources/structured-text/augustine-on-christian-doctrine/augustine-on-christian-doctrine.reconstruction-profile.json",
+      "name": "profile",
+      "role": "complete-source-feature-profile",
+      "bytes": 3268,
+      "sha256": "9037f85207562b66e3806168d99ab1700425575e02019362a034d0369ab94d7a"
+    },
+    {
+      "path": "sources/structured-text/augustine-on-christian-doctrine/augustine-on-christian-doctrine.validation-policy.json",
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "bytes": 1517,
+      "sha256": "25423743ed63164f4fe8495d07923bcdd3a00202f0590a497f20b780e90b19b7"
+    },
+    {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "path": "ocd_kernel/library/source_selection.py",
+      "name": "closure-1",
+      "role": "implementation-dependency",
+      "bytes": 12279,
+      "sha256": "e95968090550c80fb3f337043808a40ca3eb398cb4577a2b0234bf65710f5bf4"
+    },
+    {
+      "path": "ocd_kernel/library/acquisitions.py",
+      "name": "closure-2",
+      "role": "implementation-dependency",
+      "bytes": 23828,
+      "sha256": "7c292292ca41b0e24fb249ae5f6e676273f84427d9ecad1b883190bc26bc5beb"
+    },
+    {
+      "path": "ocd_kernel/library/identities.py",
+      "name": "closure-3",
+      "role": "implementation-dependency",
+      "bytes": 18945,
+      "sha256": "2297e93b3770a399b2412c210ff563f281efec257c175fcef4a998a9a5294637"
+    },
+    {
+      "path": "ocd_kernel/library/_common.py",
+      "name": "closure-4",
+      "role": "implementation-dependency",
+      "bytes": 3970,
+      "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"
+    },
+    {
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "name": "closure-5",
+      "role": "implementation-dependency",
+      "bytes": 4223,
+      "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "name": "closure-6",
+      "role": "implementation-dependency",
+      "bytes": 25905,
+      "sha256": "a9bdd045183a870fe981b7fabd23111ecb43ccae592fbdb9ab049fce1ed7f74b"
+    },
+    {
+      "path": "ocd_kernel/tei/validate.py",
+      "name": "closure-7",
+      "role": "implementation-dependency",
+      "bytes": 1385,
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"
+    },
+    {
+      "path": "schemas/v2/acquisition.schema.json",
+      "name": "closure-8",
+      "role": "implementation-dependency",
+      "bytes": 4993,
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "path": "schemas/v2/work.schema.json",
+      "name": "closure-9",
+      "role": "implementation-dependency",
+      "bytes": 6206,
+      "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+    },
+    {
+      "path": "ocd_kernel/tei/writer.py",
+      "name": "writer",
+      "role": "implementation-dependency",
+      "bytes": 4314,
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    }
+  ],
+  "converter": {
+    "id": "ocd-37c-048-augustine-on-christian-doctrine-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/augustine_on_christian_doctrine_reconstruction.py",
+    "implementation_sha256": "cd18965245e10be36f5cf5dd6035f442f07b4ddc3ad90ecbdc407491e61a3178"
+  },
+  "validator": {
+    "id": "ocd-37c-048-augustine-on-christian-doctrine-independent-check",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/augustine_on_christian_doctrine_oracle.py",
+    "implementation_sha256": "4136c3818354bd02ea5b2f9262bbe6579fe40499fdb81e9bbd6c7c2bfe16af79",
+    "import_closure_sha256": "0beac19f21273ed45a579b0662b74e09b83ecaacc6c4b16f7e854233c9e4f5af"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -23,6 +23,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
 from build.lib.paths import REPO_ROOT
+from ocd_kernel.lib.storage_topology import repository_relative_path
 from ocd_kernel.tei.writer import TEI_NS, serialize, stamp_header, tei_el
 
 RAW_PATH = REPO_ROOT / "raw" / "internet-archive" / "fisher-marrow" / "marrowmoderndiv00bostgoog_djvu.txt"
@@ -275,7 +276,7 @@ def census_fisher_marrow(raw_path: str | Path = RAW_PATH) -> dict:
             "type": "internet_archive_djvutxt",
             "work_id": WORK_ID,
             "rendering_id": RENDERING_ID,
-            "path": path.resolve().relative_to(REPO_ROOT.resolve()).as_posix(),
+            "path": repository_relative_path(REPO_ROOT, path),
             "sha256": _sha256(path),
             "scope": {
                 "start_line": lines[body_start].number,

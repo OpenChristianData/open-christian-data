@@ -1,5 +1,7 @@
 # ADR-0014: Machine-composed readings past the attestation gate
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-06-05) — model accepted; per-level publication thresholds deferred to surrogate measurement. Revised 2026-06-05 after adversarial review ([REVIEW_0014_0015_adversarial.md](REVIEW_0014_0015_adversarial.md)): schema-first preconditions, public labeling, the protected-class gate, stratified thresholds, and a supersession contract were added.
 
 ## Context

@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://sources/structured-text/watson-ten-commandments/watson-ten-commandments.source-accountability.schema.json",
+  "title": "Watson Ten Commandments retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "schema", "profile_id", "source_scope", "source_member",
+    "member_census", "excluded_member_count", "carrier_inventory",
+    "body_node_sequence", "document_shell", "selected_feature_count",
+    "selected_feature_counts", "selected_comment_count", "document_comment_count",
+    "source_claims"
+  ],
+  "properties": {
+    "contract": {"const": "watson-ten-commandments-source-accountability-v1"},
+    "schema": {"const": "watson-ten-commandments.source-accountability.schema.json"},
+    "profile_id": {"const": "watson-ten-commandments-ccel-thml-v1"},
+    "source_scope": {"type": "string", "minLength": 1},
+    "source_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256", "disposition"],
+      "properties": {
+        "path": {"const": "raw/ccel/watson/commandments.xml"},
+        "bytes": {"const": 1100623},
+        "sha256": {"const": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6"},
+        "disposition": {"const": "included as the sole retained source member"}
+      }
+    },
+    "member_census": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "bytes", "sha256", "decision", "reason"],
+        "properties": {
+          "path": {"const": "raw/ccel/watson/commandments.xml"},
+          "bytes": {"const": 1100623},
+          "sha256": {"const": "88f65cbe3a515841a14ecd7c982880b528a32c4420ac71169485ef54ccdb89d6"},
+          "decision": {"const": "include"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "excluded_member_count": {"const": 0},
+    "carrier_inventory": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/carrier"}
+    },
+    "body_node_sequence": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "oneOf": [
+          {"$ref": "#/$defs/bodyCarrier"},
+          {"$ref": "#/$defs/bodyComment"}
+        ]
+      }
+    },
+    "document_shell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xml_declaration", "doctype", "root_name", "prolog", "epilog",
+        "comments_and_processing_instructions", "head_children"
+      ],
+      "properties": {
+        "xml_declaration": {"const": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "root_name": {"const": "ThML"},
+        "prolog": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/shellNode"}
+        },
+        "epilog": {"type": "array", "maxItems": 0},
+        "comments_and_processing_instructions": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {"$ref": "#/$defs/shellNode"}
+        },
+        "head_children": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/headChild"}
+        }
+      }
+    },
+    "selected_feature_count": {"const": 5275},
+    "selected_feature_counts": {
+      "const": {
+        "a": 1863, "div": 2, "div1": 6, "div2": 25, "h1": 2, "h2": 6,
+        "h3": 24, "insertIndex": 2, "li": 210, "p": 1296,
+        "scripRef": 1627, "span": 211, "ul": 1
+      }
+    },
+    "selected_comment_count": {"const": 8},
+    "document_comment_count": {"const": 10},
+    "source_claims": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {"$ref": "#/$defs/sourceClaim"}
+    }
+  },
+  "$defs": {
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "native_id", "source_tag", "source_title", "disposition", "selection_role", "tei_region"],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0},
+        "native_id": {"enum": ["i", "iii", "iv", "v", "vi", "vii"]},
+        "source_tag": {"const": "div1"},
+        "source_title": {"type": "string", "minLength": 1},
+        "disposition": {"const": "selected-work"},
+        "selection_role": {"enum": ["body", "back"]},
+        "tei_region": {"enum": ["front", "body", "back"]}
+      }
+    },
+    "bodyCarrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "native_id", "source_tag", "source_title", "disposition", "selection_role", "tei_region", "node_kind"],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0},
+        "native_id": {"enum": ["i", "iii", "iv", "v", "vi", "vii"]},
+        "source_tag": {"const": "div1"},
+        "source_title": {"type": "string", "minLength": 1},
+        "disposition": {"const": "selected-work"},
+        "selection_role": {"enum": ["body", "back"]},
+        "tei_region": {"enum": ["front", "body", "back"]},
+        "node_kind": {"const": "carrier"}
+      }
+    },
+    "bodyComment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "kind", "path", "text", "tail", "disposition"],
+      "properties": {
+        "position": {"enum": [5, 7]},
+        "kind": {"const": "comment"},
+        "path": {"enum": ["/ThML/ThML.body/comment()[1]", "/ThML/ThML.body/comment()[2]"]},
+        "text": {"type": "string"},
+        "tail": {"type": "string"},
+        "disposition": {"const": "accounted-source-body-wrapper"}
+      }
+    },
+    "shellNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "path", "text", "tail", "disposition"],
+      "properties": {
+        "kind": {"enum": ["comment", "processing-instruction"]},
+        "path": {"type": ["string", "null"]},
+        "text": {"type": "string"},
+        "tail": {"type": "string"},
+        "disposition": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1}
+      }
+    },
+    "headChild": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "tag", "attributes", "text_sha256", "disposition"],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0},
+        "tag": {"enum": ["generalInfo", "printSourceInfo", "electronicEdInfo", "style"]},
+        "attributes": {"type": "object"},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "disposition": {"type": "string", "minLength": 1}
+      }
+    },
+    "sourceClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "text_sha256", "excerpt", "interpretation"],
+      "properties": {
+        "source_path": {"type": "string", "minLength": 1},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "excerpt": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

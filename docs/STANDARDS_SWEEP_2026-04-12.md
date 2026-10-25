@@ -1,5 +1,7 @@
 # OCD Standards Sweep Results — 2026-04-12
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 ## Summary
 
 Reviewed all 65 Python files in `build/` against CODING_DEFAULTS.md `[reviewer-checked]` rules using 4 parallel subagents.

@@ -1,0 +1,13 @@
+{
+  "contract": "ocd-lib058-validation-policy-v1",
+  "policy_id": "lib058-schaff-history-vol-4-independent-validation-v1",
+  "work_id": "schaff-history-vol-4",
+  "rules": [
+    "The one retained CCEL ThML member must match the manifest bytes, physical-line count, UTF-8 decoding, and SHA-256.",
+    "Every retained physical line must be represented exactly once in source order and bound to its exact source byte interval.",
+    "The parsed ThML root, head, body, two ordered div1 carriers, nested division counts, and complete element-tag census must match independent source traversal.",
+    "The candidate must be TEI P5 schema-valid, nonaccepted, and bound to this manifest and profile.",
+    "The independent oracle must reject source drift, topology drift, accountability mutation, TEI line mutation, provenance mutation, and unresolved-boundary mutation.",
+    "Technical validation does not establish human acceptance, rights clearance, accepted IR, CVW review, metadata adoption, or publication authorization."
+  ]
+}

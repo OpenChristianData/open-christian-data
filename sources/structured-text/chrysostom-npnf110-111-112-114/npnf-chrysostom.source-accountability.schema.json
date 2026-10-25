@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/chrysostom-npnf110-111-112-114/npnf-chrysostom.source-accountability.schema.json",
+  "title": "LIB-043 Chrysostom seven-work complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "source_scope", "source_members", "document_accounting", "member_accounting", "source_census", "assigned_work_count", "feature_count", "attribute_count", "feature_counts", "omitted_feature_count", "duplicate_feature_count", "unresolved_feature_count", "table_census", "excluded_index_comment_count", "apparatus_division_ids", "division_accounting", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-npnf-chrysostom-source-accountability-v1"},
+    "schema": {"const": "npnf-chrysostom.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf-chrysostom-110-111-112-114-seven-work-v1"},
+    "source_scope": {"const": "four retained NPNF ThML members; seven exact assigned div1 work roots"},
+    "source_members": {"type": "array", "minItems": 4, "maxItems": 4},
+    "document_accounting": {"type": "array", "minItems": 4, "maxItems": 4},
+    "member_accounting": {"type": "array", "minItems": 4, "maxItems": 4},
+    "source_census": {"type": "object", "required": ["npnf110", "npnf111", "npnf112", "npnf114"]},
+    "assigned_work_count": {"const": 7},
+    "feature_count": {"const": 58867},
+    "attribute_count": {"const": 155252},
+    "feature_counts": {"const": {"br": 20, "div1": 7, "div2": 381, "div3": 3, "i": 2299, "note": 9477, "p": 22428, "pb": 2027, "scripCom": 367, "scripRef": 11490, "span": 10364, "sup": 4}},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "table_census": {"const": {"tables": 0, "rows": 0, "cells": 0}},
+    "excluded_index_comment_count": {"const": 110},
+    "apparatus_division_ids": {"const": {"npnf110": ["iii.i", "iii.ii", "iii.iii"], "npnf111": ["vii.i", "vii.ii"], "npnf112": ["iv.i"], "npnf114": ["iv.i", "iv.ii", "v.i", "v.ii", "v.iii", "v.iv"]}},
+    "division_accounting": {"type": "array", "minItems": 400},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 58867,
+      "maxItems": 58867,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ordinal", "feature_id", "member", "work_id", "source_selector", "source_tag", "source_xml_id", "source_attributes", "text_present", "text_sha256", "tail_present", "tail_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_child_ordinal", "tei_attributes", "attribute_dispositions", "tei_selector", "parent_feature_id", "source_title_head", "disposition"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1},
+          "feature_id": {"type": "string", "pattern": "^npnf-chrysostom-feature-[0-9]{5}$"},
+          "member": {"enum": ["npnf110", "npnf111", "npnf112", "npnf114"]},
+          "work_id": {"type": "string"},
+          "source_selector": {"type": "string"},
+          "source_tag": {"enum": ["br", "div1", "div2", "div3", "i", "note", "p", "pb", "scripCom", "scripRef", "span", "sup"]},
+          "source_xml_id": {"type": ["string", "null"]},
+          "source_attributes": {"type": "object"},
+          "text_present": {"type": "boolean"},
+          "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tail_present": {"type": "boolean"},
+          "tail_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tei_tag": {"enum": ["div", "foreign", "hi", "lb", "note", "p", "pb", "ref", "seg"]},
+          "tei_xml_id": {"type": "string"},
+          "tei_parent_id": {"type": "string"},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "attribute_dispositions": {"type": "array"},
+          "tei_selector": {"type": "string", "pattern": "^#"},
+          "parent_feature_id": {"type": ["string", "null"]},
+          "source_title_head": {"type": ["string", "null"]},
+          "disposition": {"const": "represented"}
+        }
+      }
+    }
+  }
+}

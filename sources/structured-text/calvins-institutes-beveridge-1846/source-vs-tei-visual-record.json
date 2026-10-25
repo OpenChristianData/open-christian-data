@@ -1,0 +1,81 @@
+{
+  "work": {
+    "slug": "calvins-institutes-beveridge-1846",
+    "title": "The Institutes of the Christian Religion",
+    "author": "John Calvin",
+    "translator": "Henry Beveridge",
+    "oll_citation": "Edinburgh: Calvin Translation Society, 1846; two volumes in one"
+  },
+  "tei_candidate": {
+    "artifact": "candidate.tei.xml",
+    "bytes": 5092627,
+    "sha256": "ef21df8892d125cb6e7a42851c31b7738a879b253e9c3a82217d8d744c2b6106"
+  },
+  "capture_methods": {
+    "electronic_source": "The exact retained Calvin_0038.html EPUB member was captured with local headless Playwright at 1280 by 1800 pixels.",
+    "facsimile_source": "Exact retained facsimile PDF pages were rasterized with pdftoppm at 120 DPI and inspected at original screenshot resolution.",
+    "tei": "The unchanged candidate was rendered with build/tools/tei_viewer_screenshot.py and the repository CETEIcean verification viewer."
+  },
+  "tei_render_probe": {
+    "paragraphs": 3980,
+    "source_paragraphs": 3970,
+    "header_and_facsimile_layer_paragraphs": 10,
+    "note_references": 660,
+    "typed_endnote_divisions": 660,
+    "dangling_references": 0,
+    "ceteicean_upgraded": true
+  },
+  "comparisons": [
+    {
+      "region": "opening-title-translator-publisher-note-and-introduction",
+      "source_anchor": "EPUB Calvin_0038.html document opening",
+      "source_artifact": "visual/source/source.opening.png",
+      "source_bytes": 280148,
+      "source_sha256": "ca4cbec3e24dfd005dc5145eb1b4cd92441f09cee2b01cf0f50b6326bc1990fa",
+      "tei_artifact": "visual/candidate.opening.png",
+      "tei_bytes": 161106,
+      "tei_sha256": "7e6874765d817f7718c5166a3e05dbcd04d2d0d3a80e8843d2efaf0b4211a4c7",
+      "observation": "Both sides visibly retain the OLL electronic title, John Calvin, Henry Beveridge translator credit, Eerdmans imprint, single-volume/two-volume-pagination Publisher's Note, 2001 reprint notice, and John Murray introduction in the same order. Broken facsimile graphic icons at the top of the viewer are a viewer presentation limitation caused by intentionally non-served PDF graphic URLs, not missing TEI text.",
+      "result": "pass"
+    },
+    {
+      "region": "unusual-facsimile-only-general-index-opening",
+      "source_anchor": "facsimile PDF page 1298 / printed page 691",
+      "source_artifact": "visual/source/source.index-opening.png",
+      "source_bytes": 151662,
+      "source_sha256": "1ab7881584ff425eec8d270df7fa08f5cbfd3859e9294b3795d31b148f2ddf60",
+      "tei_artifact": "visual/candidate.index-opening.png",
+      "tei_bytes": 264650,
+      "tei_sha256": "7b70eae0af9ee74f77494f9e6a80d4001f9f52ebf2d6596cfe8605faa731290c",
+      "observation": "The source shows GENERAL INDEX and printed page 691 beginning with ABRAHAM. The candidate shows the separately labeled General Index, p.691 boundary, and the exact retained embedded searchable-text extraction. Visible OCR corruption demonstrates why this layer is cert=low and is not claimed as human transcription.",
+      "result": "page-boundary-and-provenance-pass-text-needs-human-review"
+    },
+    {
+      "region": "middle-facsimile-only-general-index-page-697",
+      "source_anchor": "facsimile PDF page 1304 / printed page 697",
+      "source_artifact": "visual/source/source.index-middle.png",
+      "source_bytes": 182938,
+      "source_sha256": "b929e3a8a0a7ddcebff655b8354e9b8f674404b2549112956c5c4de0153c48f7",
+      "tei_artifact": "visual/candidate.index-middle.png",
+      "tei_bytes": 276748,
+      "tei_sha256": "a07e75e00353ffceb3f254ea24ed9ae7b1bec9fbe2c99966cb4a59bbf2fb29aa",
+      "observation": "The source shows printed page 697 from Justification through Likeness. The candidate is aligned to the corresponding p.697 extraction and preserves its two-column reading-order artifacts and OCR errors without correction. Page identity is verified; exact lexical fidelity is explicitly not accepted.",
+      "result": "page-boundary-and-provenance-pass-text-needs-human-review"
+    },
+    {
+      "region": "ending-facsimile-general-index-terminal-page-704",
+      "source_anchor": "facsimile PDF page 1311 / printed page 704",
+      "source_artifact": "visual/source/source.index-terminal.png",
+      "source_bytes": 81856,
+      "source_sha256": "2b7fe5493b6876630d2ef60c532c19269d504bac21ae1652c39d1d8cd997d04b",
+      "tei_artifact": "visual/candidate.index-terminal.png",
+      "tei_bytes": 260486,
+      "tei_sha256": "a677e86ddaba820b82e80ff24f3d6fa5ce05d3f49ba50ca180eaa831d4269379",
+      "observation": "The facsimile visibly ends on page 704 with XERXES, ZEPHYRINUS, and ZIPPORAH. The candidate reaches the same p.704 boundary and retains the extraction through its distorted terminal forms. The visual pair proves completeness and exposes, rather than conceals, OCR uncertainty at the final boundary.",
+      "result": "terminal-boundary-pass-text-needs-human-review"
+    }
+  ],
+  "verdict": "technical-source-versus-tei-boundary-and-render-spot-comparison-passed",
+  "human_textual_acceptance": "not-performed",
+  "facsimile_index_human_review_required": true
+}

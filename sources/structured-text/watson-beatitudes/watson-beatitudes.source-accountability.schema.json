@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.schema.json",
+  "title": "Watson Beatitudes retained-source route accounting",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "source_member",
+    "selection_id",
+    "body_carriers",
+    "selected_feature_count",
+    "selected_feature_counts",
+    "custom_element_counts",
+    "document_shell_observation"
+  ],
+  "properties": {
+    "contract": {"const": "watson-beatitudes-source-accountability-v1"},
+    "source_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": {"const": "raw/ccel/watson/beatitudes.xml"},
+        "bytes": {"const": 1120523},
+        "sha256": {"const": "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837"}
+      }
+    },
+    "selection_id": {"const": "watson-beatitudes-all-direct-div1-route-envelope-v1"},
+    "body_carriers": {
+      "type": "array",
+      "minItems": 25,
+      "maxItems": 25,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["native_id", "title", "selection_role", "tei_region"],
+        "properties": {
+          "native_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string"},
+          "selection_role": {"enum": ["body", "back"]},
+          "tei_region": {"enum": ["front", "body", "back"]}
+        }
+      }
+    },
+    "selected_feature_count": {"const": 4953},
+    "selected_feature_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["a", "div", "div1", "div2", "h1", "h2", "i", "insertIndex", "li", "ol", "p", "scripCom", "scripRef", "span"],
+      "properties": {
+        "a": {"const": 1758},
+        "div": {"const": 2},
+        "div1": {"const": 25},
+        "div2": {"const": 2},
+        "h1": {"const": 2},
+        "h2": {"const": 26},
+        "i": {"const": 25},
+        "insertIndex": {"const": 2},
+        "li": {"const": 2},
+        "ol": {"const": 1},
+        "p": {"const": 1386},
+        "scripCom": {"const": 13},
+        "scripRef": {"const": 1707},
+        "span": {"const": 2}
+      }
+    },
+    "custom_element_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ol", "scripCom"],
+      "properties": {
+        "ol": {"const": 1},
+        "scripCom": {"const": 13}
+      }
+    },
+    "document_shell_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_name", "doctype", "element_count", "attribute_count", "comment_count", "processing_instruction_count", "selected_comment_count", "body_wrapper_comment_count"],
+      "properties": {
+        "root_name": {"const": "ThML"},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "element_count": {"const": 5001},
+        "attribute_count": {"const": 13254},
+        "comment_count": {"const": 11},
+        "processing_instruction_count": {"const": 2},
+        "selected_comment_count": {"const": 8},
+        "body_wrapper_comment_count": {"const": 2}
+      }
+    }
+  }
+}

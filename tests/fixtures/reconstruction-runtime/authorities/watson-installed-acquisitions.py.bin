@@ -1,0 +1,538 @@
+"""Exact acquisition sidecar bindings for retained source evidence."""
+
+from __future__ import annotations
+
+from ocd_kernel.lib.path_io import io_path, resolve_path, io_glob
+
+import hashlib
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+from ocd_kernel.lib.storage_topology import StorageTopologyError, resolve_repo_path
+
+from ._common import PipelineError, _reject_duplicate_keys, ensure_relative_path, load_json, require_string, safe_identifier, sha256_file, canonical_bytes
+from .identities import validate_record
+
+
+MANIFEST_RESEARCH_SECTIONS = (
+    "Acquisition queue", "2026-07-21 second-pass cross-category synthesis",
+    "2026-07-22 research closure and expanded rights catalog", "Decisions pending",
+    "2026-10-01 TFR follow-up acquisition leads",
+)
+
+
+def load_acquisition(path: Path) -> dict[str, Any]:
+    """Load one exact v2 acquisition sidecar without reading retained bytes."""
+
+    record = load_json(path)
+    validate_record("acquisition", record, context=str(path))
+    safe_identifier(
+        require_string(record, "acquisition_id", context=str(path)), field="acquisition_id"
+    )
+    safe_identifier(
+        require_string(record, "edition_id", context=str(path)), field="edition_id"
+    )
+    retained = record["retained_files"]
+    if not isinstance(retained, list) or not retained:
+        raise PipelineError(f"{path} requires non-empty retained_files")
+    seen: set[str] = set()
+    for item in retained:
+        if not isinstance(item, dict):
+            raise PipelineError(f"{path} retained_files entries must be objects")
+        rel = require_string(item, "path", context=str(path))
+        ensure_relative_path(rel, field=f"retained_files.path in {path}")
+        if rel in seen:
+            raise PipelineError(f"duplicate retained file in {path}: {rel}")
+        seen.add(rel)
+        digest = require_string(item, "sha256", context=str(path))
+        if len(digest) != 64 or any(char not in "0123456789abcdef" for char in digest):
+            raise PipelineError(f"invalid retained file sha256 in {path}: {rel}")
+        size = item.get("bytes")
+        if not isinstance(size, int) or isinstance(size, bool) or size < 0:
+            raise PipelineError(f"retained file bytes must be non-negative integer in {path}: {rel}")
+        require_string(item, "media_type", context=str(path))
+
+    source_path = record.get("source_path")
+    if source_path is not None:
+        source_path = require_string(record, "source_path", context=str(path))
+        ensure_relative_path(source_path, field=f"source_path in {path}")
+        if source_path.partition("#")[0].casefold().endswith(".zip"):
+            raise PipelineError(f"{path} source_path cannot identify a ZIP package: {source_path}")
+        source_size = record.get("source_bytes")
+        if not isinstance(source_size, int) or isinstance(source_size, bool) or source_size < 0:
+            raise PipelineError(f"source_bytes must be a non-negative integer in {path}")
+    return record
+
+
+def source_sha256(record: dict[str, Any], *, context: str) -> str:
+    """Return a singular original-source hash, or fail when it is ambiguous.
+
+    A complete original-source group is authoritative. A single retained file
+    remains a useful PIPE-001 fallback when no original group was recorded. An
+    acquisition with multiple retained files must state its original hash
+    explicitly. When source_kind is retained-member-set, this field instead
+    identifies the separately stored, canonical ordered member-set manifest;
+    validate_acquisition verifies that manifest and every original member.
+    No implicit synthetic aggregate hash is invented.
+    """
+
+    value = record.get("source_sha256")
+    if value is None:
+        retained = record.get("retained_files")
+        if isinstance(retained, list) and len(retained) == 1 and isinstance(retained[0], dict):
+            value = retained[0].get("sha256")
+        else:
+            raise PipelineError(
+                f"{context} requires explicit source_sha256 when multiple retained files exist"
+            )
+    if not isinstance(value, str) or len(value) != 64:
+        raise PipelineError(f"{context} requires a 64-character source sha256")
+    value = value.lower()
+    if any(char not in "0123456789abcdef" for char in value):
+        raise PipelineError(f"{context} source sha256 is invalid")
+    return value
+
+
+def source_member_set_bytes(record: dict[str, Any]) -> bytes:
+    """Canonical explicit member-set manifest; the digest identifies this file.
+
+    Member hashes still identify original files. Order is declared by the
+    acquisition retained_files list and must be independently evidenced.
+    """
+    retained = record.get('retained_files')
+    if not isinstance(retained, list) or len(retained) < 2:
+        raise PipelineError('source member set requires at least two retained files')
+    for member in retained:
+        require_string(member, 'scope', context='source member set')
+    return canonical_bytes({
+        'contract': 'ocd-retained-source-member-set-v1',
+        'acquisition_id': record['acquisition_id'], 'edition_id': record['edition_id'],
+        'scope': record['source_scope'],
+        'members': [dict(member, position=index) for index, member in enumerate(retained, 1)],
+    })
+
+
+def validate_acquisition(path: Path, *, root: Path) -> dict[str, Any]:
+    """Validate sidecar metadata and every retained file's bytes and hash."""
+
+    path = Path(path)
+    root = Path(root)
+    record = load_acquisition(path)
+    try:
+        relative_sidecar = resolve_path(io_path(path), strict=True).relative_to(
+            resolve_path(io_path(root), strict=True)
+        )
+    except (OSError, RuntimeError, ValueError) as exc:
+        raise PipelineError(f"acquisition sidecar is outside fixture root: {path}") from exc
+    parts = relative_sidecar.parts
+    try:
+        works_index = parts.index("works")
+        if len(parts) != works_index + 8:
+            raise ValueError("unexpected acquisition sidecar depth")
+        work_id = parts[works_index + 1]
+        form_id = parts[works_index + 3]
+        edition_id = parts[works_index + 5]
+    except (ValueError, IndexError) as exc:
+        raise PipelineError(
+            f"acquisition sidecar must be under library/works/<work>/forms/<form>/editions/<edition>: {path}"
+        ) from exc
+    if (
+        works_index != 1
+        or parts[0] != "library"
+        or parts[works_index + 2] != "forms"
+        or parts[works_index + 4] != "editions"
+        or parts[works_index + 6] != "acquisitions"
+    ):
+        raise PipelineError(f"invalid acquisition sidecar location: {path}")
+    if record["acquisition_id"] != path.stem:
+        raise PipelineError(
+            f"acquisition_id does not match sidecar filename: {path} says "
+            f"{record['acquisition_id']!r}, expected {path.stem!r}"
+        )
+    if record["edition_id"] != edition_id:
+        raise PipelineError(
+            f"acquisition edition_id does not match directory: {path} says "
+            f"{record['edition_id']!r}, expected {edition_id!r}"
+        )
+    from .identities import load_work
+
+    work_path = root / "library" / "works" / work_id / "work.json"
+    work = load_work(work_path)
+    if work["work_id"] != work_id:
+        raise PipelineError(
+            f"acquisition work directory does not match work sidecar: {work_id!r} != "
+            f"{work['work_id']!r}"
+        )
+    declared_edition = next(
+        (
+            edition
+            for form in work.get("textual_forms", [])
+            if isinstance(form, dict) and form.get("textual_form_id") == form_id
+            for edition in form.get("editions", [])
+            if isinstance(edition, dict) and edition.get("edition_id") == edition_id
+        ),
+        None,
+    )
+    if declared_edition is None:
+        raise PipelineError(
+            f"acquisition parent form/edition is not declared by {work_path}: "
+            f"{form_id}/{edition_id}"
+        )
+    declared_acquisitions = declared_edition.get("acquisition_ids", [])
+    if "acquisition_ids" in declared_edition and record["acquisition_id"] not in declared_acquisitions:
+        raise PipelineError(
+            f"acquisition {record['acquisition_id']} is not declared by edition {edition_id}"
+        )
+    mismatches: list[str] = []
+    for item in record["retained_files"]:
+        rel = item["path"]
+        try:
+            retained_path = resolve_repo_path(root, rel)
+        except StorageTopologyError as exc:
+            raise PipelineError(f"invalid retained-file storage route in {path}: {rel}: {exc}") from exc
+        if not io_path(retained_path).is_file():
+            mismatches.append(f"missing retained file: {rel}")
+            continue
+        try:
+            actual_bytes = io_path(retained_path).stat().st_size
+        except OSError as exc:
+            raise PipelineError(f"cannot stat retained file {retained_path}: {exc}") from exc
+        if actual_bytes != item["bytes"]:
+            mismatches.append(
+                f"retained file bytes mismatch for {rel}: {actual_bytes} != {item['bytes']}"
+            )
+        actual_hash = sha256_file(retained_path)
+        if actual_hash != item["sha256"]:
+            mismatches.append(f"retained file sha256 mismatch for {rel}")
+    if mismatches:
+        raise PipelineError(f"acquisition evidence failed for {path}: {'; '.join(mismatches)}")
+    if record.get('source_kind') == 'retained-member-set':
+        expected = source_member_set_bytes(record)
+        manifest = resolve_repo_path(root, record['source_path'])
+        if record['source_path'] in {item['path'] for item in record['retained_files']}:
+            raise PipelineError('member-set manifest must be separate from original source members')
+        if io_path(manifest).read_bytes() != expected or len(expected) != record['source_bytes'] or hashlib.sha256(expected).hexdigest() != record['source_sha256']:
+            raise PipelineError('ordered source member-set manifest binding differs')
+    from .source_selection import verify_source_selection
+
+    verify_source_selection(record, work, root=root)
+    return record
+
+
+def acquisition_for_edition(
+    root: Path,
+    work_id: str,
+    edition_id: str,
+    acquisition_id: str | None = None,
+) -> tuple[Path, dict[str, Any]]:
+    """Find and byte-validate one acquisition for an edition.
+
+    Multiple acquisitions are valid. Callers must select an acquisition ID when
+    more than one sidecar exists, so a generated view cannot silently choose a
+    source instance.
+    """
+
+    work_id = safe_identifier(work_id, field="work_id")
+    edition_id = safe_identifier(edition_id, field="edition_id")
+    base = Path(root) / "library" / "works" / work_id
+    candidates = sorted(
+        io_glob(base, f"forms/*/editions/{edition_id}/acquisitions/*.json"),
+        key=lambda item: item.as_posix(),
+    )
+    if acquisition_id is not None:
+        acquisition_id = safe_identifier(acquisition_id, field="acquisition_id")
+        candidates = [item for item in candidates if item.stem == acquisition_id]
+    if not candidates:
+        if acquisition_id is None:
+            raise PipelineError(f"acquisition sidecar not found for edition: {edition_id}")
+        raise PipelineError(
+            f"acquisition sidecar not found for edition {edition_id}: {acquisition_id}"
+        )
+    if len(candidates) > 1:
+        raise PipelineError(f"edition has multiple acquisition sidecars; select one: {edition_id}")
+    path = candidates[0]
+    record = validate_acquisition(path, root=root)
+    if record["edition_id"] != edition_id:
+        raise PipelineError(
+            f"acquisition edition_id mismatch: {path} says {record['edition_id']!r}, "
+            f"expected {edition_id!r}"
+        )
+    if record["acquisition_id"] != path.stem:
+        raise PipelineError(
+            f"acquisition_id does not match sidecar filename: {record['acquisition_id']} != {path.stem}"
+        )
+    return path, record
+
+
+def manifest_research(manifest_path: Path, *, root: Path) -> dict[str, Any]:
+    """Preserve manifest claims as research, never infer stable identity or acquisition.
+
+    Table rows in the acquisition queue, research closure, and pending-decision
+    sections become individually accountable leads. Narrative paragraphs remain
+    contextual evidence in the disposition report, except the explicitly named
+    modern licensed research track, whose prose is preserved as grouped leads.
+    Historical corpus summaries and policy tables are not a work registry.
+    """
+    manifest_path = Path(manifest_path)
+    try:
+        relative = resolve_path(manifest_path).relative_to(resolve_path(Path(root))).as_posix()
+    except ValueError as exc:
+        raise PipelineError("research manifest must be inside the repository") from exc
+    from ._common import read_input_bytes, read_input_lines
+    raw = read_input_bytes(manifest_path)
+    lines = read_input_lines(manifest_path)
+    digest = hashlib.sha256(raw).hexdigest()
+    headings: list[str] = []
+    section = ""
+    headers: list[str] | None = None
+    leads: list[dict[str, Any]] = []
+    dispositions: list[dict[str, Any]] = []
+    warnings: list[dict[str, Any]] = []
+    queue_seen = False
+    excluded_sections: set[str] = set()
+    index = 0
+
+    def evidence(start: int, end: int) -> dict[str, Any]:
+        return {"path": relative, "sha256": digest, "line_start": start, "line_end": end}
+
+    while index < len(lines):
+        line = lines[index]
+        number = index + 1
+        heading = re.fullmatch(r"(#{1,6})\s+(.+)", line)
+        if heading:
+            level, title = len(heading[1]), heading[2]
+            headings = headings[:level - 1] + [title]
+            if level == 2:
+                section = title
+            if title == "Acquisition queue":
+                queue_seen = True
+            headers = None
+            dispositions.append({"line_start": number, "line_end": number, "disposition": "context"})
+            index += 1
+            continue
+        active = section in MANIFEST_RESEARCH_SECTIONS
+        if section and not active:
+            excluded_sections.add(section)
+        if line.startswith("|") and index + 1 < len(lines) and re.fullmatch(r"[| :\-]+", lines[index + 1]):
+            headers = [cell.strip() for cell in line.strip("|").split("|")]
+            dispositions.append({"line_start": number, "line_end": number + 1, "disposition": "table-header"})
+            index += 2
+            continue
+        if not line.strip():
+            headers = None
+            dispositions.append({"line_start": number, "line_end": number, "disposition": "context"})
+            index += 1
+            continue
+        kind = "context"
+        end = number
+        claim = line
+        table = headers if line.startswith("|") else None
+        if table and active:
+            cells = re.split(r"(?<!\\)\|", line.strip("|"))
+            if len(cells) != len(table):
+                warnings.append({"line": number, "reason": "Column count differs from header; raw claim retained without field interpretation."})
+            kind = "lead"
+        elif active and headings[-1:] == ["Modern licensed track"]:
+            paragraph = [line]
+            while index + 1 < len(lines) and lines[index + 1].strip() and not lines[index + 1].startswith(("#", "|")):
+                index += 1
+                paragraph.append(lines[index])
+            claim = "\n".join(paragraph)
+            end = index + 1
+            kind = "lead"
+        if kind == "lead":
+            lead_id = f"manifest-{number:04d}-{hashlib.sha256(claim.encode()).hexdigest()[:12]}"
+            if section == "2026-10-01 TFR follow-up acquisition leads":
+                cells = re.split(r"(?<!\\)\|", claim.strip("|"))
+                if not table or table[0] != "Lead ID" or not cells or not re.fullmatch(r"TFR-20261001-0[1-9]", cells[0].strip()):
+                    raise PipelineError(f"TFR row lacks its declared stable lead ID at line {number}")
+                lead_id = cells[0].strip()
+            lead: dict[str, Any] = {
+                "schema_version": "2.0",
+                "lead_id": lead_id,
+                "observed_claim": claim,
+                "evidence": evidence(number, end),
+                "acquisition_intent": "assess-existing-project-research",
+                "disposition": "unresolved",
+                "context": list(headings),
+            }
+            if table:
+                lead["columns"] = list(table)
+            leads.append(lead)
+            dispositions.append({"line_start": number, "line_end": end, "disposition": "lead", "lead_id": lead_id})
+        else:
+            dispositions.append({"line_start": number, "line_end": end, "disposition": "context"})
+        index += 1
+    if not queue_seen or not leads:
+        raise PipelineError("manifest has no explicit acquisition queue and accountable research leads")
+    return {"manifest": {"path": relative, "sha256": digest, "lines": len(lines)}, "leads": leads, "dispositions": dispositions, "warnings": warnings,
+            "importer_contract": "ocd-manifest-observations-v2", "population": {"included_sections": list(MANIFEST_RESEARCH_SECTIONS), "excluded_sections": sorted(excluded_sections)}}
+
+
+def load_acquisition_leads(path: Path, *, root: Path) -> list[dict[str, Any]]:
+    """Validate queue records against their exact historical manifest claims."""
+    from ._common import read_input_bytes, read_input_lines, sha256_bytes
+    root = Path(root)
+    imported = manifest_research(root / "research" / "MANIFEST.md", root=root)
+    expected = {lead["lead_id"]: lead for lead in imported["leads"]}
+    result: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    evidence_cache: dict[Path, tuple[str, list[str]]] = {}
+    migration_cache: dict[str, Any] = {}
+    represented: set[str] = set()
+    for line_number, line in enumerate(read_input_lines(Path(path)), 1):
+        try:
+            record = json.loads(line, object_pairs_hook=_reject_duplicate_keys)
+        except json.JSONDecodeError as exc:
+            raise PipelineError(f"invalid acquisition lead JSON at {path}:{line_number}") from exc
+        if not isinstance(record, dict):
+            raise PipelineError(f"acquisition lead must be an object at {path}:{line_number}")
+        identifier = record.get("lead_id")
+        if not isinstance(identifier, str) or identifier in seen:
+            raise PipelineError(f"duplicate or unevidenced project research lead: {identifier!r}")
+        safe_identifier(identifier, field="lead_id")
+        seen.add(identifier)
+        required = {"schema_version", "lead_id", "observed_claim", "evidence", "acquisition_intent", "disposition", "context"}
+        if not required <= record.keys() or record.keys() - required - {"columns", "work_id", "resolution", "migration_id", "decision_evidence"}:
+            raise PipelineError(f"invalid acquisition lead fields: {identifier}")
+        if record["schema_version"] not in ("2.0", "2.1", "2.2"):
+            raise PipelineError(f"invalid acquisition lead version: {identifier}")
+        if ((record["schema_version"] == "2.1" and "migration_id" not in record)
+                or (record["schema_version"] == "2.0" and "migration_id" in record)):
+            raise PipelineError(f"lead migration/version mismatch: {identifier}")
+        if "migration_id" in record:
+            safe_identifier(record["migration_id"], field="migration_id")
+        for field in ("observed_claim", "acquisition_intent"):
+            require_string(record, field, context=identifier)
+        if not isinstance(record["context"], list) or not record["context"] or not all(isinstance(value, str) and value.strip() for value in record["context"]):
+            raise PipelineError(f"lead requires explicit project context: {identifier}")
+        if "columns" in record and (not isinstance(record["columns"], list) or not all(isinstance(value, str) and value.strip() for value in record["columns"])):
+            raise PipelineError(f"invalid observed table columns: {identifier}")
+        binding = record["evidence"]
+        if not isinstance(binding, dict) or set(binding) != {"path", "sha256", "line_start", "line_end"}:
+            raise PipelineError(f"lead requires exact evidence: {identifier}")
+        try:
+            evidence_path = resolve_repo_path(root, binding["path"])
+        except (StorageTopologyError, TypeError) as exc:
+            raise PipelineError(f"invalid lead evidence path: {identifier}") from exc
+        if evidence_path not in evidence_cache:
+            evidence_cache[evidence_path] = (sha256_bytes(read_input_bytes(evidence_path)), read_input_lines(evidence_path))
+        evidence_hash, evidence_lines = evidence_cache[evidence_path]
+        if evidence_hash != binding["sha256"]:
+            raise PipelineError(f"stale lead evidence: {identifier}")
+        start, end = binding["line_start"], binding["line_end"]
+        if type(start) is not int or type(end) is not int or not 1 <= start <= end <= len(evidence_lines):
+            raise PipelineError(f"invalid lead evidence extent: {identifier}")
+        if "\n".join(evidence_lines[start - 1:end]) != record["observed_claim"]:
+            raise PipelineError(f"lead does not preserve its observed evidence claim: {identifier}")
+        disposition = record.get("disposition")
+        if disposition not in {"unresolved", "promoted", "closed"}:
+            raise PipelineError(f"invalid lead disposition: {identifier}")
+        comparison = dict(record)
+        comparison["disposition"] = "unresolved"
+        work_id = comparison.pop("work_id", None)
+        reason = comparison.pop("resolution", None)
+        if "migration_id" in record:
+            from .research_leads import validate_migrated_lead
+            observation_id = validate_migrated_lead(record, root=root, expected=expected, cache=migration_cache)
+            if observation_id:
+                if observation_id in represented:
+                    raise PipelineError(f"duplicate current manifest observation: {observation_id}")
+                represented.add(observation_id)
+        else:
+            if identifier in expected and comparison != expected[identifier]:
+                raise PipelineError(f"lead claim or evidence differs from retained manifest: {identifier}")
+            if identifier.startswith("manifest-") and identifier not in expected:
+                raise PipelineError(f"unknown manifest research identity: {identifier}")
+            if identifier in expected:
+                represented.add(identifier)
+        if disposition == "promoted":
+            if not isinstance(work_id, str) or not isinstance(reason, str) or not reason.strip():
+                raise PipelineError(f"promoted lead requires work_id and evidenced resolution: {identifier}")
+            from .identities import load_work
+            work = load_work(root / "library" / "works" / safe_identifier(work_id, field="work_id") / "work.json")
+            if work["work_id"] != work_id:
+                raise PipelineError(f"promoted lead has contradictory work identity: {identifier}")
+        elif work_id is not None or (disposition == "closed" and (not isinstance(reason, str) or not reason.strip())) or (disposition == "unresolved" and reason is not None):
+            raise PipelineError(f"invalid lead resolution: {identifier}")
+        decision_evidence = record.get("decision_evidence")
+        if record["schema_version"] == "2.2" and disposition in {"promoted", "closed"}:
+            if not isinstance(decision_evidence, dict) or set(decision_evidence) != {"path", "sha256", "line_start", "line_end"}:
+                raise PipelineError(f"current lead resolution requires exact decision evidence: {identifier}")
+            decision_path = resolve_repo_path(root, decision_evidence["path"])
+            if decision_path not in evidence_cache:
+                evidence_cache[decision_path] = (sha256_bytes(read_input_bytes(decision_path)), read_input_lines(decision_path))
+            decision_hash, decision_lines = evidence_cache[decision_path]
+            start, end = decision_evidence["line_start"], decision_evidence["line_end"]
+            if decision_hash != decision_evidence["sha256"] or type(start) is not int or type(end) is not int or not 1 <= start <= end <= len(decision_lines):
+                raise PipelineError(f"stale or invalid lead decision evidence: {identifier}")
+            if "\n".join(decision_lines[start - 1:end]) != reason:
+                raise PipelineError(f"lead resolution differs from decision evidence: {identifier}")
+        elif decision_evidence is not None:
+            raise PipelineError(f"lead decision evidence is not applicable: {identifier}")
+        result.append(record)
+    for identifier, (_, _, entries) in migration_cache.items():
+        actual = {record["lead_id"] for record in result if record.get("migration_id") == identifier}
+        if actual != set(entries):
+            raise PipelineError(f"research queue drops or misassigns migration identities: {identifier}")
+    for record in result:
+        if record["schema_version"] == "2.2" and "migration_id" not in record:
+            if any(other["lead_id"] != record["lead_id"] and (
+                other["observed_claim"] == record["observed_claim"] or other["evidence"] == record["evidence"]
+            ) for other in result):
+                raise PipelineError(f"ambiguous current lead evidence: {record['lead_id']}")
+    if not set(expected) <= represented:
+        raise PipelineError(f"research queue omits {len(set(expected) - represented)} manifest observations")
+    return sorted(result, key=lambda record: record["lead_id"])
+
+
+def acquisition_research_report(root: Path, output: Path | None = None) -> dict[str, Any]:
+    """Generate a deterministic overview from the queue and evidenced sidecars."""
+    root = Path(root)
+    imported = manifest_research(root / "research" / "MANIFEST.md", root=root)
+    leads = load_acquisition_leads(root / "research" / "acquisition-leads.jsonl", root=root)
+    aliases: dict[str, str] = {}
+    migration_cache: dict[str, Any] = {}
+    for lead in leads:
+        if "migration_id" in lead:
+            from .research_leads import load_migration
+            _, _, entries = load_migration(root, lead["migration_id"], migration_cache)
+            observation = entries[lead["lead_id"]]["current_observation_id"]
+            if observation:
+                aliases[observation] = lead["lead_id"]
+    dispositions = []
+    for group in imported["dispositions"]:
+        group = dict(group)
+        if group.get("lead_id") in aliases:
+            group["observation_id"] = group["lead_id"]
+            group["lead_id"] = aliases[group["lead_id"]]
+        dispositions.append(group)
+    promoted = sorted({lead["work_id"] for lead in leads if lead["disposition"] == "promoted"})
+    acquisitions: list[dict[str, Any]] = []
+    for work_id in promoted:
+        from .state import validate_state
+        work_root = root / "library" / "works" / work_id
+        state_path = work_root / "state.json"
+        if io_path(state_path).exists():
+            validate_state(state_path, root=root)
+        for path in sorted(io_glob(work_root, "forms/*/editions/*/acquisitions/*.json")):
+            record = validate_acquisition(path, root=root)
+            acquisitions.append({"work_id": work_id, "acquisition_id": record["acquisition_id"], "edition_id": record["edition_id"], "retained_files": len(record["retained_files"]), "evidence": path.relative_to(root).as_posix()})
+    report = {
+        "schema_version": "2.1" if migration_cache else "2.0",
+        "manifest": imported["manifest"],
+        "counts": {"leads": len(leads), "unresolved": sum(lead["disposition"] == "unresolved" for lead in leads), "promoted": sum(lead["disposition"] == "promoted" for lead in leads), "closed": sum(lead["disposition"] == "closed" for lead in leads)},
+        "leads": leads,
+        "acquisitions": acquisitions,
+        "line_dispositions": dispositions,
+        "importer_contract": imported["importer_contract"],
+        "population": imported["population"],
+        "import_warnings": imported["warnings"],
+        "promotion_meaning": "A promoted lead has an evidenced stable work identity. Acquisition remains separate and is listed only after source sidecars validate.",
+        "limits": "Manifest statements are historical research claims. Only validated sidecars establish retained acquisition evidence; no master acceptance, human verification, rights clearance, or publication is inferred.",
+    }
+    if output is not None:
+        io_path(Path(output)).write_bytes(canonical_bytes(report))
+    return report

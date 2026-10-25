@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 
 import jsonschema
 import pytest
+
+import build.tei.project_hf as projector_module
 
 from ocd_kernel.lib.schema_enums import resolve_schema_path
 from build.tei.check_ledger import check_receipt
@@ -17,6 +21,11 @@ REAL_TEI = [
     REPO_ROOT / "ir" / "augustine" / "city-of-god.ccel-npnf102.tei.xml",
     REPO_ROOT / "ir" / "augustine" / "city-of-god.standard-ebooks.tei.xml",
 ]
+
+
+def test_projector_exposes_only_current_internal_traversal_names() -> None:
+    assert not hasattr(projector_module, "clean_text")
+    assert not hasattr(projector_module, "_text_blocks")
 
 
 def _fixture(path: Path) -> None:
@@ -72,7 +81,9 @@ def test_project_hf_writes_clean_text_and_loss_receipt(tmp_path: Path) -> None:
     tei_path.parent.mkdir(parents=True)
     _fixture(tei_path)
 
+    started_at = datetime.now(timezone.utc)
     receipt = project_file(tei_path, out_path, receipt_path=receipt_path, repo_root=tmp_path)
+    finished_at = datetime.now(timezone.utc)
     records = _read_jsonl(out_path)
 
     assert [record["id"] for record in records] == [
@@ -90,6 +101,13 @@ def test_project_hf_writes_clean_text_and_loss_receipt(tmp_path: Path) -> None:
         "source_url": "https://example.test/source",
         "license": "CC0",
     }
+    assert all(record["language"] == "en" for record in records)
+    generated_at = datetime.fromisoformat(
+        receipt["projection"]["generated_at"].removesuffix("Z") + "+00:00"
+    )
+    assert receipt["projection"]["generated_at"].endswith("Z")
+    assert generated_at.tzinfo == timezone.utc
+    assert started_at <= generated_at <= finished_at
 
     nodes_by_address = {node["address"]: node for node in receipt["nodes"]}
     assert nodes_by_address["n1"]["disposition"] == "dropped"
@@ -99,6 +117,111 @@ def test_project_hf_writes_clean_text_and_loss_receipt(tmp_path: Path) -> None:
     assert nodes_by_address["chapter-1/head[1]"]["targets"][0]["field"] == "title_path"
     assert receipt["totals"]["addressable_nodes"] == len(receipt["nodes"])
     assert receipt_path.exists()
+
+
+def test_project_hf_explicit_metadata_is_deterministic(tmp_path: Path) -> None:
+    tei_path = tmp_path / "ir" / "augustine" / "city-of-god.demo.tei.xml"
+    output_path = tmp_path / "ir" / "augustine" / "hf" / "city-of-god.demo.jsonl"
+    receipt_path = output_path.with_suffix(output_path.suffix + ".loss.json")
+    tei_path.parent.mkdir(parents=True)
+    _fixture(tei_path)
+    metadata = {
+        "generated_at": "2026-08-30T01:02:03.456789Z",
+        "language": "la",
+        "license_id": "CC-BY-4.0",
+    }
+
+    receipt = project_file(
+        tei_path,
+        output_path,
+        receipt_path=receipt_path,
+        repo_root=tmp_path,
+        **metadata,
+    )
+    first_output = output_path.read_bytes()
+    first_receipt = receipt_path.read_bytes()
+    records = _read_jsonl(output_path)
+
+    assert receipt["projection"]["generated_at"] == metadata["generated_at"]
+    assert all(record["language"] == metadata["language"] for record in records)
+    assert all(record["source"]["license"] == metadata["license_id"] for record in records)
+
+    project_file(
+        tei_path,
+        output_path,
+        receipt_path=receipt_path,
+        repo_root=tmp_path,
+        **metadata,
+    )
+
+    assert output_path.read_bytes() == first_output
+    assert receipt_path.read_bytes() == first_receipt
+
+
+@pytest.mark.parametrize(
+    "generated_at",
+    [
+        "",
+        "2026-08-30",
+        "2026-08-30 01:02:03Z",
+        "2026-08-30T01:02:03+00:00",
+        "2026-08-30T11:02:03+10:00",
+        "2026-02-30T01:02:03Z",
+        123,
+    ],
+)
+def test_project_hf_rejects_invalid_explicit_generated_at(
+    tmp_path: Path,
+    generated_at: object,
+) -> None:
+    tei_path = tmp_path / "ir" / "augustine" / "city-of-god.demo.tei.xml"
+    output_path = tmp_path / "ir" / "augustine" / "hf" / "city-of-god.demo.jsonl"
+    tei_path.parent.mkdir(parents=True)
+    _fixture(tei_path)
+
+    with pytest.raises(ValueError, match="generated_at"):
+        project_file(
+            tei_path,
+            output_path,
+            repo_root=tmp_path,
+            generated_at=generated_at,  # type: ignore[arg-type]
+        )
+
+    assert not output_path.exists()
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("language", ""),
+        ("language", "   "),
+        ("language", None),
+        ("language", 123),
+        ("license_id", ""),
+        ("license_id", "   "),
+        ("license_id", None),
+        ("license_id", 123),
+    ],
+)
+def test_project_hf_rejects_blank_language_or_license(
+    tmp_path: Path,
+    field: str,
+    value: object,
+) -> None:
+    tei_path = tmp_path / "ir" / "augustine" / "city-of-god.demo.tei.xml"
+    output_path = tmp_path / "ir" / "augustine" / "hf" / "city-of-god.demo.jsonl"
+    tei_path.parent.mkdir(parents=True)
+    _fixture(tei_path)
+
+    with pytest.raises(ValueError, match=field):
+        project_file(
+            tei_path,
+            output_path,
+            repo_root=tmp_path,
+            **{field: value},
+        )
+
+    assert not output_path.exists()
 
 
 def test_loss_receipt_schema_accepts_projector_output(tmp_path: Path) -> None:
@@ -111,6 +234,43 @@ def test_loss_receipt_schema_accepts_projector_output(tmp_path: Path) -> None:
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
     jsonschema.validate(receipt, schema)
+
+
+def test_projector_rolls_back_output_when_receipt_replace_fails(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    tei_path = tmp_path / "ir" / "augustine" / "city-of-god.demo.tei.xml"
+    output_path = tmp_path / "ir" / "augustine" / "hf" / "city-of-god.demo.jsonl"
+    receipt_path = output_path.with_suffix(output_path.suffix + ".loss.json")
+    tei_path.parent.mkdir(parents=True)
+    _fixture(tei_path)
+    project_file(tei_path, output_path, receipt_path=receipt_path, repo_root=tmp_path)
+    original_output = output_path.read_bytes()
+    original_receipt = receipt_path.read_bytes()
+    tei_path.write_bytes(
+        tei_path.read_bytes().replace(b"Projected preface.", b"Changed preface.")
+    )
+    real_replace = os.replace
+
+    def fail_receipt_replace(source: object, target: object) -> None:
+        if Path(target) == receipt_path:
+            raise OSError("injected receipt replace failure")
+        real_replace(source, target)
+
+    monkeypatch.setattr(projector_module.os, "replace", fail_receipt_replace)
+
+    with pytest.raises(OSError, match="injected receipt replace failure"):
+        project_file(
+            tei_path,
+            output_path,
+            receipt_path=receipt_path,
+            repo_root=tmp_path,
+        )
+
+    assert output_path.read_bytes() == original_output
+    assert receipt_path.read_bytes() == original_receipt
+    assert list(output_path.parent.glob(".*.tmp")) == []
 
 
 @pytest.mark.slow

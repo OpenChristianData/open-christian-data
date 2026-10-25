@@ -1,0 +1,101 @@
+{
+  "acquisition_id": "jan-hus-de-ecclesia-wikisource-complete-render-acquired-20261008",
+  "authorities": [
+    {
+      "bytes": 2204690,
+      "name": "rendered-text",
+      "path": "raw/wikisource/jan-hus-de-ecclesia-the-church-1915/complete-transclusions-20261008.json",
+      "role": "primary-source",
+      "sha256": "d34272bbd5479e4b04eb04a06c871ed20c38c37b3c2b61073b7b4aa5cfe34570"
+    },
+    {
+      "bytes": 102580,
+      "name": "scope-export",
+      "path": "raw/wikisource/jan-hus-de-ecclesia-the-church-1915/complete-scope-export.xml",
+      "role": "source-revision-evidence",
+      "sha256": "f1ae2edaf7f65c6a6423f8839ab26650058b5d5608cf403f0c9d48915b3b8f93"
+    },
+    {
+      "bytes": 1069297,
+      "name": "page-records-export",
+      "path": "raw/wikisource/jan-hus-de-ecclesia-the-church-1915/complete-page-records-export.xml",
+      "role": "source-revision-evidence",
+      "sha256": "56020c8b5eb65861a104bdf815375289c3de7447ca486131397d66332e500c15"
+    },
+    {
+      "bytes": 3316,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/wikisource-jan-hus-complete-20261008/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "092b5a30d72d841bce24a7d8ff808785aea96850a8034940469f836c35851bb8"
+    },
+    {
+      "bytes": 1143,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/wikisource-jan-hus-complete-20261008/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "6e30a5c0baf0865f7811b104dc4fedf85fb94c04b69b092efb445df446c6d13b"
+    },
+    {
+      "bytes": 1130,
+      "name": "provenance",
+      "path": "sources/manifest-acquisitions/wikisource-jan-hus-complete-20261008/provenance.json",
+      "role": "source-provenance",
+      "sha256": "94c1256f2849e0d04adc81de5ca0b0e049fff87a2ac8832362dba1826c8d389e"
+    },
+    {
+      "bytes": 3624,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/wikisource-jan-hus-complete-20261008/README.source.md",
+      "role": "source-attribution-and-rights",
+      "sha256": "2effc32a094727b8cbc6e2bf9c6c4316c06cda42e2c4d287d588822401caf0ee"
+    },
+    {
+      "bytes": 131814,
+      "name": "printer-mark",
+      "path": "raw/wikisource/jan-hus-de-ecclesia-the-church-1915/charles-scribner-sons-logo.png",
+      "role": "source-image",
+      "sha256": "e3f7ea47cff6111839da3e8f1d4c3c7ccafc7a8d44ee0fb3c3085e9a2f65c3eb"
+    },
+    {
+      "bytes": 1108622,
+      "name": "p5-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-jan-hus-complete-wikisource-transcription",
+    "implementation_path": "build/tei/jan_hus_wikisource_complete.py",
+    "implementation_sha256": "9e1127903520c183e80998082c89eb328c2dd02c0fa5b4089e2972101c6025a2",
+    "version": "1"
+  },
+  "edition_id": "jan-hus-de-ecclesia-the-church-wikisource-electronic",
+  "manifest_row": "L607-complete-source-handoff",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": "Complete current Wikisource electronic transcription of Schaff's 1915 English translation: front matter, introduction, contents, title page, chapters 1-23, and printed index. It covers each of the 349 quality-3/4 page positions once; the eleven quality-0 positions remain explicit gaps and are not asserted blank.",
+  "source_id": "jan-hus-de-ecclesia-wikisource-complete-render-20261008",
+  "textual_form_id": "jan-hus-de-ecclesia-the-church-wikisource-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-jan-hus-wikisource-source-carrier-oracle",
+    "implementation_path": "build/tei/jan_hus_wikisource_complete_oracle.py",
+    "implementation_sha256": "4e69a14cc80f9daf9290346e87d0fc683ab5addd44c4cc4dadd4a616e6d5af62",
+    "import_closure_sha256": "07657bb6808278b2ba8642a8459a57c6f54b686de9a9f5f319b497c546a4bef5",
+    "version": "1"
+  },
+  "work_id": "jan-hus-de-ecclesia-the-church"
+}

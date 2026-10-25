@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Hitchcock's Bible Names Dictionary</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Fixture-only extract for PIPE-014A review.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="retained-source">
+          <idno type="work_id">fixture-hitchcocks-bible-names</idno>
+          <idno type="textual_form_id">fixture-hitchcocks-bible-names-en</idno>
+          <idno type="edition_id">fixture-hitchcock-1869</idno>
+          <idno type="source_sha256">sha256:e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5</idno>
+          <idno type="retained_sha256">sha256:e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5</idno>
+          <ptr target="https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Hitchcock's Bible Names Dictionary.jsonl" />
+          <note type="source-path">raw/bible_dictionaries/hitchcocks.jsonl</note>
+          <note type="source-scope">Selected source terms Aaron, Abaddon; all other retained JSONL entries are outside this bounded fixture.</note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="dictionary-entry" n="1" xml:id="fixture-hitchcock-1869-line-000001">
+        <head type="headword">Aaron</head>
+        <p n="1">a teacher; lofty; mountain of strength</p>
+      </div>
+      <div type="dictionary-entry" n="2" xml:id="fixture-hitchcock-1869-line-000002">
+        <head type="headword">Abaddon</head>
+        <p n="1">the destroyer</p>
+      </div>
+    </body>
+  </text>
+</TEI>

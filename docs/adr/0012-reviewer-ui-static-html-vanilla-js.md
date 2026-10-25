@@ -1,6 +1,6 @@
 # ADR-0012: Reviewer UI is static HTML + vanilla JavaScript; no framework
 
-**Status:** Superseded by ADR-0020 (2026-07-04); Accepted (2026-05-15)
+**Status:** Historical. Superseded by ADR-0020 (2026-07-04); the OCD implementation was retired after CVW became the current review workbench (2026-08-15).
 
 ## Context
 

@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/poetry.schema.json",
+  "title": "OCD poetry source division public row",
+  "description": "Source-named stanza rows or complete native poetry-edition units preserving front matter, books, verse and back matter.",
+  "x-ocd-profile": {
+    "version": "ocd-poetry-tei-profile-v1",
+    "unit_type": "poem-division",
+    "tei_namespace": "http://www.tei-c.org/ns/1.0",
+    "allowed_elements": [
+      "TEI",
+      "teiHeader",
+      "fileDesc",
+      "titleStmt",
+      "title",
+      "publicationStmt",
+      "sourceDesc",
+      "ptr",
+      "idno",
+      "p",
+      "text",
+      "front",
+      "body",
+      "back",
+      "div",
+      "head",
+      "label",
+      "byline",
+      "author",
+      "lg",
+      "l",
+      "seg",
+      "hi",
+      "foreign",
+      "note",
+      "pb",
+      "lb"
+    ],
+    "structure": [
+      "collection",
+      "work",
+      "poem",
+      "poem-division"
+    ],
+    "line_element": "l",
+    "stanza_element": "lg",
+    "source_order_attribute": "xml:id"
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "category",
+        "language",
+        "text",
+        "representation_revision",
+        "locator",
+        "provenance",
+        "notes",
+        "references",
+        "poem_id",
+        "division_id",
+        "stanzas"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "category": {
+          "const": "poetry"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text",
+          "minLength": 1
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "notes": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"
+        },
+        "references": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"
+        },
+        "poem_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "division_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "poem_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stanzas": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "number",
+              "lines"
+            ],
+            "properties": {
+              "number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "lines": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "part_titles",
+            "divisions",
+            "poem",
+            "division"
+          ],
+          "properties": {
+            "kind": {
+              "const": "poem-division"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "part_titles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "divisions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "order",
+                  "type",
+                  "titles"
+                ],
+                "properties": {
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "type": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "titles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "poem": {
+              "type": "string",
+              "minLength": 1
+            },
+            "division": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "text",
+        "representation_revision",
+        "provenance",
+        "category",
+        "content_format",
+        "structure",
+        "locator"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "poetry"
+        },
+        "content_format": {
+          "const": "ocd-native-content-v1"
+        },
+        "structure": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "ocd://schemas/v2/native-content.schema.json"
+          }
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "unit"
+          ],
+          "properties": {
+            "kind": {
+              "const": "native-unit"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "document": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Ordered TEI member position within a composed edition."
+            }
+          }
+        }
+      }
+    }
+  ]
+}

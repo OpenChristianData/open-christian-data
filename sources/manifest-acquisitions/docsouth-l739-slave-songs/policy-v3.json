@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-docsouth-single-work-policy-v1",
+  "mapping": {
+    "migration": "Pinned TEI P4-to-P5 stylesheet and source-bound DocSouth mapper; preserve text/order, actual page markers, source entity names and external graphic locators.",
+    "oracle": "Independent ElementTree traversal compares complete front/body/back text, page markers, figure/entity locator sequence, source IDs, package sidecars, and TEI P5 schema.",
+    "retained_images": "All 168 figure-referenced JPEG payloads are retained as exact source-support members and hash-bound by the source manifest. The P5 candidate preserves the source graphic URLs and entity sequence; it does not embed, transcribe, or visually review musical notation.",
+    "work_boundary": "One complete top-level titled work produces one TEI document; internal chapters, regions, songs, and front/back matter remain within that TEI."
+  },
+  "provenance": {
+    "acquisition_id": "slave-songs-of-the-united-states-docsouth-acquired",
+    "authors": [
+      "William Francis Allen",
+      "Charles Pickard Ware",
+      "Lucy McKim Garrison"
+    ],
+    "edition_id": "slave-songs-of-the-united-states-docsouth-electronic",
+    "human_acceptance": "not recorded",
+    "method": "Source-bound DocSouth TEI.2 to P5 conversion with independent source-aware oracle.",
+    "publication": "not authorized",
+    "source_member_sha256": "59053eb6b3d8135ab59fa0101bf00e97a465c6c6cffe688b3d7b85b4f60c3322",
+    "source_rights": "DocSouth TEI availability states No Copyright - United States: provider believes the item public domain under US law, with no determination for other jurisdictions. Electronic text/encoding rights remain as stated by provider; no worldwide rights clearance inferred.",
+    "source_url": "https://docsouth.unc.edu/church/allen/allen.xml",
+    "textual_form_id": "slave-songs-of-the-united-states-docsouth-retained",
+    "title": "Slave Songs of the United States",
+    "work_id": "slave-songs-of-the-united-states"
+  },
+  "unresolved": [
+    {
+      "id": "print-collation",
+      "question": "The retained electronic transcription has not been independently collated against print scans.",
+      "status": "open"
+    },
+    {
+      "id": "musical-notation-review",
+      "question": "The 168 retained figure-referenced JPEG payloads are hash-verified and linked by exact source locators, but musical notation has not been visually inspected or transcribed.",
+      "status": "open"
+    },
+    {
+      "id": "unused-image-entity-ss125a",
+      "question": "The source declares image entity ss125a.jpg, which has no retained JPEG and is not referenced by a source figure; no missing content or locator is inferred.",
+      "status": "open"
+    },
+    {
+      "id": "visual-review",
+      "question": "Source/candidate visual comparison remains open.",
+      "status": "open"
+    }
+  ]
+}

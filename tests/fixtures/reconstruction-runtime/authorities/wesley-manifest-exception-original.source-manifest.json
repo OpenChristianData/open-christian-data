@@ -1,0 +1,94 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-john-wesley-sermons-exact-thml-member-20260919",
+  "ticket_id": "LIB-059",
+  "work_id": "john-wesley-sermons",
+  "source_member": {
+    "logical_path": "raw/ccel/wesley_sermons.xml",
+    "bytes": 4340943,
+    "sha256": "70f4b1d44754ae01889c52aeeb6a1b6f92b9444d016cef35f4c0b40e33ea375a"
+  },
+  "expression_scope": {
+    "boundary": "one exact retained non-OCR ThML XML member; complete document envelope and every parsed ThML.head and ThML.body element",
+    "status": "source-member-and-envelope-bound; edition-work-part-and-exhaustive-witness-identity-open",
+    "candidate_generation": "coordinator-owned; not performed by this source-route change"
+  },
+  "authorities": [
+    {
+      "name": "retained-source",
+      "path": "raw/ccel/wesley_sermons.xml",
+      "role": "primary-source",
+      "bytes": 4340943,
+      "sha256": "70f4b1d44754ae01889c52aeeb6a1b6f92b9444d016cef35f4c0b40e33ea375a"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/sermons/john-wesley-sermons/john-wesley-sermons.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 10181,
+      "sha256": "7a74006c86cac467addeca737a666632ae9082e7f2e01448cdc954b328113ad9"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/sermons/john-wesley-sermons/john-wesley-sermons.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2354,
+      "sha256": "f877368f0d74b9d751c584734cfc9822ff0e6888d5ee42f8dd4b06a37d653e03"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/sermons/john-wesley-sermons/john-wesley-sermons.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2510,
+      "sha256": "c9aa5b07dbb4a57ed4f45916cc7001c3ed53b10ce8f95179c3af67fb2dad7aa0"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "producer-implementation",
+      "path": "build/tei/john_wesley_sermons_reconstruction.py",
+      "role": "source-to-tei-producer",
+      "bytes": 22947,
+      "sha256": "4435405f6e7705eb5e9bf8ab584d3de5a5614c9fb375f574f664dbbc9a39deb7"
+    },
+    {
+      "name": "independent-oracle-implementation",
+      "path": "build/tei/john_wesley_sermons_oracle.py",
+      "role": "independent-source-to-tei-oracle",
+      "bytes": 29182,
+      "sha256": "5f2db2a98ca20062879a481b6442c6ea0ec3001a61d5794a80bcf02c207caa24"
+    }
+  ],
+  "converter": {
+    "id": "ocd-37c-235-john-wesley-sermons-thml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/john_wesley_sermons_reconstruction.py",
+    "implementation_sha256": "4435405f6e7705eb5e9bf8ab584d3de5a5614c9fb375f574f664dbbc9a39deb7"
+  },
+  "producer_import_closure_sha256": "e1d583be65db9352f6ba0a0b0083b06ec1900f92cc256824ec26a212f3b113ba",
+  "validator": {
+    "id": "ocd-37c-235-john-wesley-sermons-independent-xml-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/john_wesley_sermons_oracle.py",
+    "implementation_sha256": "5f2db2a98ca20062879a481b6442c6ea0ec3001a61d5794a80bcf02c207caa24",
+    "import_closure_sha256": "12173a77f78880a22d45414ff1969c05bcafa0797dce2618372d7f69c22c7c06"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "contract": "ocd-tcp-a41072-exact-source-policy-v1",
+  "source_id": "tcp-a41072-pinned-tei-p5",
+  "readme_sha256": "12404acd9aafea1a74b508e1a22502ea56f82743d6e2fae0dd9f702ca32c32ad",
+  "accountability": {
+    "contract": "ocd-tcp-a41072-accountability-v1",
+    "source_path": "raw/tcp/high-range/A41072/A41072.xml",
+    "projection": "exact-source-bytes-v1",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "Full retained A41072 TEI, including source divisions, paratext, gaps, page breaks, encoded characters, text and tails"
+  },
+  "provenance": {
+    "contract": "ocd-tcp-a41072-provenance-v1",
+    "status": "nonaccepted",
+    "tcp_id": "A41072",
+    "source_path": "raw/tcp/high-range/A41072/A41072.xml",
+    "source_sha256": "6050d2fee9b03d63ec4cf52d137ea025a2404e09ff736f550d6b8d97d4316379",
+    "download_url": "https://raw.githubusercontent.com/textcreationpartnership/A41072/master/A41072.xml",
+    "rights_scope": "TCP Phase I keyboarded and encoded text: CC0 1.0; no page images acquired or claimed",
+    "attribution": "Text Creation Partnership requests due credit and attribution to the original source; see README.source.md",
+    "canonical_write": false,
+    "publication_authorized": false
+  },
+  "unresolved": [
+    {
+      "id": "fell-a41072-print-collation",
+      "status": "unresolved",
+      "question": "Will the TCP keying be collated with its print exemplar?",
+      "evidence": "This exact-byte electronic witness includes no page images."
+    },
+    {
+      "id": "fell-a41072-human-review",
+      "status": "unresolved",
+      "question": "Will a human separately decide textual, identity, rights, and publication status?",
+      "evidence": "Source preservation and technical validation do not provide those decisions."
+    }
+  ],
+  "required": [
+    "complete retained TEI source byte equality",
+    "full element/text/attribute census",
+    "TCP A41072 source identity and source-defined divisions",
+    "TEI P5 validity",
+    "visible TCP source attribution and text-only rights scope",
+    "nonaccepted package status"
+  ]
+}

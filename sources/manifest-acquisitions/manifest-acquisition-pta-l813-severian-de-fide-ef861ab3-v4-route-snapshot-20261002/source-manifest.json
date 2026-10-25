@@ -1,0 +1,96 @@
+{
+  "authorities": [
+    {
+      "bytes": 224655,
+      "name": "primary-source",
+      "path": "raw/pta/ef861ab391ea35c5d85b41dd8d7ba2bf65530b21/pta-l813-severian-de-fide-ef861ab3/pta0001.pta001.pta-grcBibex.xml",
+      "role": "primary-source",
+      "sha256": "ceb7a7ed8c1a46be5c0a78d3bb00e39de656cdbf99d30c2d58ebe88778214cd1"
+    },
+    {
+      "bytes": 5308,
+      "name": "acquisition-receipt",
+      "path": "raw/pta/ef861ab391ea35c5d85b41dd8d7ba2bf65530b21/pta-l813-severian-de-fide-ef861ab3/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "6c6c7ca8476a188c9cc446f2089c45478f70cae767a6c7f618f499e8cf570cce"
+    },
+    {
+      "bytes": 1149,
+      "name": "source-attribution",
+      "path": "raw/pta/ef861ab391ea35c5d85b41dd8d7ba2bf65530b21/pta-l813-severian-de-fide-ef861ab3/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "f79e092a85eaf24f4f72ce5422fa20a00e01c23253014114802cc4b9e41e60d9"
+    },
+    {
+      "bytes": 1058117,
+      "name": "source-crosswalk",
+      "path": "plans/2026-09-23-acquisition-manifest-source-to-tei/MANIFEST_DISTINCT_WORK_CROSSWALK_PROGRESS_20260927_v4.json",
+      "role": "source-selection-crosswalk",
+      "sha256": "a07ecba30533870c83cb45d17dea6a9162b5fb5b6b74202c05010925a6fa90e0"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 11621,
+      "name": "complete-source-feature-profile",
+      "path": "sources/manifest-acquisitions/manifest-acquisition-pta-l813-severian-de-fide-ef861ab3-v4-route-snapshot-20261002/complete-source-feature-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "78e045a42147dc739704de29c793c7609be355c2de852a7bdd73cbee87f340c1"
+    },
+    {
+      "bytes": 2056,
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/manifest-acquisition-pta-l813-severian-de-fide-ef861ab3-v4-route-snapshot-20261002/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "cb73b0efefc65f4fe22e1e788d494ac394185c92d17d31aa59228439ca864f92"
+    },
+    {
+      "bytes": 333,
+      "name": "canonical-manifest-row-snapshot",
+      "path": "sources/manifest-acquisitions/manifest-acquisition-pta-l813-severian-de-fide-ef861ab3-v4-route-snapshot-20261002/canonical-manifest-row.snapshot.md",
+      "role": "canonical-manifest-row-snapshot",
+      "sha256": "1aa1a791e2c262c2607651cf4e476685685a6575bfec524694d1f51398508f4c"
+    },
+    {
+      "bytes": 3014,
+      "name": "canonical-worklist-row-snapshot",
+      "path": "sources/manifest-acquisitions/manifest-acquisition-pta-l813-severian-de-fide-ef861ab3-v4-route-snapshot-20261002/canonical-worklist-row.snapshot.md",
+      "role": "canonical-worklist-row-snapshot",
+      "sha256": "b9347069954cb20b2af3e1f82d316e5ed145ddb6bc54e8ff0c5b3750dba52da5"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-pta-retained-tei-byte-preserving-converter",
+    "implementation_path": "build/tei/pta_retained_tei.py",
+    "implementation_sha256": "040cacdeeeb8febcfcebb9528f6bc399878d93dc0b31cfd68b053ba0d9d0360c",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "pta-l813-severian-de-fide-ef861ab3",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-pta-retained-tei-independent-source-equality-oracle",
+    "implementation_path": "build/tei/pta_retained_tei_oracle.py",
+    "implementation_sha256": "4247780cd48bcc948a76aa9de22373c8141e2616ef7ced7b9f04c8dacf84021c",
+    "import_closure_sha256": "30ff6ce1df9b0ad32fb6d319027d66a899558225d1199b2b8961a546b8fb93db",
+    "version": "2"
+  },
+  "work_id": "severian-de-fide-et-lege-naturae"
+}

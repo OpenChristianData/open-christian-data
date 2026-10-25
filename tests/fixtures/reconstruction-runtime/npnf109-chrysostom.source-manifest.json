@@ -1,0 +1,200 @@
+{
+  "authorities": [
+    {
+      "bytes": 3017592,
+      "name": "npnf109-retained-xml",
+      "path": "raw/ccel/npnf1/npnf109.xml",
+      "role": "primary-source",
+      "sha256": "6d0887393b4d197d7784cbea989aeb422d7e38f55711b4c4d4af85e3de680175"
+    },
+    {
+      "bytes": 469,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/chrysostom-npnf109-16/npnf109-chrysostom.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "aea6c2922a706a82eea4cfe887c2b61b8ec4c77ecb15ee1c50d2ea01d0c08350"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 889,
+      "name": "validation-policy",
+      "path": "sources/structured-text/chrysostom-npnf109-16/npnf109-chrysostom.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "d40d4898447fec90c74e30a484570980d2ad15505414eb492dc920339c31c4ea"
+    },
+    {
+      "bytes": 8854,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/chrysostom-npnf109-16/npnf109.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "sha256": "5f00de181621e5e51cc2068a82ecea80eea5e9c15612edd03713260932dd22a7"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "rights-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 1883,
+      "name": "chrysostom-correspondence-with-rome-source-config",
+      "path": "sources/structured-text/chrysostom-correspondence-with-rome/config.json",
+      "role": "source-config",
+      "sha256": "52a401302025e15b35606e50532b9b46b40ff37719ea4879e39fbe2547b8bf63"
+    },
+    {
+      "bytes": 1866,
+      "name": "chrysostom-exhortation-to-theodore-source-config",
+      "path": "sources/structured-text/chrysostom-exhortation-to-theodore/config.json",
+      "role": "source-config",
+      "sha256": "30a5b9bf74a1830549afd29378ef27889c552c3817163c6197d28f416dee8466"
+    },
+    {
+      "bytes": 2075,
+      "name": "chrysostom-homilies-ignatius-and-babylas-source-config",
+      "path": "sources/structured-text/chrysostom-homilies-ignatius-and-babylas/config.json",
+      "role": "source-config",
+      "sha256": "b08e70b718409dd6c37fa10a47cbfb5599ed659e68f2b8e89ed7fb0905ba575d"
+    },
+    {
+      "bytes": 1867,
+      "name": "chrysostom-homilies-on-the-statues-source-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-the-statues/config.json",
+      "role": "source-config",
+      "sha256": "d9fbeb40d4509b692caa9883b0496fc74986ca4d568d04bab690f6525f20511a"
+    },
+    {
+      "bytes": 1857,
+      "name": "chrysostom-homily-against-publishing-errors-source-config",
+      "path": "sources/structured-text/chrysostom-homily-against-publishing-errors/config.json",
+      "role": "source-config",
+      "sha256": "cdcb7b819948f1877303be87f097329b8a0c266b5f2f9ff8319b02c11b0f534d"
+    },
+    {
+      "bytes": 1872,
+      "name": "chrysostom-homily-on-father-if-it-be-possible-source-config",
+      "path": "sources/structured-text/chrysostom-homily-on-father-if-it-be-possible/config.json",
+      "role": "source-config",
+      "sha256": "187f91769265eab6eeacf55a516ab458aa82210715c4a48eac8fda48668d38a4"
+    },
+    {
+      "bytes": 1830,
+      "name": "chrysostom-homily-on-lowliness-of-mind-source-config",
+      "path": "sources/structured-text/chrysostom-homily-on-lowliness-of-mind/config.json",
+      "role": "source-config",
+      "sha256": "94b860e06dbe6fb84275d62dbc6b87c43fedf42d6c49c291991942aa220933ed"
+    },
+    {
+      "bytes": 1847,
+      "name": "chrysostom-homily-on-the-paralytic-source-config",
+      "path": "sources/structured-text/chrysostom-homily-on-the-paralytic/config.json",
+      "role": "source-config",
+      "sha256": "30b1919633750702b5f29b2372e408cae7e560ac6d0b1815277a3360c3e143aa"
+    },
+    {
+      "bytes": 1875,
+      "name": "chrysostom-homily-to-those-not-attended-assembly-source-config",
+      "path": "sources/structured-text/chrysostom-homily-to-those-not-attended-assembly/config.json",
+      "role": "source-config",
+      "sha256": "09c2b4c32a1e2f3cfab3781317f7ddd14170479ffa13c92518b8637ce1e52a11"
+    },
+    {
+      "bytes": 2053,
+      "name": "chrysostom-instructions-to-catechumens-source-config",
+      "path": "sources/structured-text/chrysostom-instructions-to-catechumens/config.json",
+      "role": "source-config",
+      "sha256": "3375792d71d07daeda2a68dcb4a71f013da55a5bd25ab68ba85c934560502e06"
+    },
+    {
+      "bytes": 1844,
+      "name": "chrysostom-letter-to-young-widow-source-config",
+      "path": "sources/structured-text/chrysostom-letter-to-young-widow/config.json",
+      "role": "source-config",
+      "sha256": "4b0642396127dfb333a2738a7b9f5121f8f95aef9381b6a6ed791fca0cede1f5"
+    },
+    {
+      "bytes": 1854,
+      "name": "chrysostom-letters-to-olympias-source-config",
+      "path": "sources/structured-text/chrysostom-letters-to-olympias/config.json",
+      "role": "source-config",
+      "sha256": "1ebe08727a75701c40d975e7e7ad6dc76dc6ae2b2b6e716cc046d96101b10b95"
+    },
+    {
+      "bytes": 1857,
+      "name": "chrysostom-no-one-can-be-harmed-source-config",
+      "path": "sources/structured-text/chrysostom-no-one-can-be-harmed/config.json",
+      "role": "source-config",
+      "sha256": "ba30e5db325a5b568f268e7e08d8f9c364e6a7ba3f86bb5a699f0fa14ebb0d52"
+    },
+    {
+      "bytes": 1849,
+      "name": "chrysostom-on-the-priesthood-source-config",
+      "path": "sources/structured-text/chrysostom-on-the-priesthood/config.json",
+      "role": "source-config",
+      "sha256": "055488bdcef8f12e5e8b3365b3ea88620edf7740b4f303ac0d63367f07caa6a1"
+    },
+    {
+      "bytes": 1855,
+      "name": "chrysostom-three-homilies-on-power-of-demons-source-config",
+      "path": "sources/structured-text/chrysostom-three-homilies-on-power-of-demons/config.json",
+      "role": "source-config",
+      "sha256": "5a231ef8e38fbdfd73b5237a44f7b6253f270d3471e83117f045e984d557abd6"
+    },
+    {
+      "bytes": 1826,
+      "name": "chrysostom-two-homilies-on-eutropius-source-config",
+      "path": "sources/structured-text/chrysostom-two-homilies-on-eutropius/config.json",
+      "role": "source-config",
+      "sha256": "dfe44688cc9df586e3cc1921e7ae836ed2c605f8b6206b7a5738e1f10d20d519"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-npnf109-16-work-to-tei",
+    "implementation_path": "build/tei/npnf109_chrysostom_reconstruction.py",
+    "implementation_sha256": "1d9a6e32a6ad25fe6966e9c900fe1e11574279ed1b22e8dba219c581d731319e",
+    "version": "20"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "LIB-042",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib042-retained-source-oracle",
+    "implementation_path": "build/tei/npnf109_chrysostom_oracle.py",
+    "implementation_sha256": "8e61740c7e4fe17434f3d5e667c8fe3ff0990b23a9d3770594b1e439d15ef8d5",
+    "import_closure_sha256": "ab6e263dd83009f65aa75d0d7ecdcb5ef9bf639c359fe7a0a8452c3e0f05de92",
+    "version": "20"
+  }
+}

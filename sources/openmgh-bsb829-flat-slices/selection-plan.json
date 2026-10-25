@@ -1,0 +1,21 @@
+{
+  "contract": "ocd-openmgh-bsb829-flat-slices-selection-v1",
+  "source_path": "raw/openmgh/bsb00000829/tei/bsb00000829.xml",
+  "source_sha256": "cb35385e4e4ba87f80a002452a527527866322af7ccea7f23f366735e46df989",
+  "frozen_batch_sha256": "6623a27ea9998fbd9fad1379eafa3fc6b58d887ad00b8b42b92f5441e86cf947",
+  "source_selection": "Each row selects a complete, contiguous line-bounded letter or numbered section in one flat source ab. Its two endpoint lb elements and all intervening sibling elements and tails are copied. The surrounding collection heading, other numbered sections, and adjacent letters remain in the retained XML.",
+  "works": [
+    {"work_id":"beno-letter-to-the-roman-church","division":6,"first_id":"bsb00000829_00377_10","last_id":"bsb00000829_00381_23","scope_note":"Numbered Gesta section I; collection heading before this line remains shared."},
+    {"work_id":"beno-letter-to-roman-church-fathers","division":6,"first_id":"bsb00000829_00381_24","last_id":"bsb00000829_00388_32","scope_note":"Numbered Gesta section II; section III begins at the next line and is outside this work."},
+    {"work_id":"hugo-cardinal-letter-to-hugo-of-palestrina","division":6,"first_id":"bsb00000829_00411_34","last_id":"bsb00000829_00413_30","scope_note":"Numbered Gesta section IV after the separately retained section III."},
+    {"work_id":"roman-clergy-summons-to-hildebrands-adherents","division":6,"first_id":"bsb00000829_00413_31","last_id":"bsb00000829_00415_27","scope_note":"Numbered Gesta section V; section VI begins at the next line."},
+    {"work_id":"romanus-cardinal-letter-to-all-faithful","division":6,"first_id":"bsb00000829_00415_28","last_id":"bsb00000829_00416_2","scope_note":"Numbered Gesta section VI; section VII begins at the next line."},
+    {"work_id":"clement-letter-to-hugo-cardinal","division":6,"first_id":"bsb00000829_00416_3","last_id":"bsb00000829_00416_26","scope_note":"Numbered Gesta section VII; the work sidecar lists the closing locator before the opening one. Section VIII begins at the next line and remains outside this work."},
+    {"work_id":"hugo-letter-to-beno-and-romanus","division":6,"first_id":"bsb00000829_00424_14","last_id":"bsb00000829_00425_10","scope_note":"Numbered Gesta section IX after separately retained section VIII."},
+    {"work_id":"hugo-letter-to-countess-matilda","division":6,"first_id":"bsb00000829_00425_11","last_id":"bsb00000829_00429_21","scope_note":"Numbered Gesta section X; section XI begins at the next line and remains outside this work."},
+    {"work_id":"bruno-of-segni-letter-to-peter-of-porto","division":15,"first_id":"bsb00000829_00571_18","last_id":"bsb00000829_00572_6","scope_note":"First Bruno letter, including its own numbered synopsis and bracketed editorial continuation; the collection heading remains shared."},
+    {"work_id":"bruno-of-segni-letter-to-paschal-ii","division":15,"first_id":"bsb00000829_00572_9","last_id":"bsb00000829_00573_4","scope_note":"Second Bruno letter starts at its salutation and ends before the next letter's salutation."},
+    {"work_id":"bruno-of-segni-letter-to-st-george-brothers","division":15,"first_id":"bsb00000829_00573_7","last_id":"bsb00000829_00573_18","scope_note":"Third Bruno letter; an additional declared locator names the first line of the fourth letter and is excluded as a boundary marker."},
+    {"work_id":"bruno-of-segni-letter-to-roman-bishops-cardinals","division":15,"first_id":"bsb00000829_00573_21","last_id":"bsb00000829_00573_42","scope_note":"Fourth Bruno letter begins at its salutation and ends at the end of the source division."}
+  ]
+}

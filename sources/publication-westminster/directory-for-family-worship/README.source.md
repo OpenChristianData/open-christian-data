@@ -1,0 +1,11 @@
+# The Directory for Family Worship — source credit
+
+The paired publication notice is `data/prose/directory-for-family-worship/README.md`.
+
+This accepted electronic witness comes from [The Westminster Standard's retained page](https://thewestminsterstandard.org/directory-for-family-worship/). The retained page identifies TheWestminsterStandard as its page author. Its selected text begins with the General Assembly of the Church of Scotland's approving act dated August 24, 1647, contains the directions and sections I–XIV, and ends with the historical “A. Ker.” attribution. A named printed exemplar has not been established or collated; source spelling and punctuation remain those of this electronic witness.
+
+The [historical Assembly acts](https://www.gutenberg.org/files/28957/28957-h/28957-h.html) independently witness the 1647 act and directions. A [separate transcription hosted by Staunton OPC](https://www.stauntonopc.org/wp-content/uploads/2016/05/directory_for_family_worship.pdf) witnesses the same approving act and I–XIV sequence. These support the historical identity and bounded text scope, not exact collation of this website transcription to a printed edition. The Apache-2.0 [Reformed Standards compendium](https://github.com/reformed-standards/compendium) is for a different website and is not asserted as a license for the retained Westminster Standard page.
+
+The website's 2016 and 2026 copyright footers are retained as source-layer rights evidence. They and the navigation, scripts, styles, and other site shell are outside the selected content carrier and public prose row. The populated carrier supplies one row containing the historical act and directions, in source order, with generic structural roles for headings and paragraphs. The second carrier is empty and excluded. No provider-authored explanatory prose or modern textual addition has been identified in the selected row. The footer does not establish copyright in the 1647 historical wording.
+
+This successor supersedes the earlier unresolved transcription/wrapper hold only for private preparation of the identified U.S. public-domain historical text. It does not license website design, images, shell material, a broader territory, or a public deployment. The retained source, master TEI, acceptance decision, and the absence of a print collation remain unchanged.

@@ -1,0 +1,142 @@
+{
+  "authority_roles": {
+    "abbyy.xml.gz": "alternate compressed OCR witness; not used as converter text authority",
+    "acquisition-receipt.json": "acquisition identity, provider hashes, retained-member decision, and rights-scope note",
+    "member-inventory.tsv": "complete provider member listing and selection/exclusion ledger",
+    "metadata.json": "Internet Archive item metadata response",
+    "ocr.txt": "comparison OCR witness; not used as converter text authority",
+    "ocr.xml": "primary DjVuXML reading witness; source page/paragraph/line/word order",
+    "scan-corrections.v1.json": "work-specific scan-grounded carrier map; exact corrections and structural transformations, bound to scan.pdf and ocr.xml",
+    "scan.pdf": "primary page-image witness; 136 access-format pages",
+    "scandata.xml": "provider leaf/page-type and access-format map"
+  },
+  "contract": "ocd-robertson-keywords-1906-profile-v1",
+  "edition": {
+    "author": "A. T. Robertson",
+    "date": "1906",
+    "imprint": "Philadelphia",
+    "provider_item": "https://archive.org/details/keywordsinteachi01robe",
+    "publisher": "American Baptist Publication Society",
+    "title": "Keywords in the Teaching of Jesus"
+  },
+  "independence_note": "The converter uses stdlib XML parsing and builds source-ordered TEI; the oracle uses lxml and independently traverses the retained source, scandata, PDF and actual TEI. Both read the same scan-bound correction map and DjVuXML witness. The oracle independently checks exact source carriers, map bindings, transformations and output structure, but it is not a second blind reading of every scan glyph.",
+  "known_limitations": [
+    "Every access-format scan page has a recorded visual-review disposition and scan-verified corrections are applied, but the review is not a glyph-by-glyph transcription of every OCR word. Uncorrected OCR wording remains the retained witness and may contain unobserved recognition errors.",
+    "Six access pages (3, 4, 6, 10, 14, 133) contain no OCR WORD elements. Their page carriers remain, but image-only text is not transcribed.",
+    "The empty LINE on page 2, paragraph 2 has no WORD element; it is preserved as source structure, not interpreted as text.",
+    "Internet Archive item metadata has no rights or license URL fields. Acquisition records source identity only; rights clearance, human acceptance, canonical integration, and publication are unresolved."
+  ],
+  "mapping_policy": {
+    "empty_ocr": "Keep all six zero-word pages as explicit page carriers and identify their OCR gaps in accounting; no text is inferred from the scan.",
+    "excluded": "Account for, but exclude, non-access Color Card leaves 0 and 137 from literary TEI.",
+    "corrections": "Apply only exact source-carrier corrections confirmed in the versioned scan-corrections.v1.json map. Record the source OCR form, scan reading, location, raw WORD text, and coordinates in source accountability. The retained OCR remains immutable; comparison OCR is never merged into reading text.",
+    "layout": "Represent the page-13 contents as seven structured chapter/title/page entries; represent the two-column indexes and bibliography on pages 126-132 as ordered source-column divisions. Preserve marginal headings as scan-grounded notes attached to their source page and paragraph.",
+    "pages": "Create one scan-page division in source order for each of the 136 access-format PDF/DjVuXML pages and retain source leaf/page labels and PDF target.",
+    "sections": "Represent pages 1-14 as front matter; pages 15-125 as seven source-led chapters; pages 126-136 as back matter. Explicit source headings are encoded in place; uncertain lines remain OCR paragraphs.",
+    "support": "Bind all eight retained source/evidence files. The provider receipt and complete inventory account for the unselected provider derivatives and support members; comparison OCR is not silently merged into reading text.",
+    "text": "Preserve DjVuXML wording and order except for the exact scan-grounded corrections and structural carrier moves listed in the correction map. Concatenate retained source WORD text in each source LINE order; page, paragraph, and line carriers remain explicitly accounted. Preserve empty source paragraphs and lines.",
+    "work_boundary": "The scan presents one complete top-level titled book, including front matter, seven chapters, indexes, bibliography, and appended scan pages; emit exactly one candidate TEI for this one complete work.",
+    "visual_review": "Record direct or independent visual inspection of every access-format PDF page in the correction map. This whole-page pass does not claim exhaustive glyph-by-glyph comparison; corrections require exact scan support, and uncertain handwriting or image-only text remains explicitly unresolved."
+  },
+  "source_id": "ia-keywordsinteachi01robe",
+  "source_scope": {
+    "access_leaf_numbers": [
+      1,
+      136
+    ],
+    "access_pdf_pages": 136,
+    "back_sections": [
+      {
+        "name": "scripture-index",
+        "pages": [
+          126,
+          128
+        ]
+      },
+      {
+        "name": "topical-index",
+        "pages": [
+          129,
+          130
+        ]
+      },
+      {
+        "name": "bibliography",
+        "pages": [
+          131,
+          132
+        ]
+      },
+      {
+        "name": "appended-material",
+        "pages": [
+          133,
+          136
+        ]
+      }
+    ],
+    "body_chapter_start_pages": [
+      15,
+      29,
+      45,
+      60,
+      82,
+      97,
+      113
+    ],
+    "djvuxml_page_objects": 136,
+    "empty_structural_carriers": [
+      {
+        "disposition": "preserve the source paragraph and empty line carrier in TEI",
+        "line_elements": 1,
+        "page_ordinal": 2,
+        "paragraph_ordinal": 2,
+        "word_elements": 0
+      }
+    ],
+    "excluded_leaves": [
+      {
+        "disposition": "nonliterary calibration card; excluded from the 136-page access sequence",
+        "leaf": 0,
+        "page_type": "Color Card"
+      },
+      {
+        "disposition": "nonliterary calibration card; excluded from the 136-page access sequence",
+        "leaf": 137,
+        "page_type": "Color Card"
+      }
+    ],
+    "front_body_back": {
+      "back_pages": [
+        126,
+        136
+      ],
+      "body_pages": [
+        15,
+        125
+      ],
+      "front_pages": [
+        1,
+        14
+      ]
+    },
+    "ocr_carrier_counts": {
+      "line_elements": 3877,
+      "paragraph_elements": 1178,
+      "word_elements": 30759
+    },
+    "provider_inventory_items": 25,
+    "retained_evidence_files": 3,
+    "retained_provider_members": 5,
+    "scandata_total_leaves": 138,
+    "zero_word_page_ordinals": [
+      3,
+      4,
+      6,
+      10,
+      14,
+      133
+    ]
+  },
+  "work_id": "robertson-keywords-in-the-teaching-of-jesus"
+}

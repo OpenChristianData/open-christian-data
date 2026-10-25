@@ -1,0 +1,52 @@
+# Preserve default secret detection; these exact retained JSON fields are checksums.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Verified SHA-256 fields in retained source and runtime records"
+condition = "AND"
+regexTarget = "match"
+regexes = [
+    '''^(?:_api\.py|_array_api_info\.py|_auth\.py|_commit_api\.py|_git_credential\.py|_jobs_api\.py|_space_api\.py|_tokenizer\.py|add_token_counts\.py|api\.py|auth\.py|client_middleware_digest_auth\.py|dbapi2\.py|dictionary_key_sha256|dictionary_keys_sha256|hf_api\.py|keys\.asc|oracle\-api\-repair\-binding\.json|provider\-api\-metadata\.json|sandbox\-access\-diagnostic\.json|secrets\.py|token\.py|tokenize\.py|tokens\.py|volume\-iii\-access\-leaf\-0007\.png|volume\-iii\-access\-leaf\-0009\.png|volume\-iii\-access\-leaf\-0441\.png)"\s*:\s*"[a-f0-9]{64}"$''',
+]
+paths = [
+    '''^library/works/calvins\-institutes/publication/completion\.json$''',
+    '''^library/works/calvins\-institutes/publication/final\-delivery\-audit\.json$''',
+    '''^library/works/cox\-sacred\-hymns\-from\-the\-german\-1841/publication/completion\.json$''',
+    '''^library/works/d\-l\-moody\-prevailing\-prayer/publication/completion\.json$''',
+    '''^library/works/eng\-web\-c/publication/completion\.json$''',
+    '''^library/works/engwebpb/publication/completion\.json$''',
+    '''^library/works/engwmb/publication/completion\.json$''',
+    '''^library/works/eusebius\-commentarii\-in\-psalmos/publication/completion\.json$''',
+    '''^library/works/hymnary\-pd/publication/completion\.json$''',
+    '''^library/works/jeanne\-guyon\-short\-method\-prayer/publication/completion\.json$''',
+    '''^library/works/naves\-topical\-bible/integration/nave\-accepted\-v1/historical\-crosswalk\.json$''',
+    '''^library/works/revised\-version\-with\-apocrypha/publication/completion\.json$''',
+    '''^library/works/strong\-systematic\-theology\-vol\-2/integration/strong\-vol2\-current\-20261004\-v1/root\-source\-review\.json$''',
+    '''^library/works/strong\-systematic\-theology\-vol\-2/integration/strong\-vol2\-current\-20261004\-v1/source\-accounting\.json$''',
+    '''^library/works/strong\-systematic\-theology\-vol\-2/integration/strong\-vol2\-current\-20261004\-v1/source\-proof\-final\-v1\.json$''',
+    '''^library/works/torreys\-topical\-textbook/publication/completion\.json$''',
+    '''^library/works/tyerman\-life\-george\-whitefield/integration/whitefield\-complete\-20261004\-v1/parent\-source\-identity\-review\.json$''',
+    '''^library/works/tyerman\-life\-george\-whitefield/integration/whitefield\-complete\-20261004\-v1/source\-identity\-review\.json$''',
+    '''^library/works/tyerman\-life\-times\-john\-wesley/integration/tyerman\-john\-wesley\-current\-20261004\-v1/parent\-source\-identity\-review\.json$''',
+    '''^library/works/tyerman\-life\-times\-samuel\-wesley\-1866/integration/samuel\-complete\-20261004\-v1/parent\-source\-identity\-review\.json$''',
+    '''^library/works/watson\-theological\-institutes/integration/volume\-i\-internal\-20261008/preimage\-files\.json$''',
+    '''^plans/2026\-09\-23\-acquisition\-manifest\-source\-to\-tei/evidence/RV_CURRENT_RELEASE_READBACK_20261003\.json$''',
+    '''^sources/manifest\-acquisitions/tyerman\-life\-times\-john\-wesley\-complete\-20261004\-v1/runtime\-bindings\.json$''',
+    '''^sources/manifest\-acquisitions/tyerman\-life\-times\-john\-wesley\-complete\-20261004\-v2/runtime\-bindings\.json$''',
+    '''^sources/strong\-systematic\-theology\-vol\-2/current\-retained\-20261004\-v1/runtime\-bindings\.json$''',
+]
+
+[[rules.allowlists]]
+description = "Verified fixed CCEL source checksum; the book title contains secret"
+condition = "AND"
+regexTarget = "match"
+regexes = [
+    '''^smith\-christians\-secret\-happy\-life"\s*:\s*"14df12c4cc418579860543a350edba6d3be0f57ee9be19a5418c0e81c47b8096"$''',
+]
+paths = [
+    '''^plans/2026\-10\-02\-v1\-public\-information\-drafts/artifacts/library\-completion\-reconciliation\-20261023/ccel\-four/ccel_native_emitter\.py$''',
+]

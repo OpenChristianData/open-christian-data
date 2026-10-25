@@ -1,9 +1,12 @@
 # Batch 06 Internet Archive evidence
 
-This record covers the Fisher Marrow raw-to-TEI migration and the three
-evidence-only decisions in the batch. The Fisher converter reads the raw
-DjVuTXT witness directly. The existing structured-text JSON is a downstream
-projection and was not used as conversion input.
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
+This record covers the accepted Fisher *Marrow* candidate-generation successor,
+the frozen legacy Batch 06 artifacts, and the three evidence-only decisions in
+the batch. The current successor reads the retained DjVuTXT witness directly;
+the existing structured-text JSON is a separate canonical dataset output and
+is not conversion input.
 
 ## Fisher Marrow of Modern Divinity
 
@@ -22,6 +25,30 @@ Raw witness: `raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.
   retained as source text. The witness does not reliably delimit Boston
   footnote bodies, so no `<note>` boundaries are invented.
 
+### Current candidate-generation route
+
+The accepted route is the source manifest
+`sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json`
+invoked through the family-neutral runner:
+
+```powershell
+py -3 build/tools/reconstruct_candidate.py --manifest sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json --destination <external-empty-directory>
+```
+
+The manifest binds the exact retained witness,
+`build/tei/fisher_marrow_reconstruction.py`, and the producer-independent
+`build/tei/fisher_marrow_oracle.py`. The runner writes a deterministic
+six-member candidate only to a maintainer-chosen empty directory outside the
+repository. The candidate is TEI P5/XSD-valid and completely source-accounted,
+but remains explicitly `nonaccepted`, requires human review, and has
+`publication_status: not-authorized`.
+
+The retained title page governs the candidate identity as London, Thomas Tegg
+and Son, 1837. The stale Edinburgh / J. and D. Collie / 1828 metadata in the
+separate canonical dataset route does not override that witness. The candidate
+surfaces the Google attribution request and leaves textual acceptance and
+rights clearance unresolved for human decision.
+
 The raw heading forms are not normalized: the four chapter headings are
 `CHAPTER I.`, `CHAPTER TL`, `CHAPTER III.`, and `CHAP. LV.` (one each). The
 eight commandment headings are `COMMANDMENT I,`, `COMMANDMENT IF.`,
@@ -37,7 +64,8 @@ census records 82 exact OCR label-plus-punctuation forms, including variants
 such as `Norn`, `AnL`, `iVeo`, `JVeo`, `JVbm`, `iVom`, `N^eo`, `^eo`, `iVffo`,
 `N^o`, `&an`, and `Łvan`, in addition to the familiar labels.
 
-Raw structural census and TEI carriers agree as follows:
+Source-derived structural evidence and accepted candidate carriers agree as
+follows:
 
 | Carrier | Raw census | TEI |
 |---|---:|---:|
@@ -56,6 +84,35 @@ OCR heading evidence is kept verbatim in the TEI, including `CHAPTER TL`,
 `COMMANDMENT III` and `COMMANDMENT V` headings are not fabricated. The
 classifier promotes only bounded high-confidence speaker forms; heavily
 damaged or ambiguous starts remain ordinary paragraphs.
+
+The successor additionally accounts for every one of the 22,946 retained
+lines, restores the previously omitted 297-line Recommendations, separates
+Part II front matter, and places the Appendix in back matter. Its independent
+checks bind 455 speakers, including 24 section-boundary cases, reject nine
+paragraph-continuation lookalikes, and bind all 170 page-marker candidates and
+the 16 substantive lines that resemble running headers.
+
+### Frozen Batch 06 compatibility evidence
+
+The following earlier route and outputs remain unchanged:
+
+- `build/tei/ia_fisher_marrow_to_tei.py`
+- `ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json`
+- `ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml`
+- `ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.viewer-dialogue.png`
+- `ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl`
+- `ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl.loss.json`
+
+They remain frozen compatibility and historical evidence because current CVW,
+speaker, ledger, and canonical-evidence consumers still bind them. They are not
+outputs of the accepted successor and have not been migrated. The legacy
+converter remains temporarily available for those frozen artifacts; it is no
+longer the documented current candidate-generation route.
+
+No durable candidate review packet has been persisted by this documentation
+change. Human acceptance, rights clearance, canonical data/IR changes,
+TEI-to-Hugging-Face projection, and publication remain future separately
+authorized work.
 
 ## Evidence-only decisions
 

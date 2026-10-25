@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Canons of Dort</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Fixture-only extract for PIPE-013B review.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="retained-source">
+          <idno type="work_id">fixture-canons-of-dort</idno>
+          <idno type="textual_form_id">fixture-canons-of-dort-en</idno>
+          <idno type="edition_id">fixture-dort-1619</idno>
+          <idno type="source_sha256">sha256:4f00bc17a45b6a3843b773f5b28830b8016e4acce6681895266afadd6371196b</idno>
+          <idno type="retained_sha256">sha256:4f00bc17a45b6a3843b773f5b28830b8016e4acce6681895266afadd6371196b</idno>
+          <ptr target="http://apostles-creed.org/wp-content/uploads/2014/07/canons-of-dort.pdf" />
+          <note type="source-path">raw/Creeds.json/creeds/canons_of_dort.json</note>
+          <note type="source-scope">Chapter 1 sections A1 and A2; all other retained source sections are outside this bounded fixture.</note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="chapter" n="1" xml:id="fixture-dort-1619-chapter-1">
+        <head>Of Divine Predestination</head>
+        <div type="section" n="A1" xml:id="fixture-dort-1619-unit-1-A1">
+          <p>As all men have sinned in Adam, lie under the curse, and are deserving of eternal death, God would have done no injustice by leaving them all to perish, and delivering them over to condemnation on account of sin, according to the words of the apostle, "that every mouth may be stopped, and all the world may become guilty before God" (Rom. 3:19). And verse 23: "For all have sinned, and come short of the glory of God." And Romans 6:23: "For the wages of sin is death".</p>
+        </div>
+        <div type="section" n="A2" xml:id="fixture-dort-1619-unit-1-A2">
+          <p>But in this the love of God was manifested, that He sent His only begotten Son into the world, that whosoever believeth on Him should not perish, but have everlasting life. "In this was manifested the love of God toward us, because that God sent His only begotten Son into the world, that we might live through Him" (1 John 4:9). "For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life" (John 3:16).</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,690 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/sermons.schema.json",
+  "title": "sermons public row",
+  "x-ocd-profile": {
+    "version": "ocd-sermons-bounded-v3",
+    "elements": {
+      "TEI": [
+        "teiHeader",
+        "text"
+      ],
+      "teiHeader": [
+        "fileDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title"
+      ],
+      "title": [],
+      "publicationStmt": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p",
+        "bibl"
+      ],
+      "bibl": [
+        "title",
+        "idno"
+      ],
+      "idno": [],
+      "text": [
+        "body"
+      ],
+      "body": [
+        "div"
+      ],
+      "div": [
+        "head",
+        "opener",
+        "p",
+        "div",
+        "ab"
+      ],
+      "head": [
+        "hi",
+        "ref",
+        "note",
+        "foreign"
+      ],
+      "opener": [
+        "ref"
+      ],
+      "p": [
+        "hi",
+        "ref",
+        "note",
+        "foreign"
+      ],
+      "hi": [
+        "hi",
+        "ref",
+        "foreign"
+      ],
+      "foreign": [
+        "hi"
+      ],
+      "ref": [],
+      "note": [
+        "hi",
+        "ref",
+        "date",
+        "placeName",
+        "rs"
+      ],
+      "date": [],
+      "placeName": [],
+      "rs": [],
+      "ab": [
+        "ref"
+      ]
+    },
+    "attributes": {
+      "text": [
+        "xml:lang"
+      ],
+      "div": [
+        "xml:id",
+        "type",
+        "n"
+      ],
+      "title": [
+        "type"
+      ],
+      "idno": [
+        "type"
+      ],
+      "hi": [
+        "rend"
+      ],
+      "foreign": [
+        "xml:lang"
+      ],
+      "ref": [
+        "type",
+        "cRef"
+      ],
+      "note": [
+        "place",
+        "n"
+      ],
+      "rs": [
+        "type"
+      ],
+      "ab": [
+        "type"
+      ]
+    },
+    "division_types": [
+      "sermon",
+      "section"
+    ],
+    "renditions": [
+      "italic"
+    ],
+    "roles": {
+      "header": "header-metadata",
+      "text": "mapped",
+      "typography": "typography-in-readable-text",
+      "foreign": "source-language-tag-retained-in-receipt",
+      "document_language": "source-document-language-retained-in-receipt"
+    },
+    "block_kinds": {
+      "head": "heading",
+      "p": "paragraph",
+      "div": "section",
+      "ab": "scripture-reference"
+    }
+  },
+  "$defs": {
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "number",
+        "text",
+        "notes",
+        "references",
+        "children"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "heading",
+            "paragraph",
+            "section",
+            "scripture-reference"
+          ]
+        },
+        "number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "text",
+              "place"
+            ],
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "text": {
+                "type": "string"
+              },
+              "place": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "locus"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "locus": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "section"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "children": {
+                "minItems": 1
+              },
+              "text": {
+                "const": ""
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "text": {
+                "minLength": 1
+              },
+              "children": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "text",
+        "representation_revision",
+        "provenance",
+        "category",
+        "locator",
+        "primary_passage",
+        "collection",
+        "delivery",
+        "structure"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "sermons"
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "number",
+            "headings"
+          ],
+          "properties": {
+            "kind": {
+              "const": "sermon"
+            },
+            "number": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "headings": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "primary_passage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "collection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "delivery": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "statement",
+            "date",
+            "place",
+            "occasion"
+          ],
+          "properties": {
+            "statement": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "date": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "place": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "occasion": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            }
+          }
+        },
+        "structure": {
+          "type": "array",
+          "minItems": 1
+        },
+        "content_format": {
+          "const": "ocd-native-content-v1"
+        },
+        "front_matter": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "structure",
+              "text"
+            ],
+            "properties": {
+              "structure": {
+                "$ref": "ocd://schemas/v2/native-content.schema.json"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "primary_reference": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "raw",
+                "normalization_status"
+              ],
+              "properties": {
+                "raw": {
+                  "type": "string"
+                },
+                "cRef": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "scripture": {
+                  "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+                },
+                "normalization_attribute": {
+                  "enum": [
+                    "cRef",
+                    "target"
+                  ]
+                },
+                "normalization_status": {
+                  "enum": [
+                    "explicit-target-syntax",
+                    "unsupported-explicit-target",
+                    "no-explicit-target"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "raw",
+                "references"
+              ],
+              "properties": {
+                "raw": {
+                  "type": "string"
+                },
+                "references": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "raw",
+                      "normalization_status"
+                    ],
+                    "properties": {
+                      "raw": {
+                        "type": "string"
+                      },
+                      "cRef": {
+                        "type": "string"
+                      },
+                      "target": {
+                        "type": "string"
+                      },
+                      "scripture": {
+                        "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+                      },
+                      "normalization_attribute": {
+                        "enum": [
+                          "cRef",
+                          "target"
+                        ]
+                      },
+                      "normalization_status": {
+                        "enum": [
+                          "explicit-target-syntax",
+                          "unsupported-explicit-target",
+                          "no-explicit-target"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "content_format"
+            ]
+          },
+          "then": {
+            "required": [
+              "front_matter"
+            ],
+            "properties": {
+              "structure": {
+                "maxItems": 1,
+                "items": {
+                  "$ref": "ocd://schemas/v2/native-content.schema.json"
+                }
+              }
+            }
+          },
+          "else": {
+            "not": {
+              "required": [
+                "front_matter"
+              ]
+            },
+            "properties": {
+              "structure": {
+                "items": {
+                  "$ref": "#/$defs/block"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "text",
+        "representation_revision",
+        "provenance",
+        "category",
+        "content_format",
+        "structure",
+        "locator"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "sermons"
+        },
+        "content_format": {
+          "const": "ocd-native-content-v1"
+        },
+        "structure": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "ocd://schemas/v2/native-content.schema.json"
+          }
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "unit"
+          ],
+          "properties": {
+            "kind": {
+              "const": "native-unit"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "document": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Ordered TEI member position within a composed edition."
+            }
+          }
+        },
+        "source_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "raw",
+              "normalization_status",
+              "source_child_path"
+            ],
+            "properties": {
+              "raw": {
+                "type": "string"
+              },
+              "cRef": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "scripture": {
+                "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+              },
+              "normalization_attribute": {
+                "enum": [
+                  "cRef",
+                  "target"
+                ]
+              },
+              "normalization_status": {
+                "enum": [
+                  "explicit-target-syntax",
+                  "unsupported-explicit-target",
+                  "no-explicit-target"
+                ]
+              },
+              "source_child_path": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

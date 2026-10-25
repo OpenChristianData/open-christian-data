@@ -1,0 +1,777 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/library-record-links.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "const": "ocd-library-record-links-v1"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relationship_id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "work",
+                  "textual_form",
+                  "edition",
+                  "acquisition",
+                  "research_lead",
+                  "source_catalog_entry"
+                ]
+              },
+              "namespace": {
+                "enum": [
+                  "ocd",
+                  "research",
+                  "tfr"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "work_id": {
+                "type": "string"
+              },
+              "textual_form_id": {
+                "type": "string"
+              },
+              "edition_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "namespace",
+              "id"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "work"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "textual_form"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "edition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "acquisition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id",
+                    "edition_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "research_lead"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "research"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "source_catalog_entry"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "tfr"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "target": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "work",
+                  "textual_form",
+                  "edition",
+                  "acquisition"
+                ]
+              },
+              "namespace": {
+                "const": "ocd"
+              },
+              "id": {
+                "type": "string"
+              },
+              "work_id": {
+                "type": "string"
+              },
+              "textual_form_id": {
+                "type": "string"
+              },
+              "edition_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "namespace",
+              "id"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "work"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "textual_form"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "edition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "acquisition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id",
+                    "edition_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "relation": {
+            "enum": [
+              "same_work",
+              "same_textual_form",
+              "same_edition",
+              "same_acquisition",
+              "partial_component",
+              "related_work",
+              "unresolved_candidate"
+            ]
+          },
+          "decision_status": {
+            "enum": [
+              "proposed",
+              "reviewed",
+              "rejected"
+            ]
+          },
+          "reviewer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "decided_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "judgment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "line_start": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "line_end": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "path",
+                "sha256"
+              ]
+            },
+            "minItems": 1
+          },
+          "extent": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "direction": {
+                    "enum": [
+                      "source_contains_target",
+                      "target_contains_source"
+                    ]
+                  },
+                  "containing_identity": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "work",
+                          "textual_form"
+                        ]
+                      },
+                      "namespace": {
+                        "const": "ocd"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "work_id": {
+                        "type": "string"
+                      },
+                      "textual_form_id": {
+                        "type": "string"
+                      },
+                      "edition_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "namespace",
+                      "id"
+                    ],
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "kind": {
+                              "const": "work"
+                            }
+                          }
+                        },
+                        "then": {
+                          "required": [],
+                          "properties": {
+                            "namespace": {
+                              "const": "ocd"
+                            }
+                          },
+                          "not": {
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "edition_id"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "textual_form_id"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "work_id"
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "kind": {
+                              "const": "textual_form"
+                            }
+                          }
+                        },
+                        "then": {
+                          "required": [
+                            "work_id"
+                          ],
+                          "properties": {
+                            "namespace": {
+                              "const": "ocd"
+                            }
+                          },
+                          "not": {
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "edition_id"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "textual_form_id"
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "boundary": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "path": {
+                          "type": "string"
+                        },
+                        "sha256": {
+                          "type": "string",
+                          "pattern": "^[0-9a-f]{64}$"
+                        },
+                        "line_start": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "line_end": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "sha256"
+                      ]
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "direction",
+                  "containing_identity",
+                  "boundary",
+                  "evidence"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "current_applicability": {
+            "enum": [
+              "supported",
+              "superseded",
+              "conflicted",
+              "unassessed"
+            ]
+          },
+          "legacy_relation": {
+            "type": "string"
+          },
+          "legacy_note": {
+            "type": "string"
+          },
+          "unresolved_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "relationship_id",
+          "source",
+          "target",
+          "relation",
+          "decision_status",
+          "reviewer",
+          "decided_at",
+          "judgment",
+          "evidence",
+          "extent",
+          "current_applicability",
+          "legacy_relation",
+          "legacy_note",
+          "unresolved_questions"
+        ]
+      }
+    },
+    "associations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "work_id": {
+            "type": "string"
+          },
+          "lead_id": {
+            "type": "string"
+          },
+          "tracker": {
+            "type": "string"
+          },
+          "task": {
+            "type": "string"
+          },
+          "row_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "metadata_subject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "catalog",
+                  "acquisition_lane"
+                ]
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id"
+            ]
+          }
+        },
+        "required": [
+          "work_id",
+          "lead_id",
+          "tracker",
+          "task",
+          "row_sha256"
+        ]
+      }
+    },
+    "source_leads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "entry_id": {
+            "type": "string"
+          },
+          "lead_id": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "line_start": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "line_end": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ]
+          }
+        },
+        "required": [
+          "entry_id",
+          "lead_id",
+          "basis",
+          "evidence"
+        ]
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "relationships",
+    "associations"
+  ]
+}

@@ -5,7 +5,28 @@
   "author_id": "athanasius-of-alexandria",
   "author_birth_year": 296,
   "author_death_year": 373,
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Archibald Robertson",
+      "role": "editor",
+      "note": "Retained NPNF2-04 second-title credit: edited, with Prolegomena, Indices, and Tables; the volume preface calls Robertson the special editor. The historical 1892 config qualifier is retained in before evidence; no translator year or work allocation is inferred."
+    },
+    {
+      "name": "Philip Schaff",
+      "role": "editor",
+      "note": "Retained NPNF2-04 title-page credit places Philip Schaff under the editorial supervision of the volume. Use editor; do not infer series_editor from this heading."
+    },
+    {
+      "name": "Henry Wace",
+      "role": "editor",
+      "note": "Retained NPNF2-04 title-page credit places Henry Wace under the editorial supervision of the volume. Use editor; do not infer series_editor from this heading."
+    },
+    {
+      "name": "Newman",
+      "role": "translator",
+      "note": "Retained NPNF2-04 volume preface credits Cardinal Newman for the translation of most applicable works; exact work allocation remains unresolved and no year is asserted."
+    }
+  ],
   "original_publication_year": null,
   "language": "en",
   "original_language": "grc",
@@ -24,7 +45,7 @@
   "source_hash": "sha256:bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652",
   "source_type": "ccel_thml",
   "source_file": "raw/ccel/npnf2/npnf204.xml",
-  "translator": "Archibald Robertson (editor and translator), 1892; Philip Schaff and Henry Wace (series editors)",
+  "translator": null,
   "download_date": "2026-05-05",
   "output_file": "data/structured-text/athanasius-apology-to-the-emperor.json",
   "clearance_date": "2026-04-01",

@@ -1,0 +1,30 @@
+{
+  "contract": "ocd-lib041-npnf113-validation-policy-v1",
+  "policy_id": "lib041-npnf113-ten-work-v21",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "exact-retained-member-hash-and-size",
+    "exact-ten-root-identity-order-and-completeness",
+    "exact-recursive-source-tag-attribute-text-tail-parent-and-sibling-order-projection",
+    "root-tail-boundary-exclusion-exactly-fourteen-characters",
+    "exact-document-shell-header-comment-metadata-rights-and-apparatus-accounting",
+    "candidate-six-member-integrity",
+    "tei-p5-xsd",
+    "producer-independent-accountability-provenance-unresolved-and-readme-recomputation",
+    "stale-source-producer-oracle-profile-policy-schema-xsd-and-candidate-binding-rejection",
+    "two-fresh-process-complete-path-set-and-byte-equality",
+    "ten-ordinary-workcatalog-routes-nonaccepted-and-not-ready",
+    "ticket-maps-402-works-1045-links-915-claims"
+  ],
+  "forbidden_oracle_imports": ["producer"]
+}

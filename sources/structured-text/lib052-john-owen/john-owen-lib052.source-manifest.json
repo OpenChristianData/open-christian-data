@@ -1,0 +1,221 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "john-owen-lib052-ten-retained-ccel-xml",
+  "authorities": [
+    {
+      "name": "sacramental-discourses-source",
+      "path": "raw/ccel/owen/discourses.xml",
+      "role": "primary-source",
+      "bytes": 413074,
+      "sha256": "793fcede64e72170a24b01e22c9894cfd1fee68b0411cafdf82a409821b42a30"
+    },
+    {
+      "name": "schism-source",
+      "path": "raw/ccel/owen/schism.xml",
+      "role": "primary-source",
+      "bytes": 1016310,
+      "sha256": "76800055de75d1b52e7d9a2e04a4586cae46ef336250f84d82507bcf0c516470"
+    },
+    {
+      "name": "sermons-source",
+      "path": "raw/ccel/owen/sermons.xml",
+      "role": "primary-source",
+      "bytes": 4920196,
+      "sha256": "d8d1ee4da4cd5e90bd8cec8d3c7c9472d2ab99dc4ee2f3cd3e0fefa18c73627c"
+    },
+    {
+      "name": "sin-grace-source",
+      "path": "raw/ccel/owen/sin_grace.xml",
+      "role": "primary-source",
+      "bytes": 237618,
+      "sha256": "f5d5d1f26e38f78f5cf370eb529d9f0198517a20b168bb1087da0ae7dee62039"
+    },
+    {
+      "name": "spiritually-minded-source",
+      "path": "raw/ccel/owen/spirituallyminded.xml",
+      "role": "primary-source",
+      "bytes": 856110,
+      "sha256": "8326a32dd6e41f9a7f491238a090b1f1231be23df2d6278b0402b87d3dbb19d9"
+    },
+    {
+      "name": "temptation-source",
+      "path": "raw/ccel/owen/temptation.xml",
+      "role": "primary-source",
+      "bytes": 243041,
+      "sha256": "6b5231f59965fe7b7d75db2f59919fd5e9aff429d48e65cabb528f393c14a0ab"
+    },
+    {
+      "name": "trinity-source",
+      "path": "raw/ccel/owen/trinity.xml",
+      "role": "primary-source",
+      "bytes": 402388,
+      "sha256": "65cadd7549b2fc10624c878a3a1a797d85bc76393c971b621a75edd576c14302"
+    },
+    {
+      "name": "truth-innocence-source",
+      "path": "raw/ccel/owen/truthinnocence.xml",
+      "role": "primary-source",
+      "bytes": 613850,
+      "sha256": "efaf07aaf9c7c37c1fd5ac585d973cd3faf295a25583c93cd8a510d7a24878ff"
+    },
+    {
+      "name": "two-catechisms-source",
+      "path": "raw/ccel/owen/catechisms.xml",
+      "role": "primary-source",
+      "bytes": 299471,
+      "sha256": "c870a356a823b3053e1224321b8df1078e4c6473864bda4de297e31b9f16e153"
+    },
+    {
+      "name": "vindiciae-evangelicae-source",
+      "path": "raw/ccel/owen/vindicevang.xml",
+      "role": "primary-source",
+      "bytes": 3546737,
+      "sha256": "bd734324cadb0b613f787c8a1539639d6251990e441bd30d361e8febbbcea576"
+    },
+    {
+      "name": "john-owen-sacramental-discourses-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-sacramental-discourses/config.json",
+      "role": "work-identity-config",
+      "bytes": 105,
+      "sha256": "8c53561879c66eb6120cf4b6104b32f8eee39117cf0e61b0aa4dce0756906a04"
+    },
+    {
+      "name": "john-owen-schism-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-schism/config.json",
+      "role": "work-identity-config",
+      "bytes": 89,
+      "sha256": "d9fb6dfaf4cd1621b73518d6dea4172a597d9aeee0c7d8788a2e35e5f6e51bff"
+    },
+    {
+      "name": "john-owen-sermons-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-sermons/config.json",
+      "role": "work-identity-config",
+      "bytes": 90,
+      "sha256": "27ecb73003c6a68254303e379048ddea030f96a02f4ed1add1f03ad7f275dabb"
+    },
+    {
+      "name": "john-owen-sin-grace-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-sin-grace/config.json",
+      "role": "work-identity-config",
+      "bytes": 92,
+      "sha256": "db438487205c12e080038f7bf0f13f46ca25bb5ca8185a9ee015145739312fa3"
+    },
+    {
+      "name": "john-owen-spiritually-minded-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-spiritually-minded/config.json",
+      "role": "work-identity-config",
+      "bytes": 101,
+      "sha256": "5303d175b6aa361dabaae77c5f1968a3f73672c538352538c204d072139723f7"
+    },
+    {
+      "name": "john-owen-temptation-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-temptation/config.json",
+      "role": "work-identity-config",
+      "bytes": 93,
+      "sha256": "e2b59125162bb1730ed12e3cb25da82de9efed73d84ad6aff21fd92cb5899ee3"
+    },
+    {
+      "name": "john-owen-trinity-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-trinity/config.json",
+      "role": "work-identity-config",
+      "bytes": 90,
+      "sha256": "b4c093ef2586cda7e9998007613ab6daac8a1fe964f63bed8833951a3a7a69a8"
+    },
+    {
+      "name": "john-owen-truth-innocence-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-truth-innocence/config.json",
+      "role": "work-identity-config",
+      "bytes": 98,
+      "sha256": "f10e735b80426ceff71d29a202035845a5fd0bf2a1de19fb5f6fe2bf55e7633d"
+    },
+    {
+      "name": "john-owen-two-catechisms-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-two-catechisms/config.json",
+      "role": "work-identity-config",
+      "bytes": 97,
+      "sha256": "ae6570f128182e8dab9b9bc9be578f73fed2f554e77a67bf33e62f2d301659b0"
+    },
+    {
+      "name": "john-owen-vindiciae-evangelicae-identity",
+      "path": "sources/structured-text/lib052-john-owen/work-bindings/john-owen-vindiciae-evangelicae/config.json",
+      "role": "work-identity-config",
+      "bytes": 104,
+      "sha256": "a382cc9aac83051ba8f0a86c93b25a4ac62aff0a4abcd7605e857764de3d9163"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib052-john-owen/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1195,
+      "sha256": "875b6ae3782fe65ffa8cc4c75ef41de0d894c46eff1feefa03da245d7d201cff"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib052-john-owen/john-owen-lib052.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 11972,
+      "sha256": "24063cef130200a70147f01ccdd05071591aefa891d92b2c45bd47a7bd81aedf"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib052-john-owen/john-owen-lib052.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 412,
+      "sha256": "8ecaa4aa2c92da67784d23a139c26f5308d3875b9b14362e03f3da59afd59efe"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib052-john-owen/john-owen-lib052.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2522,
+      "sha256": "b8c01eb6c4346ae2b05c4a4111a72ecf80df94bb98f302c65b77ba24b784c80d"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-p5-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-p5-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-john-owen-lib052-retained-xml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/john_owen_lib052_reconstruction.py",
+    "implementation_sha256": "e911ee2f14672fda3268251197cd32eb1235f9cb3614a7ffc27540d09f67e33f"
+  },
+  "validator": {
+    "id": "ocd-john-owen-lib052-retained-xml-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/john_owen_lib052_oracle.py",
+    "implementation_sha256": "dfdd9a98f9c67e00a8bb0d56bcf8808fbe4f3e386e17b25369c8b54df8b3934f",
+    "import_closure_sha256": "1210d536389fdb0da7836c3e63c8eb1064f98043f6651ced6e6754361bc862ef"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

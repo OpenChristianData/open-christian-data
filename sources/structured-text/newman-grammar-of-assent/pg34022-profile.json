@@ -1,0 +1,26 @@
+{
+  "contract": "ocd-newman-grammar-pg34022-profile-v1",
+  "work_id": "newman-grammar-of-assent",
+  "edition": "London: Burns, Oates & Co., 1874 title-page witness, Project Gutenberg eBook 34022",
+  "primary_source": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent/extracted/pg34022-h/pg34022-images.html",
+  "primary_source_sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08",
+  "complete_html_body_top_level": 11,
+  "included_body_positions_one_based": [5, 7, 8, 10],
+  "included_roles": ["title page", "contents", "book body and dedication", "footnotes"],
+  "excluded_body_positions_one_based": [1, 2, 3, 4, 6, 9, 11],
+  "excluded_roles": ["Project Gutenberg header", "empty spacer", "empty spacer", "page rule", "page rule", "page rule", "Project Gutenberg footer"],
+  "zip_role": "matching acquisition package, not text authority",
+  "cover_role": "matching extracted support and HTML favicon, not book text",
+  "source_features": {
+    "parts": 2,
+    "chapters": 10,
+    "sections": 20,
+    "contents_entries": 35,
+    "printed_page_milestones": 491,
+    "linked_endnotes": 56,
+    "foreign_spans": 135,
+    "inline_quotations": 829
+  },
+  "human_review": "not-recorded-for-current-stage",
+  "rights_and_publication": "separate"
+}

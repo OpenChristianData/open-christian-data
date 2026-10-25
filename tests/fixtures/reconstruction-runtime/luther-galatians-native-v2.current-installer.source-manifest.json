@@ -1,0 +1,75 @@
+{
+  "authorities": [
+    {
+      "bytes": 1428,
+      "name": "source-config",
+      "path": "sources/structured-text/luther-commentary-on-galatians/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "b8dd74d7ddfbe5461b5905e23addfe2d231cb719310a7af4c02bc265cd7360e6"
+    },
+    {
+      "bytes": 504403,
+      "name": "retained-source",
+      "path": "raw/gutenberg/pg1549.txt",
+      "role": "primary-source",
+      "sha256": "ed00941bbe9e65b12c6619ea8a756ac053c44ec0a0c88761a83b8dff8d9a59bd"
+    },
+    {
+      "bytes": 2416,
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "9443a678d8631fa85d0e2bd382dfeea76ff4a93fdaf22bb0fb91f8f17cc89e50"
+    },
+    {
+      "bytes": 1025,
+      "name": "validation-policy",
+      "path": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "ca24bbf1e3e86e8cbd13972e205b20f8f646493a372e88d0d6c0323c6651fe1e"
+    },
+    {
+      "bytes": 585,
+      "name": "attribution-readme",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/puritan-luther-commentary-on-galatians.README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "fd9eb7d6fb2686f84afe6658ff04f51417b16c15bb6ac40611dde21185aa320b"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-luther-galatians-pg1549-native-line-tei",
+    "implementation_path": "build/tei/luther_galatians_native_v2_reconstruction.py",
+    "implementation_sha256": "674f400b85ef4aa959695b4127a668e319a7cc3f850b432dfb9acae9a4d885d5",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "luther-commentary-on-galatians-pg1549-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-luther-galatians-pg1549-independent-native-line-oracle",
+    "implementation_path": "build/tei/luther_galatians_native_v2_oracle.py",
+    "implementation_sha256": "f1eb84d92fd8252d0f2fc6b39e3c8f3868c69c663b47db536e17a95eba99598d",
+    "import_closure_sha256": "2ef757209e00e7742c84025f55bc52500fe3c4242dc7eadecfab99792fa96cd0",
+    "version": "2"
+  },
+  "work_id": "luther-commentary-on-galatians"
+}

@@ -1,5 +1,10 @@
 """Render a TEI IR through the verification viewer: assert the DOM, then screenshot it.
 
+Legacy CETEIcean diagnostic, not the maintained CVW capture path. It serves a
+repository-root test surface and writes beside the input TEI. For new CVW review
+evidence use `python -m cvw_app.capture_review capture` with a launch receipt
+and an explicit fresh output directory. Historical receipts are unchanged.
+
 Three instruments verify a TEI, and they catch different things:
   1. lxml probes of the XML       -- the artifact's content; blind to rendering.
   2. rendered-DOM assertions here -- what the viewer actually produces. Catches

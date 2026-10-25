@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["contract", "source_id", "source_members", "features", "tei", "route", "ocr"],
+  "properties": {
+    "contract": {"const": "ocd-bcp-1559-source-accountability-v1"},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_members": {"type": "array", "minItems": 16},
+    "features": {"type": "object"},
+    "tei": {"type": "object"},
+    "route": {"const": "build/tei/bcp_to_tei.py"},
+    "ocr": {"const": "not-used"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,131 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "evans-tcp-n09814-pinned-tei-p5",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/N09814.xml",
+      "role": "primary-source",
+      "bytes": 79299,
+      "sha256": "56d612750fed73102ec0daa1afbbd9182cfe3660275f957fb535fd86d11a3d1a"
+    },
+    {
+      "name": "source-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/N09814.xml.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 927,
+      "sha256": "e57c01ccac6d24a367960615b814dda91b449bcca1c8f301fc8a5efee4bae31b"
+    },
+    {
+      "name": "upstream-readme",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/README.upstream.md",
+      "role": "source-rights-and-version-evidence",
+      "bytes": 5451,
+      "sha256": "9ad4affb625cf179eeb7f7dcae8221c0b01c570f24db026efbb7befe67c0e6c2"
+    },
+    {
+      "name": "upstream-readme-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/README.upstream.md.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 934,
+      "sha256": "d0e31b4d4e350df4f1bb54cc5c8ba8035dd1ac03c82254b0e71b12d24e36f34b"
+    },
+    {
+      "name": "upstream-cc0-license",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/LICENSE.CC0-1.0.txt",
+      "role": "source-rights-evidence",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "name": "upstream-cc0-license-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/LICENSE.CC0-1.0.txt.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 361,
+      "sha256": "a883da140b1eb7b8dca7aa5c5660e65950bbcba93a23ff63981651086980f2d1"
+    },
+    {
+      "name": "upstream-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/upstream-commit.json",
+      "role": "source-version-evidence",
+      "bytes": 72655,
+      "sha256": "30c5989fcd90f4aa5ed658f73440271a07c1f7d14f88572b527822a469368f04"
+    },
+    {
+      "name": "upstream-commit-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/upstream-commit.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 1334,
+      "sha256": "a090b2b44144142d52db2b770026b9f8cf5dc0797c27bbe148b192ecd8dcdb3e"
+    },
+    {
+      "name": "upstream-contents",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/upstream-contents.json",
+      "role": "source-member-inventory-evidence",
+      "bytes": 2201,
+      "sha256": "4e246424b16d8f05fa143d0df9a344fcee791a46d8db95c79eb574e3629178e5"
+    },
+    {
+      "name": "upstream-contents-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/upstream-contents.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 1308,
+      "sha256": "1d98adef5c5725ac065d4fa6f61df72421fa69bbf63b86745dc285692a53e918"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/occom-moses-paul-execution-sermon/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1398,
+      "sha256": "5af79a31d7f09c5c8c034d3cc1305cf1c0285b11b3ea1e80e291f888e47c0e4a"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/occom-moses-paul-execution-sermon/occom-moses-paul-execution-sermon.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1458,
+      "sha256": "4dd009957b12b749b10af43a1079c1fed6e7a6390b512b21492b4d5bf6ca66e1"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/occom-moses-paul-execution-sermon/occom-moses-paul-execution-sermon.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 4763,
+      "sha256": "e4748c1e7f64f5ca88e51d615a718502bebef99af73a7083844625826fb52c14"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-evans-tcp-n09814-exact-tei-p5",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/occom_moses_paul_execution_sermon_reconstruction.py",
+    "implementation_sha256": "fd9ee427310281679c152f1d934bc33a45b5015fa0bf632457ce82eae4cfcd16"
+  },
+  "validator": {
+    "id": "ocd-evans-tcp-n09814-exact-source-oracle",
+    "version": "3",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/occom_moses_paul_execution_sermon_oracle.py",
+    "implementation_sha256": "37121dbf170ad527f2c86541625169f4d8acd0d062466e60a4be654d6aa0a17e",
+    "import_closure_sha256": "7fb0fc103120eca5c2557b552ba41c50d3c17a252e0652ccfcef21de42724c4d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "work_id": "occom-moses-paul-execution-sermon"
+}

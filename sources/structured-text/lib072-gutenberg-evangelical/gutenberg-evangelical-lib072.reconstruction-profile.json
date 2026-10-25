@@ -1,0 +1,128 @@
+{
+  "contract": "ocd-lib072-reconstruction-profile-v1",
+  "profile_id": "lib072-five-works-six-retained-members-v1",
+  "version": 1,
+  "works": [
+    {
+      "work_id": "spurgeon-all-of-grace",
+      "title": "All of Grace",
+      "author": "Charles Haddon Spurgeon",
+      "frozen_source_claim_sha256": "55256b4ebf3d44b6827411e898cff5ac7e446d5ed1f7313aedcefb4ea110ae04",
+      "witness_description": "Complete retained Internet Archive OCR for allofgraceearnes00spur, including scan front/back matter and OCR corruption; the title-page year appears as 1836 and is left unresolved rather than silently corrected.",
+      "members": [
+        {"authority_name":"spurgeon-all-of-grace-source","source_path":"raw/ia/spurgeon_all_of_grace.txt","source_bytes":192816,"source_sha256":"55256b4ebf3d44b6827411e898cff5ac7e446d5ed1f7313aedcefb4ea110ae04","source_url":"https://archive.org/details/allofgraceearnes00spur"}
+      ]
+    },
+    {
+      "work_id": "spurgeon-lectures-to-my-students",
+      "title": "Lectures to My Students",
+      "author": "Charles Haddon Spurgeon",
+      "frozen_source_claim_sha256": "028f95dd26fa5b7d4788d06ee94b38128ae81e91cfc3bf46eca135339d6a920c",
+      "witness_description": "Two complete retained Internet Archive OCR witnesses in declared order: Passmore and Alabaster Series I (1875), then Series II (1877), including all scan matter and OCR corruption.",
+      "members": [
+        {"authority_name":"spurgeon-lectures-series-1-source","source_path":"raw/ia/spurgeon_lectures_series_1.txt","source_bytes":644144,"source_sha256":"49f72c35a75b1052d98063fafc191ea05f009dc80d2a53953fd72076212f8e57","source_url":"https://archive.org/details/lecturestomystu00spuruoft"},
+        {"authority_name":"spurgeon-lectures-series-2-source","source_path":"raw/ia/spurgeon_lectures_series_2.txt","source_bytes":586376,"source_sha256":"bab94b8e4aff80d46f20134814b6393743c15f408a671e32c7ce7933ebf335f6","source_url":"https://archive.org/details/1877secondseries00spur"}
+      ]
+    },
+    {
+      "work_id": "torrey-how-to-pray",
+      "title": "How to Pray",
+      "author": "R. A. Torrey",
+      "frozen_source_claim_sha256": "4b36ffbaeceea58a3fc594b3521cc05ef06126c575e29daf3f4a0c545b1b6700",
+      "witness_description": "Complete retained Internet Archive OCR of the Fleming H. Revell witness whose title matter states copyright 1900, including all scan matter and OCR corruption.",
+      "members": [
+        {"authority_name":"torrey-how-to-pray-source","source_path":"raw/ia/torrey_how_to_pray.txt","source_bytes":164324,"source_sha256":"4b36ffbaeceea58a3fc594b3521cc05ef06126c575e29daf3f4a0c545b1b6700","source_url":"https://archive.org/details/howtopray00torr"}
+      ]
+    },
+    {
+      "work_id": "torrey-what-the-bible-teaches",
+      "title": "What the Bible Teaches",
+      "author": "R. A. Torrey",
+      "frozen_source_claim_sha256": "b29553097adb3a6dde506ce329b58d1fe8c86a22da893358eb53d6c03f38a21b",
+      "witness_description": "Complete retained Internet Archive OCR of the Fleming H. Revell witness whose title matter states copyright 1898, including all scan matter and OCR corruption.",
+      "members": [
+        {"authority_name":"torrey-bible-teaches-source","source_path":"raw/ia/torrey_what_the_bible_teaches.txt","source_bytes":1342266,"source_sha256":"b29553097adb3a6dde506ce329b58d1fe8c86a22da893358eb53d6c03f38a21b","source_url":"https://archive.org/details/whatbibleteaches00torr"}
+      ]
+    },
+    {
+      "work_id": "wilberforce-practical-view",
+      "title": "A Practical View of the Prevailing Religious System of Professed Christians",
+      "author": "William Wilberforce",
+      "frozen_source_claim_sha256": "995ff74ac2c819b526d4874878507bb85e1141f7e5b35a388c44846a963d6c96",
+      "witness_description": "Complete retained Project Gutenberg eBook 25709 UTF-8 transcription of the Dublin Robert Dapper for B. Dugdale 1797 witness, including credits, wrappers, and license.",
+      "members": [
+        {"authority_name":"wilberforce-practical-view-source","source_path":"raw/gutenberg/pg25709.txt","source_bytes":659285,"source_sha256":"995ff74ac2c819b526d4874878507bb85e1141f7e5b35a388c44846a963d6c96","source_url":"https://www.gutenberg.org/ebooks/25709"}
+      ]
+    }
+  ],
+  "adjacent_retained_member_paths": [
+    "raw/gutenberg/dogmatictheology01sheduoft_djvu.txt",
+    "raw/gutenberg/dogmatictheology02sheduoft_djvu.txt",
+    "raw/gutenberg/dogmatictheology03shed_0_djvu.txt",
+    "raw/gutenberg/luther-bondage-of-the-will-cole-covenanter.txt",
+    "raw/gutenberg/martinlutheronth00luthuoft_djvu.txt",
+    "raw/gutenberg/outlinesoftheolo1879hodg_djvu.txt",
+    "raw/gutenberg/pg11449.txt",
+    "raw/gutenberg/pg14551.txt",
+    "raw/gutenberg/pg14552.txt",
+    "raw/gutenberg/pg14553.txt",
+    "raw/gutenberg/pg1549.txt",
+    "raw/gutenberg/pg1670.txt",
+    "raw/gutenberg/pg16739.txt",
+    "raw/gutenberg/pg1722.txt",
+    "raw/gutenberg/pg22088.txt",
+    "raw/gutenberg/pg23334.txt",
+    "raw/gutenberg/pg23772.txt",
+    "raw/gutenberg/pg25709.txt",
+    "raw/gutenberg/pg3296.txt",
+    "raw/gutenberg/pg44035.txt",
+    "raw/gutenberg/pg44555.txt",
+    "raw/gutenberg/pg45001.txt",
+    "raw/gutenberg/pg45283.txt",
+    "raw/gutenberg/pg48250.txt",
+    "raw/gutenberg/pg53527.txt",
+    "raw/gutenberg/pg57121.txt",
+    "raw/gutenberg/pg64392.txt",
+    "raw/gutenberg/syllabusnotesof00dabn_djvu.txt",
+    "raw/gutenberg/systematictheolo01mile_djvu.txt",
+    "raw/gutenberg/systematictheolo02mile_djvu.txt",
+    "raw/gutenberg/worksofrichardho0001hook_djvu.txt",
+    "raw/gutenberg/worksofrichardho0002hook_djvu.txt",
+    "raw/gutenberg/worksofrichardho0003hook_pt1_djvu.txt",
+    "raw/ia/brooks_precious_remedies.txt",
+    "raw/ia/burroughs_rare_jewel.txt",
+    "raw/ia/gurnall_complete_armour.txt",
+    "raw/ia/machen_christianity_liberalism.txt",
+    "raw/ia/machen_origin_pauls_religion.txt",
+    "raw/ia/machen_what_is_faith.txt",
+    "raw/ia/murray_abide_in_christ.txt",
+    "raw/ia/murray_with_christ_in_prayer.txt",
+    "raw/ia/pink_sovereignty_of_god.txt",
+    "raw/ia/sibbes_bruised_reed.txt",
+    "raw/ia/smith_christians_secret.txt",
+    "raw/ia/spurgeon_all_of_grace.txt",
+    "raw/ia/spurgeon_lectures_series_1.txt",
+    "raw/ia/spurgeon_lectures_series_2.txt",
+    "raw/ia/torrey_how_to_pray.txt",
+    "raw/ia/torrey_what_the_bible_teaches.txt"
+  ],
+  "adjacent_retained_member_dispositions": {
+    "raw/gutenberg/martinlutheronth00luthuoft_djvu.txt": "excluded: alternate 1823 Edward Thomas Vaughan OCR witness for LIB-075 The Bondage of the Will; the frozen LIB-075 map binds the different Henry Cole Covenanter transcription",
+    "raw/gutenberg/pg48250.txt": "excluded: currently unmapped retained Project Gutenberg witness for John Knox's The History of the Reformation of Religion in Scotland; no current WorkCatalog or frozen ticket-map assignment",
+    "raw/ia/machen_origin_pauls_religion.txt": "excluded: unassigned retained OCR witness for J. Gresham Machen's The Origin of Paul's Religion; it is absent from the current WorkCatalog and frozen ticket maps"
+  },
+  "requirements": [
+    "all six exact assigned source members and five frozen source claims",
+    "all 49 adjacent top-level retained members explicitly included or excluded",
+    "every physical source line represented once in exact member and line order",
+    "line endings recorded for byte-exact UTF-8 reassembly",
+    "Project Gutenberg wrapper license and Internet Archive scan matter retained",
+    "OCR corruption retained without silent correction",
+    "edition rights and human uncertainty localized",
+    "all outputs nonaccepted and publication not ready"
+  ],
+  "unresolved": [
+    {"id":"lib072-all-of-grace-edition","scope":"spurgeon-all-of-grace","status":"unresolved","question":"What exact edition and title-page year does the retained All of Grace OCR witness represent?","evidence":"The retained OCR identifies Robert Carter and Brothers but appears to read 1836, a chronologically impossible reading for Spurgeon; no correction or edition identity is asserted."},
+    {"id":"lib072-human-rights-publication","scope":"all-five-works","status":"unresolved","question":"Will a maintainer accept the texts and edition descriptions and separately authorize publication after rights review?","evidence":"Technical line-level fidelity and schema validation are not human acceptance, a final rights determination, or publication authorization."}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-lib062-shorter-catechism-explained-validation-policy-v1",
+  "source_id": "creeds-json-lib062-shorter-catechism-explained-retained-json",
+  "work_id": "shorter-catechism-explained",
+  "provenance": {
+    "identity": {
+      "title": "The Assembly's Shorter Catechism Explained",
+      "author": "James Fisher",
+      "date": "1765",
+      "edition": "Creeds.json retained JSON member"
+    },
+    "source": {
+      "path": "raw/Creeds.json/creeds/shorter_catechism_explained.json",
+      "bytes": 1323591,
+      "sha256": "90aea411d973c7c43af89df2520f8f08c57d97643f33a135c5473aa931479b7d"
+    }
+  },
+  "checks": [
+    "strict retained JSON and exact raw-byte binding",
+    "complete metadata, parent-record, nested-subquestion, and empty-array accounting",
+    "source-order and attachment-preserving TEI reconstruction",
+    "independent source-to-TEI text, hierarchy, order, and accountability comparison",
+    "TEI P5 schema validation",
+    "candidate mutation rejection and fresh-process reproduction",
+    "CVW exact-pair visual review, human acceptance, rights, durable IR, and publication remain separate gates"
+  ],
+  "oracle_imports_forbidden": ["build.tei.lib062_json_catechisms_reconstruction", "build.tei.lib062_shorter_catechism_reconstruction"]
+}

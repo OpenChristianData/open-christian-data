@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-pg42957-modern-scepticism-validation-policy-v1",
+  "candidate_status": "nonaccepted",
+  "human_acceptance": "separate; pending",
+  "print_collation": "separate; no print-page scan is retained in this acquisition",
+  "source_scope": "One complete title-page-named 1871 volume, Modern Scepticism: A Course of Lectures Delivered at the Request of the Christian Evidence Society, comprising eleven lectures and C. J. Ellicott's explanatory paper, as represented by the complete retained 42957-h.htm body.",
+  "checks": [
+    "Bind all eight retained acquisition-package members to the current source receipt and exact size/SHA-256; verify the ZIP member set, ZIP-contained HTML equality, and cover digest.",
+    "Independently parse the exact XHTML bytes with html5lib; compare a complete ordered source-element/attribute/text ledger, text hash, page markers, footnotes and references, hyperlinks, headings, poetry, tables, transcriber's notes, and terminal boundaries with the hash-bound feature profile.",
+    "Require exactly one TEI root and one source-titled volume, with a single TEI body containing eleven lecture divisions followed by the explanatory-paper division. Preserve front matter, back matter, notes, transcriber's notes, and provider markers in source order.",
+    "Compare normalized full body text, ordered mapped-element tags, source identifiers, source links, page milestones, note identities and references, table row/cell text, poetry text, and title/body division headings with the independently derived source expectations.",
+    "Validate the candidate against both the vendored TEI P5 Relax NG and XSD schemas; validate candidate package and source-accountability schemas and exact provenance/work/edition/acquisition bindings.",
+    "Reject valid-baseline mutations that change body wording, omit/reorder a source carrier, drop or alter an identified page marker, misattach a note, change a link target, alter a table cell, change a lecture division, or invent aggregate authorship.",
+    "Reconstruct and validate in two additional fresh processes at isolated external output roots; compare every generated package member and validation sidecar byte-for-byte."
+  ],
+  "rights_and_publication": "separate; no rights or publication decision is made by technical reconstruction"
+}

@@ -1,5 +1,7 @@
 # ADR-0013: Reconcile scoring rubric, thresholds, edge combination, and N=2 tie-breaker (v1 draft)
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-16) — v1 draft; calibration revisited against golden fixtures during Phase 1 and Phase 2; amended 2026-05-16 with canonical `bucket` enum, `action` enum, and per-block-type `surface` policy (reconciliation walkthrough verification V2).
 
 ## Context

@@ -1,0 +1,75 @@
+{
+  "authorities": [
+    {
+      "bytes": 1100154,
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/skinner_expositorezek.xml",
+      "role": "primary-source",
+      "sha256": "6ecab5f91bd497b0953143228d7f1b70c5b4768e8142c56268ef8e9a1294368f"
+    },
+    {
+      "bytes": 688,
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-skinner-index-v4/skinner-expositorezek/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "e8174ac30cff92c79573ee892895ec92559542572866fc1eb5b72524db974f1e"
+    },
+    {
+      "bytes": 1371,
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-skinner-index-v4/skinner-expositorezek/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "dd4313da5c60a2afb71c83493c6b42e574d32bf95607e42a6db5fe9a6382a1ac"
+    },
+    {
+      "bytes": 942,
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-skinner-index-v4/skinner-expositorezek/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "7fc87cd28976a39694ed53d6b0b06e0db2b5ce570678aadc319b5ffe5442d80f"
+    },
+    {
+      "bytes": 1694,
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-skinner-index-v4/skinner-expositorezek/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "4405ecb59cf96284c7478350a5f5fcfb67be38e256968ddd06521b7546194802"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-expositors-lib034-readable-skinner-index-to-tei",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_skinner_index_v4.py",
+    "implementation_sha256": "3743de5075aec884535ee60896976f0f19dbb7f51f51df0d96147e24769cb7ba",
+    "version": "4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ccel-expositors-lib034-readable-skinner-index-skinner-expositorezek-v4",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-expositors-lib034-readable-skinner-index-independent-oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_skinner_index_v4_oracle.py",
+    "implementation_sha256": "20cde6b7b86fa9269d7255f7fa1b2dad6e4c020fd35383820417aa2c800ac073",
+    "import_closure_sha256": "20cde6b7b86fa9269d7255f7fa1b2dad6e4c020fd35383820417aa2c800ac073",
+    "version": "4"
+  },
+  "work_id": "expositors-bible--john-skinner"
+}

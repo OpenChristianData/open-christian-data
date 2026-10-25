@@ -1,0 +1,132 @@
+{
+  "contract": "ocd-docsouth-single-work-validation-policy-v2",
+  "mapping": {
+    "migration": "Use the pinned TEI P4-to-P5 stylesheet and source-bound mapper; preserve meaningful source structure, text, order, IDs, actual page markers, and external figure references.",
+    "oracle": "Independent Expat traversal checks the complete front/body/back text, exact source IDs and page marker order, the 125→128 discontinuity, figure links, source accountability, README/provenance, and pinned TEI P5 schema.",
+    "page_marker_gap": "The retained body marker sequence jumps from 125 to 128. Preserve all retained text between these markers. Do not insert text or page markers, and do not infer the identity or contents of absent pages 126–127.",
+    "work_boundary": "One top-level titled work -> one TEI P5 document. Preserve complete retained TEI.2 envelope, including available front/body/back."
+  },
+  "provenance": {
+    "acquisition_id": "sojourner-truth-narrative-1875-docsouth-acquired",
+    "edition_id": "sojourner-truth-narrative-1875-docsouth-electronic",
+    "human_acceptance": "not recorded",
+    "method": "Source-bound DocSouth TEI.2 to P5 conversion with independent Expat oracle.",
+    "publication": "not authorized",
+    "source_member_sha256": "09aa516b61c47a0f076670b72689bfb4d4f171256b6993a15edb515997b16dba",
+    "source_rights": "DocSouth TEI availability: ",
+    "source_url": "https://docsouth.unc.edu/neh/truth75/truth75.xml",
+    "textual_form_id": "sojourner-truth-narrative-1875-docsouth-retained",
+    "work_id": "sojourner-truth-narrative-1875"
+  },
+  "resolved_resources": {
+    "figure_assets": [
+      {
+        "bytes": 34762,
+        "entity": "truth75cv",
+        "figure_c14n_sha256": "fb3e53a0c4054827702f163e2e35827689991b8fe898f13eef2803fcae37e4ff",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth75cv.jpg",
+        "sha256": "e948109279c566222c909ff10060029327f3341f6a1bcf5409ffccd099d0aec6",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth75cv.jpg"
+      },
+      {
+        "bytes": 20557,
+        "entity": "truth75hp",
+        "figure_c14n_sha256": "4fb893568e85f9e3181c62b8c2bb559f9d87f9dd6e44063bbd6e0d7a8917c707",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth75hp.jpg",
+        "sha256": "96d90c291c2e5fe812e746a29754e1580e8cb2637f748d6e73ae28bc3ceb0aac",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth75hp.jpg"
+      },
+      {
+        "bytes": 34944,
+        "entity": "truth75fp",
+        "figure_c14n_sha256": "adc9c8cd92edf922640dbc7f71c8314f1f228c14d740d41ac687adff3f02f4b7",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth75fp.jpg",
+        "sha256": "9da06d6b8a49765d0b271a62092eab00f2ee4db022028747465ece953cc8cb99",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth75fp.jpg"
+      },
+      {
+        "bytes": 23474,
+        "entity": "truth75tp",
+        "figure_c14n_sha256": "478aede111841d5f426e4d5976d95b95d09c6d584b698ca02d3ea16e4f93435e",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth75tp.jpg",
+        "sha256": "73f8fabdb1b2eb334178824978af271f9430abfdc3c7b2b5121b71fac3ac13e6",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth75tp.jpg"
+      },
+      {
+        "bytes": 24505,
+        "entity": "truth75vs",
+        "figure_c14n_sha256": "aed862057a15844e9f48956b58f3ef7103601d49d902b6edfc7f8000baa8cc13",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth75vs.jpg",
+        "sha256": "7d0ea743f8eafed00ed361a419c602aa1a9c2678db8b035fe2bcd1663a53a7b9",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth75vs.jpg"
+      },
+      {
+        "bytes": 30263,
+        "entity": "truth313",
+        "figure_c14n_sha256": "1fb8dc841cdac09853443783f2ad7888075d6fc93a350c1298977c7676ff3d5f",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth313.jpg",
+        "sha256": "37058899e40191dbac22e2ba0ed4b447ce9a1e87843c30399cc342b2f1f42b23",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth313.jpg"
+      },
+      {
+        "bytes": 27844,
+        "entity": "truth314",
+        "figure_c14n_sha256": "9232073f269216b4319513fb78e7821fc9d98b5611ad69466bff68b035120a7c",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth314.jpg",
+        "sha256": "fbd3f6e98e54c8b736b36cba548c25903de1fce2856c74bfaf4addab228d7763",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth314.jpg"
+      },
+      {
+        "bytes": 29659,
+        "entity": "truth315",
+        "figure_c14n_sha256": "e9a88105926c533aa7416e125e3b0111ca4f8727de33f50d2aaba4912f68af2c",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l768-truth75/truth315.jpg",
+        "sha256": "47b49ba76ca4519f2fd6598d00a718381d5233460975887d7938524e17c738df",
+        "source_url": "https://docsouth.unc.edu/neh/truth75/truth315.jpg"
+      }
+    ]
+  },
+  "unresolved": [
+    {
+      "id": "print-collation",
+      "question": "The retained electronic transcription has not been independently collated against print scans.",
+      "status": "open"
+    },
+    {
+      "id": "page-marker-discontinuity-125-128",
+      "question": "Markers 126 and 127 are absent; exact leaves/pages are not identified. Retained intervening text is preserved without interpolation.",
+      "status": "open"
+    },
+    {
+      "id": "visual-review",
+      "question": "Source/candidate visual comparison remains open.",
+      "status": "open"
+    },
+    {
+      "id": "rights-clearance",
+      "question": "The acquisition receipt has no provider rights statement; no rights conclusion is made.",
+      "status": "open"
+    },
+    {
+      "id": "acceptance-publication",
+      "question": "Human acceptance, accepted-master installation, and publication are not recorded.",
+      "status": "open"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "original": "sources/augustines-confessions/augustines-confessions.source-manifest.json",
+    "original_sha256": "1beb2d1e3791fe08f465b23154e53be5fd39da1f264fb2ac8701bc32be28b6f8",
+    "manifest": "tests/fixtures/reconstruction-runtime/augustines-confessions.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/bible-text/bsb/bsb.source-manifest.json",
+    "original_sha256": "47d0f166ea6b27feb272b0579dd691e17929f41dab95dd8ab51329a731a87d96",
+    "manifest": "tests/fixtures/reconstruction-runtime/bsb.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/calvins-institutes/calvins-institutes.source-manifest.json",
+    "original_sha256": "04cbf0234232060d62389efddc8062b89fde5bca86d32cc9a81fffdb974c9c62",
+    "manifest": "tests/fixtures/reconstruction-runtime/calvins-institutes.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "runtime_profile": "tests/fixtures/reconstruction-runtime/calvins-institutes.reconstruction-profile.json",
+    "original_profile_sha256": "ac71201fd56e0599fa3ca71ac73f1c01dc23512800b78566386d2a58dc40d805"
+  },
+  {
+    "original": "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.source-manifest.json",
+    "original_sha256": "c18cc0a8212222f48a48ffdf91a2de40ffffe57dc67f08399acbe5e0a91a24b2",
+    "manifest": "tests/fixtures/reconstruction-runtime/calvins-institutes-pg64392-member.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "runtime_profile": "tests/fixtures/reconstruction-runtime/calvins-institutes-pg64392-member.reconstruction-profile.json",
+    "original_profile_sha256": "975f309b50392f0582116e3daaab51de1e5c2222e448fff95c7b6ea7b5337c62"
+  },
+  {
+    "original": "sources/city-of-god/city-of-god-dods-1871.source-manifest.json",
+    "original_sha256": "f6cc6b3a483107097f3ac0c7e6a997c8b851092b5188544011cc5dd16aef226b",
+    "manifest": "tests/fixtures/reconstruction-runtime/city-of-god-dods-1871.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/city-of-god/city-of-god-npnf-1887.source-manifest.json",
+    "original_sha256": "ea62ea61c655a84b01a55341d43865ba5c080dc794b23092a62122fe40875e9a",
+    "manifest": "tests/fixtures/reconstruction-runtime/city-of-god-npnf-1887.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/commentaries/expositors-bible/lib034.source-manifest.json",
+    "original_sha256": "090ebb5b39bb78bdd3395760f57bb3db460fe43a795a98307c36b654c5270c0b",
+    "manifest": "tests/fixtures/reconstruction-runtime/expositors-bible-lib034.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/commentaries/expositors-bible/mark.source-manifest.json",
+    "original_sha256": "900a098d54afe17ebbdd133ccf62631587f5f319da8619ad630d60e2eec63a7f",
+    "manifest": "tests/fixtures/reconstruction-runtime/mark.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/commentaries/jamieson-fausset-brown/jamieson-fausset-brown.source-manifest.json",
+    "original_sha256": "8bc0871f208c5037cb34e598045581f182bbf00cf1f90206fac7a5f497b91bce",
+    "manifest": "tests/fixtures/reconstruction-runtime/jamieson-fausset-brown.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/douay-rheims-1899/douay-rheims-1899.source-manifest.json",
+    "original_sha256": "c08e9d0d880585cf3c0c6c8dbca6646186f48bd33aaa26cfbc2a5953471df706",
+    "manifest": "tests/fixtures/reconstruction-runtime/douay-rheims-1899.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "runtime_profile": "tests/fixtures/reconstruction-runtime/douay-rheims-1899.reconstruction-profile.json",
+    "original_profile_sha256": "f5f3c158ea053e78aada271f80803e59023b2194db79f0ecdcd75c3eae07b546"
+  },
+  {
+    "original": "sources/structured-text/charnock-existence-attributes-vol-1/charnock-existence-attributes-vol-1.source-manifest.json",
+    "original_sha256": "8e4c483953a7344251cc8fdcbfcaa967439b37b883e26d9b7b8fc0e0f7be08fa",
+    "manifest": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-1.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "runtime_profile": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-1.reconstruction-profile.json",
+    "original_profile_sha256": "2e064dd20d2af7e10bd85a552cd03980a41fe59b806d632cfb0962b192a235c7",
+    "supports": [
+      {
+        "kind": "historical",
+        "authority": "attribution-readme",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/charnock-existence-attributes-vol-1.README.source.md",
+        "original_sha256": "1f8034a6f08d5187d894ce9195a180196321d38fdc25ca2e9a45b8ece441b81a"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.source-manifest.json",
+    "original_sha256": "808810589b3f6fc1dd21f1df69340a224364b990c43a1942ef3b91df6524e6da",
+    "manifest": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-2.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "runtime_profile": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-2.reconstruction-profile.json",
+    "original_profile_sha256": "e11e9ffd4bb3fd58e8fbb69bb14cba41051bdea1dd0baab9bf95a5a59d40218d",
+    "supports": [
+      {
+        "kind": "historical",
+        "authority": "attribution-readme",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/charnock-existence-attributes-vol-2.README.source.md",
+        "original_sha256": "82470e0acbd7aac352928e248b9d6bce9e11f54a8a999d36a6471772cbced834"
+      }
+    ]
+  },
+  {
+    "original": "sources/liturgies-bcp1662-current/bcp-1662/source-manifest.json",
+    "original_sha256": "bb4852ed1659c2c88bd2019951dba2b71713b15b6563047ec86e38e27c911fc3",
+    "manifest": "tests/fixtures/reconstruction-runtime/bcp1662-native-current.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "supports": [
+      {
+        "kind": "historical",
+        "authority": "source-readme",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/bcp1662-native-current.README.source.md",
+        "original_sha256": "63032938c4812cd12cb30ea59820bd19d83fc1f6d97dab669ce8e940e397278c"
+      }
+    ]
+  },
+  {
+    "original": "sources/liturgies-bcp1549-current/bcp-1549/source-manifest.json",
+    "original_sha256": "bbf675c34416229324c232847100f123153b9dfa90d2467c25ded0b382f2ab49",
+    "manifest": "tests/fixtures/reconstruction-runtime/bcp1549-native-current.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
+    "supports": [
+      {
+        "kind": "historical",
+        "authority": "source-readme",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/bcp1549-native-current.README.source.md",
+        "original_sha256": "578ee830839ef8fbcade4ff1b6efa3908e15f7a4c1d403cc180f48d43be8aa84"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/cyril-of-jerusalem-catechetical-lectures/cyril-of-jerusalem-catechetical-lectures.source-manifest.json",
+    "original_sha256": "eb18037fde4a81b9b8ebccc7ca0e720df58ea15260a4f78f62462e9520472c6c",
+    "manifest": "tests/fixtures/reconstruction-runtime/cyril-of-jerusalem-catechetical-lectures.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/structured-text/gregory-of-nazianzus-select-orations/gregory-of-nazianzus-select-orations.source-manifest.json",
+    "original_sha256": "9ee0745367b4b5160e2527b9b45e9ee1664f13d8f9904bb586cb7edf1694e0e2",
+    "manifest": "tests/fixtures/reconstruction-runtime/gregory-of-nazianzus-select-orations.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/structured-text/gregory-of-nyssa-against-eunomius/gregory-of-nyssa-against-eunomius.source-manifest.json",
+    "original_sha256": "58aa2013d26efb322fd4a6743780d2d2eb59a4897e57c1710260045c368680a9",
+    "manifest": "tests/fixtures/reconstruction-runtime/gregory-of-nyssa-against-eunomius.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  }
+]

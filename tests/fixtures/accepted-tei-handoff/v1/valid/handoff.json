@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "contract": "ocd-accepted-tei-handoff-v1",
+  "handoff_id": "synthetic-handoff-v1",
+  "identity": {
+    "work_id": "synthetic-work",
+    "textual_form_id": "synthetic-form",
+    "edition_id": "synthetic-edition",
+    "acquisition_id": "synthetic-acquisition"
+  },
+  "accepted_tei": {
+    "path": "accepted.tei.xml",
+    "bytes": 1248,
+    "sha256": "b2b6b9bd64ee9cf530fcaa883fe5f3b4f270cfbaa7874338ce4daf3f5c9e49c0"
+  },
+  "source": {
+    "acquisition_record": {
+      "path": "evidence/acquisition.json",
+      "bytes": 866,
+      "sha256": "6acb10b515dc78138eb716583dc2172349781cc65a565268067b69b4f8f91fce"
+    },
+    "source_manifest": {
+      "path": "evidence/source-manifest.json",
+      "bytes": 888,
+      "sha256": "370ccb069d5d6a97d7f72b14099d28495719468759db622931fff39f532b523e"
+    },
+    "source_file": {
+      "path": "source-member.xml",
+      "bytes": 60,
+      "sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2"
+    },
+    "source_path": "source-member.xml",
+    "source_sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2",
+    "source_bytes": 60,
+    "source_scope": "div1[@id='unit']",
+    "accounting": {
+      "path": "evidence/source-accounting.json",
+      "bytes": 890,
+      "sha256": "4183669b0083d305e80f491131d75fbcf11b092ae239a2d4b767bf7b93a02468"
+    },
+    "expected_members": [{"path": "source-member.xml", "position": 1}],
+    "included_members": [{
+      "path": "source-member.xml",
+      "position": 1,
+      "bytes": 60,
+      "sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2",
+      "scope": "div1[@id='unit']"
+    }],
+    "excluded_members": [],
+    "missing_members": [],
+    "unknown_members": []
+  },
+  "scope": {
+    "kind": "member",
+    "declared": "div1[@id='unit']",
+    "expected_members": [{"path": "source-member.xml", "position": 1}],
+    "included_members": [{
+      "path": "source-member.xml",
+      "position": 1,
+      "bytes": 60,
+      "sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2",
+      "scope": "div1[@id='unit']"
+    }],
+    "excluded_members": []
+  },
+  "technical": {
+    "validation": {
+      "evidence": {"path": "evidence/validation.json", "bytes": 678, "sha256": "a5f49634e82b0a536ee85d4f469e584a2187f767eae68829a5c28df1a2d1224c"},
+      "status": "pass",
+      "command": "synthetic-validation",
+      "exit_code": 0
+    },
+    "accounting": {
+      "evidence": {"path": "evidence/accounting.json", "bytes": 1086, "sha256": "590f190b704ef0e0e94da3d3d1d206d05fa6bcfea1197deae272c8ed8d4d71c7"},
+      "status": "pass",
+      "command": "synthetic-accounting",
+      "exit_code": 0
+    },
+    "fidelity": {
+      "evidence": {"path": "evidence/fidelity.json", "bytes": 674, "sha256": "31b52c9b0fb077582df9e679d67c7d401bd2091ea3b22e09676a9fdd33aa9152"},
+      "status": "pass",
+      "command": "synthetic-fidelity",
+      "exit_code": 0
+    },
+    "reproducibility": {
+      "evidence": {"path": "evidence/reproducibility.json", "bytes": 688, "sha256": "d98ff2b3e450488f805ffa30ffe6d8c1de563e935e59dec1dbb2e74ac8ea951c"},
+      "status": "pass",
+      "command": "synthetic-reproducibility",
+      "exit_code": 0
+    },
+    "schema": {
+      "evidence": {"path": "evidence/schema.json", "bytes": 670, "sha256": "5f3a78f4f39bb6619991f70db49f00d5ced4ced6fdabd11613dd8407f935eb24"},
+      "status": "pass",
+      "command": "synthetic-schema",
+      "exit_code": 0
+    },
+    "closure": {
+      "evidence": {"path": "evidence/closure.json", "bytes": 672, "sha256": "4479aeddfef808cfdb15ef7b3302170cccee04836f850c40a96a63ba79bbf688"},
+      "status": "pass",
+      "command": "synthetic-closure",
+      "exit_code": 0
+    },
+    "producer": {"id": "agent:synthetic-producer"},
+    "checker": {"id": "agent:synthetic-checker"},
+    "shared_assumptions": ["Synthetic member bytes and declared scope are package-local."],
+    "independent_corroboration": "Synthetic source-member traversal corroboration."
+  },
+  "review": {
+    "report": {"path": "evidence/review.json", "bytes": 1086, "sha256": "fd035aebcb53018127cb8237ea03172fcae1a9ebaeb5f76565f1b2e4c5f3e5b4"},
+    "reviewer": "agent:synthetic-review",
+    "reviewed_at": "2026-09-06T10:00:00Z",
+    "coverage": {
+      "status": "partial",
+      "declared": "div1[@id='unit']",
+      "reached": ["div1[@id='unit']"],
+      "inspected": ["div1[@id='unit']/p"],
+      "unreviewed": ["div1[@id='unit']/note"]
+    },
+    "source_quality_uncertainty": ["Synthetic source quality is unassessed outside the fixture member."],
+    "discrepancies": [],
+    "unreviewed_residuals": ["The synthetic note locus was not inspected."]
+  },
+  "representation_revision": {
+    "id": "handoff-v1",
+    "date": "2026-09-06",
+    "note": "Synthetic accepted handoff fixture."
+  },
+  "decision": {
+    "source_local_disposition": "supported for the declared synthetic member scope",
+    "blockers": [],
+    "agent_assessment": {
+      "status": "accepted",
+      "actor": "agent:synthetic-acceptance",
+      "assessed_at": "2026-09-06T10:05:00Z",
+      "supported_scope": "div1[@id='unit']",
+      "unassessed_stronger_claims": ["whole synthetic source volume"],
+      "unresolved_claims": []
+    },
+    "human_decision": {"status": "not-recorded"}
+  }
+}

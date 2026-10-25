@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-npnf204-reconstruction-profile-v1",
+  "profile_id": "npnf204-assigned-div1-vi-through-xxv-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/npnf2/npnf204.xml",
+    "bytes": 5809854,
+    "sha256": "bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652"
+  },
+  "assigned_div1": ["vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi", "xxii", "xxiii", "xxiv", "xxv"],
+  "outside_assigned_work_scope": ["i", "ii", "iii", "iv", "v", "xxvi"],
+  "assigned_feature_count": 26890,
+  "assigned_attribute_count": 57398,
+  "assigned_feature_counts": {
+    "br": 25,
+    "div1": 20,
+    "div2": 44,
+    "div3": 215,
+    "div4": 142,
+    "i": 6101,
+    "note": 4707,
+    "p": 8291,
+    "pb": 581,
+    "scripRef": 2676,
+    "span": 2921,
+    "sup": 15,
+    "table": 6,
+    "td": 966,
+    "tr": 180
+  },
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "table_census": {"tables": 6, "rows": 180, "cells": 966},
+  "preserved_athanasius_table_route": {
+    "div1_id": "vii",
+    "feature_count": 1241,
+    "table_id": "vii.i-p19.1",
+    "tables": 1,
+    "rows": 55,
+    "cells": 165
+  },
+  "document_shell": {
+    "source_xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "source_doctype": "<!DOCTYPE ThML PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">",
+    "source_pre_root_comment": " Copyright Christian Classics Ethereal Library ",
+    "candidate_xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>",
+    "candidate_doctype": null,
+    "candidate_root_siblings": 0
+  },
+  "retained_credit_evidence": {
+    "series_translation_statement": "i-p8",
+    "editorial_supervision_role": "i-p10",
+    "philip_schaff": "i-p11",
+    "henry_wace": "i-p14",
+    "archibald_robertson_roles": ["ii-p3", "iii-p4", "iii-p6"],
+    "newman_revision_context": ["ii-p4", "iv-p4"],
+    "j_h_lupton": "ii-p5",
+    "h_ellershaw": ["iv-p11", "xvi.ii.i-p50"],
+    "newman_de_synodis": "xxii.i-p13",
+    "anonymous_antioch_africa_group": "xxiii.i-p9",
+    "miss_payne_smith": ["iv-p11", "xxv.iii.i-p20"]
+  },
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-projected",
+    "notes-tables-page-breaks-scripture-references-and-language-spans-preserved",
+    "exact-source-member-and-div1-scope-accounting",
+    "exact-document-prolog-doctype-root-sibling-and-namespace-policy",
+    "exact-retained-contributor-roles-and-localized-work-credits",
+    "no-translator-inference-beyond-retained-evidence",
+    "all-twenty-works-remain-nonaccepted-and-publication-not-ready"
+  ]
+}

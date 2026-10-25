@@ -1,0 +1,58 @@
+{
+  "contract": "ocd-source-to-tei-validation-policy-v1",
+  "ticket": "37c-173",
+  "owner_route": "LIB-055",
+  "work_id": "flavel-fountain-of-life",
+  "scope": {
+    "member_order": ["raw/ccel/flavel/fountain.xml"],
+    "selector": "ThML[1] (complete retained document envelope)",
+    "boundary": "Complete retained ThML document, including the entire head and every ordered body division. The route does not assert that the member equals the complete catalog work or establishes an edition, part map, or print witness.",
+    "exclusions": []
+  },
+  "mapping": {
+    "document_shell": "Record the XML declaration, exact ThML DOCTYPE identifiers, and outside-root CCEL comment in accountability. Do not fetch the external DTD or reproduce shell syntax in TEI.",
+    "ThML.head": "Transcribe the source title, creator labels, language, identifier, type, date, subjects, source statements, description, empty fields, and other header carriers as observed source metadata. Label the electronic date as Created. Preserve the apparent 15th-century description verbatim and flag it as source-quality uncertainty. Do not infer edition, original-publication date, translator, or rights clearance.",
+    "div1/div2/div": "Map in source order to TEI div; map source id to xml:id, source title to n, source class to subtype, and observed previous/next navigation where valid. Keep every other source attribute exactly in accountability. Place source divisions i-iv under TEI front, v under TEI body, and vi under TEI back, preserving their full source order and explicit title-based boundaries.",
+    "h1/h2/h3/h4": "Map the first element heading in its source division to TEI head. Map later headings at the same parent and position to TEI p with a source-level rendition marker. Preserve source IDs and order.",
+    "p": "Map to TEI p; preserve IDs, class/rendition, exact text, mixed inline sequence, and tails.",
+    "a": "Map to TEI ref; preserve href as target and source class as type. Do not rewrite the 2,375 fragment targets.",
+    "scripRef": "Map to TEI ref type=scripture; preserve OSIS target, passage label, and ID. Keep parsed source fields in accountability.",
+    "scripCom": "Map to empty TEI anchor type=scripture-commentary-marker; preserve source ID, type, OSIS reference, and passage label. Fail closed if the source carrier is no longer empty.",
+    "insertIndex": "Map to empty TEI anchor type=index-insertion; preserve ID and source type as subtype.",
+    "br": "Map to TEI lb at the same inline position.",
+    "comments": "Preserve comments inside the body at their source position; inventory every document/header/body comment.",
+    "nonprojected_attributes": "Retain exact names and values in source-accountability.json. Any new source element or attribute class fails closed.",
+    "external_formatting": "Do not reproduce source CSS/XCSS. The complete inventory records any formatting carriers and explicit disposition."
+  },
+  "identity_policy": {
+    "catalog_work_id": "LIB-055 assigns this source cohort to the existing ID; the route binds the exact full member without settling the catalog work boundary.",
+    "textual_form": "Unknown; retain only observed language eng.",
+    "edition": "Unknown; preserve title-page statements (first published 1820; reprints 1968 and 1982) and separate them from the electronic Created date 2002-07-29 and any original composition/publication claim.",
+    "parts": "Record the six body divisions and the 42 sermon IDs in source order; do not infer authoritative volume boundaries.",
+    "witness": "Exact retained CCEL ThML bytes only; print transcription and proofreading lineage unknown.",
+    "translator": "Unknown; no translator is recorded.",
+    "rights": "Parsing permission and source attribution are recorded separately; the source DC.Rights field is empty and publication rights are not cleared."
+  },
+  "independent_check": {
+    "source": "The oracle separately parses the retained bytes and independently enumerates the full XML shell, head, body, attributes, text/tails, IDs, links, divisions, and source feature counts. It imports no producer traversal, selection, mapping, or completeness helper.",
+    "candidate": "Compare the complete TEI tree and accountability inventory against independent source-derived expectations; reject omissions, duplication, reorder, invented content, changed attachment/attributes, and metadata drift; validate against the manifest-bound TEI P5 schema.",
+    "required_mutations": [
+      "omit, duplicate, or reorder a top-level body division",
+      "change source paragraph wording or mixed-inline order",
+      "change an internal link target or scripture reference",
+      "remove or alter a scripture-commentary marker",
+      "change source-record metadata or a heading",
+      "substitute another retained source member"
+    ],
+    "determinism": "Coordinator generation and second-clean-process package reproduction remain unrun until candidate generation is authorized."
+  },
+  "validation_schema": {
+    "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+    "package_path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json"
+  },
+  "candidate_and_review_boundary": "This work-specific route is not itself a generated candidate. Candidate packaging/generation belongs to the coordinator. CVW, human acceptance, rights clearance, durable IR, promotion, release, and publication remain separate gates.",
+  "forbidden_oracle_imports": [
+    "build.tei.ccel_puritan_lib055_flavel_fountain_of_life_reconstruction",
+    "build.parsers.ccel_puritan_works"
+  ]
+}

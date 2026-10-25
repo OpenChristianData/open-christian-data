@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-stokes-subscript">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Stokes Expositor's Bible subscript excerpt</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Stokes Expositor's Bible subscript excerpt</title>
+          <idno type="sha256">2f6cbaf722c823db42d7e63dda7b6ef17f691bc83e7fedc563df51440d15edf8</idno>
+          <ptr target="ocd-source:raw/ccel/expositors-bible/stokes_expositoracts2.xml"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; nested source sub mapped to canonical subscript.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-stokes-subscript-selection">
+        <p>He there borrowed from a money-lender the sum of £800 at 12<hi rend="superscript">1</hi>⁄<hi rend="subscript">2</hi> per cent. interest, to enable him to go to Rome and push his interests at the imperial court.</p>
+      </div>
+    </body>
+  </text>
+</TEI>

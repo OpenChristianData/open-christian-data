@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd-george-whitefield-source-accountability-v1",
+  "title": "George Whitefield retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "work_id",
+    "ticket_id",
+    "source_manifest_sha256",
+    "source_set_sha256",
+    "ccel",
+    "project_gutenberg",
+    "candidate_scope"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-george-whitefield-source-accountability-v1"},
+    "work_id": {"const": "george-whitefield-sermons"},
+    "ticket_id": {"const": "LIB-060"},
+    "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ccel": {"type": "object", "required": ["path", "bytes", "sha256", "ordered_carriers", "processing_instructions", "prolog_events", "comments", "element_counts"]},
+    "project_gutenberg": {"type": "object", "required": ["path", "bytes", "sha256", "physical_line_count", "line_inventory_sha256", "line_inventory", "sermon_carriers"]},
+    "candidate_scope": {"type": "object", "required": ["status", "included", "excluded", "unknowns"]}
+  }
+}

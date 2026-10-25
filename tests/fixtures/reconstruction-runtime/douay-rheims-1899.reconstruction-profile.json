@@ -1,0 +1,46 @@
+{
+  "contract": "ocd-douay-rheims-1899-reconstruction-profile-v1",
+  "profile_id": "douay-rheims-american-1899-complete-source-v1",
+  "producer_import_closure_sha256": "d9f191f53564b096763c95b10df924b4afd144936086fc4e17131bbfc92b724a",
+  "version": 1,
+  "identity": {
+    "edition_id": "douay-rheims-american-1899",
+    "work_id": "douay-rheims-bible",
+    "title": "Douay-Rheims American Edition of 1899"
+  },
+  "candidate_status": "nonaccepted",
+  "human_review_required": true,
+  "publication_ready": false,
+  "required_counts": {
+    "books": 73,
+    "chapters": 1334,
+    "verses": 35811,
+    "facsimile_pages": 1414,
+    "ebible_annotations": 644946,
+    "ebible_poetry_markers": 2528,
+    "scrollmapper_slots": 37255,
+    "scrollmapper_empty_slots": 1450,
+    "scrollmapper_empty_book_shells": 5,
+    "print_selections": 599,
+    "ebible_selections": 307,
+    "scrollmapper_selections": 288,
+    "print_derived_selections": 4,
+    "unresolved_differences": 3025,
+    "structural_cases": 4
+  },
+  "frozen_evidence": {
+    "print_selections_sha256": "cf2cec519289d2c703034e07cf5c098186950fb3720a2d70657eae043fa1878d",
+    "variant_triage_sha256": "b11a8cd32ec53d1f6f50122e61b4a3dda964f1752b15753a38cb418c802f9245",
+    "structural_review_sha256": "16aa5d802287a4abf657e5ed0d85cc9f6696aa9e1fd00b9537085537340c2e52",
+    "ordered_ocr_object_usemaps_sha256": "8c321ec119ec5c8210bcde35e56ce1fee9edac6d2ed963c7ccb7f3ee4f9feabb",
+    "legacy_package_manifest_sha256": "7c61ba0fec8b81780ef0c7b86e649efbc3aac8402fd1b5fe32dcee7385874985",
+    "authorized_transformation": "exactly 553 stale absolute print-evidence scan_path values were replaced by raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/scan.pdf; every other selection field is semantically identical"
+  },
+  "scope": {
+    "digital_witnesses": 2,
+    "print_controls": 1,
+    "print_apparatus": "incomplete",
+    "strong_annotations": "retained eBible witness evidence; not asserted as 1899 print content",
+    "poetry_markers": "retained eBible witness structure; not asserted as 1899 print layout"
+  }
+}

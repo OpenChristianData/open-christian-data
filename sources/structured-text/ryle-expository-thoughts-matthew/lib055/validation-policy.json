@@ -1,0 +1,66 @@
+{
+  "contract": "ocd-source-to-tei-validation-policy-v1",
+  "ticket": "37c-268",
+  "owner_route": "LIB-055",
+  "work_id": "ryle-expository-thoughts-matthew",
+  "scope": {
+    "member_order": ["raw/ccel/ryle/matthew.xml"],
+    "selector": "ThML[1] (complete retained document envelope)",
+    "focus_selector": "div1[@id='xiv']/div2[@id='xiv.v']",
+    "boundary": "One complete retained CCEL ThML member, including its prolog, head, body, comments, title page, all 27 direct commentary divisions, nested source divisions, and indexes. This establishes fidelity to this exact member only; it does not establish the complete seven-volume set or a final catalog-work/edition boundary.",
+    "exclusions": []
+  },
+  "mapping": {
+    "document_shell": "Bind the exact raw UTF-8 byte prefix before the ThML root by length, SHA-256, and retained text. Separately account for the XML declaration, exact external ThML DOCTYPE identifiers/declaration, and two ordered xml-stylesheet processing instructions. Record them in source accountability and readable header evidence; do not fetch the DTD or copy shell syntax/PIs into the TEI document.",
+    "ThML.head": "Inventory every source head node, attribute, comment, text slot, tail slot, empty value, and order. Transcribe DC fields and human-readable description, print-source statement, and electronic metadata into TEI header notes. Keep source field attributes and paths. Preserve Public Domain only as a source-supplied rights label; it is not a clearance. Preserve the source's own description and any apparent errors without correction. Account for the provider style elements as formatting and do not reproduce them.",
+    "ThML.body": "Map every direct source child, including comments, in physical order beneath TEI text/body. Keep source div1/div2 parentage and IDs; do not promote nested units to sibling/top-level divisions. The title-page root id=i is labeled front-matter, and indexes root id=xxix is labeled back-matter without changing source order or nesting.",
+    "div1/div2/div": "Map each source division to TEI div. Preserve source id as xml:id; title as n; source class as subtype; previous/next navigation as same-named attributes. Preserve the exact nested path div1[@id='xiv']/div2[@id='xiv.v']; it is a child of the Matthew 13 div1 and remains there.",
+    "h1/h2/h3": "Map the first element heading child at each source parent to TEI head; preserve later heading carriers at that parent as TEI p with a source-heading rendition marker. Preserve source IDs and physical order.",
+    "p": "Map to TEI p; preserve exact mixed content, text/tail order, and source id as xml:id. Map source class to TEI rend; append any source inline style as a source-style= value in the same rendition string because TEI p does not allow the ThML source attributes directly. The exact independent source attributes remain in accountability.",
+    "a": "Map to TEI ref; preserve href exactly as target, source class as type, ID, wording, order, and attachment. The source inventory confirms all 557 fragment targets resolve to a source ID.",
+    "scripRef": "Map to TEI ref type=scripture; preserve OSIS target, passage label, ID, wording, order, and attachment. Retain parsed-source attributes in source accountability.",
+    "scripCom": "Map empty commentary marker to TEI anchor type=scripture-commentary-marker; preserve ID, type, OSIS relationship, passage label, position, and parent. Reject content added to a source-empty marker.",
+    "insertIndex": "Map empty insertion marker to TEI anchor type=index-insertion; preserve ID, source type, position, and parent. Reject content added to a source-empty marker.",
+    "br/i": "Map br to TEI lb and i to TEI hi rend=italic at their exact mixed-content positions; preserve all child tails.",
+    "comments": "Preserve each body comment as an XML comment at the same source parent and sibling position. Represent the head copyright comment in a TEI header note and inventory its exact source path/text/tail.",
+    "provider formatting": "The two source style elements and their values remain in the full source element ledger but are not converted to TEI styling. No body carrier or index is excluded.",
+    "source-accountability": "At conversion time, emit an ordered source element ledger with stable XPath, parent XPath, ordinal, tag, exact attributes, and separate text/tail length and SHA-256; inventory comments and document shell separately. The independent oracle re-enumerates these structures from retained bytes rather than importing producer traversal or inventory helpers.",
+    "unsupported carriers": "Fail closed on an unknown XML node kind, element, required attribute, nonempty source marker, changed envelope, or unaccounted source feature. Any expanded source vocabulary requires work-specific policy/profile/test review."
+  },
+  "identity_policy": {
+    "catalog_work_id": "The existing catalog ID is the LIB-055 assignment for this route; the source-member mapping does not independently settle its full work boundary.",
+    "source_title_and_creator": "Observe DC.Title Expository Thoughts on Matthew, both retained DC.Creator forms, and DC.Language eng. Do not replace those observations with the legacy config title or infer a translator.",
+    "textual_form_and_translator": "Unresolved. English and the recorded creator are observations; no specific translation/revision or translator is asserted.",
+    "edition_and_publication_history": "Unresolved. Preserve the retained print-source statement New York: Robert Carter, 1860 and electronic Created date 2012-04-30 as distinct source fields. Do not adopt the legacy config's 1856 original-publication claim or infer an edition from those fields.",
+    "parts": "Represent the actual member's title page, 27 top-level Matthew chapter divisions (1-13 and 15-28), nested Matthew 14:22-36 carrier, and indexes in order. The description's seven-volume statement does not make this one member a complete set; external parts remain unknown.",
+    "missing_Matthew_14_1_21": "The source has no top-level Matthew 14 root, no div1/div2 titled Matthew 14 or Matthew 14:1-21, and no exact scripCom carrier for Matthew 14:1-21. Record an explicit gap; never invent a Matthew 14 root or move xiv.v out of xiv.",
+    "witness": "Bind only the exact retained CCEL XML bytes. The print transcription exemplar, digital lineage, proofreading history, and collation are unknown.",
+    "rights": "CCEL permits parsing ThML/XML for text and requests attribution by convention. The retained DC.Rights Public Domain label and parse permission do not establish rights clearance, human acceptance, or publication authorization."
+  },
+  "independent_check": {
+    "source": "The oracle independently opens and parses the exact member with entity resolution, DTD loading, network access, and recovery disabled. It separately inventories the shell, complete head/body tree, attributes, text/tails, IDs, comments, links, and source-native division relationships.",
+    "candidate": "The oracle constructs its own expected TEI tree from the retained source using separate selection, traversal, attribute mapping, and completeness code, compares the actual TEI tree including text, tails, comments, order, parentage, and attributes, then validates it against the manifest-bound local TEI P5 schema.",
+    "independence": "The oracle imports neither the producer nor the legacy CCEL parser. Both readers use lxml/libxml2, so parser implementation is a shared assumption; entity expansion, DTD loading, network access, and recovery are disabled, and raw member digest plus element/comment/tail ledgers corroborate the affected boundary. The coordinator's package invocation and fresh-process reproduction remain separate work.",
+    "required_mutations": [
+      "omit, duplicate, or reorder a direct source division",
+      "omit, duplicate, or reparent div2 id=xiv.v",
+      "invent a top-level Matthew 14 or Matthew 14:1-21 division",
+      "change wording or mixed-inline order within the nested Matthew 14:22-36 carrier",
+      "change a source heading, hyperlink target, or scripture reference",
+      "remove or alter a scripture-commentary or index-insertion marker",
+      "remove or reorder body comments",
+      "change source-record metadata or source-gap statement",
+      "substitute or mutate the retained source member"
+    ],
+    "determinism": "Not tested here. Candidate generation and full package byte reproduction in a second clean process are coordinator-owned and must bind this exact manifest, producer, oracle, policy, profile, source, and schema."
+  },
+  "validation_schema": {
+    "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+    "package_path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json"
+  },
+  "candidate_and_review_boundary": "This work-local route callable returns package-member bytes in memory and writes no candidate. Candidate packaging/generation, full package reproduction, CVW admission and visual comparison remain coordinator work. The present route is not human acceptance, rights clearance, accepted IR, promotion, release, or publication authorization.",
+  "forbidden_oracle_imports": [
+    "build.tei.ryle_expository_thoughts_matthew_lib055_reconstruction",
+    "build.parsers.ccel_puritan_works"
+  ]
+}

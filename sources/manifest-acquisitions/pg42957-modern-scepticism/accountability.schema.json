@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/reconstruction/pg42957-source-accountability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "work_id", "textual_form_id", "edition_id", "acquisition_id",
+    "source_id", "source_scope", "primary_source", "retained_members",
+    "retained_member_set_sha256", "complete_source_profile_sha256",
+    "content_inventory", "work_boundary", "mapping", "exclusions",
+    "metadata_disposition", "policy", "acceptance_status", "rights_status",
+    "publication_status"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-pg42957-source-accountability-v1"},
+    "work_id": {"type": "string", "minLength": 1},
+    "textual_form_id": {"type": "string", "minLength": 1},
+    "edition_id": {"type": "string", "minLength": 1},
+    "acquisition_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_scope": {"type": "string", "minLength": 1},
+    "primary_source": {
+      "type": "object",
+      "required": ["path", "bytes", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      }
+    },
+    "retained_members": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "bytes", "sha256", "role", "treatment"],
+        "properties": {
+          "name": {"type": "string"},
+          "path": {"type": "string"},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"$ref": "#/$defs/sha256"},
+          "role": {"enum": ["primary-source", "retained-source-member"]},
+          "treatment": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "retained_member_set_sha256": {"$ref": "#/$defs/sha256"},
+    "complete_source_profile_sha256": {"$ref": "#/$defs/sha256"},
+    "content_inventory": {"type": "object"},
+    "work_boundary": {"type": "object"},
+    "mapping": {"type": "array"},
+    "exclusions": {"type": "array"},
+    "metadata_disposition": {"type": "object"},
+    "policy": {"type": "string"},
+    "acceptance_status": {"const": "nonaccepted"},
+    "rights_status": {"type": "string"},
+    "publication_status": {"const": "not authorized"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

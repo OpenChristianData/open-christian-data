@@ -1,0 +1,87 @@
+{
+  "contract": "ocd-occom-moses-paul-execution-sermon-validation-policy-v1",
+  "source_id": "evans-tcp-n09814-pinned-tei-p5",
+  "work_id": "occom-moses-paul-execution-sermon",
+  "readme_sha256": "5af79a31d7f09c5c8c034d3cc1305cf1c0285b11b3ea1e80e291f888e47c0e4a",
+  "accountability": {
+    "contract": "ocd-occom-moses-paul-execution-sermon-accountability-v1",
+    "projection": "exact-source-bytes-v1",
+    "source_path": "raw/clean-ready-acquisition-to-tei/master-2/15/occom-moses-paul-execution-sermon/N09814.xml",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "content.tei.xml is byte-identical to the retained TEI P5 source; diplomatic typography, TCP identifiers, elements, attributes, text, tails, whitespace, and encoded features remain present"
+  },
+  "provenance": {
+    "contract": "ocd-occom-moses-paul-execution-sermon-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "tcp_id": "N09814",
+      "author": "Occom, Samson, 1723-1792.",
+      "title": "A sermon, preached at the execution of Moses Paul, an Indian; who was executed at New-Haven, on the second of September, 1772; for the murder of Mr. Moses Cook, late of Waterbury, on the 7th of December, 1771. : Preached at the desire of said Paul.",
+      "publication_place": "New-Haven",
+      "publisher": "Printed and sold by T. & S. Green",
+      "date": "1772",
+      "evans": "12494",
+      "image_set": "12494"
+    },
+    "source": {
+      "landing_url": "https://name.umdl.umich.edu/N09814.0001.001",
+      "repository_url": "https://github.com/textcreationpartnership/N09814",
+      "download_url": "https://raw.githubusercontent.com/textcreationpartnership/N09814/0f90e3b14b0ec8a2e3566bca51051819a995b1c3/N09814.xml",
+      "commit": "0f90e3b14b0ec8a2e3566bca51051819a995b1c3",
+      "retrieved_utc": "2026-08-31T02:04:23Z",
+      "bytes": 79299,
+      "sha256": "56d612750fed73102ec0daa1afbbd9182cfe3660275f957fb535fd86d11a3d1a"
+    },
+    "rights": {
+      "keyboarded_and_encoded_edition": "CC0 1.0 Universal",
+      "vendor_page_images": "excluded, not redistributed, and not claimed under the text waiver",
+      "attribution_request": "TCP respectfully requests credit and attribution to the original source",
+      "human_rights_review": "required"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "canonical_write": false,
+      "human_textual_acceptance": false,
+      "identity_acceptance": false,
+      "edition_acceptance": false,
+      "rights_acceptance": false,
+      "editorial_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "occom-n09814-keying-gaps-and-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate the sampled-proofread TCP transcription and its 17 encoded gaps against the 1772 print witness?",
+      "evidence": "TCP reports sampled proofreading and possible residual errors; this route preserves every retained reading and gap but performs no print collation."
+    },
+    {
+      "id": "occom-n09814-vendor-images-and-facsimile-links",
+      "status": "unresolved",
+      "question": "How should later review resolve the source's unknown: facsimile targets without redistributing the commercial Readex/Newsbank scans?",
+      "evidence": "The pinned XML preserves 32 page milestones with unknown: facsimile identifiers; vendor scans are deliberately excluded."
+    },
+    {
+      "id": "occom-n09814-human-identity-rights-editorial-publication",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept the text, identity, edition, rights scope, editorial treatment, canonical status, and publication?",
+      "evidence": "Exact-byte reconstruction and technical validation provide no such acceptance or authorization."
+    }
+  ],
+  "required": [
+    "exact retained byte length and SHA-256",
+    "N09814, Samson Occom, Evans 12494, New Haven, and 1772 identity in the retained TEI header",
+    "candidate content.tei.xml byte-identical to retained N09814.xml",
+    "complete independently recomputed element, attribute, text, and tail census",
+    "TEI P5 validity against the vendored tei_all.xsd",
+    "exact deterministic provenance, accountability, unresolved ledger, and README bytes",
+    "complete candidate manifest authority bindings and nonaccepted status",
+    "diplomatic long-s typography, 32 page milestones, 156 encoded characters, 17 gaps, verse lines, and two nested address texts preserved",
+    "CC0 keyboarded-and-encoded-text scope distinct from excluded vendor page images",
+    "TCP attribution request retained in README.source.md",
+    "no silent omission, duplication, normalization, modernization, or invention"
+  ]
+}

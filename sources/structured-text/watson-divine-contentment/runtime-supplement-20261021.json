@@ -1,0 +1,109 @@
+{
+  "contract": "ocd-watson-runtime-supplement-v1",
+  "work_id": "watson-divine-contentment",
+  "claim": "Current unchanged oracle validates byte-identical substantive candidate members; existing accepted master and acceptance remain unchanged.",
+  "acceptance": {
+    "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acceptance.json",
+    "bytes": 8181,
+    "sha256": "3b6eb16a79265fe18685cd926d04f6c517e03d4494bd8fe6cdf3229aeccca601"
+  },
+  "bindings": [
+    {
+      "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/master.tei.xml",
+      "bytes": 332947,
+      "sha256": "c72641deb76db40c5fb95e2152b04df683ac714dbaee73f90cb9c62c31805e8f"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-proof-20261012.source-manifest.json",
+      "bytes": 5532,
+      "sha256": "2dad666358b483f14497ee76a836efdcc4f4e5fd5bf5bfb911f947cfa070fdb9"
+    },
+    {
+      "path": "sources/structured-text/watson-divine-contentment/runtime-proof-20261021.source-manifest.json",
+      "bytes": 5394,
+      "sha256": "f3722a961f60ef11012744386d8dbcf924016181c112b6b09592d774b9e0d42a"
+    },
+    {
+      "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acquisitions/watson-divine-contentment-ccel-retained.json",
+      "bytes": 3835,
+      "sha256": "adcaf589768062fb60b3577031fc8d8c33f0286e4f57a1c8234716f6f8630ce2"
+    }
+  ],
+  "authority_changes": [
+    {
+      "name": "work",
+      "path": "library/works/watson-divine-contentment/work.json",
+      "before": {
+        "bytes": 1528,
+        "sha256": "1cc4be5dc9e2ceff455c121c58d111a22640820b1e78001dc42de8a04790333b"
+      },
+      "after": {
+        "bytes": 1660,
+        "sha256": "089264045955ec46c8e52d35079a73172c290d0ba01d7d53e6d5fc6496b15867"
+      }
+    },
+    {
+      "name": "closure-identities",
+      "path": "ocd_kernel/library/identities.py",
+      "before": {
+        "bytes": 19473,
+        "sha256": "64a3ab0a835ea2cb84defbb8bc56de6bb417f8278569cf9ebfb5bb022108a4bb"
+      },
+      "after": {
+        "bytes": 21331,
+        "sha256": "2ca820099d6952907fcfd94e0ae5bf0e7dd897273587c0318423f4d7ce4c402c"
+      }
+    },
+    {
+      "name": "closure-common",
+      "path": "ocd_kernel/library/_common.py",
+      "before": {
+        "bytes": 3970,
+        "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"
+      },
+      "after": {
+        "bytes": 5045,
+        "sha256": "827b23e3c52cd77daa701389febb60b9cdc23b8ea6dd80a738fdd7d0018d64f0"
+      }
+    },
+    {
+      "name": "closure-storage-topology",
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "before": {
+        "bytes": 4223,
+        "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"
+      },
+      "after": {
+        "bytes": 4911,
+        "sha256": "08c328dcf6e1ab6b0b22d6ba116484e4aeff9a1da7a710a567ffaa7a4a8b60c0"
+      }
+    },
+    {
+      "name": "closure-work-schema",
+      "path": "schemas/v2/work.schema.json",
+      "before": {
+        "bytes": 6206,
+        "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+      },
+      "after": {
+        "bytes": 7788,
+        "sha256": "a30e4dc7f72209b2c26455d46a21e1f953f0ab382605c5bc4e15942edf3c9dbb"
+      }
+    }
+  ],
+  "previous_package_sha256": "2236e08c76338ef49c558a5818fc228bc05477fdac22fee0de2d59299a0dd5ad",
+  "current_package_sha256": "3cc864e82ba6cf619cb4a658a98483a82c93773211bed9879285575bb041982b",
+  "validation": {
+    "path": "library/works/watson-divine-contentment/integration/runtime-proof-20261021/current-candidate/validation.json",
+    "bytes": 1512,
+    "sha256": "e7ac3e9fc597411728a2bfda1e87da31b7a05526e6a5eb3e3ea424c569e3b949"
+  },
+  "source_sha256": "767ed95de4c4c990480670084e8dd1ac16b6c61d50b864e8b0202e528a076d7b",
+  "unchanged_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "contract": "ocd-ryle-holiness-validation-policy-v1",
+  "policy_id": "ryle-holiness-retained-ccel-thml-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_source_members": 1,
+  "required_retained_family_members": 1,
+  "required_work_count": 1,
+  "required_source_element_count": 5698,
+  "required_represented_element_count": 5666,
+  "required_formatting_only_excluded_element_count": 32,
+  "forbidden_oracle_imports": [
+    "build.tei.ryle_holiness_reconstruction",
+    "build.parsers.ccel_puritan_works",
+    "build.lib.ccel_thml"
+  ],
+  "checks": [
+    "exact retained source bytes and UTF-8 ThML parse",
+    "complete one-member envelope and ordered body divisions",
+    "independent element, attribute, text and tail census",
+    "exact source selector, attribute, direct-text and tail inventory",
+    "explicit formatting-only exclusions",
+    "readable TEI semantic mapping for all supported content tags",
+    "exact embedded source bytes",
+    "TEI P5 XSD validation",
+    "source-accountability JSON Schema validation",
+    "meaningful mutation rejection",
+    "fresh different-CWD deterministic reproduction",
+    "nonaccepted and not publication ready"
+  ],
+  "provenance": {
+    "contract": "ocd-ryle-holiness-provenance-v1",
+    "source_id": "ryle-holiness-retained-ccel-thml",
+    "work_id": "ryle-holiness",
+    "status": "nonaccepted",
+    "publication": "not_ready",
+    "source": {
+      "path": "raw/ccel/ryle/holiness.xml",
+      "sha256": "20f9c4a6eb9109c5981a37b580376ed02f1bc93ac98dd047ac6d0578ff3521c8",
+      "bytes": 1302437,
+      "format": "ThML XML",
+      "url": "https://www.ccel.org/ccel/ryle/holiness.xml"
+    },
+    "identity": {
+      "title": "Holiness: Its Nature, Hindrances, Difficulties, and Roots",
+      "author": "J. C. Ryle",
+      "print_source": "London: James Clarke & Co., Ltd.",
+      "title_page_edition": "THIS EDITION 1952",
+      "catalog_original_publication_year": 1879
+    },
+    "technical": {
+      "scope": "whole retained ThML member",
+      "ocr": false,
+      "visual_review": "pending",
+      "human_acceptance": "pending",
+      "rights_review": "pending",
+      "durable_ir_admission": "pending"
+    }
+  },
+  "unresolved": [
+    {
+      "id": "ryle-holiness-print-collation",
+      "status": "unresolved",
+      "scope": "edition and textual-form identity",
+      "reason": "The retained source title page states THIS EDITION 1952 and the header gives the James Clarke imprint, but no independent print copy was collated in this technical review; the catalog original-publication year 1879 is a distinct claim."
+    },
+    {
+      "id": "ryle-holiness-ccel-rights",
+      "status": "unresolved",
+      "scope": "rights and redistribution",
+      "reason": "The retained ThML DC.Rights field is empty; CCEL attribution and file/format terms remain applicable and require a separate rights decision."
+    },
+    {
+      "id": "ryle-holiness-visual-acceptance",
+      "status": "unresolved",
+      "scope": "candidate visual and human review",
+      "reason": "CVW admission and declared human visual comparison were not performed in this technical lane."
+    },
+    {
+      "id": "ryle-holiness-publication",
+      "status": "unresolved",
+      "scope": "IR, promotion and publication",
+      "reason": "The candidate remains nonaccepted; durable IR admission, promotion, and publication authorization are separate gates."
+    }
+  ]
+}

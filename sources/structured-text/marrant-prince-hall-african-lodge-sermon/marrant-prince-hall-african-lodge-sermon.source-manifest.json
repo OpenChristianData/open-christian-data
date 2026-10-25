@@ -1,0 +1,165 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "evans-tcp-n17016-pinned-tei-p5",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/N17016.xml",
+      "role": "primary-source",
+      "bytes": 48484,
+      "sha256": "cec45792f758853c291b79aaba32f79bb12360e1247e9d3e0e9271fa3b577434"
+    },
+    {
+      "name": "source-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/N17016.xml.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 926,
+      "sha256": "b1f60988f286ca9d506714a9aaf76df50080a440c73492dd6abb98b0e839dc1d"
+    },
+    {
+      "name": "upstream-readme",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/README.upstream.md",
+      "role": "source-rights-and-version-evidence",
+      "bytes": 5262,
+      "sha256": "bd6d1fd8992f26be155fe286fc8ab4cc2a96ab6e06e26e702bf183f0ad8a08dc"
+    },
+    {
+      "name": "upstream-readme-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/README.upstream.md.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 926,
+      "sha256": "01a29e9dd7b05fe37ca75974bd86889a027b2948b342474c291196279a9aaa1a"
+    },
+    {
+      "name": "upstream-cc0-license",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/LICENSE.CC0-1.0.txt",
+      "role": "source-rights-evidence",
+      "bytes": 6555,
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+    },
+    {
+      "name": "upstream-cc0-license-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/LICENSE.CC0-1.0.txt.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 924,
+      "sha256": "7c8b1e146ca71d2ad60b53a3321fb13406c33e853e91165eb00a32b5aaff0bea"
+    },
+    {
+      "name": "texts-license-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/texts-license-commit.json",
+      "role": "source-rights-version-evidence",
+      "bytes": 8737,
+      "sha256": "66397846acb76e3e98171a24a52d002dd6630a063df604703351c740902e544e"
+    },
+    {
+      "name": "texts-license-commit-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/texts-license-commit.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 1332,
+      "sha256": "f76661523ab580c05e80d46169d7f7f11de29e2d4bba6895e3392409e2e358c4"
+    },
+    {
+      "name": "upstream-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/upstream-commit.json",
+      "role": "source-version-evidence",
+      "bytes": 46126,
+      "sha256": "9465e4f07ef20f7d5bac04643ee615e3ecbac2e5c055f73a2fcd3a2e526bd997"
+    },
+    {
+      "name": "upstream-commit-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/upstream-commit.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 1337,
+      "sha256": "6ebbe320ea556570af6242785edba12f3dfc94b94331b1eeacc93c9c008753bc"
+    },
+    {
+      "name": "upstream-contents",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/upstream-contents.json",
+      "role": "source-member-inventory-evidence",
+      "bytes": 2201,
+      "sha256": "690af51f78424dfd61227e8d0b1745d5ccd1c4d03c9e10ef22a25416387b6afe"
+    },
+    {
+      "name": "upstream-contents-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/upstream-contents.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "bytes": 1308,
+      "sha256": "77f8d29dbcb946317a631dfe850a62cfd77969df7fdc3217e064f70f37c9f69b"
+    },
+    {
+      "name": "umich-live-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/umich-item.live-http-headers.redacted.txt",
+      "role": "source-identity-live-response-evidence",
+      "bytes": 2346,
+      "sha256": "c72fa71fbd417ab75da6044062fc6c7da5282f4dd86a51ce3a1ba428ce487b5d"
+    },
+    {
+      "name": "umich-recovery-metadata",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/umich-item.recovery.json",
+      "role": "source-identity-recovery-provenance",
+      "bytes": 453,
+      "sha256": "5c393ab9ba6e97c1e0778c372250a72d6e30c5b4f0170ac9a5feba5e0b00a0d3"
+    },
+    {
+      "name": "umich-archived-item",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/umich-item.wayback-20240819041023.html",
+      "role": "source-identity-snapshot-evidence",
+      "bytes": 30130,
+      "sha256": "2e7d2b8b3b038e8cf15f3e210a6d09042713e188e0462978dd29c90621ce289a"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/marrant-prince-hall-african-lodge-sermon/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 2291,
+      "sha256": "201c722dd8957849cc337629ca5308dd8d07b7927ace0baf54afbdd2e976fadd"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/marrant-prince-hall-african-lodge-sermon/marrant-prince-hall-african-lodge-sermon.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1509,
+      "sha256": "f7015395a7c13e547fe25da44ecc41ccfe445a16a1278fe318e14a5731120327"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/marrant-prince-hall-african-lodge-sermon/marrant-prince-hall-african-lodge-sermon.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 5863,
+      "sha256": "cabfcc0c048cf6a78120540c971ab7445a488cff6018e5740fc446a4deac7749"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-evans-tcp-n17016-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/marrant_prince_hall_african_lodge_sermon_reconstruction.py",
+    "implementation_sha256": "e7d72a99d543972ab7c08e2943ede59dab4580e0cc663abb18d59c2ff092b4c3"
+  },
+  "validator": {
+    "id": "ocd-evans-tcp-n17016-exact-source-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/marrant_prince_hall_african_lodge_sermon_oracle.py",
+    "implementation_sha256": "3fe86b5b85a9a12138ad2faa5721ec392d5842d71970f39a33cf621b98a02e51",
+    "import_closure_sha256": "9e3c47e6147c0a2a90db46798695df4722445c9c24b05381735e4df2d820098b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

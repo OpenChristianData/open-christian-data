@@ -1,0 +1,192 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ia-watson-theological-institutes-1825-1826",
+  "work_id": "watson-theological-institutes",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "source_selection": {
+    "authority": "vol1-scan-pdf",
+    "selection": "Two scanned PDFs and complete JP2 page bundles are textual authority. IA OCR XML covers access-format pages; a separately bound local Tesseract witness covers unique volume II leaves 306/307. All nine retained files per volume are accounted."
+  },
+  "authorities": [
+    {
+      "name": "vol1-scan-pdf",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/scan.pdf",
+      "role": "primary-source",
+      "bytes": 42141063,
+      "sha256": "e5710f05bb7bff5f88801f7fe149a68f4ab2997f413dd6af457f3614931d5c11"
+    },
+    {
+      "name": "vol1-ocr-xml",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/ocr.xml",
+      "role": "primary-source",
+      "bytes": 21003798,
+      "sha256": "cb01f306043d0789880874d86e42ee9d9520f70a7599ea6b18486c68892bb7f0"
+    },
+    {
+      "name": "vol1-ocr-txt",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/ocr.txt",
+      "role": "retained-support",
+      "bytes": 1843131,
+      "sha256": "fa292ba60c57ae0e741b5da3f699afe429b3e724337a79ae30d7a10176bfd264"
+    },
+    {
+      "name": "vol1-scandata-xml",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/scandata.xml",
+      "role": "retained-support",
+      "bytes": 302589,
+      "sha256": "85ff92b7af82643d3ce9ea627095cb958c22bf16628e6d51dff61da8ce2e7940"
+    },
+    {
+      "name": "vol1-metadata-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/metadata.json",
+      "role": "retained-support",
+      "bytes": 108487,
+      "sha256": "467002e42591d174c6ba029c067d1b286f6499e4db3f92fdc2af213657b29fe7"
+    },
+    {
+      "name": "vol1-member-inventory-tsv",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/member-inventory.tsv",
+      "role": "retained-support",
+      "bytes": 3928,
+      "sha256": "083f549777880b5b26a07041fc0b42a2a98c82845a7caed7b0ea00013516d214"
+    },
+    {
+      "name": "vol1-acquisition-receipt-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/acquisition-receipt.json",
+      "role": "retained-support",
+      "bytes": 13113,
+      "sha256": "a713c168e3552af906d34b9c4aa92a3fe71674266d066bbd19448738d08f24dd"
+    },
+    {
+      "name": "vol1-page-numbers-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/page-numbers.json",
+      "role": "retained-support",
+      "bytes": 98926,
+      "sha256": "21c977d5d99816b5e4fed679a938c5b7ecba788438de859641cbeb65a65e0fc9"
+    },
+    {
+      "name": "vol1-page-scans-zip",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst01wats/page-scans.zip",
+      "role": "primary-source",
+      "bytes": 310954521,
+      "sha256": "a03b023c758b11b7f795f566b6661e46847c2067abf3d8bd3dd116e7f3c9916c"
+    },
+    {
+      "name": "vol2-scan-pdf",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/scan.pdf",
+      "role": "primary-source",
+      "bytes": 29372076,
+      "sha256": "f77bf6c9e4b5f84e96671db823396ea7250c42c79d5e3dc4caab7e854064e1c0"
+    },
+    {
+      "name": "vol2-ocr-xml",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/ocr.xml",
+      "role": "primary-source",
+      "bytes": 17677526,
+      "sha256": "fcf3e62921c0c238b520d2eea7b1e25c354f0dabff2a7b31f4ea580e63213790"
+    },
+    {
+      "name": "vol2-ocr-txt",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/ocr.txt",
+      "role": "retained-support",
+      "bytes": 1525861,
+      "sha256": "7f3497d530413190a7cfd9d0927e926b11dde46464750bc7ded1a77c0425ecc1"
+    },
+    {
+      "name": "vol2-scandata-xml",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/scandata.xml",
+      "role": "retained-support",
+      "bytes": 258175,
+      "sha256": "cf8c32d9b4e811e26cf3a79de5082449f4782b5091671d706dd96a838c305c4e"
+    },
+    {
+      "name": "vol2-metadata-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/metadata.json",
+      "role": "retained-support",
+      "bytes": 93859,
+      "sha256": "5b6c0680ba7649a5cdf943722c99d382f6e54b445659581dbf539319b7cb7d43"
+    },
+    {
+      "name": "vol2-member-inventory-tsv",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/member-inventory.tsv",
+      "role": "retained-support",
+      "bytes": 4270,
+      "sha256": "4645aa13c53ab95bd838aa8059c962989bf0516491731300eef9d81c87ed2747"
+    },
+    {
+      "name": "vol2-acquisition-receipt-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/acquisition-receipt.json",
+      "role": "retained-support",
+      "bytes": 13893,
+      "sha256": "646dca880220af9f4d7479b82e3dc0f977b106152f3cb1d67ce6ef28e0cb4c27"
+    },
+    {
+      "name": "vol2-page-numbers-json",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/page-numbers.json",
+      "role": "retained-support",
+      "bytes": 83942,
+      "sha256": "8d796bfcaca9fe1fd77abc353066d8b7024f4f5e9ca44941ec048905907f5a12"
+    },
+    {
+      "name": "vol2-page-scans-zip",
+      "path": "raw/internet-archive/theological-institutes/theologicalinst02wats/page-scans.zip",
+      "role": "primary-source",
+      "bytes": 261617166,
+      "sha256": "bcfbed566401548c4ed368511f083038ece8cbac3fcfae2ab14054e93c3bd469"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/watson-theological-institutes-ia/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3678,
+      "sha256": "2abbca3d339d83bd4583bbdecc3586eb06d1662f3aed65e7cb5b8c9a97a536b6"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/watson-theological-institutes-ia/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1280,
+      "sha256": "a415daf0d3400ead3c60107fbf3577f71655254e5ff5242aa2505131604f8381"
+    },
+    {
+      "name": "derived-ocr-witness",
+      "path": "sources/watson-theological-institutes-ia/deleted-pages-tesseract.json",
+      "role": "derived-ocr-witness",
+      "bytes": 7344,
+      "sha256": "1eafcaed2bab48e61938620a4380f31abb79f64c5fe6a1bd7478aa17064e3dda"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "converter": {
+    "id": "ocd-watson-theological-institutes-ia-scan-indexed-ocr",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/watson_theological_institutes_ia.py",
+    "implementation_sha256": "0ddbe5100754a8b471ca5d876d0074b72f699a207d28b34bae04a3b7346bc332"
+  },
+  "validator": {
+    "id": "ocd-watson-theological-institutes-ia-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/watson_theological_institutes_ia_oracle.py",
+    "implementation_sha256": "e497773e8faa3788d97ef56e075d92b6eac7bfc49eabdfabd565913e97a2df57",
+    "import_closure_sha256": "30cbe5abba2b0df8eb68d6d1044fbdbe1afe40ad5aa1bf383d685e310f1445fd"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

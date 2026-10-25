@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/lib041/npnf113-source-accountability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "profile_id", "source_member", "document_accounting",
+    "scope_accounting", "source_census", "assigned_work_count", "feature_count",
+    "attribute_count", "omitted_feature_count", "duplicate_feature_count",
+    "unresolved_feature_count", "division_accounting", "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-lib041-npnf113-source-accountability-v1"},
+    "profile_id": {"const": "lib041-npnf113-ten-work-v21"},
+    "source_member": {"type": "object"},
+    "document_accounting": {"type": "object"},
+    "scope_accounting": {"type": "object"},
+    "source_census": {"type": "object"},
+    "assigned_work_count": {"const": 10},
+    "feature_count": {"const": 11528},
+    "attribute_count": {"const": 32716},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "division_accounting": {"type": "array", "minItems": 13},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 11528,
+      "maxItems": 11528,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ordinal", "feature_id", "work_id", "root_id", "source_selector",
+          "source_tag", "source_xml_id", "source_attributes", "source_text_present",
+          "source_text_sha256", "source_tail_present", "source_tail_sha256",
+          "tail_disposition", "tei_tag", "tei_xml_id", "tei_parent_id",
+          "tei_child_ordinal", "tei_attributes", "attribute_dispositions",
+          "tei_selector", "parent_feature_id", "source_title_head", "disposition"
+        ],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1},
+          "feature_id": {"type": "string", "pattern": "^lib041-feature-[0-9]{5}$"},
+          "work_id": {"type": "string", "minLength": 1},
+          "root_id": {"type": "string", "minLength": 1},
+          "source_selector": {"type": "string", "pattern": "^ThML\\.body/"},
+          "source_tag": {"enum": ["div2", "div3", "i", "note", "p", "pb", "scripCom", "scripRef", "span"]},
+          "source_xml_id": {"type": ["string", "null"]},
+          "source_attributes": {"type": "object"},
+          "source_text_present": {"type": "boolean"},
+          "source_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_tail_present": {"type": "boolean"},
+          "source_tail_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tail_disposition": {"enum": ["represented", "excluded-selected-root-boundary"]},
+          "tei_tag": {"enum": ["div", "foreign", "hi", "note", "p", "pb", "ref", "seg"]},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "tei_parent_id": {"type": "string", "minLength": 1},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "attribute_dispositions": {"type": "array"},
+          "tei_selector": {"type": "string", "pattern": "^#"},
+          "parent_feature_id": {"type": ["string", "null"]},
+          "source_title_head": {"type": ["string", "null"]},
+          "disposition": {"const": "represented"}
+        }
+      }
+    }
+  }
+}

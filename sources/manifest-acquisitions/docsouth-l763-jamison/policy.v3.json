@@ -1,0 +1,121 @@
+{
+  "contract": "ocd-docsouth-single-work-validation-policy-v2",
+  "mapping": {
+    "migration": "Use pinned TEI P4-to-P5 stylesheet and source-bound DocSouth compatibility mapper. Preserve source text and order. Preserve only extant page markers and their source IDs/labels; never infer missing page text. Retain figures as external graphic references using source entity names and provider URLs.",
+    "oracle": "Independent Expat parser compares complete front/body/back text, actual page marker inventory/order, source XML IDs, external figure/entity URLs, accountability ledger, policy/readme bindings, and pinned TEI P5 schema.",
+    "work_boundary": "One top-level titled work -> one TEI document. Preserve the full retained TEI.2 envelope, not just the work body."
+  },
+  "provenance": {
+    "acquisition_id": "monroe-franklin-jamison-autobiography-and-work-docsouth-acquired",
+    "edition_id": "monroe-franklin-jamison-autobiography-and-work-docsouth-electronic",
+    "human_acceptance": "not recorded",
+    "method": "Source-bound DocSouth TEI.2 to P5 conversion with independent Expat oracle.",
+    "publication": "not authorized",
+    "source_member_sha256": "ca7623a00c24cdd790c848227ea46b85decc6ce13b2d16bfc43d026d6160ddca",
+    "source_rights": "DocSouth TEI availability states No Copyright - United States; provider warns this is its belief under US law and makes no determination for other countries. Electronic text/encoding rights remain as stated by provider; no rights clearance inferred.",
+    "source_url": "https://docsouth.unc.edu/neh/jamison/jamison.xml",
+    "textual_form_id": "monroe-franklin-jamison-autobiography-and-work-docsouth-retained",
+    "work_id": "monroe-franklin-jamison-autobiography-and-work"
+  },
+  "resolved_resources": {
+    "figure_assets": [
+      {
+        "bytes": 23439,
+        "entity": "jamcv",
+        "figure_c14n_sha256": "1f2e895d6dc62147caa87dae6bade9824a18b87e4605d905194d31edeefdaff3",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jamcv.jpg",
+        "sha256": "0cb6678f8b2b84176413caee826dd5d35f76fdc95358ba2531019f5cd4911e53",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jamcv.jpg"
+      },
+      {
+        "bytes": 25761,
+        "entity": "jamtp",
+        "figure_c14n_sha256": "f2a779f898dd304ff6455dd3a87ecd3e7bfbaf057e603f36e333ad62010018b5",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jamtp.jpg",
+        "sha256": "9f581973b945e42ecd99473cf8f77362ef7feb8abb24575f35a14445ccc5ef47",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jamtp.jpg"
+      },
+      {
+        "bytes": 13701,
+        "entity": "jamvs",
+        "figure_c14n_sha256": "8ea883db62bb03e0ab874cdcefb775650e80db5212e782082b96cda4b569b242",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jamvs.jpg",
+        "sha256": "43d6a1f0fe15beb0a1a8f4139343f19124f0de2a9a9551f46f4a90c78551af4c",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jamvs.jpg"
+      },
+      {
+        "bytes": 62700,
+        "entity": "jam65",
+        "figure_c14n_sha256": "48c26db63bc2cdef6f07acfcb4efa455ccddd62a71de7197a7b1235e8c443075",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jam65.jpg",
+        "sha256": "db2650f3387375336df684ed3b7d84a9cb10fd1bdbdd746a5d0ef14b0258a1ca",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jam65.jpg"
+      },
+      {
+        "bytes": 21307,
+        "entity": "jam125",
+        "figure_c14n_sha256": "672a217bc01af22fba97e034715d83f656ec44c60df7d9810b8018c8b5404a03",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jam125.jpg",
+        "sha256": "ad37f9c2530c9fcda1688e6b26a7709e7a8854220d8e9b5ee6628110231e93d6",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jam125.jpg"
+      },
+      {
+        "bytes": 50457,
+        "entity": "jam155",
+        "figure_c14n_sha256": "663dfe6a2ff50b45c5e0f7e9959c24bb9f6de95b1b170d5e42d7d46a2f7740c4",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jam155.jpg",
+        "sha256": "3103ee168c0c2235f188491970dd3ff2818cd6512c594941b9c7c8432f20d0c6",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jam155.jpg"
+      },
+      {
+        "bytes": 54906,
+        "entity": "jam183",
+        "figure_c14n_sha256": "f5bc63a87a909ef26ad548ef4e552438f46a126da593a8a820d31787c4d7e619",
+        "http_status": 200,
+        "media_type": "image/jpeg",
+        "path": "raw/docsouth/l763-jamison/jam183.jpg",
+        "sha256": "bb94e9578ec57f63c42a97bbe47622d8300cd20e0edc1cc9bd60f10b93b4427d",
+        "source_url": "https://docsouth.unc.edu/neh/jamison/jam183.jpg"
+      }
+    ]
+  },
+  "unresolved": [
+    {
+      "id": "print-collation",
+      "question": "The retained electronic transcription has not been independently collated against print scans.",
+      "status": "open"
+    },
+    {
+      "id": "page-label-gaps",
+      "question": "Numeric page marker gaps are recorded from the retained marker sequence only; no absent page text or leaf identity is inferred.",
+      "status": "open"
+    },
+    {
+      "id": "visual-review",
+      "question": "Source/candidate visual comparison remains open.",
+      "status": "open"
+    },
+    {
+      "id": "rights-clearance",
+      "question": "The provider rights statement is retained; rights outside its stated scope and electronic encoding terms are not cleared.",
+      "status": "open"
+    },
+    {
+      "id": "acceptance-publication",
+      "question": "Human acceptance, accepted-master installation, and publication are not recorded.",
+      "status": "open"
+    }
+  ]
+}

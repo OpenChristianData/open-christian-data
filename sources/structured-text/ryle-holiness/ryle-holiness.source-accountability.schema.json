@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.local/schemas/ryle-holiness-source-accountability-v1",
+  "title": "Ryle Holiness source accountability",
+  "type": "object",
+  "required": [
+    "contract", "source_id", "source_path", "source_bytes", "source_sha256",
+    "source_census", "element_counts", "lexical_events", "member_census",
+    "features", "represented_element_count", "formatting_only_excluded_element_count",
+    "unsupported_element_count"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-ryle-holiness-source-accountability-v1"},
+    "source_id": {"const": "ryle-holiness-retained-ccel-thml"},
+    "source_path": {"const": "raw/ccel/ryle/holiness.xml"},
+    "source_bytes": {"type": "integer", "const": 1302437},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_census": {"type": "object"},
+    "element_counts": {"type": "object"},
+    "lexical_events": {"type": "object"},
+    "member_census": {
+      "type": "object",
+      "required": ["included", "excluded", "retained_family_total"],
+      "properties": {
+        "included": {"const": 1},
+        "excluded": {"const": 0},
+        "retained_family_total": {"const": 1}
+      },
+      "additionalProperties": false
+    },
+    "features": {
+      "type": "array",
+      "minItems": 5698,
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_id", "source_selector", "source_qname", "source_attributes",
+          "source_direct_text", "source_tail_text", "source_parent_selector",
+          "source_child_ordinal", "disposition"
+        ],
+        "properties": {
+          "feature_id": {"type": "string"},
+          "source_selector": {"type": "string"},
+          "source_qname": {"type": "string"},
+          "source_attributes": {"type": "array"},
+          "source_direct_text": {"type": "string"},
+          "source_tail_text": {"type": "string"},
+          "source_parent_selector": {"type": ["string", "null"]},
+          "source_child_ordinal": {"type": "integer", "minimum": 1},
+          "disposition": {"enum": ["represented", "formatting-only-excluded"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "represented_element_count": {"const": 5666},
+    "formatting_only_excluded_element_count": {"const": 32},
+    "unsupported_element_count": {"const": 0},
+    "formatting_only_tags": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.example/schemas/gregory-nyssa-npnf205-source-accountability-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "assigned_work_count",
+    "source_member_count",
+    "feature_count",
+    "attribute_count",
+    "omitted_feature_count",
+    "duplicate_feature_count",
+    "unresolved_feature_count",
+    "assigned_census",
+    "member_accounting",
+    "top_level_division_accounting",
+    "direct_div2_accounting",
+    "work_bindings",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-npnf2-lib047-source-accountability-v1"},
+    "schema": {"const": "gregory-nyssa-npnf205.source-accountability.schema.json"},
+    "profile_id": {"const": "gregory-nyssa-npnf205-two-work-v1"},
+    "assigned_work_count": {"const": 2},
+    "source_member_count": {"const": 1},
+    "feature_count": {"const": 217},
+    "attribute_count": {"const": 713},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "assigned_census": {"type": "object"},
+    "member_accounting": {"type": "array", "minItems": 1, "maxItems": 1},
+    "top_level_division_accounting": {"type": "object"},
+    "direct_div2_accounting": {"type": "object"},
+    "work_bindings": {"type": "array", "minItems": 2, "maxItems": 2},
+    "crosswalk": {"type": "array", "minItems": 217, "maxItems": 217}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib034-readable-gibson-expositormatt-v2",
+  "work_id": "expositors-bible--j-monro-gibson",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/gibson_expositormatt.xml",
+      "role": "primary-source",
+      "bytes": 905061,
+      "sha256": "25c0a6febeaff9cd0ebe4e75a676b2cfab830f95ad3b0b1d384cf8777150c7f4"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-pair-v2/gibson-expositormatt/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 692,
+      "sha256": "b263a856aef41d3dd3d94c5cc9636b14a020ff2cda1cab47368536da524ffa4e"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-pair-v2/gibson-expositormatt/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 894,
+      "sha256": "3c9d91ed00d89bf16dbd2285153ad5f00eeb9bc451bcdaae1d297041fc17141e"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-pair-v2/gibson-expositormatt/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 801,
+      "sha256": "dbeae335ca544421b86228a688a5ff4772192f569608d842bb38bacd08ece10a"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-pair-v2/gibson-expositormatt/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1690,
+      "sha256": "475f091b86bec83a0522d35cbc7e8a0e28319834094ff5de56e62a2e5d0d54c1"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib034-readable-pair-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_pair.py",
+    "implementation_sha256": "c93d7d38822efff627a24b4ee5ba2412b70ad1fc49d6d00c1fe343d7988818f8"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib034-readable-pair-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_pair_oracle.py",
+    "implementation_sha256": "393fa1e7bb48aeaa6c95ecd7e7f90a8f81060c2b5f3a276dba5746cf42c65b2f",
+    "import_closure_sha256": "393fa1e7bb48aeaa6c95ecd7e7f90a8f81060c2b5f3a276dba5746cf42c65b2f"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

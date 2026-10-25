@@ -1,0 +1,83 @@
+{
+  "contract": "ocd-watson-runtime-supplement-v1",
+  "work_id": "watson-beatitudes",
+  "claim": "Current unchanged oracle validates byte-identical substantive candidate members; existing accepted master and acceptance remain unchanged.",
+  "acceptance": {
+    "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acceptance.json",
+    "bytes": 7272,
+    "sha256": "88a0148d497dfc4423bfe15f40af6a85332be767abf6901af10542b91acbea4c"
+  },
+  "bindings": [
+    {
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/master.tei.xml",
+      "bytes": 1138506,
+      "sha256": "07b0070649c6a6b8e6ebbfd300834299dc2d64cc3684e2198fc42dadb82b0aef"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261012.source-manifest.json",
+      "bytes": 9647,
+      "sha256": "cb1ad45d3d0fb8b75d1c29cef1998ee34bf002dda2ab8562a046e9262e81be75"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261021.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "6dd270d4ffe937d7943f65c6b6960fb0080724f55d0449cf1d7b62e8e587989c"
+    },
+    {
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json",
+      "bytes": 3991,
+      "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-supplement-20261021.json",
+      "bytes": 4840,
+      "sha256": "31dbf2a9594059c86dd9fb3bec56b23e13192f98905c43bcc1687cca6d40e919"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261025.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "9c5c27e1aeac868d809001c9ff06e14bfeecb2f510652c0dde5e7d435a6b4e1c"
+    }
+  ],
+  "authority_changes": [
+    {
+      "name": "closure-acquisitions",
+      "path": "ocd_kernel/library/acquisitions.py",
+      "before": {
+        "bytes": 28740,
+        "sha256": "281ae80f19c1b0021d7e05b20dcd3f5eef4a6e29c1bea58f62cd094bbd60d08d"
+      },
+      "after": {
+        "bytes": 28739,
+        "sha256": "662112259b72c44328cef5bada83b4c7d841a597cd37ad6cc8d55efad98fc47f"
+      }
+    },
+    {
+      "name": "closure-identities",
+      "path": "ocd_kernel/library/identities.py",
+      "before": {
+        "bytes": 21331,
+        "sha256": "2ca820099d6952907fcfd94e0ae5bf0e7dd897273587c0318423f4d7ce4c402c"
+      },
+      "after": {
+        "bytes": 21850,
+        "sha256": "e4a0cb972707d575e254291993d900f90f7192c9755714aec39fba4b71ebb401"
+      }
+    }
+  ],
+  "previous_package_sha256": "c52dd0ba31f4ea178cb3218dba42b3a4d6893d0b834bd58e1844426aec8cb332",
+  "current_package_sha256": "37e1f0613bada811a709b3c624a93a185ac9d88d5ca8bedf34fc576407711f68",
+  "validation": {
+    "path": "library/works/watson-beatitudes/integration/runtime-proof-20261025/current-candidate/validation.json",
+    "bytes": 1515,
+    "sha256": "951e16c50ea73fe9990f58c5fc09bc28b85b9e2da1de72de53ffc15ac8c71e79"
+  },
+  "source_sha256": "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837",
+  "unchanged_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ]
+}

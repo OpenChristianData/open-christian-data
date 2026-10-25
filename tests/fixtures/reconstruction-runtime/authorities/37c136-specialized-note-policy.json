@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "Bind the exact ticket, work identity, one retained source path, byte count, and SHA-256.",
+    "Reassemble complete source text and every original CR/LF line terminator from the TEI candidate.",
+    "Retain every blank-delimited source block and each blank-line delimiter in source order.",
+    "Use only exact source-line heading locators, explicit parent relations, and attached title-line runs in the bound profile.",
+    "Reject ordinary prose as a heading even when it begins with a heading keyword; reject missing or altered mapped headings.",
+    "Independently derive heading selection, title attachment, line, block, member, and omission accounting from the exact source.",
+    "Verify that mapped title and following content lines remain descendants of their declared source heading.",
+    "Verify TEI sourceDesc/reference, source-correction attestation, nonacceptance, and rights disclaimer bindings.",
+    "Validate against the bound TEI P5 schema and candidate-package contract.",
+    "Keep the candidate nonaccepted; make no rights-clearance, human-acceptance, or publication claim.",
+    "Derive all 100 numbered call and definition locations independently from the retained source; verify reciprocal TEI links and the section owning each call.",
+    "Retain source-order footnote groups, link source note continuation blocks, and reject unrelated Carey-only encoding prose."
+  ],
+  "contract": "ocd-selected-source-validation-policy-v2",
+  "oracle_independence": "The Drummond oracle scans the exact retained source independently for all 100 call and definition pairs, verifies source-line carriers and endings in the final TEI, derives call-owning sections from its own source-located heading table, checks continuation blocks and validates the bound TEI P5 schema. It does not import the producer or its note map.",
+  "policy_id": "selected-proofread-policy-37c-136-notes-v1",
+  "rejected_mutations": [
+    "source-line deletion",
+    "source-line reordering",
+    "false-positive heading for ordinary prose",
+    "missing mapped heading",
+    "altered mapped heading",
+    "detached heading title/content",
+    "blank-delimiter deletion",
+    "line-ending mutation",
+    "adjacent raw-source authority insertion",
+    "sourceDesc/reference drift",
+    "human-acceptance disclaimer drift",
+    "rights-clearance disclaimer drift",
+    "numbered-note call target drift",
+    "numbered-note definition owner drift",
+    "numbered-note continuation detachment",
+    "unrelated encoding policy insertion"
+  ],
+  "source_inventory": "one explicit primary-source member; no adjacent-source traversal",
+  "source_path": "raw/gutenberg/pg23334.txt",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "ticket_id": "37c-136",
+  "work_id": "drummond-natural-law"
+}

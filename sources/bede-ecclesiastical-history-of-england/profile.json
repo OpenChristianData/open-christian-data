@@ -1,0 +1,27 @@
+{
+  "contract": "ocd-bede-gutenberg-profile-v1",
+  "work_id": "bede-ecclesiastical-history-of-england",
+  "edition_id": "bede-ecclesiastical-history-of-england-gutenberg-electronic",
+  "acquisition_id": "bede-ecclesiastical-history-of-england-gutenberg-acquired",
+  "source_html": {
+    "path": "raw/gutenberg/38326/html/pg38326-images.html",
+    "bytes": 2838642,
+    "sha256": "39e6c22c2f13902cf6d394b98a43f7e2dd83f02e878da620c879e22805719fbb"
+  },
+  "source_archive": {
+    "path": "raw/gutenberg/38326/pg38326-h.zip",
+    "bytes": 578331,
+    "sha256": "97221f5e78b47a022f3f2e9be79db30127485e63a8096d8a29fada32e6ca88c8",
+    "members": [
+      {"path": "pg38326-images.html", "bytes": 2838642, "crc32": "9965179f", "sha256": "39e6c22c2f13902cf6d394b98a43f7e2dd83f02e878da620c879e22805719fbb"},
+      {"path": "38326-cover.png", "bytes": 74200, "crc32": "30ed08d2", "sha256": "fec61832548a3392f92d60f27f94dc5d3f2ce1d780e6d4ec3bda59e8eea3f497"}
+    ]
+  },
+  "source_support": {"path": "raw/gutenberg/38326/html/38326-cover.png", "bytes": 74200, "sha256": "fec61832548a3392f92d60f27f94dc5d3f2ce1d780e6d4ec3bda59e8eea3f497"},
+  "selection": "The unique div.tei-text is the complete edition text. The enclosing Gutenberg header, footer/license, HTML head and CSS remain retained and are excluded from the literary TEI text.",
+  "expected_sections": ["Editor's Preface", "Introduction", "Life Of Bede", "Errata", "Preface", "Book I", "Book II", "Book III", "Book IV", "Book V", "Continuation", "Index"],
+  "expected_footnotes": 1081,
+  "expected_page_markers": 465,
+  "expected_local_links": 9639,
+  "expected_source_ids": 3968
+}

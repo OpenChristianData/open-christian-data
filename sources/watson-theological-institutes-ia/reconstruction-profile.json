@@ -1,0 +1,68 @@
+{
+  "profile_id": "watson-theological-institutes-ia-review-v1",
+  "work_id": "watson-theological-institutes",
+  "source_id": "ia-watson-theological-institutes-1825-1826",
+  "scope": "Two retained IA volumes, scans as textual authority, 1070 access-format OCR pages plus two unique scan-only text pages represented for review",
+  "volumes": [
+    {
+      "identifier": "theologicalinst01wats",
+      "edition_year": 1825,
+      "scandata_leaves": 586,
+      "access_pages": 578,
+      "deleted_leaves": [
+        0,
+        208,
+        209,
+        581
+      ],
+      "calibration_leaves": [
+        582,
+        583,
+        584,
+        585
+      ],
+      "front_last_leaf": 12,
+      "back_first_leaf": 574,
+      "page_scan_members": 586,
+      "deleted_leaf_disposition": "Leaves 208/209 are lower-quality spread scans of printed pages 200/201, duplicated by included clear rescans 210/211; leaves 0/581 show nontextual cover edges.",
+      "represented_text_pages": 578
+    },
+    {
+      "identifier": "theologicalinst02wats",
+      "edition_year": 1826,
+      "scandata_leaves": 500,
+      "access_pages": 492,
+      "deleted_leaves": [
+        0,
+        306,
+        307,
+        495
+      ],
+      "calibration_leaves": [
+        496,
+        497,
+        498,
+        499
+      ],
+      "front_last_leaf": 8,
+      "back_first_leaf": 488,
+      "page_scan_members": 500,
+      "deleted_leaf_disposition": "Leaves 306/307 contain unique printed pages 298/299, represented by hash-bound local uncorrected Tesseract OCR from their retained JP2 images; leaves 0/495 show nontextual cover edges.",
+      "represented_text_pages": 494
+    }
+  ],
+  "mapping": {
+    "volume": "Separate TEI text members in a group, with independently identified 1825 and 1826 source volumes.",
+    "pages": "All 1070 included scandata leaves receive scan-page divisions with PDF index and scan member; volume II leaves 306/307 receive scan-page divisions with source JP2 member and printed page label. Source order is leaf order.",
+    "front_body_back": "Front ends at title/advertisement in volume I and title/imprint in II; back starts at Contents leaf 574 or 488 respectively.",
+    "text": "Every IA OCR PARAGRAPH with visible words, plus Tesseract paragraphs from unique volume II leaves 306/307, receives a source-ID wrapper and p or explicit heading. Every source text line has an lb and unaltered line string.",
+    "headings": "Only standalone CHAPTER/PART and named front/back labels are encoded as head; all other OCR lines remain readable and need scan review.",
+    "exclusions": "Every scandata leaf has a retained JP2. Volume I's two mid-volume Delete images duplicate included rescans; volume II's two mid-volume Delete images are unique and represented at their exact source positions. The remaining non-access leaves are cover edges or calibration cards. Every excluded image is individually hashed."
+  },
+  "known_limitations": [
+    "OCR title pages contain obvious errors. The candidate preserves them visibly and does not claim scan-corrected wording.",
+    "All 1072 represented scan pages require human visual/text collation for textual fidelity.",
+    "Page-spanning paragraphs and non-explicit headings are not semantically joined."
+  ],
+  "sample_visual_review": "Personally viewed retained JP2 scans: volume I leaves 0,207-211,580-581 and volume II leaves 0,306-309,494-495. Tesseract token sequence similarity is 0.971/0.973 for volume I deleted/rescan pairs and 0.08/0.077 for volume II, corroborating distinct printed pages 298/299. This bounded review does not collate all OCR wording."
+}

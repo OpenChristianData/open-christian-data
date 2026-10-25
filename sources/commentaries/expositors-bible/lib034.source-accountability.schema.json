@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LIB-034 complete retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_member_count",
+    "work_count",
+    "source_bytes",
+    "feature_count",
+    "omitted_feature_count",
+    "unresolved_feature_count",
+    "member_census",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-expositors-bible-lib034-source-accountability-v1"
+    },
+    "schema": {
+      "const": "lib034.source-accountability.schema.json"
+    },
+    "profile_id": {
+      "const": "expositors-bible-lib034-complete-current-claim-xml-v1"
+    },
+    "source_member_count": {
+      "const": 10
+    },
+    "work_count": {
+      "const": 8
+    },
+    "source_bytes": {
+      "const": 9480629
+    },
+    "feature_count": {
+      "const": 47636
+    },
+    "omitted_feature_count": {
+      "const": 0
+    },
+    "unresolved_feature_count": {
+      "const": 0
+    },
+    "member_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "included",
+        "excluded",
+        "counts",
+        "inventory_contradiction"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ocd-expositors-bible-lib034-member-census-v1"
+        },
+        "included": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10
+        },
+        "excluded": {
+          "type": "array",
+          "minItems": 37,
+          "maxItems": 37
+        },
+        "counts": {
+          "const": {
+            "included": 10,
+            "excluded": 37,
+            "retained_family_total": 47
+          }
+        },
+        "inventory_contradiction": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 47636,
+      "maxItems": 47636,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "feature_id",
+          "source_selector",
+          "source_tag",
+          "source_attributes",
+          "source_direct_text",
+          "source_tail_text",
+          "source_direct_text_sha256",
+          "source_tail_text_sha256",
+          "source_parent_ordinal",
+          "source_child_ordinal",
+          "tei_xml_id",
+          "member_id",
+          "work_id",
+          "disposition",
+          "tei_selector"
+        ],
+        "properties": {
+          "feature_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_selector": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_tag": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_attributes": {
+            "type": "object"
+          },
+          "source_direct_text": {
+            "type": "string"
+          },
+          "source_tail_text": {
+            "type": "string"
+          },
+          "source_direct_text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "source_tail_text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "source_parent_ordinal": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "source_child_ordinal": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "tei_xml_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "member_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "work_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "const": "represented"
+          },
+          "tei_selector": {
+            "type": "string",
+            "pattern": "^#.+"
+          }
+        }
+      }
+    }
+  }
+}

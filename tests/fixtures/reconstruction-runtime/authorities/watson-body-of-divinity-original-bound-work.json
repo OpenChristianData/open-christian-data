@@ -1,0 +1,42 @@
+{
+  "schema_version": "2.0",
+  "work_id": "watson-body-of-divinity",
+  "title": "A Body of Divinity",
+  "evidence": [
+    "raw/ccel/watson/divinity.xml",
+    "raw/ccel/watson/divinity.xml#i",
+    "raw/ccel/watson/divinity.xml#iii",
+    "raw/ccel/watson/divinity.xml#iv",
+    "raw/ccel/watson/divinity.xml#v",
+    "raw/ccel/watson/divinity.xml#vi",
+    "raw/ccel/watson/divinity.xml#vii",
+    "raw/ccel/watson/divinity.xml#viii",
+    "raw/ccel/watson/divinity.xml#ix",
+    "raw/ccel/watson/divinity.xml#x",
+    "raw/ccel/watson/divinity.xml#xi"
+  ],
+  "creators": [
+    {
+      "name": "Thomas Watson",
+      "role": "author",
+      "evidence": ["raw/ccel/watson/divinity.xml#i"]
+    }
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "watson-body-of-divinity-route-source-form",
+      "title": "Retained source-form route binder; form and translation identity unresolved",
+      "language": "en",
+      "category": "prose",
+      "editions": [
+        {
+          "edition_id": "watson-body-of-divinity-retained-thml-route",
+          "title": "Retained ThML member route binder; edition identity unresolved",
+          "language": "en",
+          "category": "prose",
+          "acquisition_ids": ["watson-body-of-divinity-retained-source"]
+        }
+      ]
+    }
+  ]
+}

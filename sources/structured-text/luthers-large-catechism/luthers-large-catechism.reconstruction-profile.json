@@ -1,0 +1,40 @@
+{
+  "contract": "ocd-lib077-reconstruction-profile-v1",
+  "profile_id": "lib077-luthers-large-catechism-retained-gutenberg-v1",
+  "work_id": "luthers-large-catechism",
+  "title": "Martin Luther's Large Catechism, translated by Bente and Dau",
+  "creator": "Martin Luther",
+  "contributor_statement": "Translators F. Bente and W. H. T. Dau; retained source credits Rev. Bob Smith for the electronic text.",
+  "source_url": "https://www.gutenberg.org/ebooks/1722",
+  "source_sha256": "0e5df44eea431ef1ebaf222b2802a2fd61cbe1468bea0923085bc95797dc0b43",
+  "source_bytes": 288656,
+  "physical_lines": 4886,
+  "source_member": {
+    "path": "raw/gutenberg/pg1722.txt",
+    "bytes": 288656,
+    "sha256": "0e5df44eea431ef1ebaf222b2802a2fd61cbe1468bea0923085bc95797dc0b43"
+  },
+  "source_envelope": {
+    "header_lines": [1, 29],
+    "start_marker_line": 30,
+    "body_lines": [31, 4535],
+    "end_marker_line": 4536,
+    "license_lines": [4537, 4886],
+    "part_heading_lines": [409, 2571, 3003, 3772]
+  },
+  "structure_policy": {
+    "line_carrier": "tei:ab-or-head",
+    "line_container": "one tei:div per physical source line",
+    "heading_carriers": "source-defined Part and section headings are typed and retained",
+    "text_rule": "verbatim after BOM and CRLF transport framing removal",
+    "uncertain_structure": "retain line carrier and mark candidate boundary unresolved"
+  },
+  "scope": {
+    "status": "complete-retained-source-expression",
+    "candidate_status": "nonaccepted",
+    "represented": "all 4,886 retained physical lines",
+    "unrepresented": "none",
+    "human_review": "required"
+  }
+}
+

@@ -1,0 +1,101 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "lib072-spurgeon-lectures-two-retained-ocr-members",
+  "work_id": "spurgeon-lectures-to-my-students",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "spurgeon-lectures-to-my-students",
+    "retained_source_sha256": "dc26dcbe2dfe505c4ecb4a766bdd57db10ac691ec2975c662f9c25d3d8304fb4",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "structured-text/spurgeon-lectures-to-my-students.json",
+        "legacy_source_sha256": "028f95dd26fa5b7d4788d06ee94b38128ae81e91cfc3bf46eca135339d6a920c"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "spurgeon-lectures-series-1-source",
+      "path": "raw/ia/spurgeon_lectures_series_1.txt",
+      "role": "primary-source",
+      "bytes": 644144,
+      "sha256": "49f72c35a75b1052d98063fafc191ea05f009dc80d2a53953fd72076212f8e57"
+    },
+    {
+      "name": "spurgeon-lectures-series-2-source",
+      "path": "raw/ia/spurgeon_lectures_series_2.txt",
+      "role": "primary-source",
+      "bytes": 586376,
+      "sha256": "bab94b8e4aff80d46f20134814b6393743c15f408a671e32c7ce7933ebf335f6"
+    },
+    {
+      "name": "work-binding",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/spurgeon-lectures-to-my-students/config.json",
+      "role": "work-identity-config",
+      "bytes": 96,
+      "sha256": "57fe4650cfab122096b38062c2c33ff3300e91521b63e7c18cf378de4853f56b"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1635,
+      "sha256": "33c2f3264076c31425545412d504b0a06af2e29a700789a1b9cd83e3812d29c2"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8421,
+      "sha256": "b5c905a129c376f505bc7ae205d5a7eea9c0eb94c499cd0fbe31e52b5a5136e9"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1505,
+      "sha256": "c74d5055170e65d5cc2e0154017589021a8f4d73e8d20adc67ecbcc387b379c5"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/gutenberg-evangelical-lib072.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1748,
+      "sha256": "63ddb1d86c062295829baefb425236a47a99c6286c287dc596103e373485c00a"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib072-retained-texts-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/gutenberg_evangelical_lib072_reconstruction.py",
+    "implementation_sha256": "5005ea24a7a735dd47c11bc2202e5b054f6da42d3c063934659d7940dd7869b7"
+  },
+  "validator": {
+    "id": "ocd-lib072-retained-text-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/gutenberg_evangelical_lib072_oracle.py",
+    "implementation_sha256": "aa86b6f8339cc94ff6423e2effb9c89fd8899f94942ac5e24d10608cf23c9ece",
+    "import_closure_sha256": "3dcd6889a01598d3f3cd2ef5c89718b64fe7f71f57b1eb792d3170119a77833d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

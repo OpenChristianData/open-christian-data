@@ -1,14 +1,9 @@
-"""Phase 0 scaffolder: ensure every resource in data/ has a sources/<resource>/witnesses.json file.
+"""Historical witness-inventory utility; not a current-library admission gate.
 
-Walks data/, groups records by ``meta.id``, and writes an empty
-``sources/<meta.id>/witnesses.json`` for any resource that doesn't have one
-yet. Existing witnesses.json files are never overwritten — this is a creator,
-not a migrator. Use ``check_witness_inventory.py`` to validate after running.
-
-The flat layout (``sources/<meta.id>/witnesses.json``) is the canonical
-witness-inventory path per the v2 plan's worked examples. Existing
-``sources/<category>/<resource>/`` directories holding raw source material are
-untouched.
+Requires explicit --legacy-data, --repo-root and --schema arguments. The old
+witness_inventory schema is no longer shipped. Supply the historical schema
+from the archive being inspected; rendering catalogs and current acquisitions
+have different identities and are not interchangeable with this format.
 """
 
 from __future__ import annotations
@@ -25,10 +20,6 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
 
 from ocd_kernel.lib.atomic_io import write_json_atomic  # noqa: E402
-from build.lib.paths import REPO_ROOT  # noqa: E402
-
-
-SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "witness_inventory.schema.json"
 
 
 def _enumerate_resources(data_root: Path) -> dict[str, list[Path]]:
@@ -59,7 +50,7 @@ def _empty_inventory(resource_id: str, *, notes: str | None = None) -> dict:
     return payload
 
 
-def scaffold(repo_root: Path, *, dry_run: bool = False) -> tuple[list[str], list[str]]:
+def scaffold(repo_root: Path, *, schema_path: Path, dry_run: bool = False) -> tuple[list[str], list[str]]:
     """Create empty witnesses.json files for resources missing one.
 
     Returns ``(created, already_present)`` lists of resource ids.
@@ -67,7 +58,7 @@ def scaffold(repo_root: Path, *, dry_run: bool = False) -> tuple[list[str], list
     data_root = repo_root / "data"
     if not data_root.is_dir():
         raise FileNotFoundError(f"{data_root} does not exist")
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
     sources_root = repo_root / "sources"
 
     resources = _enumerate_resources(data_root)
@@ -89,20 +80,24 @@ def scaffold(repo_root: Path, *, dry_run: bool = False) -> tuple[list[str], list
 
 
 def _cli(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Scaffold empty witnesses.json files.")
+    parser = argparse.ArgumentParser(description="Scaffold historical witnesses.json files only; not current acquisitions.")
     parser.add_argument(
         "--repo-root",
         type=Path,
-        default=REPO_ROOT,
-        help="Repository root (defaults to the OCD repo containing this script).",
+        required=True,
+        help="Explicit historical repository root.",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Report what would be created without writing any files.",
     )
+    parser.add_argument("--legacy-data", action="store_true", required=True,
+                        help="Explicitly operate on historical data/ inventories.")
+    parser.add_argument("--schema", type=Path, required=True,
+                        help="Historical witness_inventory schema; no current schema fallback.")
     args = parser.parse_args(argv)
-    created, already = scaffold(args.repo_root, dry_run=args.dry_run)
+    created, already = scaffold(args.repo_root, schema_path=args.schema, dry_run=args.dry_run)
     verb = "would create" if args.dry_run else "created"
     print(f"{verb} {len(created)} witness-inventory files; {len(already)} already present.")
     for rid in created:

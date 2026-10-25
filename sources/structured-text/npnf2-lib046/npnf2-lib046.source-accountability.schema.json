@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.example/schemas/npnf2-lib046-source-accountability-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "assigned_work_count",
+    "source_member_count",
+    "feature_count",
+    "attribute_count",
+    "omitted_feature_count",
+    "duplicate_feature_count",
+    "unresolved_feature_count",
+    "assigned_census",
+    "member_accounting",
+    "top_level_division_accounting",
+    "direct_div2_accounting",
+    "work_bindings",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-npnf2-lib046-source-accountability-v1"},
+    "schema": {"const": "npnf2-lib046.source-accountability.schema.json"},
+    "profile_id": {"const": "basil-of-caesarea-npnf2-three-work-v1"},
+    "assigned_work_count": {"const": 3},
+    "source_member_count": {"const": 1},
+    "feature_count": {"const": 14341},
+    "attribute_count": {"const": 30629},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "assigned_census": {"type": "object"},
+    "member_accounting": {"type": "array", "minItems": 1, "maxItems": 1},
+    "top_level_division_accounting": {"type": "object"},
+    "direct_div2_accounting": {"type": "object"},
+    "work_bindings": {"type": "array", "minItems": 3, "maxItems": 3},
+    "crosswalk": {"type": "array", "minItems": 14341, "maxItems": 14341}
+  }
+}

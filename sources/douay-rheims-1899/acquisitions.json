@@ -1,0 +1,711 @@
+{
+  "contract": "ocd-wayfinder-text-acquisitions-v1",
+  "work_id": "douay-rheims-bible",
+  "edition_id": "douay-rheims-american-1899",
+  "acquisitions": [
+    {
+      "acquisition_id": "ebible-engdra-usfm-2022-11-03",
+      "acquired_on": "2026-07-25",
+      "provider": "eBible.org",
+      "source_record": "https://ebible.org/bible/details.php?id=engDRA",
+      "source_claim": "The Holy Bible in English, Douay-Rheims American Edition of 1899, translated from the Latin Vulgate",
+      "carrier_role": "primary-structured-text-witness",
+      "members": [
+        {
+          "logical_name": "02-GENengDRA.usfm",
+          "archive_member": "02-GENengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/02-GENengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 847735,
+          "sha256": "ae70f8a255d85d24cab05ed10f2452c077dd1d36261533c9a434e8e0e63919aa"
+        },
+        {
+          "logical_name": "03-EXOengDRA.usfm",
+          "archive_member": "03-EXOengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/03-EXOengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 701924,
+          "sha256": "96b80ad30cd7f1ba3776cbba098f72b04766cd320a39905ddf3cbbe1825c7f8a"
+        },
+        {
+          "logical_name": "04-LEVengDRA.usfm",
+          "archive_member": "04-LEVengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/04-LEVengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 506605,
+          "sha256": "3ba27a7e28b6af0a28cf58db5160f340c12b3a3c31ceeddfde0af20ee6bf144c"
+        },
+        {
+          "logical_name": "05-NUMengDRA.usfm",
+          "archive_member": "05-NUMengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/05-NUMengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 687721,
+          "sha256": "a88e0e7d2d5362237e5eccffaffc2295d6ad6766c865001cf4753d60bd8507b0"
+        },
+        {
+          "logical_name": "06-DEUengDRA.usfm",
+          "archive_member": "06-DEUengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/06-DEUengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 608142,
+          "sha256": "e2cd4fe975494215a832f455803661ddf176d44689babbf121e761b88badd09e"
+        },
+        {
+          "logical_name": "07-JOSengDRA.usfm",
+          "archive_member": "07-JOSengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/07-JOSengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 415845,
+          "sha256": "748b5d172450ec993e31beacc008db0d3ce3c09076d9a60dd6b82e581a696b4d"
+        },
+        {
+          "logical_name": "08-JDGengDRA.usfm",
+          "archive_member": "08-JDGengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/08-JDGengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 432303,
+          "sha256": "db4fed30ec8a902ef4d8ae0858fc669cd037416c2c2ec0f3b3a44a02e1d54887"
+        },
+        {
+          "logical_name": "09-RUTengDRA.usfm",
+          "archive_member": "09-RUTengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/09-RUTengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 58149,
+          "sha256": "7bce3d5ef89b5319dece28180b4fb4944eb5b22509fc8f633d7dbcd3b7e42f28"
+        },
+        {
+          "logical_name": "10-1SAengDRA.usfm",
+          "archive_member": "10-1SAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/10-1SAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 606539,
+          "sha256": "28d69a45b9b3351712754e39ebde4ec8640d1314130fec046b4ec264c3083327"
+        },
+        {
+          "logical_name": "11-2SAengDRA.usfm",
+          "archive_member": "11-2SAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/11-2SAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 484342,
+          "sha256": "e94b1e5af3ea81649f071cd8eef15e4a1ccf8850732e6270d55fc87b9fd153e1"
+        },
+        {
+          "logical_name": "12-1KIengDRA.usfm",
+          "archive_member": "12-1KIengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/12-1KIengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 571836,
+          "sha256": "0656eacec8676b021ff514758f5b8263cb62c9bab4659f0dcbf79052b8dd2911"
+        },
+        {
+          "logical_name": "13-2KIengDRA.usfm",
+          "archive_member": "13-2KIengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/13-2KIengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 555944,
+          "sha256": "7ed81c5a1de00132c5d23538c870644aa3ace6638a8e712b06a258d4286bcc2e"
+        },
+        {
+          "logical_name": "14-1CHengDRA.usfm",
+          "archive_member": "14-1CHengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/14-1CHengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 449693,
+          "sha256": "4662e78a28a793f4437f2f1f3816daed47df53817d736d2a89c10e959d6763c9"
+        },
+        {
+          "logical_name": "15-2CHengDRA.usfm",
+          "archive_member": "15-2CHengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/15-2CHengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 616035,
+          "sha256": "7ca3a8171b101c3cb345523572b6d23f23e6dc2e2c82cfd0634416b2b81375b6"
+        },
+        {
+          "logical_name": "16-EZRengDRA.usfm",
+          "archive_member": "16-EZRengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/16-EZRengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 171928,
+          "sha256": "ec50f29d9d999e13c724666d3ca86c886b95063bf73f614c239a87c3b1c7e5a1"
+        },
+        {
+          "logical_name": "17-NEHengDRA.usfm",
+          "archive_member": "17-NEHengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/17-NEHengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 233073,
+          "sha256": "9d5f299fda4378441e6760afa67fc7bcf3dcca31c494995378f1fd1dcf4c7d96"
+        },
+        {
+          "logical_name": "18-ESTengDRA.usfm",
+          "archive_member": "18-ESTengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/18-ESTengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 152238,
+          "sha256": "2edcbb4e13ee8a3efc660b75dc2da7fc85a300a386073be99f91a0a6f955cf47"
+        },
+        {
+          "logical_name": "19-JOBengDRA.usfm",
+          "archive_member": "19-JOBengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/19-JOBengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 405329,
+          "sha256": "f481220c22a1c84b1787c57c96098af26aed3b97966efbf9005660e6a067f297"
+        },
+        {
+          "logical_name": "20-PSAengDRA.usfm",
+          "archive_member": "20-PSAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/20-PSAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 625411,
+          "sha256": "0cb21fad011a9cf8f5f457ec3f23a1ab6d1f483b47cef591ec1d2297c50d0d6d"
+        },
+        {
+          "logical_name": "21-PROengDRA.usfm",
+          "archive_member": "21-PROengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/21-PROengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 349167,
+          "sha256": "21468af99efbee1cf2c40898df2a820a7b1ee08717e27d32e7698069bd066f2d"
+        },
+        {
+          "logical_name": "22-ECCengDRA.usfm",
+          "archive_member": "22-ECCengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/22-ECCengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 126250,
+          "sha256": "0c4fdd0a505dda04be62597d987fe2ca7d7c99faaade7be8ab99fe62447512b1"
+        },
+        {
+          "logical_name": "23-SNGengDRA.usfm",
+          "archive_member": "23-SNGengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/23-SNGengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 52763,
+          "sha256": "d7e8bba0875366f7c5d814872c3b93bdf4beaf3095fa6e2c798c60e6e45eda88"
+        },
+        {
+          "logical_name": "24-ISAengDRA.usfm",
+          "archive_member": "24-ISAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/24-ISAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 869666,
+          "sha256": "b496a12e54f1e15561aef98ba1e0249f50cecf48c439bd5e7d36556252067f24"
+        },
+        {
+          "logical_name": "25-JERengDRA.usfm",
+          "archive_member": "25-JERengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/25-JERengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 1023865,
+          "sha256": "aa143ff715f8a9bbdefd04f1ae0d9e623b17502f80f28b9ec0f6cf040d9a8568"
+        },
+        {
+          "logical_name": "26-LAMengDRA.usfm",
+          "archive_member": "26-LAMengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/26-LAMengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 81032,
+          "sha256": "0d2f9a96870c906c6ce1f8afa12decb8d6f66c8470b827fd47e85364e8fb46f0"
+        },
+        {
+          "logical_name": "27-EZKengDRA.usfm",
+          "archive_member": "27-EZKengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/27-EZKengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 940337,
+          "sha256": "92e488c5e90270725c7f07ad396706925f529033284cbb4c4342e0c8d598659b"
+        },
+        {
+          "logical_name": "28-DANengDRA.usfm",
+          "archive_member": "28-DANengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/28-DANengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 278107,
+          "sha256": "b681c5b286cb81550e59cb3f724db99df6d38305ed317c1ed7f633e9add679b8"
+        },
+        {
+          "logical_name": "29-HOSengDRA.usfm",
+          "archive_member": "29-HOSengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/29-HOSengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 118346,
+          "sha256": "3a4074f9697a45d7a5a98ed6726ca9101098c2a000f358a707113b0d6e639a37"
+        },
+        {
+          "logical_name": "30-JOLengDRA.usfm",
+          "archive_member": "30-JOLengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/30-JOLengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 38733,
+          "sha256": "b0908b9753cd874c8eaf741c4a85a2907d4b7fb8313c276ce48d054d408f3ff5"
+        },
+        {
+          "logical_name": "31-AMOengDRA.usfm",
+          "archive_member": "31-AMOengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/31-AMOengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 100065,
+          "sha256": "616508750d1efc212e614392defbad03ad84ed1a28209020981ad47793e02a5e"
+        },
+        {
+          "logical_name": "32-OBAengDRA.usfm",
+          "archive_member": "32-OBAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/32-OBAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 15195,
+          "sha256": "b7f96c2728c847292025578f74de4f9304aa37dd68407719bd0bfc88adbe4237"
+        },
+        {
+          "logical_name": "33-JONengDRA.usfm",
+          "archive_member": "33-JONengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/33-JONengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 31688,
+          "sha256": "0ef475d36d5175e1fa0a8b094328d2688d6d0a8a07ddef1357a16ded1c0bf989"
+        },
+        {
+          "logical_name": "34-MICengDRA.usfm",
+          "archive_member": "34-MICengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/34-MICengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 73149,
+          "sha256": "2a6c0866568ba85baabb834181772276f07ee30aaf2560862be7716cad4eb62c"
+        },
+        {
+          "logical_name": "35-NAMengDRA.usfm",
+          "archive_member": "35-NAMengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/35-NAMengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 26679,
+          "sha256": "7b4eb198776677ab9619bc0e5037d154ce8aa04a941eda684ffff3d157046c1d"
+        },
+        {
+          "logical_name": "36-HABengDRA.usfm",
+          "archive_member": "36-HABengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/36-HABengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 34743,
+          "sha256": "768d26e6328e3efdc0c76345c9203a22ba07107b438729040f4693e8211ec38a"
+        },
+        {
+          "logical_name": "37-ZEPengDRA.usfm",
+          "archive_member": "37-ZEPengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/37-ZEPengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 40265,
+          "sha256": "b26aa33e3811394e25888ac8b3f23b2b29d3a99ef82750d5c152677d10a4d0dd"
+        },
+        {
+          "logical_name": "38-HAGengDRA.usfm",
+          "archive_member": "38-HAGengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/38-HAGengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 24445,
+          "sha256": "895873240b933069dee31814f57fe42a22b4fd954ca2675cdf8ec874dbc5034c"
+        },
+        {
+          "logical_name": "39-ZECengDRA.usfm",
+          "archive_member": "39-ZECengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/39-ZECengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 154754,
+          "sha256": "7e4e2b02998a98e940b75fe2dcc0cbd6ee909e9c22a722c7459773fcefa2f4f1"
+        },
+        {
+          "logical_name": "40-MALengDRA.usfm",
+          "archive_member": "40-MALengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/40-MALengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 39318,
+          "sha256": "248933abd0c4859fcab46972d54dc76bbb73fa255baaee38f58d3d67b87eb7c9"
+        },
+        {
+          "logical_name": "41-TOBengDRA.usfm",
+          "archive_member": "41-TOBengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/41-TOBengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 38224,
+          "sha256": "5ebd4f7da704ff1b52745b6712ecbd013aeeefc40a40f2d50367b0e3151a3efb"
+        },
+        {
+          "logical_name": "42-JDTengDRA.usfm",
+          "archive_member": "42-JDTengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/42-JDTengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 52621,
+          "sha256": "0ad146b93aa0e48c3201e2e5e59fd0be8b34680eb75f7f7d758f7103d273e6a5"
+        },
+        {
+          "logical_name": "45-WISengDRA.usfm",
+          "archive_member": "45-WISengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/45-WISengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 60639,
+          "sha256": "8d51e79263ae7ce9d0658fa986e9beb004819b5031b66a1cd2c1146dccddc080"
+        },
+        {
+          "logical_name": "46-SIRengDRA.usfm",
+          "archive_member": "46-SIRengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/46-SIRengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 172724,
+          "sha256": "05074acafcaf3b2ddf441fe9028452993991d513a9592737121ab7ba30f00f37"
+        },
+        {
+          "logical_name": "47-BARengDRA.usfm",
+          "archive_member": "47-BARengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/47-BARengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 28804,
+          "sha256": "93c5ff21852ddd00c1091ef7096dd34255478c8c85392813523b5514ab665ef3"
+        },
+        {
+          "logical_name": "52-1MAengDRA.usfm",
+          "archive_member": "52-1MAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/52-1MAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 131230,
+          "sha256": "3b824aae1b271f62325332534b2b355964ec50d2b38883f15023a4abe7cf5cff"
+        },
+        {
+          "logical_name": "53-2MAengDRA.usfm",
+          "archive_member": "53-2MAengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/53-2MAengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 93092,
+          "sha256": "27fcf24fab63c8293a9ccaf2de2d7178ea8316d77812f0b6bf441eab8c82cbe9"
+        },
+        {
+          "logical_name": "70-MATengDRA.usfm",
+          "archive_member": "70-MATengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/70-MATengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 564064,
+          "sha256": "607eb5f138d5bcd39e250a1defc2725da320065367715c29b4114b72cebc6a76"
+        },
+        {
+          "logical_name": "71-MRKengDRA.usfm",
+          "archive_member": "71-MRKengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/71-MRKengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 356122,
+          "sha256": "a5f8d8e63f00bd4c8cc6d285e8b9a7a847f8235146be8f065b413c75a9ef44ac"
+        },
+        {
+          "logical_name": "72-LUKengDRA.usfm",
+          "archive_member": "72-LUKengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/72-LUKengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 620757,
+          "sha256": "9530f9918febd4c7be5f97226dafbde612e41d5689c1f45ca992ef7dc5f880b7"
+        },
+        {
+          "logical_name": "73-JHNengDRA.usfm",
+          "archive_member": "73-JHNengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/73-JHNengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 468290,
+          "sha256": "f112f885e42b981df148732ea9657562699394ec50c5c49b10a57f0bc5015708"
+        },
+        {
+          "logical_name": "74-ACTengDRA.usfm",
+          "archive_member": "74-ACTengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/74-ACTengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 579146,
+          "sha256": "803734a9d89fc0836fa3ae4b36cf4fddc734d8b31aaf03c4ad60e19671ce1eb5"
+        },
+        {
+          "logical_name": "75-ROMengDRA.usfm",
+          "archive_member": "75-ROMengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/75-ROMengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 228359,
+          "sha256": "3942fe9acd40b4e8cbc4c255cb4085ebf2d5f4d9a2741b1a92ced430a140b511"
+        },
+        {
+          "logical_name": "76-1COengDRA.usfm",
+          "archive_member": "76-1COengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/76-1COengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 229467,
+          "sha256": "d0d2c1979022326ffb814542a30dd586a0262cc81b5c12a2679c0e6abd0cd972"
+        },
+        {
+          "logical_name": "77-2COengDRA.usfm",
+          "archive_member": "77-2COengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/77-2COengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 145458,
+          "sha256": "3fe6d490d5a24a5bb38f44c4b5dbc183ccbb654b7070947dd1302d79605734df"
+        },
+        {
+          "logical_name": "78-GALengDRA.usfm",
+          "archive_member": "78-GALengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/78-GALengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 75570,
+          "sha256": "a6b67174d32716412a0c41861b84f083dc2487ebe75ae8f77d2677531ff96c08"
+        },
+        {
+          "logical_name": "79-EPHengDRA.usfm",
+          "archive_member": "79-EPHengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/79-EPHengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 74888,
+          "sha256": "e86e9d79c31020b1e78815b5b801d3bd2e248c39f57c90077959c77431bc331a"
+        },
+        {
+          "logical_name": "80-PHPengDRA.usfm",
+          "archive_member": "80-PHPengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/80-PHPengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 53374,
+          "sha256": "abd3a92308e433d1b194ffbb43b3fc328438a0b362b8b2b8852a862e24195f5a"
+        },
+        {
+          "logical_name": "81-COLengDRA.usfm",
+          "archive_member": "81-COLengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/81-COLengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 49417,
+          "sha256": "788a808e3724cc054fc363ff4e71b171754909cc967dc20a7e11ccb54103d5ba"
+        },
+        {
+          "logical_name": "82-1THengDRA.usfm",
+          "archive_member": "82-1THengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/82-1THengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 45214,
+          "sha256": "65d88c4aa535ece812aeac16809a69aa50d3c5803f7598f399e5b708d485b544"
+        },
+        {
+          "logical_name": "83-2THengDRA.usfm",
+          "archive_member": "83-2THengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/83-2THengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 24720,
+          "sha256": "2bfed0ae68ecb4607c3d627203555ffc789302cb2e75b0b2cb03e7a49bf1856a"
+        },
+        {
+          "logical_name": "84-1TIengDRA.usfm",
+          "archive_member": "84-1TIengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/84-1TIengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 52866,
+          "sha256": "3553000be22af7ee89af391124d0d44e54ca0970ec032ab50377fbfdcde8d7db"
+        },
+        {
+          "logical_name": "85-2TIengDRA.usfm",
+          "archive_member": "85-2TIengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/85-2TIengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 38214,
+          "sha256": "3a61d6f470c26b7905e361051c7c20d3be8224f79335bf81cc3e826f200aa129"
+        },
+        {
+          "logical_name": "86-TITengDRA.usfm",
+          "archive_member": "86-TITengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/86-TITengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 21282,
+          "sha256": "298f7324b14c3ab3fb6fc92917dac97278e0ba137bf6b7454cd8957c0bd6470d"
+        },
+        {
+          "logical_name": "87-PHMengDRA.usfm",
+          "archive_member": "87-PHMengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/87-PHMengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 10515,
+          "sha256": "98a63deb91a45f4e2934490a75af0bbece4e282ed3fb9093fefead521388ca89"
+        },
+        {
+          "logical_name": "88-HEBengDRA.usfm",
+          "archive_member": "88-HEBengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/88-HEBengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 163368,
+          "sha256": "065fcd4d514b49036694893dfd6dbdb9265f3467314c076163d4e86aba5587f9"
+        },
+        {
+          "logical_name": "89-JASengDRA.usfm",
+          "archive_member": "89-JASengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/89-JASengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 54629,
+          "sha256": "4ad177f507c1f221ddee8529670dba9dcc9d282d28c2e8fb212b5adaa7b13814"
+        },
+        {
+          "logical_name": "90-1PEengDRA.usfm",
+          "archive_member": "90-1PEengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/90-1PEengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 57637,
+          "sha256": "5be33b2f7d70a98bf36ad72f360b5810acd2624d4e5e7f845b0908e8f7add9d2"
+        },
+        {
+          "logical_name": "91-2PEengDRA.usfm",
+          "archive_member": "91-2PEengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/91-2PEengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 36407,
+          "sha256": "3dc43937c2affdc49efda439243029f16bca23adc21fd660bd70ce9368dfee9e"
+        },
+        {
+          "logical_name": "92-1JNengDRA.usfm",
+          "archive_member": "92-1JNengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/92-1JNengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 60898,
+          "sha256": "fab8cc129652ccfebf5c7dbb262a34d7357d0f8abe23ef32a0c56ddf8a04f143"
+        },
+        {
+          "logical_name": "93-2JNengDRA.usfm",
+          "archive_member": "93-2JNengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/93-2JNengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 7552,
+          "sha256": "6af7c23cab528d49c0a58bd601c3c1c748a9759d3eaba9b2d04dddcb0043faa0"
+        },
+        {
+          "logical_name": "94-3JNengDRA.usfm",
+          "archive_member": "94-3JNengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/94-3JNengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 7217,
+          "sha256": "b868769a4c0068de4092f55b75fc27157e8c27cee398baf9ef43d0411e322c53"
+        },
+        {
+          "logical_name": "95-JUDengDRA.usfm",
+          "archive_member": "95-JUDengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/95-JUDengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 14922,
+          "sha256": "1be648646ed8a97d876c7cd27f05e3630209e0a2e0512388a3d6c5119955c380"
+        },
+        {
+          "logical_name": "96-REVengDRA.usfm",
+          "archive_member": "96-REVengDRA.usfm",
+          "path": "raw/ebible/engDRA/members/96-REVengDRA.usfm",
+          "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+          "bytes": 296825,
+          "sha256": "f403ddff4968d76000dc69bb7ab19d46bd459180080f57a1bf3f35553ce00f8f"
+        }
+      ],
+      "observed_scope": {
+        "books": 73,
+        "verse_records": 35811,
+        "poetry_markers": 2528,
+        "strong_annotations": 644946,
+        "notes": 0,
+        "cross_references": 0,
+        "signed_checksum_declarations": 75,
+        "signed_checksum_content_match": "verified",
+        "pgp_signature": "present-not-cryptographically-verified"
+      },
+      "archive": {
+        "path": "raw/ebible/engDRA/engDRA_usfm.zip",
+        "source_url": "https://ebible.org/Scriptures/engDRA_usfm.zip",
+        "bytes": 2942301,
+        "sha256": "36d3c0b2263fd8a2ff17bb8cdcf7a8c8903634232bd4112b089bde16ee894853",
+        "role": "acquisition/archive-provenance"
+      },
+      "archive_member_count": 77,
+      "retained_usfm_member_count": 73
+    },
+    {
+      "acquisition_id": "scrollmapper-drc-json-a228a19a",
+      "acquired_on": "2026-07-05",
+      "provider": "scrollmapper/bible_databases",
+      "provider_revision": "a228a19a29099a41c196c2a310cd93e50a390e30",
+      "source_record": "https://github.com/scrollmapper/bible_databases",
+      "source_claim": "DRC: Douay-Rheims Bible, Challoner Revision",
+      "carrier_role": "secondary-structured-text-witness",
+      "generator_lineage": {
+        "upstream_format": "CrossWire SWORD DRC module version 2.0",
+        "upstream_version_date": "2009-10-24",
+        "upstream_text_source": "http://www.sacredbible.org/",
+        "upstream_claim": "Bishop Richard Challoner revision, published with the approbation of James Cardinal Gibbons, Archbishop of Baltimore"
+      },
+      "members": [
+        {
+          "path": "raw/bible_databases/formats/json/DRC.json",
+          "bytes": 9887658,
+          "sha256": "b0a6809f72b337020ad12d02ebb477d3ffeab7dcb67abbef96f64f4dede47c6f"
+        }
+      ],
+      "observed_scope": {
+        "carrier_book_slots": 78,
+        "verse_slots": 37255,
+        "text_bearing_slots": 35805,
+        "explicitly_empty_slots": 1450,
+        "entirely_empty_book_shells": 5
+      }
+    },
+    {
+      "acquisition_id": "john-murphy-1899-via-tan-1971-facsimile",
+      "acquired_on": "2026-07-25",
+      "provider": "Internet Archive",
+      "provider_item_id": "holybible00balt",
+      "source_record": "https://archive.org/details/holybible00balt",
+      "carrier_role": "photographic-facsimile-control-scan",
+      "physical_identity": {
+        "carrier_publisher": "TAN Books and Publishers",
+        "carrier_place": "Rockford, Illinois",
+        "carrier_year": 1971,
+        "reproduced_edition_publisher": "John Murphy Company",
+        "reproduced_edition_place": "Baltimore, Maryland",
+        "reproduced_edition_year": 1899,
+        "scope_warning": "The 1971 carrier's own added front matter must remain distinct from the photographically reproduced 1899 pages."
+      },
+      "members": [
+        {
+          "path": "raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/scan.pdf",
+          "source_url": "https://archive.org/download/holybible00balt/holybible00balt.pdf",
+          "bytes": 216586578,
+          "sha256": "e82912102e011284f19bc2e9752feae781dea240da0d692e6b11a51249be8508"
+        },
+        {
+          "path": "raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/ocr.txt",
+          "source_url": "https://archive.org/download/holybible00balt/holybible00balt_djvu.txt",
+          "bytes": 5855738,
+          "sha256": "cd98e4cea7f2fc367bccd276e383b6bee534544e811c82c8623e71ab0d3663df"
+        },
+        {
+          "path": "raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/ocr.xml",
+          "source_url": "https://archive.org/download/holybible00balt/holybible00balt_djvu.xml",
+          "bytes": 88681961,
+          "sha256": "60571bbb590ccdbd9b2307dda417e19a38ec7f1f33b8029e23016088dc5f511f"
+        },
+        {
+          "path": "raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/scandata.zip",
+          "source_url": "https://archive.org/download/holybible00balt/scandata.zip",
+          "bytes": 102380268,
+          "sha256": "0de149f0bc5babd036c9d50a4d86b73f72b0a13ac445919d3911f3aff95f2082"
+        },
+        {
+          "path": "raw/internet-archive/douay-rheims/1899-john-murphy-via-1971-tan/metadata.json",
+          "source_url": "https://archive.org/metadata/holybible00balt",
+          "bytes": 248450,
+          "sha256": "f714958793f167394f95eef1a2845daf24ec8d31dbd16f209e059ce649b325bd"
+        }
+      ]
+    }
+  ],
+  "external_genealogy_evidence": [
+    {
+      "source": "https://www.intratext.com/IXT/ENG0011/",
+      "claim": "The electronic transcription identifies its printed source as the John Murphy Company, Baltimore, 1899 edition and lists annotations, references, and a historical and chronological index.",
+      "authority": "independent-digital-transcription-metadata"
+    },
+    {
+      "source": "https://www.htmlbible.com/douay_rheims/about.htm",
+      "claim": "The electronic text states that it was converted from the 1899 John Murphy Company edition.",
+      "authority": "independent-digital-transcription-metadata"
+    }
+  ]
+}

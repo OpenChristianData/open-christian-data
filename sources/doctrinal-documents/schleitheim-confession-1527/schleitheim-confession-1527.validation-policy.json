@@ -1,0 +1,20 @@
+{
+  "contract": "ocd-schleitheim-confession-retained-html-validation-policy-v1",
+  "policy_id": "schleitheim-confession-retained-html-policy-v1",
+  "oracle_id": "ocd-schleitheim-confession-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "ticket_id": "LIB-083",
+  "work_id": "schleitheim-confession-1527",
+  "required_counts": {"articles": 7, "article_words": 2341, "closing_imprint_words": 11, "work_words": 2352, "contents_items": 7, "source_segments": 5, "omitted": 0, "duplicate": 0, "unresolved": 3},
+  "required_article_order": ["I", "II", "III", "IV", "V", "VI", "VII"],
+  "required_unresolved_ids": ["schleitheim-confession-identity-review", "schleitheim-confession-rights-review", "schleitheim-confession-human-acceptance"],
+  "forbidden_import_prefixes": ["build.parsers.schleitheim_confession"],
+  "requirements": [
+    "bind the retained HTML bytes and exact hash",
+    "represent the complete work-bearing preface, seven article headings and source paragraphs, and closing imprint in order",
+    "partition all retained HTML bytes into five exact ordered source segments with explicit represented or excluded dispositions",
+    "reject preface, contents, article, closing-imprint, outer-disposition, metadata, evidence, and unresolved-ledger drift",
+    "keep the candidate nonaccepted and publication unauthorized"
+  ]
+}

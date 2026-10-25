@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/agent-assessment.schema.json",
+  "title": "OCD provisional agent assessment",
+  "description": "Evidence and uncertainty recorded by an agent. This record is not a human review, acceptance decision, or publication decision.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "work_id",
+    "edition_id",
+    "assessed_at",
+    "agent",
+    "scope",
+    "artifacts",
+    "citations",
+    "coverage",
+    "outcome",
+    "summary",
+    "uncertainties",
+    "issues"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "assessment_id": {"$ref": "#/$defs/identifier"},
+    "work_id": {"$ref": "#/$defs/identifier"},
+    "edition_id": {"$ref": "#/$defs/identifier"},
+    "assessed_at": {"$ref": "#/$defs/utc_date_time"},
+    "agent": {"$ref": "#/$defs/agent"},
+    "scope": {"$ref": "#/$defs/scope"},
+    "artifacts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/artifact_binding"},
+      "uniqueItems": true
+    },
+    "citations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/citation"},
+      "uniqueItems": true
+    },
+    "coverage": {"$ref": "#/$defs/coverage"},
+    "outcome": {
+      "enum": ["supports", "mixed", "contradicts", "inconclusive"]
+    },
+    "summary": {"$ref": "#/$defs/non_empty"},
+    "uncertainties": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty"},
+      "uniqueItems": true
+    },
+    "issues": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/issue"},
+      "uniqueItems": true
+    }
+  },
+  "anyOf": [
+    {"properties": {"artifacts": {"minItems": 1}}},
+    {"properties": {"citations": {"minItems": 1}}}
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "utc_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {"$ref": "#/$defs/non_empty"},
+        "version": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "description"],
+      "properties": {
+        "kind": {
+          "enum": ["work", "edition", "source-member", "selected-portion"]
+        },
+        "reference": {"$ref": "#/$defs/non_empty"},
+        "description": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "artifact_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "kind", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/identifier"},
+        "kind": {
+          "enum": ["source", "tei", "validation", "accounting", "review", "other"]
+        },
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "locator": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["citation_id", "label", "url"],
+      "properties": {
+        "citation_id": {"$ref": "#/$defs/identifier"},
+        "label": {"$ref": "#/$defs/non_empty"},
+        "url": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9+.-]*://\\S+$"
+        },
+        "locator": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "coverage_locator": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completeness", "inspected", "omitted"],
+      "properties": {
+        "completeness": {"enum": ["complete", "partial", "unknown"]},
+        "inspected": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/coverage_locator"},
+          "uniqueItems": true
+        },
+        "omitted": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/coverage_locator"},
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "completeness": {"enum": ["partial", "unknown"]}
+            }
+          },
+          "then": {
+            "properties": {"omitted": {"minItems": 1}}
+          }
+        }
+      ]
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issue_id", "severity", "statement", "evidence_refs"],
+      "properties": {
+        "issue_id": {"$ref": "#/$defs/identifier"},
+        "severity": {"enum": ["info", "warning", "blocker"]},
+        "statement": {"$ref": "#/$defs/non_empty"},
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/identifier"},
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

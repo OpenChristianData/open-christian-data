@@ -1,5 +1,7 @@
 # ADR-0006: Scans stay local; page-level mapping required, bounding boxes opportunistic
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15)
 
 ## Context

@@ -1,0 +1,128 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ocd-37c137-ecumenical-councils-npnf214-seven-roots",
+  "scope": {
+    "kind": "complete-source-subtrees",
+    "source_member": "retained-npnf214",
+    "assigned_roots_in_source_order": [
+      [
+        "npnf214",
+        "vii",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "ix",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "x",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "xi",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "xii",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "xiii",
+        "ecumenical-councils-canons-and-decrees"
+      ],
+      [
+        "npnf214",
+        "xvi",
+        "ecumenical-councils-canons-and-decrees"
+      ]
+    ],
+    "excluded_top_level_roots": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "viii",
+      "xiv",
+      "xv",
+      "xvii",
+      "xviii"
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-npnf214",
+      "path": "raw/ccel/npnf2/npnf214.xml",
+      "role": "primary-source",
+      "bytes": 3196008,
+      "sha256": "4ae3cb29edcb7b8e58bb9246049243c464b6839f88f6730f98b80122770b9bb4"
+    },
+    {
+      "name": "work-config",
+      "path": "sources/structured-text/ecumenical-councils-canons-and-decrees/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 9383,
+      "sha256": "5298b01c581fe0c930549b8ecb40a0cddd029d6e5c43a045ef20597d5c375c00"
+    },
+    {
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/ecumenical-councils-canons-and-decrees/ecumenical-councils.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3381,
+      "sha256": "0cc528c388f1f0ed8ed8348a0d2a74179cbf6dca02e401b6af3fa451dafeed4c"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/ecumenical-councils-canons-and-decrees/ecumenical-councils.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 4969,
+      "sha256": "de60b23890fb14b885aa61159a68eb5d20eaa3bc1b36b9d8f7372e248400a20c"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-37c137-ecumenical-councils-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ecumenical_councils_canons_and_decrees_reconstruction.py",
+    "implementation_sha256": "a56fb2658d962cf8c57cb8dc4dfc7247d7cf4b56dcf9ad803959d854f83bf276"
+  },
+  "validator": {
+    "id": "ocd-37c137-ecumenical-councils-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/ecumenical_councils_canons_and_decrees_oracle.py",
+    "implementation_sha256": "9da93fd81e7d4b5f3b3d3eb96c10251624feb86d7d52a61c37fe152aea975bf2",
+    "import_closure_sha256": "b93ac8302882ed9d848413279329a7cb4345ff2392920e89c6b452b01c441e08"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

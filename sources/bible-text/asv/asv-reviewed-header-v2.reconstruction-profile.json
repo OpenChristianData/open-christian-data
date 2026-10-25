@@ -1,0 +1,23 @@
+{
+  "contract": "ocd-asv-reviewed-header-profile-v2",
+  "work_id": "asv",
+  "source": "raw/bible_databases/formats/json/ASV.json",
+  "translation": "ASV: American Standard Version (1901)",
+  "scope": "complete retained JSON electronic witness",
+  "expected": {"books": 66, "chapters": 1189, "verses": 31102},
+  "ordering": "source-native array order and parent-qualified ordinal identities",
+  "mapping": {
+    "translation": "teiHeader/fileDesc/titleStmt/title",
+    "book.name": "text/body/div/head",
+    "chapter.chapter": "text/body/div/div@n",
+    "verse.verse": "text/body/div/div/ab@n",
+    "verse.text": "text/body/div/div/ab text with xml:space preserve"
+  },
+  "reviewed_header": {
+    "binding": "work, textual form, edition, acquisition, source SHA-256/bytes, source URL and representation revision are derived from bound current sidecars",
+    "historical_source_description": "preserved verbatim inside sourceDesc/bibl/note[@type='historical-source-description']",
+    "body_bytes": "preserved byte-for-byte from the validated base conversion"
+  },
+  "exclusions": [],
+  "print_edition_completeness": "unassessed: retained JSON has no physical title page, preface, marginal apparatus, or scan"
+}

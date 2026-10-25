@@ -1,0 +1,113 @@
+{
+  "builder_version": "ocd-pipe-013a-fixture-builder-v1",
+  "status": "source-bound-offline-fixtures",
+  "category": "catechisms",
+  "fixtures": [
+    {
+      "fixture_id": "westminster-shorter",
+      "title": "Westminster Shorter Catechism",
+      "tei_file": "westminster-shorter.tei.xml",
+      "source_file": "source-westminster-shorter.json",
+      "source_path": "raw/westminster-standard-org/westminster-shorter-catechism.html",
+      "source_url": "https://thewestminsterstandard.org/westminster-shorter-catechism/",
+      "source_sha256": "8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a",
+      "retained_sha256": "8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a",
+      "source_unit_count": 107,
+      "selected_source_units": [
+        "1",
+        "2"
+      ],
+      "selected_source_subunits": [],
+      "source_excerpt_sha256": "4783116453775291264f6af41a27472a9cd9883676fdb9f1ae0b4db11b1ba0b4",
+      "identity": {
+        "work_id": "fixture-westminster-shorter-catechism",
+        "textual_form_id": "fixture-westminster-shorter-catechism-en",
+        "edition_id": "fixture-wsc-1647"
+      },
+      "edition_title": "Westminster Shorter Catechism",
+      "rows": 2,
+      "tei_sha256": "77e325b880e557818773a561ac8c580c9b852a952a330a1e07312ee705fbf2cc"
+    },
+    {
+      "fixture_id": "matthew-henry",
+      "title": "Matthew Henry's Scripture Catechism",
+      "tei_file": "matthew-henry.tei.xml",
+      "source_file": "source-matthew-henry.json",
+      "source_path": "raw/Creeds.json/creeds/matthew_henrys_scripture_catechism.json",
+      "source_url": "https://archive.org/details/westminsterassem00west/mode/2up",
+      "source_sha256": "00379a49df4ed5972f85a650246ef0b0e58344dc26fe0fec9959c8a8116f926f",
+      "retained_sha256": "00379a49df4ed5972f85a650246ef0b0e58344dc26fe0fec9959c8a8116f926f",
+      "source_unit_count": 107,
+      "selected_source_units": [
+        "1"
+      ],
+      "selected_source_subunits": [
+        "1a",
+        "1b",
+        "2a",
+        "2b",
+        "2c",
+        "2d",
+        "3a",
+        "3b",
+        "4a",
+        "4b",
+        "4c",
+        "4d",
+        "4e",
+        "5a",
+        "5b",
+        "5c",
+        "6a",
+        "6b",
+        "6c",
+        "6d",
+        "7a",
+        "7b",
+        "7c",
+        "8a",
+        "8b",
+        "8c",
+        "8d",
+        "9a",
+        "9b",
+        "9c"
+      ],
+      "source_excerpt_sha256": "4f92d54e49bf585cbfe5cd658dea464662ac45e9d21739ddef7d89b2defbf814",
+      "identity": {
+        "work_id": "fixture-matthew-henrys-scripture-catechism",
+        "textual_form_id": "fixture-matthew-henry-catechism-en",
+        "edition_id": "fixture-matthew-henry-1703"
+      },
+      "edition_title": "Matthew Henry's Scripture Catechism",
+      "rows": 1,
+      "tei_sha256": "9bd20f5494f0b9b123b28ac54be1a60aa6c66976e0750d3254369674e798d0d2"
+    },
+    {
+      "fixture_id": "luther-small",
+      "title": "Luther's Small Catechism",
+      "tei_file": "luther-small.tei.xml",
+      "source_file": "source-luther-small.json",
+      "source_path": "raw/gutenberg/pg1670.txt",
+      "source_url": "ocd-source:raw/gutenberg/pg1670.txt",
+      "source_sha256": "bef45c16f9785a86d2cc0a902415e50fb689915c5aaaf7328773b9949baaf61f",
+      "retained_sha256": "bef45c16f9785a86d2cc0a902415e50fb689915c5aaaf7328773b9949baaf61f",
+      "source_unit_count": 22,
+      "selected_source_units": [
+        "1",
+        "2"
+      ],
+      "selected_source_subunits": [],
+      "source_excerpt_sha256": "4050dcc8a40c2d0c4925fb4697dd32b4e5963fdb62e0f815ae083b35ff3c4659",
+      "identity": {
+        "work_id": "fixture-luthers-small-catechism",
+        "textual_form_id": "fixture-luthers-small-catechism-en",
+        "edition_id": "fixture-luther-1670"
+      },
+      "edition_title": "Luther's Small Catechism",
+      "rows": 2,
+      "tei_sha256": "57d23b048a79e8488860e4d58e6776d8bb41466304898ef0c37d3b0e077c03d2"
+    }
+  ],
+  "selected_unit_count": 5
+}

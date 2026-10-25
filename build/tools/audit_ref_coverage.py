@@ -1,31 +1,22 @@
-"""audit_ref_coverage.py
-Audit all cross_reference OSIS refs across the data directory.
+"""Audit explicit normalized references in independently verified release rows.
 
-For each ref in every data file's cross_references field, validate it against
-the BSB verse index and the KJV index.  Buckets results into:
+Normal invocation requires --root, --release and --selection. Source-bound OSIS
+arrays and explicit normalized scripture targets are supported; other shapes remain
+visible as unsupported. Literal source passages are never guessed into OSIS.
+A nonzero exit indicates failed, unverified or unsupported coverage.
 
-  - valid-bsb      : present in BSB critical text
-  - valid-kjv-only : present in KJV/TR but absent from BSB (Layer 1 disputes)
-  - deuterocanon   : book code is from the deuterocanonical/apocryphal set
-                     (would pass the validator but can't be checked for existence)
-  - failed         : fails both indexes -- invalid verse ref or genuine data issue
-
-Output: console summary + build/tools/audit_ref_coverage_report.json
-
-The "failed" bucket is the actionable set for Layer 3: these are refs that
-slipped through normalisation as valid OSIS strings but point to verses that
-don't exist in either the KJV or BSB canon.  Investigate each one to determine
-whether it is a normaliser bug, an OCR artefact, or a source-data error.
-
-Usage:
-    py -3 build/tools/audit_ref_coverage.py [--category commentaries]
+Historical invocation: --legacy-data [--category commentaries]. This explicit
+branch reads old data/ cross_references and writes the historical report next
+to this tool. It does not establish current-library reference coverage.
 """
 
 import argparse
+import hashlib
 import json
 import logging
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
@@ -59,14 +50,6 @@ DEUTEROCANONICAL_BOOK_CODES = frozenset({
 # Logging
 # ---------------------------------------------------------------------------
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s  %(levelname)-8s  %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_FILE, encoding="utf-8"),
-        logging.StreamHandler(sys.stdout),
-    ],
-)
 log = logging.getLogger(__name__)
 
 
@@ -80,6 +63,18 @@ def _validate_ref_verbose(osis_ref: str, validate_fn) -> tuple[str, str]:
 
     Buckets: 'valid-bsb', 'valid-kjv-only', 'deuterocanon', 'failed'.
     """
+    if "-" in osis_ref:
+        # The shared validator drops positive endpoint reasons for ranges.
+        valid, reason = validate_fn(osis_ref)
+        if not valid:
+            return "failed", reason
+        start, end = osis_ref.split("-", 1)
+        endpoints = [_validate_ref_verbose(start, validate_fn),
+                     _validate_ref_verbose(end, validate_fn)]
+        for bucket in ("failed", "unverified", "deuterocanon", "valid-kjv-only"):
+            if any(item[0] == bucket for item in endpoints):
+                return bucket, "; ".join(item[1] for item in endpoints if item[1])
+        return "valid-bsb", ""
     book = _book_code(osis_ref)
     if book in DEUTEROCANONICAL_BOOK_CODES:
         return "deuterocanon", f"book {book} is deuterocanonical"
@@ -87,6 +82,9 @@ def _validate_ref_verbose(osis_ref: str, validate_fn) -> tuple[str, str]:
     valid, reason = validate_fn(osis_ref)
     if not valid:
         return "failed", reason
+    if any(marker in reason.lower() for marker in
+           ("unavailable", "no verse index", "known omission", "versification offset")):
+        return "unverified", reason
     if "KJV" in reason or "kjv" in reason.lower():
         return "valid-kjv-only", reason
     return "valid-bsb", reason
@@ -111,6 +109,7 @@ def audit_data(data_root: Path, category_filter: str | None, validate_fn) -> dic
         "failed_refs": [],   # {file, entry_id, ref, reason}
         "kjv_only_refs": [], # {file, entry_id, ref}
         "deuterocanon_refs": [], # {file, entry_id, ref}
+        "unverified_refs": [],
     }
     counts = results["counts"]
 
@@ -175,6 +174,12 @@ def audit_data(data_root: Path, category_filter: str | None, validate_fn) -> dic
                             "entry_id": entry_id,
                             "ref": ref,
                         })
+                    elif bucket == "unverified":
+                        counts["unverified"] = counts.get("unverified", 0) + 1
+                        results["unverified_refs"].append({
+                            "file": rel_path, "entry_id": entry_id,
+                            "ref": ref, "reason": reason,
+                        })
                     else:  # failed
                         counts["failed"] += 1
                         results["failed_refs"].append({
@@ -187,15 +192,21 @@ def audit_data(data_root: Path, category_filter: str | None, validate_fn) -> dic
     return results
 
 
-def main() -> None:
+def legacy_main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--category",
         default=None,
         help="Only audit this data category (e.g. commentaries). Default: all.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s  %(levelname)-8s  %(message)s",
+        handlers=[logging.FileHandler(LOG_FILE, encoding="utf-8"),
+                  logging.StreamHandler(sys.stdout)],
+    )
     start = time.time()
     log.info("=== audit_ref_coverage.py ===")
     if args.category:
@@ -237,14 +248,16 @@ def main() -> None:
         for item in results["deuterocanon_refs"][:20]:
             log.info("  %-35s  %s", item["file"][:35], item["ref"])
 
-    if c["failed"] == 0 and c["deuterocanon"] == 0:
+    log.info("  unverified:       %d", c.get("unverified", 0))
+
+    if c["failed"] == 0 and c["deuterocanon"] == 0 and not c.get("unverified", 0):
         log.info("---")
         log.info("Layer 3 clear: no refs fail both indexes, no deuterocanonical refs "
                  "found in data files.")
 
     # Write full report
     report = {
-        "generated": __import__("datetime").date.today().isoformat(),
+        "generated": datetime.now(timezone.utc).isoformat(),
         "category_filter": args.category,
         "counts": c,
         "failed_refs": results["failed_refs"],
@@ -253,12 +266,90 @@ def main() -> None:
             "unique_refs": sorted(set(x["ref"] for x in results["kjv_only_refs"])),
         },
         "deuterocanon_refs": results["deuterocanon_refs"],
+        "unverified_refs": results["unverified_refs"],
     }
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2, ensure_ascii=False)
+    OUTPUT_FILE.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     log.info("Report written to %s", OUTPUT_FILE)
     log.info("Completed in %.1fs", elapsed)
+    return 1 if c["failed"] or c["deuterocanon"] or c.get("unverified", 0) else 0
+
+
+def audit_release(root: Path, release: Path, selection: dict, validate_fn) -> dict:
+    """Audit explicit normalized OSIS only; account for all unsupported rows."""
+    from build.tools.report_release_stats import release_statistics
+    from ocd_kernel.library._common import PipelineError
+
+    report_path = release / "internal/release-report.json"
+    report_bytes = report_path.read_bytes()
+    release_statistics(root, release, selection)
+    if report_path.read_bytes() != report_bytes:
+        raise PipelineError("release report changed during verification")
+    report = json.loads(report_bytes)
+    findings = []
+    unsupported = []
+    rows_scanned = 0
+    def references(value, pointer=""):
+        if isinstance(value, dict):
+            if value.get("derivation") == "explicit-target-syntax-v1":
+                yield pointer + "/normalized", value["normalized"]
+            elif value.get("normalization_status") in ("unsupported-explicit-target", "no-explicit-target"):
+                yield pointer, None
+            elif "osis" in value and "raw" in value:
+                for index, ref in enumerate(value["osis"]):
+                    yield pointer + "/osis/" + str(index), ref
+            else:
+                for key, child in value.items():
+                    yield from references(child, pointer + "/" + key)
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                yield from references(child, pointer + "/" + str(index))
+    for config in report["configurations"]:
+        content = (release / config["path"]).read_bytes()
+        if hashlib.sha256(content).hexdigest() != config["sha256"]:
+            raise PipelineError("release rows changed after verification")
+        for line in content.decode("utf-8").splitlines():
+            row = json.loads(line)
+            rows_scanned += 1
+            identity = {"work_id": row["work_id"], "record_id": row["record_id"],
+                        "category": row["category"]}
+            if row["category"] not in ("catechisms", "doctrinal_documents", "bible",
+                                       "commentary", "devotionals", "prayers", "sermons", "prose"):
+                unsupported.append({**identity, "reason": "category has no supported normalized OSIS extraction; literal text and record links are not interpreted"})
+                continue
+            for pointer, ref in references(row):
+                if ref is None:
+                    unsupported.append({**identity, "pointer": pointer,
+                                        "reason": "source reference has no supported explicit normalized target"})
+                    continue
+                bucket, reason = _validate_ref_verbose(ref, validate_fn)
+                findings.append({**identity, "pointer": pointer, "reference": ref,
+                                 "outcome": bucket, "reason": reason})
+    complete = not unsupported and all(item["outcome"] in ("valid-bsb", "valid-kjv-only") for item in findings)
+    return {"status": "pass" if complete else "incomplete", "rows_scanned": rows_scanned,
+            "release_report_sha256": hashlib.sha256(report_bytes).hexdigest(),
+            "references": findings, "unsupported_rows": unsupported,
+            "scope": "Source-bound OSIS arrays and explicit normalized scripture targets; no reference inference"}
+
+
+def main(argv: list[str] | None = None) -> int:
+    from ocd_kernel.library._common import PipelineError
+    from ocd_kernel.release.selection import load_release_selection
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0] == "--legacy-data":
+        return legacy_main(arguments[1:])
+    parser = argparse.ArgumentParser(description="Audit explicit references in a verified release; unsupported formats remain visible. Historical data requires --legacy-data first.")
+    parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--release", type=Path, required=True)
+    parser.add_argument("--selection", type=Path, required=True)
+    args = parser.parse_args(arguments)
+    from build.scripts.validate_osis import validate_osis_ref
+    try:
+        result = audit_release(args.root, args.release, load_release_selection(args.selection), validate_osis_ref)
+    except (PipelineError, OSError, ValueError) as exc:
+        parser.error(str(exc))
+    print(json.dumps(result, ensure_ascii=True, indent=2))
+    return 0 if result["status"] == "pass" else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

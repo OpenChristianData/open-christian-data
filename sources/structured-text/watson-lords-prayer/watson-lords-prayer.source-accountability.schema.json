@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://sources/structured-text/watson-lords-prayer/watson-lords-prayer.source-accountability.schema.json",
+  "title": "Watson The Lord's Prayer retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract", "schema", "profile_id", "source_scope", "source_member",
+    "member_census", "excluded_member_count", "carrier_inventory",
+    "body_node_sequence", "document_shell", "selected_feature_count",
+    "selected_feature_counts", "selected_comment_count", "document_comment_count",
+    "source_claims"
+  ],
+  "properties": {
+    "contract": {"const": "watson-lords-prayer-source-accountability-v1"},
+    "schema": {"const": "watson-lords-prayer.source-accountability.schema.json"},
+    "profile_id": {"const": "watson-lords-prayer-retained-thml-route-v1"},
+    "source_scope": {"type": "string", "minLength": 1},
+    "source_member": {
+      "const": {
+        "path": "raw/ccel/watson/prayer.xml",
+        "bytes": 1376060,
+        "sha256": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca",
+        "disposition": "included as the sole retained source member"
+      }
+    },
+    "member_census": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "bytes", "sha256", "decision", "reason"],
+        "properties": {
+          "path": {"const": "raw/ccel/watson/prayer.xml"},
+          "bytes": {"const": 1376060},
+          "sha256": {"const": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca"},
+          "decision": {"const": "include"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "excluded_member_count": {"const": 0},
+    "carrier_inventory": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/carrier"}
+    },
+    "body_node_sequence": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/bodyCarrier"}
+    },
+    "document_shell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xml_declaration", "doctype", "root_name", "prolog", "epilog",
+        "comments_and_processing_instructions", "head_children"
+      ],
+      "properties": {
+        "xml_declaration": {"const": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "root_name": {"const": "ThML"},
+        "prolog": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {"$ref": "#/$defs/shellNode"}
+        },
+        "epilog": {"type": "array", "maxItems": 0},
+        "comments_and_processing_instructions": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 0,
+          "items": {"$ref": "#/$defs/shellNode"}
+        },
+        "head_children": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/headChild"}
+        }
+      }
+    },
+    "selected_feature_count": {"const": 6723},
+    "selected_feature_counts": {
+      "const": {
+        "a": 2456,
+        "div": 3,
+        "div1": 10,
+        "div2": 2,
+        "h1": 2,
+        "h2": 10,
+        "h3": 1,
+        "insertIndex": 2,
+        "li": 325,
+        "p": 1547,
+        "scripRef": 2024,
+        "span": 340,
+        "ul": 1
+      }
+    },
+    "selected_comment_count": {"const": 0},
+    "document_comment_count": {"const": 0},
+    "source_claims": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {"$ref": "#/$defs/sourceClaim"}
+    }
+  },
+  "$defs": {
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "position", "native_id", "source_tag", "source_title", "disposition",
+        "selection_role", "tei_region"
+      ],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0, "maximum": 9},
+        "native_id": {"enum": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]},
+        "source_tag": {"const": "div1"},
+        "source_title": {"type": "string", "minLength": 1},
+        "disposition": {"const": "selected-work"},
+        "selection_role": {"enum": ["body", "back"]},
+        "tei_region": {"enum": ["front", "body", "back"]}
+      }
+    },
+    "bodyCarrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "position", "native_id", "source_tag", "source_title", "disposition",
+        "selection_role", "tei_region", "node_kind"
+      ],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0, "maximum": 9},
+        "native_id": {"enum": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]},
+        "source_tag": {"const": "div1"},
+        "source_title": {"type": "string", "minLength": 1},
+        "disposition": {"const": "selected-work"},
+        "selection_role": {"enum": ["body", "back"]},
+        "tei_region": {"enum": ["front", "body", "back"]},
+        "node_kind": {"const": "carrier"}
+      }
+    },
+    "shellNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "path", "text", "tail", "disposition"],
+      "properties": {
+        "kind": {"enum": ["comment", "processing-instruction"]},
+        "path": {"type": ["string", "null"]},
+        "text": {"type": "string"},
+        "tail": {"type": "string"},
+        "disposition": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1}
+      }
+    },
+    "headChild": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "tag", "attributes", "text_sha256", "disposition"],
+      "properties": {
+        "position": {"type": "integer", "minimum": 0, "maximum": 4},
+        "tag": {"enum": ["generalInfo", "printSourceInfo", "electronicEdInfo", "style"]},
+        "attributes": {"type": "object"},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "disposition": {"type": "string", "minLength": 1}
+      }
+    },
+    "sourceClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "text_sha256", "excerpt", "interpretation"],
+      "properties": {
+        "source_path": {"type": "string", "minLength": 1},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "excerpt": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

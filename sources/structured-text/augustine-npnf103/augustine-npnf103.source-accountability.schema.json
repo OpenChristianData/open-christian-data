@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/augustine-npnf103/augustine-npnf103.source-accountability.schema.json",
+  "title": "NPNF103 sixteen-work complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_scope",
+    "source_member",
+    "document_accounting",
+    "member_accounting",
+    "source_census",
+    "assigned_work_count",
+    "feature_count",
+    "attribute_count",
+    "feature_counts",
+    "omitted_feature_count",
+    "duplicate_feature_count",
+    "unresolved_feature_count",
+    "table_census",
+    "top_level_division_accounting",
+    "direct_div2_accounting",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-npnf103-source-accountability-v1"},
+    "schema": {"const": "augustine-npnf103.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf103-assigned-div2-iv-i-through-v-ix-v1"},
+    "source_scope": {"const": "retained ThML.body div1 iv/v direct div2 iv.i–iv.vii and v.i–v.ix"},
+    "source_member": {
+      "const": {
+        "path": "raw/ccel/npnf1/npnf103.xml",
+        "bytes": 3842341,
+        "sha256": "410f240f8105bb6097316a54a867fa5a4ae02c0d3d03606aefc2df71f5bfc455",
+        "disposition": "included as the sole retained source member"
+      }
+    },
+    "document_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["xml_declaration", "standalone", "doctype", "pre_root_comments", "pre_root_processing_instructions", "post_root_nodes", "root_tag", "root_attributes", "root_namespace_declarations", "assigned_comment_count", "assigned_processing_instruction_count"],
+      "properties": {
+        "xml_declaration": {"const": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"},
+        "standalone": {"const": false},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "pre_root_comments": {"type": "array", "minItems": 2, "maxItems": 2},
+        "pre_root_processing_instructions": {"const": []},
+        "post_root_nodes": {"const": []},
+        "root_tag": {"const": "ThML"},
+        "root_attributes": {"const": {}},
+        "root_namespace_declarations": {"const": {}},
+        "assigned_comment_count": {"const": 0},
+        "assigned_processing_instruction_count": {"const": 0}
+      }
+    },
+    "member_accounting": {"type": "array", "minItems": 1, "maxItems": 1},
+    "source_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complete_document", "assigned_scope", "excluded_shell_front_and_indexes"],
+      "properties": {
+        "complete_document": {"type": "object"},
+        "assigned_scope": {"type": "object"},
+        "excluded_shell_front_and_indexes": {"type": "object"}
+      }
+    },
+    "assigned_work_count": {"const": 16},
+    "feature_count": {"const": 12832},
+    "attribute_count": {"const": 35788},
+    "feature_counts": {"const": {"br": 4, "div2": 16, "div3": 580, "div4": 226, "i": 1309, "note": 2775, "p": 4414, "pb": 504, "scripRef": 2297, "span": 705, "sup": 2}},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "table_census": {"const": {"tables": 0, "rows": 0, "cells": 0}},
+    "top_level_division_accounting": {"type": "array", "minItems": 7, "maxItems": 7},
+    "direct_div2_accounting": {"type": "array", "minItems": 21, "maxItems": 21},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 12832,
+      "maxItems": 12832,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["feature_id", "source_selector", "source_tag", "source_xml_id", "attributes", "direct_text", "tail_text", "direct_text_sha256", "tail_text_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_child_ordinal", "tei_attributes", "attribute_dispositions", "disposition", "tei_selector", "parent_feature_id", "source_title_head"],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^npnf103-feature-[0-9]{5}$"},
+          "source_selector": {"type": "string", "minLength": 1},
+          "source_tag": {"enum": ["br", "div2", "div3", "div4", "i", "note", "p", "pb", "scripRef", "span", "sup"]},
+          "source_xml_id": {"type": ["string", "null"]},
+          "attributes": {"type": "object"},
+          "direct_text": {"type": "string"},
+          "tail_text": {"type": "string"},
+          "direct_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tail_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tei_tag": {"enum": ["div", "foreign", "hi", "lb", "note", "p", "pb", "ref", "seg"]},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "tei_parent_id": {"type": "string", "minLength": 1},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "attribute_dispositions": {"type": "array"},
+          "disposition": {"const": "represented"},
+          "tei_selector": {"type": "string", "pattern": "^#"},
+          "parent_feature_id": {"type": ["string", "null"]},
+          "source_title_head": {"type": ["string", "null"]},
+          "work_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}

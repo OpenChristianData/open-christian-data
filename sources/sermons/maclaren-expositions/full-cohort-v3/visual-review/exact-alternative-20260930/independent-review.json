@@ -1,0 +1,172 @@
+{
+  "alternative_presentation": {
+    "binding": "Every displayed TEI line was selected independently by exact pg{member}-line-{six-digit-line} xml:id from the candidate bytes; the bundle records source, TEI, HTML, and frame hashes.",
+    "kind": "exact-source-lines-beside-TEI-source-physical-line-carriers",
+    "manifest_path": "sources/sermons/maclaren-expositions/full-cohort-v3/visual-review/exact-alternative-20260930/manifest.json",
+    "manifest_sha256": "16de7da26ac143a2c8b0dca8408378cbcd0d9a0ac889cdfd5341e8a955dbe341"
+  },
+  "candidate": {
+    "oracle_report_sha256": "c74b6bfd6177bee7544cb6f9da9b61c4104ff1ee8f61c3fec119a21ddfde2e32",
+    "package_sha256": "35523d865824c9b53db7d8dd5be85195d33294b2fe405b5a1b841a5a41185474",
+    "tei_sha256": "9fa413cf7e13ff5d31448c547d63a66ccfd16b8396f772aa76603613a61e9e08",
+    "validation_sha256": "b31c8bedd5ec9b17991bc6eb78c5f476118ef9ab16f68c03aa1ed7a33844f377"
+  },
+  "contract": "ocd-source-to-tei-agent-visual-review-v1",
+  "coverage": {
+    "machine_scope": "All 15 members, 339526 physical lines, 26 source parts, and 1444 mapped markers are covered by the independent full oracle.",
+    "status": "bounded-sample",
+    "unreviewed": [
+      "Whole-work line-by-line visual proofreading",
+      "All 28 nonexact title cases as rendered pixels; all 28 are covered by exact machine ownership checks",
+      "Print-edition collation",
+      "Human visual acceptance"
+    ],
+    "visually_inspected": [
+      "PG 7069 opening exposition boundary, lines 168-186",
+      "PG 7925 printed volume II/source-part opening, lines 11082-11100",
+      "PG 15836 middle nonexact title and full adjacent epigraph, lines 8226-8257",
+      "PG 8381 source-local pilot nonexact title and adjacent epigraph, lines 4493-4508",
+      "PG 24674 final exposition opening, lines 21958-21977",
+      "PG 24674 terminal retained license tail, lines 22618-22632"
+    ]
+  },
+  "cvw": {
+    "admission": "pass",
+    "catalog_sha256": "c0997fbd128191454dcb5c2071de09d6ae6a140d5c2f455cf9ab3356076b21f0",
+    "display": "gap",
+    "gap": "The exact source and candidate were admitted. The first full 56 MB TEI readable projection did not return before the governed capture/client deadline in the retained session or a clean single-request session, so no CVW pixel frame is claimed.",
+    "implementation_sha256": "454e2a0bc973d87ea13f64fe84322f6ed04c21d80c916410395b406c2566feab",
+    "sessions": [
+      {
+        "receipt_sha256": "cbfd13564fec6ea1b8c12f438f92cd7c83cb8fbd09a7c8ba198216e39948dd92",
+        "session_id": "9c7105a6082046df8f514d4cba5fbc91"
+      },
+      {
+        "receipt_sha256": "8509ffb281e32983f73cfa234964659654d5799557763edd56cb2281228512df",
+        "session_id": "ac6206880c99452fbefb1e2fc73d34fa"
+      }
+    ]
+  },
+  "decision": {
+    "human_visual_acceptance": "not-recorded",
+    "publication": "not-authorized",
+    "rights": "not-cleared",
+    "technical_visual_assessment": "pass for the declared bounded loci"
+  },
+  "discrepancies": [],
+  "findings": [],
+  "limits": [
+    "This review credits the six retained exact-alternative frames after direct pixel inspection; it does not credit a CVW frame.",
+    "The TEI readable CVW projection gap is a display/performance limitation and is not treated as source fidelity evidence.",
+    "Human acceptance, certain print lineage, rights clearance, release selection, and publication remain unrecorded."
+  ],
+  "observations": [
+    {
+      "ancestor_xml_ids": [
+        "pg7069-p1-exposition-1",
+        "pg7069-part-1",
+        "member-pg7069",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 174,
+      "frame_sha256": "14de6680c36a96d8392bf413260771a603b93d673ca7102b59e42112f9d25a37",
+      "label": "opening-pg7069",
+      "lines": [
+        168,
+        186
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "7dedfcfa940f9a3b7a1827f969f43babb67aae27c2c415a0bf25a4c5fbd94250"
+    },
+    {
+      "ancestor_xml_ids": [
+        "pg7925-p2-exposition-1",
+        "pg7925-part-2",
+        "member-pg7925",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 11089,
+      "frame_sha256": "b7713fc7cd93e39ca8d6fc85872373ea5afbbefe2f15e5e9e350248a40cf32cd",
+      "label": "volume-boundary-pg7925",
+      "lines": [
+        11082,
+        11100
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "18d36d2629476615e2a4a7c7e26c46f431747f306f28947134ed7615c555144a"
+    },
+    {
+      "ancestor_xml_ids": [
+        "pg15836-p1-exposition-39",
+        "pg15836-p1-book-10",
+        "pg15836-part-1",
+        "member-pg15836",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 8229,
+      "frame_sha256": "62c442cb7f6d4db92dc5c714ec0fbdd07a15ad23a982280f7dce9f7dcf628123",
+      "label": "middle-variant-pg15836",
+      "lines": [
+        8226,
+        8257
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "24cc44a7ccbcf52839307d8885ce54ba4c469d791043ff3d022543179f181dd9"
+    },
+    {
+      "ancestor_xml_ids": [
+        "pg8381-p1-exposition-16",
+        "pg8381-part-1",
+        "member-pg8381",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 4497,
+      "frame_sha256": "b8aa3e8845106d9a555a33028a5c30765da7b62203d89015bc8d95b4fbd54190",
+      "label": "pg8381-epigraph",
+      "lines": [
+        4493,
+        4508
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "9666a51d24dfcfff7b23d2ddfb2e2fe143a1b742f8951143a9fbde2c67f26841"
+    },
+    {
+      "ancestor_xml_ids": [
+        "pg24674-p2-exposition-42",
+        "pg24674-p2-book-3",
+        "pg24674-part-2",
+        "member-pg24674",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 21964,
+      "frame_sha256": "85e53d67534f553f0d80bfb7f271f7de31dcdec5294f1fa59d1ebd440a7fdab1",
+      "label": "final-exposition-pg24674",
+      "lines": [
+        21958,
+        21977
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "dc4dfbd60b79c04442b2f8c54c283f01a08dd14e7e8ac3623c939888d50ac21b"
+    },
+    {
+      "ancestor_xml_ids": [
+        "member-pg24674",
+        "maclaren-expositions-full-cohort-v3"
+      ],
+      "focus_line": 22632,
+      "frame_sha256": "373b9f9960cb649005305ec24054eb2121ca42dad604b0222fd4ea35f09e988a",
+      "label": "final-tail-pg24674",
+      "lines": [
+        22618,
+        22632
+      ],
+      "pixel_inspection": "Source wording, order, blank-line placement, title/epigraph attachment, and boundary placement are visually concordant in the displayed pair; no discrepancy observed.",
+      "source_sha256": "dc4dfbd60b79c04442b2f8c54c283f01a08dd14e7e8ac3623c939888d50ac21b"
+    }
+  ],
+  "reviewed_at": "2026-09-30T09:55:00Z",
+  "reviewer": "agent:maclaren-expositions-technical-owner",
+  "status": "pass-bounded-exact-alternative",
+  "ticket_id": "LIB-073",
+  "work_id": "maclaren-expositions"
+}

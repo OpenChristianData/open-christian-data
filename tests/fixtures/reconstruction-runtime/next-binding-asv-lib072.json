@@ -1,0 +1,38 @@
+[
+  {
+    "original": "sources/bible-text/asv/asv.source-manifest.json",
+    "original_sha256": "eaa7251d12cf0d4873685682164c145c9773c07b61a1603b9daf1a21d1620d5f",
+    "manifest": "tests/fixtures/reconstruction-runtime/asv.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  },
+  {
+    "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/spurgeon-all-of-grace/spurgeon-all-of-grace.source-manifest.json",
+    "original_sha256": "9d220aa4bffb6d4d9e7e89ab444e2c3a20ec9065fae72db3c846fe6da87a6e91",
+    "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-all-of-grace-lib072.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  },
+  {
+    "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/spurgeon-lectures-to-my-students/spurgeon-lectures-to-my-students.source-manifest.json",
+    "original_sha256": "93db1e33fc981ddee3600585651c14b2f9b28d1a8f033631e302b5d9a14c61e1",
+    "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-lectures-to-my-students-lib072.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  },
+  {
+    "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/torrey-how-to-pray/torrey-how-to-pray.source-manifest.json",
+    "original_sha256": "f4c48937c356bc94ecba42d8d7f36d69cd88981ca193af2a8b6f0ae3274c5ff7",
+    "manifest": "tests/fixtures/reconstruction-runtime/torrey-how-to-pray-lib072.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  },
+  {
+    "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/torrey-what-the-bible-teaches/torrey-what-the-bible-teaches.source-manifest.json",
+    "original_sha256": "27477fe8f33cd7f7c6c9f910d0265178bd9013aba3f8b45f1f934ab4b915655f",
+    "manifest": "tests/fixtures/reconstruction-runtime/torrey-what-the-bible-teaches-lib072.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  },
+  {
+    "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/wilberforce-practical-view.source-manifest.json",
+    "original_sha256": "2cc05b41b531cda6d254aa8bfcb56e3f7b347e89e4ccaeecee6c91ce960bb8f2",
+    "manifest": "tests/fixtures/reconstruction-runtime/wilberforce-practical-view-lib072.source-manifest.json",
+    "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
+  }
+]

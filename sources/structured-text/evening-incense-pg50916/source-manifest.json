@@ -1,0 +1,122 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "evening-incense-pg50916-current-extracted-html",
+  "work_id": "evening-incense-macduff",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "scope": {
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "title": "Evening Incense",
+    "source_url": "https://www.gutenberg.org/ebooks/50916",
+    "candidate_status": "nonaccepted",
+    "represented_body_elements": 1066,
+    "flattened_structural_wrappers": 1,
+    "unrepresented_body_elements": 0,
+    "package_cover_role": "head favicon support"
+  },
+  "source_bundle": {
+    "members": 1,
+    "bytes": 151518,
+    "sha256": "621b8c4c06f315fe19ac05ae267a281a814f3d8240e6968d7162f0694d35264b"
+  },
+  "source_members": [
+    {
+      "name": "pg50916-images.html",
+      "logical_name": "pg50916-images.html",
+      "path": "raw/gutenberg/50916/html/pg50916-images.html",
+      "order": 1,
+      "bytes": 151518,
+      "sha256": "621b8c4c06f315fe19ac05ae267a281a814f3d8240e6968d7162f0694d35264b"
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-source",
+      "path": "raw/gutenberg/50916/html/pg50916-images.html",
+      "role": "primary-source",
+      "bytes": 151518,
+      "sha256": "621b8c4c06f315fe19ac05ae267a281a814f3d8240e6968d7162f0694d35264b"
+    },
+    {
+      "name": "retained-package",
+      "path": "raw/gutenberg/50916/pg50916-h.zip",
+      "role": "supporting-package",
+      "bytes": 89470,
+      "sha256": "7f299fc6985c426fa725c3b9c04023b5368c0e55521e87e8c7a825419b413d56"
+    },
+    {
+      "name": "retained-cover",
+      "path": "raw/gutenberg/50916/html/images/cover.jpg",
+      "role": "head-favicon-support",
+      "bytes": 38047,
+      "sha256": "b1e6b2fd726c77f631873789aab3275578966bc7f23f5425b31ac5f83c3e3ba3"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/evening-incense-pg50916/profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1150,
+      "sha256": "d0a7168ddd4957937628eca01ebcf166324035e78d2bf79d23e08f6e2662519d"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/evening-incense-pg50916/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 807,
+      "sha256": "8065655a422a227d7090d8fd03962bedc6e3a9c1a83c3b7dd735e1e7750a75a3"
+    },
+    {
+      "name": "source-readme",
+      "path": "sources/structured-text/evening-incense-pg50916/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1325,
+      "sha256": "20501cb0f3e24a33a29b4a45b3b1acf892c07a59fd2bb4d697bd57dd2ad4c4c3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "producer-implementation",
+      "path": "build/tei/evening_incense_pg50916_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "bytes": 10328,
+      "sha256": "da929f2c4ed59a3a2df7551c06ebfaf854f0bd8370cc3185cd7953358b81fd60"
+    },
+    {
+      "name": "oracle-implementation",
+      "path": "build/tei/evening_incense_pg50916_oracle.py",
+      "role": "supporting-validator-implementation",
+      "bytes": 10767,
+      "sha256": "bb5371e3435aec0e7d7fc5ebb6d5ee885b377a652cd709fbd5a1fcd7eee80c67"
+    }
+  ],
+  "converter": {
+    "id": "ocd-evening-incense-pg50916-extracted-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/evening_incense_pg50916_reconstruction.py",
+    "implementation_sha256": "da929f2c4ed59a3a2df7551c06ebfaf854f0bd8370cc3185cd7953358b81fd60"
+  },
+  "validator": {
+    "id": "ocd-evening-incense-pg50916-independent-html-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/evening_incense_pg50916_oracle.py",
+    "implementation_sha256": "bb5371e3435aec0e7d7fc5ebb6d5ee885b377a652cd709fbd5a1fcd7eee80c67",
+    "import_closure_sha256": "490491ec54350866ad3655509bc3a776e08b7ef0bc73d208b7034fc74d130242"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

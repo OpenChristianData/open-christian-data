@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/rutherford-letters-source-accountability-v1",
+  "title": "Rutherford Letters complete retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "work_id", "source_member", "scope", "document", "carrier_inventory", "elements", "exclusions"],
+  "properties": {
+    "contract": {"const": "rutherford-letters-source-accountability-v1"},
+    "schema": {"const": "source-accountability.schema.json"},
+    "work_id": {"const": "rutherford-letters"},
+    "source_member": {"type": "object", "required": ["path", "bytes", "sha256"], "properties": {"path": {"const": "raw/ccel/rutherford/letters.xml"}, "bytes": {"const": 285570}, "sha256": {"const": "33fda0ccc68d7e35aec2dbe6abd366ca55e81c8a116973c9ed69e3becede6ebf"}}, "additionalProperties": false},
+    "scope": {"type": "object"},
+    "document": {"type": "object"},
+    "carrier_inventory": {"type": "array", "minItems": 6, "items": {"type": "object"}},
+    "elements": {"type": "array", "minItems": 1171, "items": {"type": "object"}},
+    "exclusions": {"type": "array", "minItems": 4, "items": {"type": "object"}},
+    "body_node_sequence": {"type": "array"},
+    "document_shell": {"type": "object"}
+  }
+}

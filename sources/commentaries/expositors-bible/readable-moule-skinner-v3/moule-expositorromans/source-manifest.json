@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib034-readable-moule-expositorromans-v3",
+  "work_id": "expositors-bible--h-c-g-moule",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/moule_expositorromans.xml",
+      "role": "primary-source",
+      "bytes": 1059339,
+      "sha256": "a6b919c200f4702fae4e3cb5f687676a503728233f5eb6c1a9468f835a533433"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-moule-skinner-v3/moule-expositorromans/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 706,
+      "sha256": "3c8cbe642c12916b9e574ed33ce872aeef12eb30094dc5a9d3a4c8980a4f9c17"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-moule-skinner-v3/moule-expositorromans/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 936,
+      "sha256": "abb339b9838cb56804829fc320289bf5ed6aeb78ae763f6d1f2eafac4d2bda60"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-moule-skinner-v3/moule-expositorromans/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 829,
+      "sha256": "28c782e24f2db1d73b7c475939f315f27657f6fb2e74118442bf9abf877153bf"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-moule-skinner-v3/moule-expositorromans/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1694,
+      "sha256": "62eaea51367a0ac6e34149194ee27f28de7cd85f44c7152da341ac7b32db8b6e"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib034-readable-moule-skinner-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_moule_skinner.py",
+    "implementation_sha256": "779ea4d3fbb6e9943d22b175cab0806dd52abc35eda90c9b9b4a50c488398a01"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib034-readable-moule-skinner-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_moule_skinner_oracle.py",
+    "implementation_sha256": "5b0abf81a6798b9c5b474cfd5543e6296adeab23b72ffb7e973c9e090b72f8c6",
+    "import_closure_sha256": "5b0abf81a6798b9c5b474cfd5543e6296adeab23b72ffb7e973c9e090b72f8c6"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

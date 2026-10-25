@@ -1,0 +1,104 @@
+{
+  "authorities": [
+    {
+      "bytes": 177425,
+      "name": "official-source-member",
+      "path": "raw/docsouth/l763-greenew-exact-1888/greenew.xml",
+      "role": "primary-source",
+      "sha256": "6d8808688dbbb7d50854aab4b11a6242f76b7ce9fe409066304daeda260d9417"
+    },
+    {
+      "bytes": 4960,
+      "name": "original-acquisition-receipt",
+      "path": "raw/docsouth/l763-greenew-exact-1888/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "sha256": "2ed58f7e012d83be6212cae94573f6278a119410d46005c59318ef10abcbf7c7"
+    },
+    {
+      "bytes": 532,
+      "name": "acquisition-receipt",
+      "path": "sources/manifest-acquisitions/docsouth-l763-greenew-exact-1888/receipt-projection.json",
+      "role": "source-acquisition-receipt-projection",
+      "sha256": "237e93f33a04707b209a8d6277e6fb740b7cb77a082d1a3325ec8a1813a1cdc6"
+    },
+    {
+      "bytes": 179,
+      "name": "member-inventory",
+      "path": "raw/docsouth/l763-greenew-exact-1888/member-inventory.json",
+      "role": "complete-source-member-inventory",
+      "sha256": "b0a7fd2149c72c892602b582a1e18f1fa33fe197db9d1b33e05ce0391bf98f0f"
+    },
+    {
+      "bytes": 3983,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/docsouth-l763-greenew-exact-1888/profile-v4.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "fc1d6198da302c028d47dd15e3f4a544353692c312e51fedddfe3b692c61b9f4"
+    },
+    {
+      "bytes": 819,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/docsouth-l763-greenew-exact-1888/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a5bd1521ba16f7f09ddcbf4daaea845a6010d0c91fc59e7bd0aa106fad0b9a12"
+    },
+    {
+      "bytes": 2012,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/docsouth-l763-greenew-exact-1888/README.source-v3.md",
+      "role": "source-attribution-readme",
+      "sha256": "1c795b59368ba03a0a52f9d48d87ec1023a238e7188419e3285fc01f6b74db84"
+    },
+    {
+      "bytes": 19315,
+      "name": "p4-to-p5-stylesheet",
+      "path": "build/tei/vendor/tei-p4top5-2007.xsl",
+      "role": "migration-stylesheet",
+      "sha256": "3210cdbe31a4c9b4da527b0c926003f2e714ee595f526b648d30cfc8177eaa38"
+    },
+    {
+      "bytes": 1108622,
+      "name": "p5-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 17859,
+      "name": "converter-helper",
+      "path": "build/tei/docsouth_l761_l762.py",
+      "role": "implementation-dependency",
+      "sha256": "41a8c2efda21c7fde78eacc253044a71234858bfeab08507365f06e7684fccd4"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-docsouth-green-exact-v2-title-accounting-to-p5",
+    "implementation_path": "build/tei/docsouth_green_exact_v2.py",
+    "implementation_sha256": "d3397798b87d8f4e234c774e7aea263479f92db71a4f82e58d24d4203fecc7c6",
+    "version": "2"
+  },
+  "manifest_row": "L763",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "docsouth-l763-greenew-exact-1888",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-docsouth-green-exact-v2-title-oracle",
+    "implementation_path": "build/tei/docsouth_green_exact_v3_oracle.py",
+    "implementation_sha256": "6b214819f67a00636d29e67651071ee599a2b9a9d7ab7b5d69d015bbbb491f7b",
+    "import_closure_sha256": "7f40c8446a557a2013f6e1e993e884c2140ee4af48d280f0142709645df8b894",
+    "version": "2"
+  },
+  "work_id": "elisha-w-green-life-1888"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "historical_work_fixture": "tests/fixtures/reconstruction-runtime/authorities/npnf210-before/ambrose-of-milan-on-duties-of-clergy/work.json",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf210-title-ambrose-of-milan-on-duties-of-clergy.source-manifest.json",
+    "original": "sources/structured-text/ambrose-of-milan-on-duties-of-clergy/npnf210-duties-faith-title-v3.source-manifest.json",
+    "original_sha256": "763e5e4281b1a0f1b2efd805b84434a4dee8ff4de21c8ae85da177462af0d54e",
+    "preservation_test": "tests/test_npnf210_title_runtime_manifests.py::test_complete_record_preserved_with_exact_historical_work_authority",
+    "retained_package_sha256": "6f971bd5cd69b0ad0aee36446214e6d082caf5e9c6cce01d0b68347aad0c3bc3",
+    "work_id": "ambrose-of-milan-on-duties-of-clergy"
+  },
+  {
+    "historical_work_fixture": "tests/fixtures/reconstruction-runtime/authorities/npnf210-before/ambrose-of-milan-exposition-of-christian-faith/work.json",
+    "manifest": "tests/fixtures/reconstruction-runtime/npnf210-title-ambrose-of-milan-exposition-of-christian-faith.source-manifest.json",
+    "original": "sources/structured-text/ambrose-of-milan-exposition-of-christian-faith/npnf210-duties-faith-title-v3.source-manifest.json",
+    "original_sha256": "e782fe3b38612833e4046d3be0421d4ef70ace9f2a59556a235eb7e68d2f3e1d",
+    "preservation_test": "tests/test_npnf210_title_runtime_manifests.py::test_complete_record_preserved_with_exact_historical_work_authority",
+    "retained_package_sha256": "367aa61be3c77ae555fe0e2ca3d4656e203380351cc3d303734379636b2000c1",
+    "work_id": "ambrose-of-milan-exposition-of-christian-faith"
+  }
+]

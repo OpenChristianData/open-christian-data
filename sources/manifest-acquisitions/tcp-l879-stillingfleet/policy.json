@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "source_id": "tcp-l879-stillingfleet-a61580",
+  "validation_scope": "Exact conservation and TEI P5 schema validity for one complete retained A61580 TEI P5 witness representing one top-level titled monographic work.",
+  "acceptance": "A successful technical validation is a nonaccepted candidate only. It does not change WorkCatalog acceptance, rights review, or publication authorization.",
+  "comparison": {
+    "required": [
+      "Candidate content.tei.xml is byte-identical to the exact retained A61580.xml source.",
+      "The document is well-formed TEI P5 and validates against the pinned OCD TEI all.xsd.",
+      "Exactly one TEI root and one monographic title hierarchy are present.",
+      "The source title page, three internal books, 22 chapters, page anchors, notes, verse, character references, and source-declared gaps remain conserved by byte identity."
+    ],
+    "known_limit": "Byte identity demonstrates source conservation, not accuracy against page images. Image collation and human editorial acceptance remain separate and open."
+  },
+  "mutation_challenges": [
+    "Alter body wording while retaining valid XML and resealing package membership; require rejection for source-byte and body-text mismatch.",
+    "Alter a chapter heading while retaining valid XML and resealing package membership; require rejection for source-byte and division-text mismatch.",
+    "Alter a note attachment while retaining valid XML and resealing package membership; require rejection for source-byte and note-attachment mismatch."
+  ],
+  "reproduction": "Reconstruct and independently validate in two fresh Python processes; baseline package and validation report hashes must match exactly."
+}

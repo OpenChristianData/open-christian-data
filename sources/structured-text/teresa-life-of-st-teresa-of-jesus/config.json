@@ -1,0 +1,29 @@
+{
+  "resource_id": "teresa-life-of-st-teresa-of-jesus",
+  "title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+  "author": "Teresa of Avila",
+  "author_id": "teresa-of-avila",
+  "language": "en",
+  "original_language": "es",
+  "tradition": [
+    "catholic"
+  ],
+  "era": "reformation",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "devotional-classic",
+  "translator": "David Lewis",
+  "source_url": "https://www.gutenberg.org/ebooks/8120",
+  "source_format": "Project Gutenberg HTML with images (UTF-8)",
+  "source_edition": "Third Edition Enlarged, with additional notes and an introduction by Benedict Zimmerman, O.C.D.; London: Thomas Baker; New York: Benziger Bros.; 1904.",
+  "source_hash": "sha256:92b3442c0b2c04c206152c41b698bd464899ac078c2660afa83c2c751b17d274",
+  "source_type": "project_gutenberg_html",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-1/07/teresa-life-of-st-teresa-of-jesus/pg8120-h.zip",
+  "source_members": [
+    "pg8120-images.html",
+    "8120-cover.png"
+  ],
+  "processing_script": "build/tei/teresa_life_of_st_teresa_of_jesus.py",
+  "output_file": "reports/clean-ready-acquisition-to-tei/master-1/07/teresa-life-of-st-teresa-of-jesus/candidate.tei.xml",
+  "notes": "The source-local route is bound to the released archive and exact member hashes. It preserves the 1904 title and translator/editor matter, front matter, Prologue, forty Life chapters, eleven Relations, Index, all 730 linked notes, all internal references, language and typographic markup, tables, description list, quotations, line and typographic breaks. The electronic source has no print-page anchors or page-image facsimile, so none are invented. Project Gutenberg redistribution boilerplate is excluded from the TEI text and documented in the source-local README."
+}

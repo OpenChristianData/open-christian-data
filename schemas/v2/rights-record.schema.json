@@ -1,0 +1,325 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "work_id",
+    "edition_id",
+    "scope",
+    "subject",
+    "rights_status",
+    "jurisdictions",
+    "license_ids",
+    "basis",
+    "condition",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.1"
+    },
+    "record_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "work_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "edition_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "subject": {
+      "$ref": "#/$defs/subject_binding"
+    },
+    "rights_status": {
+      "$ref": "#/$defs/rights_status"
+    },
+    "jurisdictions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(?:[A-Z]{2}|worldwide)$"
+      }
+    },
+    "license_ids": {
+      "type": "array",
+      "maxItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9.+-]*$"
+      }
+    },
+    "basis": {
+      "$ref": "#/$defs/basis"
+    },
+    "condition": {
+      "$ref": "#/$defs/condition"
+    },
+    "evidence": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/binding"
+      }
+    },
+    "assessed_by": {
+      "$ref": "#/$defs/non_empty"
+    },
+    "assessed_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "scope_note": {
+      "$ref": "#/$defs/non_empty"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/rights-record.schema.json",
+  "title": "OCD attributed territorial rights assessment",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "pointer": {
+          "type": "string",
+          "pattern": "^(?:|/.*)$"
+        }
+      }
+    },
+    "subject_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "id"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "pointer": {
+          "type": "string",
+          "pattern": "^(?:|/.*)$"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        }
+      }
+    },
+    "scope": {
+      "enum": [
+        "whole-edition",
+        "selected-text",
+        "original-text",
+        "translation",
+        "editorial-material",
+        "digital-contribution",
+        "compilation"
+      ]
+    },
+    "rights_status": {
+      "enum": [
+        "public-domain",
+        "licensed",
+        "mixed",
+        "restricted",
+        "undetermined",
+        "not-assessed"
+      ]
+    },
+    "basis": {
+      "enum": [
+        "statutory-assessment",
+        "provider-declaration",
+        "dedication",
+        "license",
+        "permission",
+        "not-assessed"
+      ]
+    },
+    "condition": {
+      "enum": [
+        "unconditional",
+        "if-protectable"
+      ]
+    },
+    "query_mode": {
+      "enum": [
+        "public-domain",
+        "cc0",
+        "public-domain-or-cc0"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "rights_status": {
+            "const": "public-domain"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "license_ids": {
+            "maxItems": 0
+          },
+          "basis": {
+            "enum": [
+              "statutory-assessment",
+              "provider-declaration"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "rights_status": {
+            "const": "licensed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "license_ids": {
+            "minItems": 1
+          },
+          "basis": {
+            "enum": [
+              "dedication",
+              "license",
+              "permission",
+              "provider-declaration"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "rights_status": {
+            "const": "not-assessed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "jurisdictions": {
+            "maxItems": 0
+          },
+          "license_ids": {
+            "maxItems": 0
+          },
+          "basis": {
+            "const": "not-assessed"
+          },
+          "evidence": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "rights_status": {
+            "not": {
+              "const": "not-assessed"
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "assessed_by",
+          "assessed_on"
+        ],
+        "properties": {
+          "evidence": {
+            "minItems": 1
+          },
+          "basis": {
+            "not": {
+              "const": "not-assessed"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "basis": {
+            "not": {
+              "enum": [
+                "provider-declaration",
+                "not-assessed"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "jurisdictions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "condition": {
+            "const": "if-protectable"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rights_status": {
+            "const": "licensed"
+          }
+        }
+      }
+    }
+  ]
+}

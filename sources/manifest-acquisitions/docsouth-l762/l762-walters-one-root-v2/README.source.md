@@ -1,0 +1,10 @@
+# My Life and Work — retained DocSouth electronic source
+
+- Manifest row: L762; work ID: alexander-walters-my-life-and-work; edition ID: alexander-walters-my-life-and-work-docsouth-electronic; acquisition ID: alexander-walters-my-life-and-work-docsouth-acquired.
+- Official TEI.2 XML: https://docsouth.unc.edu/neh/walters/walters.xml (retained 2026-09-23T06:41:06.479835Z); 451195 bytes; SHA-256 c3e75824f7a9be17f14f0e4b833ac1fefdb6098208ff574b53b63c177cd0db94.
+- Complete current envelope: 12 retained members (451195 XML bytes plus 285935 JPEG bytes); member-inventory SHA-256 de2088989b4e430ca95ea8186601cf2f0e822797b5fe9ad5cc28e22a5f79b6fb. Every member is separately hash-bound by the versioned source manifest.
+- Source-attested title-page work: “MY LIFE AND WORK” at /TEI.2/text/front/titlePage/docTitle[1]; candidate contains exactly one titled TEI root. Chapters and internal sections remain within that book.
+- Source XML has 254 body page markers (labels 19–272) plus ten front-matter markers; unmarked numbers within the body-label span: []. Marker jumps do not imply missing text.
+- Eleven declared JPEG entities have matching retained bytes and ordered TEI graphic targets. The fixed candidate package does not embed binary assets; source manifest and accountability preserve their hashes, while graphics retain original DocSouth URLs. Image display/visual comparison remains open.
+- Provider availability wording in XML: No Copyright - United StatesThe organization that has made the Item available believes that the Item is in the Public Domain under the laws of the United States, but a determination was not made as to its copyright status under the copyright laws of other countries. The Item may not be in the Public Domain under the laws of other countries. Please refer to the organization that has made the Item available for more information.
+- This nonaccepted reconstruction represents the retained electronic edition. Print collation, full visual comparison, human acceptance, worldwide rights clearance, and publication authorization remain open.

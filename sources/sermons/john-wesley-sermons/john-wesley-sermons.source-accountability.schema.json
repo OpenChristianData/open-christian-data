@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.example/schemas/john-wesley-sermons-source-accountability-v1.schema.json",
+  "title": "John Wesley Sermons source accountability",
+  "type": "object",
+  "required": ["contract", "work_id", "source", "document_shell", "element_count", "attribute_count", "tag_counts", "body_carriers", "crosswalk", "internal_links"],
+  "properties": {
+    "contract": {"const": "ocd-john-wesley-sermons-source-accountability-v1"},
+    "work_id": {"const": "john-wesley-sermons"},
+    "source": {
+      "type": "object",
+      "required": ["logical_path", "bytes", "sha256"],
+      "properties": {
+        "logical_path": {"const": "raw/ccel/wesley_sermons.xml"},
+        "bytes": {"const": 4340943},
+        "sha256": {"const": "70f4b1d44754ae01889c52aeeb6a1b6f92b9444d016cef35f4c0b40e33ea375a"}
+      },
+      "additionalProperties": false
+    },
+    "document_shell": {"type": "object"},
+    "element_count": {"const": 15636},
+    "attribute_count": {"const": 22125},
+    "tag_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+    "body_carriers": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object"}},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 15636,
+      "maxItems": 15636,
+      "items": {
+        "type": "object",
+        "required": ["source_path", "source_tag", "source_native_id", "source_attributes", "direct_text", "tail_text", "target_tag", "target_xml_id"],
+        "properties": {
+          "source_path": {"type": "string", "minLength": 1},
+          "source_tag": {"type": "string", "minLength": 1},
+          "source_native_id": {"type": ["string", "null"]},
+          "source_attributes": {"type": "object", "additionalProperties": {"type": "string"}},
+          "direct_text": {"type": ["string", "null"]},
+          "tail_text": {"type": ["string", "null"]},
+          "target_tag": {"type": "string", "minLength": 1},
+          "target_xml_id": {"type": "string", "minLength": 1},
+          "derived_heading": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "internal_links": {
+      "type": "object",
+      "required": ["count", "resolved_count", "unresolved"],
+      "properties": {
+        "count": {"const": 561},
+        "resolved_count": {"const": 561},
+        "unresolved": {"const": []}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

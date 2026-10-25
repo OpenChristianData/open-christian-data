@@ -1,0 +1,245 @@
+{
+  "contract": "ocd-wayfinder-cross-category-pilot-preserved-evidence-pin-v1",
+  "status": "historical-preserved-evidence-pin",
+  "package_count": 16,
+  "package_digests": [
+    "086b994ff570440008996d2e7718fcc1cd0b16d9c5939a266af378a95cbf5c37",
+    "0a373f7d471ee0ba9e16410aa1cfd0b5fb4dcc1e1cdabdd4706ba59b6fc8047d",
+    "529f03ce37c48c02fd370f85df800bfc2d9a6df90ac09f69b82adda65055739a",
+    "59e9c2ccf3b6f48c6c1bd08a88eb569c6b432aa8cbf9b7bd349b62bb97f3dc65",
+    "65add918779d6635a30e360ced5e979e9b9bd1b41fdf4c4e1d5b6de01def72ce",
+    "78e539187a260456f198778a38f5344e9a05fd74bdede706c09014d462aa25df",
+    "7e71c5810234169705ba1e1ae970692f4645c30b5b4dc9ab175db27cb506ac55",
+    "80baa3f6a805ada3f1cfb67e72cc3ced80141e9b3073f26a012191a027f6870a",
+    "83666eb13cece5b57f89ac0000b15c4291291fc89c0f77523b308e9ec007aec0",
+    "989c22e526d31fd0c3f55c2e39f90928aeaa91d46e54672ecba5b5697da542fe",
+    "999063ba1d3c32f83b519697b037ae0ae041fab935f078546a17413bd269805c",
+    "aca5e04a020df2ecd14155d71dfca7e3e46cea9d210a97ef8cadac2df8565fcd",
+    "aff9a91349304e95fd1f8ed1ed69045836ec7abdb5cdc3fc50cdaf12d9b3f8cc",
+    "d03920aee91f8da3dc8493c4c9da9cf4b8abea4a4fd852e654791e43ab58fce8",
+    "dfa1bff73f830e033f39dfc9adbfbc4259e840530f785830566444a3952ff5c0",
+    "e11e3ca8820f483ac76f95ba6226119949c29a6c8769728982b53d5e069e750d"
+  ],
+  "historical_active_digests": [
+    "0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137",
+    "3bfeee5e7b5360f64b1d5e27107d3e59c8e38bcfd8ca9aad5e235797fd5d1b12",
+    "cd7ae916c513eb20e53ecea019a74c8fa6bc356abc34c91b472d994ad85326f1",
+    "df09f095e0050cfe367f78de9da828d1709bddf5e41c7f111d766b50696cf59b",
+    "e98e4feaab7fb772712b2c38f76cc0c9df46f5c0bec64518ece493319bf3ec56"
+  ],
+  "evidence_basis": {
+    "continuity": "Exact prior source-session JSONL continuity evidence supplied on 2026-07-30.",
+    "corroboration": "The independent closure review reported 21 package trees: five active and 16 preserved superseded trees, with the preserved digest-to-edition and superseded-by bindings recovered from the historical inventory.",
+    "defect_scope": "The independent closure review reported that all 16 preserved pre-correction TEI documents failed validation against the vendored tei_all.xsd. No narrower per-digest defect claim is made here."
+  },
+  "entries": [
+    {
+      "package_digest": "086b994ff570440008996d2e7718fcc1cd0b16d9c5939a266af378a95cbf5c37",
+      "edition_id": "pilot-hymnary-at-bethlehem-instance",
+      "superseded_by": "e98e4feaab7fb772712b2c38f76cc0c9df46f5c0bec64518ece493319bf3ec56",
+      "superseded_reason": "Historical Hymnary package 086b994f was superseded by the later regenerated package e98e4fea for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hymnary package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "0a373f7d471ee0ba9e16410aa1cfd0b5fb4dcc1e1cdabdd4706ba59b6fc8047d",
+      "edition_id": "pilot-expositors-bible-mark",
+      "superseded_by": "3bfeee5e7b5360f64b1d5e27107d3e59c8e38bcfd8ca9aad5e235797fd5d1b12",
+      "superseded_reason": "Historical Expositor package 0a373f7d was superseded by the later regenerated package 3bfeee5e for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Expositor package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "529f03ce37c48c02fd370f85df800bfc2d9a6df90ac09f69b82adda65055739a",
+      "edition_id": "pilot-hymnary-at-bethlehem-instance",
+      "superseded_by": "e98e4feaab7fb772712b2c38f76cc0c9df46f5c0bec64518ece493319bf3ec56",
+      "superseded_reason": "Historical Hymnary package 529f03ce was superseded by the later regenerated package e98e4fea for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hymnary package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "59e9c2ccf3b6f48c6c1bd08a88eb569c6b432aa8cbf9b7bd349b62bb97f3dc65",
+      "edition_id": "pilot-westminster-shorter-catechism",
+      "superseded_by": "cd7ae916c513eb20e53ecea019a74c8fa6bc356abc34c91b472d994ad85326f1",
+      "superseded_reason": "Historical Westminster package 59e9c2cc was superseded by the later regenerated package cd7ae916 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Westminster package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "65add918779d6635a30e360ced5e979e9b9bd1b41fdf4c4e1d5b6de01def72ce",
+      "edition_id": "pilot-westminster-shorter-catechism",
+      "superseded_by": "cd7ae916c513eb20e53ecea019a74c8fa6bc356abc34c91b472d994ad85326f1",
+      "superseded_reason": "Historical Westminster package 65add918 was superseded by the later regenerated package cd7ae916 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Westminster package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "78e539187a260456f198778a38f5344e9a05fd74bdede706c09014d462aa25df",
+      "edition_id": "pilot-paradise-lost-book-i",
+      "superseded_by": "df09f095e0050cfe367f78de9da828d1709bddf5e41c7f111d766b50696cf59b",
+      "superseded_reason": "Historical Paradise Lost package 78e53918 was superseded by the later regenerated package df09f095 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Paradise Lost package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "7e71c5810234169705ba1e1ae970692f4645c30b5b4dc9ab175db27cb506ac55",
+      "edition_id": "pilot-hastings-abel-entry",
+      "superseded_by": "0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137",
+      "superseded_reason": "Historical Hastings package 7e71c581 was superseded by the later regenerated package 0a38cebd for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hastings package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "80baa3f6a805ada3f1cfb67e72cc3ced80141e9b3073f26a012191a027f6870a",
+      "edition_id": "pilot-hastings-abel-entry",
+      "superseded_by": "0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137",
+      "superseded_reason": "Historical Hastings package 80baa3f6 was superseded by the later regenerated package 0a38cebd for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hastings package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "83666eb13cece5b57f89ac0000b15c4291291fc89c0f77523b308e9ec007aec0",
+      "edition_id": "pilot-paradise-lost-book-i",
+      "superseded_by": "df09f095e0050cfe367f78de9da828d1709bddf5e41c7f111d766b50696cf59b",
+      "superseded_reason": "Historical Paradise Lost package 83666eb1 was superseded by the later regenerated package df09f095 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Paradise Lost package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "989c22e526d31fd0c3f55c2e39f90928aeaa91d46e54672ecba5b5697da542fe",
+      "edition_id": "pilot-paradise-lost-book-i",
+      "superseded_by": "df09f095e0050cfe367f78de9da828d1709bddf5e41c7f111d766b50696cf59b",
+      "superseded_reason": "Historical Paradise Lost package 989c22e5 was superseded by the later regenerated package df09f095 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Paradise Lost package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "999063ba1d3c32f83b519697b037ae0ae041fab935f078546a17413bd269805c",
+      "edition_id": "pilot-westminster-shorter-catechism",
+      "superseded_by": "cd7ae916c513eb20e53ecea019a74c8fa6bc356abc34c91b472d994ad85326f1",
+      "superseded_reason": "Historical Westminster package 999063ba was superseded by the later regenerated package cd7ae916 for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Westminster package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "aca5e04a020df2ecd14155d71dfca7e3e46cea9d210a97ef8cadac2df8565fcd",
+      "edition_id": "pilot-hastings-abel-entry",
+      "superseded_by": "0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137",
+      "superseded_reason": "Historical Hastings package aca5e04a was superseded by the later regenerated package 0a38cebd for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hastings package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "aff9a91349304e95fd1f8ed1ed69045836ec7abdb5cdc3fc50cdaf12d9b3f8cc",
+      "edition_id": "pilot-hastings-abel-entry",
+      "superseded_by": "0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137",
+      "superseded_reason": "Historical Hastings package aff9a913 was superseded by the later regenerated package 0a38cebd for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hastings package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "d03920aee91f8da3dc8493c4c9da9cf4b8abea4a4fd852e654791e43ab58fce8",
+      "edition_id": "pilot-hymnary-at-bethlehem-instance",
+      "superseded_by": "e98e4feaab7fb772712b2c38f76cc0c9df46f5c0bec64518ece493319bf3ec56",
+      "superseded_reason": "Historical Hymnary package d03920ae was superseded by the later regenerated package e98e4fea for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Hymnary package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "dfa1bff73f830e033f39dfc9adbfbc4259e840530f785830566444a3952ff5c0",
+      "edition_id": "pilot-expositors-bible-mark",
+      "superseded_by": "3bfeee5e7b5360f64b1d5e27107d3e59c8e38bcfd8ca9aad5e235797fd5d1b12",
+      "superseded_reason": "Historical Expositor package dfa1bff7 was superseded by the later regenerated package 3bfeee5e for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Expositor package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    },
+    {
+      "package_digest": "e11e3ca8820f483ac76f95ba6226119949c29a6c8769728982b53d5e069e750d",
+      "edition_id": "pilot-expositors-bible-mark",
+      "superseded_by": "3bfeee5e7b5360f64b1d5e27107d3e59c8e38bcfd8ca9aad5e235797fd5d1b12",
+      "superseded_reason": "Historical Expositor package e11e3ca8 was superseded by the later regenerated package 3bfeee5e for the same pilot edition and is retained as pre-correction evidence.",
+      "defects": [
+        "content.tei.xml failed vendored TEI XSD validation in the independent closure review; no narrower package-specific defect is established."
+      ],
+      "supersession_evidence": [
+        "Historical inventory identified this digest as a preserved superseded Expositor package.",
+        "Independent closure review identified the preserved pre-correction TEI set as XSD-invalid."
+      ]
+    }
+  ]
+}

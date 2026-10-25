@@ -1,0 +1,122 @@
+{
+  "authorities": [
+    {
+      "bytes": 245986,
+      "name": "retained-source",
+      "path": "raw/gutenberg/76888/html/pg76888-images.html",
+      "role": "primary-source",
+      "sha256": "b3f452ee4a68ee4aae8613cb5b78f65f1f00e2d639ccc9a08e8b2e6b754ae626"
+    },
+    {
+      "bytes": 996951,
+      "name": "retained-package",
+      "path": "raw/gutenberg/76888/pg76888-h.zip",
+      "role": "supporting-package",
+      "sha256": "0c092bc29176287d0d0843fba1de06c5308fc9dc92a706e57c920b2f4b49dbe7"
+    },
+    {
+      "bytes": 916931,
+      "name": "retained-cover",
+      "path": "raw/gutenberg/76888/html/images/cover.jpg",
+      "role": "unreferenced-support",
+      "sha256": "1c309d431db3de5d1e00837f3f4a86919bea8df762fca39c6485e37f66a48077"
+    },
+    {
+      "bytes": 1061,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/before-most-holy-pg76888/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "24c7f507a0a309d3b4dc50bcf514ce98072645e9c59b99337a68af569a987e8d"
+    },
+    {
+      "bytes": 812,
+      "name": "validation-policy",
+      "path": "sources/structured-text/before-most-holy-pg76888/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "ca33c5fbf59d01120daa3e97a5979d30efe4758f9ea8ee40a574c08fcd22542a"
+    },
+    {
+      "bytes": 1240,
+      "name": "source-readme",
+      "path": "sources/structured-text/before-most-holy-pg76888/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "627129f1212cd805b39b70ed81328234363c662acdf2a7080c3241782765ecb2"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 10496,
+      "name": "producer-implementation",
+      "path": "build/tei/before_most_holy_pg76888_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "9a3b2619dd01e7dab20a13ad06d1033965b5512f7a23a41bd257de5cfa034e05"
+    },
+    {
+      "bytes": 10612,
+      "name": "oracle-implementation",
+      "path": "build/tei/before_most_holy_pg76888_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "56069a74259ac6e8b99149fb0f54e33f75ff15195deef7a7dfe128bfcba23b91"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-before-most-holy-pg76888-extracted-html-to-tei",
+    "implementation_path": "build/tei/before_most_holy_pg76888_reconstruction.py",
+    "implementation_sha256": "9a3b2619dd01e7dab20a13ad06d1033965b5512f7a23a41bd257de5cfa034e05",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "flattened_structural_wrappers": 1,
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "package_cover_role": "unreferenced support",
+    "represented_body_elements": 2324,
+    "source_url": "https://www.gutenberg.org/ebooks/76888",
+    "title": "Before the Most Holy = (Coram Sanctissimo)",
+    "unrepresented_body_elements": 0
+  },
+  "source_bundle": {
+    "bytes": 245986,
+    "members": 1,
+    "sha256": "b3f452ee4a68ee4aae8613cb5b78f65f1f00e2d639ccc9a08e8b2e6b754ae626"
+  },
+  "source_id": "before-most-holy-pg76888-current-extracted-html",
+  "source_members": [
+    {
+      "bytes": 245986,
+      "logical_name": "pg76888-images.html",
+      "name": "pg76888-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/76888/html/pg76888-images.html",
+      "sha256": "b3f452ee4a68ee4aae8613cb5b78f65f1f00e2d639ccc9a08e8b2e6b754ae626"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-before-most-holy-pg76888-independent-html-oracle",
+    "implementation_path": "build/tei/before_most_holy_pg76888_oracle.py",
+    "implementation_sha256": "56069a74259ac6e8b99149fb0f54e33f75ff15195deef7a7dfe128bfcba23b91",
+    "import_closure_sha256": "b9a231d18ae0482de88128abcbe992d739dd3b1762b42b91863d6e6daa239df7",
+    "version": "1"
+  },
+  "work_id": "before-the-most-holy"
+}

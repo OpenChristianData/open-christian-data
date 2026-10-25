@@ -1,0 +1,15 @@
+# King James Version with Apocrypha: retained source and current release disposition
+
+The October 13, 2026 public-text disposition and complete downloader-visible credit are at `data/bible/kjva/README.md`. Bind this source note and that data notice together in the selected release. Current selected row license: `Public domain (United States): historical KJV wording; GPL-3.0 for any protectable electronic contribution (provider GPL without version, recipient elects GPLv3)`.
+
+The historical private-preparation limitations in the retained earlier audit below are superseded for this exact public scope by the current data notice. Source identity, accepted-master scope, historical metadata qualifications, and excluded layers remain authoritative. Public distribution is limited to the exact supported scope; no worldwide rights opinion or new grant over a provider's reserved material is asserted.
+
+## Retained earlier reconstruction and private-preparation audit
+
+# Retained KJVA electronic witness and selected release notice
+
+The accepted textual source is the exact retained `raw/bible_databases/formats/json/KJVA.json` from scrollmapper/bible_databases. Its translation label describes a King James Version (1769) with Strong's Numbers, Morphology, CatchWords, and Apocrypha, without glosses. The actual JSON contains only a translation label, book names, chapter numbers, and verse numbers/text: 80 ordered books, including 14 Apocrypha books, 1,371 chapters, and 36,819 verse strings. No separate Strong's, morphology, or catchword fields are present. The verse strings retain one closing-title token and one bracketed word. This witness has not been collated to a particular historical printing or certified as a complete annotated SWORD module.
+
+The provider's KJVA-specific retained notice labels this translation `GPL` without a version. GNU GPLv3 section 14 permits the recipient to choose a Free Software Foundation-published GPL version when the covered work states none. This private selection elects GPLv3 for any protectable contribution to the retained KJVA electronic verse data; the complete, unmodified GPLv3 text is in the paired downloader-visible data notice. A related CrossWire KJVA module lists GPL for distribution and separately grants the KJV2003 electronic effort for any purpose; identical provenance for this retained JSON is not established. The repository's MIT software license is a separate layer. The historical KJV wording supports a qualified U.S. public-domain disposition; U.K. Crown prerogative rights do not decide U.S. status. Private preparation does not authorize public upload or assert worldwide clearance.
+
+The paired human-visible rights, provider credit, scope, territorial limits, and complete retained repository MIT notice are at `data/bible/kjva/README.md`. Include that data notice in any selected release. Preserve source strings, book order, verse labels, the existing accepted identity, and known source artifacts without inventing annotations or a print collation.

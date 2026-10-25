@@ -1,0 +1,116 @@
+{
+  "authorities": [
+    {
+      "bytes": 2307663,
+      "name": "retained-source",
+      "path": "raw/ccel/schaff/hcc5.xml",
+      "role": "primary-source",
+      "sha256": "35b199838ed7c4afa70417534d97b37e544d8f75c071426eddbd50cb593f06ab"
+    },
+    {
+      "bytes": 3020,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/schaff-history-vol-5/schaff-history-vol-5.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "73e310741b18372f4590141f7d9dd70693bcb72a3414ab7b99413f515fa31ad5"
+    },
+    {
+      "bytes": 1114,
+      "name": "validation-policy",
+      "path": "sources/structured-text/schaff-history-vol-5/schaff-history-vol-5.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "fa2f3af72345aa0fcce079a3c2931abfaab0b0b2a9ba8c6f8e450bd6d70df389"
+    },
+    {
+      "bytes": 1853,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/schaff-history-vol-5/schaff-history-vol-5.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "6142fe3c342ce766e798a9a1198a97f9648cfd237b6c64ab9f52adc2f1cdad69"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1060,
+      "name": "source-readme",
+      "path": "sources/structured-text/schaff-history-vol-5/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "bc6c6001a2dd5ce6a27c7442d0da392c4cac2cfc145fc08d97add49a2eece50b"
+    },
+    {
+      "bytes": 13102,
+      "name": "producer-implementation",
+      "path": "build/tei/schaff_history_vol5_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "b2a9cf946057833768f2b019c75fdd2d0b4e7c9834b7f1da7b12b49f75772fa8"
+    },
+    {
+      "bytes": 12549,
+      "name": "oracle-implementation",
+      "path": "build/tei/schaff_history_vol5_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "08657ba182672e7e926f9c8cc11c697d79d9e94b9e48d8ffbcf155336dd7caab"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib058-schaff-history-vol5-to-tei",
+    "implementation_path": "build/tei/schaff_history_vol5_reconstruction.py",
+    "implementation_sha256": "b2a9cf946057833768f2b019c75fdd2d0b4e7c9834b7f1da7b12b49f75772fa8",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-retained-ccel-thml-member",
+    "represented_lines": 35311,
+    "source_kind": "CCEL ThML XML",
+    "source_url": "https://www.ccel.org/ccel/schaff/hcc5.xml",
+    "title": "History of the Christian Church, Vol. 5: The Middle Ages, A.D. 1049-1294",
+    "unrepresented_members": []
+  },
+  "source_bundle": {
+    "bytes": 2307663,
+    "members": 1,
+    "sha256": "35b199838ed7c4afa70417534d97b37e544d8f75c071426eddbd50cb593f06ab"
+  },
+  "source_id": "schaff-history-vol-5-retained-ccel-thml-v1",
+  "source_members": [
+    {
+      "bytes": 2307663,
+      "lines": 35311,
+      "logical_name": "hcc5.xml",
+      "name": "hcc5.xml",
+      "order": 1,
+      "path": "raw/ccel/schaff/hcc5.xml",
+      "sha256": "35b199838ed7c4afa70417534d97b37e544d8f75c071426eddbd50cb593f06ab"
+    }
+  ],
+  "ticket_id": "LIB-058",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib058-schaff-history-vol5-independent-oracle",
+    "implementation_path": "build/tei/schaff_history_vol5_oracle.py",
+    "implementation_sha256": "08657ba182672e7e926f9c8cc11c697d79d9e94b9e48d8ffbcf155336dd7caab",
+    "import_closure_sha256": "6ef0f28c4c32c9574bc910ed8ca98c3b9048f9fdaa41828bc7b906cb7725757c",
+    "version": "1"
+  },
+  "work_id": "schaff-history-vol-5"
+}

@@ -1,0 +1,10 @@
+# Second Epitaph for Georgius, from Epitaphium senioris Georgii triplex
+
+Source: Monumenta Germaniae Historica (MGH) and Bavarian State Library, Munich (BSB), [openMGH MGH SS rer. Germ. 73](https://www.dmgh.de/mgh_ss_rer_germ_73/index.htm). The retained volume bibliography credits Bernhard Vogel and gives Hannover: Hahn, 2001. These volume statements do not establish print equivalence or stronger attribution to this individual poem.
+
+The literal source ALIUD heading introduces this complete second six-line epitaph. It belongs to the three-poem EPITAPHIUM SENIORIS GEORGII TRIPLEX collection. The collection heading is context; the first and third poems are excluded. This preparation represents one complete independent epitaph and does not claim to represent the whole triplex. The source Carmina heading reads Versus fratris Lamberti in monasterio sancti Laurentii; that statement remains collection context. Native line identifiers, spelling, punctuation and the internal page break are preserved.
+
+The electronic header licenses MGH/BSB annotations under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) and does not claim rights in the underlying text, which it believes to be public domain. Credit MGH and BSB when distributing copies or derivatives. Human verification, visual review, print comparison, final rights disposition and publication authorization remain separate.
+## OpenMGH license and changes
+
+openMGH provides its TEI-XML resources and the annotations added by the Monumenta Germaniae Historica (MGH) and the Bavarian State Library (Bayerische Staatsbibliothek, BSB) under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). openMGH states that the underlying medieval text is free from copyright. Source: [openMGH](https://www.mgh.de/en/digital-mgh/openmgh). OCD reprocessed the source TEI/XML into an accepted TEI master and this public record, changing the source encoding and structure for this dataset.

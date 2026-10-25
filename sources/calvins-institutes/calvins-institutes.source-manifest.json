@@ -1,0 +1,16 @@
+{
+  "authorities": [
+    {"bytes": 1925337, "name": "retained-volume-1", "path": "raw/gutenberg/pg45001.txt", "role": "primary-source", "sha256": "a989a8661fedc4e999ae4b5ba749a40e7e9e4d441e88f08ff97ce9d75623746c"},
+    {"bytes": 2134850, "name": "retained-volume-2", "path": "raw/gutenberg/pg64392.txt", "role": "primary-source", "sha256": "3d79335bbb231773d1cbf849f4f7dd67e52f8773091416ba765da3ade0fefb31"},
+    {"bytes": 3541, "name": "reconstruction-profile", "path": "sources/calvins-institutes/calvins-institutes.reconstruction-profile.json", "role": "complete-source-feature-profile", "sha256": "ac71201fd56e0599fa3ca71ac73f1c01dc23512800b78566386d2a58dc40d805"},
+    {"bytes": 2202, "name": "validation-policy", "path": "sources/calvins-institutes/calvins-institutes.validation-policy.json", "role": "independent-validation-policy", "sha256": "c5dde9a75da285b717545501b47075d3d432ccc34b2a35acca73f5c249ae89fe"},
+    {"bytes": 2595, "name": "source-accountability-schema", "path": "sources/calvins-institutes/calvins-institutes.source-accountability.schema.json", "role": "complete-source-accountability-schema", "sha256": "85db8a282e38ac44b7fcb4f4a05cabeca3893e463af5d0c1c20de9d3b60f71c1"},
+    {"bytes": 1108622, "name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"bytes": 2173, "name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {"callable": "_convert", "id": "ocd-calvins-institutes-two-volume-gutenberg-to-tei", "implementation_path": "build/tei/calvins_institutes_reconstruction.py", "implementation_sha256": "58d3b335fa04ec3104617b3fe02bdecf76f4388686dded9bc331659487ac60a0", "version": "1"},
+  "package_schema": {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+  "source_id": "calvins-institutes-project-gutenberg-two-volume-retained",
+  "validator": {"callable": "_oracle", "id": "ocd-calvins-institutes-independent-two-volume-oracle", "implementation_path": "build/tei/calvins_institutes_oracle.py", "implementation_sha256": "083241c793ea523eca1478621c857da1c7d226444995c247b5b1fda513fb3252", "import_closure_sha256": "877b12032d06fa82081219c22a15a47106207cc6f978412c02ea143d1d1e1387", "version": "1"}
+}

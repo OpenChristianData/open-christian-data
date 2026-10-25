@@ -1,0 +1,74 @@
+{
+  "authorities": [
+    {
+      "bytes": 1275,
+      "name": "source-config",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "5c11a27edfc451e59e9f8c685ccadeadf0846dd500361c14426d1c3017862112"
+    },
+    {
+      "bytes": 3949934,
+      "name": "retained-source",
+      "path": "raw/gutenberg/pg53527.txt",
+      "role": "primary-source",
+      "sha256": "7edb772fb0147fe69e884b4b7f1feb71d96525f86e5be8c9a8e3eefa33626888"
+    },
+    {
+      "bytes": 847,
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "d886ef5b25cbc1f4a7cb67dcf0e767c362da80651f7d5e81ece25ad4cf7d176a"
+    },
+    {
+      "bytes": 1810,
+      "name": "validation-policy",
+      "path": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "efa3a22d3582e5bf75c0d64db894182ba3c9e1b677d915c5e4212c1a3cc40769"
+    },
+    {
+      "bytes": 1026,
+      "name": "attribution-readme",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/charnock-existence-attributes-vol-2.README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "82470e0acbd7aac352928e248b9d6bce9e11f54a8a999d36a6471772cbced834"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-charnock-pg53527-native-volume-to-tei",
+    "implementation_path": "build/tei/charnock_gutenberg_native_v2_reconstruction.py",
+    "implementation_sha256": "8d628751f764febcd2594bd211b3a9b7f9c7743fc02498e974e5a3b874d96fa2",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "charnock-existence-attributes-vol-2-pg53527-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-charnock-pg53527-independent-native-partition-oracle",
+    "implementation_path": "build/tei/charnock_gutenberg_native_v2_oracle.py",
+    "implementation_sha256": "8fd1b2664a00d23114ed8017a6630e8fd1e222dd254e5450cb488c0f7d2018d0",
+    "import_closure_sha256": "44e7d044f7857e953c91fd0fce40a8fdecc17f39dab2c90995e4ebe1539c2ce2",
+    "version": "2"
+  }
+}

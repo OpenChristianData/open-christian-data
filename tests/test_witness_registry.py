@@ -13,6 +13,7 @@ from build.lib._generated_enums import (  # noqa: E402
     WITNESS_REGISTRY__SOURCE_TYPE,
 )
 from build.tools.witness_registry import (  # noqa: E402
+    DEFAULT_REGISTRY_PATH,
     WitnessRecord,
     list_witnesses_for_resource,
     load_witness_registry,
@@ -156,3 +157,19 @@ def test_metadata_for_witness_returns_comparison_metadata():
     assert metadata.source_type == "html"
     assert metadata.rights_status == "comparison-only"
     assert metadata.edition_note == "Synthetic fixture."
+
+
+def test_city_of_god_digital_witnesses_share_expression_and_declare_roles():
+    records = load_witness_registry(DEFAULT_REGISTRY_PATH)
+    by_id = {record.witness_id: record for record in records}
+
+    standard = by_id["city-of-god-standard-ebooks"]
+    ccel = by_id["city-of-god-ccel-npnf102"]
+    assert standard.related_resource_id == ccel.related_resource_id == "city-of-god"
+    assert standard.expression_id == ccel.expression_id == "augustine-city-of-god-dods-en"
+    assert standard.relationship_role == "preferred-reading-transformation"
+    assert ccel.relationship_role == "verification-collation-apparatus"
+    assert standard.related_witness_ids == (ccel.witness_id,)
+    assert ccel.related_witness_ids == (standard.witness_id,)
+    assert standard.source_revision_type == "git-commit-sha1"
+    assert standard.source_revision == "7ec3a325a495cb791581d06f1c0fed14d2576ff0"

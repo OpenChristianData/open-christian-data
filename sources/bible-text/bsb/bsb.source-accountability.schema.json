@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opencd.example/schemas/bsb-source-accountability-v1",
+  "title": "BSB source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "ticket_id",
+    "work_id",
+    "source_id",
+    "source_sha256",
+    "source_bytes",
+    "source_top_level_keys",
+    "source_envelope",
+    "observation_counts",
+    "excluded",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-37c087-bsb-source-accountability-v1"},
+    "ticket_id": {"const": "37c-087"},
+    "work_id": {"const": "bsb"},
+    "source_id": {"type": "string"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_bytes": {"type": "integer", "minimum": 1},
+    "source_top_level_keys": {
+      "type": "array",
+      "const": ["translation", "books"]
+    },
+    "source_envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["books", "chapters", "verses", "nonempty_verses", "empty_verses"],
+      "properties": {
+        "books": {"const": 66},
+        "chapters": {"const": 1189},
+        "verses": {"const": 31102},
+        "nonempty_verses": {"const": 31086},
+        "empty_verses": {"const": 16}
+      }
+    },
+    "observation_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top_level_fields", "books", "chapters", "verses", "represented", "omitted", "duplicate", "invented"],
+      "properties": {
+        "top_level_fields": {"const": 2},
+        "books": {"const": 66},
+        "chapters": {"const": 1189},
+        "verses": {"const": 31102},
+        "represented": {"const": 32359},
+        "omitted": {"const": 0},
+        "duplicate": {"const": 0},
+        "invented": {"const": 0}
+      }
+    },
+    "excluded": {"type": "array", "maxItems": 0},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 32359,
+      "maxItems": 32359,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "source_path", "target", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["top-level-field", "book", "chapter", "verse"]},
+          "source_path": {"type": "string"},
+          "source_field": {"type": "string"},
+          "source_index": {"type": "integer", "minimum": 0},
+          "book_index": {"type": "integer", "minimum": 0},
+          "chapter_index": {"type": "integer", "minimum": 0},
+          "verse_index": {"type": "integer", "minimum": 0},
+          "book_name": {"type": "string"},
+          "chapter_number": {"type": "integer", "minimum": 1},
+          "verse_number": {"type": "integer", "minimum": 1},
+          "value": {},
+          "target": {"type": "string", "pattern": "^#bsb-"},
+          "status": {"const": "represented"}
+        }
+      }
+    }
+  }
+}

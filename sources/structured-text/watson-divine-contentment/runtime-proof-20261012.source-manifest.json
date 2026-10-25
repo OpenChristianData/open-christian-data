@@ -1,0 +1,138 @@
+{
+  "authorities": [
+    {
+      "bytes": 293615,
+      "name": "retained-source",
+      "path": "raw/ccel/watson/contentment.xml",
+      "role": "primary-source",
+      "sha256": "767ed95de4c4c990480670084e8dd1ac16b6c61d50b864e8b0202e528a076d7b"
+    },
+    {
+      "bytes": 1528,
+      "name": "work",
+      "path": "library/works/watson-divine-contentment/work.json",
+      "role": "work-identity-config",
+      "sha256": "1cc4be5dc9e2ceff455c121c58d111a22640820b1e78001dc42de8a04790333b"
+    },
+    {
+      "bytes": 3835,
+      "name": "acquisition",
+      "path": "library/works/watson-divine-contentment/forms/watson-divine-contentment-english/editions/watson-divine-contentment-ccel-thml/acquisitions/watson-divine-contentment-ccel-retained.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "adcaf589768062fb60b3577031fc8d8c33f0286e4f57a1c8234716f6f8630ce2"
+    },
+    {
+      "bytes": 5124,
+      "name": "profile",
+      "path": "sources/structured-text/watson-divine-contentment/watson-divine-contentment.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "a8f80675867f620770491e10b641a8f77b42d922cd18e089994365418ccca18e"
+    },
+    {
+      "bytes": 1833,
+      "name": "policy",
+      "path": "sources/structured-text/watson-divine-contentment/watson-divine-contentment.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a238f68fc39c4913070f5cea8767966c469693aae9c3e19b32b973551277a5c8"
+    },
+    {
+      "bytes": 2354,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/watson-divine-contentment/watson-divine-contentment.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "sha256": "7b0874aa1e1d6a70357969d2e45ca67f400ed0e3af9f8ef70f380cdaf6dcf1c4"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 19473,
+      "name": "closure-identities",
+      "path": "ocd_kernel/library/identities.py",
+      "role": "implementation-dependency",
+      "sha256": "64a3ab0a835ea2cb84defbb8bc56de6bb417f8278569cf9ebfb5bb022108a4bb"
+    },
+    {
+      "bytes": 3970,
+      "name": "closure-common",
+      "path": "ocd_kernel/library/_common.py",
+      "role": "implementation-dependency",
+      "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"
+    },
+    {
+      "bytes": 4223,
+      "name": "closure-storage-topology",
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "role": "implementation-dependency",
+      "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"
+    },
+    {
+      "bytes": 25905,
+      "name": "closure-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "implementation-dependency",
+      "sha256": "a9bdd045183a870fe981b7fabd23111ecb43ccae592fbdb9ab049fce1ed7f74b"
+    },
+    {
+      "bytes": 6014,
+      "name": "closure-verifier",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "implementation-dependency",
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "bytes": 1385,
+      "name": "closure-validate",
+      "path": "ocd_kernel/tei/validate.py",
+      "role": "implementation-dependency",
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"
+    },
+    {
+      "bytes": 4993,
+      "name": "closure-acquisition-schema",
+      "path": "schemas/v2/acquisition.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "bytes": 6206,
+      "name": "closure-work-schema",
+      "path": "schemas/v2/work.schema.json",
+      "role": "implementation-dependency",
+      "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-watson-complete-present-thml-to-tei",
+    "implementation_path": "build/tei/watson_divine_contentment_reconstruction.py",
+    "implementation_sha256": "dd26bfaa02cff442d830df8b20dcbdd5a1354491aae36ef6b5f662268e0193da",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "37c-316-watson-divine-contentment-retained-thml-complete-present",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-watson-independent-present-thml-oracle",
+    "implementation_path": "build/tei/watson_divine_contentment_oracle.py",
+    "implementation_sha256": "2899b332e826626fb732fe2ac7b5aca265913c166195f9efcdb5c2713c6ecd36",
+    "import_closure_sha256": "cfaae3f6cb5a99580f74c576fa7169b2d4733b884543ad45844b46f8b493256c",
+    "version": "1"
+  },
+  "work_id": "watson-divine-contentment"
+}

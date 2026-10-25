@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/standard_ebooks.py@v1.0.0",
+  "writer_identity": "standard_ebooks_parser",
+  "run_id": "city-of-god-standard-ebooks-reconstruction-20260721",
+  "started_at": "2026-07-21T00:28:21.6277844Z",
+  "data_paths": [
+    "data/structured-text/city-of-god.json"
+  ],
+  "checksums": {
+    "data/structured-text/city-of-god.json": {
+      "before_sha256": "fe493fa54f32638384080dcb22896b3163e32f9932170d26d73d58e1aaed5d2f",
+      "after_sha256": "563743aeb007e0d10595a78874368a951d256abc38abdbdf11b7bdf7716de419"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/city-of-god.json": {
+      "entries_changed": 17,
+      "fields_changed": 17
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

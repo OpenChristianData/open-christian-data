@@ -1,0 +1,462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/devotionals.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "language",
+    "text",
+    "representation_revision",
+    "provenance",
+    "category",
+    "locator",
+    "date",
+    "readings",
+    "divisions"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "allOf": [
+        {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "category": {
+      "const": "devotionals"
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "number",
+        "heading"
+      ],
+      "properties": {
+        "kind": {
+          "const": "devotional"
+        },
+        "number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "readings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "locus"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locus": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "minProperties": 1,
+            "properties": {
+              "cRef": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "scripture": {
+                "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+              },
+              "normalization_attribute": {
+                "enum": [
+                  "cRef",
+                  "target"
+                ]
+              },
+              "normalization_status": {
+                "enum": [
+                  "explicit-target-syntax",
+                  "unsupported-explicit-target",
+                  "no-explicit-target"
+                ]
+              }
+            },
+            "description": "Explicit TEI reference attributes, preserved separately without interpretation."
+          },
+          "role": {
+            "const": "primary"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "divisions": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "text"
+            ],
+            "properties": {
+              "kind": {
+                "const": "paragraph"
+              },
+              "text": {
+                "type": "string"
+              },
+              "references": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "raw"
+                  ],
+                  "properties": {
+                    "raw": {
+                      "type": "string"
+                    },
+                    "cRef": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "target": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "scripture": {
+                      "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+                    },
+                    "normalization_attribute": {
+                      "enum": [
+                        "cRef",
+                        "target"
+                      ]
+                    },
+                    "normalization_status": {
+                      "enum": [
+                        "explicit-target-syntax",
+                        "unsupported-explicit-target",
+                        "no-explicit-target"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "lines"
+            ],
+            "properties": {
+              "kind": {
+                "const": "verse"
+              },
+              "lines": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text",
+                    "rendition"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "rendition": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "references": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "raw"
+                        ],
+                        "properties": {
+                          "raw": {
+                            "type": "string"
+                          },
+                          "cRef": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "target": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "scripture": {
+                            "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+                          },
+                          "normalization_attribute": {
+                            "enum": [
+                              "cRef",
+                              "target"
+                            ]
+                          },
+                          "normalization_status": {
+                            "enum": [
+                              "explicit-target-syntax",
+                              "unsupported-explicit-target",
+                              "no-explicit-target"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-devotionals-bounded-v4",
+    "unit_type": "devotional",
+    "elements": {
+      "TEI": [
+        "teiHeader",
+        "text"
+      ],
+      "teiHeader": [
+        "fileDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title"
+      ],
+      "title": [],
+      "publicationStmt": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p"
+      ],
+      "text": [
+        "body"
+      ],
+      "body": [
+        "div"
+      ],
+      "div": [
+        "head",
+        "cit",
+        "dateline",
+        "p",
+        "lg"
+      ],
+      "head": [
+        "hi"
+      ],
+      "cit": [
+        "quote",
+        "bibl"
+      ],
+      "quote": [
+        "hi"
+      ],
+      "bibl": [
+        "author",
+        "title",
+        "ref"
+      ],
+      "author": [],
+      "ref": [],
+      "hi": [],
+      "p": [
+        "hi",
+        "ref"
+      ],
+      "dateline": [
+        "date"
+      ],
+      "date": [],
+      "lg": [
+        "l"
+      ],
+      "l": [
+        "hi",
+        "ref"
+      ]
+    },
+    "attributes": {
+      "TEI": [],
+      "div": [
+        "type",
+        "n",
+        "xml:id"
+      ],
+      "hi": [
+        "rend"
+      ],
+      "ref": [
+        "type",
+        "cRef",
+        "target"
+      ],
+      "date": [],
+      "l": [
+        "rend"
+      ],
+      "cit": [
+        "type"
+      ]
+    },
+    "renditions": [
+      "italic",
+      "small-caps"
+    ],
+    "warning_reasons": [
+      "typography-in-readable-text"
+    ],
+    "exclusion_reasons": [
+      "header-metadata"
+    ],
+    "header_elements": {
+      "teiHeader": [
+        "fileDesc",
+        "revisionDesc"
+      ],
+      "fileDesc": [
+        "titleStmt",
+        "publicationStmt",
+        "sourceDesc"
+      ],
+      "titleStmt": [
+        "title",
+        "author"
+      ],
+      "title": [],
+      "author": [],
+      "publicationStmt": [
+        "p",
+        "publisher",
+        "availability"
+      ],
+      "publisher": [],
+      "availability": [
+        "p"
+      ],
+      "sourceDesc": [
+        "p",
+        "bibl"
+      ],
+      "p": [],
+      "bibl": [
+        "ptr",
+        "idno",
+        "note"
+      ],
+      "ptr": [],
+      "idno": [],
+      "note": [],
+      "revisionDesc": [
+        "change"
+      ],
+      "change": []
+    },
+    "header_attributes": {
+      "availability": [
+        "status"
+      ],
+      "ptr": [
+        "target"
+      ],
+      "idno": [
+        "type"
+      ],
+      "note": [
+        "type"
+      ],
+      "change": [
+        "xml:id",
+        "when"
+      ]
+    }
+  }
+}

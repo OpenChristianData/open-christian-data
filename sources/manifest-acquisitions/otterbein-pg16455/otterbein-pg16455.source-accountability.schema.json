@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.example/schemas/otterbein-pg16455.source-accountability.v1.json",
+  "title": "Otterbein PG 16455 source accountability",
+  "type": "object",
+  "required": ["contract","profile_id","identity","source","member_census","document_inventory","body_text","scope_counts","carrier_inventory","coverage","unresolved_ids"],
+  "properties": {
+    "contract": {"const":"ocd-otterbein-pg16455-source-accountability-v1"},
+    "profile_id": {"const":"otterbein-pg16455-retained-html-v1"},
+    "identity": {"type":"object","required":["work_id","textual_form_id","edition_id","acquisition_id"],"properties":{"work_id":{"const":"otterbein-hymnal"},"textual_form_id":{"const":"otterbein-hymnal-gutenberg-retained"},"edition_id":{"const":"otterbein-hymnal-gutenberg-electronic"},"acquisition_id":{"const":"otterbein-hymnal-gutenberg-acquired"}},"additionalProperties":true},
+    "source": {"type":"object","required":["path","bytes","sha256"],"properties":{"path":{"const":"raw/gutenberg/16455/html/pg16455-images.html"},"bytes":{"const":823187},"sha256":{"const":"49221d85bf34139c6ddad71dcd31076da47236042cf346fd93da39da1a2d7362"}},"additionalProperties":true},
+    "member_census": {"type":"array","minItems":3,"items":{"type":"object","required":["path","bytes","sha256","role","decision","reason"],"additionalProperties":true}},
+    "document_inventory": {"type":"object","required":["encoding","root_tag","head_metadata","element_count","comment_count"],"additionalProperties":true},
+    "body_text": {"type":"object","required":["character_count","sha256","mapping"],"properties":{"mapping":{"const":"exact-decoded-order"}},"additionalProperties":true},
+    "scope_counts": {"type":"object","required":["body_elements","hymns","stanzas","page_comments","links","internal_links","external_links","source_link_targets"],"properties":{"hymns":{"const":548},"stanzas":{"const":2322},"page_comments":{"const":394},"links":{"const":588}},"additionalProperties":true},
+    "carrier_inventory": {"type":"array","minItems":500,"items":{"type":"object","required":["source_index","selector","node_kind","source_name","attributes","direct_text_sha256","tail_sha256","disposition","tei_xml_id"],"additionalProperties":true}},
+    "coverage": {"type":"object","required":["expected_body_nodes","represented_body_nodes","unmapped_body_nodes","top_level_complete_work_count","candidate_tei_document_count"],"properties":{"unmapped_body_nodes":{"const":0},"top_level_complete_work_count":{"const":1},"candidate_tei_document_count":{"const":1}},"additionalProperties":true},
+    "unresolved_ids": {"type":"array","items":{"type":"string"}}
+  },
+  "additionalProperties":true
+}

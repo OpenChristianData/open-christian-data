@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/bcp1662.py@v1.1.0+input-receipt-sha256-e7366ae0bae94f86280096f4f4774f5872efbd91be20a840415cf8f92afa6f49",
+  "writer_identity": "bcp1662_parser",
+  "run_id": "bcp-db14-integration-2026-09-05-collects",
+  "started_at": "2026-09-05T03:31:02.898652+00:00",
+  "data_paths": [
+    "data/prayers/bcp-1662/collects.json"
+  ],
+  "checksums": {
+    "data/prayers/bcp-1662/collects.json": {
+      "before_sha256": "26a278d1b8fe7d4615c6d25430ea32dcc4f12585252837b829c70de76bfbf5f2",
+      "after_sha256": "e17342314446e929fb3d6ae35f07c35bb67aaecec56be9058affd6df7c9915c6"
+    }
+  },
+  "expected_delta_counts": {
+    "data/prayers/bcp-1662/collects.json": {
+      "entries_changed": 0,
+      "fields_changed": 0
+    }
+  },
+  "allowed_field_paths": [
+    "/meta"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

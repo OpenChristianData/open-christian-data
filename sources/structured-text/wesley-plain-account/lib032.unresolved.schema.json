@@ -1,0 +1,4 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://openchristiandata.org/sources/structured-text/wesley-plain-account/lib032.unresolved.schema.json", "type": "array", "minItems": 2, "maxItems": 2,
+  "items": {"type": "object", "additionalProperties": false, "required": ["id", "scope", "status", "question", "evidence"], "properties": {"id": {"type": "string", "minLength": 1}, "scope": {"const": "wesley-plain-account"}, "status": {"const": "unresolved"}, "question": {"type": "string", "minLength": 1}, "evidence": {"type": "string", "minLength": 1}}}
+}

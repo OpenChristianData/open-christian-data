@@ -1,0 +1,188 @@
+[
+  {
+    "original": "sources/catechism-for-young-children/catechism-for-young-children.source-manifest.json",
+    "original_sha256": "ad08f14824b1169cc999e8078219df25ef38db855ea8a2179f69742d06b4b5ed",
+    "manifest": "tests/fixtures/reconstruction-runtime/catechism-for-young-children.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/westminster-larger-catechism/westminster-larger-catechism.source-manifest.json",
+    "original_sha256": "cd06899effb7f981d73882d89708ec837f3c1f46d0a156ca04bedfcab7fa54f3",
+    "manifest": "tests/fixtures/reconstruction-runtime/westminster-larger-catechism.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/bible-text/kjv/kjv.source-manifest.json",
+    "original_sha256": "2fdba1f9332e45082206517c3838f00d0500321d9fcaed21af57b28c471df03f",
+    "manifest": "tests/fixtures/reconstruction-runtime/kjv.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/shorter-catechism-explained/shorter-catechism-explained.source-manifest.json",
+    "original_sha256": "1fe8c2d86047cf6bf4f32a44ad09a7df2c2298b7db544debd3adae266016b8df",
+    "manifest": "tests/fixtures/reconstruction-runtime/shorter-catechism-explained.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/abstract-of-principles/abstract-of-principles.source-manifest.json",
+    "original_sha256": "bdd0ace6eb892e8837cb34466b8d7bdafe1e9bc4fc4435b0ec8d568bf23dbbb7",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-abstract-of-principles.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/apostles-creed/apostles-creed.source-manifest.json",
+    "original_sha256": "2169e91f3371270f3f7d56d101fd55e413f454c261e3d34ed133d956131b6da4",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-apostles-creed.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/athanasian-creed/athanasian-creed.source-manifest.json",
+    "original_sha256": "396ed24fce4deb3c7694e7f66b8e0f80031ba1740b702552ccc90df71697a1a0",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-athanasian-creed.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/belgic-confession-of-faith/belgic-confession-of-faith.source-manifest.json",
+    "original_sha256": "5979af57c51066e06b86ecfd7ddd13799df8cf0008a333f79872c7106edb92f6",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-belgic-confession-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/canons-of-dort/canons-of-dort.source-manifest.json",
+    "original_sha256": "ed7c886b637e07e83910366daae133a989a75acecd045fd2330f86829f4c7298",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-canons-of-dort.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/chalcedonian-definition/chalcedonian-definition.source-manifest.json",
+    "original_sha256": "35225f86172b074332d38d7a2767d004203dcac8b70a8912b76441aa68582740",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-chalcedonian-definition.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/consensus-tigurinus/consensus-tigurinus.source-manifest.json",
+    "original_sha256": "e1777e26cf68ea90803f50729b2cd7acdd74d07b87cca850e0633afbdabc20db",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-consensus-tigurinus.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/council-of-orange/council-of-orange.source-manifest.json",
+    "original_sha256": "2113ec391fe48f8d99595448e8e05b407a5b3d615ffe2b610f79b8ba55e8a53d",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-council-of-orange.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/first-confession-of-basel/first-confession-of-basel.source-manifest.json",
+    "original_sha256": "34806827d37faa3762b2715a900f874a71c1eeaf71a62b07ec5e9562fac40041",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-first-confession-of-basel.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib063-creeds-json/first-helvetic-confession/first-helvetic-confession.source-manifest.json",
+    "original_sha256": "7de2dcceb49521c0daeb42309ada2e4e9858112060fcc0e694fa938ba5ea514f",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-first-helvetic-confession.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/french-confession-of-faith/french-confession-of-faith.source-manifest.json",
+    "original_sha256": "c939c18ed7d5a53b184c342e1df474bda3d24a99a53608ce530e173572613378",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-french-confession-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/gregorys-declaration-of-faith/gregorys-declaration-of-faith.source-manifest.json",
+    "original_sha256": "0ba39a4068fa60c5302dba8413247de8b310291397f3d5cc04fa530ab6b70c27",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-gregorys-declaration-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/helvetic-consensus/helvetic-consensus.source-manifest.json",
+    "original_sha256": "eb8085de5149abe1ba0aa80651347b1940985ba958e169b0805da9006ed9e43e",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-helvetic-consensus.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/ignatius-creed/ignatius-creed.source-manifest.json",
+    "original_sha256": "05218115ad9b1fbf7787f283e87c9a09b8c21a592043fb52b9a80c60fa3b5b79",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-ignatius-creed.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/irenaeus-rule-of-faith/irenaeus-rule-of-faith.source-manifest.json",
+    "original_sha256": "a5aa6231a21b09e01edf1c4a26c3303fffb5e55a1309250dd234e04a6767499c",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-irenaeus-rule-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/london-baptist-confession-1689/london-baptist-confession-1689.source-manifest.json",
+    "original_sha256": "b64df598b273aa5538120fefa11df0e637655e221df65f43aaa2e22d7e980845",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-london-baptist-confession-1689.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/nicene-creed/nicene-creed.source-manifest.json",
+    "original_sha256": "5c400df3eba905673678e805735f8704564228c99c4b1bb85ba0ea0c56685996",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-nicene-creed.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/savoy-declaration/savoy-declaration.source-manifest.json",
+    "original_sha256": "9079a47f3aba25de105b21596e628c159b1caa821733009e501670ac324c9379",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-savoy-declaration.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/scots-confession/scots-confession.source-manifest.json",
+    "original_sha256": "12a7e647be5f93e82747e7a4342fa7fa3aafe61157cced01e382d3a58a4dce34",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-scots-confession.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib064-creeds-json/second-helvetic-confession/second-helvetic-confession.source-manifest.json",
+    "original_sha256": "7c30740d05a49a8a32f02338cfaede962fdbcf2c49941927e8383c37dbd34572",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-second-helvetic-confession.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/ten-theses-of-berne/ten-theses-of-berne.source-manifest.json",
+    "original_sha256": "a74857fd20a01c828d7b925e1b9d272cfd440a55fa9f4b8d8b16aa0c2aa8b81d",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-ten-theses-of-berne.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/tertullians-rule-of-faith/tertullians-rule-of-faith.source-manifest.json",
+    "original_sha256": "b9bd645f72576374d990d959081db68e7ea774d1b06a00efdedf2b024c01570b",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-tertullians-rule-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/tetrapolitan-confession/tetrapolitan-confession.source-manifest.json",
+    "original_sha256": "27f39a1bf38ad05c4267823708b4f402858b285b35fa7afaa1b1bf5b51fdf6e1",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-tetrapolitan-confession.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/waldensian-confession/waldensian-confession.source-manifest.json",
+    "original_sha256": "9aafcec0c9e95ef06e5de7617e9f48daaa2eeb6509eac8ae4a38c6025f0a254c",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-waldensian-confession.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/westminster-confession-of-faith/westminster-confession-of-faith.source-manifest.json",
+    "original_sha256": "02168e8db8233942af2dd619cd9cc525ff732581bc761b245d60e1a167cc6a0e",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-westminster-confession-of-faith.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/zwinglis-67-articles/zwinglis-67-articles.source-manifest.json",
+    "original_sha256": "54d97cfaa23b7b59bf5bdb329f3c8a1bef30e8b88a65739f9ca86fc5f5dc9ae1",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-zwinglis-67-articles.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  },
+  {
+    "original": "sources/doctrinal-documents/lib065-creeds-json/zwinglis-fidei-ratio/zwinglis-fidei-ratio.source-manifest.json",
+    "original_sha256": "f470fc0e4c8a5720f85e61d3231308d23c38d210790d10e03e5d2c32c6f70e8e",
+    "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-zwinglis-fidei-ratio.source-manifest.json",
+    "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
+  }
+]

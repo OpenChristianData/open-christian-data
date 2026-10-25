@@ -1,0 +1,115 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "flavel-method-of-grace-lib055-retained-xml",
+  "ticket": "37c-174",
+  "owner_route": "LIB-055",
+  "work_id": "flavel-method-of-grace",
+  "status": "entry-local-technical-candidate",
+  "identity": {
+    "work_id": "flavel-method-of-grace",
+    "source_record_metadata": {
+      "title": "The Method of Grace in the Gospel Redemption",
+      "creator": "John Flavel",
+      "language": "eng"
+    },
+    "textual_form": null,
+    "edition": null,
+    "parts": null,
+    "witness_claim": null,
+    "translator": null,
+    "original_publication_year": null
+  },
+  "scope": {
+    "selector": "ThML[1] (complete retained document envelope)",
+    "selected_source_path": "ThML[1]",
+    "member_count": 1,
+    "member_order": [
+      "raw/ccel/flavel/grace.xml"
+    ],
+    "top_level_div1_ids": [
+      "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
+      "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix",
+      "xx", "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxvi", "xxvii",
+      "xxviii", "xxix", "xxx", "xxxi", "xxxii", "xxxiii", "xxxiv",
+      "xxxv", "xxxvi", "xxxvii", "xxxviii", "xxxix"
+    ],
+    "boundary": "Complete retained ThML root, including the exact header, document shell, and every ordered body node in the single retained XML member. This member boundary does not assert that the file equals the complete catalog work, a specific edition, or an authoritative part map."
+  },
+  "authorities": [
+    {
+      "name": "source-member",
+      "role": "primary-source",
+      "path": "raw/ccel/flavel/grace.xml",
+      "bytes": 1796532,
+      "sha256": "c044cad334d574b0cf52c936d6179a978c5c9a86bf7d8f51c4b3246a617f40cf"
+    },
+    {
+      "name": "work-identity",
+      "role": "work-config",
+      "path": "sources/structured-text/flavel-method-of-grace/lib055/work-identity.json",
+      "bytes": 1857,
+      "sha256": "5d247e43c4a22d5abafced86c628c7c44aed2294b70f0b2351b18b2040df6a1f"
+    },
+    {
+      "name": "feature-profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/structured-text/flavel-method-of-grace/lib055/source-feature-profile.json",
+      "bytes": 5334,
+      "sha256": "e03027958175c898932722c0c1cff5da143c0cd124efb7f097bd70ff5d6aea85"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/structured-text/flavel-method-of-grace/lib055/validation-policy.json",
+      "bytes": 7130,
+      "sha256": "c6e29fdfa019398bc4b1d91f3c925f6b67fa9dd8aa43a61f70845d1ad72dbf81"
+    },
+    {
+      "name": "source-readme",
+      "role": "source-attribution-readme",
+      "path": "sources/structured-text/flavel-method-of-grace/lib055/README.source.md",
+      "bytes": 1119,
+      "sha256": "ac3a275e436c97d0f5b014aa6fc001dd1b9eae9c8da390b9a0f78b5a97f76cec"
+    },
+    {
+      "name": "ccel-permission",
+      "role": "exact-source-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "flavel-method-of-grace-lib055-source-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ccel_puritan_lib055_flavel_method_of_grace_reconstruction.py",
+    "implementation_sha256": "8225eb826520010cf2e4abeaf542d6f4b6431ba17e14fad5cfe6539476d3038b"
+  },
+  "validator": {
+    "id": "flavel-method-of-grace-lib055-independent-retained-byte-oracle",
+    "version": "1",
+    "callable": "validate",
+    "implementation_path": "build/tei/ccel_puritan_lib055_flavel_method_of_grace_oracle.py",
+    "implementation_sha256": "8cdc308ee088e7978a3695e44ea05826366cd2189a8b7b06db8303381ae21b27",
+    "import_closure_sha256": "bb39fa3b888195ccfb080bb160ae2c0d99a8390ace9ac03037f9eb1a102da34b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

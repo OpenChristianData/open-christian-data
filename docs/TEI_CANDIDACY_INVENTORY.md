@@ -1,13 +1,17 @@
 # TEI candidacy inventory
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 This inventory is the decision surface for batches 04-08 of the dataset corrections and TEI
 long-tail campaign. The machine-readable source is
 `docs/tei-candidacy-inventory.json`; `build/tools/build_tei_candidacy_inventory.py` checks it against
 the live parser, source-config, dataset-output, and IR trees.
 
-**Campaign integration (2026-07-16):** the proof sets below exist, but no public path was cut over.
-A projection-ledger PASS is necessary but not sufficient until the BCP-1549 false-accounting defect
-is fixed; see `docs/DATASET_SUCCESSOR_QUEUE.md`.
+**Campaign integration (2026-07-16; updated after B03a-c):** the proof sets below exist, but no
+public path was cut over. Loss-receipt v2 superseded the former BCP-1549 false-accounting behavior
+by requiring evidence for the supported text-bearing TEI profile. A projection-ledger PASS remains
+necessary but not sufficient evidence of raw-to-IR fidelity; see
+`docs/DATASET_SUCCESSOR_QUEUE.md`.
 
 The unit counted here is a production source family or a deliberately separated work grouping, not
 an individual config or JSON file. A family can be `proven-partial`: named proof renderings have
@@ -46,13 +50,20 @@ as non-producing helpers. `sources/local-ocr/schaff/config.json` and the NSH ren
   auxiliary witness, or superseded route.
 - `unknown`: reserved for genuinely missing live evidence, with the missing artifact named.
 
+OCR quality is not publication eligibility. `OCR-GOOD` and `OCR-RAW` record
+sampled source condition only; every uncorrected machine-OCR text must be excluded
+from public releases until EzraOCR corrects it against the exact witness and
+OCD's accepted-text and release checks pass. See
+`docs/DATASET_SUCCESSOR_QUEUE.md` for the open audit of historical and pending
+release payloads.
+
 ## TEI-now and proven/partial families
 
 | Entry | Status | Priority | Batch | Decision and live evidence |
 |---|---|---:|---:|---|
 | `ccel-thml` | `tei-now`; proven/partial | 1 | 04 | Five selected proof renderings exist: City of God, Athanasius, Owen, and two Gregory of Nyssa works. The remaining ThML configs still lose notes, page breaks, emphasis, language spans, and other apparatus in JSON. See `docs/FORMAT_STATE_MAP.md` §1, `build/tei/ccel_work_configs.json`, and `ir/ccel/`. |
-| `standard-ebooks-xhtml` | `tei-now`; proven/partial | 2 | 05 | City of God, Bunyan, and Kempis now prove recovery of nested sections, endnotes, bridgeheads, verse/song/poem blocks, lists, front/back matter, and inline semantics. The other six XHTML configs remain deferred pending higher-yield scope decisions. See `docs/FORMAT_STATE_MAP.md` §2, `build/tei/se_to_tei.py`, and `ir/census/`. |
-| `ia-fisher-marrow` | `tei-now` | 3 | 06 | Raw census and TEI now agree on 2 parts, 4 chapters, 8 commandments, 41 structural sections, 6 synopsis lines, and 455 high-confidence dialogue labels. The uncorrected OCR limit is recorded and the projection is ledger-gated. See `docs/IA_BATCH06_EVIDENCE.md`, `build/tei/ia_fisher_marrow_to_tei.py`, `ir/fisher/`, and `ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json`. |
+| `standard-ebooks-xhtml` | `tei-now`; nonaccepted successors/partial | 2 | 05 | Bunyan and Kempis now reconstruct through exact source manifests plus `build/tools/reconstruct_candidate.py`; their deterministic six-member packages are XSD-valid and completely source-accounted but require human review. City and committed Bunyan/Kempis IR remain compatibility evidence. Other XHTML configs remain separate scope decisions. See `docs/FORMAT_STATE_MAP.md` §2. |
+| `ia-fisher-marrow` | `tei-now`; nonaccepted successor | 3 | 06 | The current candidate route is `sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json` plus `build/tools/reconstruct_candidate.py`. It reconstructs the exact 1837 retained witness into a deterministic, XSD-valid, completely source-accounted six-member package, but still requires human review and is not authorized for publication. The committed TEI/census/HF/viewer artifacts and `build/tei/ia_fisher_marrow_to_tei.py` remain frozen compatibility evidence, not migrated successor output. See `docs/IA_BATCH06_EVIDENCE.md` and `docs/FORMAT_STATE_MAP.md` §6. |
 | `spurgeon-mtp-html` | `tei-now` | 4 | 08 | **Status: proof works, 3 of 3,547.** The bounded raw-HTML proof preserves ordered-list containers, items, and one nested list; the family-wide JSON projection still flattens list semantics. See `docs/BATCH08_EVIDENCE.md`, `docs/FORMAT_STATE_MAP.md` §10d, and `raw/spurgeon_sermons/html/`. |
 | `bcp-liturgy` | `tei-now`; proven/partial | 0 | 08 | Current 1549/1559/1662 services and 1928 collects have census-gated TEI, but publication cutover is blocked by projection accounting, speaker-role, nesting, and metadata defects. Keep the family status proven/partial. See `docs/FORMAT_STATE_MAP.md` §9, `docs/DATASET_SUCCESSOR_QUEUE.md`, and `ir/bcp/`. |
 
@@ -61,7 +72,9 @@ Incarnation*, Owen *Mortification*, and two Gregory of Nyssa works); three Stand
 renderings (City of God, *The Pilgrim's Progress*, and *The Imitation of Christ*); Calvin's
 two-volume Gutenberg *Institutes* rendering; the bounded Fisher *Marrow* IA OCR witness; Spurgeon
 MTP sermons 1, 15, and 317 in one proof artifact; and BCP 1549, 1559, 1662, and 1928 collects. Their
-census files are under `ir/census/`. None of these statements makes its source family TEI-backed.
+legacy census files are under `ir/census/`; Bunyan, Kempis, Calvin, and Fisher now emit source
+accountability inside explicit-destination six-member candidates. None of these statements makes
+its source family TEI-backed or accepts a candidate for publication.
 
 ## Batch 05 candidate decisions
 
@@ -69,9 +82,9 @@ The raw-source census accepted three bounded works:
 
 | Family | Decision | Raw carrier evidence | Artifacts |
 |---|---|---|---|
-| Standard Ebooks — *The Pilgrim's Progress* | accepted | 10 content sections; 1,010 endnote references/bodies; 15 semantic `<em>` runs; 21 typographic `<i>` runs; 1,075 bold runs; 1 list with 16 items; 56 body verse/song/poem blocks plus 39 note-body verse blocks; 6 front and 2 back sections | `ir/bunyan/`, `ir/census/pilgrims-progress.standard-ebooks.census.json` |
-| Standard Ebooks — *The Imitation of Christ* | accepted | 130 content sections; 183 endnote references/bodies; 5 semantic `<em>` runs; 22 typographic `<i>` runs; 6 bold runs; 1 list with 4 items; 3 body verse blocks; 5 front and 2 back sections; bare `bridgehead` and `hgroup` carriers | `ir/kempis/`, `ir/census/imitation-of-christ.standard-ebooks.census.json` |
-| Project Gutenberg — Calvin, *Institutes of the Christian Religion* | accepted | `pg45001` + `pg64392`; 4 logical books and 80 chapters; 539 direct raw underscore-emphasis pairs (573 normalized TEI carriers); Vol. I has 2,016 sequential `(N)` refs resolving to 2,016 note bodies; Vol. II has 1,489 refs resolving to 1,490 note bodies (one unreferenced); two front-matter blocks; Vol. II index excluded at the work boundary | `ir/calvin/`, `ir/census/calvins-institutes.gutenberg.census.json` |
+| Standard Ebooks — *The Pilgrim's Progress* | nonaccepted successor | Exact 26-member source; 31,735 observations; 11 source sections; 1,010 endnotes; 95 verse groups; lists, carriers, navigation, metadata, provenance, and rights limits | source manifest + `build/tools/reconstruct_candidate.py`; committed `ir/bunyan/` frozen |
+| Standard Ebooks — *The Imitation of Christ* | nonaccepted successor | Exact 142-member source; 10,009 observations; exact hierarchy, carrier attachment, Benham roles, navigation, metadata, provenance, and rights limits | source manifest + `build/tools/reconstruct_candidate.py`; committed `ir/kempis/` frozen |
+| Project Gutenberg — Calvin, *Institutes of the Christian Religion* | nonaccepted successor | Exact two-witness source; 69,897 records; 4 logical/5 physical books; 80 chapters; 65 introductions/arguments; both indexes; both note systems including note 1473 | source manifest + `build/tools/reconstruct_candidate.py`; committed `ir/calvin/` frozen |
 
 The remaining Standard Ebooks works are deferred: Practical Mysticism (9 verse, 32 `<em>`, 11
 `<i>`, 12 blockquotes), Heretics (8 verse, 6 `<em>`, 59 `<i>`, 9 blockquotes), Orthodoxy (6
@@ -90,8 +103,8 @@ TEI migration.
 
 | Entry | Priority | Batch | Decision and live evidence |
 |---|---:|---:|---|
-| `gutenberg-clean-text` | 5 | 05 | JSON structure is generally sound after the inline decoder fix. Calvin's two-volume Gutenberg rendering now proves a bounded TEI path for true `_italic_` emphasis, front matter, work-boundary exclusions, and two honest per-volume apparatus shapes: Vol. I's 2,016 sequential refs resolve to its 2,016 notes; Vol. II's 1,489 refs resolve to 1,490 notes, leaving one body unreferenced. Apparatus-free or low-yield witnesses remain rejected/deferred. `docs/FORMAT_STATE_MAP.md` §5 explicitly ranks this below CCEL/SE. |
-| `ia-ocr-general` | 7 | 06 | Batch 06 remains evidence-only: 10 general text/PDF parser routes are heterogeneous, so no family-wide raw structure count is valid. Preserve the MANIFEST's OCR-GOOD/OCR-RAW distinction and census each work before ingestion. Evidence: `docs/IA_BATCH06_EVIDENCE.md`, `docs/FORMAT_STATE_MAP.md` §6, `research/MANIFEST.md`, and the live parsers. |
+| `gutenberg-clean-text` | 5 | 05 | JSON structure is generally sound after the inline decoder fix. Calvin's exact two-witness manifest plus the generic runner now produces a deterministic, XSD-valid, completely accounted nonaccepted candidate preserving both indexes, the physical volume boundary, 65 introductions/arguments, and both note systems including note 1473. The committed TEI/census/HF/viewer artifacts and old converter remain frozen pending safe retirement. Other witnesses remain work-by-work. |
+| `ia-ocr-general` | 7 | 06 | Batch 06 remains evidence-only: 10 general text/PDF parser routes are heterogeneous, so no family-wide raw structure count is valid. Preserve the MANIFEST's OCR-GOOD/OCR-RAW distinction as triage only; census each work before ingestion and exclude uncorrected OCR from public release. Evidence: `docs/IA_BATCH06_EVIDENCE.md`, `docs/FORMAT_STATE_MAP.md` §6, `research/MANIFEST.md`, and the live parsers. |
 | `ia-hastings-dictionary` | 8 | 06 | Batch 06 remains evidence-only: the source config has 5 raw volume files; the downstream output carries 835 See/See-also links across 479 of 2,512 entries, while OCR Bible-reference extraction remains absent. Census headwords before choosing TEI carriers. Evidence: `docs/IA_BATCH06_EVIDENCE.md`, `docs/FORMAT_STATE_MAP.md` §4, and `build/parsers/ia_hastings_dictionary.py`. |
 | `catholic-encyclopedia-html` | 10 | 08 | Scripture and explicit related links now survive JSON. A later HTML census may justify inline/link carriers, but it does not outrank the proven rich-text families. Evidence: `docs/FORMAT_STATE_MAP.md` §4 and `build/parsers/catholic_encyclopedia.py`. |
 
@@ -164,11 +177,14 @@ bulk-migrate apparatus-free clean text merely for format uniformity.
 ### Batch 06 — Internet Archive OCR
 
 Consume entries `ia-fisher-marrow`, `ia-ocr-general`, `ia-hastings-dictionary`, and
-`ia-schaff-herzog-legacy`, plus queue items 3, 6, and 7. Fisher is the only completed
-raw-to-TEI migration: its census, TEI, projection, and ledger are recorded in
-`docs/IA_BATCH06_EVIDENCE.md`. The other three entries remain evidence-only or
-frozen. For all other IA works, retain the MANIFEST OCR-GOOD/OCR-RAW split and require a
-work census. Do not touch NSH artifacts or migrate the frozen Schaff-Herzog legacy route.
+`ia-schaff-herzog-legacy`, plus queue items 3, 6, and 7. Fisher now has an accepted
+Windows-local candidate generator bound by its source manifest and invoked through the
+generic candidate runner. Its output remains nonaccepted and outside canonical IR; the
+older census, TEI, HF projection, viewer artifact, ledger, and converter remain frozen
+compatibility evidence until durable review binding and a future TEI-to-Hugging-Face or
+canonical migration. The other three entries remain evidence-only or frozen. For all
+other IA works, retain the MANIFEST OCR-GOOD/OCR-RAW split and require a work census. Do
+not touch NSH artifacts or migrate the frozen Schaff-Herzog legacy route.
 
 ### Batch 07 — SWORD upstream decisions
 

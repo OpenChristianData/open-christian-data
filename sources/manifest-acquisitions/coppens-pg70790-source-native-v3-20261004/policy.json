@@ -1,0 +1,27 @@
+{
+  "contract": "ocd-coppens-pg70790-policy-v3",
+  "unit": "The one complete source-titled English Coppens adaptation book in retained Project Gutenberg eBook 70790.",
+  "mapping": [
+    "The retained two-member ZIP is the entire declared input envelope; hash and CRC-check both members and do not fetch the metadata-only Open Graph cover URL.",
+    "The HTML is parsed by lxml's HTML recovery parser because the provider file uses HTML5 header/footer tags that lxml logs as unknown tags; both logged diagnostics are pinned, the independently parsed standard-library HTML body has the same 3,612 element nodes and 1,114 direct children, and the one exterior ppgen HTML comment is explicitly inventoried.",
+    "The frozen predecessor TEI package is a historical input, never treated as current proof. Before modification, independently bind its package and TEI hashes and compare every HTML body element to the corresponding TEI node by the 1-based dotted @n locator, preserving source order, child cardinality, element type, normalized text, and tail.",
+    "Preserve all source body attributes: id to xml:id; class and style as exact source-class/source-style renditions; nonempty title as source-title rendition; href to target; src to url; lang to xml:lang. Explicitly distinguish the source's empty title and empty alt attributes with source-title-empty and source-alt-empty rendition tokens.",
+    "Keep the original source body text and structure unchanged. Add only the two explicit empty-attribute carriers and one sourceDesc paragraph describing source-attested title-page and Project Gutenberg creator assertions.",
+    "Inventory all 26 direct HTML head children in source order with exact tag, attribute, text, and tail values. Disposition style children as retained source presentation, format-detection as a retained browser hint, schema links as vocabulary identifiers, the local icon as the retained cover member, and the Open Graph image as an unacquired metadata-only pointer.",
+    "Keep Project Gutenberg electronic creation/release/modified dates separate from the 1916 printed title-page imprint and copyright statement. The provider's public-domain-in-the-USA statement is quoted as a source claim only; it is not rights clearance.",
+    "The work boundary is this complete Coppens adaptation book, including its title page, front matter, retreat material, source links, cover reference, and Project Gutenberg ending. It is not Ignatius's complete original Exercises and not every Ignatian or Coppens work."
+  ],
+  "independent_checks": [
+    "Exact retained archive SHA, member list, byte lengths, CRC values, and member SHA-256 values.",
+    "Independent standard-library HTML parser and XML parser source/candidate comparison for complete body order, locator coverage, child counts, text/tail, element-type carriers, and all mapped source attributes.",
+    "Exact 26-child source-head inventory and per-item disposition compared with the candidate source-accountability member.",
+    "TEI P5 validation using the bound vendored TEI schema.",
+    "Candidate package contract and all five non-manifest member hashes.",
+    "Fresh-process reconstruction and validation from the exact retained archive and frozen predecessor package."
+  ],
+  "explicit_exclusions": [
+    "Project Gutenberg's external Open Graph image is recorded but not downloaded.",
+    "HTML CSS and browser format-detection hints remain in the hash-bound source HTML; they are not textual content and are not converted to TEI styling.",
+    "Print collation, human text/edition acceptance, item-level rights clearance, and publication decisions remain unresolved."
+  ]
+}

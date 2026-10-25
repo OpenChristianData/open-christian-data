@@ -1,0 +1,105 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-taylor-holy-dying-retained",
+  "ticket_id": "LIB-068",
+  "work_id": "taylor-holy-dying",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "authorities": [
+    {
+      "name": "retained-text",
+      "path": "raw/ccel/taylor-holy-dying.txt",
+      "role": "primary-source",
+      "bytes": 626969,
+      "sha256": "a99a2da53737c99b48acd37c5506926620a0a66d5b74c1f2c0759bbe638679ad"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/taylor-holy-dying/LIB-068.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1289,
+      "sha256": "4a6a424c7e34a2f8b76b9c546f20230e1a1f95ae239548d2bac425d330940d04"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/taylor-holy-dying/LIB-068.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 887,
+      "sha256": "ea23c023e015993a9b09d2c1239b85dcbf402e979eca4f939ecec66bb153631c"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/structured-text/taylor-holy-dying/LIB-068.README.source.md",
+      "role": "source-attribution",
+      "bytes": 1003,
+      "sha256": "0fc6a2d8dc09c5628cb071e0fbeec69eb433f15af12e2881e30f081af075ace5"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/taylor-holy-dying/LIB-068.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1929,
+      "sha256": "7050372649aaf6436ac7cf7da9bcec514f29b62d3512f2d4e9687c1e4f2ba1ac"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "lib068-source-letters",
+      "path": "build/tei/lib068_source_letters.py",
+      "role": "implementation-support",
+      "bytes": 4609,
+      "sha256": "b6d40ad199c8014894ad0efe087e369c0001f999aea21c967da82d7352e52e36"
+    },
+    {
+      "name": "lib068-source-letters-oracle",
+      "path": "build/tei/lib068_source_letters_oracle.py",
+      "role": "implementation-support",
+      "bytes": 7655,
+      "sha256": "1d7a668960c4beb604d80338ce256e905fff752c5ecc906673a90608c5bdbdb0"
+    },
+    {
+      "name": "lib068-literary-blocks",
+      "path": "build/tei/lib068_literary_blocks.py",
+      "role": "implementation-support",
+      "bytes": 50814,
+      "sha256": "3ec4dc1ff80497e7bd09dadcda44220c3e712d693fe295499a30a4965705ae50"
+    },
+    {
+      "name": "lib068-literary-blocks-oracle",
+      "path": "build/tei/lib068_literary_blocks_oracle.py",
+      "role": "implementation-support",
+      "bytes": 64455,
+      "sha256": "bdfe6332ca732da6c9735545e75160b4fdaf19ca9913f995d17cdca4bb78d40c"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib068-source-local-retained-text-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lib068_source_local.py",
+    "implementation_sha256": "ebbf7bc269eec9504d0d8e19dddcd7ade986d9a382103003e8ca8e4acbe289a8"
+  },
+  "validator": {
+    "id": "ocd-lib068-source-local-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lib068_source_local_oracle.py",
+    "implementation_sha256": "2eafbefc25696486712f54996c449e4b5be639731cae0b734ef3ac353f1d7fb6",
+    "import_closure_sha256": "e329f19b49650e8f2a874c54d42f39c00c91b9db1106c273123af4ee5bdf8775"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

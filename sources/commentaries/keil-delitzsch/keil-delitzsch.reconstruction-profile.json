@@ -1,0 +1,103 @@
+{
+  "contract": "ocd-helloao-keil-delitzsch-profile-v1",
+  "profile_id": "helloao-keil-delitzsch-complete-retained-json-v1",
+  "version": 1,
+  "work_id": "keil-delitzsch",
+  "source_root": "raw/helloao_local/api/c/keil-delitzsch",
+  "scope": {
+    "member_count": 911,
+    "total_bytes": 47103116,
+    "metadata_members": [
+      "books.json",
+      "profiles.json"
+    ],
+    "json_object_count": 10195,
+    "object_key_order_variant_count": 8,
+    "book_count": 39,
+    "chapter_count": 909,
+    "commentary_occurrence_count": 6516,
+    "book_introduction_count": 39,
+    "chapter_introduction_present_count": 394,
+    "chapter_introduction_absent_count": 515,
+    "zero_chapter_books": [
+      "SNG"
+    ],
+    "retained_chapter_gaps": {
+      "EXO": [37, 38],
+      "NUM": [17],
+      "JOB": [25],
+      "PSA": [101, 117, 131, 133],
+      "EZK": [4, 5, 36]
+    },
+    "null_previous_link_paths": [
+      "GEN/1.json"
+    ],
+    "null_next_link_paths": [
+      "MAL/4.json"
+    ],
+    "nonmonotonic_chapters": [
+      "JDG/12.json",
+      "2KI/10.json",
+      "ISA/38.json"
+    ],
+    "duplicate_occurrence_numbers": [
+      {
+        "path": "ISA/38.json",
+        "number": 21,
+        "count": 2
+      }
+    ],
+    "empty_string_occurrences": [
+      {
+        "path": "EZK/6.json",
+        "ordinal": 2,
+        "number": 8
+      }
+    ]
+  },
+  "fidelity_policy": {
+    "book_order": "books.json array order, unchanged",
+    "chapter_order": "numeric retained chapter-path order within books.json order, including exact retained gaps",
+    "occurrence_order": "each retained chapter.content array order, unchanged",
+    "occurrence_identity": "retained book, chapter, and array ordinal; verse number is not a unique key",
+    "content": "each sole occurrence content string is preserved byte-for-codepoint; every literal double-newline becomes an ordered TEI paragraph boundary, and only source spans pinned by the source structure inventory become commentary-section/head blocks",
+    "book_introductions": "all 39 retained strings are represented, including the introduction-only SNG record",
+    "chapter_introductions": "394 retained strings are represented and 515 absent properties remain absent",
+    "chapter_envelopes": "all retained links and numberOfVerses values are represented and exact global navigation is checked across gaps",
+    "metadata": "retained commentary, profile, book, chapter, envelope, and occurrence metadata are authoritative",
+    "forbidden_transformations": [
+      "sort occurrence numbers or arrays",
+      "merge or deduplicate ISA 38 verse 21 occurrences",
+      "invent the eleven absent chapter members",
+      "drop or relabel the zero-chapter Song of Solomon record",
+      "infer verse or occurrence ranges",
+      "add Bible or BSB verse text",
+      "modernize or silently correct source wording",
+      "replace retained metadata with source-config metadata",
+      "change the retained English rtl marker",
+      "merge an alternate witness"
+    ]
+  },
+  "identity_and_rights_policy": {
+    "retained_title": "Carl Friedrich Keil and Franz Delitzsch Old Testament Commentary",
+    "configured_title": "Biblical Commentary on the Old Testament",
+    "author": "Carl Friedrich Keil and Franz Delitzsch",
+    "author_evidence": "retained commentary name and website",
+    "retained_language": "eng",
+    "retained_text_direction": "rtl",
+    "retained_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "retained_license_notes": null,
+    "configured_license": "cc0-1.0",
+    "configured_helloao_license": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "edition": null,
+    "original_publication_year": null,
+    "configured_bibliographic_disposition": "the config's 1861 starting year and 1861-1875 narrative are diagnostic unresolved evidence only",
+    "alternate_witness_disposition": "none supplied"
+  },
+  "candidate_model": {
+    "candidate_status": "nonaccepted",
+    "accepted_ir": "not_accepted",
+    "publication": "not_ready",
+    "human_decision": null
+  }
+}

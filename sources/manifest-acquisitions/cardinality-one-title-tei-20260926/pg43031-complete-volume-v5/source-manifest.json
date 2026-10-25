@@ -1,0 +1,124 @@
+{
+  "authorities": [
+    {
+      "bytes": 553900,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/43031/pg43031-h.zip",
+      "role": "primary-source",
+      "sha256": "dd4e413ff92211b114212d74544ccc29cf5c1805336d05e989ee007e703e2381"
+    },
+    {
+      "bytes": 1027890,
+      "name": "extracted-html",
+      "path": "raw/gutenberg/43031/html/pg43031-images.html",
+      "role": "source-extraction",
+      "sha256": "e07e72b000efbcd5df477a5596a2bd36d04ca80a2fead5f1f8a872eb62d3d8de"
+    },
+    {
+      "bytes": 1348,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/43031/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "e94a5f51ae3864d60376c34af400e8e3dfd5a12c95cfec12cdb0dc265dae8caf"
+    },
+    {
+      "bytes": 1241,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/cardinality-one-title-tei-20260926/pg43031-complete-volume-v5/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3b50771b460d2c98c8c0c5a8653d84232b1f5fdc62c96ba8f8462fd7de585e0a"
+    },
+    {
+      "bytes": 3896,
+      "name": "base-profile",
+      "path": "sources/manifest-held-pg/43031/profile.json",
+      "role": "source-unit-boundary-profile",
+      "sha256": "4584e86c271d57ca54e09369fc3b957296817202b38f5c9e0b0f7b234752d69b"
+    },
+    {
+      "bytes": 1521,
+      "name": "policy",
+      "path": "sources/manifest-held-pg/43031/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "8cc993ee0c9cbac53fae9b22dc93bd7ff891acc6aef3bd8f0c82beb0e7533214"
+    },
+    {
+      "bytes": 716,
+      "name": "original-readme",
+      "path": "sources/manifest-held-pg/43031/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "02d7d5f317ca25ced4101397b3e2afdd0b2a8b5637cc65dba12add9bc841e05e"
+    },
+    {
+      "bytes": 1089,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/cardinality-one-title-tei-20260926/pg43031-complete-volume-v4/README.source.md",
+      "role": "source-attribution-and-scope-statement",
+      "sha256": "1f821dc72918bc4e1e754da00b2de1bad60ab0e409cb2a32e095ea5d52fdc75d"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 12013,
+      "name": "converter-implementation",
+      "path": "build/tei/manifest_held_pg_one_root.py",
+      "role": "implementation-dependency",
+      "sha256": "07893ba31e7cc63debce979e1ef1bb67dcfe5daac5528df42b0572214e1cf413"
+    },
+    {
+      "bytes": 18080,
+      "name": "oracle-implementation",
+      "path": "build/tei/manifest_held_pg_one_root_oracle.py",
+      "role": "implementation-dependency",
+      "sha256": "448e39f58dc7ad8efa57df02464ec92fb00d7a7443ff3b0a14761864cd8c6b59"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-manifest-held-pg-direct-one-root",
+    "implementation_path": "build/tei/manifest_held_pg_one_root.py",
+    "implementation_sha256": "07893ba31e7cc63debce979e1ef1bb67dcfe5daac5528df42b0572214e1cf413",
+    "version": "1"
+  },
+  "ebook_id": "43031",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "predecessor": {
+    "candidate_manifest_sha256": "dad6104517e1b90801eca5201538efe10ecfcaec76aab39ff0e84062d830f435",
+    "candidate_tei_sha256": "673a82371c1da5edd0678a632284b83b5d249b737800f97cec593dabc8a0993e",
+    "lineage_note": "Versioned source identity successor for measured current-runtime closure; retained raw source, source-unit profile behavior, and converter/oracle implementations are inherited from the pinned v4 authority.",
+    "profile_sha256": "861ef73dd1c8515ee578bfd5a11ebe9be56f8978a55d0ef4a6d0602529ec4b24",
+    "scope_id": "pg43031-complete-volume-v4",
+    "source_id": "pg43031-held-edition-retained-direct-pg43031-complete-volume-v4",
+    "source_manifest": {
+      "path": "sources/manifest-acquisitions/cardinality-one-title-tei-20260926/pg43031-complete-volume-v4/source-manifest.json",
+      "sha256": "d67e1f20e1b467413dbcfd20e9b774765c349673e3259cbbe7ea00c9b7e90fb8"
+    },
+    "validation_sha256": "aa5cef6be71f8c2e683f38123f8f035b19d121310205dceed543196a4f2824ca"
+  },
+  "scope_id": "pg43031-complete-volume-v4",
+  "source_id": "pg43031-held-edition-retained-direct-pg43031-complete-volume-v5",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-manifest-held-pg-direct-one-root-independent-oracle",
+    "implementation_path": "build/tei/manifest_held_pg_one_root_oracle.py",
+    "implementation_sha256": "448e39f58dc7ad8efa57df02464ec92fb00d7a7443ff3b0a14761864cd8c6b59",
+    "import_closure_sha256": "af662ee151b0c781e885df6c5070e7a78efa31f874977e9d9364308ee6dd2b44",
+    "version": "1"
+  }
+}

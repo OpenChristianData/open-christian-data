@@ -1,0 +1,212 @@
+{
+  "ticket": "07",
+  "wave": 2,
+  "slug": "newman-grammar-of-assent",
+  "sealed_utc": "2026-08-31T02:21:00Z",
+  "release": {
+    "work": "John Henry Newman, An Essay in Aid of a Grammar of Assent, Project Gutenberg 34022, 1874 witness",
+    "release_gate_sha256": "680c132d9c5ba74b51d62941258d9fd5723082c1961110366fa4aa161830db47",
+    "held": [
+      "Teresa's Life",
+      "tickets 08-13"
+    ]
+  },
+  "raw_artifacts": [
+    {
+      "path": "landing.headers.txt",
+      "bytes": 400,
+      "sha256": "3b33c4a71706112b1871d2622f323643595cfe24d70b7e403eb1acedea699043"
+    },
+    {
+      "path": "landing.html",
+      "bytes": 23242,
+      "sha256": "9d9aae732adc52f8f88c4cf8dd8d6d900fe5e7efee3803c71bc62b2a0d4b5476"
+    },
+    {
+      "path": "pg34022-h.zip",
+      "bytes": 559549,
+      "sha256": "27f6e1c54a0b5ac43b15b1ac26dabeff05a78aa27e2e2989f1633093200cedec"
+    },
+    {
+      "path": "pg34022-h.zip.headers.txt",
+      "bytes": 217,
+      "sha256": "ea9f97356df6c055f6bc73418fc06e06163ff548c2f756ecc158656d4d37d89a"
+    },
+    {
+      "path": "pg34022.rdf",
+      "bytes": 18042,
+      "sha256": "5022d3d25b3f9f160078c71d4ff70bde9816113074f6d7ed801ff29b30ad334e"
+    },
+    {
+      "path": "pg34022.rdf.headers.txt",
+      "bytes": 558,
+      "sha256": "63b1f0480a7b0858ceab457d1577e2b55934f8e2361bb7666e72bf675194eab7"
+    }
+  ],
+  "archive_members": [
+    {
+      "path": "pg34022-images.html",
+      "bytes": 997641,
+      "sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+    },
+    {
+      "path": "images/cover.jpg",
+      "bytes": 241293,
+      "sha256": "1e4c52a14131a78573156916ec5ba3954d52db27025f0acdaa23420ba05d8162"
+    }
+  ],
+  "worktree_artifacts": [
+    {
+      "path": "build/tei/newman_grammar_of_assent.py",
+      "bytes": 35967,
+      "sha256": "3298abab66a488a460dff99d8ef84942cc5c9f59ac2731ff5c4dae9b2ff81172"
+    },
+    {
+      "path": "tests/test_newman_grammar_of_assent.py",
+      "bytes": 5930,
+      "sha256": "bc55c0db061b878a66e518709847033d314d597b4f02ddd7af070fa76f4dbe9e"
+    },
+    {
+      "path": "sources/structured-text/newman-grammar-of-assent/config.json",
+      "bytes": 1688,
+      "sha256": "770d5570855eea4b32c34785edfbde928f80dafde076fef6242e08ce2c2d4b57"
+    },
+    {
+      "path": "sources/structured-text/newman-grammar-of-assent/README.md",
+      "bytes": 2741,
+      "sha256": "5ff2e844ee3afb6f5634af00e1f36b7fafd16658cdcbc00ee6956a8bd458b25b"
+    },
+    {
+      "path": "sources/structured-text/newman-grammar-of-assent/acquisition-receipt.json",
+      "bytes": 3598,
+      "sha256": "fdfc85feb46634f7b6c71336682dea237168ab03e17ac5cbbffc2c31d8313828"
+    },
+    {
+      "path": "sources/structured-text/newman-grammar-of-assent/source-vs-tei-visual-record.json",
+      "bytes": 4443,
+      "sha256": "f0a3af19171b7e6c078eca35f04602b373be056db109a8a27f271ee5b13a69c7"
+    }
+  ],
+  "report_artifacts": [
+    {
+      "path": "candidate.tei.xml",
+      "bytes": 910178,
+      "sha256": "9f15e77cb3bb539ebd9da11624244b2168299c5ce0ac917b2d257a95c88932e6"
+    },
+    {
+      "path": "accounting.json",
+      "bytes": 2254,
+      "sha256": "e5bfba7fe507d663cc043a5ec0c36e73272deb3ae2fbf245dade0b4af379b7c0"
+    },
+    {
+      "path": "determinism/candidate.tei.xml",
+      "bytes": 910178,
+      "sha256": "9f15e77cb3bb539ebd9da11624244b2168299c5ce0ac917b2d257a95c88932e6"
+    },
+    {
+      "path": "determinism/accounting.json",
+      "bytes": 2254,
+      "sha256": "e5bfba7fe507d663cc043a5ec0c36e73272deb3ae2fbf245dade0b4af379b7c0"
+    },
+    {
+      "path": "acquisition-receipt.json",
+      "bytes": 3598,
+      "sha256": "fdfc85feb46634f7b6c71336682dea237168ab03e17ac5cbbffc2c31d8313828"
+    },
+    {
+      "path": "source-vs-tei-visual-record.json",
+      "bytes": 4443,
+      "sha256": "f0a3af19171b7e6c078eca35f04602b373be056db109a8a27f271ee5b13a69c7"
+    },
+    {
+      "path": "visual/candidate.opening.png",
+      "bytes": 201102,
+      "sha256": "fd97f33728fdf65cae0d9d7eb2e00f182536a791cc7245cb59c36c140f2210f9"
+    },
+    {
+      "path": "visual/candidate.middle.png",
+      "bytes": 236243,
+      "sha256": "df1edc7b2ace8aae12217a9aeaa5d6b9649873c62f31e4817f0113c00a46ce73"
+    },
+    {
+      "path": "visual/candidate.ending.png",
+      "bytes": 228326,
+      "sha256": "1998fd0c85e86a97050ad0809b79fef095ce42e71ec23d41caf534dd9b441148"
+    },
+    {
+      "path": "visual/candidate.language.png",
+      "bytes": 253505,
+      "sha256": "71ae1a77202824bf6ae76434aa7ca9b3873ae97efaf4b01ea330972cb9d3f0bf"
+    },
+    {
+      "path": "visual/source/source.opening.png",
+      "bytes": 110376,
+      "sha256": "444b4b5b8151d74c1f08ca947ac389c8da174f3d4200e8983e4a9e10c524fd71"
+    },
+    {
+      "path": "visual/source/source.middle.png",
+      "bytes": 229541,
+      "sha256": "c03c36dba0c5d190e056ca58d1803f0e7f91cbfb27d5f9ade570bf89088c9b73"
+    },
+    {
+      "path": "visual/source/source.ending.png",
+      "bytes": 206922,
+      "sha256": "bbe277962e9677dcef3cb5592f144e634b241a04aeeb6af53b9084929e5f9db6"
+    },
+    {
+      "path": "visual/source/source.language.png",
+      "bytes": 267816,
+      "sha256": "e0c403b0997d36f30d8f8ccc1a0230a0183501f590820ca39eb42b35d1adf57a"
+    }
+  ],
+  "validation": {
+    "tei_p5_relaxng_valid": true,
+    "tei_relaxng_sha256": "a4edf351a10fc634016aa64331f3f75daba26107331574bfee61633aa77531c4",
+    "source_visible_text_sha256": "b7e652b27ec9a99dd0a98ad83d68e010c1d0b7d67154d3a4dd4912889ec3b850",
+    "tei_visible_text_sha256": "b7e652b27ec9a99dd0a98ad83d68e010c1d0b7d67154d3a4dd4912889ec3b850",
+    "candidate_deterministic": true,
+    "accounting_deterministic": true,
+    "printed_page_milestones": 491,
+    "note_references": 56,
+    "note_bodies": 56,
+    "parts": 2,
+    "chapters": 10,
+    "sections": 20,
+    "foreign_spans": 135,
+    "latin_spans": 102,
+    "greek_spans": 6,
+    "unmarked_foreign_spans": 27,
+    "inline_quotations": 829,
+    "block_quotations": 7,
+    "line_groups": 5,
+    "lines": 13,
+    "typographic_breaks": 13,
+    "ceteicean_render": {
+      "paragraphs": 849,
+      "note_references": 56,
+      "end_notes": 56,
+      "dangling_references": 0,
+      "upgraded": true
+    }
+  },
+  "tests": {
+    "command": "py -3 -m pytest -p no:cacheprovider tests/test_newman_grammar_of_assent.py -q --basetemp <unique strict child of PYTEST_DEBUG_TEMPROOT>",
+    "result": "4 passed in 35.87s",
+    "basetemp_removed": true,
+    "py_compile_passed": true
+  },
+  "mutations": {
+    "canonical_data": false,
+    "canonical_ir": false,
+    "workcatalog": false,
+    "schemas": false,
+    "kernel": false,
+    "shared_viewer": false,
+    "commit": false,
+    "push": false,
+    "acceptance": false,
+    "publication": false
+  },
+  "verdict": "technical-packet-complete-pending-root-review",
+  "human_acceptance": "not-performed"
+}

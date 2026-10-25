@@ -24,8 +24,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from build.lib.paths import REPO_ROOT
-from build.tei.check_ledger_v2 import check_receipt_v2
+from build.tei.check_ledger import check_receipt
 from build.tei.project_hf import project_file
+from ocd_kernel.lib.git_artifact import is_committed_path
 
 IR_DIR = REPO_ROOT / "ir"
 
@@ -43,6 +44,12 @@ def discover(repo_root: Path = REPO_ROOT) -> list[Projection]:
 
     projections: list[Projection] = []
     for receipt_path in sorted((repo_root / "ir").rglob("*.loss.json")):
+        if not is_committed_path(
+            receipt_path,
+            repository_root=repo_root,
+            revision="HEAD",
+        ):
+            continue
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         projections.append(
             Projection(
@@ -66,7 +73,7 @@ def regenerate(projection: Projection, *, repo_root: Path = REPO_ROOT) -> list[s
         receipt_path=projection.receipt_path,
         repo_root=repo_root,
     )
-    return check_receipt_v2(projection.receipt_path, repo_root=repo_root)
+    return check_receipt(projection.receipt_path, repo_root=repo_root)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

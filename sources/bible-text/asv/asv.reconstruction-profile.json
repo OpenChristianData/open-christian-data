@@ -1,0 +1,13 @@
+{
+  "contract": "ocd-asv-profile-v1",
+  "work_id": "asv",
+  "source": "raw/bible_databases/formats/json/ASV.json",
+  "translation": "ASV: American Standard Version (1901)",
+  "scope": "complete retained JSON witness",
+  "expected": {"books": 66, "chapters": 1189, "verses": 31102},
+  "ordering": "source-native array order and parent-qualified ordinal identities",
+  "mapping": {"translation": "teiHeader/fileDesc/titleStmt/title", "book.name": "body/div/head", "chapter.chapter": "body/div/div@n", "verse.verse": "body/div/div/ab@n", "verse.text": "body/div/div/ab text with xml:space preserve"},
+  "exclusions": [],
+  "syntax_disposition": "JSON punctuation, indentation, and collection keys become the declared TEI topology; every scalar is accounted for",
+  "print_edition_completeness": "unassessed: retained JSON has no physical title page, preface, marginal apparatus, or scan"
+}

@@ -1,0 +1,62 @@
+{
+  "contract": "ocd-daily-light-sword-rawld-reconstruction-profile-v1",
+  "profile_id": "daily-light-sword-rawld-v1",
+  "ticket_id": "LIB-006",
+  "identity": {
+    "title": "Daily Light on the Daily Path",
+    "author": "Jonathan Bagster",
+    "language": "en",
+    "expression_status": "retained CrossWire SWORD rawLD module",
+    "edition_status": "ca. 1875 compilation; exact historical edition remains for human review",
+    "acceptance_status": "nonaccepted"
+  },
+  "source_scope": {
+    "extracted_root": "raw/sword_modules/Daily",
+    "member_paths": [
+      "modules/lexdict/rawld/devotionals/daily/daily.dat",
+      "modules/lexdict/rawld/devotionals/daily/daily.idx",
+      "mods.d/daily.conf"
+    ],
+    "member_bytes": {
+      "modules/lexdict/rawld/devotionals/daily/daily.dat": 1034668,
+      "modules/lexdict/rawld/devotionals/daily/daily.idx": 2202,
+      "mods.d/daily.conf": 603
+    },
+    "member_sha256": {
+      "modules/lexdict/rawld/devotionals/daily/daily.dat": "a7b7a9a4207836d152365e465ca3ba219de3df01d5516e2bfcf7ed6201f8e543",
+      "modules/lexdict/rawld/devotionals/daily/daily.idx": "76bdcf08e75da1bcb98b46fbc7a0b97183c055756cef9b4e4b7318e439083899",
+      "mods.d/daily.conf": "4c5afc29317b58ad7c110affbac23ffc534a9e04d1d4f86c05efd4cb584689fb"
+    },
+    "member_roles": {
+      "modules/lexdict/rawld/devotionals/daily/daily.dat": "textual-witness",
+      "modules/lexdict/rawld/devotionals/daily/daily.idx": "binary-order-index-authority",
+      "mods.d/daily.conf": "module-metadata-and-rights-evidence"
+    },
+    "index_record_count": 367,
+    "index_sentinel_count": 1,
+    "header_bytes": 1550,
+    "day_count": 366,
+    "record_delimiter_count": 366,
+    "record_delimiter_bytes": 732,
+    "terminal_tail_bytes": 2,
+    "gap_count": 367,
+    "gap_bytes": 2282,
+    "period_count": 732,
+    "source_element_count": 22298,
+    "tag_counts": {"b": 1, "br": 20346, "center": 1, "i": 732, "scripRef": 1218}
+  },
+  "reading_policy": "Preserve the ordered SWORD index, every day and period, and every source markup element; do not infer missing verses or editorial readings.",
+  "feature_dispositions": {
+    "br": "one TEI lb with source corresp",
+    "i": "one TEI hi rend=italic with source corresp",
+    "b": "one TEI hi rend=bold with source corresp",
+    "center": "one TEI hi rend=center with source corresp",
+    "scripRef": "one TEI ref type=scripture with source corresp"
+  },
+  "rights": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "historic_work": "The historical compilation is old enough to require a separate human rights review for the retained expression.",
+    "structured_module": "CrossWire module provenance and redistribution terms require human review.",
+    "worldwide_status": "human rights and edition review required before acceptance or publication"
+  }
+}

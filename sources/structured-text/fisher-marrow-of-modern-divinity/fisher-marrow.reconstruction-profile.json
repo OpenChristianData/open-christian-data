@@ -1,0 +1,94 @@
+{
+  "contract": "ocd-fisher-marrow-reconstruction-profile-v1",
+  "profile_id": "fisher-marrow-complete-line-accountability-v1",
+  "version": 1,
+  "source_scope": {
+    "logical_path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+    "bytes": 1087403,
+    "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+    "encoding": "utf-8",
+    "line_separator": "LF",
+    "line_count": 22946,
+    "newline_count": 22945
+  },
+  "witness_identity": {
+    "title": "The Marrow of Modern Divinity",
+    "author": "Edward Fisher, A.M.",
+    "contributor": "The Rev. Thomas Boston (notes)",
+    "edition_statement": "A New Edition",
+    "place": "London",
+    "publisher": "Thomas Tegg and Son",
+    "year": "1837",
+    "authority": "retained title page, lines 63-94",
+    "legacy_edinburgh_1828_claim_is_current_authority": false
+  },
+  "title_page_evidence": {
+    "normalization_rule": "Read the named retained UTF-8 lines literally. Strip surrounding whitespace and punctuation only where stated. For line 87 only, replace the exact OCR form NBW with NEW. For line 90 only, replace the exact OCR forms tINTED with PRINTED and TE66 with TEGG, then extract the publisher between PRINTED FOR and the first comma. No other OCR repair is authorized.",
+    "lines": [
+      {"line": 80, "text": "BY EDWARD FISHER, A.M. ", "sha256": "7aa95a4d7d2d433eeed69901e959a4f580b07fa2cf536a37fdae0fae97de6ea2"},
+      {"line": 83, "text": "BY THE REV. THOMAS BOSTON, ", "sha256": "d34cb9213499ab59714f868c91aacb1b6d4d4095bc6dea100e27de16d9a2a1a6"},
+      {"line": 87, "text": "A NBW EDITION. ", "sha256": "eeff10105d51aecc399d3c19ec4bd079e2fecd03014dc383699949da6ca1ed85"},
+      {"line": 88, "text": "LONDON: ", "sha256": "99fbe9de0e2b1838fcaab016715678920e6ca93b3d515fdff7c668ee64ca376c"},
+      {"line": 90, "text": "tINTED FOR THOMAS TE66 AND SON, 73, CHEAPSIDE; ", "sha256": "8a0d1fe61b06af1b326b277b456ed593c023d589b7b10e5cdc9626bd373579f1"},
+      {"line": 94, "text": "1837. ", "sha256": "99db84e2329035d41f42c205d45f11b0965290746fdd77f56fab0e9d4a59df3d"}
+    ]
+  },
+  "google_attribution_evidence": {
+    "obligation": "Maintain the Google watermark and Google Book Search attribution; do not remove it from redistributed source-derived material.",
+    "lines": [
+      {"line": 30, "text": "+ Maintain attribution The Google \"watermark\" you see on each file is essential for informing people about this project and helping them find ", "sha256": "fac44e9d457d1e4157485cdfe97e72fc453349c104e5f5923ff92170ffa2ffdf"},
+      {"line": 31, "text": "additional materials through Google Book Search. Please do not remove it. ", "sha256": "fcb1859562efbe7be3eadc0ce03543904a18b982f5c56bcc88ffa942a7410dd3"}
+    ]
+  },
+  "regions": [
+    {"id": "carrier-front", "tei_part": "front", "type": "carrier-front", "start_line": 1, "end_line": 62},
+    {"id": "title-page", "tei_part": "front", "type": "titlepage", "start_line": 63, "end_line": 94},
+    {"id": "preliminary", "tei_part": "front", "type": "preliminary", "start_line": 95, "end_line": 241},
+    {"id": "recommendations", "tei_part": "front", "type": "recommendations", "start_line": 242, "end_line": 538},
+    {"id": "preface", "tei_part": "front", "type": "preface", "start_line": 539, "end_line": 720},
+    {"id": "dedication", "tei_part": "front", "type": "dedication", "start_line": 721, "end_line": 828},
+    {"id": "to-the-reader", "tei_part": "front", "type": "to-the-reader", "start_line": 829, "end_line": 1284},
+    {"id": "part-one", "tei_part": "body", "type": "part", "n": "I", "start_line": 1285, "end_line": 16576},
+    {"id": "part-two-front", "tei_part": "body", "type": "part-front-matter", "n": "II", "start_line": 16577, "end_line": 16775},
+    {"id": "part-two", "tei_part": "body", "type": "part", "n": "II", "start_line": 16776, "end_line": 21185},
+    {"id": "appendix", "tei_part": "back", "type": "appendix", "start_line": 21186, "end_line": 22946}
+  ],
+  "landmarks": {
+    "recommendations": {"start_line": 242, "end_line": 538, "line_count": 297},
+    "part_two_title": {"start_line": 16577, "end_line": 16585},
+    "part_two_front_matter": {"start_line": 16577, "end_line": 16775},
+    "part_two_dialogue_start": 16776,
+    "appendix_start": 21186,
+    "page_marker_scope_start": 1285,
+    "page_marker_candidate_count": 170,
+    "page_marker_candidate_line_numbers_sha256": "e2478a85557a1bda1e6286a81afdfe58b4f9860929ab93167cc54eb1831b0472",
+    "false_running_header_lines": [1656, 3155, 4579, 7146, 7602, 13507, 14521, 15798, 17422, 17645, 17725, 18094, 18676, 19162, 21145, 21276],
+    "false_running_header_line_numbers_sha256": "7b1251913aef9078d48bbd7323e586f8861a0fee1d5bdbd11b3e69f7225074dd",
+    "false_running_header_observations_sha256": "ff18efcd50a730de4fe2513e91f699f32785e79747871772b5e196164c83556d",
+    "high_confidence_speaker_count": 455,
+    "section_boundary_speaker_count": 24,
+    "paragraph_continuation_speaker_like_count": 9,
+    "paragraph_continuation_speaker_like_lines": [2899, 3080, 6290, 9115, 15083, 15957, 16997, 19112, 19687],
+    "google_attribution_lines": [30, 31],
+    "inline_marker_counts": {"asterisk": 2039, "section_sign": 44, "dagger": 0, "double_dagger": 0}
+  },
+  "speaker_observation_authority": {
+    "record_shape": ["line", "raw_line_sha256", "section_prefix_sha256", "speaker_prefix_sha256", "body_sha256"],
+    "derivation": "The ordered accepted line inventory is reviewed authority. For ordinary observations, split the exact retained line at its accepted OCR speaker prefix. For the 24 named mixed observations, split at the first em dash into the exact section prefix and speaker-bearing remainder, then split that remainder at its OCR speaker prefix. Hash every exact UTF-8 component and canonicalize ordered records with sorted keys, compact separators, and one trailing LF.",
+    "count": 455,
+    "ordered_line_numbers": [1297,1301,1305,1327,1331,1342,1353,1358,1363,1477,1547,1675,1679,1682,1751,1811,1830,1842,1890,1894,1953,1969,2004,2058,2065,2069,2139,2197,2200,2217,2222,2236,2239,2296,2329,2332,2345,2348,2365,2392,2401,2415,2461,2530,2534,2813,2817,2928,2938,2941,3000,3015,3018,3122,3125,3138,3140,3255,3258,3264,3295,3321,3361,3422,3429,3618,3744,3816,3821,3930,3983,3986,4114,4117,4226,4229,4296,4299,4487,4493,4560,4564,4604,4607,4619,4672,4675,4690,4722,4749,4794,4799,4849,4852,4855,4918,4973,4977,5068,5102,5106,5108,5136,5275,5281,5286,5425,5753,5772,5775,5782,5798,5822,5838,5842,5888,6026,6030,6144,6219,6227,6231,6289,6292,6618,6622,6636,6819,6891,6894,6897,6903,7070,7073,7201,7206,7964,8298,8432,8447,8672,8788,8793,8803,8811,8863,8867,8879,8887,8937,8996,9062,9311,9316,9447,9450,9505,9523,9525,9568,9656,9660,9883,9886,9890,9897,9948,10019,10024,10982,10985,10998,11031,11167,11231,11378,11423,11426,11510,11708,11879,11882,11927,12049,12127,12138,12381,12800,12804,12978,13035,13103,13178,13182,13227,13233,13356,13360,13385,13388,13614,13619,13692,13696,13741,13765,13769,13818,13834,13839,13861,13877,13890,14163,14186,14200,14217,14220,14437,14442,14669,14865,14879,14897,14926,14943,14948,14955,14991,15001,15082,15123,15140,15158,15178,15258,15325,15328,15332,15337,15389,15401,15460,15463,15481,15580,15629,15632,15801,15806,15954,16046,16049,16076,16138,16142,16499,16510,16520,16530,16783,16805,16869,16882,16885,16914,16920,16989,16993,16996,17010,17035,17047,17052,17106,17115,17118,17131,17134,17193,17197,17249,17252,17306,17331,17340,17344,17390,17393,17416,17420,17432,17480,17585,17611,17635,17650,17653,17659,17662,17669,17672,17693,17700,17703,17716,17733,17736,17762,17765,17772,17775,17782,17785,17798,17801,17805,17808,17833,17837,17848,17882,17902,17917,17920,17951,17964,17967,17978,18000,18003,18018,18023,18027,18154,18159,18177,18202,18205,18218,18221,18250,18255,18258,18271,18307,18310,18314,18317,18326,18330,18359,18362,18385,18388,18417,18436,18460,18466,18484,18487,18501,18504,18529,18547,18557,18567,18712,18776,18780,18786,18789,18795,18807,18811,18845,18848,18862,18866,18871,18874,18899,18910,18913,18928,18931,19000,19012,19035,19038,19047,19050,19085,19102,19106,19130,19200,19204,19241,19246,19256,19260,19272,19275,19308,19312,19317,19320,19340,19346,19382,19397,19450,19543,19549,19593,19601,19606,19608,19612,19654,19659,19672,19682,19686,19700,19721,19727,19730,19734,19742,19746,19749,19764,19815,20017,20020,20047,20080,20109,20359,20362,20364,20430,20482,20486,20496,20500,20508,20524,20579,20813,20817,22632,22641],
+    "ordered_line_numbers_sha256": "9501f7ce4ee3eab50cbcb0e405122b3423201120a0d93a079a72a63c64763f30",
+    "section_boundary_line_numbers": [1301,1363,2058,2139,2461,2813,3138,4114,4296,5275,5888,9525,9883,10019,10982,11231,11510,12138,12800,13227,14865,15158,15580,16138],
+    "rejected_paragraph_continuation_line_numbers": [2899,3080,6290,9115,15083,15957,16997,19112,19687],
+    "ordered_observations_sha256": "840356b52312d38a5e67338d366ad657dc3a55fa568d56c68e30008881077ccb"
+  },
+  "interpretation_policy": {
+    "line_text": "preserve every decoded retained line exactly, including leading and trailing spaces",
+    "newlines": "account as exact source byte ranges; do not copy the retained source into the candidate",
+    "page_markers": "mark all standalone decimal or Roman-numeral lines from line 1285 as candidates; do not invent certainty that each is a page break",
+    "dialogue": "mark only explicit OCR speaker prefixes; retain the complete line without correction",
+    "inline_marks": "preserve asterisks and section signs literally; do not invent note boundaries",
+    "ocr": "preserve damaged headings and OCR uncertainty literally; do not silently correct them",
+    "acceptance": "candidate generation and validation do not constitute human acceptance or publication readiness"
+  }
+}

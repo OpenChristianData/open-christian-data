@@ -1,5 +1,7 @@
 # ADR-0010: Biblical-language ISO codes (`grc`, `hbo`, `arc`) over modern defaults
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15); amended 2026-05-16 (R14 — `arc`, `syr`, `cop` removed from Phase 1 schema enum; staged re-introduction rule documented)
 
 ## Context

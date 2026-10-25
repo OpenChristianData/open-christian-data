@@ -1,5 +1,7 @@
 # Cold-storage policy
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 This policy covers migration of release-bound large artifacts out of hot
 storage after publication, while preserving replay, provenance, and audit
 access. Planned tools are `build/tools/plan_cold_storage_migration.py` and

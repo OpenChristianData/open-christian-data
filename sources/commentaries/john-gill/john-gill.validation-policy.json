@@ -1,0 +1,51 @@
+{
+  "contract": "ocd-helloao-john-gill-validation-policy-v1",
+  "policy_id": "helloao-john-gill-complete-retained-json-to-tei-v1",
+  "version": 1,
+  "work_id": "john-gill",
+  "candidate_status": "nonaccepted",
+  "required_counts": {
+    "source_members": 1191,
+    "source_bytes": 54866016,
+    "books": 66,
+    "chapters": 1189,
+    "commentary_occurrences": 28300,
+    "book_introductions": 66,
+    "chapter_introductions_present": 1186,
+    "chapter_introductions_absent": 3
+  },
+  "required_unresolved_ids": [
+    "john-gill-retained-vs-configured-title",
+    "john-gill-config-cc0-vs-retained-pdm",
+    "john-gill-configured-source-endpoint",
+    "john-gill-retained-rtl-anomaly",
+    "john-gill-edition-and-original-date"
+  ],
+  "required_checks": [
+    "bind all 1191 retained members by normalized path, byte count, and SHA-256",
+    "verify the formal ocd-source-member-set-v1 digest",
+    "preserve the exact 66-book and 1189-chapter source order",
+    "preserve all 28300 occurrence records, ordinals, numbers, types, and text",
+    "preserve all 66 book introductions",
+    "preserve 1186 present chapter introductions and three absent properties",
+    "preserve chapter envelope links, numberOfVerses, and null carriers",
+    "preserve the 19 nonmonotonic occurrence sequences and reject duplicates",
+    "reject inferred ranges and Bible or BSB verse text",
+    "localize retained PDM and configured CC0 drift",
+    "localize the retained English rtl marker",
+    "localize edition and original-date uncertainty",
+    "keep the candidate nonaccepted and publication-not-ready",
+    "enforce the exact canonical UTF-8 TEI lexical document shell",
+    "validate TEI P5 against the retained source structure",
+    "validate with an independently implemented oracle and import closure",
+    "verify the exact catalog-claim lineage bridge for 66 current WorkCatalog claims",
+    "exact-source-double-newline-paragraph-segmentation-without-inferred-heading-semantics"
+  ],
+  "forbidden_import_prefixes": [
+    "build.parsers.helloao_commentary",
+    "build.tei.helloao_john_gill_reconstruction",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ]
+}

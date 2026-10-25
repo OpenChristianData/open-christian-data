@@ -1,5 +1,7 @@
 # ADR-0014 / ADR-0015 adversarial review
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 ## Verdicts
 
 ADR-0014: Reject in current form. It swaps a word-level attestation gate for a character-provenance gate before the schema, validator, and recall path exist.

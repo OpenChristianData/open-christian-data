@@ -1,0 +1,130 @@
+{
+  "acquisition_id": "apostolic-tradition-gutenberg-acquired",
+  "authorities": [
+    {
+      "bytes": 339654,
+      "name": "retained-html",
+      "path": "raw/gutenberg/61614/html/pg61614-images.html",
+      "role": "primary-source",
+      "sha256": "820d396c5f69ff601cf2264cb8ed352765c49809a69fda8f616b746e07b9cd05"
+    },
+    {
+      "bytes": 301757,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/61614/pg61614-h.zip",
+      "role": "acquisition-container",
+      "sha256": "72a7ceef6b4145b08f1131a58a9ae2e5665b4e4c06f7fce01d56cd77879fabc7"
+    },
+    {
+      "bytes": 188705,
+      "name": "cover-image",
+      "path": "raw/gutenberg/61614/html/images/cover.jpg",
+      "role": "source-support",
+      "sha256": "584347aae3f932699969dddfeb7f498e2754852377e6e5b8006ce864836c2263"
+    },
+    {
+      "bytes": 14675,
+      "name": "spine-image",
+      "path": "raw/gutenberg/61614/html/images/spine.jpg",
+      "role": "source-support",
+      "sha256": "829583471aff8439e88aa42fc110549933e243eaf3e30cdeba1eebeec0bb73bc"
+    },
+    {
+      "bytes": 569,
+      "name": "work-sidecar",
+      "path": "library/works/apostolic-tradition/work.json",
+      "role": "work-identity-config",
+      "sha256": "53e274b789ae7ad7678cfa01542175ccea71bfbe70cd7fdae8a7e0035a9bc2fb"
+    },
+    {
+      "bytes": 2450,
+      "name": "acquisition-sidecar",
+      "path": "library/works/apostolic-tradition/forms/apostolic-tradition-gutenberg-retained/editions/apostolic-tradition-gutenberg-electronic/acquisitions/apostolic-tradition-gutenberg-acquired.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "b83e3fe0f76bac83dce44e02cb5067e1ab749a03bd7f9c95967f68763a1c489e"
+    },
+    {
+      "bytes": 2011,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/61614/acquisition-receipt.json",
+      "role": "acquisition-receipt",
+      "sha256": "1db7163371a71b79841e0e9984235e9b1a3b363fc1ef44e639ac708ee4be1e95"
+    },
+    {
+      "bytes": 2777,
+      "name": "source-readme",
+      "path": "sources/apostolic-tradition/README.source.md",
+      "role": "source-attribution",
+      "sha256": "7f9be2d7421eb4fa1eee20fa66d3f9db397fc57823e415b097d3ae6b3e961190"
+    },
+    {
+      "bytes": 6714,
+      "name": "reconstruction-profile",
+      "path": "sources/apostolic-tradition/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "b8537e261b6b90b98f0e829abc7dab725a8bba173fb05e344ca56bc2aef3b6e1"
+    },
+    {
+      "bytes": 2881,
+      "name": "validation-policy",
+      "path": "sources/apostolic-tradition/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "381f77f3be829dc12dd1a4adff8e0ec0df312776876dbd4cbe71441c79fd01c7"
+    },
+    {
+      "bytes": 1142,
+      "name": "source-accountability-schema",
+      "path": "sources/apostolic-tradition/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "61439bd617eaa9b8cfb7bb16c7a989a402821aa22cadc6ea6ca8a11a465b18cc"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 4314,
+      "name": "tei-writer-dependency",
+      "path": "ocd_kernel/tei/writer.py",
+      "role": "implementation-dependency",
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-apostolic-tradition-html-to-tei",
+    "implementation_path": "build/tei/apostolic_tradition_reconstruction.py",
+    "implementation_sha256": "894bb13ca032cda1b096497787655bad34aea546f046d512bf47c8c223404258",
+    "version": "1"
+  },
+  "edition_id": "apostolic-tradition-gutenberg-electronic",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "apostolic-tradition-gutenberg-retained",
+  "source_selection": {
+    "authority": "retained-html",
+    "selection": "The complete retained Project Gutenberg HTML document is source-bound. Every ordered child and any leading text of its parsed body is reconstructed; the outer document shell is separately profiled and hash-bound."
+  },
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-apostolic-tradition-html5-independent-oracle",
+    "implementation_path": "build/tei/apostolic_tradition_oracle.py",
+    "implementation_sha256": "64eefef8199a315c645b2fa4f69899edcd0cf1afcc7d43d9b8cc489baf3e2bf8",
+    "import_closure_sha256": "fafda0b55875ed8b3fc5839cfeb0e639c823f85b93928dc8bde6dd6f18beeb10",
+    "version": "1"
+  },
+  "work_id": "apostolic-tradition"
+}

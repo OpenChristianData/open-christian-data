@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source-availability-blocker",
+  "ticket_id": "LIB-025",
+  "work_id": "catholic-encyclopedia-vol01",
+  "title": "The Catholic Encyclopedia",
+  "as_of_date": "2026-08-31",
+  "disposition": "blocked",
+  "candidate_status": "nonaccepted",
+  "publication_authorized": false,
+  "tei_candidate_created": false,
+  "owner": "project-maintainer",
+  "summary": "No complete suitable retained Catholic Encyclopedia source cohort is present in the durable raw store, and none of the 15 frozen current source-hash claims matches any retained raw file.",
+  "assigned_source_hash_claims": [
+    "0b5e87e834c5765cb761809ca5a569515d1229fff3421877755cd38d9f720f7d",
+    "1c41cfd283ae998d68e42e782f693133c727a0e5fee4724f73ddb07da830ab79",
+    "27c0c93555e5caebdd3db1490b35ab1e714aba2b2bc86e189b2fff5778687836",
+    "326f37ce24c470d23e0d700100dfd0b47eb6f810c91ca51a69ca53201a44b995",
+    "596cf448a83584b7239deef443f3110eba4f1b05e0b3494d42bd55e4da45d0c8",
+    "5ca185ed4a0babdf6a187849b483a4304502693b31ef0fe3e0222559a314b9b3",
+    "5dab7c63a354267b16ea2144812819145880fccb37b7869c914f40b445e2c985",
+    "6ab14694a49ab947150cda9b3f8b272114d0a4f2cf67c4c81396ddcd989a717b",
+    "728a7a2aacc5e017e89f068bf67214b72dabc8e01d1bf14394b838ec6e8da3ea",
+    "7ee8e7fb47f4d9c99ce8fada083f9de487bc552b047cc5e015e30a178dec90ba",
+    "b4de1fede91f67ab10a33de071e7c177436b491766fdf1b7bb3bc548bdf0e38f",
+    "b96c9a97904c0105a1d09dbc1d4ac73e56f4b1c44efa5de229839f184dd11d53",
+    "beef4be1f6541b38782dc116f5dac84b8c8b00da9d2909be6029523979dfcf12",
+    "cc11827263194f45d92b34d55728d344138fbf16e76afd1dcf53237f8a392ba6",
+    "edab4d3610e1082c4dc17014924b5a43c0f390497bc9dbd18cd2b9738336cc15"
+  ],
+  "claim_resolution": {
+    "matched_retained_raw_file_count": 0,
+    "missing_claims": [
+      "0b5e87e834c5765cb761809ca5a569515d1229fff3421877755cd38d9f720f7d",
+      "1c41cfd283ae998d68e42e782f693133c727a0e5fee4724f73ddb07da830ab79",
+      "27c0c93555e5caebdd3db1490b35ab1e714aba2b2bc86e189b2fff5778687836",
+      "326f37ce24c470d23e0d700100dfd0b47eb6f810c91ca51a69ca53201a44b995",
+      "596cf448a83584b7239deef443f3110eba4f1b05e0b3494d42bd55e4da45d0c8",
+      "5ca185ed4a0babdf6a187849b483a4304502693b31ef0fe3e0222559a314b9b3",
+      "5dab7c63a354267b16ea2144812819145880fccb37b7869c914f40b445e2c985",
+      "6ab14694a49ab947150cda9b3f8b272114d0a4f2cf67c4c81396ddcd989a717b",
+      "728a7a2aacc5e017e89f068bf67214b72dabc8e01d1bf14394b838ec6e8da3ea",
+      "7ee8e7fb47f4d9c99ce8fada083f9de487bc552b047cc5e015e30a178dec90ba",
+      "b4de1fede91f67ab10a33de071e7c177436b491766fdf1b7bb3bc548bdf0e38f",
+      "b96c9a97904c0105a1d09dbc1d4ac73e56f4b1c44efa5de229839f184dd11d53",
+      "beef4be1f6541b38782dc116f5dac84b8c8b00da9d2909be6029523979dfcf12",
+      "cc11827263194f45d92b34d55728d344138fbf16e76afd1dcf53237f8a392ba6",
+      "edab4d3610e1082c4dc17014924b5a43c0f390497bc9dbd18cd2b9738336cc15"
+    ],
+    "basis": "The recorded default recursive SHA-256 traversal under D:/Library/Open Christian Data/raw covered 71,646 files totaling 13,510,943,618 bytes, with zero claim matches and zero read/hash errors. It excluded 157 files under five .git metadata directories and included 408 .git files under 11 other .git directories; the complete raw tree contains 71,803 files."
+  },
+  "checked_routes": [
+    {
+      "route": "durable-raw-direct-file-census",
+      "result": "unavailable",
+      "evidence": "The recorded default durable raw path traversal covered 71,646 files totaling 13,510,943,618 bytes; it excludes 157 files under five .git metadata directories and includes 408 .git files under 11 other .git directories, while the complete raw tree contains 71,803 files. No path contained Catholic, Encyclopedia, New Advent, Cathen, Herbermann, or Appleton identifiers; a full text-signature scan found no corresponding text; and the SHA-256 pass found zero matches to the 15 assigned claims with zero errors."
+    },
+    {
+      "route": "durable-raw-container-census",
+      "result": "unavailable",
+      "evidence": "All 63 retained ZIP files were opened read-only and all 531,724 entry names were censused. No entry name contained Catholic, Encyclopedia, New Advent, Cathen, Herbermann, or Appleton identifiers, and no ZIP read errors occurred. The eight retained PDFs are path-identified as unrelated Calvin, Treasury of David, Wesley, City of God, or Douay-Rheims sources."
+    },
+    {
+      "route": "source-local-config",
+      "result": "metadata-only",
+      "evidence": "sources/reference/catholic-encyclopedia/config.json identifies a New Advent web route and a 15-volume scope but contains no retained source-member path, member inventory, or exact retained bytes. It was inspected read-only and is not source authority."
+    },
+    {
+      "route": "current-derived-json",
+      "result": "excluded-as-authority",
+      "evidence": "The 15 data/reference/catholic-encyclopedia-volNN.json files contain the 15 assigned claims one-for-one as provenance source_hash values. They are parser-derived products, their file SHA-256 values differ from those claims, and they are not retained source authority."
+    },
+    {
+      "route": "legacy-parser-fixtures",
+      "result": "excluded-as-authority",
+      "evidence": "tests/fixtures/catholic_encyclopedia contains five small cathen_01NNNa.html parser fixtures only. They are incomplete test material outside durable raw storage and are not source authority."
+    },
+    {
+      "route": "prior-acquisition-and-parser-evidence",
+      "result": "live-source-not-retained",
+      "evidence": "research/2026-07-22-reference-hymn-and-parser-estate-survey.md records that fetched New Advent HTML was hashed in memory but not retained. build/parsers/catholic_encyclopedia.py confirms that source_hash combines each fetched URL and HTML response while writing only derived JSON. The live site was not recrawled because new mutable responses would not recover the exact retained cohort required by LIB-025."
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency": "authoritative-acquisition",
+      "status": "missing",
+      "requirement": "Acquire and durably retain a complete suitable Catholic Encyclopedia cohort with an exact member inventory and byte hashes."
+    },
+    {
+      "dependency": "source-and-work-identity",
+      "status": "unresolved",
+      "requirement": "Bind the complete retained cohort to the intended work, edition, volume/member scope, and the 15 frozen claims, or obtain explicit authorization for claim reconciliation."
+    },
+    {
+      "dependency": "rights",
+      "status": "unresolved",
+      "requirement": "Bind authoritative rights evidence for the exact retained carrier, including the transcription or digitization basis separately from rights in the underlying work."
+    }
+  ],
+  "next_action": "The project maintainer should select an authoritative acquisition route, retain the complete exact cohort in durable raw storage without deriving it from current JSON, record every member and hash, resolve work and edition identity, and bind carrier-specific rights evidence before reconstruction is scheduled.",
+  "reopening_condition": "Reopen LIB-025 only when a complete suitable cohort is durably retained and fully censused, exact byte identity and work/edition scope are established, carrier-specific rights evidence is bound, and every frozen claim either resolves to retained evidence or an explicitly authorized claim-reconciliation decision is recorded.",
+  "boundaries": {
+    "technical_acceptance": false,
+    "human_acceptance": false,
+    "publication_ready": false,
+    "derived_json_is_authority": false,
+    "parser_fixtures_are_authority": false
+  }
+}

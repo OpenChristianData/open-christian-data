@@ -1,0 +1,104 @@
+{
+  "contract": "ocd-l741-source-to-tei-policy-v1",
+  "edition_id": "evangelische-gezangen-1806-dbnl-electronic",
+  "identity": "The exact retained XML receipt, the TEI.2 title/edition statements, and the source title-page title and imprint identify one DBNL transcription of the 1806 first edition. The existing canonical WorkCatalog work, retained form, electronic edition, and acquisition sidecars bind this candidate to the correct work chain; no individual hymn, tune, or index is elevated to a separate work.",
+  "checks": [
+    "current five-file retained-source bundle, 68 score-image resources, byte counts, and SHA-256 digests match the source profile and manifest",
+    "the exact existing WorkCatalog work, retained-form, electronic-edition, acquisition, and acquired-stage sidecars bind the same title and retained DBNL source",
+    "exact DBNL title, first-edition statement, title-page title/imprint, provider title code, and source identity are present",
+    "one direct TEI P5 root and one text with front/body/back; no nested TEI roots",
+    "source-body element order, names, attributes, text, and tails are mapped one-to-one and linked to the exact witness",
+    "complete source-body text stream matches without normalization",
+    "265 poem groups, 414 page-break markers and labels, 193 interpGrp groups, 194 interp entries, 192 song links, 26 tables, 192 rows, 384 cells, and 68 figure/graphic targets are preserved",
+    "all 68 source score targets resolve through XML Base and bind to the matching retained DBNL GIF bytes, source URL, and SHA-256",
+    "three DBNL editorial intervention statements and exact TEI.2 header slice are preserved",
+    "the absent printed page-image witness and unavailable visual comparison remain listed in unresolved.jsonl",
+    "candidate-accountability and provenance sidecars bind source, media resources, manifest, structure, limitations, and nonaccepted status",
+    "independent TEI P5 XSD validation and producer-independent source oracle pass",
+    "P5-valid mutations to source wording, page labels, tune/song linkage, index content, score targets, and XML Base are rejected",
+    "two fresh-process replays reproduce all six candidate member bytes and the external validation sidecar byte-for-byte"
+  ],
+  "independence": {
+    "producer": "The producer parses the retained XML with lxml, verifies the exact local score-image resources through their manifest authorities, maps the source body using an explicit P5 mapping, and creates the five standard candidate members. It does not read any previous TEI candidate or resolve the external DTD.",
+    "oracle": "The oracle independently reparses the retained XML with Python's standard-library XML parser, recomputes source identity, element/path ordering, direct division boundaries, text stream, page markers, song/tune relations, tables, xptr-to-GIF target order, and sidecars; it separately verifies each retained GIF signature, byte count, manifest digest, and DBNL XML Base before validating the P5 document with the repository XSD. It does not import the producer.",
+    "shared_assumptions": "Both bind to the exact retained DBNL XML and its exact score-image resources, use the explicit source division boundary (front matter; 192 hymn divisions; four index/tune/errata divisions), preserve source target strings, use the same external DBNL target base, and use the repository TEI P5 XSD."
+  },
+  "mapping": {
+    "root": "TEI.2 becomes one TEI P5 root; no additional TEI root is emitted.",
+    "source-header": "Standard bibliographic identity is expressed in P5 header fields; the exact original teiHeader byte slice is also included as escaped text, and the external DTD identifier is retained as text.",
+    "source-body": "The source cf title matter and first two divisions are placed in front; direct divisions 3-194 remain in body; divisions 195-198 remain in back. Every original source-body element is mapped once with a generated xml:id and corresp reference to the source witness.",
+    "source-content": "All source-body text, element character data, and tails are copied without whitespace normalization. Existing pb labels, rendition attributes, tables, interpGrp/interp values, and element nesting are preserved.",
+    "source-image-references": "Each source xptr/@to is copied verbatim to TEI graphic/@url. xml:base on each graphic resolves that exact relative target at DBNL's source score-image base. Source-accountability binds every pointer to the locally retained GIF bytes and SHA-256; the five-member candidate package stays flat. These are score images, not print page scans.",
+    "editorial-interventions": "The three source header corr statements are preserved verbatim as editorial-declaration notes; no additional corrections are applied."
+  },
+  "unresolved": [
+    {
+      "id": "visual-print-witness",
+      "status": "not-retained",
+      "detail": "The exact source-only bundle contains no page images; comparison of the DBNL transcription and the 1806 print witness remains unresolved."
+    },
+    {
+      "id": "intervention-visual-check",
+      "status": "not-performed",
+      "detail": "DBNL records interventions at pp. 151, 352, and 386; no scan images are retained in this bundle for independent visual comparison."
+    },
+    {
+      "id": "rights-clearance",
+      "status": "not-determined-by-technical-candidate",
+      "detail": "The receipt records DBNL's Auteursrechtvrij provider label only; broader jurisdictional or downstream clearance is not asserted."
+    },
+    {
+      "id": "human-acceptance",
+      "status": "not-performed",
+      "detail": "Technical reconstruction and validation are not human acceptance."
+    },
+    {
+      "id": "publication",
+      "status": "not-authorized",
+      "detail": "No publication authorization is asserted."
+    }
+  ],
+  "provenance": {
+    "contract": "ocd-source-to-tei-provenance-v1",
+    "edition_id": "evangelische-gezangen-1806-dbnl-electronic",
+    "human_acceptance": "not-performed",
+    "publication": "not-authorized",
+    "rights_clearance": "not-determined-by-technical-candidate",
+    "source": "DBNL, Evangelische Gezangen, TEI.2 transcription of the 1806 first edition; retained primary XML at raw/dbnl/evangelische-gezangen-1806/evangelische-gezangen-1806.xml (SHA-256 d8132943dd20b1053d1d77bda57cab2b69c9dc567e38ea4450baab914925abb9) and 68 source-linked score GIF resources under raw/dbnl/evangelische-gezangen-1806/score-images, each bound by source-accountability.",
+    "source_credit": "DBNL digital transcription of the anonymous 1806 Dutch Reformed hymnal; its title page names the joint synods as commissioning body and Johannes Allart as publisher.",
+    "source_terms": "The source-only receipt records DBNL's Auteursrechtvrij provider label; no broader rights conclusion is made.",
+    "status": "nonaccepted",
+    "source_witness_role": "Exact retained DBNL TEI.2 transcription for the 1806 first edition with its 68 source-linked score GIF resources; no print scan images are retained.",
+    "source_id": "dbnl-eva005evan01-1806",
+    "ticket_id": "L741",
+    "title": "Evangelische Gezangen, om nevens het Boek der Psalmen bij den openbaren godsdienst in de Nederlandsche Hervormde Gemeenten gebruikt te worden",
+    "work_catalog_link": {
+      "contract": "ocd-workcatalog-link-v1",
+      "work_id": "evangelische-gezangen-1806",
+      "textual_form_id": "evangelische-gezangen-1806-dbnl-retained",
+      "edition_id": "evangelische-gezangen-1806-dbnl-electronic",
+      "acquisition_id": "evangelische-gezangen-1806-dbnl-acquired",
+      "work_record": {
+        "path": "library/works/evangelische-gezangen-1806/work.json",
+        "snapshot_path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-work-record.json",
+        "sha256": "a2cf66e3e7c5c7916669fd6c098f21d448a63029de311f55ff580b604d2d8e13"
+      },
+      "state_record": {
+        "path": "library/works/evangelische-gezangen-1806/state.json",
+        "snapshot_path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-state-record.json",
+        "sha256": "4e07ee042dbea86f90f3644e04e88f8a2e887706b94a4874c52a15ae1aca9be6"
+      },
+      "acquisition_record": {
+        "path": "library/works/evangelische-gezangen-1806/forms/evangelische-gezangen-1806-dbnl-retained/editions/evangelische-gezangen-1806-dbnl-electronic/acquisitions/evangelische-gezangen-1806-dbnl-acquired.json",
+        "snapshot_path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-acquisition-record.json",
+        "sha256": "b694e97b4560799b8e8027e5d53ed7dee9341e01319f20ac5f3a72f90a634e29"
+      }
+    },
+    "work_id": "evangelische-gezangen-1806",
+    "textual_form_id": "evangelische-gezangen-1806-dbnl-retained",
+    "acquisition_id": "evangelische-gezangen-1806-dbnl-acquired"
+  },
+  "work_id": "evangelische-gezangen-1806",
+  "textual_form_id": "evangelische-gezangen-1806-dbnl-retained",
+  "acquisition_id": "evangelische-gezangen-1806-dbnl-acquired"
+}

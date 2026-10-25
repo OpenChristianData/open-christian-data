@@ -1,0 +1,21 @@
+{
+  "schema_version": "2.0",
+  "acquisition_id": "ccel-npnf204-retained-xml",
+  "edition_id": "ccel-npnf204",
+  "provider": "Christian Classics Ethereal Library",
+  "url": "https://www.ccel.org/ccel/schaff/npnf204.xml",
+  "source_path": "raw/ccel/npnf2/npnf204.xml",
+  "source_sha256": "bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652",
+  "source_bytes": 5809854,
+  "source_scope": "div1[@id='vii']",
+  "retained_files": [
+    {
+      "path": "retained/npnf204.vii.ii.i.thml.xml",
+      "sha256": "d16a6d825621cde9b93c5ed54489521895b9b9e44098b38bd61c437b927faafa",
+      "bytes": 4174,
+      "media_type": "application/xml",
+      "scope": "div1[@id='vii']/div2[@id='vii.ii']/div3[@id='vii.ii.i']"
+    }
+  ],
+  "route": "born-digital"
+}

@@ -1,0 +1,16 @@
+{
+  "contract": "ocd-asv-reviewed-header-policy-v2",
+  "work_id": "asv",
+  "unknown_source_fields": "reject",
+  "duplicate_keys": "reject",
+  "text_normalization": "none",
+  "source_order": "preserve",
+  "parent_attachment": "exact",
+  "unexpected_tei_nodes_attributes_or_text": "reject",
+  "accounting": "all scalar fields and all ordered array relationships",
+  "reviewed_header": "verify exact TEI P5 header semantics and all four source-work identity bindings against current work and acquisition sidecars",
+  "source_context": "bind canonical Workspace research/MANIFEST.md ASV row and L223 Worklist row by exact authority bytes; report count differences rather than rewriting them",
+  "schema": "TEI P5 vendored tei_all.xsd with bound imports",
+  "independence": "recursive JSON source oracle plus actual-tree lxml checks; checker does not import converter or header binding helper",
+  "mutations": ["verse text invention", "title identity drift", "source accounting omission", "source manifest binding drift", "source ordering", "wrong parent", "trailing whitespace loss", "duplicate key"]
+}

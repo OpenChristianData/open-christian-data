@@ -1,0 +1,49 @@
+.stage-row {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  background: #fff;
+  color: var(--navy);
+}
+
+.stage-row:not(:disabled) { cursor: pointer; }
+.stage-row:not(:disabled):hover { background: #f6f9ff; }
+.stage-row:disabled { cursor: not-allowed; color: #657184; opacity: 1; }
+.current-stage { color: var(--navy); }
+.current-marker { color: var(--blue); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+
+.drift-notice {
+  display: grid;
+  gap: .35rem;
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border: 2px solid #a64b00;
+  background: #fff6e9;
+  color: #682d00;
+}
+
+.json-branch { margin: .35rem 0; }
+.json-branch > summary { cursor: pointer; font: 700 .9rem/1.5 Inter, "Segoe UI", sans-serif; color: #314a68; }
+.json-branch > summary span { font-weight: 400; color: var(--muted); }
+.json-branch ul { list-style: none; margin: .4rem 0 .5rem .55rem; padding-left: 1.1rem; border-left: 1px solid var(--line); }
+.json-property { margin: .3rem 0; font: 400 .92rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.json-key { font-weight: 700; color: #173f87; }
+.json-string { color: #17603a; }
+.json-number, .json-boolean, .json-null { color: #8b3f08; }
+
+/* Ticket 06b: same-origin facsimile images and degraded unregistered-kind presentations. */
+.artifact-content img { display: block; max-width: 100%; height: auto; margin: .75rem 0; border: 1px solid var(--line); background: #fff; }
+.degraded-presentation { border: 1px solid var(--line); background: #fff; }
+.degraded-message { margin: 0; padding: .85rem 1rem; font: 700 .82rem/1.5 Inter, "Segoe UI", sans-serif; color: #682d00; background: #fff6e9; border-bottom: 1px solid var(--line); }
+
+.source-picker { display: grid; grid-template-columns: minmax(160px, .55fr) minmax(240px, 1.45fr); gap: .65rem 1rem; min-width: 0; }
+.source-picker label { display: grid; gap: .35rem; min-width: 0; font-size: .8rem; font-weight: 800; }
+.source-picker input, .source-picker select { width: 100%; min-width: 0; padding: .65rem; border: 1px solid #91a4be; background: #fff; color: var(--navy); }
+.source-picker small { grid-column: 1 / -1; color: var(--muted); }
+.mode-button:disabled { border-color: var(--line); color: var(--muted); cursor: not-allowed; }
+
+@media(max-width:700px){.source-picker{grid-template-columns:1fr}}
+
+/* Verse preserves its line breaks while using the book reading face. */
+.artifact-content[data-presentation-kind="tei-reader"] pre,.artifact-content[data-media-type="text/csv"] pre{font-family:inherit;font-size:1em;line-height:1.65}

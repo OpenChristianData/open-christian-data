@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "source_id": "tcp-l879-stillingfleet-a61580",
+  "work_id": "stillingfleet-origines-sacrae",
+  "title": "Origines sacræ, or, A rational account of the grounds of Christian faith, as to the truth and divine authority of the Scriptures and the matters therein contained by Edward Stillingfleet ...",
+  "source_member": "raw/clean-ready-acquisition-to-tei/master-4/28/stillingfleet-origines-sacrae/A61580.xml",
+  "source_sha256": "4d8363a0fb86a92c10a58a048997a1129e99f712c40d1419021b3a1110541b3c",
+  "source_scope": "The complete retained TCP P5 witness A61580 for the single monographic title Origines sacræ, printed in London in 1662. The three book divisions and 22 chapters are internal parts of this one work.",
+  "declared_envelope": [
+    "The primary source member A61580.xml is the conversion input.",
+    "README.md, tcpchars.xml, and Texts-LICENSE are retained source support and attribution/character authorities; they are not separate text works and are not duplicated into TEI.",
+    "Commercial page images are not acquired and are outside this electronic-witness reconstruction."
+  ],
+  "carrier_inventory": [
+    "TEI root and complete header/title hierarchy",
+    "title page, dedication, reader preface, table of contents, errata",
+    "three books and 22 ordered chapters",
+    "all ordered paragraphs, verse lines, notes and marginal annotations",
+    "all page anchors and source-declared gap elements",
+    "all TCP character references resolved against the pinned tcpchars.xml authority",
+    "closing source trailer FINIS"
+  ],
+  "boundary_decision": "The title page names one monograph; Books I-III and their 22 chapters are nested divisions, not separate work identities. Exactly one candidate TEI is produced.",
+  "source_native_features_reported_by_existing_inventory": {
+    "source_extent": "[40], 619 pages",
+    "page_anchors": 662,
+    "distinct_image_facsimile_identifiers": 331,
+    "marginal_notes": 1146,
+    "verse_lines": 128,
+    "tcp_character_references": 4336,
+    "source_declared_gaps": {
+      "duplicate": 10,
+      "foreign": 731,
+      "illegible": 1054
+    }
+  },
+  "provenance_note": "The source member is already TEI P5. The candidate preserves it byte-for-byte; it does not repair TCP transcription, replace source-declared gaps, or claim comparison to the unavailable commercial page images."
+}

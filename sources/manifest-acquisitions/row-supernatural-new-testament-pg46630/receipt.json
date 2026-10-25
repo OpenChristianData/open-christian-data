@@ -1,0 +1,68 @@
+{
+  "contract": "ocd-retained-source-acquisition-v1",
+  "work_id": "row-supernatural-new-testament",
+  "source_id": "row-supernatural-new-testament-pg46630-html",
+  "status": "retained-source-only",
+  "retrieved_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "title": "The Supernatural in the New Testament, Possible, Credible, and Historical; or, An Examination of the Validity of Some Recent Objections Against Christianity as a Divine Revelation",
+  "creator": "Charles Adolphus Row",
+  "edition": "London: Frederic Norgate, 1875",
+  "source_url": "https://www.gutenberg.org/ebooks/46630",
+  "download_url": "https://www.gutenberg.org/cache/epub/46630/pg46630-h.zip",
+  "rights_and_copying_conditions": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally.",
+  "retained_scope_note": "Complete proofread HTML eBook plus cover image; research identifies dedication, contents, 22 chapters, and footnotes.",
+  "original_archive": {
+    "path": "raw/gutenberg/46630/pg46630-h.zip",
+    "bytes": 470588,
+    "sha256": "f4feb93d79896c984c6476a7ffe88f9700a6c601bdf27d512b59f23545c124a2",
+    "format": "ZIP"
+  },
+  "archive_inventory": {
+    "member_count": 2,
+    "total_uncompressed_bytes": 1365344,
+    "canonical_inventory_sha256": "07ec041f7aef0cd7af5d3f7627994218933a40b908baff10b5798c534a2783c3",
+    "members": [
+      {
+        "name": "pg46630-images.html",
+        "bytes": 1235284,
+        "sha256": "2700a2886eea013702e52933a93f8ec5044fda2da78e0c5b158668ffff57d34c",
+        "kind": "file"
+      },
+      {
+        "name": "images/cover.jpg",
+        "bytes": 130060,
+        "sha256": "91695d81e91a874ef844c2b825f7e0adf7021ef9438cc56262374cdbc4f59f5c",
+        "kind": "file"
+      }
+    ]
+  },
+  "source_page_accessed_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "identity_basis": "Archived clean-ready research bundle plus the primary source page/repository metadata and the retained source title/header; see source-local README for edition-specific notes.",
+  "source_manifest_path": "sources/manifest-acquisitions/row-supernatural-new-testament-pg46630/source-manifest.json",
+  "acquisition_route": "Original ZIP retained byte-for-byte at the configured durable raw store; all ZIP members inventoried and hashed without modifying or flattening the package.",
+  "rights_evidence": {
+    "rights_statement_url": "https://www.gutenberg.org/ebooks/46630",
+    "copying_terms_url": "https://www.gutenberg.org/license",
+    "summary": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally."
+  },
+  "source_local_readme_path": "sources/manifest-acquisitions/row-supernatural-new-testament-pg46630/README.source.md",
+  "source_local_readme_sha256": "7067ca78b4eb065f96aa1a21ac7606ed5483e9de751f0d20b49bf3bfac0e0876",
+  "identity_and_digital_correctness_evidence": [
+    {
+      "authority": "archived edition and acquisition research; CLEAN-READY row 11",
+      "path": "plans/_archive/2026-09-05-clean-ready-acquisition-to-tei/originals/research-evidence/open-christian-data-christian-apologetics-evidences-research.md",
+      "finding": "Complete dedication, contents, 22 chapters and footnotes; proofread, structurally bounded digital text."
+    },
+    {
+      "authority": "Project Gutenberg official ebook record",
+      "url": "https://www.gutenberg.org/ebooks/46630",
+      "finding": "record confirms ebook ID, item title, creator/editor/translator roles and U.S. rights status"
+    },
+    {
+      "authority": "retained original HTML archive",
+      "path": "raw/gutenberg/46630/pg46630-h.zip",
+      "finding": "complete downloaded HTML ZIP preserved; main HTML member contains source start/end markers and license notice; all members have independent length and SHA-256 inventory"
+    }
+  ],
+  "acquisition_method": "HTTPS retrieval of the exact upstream ZIP URL; package retained unchanged and inventoried locally."
+}

@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "subject_id",
+    "work_id",
+    "edition_id",
+    "scope",
+    "material",
+    "components",
+    "public_scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.1"
+    },
+    "subject_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "work_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "edition_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "material": {
+      "$ref": "#/$defs/binding",
+      "description": "Exact existing decision/selection defining the material, including a JSON pointer when only one part is selected. This is not a representation master hash."
+    },
+    "components": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/identifier"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/binding"
+      }
+    },
+    "note": {
+      "$ref": "#/$defs/non_empty"
+    },
+    "public_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "include",
+        "exclude"
+      ],
+      "properties": {
+        "include": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "values"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "record-id",
+                  "source-anchor",
+                  "division-number",
+                  "source-label"
+                ]
+              },
+              "values": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "values"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "record-id",
+                  "source-anchor",
+                  "division-number",
+                  "source-label"
+                ]
+              },
+              "values": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/rights-subject.schema.json",
+  "title": "OCD exact rights material subject",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "pointer": {
+          "type": "string",
+          "pattern": "^(?:|/.*)$"
+        }
+      }
+    },
+    "scope": {
+      "enum": [
+        "whole-edition",
+        "selected-text",
+        "original-text",
+        "translation",
+        "editorial-material",
+        "digital-contribution",
+        "compilation"
+      ]
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "selected-text"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "material": {
+            "required": [
+              "pointer"
+            ],
+            "properties": {
+              "pointer": {
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

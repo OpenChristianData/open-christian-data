@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/hymns.schema.json",
+  "title": "OCD hymn occurrence public row",
+  "description": "A source-bound occurrence keeps hymn text identity, source order, and explicit hymnal metadata separate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id", "textual_form_id", "edition_id", "record_id", "sequence",
+    "category", "language", "text", "representation_revision", "locator",
+    "provenance", "notes", "references"
+  ],
+  "properties": {
+    "work_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"},
+    "textual_form_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"},
+    "edition_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"},
+    "record_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"},
+    "sequence": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"},
+    "category": {"const": "hymns"},
+    "language": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"},
+    "text": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text", "minLength": 1},
+    "representation_revision": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"},
+    "provenance": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"},
+    "notes": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"},
+    "references": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"},
+    "occurrence_id": {"type": "string", "minLength": 1},
+    "hymn_text_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "first_line": {"type": "string", "minLength": 1},
+    "tune": {"type": "string", "minLength": 1},
+    "contributor": {"type": "string", "minLength": 1},
+    "author_birth": {"type": "string", "minLength": 1},
+    "author_death": {"type": "string", "minLength": 1},
+    "year_written": {"type": "string", "minLength": 1},
+    "hymnal_setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "edition"],
+      "properties": {
+        "title": {"type": ["string", "null"]},
+        "edition": {"type": ["string", "null"]}
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "tune"],
+      "properties": {
+        "text": {"type": ["string", "null"]},
+        "tune": {"type": ["string", "null"]}
+      }
+    },
+    "stanzas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["number", "lines"],
+        "properties": {
+          "number": {"type": "integer", "minimum": 1},
+          "lines": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "stanzas"],
+        "properties": {
+          "label": {"type": ["string", "null"]},
+          "stanzas": {"$ref": "#/properties/stanzas"}
+        }
+      }
+    },
+    "refrain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "lines"],
+      "properties": {
+        "label": {"type": ["string", "null"]},
+        "lines": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "number", "lines"],
+            "properties": {
+              "kind": {"const": "stanza"},
+              "number": {"type": "integer", "minimum": 1},
+              "lines": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "label", "lines"],
+            "properties": {
+              "kind": {"const": "refrain"},
+              "label": {"type": ["string", "null"]},
+              "lines": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "label"],
+            "properties": {
+              "kind": {"const": "refrain-marker"},
+              "label": {"type": "string", "minLength": 1}
+            }
+          }
+        ]
+      }
+    },
+    "locator": {
+      "oneOf": [
+        {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "text_part", "part_titles", "divisions", "occurrence"],
+      "properties": {
+        "kind": {"const": "hymn-occurrence"},
+        "text_part": {"enum": ["front", "body", "back"]},
+        "part_titles": {"type": "array", "items": {"type": "string"}},
+        "divisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["order", "type", "titles"],
+            "properties": {
+              "order": {"type": "integer", "minimum": 1},
+              "type": {"type": ["string", "null"]},
+              "titles": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "occurrence": {"type": "integer", "minimum": 1}
+      }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "row", "source_member"],
+          "properties": {
+            "kind": {"const": "retained-csv-row"},
+            "row": {"type": "integer", "minimum": 1},
+            "source_member": {"const": "oldest_pd_instances.csv"}
+          }
+        }
+      ]
+    },
+    "content_format": {"const": "ocd-native-content-v1"},
+    "structure": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "ocd://schemas/v2/native-content.schema.json"}
+    },
+    "source_record_number": {"type": "integer", "minimum": 1},
+    "source_fields": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "prefixItems": [
+        {"$ref": "#/$defs/source_field_1"},
+        {"$ref": "#/$defs/source_field_2"},
+        {"$ref": "#/$defs/source_field_3"},
+        {"$ref": "#/$defs/source_field_4"},
+        {"$ref": "#/$defs/source_field_5"},
+        {"$ref": "#/$defs/source_field_6"},
+        {"$ref": "#/$defs/source_field_7"},
+        {"$ref": "#/$defs/source_field_8"}
+      ],
+      "items": false
+    }
+  },
+  "$defs": {
+    "source_field_1": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 1}, "label": {"const": "Title"}, "value": {"type": "string"}}},
+    "source_field_2": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 2}, "label": {"const": "Full text"}, "value": {"type": "string"}}},
+    "source_field_3": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 3}, "label": {"const": "Author name"}, "value": {"type": "string"}}},
+    "source_field_4": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 4}, "label": {"const": "Author birth"}, "value": {"type": "string"}}},
+    "source_field_5": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 5}, "label": {"const": "Author death"}, "value": {"type": "string"}}},
+    "source_field_6": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 6}, "label": {"const": "Year written"}, "value": {"type": "string"}}},
+    "source_field_7": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 7}, "label": {"const": "Hymnal title"}, "value": {"type": "string"}}},
+    "source_field_8": {"type": "object", "additionalProperties": false, "required": ["position", "label", "value"], "properties": {"position": {"const": 8}, "label": {"const": "Hymnal publication year"}, "value": {"type": "string"}}}
+  },
+  "oneOf": [
+    {
+      "required": ["occurrence_id", "hymn_text_id", "first_line", "stanzas", "segments"],
+      "properties": {"locator": {"$ref": "#/properties/locator/oneOf/0"}},
+      "not": {"anyOf": [
+        {"required": ["source_fields"]}, {"required": ["source_record_number"]},
+        {"required": ["content_format"]}, {"required": ["structure"]}
+      ]}
+    },
+    {
+      "required": ["content_format", "structure", "source_fields", "source_record_number"],
+      "properties": {
+        "work_id": {"const": "hymnary-pd"},
+        "textual_form_id": {"const": "hymnary-pd-multilingual"},
+        "edition_id": {"const": "hymnary-pd-retained-electronic-witness"},
+        "locator": {"$ref": "#/properties/locator/oneOf/1"}
+      },
+      "not": {"anyOf": [
+        {"required": ["occurrence_id"]}, {"required": ["hymn_text_id"]},
+        {"required": ["first_line"]}, {"required": ["stanzas"]},
+        {"required": ["segments"]}
+      ]}
+    }
+  ],
+  "x-ocd-profile": {
+    "version": "ocd-hymns-tei-profile-v1",
+    "unit_type": "hymn",
+    "tei_namespace": "http://www.tei-c.org/ns/1.0",
+    "allowed_elements": ["TEI", "teiHeader", "fileDesc", "titleStmt", "title", "publicationStmt", "sourceDesc", "source", "ptr", "idno", "p", "text", "front", "body", "back", "div", "head", "note", "lg", "l", "label", "seg", "hi", "foreign", "pb", "lb", "ref"],
+    "structure": ["stanza", "refrain", "collection", "work", "book", "part", "section"],
+    "metadata_note_types": ["tune", "contributor", "author", "author-birth", "author-death", "year-written", "hymnal", "edition", "rights-text", "rights-tune"]
+  }
+}

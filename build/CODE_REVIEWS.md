@@ -62,9 +62,6 @@ Discovery threshold (Tier 1 known positives): THE0T0K08 confirmed TP (digit_in_l
 | build/scripts/download_gutenberg.py | 2026-03-31 | Opus reviewed, no critical issues |
 | build/scripts/download_sword_modules.py | 2026-03-31 | Opus reviewed |
 | build/scripts/export_huggingface.py | 2026-04-12 | Standards pass. Opus pending |
-| build/scripts/extend_registry_non_cf.py | 2026-03-31 | Standards pass. One-shot data script |
-| build/scripts/inspect_sword_zld.py | 2026-03-31 | Exploratory script. Opus reviewed |
-| build/scripts/sample_church_fathers.py | 2026-03-28 | Read-only, low risk |
 | build/scripts/upload_huggingface.py | 2026-04-12 | Standards pass. Opus pending |
 | build/scripts/validate_osis.py | 2026-04-14 | 10 versification cases incl. double-super Ps, Hos 2, Job 40, LXX Esth/Dan. Standards pass. Opus pending |
 | build/tools/audit_data_accuracy.py | 2026-04-07 | Standards pass. Opus pending |

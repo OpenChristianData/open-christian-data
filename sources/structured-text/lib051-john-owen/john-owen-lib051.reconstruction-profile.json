@@ -1,0 +1,301 @@
+{
+  "contract": "ocd-john-owen-lib051-profile-v1",
+  "profile_id": "john-owen-lib051-ten-retained-xml-v1",
+  "works": [
+    {
+      "work_id": "john-owen-glory",
+      "title": "Meditations and Discourses on the Glory of Christ",
+      "member_id": "glory",
+      "authority_name": "glory-source",
+      "identity_authority_name": "john-owen-glory-identity",
+      "path": "raw/ccel/owen/glory.xml",
+      "bytes": 730307,
+      "sha256": "176f4e2d04fecc699129ff91cc886eba69761b05719a6ac740ceeb78243b2a11"
+    },
+    {
+      "work_id": "john-owen-grotius",
+      "title": "A Review of the Annotations of Hugo Grotius",
+      "member_id": "grotius",
+      "authority_name": "grotius-source",
+      "identity_authority_name": "john-owen-grotius-identity",
+      "path": "raw/ccel/owen/grotius.xml",
+      "bytes": 165044,
+      "sha256": "fcbacae9664b164da182195144c3fe3ea7157d83653117e01a272edec6518ce1"
+    },
+    {
+      "work_id": "john-owen-indwelling-sin",
+      "title": "Indwelling Sin in Believers",
+      "member_id": "indwellingsin",
+      "authority_name": "indwelling-sin-source",
+      "identity_authority_name": "john-owen-indwelling-sin-identity",
+      "path": "raw/ccel/owen/indwellingsin.xml",
+      "bytes": 655068,
+      "sha256": "d96a21545e33e34ec0cfb1af8f1fad92faa395082bd596ba44d7a1be7adaa6c5"
+    },
+    {
+      "work_id": "john-owen-justification",
+      "title": "The Doctrine of Justification by Faith",
+      "member_id": "just",
+      "authority_name": "justification-source",
+      "identity_authority_name": "john-owen-justification-identity",
+      "path": "raw/ccel/owen/just.xml",
+      "bytes": 1768558,
+      "sha256": "7b5b2a7ee95189a47aaba0364e242d80c09d83d955485761671a78472c86f942"
+    },
+    {
+      "work_id": "john-owen-liturgies",
+      "title": "Discourse Concerning Liturgies, and their Imposition",
+      "member_id": "liturgies",
+      "authority_name": "liturgies-source",
+      "identity_authority_name": "john-owen-liturgies-identity",
+      "path": "raw/ccel/owen/liturgies.xml",
+      "bytes": 202381,
+      "sha256": "57fc24dab8facffc4bb82a3e39ee2372a97b1c55a0ef1851cfde69b3fbb5897c"
+    },
+    {
+      "work_id": "john-owen-mortification",
+      "title": "Of the Mortification of Sin in Believers",
+      "member_id": "mort",
+      "authority_name": "mortification-source",
+      "identity_authority_name": "john-owen-mortification-identity",
+      "path": "raw/ccel/owen/mort.xml",
+      "bytes": 345268,
+      "sha256": "e3577b8e81583250a41df8b0bd6504dc37209a60944cbd5e20ec2ae82779c211"
+    },
+    {
+      "work_id": "john-owen-pastors-people",
+      "title": "The Duty of Pastors and People Distinguished",
+      "member_id": "pastorspeople",
+      "authority_name": "pastors-people-source",
+      "identity_authority_name": "john-owen-pastors-people-identity",
+      "path": "raw/ccel/owen/pastorspeople.xml",
+      "bytes": 222797,
+      "sha256": "dbe4984fd62de26c249ae366f9982353bb39727ea956fbf7c8c36f163cedac4b"
+    },
+    {
+      "work_id": "john-owen-perseverance",
+      "title": "The Doctrine of the Saints' Perseverance",
+      "member_id": "perseverance",
+      "authority_name": "perseverance-source",
+      "identity_authority_name": "john-owen-perseverance-identity",
+      "path": "raw/ccel/owen/perseverance.xml",
+      "bytes": 3089010,
+      "sha256": "0d3bc041bdd6f1615b705ef8f336ece29c3636a42c69d04aebd5b231f75157a5"
+    },
+    {
+      "work_id": "john-owen-pneumatologia",
+      "title": "Pneumatologia: A Discourse Concerning the Holy Spirit",
+      "member_id": "pneum",
+      "authority_name": "pneumatologia-source",
+      "identity_authority_name": "john-owen-pneumatologia-identity",
+      "path": "raw/ccel/owen/pneum.xml",
+      "bytes": 5089504,
+      "sha256": "ebbdf6e0de85a876456dc9fa7a2fd9da5e2b58f65a486b82fcc8b147e8b08d9a"
+    },
+    {
+      "work_id": "john-owen-psalm130",
+      "title": "A Practical Exposition upon Psalm CXXX",
+      "member_id": "psalm130",
+      "authority_name": "psalm130-source",
+      "identity_authority_name": "john-owen-psalm130-identity",
+      "path": "raw/ccel/owen/psalm130.xml",
+      "bytes": 1272376,
+      "sha256": "d2fc99719f83e550256d2c2e2edda7f09b6c70d3e399936b872551d7a5090444"
+    }
+  ],
+  "adjacent_retained_member_accounting": [
+    {
+      "path": "raw/ccel/owen/apostasy.xml",
+      "bytes": 983910,
+      "sha256": "434379f00e2337464f811b1962e9cd066770e83aac4871a80537fc01c8ea35cf",
+      "disposition": "excluded: assigned to LIB-050 john-owen-apostasy"
+    },
+    {
+      "path": "raw/ccel/owen/catechisms.xml",
+      "bytes": 299471,
+      "sha256": "c870a356a823b3053e1224321b8df1078e4c6473864bda4de297e31b9f16e153",
+      "disposition": "excluded: assigned to LIB-052 john-owen-two-catechisms"
+    },
+    {
+      "path": "raw/ccel/owen/churchlove.xml",
+      "bytes": 438596,
+      "sha256": "cf6c515990bf310ad0acab8d1adb75a1595c6db0871ef7f924222014dc4b6f5d",
+      "disposition": "excluded: assigned to LIB-050 john-owen-church-love"
+    },
+    {
+      "path": "raw/ccel/owen/communion.xml",
+      "bytes": 2512071,
+      "sha256": "108a3b22374c03e1c382c65921e8135693e8197561f0db5ee91e0481fbdf27ec",
+      "disposition": "excluded: assigned to LIB-050 john-owen-communion"
+    },
+    {
+      "path": "raw/ccel/owen/conscience.xml",
+      "bytes": 169775,
+      "sha256": "472e1fd7c0b3abfb9999369cbbe7d091026ef7f6cc314c3576476f787edcb836",
+      "disposition": "excluded: assigned to LIB-050 john-owen-conscience"
+    },
+    {
+      "path": "raw/ccel/owen/deathofdeath.xml",
+      "bytes": 2884467,
+      "sha256": "c76ae424be0caab02f3e829be21d580cb4c0a93fae0c8a7fe7dc4d5cdddaab22",
+      "disposition": "excluded: assigned to LIB-050 john-owen-death-of-death"
+    },
+    {
+      "path": "raw/ccel/owen/discourses.xml",
+      "bytes": 413074,
+      "sha256": "793fcede64e72170a24b01e22c9894cfd1fee68b0411cafdf82a409821b42a30",
+      "disposition": "excluded: assigned to LIB-052 john-owen-sacramental-discourses"
+    },
+    {
+      "path": "raw/ccel/owen/display.xml",
+      "bytes": 747178,
+      "sha256": "4e99940b8fc7da9fc0c7a3ae66b342cde56f102a68c0a0eb9026428938649082",
+      "disposition": "excluded: assigned to LIB-050 john-owen-display-arminianism"
+    },
+    {
+      "path": "raw/ccel/owen/eshcol.xml",
+      "bytes": 210148,
+      "sha256": "edb9abc6649f5e4ec1e34e1ef05b0548fd93f48a7eb7f41795c39007fd022419",
+      "disposition": "excluded: assigned to LIB-050 john-owen-eshcol"
+    },
+    {
+      "path": "raw/ccel/owen/evangelicalchurches.xml",
+      "bytes": 1886264,
+      "sha256": "fa7afc08f59e7298af01650dbe455afd2d145c8109fa55eeb17e0835f369c4c1",
+      "disposition": "excluded: assigned to LIB-050 john-owen-evangelical-churches"
+    },
+    {
+      "path": "raw/ccel/owen/faith.xml",
+      "bytes": 209188,
+      "sha256": "4181f2b8411d153056a893be8c15cd0f85a12d31f8c4fe9194bc98de37d8a6aa",
+      "disposition": "excluded: assigned to LIB-050 john-owen-faith-elect"
+    },
+    {
+      "path": "raw/ccel/owen/glory.xml",
+      "bytes": 730307,
+      "sha256": "176f4e2d04fecc699129ff91cc886eba69761b05719a6ac740ceeb78243b2a11",
+      "disposition": "included: LIB-051 john-owen-glory"
+    },
+    {
+      "path": "raw/ccel/owen/grotius.xml",
+      "bytes": 165044,
+      "sha256": "fcbacae9664b164da182195144c3fe3ea7157d83653117e01a272edec6518ce1",
+      "disposition": "included: LIB-051 john-owen-grotius"
+    },
+    {
+      "path": "raw/ccel/owen/indwellingsin.xml",
+      "bytes": 655068,
+      "sha256": "d96a21545e33e34ec0cfb1af8f1fad92faa395082bd596ba44d7a1be7adaa6c5",
+      "disposition": "included: LIB-051 john-owen-indwelling-sin"
+    },
+    {
+      "path": "raw/ccel/owen/just.xml",
+      "bytes": 1768558,
+      "sha256": "7b5b2a7ee95189a47aaba0364e242d80c09d83d955485761671a78472c86f942",
+      "disposition": "included: LIB-051 john-owen-justification"
+    },
+    {
+      "path": "raw/ccel/owen/justice.xml",
+      "bytes": 674370,
+      "sha256": "6bd7e642532e974b91835c50d64cca73d6ca9dbcb79940790612e0d90d2ea5b7",
+      "disposition": "excluded: assigned to LIB-050 john-owen-divine-justice"
+    },
+    {
+      "path": "raw/ccel/owen/liturgies.xml",
+      "bytes": 202381,
+      "sha256": "57fc24dab8facffc4bb82a3e39ee2372a97b1c55a0ef1851cfde69b3fbb5897c",
+      "disposition": "included: LIB-051 john-owen-liturgies"
+    },
+    {
+      "path": "raw/ccel/owen/mort.xml",
+      "bytes": 345268,
+      "sha256": "e3577b8e81583250a41df8b0bd6504dc37209a60944cbd5e20ec2ae82779c211",
+      "disposition": "included: LIB-051 john-owen-mortification"
+    },
+    {
+      "path": "raw/ccel/owen/pastorspeople.xml",
+      "bytes": 222797,
+      "sha256": "dbe4984fd62de26c249ae366f9982353bb39727ea956fbf7c8c36f163cedac4b",
+      "disposition": "included: LIB-051 john-owen-pastors-people"
+    },
+    {
+      "path": "raw/ccel/owen/perseverance.xml",
+      "bytes": 3089010,
+      "sha256": "0d3bc041bdd6f1615b705ef8f336ece29c3636a42c69d04aebd5b231f75157a5",
+      "disposition": "included: LIB-051 john-owen-perseverance"
+    },
+    {
+      "path": "raw/ccel/owen/pneum.xml",
+      "bytes": 5089504,
+      "sha256": "ebbdf6e0de85a876456dc9fa7a2fd9da5e2b58f65a486b82fcc8b147e8b08d9a",
+      "disposition": "included: LIB-051 john-owen-pneumatologia"
+    },
+    {
+      "path": "raw/ccel/owen/poema.xml",
+      "bytes": 11637,
+      "sha256": "959031f365b8396edacf22e8e1ae15211fa64ed50396edffd8a7f1c6583a2a53",
+      "disposition": "excluded: retained Latin poem to Cromwell with no frozen WorkCatalog or ticket-map identity; surface to LIB-090"
+    },
+    {
+      "path": "raw/ccel/owen/psalm130.xml",
+      "bytes": 1272376,
+      "sha256": "d2fc99719f83e550256d2c2e2edda7f09b6c70d3e399936b872551d7a5090444",
+      "disposition": "included: LIB-051 john-owen-psalm130"
+    },
+    {
+      "path": "raw/ccel/owen/schism.xml",
+      "bytes": 1016310,
+      "sha256": "76800055de75d1b52e7d9a2e04a4586cae46ef336250f84d82507bcf0c516470",
+      "disposition": "excluded: assigned to LIB-052 john-owen-schism"
+    },
+    {
+      "path": "raw/ccel/owen/sermons.xml",
+      "bytes": 4920196,
+      "sha256": "d8d1ee4da4cd5e90bd8cec8d3c7c9472d2ab99dc4ee2f3cd3e0fefa18c73627c",
+      "disposition": "excluded: assigned to LIB-052 john-owen-sermons"
+    },
+    {
+      "path": "raw/ccel/owen/sin_grace.xml",
+      "bytes": 237618,
+      "sha256": "f5d5d1f26e38f78f5cf370eb529d9f0198517a20b168bb1087da0ae7dee62039",
+      "disposition": "excluded: assigned to LIB-052 john-owen-sin-grace"
+    },
+    {
+      "path": "raw/ccel/owen/spirituallyminded.xml",
+      "bytes": 856110,
+      "sha256": "8326a32dd6e41f9a7f491238a090b1f1231be23df2d6278b0402b87d3dbb19d9",
+      "disposition": "excluded: assigned to LIB-052 john-owen-spiritually-minded"
+    },
+    {
+      "path": "raw/ccel/owen/temptation.xml",
+      "bytes": 243041,
+      "sha256": "6b5231f59965fe7b7d75db2f59919fd5e9aff429d48e65cabb528f393c14a0ab",
+      "disposition": "excluded: assigned to LIB-052 john-owen-temptation"
+    },
+    {
+      "path": "raw/ccel/owen/trinity.xml",
+      "bytes": 402388,
+      "sha256": "65cadd7549b2fc10624c878a3a1a797d85bc76393c971b621a75edd576c14302",
+      "disposition": "excluded: assigned to LIB-052 john-owen-trinity"
+    },
+    {
+      "path": "raw/ccel/owen/truthinnocence.xml",
+      "bytes": 613850,
+      "sha256": "efaf07aaf9c7c37c1fd5ac585d973cd3faf295a25583c93cd8a510d7a24878ff",
+      "disposition": "excluded: assigned to LIB-052 john-owen-truth-innocence"
+    },
+    {
+      "path": "raw/ccel/owen/vindicevang.xml",
+      "bytes": 3546737,
+      "sha256": "bd734324cadb0b613f787c8a1539639d6251990e441bd30d361e8febbbcea576",
+      "disposition": "excluded: assigned to LIB-052 john-owen-vindiciae-evangelicae"
+    },
+    {
+      "path": "raw/ccel/owen/worship.xml",
+      "bytes": 841339,
+      "sha256": "88c1fee9f8907222dbef6bcc4fa9bed469b72d8c445bb9a605403af62829e1d3",
+      "disposition": "excluded: assigned to LIB-053 john-owen-worship"
+    }
+  ]
+}
+

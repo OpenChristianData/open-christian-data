@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/release-report.schema.json",
+  "title": "OCD offline release report",
+  "description": "Private accounting for every selected item and every emitted public configuration.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "release_id",
+    "release_version",
+    "status",
+    "items",
+    "accounting",
+    "configurations",
+    "selection_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "release_id": {"$ref": "#/$defs/identifier"},
+    "release_version": {"const": "ocd-offline-release-v2"},
+    "status": {"enum": ["pass", "fail"]},
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/item"}
+    },
+    "accounting": {"$ref": "#/$defs/accounting"},
+    "configurations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/configuration"}
+    },
+    "selection_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!.*\\.$)[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "relative_posix_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*//)(?!.*(?:^|/)[^/]*[. ](?:/|$))(?!.*(?:^|/)\\.(?:/|$))(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "item_status": {
+      "enum": ["included", "warned", "failed", "excluded"]
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "category",
+        "acceptance_path",
+        "status",
+        "reasons",
+        "row_count",
+        "receipt_path"
+      ],
+      "properties": {
+        "item_id": {"$ref": "#/$defs/identifier"},
+        "category": {"$ref": "#/$defs/non_empty"},
+        "acceptance_path": {"$ref": "#/$defs/relative_posix_path"},
+        "status": {"$ref": "#/$defs/item_status"},
+        "reasons": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        },
+        "row_count": {"type": "integer", "minimum": 0},
+        "receipt_path": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/relative_posix_path"}
+          ]
+        }
+      }
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "included", "warned", "failed", "excluded"],
+      "properties": {
+        "requested": {"$ref": "#/$defs/count"},
+        "included": {"$ref": "#/$defs/count"},
+        "warned": {"$ref": "#/$defs/count"},
+        "failed": {"$ref": "#/$defs/count"},
+        "excluded": {"$ref": "#/$defs/count"}
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "path", "row_count", "sha256"],
+      "properties": {
+        "category": {"$ref": "#/$defs/non_empty"},
+        "path": {
+          "type": "string",
+          "pattern": "^public/data/[A-Za-z0-9_-](?:[A-Za-z0-9._-]*[A-Za-z0-9_-])?/train\\.jsonl$"
+        },
+        "row_count": {"$ref": "#/$defs/count"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "features": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "typed_encoding": {"const": "arrow-ipc-bounded-v1"},
+        "typed_companion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {"type": "string", "pattern": "^public/data/[a-z][a-z_]*/train\\.arrow$"},
+            "sha256": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,18 @@
   "author_id": "gregory-the-great",
   "author_birth_year": 540,
   "author_death_year": 604,
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "James Barmby",
+      "role": "translator",
+      "note": "Retained primary evidence: NPNF212/213 Gregory title-page translator credit; constituent scope. Preserve printed scope; no translator year or narrower work allocation is inferred."
+    },
+    {
+      "name": "Philip Schaff",
+      "role": "editor",
+      "note": "Exact retained NPNF2 DC.Creator sub=Editor short-form credit for Philip Schaff; series-wide extent remains unresolved."
+    }
+  ],
   "original_publication_year": 1895,
   "language": "en",
   "original_language": "lat",
@@ -25,7 +36,7 @@
   "source_hash": "sha256:f701b4ce5196bc5890e50adabce4900cd07b803f3221115a7cce526ae0a95570",
   "source_type": "ccel_thml",
   "source_file": "raw/ccel/npnf2/npnf212.xml",
-  "translator": "James Barmby (translator), 1895; Philip Schaff and Henry Wace (series editors)",
+  "translator": "James Barmby",
   "download_date": "2026-05-05",
   "output_file": "data/structured-text/gregory-the-great-pastoral-rule-and-epistles.json",
   "clearance_date": "2026-04-01",

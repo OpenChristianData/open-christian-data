@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-owen-lib052-readable-truth-innocence-v1",
+  "work_id": "john-owen-truth-innocence",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/owen/truthinnocence.xml",
+      "role": "primary-source",
+      "bytes": 613850,
+      "sha256": "efaf07aaf9c7c37c1fd5ac585d973cd3faf295a25583c93cd8a510d7a24878ff"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/lib052-john-owen/readable-truth-innocence-v1/truth-innocence/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1653,
+      "sha256": "bd0d3fc67e4971cf7d9518de3af5caeb9ec43f95ccef93e05ca16c1b5477b94a"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib052-john-owen/readable-truth-innocence-v1/truth-innocence/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2034,
+      "sha256": "10cd1d28bd7a11fe7c02eea0bbe6c00cbe65caefb9738595669a816fe16a690a"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib052-john-owen/readable-truth-innocence-v1/truth-innocence/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 982,
+      "sha256": "0c58c4fc009716ad4d544adb3920deb5ba38b44a2d0818183b0fc68bb63bcac7"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib052-john-owen/readable-truth-innocence-v1/truth-innocence/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1904,
+      "sha256": "94fdea4d8aa40c7ea001328b795353f5bd354e66dad31b05ad6d8e09b36a4f3a"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-owen-lib052-truth-innocence-readable-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/owen_lib052_truth_innocence_readable.py",
+    "implementation_sha256": "c847313228921fbec00853e4959919efa84d985ef7bfbdce79ed39d701602e05"
+  },
+  "validator": {
+    "id": "ocd-owen-lib052-truth-innocence-readable-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/owen_lib052_truth_innocence_readable_oracle.py",
+    "implementation_sha256": "569b8465d8ecd9f63b3524ae17429304d7d85bb21f742d735fe0237523ee156b",
+    "import_closure_sha256": "569b8465d8ecd9f63b3524ae17429304d7d85bb21f742d735fe0237523ee156b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

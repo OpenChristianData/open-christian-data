@@ -1,0 +1,71 @@
+{
+  "authorities": [
+    {
+      "bytes": 135684,
+      "name": "retained-html",
+      "path": "raw/westminster-standard-org/sum-of-saving-knowledge.html",
+      "role": "primary-source",
+      "sha256": "6aa4907f6994d61ce3afeeea9b063cabf667b087185bc1cf7f7fd71fc19fee83"
+    },
+    {
+      "bytes": 1215,
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/sum-of-saving-knowledge/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "911d3af3ecc88b56ed59fadc8b0b7625138a41fc03c0e192ac95642448dc3a6f"
+    },
+    {
+      "bytes": 692,
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/sum-of-saving-knowledge/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "4e14e94b726ce46889ad63d92029cac0ac27d9b89d54c896814ecdccd768618e"
+    },
+    {
+      "bytes": 862,
+      "name": "source-attribution-readme",
+      "path": "sources/doctrinal-documents/sum-of-saving-knowledge/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "7017cae86eda138c829b48ca7e00453c2b00e22015d9d0724e13c8f4a80ee6ec"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-37c-300-sum-saving-knowledge-html-to-tei",
+    "implementation_path": "build/tei/sum_saving_knowledge_reconstruction.py",
+    "implementation_sha256": "323b00f923493593fee581637bfecb429da9aa386c9501980df873eb0ed3a884",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "d3283af93d85d5ee3ff7dc9400981f789611bc00489dd0c0a5fa33764f6c64fb",
+  "retained_source_path": "raw/westminster-standard-org/sum-of-saving-knowledge.html",
+  "source_id": "westminsterstandard-sum-of-saving-knowledge-retained-html",
+  "ticket_id": "LIB-089",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-37c-300-independent-html-tei-oracle",
+    "implementation_path": "build/tei/sum_saving_knowledge_oracle.py",
+    "implementation_sha256": "8e103b487dfedf03752f330f5b8e92971b6764e7dcb1fbabda549c3916dcf996",
+    "import_closure_sha256": "354697cdf471b9de85a580bb3702b7857b343d0cf3a86d6531c90b9b8b539b08",
+    "version": "1"
+  },
+  "work_id": "sum-of-saving-knowledge"
+}

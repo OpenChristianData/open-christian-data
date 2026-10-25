@@ -1,0 +1,60 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "maclaren-expositions-pg-cohort-15-structured-v3",
+  "work_id": "maclaren-expositions",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "maclaren-expositions",
+    "retained_source_sha256": "1401d0bf706b0349447550e684ed67a6d337a5ed4d6d4c72058cc9eadcf165f1",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "sermons/maclaren-expositions.json",
+        "legacy_source_sha256": "sha256:a64bdf1b33b394f709cba39dadab6f940af231e1a155da51f9f13bd89661b85d"
+      }
+    ]
+  },
+  "ticket_id": "LIB-073",
+  "authorities": [
+    {"name":"retained-pg-7069","path":"raw/gutenberg/sermons/maclaren/pg7069.txt","role":"primary-source","bytes":1317887,"sha256":"7dedfcfa940f9a3b7a1827f969f43babb67aae27c2c415a0bf25a4c5fbd94250"},
+    {"name":"retained-pg-8068","path":"raw/gutenberg/sermons/maclaren/pg8068.txt","role":"primary-source","bytes":1514479,"sha256":"5c45a2f4fe70e4aad3a5b4d65e225c3de9e0fc6232d3f2b8e50df5323e99652b"},
+    {"name":"retained-pg-7883","path":"raw/gutenberg/sermons/maclaren/pg7883.txt","role":"primary-source","bytes":1486142,"sha256":"5bce355ac83f64ff4d41ba9b08688073261e512f35860bdb9313a762cdc0b408"},
+    {"name":"retained-pg-7925","path":"raw/gutenberg/sermons/maclaren/pg7925.txt","role":"primary-source","bytes":1377274,"sha256":"18d36d2629476615e2a4a7c7e26c46f431747f306f28947134ed7615c555144a"},
+    {"name":"retained-pg-8069","path":"raw/gutenberg/sermons/maclaren/pg8069.txt","role":"primary-source","bytes":1317379,"sha256":"6c936f4352b794a94574cd3fe2499183249938952d024c2e8ac914f71fe00ae3"},
+    {"name":"retained-pg-15836","path":"raw/gutenberg/sermons/maclaren/pg15836.txt","role":"primary-source","bytes":1432349,"sha256":"24cc44a7ccbcf52839307d8885ce54ba4c469d791043ff3d022543179f181dd9"},
+    {"name":"retained-pg-7351","path":"raw/gutenberg/sermons/maclaren/pg7351.txt","role":"primary-source","bytes":1399488,"sha256":"b891ce06a78cec4f410b58720ef0f862cb9ce9788244fdce5029bde149810572"},
+    {"name":"retained-pg-8071","path":"raw/gutenberg/sermons/maclaren/pg8071.txt","role":"primary-source","bytes":1146795,"sha256":"9597cfe74673a543b546703c3a1211a424096ee895a859c031efebda4590c6b6"},
+    {"name":"retained-pg-8200","path":"raw/gutenberg/sermons/maclaren/pg8200.txt","role":"primary-source","bytes":1442929,"sha256":"0b702e2ac97be160bb25b566c4b9249651fc764d12b3fc8667e20ce5ffbefdd1"},
+    {"name":"retained-pg-8070","path":"raw/gutenberg/sermons/maclaren/pg8070.txt","role":"primary-source","bytes":1340780,"sha256":"1e1ca9317e368fc3136c8cc7b4b8796ccb00852d385085f383a74eff7160a905"},
+    {"name":"retained-pg-8381","path":"raw/gutenberg/sermons/maclaren/pg8381.txt","role":"primary-source","bytes":731722,"sha256":"9666a51d24dfcfff7b23d2ddfb2e2fe143a1b742f8951143a9fbde2c67f26841"},
+    {"name":"retained-pg-8397","path":"raw/gutenberg/sermons/maclaren/pg8397.txt","role":"primary-source","bytes":1427254,"sha256":"4d62ada364818bd1483277c6eedf2ddc8a91b881485ce3e053a3b1c5d52f63d9"},
+    {"name":"retained-pg-13601","path":"raw/gutenberg/sermons/maclaren/pg13601.txt","role":"primary-source","bytes":1429114,"sha256":"f19a36b3bc02f475fb4485c3eb6ae494c2d4b7c9f07957122caa1ccc3d7e9e48"},
+    {"name":"retained-pg-21190","path":"raw/gutenberg/sermons/maclaren/pg21190.txt","role":"primary-source","bytes":1413154,"sha256":"cb75f518f332bce1857a3f30f9386187b0a5e74cb921f9a157dcfc6abb4a81c5"},
+    {"name":"retained-pg-24674","path":"raw/gutenberg/sermons/maclaren/pg24674.txt","role":"primary-source","bytes":1364695,"sha256":"dc4dfbd60b79c04442b2f8c54c283f01a08dd14e7e8ac3623c939888d50ac21b"},
+    {"name":"structure-map-v3","path":"sources/sermons/maclaren-expositions/full-cohort-v3/source-structure-map.json","role":"source-structure-map","bytes":295307,"sha256":"a7e40fe8f1eae31d5ceac9bbc9f14db3ad6f8d76df24bb8e20ff174cda4bd5bc"},
+    {"name":"reconstruction-profile","path":"sources/sermons/maclaren-expositions/maclaren-expositions.reconstruction-profile.json","role":"complete-source-feature-profile","bytes":23520,"sha256":"2d941572c7e9b178dfb41e00e91f759ef45b44f3a5b12e64df3ec757a7a72434"},
+    {"name":"validation-policy","path":"sources/sermons/maclaren-expositions/maclaren-expositions.validation-policy.json","role":"independent-validation-policy","bytes":2270,"sha256":"f59a39ef0907e0ef31d560b56b211dde3c1b9f5ae6cc949e60468bffa809b747"},
+    {"name":"candidate-package-schema","path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","role":"candidate-package-schema","bytes":2173,"sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+    {"name":"tei-p5-xsd","path":"ocd_kernel/tei/vendor/xsd/tei_all.xsd","role":"tei-validation-schema","bytes":1108622,"sha256":"2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name":"attribution-readme-v3","path":"sources/sermons/maclaren-expositions/full-cohort-v3/README.source.md","role":"source-attribution-evidence","bytes":1046,"sha256":"6a5ea5128eb982612d68047df0816a93e6257ed6cdffb2f94f7fd5fe08ecb2ac"}
+  ],
+  "converter": {
+    "id": "ocd-lib073-maclaren-expositions-structured-cohort-v3",
+    "version": "3",
+    "callable": "_convert",
+    "implementation_path": "build/tei/maclaren_expositions_package_v3.py",
+    "implementation_sha256": "87ae058fe103389250d11c15da468cbc76562bab98da49713fd3f9747a8dbdcf"
+  },
+  "validator": {
+    "id": "ocd-lib073-maclaren-expositions-structured-oracle-v3",
+    "version": "3",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/maclaren_expositions_structured_oracle_v3.py",
+    "implementation_sha256": "34f62bb4a75597b4a14067ea57eb18f8a4d029715ed512772a024321485a13d6",
+    "import_closure_sha256": "34f62bb4a75597b4a14067ea57eb18f8a4d029715ed512772a024321485a13d6"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

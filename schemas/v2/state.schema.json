@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/state.schema.json",
+  "title": "OCD current project state",
+  "description": "Mutable target state for one work. Stable identity and acquisition facts are held by their own records.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "work_id", "targets"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "work_id": {"$ref": "#/$defs/identifier"},
+    "targets": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/target"}
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "evidence_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["planned", "acquired", "reconstructing", "review", "accepted", "blocked", "abandoned"]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_id", "target_type", "stage", "updated_at", "evidence"],
+      "properties": {
+        "target_id": {"$ref": "#/$defs/identifier"},
+        "target_type": {"enum": ["acquisition", "edition"]},
+        "stage": {"$ref": "#/$defs/stage"},
+        "updated_at": {"$ref": "#/$defs/utc_date_time"},
+        "reason": {"$ref": "#/$defs/non_empty"},
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/evidence_reference"},
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"target_type": {"const": "acquisition"}}},
+          "then": {"properties": {"stage": {"enum": ["planned", "acquired", "blocked", "abandoned"]}}}
+        },
+        {
+          "if": {"properties": {"target_type": {"const": "edition"}}},
+          "then": {"properties": {"stage": {"enum": ["planned", "acquired", "reconstructing", "review", "accepted", "blocked", "abandoned"]}}}
+        }
+      ]
+    },
+    "utc_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "contract": "ocd-reconstruction-work-identity-v1",
+  "ticket": "37c-173",
+  "owner_route": "LIB-055",
+  "work_id": "flavel-fountain-of-life",
+  "status": "observed-only",
+  "source_record": {
+    "title": "The Fountain of Life Opened Up",
+    "creator": [
+      {"scheme": "ccel", "sub": "Author", "value": ""},
+      {"scheme": "file-as", "sub": "Author", "value": "Flavel, John (c. 1630-1691)"},
+      {"scheme": "short-form", "sub": "Author", "value": "John Flavel"}
+    ],
+    "language": {"scheme": "ISO639-3", "value": "eng"},
+    "identifier": {"scheme": "URL", "value": "/ccel/flavel/fountain.html"},
+    "type": "Text.Sermons",
+    "electronic_created": {"scheme": "ISO8601", "sub": "Created", "value": "2002-07-29"},
+    "print_source_statements": [
+      "First published by W. Baynes and Son, 1820",
+      "Reprinted by The Banner of Truth Trust 1968",
+      "Second reprint 1982"
+    ],
+    "body_divisions": [
+      {"id": "i", "title": "Title Page", "disposition": "represented-in-source-envelope"},
+      {"id": "ii", "title": "Contents", "disposition": "represented-in-source-envelope"},
+      {"id": "iii", "title": "Dedicatory address", "disposition": "represented-in-source-envelope"},
+      {"id": "iv", "title": "To the Christian Readers", "disposition": "represented-in-source-envelope"},
+      {"id": "v", "title": "The Fountain of Life", "disposition": "represented-in-source-envelope; contains 42 ordered sermon divisions"},
+      {"id": "vi", "title": "Indexes", "disposition": "represented-in-source-envelope; contains vi.i and vi.ii"}
+    ]
+  },
+  "unresolved": {
+    "work_boundary": "The retained CCEL member names The Fountain of Life and contains a main division with 42 sermons, front matter, a dedicatory address, reader's address, and indexes. The complete member is routed without claiming that it equals the catalog work boundary.",
+    "textual_form_and_translator": "The retained header records English (eng) but no translator or specific translation/revision. Do not infer one.",
+    "edition_and_publication_history": "The retained title page records first publication in 1820 and reprints in 1968 and 1982. This does not establish the edition or the original composition/publication date; the legacy config's 1671 assertion is not adopted.",
+    "parts": "The member has one main division with 42 ordered sermon divisions plus front matter and indexes. No volume/part map beyond these source-native divisions is asserted.",
+    "witness_claim": "Only the exact retained CCEL ThML member is bound. The print transcription witness, collation, and proofreading history are unknown.",
+    "source_quality": "The electronic description says Flavel lived in the 15th century, an apparent source-supplied error. Preserve the statement as evidence; do not correct the retained source.",
+    "rights_clearance": "The CCEL permission record allows parsing ThML/XML and specifies attribution and a formatting-sale restriction. The empty source DC.Rights field and parse permission do not establish publication rights clearance."
+  }
+}

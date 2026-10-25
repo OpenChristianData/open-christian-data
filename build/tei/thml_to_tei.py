@@ -12,7 +12,10 @@ from typing import Any
 from lxml import etree
 
 from ocd_kernel.lib.bible_ref_normalizer import parse_maclaren_ref, parse_thml_refs
-from build.tei.census import _display_path, _parse_thml
+from build.lib.ccel_thml import (
+    display_path as _display_path,
+    parse_thml as _parse_thml,
+)
 from build.tei.ccel_work_config import (
     CcelWorkConfig,
     ccel_division_rule,
@@ -400,7 +403,7 @@ def convert_thml_to_tei(
         stamp_header(
             title=str(config.get("title") or div1.get("title") or ""),
             author=str(config.get("author") or ""),
-            contributors=[str(item) for item in config.get("contributors", [])],
+            contributors=list(config.get("contributors", [])),
             source_url=str(config.get("source_url") or ""),
             source_sha256=str(config.get("source_hash") or ""),
             print_source=_print_source(root, config),

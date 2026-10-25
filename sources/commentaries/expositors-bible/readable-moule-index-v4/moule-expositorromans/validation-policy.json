@@ -1,0 +1,30 @@
+{
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "retained-source-hash",
+    "complete-root-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "comment-order-and-disposition",
+    "resolved-local-links",
+    "tei-p5",
+    "stock-native-projection-and-independent-verification",
+    "exact-three-index-one-hebrew-source-class-carriers",
+    "full-prior-current-accepted-tei-node-delta"
+  ],
+  "contract": "ocd-expositors-lib034-readable-moule-index-validation-policy-v4",
+  "forbidden_oracle_imports": [
+    "build.tei.expositors_bible_lib034_readable_moule_index_v4"
+  ],
+  "member_id": "moule-expositorromans",
+  "oracle_import_closure": [
+    "build/tei/expositors_bible_lib034_readable_moule_index_v4_oracle.py"
+  ],
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ]
+}

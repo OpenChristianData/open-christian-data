@@ -1,0 +1,120 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "internet-archive-fisher-marrow-1837-retained-ocr",
+  "work_id": "fisher-marrow-of-modern-divinity",
+  "source_members": [
+    {
+      "logical_name": "retained-fisher-ocr",
+      "path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+      "role": "primary-source",
+      "bytes": 1087403,
+      "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+      "reason": "Complete retained OCR witness; every decoded line and source byte range is accounted for without treating the legacy projection as authority."
+    }
+  ],
+  "excluded_members": [
+    {
+      "logical_name": "source-config",
+      "path": "sources/structured-text/fisher-marrow-of-modern-divinity/config.json",
+      "reason": "Current metadata is a diagnostic comparator and carries the stale Edinburgh 1828 claim; retained title-page evidence governs candidate identity."
+    },
+    {
+      "logical_name": "witness-inventory-scaffold",
+      "path": "sources/fisher-marrow-of-modern-divinity/witnesses.json",
+      "reason": "Empty scaffold records no retained alternate witness and is not source text for this work."
+    },
+    {
+      "logical_name": "canonical-json-projection",
+      "path": "data/structured-text/fisher-marrow-of-modern-divinity.json",
+      "reason": "Existing canonical JSON is a comparator and downstream projection, not retained-source authority for faithful TEI reconstruction."
+    },
+    {
+      "logical_name": "legacy-census",
+      "path": "ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json",
+      "reason": "Legacy census is a defect comparator and shares the incumbent route's interpretation; it cannot establish complete retained-member coverage."
+    },
+    {
+      "logical_name": "legacy-tei",
+      "path": "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml",
+      "reason": "Legacy TEI is frozen comparator output with known omissions and misattachments, not reconstruction authority."
+    },
+    {
+      "logical_name": "legacy-hf-projection",
+      "path": "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl",
+      "reason": "Legacy JSONL is a downstream projection and cannot replace the retained OCR witness or establish TEI fidelity."
+    },
+    {
+      "logical_name": "legacy-loss-receipt",
+      "path": "ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl.loss.json",
+      "reason": "Legacy projection loss receipt describes the incumbent output and is retained only as comparator evidence."
+    },
+    {
+      "logical_name": "legacy-viewer-render",
+      "path": "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.viewer-dialogue.png",
+      "reason": "Legacy viewer render is presentation evidence only and is not a retained source member or TEI authority."
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-fisher-ocr",
+      "path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+      "role": "primary-source",
+      "bytes": 1087403,
+      "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 9775,
+      "sha256": "33b63123b6ce5b855f776c20f20af08475f4a358e114ac0535734853f12eac89"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2345,
+      "sha256": "a68b46014515f5d4f7c1aa0e99e6a48167852f3b77f4206a347f7757f82aa206"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-accountability.schema.json",
+      "role": "fisher-complete-line-accountability-schema",
+      "bytes": 3369,
+      "sha256": "3a8865e219c068c6f92d321104539d3661df92d307984affd43daea2bc281a67"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-fisher-marrow-retained-ocr-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/fisher_marrow_reconstruction.py",
+    "implementation_sha256": "98978df902154bb89d1d59994fdb114b3657ecc4455fb2f7b9fd8b056028b201"
+  },
+  "validator": {
+    "id": "ocd-fisher-marrow-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/fisher_marrow_oracle.py",
+    "implementation_sha256": "2746b180f765d808f83e5eed30c592323a58bcb06df363900dcae5a16df3a26b",
+    "import_closure_sha256": "066b9f1a678ffc059b1e8e275f9027ee4bebb73dc7671a61296665a07380fa51"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

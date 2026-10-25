@@ -1,0 +1,63 @@
+{
+  "contract": "ocd-ursinus-source-feature-profile-v1",
+  "source_id": "ia-commdrza00ursi-second-american-1852",
+  "work_id": "ursinus-commentary-heidelberg-catechism-1852",
+  "edition_id": "commdrza00ursi-1852",
+  "acquisition_id": "ia-commdrza00ursi-second-american-1852",
+  "manifest_rows": ["L427", "L468"],
+  "source_identity": {
+    "provider": "Internet Archive",
+    "item_identifier": "commdrza00ursi",
+    "title": "The commentary of Dr. Zacharias Ursinus on the Heidelberg catechism",
+    "edition": "Second American edition, Columbus, Ohio, 1852",
+    "creator": "Zacharias Ursinus",
+    "translator": "G. W. Williard",
+    "url": "https://archive.org/details/commdrza00ursi"
+  },
+  "source_scope": {
+    "primary_carrier": "ocr.xml",
+    "primary_carrier_role": "retained provider OCR XML with page, paragraph, line, and word structure",
+    "retained_source_members": ["scan.pdf", "ocr.txt", "ocr.xml", "page-numbers.json", "scandata.xml"],
+    "additional_retained_envelope_evidence": ["acquisition-receipt.json", "member-inventory.tsv", "metadata.json"],
+    "complete_source_envelope_members": 8,
+    "candidate_text_scope": "One source-titled 1852 commentary, represented by exactly one candidate TEI document. L427 and L468 are duplicate manifest rows, not separate works.",
+    "page_envelope": {
+      "access_pdf_pages": 720,
+      "ocr_pages": 720,
+      "scandata_leaves": 722,
+      "excluded_leaves": [
+        {"leaf": 0, "reason": "Opening color card is marked addToAccessFormats=false and is absent from the PDF and OCR."},
+        {"leaf": 721, "reason": "Closing color card is marked addToAccessFormats=false and is absent from the PDF and OCR."}
+      ],
+      "empty_ocr_pages": 16
+    }
+  },
+  "carriers_and_mapping": {
+    "ocr.xml": "Primary text carrier. Preserve all 720 pages, paragraphs, lines, words, order, page geometry, and explicit empty OCR pages; do not silently correct OCR readings.",
+    "scan.pdf": "Retained visual witness and target of external facsimile references.",
+    "scandata.xml": "Provider page-leaf envelope, page types, and color-card exclusion evidence.",
+    "page-numbers.json": "Retained provider leaf and printed-page-label map.",
+    "ocr.txt": "Independent ordered-word OCR corroboration.",
+    "metadata.json": "Provider title, creator, translator, and date support.",
+    "acquisition-receipt.json": "Acquisition identity, retained-file hashes, provider inventory, and source-scope statement.",
+    "member-inventory.tsv": "Provider-wide member inventory and selected/unselected disposition."
+  },
+  "expected_source_carriers": {
+    "paragraphs": 6005,
+    "lines": 34726,
+    "contents_rows": 436,
+    "diagram_scan_leaves": [205, 552]
+  },
+  "work_boundary": {
+    "classification": "one complete top-level titled work",
+    "title_anchor": "THE COMMENTARY OP DR. ZACHARIAS URSINUS, ON THE HEIDELBERG CATECHISM.",
+    "output_count": 1,
+    "rule": "One complete top-level titled work produces exactly one candidate TEI; nested divisions, page carriers, front matter, and back matter remain within it.",
+    "manifest_row_relationship": "L427 and L468 share IA item commdrza00ursi and identify this same commentary."
+  },
+  "known_open_fidelity_gaps": [
+    "OCR spelling and transcription have not been comprehensively reviewed against scan images.",
+    "The diagrams on scan leaves 205 and 552 are preserved and source-linked, with a mechanically checked branch hierarchy; complete visual and semantic proofreading of every label and branch remains open.",
+    "The retained digital evidence does not itself provide human textual acceptance, rights clearance, or publication authorization."
+  ]
+}

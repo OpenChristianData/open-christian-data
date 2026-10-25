@@ -1,0 +1,36 @@
+{
+  "barnes-nt-notes": {
+    "original": "sources/barnes-nt-notes/barnes-nt-notes.candidate-source-manifest-20260926.json",
+    "sha256": "b86ff5234dff59b0406adfedb2a5ef588538255719b43ec25f5963c6b3e9dcf6",
+    "fixture": "tests/fixtures/reconstruction-runtime/barnes-nt-notes.source-manifest.json",
+    "roles": [
+      "converter",
+      "validator"
+    ]
+  },
+  "expositors-bible-lib033": {
+    "original": "sources/commentaries/expositors-bible/lib033.source-manifest.json",
+    "sha256": "3858b10f415452dd5a2ac64a89d586b92a23e67727b83de3b506cf899868b2d1",
+    "fixture": "tests/fixtures/reconstruction-runtime/expositors-bible-lib033.source-manifest.json",
+    "roles": [
+      "converter",
+      "validator"
+    ]
+  },
+  "expositors-bible-lib035": {
+    "original": "sources/commentaries/expositors-bible/lib035.source-manifest.json",
+    "sha256": "0febdfc83e8301ce343b9246755d2a5ad1bb26b4bf2b1ba2c8a3de5030478003",
+    "fixture": "tests/fixtures/reconstruction-runtime/expositors-bible-lib035.source-manifest.json",
+    "roles": [
+      "validator"
+    ]
+  },
+  "expositors-bible-lib036": {
+    "original": "sources/commentaries/expositors-bible/lib036.source-manifest.json",
+    "sha256": "a5638d012a274145921cf416a4b8df1bc2ea64f3ecc28d0d5f858cff7cfc47d0",
+    "fixture": "tests/fixtures/reconstruction-runtime/expositors-bible-lib036.source-manifest.json",
+    "roles": [
+      "validator"
+    ]
+  }
+}

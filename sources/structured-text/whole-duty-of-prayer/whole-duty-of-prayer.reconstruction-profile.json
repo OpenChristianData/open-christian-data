@@ -1,0 +1,859 @@
+{
+  "contract": "ocd-tcp-a23804-complete-source-profile-v1",
+  "source_id": "tcp-A23804",
+  "source_path": "raw/tcp/high-range/A23804/A23804.xml",
+  "source_bytes": 242909,
+  "source_sha256": "4ce798180f8b9ef8c9b9cd9200b50a9c324ab858c7aad07d1e7d22931ee2a5f1",
+  "element_counts": {
+    "TEI": 1,
+    "author": 2,
+    "availability": 1,
+    "back": 1,
+    "bibl": 2,
+    "biblFull": 1,
+    "body": 1,
+    "change": 5,
+    "closer": 100,
+    "date": 8,
+    "desc": 27,
+    "div": 149,
+    "edition": 1,
+    "editionStmt": 1,
+    "editorialDecl": 1,
+    "encodingDesc": 1,
+    "extent": 2,
+    "fileDesc": 1,
+    "front": 1,
+    "g": 662,
+    "gap": 27,
+    "group": 1,
+    "head": 138,
+    "hi": 315,
+    "idno": 6,
+    "item": 128,
+    "keywords": 1,
+    "label": 5,
+    "langUsage": 1,
+    "language": 1,
+    "list": 4,
+    "listPrefixDef": 1,
+    "note": 8,
+    "notesStmt": 2,
+    "p": 319,
+    "pb": 178,
+    "prefixDef": 2,
+    "profileDesc": 1,
+    "projectDesc": 1,
+    "pubPlace": 2,
+    "publicationStmt": 2,
+    "publisher": 2,
+    "q": 2,
+    "ref": 2,
+    "revisionDesc": 1,
+    "seriesStmt": 1,
+    "signed": 1,
+    "sourceDesc": 1,
+    "teiHeader": 1,
+    "term": 2,
+    "text": 2,
+    "textClass": 1,
+    "title": 3,
+    "titleStmt": 2,
+    "trailer": 2
+  },
+  "source_census": {
+    "elements": 2134,
+    "attributes": 1249,
+    "text_nodes": 1319,
+    "tail_nodes": 2133,
+    "characters": 202336,
+    "comments": 0,
+    "processing_instructions": 0
+  },
+  "source_features": {
+    "root": "TEI",
+    "namespace": "http://www.tei-c.org/ns/1.0",
+    "tei_corpus_count": 0,
+    "title_statement_count": 1,
+    "title_statement_titles": [
+      "The whole duty of prayer containing devotions for every day in the week, and for several occasions, ordinary and extraordinary / by the author of The whole duty of man ..."
+    ],
+    "title_statement_authors": [
+      "Allestree, Richard, 1619-1681."
+    ],
+    "dlps_ids": [
+      "A23804"
+    ],
+    "top_level_text_count": 1,
+    "top_level_text_children": [
+      "group"
+    ],
+    "grouped_work_text_count": 1,
+    "grouped_work_children": [
+      "front",
+      "body",
+      "back"
+    ],
+    "front_div_types": [
+      "title_page",
+      "preface"
+    ],
+    "body_div_types": [
+      "part",
+      "title_page",
+      "part"
+    ],
+    "back_div_types": [
+      "table"
+    ],
+    "source_notes": [
+      "\"No absolute certainty has yet been reached regarding the authorship of The whole duty of man, and other treatises by the same author. The preponderance of opinion, however, is heavily in favour of Dr. Allestree\"--Halkett & Laing (2nd ed.).",
+      "Preface signed: G.B.",
+      "\"Additional devotions for several occasions\" (p. [139]-164) has special t.p.",
+      "This item is incorrectly identified in the reel guide as Wing A1195A.",
+      "Reproduction of original in Bodleian Library."
+    ],
+    "division_count": 149,
+    "division_types": {
+      "ejaculation": 18,
+      "grace": 6,
+      "graces": 2,
+      "meditation": 10,
+      "part": 2,
+      "prayer": 96,
+      "prayers": 2,
+      "preface": 1,
+      "subpart": 9,
+      "table": 1,
+      "title_page": 2
+    },
+    "head_count": 138,
+    "page_breaks": [
+      [
+        null,
+        "tcp:64934:1"
+      ],
+      [
+        null,
+        "tcp:64934:1"
+      ],
+      [
+        null,
+        "tcp:64934:2"
+      ],
+      [
+        null,
+        "tcp:64934:2"
+      ],
+      [
+        null,
+        "tcp:64934:3"
+      ],
+      [
+        null,
+        "tcp:64934:3"
+      ],
+      [
+        null,
+        "tcp:64934:4"
+      ],
+      [
+        "1",
+        "tcp:64934:4"
+      ],
+      [
+        "2",
+        "tcp:64934:5"
+      ],
+      [
+        "3",
+        "tcp:64934:5"
+      ],
+      [
+        "4",
+        "tcp:64934:6"
+      ],
+      [
+        "5",
+        "tcp:64934:6"
+      ],
+      [
+        "6",
+        "tcp:64934:7"
+      ],
+      [
+        "7",
+        "tcp:64934:7"
+      ],
+      [
+        "8",
+        "tcp:64934:8"
+      ],
+      [
+        "9",
+        "tcp:64934:8"
+      ],
+      [
+        "10",
+        "tcp:64934:9"
+      ],
+      [
+        "11",
+        "tcp:64934:9"
+      ],
+      [
+        "12",
+        "tcp:64934:10"
+      ],
+      [
+        "13",
+        "tcp:64934:10"
+      ],
+      [
+        "14",
+        "tcp:64934:11"
+      ],
+      [
+        "15",
+        "tcp:64934:11"
+      ],
+      [
+        "16",
+        "tcp:64934:12"
+      ],
+      [
+        "17",
+        "tcp:64934:12"
+      ],
+      [
+        "18",
+        "tcp:64934:13"
+      ],
+      [
+        "19",
+        "tcp:64934:13"
+      ],
+      [
+        "20",
+        "tcp:64934:14"
+      ],
+      [
+        "21",
+        "tcp:64934:14"
+      ],
+      [
+        "22",
+        "tcp:64934:15"
+      ],
+      [
+        "23",
+        "tcp:64934:15"
+      ],
+      [
+        "24",
+        "tcp:64934:16"
+      ],
+      [
+        "25",
+        "tcp:64934:16"
+      ],
+      [
+        "26",
+        "tcp:64934:17"
+      ],
+      [
+        "27",
+        "tcp:64934:17"
+      ],
+      [
+        "28",
+        "tcp:64934:18"
+      ],
+      [
+        "29",
+        "tcp:64934:18"
+      ],
+      [
+        "30",
+        "tcp:64934:19"
+      ],
+      [
+        "31",
+        "tcp:64934:19"
+      ],
+      [
+        "32",
+        "tcp:64934:20"
+      ],
+      [
+        "33",
+        "tcp:64934:20"
+      ],
+      [
+        "34",
+        "tcp:64934:21"
+      ],
+      [
+        "35",
+        "tcp:64934:21"
+      ],
+      [
+        "36",
+        "tcp:64934:22"
+      ],
+      [
+        "37",
+        "tcp:64934:22"
+      ],
+      [
+        "38",
+        "tcp:64934:23"
+      ],
+      [
+        "39",
+        "tcp:64934:23"
+      ],
+      [
+        "40",
+        "tcp:64934:24"
+      ],
+      [
+        "41",
+        "tcp:64934:24"
+      ],
+      [
+        "42",
+        "tcp:64934:25"
+      ],
+      [
+        "43",
+        "tcp:64934:25"
+      ],
+      [
+        "44",
+        "tcp:64934:26"
+      ],
+      [
+        "45",
+        "tcp:64934:26"
+      ],
+      [
+        "46",
+        "tcp:64934:27"
+      ],
+      [
+        "47",
+        "tcp:64934:27"
+      ],
+      [
+        "48",
+        "tcp:64934:28"
+      ],
+      [
+        "49",
+        "tcp:64934:28"
+      ],
+      [
+        "50",
+        "tcp:64934:29"
+      ],
+      [
+        "51",
+        "tcp:64934:29"
+      ],
+      [
+        "52",
+        "tcp:64934:30"
+      ],
+      [
+        "53",
+        "tcp:64934:30"
+      ],
+      [
+        "54",
+        "tcp:64934:31"
+      ],
+      [
+        "55",
+        "tcp:64934:31"
+      ],
+      [
+        "56",
+        "tcp:64934:32"
+      ],
+      [
+        "57",
+        "tcp:64934:32"
+      ],
+      [
+        "58",
+        "tcp:64934:33"
+      ],
+      [
+        "59",
+        "tcp:64934:33"
+      ],
+      [
+        "60",
+        "tcp:64934:34"
+      ],
+      [
+        "61",
+        "tcp:64934:34"
+      ],
+      [
+        "62",
+        "tcp:64934:35"
+      ],
+      [
+        "63",
+        "tcp:64934:35"
+      ],
+      [
+        "64",
+        "tcp:64934:36"
+      ],
+      [
+        "65",
+        "tcp:64934:36"
+      ],
+      [
+        "66",
+        "tcp:64934:37"
+      ],
+      [
+        "67",
+        "tcp:64934:37"
+      ],
+      [
+        "68",
+        "tcp:64934:38"
+      ],
+      [
+        "69",
+        "tcp:64934:38"
+      ],
+      [
+        "70",
+        "tcp:64934:39"
+      ],
+      [
+        "71",
+        "tcp:64934:39"
+      ],
+      [
+        "72",
+        "tcp:64934:40"
+      ],
+      [
+        "73",
+        "tcp:64934:40"
+      ],
+      [
+        "74",
+        "tcp:64934:41"
+      ],
+      [
+        "75",
+        "tcp:64934:41"
+      ],
+      [
+        "76",
+        "tcp:64934:42"
+      ],
+      [
+        "77",
+        "tcp:64934:42"
+      ],
+      [
+        "78",
+        "tcp:64934:43"
+      ],
+      [
+        "79",
+        "tcp:64934:43"
+      ],
+      [
+        "80",
+        "tcp:64934:44"
+      ],
+      [
+        "81",
+        "tcp:64934:44"
+      ],
+      [
+        "82",
+        "tcp:64934:45"
+      ],
+      [
+        "83",
+        "tcp:64934:45"
+      ],
+      [
+        "84",
+        "tcp:64934:46"
+      ],
+      [
+        "85",
+        "tcp:64934:46"
+      ],
+      [
+        "86",
+        "tcp:64934:47"
+      ],
+      [
+        "87",
+        "tcp:64934:47"
+      ],
+      [
+        "88",
+        "tcp:64934:48"
+      ],
+      [
+        "89",
+        "tcp:64934:48"
+      ],
+      [
+        "90",
+        "tcp:64934:49"
+      ],
+      [
+        "91",
+        "tcp:64934:49"
+      ],
+      [
+        "92",
+        "tcp:64934:50"
+      ],
+      [
+        "93",
+        "tcp:64934:50"
+      ],
+      [
+        "94",
+        "tcp:64934:51"
+      ],
+      [
+        "95",
+        "tcp:64934:51"
+      ],
+      [
+        "96",
+        "tcp:64934:52"
+      ],
+      [
+        "97",
+        "tcp:64934:52"
+      ],
+      [
+        "98",
+        "tcp:64934:53"
+      ],
+      [
+        "99",
+        "tcp:64934:53"
+      ],
+      [
+        "100",
+        "tcp:64934:54"
+      ],
+      [
+        "101",
+        "tcp:64934:54"
+      ],
+      [
+        "102",
+        "tcp:64934:55"
+      ],
+      [
+        "103",
+        "tcp:64934:55"
+      ],
+      [
+        "104",
+        "tcp:64934:56"
+      ],
+      [
+        "105",
+        "tcp:64934:56"
+      ],
+      [
+        "106",
+        "tcp:64934:57"
+      ],
+      [
+        "107",
+        "tcp:64934:57"
+      ],
+      [
+        "108",
+        "tcp:64934:58"
+      ],
+      [
+        "109",
+        "tcp:64934:58"
+      ],
+      [
+        "110",
+        "tcp:64934:59"
+      ],
+      [
+        "111",
+        "tcp:64934:59"
+      ],
+      [
+        "112",
+        "tcp:64934:60"
+      ],
+      [
+        "113",
+        "tcp:64934:60"
+      ],
+      [
+        "114",
+        "tcp:64934:61"
+      ],
+      [
+        "115",
+        "tcp:64934:61"
+      ],
+      [
+        "116",
+        "tcp:64934:62"
+      ],
+      [
+        "117",
+        "tcp:64934:62"
+      ],
+      [
+        "118",
+        "tcp:64934:63"
+      ],
+      [
+        "119",
+        "tcp:64934:63"
+      ],
+      [
+        "120",
+        "tcp:64934:64"
+      ],
+      [
+        "121",
+        "tcp:64934:64"
+      ],
+      [
+        "122",
+        "tcp:64934:65"
+      ],
+      [
+        "123",
+        "tcp:64934:65"
+      ],
+      [
+        "124",
+        "tcp:64934:66"
+      ],
+      [
+        "125",
+        "tcp:64934:66"
+      ],
+      [
+        "126",
+        "tcp:64934:67"
+      ],
+      [
+        "127",
+        "tcp:64934:67"
+      ],
+      [
+        "128",
+        "tcp:64934:68"
+      ],
+      [
+        "129",
+        "tcp:64934:68"
+      ],
+      [
+        "130",
+        "tcp:64934:69"
+      ],
+      [
+        "131",
+        "tcp:64934:69"
+      ],
+      [
+        "132",
+        "tcp:64934:70"
+      ],
+      [
+        "133",
+        "tcp:64934:70"
+      ],
+      [
+        "134",
+        "tcp:64934:71"
+      ],
+      [
+        "135",
+        "tcp:64934:71"
+      ],
+      [
+        "136",
+        "tcp:64934:72"
+      ],
+      [
+        "137",
+        "tcp:64934:72"
+      ],
+      [
+        null,
+        "tcp:64934:73"
+      ],
+      [
+        null,
+        "tcp:64934:73"
+      ],
+      [
+        null,
+        "tcp:64934:74"
+      ],
+      [
+        "141",
+        "tcp:64934:74"
+      ],
+      [
+        "142",
+        "tcp:64934:75"
+      ],
+      [
+        "143",
+        "tcp:64934:75"
+      ],
+      [
+        "144",
+        "tcp:64934:76"
+      ],
+      [
+        "145",
+        "tcp:64934:76"
+      ],
+      [
+        "146",
+        "tcp:64934:77"
+      ],
+      [
+        "147",
+        "tcp:64934:77"
+      ],
+      [
+        "148",
+        "tcp:64934:78"
+      ],
+      [
+        "149",
+        "tcp:64934:78"
+      ],
+      [
+        "150",
+        "tcp:64934:79"
+      ],
+      [
+        "151",
+        "tcp:64934:79"
+      ],
+      [
+        "152",
+        "tcp:64934:80"
+      ],
+      [
+        "153",
+        "tcp:64934:80"
+      ],
+      [
+        "154",
+        "tcp:64934:81"
+      ],
+      [
+        "155",
+        "tcp:64934:81"
+      ],
+      [
+        "156",
+        "tcp:64934:82"
+      ],
+      [
+        "157",
+        "tcp:64934:82"
+      ],
+      [
+        "158",
+        "tcp:64934:83"
+      ],
+      [
+        "159",
+        "tcp:64934:83"
+      ],
+      [
+        "160",
+        "tcp:64934:84"
+      ],
+      [
+        "161",
+        "tcp:64934:84"
+      ],
+      [
+        "162",
+        "tcp:64934:85"
+      ],
+      [
+        "163",
+        "tcp:64934:85"
+      ],
+      [
+        "164",
+        "tcp:64934:86"
+      ],
+      [
+        null,
+        "tcp:64934:86"
+      ],
+      [
+        null,
+        "tcp:64934:87"
+      ],
+      [
+        null,
+        "tcp:64934:87"
+      ],
+      [
+        null,
+        "tcp:64934:88"
+      ],
+      [
+        null,
+        "tcp:64934:88"
+      ],
+      [
+        null,
+        "tcp:64934:89"
+      ],
+      [
+        null,
+        "tcp:64934:89"
+      ]
+    ],
+    "gap_count": 27,
+    "gap_reasons": {
+      "illegible": 27
+    },
+    "glyph_references": {
+      "char:EOLhyphen": 635,
+      "char:punc": 27
+    },
+    "graphic_count": 0,
+    "facs_attribute_count": 178,
+    "note_signature_values": [
+      "G. B."
+    ]
+  }
+}

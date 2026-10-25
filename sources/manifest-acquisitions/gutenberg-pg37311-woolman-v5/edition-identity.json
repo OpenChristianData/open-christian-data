@@ -1,0 +1,39 @@
+{
+  "acquisition_id": "gutenberg-37311",
+  "contract": "ocd-edition-identity-evidence-v1",
+  "edition_id": "everyman-402-1910-electronic",
+  "electronic_source": {
+    "author": "John Woolman",
+    "commentator": "Vida Dutton Scudder",
+    "ebook_id": "37311",
+    "official_catalog_observation": "Project Gutenberg lists the exact title, author, alternate title John Woolman's journal, Series Title Everyman's library [no. 402], and contents matching the retained volume.",
+    "official_catalog_url": "https://www.gutenberg.org/ebooks/37311",
+    "title": "The Journal, with Other Writings of John Woolman",
+    "title_page_evidence": "Retained HTML metadata and title-page matter name this collected volume; the scanned title page names J. M. Dent & Sons Ltd. and E. P. Dutton & Co."
+  },
+  "journal_component": {
+    "evidence": "The retained “Advertisement to the Reader” explicitly states that the following abridgement of the Journal is presented and that two tracts are omitted in this abridgement.",
+    "status": "abridged"
+  },
+  "print_edition": {
+    "limitation": "The retained electronic title-page text/image does not show the year or series number; those two values are carried from the current Manifest and frozen Worklist row. The Project Gutenberg catalog independently confirms the series number.",
+    "series": "Everyman's Library",
+    "series_number": "402",
+    "year": "1910",
+    "year_evidence": [
+      "research/MANIFEST.md#L641",
+      "plans/2026-09-23-acquisition-manifest-source-to-tei/WORKLIST.md#L332"
+    ]
+  },
+  "textual_form_id": "english",
+  "volume_boundary": {
+    "basis": "The retained title page, ordered Contents, Project Gutenberg title/series record, and complete single HTML volume identify one titled collected book. All 12 source units are represented inside its one TEI root.",
+    "evidence": [
+      "raw/gutenberg/37311/html/pg37311-images.html",
+      "https://www.gutenberg.org/ebooks/37311"
+    ],
+    "tei_document_count": 1,
+    "top_level_work_count": 1
+  },
+  "work_id": "john-woolman-journal-other-writings"
+}

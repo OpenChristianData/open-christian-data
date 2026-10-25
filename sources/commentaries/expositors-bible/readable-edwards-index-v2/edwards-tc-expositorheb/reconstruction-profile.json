@@ -1,0 +1,63 @@
+{
+  "contract": "ocd-expositors-lib035-readable-edwards-index-profile-v2",
+  "member_id": "edwards-tc-expositorheb",
+  "work_id": "expositors-bible--thomas-charles-edwards",
+  "source": {
+    "path": "raw/ccel/expositors-bible/edwards_tc_expositorheb.xml",
+    "bytes": 584922,
+    "sha256": "6da565a2393cb74c75f98589650072f05e0f9780855b5472fe6954810f926fb3"
+  },
+  "source_title": "The Expositor's Bible: The Epistle to the Hebrews",
+  "source_author": "Thomas Charles Edwards, D.D.",
+  "root_disposition": {
+    "front": [
+      "i",
+      "ii"
+    ],
+    "body": "all other direct ThML.body div1 roots in original order",
+    "back": [
+      "xxi",
+      "xxii"
+    ]
+  },
+  "source_root_ids_in_order": [
+    "i",
+    "ii",
+    "iv",
+    "v",
+    "vi",
+    "vii",
+    "viii",
+    "ix",
+    "x",
+    "xi",
+    "xii",
+    "xiii",
+    "xiv",
+    "xv",
+    "xvi",
+    "xvii",
+    "xviii",
+    "xix",
+    "xx",
+    "xxi",
+    "xxii"
+  ],
+  "source_numbering_note": "The source skips div1 id iii; no omitted text is inferred from this numbering gap.",
+  "element_count": 3646,
+  "comment_count": 10,
+  "scope": "complete one retained CCEL electronic edition with title, preface, summary, 16 chapters, and two indexes",
+  "comment_disposition": "nontextual CCEL auto-index comments retained exactly in accounting ledger",
+  "broken_local_links": [
+    {
+      "source_id": null,
+      "href": "#iii-Page_vii"
+    },
+    {
+      "source_id": null,
+      "href": "#iii-Page_viii"
+    }
+  ],
+  "human_acceptance": "absent",
+  "source_div_class_mapping": "Two source Index divs become TEI div type source-index. The source Greek wrapper around the first Index becomes structural TEI div type source-greek, preserving its marker, comments, hierarchy, direct text and tail. Twenty Quote divs retain prior TEI quote type source-div; no other source div class is accepted."
+}

@@ -1,0 +1,89 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "augustine-confessions-project-gutenberg-pg3296",
+  "ticket_id": "LIB-077",
+  "work_id": "augustines-confessions",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "augustines-confessions",
+    "retained_source_sha256": "5a036498dc7c546a98b9e7a31952e030ca74db7dd111b30029354efe12bcd691",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "structured-text/augustines-confessions.json",
+        "legacy_source_sha256": "20f5b0791e2307186e3db1f80a90f2083ace32a00c5074011dd47d1cb3bb6e00"
+      }
+    ]
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "authorities": [
+    {
+      "name": "retained-text",
+      "path": "raw/TheologAI/data/historical-sources/project-gutenberg/pg3296/pg3296.txt",
+      "role": "primary-source",
+      "bytes": 632167,
+      "sha256": "5a036498dc7c546a98b9e7a31952e030ca74db7dd111b30029354efe12bcd691"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/augustines-confessions/augustines-confessions.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2485,
+      "sha256": "bb46be8b60a24457309a9cedd6dae80050bfb853de1fa5bde477594de938075a"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/augustines-confessions/augustines-confessions.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1176,
+      "sha256": "e5c35cf9eaa4e2479ee87dada115ee57d72a4086fb4a944961431f91e20fedf1"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/augustines-confessions/README.source.md",
+      "role": "source-attribution",
+      "bytes": 1206,
+      "sha256": "094cabedacbe22bcf230d0640700159c425a0e1028aebb4fcc3a61004c20c526"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/augustines-confessions/augustines-confessions.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1763,
+      "sha256": "e3e6d2c62902c0f7f0eeac8a4456af8310911b8d868dc3b5c0324e013815239b"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-augustines-confessions-pg3296-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/augustines_confessions_reconstruction.py",
+    "implementation_sha256": "0f187045357c31e62d24ce572446647bb84997979a7e18099f9e7706a6813c02"
+  },
+  "validator": {
+    "id": "ocd-augustines-confessions-independent-source-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/augustines_confessions_oracle.py",
+    "implementation_sha256": "4db2ac44a29b1a0e001d76d53d67d381575b8b85620e138d83a30b96c85134d4",
+    "import_closure_sha256": "3270ebd2ee7090db9718478bf875cee0d796d2a5c5f6e043f41e5e0b6fa9a907"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Open Christian Data works</title>
+<style>
+:root{color-scheme:light;--paper:#faf9f4;--ink:#203e33;--quiet:#5d6c62;--rule:#dce3d9;--green:#e5eee3;--gold:#f7edcc;--blue:#e8eef5}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:56px 30px 26px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(37px,5vw,62px);max-width:920px;margin:16px 0 24px}h2{font-size:29px;margin:0 0 26px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--quiet)}.purpose{max-width:700px;color:var(--quiet);font-size:19px}.help{color:var(--quiet);font-size:13px;margin:28px 0}.pill{display:inline-block;border:1px solid var(--rule);border-radius:25px;padding:5px 12px;font-size:12px;margin:0 5px 5px 0}nav{display:flex;flex-wrap:wrap;gap:13px 23px;margin:28px 0 45px}a{color:var(--ink);text-underline-offset:4px;font-size:14px}section{margin:0 0 50px;padding-top:30px;border-top:1px solid var(--rule);scroll-margin-top:20px}.row{display:flex;gap:10px;align-items:stretch;justify-content:center}.arrow{align-self:center;font-size:23px;color:#738978;flex:none}.down{text-align:center;color:#738978;font-size:23px;margin:10px}.step{position:relative;flex:1;min-width:0}.step button{border:1px solid #c5d4c3;border-radius:12px;background:var(--green);color:var(--ink);font:500 15px/1.4 system-ui,sans-serif;padding:21px 15px;width:100%;height:100%;min-height:85px;text-align:center;cursor:help;transition:transform .15s,border-color .15s}.step button:hover{border-color:#728e73;transform:translateY(-2px)}.step button:focus-visible{outline:3px solid #b38422;outline-offset:4px}.step small{display:block;font-size:11px;font-weight:400;margin-top:7px;opacity:.8;font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.step.dark button{background:#244e3c;color:#fff;border-color:#244e3c}.step.gold button{background:var(--gold);border-color:#decf9e}.step.blue button{background:var(--blue);border-color:#ccd8e6}.tip{display:none;position:absolute;z-index:30;left:0;top:calc(100% + 9px);width:300px;max-width:calc(100vw - 64px);padding:15px 17px;background:#203e33;color:#fff;border-radius:10px;box-shadow:0 10px 28px #18332726;font-size:14px;line-height:1.55;font-weight:400;pointer-events:auto}.step:last-child .tip{left:auto;right:0}.step:hover .tip,.step:focus-within .tip,.step.open .tip{display:block}.step.dismissed .tip{display:none}.tip code{display:block;font:11px/1.55 ui-monospace,monospace;margin-top:9px;color:#d5e4d6;overflow-wrap:anywhere}.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.lane{border:1px dashed #c5d4c3;border-radius:14px;padding:20px}.lane-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--quiet);margin-bottom:18px;text-align:center}.center{max-width:440px;margin:auto}.connector{text-align:center;color:var(--quiet);font-size:12px;margin:12px}.return{text-align:center;color:#836222;font-size:13px;margin:16px 0 0}.foot{font-size:12px;color:var(--quiet);margin:24px 0 10px}footer{padding:20px 0;border-top:1px solid var(--rule);font-size:12px;color:var(--quiet)}footer a{font-size:12px}.mini .step button{min-height:70px;padding:15px 12px}.wide{max-width:780px;margin:auto}@media(prefers-reduced-motion:reduce){.step button{transition:none}.step button:hover{transform:none}}@media(max-width:740px){main{padding:28px 18px}.row{flex-direction:column;gap:7px}.row>.arrow{transform:rotate(90deg)}.two,.three{grid-template-columns:1fr}.tip{left:0;right:auto!important;width:100%;max-width:100%}.step button{min-height:70px}.lane{padding:16px}h2{font-size:26px}section{margin-bottom:38px}}
+</style>
+</head>
+<body><main>
+<header>
+<h1>How Open Christian Data works</h1>
+<p class="purpose">Open Christian Data collects Christian texts for reading, research, and AI projects. We convert texts from different source formats into TEI, our common format, and verify their accuracy against the originals. From these copies, we prepare files that let software work with individual verses, sermons, or reference articles, including their source details, credits, and terms of use.</p>
+
+<p class="help">Follow the arrows through each diagram. Hover, tap, or use Tab to read more about a box.</p>
+<nav aria-label="Diagrams"><a href="#journey">Overview</a><a href="#copy">Adding a text</a><a href="#save">Saving it</a><a href="#downloads">Files for other software</a><a href="#publish">Publishing</a><a href="#programs">The programs</a></nav>
+</header>
+
+<section id="journey"><h2>Overview</h2>
+<div class="row">
+<div class="step blue"><button type="button" aria-describedby="tip-find">Choose a text</button><span class="tip" role="tooltip" id="tip-find">Research the text, its editions and translations, and find a digital copy.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step"><button type="button" aria-describedby="tip-copy">Convert to a common format</button><span class="tip" role="tooltip" id="tip-copy">Convert the source into TEI so texts from different formats can go through the same export process. Preserve the wording and structure, including chapters, paragraphs, footnotes, and tables.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step"><button type="button" aria-describedby="tip-check">Verify the TEI copy</button><span class="tip" role="tooltip" id="tip-check">Verify that the TEI copy accurately represents the source by comparing its wording, order, and structure. The verification report identifies differences and says which pages or sections were compared, so we know what still needs attention.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step dark"><button type="button" aria-describedby="tip-use">Save the master copy</button><span class="tip" role="tooltip" id="tip-use">Save the accepted TEI copy in the library as the master text from which we generate files for other software. Its library records link to the source and verification reports, so we can trace the text’s origin and see how its accuracy was assessed.</span></div>
+</div></section>
+
+<section id="copy"><h2>Adding a text</h2>
+<div class="center step blue"><button type="button" aria-describedby="tip-original">Save the source files</button><span class="tip" role="tooltip" id="tip-original">Preserve the exact files used to create the TEI copy, along with their origin and retrieval date. A hash, calculated from each file’s contents, lets us detect later changes to the source.</span></div>
+<div class="down" aria-hidden="true">↓</div>
+<div class="two">
+<div class="lane"><div class="lane-title">Create the TEI copy</div>
+<div class="step"><button type="button" aria-describedby="tip-convert">Convert to a common format</button><span class="tip" role="tooltip" id="tip-convert">Convert the original files into our common TEI format, preserving the text and its structure. The export programs can then read every text in the same way, regardless of its original format.</span></div>
+<div class="down" aria-hidden="true">↓</div>
+<div class="step"><button type="button" aria-describedby="tip-working">Save the draft and its notes</button><span class="tip" role="tooltip" id="tip-working">Save the draft TEI copy with a record of its source, omissions, and unresolved problems. This gives the reviewer the information needed to compare it with the original and tells whoever continues the work what remains to be done.</span></div>
+</div>
+<div class="lane"><div class="lane-title">Verify the TEI copy</div>
+<div class="step"><button type="button" aria-describedby="tip-independent">Verify with a separate program</button><span class="tip" role="tooltip" id="tip-independent">Verify the draft against the source with a separate program. It compares the wording, order, and structure that it can read from the source and reports differences, such as missing or repeated text.</span></div>
+<div class="down" aria-hidden="true">↓</div>
+<div class="step"><button type="button" aria-describedby="tip-compare">Look at source and copy together</button><span class="tip" role="tooltip" id="tip-compare">Use CVW to compare the source and TEI copy visually, looking for problems that code alone can miss, such as a misplaced footnote or incorrect reading order. Save review notes naming the pages or sections inspected and any problems found, so the next reviewer knows what has been examined and where to continue.</span></div>
+</div></div>
+<div class="down" aria-hidden="true">↓</div>
+<div class="center step gold"><button type="button" aria-describedby="tip-ready">Finish the reconstruction</button><span class="tip" role="tooltip" id="tip-ready">Finish the reconstruction by resolving problems found during verification and verifying the corrected copy. Rerun the conversion to confirm that it produces the same result, and document any omissions or remaining limitations for the acceptance decision.</span></div>
+<div class="return">↶ Correct discrepancies and verify the revised copy.</div></section>
+
+<section id="save"><h2>Accepting a copy into the library</h2>
+<div class="row">
+<div class="step gold"><button type="button" aria-describedby="tip-approve">Accept a version for the library</button><span class="tip" role="tooltip" id="tip-approve">Record the decision to use this TEI copy as the library’s master text. The acceptance identifies the exact file, who accepted it, the verification supporting the decision, and any omissions or unresolved problems that someone using it should know about.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step"><button type="button" aria-describedby="tip-install">Install the accepted copy</button><span class="tip" role="tooltip" id="tip-install">Install the accepted TEI copy so the export programs can find and read it. The installer saves the text and its library records and keeps the previous version available if an update needs to be reversed.<code>ocd_kernel/tei/install_accepted.py</code></span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step dark"><button type="button" aria-describedby="tip-master">Use it to prepare text files</button><span class="tip" role="tooltip" id="tip-master">Generate text files for other software from the library’s master TEI copy. When a correction is accepted, replace the master copy and regenerate the affected files from it.</span></div>
+</div></section>
+
+<section id="downloads"><h2>Preparing text for other software</h2>
+<div class="three mini">
+<div class="step blue"><button type="button" aria-describedby="tip-books">Read the saved books</button><span class="tip" role="tooltip" id="tip-books">Read the master TEI copy for each selected edition. Consult its records for any omitted sections or unresolved problems before choosing the text to include.</span></div>
+<div class="step blue"><button type="button" aria-describedby="tip-rights">Resolve sharing terms and credits</button><span class="tip" role="tooltip" id="tip-rights">Determine which selected texts and parts we can share under their terms of use. Include the required credits, notices, and conditions with the exported files.</span></div>
+<div class="step gold"><button type="button" aria-describedby="tip-selection">Choose the books and editions</button><span class="tip" role="tooltip" id="tip-selection">Specify the books, editions, and parts to include in this collection. The exporter and verifier use the same list, with reasons recorded for exclusions.</span></div>
+</div><div class="down" aria-hidden="true">↓</div>
+<div class="row">
+<div class="step"><button type="button" aria-describedby="tip-project">Divide the text into entries</button><span class="tip" role="tooltip" id="tip-project">Make each verse, sermon, article, or other source-defined part available as a separate entry for software to use. Each entry retains its book details and location in the TEI copy.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step"><button type="button" aria-describedby="tip-write">Write JSONL and Arrow files</button><span class="tip" role="tooltip" id="tip-write">Store the entries in JSONL and Arrow for research and AI software. JSONL has one entry per line; Arrow organizes the data in columns. Progress is saved after each edition so an interrupted job can resume.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step"><button type="button" aria-describedby="tip-readers">Verify the exported files</button><span class="tip" role="tooltip" id="tip-readers">Verify that the exported entries preserve the selected text and order, screen for private information, and test that software can read the collection both together and one entry at a time.</span></div><span class="arrow" aria-hidden="true">→</span>
+<div class="step dark"><button type="button" aria-describedby="tip-package">Prepare the upload folder</button><span class="tip" role="tooltip" id="tip-package">Prepare the files people will receive: the text entries, credits, terms, and reading instructions. Store internal verification reports separately from the upload folder.</span></div>
+</div><div class="return">An interrupted job can resume from saved progress. The finished files go through verification before they are ready for review.</div>
+</section>
+
+<section id="publish"><h2>Publishing</h2>
+<div class="two">
+<div class="lane"><div class="lane-title">Text downloads · Hugging Face</div>
+<div class="step"><button type="button" aria-describedby="tip-preview-data">Review the upload</button><span class="tip" role="tooltip" id="tip-preview-data">Review what publishing this collection will change on Hugging Face, the service hosting the downloadable text files. Compare the proposed files with the versions already online.</span></div><div class="down" aria-hidden="true">↓</div>
+<div class="step gold"><button type="button" aria-describedby="tip-data-approval">Approve the upload</button><span class="tip" role="tooltip" id="tip-data-approval">Robbie decides whether to publish the proposed collection after reviewing its text files, credits, and terms of use. Approval applies to that version of the files.</span></div><div class="down" aria-hidden="true">↓</div>
+<div class="step dark"><button type="button" aria-describedby="tip-upload">Upload the files</button><span class="tip" role="tooltip" id="tip-upload">Make the approved collection available on Hugging Face. Verify that the uploaded files match the approved local copies.</span></div>
+</div>
+<div class="lane"><div class="lane-title">Project software · GitHub</div>
+<div class="step"><button type="button" aria-describedby="tip-mirror">Prepare the code to share</button><span class="tip" role="tooltip" id="tip-mirror">Prepare the software and documentation for the public GitHub repository. The public-mirror tool saves the proposed version with a report showing what will be published.<code>build/tools/publish_public_mirror.py</code></span></div><div class="down" aria-hidden="true">↓</div>
+<div class="step gold"><button type="button" aria-describedby="tip-code-approval">Review the code</button><span class="tip" role="tooltip" id="tip-code-approval">Robbie reviews the prepared software, documentation, and report and approves a specific version for publication.</span></div><div class="down" aria-hidden="true">↓</div>
+<div class="step dark"><button type="button" aria-describedby="tip-push">Publish to GitHub</button><span class="tip" role="tooltip" id="tip-push">Make the approved software and documentation available in the public GitHub repository using the public-mirror tool.</span></div>
+</div></div></section>
+
+<section id="programs"><h2>How the programs fit together</h2>
+<div class="two mini"><div class="step blue"><button type="button" aria-describedby="tip-cli">Command-line tools</button><span class="tip" role="tooltip" id="tip-cli">Command-line tools let us start pipeline jobs by typing a command or running a script. For example, export_huggingface.py prepares a selected collection of texts for other software.<code>build/scripts/export_huggingface.py</code></span></div>
+<div class="step blue"><button type="button" aria-describedby="tip-cvw">CVW comparison app</button><span class="tip" role="tooltip" id="tip-cvw">CVW lets us browse texts and visually verify a TEI copy against its source, including details the automatic checks may miss. It opens in a browser, with a server on our computer supplying the files.<code>cvw_app/</code></span></div></div>
+<div class="connector">↓ commands and the app call shared code as needed ↓</div>
+<div class="three mini">
+<div class="step"><button type="button" aria-describedby="tip-library-code">Shared library code</button><span class="tip" role="tooltip" id="tip-library-code">Give the command-line tools and comparison app a shared way to read book identities, editions, sources, and terms of use. Detect changes to the records during a read so results can be retried or reported as incomplete.<code>ocd_kernel/library/</code></span></div>
+<div class="step"><button type="button" aria-describedby="tip-text-code">Conversion, verification, and installation</button><span class="tip" role="tooltip" id="tip-text-code">Convert original files into the common TEI format, verify their accuracy, and install the accepted copies in the library for the export programs to use.</span></div>
+<div class="step"><button type="button" aria-describedby="tip-release-code">Export programs</button><span class="tip" role="tooltip" id="tip-release-code">Turn selected library texts into a collection that other software can read. These programs create entries, apply the sharing terms, write the files, and verify the results against the TEI copies.<code>ocd_kernel/release/</code></span></div>
+</div><div class="connector">↓ work with these files and rules ↓</div>
+<div class="three mini">
+<div class="step dark"><button type="button" aria-describedby="tip-library-files">Library: texts and book details</button><span class="tip" role="tooltip" id="tip-library-files">Store the master TEI copy and records for each edition. The records identify its source and link to verification and acceptance reports, so we can trace how the copy was made, assess known problems, and review future corrections.<code>library/works/</code></span></div>
+<div class="step dark"><button type="button" aria-describedby="tip-storage">Sources, reports, and exports</button><span class="tip" role="tooltip" id="tip-storage">Keep the original sources in raw/, verification reports in reports/, and generated files in exports/. These folders link to the durable library storage so the large files are stored outside the code checkout.</span></div>
+<div class="step dark"><button type="button" aria-describedby="tip-rules">Schemas and software tests</button><span class="tip" role="tooltip" id="tip-rules">Schemas define the required structure and information in a file. Software tests exercise the programs with valid and invalid inputs to verify that they produce the expected results and handle errors.<code>schemas/ · ocd_kernel/schemas/ · tests/</code></span></div>
+</div>
+</section>
+<footer>More detail: <a href="OCD_LIBRARY_PIPELINE_SPEC.md">Detailed pipeline rules</a> · <a href="LIBRARY_CONSUMER_CUTOVER.md">Commands and options</a>.</footer>
+</main>
+<script>
+const steps=[...document.querySelectorAll('.step')];
+function closeTips(){for(const step of steps)step.classList.remove('open');}
+for(const step of steps){
+ const button=step.querySelector('button');
+ button.addEventListener('click',()=>{const open=!step.classList.contains('open');closeTips();step.classList.remove('dismissed');if(open)step.classList.add('open');});
+ step.addEventListener('pointerenter',()=>step.classList.remove('dismissed'));
+ button.addEventListener('focus',()=>step.classList.remove('dismissed'));
+ step.addEventListener('pointerleave',()=>step.classList.remove('dismissed'));
+}
+document.addEventListener('click',event=>{if(!event.target.closest('.step'))closeTips();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeTips();for(const step of steps)step.classList.add('dismissed');}});
+</script>
+</body></html>

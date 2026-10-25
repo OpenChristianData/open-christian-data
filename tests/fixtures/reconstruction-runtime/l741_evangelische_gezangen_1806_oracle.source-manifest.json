@@ -1,0 +1,636 @@
+{
+  "acquisition_id": "evangelische-gezangen-1806-dbnl-acquired",
+  "authorities": [
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 7317,
+      "name": "clean-process-reproduction-runner",
+      "path": "build/tei/l741_evangelische_gezangen_1806_reproduce.py",
+      "role": "clean-process-reproduction-runner",
+      "sha256": "b8a48c40e5bb1cd85155c6e5be60fb06c3399f0a32319a01a2ecd3b62ee1737a"
+    },
+    {
+      "bytes": 89195,
+      "name": "complete-source-feature-profile",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "5b998380715f1db637522bc5f7f5d64cc8044fbd974f7d8af5eca3488d50aefe"
+    },
+    {
+      "bytes": 27117,
+      "name": "converter-implementation",
+      "path": "build/tei/l741_evangelische_gezangen_1806.py",
+      "role": "conversion-implementation",
+      "sha256": "9e0cfa77efbe289ca755399fed22f8eec72ce73170095c5d9b5d23cbd9b4c697"
+    },
+    {
+      "bytes": 12054,
+      "name": "focused-source-feature-tests",
+      "path": "tests/fixtures/reconstruction-runtime/authorities/87d1a84ae641-test_l741_evangelische_gezangen_1806.py.txt",
+      "role": "focused-source-feature-tests",
+      "sha256": "87d1a84ae641737bfb9a4318ceabbe783adb97ab57d63b48cbfb69b9d135e0eb"
+    },
+    {
+      "bytes": 9141,
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "8e481d3a44b63ae35c524871609afada04ba1fe8d5def0a2d83ac9216a0bee6c"
+    },
+    {
+      "bytes": 33862,
+      "name": "independent-validator-implementation",
+      "path": "build/tei/l741_evangelische_gezangen_1806_oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "4852f6861a938372e63bba87a4c58ed40e041677a8595c38683c0721150f4ef3"
+    },
+    {
+      "bytes": 88198,
+      "name": "l741-score-image-001",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0361a.gif",
+      "role": "source-resource",
+      "sha256": "5d22a330c39320a0975287e6badc52ea53029656162bdc74d44dd1d0d73f2a8a"
+    },
+    {
+      "bytes": 39721,
+      "name": "l741-score-image-002",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0361b.gif",
+      "role": "source-resource",
+      "sha256": "18ac3455347895170fa204c4dd7cf7e4173d7c9abb6648646cdf8cf5daf3067f"
+    },
+    {
+      "bytes": 99914,
+      "name": "l741-score-image-003",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0362a.gif",
+      "role": "source-resource",
+      "sha256": "c77561be943d36d7364400421344f9954991e7397094e3c7d89d4e61f2da068f"
+    },
+    {
+      "bytes": 36007,
+      "name": "l741-score-image-004",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0362b.gif",
+      "role": "source-resource",
+      "sha256": "23515494f9fc55a481edc2bf60c4e3c879b4634a3cef4c7c3d14b5d23c08b1a4"
+    },
+    {
+      "bytes": 122104,
+      "name": "l741-score-image-005",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0363a.gif",
+      "role": "source-resource",
+      "sha256": "b3a49885b8850398da982567dfddde91c01dbdfcf0140306bfb86a4d22735c78"
+    },
+    {
+      "bytes": 95707,
+      "name": "l741-score-image-006",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0363b.gif",
+      "role": "source-resource",
+      "sha256": "101d3ce480788335c016aac7f875b3d2bde2c9f2e5d2641e11fdd0f597d90ae6"
+    },
+    {
+      "bytes": 62451,
+      "name": "l741-score-image-007",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0364a.gif",
+      "role": "source-resource",
+      "sha256": "86cee749b64416a85eec9524f4a042cbb20095b558b6795dea764917e0c31a5c"
+    },
+    {
+      "bytes": 20451,
+      "name": "l741-score-image-008",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0364b.gif",
+      "role": "source-resource",
+      "sha256": "012c8dec5d33f200a08fb51f4f22f510b937c49a88520db01484ec5d203556ea"
+    },
+    {
+      "bytes": 34313,
+      "name": "l741-score-image-009",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0364c.gif",
+      "role": "source-resource",
+      "sha256": "384fa11adaf50753405f945de6103cedb79a412105a18fefa91f7158f58feae6"
+    },
+    {
+      "bytes": 24201,
+      "name": "l741-score-image-010",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0365a.gif",
+      "role": "source-resource",
+      "sha256": "9b1340b076dadc851e784d4ba7cb2d70958d2f7ce20aae946e95558c5b7d2f85"
+    },
+    {
+      "bytes": 28536,
+      "name": "l741-score-image-011",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0365b.gif",
+      "role": "source-resource",
+      "sha256": "902b8a8479016ee0b344f9db75a45f1e39d7a34871708f2881452d777e3e0231"
+    },
+    {
+      "bytes": 113177,
+      "name": "l741-score-image-012",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0366a.gif",
+      "role": "source-resource",
+      "sha256": "71120dbe95a87b3af2ae93934e5f927f4f386cf62c719b339113842f78d7e1d8"
+    },
+    {
+      "bytes": 21687,
+      "name": "l741-score-image-013",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0366b.gif",
+      "role": "source-resource",
+      "sha256": "a245b56a564d27ed6809d7ce34860f88cd1652acde46e82f2d6c515a7c4572f1"
+    },
+    {
+      "bytes": 107023,
+      "name": "l741-score-image-014",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0367a.gif",
+      "role": "source-resource",
+      "sha256": "773b16e85725e602be1b4b1308bc89cb5df6dd2f32faff7742904c768404de46"
+    },
+    {
+      "bytes": 143273,
+      "name": "l741-score-image-015",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0367b.gif",
+      "role": "source-resource",
+      "sha256": "40572a041f0df69925d3e3554bb497df63beb028af3df9d437d0bcaad5216824"
+    },
+    {
+      "bytes": 83129,
+      "name": "l741-score-image-016",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0368a.gif",
+      "role": "source-resource",
+      "sha256": "016868723dfd515599bb06e470ea277219c6764201970557ebd0b75f7f450bd0"
+    },
+    {
+      "bytes": 115790,
+      "name": "l741-score-image-017",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0368b.gif",
+      "role": "source-resource",
+      "sha256": "0187253fb179e0510597e1c36d35f358f6a9ce03eaf2652707422c143f69be0d"
+    },
+    {
+      "bytes": 157847,
+      "name": "l741-score-image-018",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0369.gif",
+      "role": "source-resource",
+      "sha256": "ec40aa1586b33383b446dd0d7d5cea6375f42770022a26c16314bde6c97492d8"
+    },
+    {
+      "bytes": 133826,
+      "name": "l741-score-image-019",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0370a.gif",
+      "role": "source-resource",
+      "sha256": "b3bb5c2b1689383e64e0273f2803ca1717087da7c87514605b123e8153a830ea"
+    },
+    {
+      "bytes": 33843,
+      "name": "l741-score-image-020",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0370b.gif",
+      "role": "source-resource",
+      "sha256": "2ff7db3a6d4be292ecbd0612e0538e2437ad6ddc338ec7879aca4005730d3b5c"
+    },
+    {
+      "bytes": 135259,
+      "name": "l741-score-image-021",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0371a.gif",
+      "role": "source-resource",
+      "sha256": "bdf90b89b00d54c49a1d05f66713bc9a30eabf3931253c0743ba692875e0bc74"
+    },
+    {
+      "bytes": 86941,
+      "name": "l741-score-image-022",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0371b.gif",
+      "role": "source-resource",
+      "sha256": "10eca7337d3e51360fe7de991e63fd3d4b5b8ac1ba9158cd43e00c92360f1717"
+    },
+    {
+      "bytes": 150132,
+      "name": "l741-score-image-023",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0372a.gif",
+      "role": "source-resource",
+      "sha256": "f7f45c9ddba4c55029dbb570b9f747a529d5422b3395c086ff92b8d0e81389b2"
+    },
+    {
+      "bytes": 34236,
+      "name": "l741-score-image-024",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0372b.gif",
+      "role": "source-resource",
+      "sha256": "a83da2c01969df674938ebe4878d54d48afb17932efd568d622f52745b7a128a"
+    },
+    {
+      "bytes": 87722,
+      "name": "l741-score-image-025",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0373a.gif",
+      "role": "source-resource",
+      "sha256": "61e30df2ab8a77b35529a785b000583bc425649fe10d82de7efe9156bcb34c48"
+    },
+    {
+      "bytes": 91847,
+      "name": "l741-score-image-026",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0373b.gif",
+      "role": "source-resource",
+      "sha256": "c74342bd993f5124fb47521c5d7e094a4d8d9b45eeb92daab690234c3f7d4176"
+    },
+    {
+      "bytes": 23060,
+      "name": "l741-score-image-027",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0373c.gif",
+      "role": "source-resource",
+      "sha256": "aaacefd74ac6d149cc070fb5fdce4b601c92b1dbec5a0ea79e3ad4256be62835"
+    },
+    {
+      "bytes": 34163,
+      "name": "l741-score-image-028",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0374a.gif",
+      "role": "source-resource",
+      "sha256": "2747cefd853f742c8bc23dfb51adb027603f3830a19ea9d18aaf45cab19a8479"
+    },
+    {
+      "bytes": 21395,
+      "name": "l741-score-image-029",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0374b.gif",
+      "role": "source-resource",
+      "sha256": "07ec870496dd3fa81603e08439b3ef5d007c3f30bee3457706b6b1c38dd2ed08"
+    },
+    {
+      "bytes": 173232,
+      "name": "l741-score-image-030",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0375.gif",
+      "role": "source-resource",
+      "sha256": "2a3baa8f9cd56f6ff103569e907558a0636ab1d3d9f61621d59fd416a8232f3d"
+    },
+    {
+      "bytes": 156546,
+      "name": "l741-score-image-031",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0376a.gif",
+      "role": "source-resource",
+      "sha256": "694617b793dec6db4bcf94356dc8afef151a88fb16d8ba073a076c873c02e63c"
+    },
+    {
+      "bytes": 90952,
+      "name": "l741-score-image-032",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0376b.gif",
+      "role": "source-resource",
+      "sha256": "539337d242147651dd55d188576b1f16e85215796014de0e0fd7b9aec577c3b8"
+    },
+    {
+      "bytes": 92339,
+      "name": "l741-score-image-033",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0377a.gif",
+      "role": "source-resource",
+      "sha256": "a0ee95a7080c7b4d2f219976c227e6fdb5d24fd42209be97257df219baa5f8d2"
+    },
+    {
+      "bytes": 127893,
+      "name": "l741-score-image-034",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0377b.gif",
+      "role": "source-resource",
+      "sha256": "939012276064386d9a2e50a64bf9036d607b6ff95c59dd23f248442058e694e3"
+    },
+    {
+      "bytes": 20335,
+      "name": "l741-score-image-035",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0378a.gif",
+      "role": "source-resource",
+      "sha256": "f0dd5c250ff7d18413ab004c2477381bc21a1ad013253c2f525ae91de0172f91"
+    },
+    {
+      "bytes": 48554,
+      "name": "l741-score-image-036",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0378b.gif",
+      "role": "source-resource",
+      "sha256": "9e3935d23872a11132de5d10290f62852ff108bb548a6002dd2506d920ddaea7"
+    },
+    {
+      "bytes": 79731,
+      "name": "l741-score-image-037",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0379.gif",
+      "role": "source-resource",
+      "sha256": "13ac61742516f36b55a2d16a18be431034f108f15271c4b246cde49a1800e580"
+    },
+    {
+      "bytes": 121463,
+      "name": "l741-score-image-038",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0380a.gif",
+      "role": "source-resource",
+      "sha256": "3a790e33d0afb0bac771bdcc1cc617aca979a321dd04241090e419001a9c9589"
+    },
+    {
+      "bytes": 92088,
+      "name": "l741-score-image-039",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0380b.gif",
+      "role": "source-resource",
+      "sha256": "43ea80beb872a59fd54e3cee60571d53269d81598294afddb9e0ee2101413feb"
+    },
+    {
+      "bytes": 21952,
+      "name": "l741-score-image-040",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0381a.gif",
+      "role": "source-resource",
+      "sha256": "fdf592e82b9a4766ec75003645604345874906040b9b95a328d0ede66986741f"
+    },
+    {
+      "bytes": 77832,
+      "name": "l741-score-image-041",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0381b.gif",
+      "role": "source-resource",
+      "sha256": "5d0ab46df321fbdda332560d336aa717221c238791c0a7f0ba8ceeae55a231df"
+    },
+    {
+      "bytes": 72711,
+      "name": "l741-score-image-042",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0382a.gif",
+      "role": "source-resource",
+      "sha256": "568ef6dfb713a9d263019ddbfd71e84b9bf99bd6c2e0caaf8bafca36ca7e6792"
+    },
+    {
+      "bytes": 31606,
+      "name": "l741-score-image-043",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0382b.gif",
+      "role": "source-resource",
+      "sha256": "8a5cf354010eb9171406f500e4072e0f7b62f554c7c024520a4cc21c39ca7ad1"
+    },
+    {
+      "bytes": 39374,
+      "name": "l741-score-image-044",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0383.gif",
+      "role": "source-resource",
+      "sha256": "8f6052d8dfa392e01e08f4863c44bede322711fed58f26e2a6507bb0f76216bc"
+    },
+    {
+      "bytes": 151501,
+      "name": "l741-score-image-045",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0384.gif",
+      "role": "source-resource",
+      "sha256": "20cc46c0282296d1f7f1b7fe74d232be001aa4ab16df555ce04ddc9a4de84306"
+    },
+    {
+      "bytes": 114740,
+      "name": "l741-score-image-046",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0385a.gif",
+      "role": "source-resource",
+      "sha256": "7d41120190fed7b6f8cc84f020d8ff03dc3f452f964dda361d9474796b7676ff"
+    },
+    {
+      "bytes": 118622,
+      "name": "l741-score-image-047",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0385b.gif",
+      "role": "source-resource",
+      "sha256": "b5bbbd7e04d80fa57c2680eed78d4b3a8dffa23a80f8477a2c5820daaf7f9fd7"
+    },
+    {
+      "bytes": 146807,
+      "name": "l741-score-image-048",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0386a.gif",
+      "role": "source-resource",
+      "sha256": "2d38d00dd2c7926f23d7cfac88ae6b1b102f3b34e5cd9a524b24aa5919049300"
+    },
+    {
+      "bytes": 35369,
+      "name": "l741-score-image-049",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0386b.gif",
+      "role": "source-resource",
+      "sha256": "77ceb18c12820a878bd02748730558e6ded214dc37c227194e6175c2f9219f65"
+    },
+    {
+      "bytes": 45960,
+      "name": "l741-score-image-050",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0387a.gif",
+      "role": "source-resource",
+      "sha256": "4f9ccb965a685718981440dc64e788bce94b20d06970dc0c7942221e49b5a5ac"
+    },
+    {
+      "bytes": 77647,
+      "name": "l741-score-image-051",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0387b.gif",
+      "role": "source-resource",
+      "sha256": "0498b0933cf0216933ec65cb058cce2ac7dd252f313214762b6b6a483963098d"
+    },
+    {
+      "bytes": 64584,
+      "name": "l741-score-image-052",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0388a.gif",
+      "role": "source-resource",
+      "sha256": "938d18a870e9757c561b8d2951f9ac09bf76f12feb53b50503f57484b15640d0"
+    },
+    {
+      "bytes": 123478,
+      "name": "l741-score-image-053",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0388b.gif",
+      "role": "source-resource",
+      "sha256": "46672b99e5097e57ec1d957c90107fb4a9e3fa4b5d5c5b0279527ef3f49f6874"
+    },
+    {
+      "bytes": 23233,
+      "name": "l741-score-image-054",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0389a.gif",
+      "role": "source-resource",
+      "sha256": "1c5bcff6edc9101c6396b8d7f7a717480c2185b07bda3826cc3406a3287d1848"
+    },
+    {
+      "bytes": 94555,
+      "name": "l741-score-image-055",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0389b.gif",
+      "role": "source-resource",
+      "sha256": "1d9a18491af84139c026688758bf73c2ae1f3043fc1841012345c9eb2b6dd46d"
+    },
+    {
+      "bytes": 69077,
+      "name": "l741-score-image-056",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0390.gif",
+      "role": "source-resource",
+      "sha256": "a5ac0e9a9f38a1cdff615770dc5d32233e326378009ef430f0b1ba0712cbe572"
+    },
+    {
+      "bytes": 66548,
+      "name": "l741-score-image-057",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0391a.gif",
+      "role": "source-resource",
+      "sha256": "ba82df17b71264d2ba7109d4f2060b4b9e776e7431a8f81c990d3828ab7b1750"
+    },
+    {
+      "bytes": 27493,
+      "name": "l741-score-image-058",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0391b.gif",
+      "role": "source-resource",
+      "sha256": "0e25dde8cac772a8b038cd44702d8e8118bdcd5c5efd3832cf4fe4a1f55b5541"
+    },
+    {
+      "bytes": 95070,
+      "name": "l741-score-image-059",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0392a.gif",
+      "role": "source-resource",
+      "sha256": "b2e0b5d5ddc8b2754708638b984312ff242793113222b62ae9d6b4a4bcd353de"
+    },
+    {
+      "bytes": 24170,
+      "name": "l741-score-image-060",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0392b.gif",
+      "role": "source-resource",
+      "sha256": "b702950095b7fd1d0ac1e6289d700fe317316481974397ee28b9edf1e1121920"
+    },
+    {
+      "bytes": 38148,
+      "name": "l741-score-image-061",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0394.gif",
+      "role": "source-resource",
+      "sha256": "76045dbfbb77413bb55d302d9ecdd338ddfa1abc0e84d2d676ae17b8c0f66d19"
+    },
+    {
+      "bytes": 85364,
+      "name": "l741-score-image-062",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0395a.gif",
+      "role": "source-resource",
+      "sha256": "fc148c476ed1d36d07adc48aa8a71dffcb40ceaff7bbc51f02636687ddbf9b73"
+    },
+    {
+      "bytes": 92909,
+      "name": "l741-score-image-063",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0395b.gif",
+      "role": "source-resource",
+      "sha256": "522ec0b93352d40a5592a5dab94ebdb55d5e4e10fe376c5ea85e76b8b8ee0cef"
+    },
+    {
+      "bytes": 40161,
+      "name": "l741-score-image-064",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0396.gif",
+      "role": "source-resource",
+      "sha256": "eaff6a04f17da2e5346f8f9a969e6abad73e8095b7bf3f3f3731f041ff8d3403"
+    },
+    {
+      "bytes": 86554,
+      "name": "l741-score-image-065",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0397.gif",
+      "role": "source-resource",
+      "sha256": "fd72ab1e877ef95027ddd30912a9c21d60085a14e15ecb1ae2203b189318695a"
+    },
+    {
+      "bytes": 141177,
+      "name": "l741-score-image-066",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0398a.gif",
+      "role": "source-resource",
+      "sha256": "f8ed2b34d823a006c82034fbe9a84fbf40ebfc87619ca17cf38cdc3188eaeba7"
+    },
+    {
+      "bytes": 122357,
+      "name": "l741-score-image-067",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0398b.gif",
+      "role": "source-resource",
+      "sha256": "96e8e31afa983d92d22e5ea0c37090ea1d59565664576cc9ff3efeb2ba2ce0d5"
+    },
+    {
+      "bytes": 77363,
+      "name": "l741-score-image-068",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-images/_eva005evan01ill0399.gif",
+      "role": "source-resource",
+      "sha256": "0dac99332dff091a09116953e9ff77769ab80bc15e03b3a39c6b4adce2da8c69"
+    },
+    {
+      "bytes": 27875,
+      "name": "l741-score-image-acquisition-receipt",
+      "path": "raw/dbnl/evangelische-gezangen-1806/score-image-acquisition-receipt.json",
+      "role": "source-resource-acquisition-receipt",
+      "sha256": "017a55fd3a65c25e01d6c5b80b6cd229fd5959630206b29d956d52f129ae46f9"
+    },
+    {
+      "bytes": 1593,
+      "name": "registered-work-acquisition",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-acquisition-record.json",
+      "role": "registered-work-acquisition",
+      "sha256": "b694e97b4560799b8e8027e5d53ed7dee9341e01319f20ac5f3a72f90a634e29"
+    },
+    {
+      "bytes": 653,
+      "name": "registered-work-identity",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-work-record.json",
+      "role": "registered-work-identity",
+      "sha256": "a2cf66e3e7c5c7916669fd6c098f21d448a63029de311f55ff580b604d2d8e13"
+    },
+    {
+      "bytes": 1046,
+      "name": "registered-work-state",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/work-catalog-state-record.json",
+      "role": "registered-work-state",
+      "sha256": "4e07ee042dbea86f90f3644e04e88f8a2e887706b94a4874c52a15ae1aca9be6"
+    },
+    {
+      "bytes": 1344,
+      "name": "retained-dbNL-acquisition-receipt",
+      "path": "raw/dbnl/evangelische-gezangen-1806/acquisition-receipt.json",
+      "role": "retained-source-receipt",
+      "sha256": "b5002477c8bb2ba416d80ce5ae83fdc47c6f10e75ed2709b30c445befd2259aa"
+    },
+    {
+      "bytes": 7593,
+      "name": "retained-dbNL-member-inventory",
+      "path": "raw/dbnl/evangelische-gezangen-1806/member-inventory.tsv",
+      "role": "retained-source-bundle-member",
+      "sha256": "36cc64bf6ce54b9f815f8b1e06ac328e9252605b596cb9cc684be32e8aed4313"
+    },
+    {
+      "bytes": 747,
+      "name": "retained-dbNL-source-readme",
+      "path": "raw/dbnl/evangelische-gezangen-1806/README.md",
+      "role": "retained-source-bundle-member",
+      "sha256": "ce7f5bd98af9749ab50f4e34b792d46bc556bc268519e5e713eb5045b75e4ca3"
+    },
+    {
+      "bytes": 574306,
+      "name": "retained-dbnl-tei2-xml",
+      "path": "raw/dbnl/evangelische-gezangen-1806/evangelische-gezangen-1806.xml",
+      "role": "primary-source",
+      "sha256": "d8132943dd20b1053d1d77bda57cab2b69c9dc567e38ea4450baab914925abb9"
+    },
+    {
+      "bytes": 3635,
+      "name": "source-attribution-readme",
+      "path": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "f6bd49fa814341afd8c70b3765bb05a907b65bb0f33534ff275d9dc5e9d4a8b9"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-l741-dbnl-evangelische-gezangen-1806-to-direct-tei",
+    "implementation_path": "build/tei/l741_evangelische_gezangen_1806.py",
+    "implementation_sha256": "9e0cfa77efbe289ca755399fed22f8eec72ce73170095c5d9b5d23cbd9b4c697",
+    "version": "3"
+  },
+  "edition_id": "evangelische-gezangen-1806-dbnl-electronic",
+  "external_library_root": "D:\\Library\\Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "retained_source_path": "raw/dbnl/evangelische-gezangen-1806/evangelische-gezangen-1806.xml",
+  "source_id": "dbnl-eva005evan01-1806",
+  "source_members": [
+    {
+      "bytes": 574306,
+      "name": "evangelische-gezangen-1806.xml",
+      "path": "raw/dbnl/evangelische-gezangen-1806/evangelische-gezangen-1806.xml",
+      "sha256": "d8132943dd20b1053d1d77bda57cab2b69c9dc567e38ea4450baab914925abb9"
+    }
+  ],
+  "textual_form_id": "evangelische-gezangen-1806-dbnl-retained",
+  "ticket_id": "L741",
+  "title": "Evangelische Gezangen, om nevens het Boek der Psalmen bij den openbaren godsdienst in de Nederlandsche Hervormde Gemeenten gebruikt te worden",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-l741-dbnl-evangelische-gezangen-1806-independent-oracle",
+    "implementation_path": "build/tei/l741_evangelische_gezangen_1806_oracle.py",
+    "implementation_sha256": "4852f6861a938372e63bba87a4c58ed40e041677a8595c38683c0721150f4ef3",
+    "import_closure_sha256": "b8ccb4641ca635ee5bf1a5a4211d8a9100a8c278a534068f5e53ef6e94fb780f",
+    "version": "3"
+  },
+  "work_id": "evangelische-gezangen-1806"
+}

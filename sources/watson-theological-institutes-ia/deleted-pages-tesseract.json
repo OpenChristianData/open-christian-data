@@ -1,0 +1,36 @@
+{
+  "contract": "ocd-watson-ia-derived-ocr-v1",
+  "source_archive": "raw/internet-archive/theological-institutes/theologicalinst02wats/page-scans.zip",
+  "engine": "tesseract v5.5.0.20241111",
+  "command": [
+    "tesseract",
+    "stdin",
+    "stdout",
+    "--psm",
+    "3",
+    "-l",
+    "eng"
+  ],
+  "preprocess": "Pillow decode JP2, convert RGB, save PNG without resizing",
+  "status": "uncorrected derived OCR for two scan-only textual pages",
+  "pages": [
+    {
+      "leaf": 306,
+      "printed_page": "298",
+      "source_member": "theologicalinst02wats_jp2/theologicalinst02wats_0306.jp2",
+      "source_jp2_sha256": "c68b3d728a7a02428faa6a68930504d88bd53c1cdcc4be7115bfdb0013c3faed",
+      "png_handoff_sha256": "ce1b8504dec9a55480f7e598b6f92731dac8795757b311f77385c81a53a55aa3",
+      "raw_tesseract_text": "298 PHEOLOGICAL INSTITUTES. [PART\r\n\r\nthis case, the redemption, the purchased deliverance of man, as\r\nproclaimed in the Gospel, applies itself. Hence, in the above\r\ncited and other passages, it is said “‘ we have redemption through\r\nhis blood the forgiveness of sins,” in opposition to guilt ; redemp-\r\ntion from “ the curse of the law ;” deliverance from sin, that ‘* we\r\nshould be set free from sin ;” deliverance from the power of\r\nSatan ; from death, by a resurrection ; and from future * wrath,”\r\nby the gift of eternal life. Throughout the whole of this glorious\r\ndoctrine of our redemption from these tremendous evils there is,\r\nhowever, inthe New Testament, a constant reference to the Av]pov,\r\nthe redemption price, which Avipo is as constantly declared to be\r\nthe death of Christ, which he endured in our stead. Matt. xx, 28,\r\n‘‘The Son of Man came to give his life a ransom (Avipov) for\r\nmany.” I Tim. ii, 6, “Who gave himself a ransom (aviAvipov)\r\nfor all.” Ephesians i, 7, “In whom we have redemption (cmv\r\nanodurpwow) through his blood.” 1 Peteri, 15, 19, “* Ye were not\r\nredeemed (cdv7pwiqle) with corruptible things, as silver and gold—\r\nbut with the precious blood of Christ.” That deliverance of man\r\nfrom sin, misery, and all other penal evils of his transgression\r\nwhich constitutes our redemption by Christ is not, therefore, a\r\ngratuitous deliverance, granted without a consideration, as an act\r\nof mere prerogative ; the ransom, the redemption price, was\r\nexacted and paid; one thing was given for another,—the pre-\r\ncious blood of Christ for captive and condemned men. Of the\r\nsame import are those passages which represent us as having been\r\n“bought,” or *‘ purchased” by Christ. St. Peter speaks of those\r\n‘who denied the Lord that bought them,” (tov ayopacavie. avlovg,)\r\nand St. Paul, in the passage cited above, says “ye are bought\r\n(nyopacdyle) with a price ;” which price is expressly said by St.\r\nJohn, Rev. v, 9, to be the blood of Christ—‘* Thou wast slain,\r\nand hast redeemed us to God (nycpacas, hast purchased us) by\r\nthy blood.”\r\n\r\nThe means by which it has been attempted to evade the force\r\nof these most express statements of the inspired writers remain to\r\nbe pointed out and refuted.\r\n\r\nThe first is to allege that the term redemption is sometimes\r\nused for simple deliverance, where no price or consideration is\r\n\r\nsupposed to be given; as when we read in the Old Testament of\r\n\r\nGod’s redeeming his people from trouble, from death, from danger,\r\nwhere no price is mentioned; and when Moses is called, Acts\r\nvil, 35, Avlpwins, a redeemer, because he delivered his people from\r\nthe bondage of Egypt. But the occasional use of the term in an\r\nimproper and allusive sense cannot be urged against its strict and\r\n\r\n",
+      "raw_text_sha256": "4197a1ee34a430707f8f5cead50469044779f1c07c866df02e2667b189420671"
+    },
+    {
+      "leaf": 307,
+      "printed_page": "299",
+      "source_member": "theologicalinst02wats_jp2/theologicalinst02wats_0307.jp2",
+      "source_jp2_sha256": "a47b2df8ae34a404920ade2202c0972a5428ca4808431bf313c56e7b773233a9",
+      "png_handoff_sha256": "4911fd75674e85ae0ef0f5a38dd5e6a6d5e8c6a5ac520ecc7af1a4055415411f",
+      "raw_tesseract_text": "SECOND. | FHEOLOGICAL INSTITUTES. 299\r\n\r\nproper signification universally ; and granting the occasional use\r\nof it in an improper sense, it will still remain to be proved that, in\r\nthe passages just adduced out of the New Testament, it is used in\r\nthis manner. The propriety of words is not to be receded from,\r\nbut for weighty reasons. The strict meaning of the verb to redeem,\r\nis to deliver from captivity, by paying a ransom ; it is extended\r\nto signify deliverance from evils of various kinds by the interven-\r\ntion of a valuable consideration; it is, in some cases, used for\r\ndeliverance by any means ; the context of the passage, in which\r\nthe word occurs, and the circumstances of the case must, there-\r\nfore, be resorted to in order to determine the sense in which the\r\nword is used. Fair criticism requires that we take words in\r\ntheir proper sense, unless a sufficient reason can be shown, from\r\ntheir connection, to the contrary ; and not that we are first to take\r\nthem in their improper sense until the proper sense is forced upon\r\nus by argument. This, however, is not a case of argument, but\r\nof the obvious sense of the words used; for if deliverances, in\r\nsome passages of the Old Testament, from trouble and danger are\r\nspoken of as a redemption, without reference to a Avipov, or ran-\r\nsom, our redemption by Christ is not so spoken of; but, on the\r\ncontrary, the Aurpov, or redemption price, is repeatedly, expressly,\r\nand emphatically mentioned, and that price is said to be “the\r\nblood of Christ.” When Greek writers speak of avowe and durpa,\r\nwith reference to the release of a prisoner, nothing could be more\r\nabsurd, than to attempt to resolve these terms into a figurative\r\nmeaning ; because their mention of the price, and the act of\r\npaying it, and the circumstances under which it was paid, all\r\nshow that they use the terms in the proper and strict sense. For\r\nthe same reason must they be so understood in the New Testa-\r\nment, since the price itself which constitutes the Avrpov,* and the\r\nperson who paid it, and the circumstances under which the trans-\r\naction took place, are all given with as minute an historical preci-\r\nsion, and a figurative interpretation would involve us in as great an\r\nabsurdity in the one case as the other: We apply this to the case\r\nof Moses being called a redeemer, with reference to his delivering\r\nIsrael from Egypt, and remark, that the improper use of that term\r\n\r\nmay be allowed in the case of Moses, because he is no where said\r\nto have redeemed Israel by his death, nor by his blood, nor to have\r\npurchased the Jews with a price, nor to have given himself as a\r\n\r\nransom ; nor to have interposed any other consideration, on ac-\r\n\r\ncount of which he was allowed to lead his people out of captivity.\r\n\r\nHe is said to be a deliverer, a redeemer, and that is all; but the\r\nidea of a proper redemption could not, in the nature of things,\r\n",
+      "raw_text_sha256": "9926466f9fda6ab42501cedab65c1d7c78a398b50c02c9273c19976bb94343d6"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Electronic source for vita-sancti-erminonis
+
+The retained text source is `raw/openmgh/bsb00000753/tei/bsb00000753.xml` (SHA-256 `550c090dad42988c5a8c95adc3328a3b5ef93dcfeaa8f91354fe6a03995f9b27`). Its ZIP is acquisition packaging, not another text witness. This work selects complete source work division 11, native part 1 (zero-based), C14N SHA-256 `0adb315be418cc15140d3514d141681f69027dd5a78f13f617dd9e2ef1521d0b`. The other Vita part in this carrier is a separate cataloged work. All other divisions remain outside this work. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/vita-sancti-erminonis/README.md` and bind both exact hashes through `public_notices`.

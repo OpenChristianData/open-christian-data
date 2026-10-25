@@ -1,0 +1,101 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "tcp-N00001",
+  "work_id": "bay-psalm-book-1640",
+  "source_selection": {
+    "authority": "retained-tei-p5",
+    "scope": "complete retained N00001 electronic TEI P5 member",
+    "selection": "/TEI"
+  },
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/tcp/high-range/N00001/N00001.xml",
+      "role": "primary-source",
+      "bytes": 938122,
+      "sha256": "3016f74bcce71ffa67f7b87e55db64ffcd54a28ad29899251582d2e784a6df7e"
+    },
+    {
+      "name": "acquisition-receipt",
+      "path": "raw/tcp/high-range/N00001/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "bytes": 2347,
+      "sha256": "188ccb077e3119da8573c98e950cd32e34d31633cc56c9dc906a28a3dec3dbf4"
+    },
+    {
+      "name": "member-inventory",
+      "path": "raw/tcp/high-range/N00001/member-inventory.tsv",
+      "role": "source-member-inventory-evidence",
+      "bytes": 101,
+      "sha256": "6383b60969a50f16f36000f14be619c7732d2bba4de9a8f4746dd27a0a4bfaf0"
+    },
+    {
+      "name": "source-credit",
+      "path": "library/works/bay-psalm-book-1640/SOURCE_NOTICE.md",
+      "role": "source-local-attribution-readme",
+      "bytes": 1473,
+      "sha256": "b555a9f57145326096f1998c7c31c9417da7368aff4947bc85f7d1b3a5a4a784"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/bay-psalm-book-1640/bay-psalm-book-1640.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2270,
+      "sha256": "70cad5492d563388edecb063655fa4faa7d9a4e9e51d992aed84ee7508abd8ff"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/bay-psalm-book-1640/bay-psalm-book-1640.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2677,
+      "sha256": "467028831c08491d00bedad280222d07e6f2f9c0acb268b1039dc9cf4b334cb9"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "work-identity",
+      "path": "library/works/bay-psalm-book-1640/work.json",
+      "role": "work-identity-config",
+      "bytes": 530,
+      "sha256": "eeb325dce77719b2bededf85ef44d2f4182a4d54e2db8e4327759a911c336fef"
+    },
+    {
+      "name": "acquisition-selection",
+      "path": "library/works/bay-psalm-book-1640/forms/bay-psalm-book-1640-tcp-retained/editions/bay-psalm-book-1640-tcp-electronic/acquisitions/bay-psalm-book-1640-tcp-acquired.json",
+      "role": "acquisition-selection-authority",
+      "bytes": 2029,
+      "sha256": "073a82aa1ab124fcc7185b5f19f044095b66dc1d5b5095829b3a9a4895f16043"
+    }
+  ],
+  "converter": {
+    "id": "ocd-tcp-n00001-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bay_psalm_book_1640_reconstruction.py",
+    "implementation_sha256": "418324133224f431adf6d455d7a4f9ec6aa04e8edd43baee36ef268c4b2ab4d3"
+  },
+  "validator": {
+    "id": "ocd-tcp-n00001-independent-complete-source",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bay_psalm_book_1640_oracle.py",
+    "implementation_sha256": "925bbe36772c221f32bccc495c75ec684ac1cda634f12e1aa3b6581f96c33286",
+    "import_closure_sha256": "bcff823d8288f0dd84541791ead33034cf0bbc44a4551331d1abeb8b3612aaa4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

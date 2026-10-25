@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/commentary.schema.json",
+  "title": "OCD commentary public row",
+  "description": "A commentary row preserves one source-defined commentary unit and its attached target scope.",
+  "x-ocd-profile": {
+    "version": "ocd-commentary-bounded-v1",
+    "unit_type": "source-defined-commentary-unit",
+    "scope_rule": "A unit must carry one explicit source target; a passage range remains one row.",
+    "unsupported_behavior": "Visible unsupported structure raises an unsupported-visible diagnostic; it is never converted into invented verse rows."
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "category",
+        "language",
+        "text",
+        "representation_revision",
+        "locator",
+        "provenance",
+        "notes",
+        "references"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "category": {
+          "const": "commentary"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text",
+          "minLength": 1
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "notes": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"
+        },
+        "references": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "part_titles",
+            "divisions",
+            "scope",
+            "unit",
+            "source_order"
+          ],
+          "properties": {
+            "kind": {
+              "const": "commentary-unit"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "part_titles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "divisions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "order",
+                  "type",
+                  "titles"
+                ],
+                "properties": {
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "type": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1
+                  },
+                  "titles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "raw",
+                "normalized",
+                "type"
+              ],
+              "properties": {
+                "raw": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "normalized": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "enum": [
+                    "verse",
+                    "range",
+                    "chapter",
+                    "book",
+                    "other"
+                  ]
+                },
+                "source_label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "book_label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "normalization_status": {
+                  "enum": [
+                    "explicit-target-syntax",
+                    "unsupported-explicit-target"
+                  ]
+                },
+                "reference": {
+                  "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+                },
+                "book_label_language": {
+                  "type": "string"
+                },
+                "english_book_name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "book_name_status": {
+                  "enum": [
+                    "english-language-not-declared",
+                    "unrecognized-english-label",
+                    "target-unresolved",
+                    "explicit-english-label"
+                  ]
+                }
+              }
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "source_order": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "unit_role": {
+              "const": "introduction"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "text",
+        "representation_revision",
+        "provenance",
+        "category",
+        "content_format",
+        "structure",
+        "locator"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "commentary"
+        },
+        "content_format": {
+          "const": "ocd-native-content-v1"
+        },
+        "structure": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "ocd://schemas/v2/native-content.schema.json"
+          }
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "unit"
+          ],
+          "properties": {
+            "kind": {
+              "const": "native-unit"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "document": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Ordered TEI member position within a composed edition."
+            }
+          }
+        },
+        "source_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "raw",
+              "normalization_status",
+              "source_child_path"
+            ],
+            "properties": {
+              "raw": {
+                "type": "string"
+              },
+              "cRef": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "scripture": {
+                "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+              },
+              "normalization_attribute": {
+                "enum": [
+                  "cRef",
+                  "target"
+                ]
+              },
+              "normalization_status": {
+                "enum": [
+                  "explicit-target-syntax",
+                  "unsupported-explicit-target",
+                  "no-explicit-target"
+                ]
+              },
+              "source_child_path": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

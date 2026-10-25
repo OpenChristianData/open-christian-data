@@ -10,7 +10,16 @@ TARGET_FIELDS = ("text", "argument", "title_path", "speeches")
 PROFILE_ID = "hf-clean-text-v2"
 PROFILE_VERSION = "2.0.0"
 DROP_DIV_TYPES = frozenset(
-    {"title", "titlepage", "imprint", "halftitlepage", "colophon", "copyright-page"}
+    {
+        "title",
+        "titlepage",
+        "title-page",
+        "imprint",
+        "halftitlepage",
+        "half-title-page",
+        "colophon",
+        "copyright-page",
+    }
 )
 DROP_ELEMENTS = frozenset({"note", "pb"})
 STRUCTURAL_ELEMENTS = frozenset(

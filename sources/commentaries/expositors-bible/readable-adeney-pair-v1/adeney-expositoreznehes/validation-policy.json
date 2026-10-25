@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-expositors-lib036-readable-adeney-pair-validation-policy-v1",
+  "member_id": "adeney-expositoreznehes",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "retained-source-hash",
+    "complete-root-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "comment-order-and-disposition",
+    "resolved-local-links",
+    "tei-p5",
+    "stock-native-projection-and-independent-verification"
+  ],
+  "oracle_import_closure": [
+    "build/tei/expositors_bible_lib036_readable_adeney_pair_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.expositors_bible_lib036_readable_adeney_pair"
+  ]
+}

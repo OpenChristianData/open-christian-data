@@ -1,0 +1,104 @@
+{
+  "acquisition_id": "evangelical-lutheran-hymn-book-abridged-gutenberg-acquired",
+  "authorities": [
+    {
+      "bytes": 461780,
+      "name": "retained-source",
+      "path": "raw/gutenberg/76498/pg76498-h.zip",
+      "role": "primary-source",
+      "sha256": "37de1a88d36166c86377e7451ccaabd6e870259b3089c2eb01f2abbe3b67a2c5"
+    },
+    {
+      "bytes": 1348,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/76498/acquisition-receipt.json",
+      "role": "source-retrieval-evidence",
+      "sha256": "b3af4cd034115d035dc9ca5fb060d81c2801ec9ff5e2f40e7ef1df05e3a6590b"
+    },
+    {
+      "bytes": 303,
+      "name": "member-inventory",
+      "path": "raw/gutenberg/76498/member-inventory.tsv",
+      "role": "source-member-inventory-evidence",
+      "sha256": "de541888421116367c890673c90f099e2c363e7750f44d3ee69f1c6b215d1431"
+    },
+    {
+      "bytes": 868,
+      "name": "canonical-source-identity",
+      "path": "sources/lutheran-hymnbook-pg76498/canonical-source-identity.json",
+      "role": "canonical-identity-selection",
+      "sha256": "e26d3b890bce1be65e6c1a9ad31d0ddcbdb95d3279ff5d91e8e73bd27d333f62"
+    },
+    {
+      "bytes": 2276,
+      "name": "acquisition",
+      "path": "library/works/evangelical-lutheran-hymn-book-abridged/forms/evangelical-lutheran-hymn-book-abridged-gutenberg-retained/editions/evangelical-lutheran-hymn-book-abridged-gutenberg-electronic/acquisitions/evangelical-lutheran-hymn-book-abridged-gutenberg-acquired.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "dc7a44c5cc95cc41ce7dfc417f3c12a8fccfb11dce25b6d2bf11f241f3e0f2d2"
+    },
+    {
+      "bytes": 1248,
+      "name": "source-local-attribution-readme",
+      "path": "sources/lutheran-hymnbook-pg76498/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "a7627bc87c02c488782720bec4544fca0cea3df7222890dac35b7cbdc9aa27f0"
+    },
+    {
+      "bytes": 7637642,
+      "name": "reconstruction-profile",
+      "path": "sources/lutheran-hymnbook-pg76498/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "eb03aec05bdff48c974d47a0d95fd56e2ad80114aee4cf59cfb73111583396ac"
+    },
+    {
+      "bytes": 3354,
+      "name": "validation-policy",
+      "path": "sources/lutheran-hymnbook-pg76498/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "1456e0244c8244a19d9e099a5c55830f472eb3034d0a7caf7b44094cd70cb933"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-pg76498-lutheran-hymnbook-source-bound-html-to-tei",
+    "implementation_path": "build/tei/lutheran_hymnbook_pg76498.py",
+    "implementation_sha256": "0549004d8acba95a935ae74791f865149930cbd6edbea2e5451ed670d0b08c8e",
+    "version": "1"
+  },
+  "edition_id": "evangelical-lutheran-hymn-book-abridged-gutenberg-electronic",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "pg76498-lcms-abridged-1927",
+  "source_selection": {
+    "archive_member": "pg76498-images.html",
+    "authority": "retained-source",
+    "selection": "Complete strict UTF-8 HTML witness and both retained image members; no separate music, related hymnals or Cambridge series coverage claimed."
+  },
+  "textual_form_id": "evangelical-lutheran-hymn-book-abridged-gutenberg-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-pg76498-lutheran-hymnbook-independent-html-token-oracle",
+    "implementation_path": "build/tei/lutheran_hymnbook_pg76498_oracle.py",
+    "implementation_sha256": "5bb411cb326fe8816e4599cc0c1f3cb742e530c458f118a8932f66fb2abfb413",
+    "import_closure_sha256": "49d17530d9df238a49cb9f178145af60d2cfc5828c7e63d2803ce37e19a05752",
+    "version": "1"
+  },
+  "work_id": "evangelical-lutheran-hymn-book-abridged"
+}

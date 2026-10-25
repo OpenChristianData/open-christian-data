@@ -1,0 +1,81 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-074",
+  "work_id": "bcp-1559",
+  "source_id": "bcp-1559-retained-justus-html",
+  "scope": {
+    "kind": "complete-retained-html-expression",
+    "edition": "The Book of Common Prayer (1559)",
+    "source_kind": "justus",
+    "source_root": "raw/bcp-full-text/bcp-1559",
+    "member_count": 16,
+    "excluded_members": []
+  },
+  "source_bundle": {
+    "members": 16,
+    "bytes": 686578,
+    "sha256": "7fc54077ea6e21afd791fe9ed72cfe02bf2b521ec791f042d042180b5c4a6e08"
+  },
+  "source_members": [
+    {"name": "Baptism_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Baptism_1559.htm", "bytes": 43214, "sha256": "6837adc65ff63ea8c61931eed92e401952b2d8b7448c40bebf9e751e2e3e74c0"},
+    {"name": "BCP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/BCP_1559.htm", "bytes": 29928, "sha256": "0966ea8463dc62a7baf03fc17e251d2132852f2a0f925db473b874c40152d36a"},
+    {"name": "Burial_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Burial_1559.htm", "bytes": 18453, "sha256": "7f3e322bb6ece07d00d108559d4458512b337d6f6907010a35c7fa75b7374450"},
+    {"name": "Churching_of_Women_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Churching_of_Women_1559.htm", "bytes": 29075, "sha256": "683bbc2864e21ace37d902f45fc0cba7ca314b1c0ee55aba66dbd356a550be60"},
+    {"name": "Commination_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Commination_1559.htm", "bytes": 17533, "sha256": "d07de21496381ff198bb594f7cf3f69c612259508824cda9067675de9ef9a6c9"},
+    {"name": "Communion_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Communion_1559.htm", "bytes": 71379, "sha256": "a18655cbd8fc6fcc19395001a26b1121bbac580bec423b2a1b904940028fedf4"},
+    {"name": "Confirmation_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Confirmation_1559.htm", "bytes": 32360, "sha256": "217cf95ce17248da84e4399ab11c1644a28a353a937f58aa89fc4b6da95daeac"},
+    {"name": "EP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/EP_1559.htm", "bytes": 22529, "sha256": "4c7b81bc85b1813e9b1ea67832b9fb596a5e1649806cdcfa0880c631729d31f4"},
+    {"name": "front_matter_1559.htm", "path": "raw/bcp-full-text/bcp-1559/front_matter_1559.htm", "bytes": 46176, "sha256": "3ff66488b1dde62bd8f7daf95ed38025d8c27590fae0bc2b1afc59dcef020d5c"},
+    {"name": "Godly_Prayers.htm", "path": "raw/bcp-full-text/bcp-1559/Godly_Prayers.htm", "bytes": 65214, "sha256": "6418f1160fd7f6be6a1204efa6228470fd78ff63a1f2e2a45e7d0a8405e485be"},
+    {"name": "JamesI_Procl_Uniformity.htm", "path": "raw/bcp-full-text/bcp-1559/JamesI_Procl_Uniformity.htm", "bytes": 13690, "sha256": "e0743ae2b16d95f0ff3a8d842be5fb6791b382d3d33601830187724a54c3564f"},
+    {"name": "Kalendar_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Kalendar_1559.htm", "bytes": 145728, "sha256": "16672a8393c520940806450986b22b992041a5117de599dd5cbf8afa4a53d5a3"},
+    {"name": "Litany_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Litany_1559.htm", "bytes": 45804, "sha256": "77192a50f8c20db2caec26f7f909536b6bc64d6bd9ec9771c39ffa8d5fefd328"},
+    {"name": "Marriage_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Marriage_1559.htm", "bytes": 32491, "sha256": "545a11dc4a4eee73b290a96d48b8e3be535c2a893ee59bfcc1b587e624c864b3"},
+    {"name": "MP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/MP_1559.htm", "bytes": 41469, "sha256": "b37e88f32bca0aa8204d44a2b0b99a6fa8c9e56a6707f88cc2ceb757d250bae0"},
+    {"name": "Visitation_Sick_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Visitation_Sick_1559.htm", "bytes": 31535, "sha256": "bf30ac2440110100e98aa151ac1785c92699b1f1df54fe0049a1763eba904318"}
+  ],
+  "authorities": [
+    {"name": "Baptism_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Baptism_1559.htm", "role": "primary-source", "bytes": 43214, "sha256": "6837adc65ff63ea8c61931eed92e401952b2d8b7448c40bebf9e751e2e3e74c0"},
+    {"name": "BCP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/BCP_1559.htm", "role": "primary-source", "bytes": 29928, "sha256": "0966ea8463dc62a7baf03fc17e251d2132852f2a0f925db473b874c40152d36a"},
+    {"name": "Burial_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Burial_1559.htm", "role": "primary-source", "bytes": 18453, "sha256": "7f3e322bb6ece07d00d108559d4458512b337d6f6907010a35c7fa75b7374450"},
+    {"name": "Churching_of_Women_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Churching_of_Women_1559.htm", "role": "primary-source", "bytes": 29075, "sha256": "683bbc2864e21ace37d902f45fc0cba7ca314b1c0ee55aba66dbd356a550be60"},
+    {"name": "Commination_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Commination_1559.htm", "role": "primary-source", "bytes": 17533, "sha256": "d07de21496381ff198bb594f7cf3f69c612259508824cda9067675de9ef9a6c9"},
+    {"name": "Communion_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Communion_1559.htm", "role": "primary-source", "bytes": 71379, "sha256": "a18655cbd8fc6fcc19395001a26b1121bbac580bec423b2a1b904940028fedf4"},
+    {"name": "Confirmation_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Confirmation_1559.htm", "role": "primary-source", "bytes": 32360, "sha256": "217cf95ce17248da84e4399ab11c1644a28a353a937f58aa89fc4b6da95daeac"},
+    {"name": "EP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/EP_1559.htm", "role": "primary-source", "bytes": 22529, "sha256": "4c7b81bc85b1813e9b1ea67832b9fb596a5e1649806cdcfa0880c631729d31f4"},
+    {"name": "front_matter_1559.htm", "path": "raw/bcp-full-text/bcp-1559/front_matter_1559.htm", "role": "primary-source", "bytes": 46176, "sha256": "3ff66488b1dde62bd8f7daf95ed38025d8c27590fae0bc2b1afc59dcef020d5c"},
+    {"name": "Godly_Prayers.htm", "path": "raw/bcp-full-text/bcp-1559/Godly_Prayers.htm", "role": "primary-source", "bytes": 65214, "sha256": "6418f1160fd7f6be6a1204efa6228470fd78ff63a1f2e2a45e7d0a8405e485be"},
+    {"name": "JamesI_Procl_Uniformity.htm", "path": "raw/bcp-full-text/bcp-1559/JamesI_Procl_Uniformity.htm", "role": "primary-source", "bytes": 13690, "sha256": "e0743ae2b16d95f0ff3a8d842be5fb6791b382d3d33601830187724a54c3564f"},
+    {"name": "Kalendar_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Kalendar_1559.htm", "role": "primary-source", "bytes": 145728, "sha256": "16672a8393c520940806450986b22b992041a5117de599dd5cbf8afa4a53d5a3"},
+    {"name": "Litany_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Litany_1559.htm", "role": "primary-source", "bytes": 45804, "sha256": "77192a50f8c20db2caec26f7f909536b6bc64d6bd9ec9771c39ffa8d5fefd328"},
+    {"name": "Marriage_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Marriage_1559.htm", "role": "primary-source", "bytes": 32491, "sha256": "545a11dc4a4eee73b290a96d48b8e3be535c2a893ee59bfcc1b587e624c864b3"},
+    {"name": "MP_1559.htm", "path": "raw/bcp-full-text/bcp-1559/MP_1559.htm", "role": "primary-source", "bytes": 41469, "sha256": "b37e88f32bca0aa8204d44a2b0b99a6fa8c9e56a6707f88cc2ceb757d250bae0"},
+    {"name": "Visitation_Sick_1559.htm", "path": "raw/bcp-full-text/bcp-1559/Visitation_Sick_1559.htm", "role": "primary-source", "bytes": 31535, "sha256": "bf30ac2440110100e98aa151ac1785c92699b1f1df54fe0049a1763eba904318"},
+    {"name": "work-config", "path": "sources/structured-text/bcp-1559/config.json", "role": "source-identity-and-rights-config", "bytes": 886, "sha256": "d00a91219b9bc192e8801bf4cc2c22455beb6b581fee61a19f64e53f9d8f1152"},
+    {"name": "source-readme", "path": "sources/structured-text/bcp-1559/README.source.md", "role": "source-readme", "bytes": 311, "sha256": "c273722d22d5a3e791d57c797cd9cf4e7231c2eafa3c3e8ec85641e46ab62a8a"},
+    {"name": "bcp1559-profile", "path": "sources/structured-text/bcp-1559/bcp-1559.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 582, "sha256": "5e144b3f19c767c50830c9f1e5f631fad3a0863fb4aefb575dcf9e62f8718124"},
+    {"name": "validation-policy", "path": "sources/structured-text/bcp-1559/bcp-1559.validation-policy.json", "role": "independent-validation-policy", "bytes": 546, "sha256": "8be13c2af553cab1149cb170aa85497375ca3a4a0cc1f33b01b23e433a68ce61"},
+    {"name": "source-accountability-schema", "path": "sources/structured-text/bcp-1559/bcp-1559.source-accountability.schema.json", "role": "source-accountability-schema", "bytes": 562, "sha256": "7734da71f5c60d413393fd682024f0c606895bdb3ed66aa50ea9e69e7a9877d5"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {
+    "id": "ocd-bcp-1559-retained-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bcp_1559_reconstruction.py",
+    "implementation_sha256": "4c1643c0c31b7acd6ef2b099ad2976b71f20e9012c610047d44ca15d354f3eeb"
+  },
+  "validator": {
+    "id": "ocd-bcp-1559-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bcp_1559_oracle.py",
+    "implementation_sha256": "e586a83328a3a1fdbb29ed4aed314a09cfc8b62c9bbc6e80ea6110708953d420",
+    "import_closure_sha256": "0338734e6c8a1d53136958bd30e6ecd5ea228ca37ca806d31d66f77df9e94a3e"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

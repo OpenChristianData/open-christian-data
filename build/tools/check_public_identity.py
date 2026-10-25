@@ -20,6 +20,14 @@ LITERALS = [
     "-".join(["github", "".join(["bas", "ed", "gpt"])]),
 ]
 WORDS = ["Co" + "work"]
+# Only the maintained reconstruction skill is public; other agent state stays private.
+PUBLIC_SKILL_FILES = frozenset({
+    ".agents/skills/source-to-tei/SKILL.md",
+    ".agents/skills/source-to-tei/references/inventory-strategies.md",
+    ".agents/skills/source-to-tei/references/findings-and-readiness.md",
+    ".agents/skills/source-to-tei/references/visual-verification.md",
+    ".agents/skills/source-to-tei/references/cvw-receipt-template.json",
+})
 FILENAME_DENYLIST = [
     "AGENTS.md",
     "CLAUDE",
@@ -58,6 +66,11 @@ def word_pattern(word: str) -> str:
     return rf"(?<![A-Za-z0-9_-]){re.escape(word)}(?![A-Za-z0-9_-])"
 
 
+def literal_pattern(literal: str) -> str:
+    """Recognize ordinary, JSON-escaped, and forward-slash path spellings."""
+    return r"[\\/]+".join(re.escape(part) for part in re.split(r"[\\/]+", literal))
+
+
 def tracked_paths(tree: str) -> list[str]:
     if tree == "HEAD":
         return [path for path in run_git(["ls-files", "-z"]).split("\0") if path]
@@ -69,10 +82,12 @@ def filename_hits(paths: list[str]) -> list[str]:
     for path in paths:
         path_lower = path.lower()
         for denied in FILENAME_DENYLIST:
+            if denied == ".agents/" and path in PUBLIC_SKILL_FILES:
+                continue
             if path_lower == denied.lower().rstrip("/") or path_lower.startswith(denied.lower()):
                 hits.append(f"{path}: forbidden public path")
         for literal in LITERALS:
-            if literal.lower() in path_lower:
+            if re.search(literal_pattern(literal), path, re.IGNORECASE):
                 hits.append(f"{path}: filename contains blocked literal")
         for word in WORDS:
             if re.search(word_pattern(word), path, re.IGNORECASE):
@@ -84,7 +99,7 @@ def grep_hits(tree: str) -> list[str]:
     hits: list[str] = []
     for literal in LITERALS:
         result = subprocess.run(
-            ["git", "-C", str(REPO_ROOT), "grep", "-I", "-n", "-i", "--fixed-strings", literal, tree, "--"],
+            ["git", "-C", str(REPO_ROOT), "grep", "-I", "-n", "-i", "-P", literal_pattern(literal), tree, "--"],
             check=False,
             text=True,
             encoding="utf-8",

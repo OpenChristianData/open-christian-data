@@ -1,0 +1,15 @@
+# Source and rights preparation — Ignatius to the Romans
+
+The text is reconstructed from the retained extracted HTML for [Project Gutenberg eBook 77576](https://www.gutenberg.org/ebooks/77576): `raw/gutenberg/77576/html/pg77576-images.html`. The ZIP is the acquisition package. The accepted constituent includes the shorter and longer Greek readings, the Syriac recension, its shared manuscript notice, and the source footnotes; the other volume works remain outside this edition.
+
+The 1870 volume title page names Alexander Roberts and James Donaldson as editors and lists Roberts, Donaldson, and Frederick Crombie as volume translators. Its preface attributes the translation to the editors except the *Similitudes of Hermas*, translated by Crombie. Roberts and Donaldson are the supported collective attribution for this epistle; the source does not identify which editor translated it. The electronic edition credits David King and the Online Proofreading Team at PGDP and identifies Internet Archive images as the source scans.
+
+The human-visible data notice is `data/structured-text/pg77576-ignatius-romans/README.md`. It carries the exact full retained Project Gutenberg License, an original-format link, and qualified source and rights statements. The Gutenberg catalog reports public-domain status in the United States; jurisdiction-specific rights for the translation and electronic transcription, human verification, print collation, and public publication remain separate.
+
+## Current item-specific rights disposition — October 9, 2026
+
+Target `pg77576-ignatius-romans--pg77576-ignatius-romans-pg77576-edition` matches the acceptance, acquisition and master bytes reviewed in `reports/_logs/first-publication-rights-inputs-20261008-v1/project-gutenberg-target-review-20261008.json` (review SHA-256 `cf2811c0bf4e2cc00bad6cefdd87fb09f6757153e33d7da6a5b1fb1fe185a4fd`). Current acceptance SHA-256: `de8bd8f06f7069efc090c628add9f851e7eaf26e800f90c54545c9ab613b7b0c`; master SHA-256: `a7d4340952bda7986880426921d56a41c08bb0cd5d6822cac838d6d1b6163bd1`; textual source SHA-256: `ca58049f2ee7c62c8c34dffb6badfdb910ab698748f8decc9d9b978e7972e507`.
+
+The supported route is **Public domain (United States and Australia); 1870 historical text, translation, and notes only**, limited to this source-titled constituent and its linked historical notes. This supersedes the preliminary unassessed-rights statement only for the selected 1870 literary text, translation and textual edition in these two territories. It does not clear new digital-transcription matter, images, modern additions, worldwide use or the whole eBook package. Preserve existing source/editor/translator credits and all scope/authenticity qualifications.
+
+Bind and carry the complete current human-visible notice at `data/structured-text/pg77576-ignatius-romans/README.md`, including its unaltered retained Gutenberg License, prominent notice, and original-format access link. Final projection/release checks and publication authorization remain separate.

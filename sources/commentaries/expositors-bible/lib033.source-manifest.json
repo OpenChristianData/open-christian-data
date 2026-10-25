@@ -1,0 +1,194 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-bible-lib033-twelve-member-retained-xml",
+  "work_id": "expositors-bible-lib033-five-work-cohort",
+  "authorities": [
+    {
+      "name": "retained-maclaren-psalms-1",
+      "path": "raw/ccel/expositors-bible/maclaren_expositorpsalms1.xml",
+      "role": "primary-source",
+      "bytes": 790728,
+      "sha256": "5f76553f07cf45368a772e0a2f654df2852ee9be5c3f0f4d35549391a4791b58"
+    },
+    {
+      "name": "retained-maclaren-psalms-2",
+      "path": "raw/ccel/expositors-bible/maclaren_expositorpsalms2.xml",
+      "role": "primary-source",
+      "bytes": 1048849,
+      "sha256": "e7bf253c78cc91a77c3a3a5173122f89d03b29390ade4f3e14f5d2db2ef98ebb"
+    },
+    {
+      "name": "retained-maclaren-psalms-3",
+      "path": "raw/ccel/expositors-bible/maclaren_expositorpsalms3.xml",
+      "role": "primary-source",
+      "bytes": 960697,
+      "sha256": "451e5e3c7196a06caa96992cbc7c43f23f033ab84459373368b5685195c942bb"
+    },
+    {
+      "name": "retained-maclaren-colossians-philemon",
+      "path": "raw/ccel/expositors-bible/maclaren_expositorcolphm.xml",
+      "role": "primary-source",
+      "bytes": 934108,
+      "sha256": "f611e456b4855ebb529de32346343f0358bfe29f6b114639ab569b4a5a1d3c63"
+    },
+    {
+      "name": "retained-plummer-pastoral",
+      "path": "raw/ccel/expositors-bible/plummer_expositorpastoral.xml",
+      "role": "primary-source",
+      "bytes": 988188,
+      "sha256": "1fd1cf712e96ed431f5e4abcf13c21d3819499c39fe603d6af54a404d73d6882"
+    },
+    {
+      "name": "retained-plummer-james-jude",
+      "path": "raw/ccel/expositors-bible/plummer_expositorjamesjude.xml",
+      "role": "primary-source",
+      "bytes": 1171840,
+      "sha256": "20053cd20a768b654da39896a869bda507f7806cab9bb82013282e06860202a8"
+    },
+    {
+      "name": "retained-harper-deuteronomy",
+      "path": "raw/ccel/expositors-bible/harper_expositordeut.xml",
+      "role": "primary-source",
+      "bytes": 1089654,
+      "sha256": "a40389d4afff8752354acbd1c10e687df6933f9f36e520c8b1422371b39a338d"
+    },
+    {
+      "name": "retained-farrar-second-kings",
+      "path": "raw/ccel/expositors-bible/farrar_expositor2kings.xml",
+      "role": "primary-source",
+      "bytes": 1295251,
+      "sha256": "1827452772153d95bb8f5c8c56782b4b038b51f335e6339b2ac8e241dc7267fa"
+    },
+    {
+      "name": "retained-farrar-daniel",
+      "path": "raw/ccel/expositors-bible/farrar_expositordan.xml",
+      "role": "primary-source",
+      "bytes": 945183,
+      "sha256": "6a851a9f4c0bf941745ce28b8a0c0da9b15f3a6568c089511b66d8bc10d1a67b"
+    },
+    {
+      "name": "retained-farrar-first-kings",
+      "path": "raw/ccel/expositors-bible/farrar_expositor1kings.xml",
+      "role": "primary-source",
+      "bytes": 1187151,
+      "sha256": "b5bb6a2200528b3d3573aa373eaec2f7a827c1057b462c5d473eb231e812ca8d"
+    },
+    {
+      "name": "retained-findlay-ephesians",
+      "path": "raw/ccel/expositors-bible/findlay_expositoreph.xml",
+      "role": "primary-source",
+      "bytes": 1023989,
+      "sha256": "697b5713691c402b9d127296cf7d68c2e5aacae66fc6e8a052d6ac9206b3f771"
+    },
+    {
+      "name": "retained-findlay-galatians",
+      "path": "raw/ccel/expositors-bible/findlay_expositorgal.xml",
+      "role": "primary-source",
+      "bytes": 1003429,
+      "sha256": "9fcb5bc51a36d49f68a94d1852a57ffcefd8896d7e7f8ae7036aae1da4a8fc6d"
+    },
+    {
+      "name": "identity-alexander-maclaren",
+      "path": "sources/commentaries/expositors-bible/lib033/expositors-bible--alexander-maclaren/config.json",
+      "role": "work-identity-binding",
+      "bytes": 51,
+      "sha256": "cf75207e3e5971a8e7757efa6f1dde0326c4c76f369a648f2f71a9fdd55c1f1b"
+    },
+    {
+      "name": "identity-alfred-plummer",
+      "path": "sources/commentaries/expositors-bible/lib033/expositors-bible--alfred-plummer/config.json",
+      "role": "work-identity-binding",
+      "bytes": 47,
+      "sha256": "44be2794513994234585123087ed83e135161ec979e3df820f066d2bc2eda90b"
+    },
+    {
+      "name": "identity-andrew-harper",
+      "path": "sources/commentaries/expositors-bible/lib033/expositors-bible--andrew-harper/config.json",
+      "role": "work-identity-binding",
+      "bytes": 46,
+      "sha256": "19a88221d1e202039f8af754ef522d63eaecee14b8e08e834787808e39c4b793"
+    },
+    {
+      "name": "identity-frederic-w-farrar",
+      "path": "sources/commentaries/expositors-bible/lib033/expositors-bible--frederic-w-farrar/config.json",
+      "role": "work-identity-binding",
+      "bytes": 50,
+      "sha256": "3ba9e946ab495279f0d1274772684b47ccd804b64f1fb806e6dcb85b61fa4480"
+    },
+    {
+      "name": "identity-g-g-findlay",
+      "path": "sources/commentaries/expositors-bible/lib033/expositors-bible--g-g-findlay/config.json",
+      "role": "work-identity-binding",
+      "bytes": 44,
+      "sha256": "57b71cd8de0a497ae70b2f98f8c591e6a6cd7aa5f9e049b85c80041118cee0c8"
+    },
+    {
+      "name": "ccel-permission",
+      "path": "sources/commentaries/expositors-bible/ccel-permission.md",
+      "role": "exact-source-permission",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "attribution-readme",
+      "path": "data/commentaries/expositors-bible/README.md",
+      "role": "required-attribution-deliverable",
+      "bytes": 637,
+      "sha256": "4ebf9f368e211fe70ba7b531906f91886dcd0b634f13cee6c7eb046384cf8359"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/lib033.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 87100,
+      "sha256": "923a5745c4a8cb2173ae4e57242c9e79a1a07d01549e689d30358bcdb5ee5998"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/lib033.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2971,
+      "sha256": "37c49b1ee2e8e8c218337a419672b49f9ebd782fa2687de6a2d5283d46676dc2"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/lib033.source-accountability.schema.json",
+      "role": "lib033-complete-source-accountability-schema",
+      "bytes": 4358,
+      "sha256": "8967bcb9e80ddb73ef7598fd7f7c7510eb700cde3e592ab8aa1503e3f1417a2e"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-bible-lib033-retained-xml-to-tei",
+    "version": "3",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib033_reconstruction.py",
+    "implementation_sha256": "af869417629b0663e2bc9e794010df250b10387cde34815c0111c31f775cb75b"
+  },
+  "validator": {
+    "id": "ocd-expositors-bible-lib033-independent-retained-byte-oracle",
+    "version": "3",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib033_oracle.py",
+    "implementation_sha256": "229a04a4827d2b48d5686e700fd0211e008df033766a48b4f43bec6c3f4e0ac8",
+    "import_closure_sha256": "8ea1286d108c5f14ad83752284614999f6f8d9a25225e9a9cfc7a9fe64f979cf"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

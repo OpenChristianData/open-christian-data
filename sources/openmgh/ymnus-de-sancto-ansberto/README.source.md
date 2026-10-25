@@ -1,0 +1,5 @@
+# Electronic source for ymnus-de-sancto-ansberto
+
+The exact retained textual witness is `raw/openmgh/bsb00000752/tei/bsb00000752.xml` (SHA-256 `620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a`). The retained ZIP is an acquisition package, not another text witness. The selected electronic hymn is source work division 19, native part 2. The two preceding prose parts belong to Vita Ansberti and remain excluded. All 70 line and two page milestones stay in source order. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/ymnus-de-sancto-ansberto/README.md` and bind both exact hashes through `public_notices`.

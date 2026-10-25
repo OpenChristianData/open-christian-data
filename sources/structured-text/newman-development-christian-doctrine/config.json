@@ -1,0 +1,31 @@
+{
+  "resource_id": "newman-development-christian-doctrine",
+  "title": "An Essay on the Development of Christian Doctrine",
+  "author": "John Henry Newman",
+  "author_id": "newman-john-henry",
+  "original_publication_year": 1878,
+  "language": "en",
+  "original_language": "en",
+  "tradition": [
+    "anglican",
+    "catholic"
+  ],
+  "era": "modern",
+  "audience": "scholarly",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "theological-work",
+  "source_url": "https://www.gutenberg.org/ebooks/35110",
+  "source_format": "Project Gutenberg HTML with images (UTF-8)",
+  "source_edition": "Sixth edition. The retained preface is dated February 2, 1878; Project Gutenberg eBook #35110.",
+  "source_hash": "sha256:8335ab4ef21bc0c17169eb8562d3271f49595ce851948476a32ce9ae8d7c22f6",
+  "source_type": "project_gutenberg_html",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-development-christian-doctrine/pg35110-h.zip",
+  "source_members": [
+    "pg35110-images.html",
+    "35110-cover.png"
+  ],
+  "processing_script": "build/tei/newman_development_christian_doctrine.py",
+  "output_file": "reports/clean-ready-acquisition-to-tei/master-1/07/newman-development-christian-doctrine/candidate.tei.xml",
+  "notes": "The source-local route is bound to the authorized retained archive and validates its archive and HTML member hashes. It preserves source-defined front matter, contents, parts, chapters, sections, page milestones, notes, Greek transliteration spans, typography, and final Transcriber's Notes. Project Gutenberg redistribution boilerplate is excluded from the TEI text and documented in the source-local README."
+}

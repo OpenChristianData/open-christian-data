@@ -1,0 +1,127 @@
+{
+  "authorities": [
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 19526,
+      "name": "converter-implementation",
+      "path": "build/tei/wilberforce_practical_view_37c322_reconstruction.py",
+      "role": "source-converter-implementation",
+      "sha256": "4a1da6b2ed281b75eaf1cd16a02c1846209953f04568e052bf103fb4e64cd162"
+    },
+    {
+      "bytes": 64086,
+      "name": "oracle-implementation",
+      "path": "build/tei/wilberforce_practical_view_37c322_oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "269cf9ebf8a525a0983d279a9309ea51f136d993b08567b99278581f40ac6297"
+    },
+    {
+      "bytes": 659285,
+      "name": "primary-source",
+      "path": "raw/gutenberg/pg25709.txt",
+      "role": "primary-source",
+      "sha256": "995ff74ac2c819b526d4874878507bb85e1141f7e5b35a388c44846a963d6c96"
+    },
+    {
+      "bytes": 9690,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3f90ca6e7607c5100b093ebd442f55184ef5b36ff6b7396fbe3ec367e2758585"
+    },
+    {
+      "bytes": 39371,
+      "name": "shared-structural-producer",
+      "path": "build/tei/gutenberg_evangelical_lib072_selected_reconstruction.py",
+      "role": "producer-dependency",
+      "sha256": "95b72a2db2a8ca6d7d34e813afe31a8317ac66eb63860846ab67ca19668fd6dc"
+    },
+    {
+      "bytes": 8755,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "44de92d2dcf70bb904edaacef583d64c4cb7154dd2b7b0b75c588e7d429bb357"
+    },
+    {
+      "bytes": 1772,
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "d70bc052f424187501527fd3df2650daa22bf342e0c37d1b9651d05aaec1321d"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 18899,
+      "name": "ticket-scope",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.scope-snapshot.v1.json",
+      "role": "ticket-scope",
+      "sha256": "75e54eb2acecac653e44a0124944c50acaca1b40133b2943c071770073cb78ab"
+    },
+    {
+      "bytes": 5069,
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "b2bcafdbdc6c64655ee9afea78e796463f3500ffaeb200686b3ba66f3f1cebbf"
+    },
+    {
+      "bytes": 90,
+      "name": "work-identity",
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/config.json",
+      "role": "work-identity",
+      "sha256": "66798f56180f22047039fe110f175a3f1bb2aef2d027980ea638045ae1d76d66"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-lib072-37c-322-readable-italic-adapter",
+    "implementation_path": "build/tei/wilberforce_practical_view_37c322_reconstruction.py",
+    "implementation_sha256": "4a1da6b2ed281b75eaf1cd16a02c1846209953f04568e052bf103fb4e64cd162",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "retained_source_path": "raw/gutenberg/pg25709.txt",
+  "source_id": "gutenberg-37c-322-pg25709",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "ticket_id": "37c-322",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-lib072-37c-322-readable-italic-independent-oracle",
+    "implementation_path": "build/tei/wilberforce_practical_view_37c322_oracle.py",
+    "implementation_sha256": "269cf9ebf8a525a0983d279a9309ea51f136d993b08567b99278581f40ac6297",
+    "import_closure_sha256": "a31cfd62a62a6ae5267b26c87258a3ec94e5ea633bbe2e3d41c68ba1fda21524",
+    "version": "2"
+  },
+  "work_id": "wilberforce-practical-view"
+}

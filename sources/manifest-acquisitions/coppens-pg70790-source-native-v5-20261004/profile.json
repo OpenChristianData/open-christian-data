@@ -1,0 +1,147 @@
+{
+  "contract": "ocd-coppens-pg70790-profile-v5",
+  "source_id": "pg70790-coppens-source-native-v5",
+  "ticket_id": "L793",
+  "work_id": "charles-coppens-spiritual-exercises-adaptation",
+  "textual_form_id": "charles-coppens-eight-days-six-triduums-1916",
+  "edition_id": "charles-coppens-exercises-1916-pg70790",
+  "acquisition_id": "pg70790-retained-zip",
+  "source_archive_path": "raw/gutenberg/70790/pg70790-h.zip",
+  "source_archive_sha256": "fdfcd5228a14f985fff53cb1bddca74574cee04daca68400b0b11a66a81fcedf",
+  "source_archive_members": [
+    {
+      "path": "images/cover.jpg",
+      "bytes": 1450734,
+      "crc32": "085f2785",
+      "sha256": "514e7a598719e6950f1c645feaa09b37ab98712d42991866a2cb9fd124a147df"
+    },
+    {
+      "path": "pg70790-images.html",
+      "bytes": 451272,
+      "crc32": "5ee75906",
+      "sha256": "5a824563e0a08ed885c4b4e4bac49c43750ae91946e677d06b3e5ce701e50b54"
+    }
+  ],
+  "complete_title_boundary": {
+    "kind": "one complete titled book as represented by the retained English Project Gutenberg electronic witness",
+    "source_title_page_title": "The Spiritual Exercises of St. Ignatius Adapted to an Eight Days Retreat and Six Triduums",
+    "source_subtitle_and_audience": "In Preparation for The Semi-Annual Renovation of the Vows; All for the use of Jesuits only",
+    "named_book_author": "Rev. Charles Coppens, S.J.",
+    "boundary_evidence": [
+      "The retained HTML title page presents one continuous full title and author/imprint block.",
+      "The retained source includes the complete front matter and body through the Project Gutenberg END marker for The Spiritual Exercises of St. Ignatius.",
+      "The work is Coppens's adaptation of the Spiritual Exercises for the described retreat use; it is not the complete original work by Ignatius of Loyola."
+    ],
+    "scope_limit": "This one source-titled adaptation book only; it makes no claim to cover all Ignatian Exercises, other editions, or other Coppens writings."
+  },
+  "source_page_facts": {
+    "page_title": "The spiritual exercises of St. Ignatius | Project Gutenberg",
+    "printed_title_page_title": "The Spiritual Exercises of St. Ignatius Adapted to an Eight Days Retreat and Six Triduums",
+    "title_page_author_line": "Rev. CHARLES COPPENS, S.J.",
+    "title_page_publisher": "B. HERDER",
+    "title_page_address": "17 South Broadway; St. Louis, Mo.",
+    "title_page_publication_year": "1916",
+    "title_page_copyright_statement": "Copyright, 1916 by Joseph Gummersbach",
+    "gutenberg_header_author_lines": [
+      "Saint of Loyola Ignatius",
+      "Charles Coppens"
+    ],
+    "gutenberg_release_line": "May 18, 2023 [eBook #70790]",
+    "language": "English"
+  },
+  "title_page_imprint": {
+    "publisher": "B. HERDER",
+    "address": "17 South Broadway",
+    "place": "St. Louis, Mo.",
+    "publication_statement": "1916",
+    "copyright_statement": "Copyright, 1916 by Joseph Gummersbach",
+    "qualification": "The 1916 date is printed with the title-page imprint and also appears in a copyright statement; it is not inferred from the unrelated Project Gutenberg electronic dates."
+  },
+  "electronic_metadata_date_roles": {
+    "body_release_date": "May 18, 2023 [eBook #70790]",
+    "dcterms.created": "2023-05-18",
+    "dcterms.modified": "2026-08-28T10:06:58.953520+00:00",
+    "qualification": "These are Project Gutenberg electronic-witness dates and remain distinct from the title-page 1916 imprint/copyright statements."
+  },
+  "html_head_child_count": 26,
+  "html_source_parse": {
+    "engine": "lxml.html.HTMLParser",
+    "recover": true,
+    "diagnostics": [
+      {
+        "line": 328,
+        "column": 73,
+        "domain": "HTML",
+        "type": "HTML_UNKNOWN_TAG",
+        "message": "Tag header invalid"
+      },
+      {
+        "line": 8160,
+        "column": 114,
+        "domain": "HTML",
+        "type": "HTML_UNKNOWN_TAG",
+        "message": "Tag footer invalid"
+      }
+    ],
+    "independent_parse": "Python standard-library HTMLParser builds the same 3,612-node body tree with the same 1,114 body children; both parser interpretations are checked against the frozen TEI."
+  },
+  "html_non_element_markup": [
+    {
+      "position": 1,
+      "parent_path": "html",
+      "parent_tag": "html",
+      "kind": "comment",
+      "text": " created with ppgen.py 3.57d_GHS_H5 on 2023-05-17 21:59:27 GMT "
+    }
+  ],
+  "source_body": {
+    "direct_child_count": 1114,
+    "element_count_including_body": 3612,
+    "source_attribute_counts": {
+      "alt": 1,
+      "class": 1644,
+      "href": 159,
+      "id": 334,
+      "lang": 31,
+      "src": 1,
+      "style": 6,
+      "title": 1136
+    },
+    "explicit_empty_attribute_carriers": [
+      {
+        "source_locator": "1.1",
+        "source_tag": "h2",
+        "attribute": "title",
+        "value": "",
+        "candidate_carrier": "@rend token source-title-empty"
+      },
+      {
+        "source_locator": "3.2",
+        "source_tag": "img",
+        "attribute": "alt",
+        "value": "",
+        "candidate_carrier": "graphic/@rend token source-alt-empty"
+      }
+    ],
+    "locator_scheme": "The HTML body root is the TEI body; each descendant receives the 1-based dotted element-child path in @n. Every mapped descendant retains source order, child count, normalized text/tail, and source element type."
+  },
+  "predecessor_candidate_path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260928-l793-l795-fresh-replays\\L793-PG70790-fresh-1\\package",
+  "predecessor_candidate_manifest_sha256": "2640cc87a9cdcbc4e75b8fc0c0def8f773038f3072f4c349ba1bf416a04ffa5d",
+  "predecessor_content_sha256": "6d073f71cc75a46761c29b886ef33c331501778dd87472b64ddb9b94ead6bae3",
+  "predecessor_source_manifest_sha256": "192c1556ab84c032252ae5c9ff1e6d290ca3ad85103deabb7f678f1529fc54b8",
+  "oracle_dependency_paths": [
+    "ocd_kernel/__init__.py",
+    "ocd_kernel/lib/__init__.py",
+    "ocd_kernel/lib/path_io.py",
+    "ocd_kernel/lib/storage_topology.py",
+    "ocd_kernel/reconstruction/__init__.py",
+    "ocd_kernel/reconstruction/contract.py",
+    "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "ocd_kernel/tei/__init__.py",
+    "ocd_kernel/tei/validate.py",
+    "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+    "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+    "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd"
+  ],
+  "tei_source_description_addition": "The retained title page names Rev. CHARLES COPPENS, S.J.; prints B. HERDER, 17 South Broadway, St. Louis, Mo., 1916; and states ‘Copyright, 1916 by Joseph Gummersbach.’ It says ‘All for the use of Jesuits only.’ Project Gutenberg's HTML head separately lists the creators ‘Ignatius, of Loyola, Saint, 1491-1556’ and ‘Coppens, Charles, 1835-1920’; these are source metadata assertions, not independently curated identity claims. Its 1916 imprint/copyright statements are distinct from the Project Gutenberg electronic creation and release dates recorded in source accounting."
+}

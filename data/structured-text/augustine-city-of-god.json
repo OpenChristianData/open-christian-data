@@ -8,10 +8,13 @@
     "author_death_year": 430,
     "contributors": [
       {
-        "name": "Marcus Dods (translator, 1871)"
+        "name": "Marcus Dods",
+        "role": "translator",
+        "note": "1871 translation"
       },
       {
-        "name": "Philip Schaff (series editor)"
+        "name": "Philip Schaff",
+        "role": "series_editor"
       }
     ],
     "original_publication_year": 413,
@@ -28,19 +31,28 @@
     "schema_type": "structured_text",
     "schema_version": "2.1.0",
     "completeness": "full",
+    "expression_id": "augustine-city-of-god-dods-en",
+    "digital_witness_id": "city-of-god-ccel-npnf102",
+    "witness_role": "verification-collation-apparatus",
+    "related_witness_ids": [
+      "city-of-god-standard-ebooks"
+    ],
+    "segmentation_basis": "CCEL ThML divisions projected as books and chapters; notes and page breaks are excluded from this structured-text projection.",
     "provenance": {
       "source_url": "https://www.ccel.org/ccel/schaff/npnf102.xml",
       "source_format": "ThML XML",
-      "source_edition": "Nicene and Post-Nicene Fathers, Series 1. Philip Schaff (ed.). New York: Christian Literature Publishing Co., 1886-1889.",
+      "source_edition": "Nicene and Post-Nicene Fathers, First Series, Volume 2. New York: Christian Literature Publishing Co., 1890. Philip Schaff, series editor.",
       "download_date": "2026-04-23",
       "source_hash": "sha256:b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a",
+      "source_hash_scope": "retained-thml-file",
+      "generated_content_hash": "sha256:228d5a6dac2a56b119e25ebb19ffadf2c550152b65a3c20084dddab1e60afc9d",
       "processing_method": "automated",
-      "processing_script_version": "build/parsers/ccel_npnf1.py@v1.0.0",
-      "processing_date": "2026-04-23",
+      "processing_script_version": "build/parsers/ccel_npnf1.py@v1.1.0",
+      "processing_date": "2026-07-20",
       "notes": "ThML HTML entities replaced with Unicode equivalents. DOCTYPE stripped before parsing. Footnotes (<note>) and page breaks (<pb>) excluded from content. Editorial front matter (title pages, prefaces, arguments, introductory essays, indexes, retractations extracts) excluded. robots.txt crawl-delay 10s honoured.",
       "source_type": "ccel_thml",
       "source_file": "raw/ccel/npnf1/npnf102.xml",
-      "translator": "Philip Schaff (ed.), 1886"
+      "translator": "Marcus Dods (translator), 1871"
     }
   },
   "data": {

@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "targets": [
+    {
+      "evidence": [
+        "raw/wikisource/chrysostom-divine-liturgy-1866/acquisition-receipt.json",
+        "raw/wikisource/chrysostom-divine-liturgy-1866/wikisource-export.xml",
+        "library/works/chrysostom-divine-and-sacred-liturgy/forms/chrysostom-divine-and-sacred-liturgy-wikisource-retained/editions/chrysostom-divine-and-sacred-liturgy-wikisource-electronic/acquisitions/chrysostom-divine-and-sacred-liturgy-wikisource-acquired.json"
+      ],
+      "stage": "acquired",
+      "target_id": "chrysostom-divine-and-sacred-liturgy-wikisource-acquired",
+      "target_type": "acquisition",
+      "updated_at": "2026-09-25T13:10:40Z"
+    },
+    {
+      "evidence": [
+        "sources/manifest-acquisitions/wikisource-chrysostom-l594/source-manifest-v3.json",
+        "sources/manifest-acquisitions/wikisource-chrysostom-l594/profile-v2.json",
+        "plans/2026-09-23-acquisition-manifest-source-to-tei/evidence/L594_CHRYSOSTOM_CURRENT_V5_TECHNICAL_CLOSEOUT_20260930.json",
+        "sources/manifest-acquisitions/wikisource-chrysostom-l594/source-manifest-complete.json",
+        "plans/2026-09-23-acquisition-manifest-source-to-tei/evidence/L594_CHRYSOSTOM_COMPLETE_WITNESS_20261008.json",
+        "library/works/chrysostom-divine-and-sacred-liturgy/forms/chrysostom-divine-and-sacred-liturgy-wikisource-retained/editions/chrysostom-divine-and-sacred-liturgy-wikisource-electronic/master.tei.xml",
+        "library/works/chrysostom-divine-and-sacred-liturgy/forms/chrysostom-divine-and-sacred-liturgy-wikisource-retained/editions/chrysostom-divine-and-sacred-liturgy-wikisource-electronic/acceptance.json"
+      ],
+      "reason": "Evidence-backed TEI is the master; human verification, rights, and publication remain separate.",
+      "stage": "accepted",
+      "target_id": "chrysostom-divine-and-sacred-liturgy-wikisource-electronic",
+      "target_type": "edition",
+      "updated_at": "2026-10-07T15:10:08.651285Z"
+    },
+    {
+      "evidence": [
+        "library/works/chrysostom-divine-and-sacred-liturgy/forms/chrysostom-divine-and-sacred-liturgy-wikisource-retained/editions/chrysostom-divine-and-sacred-liturgy-wikisource-electronic/acquisitions/chrysostom-divine-and-sacred-liturgy-wikisource-complete-20261007.json",
+        "sources/manifest-acquisitions/wikisource-chrysostom-l594/source-manifest-complete.json"
+      ],
+      "stage": "acquired",
+      "target_id": "chrysostom-divine-and-sacred-liturgy-wikisource-complete-20261007",
+      "target_type": "acquisition",
+      "updated_at": "2026-10-07T13:07:44.426212Z"
+    }
+  ],
+  "work_id": "chrysostom-divine-and-sacred-liturgy"
+}

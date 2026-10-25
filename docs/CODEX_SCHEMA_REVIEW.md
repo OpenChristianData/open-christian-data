@@ -1,5 +1,7 @@
 # Open Christian Data -- Independent Schema Review
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Date:** 2026-03-27  
 **Reviewer:** Codex  
 **Scope reviewed:** `docs/SCHEMA_SPEC.md` v2.1.0, `schemas/v1/commentary.schema.json`, `schemas/types.ts`, `data/commentaries/matthew-henry/ezekiel.json`, `raw/bible_databases/formats/json/BSB.json`, `raw/Creeds.json`, `raw/Commentaries-Database`, and the representative samples in `raw/samples/`.

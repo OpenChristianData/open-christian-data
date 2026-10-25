@@ -1,0 +1,102 @@
+{
+  "authorities": [
+    {
+      "bytes": 6222968,
+      "name": "retained-thml",
+      "path": "raw/ccel/npnf1/npnf108.xml",
+      "role": "primary-source",
+      "sha256": "87b60e90917e69f03c75955517fc996a0e6d22dc9862365b45c308e70e5bf784"
+    },
+    {
+      "bytes": 1479,
+      "name": "augustine-expositions-on-psalms-config",
+      "path": "sources/structured-text/augustine-expositions-on-psalms/config.json",
+      "role": "local-metadata-claim-evidence",
+      "sha256": "ebe8d012f38553ed09321ca5441f3ee1c91e932a5b9cc04544abd827d3847c5f"
+    },
+    {
+      "bytes": 1247,
+      "name": "source-attribution-readme",
+      "path": "sources/structured-text/augustine-expositions-on-psalms/README.md",
+      "role": "source-attribution-readme",
+      "sha256": "1ad1b2ad7498366f1ffe3b132f105b58713b638a51bcb7a3d4f49d99ef984b86"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-rights-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 2170,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/augustine-expositions-on-psalms/lib038.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "d8c6be2295843973c2ed02dede6a2ffc1ffa6bc649a11f33d74e6596ba9446c1"
+    },
+    {
+      "bytes": 1229,
+      "name": "validation-policy",
+      "path": "sources/structured-text/augustine-expositions-on-psalms/lib038.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "fd54578a07a79c823120d1ba860f2339b97b05d32010107885c6deefb5c3a447"
+    },
+    {
+      "bytes": 8057,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/augustine-expositions-on-psalms/lib038.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "4edf2096c9cd400d8fdac3c037ced97eca6e2ce43d494f2a66bd110bee8e8170"
+    },
+    {
+      "bytes": 1119,
+      "name": "converter-first-party-import-closure",
+      "path": "tests/fixtures/reconstruction-runtime/npnf108-lib038.converter.import-closure.json",
+      "role": "converter-import-closure",
+      "sha256": "f099a8726d6c71999c6b0c11f3f06cc7984e077dc1517f9614e9675f0caebd39"
+    },
+    {
+      "bytes": 592,
+      "name": "validator-first-party-import-closure",
+      "path": "tests/fixtures/reconstruction-runtime/npnf108-lib038.validator.import-closure.json",
+      "role": "validator-import-closure",
+      "sha256": "62316289bb5bc990757a42bb8a09cac0318e6ad4b1325346a53c58f8f958dbe5"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-npnf108-lib038-assigned-psalms-to-tei",
+    "implementation_path": "build/tei/npnf108_lib038_reconstruction.py",
+    "implementation_sha256": "277020955f8d0986a98016d94404de0729b6e0ef268a42237e24adb40c8939cb",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ccel-npnf108-lib038-retained-xml",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-npnf108-lib038-source-to-tei-oracle",
+    "implementation_path": "build/tei/npnf108_lib038_oracle.py",
+    "implementation_sha256": "01cc7f07d3ed773b8f9767e41b6c109c2f60d35a5fa19d2f518183733da870fc",
+    "import_closure_sha256": "62316289bb5bc990757a42bb8a09cac0318e6ad4b1325346a53c58f8f958dbe5",
+    "version": "1"
+  }
+}

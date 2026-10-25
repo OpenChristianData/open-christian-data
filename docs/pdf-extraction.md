@@ -26,10 +26,10 @@ Tests at `tests/test_ordinal_parser.py` cover all 150 psalms via full-range prob
 
 ## Known limitations
 
-- **Hebrew RTL broken in ALL open-source PDF tools** — word order reverses within Hebrew runs. Mitigation: python-bidi post-processing or manual review.
+- **Hebrew reading order needs source comparison.** The files examined for this guide showed reversed Hebrew runs. Check each new source against page images; correct only with source evidence.
 - **Footnotes are positional** (page-bottom detection), not semantically linked to reference marks in body text.
 - **pymupdf4llm is rules-based** — no column detection ML. Complex multi-column layouts may need Docling.
 
 ## When to add a new PDF source
 
-Use `build/extract_pdf.py`. Don't revisit tool choice unless a source is scanned/image-only or has complex multi-column layout.
+For a usable text layer, start with `build/extract_pdf.py` and check the result against page images. Scanned or image-only sources need the EzraOCR workflow. Choose extraction changes from observed fidelity failures.

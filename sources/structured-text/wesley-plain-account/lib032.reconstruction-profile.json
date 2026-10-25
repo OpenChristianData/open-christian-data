@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-lib032-reconstruction-profile-v1",
+  "profile_id": "lib032-wesley-plain-account-v1",
+  "version": 1,
+  "source_set_authority": "retained-source-set",
+  "source_root_environment": "OCD_RETAINED_RAW_ROOT",
+  "work_order": [
+    "wesley-plain-account"
+  ],
+  "projection": {
+    "scope": "ThML.body descendants in document order",
+    "unknown_elements": "seg with explicit thml-{source-name} type",
+    "source_text": "preserved exactly as direct text and child tails",
+    "source_attributes": "projected only where a TEI destination is explicit and otherwise retained in the crosswalk"
+  },
+  "works": [
+    {"work_id":"wesley-plain-account","title":"A Plain Account of Christian Perfection","author":"John Wesley","contributors":[],"source_url":"https://www.ccel.org/ccel/wesley/perfection.xml","source_edition":"CCEL ThML edition (sourced via CCEL.org). Original: London, 1777.","source_sha256":"2c6d835621077e8002c86a4a3cfd0613c604d56626110d3d77d5e43c50dfab9b"}
+  ],
+  "requirements": [
+    "exact-retained-source-hash-and-member-order",
+    "complete-ThML.body-element-and-attribute-accounting",
+    "exact-direct-text-and-child-tail-preservation",
+    "deterministic-TEI-identities-and-order",
+    "TEI-P5-validation",
+    "source-accountability-schema-validation",
+    "nonaccepted-human-review-and-publication-boundary"
+  ]
+}

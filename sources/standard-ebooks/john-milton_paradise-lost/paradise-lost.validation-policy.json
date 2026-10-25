@@ -1,0 +1,11 @@
+{
+  "contract":"ocd-paradise-lost-validation-policy-v1",
+  "policy_id":"paradise-lost-complete-source-to-tei-v1",
+  "version":1,
+  "candidate_status":"nonaccepted",
+  "required_member_names":["manifest.json","content.tei.xml","source-accountability.json","provenance.json","unresolved.jsonl","README.source.md"],
+  "required_counts":{"source_members":33,"source_bytes":3747043,"xml_members":25,"non_xml_members":8,"observations":55544,"represented":10847,"evidence_only":44697,"sections":40,"top_level_sections":16,"books":12,"arguments":12,"poem_groups":12,"verse_groups":1,"stanzas":400,"verse_lines":10568,"poem_line_spans":10565,"poem_breaks":10166,"uncopyright_line_spans":3,"uncopyright_breaks":2,"colophon_layout_breaks":17,"body_links":14,"toc_links":16,"landmarks":1,"image_borne_strings":16,"image_alternatives":3},
+  "required_unresolved_ids":["paradise-lost-edition-basis","paradise-lost-metadata-conflicts","paradise-lost-rights-jurisdiction","paradise-lost-human-acceptance"],
+  "forbidden_import_prefixes":["build.tei.paradise_lost_reconstruction","build.tei.se_to_tei","build.tei.census","build.reconstruction","build.parsers.standard_ebooks","ocd_kernel.reconstruction.case_declaration","ocd_kernel.reconstruction.persistence","ocd_kernel.reconstruction.wave"],
+  "checks":["actual-clean-git-commit-tree-tracked-member-set","complete-55544-observation-accounting","opf-spine-front-body-back-order","exact-section-heading-text-link-language-attachments","exact-poem-group-stanza-line-span-break-occurrences","identical-repeated-line-address-identity","exact-inline-carrier-attribute-location-order","exact-toc-landmark-image-string-metadata-conflict-evidence","rights-categories-separated","tei-p5-xsd","fresh-process-six-member-determinism","recursive-independent-import-closures-and-runtime-paths","candidate-separated-from-human-acceptance"]
+}

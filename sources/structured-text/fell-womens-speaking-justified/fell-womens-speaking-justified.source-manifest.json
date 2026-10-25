@@ -1,0 +1,74 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "tcp-a41072-pinned-tei-p5",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/tcp/high-range/A41072/A41072.xml",
+      "role": "primary-source",
+      "bytes": 57360,
+      "sha256": "6050d2fee9b03d63ec4cf52d137ea025a2404e09ff736f550d6b8d97d4316379"
+    },
+    {
+      "name": "acquisition-receipt",
+      "path": "raw/tcp/high-range/A41072/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "bytes": 2232,
+      "sha256": "f2b4b43da357dfea4ac33b64a10409a8fa599047abd6f1aa2e884faa7fb73461"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/fell-womens-speaking-justified/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1132,
+      "sha256": "12404acd9aafea1a74b508e1a22502ea56f82743d6e2fae0dd9f702ca32c32ad"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/fell-womens-speaking-justified/fell-womens-speaking-justified.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2703,
+      "sha256": "cf58576f6314f6bfde2e081813827d8c1647bf52454663228ab6775e737f6cdc"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/fell-womens-speaking-justified/fell-womens-speaking-justified.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2173,
+      "sha256": "e2f9e348671c93b1add382536f0cd933203fb9938a91ccfeb2f154be01620a7d"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-tcp-a41072-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/fell_a41072_reconstruction.py",
+    "implementation_sha256": "1b2d95dfd975308fd952a4431c45e1c0316703bf85c97052253ec1965153b20a"
+  },
+  "validator": {
+    "id": "ocd-tcp-a41072-exact-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/fell_a41072_oracle.py",
+    "implementation_sha256": "9b3106a3722c6f95442d7f4f0ac432acb2c8f08890cfc9ba99a559f173ffd494",
+    "import_closure_sha256": "ddfc952bdae26b62d33041d5a7c9e67aded05ad9416a3f07617295dfcd0363ae"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

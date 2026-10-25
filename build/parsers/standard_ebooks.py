@@ -46,6 +46,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
 from build.lib._generated_enums import STRUCTURED_TEXT__DEFS__SECTION__SECTION_TYPE  # noqa: E402
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib.parser_logging import configure_logging as _shared_setup_logging
 
 RAW_DIR = REPO_ROOT / "raw" / "standard_ebooks"
 SOURCES_DIR = REPO_ROOT / "sources" / "standard-ebooks"
@@ -533,6 +534,7 @@ def process_structured_text(se_id, config, dry_run=False, list_files=False):
         "sections": len(sections),
         "total_blocks": total_blocks,
         "total_words": total_words,
+        "source_hash": _source_manifest_hash(xhtml_files, RAW_DIR / se_id),
     }
 
     return sections, stats
@@ -775,7 +777,20 @@ def report_sermon_quality(sermons, stats):
 # Output building
 # ---------------------------------------------------------------------------
 
-def build_meta(config, data_hash, processing_date):
+def _source_manifest_hash(paths: list[Path], root: Path) -> str:
+    """Hash a deterministic manifest of the retained source files used by the parser."""
+    manifest = [
+        {
+            "path": path.relative_to(root).as_posix(),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        }
+        for path in sorted(paths)
+    ]
+    encoded = json.dumps(manifest, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def build_meta(config, source_hash, generated_content_hash, processing_date):
     """Build the OCD metadata envelope from source config."""
     return {
         "id": config["resource_id"],
@@ -795,12 +810,21 @@ def build_meta(config, data_hash, processing_date):
         "schema_type": config["schema_type"],
         "schema_version": SCHEMA_VERSION,
         "completeness": "full",
+        "expression_id": config.get("expression_id"),
+        "digital_witness_id": config.get("digital_witness_id"),
+        "witness_role": config.get("witness_role"),
+        "related_witness_ids": config.get("related_witness_ids", []),
+        "segmentation_basis": config.get("segmentation_basis"),
         "provenance": {
             "source_url": config["source_url"],
             "source_format": config["source_format"],
             "source_edition": config["source_edition"],
-            "download_date": processing_date,
-            "source_hash": f"sha256:{data_hash}",
+            "download_date": config.get("download_date"),
+            "source_hash": source_hash,
+            "source_hash_scope": config.get("source_hash_scope"),
+            "source_revision": config.get("source_revision"),
+            "source_revision_type": config.get("source_revision_type"),
+            "generated_content_hash": generated_content_hash,
             "processing_method": "automated",
             "processing_script_version": (
                 f"build/parsers/standard_ebooks.py@{SCRIPT_VERSION}"
@@ -847,9 +871,14 @@ def process_title(se_id, dry_run=False, list_files=False):
             "sections": sections,
         }
         data_bytes = json.dumps(sections, ensure_ascii=False, sort_keys=True).encode("utf-8")
-        data_hash = hashlib.sha256(data_bytes).hexdigest()
+        generated_content_hash = "sha256:" + hashlib.sha256(data_bytes).hexdigest()
 
-        meta = build_meta(config, data_hash, processing_date)
+        meta = build_meta(
+            config,
+            source_hash=stats["source_hash"],
+            generated_content_hash=generated_content_hash,
+            processing_date=processing_date,
+        )
         output = {"meta": meta, "data": data_payload}
 
         print()
@@ -863,7 +892,13 @@ def process_title(se_id, dry_run=False, list_files=False):
         data_bytes = json.dumps(sermons, ensure_ascii=False, sort_keys=True).encode("utf-8")
         data_hash = hashlib.sha256(data_bytes).hexdigest()
 
-        meta = build_meta(config, data_hash, processing_date)
+        legacy_hash = f"sha256:{data_hash}"
+        meta = build_meta(
+            config,
+            source_hash=legacy_hash,
+            generated_content_hash=legacy_hash,
+            processing_date=processing_date,
+        )
         output = {"meta": meta, "data": sermons}
 
         print()
@@ -906,13 +941,7 @@ def process_title(se_id, dry_run=False, list_files=False):
 
 
 def setup_logging() -> None:
-    """Configure file + console logging."""
-    fh = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.INFO)
-    logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh],
-                        format="%(levelname)s: %(message)s")
+    return _shared_setup_logging(LOG_FILE=LOG_FILE)
 
 
 def main():

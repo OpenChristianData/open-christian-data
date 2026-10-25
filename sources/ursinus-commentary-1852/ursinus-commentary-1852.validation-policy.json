@@ -1,0 +1,53 @@
+{
+  "contract": "ocd-ursinus-independent-validation-policy-v1",
+  "oracle_id": "ocd-ursinus-1852-independent-source-oracle",
+  "rules": [
+    "Require the exact IA commdrza00ursi identity and all eight pinned retained-envelope member hashes.",
+    "Require the candidate primary-source authority set to equal the five retained_files bound by the acquisition sidecar; bind receipt, metadata, inventory, and reconstruction dependencies as support authorities.",
+    "Independently account for 720 PDF/OCR pages, 722 scandata leaves, the two explicitly excluded color cards, 16 empty OCR pages, all ordered paragraphs and lines, and 436 source-derived contents rows.",
+    "Require one TEI root, one text element, and one body division for the single source-titled commentary represented by duplicate manifest rows L427 and L468.",
+    "Reconcile every TEI page, line, paragraph, contents row, and diagram link to independent source-derived expectations; verify every external facsimile URI resolves to the retained scan.pdf bytes.",
+    "Validate the TEI against the bound TEI P5 XSD and Relax NG schemas and the source-accountability document against its bound JSON Schema.",
+    "Preserve OCR readings and list unreviewed OCR and diagram concerns as unresolved; do not infer missing text or convert technical validation into human acceptance, rights clearance, or publication authorization.",
+    "Require current declared work, state, edition, and acquisition sidecars to bind the candidate source; reproduce package and validation bytes from fresh processes."
+  ],
+  "oracle_import_closure": [
+    "build/__init__.py",
+    "build/tei/__init__.py",
+    "build/tei/ursinus_heidelberg_1852_v2_oracle.py",
+    "build/tei/ursinus_heidelberg_1852_reconstruction_oracle.py",
+    "ocd_kernel/__init__.py",
+    "ocd_kernel/reconstruction/__init__.py",
+    "ocd_kernel/reconstruction/contract.py",
+    "ocd_kernel/reconstruction/verifier.py"
+  ],
+  "runtime_dependencies": {
+    "PyMuPDF": "1.27.2.2",
+    "lxml": "6.0.2",
+    "jsonschema": "4.26.0"
+  },
+  "unresolved_fidelity_gaps": [
+    {
+      "id": "ursinus-1852-ocr-scan-collation",
+      "kind": "transcription-fidelity",
+      "scope": "All 720 retained OCR pages",
+      "statement": "Provider OCR spelling and transcription have not been comprehensively proofread against the retained scan. Preserve OCR readings without silent correction.",
+      "evidence": ["ocr.xml", "ocr.txt", "scan.pdf"],
+      "disposition": "Candidate preserves the source OCR and page/paragraph/line order; visual collation remains open."
+    },
+    {
+      "id": "ursinus-1852-diagram-proofreading",
+      "kind": "diagram-fidelity",
+      "scope": "Scan leaves 205 and 552",
+      "statement": "The scan-linked diagram carriers and transcribed brace hierarchy are present, but every printed label and branch relationship has not received complete visual and semantic proofreading.",
+      "evidence": ["scan.pdf#page=205", "scan.pdf#page=552", "ocr.xml"],
+      "disposition": "Retain the scanned figures and the current source-linked hierarchy as a nonaccepted candidate; keep proofreading open."
+    }
+  ],
+  "explicit_exclusions": [
+    "Human textual acceptance",
+    "Rights determination or clearance",
+    "Publication or release authorization",
+    "OCR correction without source-image evidence"
+  ]
+}

@@ -1,0 +1,1 @@
+| Amphilochius, *Epistula synodalis*; Severian, *De fide et lege naturae*; Methodius, *Symposium*; anonymous *Vita sancti Cononi*; Hesychius, *Commentarius magnus in Psalmos* | PTA/First1KGreek structured editions; CC BY-SA 4.0 | ★ CLEAN-READY / ◒ PARTIAL | Scholarly patristic tranche; exclude the NC Church Slavonic witness. |

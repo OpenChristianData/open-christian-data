@@ -1,0 +1,88 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-andrewes-private-devotions-retained",
+  "ticket_id": "LIB-067",
+  "work_id": "andrewes-private-devotions",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "producer_import_closure_sha256": "62f24c7ef00ba952f4654d7b449dc6656c95a8ff54f7dbfa68d586cae699699c",
+  "authorities": [
+    {
+      "name": "retained-text",
+      "path": "raw/ccel/andrewes-private-devotions.txt",
+      "role": "primary-source",
+      "bytes": 168055,
+      "sha256": "366ebbd4dc4ea9420099d7335beb73a47ff0f331803d8e3d7fb1c4ad81e6ea47"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/andrewes-private-devotions/lib067-andrewes.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1321,
+      "sha256": "f621e4dae774bd67675580e8f128c8991f90c8fac0b4d6ca624a245932545d2a"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/andrewes-private-devotions/lib067-andrewes.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1031,
+      "sha256": "75cb451d96450985f20fd4050e41d59601f677439fbb25abea52e534ef2a2acb"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/andrewes-private-devotions/README.lib067.source.md",
+      "role": "source-attribution",
+      "bytes": 1027,
+      "sha256": "52aa06b131053ab982a2885caaa23f2046dcff98cbc78e433b5796db30796116"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/andrewes-private-devotions/lib067-andrewes.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2164,
+      "sha256": "3ea31afa0b818ee8b4ef8fcd6e05f143d6302cd7198fce0e22baa0dec0947ad7"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib067-andrewes-retained-text-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lib067_andrewes_private_devotions.py",
+    "implementation_sha256": "5af91b28e9ebca66999553015340d1811717fdb858a3d29c2fce0d672fc38839"
+  },
+  "validator": {
+    "id": "ocd-lib067-andrewes-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lib067_andrewes_private_devotions_oracle.py",
+    "implementation_sha256": "c0f9448099515fa6d34df87ecd6ca99822e7b73bd882a01c16665577f2f1dd08",
+    "import_closure_sha256": "255bc56577d99e0bc66ef0cd7af353866ab9044d469c275b774990f9a4950bdc"
+  },
+  "lineage": {
+    "terminal_normalization": {
+      "double_lf": {
+        "README.lib067.source.md": "adf27a3b1d31061a4d9df128c45a107f061df20caa4bc662e9a7dbe0d78cda15",
+        "lib067-andrewes.reconstruction-profile.json": "ab051aa223a9ff73bb4907285cad885580a77820a19154e86e4fedc3898ec810",
+        "lib067-andrewes.source-accountability.schema.json": "1d7c9787e4340c87aa70adfad510f4f2fa19c33f6d4d06ee92093d48913ce4e6",
+        "lib067-andrewes.validation-policy.json": "9bdb09c6e2e6061b3a733d19d2b2b0ba858628a454353694d926d388db2d0772"
+      }
+    }
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

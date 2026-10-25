@@ -1,0 +1,55 @@
+{
+  "schema_version": "2.0",
+  "work_id": "john-woolman-journal-other-writings",
+  "title": "The Journal, with Other Writings of John Woolman",
+  "creators": [
+    {
+      "name": "John Woolman",
+      "role": "author",
+      "evidence": [
+        "raw/gutenberg/37311/html/pg37311-images.html",
+        "research/MANIFEST.md#L641"
+      ]
+    },
+    {
+      "name": "Vida Dutton Scudder",
+      "role": "introduction author",
+      "evidence": [
+        "raw/gutenberg/37311/html/pg37311-images.html"
+      ]
+    },
+    {
+      "name": "Ernest Rhys",
+      "role": "Everyman's Library series editor",
+      "evidence": [
+        "raw/gutenberg/37311/html/pg37311-images.html"
+      ]
+    }
+  ],
+  "evidence": [
+    "raw/gutenberg/37311/pg37311-h.zip",
+    "raw/gutenberg/37311/html/pg37311-images.html",
+    "raw/gutenberg/37311/acquisition-receipt.json",
+    "research/MANIFEST.md#L641",
+    "plans/2026-09-23-acquisition-manifest-source-to-tei/WORKLIST.md#L332",
+    "https://www.gutenberg.org/ebooks/37311",
+    "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/edition-identity.json"
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "english",
+      "title": "English collected volume",
+      "language": "en",
+      "editions": [
+        {
+          "edition_id": "everyman-402-1910-electronic",
+          "title": "Project Gutenberg eBook 37311 electronic witness of The Journal, with Other Writings of John Woolman (Everyman's Library no. 402, 1910)",
+          "language": "en",
+          "acquisition_ids": [
+            "gutenberg-37311"
+          ]
+        }
+      ]
+    }
+  ]
+}

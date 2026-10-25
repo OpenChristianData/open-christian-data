@@ -1,5 +1,7 @@
 # ADR-0007: Modernisation rules as data files
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15); amended 2026-05-16 (canonical `test_cases` field name, shape, and coverage requirements added during reconciliation walkthrough verification).
 
 ## Context

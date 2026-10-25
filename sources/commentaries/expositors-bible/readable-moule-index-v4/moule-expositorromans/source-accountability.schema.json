@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "member_id",
+    "source",
+    "root_ids_in_order",
+    "root_disposition",
+    "source_body_text",
+    "features",
+    "feature_count",
+    "comments",
+    "comment_count"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-expositors-lib034-readable-moule-skinner-accounting-v1"
+    },
+    "member_id": {
+      "const": "moule-expositorromans"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "path",
+        "bytes",
+        "sha256"
+      ]
+    },
+    "root_ids_in_order": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "root_disposition": {
+      "type": "object",
+      "required": [
+        "front",
+        "body",
+        "back"
+      ]
+    },
+    "source_body_text": {
+      "type": "string"
+    },
+    "features": {
+      "type": "array",
+      "minItems": 6373,
+      "maxItems": 6373,
+      "items": {
+        "type": "object",
+        "required": [
+          "ordinal",
+          "source_tag",
+          "source_attributes",
+          "source_text",
+          "source_tail",
+          "tei_id",
+          "tei_tag",
+          "tei_attributes"
+        ]
+      }
+    },
+    "feature_count": {
+      "const": 6373
+    },
+    "comments": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": [
+          "text",
+          "tail",
+          "after_feature",
+          "disposition"
+        ]
+      }
+    },
+    "comment_count": {
+      "const": 14
+    }
+  }
+}

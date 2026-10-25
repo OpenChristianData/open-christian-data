@@ -1,0 +1,102 @@
+{
+  "authorities": [
+    {
+      "bytes": 123756,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/24989/pg24989-h.zip",
+      "role": "primary-source",
+      "sha256": "c07fc7a789cbbc2a8f56b0f8f20949511d1a2c0726f132cafbeae979405736a4"
+    },
+    {
+      "bytes": 144002,
+      "name": "extracted-html",
+      "path": "raw/gutenberg/24989/html/pg24989-images.html",
+      "role": "source-extraction",
+      "sha256": "fb4576d4e74f90e087ecf608881c53f127f70d21d2efd75a02762c0f16878cf2"
+    },
+    {
+      "bytes": 1347,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/24989/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "91022209c1ad5bbeab8c6a2f7c818ecdf5cf6e1ebddff1316c40598e5b71cf11"
+    },
+    {
+      "bytes": 199,
+      "name": "member-inventory",
+      "path": "raw/gutenberg/24989/member-inventory.tsv",
+      "role": "source-member-inventory",
+      "sha256": "e9b127bda94a9fe4752da4405dc9c38e738ac0cb0a3de7a22fb1e91ee41c8f11"
+    },
+    {
+      "bytes": 1784,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/guyon-short-method-pg24989-v16/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "a04b30c690da15c2967410d90acd42d20d077a88088beaf9930bdba663b7d99d"
+    },
+    {
+      "bytes": 3133,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/guyon-short-method-pg24989-v16/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "49138c1ee9fa6677ba599f79d59de7c1e50a7d6cfbcd228432eac105ff9405a3"
+    },
+    {
+      "bytes": 1310,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/guyon-short-method-pg24989-v16/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "e1bc8d9c61f7a404f3e3015d038dce0f7d5e7a365b8d06f3b817aa326c4f3b66"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 14756,
+      "name": "historical-body-converter",
+      "path": "build/tei/manifest_pg_l772_l790.py",
+      "role": "bound-body-converter-dependency",
+      "sha256": "5e54d5a7d78d46fce9e25b5e05ac7723611f853c54e1f7717f57aa2946bcf427"
+    },
+    {
+      "bytes": 1452,
+      "name": "cover-visual-observation",
+      "path": "plans/2026-09-23-acquisition-manifest-source-to-tei/evidence/GUYON_PG24989_COVER_VISUAL_SOURCE_OBSERVATION_20261003.json",
+      "role": "independent-visual-source-observation",
+      "sha256": "f248635434917ae8e110bd3b384ff1368860b19ee53b00166b864d6c3242eb1c"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-guyon-pg24989-complete-envelope-to-tei",
+    "implementation_path": "build/tei/guyon_short_method_24989_v16.py",
+    "implementation_sha256": "56b5abd3d8ea9f66312eab946cc77b1bee672aebcf549e5deda2ea9ccce38199",
+    "version": "16"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "pg24989-l772-l790-retained-witness",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-guyon-pg24989-complete-envelope-oracle",
+    "implementation_path": "build/tei/guyon_short_method_24989_v16_oracle.py",
+    "implementation_sha256": "a153aa8c0096bd9a6540dccfb28f691050fe8e02792ad663bffacfb28bf87161",
+    "import_closure_sha256": "5fe5270f957a1051b5d4e201bd6fa62b0513f8adf334e084433d89702422c1c9",
+    "version": "16"
+  }
+}

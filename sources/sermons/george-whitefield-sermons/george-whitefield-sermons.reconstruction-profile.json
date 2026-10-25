@@ -1,0 +1,86 @@
+{
+  "contract": "ocd-george-whitefield-reconstruction-profile-v1",
+  "work_id": "george-whitefield-sermons",
+  "ticket_id": "LIB-060",
+  "catalog_title_observation": "Selected Sermons of George Whitefield",
+  "identity": {
+    "collection_boundary": "unresolved",
+    "edition_relationship": "unresolved",
+    "part_relationship": "unresolved",
+    "cross_witness_numbering": "unresolved; preserve each source-native label and do not assign shared ordinals",
+    "rights_status": "unresolved; no rights inquiry performed"
+  },
+  "route_observation": {
+    "authority": "sources/sermons/george-whitefield-sermons/config.json",
+    "authority_role": "legacy member-routing observation only",
+    "claims_not_adopted_as_facts": [
+      "the CCEL source edition/year statement",
+      "the Project Gutenberg source edition/year statement",
+      "the assignment of Project Gutenberg Sermons LVIII and LIX to shared records 60 and 61",
+      "the legacy rights and permission statements"
+    ]
+  },
+  "members": [
+    {
+      "name": "retained-ccel-xml",
+      "path": "raw/ccel/whitefield_sermons.xml",
+      "sha256": "cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec",
+      "bytes": 2046222,
+      "format_observation": "ThML XML; source root is ThML",
+      "scope": "complete retained XML document; preserve its head metadata and every direct body div1 carrier in source order, along with comments and source metadata",
+      "expected_root": "ThML",
+      "expected_body": "ThML.body",
+      "expected_direct_div1_count": 62,
+      "expected_direct_div1_ids": [
+        "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
+        "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx",
+        "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxvi", "xxvii", "xxviii", "xxix", "xxx",
+        "xxxi", "xxxii", "xxxiii", "xxxiv", "xxxv", "xxxvi", "xxxvii", "xxxviii", "xxxix", "xl",
+        "xli", "xlii", "xliii", "xliv", "xlv", "xlvi", "xlvii", "xlviii", "xlix", "l",
+        "li", "lii", "liii", "liv", "lv", "lvi", "lvii", "lviii", "lix", "lx",
+        "lxi", "lxii"
+      ],
+      "expected_sermon_div1_ids": [
+        "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii",
+        "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi", "xxii",
+        "xxiii", "xxiv", "xxv", "xxvi", "xxvii", "xxviii", "xxix", "xxx", "xxxi", "xxxii",
+        "xxxiii", "xxxiv", "xxxv", "xxxvi", "xxxvii", "xxxviii", "xxxix", "xl", "xli", "xlii",
+        "xliii", "xliv", "xlv", "xlvi", "xlvii", "xlviii", "xlix", "l", "li", "lii",
+        "liii", "liv", "lv", "lvi", "lvii", "lviii", "lix", "lx", "lxi"
+      ],
+      "nonsermon_carrier_dispositions": {
+        "i": "represented as the source title-page carrier",
+        "ii": "represented as the source contents carrier",
+        "lxii": "represented as the source indexes carrier"
+      },
+      "expected_processing_instruction_count": 2,
+      "expected_pre_root_processing_instruction_count": 2,
+      "expected_xml_comment_count": 11,
+      "expected_pre_root_xml_comment_count": 1,
+      "expected_in_root_xml_comment_count": 10,
+      "expected_post_root_xml_comment_count": 0,
+      "expected_doctype": ""
+    },
+    {
+      "name": "retained-project-gutenberg-text",
+      "path": "raw/gutenberg/sermons/whitefield/pg77041.txt",
+      "sha256": "b952725e8731399d4fd7fbe319aa9f57660d887f7cc6dd3937da91754e4ce08e",
+      "bytes": 896665,
+      "format_observation": "UTF-8 text with an initial BOM and a complete Project Gutenberg wrapper",
+      "expected_physical_line_count": 14698,
+      "expected_source_sermon_labels": [
+        "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX",
+        "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX",
+        "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX"
+      ],
+      "selected_source_sermon_labels": ["LVIII", "LIX"],
+      "selection_basis": "The legacy source-local config names the titles of two supplementary sermons. The retained member contains those exact title lines under its source-native labels LVIII and LIX. No shared ordinal, common edition, or common part boundary is inferred.",
+      "other_sermon_disposition": "Explicitly not selected by the current work-specific config; their relation to this catalog work remains unresolved and they are not declared outside Whitefield's larger corpus."
+    }
+  ],
+  "mapping": {
+    "ccel": "Convert every source XML element in the declared document envelope to a TEI element carrying the exact source tag and source attributes; preserve text, tails, order, and XML comments. Preserve processing-instruction target/data in the TEI source metadata.",
+    "project_gutenberg": "Represent the complete physical lines of only source-native Sermons LVIII and LIX as ordered TEI anonymous blocks; preserve their exact line text, including leading spaces. Bind every line ending and every selected/excluded physical line in source-accountability.json.",
+    "normalization": "No wording normalization, shared numbering, editorial correction, or inferred collection/edition/part relation."
+  }
+}

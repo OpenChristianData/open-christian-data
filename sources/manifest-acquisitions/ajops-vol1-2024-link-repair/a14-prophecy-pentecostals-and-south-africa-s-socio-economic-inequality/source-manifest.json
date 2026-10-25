@@ -1,0 +1,89 @@
+{
+  "authorities": [
+    {
+      "bytes": 71435,
+      "name": "publisher-xml",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/publisher-xml.xml",
+      "role": "primary-source",
+      "sha256": "f31b7842c5df74b59cd631da1e046dd2873c59be3b18d1ff67e9cf4c163f7331"
+    },
+    {
+      "bytes": 605214,
+      "name": "publisher-pdf",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/publisher-pdf.pdf",
+      "role": "comparison-witness",
+      "sha256": "1ac11f5fceae4468437f4ece356ea9cce81f87c76220e473294e01173b5d8087"
+    },
+    {
+      "bytes": 2054,
+      "name": "acquisition-receipt",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/receipt.json",
+      "role": "acquisition-receipt",
+      "sha256": "7cc64bccb9d8ebfca1e0f7173f85c76e8bf2f982df8fb627476f582fd868c419"
+    },
+    {
+      "bytes": 3713,
+      "name": "feature-profile",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "76e9fa159532fcdff00ea83e2daa5ac1fa9fa377c4e77107caccf5faf68a40b4"
+    },
+    {
+      "bytes": 801,
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "be4d7905c71e4229e47f0ef758ba7d052478ee4479caceac95a40c7914fdd642"
+    },
+    {
+      "bytes": 628,
+      "name": "source-readme",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a14-prophecy-pentecostals-and-south-africa-s-socio-economic-inequality/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "8c6d54f3234370736b80d9dd7768cfe1cf01a30bf0d6916da369ca178ab71238"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-ajops-jats-article-to-tei",
+    "implementation_path": "build/tei/ajops_jats_to_tei_v3.py",
+    "implementation_sha256": "b32de1d9bcbd9ab3ce98177380b0b8ef8fedce688977c6d6f00eec114ad24302",
+    "version": "3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "307257c240c8949424fb443ba48b4eb6505d73f4fcca2e5cb37956c50be593b7",
+  "source_id": "ajops-v1-2024-a14-retained-publisher-jats-and-pdf",
+  "source_selection": {
+    "authority": "publisher-xml",
+    "scope_cutoff": "2026-07-22",
+    "selection": "Complete publisher JATS article XML; exact publisher PDF retained as comparison witness; no alternate edition."
+  },
+  "ticket_id": "MANIFEST-ACQUISITION-20260925",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-ajops-jats-article-independent-source-census-oracle",
+    "implementation_path": "build/tei/ajops_jats_oracle_v3.py",
+    "implementation_sha256": "581e41b2100719b2bfd8cb83c29dfa9bf2842710f4ae622e846ed96fb725d7c1",
+    "import_closure_sha256": "5b2ea8723671df39dba08e6fdb0c743bedda8e67c7b50da4b086a77a85ebc330",
+    "version": "3"
+  },
+  "work_id": "ajops-v1-2024-a14"
+}

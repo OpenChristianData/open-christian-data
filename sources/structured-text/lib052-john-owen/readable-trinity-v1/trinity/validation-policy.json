@@ -1,0 +1,30 @@
+{
+  "contract": "ocd-owen-lib052-trinity-readable-validation-policy-v1",
+  "member_id": "trinity",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "retained-source-hash",
+    "complete-nine-root-front-body-back-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "electronic-header-title",
+    "unique-source-IDs-and-local-links",
+    "typed-source-attribution-carriers",
+    "index-marker-carriers",
+    "tei-p5",
+    "stock-native-prose-projection-and-independent-verification"
+  ],
+  "oracle_import_closure": [
+    "build/tei/owen_lib052_trinity_readable_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.owen_lib052_trinity_readable"
+  ]
+}

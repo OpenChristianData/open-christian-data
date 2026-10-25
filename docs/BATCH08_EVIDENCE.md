@@ -1,5 +1,7 @@
 # Batch 08 Evidence — Reference, Hymn, Sermon, and Miscellaneous Residuals
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 This file records the bounded evidence wave for batch 08. Counts below are
 computed from the named raw witnesses or existing generated outputs. No
 family-wide TEI claim is inferred from a proof wave.
@@ -78,8 +80,8 @@ Get-FileHash -Algorithm SHA256 -LiteralPath $out
 The parser-level verification loaded each cached page with BeautifulSoup,
 called the slug's function from `PARSER_FN_MAP`, removed derived `token_count`
 fields from the current JSON for comparison, and required exact unit equality.
-The Shorter Catechism check called `extract_wsc_proofs_from_html` and required
-exact equality with each question's current `proofs` array.
+The Shorter Catechism check called the one-pass `parse_wsc_witness_document`
+seam and required exact equality with each question's current `proofs` array.
 
 The host's responses were intermittent. The first successor pass returned 403
 for the Shorter Catechism and 200 for the other five pages. The hash-pinning
@@ -90,7 +92,7 @@ cached under `raw/westminster-standard-org/` and pinned in their configs:
 
 | Config | Bytes | SHA-256 | Edition-match evidence | Disposition |
 |---|---:|---|---|---|
-| `westminster-shorter-catechism` | 98,505 | `8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a` | 107 questions, 400 references, zero parse errors, and every parsed proof object exactly matches the current output | acquired HTML secondary witness; Creeds.json remains the primary Q&A source |
+| `westminster-shorter-catechism` | 98,505 | `8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a` | 107 questions and 401 references; the earlier 400 count omitted Q37's second emphasized proof fragment | acquired HTML secondary witness; Creeds.json remains the primary Q&A source |
 | `directory-for-family-worship` | 63,341 | `b18780153306e2966aac28f5c677b6c47588dc0eec4123e393dcd4687aba1640` | exact match to all 14 current units and 2,100 words | acquired |
 | `form-of-church-government` | 92,499 | `d5b31994e9ce43e7828ff65f3ac758e8974b0396d6ba03f991c785b8d92a3ac4` | exact match to all 19 current units and 5,257 words | acquired |
 | `solemn-league-and-covenant` | 66,315 | `824dfd79c68a13d137ad6f7f7575e8af5c856287087c9694a3100f2c45b4cc5d` | exact match to all 7 current units and 1,404 words | acquired |

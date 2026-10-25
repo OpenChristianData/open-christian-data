@@ -1,0 +1,1874 @@
+{
+  "schema_version": "tei-conformance-fixtures-v1",
+  "status": "provisional",
+  "purpose": "Small provenance-linked real TEI excerpts for TEI-003 profile and targeted reference checks.",
+  "source_oracle_policy": "Fixture/reference comparison is frozen regression evidence; it does not rerun source-family fidelity or authorize acceptance/publication.",
+  "namespaces": {
+    "tei": "http://www.tei-c.org/ns/1.0",
+    "xml": "http://www.w3.org/XML/1998/namespace"
+  },
+  "fixtures": [
+    {
+      "id": "augustine-ccel-chapter",
+      "path": "positive/augustine-ccel-chapter.tei.xml",
+      "sha256": "f4bb3a2fb8370ae753d7fa4962bc70399bf5aa26bbd2e3a2fb9ed4787d06f66a",
+      "kind": "synthetic-derivative",
+      "title": "City of God NPNF chapter excerpt",
+      "origin": {
+        "tei_path": "ir/augustine/city-of-god.ccel-npnf102.tei.xml",
+        "tei_sha256": "1f69679dd4ecafdc3f509c0216186864278a97d03aaadcade8fa8d69df475211",
+        "selector": "//tei:div[@xml:id='iv.ii.i']",
+        "source_authorities": [
+          {
+            "path": "sources/city-of-god/city-of-god-npnf-1887.source-manifest.json",
+            "sha256": "62c64b385758b08b1100ead4d630e46639b552d84a6acfa73e5f9b1d5e9cea01"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/npnf1/npnf102.xml",
+            "sha256": "b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a",
+            "locator": "XML div xml:id=iv.ii.i; retained chapter unit"
+          }
+        ],
+        "identity": {
+          "source_id": "city-of-god-npnf-1887-retained-authorities",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:chapter",
+        "head",
+        "p",
+        "note:place-end",
+        "ref:type-scripture",
+        "foreign",
+        "hi",
+        "seg"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and selector inventory",
+        "City of God source manifest and retained NPNF XML digest"
+      ],
+      "limits": [
+        "Current legacy header does not prove the four OCD identity IDs or a TEI representation revision."
+      ]
+    },
+    {
+      "id": "augustine-standard-ebooks-annotations",
+      "path": "positive/augustine-standard-ebooks-annotations.tei.xml",
+      "sha256": "5ca5cf1251a821874456658b7c9fd222111f6dad7e3cb5f95996711bb37d4eb3",
+      "kind": "synthetic-derivative",
+      "title": "City of God Standard Ebooks annotated book excerpt",
+      "origin": {
+        "tei_path": "ir/augustine/city-of-god.standard-ebooks.tei.xml",
+        "tei_sha256": "614c27fce6767450023d563f88077d592ef2ad8f956bd1d12294f4e5ea342f6b",
+        "selector": "(//tei:div[@xml:id='part-1'])[1] | (//tei:div[@xml:id='book-1']/tei:head)[1] | (//tei:div[@xml:id='book-1']/tei:argument)[1] | (//tei:div[@xml:id='book-1']//tei:p[.//tei:abbr and .//tei:seg and .//tei:hi])[1]",
+        "source_authorities": [
+          {
+            "path": "sources/city-of-god/city-of-god.reconstruction-profile.json",
+            "sha256": "0f794df5771981a126cec880c90749f94762d90883859860925e04bf9d1eace7"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/part-1.xhtml",
+            "sha256": "c581ca3eaa3640a7240cf2895d6a1cda7d32e0eeb7474a89dd23bd1c29ca1661",
+            "locator": "XHTML member part-1.xhtml; selected #part-1 fragment only"
+          },
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/book-1.xhtml",
+            "sha256": "73b94c7ba5e46395c30102ec2fa432e7034b01ce46fcd0c15f1bb9fd50e05254",
+            "locator": "XHTML member book-1.xhtml; selected book-1 head, argument, and annotated paragraph"
+          }
+        ],
+        "identity": {
+          "source_id": null,
+          "scope": "city-of-god.reconstruction-profile.json#standard_scope",
+          "git_commit_sha1": "7ec3a325a495cb791581d06f1c0fed14d2576ff0",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:part",
+        "div:book",
+        "argument",
+        "abbr",
+        "seg",
+        "hi:italic",
+        "note:place-end",
+        "external-edition-annotation"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master.",
+        "Grouped the selected original book head, argument, and annotated paragraph under a synthetic book excerpt wrapper because those source nodes were descendants of book-1; this preserves their selected wording/order/attachments without copying the whole book."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-undeclared-annotation. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-undeclared-annotation"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Standard Ebooks profile",
+        "Standard Ebooks member-set and commit evidence"
+      ],
+      "limits": [
+        "Standard Ebooks se/z3998 annotations remain external edition evidence; no common-token adoption is claimed.",
+        "The retained notes have corresp fragments #noteref-61 and #noteref-62 without those target anchors in this excerpt. Raw XHTML anchors exist in book-1.xhtml; this fixture does not claim complete local-pointer closure."
+      ]
+    },
+    {
+      "id": "bcp1662-liturgy",
+      "path": "positive/bcp1662-liturgy.tei.xml",
+      "sha256": "bbdc829c33021e36d7e0045168de6cb44f842848af7690712b14e64e59f93858",
+      "kind": "synthetic-derivative",
+      "title": "Book of Common Prayer 1662 service and collect excerpt",
+      "origin": {
+        "tei_path": "ir/bcp/book-of-common-prayer.bcp-1662.tei.xml",
+        "tei_sha256": "15fe6e96a3593b6563c728e641dcd49fde826bb5c9ddbf7890d33edc9914febb",
+        "selector": "//tei:div[@xml:id='bcp-bcp-1662-daily-morning']/tei:label | //tei:div[@xml:id='bcp-bcp-1662-daily-morning']/tei:p[@rend='rubric'][1] | //tei:sp[@xml:id='bcp-bcp-1662-daily-morning-sp-5-answer'] | //tei:div[@xml:id='bcp-bcp-1662-advent1-collect']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/bcp-1662/bcp-1662.source-manifest.json",
+            "sha256": "cad18b367c94aa76fbc6c1e2c4214a277f093bacaf9610de00211f92d66aeb4b"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/bcp-full-text/bcp-1662/daily__morning.html",
+            "sha256": "7902d0a48ace50a15688d392e3092e92cbd40525e6fd3829d89ffe69d8c791f3",
+            "locator": "HTML heading: The Order for Morning Prayer, Daily Throughout the Year"
+          },
+          {
+            "path": "raw/bcp1662/xmas.html",
+            "sha256": "502c0c6fa6a218070c789221d2b183fd20ffbbd2ea36ec5de59495fd5b1f83bd",
+            "locator": "HTML calendar Part I; Advent 1 collect"
+          }
+        ],
+        "identity": {
+          "source_id": "bcp-1662-retained-partial-html",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "scope": "partial service and calendar members",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:service",
+        "div:collect",
+        "label",
+        "p:rend-rubric",
+        "sp",
+        "speaker"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-undeclared-p-rend. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-undeclared-p-rend"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen BCP1662 output",
+        "BCP1662 manifest bundle and member digests"
+      ],
+      "limits": [
+        "The retained BCP1662 expression is explicitly partial; this excerpt does not claim a complete edition or rights decision."
+      ]
+    },
+    {
+      "id": "bunyan-standard-ebooks-lines",
+      "path": "positive/bunyan-standard-ebooks-lines.tei.xml",
+      "sha256": "1193658958787174fae0e57316bb01e9a069825ee4179de67045e576616b46df",
+      "kind": "synthetic-derivative",
+      "title": "Pilgrim's Progress Standard Ebooks line excerpt",
+      "origin": {
+        "tei_path": "ir/bunyan/pilgrims-progress.standard-ebooks.tei.xml",
+        "tei_sha256": "165a488f906f38d7fa8419f96e50ef6059beff8f8c604165b56300b43d65a5e5",
+        "selector": "(//tei:div[@xml:id='part-1']//tei:lg)[1]",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.source-manifest.json",
+            "sha256": "96731193d0f6f364ef18d7955812a5cee8b03ce8d035d2d98794b446d99e7878"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/john-bunyan_the-pilgrims-progress/src/epub/text/part-1.xhtml",
+            "sha256": "e739b408373a4b11c45f190f9029464a1fc9afccdb7407688f7a6110a4c494d7",
+            "locator": "XHTML member part-1.xhtml; first line-group selected under #part-1"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-pilgrims-progress-retained-checkout",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:part",
+        "lg",
+        "l",
+        "external-edition-annotation"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Standard Ebooks source manifest"
+      ],
+      "limits": [
+        "The legacy TEI header has a malformed 40-character source value; the manifest member digest is authoritative for this fixture."
+      ]
+    },
+    {
+      "id": "calvin-chapter-notes",
+      "path": "positive/calvin-chapter-notes.tei.xml",
+      "sha256": "598e8a362a4418732ecff644debf151c2737aaca813bf41088436285142e50a9",
+      "kind": "synthetic-derivative",
+      "title": "Calvin Institutes book and chapter excerpt",
+      "origin": {
+        "tei_path": "ir/calvin/calvins-institutes.gutenberg.tei.xml",
+        "tei_sha256": "5c986624d7af2f8392552096c7ea0773f41b0f512f23dc2e98b5cf917f5c70e1",
+        "selector": "//tei:div[@xml:id='pg45001-chapter-I-I']",
+        "source_authorities": [
+          {
+            "path": "sources/calvins-institutes/calvins-institutes.source-manifest.json",
+            "sha256": "2c4cd8a95af5fe9781bac9313e3449aec203cbdc93980a8ad2bc370cf3dfd0ac"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/gutenberg/pg45001.txt",
+            "sha256": "a989a8661fedc4e999ae4b5ba749a40e7e9e4d441e88f08ff97ce9d75623746c",
+            "locator": "Plain-text lines 1433 onward; BOOK I, chapter I.I"
+          }
+        ],
+        "identity": {
+          "source_id": "calvins-institutes-project-gutenberg-two-volume-retained",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "selected_member": "pg45001.txt",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:chapter",
+        "head",
+        "p",
+        "ref:type-note",
+        "note-attachment",
+        "source-order"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-note-target-resolves. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-note-target-resolves"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Calvin source manifest",
+        "Calvin retained-volume-1 locator and source digest"
+      ],
+      "limits": [
+        "This is one member/chapter excerpt; it cannot stand for the second retained volume or a complete edition.",
+        "The bounded chapter excerpt retains note pointers whose target notes are outside this selection. The semantic failure describes excerpt closure, not a finding that the complete Calvin source or TEI lacks those notes."
+      ]
+    },
+    {
+      "id": "athanasius-table",
+      "path": "positive/athanasius-table.tei.xml",
+      "sha256": "2d053a238098cfed3ff57044d1302c2da5db920f070e51f0ab142dd85a8587fd",
+      "kind": "synthetic-derivative",
+      "title": "Athanasius table excerpt",
+      "origin": {
+        "tei_path": "ir/ccel/athanasius-on-the-incarnation.ccel-npnf204.tei.xml",
+        "tei_sha256": "9b4c941fdbecfe150fd5054b8aa85382758e754f351179d802c00b5acc96d0cc",
+        "selector": "//tei:table[@xml:id='vii.i-p19.1']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.source-manifest.json",
+            "sha256": "ffde1e120acf13b0fa502f95d88015fb6aa36a932b528d543d30c11087c8cf68"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/npnf2/npnf204.xml",
+            "sha256": "bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652",
+            "locator": "XML table xml:id=vii.i-p19.1 and its retained page/row/cell order"
+          }
+        ],
+        "identity": {
+          "source_id": "ccel-npnf204-retained-xml",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "table",
+        "row",
+        "cell",
+        "pb",
+        "hi:italic",
+        "seg"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Athanasius table manifest",
+        "Retained NPNF204 XML table locator"
+      ],
+      "limits": [
+        "One real table is provisional structural coverage, not a complete table policy."
+      ]
+    },
+    {
+      "id": "owen-argument-notes",
+      "path": "positive/owen-argument-notes.tei.xml",
+      "sha256": "2a89e386a027c84678908ab82dc61f8d9d0062cf5c7b524f5f7aa30939c276d7",
+      "kind": "synthetic-derivative",
+      "title": "John Owen Mortification chapter excerpt",
+      "origin": {
+        "tei_path": "ir/ccel/owen-mortification.ccel-owen-mort.tei.xml",
+        "tei_sha256": "c059067e19def7485901db8279b2217e2ee43775c8806e22f5abcc555d8542cd",
+        "selector": "//tei:div[@xml:id='i.iv']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/lib051-john-owen/john-owen-lib051.source-manifest.json",
+            "sha256": "57307b81a8290a6de558ec9f7ad67136d6d02edf4d8f6f72d8fce0701c16be57"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/owen/mort.xml",
+            "sha256": "e3577b8e81583250a41df8b0bd6504dc37209a60944cbd5e20ec2ae82779c211",
+            "locator": "XML div xml:id=i.iv; argument, footnote, Scripture references, and page carriers"
+          }
+        ],
+        "identity": {
+          "source_id": "john-owen-lib051-ten-retained-ccel-xml",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "route": "lib051",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:chapter",
+        "argument",
+        "note:place-foot",
+        "ref:type-scripture",
+        "pb",
+        "foreign",
+        "hi:italic"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Owen lib051 source manifest"
+      ],
+      "limits": [
+        "The lib051 source route is explicit; this excerpt must not be rebound to the nearby lib050 route."
+      ]
+    },
+    {
+      "id": "fisher-dialogue",
+      "path": "positive/fisher-dialogue.tei.xml",
+      "sha256": "ae67c97c44ce2ee05fe03b44829f8c68bfe5c1463c22fd138f8ea764443bca34",
+      "kind": "synthetic-derivative",
+      "title": "Fisher Marrow dialogue excerpt",
+      "origin": {
+        "tei_path": "ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml",
+        "tei_sha256": "d239a7df562c426b746446997eb791c4cd0aa24e320fd1f362f336c0504b52c2",
+        "selector": "//tei:div[@xml:id='fisher-marrow-l1301-section-1']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json",
+            "sha256": "b04020db0ab2560a27b77269ba510d139b0c0b74c2fb915491447f421f89e7e9"
+          },
+          {
+            "path": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.reconstruction-profile.json",
+            "sha256": "33b63123b6ce5b855f776c20f20af08475f4a358e114ac0535734853f12eac89"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+            "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+            "locator": "Plain-text lines 1285-1301; part one, section, and speaker anchors"
+          }
+        ],
+        "identity": {
+          "source_id": "internet-archive-fisher-marrow-1837-retained-ocr",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "line_scope": "1285-1301",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:section",
+        "sp",
+        "speaker",
+        "p",
+        "source-line-locator"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Fisher source manifest/profile",
+        "Fisher source-line profile selectors"
+      ],
+      "limits": [
+        "OCR uncertainty and source scope remain visible evidence limits; no editorial correction is asserted."
+      ]
+    },
+    {
+      "id": "kempis-subchapter",
+      "path": "positive/kempis-subchapter.tei.xml",
+      "sha256": "696db36656dd5e4bfe575ee87d21c53d7d2628ad8d222cf2a38154ca0abfb133",
+      "kind": "synthetic-derivative",
+      "title": "Imitation of Christ subchapter excerpt",
+      "origin": {
+        "tei_path": "ir/kempis/imitation-of-christ.standard-ebooks.tei.xml",
+        "tei_sha256": "b983f88f70a5aeee169e47ee3b05f861e221e407a805d05319cdc8be383ce73c",
+        "selector": "//tei:div[@xml:id='chapter-3-3-1']",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
+            "sha256": "6b424ee3fb951a13c7a77e768d5ab96aaaf68de61a4e0e0a4ad152261db8d22f"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/src/epub/text/chapter-3-3.xhtml",
+            "sha256": "0de028662e5f5771cf06d7f7da759e648e5d97d5087c9d8b7982234837315fbd",
+            "locator": "XHTML fragment #chapter-3-3-1; nested subchapter content"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-imitation-of-christ-retained-checkout",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:subchapter",
+        "head",
+        "p",
+        "source-order"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-div-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-div-type"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen IR digest and Kempis source manifest"
+      ],
+      "limits": [
+        "The legacy TEI header has a malformed 40-character source value; the manifest member digest is authoritative."
+      ]
+    },
+    {
+      "id": "spurgeon-primary-references",
+      "path": "positive/spurgeon-primary-references.tei.xml",
+      "sha256": "24a528b397be5262640ccdd17058b314edcf76b02c4c5127fa4db57c18ae88d9",
+      "kind": "synthetic-derivative",
+      "title": "Spurgeon sermon primary-reference excerpts",
+      "origin": {
+        "tei_path": "ir/spurgeon/spurgeon-mtp.proof-wave.tei.xml",
+        "tei_sha256": "cd3d6e560918fc88837c096a221d8c90b1446bfda46198bdcd31ab87b86e2530",
+        "selector": "//tei:div[@xml:id='spurgeon-mtp-1']/tei:quote[@type='primary-reference'] | //tei:div[@xml:id='spurgeon-mtp-15']/tei:quote[@type='primary-reference'] | //tei:div[@xml:id='spurgeon-mtp-1']/tei:list[1]",
+        "source_authorities": [
+          {
+            "path": "sources/spurgeon-mtp/spurgeon-mtp.source-manifest.json",
+            "sha256": "d2be88cbe6e86788c5cbdbde452e1256f3a91b7dafb4fae8e9d4f680b1dec196"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/spurgeon_sermons/html/1.html",
+            "sha256": "39a99f4d95ebe439d6fb232dd9d3b226039848a97fa14792d6dbf8f5698f0699",
+            "locator": "HTML article class=sermon; sermon 1 primary passage"
+          },
+          {
+            "path": "raw/spurgeon_sermons/html/15.html",
+            "sha256": "67d27cc11b0e10b937f519a40a79fd4fd405e6b2e5c6e1311384b800f3d5b068",
+            "locator": "HTML article class=sermon; sermon 15 primary passage"
+          }
+        ],
+        "identity": {
+          "source_id": "spurgeon-mtp-complete-retained-html",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "proof_wave": "3-of-3547",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:sermon",
+        "quote:type-primary-reference",
+        "ref:type-scripture",
+        "list",
+        "item"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-undeclared-quote-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-undeclared-quote-type"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen Spurgeon proof-wave digest and source manifest",
+        "Two differing sermon HTML member bindings"
+      ],
+      "limits": [
+        "The proof wave samples three of 3,547 sermons; its size is a coverage limit, not a TEI failure or human review."
+      ]
+    },
+    {
+      "id": "hastings-dictionary-entry",
+      "path": "positive/hastings-dictionary-entry.tei.xml",
+      "sha256": "fa385c821d0752109fcd741c7019556b16289f1200c347d7cb4d3bac14ecbab5",
+      "kind": "synthetic-derivative",
+      "title": "Hastings Dictionary ABEL entry",
+      "origin": {
+        "tei_path": "reports/_reconstruction/review/cross-category-pilot/packages/0a38cebd11dac6159eb9b18d64317e7e37fc09f4b147117a58204be83fb7c137/content.tei.xml",
+        "tei_sha256": "3e8f3abae6ed65de0e2ad4fa9d2e4660cb41a7173ee51eb75c4658f98c8183ca",
+        "selector": "//tei:div[@xml:id='hastings-abel-entry']",
+        "source_authorities": [
+          {
+            "path": "sources/hastings-dictionary-of-the-bible/LIB-016/lib016-hastings.source-manifest.json",
+            "sha256": "a081d46ae18816da678fc8a304f59da334f04bb9cc94c26314d24cb80f680b46"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ia/hastings-dictionary/DictionaryOfTheBibleV1_djvu.txt",
+            "sha256": "7a7bf16bf9a32891e62ab6dce4948ba9cee16bdfa4633fa7111a6e24b0ec8403",
+            "locator": "Plain-text lines 2045-2088; ABEL entry"
+          }
+        ],
+        "identity": {
+          "source_id": "hastings-dictionary-of-the-bible",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "package_status": "bounded-pilot-not-accepted",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "dictionary-entry",
+        "headword",
+        "p",
+        "source-line-locator",
+        "cross-reference"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-undeclared-annotation for the source-owned ocr-uncertain annotations and ocd-undeclared-subtype for source-owned subtype values. Dictionary-entry and headword vocabulary is admitted by the provisional common profile; P5 validity alone is not semantic conformance.",
+          "Source-owned head/seg type values require declared extension records; their source-faithful preservation is not common-profile admission."
+        ],
+        "required_common_rule_ids": [
+          "ocd-undeclared-annotation",
+          "ocd-undeclared-subtype"
+        ]
+      },
+      "evidence": [
+        "Candidate package manifest/provenance/profile evidence",
+        "Hastings source manifest and exact line range"
+      ],
+      "limits": [
+        "This is a bounded pilot candidate, not an accepted dictionary master or rights decision."
+      ]
+    },
+    {
+      "id": "expositor-commentary",
+      "path": "positive/expositor-commentary.tei.xml",
+      "sha256": "b0e5e7685698755a5ef703e6d988d0f7ba78a2e2e70d048fdea88ce4a60193d0",
+      "kind": "synthetic-derivative",
+      "title": "Expositor's Bible Mark commentary excerpt",
+      "origin": {
+        "tei_path": "reports/_reconstruction/review/cross-category-pilot/packages/3bfeee5e7b5360f64b1d5e27107d3e59c8e38bcfd8ca9aad5e235797fd5d1b12/content.tei.xml",
+        "tei_sha256": "7e68835aee67d673b42fb01f155f26ec57f65b097d35965b38051838655bd39e",
+        "selector": "//tei:div[@xml:id='source-iii-i']",
+        "source_authorities": [
+          {
+            "path": "sources/commentaries/expositors-bible/mark.source-manifest.json",
+            "sha256": "78a759133a98d26b86de16b3eb85082dc2819cd840dd0ee9878a3cf91b8ca4d4"
+          },
+          {
+            "path": "sources/commentaries/expositors-bible/mark.reconstruction-profile.json",
+            "sha256": "950fdc473e39497d31a43d07e230757b3ed24d1cc072352481a966e28b06c5a2"
+          },
+          {
+            "path": "sources/commentaries/expositors-bible/mark.validation-policy.json",
+            "sha256": "a89161738bd46b4fc7b6ea94666d69532ac6041929b2137b4067aa2f1bed1ee4"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/expositors-bible/chadwick_mark.xml",
+            "sha256": "1bbe36d072f96184a6d6c46a13d0b0b4e6c395f02efd5e769dc87e2d6fcf4bf2",
+            "locator": "XML Mark I:1-6 commentary division iii.i; within Mark I:1-13 scope"
+          }
+        ],
+        "identity": {
+          "source_id": "ccel-chadwick-mark-whole-thml",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "package_status": "bounded-pilot-not-accepted",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:commentary",
+        "head",
+        "p",
+        "note",
+        "ref",
+        "scripture-reference"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-ref-type, ocd-undeclared-ab-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-ref-type",
+          "ocd-undeclared-ab-type"
+        ]
+      },
+      "evidence": [
+        "Candidate package manifest/provenance/profile/policy evidence",
+        "Expositor Mark source manifest and exact division locator"
+      ],
+      "limits": [
+        "The comparison JSON is not source authority; rights and human-review status remain separate."
+      ]
+    },
+    {
+      "id": "american-missionary-periodical",
+      "path": "positive/american-missionary-periodical.tei.xml",
+      "sha256": "6f2d73b88fddfcf2cc981155c3ecec7edda1185f9f26787663e3fcbdb545c6bb",
+      "kind": "synthetic-derivative",
+      "title": "American Missionary volume 36 issue excerpt",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-5/35/american-missionary-volume-36-1882/candidate/american-missionary-volume-36-1882.tei.xml",
+        "tei_sha256": "04823c4d821fc3abb5d1d81b13f1d1fe19c5677489db4209c92426adad48b795",
+        "selector": "(//tei:div[@xml:id='amv36-issue-01']/tei:head)[1] | (//tei:div[@xml:id='amv36-issue-01']//tei:table)[1] | (//tei:div[@xml:id='amv36-issue-01']//tei:figure[@xml:id='amv36-i01-img_images_coversm.jpg'])[1] | (//tei:div[@xml:id='amv36-issue-01']//tei:pb)[1]",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/american-missionary-volume-36-1882/config.json",
+            "sha256": "82ec904f265274148a2d3a0aa17ceacfb612c3f7ee8510002461a196b3cb67e4"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-5/35/american-missionary-volume-36-1882/pg57445/pg57445-images.html",
+            "sha256": "76f775aa529175bd9bfd333bd44d766518397ee3f6edc64f69a2389ec539ed31",
+            "locator": "HTML issue 1, Project Gutenberg 57445; periodical member root"
+          }
+        ],
+        "identity": {
+          "source_id": null,
+          "legacy_slug": "american-missionary-volume-36-1882",
+          "identity_status": "provisional_net_new_candidate",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "member_scope": "280 retained files / 12 issues",
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "periodical-issue",
+        "head",
+        "table",
+        "row",
+        "cell",
+        "figure",
+        "graphic",
+        "pb",
+        "source-node",
+        "source-wrapper"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-hi-rend. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-hi-rend"
+        ]
+      },
+      "evidence": [
+        "Candidate config/receipt/accounting/validation/verification evidence",
+        "Issue-1 source member hash spot-check"
+      ],
+      "limits": [
+        "Source-node/source-wrapper are source-family carriers; this fixture does not adopt them as common semantics or establish rights.",
+        "The table retains 19 page references, including Page_2 and Page_30, while this selection includes only the Page_1 milestone. These external-to-excerpt page targets are an explicit bounded-pointer gap, not evidence of missing pages in the source."
+      ]
+    },
+    {
+      "id": "ports-entry-periodical",
+      "path": "positive/ports-entry-periodical.tei.xml",
+      "sha256": "a4473dc8e1146ff7a04635e623bfbdc1467b808cce32a04c298a56aa7da6e1d0",
+      "kind": "synthetic-derivative",
+      "title": "Ports of Entry Missionary Herald section excerpt",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-5/35/ports-of-entry-missionary-herald/candidate/ports-of-entry-missionary-herald.tei.xml",
+        "tei_sha256": "567dd0e8ce8f4c7922287d68a5bec6464943c35612b980b1313ae6d7e690f7fc",
+        "selector": "//tei:div[@xml:id='poe-ellis-island']/tei:head | //tei:div[@xml:id='poe-ellis-island']/tei:list[@type='simple'][1] | //tei:div[@xml:id='poe-ellis-island']/tei:table[1] | //tei:div[@xml:id='poe-ellis-island']/tei:figure[1] | //tei:div[@xml:id='poe-ellis-island']/tei:pb[1]",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/ports-of-entry-missionary-herald/config.json",
+            "sha256": "cd8e2942308d721487f54205e8a44222ad762356aad28921c879fe87c791d00c"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-5/35/ports-of-entry-missionary-herald/pg55955-images.html",
+            "sha256": "a8d4f79ae076080cd64ef07b3cb798dcdcfc1b9d38f461f0648c9844b0bb3dbf",
+            "locator": "HTML section Ellis Island; source heading and page/list/table/figure sequence"
+          }
+        ],
+        "identity": {
+          "source_id": null,
+          "legacy_slug": "ports-of-entry-missionary-herald",
+          "identity_status": "provisional_net_new_candidate",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "periodical-section",
+        "head:source-h2",
+        "list:type-simple",
+        "table",
+        "row",
+        "cell",
+        "figure",
+        "pb",
+        "source-carrier"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-head-type and ocd-controlled-list-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance.",
+          "Source-owned head/seg type values require declared extension records; their source-faithful preservation is not common-profile admission."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-head-type",
+          "ocd-controlled-list-type"
+        ]
+      },
+      "evidence": [
+        "Candidate config/receipt/accounting/validation/verification evidence",
+        "Ports source member and Ellis Island locator"
+      ],
+      "limits": [
+        "Simple lists and source-* carriers remain source/category evidence pending extension ownership; rights and edition questions remain separate."
+      ]
+    },
+    {
+      "id": "missionary-survey-source-prose",
+      "path": "positive/missionary-survey-source-prose.tei.xml",
+      "sha256": "dcdc81deb9cd37b5b3e54519ffd2b0ec16c5cc04dc5b3532c5232aec84058d13",
+      "kind": "synthetic-derivative",
+      "title": "Missionary Survey chapter and table-transcription excerpt",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-5/35/missionary-survey/candidate/missionary-survey.tei.xml",
+        "tei_sha256": "be815784cb77e2fd786d70da15342573f647d36a7f167c451750df2e39e11e13",
+        "selector": "//tei:div[@xml:id='ms-chapter-IV']/tei:head[1] | //tei:div[@xml:id='ms-chapter-IV']/tei:head[2] | //tei:div[@xml:id='ms-chapter-IV']/tei:ab[@type='table-transcription'][1] | //tei:div[@xml:id='ms-chapter-IV']/tei:note[1]",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/missionary-survey/config.json",
+            "sha256": "f1c07bc0d0cf4e339b0362ca42f5cfe628f1c84fc86e6377b3cdc6cdc131ddd7"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-5/35/missionary-survey/pg13360.txt",
+            "sha256": "9ecb274cbbd9cda2e699b643cf3f2c1a574ed60639b49d586d9c9a6af7772878",
+            "locator": "Plain-text Project Gutenberg 13360; chapter IV source lines"
+          },
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-5/35/missionary-survey/pg13360-images.html",
+            "sha256": "eb15097c360d6c7c100a46142dffec55e935e3b9780560dd9fe29da5b50e1202",
+            "locator": "HTML cross-check Project Gutenberg 13360; chapter IV heading/table witness"
+          }
+        ],
+        "identity": {
+          "source_id": null,
+          "legacy_slug": "missionary-survey",
+          "identity_status": "provisional_net_new_candidate",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "div:chapter",
+        "head",
+        "ab:table-transcription",
+        "note",
+        "source-line-locator"
+      ],
+      "transformations": [
+        "Copied the selected original TEI nodes byte-semantically at the XML event level into a small excerpt; original wording, order, attributes, tails, and node attachments are retained.",
+        "Added a TEI-003 provisional header and a synthetic section wrapper solely to make the excerpt self-contained; the wrapper is not source content, a work/edition identity, or a master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-head-type, ocd-undeclared-ab-type, ocd-undeclared-style (plus the source-owned element-type gap). A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance.",
+          "Source-owned head/seg type values require declared extension records; their source-faithful preservation is not common-profile admission."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-head-type",
+          "ocd-undeclared-ab-type",
+          "ocd-undeclared-element-type",
+          "ocd-undeclared-style"
+        ]
+      },
+      "evidence": [
+        "Candidate config/receipt/accounting/validation/verification evidence",
+        "Project Gutenberg text and HTML cross-check hashes"
+      ],
+      "limits": [
+        "The source report records table orientation uncertainty; this excerpt preserves the surfaced transcription and does not settle that question."
+      ]
+    },
+    {
+      "id": "augustine-standard-ebooks-metadata-matter",
+      "path": "positive/augustine-standard-ebooks-metadata-matter.tei.xml",
+      "sha256": "89272151135ec6e2dbeb8af6f7e5af34aef890e66977c149d1578ba6f62047e3",
+      "kind": "synthetic-derivative",
+      "title": "City of God Standard Ebooks header and metadata-matter excerpt",
+      "origin": {
+        "tei_path": "ir/augustine/city-of-god.standard-ebooks.tei.xml",
+        "tei_sha256": "614c27fce6767450023d563f88077d592ef2ad8f956bd1d12294f4e5ea342f6b",
+        "selector": "/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author | /tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:respStmt | /tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:publisher | /tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:availability | /tei:TEI/tei:text/tei:front/tei:div[@xml:id='titlepage'] | /tei:TEI/tei:text/tei:front/tei:div[@xml:id='preface']/tei:head | /tei:TEI/tei:text/tei:front/tei:div[@xml:id='preface']/tei:p[1] | /tei:TEI/tei:text/tei:front/tei:div[@xml:id='preface']/tei:trailer | /tei:TEI/tei:text/tei:back/tei:div[@xml:id='colophon'] | /tei:TEI/tei:text/tei:back/tei:div[@xml:id='uncopyright']/tei:p[1]",
+        "source_authorities": [
+          {
+            "path": "sources/city-of-god/city-of-god.reconstruction-profile.json",
+            "sha256": "0f794df5771981a126cec880c90749f94762d90883859860925e04bf9d1eace7"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/titlepage.xhtml",
+            "sha256": "498a98666d7b884ed07e4e5f29085578c7a4a068a7f5bdc5609bbf0f844f4f41",
+            "locator": "XHTML titlepage member; selected front/titlepage division"
+          },
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/preface.xhtml",
+            "sha256": "7db359baf1cfe66375efeddc5a84d5b3da855d50e8b67a60e578cc12c058e928",
+            "locator": "XHTML preface member; selected preface head, first paragraph, and trailer"
+          },
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/colophon.xhtml",
+            "sha256": "556683dc00e926d965e505606c02e5b97ce7d03abea99bc1ce1d867f3e2b0920",
+            "locator": "XHTML colophon member; selected back/colophon division"
+          },
+          {
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/uncopyright.xhtml",
+            "sha256": "d07c76023355a3f86a1b24bf4c9f9ed61d10015446786bd4861d4c5c3a8abf10",
+            "locator": "XHTML uncopyright member; selected paragraph with emph"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-city-of-god-retained-checkout",
+          "scope": "metadata-matter members and generated legacy TEI header",
+          "git_commit_sha1": "7ec3a325a495cb791581d06f1c0fed14d2576ff0",
+          "work_id": null,
+          "textual_form_id": null,
+          "edition_id": null,
+          "acquisition_id": null,
+          "canonical_identity_status": "undeclared; this fixture is identified by retained-source-local evidence, not invented pipeline IDs"
+        }
+      },
+      "patterns": [
+        "teiHeader",
+        "author",
+        "respStmt",
+        "resp",
+        "name",
+        "publisher",
+        "availability",
+        "front",
+        "back",
+        "head",
+        "div:titlepage",
+        "div:preface",
+        "div:colophon",
+        "trailer",
+        "date",
+        "emph",
+        "hi",
+        "source-order"
+      ],
+      "transformations": [
+        "Copied selected original header, front, preface-trailer, colophon, and uncopyright paragraph nodes byte-semantically at the XML event level; original wording, order, attributes, tails, and attachments are retained.",
+        "Added a TEI-003 provisional header, synthetic preface/uncopyright wrappers, and a labeled body context solely to keep selected nodes self-contained; the wrappers and copied header are a derivative fixture, not source content, an accepted master, or a rights decision."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Legacy titlepage spelling is retained as source evidence; no preferred-value normalization is claimed.",
+          "Synthetic wrapper/header is not an accepted master and does not establish human acceptance, rights, or publication.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-controlled-div-type, ocd-undeclared-annotation, ocd-undeclared-note-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-controlled-div-type",
+          "ocd-undeclared-annotation",
+          "ocd-undeclared-note-type"
+        ]
+      },
+      "evidence": [
+        "TEI-001 frozen Augustine Standard Ebooks output",
+        "City of God reconstruction profile and exact four XHTML member digests",
+        "Frozen reference comparison checks expanded-name, attribute, text, order, and attachment events"
+      ],
+      "limits": [
+        "Header metadata is inherited from the existing legacy TEI evidence and is not a new bibliographic or rights authority.",
+        "This fixture is a bounded metadata-matter excerpt, not a whole-edition source-fidelity claim.",
+        "The retained preface note has corresp=\"#noteref-1\" without that target anchor in this excerpt. The raw anchor exists in preface.xhtml; this fixture does not claim complete local-pointer closure."
+      ]
+    },
+    {
+      "id": "lightfoot-source-only-header-probe",
+      "path": "positive/lightfoot-source-only-header-probe.tei.xml",
+      "sha256": "73497bc84693e1cdd6f0383cd11c0f05f9149cfedb76c4f8b35d98582e06e62b",
+      "kind": "synthetic-derivative",
+      "title": "Lightfoot retained-source-only header placement probe",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "UTF-8 retained source lines 75-94 inclusive",
+        "source_authorities": [
+          {
+            "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.source-manifest.json",
+            "sha256": "b13e1a9623f469c91c0370d4ff57a3c76aefbdcd214f19a1527ced1ea5166a5a"
+          },
+          {
+            "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.reconstruction-profile.json",
+            "sha256": "d77e4058eb1b37d8762a7040f32df4708d249b4f842ea182e2421552cd310abe"
+          },
+          {
+            "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.validation-policy.json",
+            "sha256": "e574b082eed742b5b01ee4cbc46e9112fd3949eccce89bd1327d57c107bc897d"
+          },
+          {
+            "path": "library/works/lightfoot-colossians-philemon/work.json",
+            "sha256": "89287774d2a4b6e78181feeb21c686c8b3bc00269ae29b296fdd0f50c3e496ac"
+          },
+          {
+            "path": "library/works/lightfoot-colossians-philemon/forms/lightfoot-english/editions/pg50857/acquisitions/pg50857-text.json",
+            "sha256": "a9ed5975b415b00d361b028a308b8f910416e0daca9075daf9aadfdd196ac27b"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/gutenberg/commentary/lightfoot-colossians-philemon/pg50857.txt",
+            "sha256": "a97cb49964906a2c158a0444cfdc3b0daf13261620c919a90f1333a98ac0b913",
+            "locator": "UTF-8 decoded retained source lines 75-94 inclusive (title and print-layer block; creator identity is bound from work authority)"
+          }
+        ],
+        "identity": {
+          "source_id": "gutenberg-50857-lightfoot-colossians-philemon-retained",
+          "work_id": "lightfoot-colossians-philemon",
+          "textual_form_id": "lightfoot-english",
+          "edition_id": "pg50857",
+          "acquisition_id": "pg50857-text",
+          "source_scope": "Complete retained PG 50857 text file; selected lines 75-94 only (creator name supplied by work authority)",
+          "representation_status": "no-existing-tei-origin"
+        }
+      },
+      "patterns": [
+        "teiHeader",
+        "idno:ocd-work-id",
+        "idno:ocd-textual-form-id",
+        "idno:ocd-edition-id",
+        "idno:ocd-acquisition-id",
+        "revisionDesc",
+        "change",
+        "front",
+        "div:title-page",
+        "p:source-line",
+        "source-order"
+      ],
+      "transformations": [
+        "Copied exact decoded source lines 75-94 into one bounded synthetic title-page derivative, retaining source order and line content; the named creator in the header comes from the existing work authority, not an invented source-line claim. Added one labeled synthetic body context only to satisfy the self-contained TEI document shape. This is not a source-to-TEI reconstruction.",
+        "Added a provisional TEI header solely to probe the approved identity-ID and representation-revision placements. The four IDs come from the existing Lightfoot authority files; none is invented from a title."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "expected-common-profile-failure",
+        "known_issues": [
+          "Source-only derivative has no original TEI origin or source-to-TEI fidelity oracle; parent loader must treat origin.kind=retained-source-only separately.",
+          "The derivative is evidence for header placement only and cannot be promoted, accepted, rights-cleared, or published.",
+          "The preserved excerpt intentionally demonstrates common-profile gaps: ocd-undeclared-note-type. A selected extension, if declared, has a separate fixture-bound test; P5 validity alone is not semantic conformance."
+        ],
+        "required_common_rule_ids": [
+          "ocd-undeclared-note-type"
+        ]
+      },
+      "evidence": [
+        "Lightfoot source manifest and acquisition sidecar",
+        "Lightfoot reconstruction profile line representation",
+        "Existing work/form/edition/acquisition authorities",
+        "Exact retained source SHA-256 and lines 75-94 locator"
+      ],
+      "limits": [
+        "No real TEI master/candidate exists for this target; the empty library master tree is not substituted.",
+        "No human review, fidelity result, rights determination, or publication authorization is claimed.",
+        "Typed source-location/source-identity header notes are provisional derivative annotations and intentionally fail the common profile; header-probe tests exercise identity placement separately."
+      ]
+    },
+    {
+      "id": "nave-dictionary-entry-pure",
+      "path": "positive/nave-dictionary-entry-pure.tei.xml",
+      "sha256": "5dbcf5e5bc15d7b010e7cf10459ff3b27affed61cb53c6059f28a8480c72233f",
+      "kind": "synthetic-derivative",
+      "title": "Nave ABEL dictionary entry",
+      "origin": {
+        "tei_path": "reports/_reconstruction/source-to-ir-batches/2026-08-02-broad-pass/packages/33e68744042337be0f4f5b843d8a2ceadef264a18a6a67e4380baacf4e09576c/content.tei.xml",
+        "tei_sha256": "c8ef6a5ceaaa002f1ffc53d2d584e968d430681959b2b1b58c5bbee79b044944",
+        "selector": "//tei:div[@xml:id='nave-ABEL-1']",
+        "source_authorities": [
+          {
+            "path": "sources/naves-topical-bible/naves-topical-bible.source-manifest.json",
+            "sha256": "0b872185c2c75bea101b4816940ec3424b8fc7fd41822aa99387662405048062"
+          },
+          {
+            "path": "reports/_reconstruction/source-to-ir-batches/2026-08-02-broad-pass/packages/33e68744042337be0f4f5b843d8a2ceadef264a18a6a67e4380baacf4e09576c/manifest.json",
+            "sha256": "33e68744042337be0f4f5b843d8a2ceadef264a18a6a67e4380baacf4e09576c"
+          },
+          {
+            "path": "reports/_reconstruction/source-to-ir-batches/2026-08-02-broad-pass/packages/33e68744042337be0f4f5b843d8a2ceadef264a18a6a67e4380baacf4e09576c/provenance.json",
+            "sha256": "2e2f8c6f3e03d59af6c4645f7f1f86c7a83ae487c2473b4f88f9c246a48e97a1"
+          },
+          {
+            "path": "reports/_reconstruction/source-to-ir-batches/2026-08-02-broad-pass/packages/33e68744042337be0f4f5b843d8a2ceadef264a18a6a67e4380baacf4e09576c/evidence.json",
+            "sha256": "f99f698cc7a26bf2acd4b0ee507c9653e0a6ab3b90872238c4b7fd98ac8b7cd1"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/naves_topical/Nave.zip",
+            "sha256": "52d9b7cde04c2abb5187ae804bcb97d93c7344a1358539f50ebc178ac0c945f0",
+            "locator": "Nave v3 SWORD archive; zLD dictionary entryFree n=ABEL and dict.idx/dict.dat/dict.zdt/dict.zdx members"
+          }
+        ],
+        "identity": {
+          "source_id": "crosswire-nave-sword-v3",
+          "work_id": null,
+          "package_status": "bounded-pilot-pass-not-accepted",
+          "source_scope": "ABEL entry; candidate package is review evidence only",
+          "legacy_slug": "naves-topical-bible",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:dictionary-entry",
+        "head:headword",
+        "p",
+        "list",
+        "ref",
+        "source-order",
+        "source-candidate-reorder"
+      ],
+      "transformations": [
+        "Retain the selected entry, own headword, and all three source carriers in retained source order: sense 1 paragraph, death-reference list, then sense 2 paragraph.",
+        "Normalize source div/@type=reference-entry to canonical div/@type=dictionary-entry; preserve the source spelling in the provenance and source-selection evidence.",
+        "The broad-pass candidate placed sense 2 before the death-reference list; the fixture repairs that candidate-only ordering defect from the retained source without editing the candidate or master.",
+        "Preserve the retained source's two spaces in 1Jo  3:12; the initial fixture draft collapsed that spacing and was corrected before verification.",
+        "Add only the provisional TEI header and self-contained section wrapper; the wrapper is not source content or an accepted master."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Candidate and source package remain bounded nonaccepted evidence; conformance does not establish human acceptance, rights, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Current Nave source manifest and retained archive hash",
+        "Bounded broad-pass candidate package manifest, provenance, and evidence",
+        "Source-led order correction and two-space spelling observation"
+      ],
+      "limits": [
+        "This is a bounded ABEL entry excerpt, not a whole-dictionary reconstruction or accepted edition."
+      ]
+    },
+    {
+      "id": "baxter-subsection",
+      "path": "positive/baxter-subsection.tei.xml",
+      "sha256": "687b412d937d9bb2261bfd3106395f585ee24dbf72d5a3c9ae7b2e1573c7d6d4",
+      "kind": "synthetic-derivative",
+      "title": "A Christian Directory subsection heading",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/candidate/package/content.tei.xml",
+        "tei_sha256": "1b90e060921164cb2486d938c653640537cb710e8b1889c48a0e10f5e515035e",
+        "selector": "//tei:div[@type='subsection'][tei:head='Directions about the work it self.']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/baxter-christian-directory/baxter-christian-directory.source-manifest.json",
+            "sha256": "8d617c9f960756b7883def9238e3e8f5a20eaaa7e735789bbdd17432c035b174"
+          },
+          {
+            "path": "reports/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/candidate/package/manifest.json",
+            "sha256": "8f5f188e18289d8b93265a09df9fbd73ca4de7913e8bd905f1966ef6a98270d0"
+          },
+          {
+            "path": "reports/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/candidate/package/provenance.json",
+            "sha256": "2e7a48a8cd8404dd018530efea6b2fb88a585ab0144da14929f7e837e88b1ae9"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-2/14/baxter-christian-directory/A26892.xml",
+            "sha256": "1b90e060921164cb2486d938c653640537cb710e8b1889c48a0e10f5e515035e",
+            "locator": "TEI div @type=subsection beginning at retained-source line 17652; head text Directions about the work it self."
+          }
+        ],
+        "identity": {
+          "source_id": "eebo-tcp-a26892-pinned-tei-p5",
+          "work_id": null,
+          "package_status": "nonaccepted-byte-identical-candidate",
+          "source_scope": "Selected subsection heading only; all body paragraphs are outside this fixture excerpt",
+          "legacy_slug": "baxter-christian-directory",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:subsection",
+        "head",
+        "source-line-locator",
+        "explicit-excerpt-scope"
+      ],
+      "transformations": [
+        "Retain only the source subsection heading under a synthetic section wrapper; all body content is outside this narrow common-vocabulary proof.",
+        "Preserve source div/@type=subsection exactly; all source body paragraphs, including their margin-note carriers, are explicitly omitted, so this fixture makes no whole-subsection completeness claim.",
+        "Add only the provisional TEI header and wrapper; the candidate and retained source are byte-identical, nonaccepted evidence."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "The heading-only boundary is deliberate; subsection body fidelity is not asserted."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Baxter retained source and byte-identical candidate hashes",
+        "Candidate package manifest/provenance and exact retained line locator"
+      ],
+      "limits": [
+        "Bounded heading-only evidence; no second independent retained @type=subsection work was found in the declared scan."
+      ]
+    },
+    {
+      "id": "kempis-title-page",
+      "path": "positive/kempis-title-page.tei.xml",
+      "sha256": "abe6d87a4e20d49b7f3804e02489da9fbd3bc0e032c7e9c576c8e10651097f8b",
+      "kind": "synthetic-derivative",
+      "title": "The Imitation of Christ title page",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//xhtml:section[@id='titlepage'][@epub:type='titlepage']",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
+            "sha256": "6b424ee3fb951a13c7a77e768d5ab96aaaf68de61a4e0e0a4ad152261db8d22f"
+          },
+          {
+            "path": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/config.json",
+            "sha256": "702c05e37ca46fed4c9337fe2f664f4b79ac7e813f4602e19ec748d0494a4134"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/src/epub/text/titlepage.xhtml",
+            "sha256": "bdefa927eb04c6f4fc5af4dccd8511d4f0cd8cae8b96b4062a31109a32c2477e",
+            "locator": "XHTML titlepage section; retained source id=titlepage and epub:type=titlepage"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-imitation-of-christ-retained",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "Textual titlepage carriers only",
+          "legacy_slug": "imitation-of-christ",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:title-page",
+        "head",
+        "p",
+        "source-epub-titlepage"
+      ],
+      "transformations": [
+        "Map source section epub:type=titlepage to canonical div/@type=title-page, h1 to head, and source b author/translator carriers to hi/@rend=bold while retaining text and order.",
+        "Omit the XHTML document shell, CSS links, epub:type annotations on child elements, and the accompanying titlepage.svg graphic with empty alt text; this is an explicit text-only excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; this source-only derivative has no original TEI claim."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only text excerpt does not claim graphic or CSS preservation, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Kempis source manifest/configuration",
+        "Exact retained titlepage.xhtml hash and source selector"
+      ],
+      "limits": [
+        "Text-only title-page evidence; accompanying graphic and source shell are outside scope."
+      ]
+    },
+    {
+      "id": "underhill-title-page",
+      "path": "positive/underhill-title-page.tei.xml",
+      "sha256": "00f1f0383e87a000d20d6668fcc9cbcc70e3a04effcade762f3661c5b86eec7b",
+      "kind": "synthetic-derivative",
+      "title": "Practical Mysticism title page",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//xhtml:section[@id='titlepage'][@epub:type='titlepage']",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/evelyn-underhill_practical-mysticism/config.json",
+            "sha256": "879b24e13011e816ef01efb50b8691d5561c726ee9ae665eb12c8e3f7b28cdfd"
+          },
+          {
+            "path": "sources/practical-mysticism/witnesses.json",
+            "sha256": "1a1378fb4698311cb6cd06b434589ffa4d1a7efe057435dac0f7bfc237d1040d"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/evelyn-underhill_practical-mysticism/src/epub/text/titlepage.xhtml",
+            "sha256": "326c79d1c56dd3486833e7b419eb18ee58d373eeb85241180db2aff832c7b422",
+            "locator": "XHTML titlepage section; retained source id=titlepage and epub:type=titlepage"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-practical-mysticism-retained",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "Textual titlepage carriers only",
+          "legacy_slug": "practical-mysticism",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:title-page",
+        "head",
+        "p",
+        "source-epub-titlepage"
+      ],
+      "transformations": [
+        "Map source section epub:type=titlepage to canonical div/@type=title-page, h1 to head, and source b author carrier to hi/@rend=bold while retaining text and order.",
+        "Omit the XHTML document shell, CSS links, epub:type annotations on child elements, and the accompanying titlepage.svg graphic with empty alt text; this is an explicit text-only excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; this source-only derivative has no original TEI claim."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only text excerpt does not claim graphic or CSS preservation, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Underhill source configuration and empty witness inventory",
+        "Exact retained titlepage.xhtml hash and source selector"
+      ],
+      "limits": [
+        "Text-only title-page evidence; accompanying graphic and source shell are outside scope."
+      ]
+    },
+    {
+      "id": "kempis-half-title-page",
+      "path": "positive/kempis-half-title-page.tei.xml",
+      "sha256": "67127f9f6223e2208274b7c235cdfeaacf8948bb9263bbe0f39007033ff8e6aa",
+      "kind": "synthetic-derivative",
+      "title": "The Imitation of Christ half-title page",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//xhtml:section[@id='halftitlepage'][@epub:type='halftitlepage']",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
+            "sha256": "6b424ee3fb951a13c7a77e768d5ab96aaaf68de61a4e0e0a4ad152261db8d22f"
+          },
+          {
+            "path": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/config.json",
+            "sha256": "702c05e37ca46fed4c9337fe2f664f4b79ac7e813f4602e19ec748d0494a4134"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/src/epub/text/halftitlepage.xhtml",
+            "sha256": "bda148b3c69134fe78449c0efce3ea9b8177743f36f7793d328e94605ee56a3c",
+            "locator": "XHTML half-title-page section; retained source id=halftitlepage and epub:type=halftitlepage"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-imitation-of-christ-retained",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "Textual half-title-page carriers only",
+          "legacy_slug": "imitation-of-christ",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:half-title-page",
+        "head",
+        "source-epub-halftitlepage"
+      ],
+      "transformations": [
+        "Map source section epub:type=halftitlepage to canonical div/@type=half-title-page and source h2 to head while retaining title text and order.",
+        "Omit the XHTML document shell, CSS links, epub:type annotations, and source section shell; this is an explicit text-only excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; source spelling halftitlepage remains in provenance and selector."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only text excerpt does not claim CSS or shell preservation, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Kempis source manifest/configuration",
+        "Exact retained halftitlepage.xhtml hash and source selector"
+      ],
+      "limits": [
+        "Text-only half-title-page evidence; source shell is outside scope."
+      ]
+    },
+    {
+      "id": "underhill-half-title-page",
+      "path": "positive/underhill-half-title-page.tei.xml",
+      "sha256": "91411ae9116107ac04be5cdbc58d21cc23c196b9e53691d3a09c8501023c9ebb",
+      "kind": "synthetic-derivative",
+      "title": "Practical Mysticism half-title page",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//xhtml:section[@id='halftitlepage'][@epub:type='halftitlepage']",
+        "source_authorities": [
+          {
+            "path": "sources/standard-ebooks/evelyn-underhill_practical-mysticism/config.json",
+            "sha256": "879b24e13011e816ef01efb50b8691d5561c726ee9ae665eb12c8e3f7b28cdfd"
+          },
+          {
+            "path": "sources/practical-mysticism/witnesses.json",
+            "sha256": "1a1378fb4698311cb6cd06b434589ffa4d1a7efe057435dac0f7bfc237d1040d"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/standard_ebooks/evelyn-underhill_practical-mysticism/src/epub/text/halftitlepage.xhtml",
+            "sha256": "72262f3c3b32196fd6c78a121608d6ab08b1860d51dccc5076f99ec0ea2a458b",
+            "locator": "XHTML half-title-page section; retained source id=halftitlepage and epub:type=halftitlepage"
+          }
+        ],
+        "identity": {
+          "source_id": "standard-ebooks-practical-mysticism-retained",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "Textual half-title-page carriers only",
+          "legacy_slug": "practical-mysticism",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "div:half-title-page",
+        "head",
+        "p",
+        "source-epub-halftitlepage"
+      ],
+      "transformations": [
+        "Map source section epub:type=halftitlepage to canonical div/@type=half-title-page, h2 to head, and source subtitle p to TEI p while retaining text and order.",
+        "Omit the XHTML document shell, CSS links, epub:type annotations, and source section shell; this is an explicit text-only excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; source spelling halftitlepage remains in provenance and selector."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only text excerpt does not claim CSS or shell preservation, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Underhill source configuration and empty witness inventory",
+        "Exact retained halftitlepage.xhtml hash and source selector"
+      ],
+      "limits": [
+        "Text-only half-title-page evidence; source shell is outside scope."
+      ]
+    },
+    {
+      "id": "eusebius-subscript",
+      "path": "positive/eusebius-subscript.tei.xml",
+      "sha256": "0198ee1508c02cf981929a68032900866529b40392bd0f775a4f26cc5d546565",
+      "kind": "synthetic-derivative",
+      "title": "Eusebius Life of Constantine subscript excerpt",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//p[@id='iv.iii.v.iii-p161']/sub[@id='iv.iii.v.iii-p161.2']",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028.source-manifest.json",
+            "sha256": "6da39d9befe5e7d632023f11392fa3bfd9feaf8477129bb32ae3ead25437b59e"
+          },
+          {
+            "path": "sources/structured-text/eusebius-life-of-constantine/lib028.work-binding.json",
+            "sha256": "66c35bbfff9c40707608224f5a0a7032079f653eaac92a0baef9c7e6be937965"
+          },
+          {
+            "path": "sources/structured-text/eusebius-life-of-constantine/config.json",
+            "sha256": "327468d9e2284d7f97dbc9e36f3dd37118ad293087fba2bed2b008f11138144f"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/schaff/npnf201.xml",
+            "sha256": "da92679dcdd452c10dab212ee4168be1d37f89f758dae8301821a96d49a261c9",
+            "locator": "Retained ThML paragraph id=iv.iii.v.iii-p161; T. 271<sub id=iv.iii.v.iii-p161.2>1.2</sub> in Life of Constantine, General Prolegomena, Sources and Literature"
+          }
+        ],
+        "identity": {
+          "source_id": "ccel-schaff-npnf2-lib028-three-retained-xml-members",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "One sentence containing the selected sub carrier",
+          "legacy_slug": "eusebius-life-of-constantine",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "p",
+        "hi:subscript",
+        "source-sub"
+      ],
+      "transformations": [
+        "Map the retained ThML sub element to canonical TEI hi/@rend=subscript while retaining its text 1.2.",
+        "Retain the selected sentence text and omit surrounding source lines, source shell, and unrelated formatting carriers; this is a bounded text excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; no original TEI is claimed."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only excerpt does not claim whole-volume fidelity, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "lib028 source manifest and Life of Constantine work binding",
+        "Exact retained npnf201.xml hash and sub selector"
+      ],
+      "limits": [
+        "Bounded Life of Constantine literature sentence; source-family oracle was not rerun."
+      ]
+    },
+    {
+      "id": "stokes-subscript",
+      "path": "positive/stokes-subscript.tei.xml",
+      "sha256": "c3cef09a0869a985610eb91b910762da1dfeb116eed43de152c584d3e96392ce",
+      "kind": "synthetic-derivative",
+      "title": "Stokes Expositor's Bible subscript excerpt",
+      "origin": {
+        "kind": "retained-source-only",
+        "tei_path": null,
+        "tei_sha256": null,
+        "selector": "//p[.//*[@id='xi-p5.3']][.//*[@id='xi-p5.4']]",
+        "source_authorities": [
+          {
+            "path": "sources/commentaries/expositors-bible/lib034.source-manifest.json",
+            "sha256": "c10a94257a33e9e01270b206a8f6dc1d1a8b0c06d20b043468d17741d3dd4737"
+          },
+          {
+            "path": "sources/commentaries/expositors-bible/lib034/expositors-bible--g-t-stokes/config.json",
+            "sha256": "e86291617fa49375f5c850bfb5ca633e3ce77cb803cd27493007d590fbf93970"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/ccel/expositors-bible/stokes_expositoracts2.xml",
+            "sha256": "2f6cbaf722c823db42d7e63dda7b6ef17f691bc83e7fedc563df51440d15edf8",
+            "locator": "Retained ThML paragraph containing 12<sup><small id=xi-p5.3>1</small></sup>⁄<sub id=xi-p5.4><small id=xi-p5.5>2</small></sub> per cent. interest"
+          }
+        ],
+        "identity": {
+          "source_id": "ccel-expositors-bible-lib034-ten-current-member-retained-xml",
+          "work_id": null,
+          "package_status": "retained-source-only",
+          "source_scope": "One sentence containing the selected fraction",
+          "legacy_slug": "expositors-bible--g-t-stokes",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "p",
+        "hi:superscript",
+        "hi:subscript",
+        "source-nested-small"
+      ],
+      "transformations": [
+        "Map the retained nested sup/small numerator to hi/@rend=superscript and sub/small denominator to hi/@rend=subscript while retaining the numeric text and fraction slash.",
+        "Retain the selected borrowing sentence and omit surrounding paragraph, source shell, and unrelated carriers; this is a bounded text excerpt.",
+        "Add the provisional TEI header and self-contained section wrapper; no original TEI is claimed."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Source-only excerpt does not claim whole-commentary fidelity, acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "lib034 source manifest and Stokes work configuration",
+        "Exact retained stokes_expositoracts2.xml hash and nested sub locator"
+      ],
+      "limits": [
+        "Bounded Stokes Acts 2 commentary sentence; source-family oracle was not rerun."
+      ]
+    },
+    {
+      "id": "singmaster-small-caps",
+      "path": "positive/singmaster-small-caps.tei.xml",
+      "sha256": "6c339a49b05ffd819edeb7d64630ced5dd5b67855d375444dccbba6a27ff938d",
+      "kind": "synthetic-derivative",
+      "title": "The Story of Lutheran Missions small-caps excerpt",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-5/35/singmaster-story-of-lutheran-missions/candidate/singmaster-story-of-lutheran-missions.tei.xml",
+        "tei_sha256": "0f06812667a16896749b357a66fd232f94748832b1b7103b61ec7e6a49be86ae",
+        "selector": "(//tei:ab[@xml:id='slm-src-B0009']/tei:hi[@rend='small-caps'])[1]",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/singmaster-story-of-lutheran-missions/config.json",
+            "sha256": "9ddcd712f3a1a68922eea1ac7c88a45e3e0b94203108b9d0dd93fbc73cc5c41f"
+          },
+          {
+            "path": "reports/clean-ready-acquisition-to-tei/master-5/35/singmaster-story-of-lutheran-missions/verification.json",
+            "sha256": "78417d0ddd9a7fd13aa34be91a997bb478c9634f0b95423f763a81f2f1dd8786"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-5/35/singmaster-story-of-lutheran-missions/pg55819-images.html",
+            "sha256": "11d6827013ade4b36ed68c3f9f9d4f5d96086405013deb202651361d5a41871a",
+            "locator": "HTML line 512; class=sc on Copyright; CSS lines 110-112 define .sc { font-variant: small-caps }"
+          }
+        ],
+        "identity": {
+          "source_id": "singmaster-story-of-lutheran-missions",
+          "work_id": null,
+          "package_status": "technically-valid-nonaccepted-candidate",
+          "source_scope": "Candidate ab xml:id=slm-src-B0009 and matching raw HTML span",
+          "legacy_slug": "singmaster-story-of-lutheran-missions",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "ab",
+        "hi:small-caps",
+        "source-css-class"
+      ],
+      "transformations": [
+        "Retain candidate hi/@rend=small-caps and its Copyright text; bind it to raw HTML class=sc at line 512 and the retained CSS definition font-variant: small-caps.",
+        "Add the provisional TEI header and section wrapper; candidate status remains nonaccepted and no source-family oracle is rerun."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Candidate and source package remain nonaccepted evidence; conformance does not establish human acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Singmaster config and verification artifact",
+        "Raw HTML class/CSS binding and exact candidate hash"
+      ],
+      "limits": [
+        "One bounded front-matter carrier; the CSS proof is source-specific evidence, not a whole-book typography claim."
+      ]
+    },
+    {
+      "id": "greenleaf-small-caps",
+      "path": "positive/greenleaf-small-caps.tei.xml",
+      "sha256": "344ae0b4819fe3597df02c15fbd41604653e55812b6b70621167d453fb2530c2",
+      "kind": "synthetic-derivative",
+      "title": "Greenleaf Testimony small-caps excerpt",
+      "origin": {
+        "tei_path": "reports/clean-ready-acquisition-to-tei/master-4/28/greenleaf-testimony-four-evangelists-1847/candidate/package/greenleaf-testimony-four-evangelists-1847.tei.xml",
+        "tei_sha256": "366fefc2c0f81128259a619e3c4fc20d1eb4a2ee617c995f71e2c5fcda91a07c",
+        "selector": "(//tei:hi[@rend='smallcaps' and starts-with(normalize-space(),'Greenleaf')])[1]",
+        "source_authorities": [
+          {
+            "path": "sources/structured-text/greenleaf-testimony-four-evangelists-1847/config.json",
+            "sha256": "c744d53e1e8eec374d5a7e44afc3c3adb56cc9d3be0ec422abdd53e090012c7b"
+          },
+          {
+            "path": "reports/clean-ready-acquisition-to-tei/master-4/28/greenleaf-testimony-four-evangelists-1847/evidence/source_receipt.json",
+            "sha256": "b431ee873a41c1f8aa9b78a5e94b84e909abb87242c91ffda8b65db6d8161339"
+          },
+          {
+            "path": "reports/clean-ready-acquisition-to-tei/master-4/28/greenleaf-testimony-four-evangelists-1847/evidence/validation.json",
+            "sha256": "a6981c503edcfb495bb7d993ac7f9c6c340161b8e2bf13eb861dfb5e94eaeeb0"
+          }
+        ],
+        "source_members": [
+          {
+            "path": "raw/clean-ready-acquisition-to-tei/master-4/28/greenleaf-testimony-four-evangelists-1847/pg34989-images.html",
+            "sha256": "ea456f2330a312b08602363c389ca4fa3268cbc010aefbaeb417ccfadae4c49f",
+            "locator": "HTML line 375; inline style explicitly declares font-variant: small-caps on Greenleaf's"
+          }
+        ],
+        "identity": {
+          "source_id": "greenleaf-testimony-four-evangelists-1847",
+          "work_id": null,
+          "package_status": "nonaccepted-candidate",
+          "source_scope": "First source/candidate small-caps run Greenleaf's and its surrounding sentence",
+          "legacy_slug": "greenleaf-testimony-four-evangelists-1847",
+          "canonical_identity_status": "source-local labels only; canonical pipeline identity is not asserted"
+        }
+      },
+      "patterns": [
+        "p",
+        "hi:small-caps",
+        "source-inline-style"
+      ],
+      "transformations": [
+        "Bind the raw HTML inline style font-variant: small-caps on Greenleaf's to the candidate hi/@rend=smallcaps run.",
+        "Normalize candidate/source spelling rend=smallcaps to canonical hi/@rend=small-caps while retaining the source spellings in provenance and this transformation.",
+        "Retain the surrounding sentence in source order and add only the provisional TEI header and section wrapper; the candidate remains nonaccepted."
+      ],
+      "expected": {
+        "p5": "expected-pass",
+        "semantic": "provisional-pass",
+        "known_issues": [
+          "Candidate and source package remain nonaccepted evidence; conformance does not establish human acceptance, rights clearance, or publication."
+        ],
+        "required_common_rule_ids": []
+      },
+      "evidence": [
+        "Greenleaf config, source receipt, and candidate validation",
+        "Raw HTML inline-style binding and exact candidate hash"
+      ],
+      "limits": [
+        "One bounded sentence; inline style evidence is source-specific and not a whole-book typography claim."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "nave-abel-stale",
+      "status": "excluded",
+      "reason": "Candidate source digest does not match the current retained ZIP."
+    },
+    {
+      "id": "bcp-1549-1559-1928",
+      "status": "excluded",
+      "reason": "Pending or absent retained source digest/member envelope."
+    },
+    {
+      "id": "gregory-nyssa",
+      "status": "bounded-selection-exclusion",
+      "reason": "Config/witness/hash evidence is retained, but this first set selected stronger manifest/profile/policy bindings; absence of a v1 manifest is not a universal TEI-003 rule."
+    }
+  ],
+  "coverage_gaps": [
+    "The revision-02 package retains the frozen 17-fixture baseline and adds real source-bound or provisional evidence for dictionary-entry/headword, title-page, half-title-page, subscript, and small-caps; it is not an exhaustive corpus claim.",
+    "Revision-02 has one independent retained work for div/@type=subsection (Baxter) after the declared bounded exact-type scan; scarcity is explicit and no second work is manufactured.",
+    "The new title-page and half-title-page fixtures are text-only excerpts from retained XHTML sections. Source shells, CSS, epub:type annotations, and accompanying image carriers are explicit exclusions.",
+    "The legacy titlepage spelling remains in the frozen Augustine regression fixture; the source spelling halftitlepage remains in the new provenance and selectors while fixture div/@type values use canonical title-page and half-title-page.",
+    "Subscript and small-caps each have two independent retained works with non-whitespace content and explicit source formatting evidence; no whole-work fidelity claim is made."
+  ]
+}

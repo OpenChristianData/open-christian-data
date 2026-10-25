@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "contract",
+    "ticket_id",
+    "work_id",
+    "source_id",
+    "source_sha256",
+    "source_bytes",
+    "source_top_level_keys",
+    "source_envelope",
+    "observation_counts",
+    "excluded",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-37c239-kjv-source-accountability-v1"},
+    "ticket_id": {"const": "37c-239"},
+    "work_id": {"const": "kjv"},
+    "source_id": {"const": "ocd-37c239-kjv-retained-native-json-v1"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_bytes": {"type": "integer", "minimum": 1},
+    "source_top_level_keys": {"const": ["translation", "books"]},
+    "source_envelope": {"type": "object"},
+    "observation_counts": {"type": "object"},
+    "excluded": {"const": []},
+    "crosswalk": {"type": "array", "minItems": 32359}
+  },
+  "additionalProperties": false
+}

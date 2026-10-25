@@ -1,0 +1,7 @@
+# A Plain Account of Christian Perfection — retained source
+
+The accepted edition `ccel-perfection` represents John Wesley's *A Plain Account of Christian Perfection* from one retained Christian Classics Ethereal Library (CCEL) ThML witness, `raw/ccel/wesley/perfection.xml`. Its source bytes are retained at 228,042 bytes, SHA-256 `2c6d835621077e8002c86a4a3cfd0613c604d56626110d3d77d5e43c50dfab9b`. The accepted master and source integration were reviewed for the electronic witness; no print-edition collation was performed.
+
+The retained electronic header names John Wesley as author and Christian Classics Ethereal Library of Grand Rapids, Michigan as electronic publisher. The source description is signed "Abby Zwart, CCEL Staff Writer"; that credit belongs to the electronic description, not the authorship of Wesley's text. The retained header has an empty `DC.Rights` field. A local source configuration calls the underlying work public domain and records CCEL permission to parse its ThML, but neither statement establishes worldwide rights clearance or permission for public redistribution of this electronic transcription.
+
+The selected human-visible data notice at `data/structured-text/wesley-plain-account/README.md` carries these source credits and reuse limits into the private offline release. Human acceptance, print collation, broader rights clearance, and public publication remain separate decisions.

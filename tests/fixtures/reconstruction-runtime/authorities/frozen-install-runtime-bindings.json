@@ -1,0 +1,202 @@
+{
+  "tests/test_bcp1549_current_install.py": {
+    "original_receipt_sha256": "7027ce3780273f9f98e535d86471605d966435b1c1a2d182ea90a82df36d111e",
+    "runtime_schema_pins": {
+      "ocd_kernel/projection/categories/liturgies.py": "4de409c9c5163f25db90b70d87e77267b5be3aeb226f554cf0ff34e108668b7e",
+      "ocd_kernel/projection/categories/liturgies_bcp1549.py": "0a8fb7f3743c3df7e269433c950fd446a50eff7cd3aa221433eb17c472d9438e",
+      "ocd_kernel/projection/categories/liturgies_bcp1549_check.py": "6d4c4f52ae12a828bc71da94f43c771113faab52ffc8a212cb8ed85130238925",
+      "ocd_kernel/projection/native_content.py": "0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77",
+      "ocd_kernel/projection/native_content_check.py": "15c06d8b03709e052aaa0356ee18372612ee79a5a8f41aa4888abb75c82bc16b",
+      "schemas/v2/categories/liturgies.schema.json": "79971ab3d0f50ed8e316978387f75477b2eebb6a5f9971676cdd5f1e7f73e997",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_bcp1662_current_install.py": {
+    "original_receipt_sha256": "9f4b12662f4819f613d8877732674ef445ac7a016cf3c4c6d02283be23521a34",
+    "runtime_schema_pins": {
+      "ocd_kernel/projection/categories/liturgies.py": "4de409c9c5163f25db90b70d87e77267b5be3aeb226f554cf0ff34e108668b7e",
+      "ocd_kernel/projection/categories/liturgies_bcp1662.py": "46431a8e191ee53b548af3b52ea358aa37d0cb3c3be413688da869088b359433",
+      "ocd_kernel/projection/categories/liturgies_bcp1662_check.py": "2b93407b7b3670eab0bcb492a69881c8e248bb2fbeb0b8365665af005bd8ac6f",
+      "ocd_kernel/projection/native_content.py": "0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77",
+      "ocd_kernel/projection/native_content_check.py": "15c06d8b03709e052aaa0356ee18372612ee79a5a8f41aa4888abb75c82bc16b",
+      "schemas/v2/categories/liturgies.schema.json": "79971ab3d0f50ed8e316978387f75477b2eebb6a5f9971676cdd5f1e7f73e997",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_brainerd_current_install.py": {
+    "original_receipt_sha256": "903bfddb7286a4f22e011228544b6b3bfd2abbf55e67d570efb991c253b171a9",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_chrysostom_2_corinthians_install.py": {
+    "original_receipt_sha256": "c6f132598b00345a09d6fe09daa1731a5843ef849ce31e61ea828e9c3dc7dc1b",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_chrysostom_romans_install.py": {
+    "original_receipt_sha256": "4940aa9e9efdc64cbb80b1edd7c9d1dd6db04bd8b20a9b99052a1c4381111808",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_donne_devotions_scoped.py": {
+    "original_receipt_sha256": "f62ac32f54c0641172e76dc2c01b5ad0b6f986cded1ed8cb19356fc3fb6836de",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_gregory_pastoral_epistles_install.py": {
+    "original_receipt_sha256": "2ad710c2ceb3e82f0219a1d615e44d7060128b7637cb4b31eb2b7a959a444e65",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_gregory_selected_epistles_install.py": {
+    "original_receipt_sha256": "d6bd7cb2a2ff00d390e6c526c21562242ef4d7c22871fc0fc9a1331e26f0d3dc",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_hodge_vol1_complete_install.py": {
+    "original_receipt_sha256": "de73f5f7231cc449708eb16ada05c91a9fdb83b2c062906fbb929a0f0e2206be",
+    "runtime_schema_pins": {
+      "ocd_kernel/projection/categories/native_documents.py": "229f3f1e9be106c061c8f7a699820f263fc615798c61212ef8756a009261a59a",
+      "ocd_kernel/projection/categories/prose.py": "e39117916a64f903bd2b5efc569096308c29c99f429f28386f0ada378aba49aa",
+      "ocd_kernel/projection/native_content.py": "0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77",
+      "ocd_kernel/projection/native_content_check.py": "15c06d8b03709e052aaa0356ee18372612ee79a5a8f41aa4888abb75c82bc16b",
+      "ocd_kernel/tei/acceptance.py": "7783a2be43ed6df687e67c4385ada1d86b10550c209a7d46678e7f061833df18",
+      "ocd_kernel/tei/install_accepted.py": "8e7a2e63e0ffee2555c1f2283bbbd41e229fc2f8fc115dd8dc248f58be9c4665",
+      "ocd_kernel/tei/reviewed_integration.py": "6ce7d22e0fae5c0a919eb281fb20752811e693b4d4a0b8185585fc34318d062b",
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_jerome_letters_install.py": {
+    "original_receipt_sha256": "64b9a45c06e3166ff161b573f24f379fc073a15446d1909d2103a381d6aaa368",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_jps_current_install.py": {
+    "original_receipt_sha256": "d501994327a97638d4f6898565eb8443237052e69d6ad9a3151f7260895d8d7e",
+    "runtime_schema_pins": {
+      "ocd_kernel/projection/categories/bible.py": "551d272b9c432d3e9f374fb8f31dc453c552fb948ebc12665ca6516324f8e68a",
+      "schemas/v2/categories/bible.schema.json": "b571d98f70d1dd366a67dfaced719a55e7d526da63e2c146b133184a1a7dad26",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_modern_scepticism_current_install.py": {
+    "original_receipt_sha256": "d87ac3b51fa4c93793a8a8f000f9da8f81de7c384945a6e4486b1aee53286b5c",
+    "runtime_schema_pins": {
+      "ocd_kernel/projection/categories/native_documents.py": "229f3f1e9be106c061c8f7a699820f263fc615798c61212ef8756a009261a59a",
+      "ocd_kernel/projection/categories/prose.py": "e39117916a64f903bd2b5efc569096308c29c99f429f28386f0ada378aba49aa",
+      "ocd_kernel/projection/native_content.py": "0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77",
+      "ocd_kernel/projection/native_content_check.py": "15c06d8b03709e052aaa0356ee18372612ee79a5a8f41aa4888abb75c82bc16b",
+      "ocd_kernel/tei/acceptance.py": "7783a2be43ed6df687e67c4385ada1d86b10550c209a7d46678e7f061833df18",
+      "ocd_kernel/tei/install_accepted.py": "8e7a2e63e0ffee2555c1f2283bbbd41e229fc2f8fc115dd8dc248f58be9c4665",
+      "ocd_kernel/tei/reviewed_integration.py": "6ce7d22e0fae5c0a919eb281fb20752811e693b4d4a0b8185585fc34318d062b",
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_schaff_history_vol1_current_install.py": {
+    "original_receipt_sha256": "f3b13632fa831bf062735d8cc6f573854109c59f769b96b2ada04827a4e62358",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_schaff_history_vol3_current_install.py": {
+    "original_receipt_sha256": "5342087a89bc7e5cfa5b388aa625b7723799b6cc3423b0e95dbf735fdbab6382",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_schaff_history_vol4_current_install.py": {
+    "original_receipt_sha256": "551bf4f4402915af4846fdb82b6b69304a388ecd7eb901725d9eceed118ed97c",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  },
+  "tests/test_schaff_history_vol7_current_install.py": {
+    "original_receipt_sha256": "553989d8d228307d7f244d066c18049eab4b777c22d13a4234469c1de4488eeb",
+    "runtime_schema_pins": {
+      "schemas/v2/categories/prose.schema.json": "df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8",
+      "schemas/v2/native-content.schema.json": "adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab",
+      "schemas/v2/projection-receipt.schema.json": "efdcb63142fc7e1796cfba80a0acf6b7acff490149d3994e0bf129b8c7a8020a",
+      "schemas/v2/public-row.schema.json": "29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc",
+      "schemas/v2/release-report.schema.json": "66729c0b80a9c9b63443b50c682087c17f7e066c874eb9de3e365347118540a6",
+      "schemas/v2/release-selection.schema.json": "bd6c8d47b26b67de17fa2d5695a20ff1fcecc017f93c8d45c18ae47d8ae0d1f4"
+    }
+  }
+}

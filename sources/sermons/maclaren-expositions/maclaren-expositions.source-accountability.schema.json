@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/maclaren-expositions-source-accountability-v1.schema.json",
+  "title": "Maclaren Expositions retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "work_id",
+    "ticket_id",
+    "source_manifest_sha256",
+    "source_set_sha256",
+    "source_inventory",
+    "source_member_count",
+    "physical_line_count",
+    "represented_line_count",
+    "excluded_line_count",
+    "omitted_line_count",
+    "duplicate_line_count",
+    "exact_empty_line_count",
+    "whitespace_only_line_count",
+    "source_members",
+    "inventory_exclusions",
+    "count_discrepancy",
+    "candidate_scope"
+  ],
+  "properties": {
+    "contract": { "const": "ocd-maclaren-expositions-source-accountability-v1" },
+    "work_id": { "const": "maclaren-expositions" },
+    "ticket_id": { "const": "LIB-073" },
+    "source_manifest_sha256": { "$ref": "#/$defs/sha256" },
+    "source_set_sha256": { "$ref": "#/$defs/sha256" },
+    "source_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256", "member_count"],
+      "properties": {
+        "path": { "const": "raw/gutenberg/sermons/PG_SERMON_INVENTORY.md" },
+        "bytes": { "const": 9173 },
+        "sha256": { "const": "d517ec7382eb96e7429b6567375091d3a687757bac1b0266567e8180a8d4bd55" },
+        "member_count": { "const": 15 }
+      }
+    },
+    "source_member_count": { "const": 15 },
+    "physical_line_count": { "const": 339526 },
+    "represented_line_count": { "const": 339526 },
+    "excluded_line_count": { "const": 0 },
+    "omitted_line_count": { "const": 0 },
+    "duplicate_line_count": { "const": 0 },
+    "exact_empty_line_count": { "const": 36845 },
+    "whitespace_only_line_count": { "const": 120 },
+    "source_members": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": { "$ref": "#/$defs/member" }
+    },
+    "inventory_exclusions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pg_id", "disposition", "reason"],
+        "properties": {
+          "pg_id": { "enum": ["42445", "42488", "44027"] },
+          "disposition": { "const": "excluded-different-series" },
+          "reason": { "type": "string", "minLength": 20 }
+        }
+      }
+    },
+    "count_discrepancy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "legacy_config_claim",
+        "legacy_projection_records",
+        "difference",
+        "source_verified_exposition_count",
+        "resolution",
+        "route_uses_either_count_as_a_selection_limit",
+        "disposition"
+      ],
+      "properties": {
+        "legacy_config_claim": { "const": 1263 },
+        "legacy_projection_records": { "const": 1255 },
+        "difference": { "const": 8 },
+        "source_verified_exposition_count": { "type": "null" },
+        "resolution": { "const": "unresolved-from-retained-source" },
+        "route_uses_either_count_as_a_selection_limit": { "const": false },
+        "disposition": { "type": "string", "minLength": 40 }
+      }
+    },
+    "candidate_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "included_member_count",
+        "included_source_line_count",
+        "excluded_source_line_count",
+        "individual_expositions_segmented",
+        "source_unit_selection_by_legacy_count"
+      ],
+      "properties": {
+        "status": { "const": "complete-retained-member-cohort-provisional" },
+        "included_member_count": { "const": 15 },
+        "included_source_line_count": { "const": 339526 },
+        "excluded_source_line_count": { "const": 0 },
+        "individual_expositions_segmented": { "const": false },
+        "source_unit_selection_by_legacy_count": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inventory_order",
+        "pg_id",
+        "path",
+        "bytes",
+        "sha256",
+        "physical_line_count",
+        "leading_utf8_bom",
+        "line_ending",
+        "line_inventory_sha256",
+        "line_accounting_sha256",
+        "represented_line_count",
+        "excluded_line_count",
+        "omitted_line_count",
+        "duplicate_line_count",
+        "start_marker_line",
+        "end_marker_line",
+        "full_license_line",
+        "regions"
+      ],
+      "properties": {
+        "inventory_order": { "type": "integer", "minimum": 1, "maximum": 15 },
+        "pg_id": { "type": "string", "pattern": "^[0-9]+$" },
+        "path": { "type": "string", "pattern": "^raw/gutenberg/sermons/maclaren/pg[0-9]+\\.txt$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "physical_line_count": { "type": "integer", "minimum": 1 },
+        "leading_utf8_bom": { "const": true },
+        "line_ending": { "const": "CRLF" },
+        "line_inventory_sha256": { "$ref": "#/$defs/sha256" },
+        "line_accounting_sha256": { "$ref": "#/$defs/sha256" },
+        "represented_line_count": { "type": "integer", "minimum": 1 },
+        "excluded_line_count": { "const": 0 },
+        "omitted_line_count": { "const": 0 },
+        "duplicate_line_count": { "const": 0 },
+        "start_marker_line": { "type": "integer", "minimum": 1 },
+        "end_marker_line": { "type": "integer", "minimum": 2 },
+        "full_license_line": { "type": "integer", "minimum": 2 },
+        "regions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "line_start",
+              "line_end_inclusive",
+              "byte_start",
+              "byte_end_exclusive",
+              "line_count",
+              "disposition",
+              "first_line_xml_id",
+              "last_line_xml_id"
+            ],
+            "properties": {
+              "type": { "enum": ["provider-preamble", "gutenberg-text-and-wrapper", "post-envelope-license-and-tail"] },
+              "line_start": { "type": "integer", "minimum": 1 },
+              "line_end_inclusive": { "type": "integer", "minimum": 1 },
+              "byte_start": { "type": "integer", "minimum": 0 },
+              "byte_end_exclusive": { "type": "integer", "minimum": 1 },
+              "line_count": { "type": "integer", "minimum": 1 },
+              "disposition": { "const": "represented-in-tei" },
+              "first_line_xml_id": { "type": "string", "pattern": "^pg[0-9]+-line-[0-9]{6}$" },
+              "last_line_xml_id": { "type": "string", "pattern": "^pg[0-9]+-line-[0-9]{6}$" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

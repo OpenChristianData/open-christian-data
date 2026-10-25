@@ -1,0 +1,116 @@
+{
+  "contract": "ocd-tcp-a41072-complete-source-profile-v1",
+  "source_id": "tcp-a41072-pinned-tei-p5",
+  "source_bytes": 57360,
+  "source_sha256": "6050d2fee9b03d63ec4cf52d137ea025a2404e09ff736f550d6b8d97d4316379",
+  "element_counts": {
+    "TEI": 1,
+    "author": 3,
+    "availability": 1,
+    "bibl": 4,
+    "biblFull": 1,
+    "body": 1,
+    "change": 5,
+    "closer": 1,
+    "date": 8,
+    "desc": 13,
+    "div": 3,
+    "edition": 1,
+    "editionStmt": 1,
+    "editorialDecl": 1,
+    "encodingDesc": 1,
+    "extent": 2,
+    "fileDesc": 1,
+    "front": 1,
+    "g": 87,
+    "gap": 13,
+    "head": 2,
+    "hi": 265,
+    "idno": 6,
+    "keywords": 1,
+    "label": 5,
+    "langUsage": 1,
+    "language": 1,
+    "listPrefixDef": 1,
+    "note": 7,
+    "notesStmt": 2,
+    "p": 46,
+    "pb": 16,
+    "prefixDef": 2,
+    "profileDesc": 1,
+    "projectDesc": 1,
+    "pubPlace": 2,
+    "publicationStmt": 2,
+    "publisher": 2,
+    "q": 4,
+    "ref": 2,
+    "revisionDesc": 1,
+    "seriesStmt": 1,
+    "signed": 1,
+    "sourceDesc": 1,
+    "teiHeader": 1,
+    "term": 3,
+    "text": 1,
+    "textClass": 1,
+    "title": 3,
+    "titleStmt": 2,
+    "trailer": 1
+  },
+  "source_census": {
+    "elements": 534,
+    "attributes": 166,
+    "text_nodes": 433,
+    "tail_nodes": 533,
+    "characters": 47601
+  },
+  "source_features": {
+    "tcp_ids": [],
+    "title_stmt_titles": [
+      "Womens speaking justified, proved and allowed of by the Scriptures, all such as speak by the spirit and power of the Lord Jesus and how women were the first that preached the tidings of the resurrection of Jesus, and were sent by Christ's own command, before he ascended to the Father, John 20:17.",
+      "Womens speaking justified, proved and allowed of by the Scriptures, all such as speak by the spirit and power of the Lord Jesus and how women were the first that preached the tidings of the resurrection of Jesus, and were sent by Christ's own command, before he ascended to the Father, John 20:17."
+    ],
+    "text_children": [
+      [
+        "front",
+        null
+      ],
+      [
+        "body",
+        null
+      ]
+    ],
+    "front_div_types": [
+      "title_page"
+    ],
+    "body_div_types": [
+      "text",
+      "part"
+    ],
+    "g_refs": {
+      "char:EOLhyphen": 83,
+      "char:punc": 4
+    },
+    "gap_reasons": {
+      "illegible": 6,
+      "illegible: blotted": 7
+    },
+    "page_numbers": [
+      null,
+      null,
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ]
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/creeds-of-christendom-vol-1/lib029.source-accountability.schema.json",
+  "title": "LIB-029 complete selected-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_scope",
+    "source_reference_authority",
+    "source_members",
+    "document_accounting",
+    "work_count",
+    "feature_count",
+    "attribute_count",
+    "feature_counts",
+    "omitted_feature_count",
+    "duplicate_feature_count",
+    "unresolved_feature_count",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-lib029-source-accountability-v1"
+    },
+    "schema": {
+      "const": "lib029.source-accountability.schema.json"
+    },
+    "profile_id": {
+      "const": "lib029-ccel-complete-volume-v8"
+    },
+    "source_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_reference_authority": {
+      "type": "object"
+    },
+    "source_members": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "work_id",
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "work_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "document_accounting": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "work_id",
+          "logical_path",
+          "bytes",
+          "sha256",
+          "scope_div1_ids",
+          "feature_count",
+          "document_accounting",
+          "disposition"
+        ],
+        "properties": {
+          "work_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "logical_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "scope_div1_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "feature_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "document_accounting": {
+            "type": "object",
+            "required": [
+              "body_element_count",
+              "body_attribute_count",
+              "comment_count",
+              "processing_instruction_count"
+            ],
+            "properties": {
+              "body_element_count": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "body_attribute_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "comment_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "processing_instruction_count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "disposition": {
+            "const": "complete-volume-with-front-body-back"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "work_count": {
+      "const": 1
+    },
+    "feature_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "attribute_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "feature_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "omitted_feature_count": {
+      "const": 0
+    },
+    "duplicate_feature_count": {
+      "const": 0
+    },
+    "unresolved_feature_count": {
+      "const": 0
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "feature_id",
+          "work_id",
+          "source_selector",
+          "source_tag",
+          "source_xml_id",
+          "attributes",
+          "direct_text",
+          "tail_text",
+          "direct_text_sha256",
+          "tail_text_sha256",
+          "tei_tag",
+          "tei_xml_id",
+          "tei_parent_id",
+          "tei_child_ordinal",
+          "tei_attributes",
+          "attribute_dispositions",
+          "disposition",
+          "tei_selector",
+          "parent_feature_id",
+          "source_title_head"
+        ],
+        "properties": {
+          "feature_id": {
+            "type": "string",
+            "pattern": "^lib029-feature-[0-9]{7}$"
+          },
+          "work_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_selector": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_tag": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_xml_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "direct_text": {
+            "type": "string"
+          },
+          "tail_text": {
+            "type": "string"
+          },
+          "direct_text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "tail_text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "tei_tag": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tei_xml_id": {
+            "type": "string",
+            "pattern": "^lib029-f-[0-9]{7}$"
+          },
+          "tei_parent_id": {
+            "type": "string"
+          },
+          "tei_child_ordinal": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "tei_attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "attribute_dispositions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_attribute",
+                "source_value",
+                "destination"
+              ],
+              "properties": {
+                "source_attribute": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_value": {
+                  "type": "string"
+                },
+                "destination": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "disposition": {
+            "const": "represented"
+          },
+          "tei_selector": {
+            "type": "string",
+            "pattern": "^#lib029-f-[0-9]{7}$"
+          },
+          "parent_feature_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_title_head": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

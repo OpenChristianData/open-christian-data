@@ -1,0 +1,99 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "lib062-westminster-larger-catechism-retained-json",
+  "work_id": "westminster-larger-catechism",
+  "source_selection": {
+    "authority": "retained-json",
+    "json_pointer": "",
+    "selection": "the complete retained Creeds.json member; the TheologAI member remains excluded"
+  },
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "westminster-larger-catechism",
+    "retained_source_sha256": "0b98df0c7e80f652c660c5bcdf7606793c41c07f7e6cf445698c8ee69d7b3fb1",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "catechisms/westminster-larger-catechism.json",
+        "legacy_source_sha256": "755274a3ba67aa840021dcefde55e357851a95f87daab52bcd2407d131d7cab5"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/westminster_larger_catechism.json",
+      "role": "primary-source",
+      "bytes": 328375,
+      "sha256": "0b98df0c7e80f652c660c5bcdf7606793c41c07f7e6cf445698c8ee69d7b3fb1"
+    },
+    {
+      "name": "source-packet",
+      "path": "sources/westminster-larger-catechism/LIB-062.packet.json",
+      "role": "source-packet",
+      "bytes": 2977,
+      "sha256": "24bf384f8ce656a3717acb7e8832a523cd97bdf9de473ef35a5557d25f713077"
+    },
+    {
+      "name": "rights-readme",
+      "path": "sources/westminster-larger-catechism/LIB-062.README.md",
+      "role": "rights-evidence",
+      "bytes": 542,
+      "sha256": "8b06bb41d3256a68f5bfd77aa8a625344b6d73691cfe9ec4140aef1b21b72c5a"
+    },
+    {
+      "name": "retained-member-census",
+      "path": "sources/1695-baptist-catechism/LIB-062.retained-member-census.json",
+      "role": "retained-member-census",
+      "bytes": 14058,
+      "sha256": "31cd4df7e550871991968c3e9a8b62dbbab820e7b5ac03406df1c23216e3f04c"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/westminster-larger-catechism/westminster-larger-catechism.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2489,
+      "sha256": "26dc20e52dd70479ab98be2d56faf05a2fd4d86f926916719bcbfb8684ea5309"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/westminster-larger-catechism/westminster-larger-catechism.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 768,
+      "sha256": "65bb41ed78767b7e78cebd2e2ced64863e2155fd9f669cb7af6b092fcfa60e0a"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib062-westminster-larger-catechism-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/lib062_westminster_larger_catechism_reconstruction.py",
+    "implementation_sha256": "f8184b694390bcb613e96da2655828c246afdccfe68e78cd64c4309d3afcc75f"
+  },
+  "validator": {
+    "id": "ocd-lib062-westminster-larger-catechism-independent-oracle",
+    "version": "1",
+    "callable": "oracle",
+    "implementation_path": "build/tei/lib062_westminster_larger_catechism_oracle.py",
+    "implementation_sha256": "49d381bb0ccdd3312402cae5fa7352536438aaa6921b03901522a448225e7de1",
+    "import_closure_sha256": "958df4b913464db793282d2a36c566228703abfc30e25dc6c2b2d2d56306ae34"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

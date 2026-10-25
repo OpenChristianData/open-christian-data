@@ -1,0 +1,40 @@
+{
+  "contract": "ocd-boethius-theological-tractates-validation-policy-v1",
+  "policy_id": "boethius-theological-tractates-div1-iv-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_div1_id": "iv",
+  "required_div2_ids": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v"],
+  "required_feature_count": 778,
+  "required_attribute_count": 1208,
+  "checks": [
+    "exact-source-byte-count-and-sha256",
+    "authoritative-config-metadata-and-scope",
+    "exact-five-tract-census-order-and-titles",
+    "complete-byte-and-element-crosswalk",
+    "exact-source-hierarchy-attributes-text-and-tails",
+    "omission-duplication-reorder-invention-and-text-drift",
+    "source-accountability-json-schema",
+    "direct-tei-p5-xsd",
+    "candidate-package-and-provenance-boundaries",
+    "exact-readme-and-unresolved-evidence",
+    "producer-independent-oracle-import-boundary"
+  ],
+  "oracle_import_closure": [
+    "build/tei/boethius_theological_tractates_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.boethius_theological_tractates_reconstruction",
+    "build.tei.thml_to_tei",
+    "build.lib.ccel_thml"
+  ]
+}

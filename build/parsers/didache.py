@@ -49,6 +49,7 @@ if str(_BOOTSTRAP_ROOT) not in sys.path:
 from build.lib.contributors import normalize_contributors  # noqa: E402
 from build.lib.config_validation import validate_config_enums  # noqa: E402
 from build.lib.paths import REPO_ROOT  # noqa: E402
+from build.lib.parser_logging import configure_logging as _shared_setup_logging
 
 RAW_DIR = REPO_ROOT / "raw" / "wikisource"
 OUTPUT_DIR = REPO_ROOT / "data" / "prayers" / "didache"
@@ -396,13 +397,7 @@ def build_meta(config: dict, source_hash: str, processing_date: str) -> dict:
 
 
 def setup_logging() -> None:
-    """Configure file + console logging."""
-    fh = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.INFO)
-    logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh],
-                        format="%(levelname)s: %(message)s")
+    return _shared_setup_logging(LOG_FILE=LOG_FILE)
 
 
 def main() -> None:

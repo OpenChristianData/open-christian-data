@@ -1,0 +1,118 @@
+{
+  "contract": "ocd-methodius-first1kgreek-source-profile-v1",
+  "source_path": "raw/first1kgreek/methodius-symposium-1917/tlg2959.tlg001.opp-grc1.xml",
+  "source_bytes": 624143,
+  "source_sha256": "f578699c791b33d161acce516af02c84e7ff46effc50bce4b2d8ffa268429c94",
+  "member_inventory": {
+    "root": "{http://www.tei-c.org/ns/1.0}TEI",
+    "cts_edition": "urn:cts:greekLit:tlg2959.tlg001.opp-grc1",
+    "title": "Symposium Sive Convivium Decem Virginum",
+    "license_target": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "edition_names_bonwetsch": true,
+    "edition_names_1917": true,
+    "book_chapter_counts": [
+      {
+        "book": "praef",
+        "chapters": 0
+      },
+      {
+        "book": "1",
+        "chapters": 5
+      },
+      {
+        "book": "2",
+        "chapters": 7
+      },
+      {
+        "book": "3",
+        "chapters": 14
+      },
+      {
+        "book": "4",
+        "chapters": 6
+      },
+      {
+        "book": "5",
+        "chapters": 8
+      },
+      {
+        "book": "6",
+        "chapters": 5
+      },
+      {
+        "book": "7",
+        "chapters": 9
+      },
+      {
+        "book": "8",
+        "chapters": 17
+      },
+      {
+        "book": "9",
+        "chapters": 5
+      },
+      {
+        "book": "10",
+        "chapters": 6
+      },
+      {
+        "book": "11",
+        "chapters": 1
+      }
+    ],
+    "element_counts": {
+      "TEI": 1,
+      "author": 2,
+      "authority": 1,
+      "availability": 1,
+      "biblStruct": 1,
+      "body": 1,
+      "cRefPattern": 2,
+      "change": 1,
+      "date": 2,
+      "div": 96,
+      "editor": 2,
+      "encodingDesc": 1,
+      "fileDesc": 1,
+      "funder": 1,
+      "head": 12,
+      "idno": 1,
+      "imprint": 1,
+      "l": 17,
+      "langUsage": 1,
+      "language": 3,
+      "lb": 579,
+      "lg": 7,
+      "licence": 1,
+      "listBibl": 1,
+      "meeting": 1,
+      "milestone": 302,
+      "monogr": 1,
+      "name": 1,
+      "note": 329,
+      "p": 240,
+      "pb": 139,
+      "persName": 10,
+      "principal": 2,
+      "profileDesc": 1,
+      "pubPlace": 2,
+      "publicationStmt": 1,
+      "publisher": 2,
+      "ref": 1,
+      "refsDecl": 1,
+      "resp": 10,
+      "respStmt": 9,
+      "revisionDesc": 1,
+      "sourceDesc": 1,
+      "sponsor": 1,
+      "teiHeader": 1,
+      "text": 1,
+      "title": 2,
+      "titleStmt": 1
+    },
+    "source_text_sha256": "559247a7d9669a1626c6503e8ce8e8778764769e3d471a38c62b66b23503db25"
+  },
+  "declared_scope": "Complete official single TEI member, including header, CTS edition division, preface, books 1 through 11, 83 chapters, 329 notes, 139 page breaks, 302 milestones, verse, and trailing source text. No member or substructure excluded.",
+  "source_envelope": "One XML member, not an archive; XML declaration and TEI header retained in exact original bytes. No external supporting files were included in the declared source file.",
+  "evidence_boundary": "Member completeness is established against the official identified file and its internal boundaries; completeness against every historical manuscript or print page is not asserted."
+}

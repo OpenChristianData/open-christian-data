@@ -36,16 +36,17 @@ a best-guess.
     for t, c in titles.most_common(30): print(f'{c:3d}  {t}')
     "
 
-Check the most recent comparable patch script in `build/scripts/` for
-conventions.
+Use the retained TOML and current parser tests to establish conventions. Loose
+downstream patch scripts are not source authority.
 
 ## Step 2 -- Triage
 
 If all existing entries share a single source_title AND the TOML files
 for missing entries contain no contradicting metadata (no different
-source_url, no different append_to_author_name): this is a data
-propagation gap. Verify with 2-3 quote-matches then patch directly --
-don't spend time researching what's already answered.
+source_url, no different append_to_author_name): this is a source
+propagation gap. Verify with 2-3 quote-matches, then propose the upstream
+source correction and prove it through parser tests. Do not patch generated
+JSON.
 
 Otherwise: open `raw/Commentaries-Database/<Author Name>/` and map each
 TOML block to its source work using:
@@ -68,7 +69,7 @@ fails after trying NewAdvent and tertullian.org, leave the entry blank
 and document why -- an empty field is more honest than a format-
 inconsistent one.
 
-## Step 3 -- Confidence rating (rate EVERY entry before writing patch)
+## Step 3 -- Confidence rating (rate EVERY entry before changing source authority)
 
 - **HIGH**: Verified against primary source (newadvent.org, CCEL,
   archive.org scan).
@@ -77,7 +78,18 @@ inconsistent one.
 - **LOW**: Short quote (<20 words), single-signal inference, or
   alternative work is plausible.
 
-Only include HIGH entries in the patch. Leave MEDIUM and LOW blank.
+Only promote HIGH entries into parser-consumed source authority. Leave MEDIUM
+and LOW blank. The current supplemental authority is
+`sources/church-fathers/source-title-corrections.json`; each record binds a
+retained TOML path, block index, quote SHA-256, normalized title, and evidence
+reference. Accepted `data/` entry IDs are never authority keys.
+
+The 18 retained directories named for New Testament books are a distinct,
+deterministic case: the directory names the source work that carries each Old
+Testament quotation. The parser derives their normalized canonical book title
+directly from that source-directory identity (300 current retained blocks). It
+rejects a contradictory retained title. These rules do not belong in the
+supplemental locator authority and must not be reintroduced as an output patch.
 
 ## Known failure modes (hard checks, not suggestions)
 
@@ -90,19 +102,16 @@ at sections 2.16 and 2.20 and a third missing block that is much longer,
 the missing block is almost certainly from a third section. Look it up
 independently.
 
-## Step 4 -- Write patch script
+## Step 4 -- Correct source authority and add parser tests
 
-Write `build/scripts/patch_source_title_<SLUG>.py` that:
-- Loads `data/church-fathers/<SLUG>.json`
-- Applies a patch dict (entry_id -> source_title)
-- Is idempotent (skips already-set entries)
-- Prints how many were set vs skipped
-- Asserts `len(PATCH) == expected` before `main()`
-- Saves to the same file
-- Uses `Path(__file__).resolve().parents[N]` for DATA_FILE -- no
-  hardcoded user paths
-- Runs `py -3 build/validate.py data/church-fathers/<SLUG>.json` to
-  verify
+Submit the correction upstream to the retained Commentaries-Database source.
+Until corrected source bytes are acquired, a HIGH claim may be recorded in the
+supplemental authority above. The parser must fail if the bound quote changes or
+the retained title contradicts the correction. Once corrected source is
+acquired, remove the now-redundant supplemental record. Add focused parser tests
+and regenerate through `build/parsers/church_fathers.py`. Never write
+`data/church-fathers/*.json` directly and never introduce a post-parse patch,
+accepted-output lookup, fallback, or compatibility branch.
 
 ## Step 5 -- Spot-check 3 riskiest before committing
 
@@ -113,23 +122,21 @@ The riskiest are:
    blocks
 3. Any entry assigned by single-signal inference only
 
-For each: fetch the relevant NewAdvent/CCEL/archive.org page and confirm
-the quote's opening words appear in the claimed section. Use Playwright
-at depth>=4 for historicalchristian.faith and NewAdvent.
+Verify each proposed attribution against the quoted passage in a primary source.
+Record the source URL or scan locator and matching section. Independently recheck
+the three riskiest changes, or every change when there are fewer than three.
+Leave an individual field blank when its evidence is insufficient. Browser
+traversal depth is not evidence of a correct attribution.
 
-Add a spot-check block to the patch script's docstring:
+Record the checks and any unresolved fields in the upstream issue or source
+provenance record.
 
-    Spot-checked against primary source:
-      - [entry_id] (URL) -- confirmed/failed/skipped + reason
+## Step 6 -- Verify the regenerated result
 
-The commit must contain this block. If fewer than 3 are confirmed,
-document why and flag to the orchestrator before committing.
-
-## Step 6 -- Commit
-
-    git add data/church-fathers/<SLUG>.json \
-            build/scripts/patch_source_title_<SLUG>.py
-    git commit -m "curate: source_title for <SLUG> (N entries)"
+Run the focused parser tests, regenerate through the parser, and validate the
+generated artifact. Commit the acquired source-authority change, parser tests,
+and generated output together under the repository's normal data-production
+workflow.
 
 ## Upstream bug log
 
@@ -139,6 +146,6 @@ the repo root rather than trying to fix it here.
 
 ## Reporting back
 
-Agent summary to the orchestrator should cover: how many entries patched,
+Agent summary to the orchestrator should cover: how many entries corrected,
 how many left blank (with reason categories), any upstream bugs flagged,
 any interesting findings.

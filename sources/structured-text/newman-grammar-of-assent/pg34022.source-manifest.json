@@ -1,0 +1,132 @@
+{
+  "authorities": [
+    {
+      "bytes": 997641,
+      "name": "retained-source",
+      "path": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent/extracted/pg34022-h/pg34022-images.html",
+      "role": "primary-source",
+      "sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+    },
+    {
+      "bytes": 559549,
+      "name": "retained-package",
+      "path": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent/pg34022-h.zip",
+      "role": "supporting-package",
+      "sha256": "27f6e1c54a0b5ac43b15b1ac26dabeff05a78aa27e2e2989f1633093200cedec"
+    },
+    {
+      "bytes": 241293,
+      "name": "retained-cover",
+      "path": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent/extracted/pg34022-h/images/cover.jpg",
+      "role": "favicon-support",
+      "sha256": "1e4c52a14131a78573156916ec5ba3954d52db27025f0acdaa23420ba05d8162"
+    },
+    {
+      "bytes": 1287,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/newman-grammar-of-assent/pg34022-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "7e232918b1515f3df189197b1d55ceccf44e555c08ab73bbc522635545bf8b37"
+    },
+    {
+      "bytes": 1205,
+      "name": "validation-policy",
+      "path": "sources/structured-text/newman-grammar-of-assent/pg34022-validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "c1764375c298289a1f085aa67407e0dc14311ebb4a2edb26ab2fb30db1fefd61"
+    },
+    {
+      "bytes": 2769,
+      "name": "source-readme",
+      "path": "sources/structured-text/newman-grammar-of-assent/README.md",
+      "role": "source-attribution-readme",
+      "sha256": "8a254374fd9446ba6e0252cb72834d2e067a598f1ca2e535aa34e630b8f94854"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 37342,
+      "name": "semantic-converter",
+      "path": "build/tei/newman_grammar_of_assent.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "c5393db1192b37c0687931152f3c19434ed45c26b43f06d781185474389b7247"
+    },
+    {
+      "bytes": 3206,
+      "name": "producer-implementation",
+      "path": "build/tei/newman_grammar_pg34022_package.py",
+      "role": "supporting-converter-package",
+      "sha256": "8872db0952c4b66fc1b0110ee23f8d760d841975dc80f57e9a19b59894a912d6"
+    },
+    {
+      "bytes": 9814,
+      "name": "oracle-implementation",
+      "path": "build/tei/newman_grammar_pg34022_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "51e2b9a97597d86f16a5ab05c81a308129caa9a2431a82e53ae0275431426a6a"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-newman-grammar-pg34022-extracted-html-v1",
+    "implementation_path": "build/tei/newman_grammar_pg34022_package.py",
+    "implementation_sha256": "8872db0952c4b66fc1b0110ee23f8d760d841975dc80f57e9a19b59894a912d6",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "book_body_positions": [
+      5,
+      7,
+      8,
+      10
+    ],
+    "candidate_status": "nonaccepted",
+    "edition": "London: Burns, Oates & Co., 1874 title-page witness",
+    "kind": "one-complete-electronic-book",
+    "provider_wrapper_disposition": "excluded and fully accounted",
+    "source_url": "https://www.gutenberg.org/ebooks/34022"
+  },
+  "source_bundle": {
+    "bytes": 997641,
+    "members": 1,
+    "sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+  },
+  "source_id": "newman-grammar-pg34022-extracted-html-current-v1",
+  "source_members": [
+    {
+      "bytes": 997641,
+      "logical_name": "pg34022-images.html",
+      "name": "pg34022-images.html",
+      "order": 1,
+      "path": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent/extracted/pg34022-h/pg34022-images.html",
+      "sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-newman-grammar-pg34022-independent-html-oracle",
+    "implementation_path": "build/tei/newman_grammar_pg34022_oracle.py",
+    "implementation_sha256": "51e2b9a97597d86f16a5ab05c81a308129caa9a2431a82e53ae0275431426a6a",
+    "import_closure_sha256": "3c11b5fab1e4e93f8658ded8bf2968460e39dd02cdc49f1c5c238c92e224a214",
+    "version": "1"
+  },
+  "work_id": "newman-grammar-of-assent"
+}

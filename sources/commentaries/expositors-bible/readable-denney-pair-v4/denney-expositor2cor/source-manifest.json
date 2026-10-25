@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib034-readable-denney-expositor2cor-v4",
+  "work_id": "expositors-bible--james-denney",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/denney_expositor2cor.xml",
+      "role": "primary-source",
+      "bytes": 787234,
+      "sha256": "afdf1cb907eb7d79f2f20582dd8d5e96a84614c253bb193903cc1cac76d16bc7"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-denney-pair-v4/denney-expositor2cor/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 936,
+      "sha256": "3e2d838db9ae1361dbfefd7975ce02939929d48d20db1b060202a91e1c782748"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-denney-pair-v4/denney-expositor2cor/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1086,
+      "sha256": "c25c677bc85b0f1a38c611f7bd5ce6f9e7611d9b823422f8790a3abab886dbb4"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-denney-pair-v4/denney-expositor2cor/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 822,
+      "sha256": "6505fc7b313cd906865900640a32a67f95d38474c4d0af220662f4f4e61b816b"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-denney-pair-v4/denney-expositor2cor/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1816,
+      "sha256": "31f8a2c963bcbf036d6a8626a106700d92deec1802d7f312756d4fb9fbc904b8"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib034-readable-denney-pair-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_denney_pair.py",
+    "implementation_sha256": "83890820d2bd9f0187631be923daf17d64017ddbacee4309825f745fe45e4739"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib034-readable-denney-pair-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_denney_pair_oracle.py",
+    "implementation_sha256": "0f889452e98ecd773ff7e477da1ad1041bef4483e78fa616ddf7a035dcff87c7",
+    "import_closure_sha256": "0f889452e98ecd773ff7e477da1ad1041bef4483e78fa616ddf7a035dcff87c7"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "john-owen-lib051-ten-retained-ccel-xml",
+  "authorities": [
+    {
+      "name": "glory-source",
+      "path": "raw/ccel/owen/glory.xml",
+      "role": "primary-source",
+      "bytes": 730307,
+      "sha256": "176f4e2d04fecc699129ff91cc886eba69761b05719a6ac740ceeb78243b2a11"
+    },
+    {
+      "name": "grotius-source",
+      "path": "raw/ccel/owen/grotius.xml",
+      "role": "primary-source",
+      "bytes": 165044,
+      "sha256": "fcbacae9664b164da182195144c3fe3ea7157d83653117e01a272edec6518ce1"
+    },
+    {
+      "name": "indwelling-sin-source",
+      "path": "raw/ccel/owen/indwellingsin.xml",
+      "role": "primary-source",
+      "bytes": 655068,
+      "sha256": "d96a21545e33e34ec0cfb1af8f1fad92faa395082bd596ba44d7a1be7adaa6c5"
+    },
+    {
+      "name": "justification-source",
+      "path": "raw/ccel/owen/just.xml",
+      "role": "primary-source",
+      "bytes": 1768558,
+      "sha256": "7b5b2a7ee95189a47aaba0364e242d80c09d83d955485761671a78472c86f942"
+    },
+    {
+      "name": "liturgies-source",
+      "path": "raw/ccel/owen/liturgies.xml",
+      "role": "primary-source",
+      "bytes": 202381,
+      "sha256": "57fc24dab8facffc4bb82a3e39ee2372a97b1c55a0ef1851cfde69b3fbb5897c"
+    },
+    {
+      "name": "mortification-source",
+      "path": "raw/ccel/owen/mort.xml",
+      "role": "primary-source",
+      "bytes": 345268,
+      "sha256": "e3577b8e81583250a41df8b0bd6504dc37209a60944cbd5e20ec2ae82779c211"
+    },
+    {
+      "name": "pastors-people-source",
+      "path": "raw/ccel/owen/pastorspeople.xml",
+      "role": "primary-source",
+      "bytes": 222797,
+      "sha256": "dbe4984fd62de26c249ae366f9982353bb39727ea956fbf7c8c36f163cedac4b"
+    },
+    {
+      "name": "perseverance-source",
+      "path": "raw/ccel/owen/perseverance.xml",
+      "role": "primary-source",
+      "bytes": 3089010,
+      "sha256": "0d3bc041bdd6f1615b705ef8f336ece29c3636a42c69d04aebd5b231f75157a5"
+    },
+    {
+      "name": "pneumatologia-source",
+      "path": "raw/ccel/owen/pneum.xml",
+      "role": "primary-source",
+      "bytes": 5089504,
+      "sha256": "ebbdf6e0de85a876456dc9fa7a2fd9da5e2b58f65a486b82fcc8b147e8b08d9a"
+    },
+    {
+      "name": "psalm130-source",
+      "path": "raw/ccel/owen/psalm130.xml",
+      "role": "primary-source",
+      "bytes": 1272376,
+      "sha256": "d2fc99719f83e550256d2c2e2edda7f09b6c70d3e399936b872551d7a5090444"
+    },
+    {
+      "name": "john-owen-glory-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-glory/config.json",
+      "role": "work-identity-config",
+      "bytes": 89,
+      "sha256": "293254631e474f2b95845608c9bc01ecf61f4467be128416060ed1ca2d81b376"
+    },
+    {
+      "name": "john-owen-grotius-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-grotius/config.json",
+      "role": "work-identity-config",
+      "bytes": 91,
+      "sha256": "84e14fbeee027d9d142766bb26172c740c3b564744175466796117d040d769b6"
+    },
+    {
+      "name": "john-owen-indwelling-sin-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-indwelling-sin/config.json",
+      "role": "work-identity-config",
+      "bytes": 98,
+      "sha256": "17d8d92e59a8f876beeaac2ff355ffd0b6cb2441ecb044770d6cb44393be5ca7"
+    },
+    {
+      "name": "john-owen-justification-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-justification/config.json",
+      "role": "work-identity-config",
+      "bytes": 97,
+      "sha256": "22c82c459499125196b54395ab51e756132a7c6c963ddf7804053228a93105f5"
+    },
+    {
+      "name": "john-owen-liturgies-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-liturgies/config.json",
+      "role": "work-identity-config",
+      "bytes": 93,
+      "sha256": "021b6dd0ab9474b6202536d231c603c14c0b58b9de42ab909c404b47eb47ae01"
+    },
+    {
+      "name": "john-owen-mortification-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-mortification/config.json",
+      "role": "work-identity-config",
+      "bytes": 97,
+      "sha256": "5616780316f0beb7ccc3c7170a85545da3f9e414140eb67255083c10341162ca"
+    },
+    {
+      "name": "john-owen-pastors-people-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-pastors-people/config.json",
+      "role": "work-identity-config",
+      "bytes": 98,
+      "sha256": "d5a9bd9ef547162e0caa2f62aa269c69152e609fda4f42ba3d38171c9b103be5"
+    },
+    {
+      "name": "john-owen-perseverance-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-perseverance/config.json",
+      "role": "work-identity-config",
+      "bytes": 96,
+      "sha256": "7c377a49a024ffb881de408878449f9a1cd86e43149cb7bfcc4e8ffb5175ea03"
+    },
+    {
+      "name": "john-owen-pneumatologia-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-pneumatologia/config.json",
+      "role": "work-identity-config",
+      "bytes": 97,
+      "sha256": "622d58e0d03f691816d4f21e3ad49a873d4ae98392f620a48178aa8481983225"
+    },
+    {
+      "name": "john-owen-psalm130-identity",
+      "path": "sources/structured-text/lib051-john-owen/work-bindings/john-owen-psalm130/config.json",
+      "role": "work-identity-config",
+      "bytes": 92,
+      "sha256": "687f2428c53a10873b9573c328f3d2d103e512dc5a224d85636f282377d013bb"
+    },
+    {
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib051-john-owen/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1189,
+      "sha256": "075c2655e873ba4a4d4d6750f92c89ad32826f32abc54674bf81121da1d9b034"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib051-john-owen/john-owen-lib051.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 11927,
+      "sha256": "85a4d6d9c553adaff92e311049b7cf8db8f1d0a53e466391673fb47d2a946aa6"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib051-john-owen/john-owen-lib051.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 413,
+      "sha256": "12aea640727cfea434ae6d5d66e849153ca5acfe5c260cd67d807e2d4c7177eb"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib051-john-owen/john-owen-lib051.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2522,
+      "sha256": "82ddacd24715ff835c366d3662bd64a59291daa4bd05ecb933c5565d25f6c680"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-p5-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-p5-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-john-owen-lib051-retained-xml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/john_owen_lib051_reconstruction.py",
+    "implementation_sha256": "40b37b26f625c185c37d0209ea999df45031704492a087fd8bc6e49faaf89878"
+  },
+  "validator": {
+    "id": "ocd-john-owen-lib051-retained-xml-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/john_owen_lib051_oracle.py",
+    "implementation_sha256": "261e7566990efb8b2112f2197969bd5c2431995ca185ea66c205c94fd9c32eeb",
+    "import_closure_sha256": "511c19819e83a9e58fd817309922e8f565f004ff3624a2e8b6d051b5529c98b2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

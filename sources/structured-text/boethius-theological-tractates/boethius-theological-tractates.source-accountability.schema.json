@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/boethius-theological-tractates/boethius-theological-tractates.source-accountability.schema.json",
+  "title": "Boethius Theological Tractates complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_scope",
+    "source_member",
+    "selected_byte_range",
+    "feature_count",
+    "attribute_count",
+    "feature_counts",
+    "omitted_feature_count",
+    "duplicate_feature_count",
+    "invented_feature_count",
+    "division_accounting",
+    "tractate_accounting",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-boethius-theological-tractates-source-accountability-v1"},
+    "schema": {"const": "boethius-theological-tractates.source-accountability.schema.json"},
+    "profile_id": {"const": "boethius-theological-tractates-div1-iv-v1"},
+    "source_scope": {"const": "ThML.body/div1[@id='iv'] with all five direct div2 tractates"},
+    "source_member": {
+      "const": {
+        "path": "raw/ccel/boethius/tracts.xml",
+        "bytes": 162005,
+        "sha256": "406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8"
+      }
+    },
+    "selected_byte_range": {
+      "const": {
+        "start": 17385,
+        "end": 152896,
+        "bytes": 135511,
+        "sha256": "10a2a8b84ff2fe5a1ba613181b39be1c5eb3d62032fd31977c78e8b6232db664"
+      }
+    },
+    "feature_count": {"const": 778},
+    "attribute_count": {"const": 1208},
+    "feature_counts": {
+      "const": {
+        "b": 3,
+        "div1": 1,
+        "div2": 5,
+        "h2": 1,
+        "h3": 1,
+        "i": 188,
+        "note": 59,
+        "p": 297,
+        "pb": 64,
+        "scripRef": 1,
+        "span": 60,
+        "sup": 1,
+        "sync": 88,
+        "unclear": 9
+      }
+    },
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "invented_feature_count": {"const": 0},
+    "division_accounting": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ordinal", "div1_id", "title", "disposition"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1, "maximum": 5},
+          "div1_id": {"enum": ["i", "ii", "iii", "iv", "v"]},
+          "title": {"type": "string"},
+          "disposition": {"enum": ["selected-work-represented", "excluded-sibling-work"]}
+        }
+      }
+    },
+    "tractate_accounting": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ordinal", "div2_id", "title", "disposition"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1, "maximum": 5},
+          "div2_id": {"enum": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v"]},
+          "title": {"type": "string"},
+          "disposition": {"const": "represented-exactly"}
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 778,
+      "maxItems": 778,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "feature_id",
+          "parent_feature_id",
+          "source_selector",
+          "source_tag",
+          "source_xml_id",
+          "source_attributes",
+          "source_direct_text",
+          "source_tail_text",
+          "source_direct_text_sha256",
+          "source_tail_text_sha256",
+          "source_byte_start",
+          "source_byte_end",
+          "source_byte_count",
+          "source_bytes_sha256",
+          "tei_tag",
+          "tei_xml_id",
+          "tei_parent_id",
+          "tei_child_ordinal",
+          "tei_attributes",
+          "disposition"
+        ],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^boethius-feature-[0-9]{4}$"},
+          "parent_feature_id": {"type": ["string", "null"]},
+          "source_selector": {"type": "string", "minLength": 1},
+          "source_tag": {"enum": ["b", "div1", "div2", "h2", "h3", "i", "note", "p", "pb", "scripRef", "span", "sup", "sync", "unclear"]},
+          "source_xml_id": {"type": ["string", "null"]},
+          "source_attributes": {"type": "object"},
+          "source_direct_text": {"type": "string"},
+          "source_tail_text": {"type": "string"},
+          "source_direct_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_tail_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_byte_start": {"type": "integer", "minimum": 0},
+          "source_byte_end": {"type": "integer", "minimum": 1},
+          "source_byte_count": {"type": "integer", "minimum": 1},
+          "source_bytes_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tei_tag": {"enum": ["ab", "anchor", "div", "foreign", "head", "hi", "note", "p", "pb", "ref", "unclear"]},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "tei_parent_id": {"type": "string", "minLength": 1},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "disposition": {"const": "represented-exactly"}
+        }
+      }
+    }
+  }
+}

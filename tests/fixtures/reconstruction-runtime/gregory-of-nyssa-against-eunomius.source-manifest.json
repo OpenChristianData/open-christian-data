@@ -1,0 +1,103 @@
+{
+  "authorities": [
+    {
+      "bytes": 4225695,
+      "name": "retained-source",
+      "path": "raw/ccel/npnf2/npnf205.xml",
+      "role": "primary-source",
+      "sha256": "43e87ed232457fd2d5862f72dd2d5d84fe1e8b69f4c3eec839bad04579327bf3"
+    },
+    {
+      "bytes": 2271,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/gregory-of-nyssa-against-eunomius/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "e67b3bf66e02ee164e98aa3e9e8417fe135cef0e2ea85766e541c8fe62954f29"
+    },
+    {
+      "bytes": 916,
+      "name": "validation-policy",
+      "path": "sources/structured-text/gregory-of-nyssa-against-eunomius/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a3563e855b0b78045cc6244a071dfd3b2593669627986f31147829aa231b7f82"
+    },
+    {
+      "bytes": 1087,
+      "name": "source-attribution-readme",
+      "path": "sources/structured-text/gregory-of-nyssa-against-eunomius/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "43880acfeb881d1e0d2d3eebaff5d94241f1fd59e1691bd2ab82ca91247d39e2"
+    },
+    {
+      "bytes": 2275,
+      "name": "work-config",
+      "path": "sources/structured-text/gregory-of-nyssa-against-eunomius/config.json",
+      "role": "local-metadata-claim-evidence",
+      "sha256": "7ea2c58ed186c10d4d970d92300be601de8133287eb04934ea703a46833996ef"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 3604,
+      "name": "producer-root-bindings",
+      "path": "build/tei/npnf2_missing_work_roots.py",
+      "role": "converter-support-implementation",
+      "sha256": "49914268c60e33b502b0367492ae3de2ccf1160b4fd5a2b14958ca2179e17c52"
+    },
+    {
+      "bytes": 4314,
+      "name": "tei-writer",
+      "path": "ocd_kernel/tei/writer.py",
+      "role": "converter-support-implementation",
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-npnf2-missing-work-roots-to-tei",
+    "implementation_path": "build/tei/npnf2_missing_work_reconstruction.py",
+    "implementation_sha256": "e3994dd43d7861bbba3d8cfb81e6dd7393e188dc8e541ece50b6deaf7cf2be97",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "kind": "complete-source-subtree",
+    "root_path": [
+      "viii",
+      "viii.i"
+    ]
+  },
+  "source_id": "ccel-npnf205-viii.i-gregory-of-nyssa-against-eunomius",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-npnf2-missing-work-source-oracle",
+    "implementation_path": "build/tei/npnf2_missing_work_oracle.py",
+    "implementation_sha256": "ea64d5037d28c003588baaec7d2bdb16ed37131b968acfc2285369d83a05b6ab",
+    "import_closure_sha256": "605d74b3ec858b3010de1db5d18bc4780a24991b19dc28ef3fd60fd68912e838",
+    "version": "1"
+  },
+  "work_id": "gregory-of-nyssa-against-eunomius"
+}

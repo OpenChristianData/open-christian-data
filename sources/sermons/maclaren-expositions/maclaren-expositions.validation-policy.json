@@ -1,0 +1,60 @@
+{
+  "contract": "ocd-maclaren-expositions-validation-policy-v1",
+  "version": 1,
+  "work_id": "maclaren-expositions",
+  "ticket_id": "LIB-073",
+  "source_scope": {
+    "primary_member_count": 15,
+    "ordered_by": "PG_SERMON_INVENTORY.md Maclaren member table",
+    "member_disposition": "include-complete-member",
+    "physical_line_disposition": "represent-each-line-once-in-source-order",
+    "exposition_segmentation": "not-inferred"
+  },
+  "required_checks": [
+    "source-manifest-and-exact-inventory-binding",
+    "strict-utf8-bom-and-crlf-member-audit",
+    "single-ordered-gutenberg-start-end-envelope-per-member",
+    "complete-per-member-and-per-line-source-accounting",
+    "readable-paragraph-uppercase-line-and-blank-line-mapping",
+    "literal-note-and-underscore-marker-preservation",
+    "independent-source-to-actual-tei-order-and-text-comparison",
+    "source-accountability-schema-validation",
+    "pinned-tei-p5-xsd-validation",
+    "meaningful-content-order-wrapper-license-and-accountability-mutation-rejection",
+    "clean-process-byte-deterministic-converter-output"
+  ],
+  "tei_schema_authority": {
+    "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+    "role": "tei-validation-schema"
+  },
+  "forbidden_import_prefixes": [
+    "build.tei.maclaren_expositions_reconstruction"
+  ],
+  "producer_forbidden_import_prefixes": [
+    "build.tei.maclaren_expositions_oracle"
+  ],
+  "required_unresolved_ids": [
+    "maclaren-expositions-count-discrepancy-exact-eight",
+    "maclaren-expositions-work-collection-and-edition-identity",
+    "maclaren-expositions-textual-form-and-revision",
+    "maclaren-expositions-contributor-role-adoption",
+    "maclaren-expositions-rights-review",
+    "maclaren-expositions-human-acceptance-and-cvw"
+  ],
+  "count_policy": {
+    "config_claim": 1263,
+    "generated_projection_records": 1255,
+    "difference": 8,
+    "source_verified_exposition_count": null,
+    "reconciliation": "unresolved-from-retained-source",
+    "may_select_or_drop_source_units": false
+  },
+  "candidate_boundary": {
+    "status": "nonaccepted",
+    "rights": "not-reviewed",
+    "human_acceptance": "not-performed",
+    "visual_review": "not-performed",
+    "publication": "not-authorized",
+    "canonical_data_or_ir_write": false
+  }
+}

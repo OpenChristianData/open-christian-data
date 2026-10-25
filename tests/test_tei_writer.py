@@ -17,6 +17,7 @@ def test_stamp_header_records_provenance() -> None:
         source_url="https://www.ccel.org/ccel/schaff/npnf102.xml",
         source_sha256="abc123",
         print_source="New York: The Christian Literature Publishing Co., 1890",
+        rights_statement="Public-domain source text; CCEL attribution required by project policy.",
     )
 
     assert header.findtext(f".//{{{TEI_NS}}}title") == "The City of God"
@@ -32,13 +33,33 @@ def test_stamp_header_records_provenance() -> None:
     assert header.findtext(f".//{{{TEI_NS}}}publisher") == "Open Christian Data"
     availability = header.find(f".//{{{TEI_NS}}}availability")
     assert availability.text is None
-    assert "public domain" in availability.findtext(f"{{{TEI_NS}}}p").lower()
+    assert availability.get("status") == "restricted"
+    assert availability.findtext(f"{{{TEI_NS}}}p") == (
+        "Public-domain source text; CCEL attribution required by project policy."
+    )
     ptr = header.find(f".//{{{TEI_NS}}}ptr")
     assert ptr.get("target") == "https://www.ccel.org/ccel/schaff/npnf102.xml"
     assert ptr.text is None
     source_desc = " ".join(header.find(f".//{{{TEI_NS}}}sourceDesc").itertext())
     assert "abc123" in source_desc
     assert "Christian Literature Publishing" in source_desc
+
+
+def test_stamp_header_never_invents_public_domain_rights() -> None:
+    header = stamp_header(
+        title="Unknown witness",
+        author="Unknown",
+        contributors=[],
+        source_url="retained/source.bin",
+        source_sha256=None,
+        print_source="Uncollated source",
+    )
+
+    availability = header.find(f".//{{{TEI_NS}}}availability")
+    assert availability.get("status") == "unknown"
+    assert availability.findtext(f"{{{TEI_NS}}}p") == (
+        "Rights status unresolved; consult the bound source authority before use."
+    )
 
 
 def test_derive_address_uses_xml_id_when_present() -> None:

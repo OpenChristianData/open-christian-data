@@ -1,0 +1,38 @@
+{
+  "contract": "ocd-lib015-blocked-source-evidence-v1",
+  "ticket": "LIB-015",
+  "work_id": "hooker-ecclesiastical-polity",
+  "status": "blocked",
+  "candidate_status": "nonaccepted",
+  "publication_authorized": false,
+  "tei_candidate_created": false,
+  "frozen_claim_sha256": "acd6b5b1f3ac0303550d1902c5345d60ec07a20070ef737439ca3ac66eda1495",
+  "retained_members_in_likely_volume_order": [
+    {"path": "raw/gutenberg/worksofrichardho0001hook_djvu.txt", "bytes": 1603485, "physical_lines": 43831, "encoding": "UTF-8", "sha256": "a7282a0444c4c6a4d29057cc59818d5f8544eb159a0fda0a3b8b398f670b8f6d"},
+    {"path": "raw/gutenberg/worksofrichardho0002hook_djvu.txt", "bytes": 1764903, "physical_lines": 52363, "encoding": "UTF-8", "sha256": "7541256bb664c7aaac5bdb6d9fe2f5d0a553e0aec1cb1fbc839bfb8605e2987b"},
+    {"path": "raw/gutenberg/worksofrichardho0003hook_pt1_djvu.txt", "bytes": 1306725, "physical_lines": 38477, "encoding": "UTF-8", "sha256": "915cec9367ad6ceb888f544d7918aa48204ddbc38b5f7ed5992ea6db4a549eee"}
+  ],
+  "likely_order_census": {"members": 3, "bytes_without_separator": 4675113, "physical_lines": 134671},
+  "likely_order_cohort_hashes": [
+    {"separator": "none", "bytes": 4675113, "sha256": "82c75cf767c25d730136415375b31dc2833e8705f5db17ab708263e13f338061"},
+    {"separator": "LF", "bytes": 4675115, "sha256": "b50acbbaf2ea9df2f57c7706287083e0b59285dc4f219ce4851078c56d44e6e5"},
+    {"separator": "CRLF", "bytes": 4675117, "sha256": "e1bff4c1f9644e6d5b775f6d1fbc2d62ca6b8b58ffd2a7f07aa0db78af9b2af7"}
+  ],
+  "exhaustive_simple_cohort_probe": {
+    "orders_tested": 6,
+    "separators_per_order": ["none", "LF", "CRLF"],
+    "constructions_tested": 18,
+    "matching_constructions": 0,
+    "observed_sha256": [
+      "82c75cf767c25d730136415375b31dc2833e8705f5db17ab708263e13f338061", "b50acbbaf2ea9df2f57c7706287083e0b59285dc4f219ce4851078c56d44e6e5", "e1bff4c1f9644e6d5b775f6d1fbc2d62ca6b8b58ffd2a7f07aa0db78af9b2af7",
+      "e8b5d77251698f021efb532d6e0c3780bbb9f22105ea0d34e828709f3e48ba08", "bbdf856250406876ee09d7de5a27fbdee5f8f2f95ef5d92c456c7710d0f87d48", "4058fe8f96d7ae5b38eba362c900fc5edebd37e5dfb2a8341cd077f7af0c039c",
+      "310d07efb4c8b82f63e7ebe5f1cab1a18e641a3463dfa25db53f82e425722be0", "21776b1e7a3b19eff94882011f5eb7e561550454bc1ffa9dc4780135f9dd1549", "7f77d1b6ce9fbf35df27788bb88edb0053e92aaef7ea4a130c93f320e69a897b",
+      "6456b3a35acf81ebca0bcabcb22c970645d8770fa7bd717db4d653deb70602fb", "b64d72577795caa7b106dfa06390573c7251e575129660be046885fb07b0dd27", "d95ec4d70baf670e99a339afdffcbf69150220136337259a8f2801723be5c1cc",
+      "59043ff0a3112d87511e3159979ea082cca39c5dca157cc61fdc20850fa8b1c0", "d6cacd8995d43b925eb1c8451fabc3df24d78c411eb002a9f3ed4ce59d2b6928", "d88d54ad2b60db697a05eb83d20b2f3568613769c65533101bb49de18e20674f",
+      "0f6ddbb8a3a40eb3558c4c31c5e0a6b626b9ed6b49e7527bee238c1fc2f3fa36", "88de9a2c9f21f517d06662a6f9bfb3c266482a117f06e0e8be4ac6686c0f92e8", "cb17289dd45c9b11863623a785e47a6692c5f5c90b6d1ec9f817107fde9223ec"
+    ]
+  },
+  "blocker": "The frozen current claim resolves to none of the three retained members and none of the 18 bounded full-byte cohort constructions. The cohort recipe and exact frozen source identity therefore remain unknown.",
+  "reopening_condition": "Provide an authoritative retained member matching the frozen SHA-256, or a frozen and reproducible cohort recipe whose bytes hash exactly to the claim.",
+  "scope_boundary": "No Hooker TEI candidate, source manifest, complete label, human acceptance, or publication authorization is created by this evidence."
+}

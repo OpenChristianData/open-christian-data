@@ -1,0 +1,32 @@
+{
+  "contract": "ocd-lib058-reconstruction-profile-v1",
+  "profile_id": "lib058-schaff-history-vol-6-retained-ccel-thml-v1",
+  "work_id": "schaff-history-vol-6",
+  "title": "History of the Christian Church, Vol. 6: The Middle Ages, A.D. 1294-1517",
+  "creator": "Philip Schaff",
+  "contributor_statement": "Christian Classics Ethereal Library (electronic witness); retained header identifies Philip Schaff, Electronic Bible Society source, and CCEL publisher statements.",
+  "source_url": "https://www.ccel.org/ccel/schaff/hcc6.xml",
+  "source_sha256": "7221658476b0847e10a58ac01eea5f3b5fbf884d5941d32d758be5ef1cdca4c5",
+  "source_bytes": 2128205,
+  "physical_lines": 32628,
+  "source_member": {"path": "raw/ccel/schaff/hcc6.xml", "bytes": 2128205, "sha256": "7221658476b0847e10a58ac01eea5f3b5fbf884d5941d32d758be5ef1cdca4c5"},
+  "source_envelope": {"encoding": "UTF-8", "line_framing": "LF; final line has no line ending", "root": "ThML", "head": "ThML.head", "body": "ThML.body", "body_top_level_ids": ["i", "ii", "iii", "iv"]},
+  "source_structure": {
+    "root": "ThML", "head": "ThML.head", "body": "ThML.body",
+    "body_top_level": [{"id": "i", "type": null, "source_line": 183, "elements": 14}, {"id": "ii", "type": null, "source_line": 203, "elements": 11}, {"id": "iii", "type": null, "source_line": 270, "elements": 6928}, {"id": "iv", "type": null, "source_line": 31862, "elements": 700}],
+    "content_div2": 11, "content_sections": 1, "content_chapters": 10, "content_div3": 79, "index_div2": 6,
+    "tag_counts": {
+      "DC": 1, "DC.Contributor": 2, "DC.Creator": 2, "DC.Date": 1, "DC.Description": 1, "DC.Format": 1,
+      "DC.Identifier": 1, "DC.Language": 1, "DC.Publisher": 1, "DC.Rights": 1, "DC.Source": 1, "DC.Subject": 4,
+      "DC.Title": 2, "DC.Type": 1, "ThML": 1, "ThML.body": 1, "ThML.head": 1, "a": 376, "attr": 10,
+      "authorID": 1, "bkgID": 1, "bookID": 1, "br": 3, "cite": 5, "comments": 1, "description": 1, "div": 6,
+      "div1": 4, "div2": 17, "div3": 79, "editorialComments": 1, "electronicEdInfo": 1, "firstPublished": 1,
+      "generalInfo": 1, "h1": 1, "h2": 9, "h3": 5, "h4": 3, "i": 1433, "index": 6, "insertIndex": 6, "l": 203,
+      "li": 235, "name": 16, "note": 1353, "p": 3473, "printSourceInfo": 1, "property": 33, "pubHistory": 1,
+      "published": 1, "publisherID": 1, "revisionHistory": 1, "scripRef": 86, "selector": 17, "series": 1,
+      "span": 274, "status": 1, "style": 2, "ul": 4, "unclear": 1, "verse": 53, "version": 1, "workID": 1
+    }
+  },
+  "structure_policy": {"line_carrier": "tei:ab-or-head", "line_container": "one tei:div per physical source line", "source_topology": "retained in profile and independently recomputed from the XML tree", "text_rule": "verbatim UTF-8 source line after removing only LF transport framing", "uncertain_structure": "retain line carrier and mark candidate boundary unresolved"},
+  "scope": {"status": "complete-retained-source-expression", "candidate_status": "nonaccepted", "represented": "all 32,628 retained physical lines and the complete parsed ThML source topology", "unrepresented": "none", "human_review": "required"}
+}

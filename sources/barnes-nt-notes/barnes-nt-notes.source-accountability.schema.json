@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Barnes retained SWORD slot and byte-range accountability",
+  "type": "object",
+  "required": [
+    "contract",
+    "work_id",
+    "source_id",
+    "slot_count",
+    "empty_slots",
+    "invalid_utf8_slots",
+    "xml_incompatible_slots",
+    "unrepresentable_byte_counts",
+    "unrepresentable_byte_count",
+    "unrepresentable_range_count",
+    "byte_range_contract",
+    "carrier_stream_sha256",
+    "slots"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-barnes-source-accountability-v2"},
+    "work_id": {"const": "barnes-nt-notes"},
+    "source_id": {"const": "barnes-crosswire-sword-v1.1"},
+    "slot_count": {"const": 8246},
+    "nonempty_slots": {"const": 7463},
+    "empty_slots": {"const": 783},
+    "invalid_utf8_slots": {
+      "type": "array",
+      "minItems": 60,
+      "maxItems": 60,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0, "maximum": 8245}
+    },
+    "xml_incompatible_slots": {
+      "type": "array",
+      "minItems": 76,
+      "maxItems": 76,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0, "maximum": 8245}
+    },
+    "unrepresentable_byte_counts": {
+      "type": "object",
+      "required": ["invalid_utf8", "xml_1_0_forbidden"],
+      "properties": {
+        "invalid_utf8": {"const": 68},
+        "xml_1_0_forbidden": {"const": 98}
+      },
+      "additionalProperties": false
+    },
+    "unrepresentable_byte_count": {"const": 166},
+    "unrepresentable_range_count": {"type": "integer", "minimum": 136, "maximum": 166},
+    "byte_range_contract": {
+      "type": "object",
+      "required": ["scheme", "offset_unit", "offset_origin", "end_exclusive", "scope"],
+      "properties": {
+        "scheme": {"const": "ocd-barnes-source-byte-span-v1"},
+        "offset_unit": {"const": "byte"},
+        "offset_origin": {"const": 0},
+        "end_exclusive": {"const": true},
+        "scope": {"const": "affected-carriers-only"}
+      },
+      "additionalProperties": false
+    },
+    "carrier_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "slots": {
+      "type": "array",
+      "minItems": 8246,
+      "maxItems": 8246,
+      "items": {"$ref": "#/$defs/slot"}
+    }
+  },
+  "$defs": {
+    "slot": {
+      "type": "object",
+      "required": ["slot", "bible_position", "bytes", "sha256", "state", "byte_ranges"],
+      "properties": {
+        "slot": {"type": "integer", "minimum": 0, "maximum": 8245},
+        "bible_position": {"type": "object"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "state": {"enum": ["empty", "utf8", "partial"]},
+        "byte_ranges": {"type": "array", "items": {"$ref": "#/$defs/byteRange"}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"state": {"const": "partial"}}, "required": ["state"]},
+          "then": {"properties": {"byte_ranges": {"minItems": 2}}}
+        },
+        {
+          "if": {"properties": {"state": {"enum": ["empty", "utf8"]}}, "required": ["state"]},
+          "then": {"properties": {"byte_ranges": {"maxItems": 0}}}
+        }
+      ],
+      "additionalProperties": true
+    },
+    "byteRange": {
+      "type": "object",
+      "required": ["slot", "start", "end", "bytes", "state", "sha256", "hex"],
+      "properties": {
+        "slot": {"type": "integer", "minimum": 0, "maximum": 8245},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "state": {"enum": ["represented", "unrepresentable"]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+        "reason": {"const": "unrepresentable"},
+        "cause": {"enum": ["invalid-utf8", "xml-1.0-forbidden-character"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"state": {"const": "unrepresentable"}}, "required": ["state"]},
+          "then": {"required": ["reason", "cause"]}
+        },
+        {
+          "if": {"properties": {"state": {"const": "represented"}}, "required": ["state"]},
+          "then": {"not": {"anyOf": [{"required": ["reason"]}, {"required": ["cause"]}]}}
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

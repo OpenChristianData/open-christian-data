@@ -83,4 +83,4 @@ jobs:
         run: pip install -e ./ocd_kernel
 
       - name: Run tests
-        run: python -m pytest tests/ -m "not requires_local_artifacts" -v
+        run: python -m pytest tests/ -p tests.public_release_inputs -m "not requires_local_artifacts" -n 4 --dist loadfile --durations=20 -v

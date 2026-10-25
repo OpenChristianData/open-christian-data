@@ -1,0 +1,32 @@
+{
+  "contract": "selected-thml-check-v1",
+  "policy_id": "watson-ten-commandments-selected-thml-policy-v1",
+  "work_id": "watson-ten-commandments",
+  "profile": "watson-ten-commandments.reconstruction-profile.json",
+  "source_accountability": "watson-ten-commandments.source-accountability.json",
+  "source_accountability_schema": "watson-ten-commandments.source-accountability.schema.json",
+  "checks": [
+    "Exact one-member acquisition path, byte count, and SHA-256.",
+    "Exact source-derived order and disposition of every ThML.body carrier and every direct comment node.",
+    "All six div1 carriers selected once; title page maps to TEI front, four ordered content divisions to body, and Indexes to back.",
+    "Independent complete source and candidate enumeration; no converter traversal, mapping, selection, or accounting helper is imported by the checker.",
+    "Exact text, tail, hierarchy, source ID order, links, styles, notes, all source attributes in the feature ledger, and all h1/h2/h3 headings.",
+    "h3 headings map to TEI head type=thml-h3 with exact source text; preserve div@title in source accountability but do not render it as a second body head when a direct h1, h2, or h3 exists.",
+    "Complete source prolog, DOCTYPE, head-child inventory, in-root comments, body wrapper comments, and empty stylesheet disposition.",
+    "TEI P5 XSD, source-accountability schema, and candidate-package contract validation.",
+    "Reject omission, duplication, reordering, invention, source or metadata drift, unsupported XML nodes, and stale member bindings.",
+    "Mutation tests for source units, heading structure/text, TEI region placement, candidate accounting, and source-member bindings.",
+    "Two reconstructions from fresh Python processes must have identical package path sets and per-file bytes."
+  ],
+  "candidate_boundary": {
+    "status": "nonaccepted",
+    "visual_review": "pending",
+    "human_acceptance": "separate decision",
+    "rights_clearance": "separate decision",
+    "release_and_publication": "not changed"
+  },
+  "not_asserted": [
+    "No composition date, print edition date, exact print exemplar, or transcription lineage is asserted.",
+    "No project rights clearance or publication authorization is asserted."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "contract": "ocd-expositors-lib035-readable-horton-profile-v1",
+  "member_id": "horton-expositorprov",
+  "work_id": "expositors-bible--robert-f-horton",
+  "source": {
+    "path": "raw/ccel/expositors-bible/horton_expositorprov.xml",
+    "bytes": 1144079,
+    "sha256": "a7372596c60d053b539e957c01d29a54269da5c25b094cd7b373cb7e834e122d"
+  },
+  "source_title": "The Expositor's Bible: The Book of Proverbs",
+  "source_author": "R. F. Horton",
+  "root_disposition": {
+    "front": [
+      "i",
+      "ii"
+    ],
+    "body": "all other direct ThML.body div1 roots in original order",
+    "back": [
+      "xxxiv",
+      "xxxv",
+      "xxxvi"
+    ]
+  },
+  "source_root_ids_in_order": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "vii",
+    "viii",
+    "ix",
+    "x",
+    "xi",
+    "xii",
+    "xiii",
+    "xiv",
+    "xv",
+    "xvi",
+    "xvii",
+    "xviii",
+    "xix",
+    "xx",
+    "xxi",
+    "xxii",
+    "xxiii",
+    "xxiv",
+    "xxv",
+    "xxvi",
+    "xxvii",
+    "xxviii",
+    "xxix",
+    "xxx",
+    "xxxi",
+    "xxxii",
+    "xxxiii",
+    "xxxiv",
+    "xxxv",
+    "xxxvi"
+  ],
+  "element_count": 8320,
+  "comment_count": 10,
+  "scope": "complete one retained CCEL ThML electronic edition: title, introduction, 31 chapters, passage index, general index, and indexes",
+  "comment_disposition": "nontextual CCEL auto-index comments retained exactly in accounting ledger",
+  "broken_local_links": [],
+  "human_acceptance": "absent",
+  "table": {
+    "source_id": "xxxiv-p1.3",
+    "rows": 678,
+    "cells": 1263,
+    "cell_colspan_values": [
+      "1",
+      "2"
+    ],
+    "cell_rowspan_value": "1",
+    "cell_class_values": [
+      "Center",
+      "c2",
+      "c3"
+    ],
+    "mapping": "table/row/cell; colspan to cell@cols, source class to cell@rend; exact source attributes in accounting"
+  },
+  "image": {
+    "source_id": "xi-p8.1",
+    "src": "/ccel/horton/expositorprov/files/provill.png",
+    "alt": "Provill",
+    "title": "Provill",
+    "mapping": "inline figure/graphic/figDesc/label; source attributes in accounting",
+    "asset_status": "referenced PNG bytes absent from the one-member retained XML acquisition"
+  }
+}

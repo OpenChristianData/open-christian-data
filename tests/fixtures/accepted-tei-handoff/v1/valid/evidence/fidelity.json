@@ -1,0 +1,10 @@
+{
+  "contract": "ocd-synthetic-fidelity-v1",
+  "identity": {"work_id": "synthetic-work", "textual_form_id": "synthetic-form", "edition_id": "synthetic-edition", "acquisition_id": "synthetic-acquisition"},
+  "accepted_tei": {"path": "accepted.tei.xml", "bytes": 1248, "sha256": "b2b6b9bd64ee9cf530fcaa883fe5f3b4f270cfbaa7874338ce4daf3f5c9e49c0"},
+  "source": {"source_path": "source-member.xml", "source_sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2", "source_bytes": 60, "source_scope": "div1[@id='unit']"},
+  "scope": {"kind": "member", "declared": "div1[@id='unit']"},
+  "status": "pass",
+  "command": "synthetic-fidelity",
+  "exit_code": 0
+}

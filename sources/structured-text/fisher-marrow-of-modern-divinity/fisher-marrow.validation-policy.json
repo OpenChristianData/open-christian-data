@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-fisher-marrow-validation-policy-v1",
+  "policy_id": "fisher-marrow-complete-source-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "required_line_count": 22946,
+  "required_page_marker_candidate_count": 170,
+  "required_false_running_header_content_count": 16,
+  "required_high_confidence_speaker_count": 455,
+  "required_section_boundary_speaker_count": 24,
+  "required_rejected_paragraph_continuation_speaker_like_count": 9,
+  "tei_header": {
+    "title": "The Marrow of Modern Divinity",
+    "author": "Edward Fisher, A.M.",
+    "contributor": "The Rev. Thomas Boston (notes)",
+    "edition": "A New Edition",
+    "place": "London",
+    "publisher": "Thomas Tegg and Son",
+    "year": "1837",
+    "source_url": "https://archive.org/details/marrowmoderndiv00bostgoog",
+    "availability_status": "unknown",
+    "rights_statement": "Rights and publication status are unresolved; this nonaccepted reconstruction candidate is not publication authorization."
+  },
+  "required_unresolved_ids": ["fisher-ocr-note-boundaries", "fisher-rights-review", "fisher-human-acceptance"],
+  "forbidden_import_prefixes": ["build.parsers.ia_fisher_marrow", "build.tei.ia_fisher_marrow_to_tei", "build.tei.fisher_marrow_reconstruction", "build.reconstruction", "ocd_kernel.reconstruction.case_declaration", "ocd_kernel.reconstruction.persistence", "ocd_kernel.reconstruction.verifier_process", "ocd_kernel.reconstruction.wave"],
+  "checks": ["exact-retained-source-digest-and-byte-scope", "complete-contiguous-line-byte-accounting", "zero-omission-duplication-reorder-and-misattachment", "exact-line-text-and-ocr-uncertainty", "paragraph-aware-455-speaker-census", "24-section-boundary-speakers-preserve-heading-and-speaker", "9-paragraph-continuation-speaker-like-lines-rejected", "recommendations-part-two-front-and-appendix-structure", "all-page-marker-candidates-accounted-without-invented-certainty", "substantive-false-headers-retained-as-content", "direct-retained-title-page-identity", "google-attribution-obligation", "candidate-package-integrity", "tei-p5-xsd", "recursive-producer-independent-import-closure", "nonaccepted-separation-from-human-decision"]
+}

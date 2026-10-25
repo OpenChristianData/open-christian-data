@@ -1,0 +1,52 @@
+{
+  "contract": "ocd-lib089-source-blocker-v1",
+  "ticket_id": "LIB-089",
+  "work_id": "directory-for-publick-worship",
+  "title": "The Directory for the Publick Worship of God",
+  "frozen_source_claim": {
+    "logical_path": "raw/westminster-standard-org/directory-for-publick-worship.html",
+    "sha256": "354006b984ea249e06be9c5a4f9f13fcee64a269cc016df2097e929430fc7df3",
+    "bytes": null,
+    "claim_status": "unverified-current-claim"
+  },
+  "durable_raw": {
+    "library_root": "D:/Library/Open Christian Data",
+    "present": false,
+    "verified_on": "2026-08-31"
+  },
+  "known_attempts": [
+    {
+      "url": "https://thewestminsterstandard.org/directory-for-the-publick-worship-of-god/",
+      "result": "HTTP 403 on both recorded pinning attempts"
+    },
+    {
+      "url": "https://www.reformed.org/documents/wcf_standards/p369-direct_pub_worship.html",
+      "result": "redirected to reformed.org and returned HTTP 404"
+    },
+    {
+      "url": "http://www.reformed.org/documents/wcf_standards/p369-direct_pub_worship.html",
+      "result": "redirected to reformed.org and returned HTTP 404"
+    },
+    {
+      "url": "https://www.puritannica.com/front/demo/wk/StandardsWestminster/DirectoryPublicWorship/0000-0000.html",
+      "result": "DNS resolution failure: No such host is known"
+    }
+  ],
+  "network_acquisition_performed_for_lib089": false,
+  "source_manifest": null,
+  "candidate": null,
+  "validation": null,
+  "acceptance_status": "nonaccepted",
+  "publication": false,
+  "blocker": "The frozen hash claim cannot be verified because no retained source bytes are present, and the recorded canonical and alternative-witness routes did not yield a suitable retained witness.",
+  "owner": "source-evidence-maintainer",
+  "next_action": "Retain a politely acquired canonical response or a complete edition-matched alternative witness without bypassing access controls; then hash-pin it and compare its identity and complete text before creating any manifest or candidate.",
+  "reopening_condition": "A complete locally retained witness exists whose bytes match the frozen claim, or whose different hash is independently shown to be an edition-matched source and is explicitly re-pinned by authorized campaign maintenance.",
+  "unresolved": [
+    "source-byte identity",
+    "edition and witness identity",
+    "rights and source terms",
+    "editorial structure and readings",
+    "human textual acceptance"
+  ]
+}

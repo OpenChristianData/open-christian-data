@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-bcp-1549-validation-policy-v1",
+  "source_id": "bcp-1549-retained-justus-html",
+  "rules": [
+    "Every retained HTML member is bound by path, byte count, and SHA-256.",
+    "Every route source carrier is represented by one corresponding TEI ID or an explicit evidence disposition.",
+    "TEI output validates against the vendored TEI P5 schema.",
+    "A fresh second process must reproduce the candidate bytes.",
+    "Visual review, human acceptance, rights, durable admission, and publication remain separate gates."
+  ]
+}

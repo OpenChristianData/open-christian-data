@@ -1,0 +1,29 @@
+{
+  "contract": "ocd-boethius-complete-envelope-validation-policy-v1",
+  "policy_id": "boethius-tracts-complete-five-root-ccel-witness-v4",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "exact-source-byte-and-hash",
+    "complete-five-root-front-body-back",
+    "element-comment-attribute-text-tail-accounting",
+    "all-local-links-resolve",
+    "independent-source-comparison",
+    "comment-ledger-only-disposition",
+    "direct-tei-p5",
+    "nonaccepted-boundary"
+  ],
+  "oracle_import_closure": [
+    "build/tei/boethius_complete_envelope_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.boethius_complete_envelope"
+  ]
+}

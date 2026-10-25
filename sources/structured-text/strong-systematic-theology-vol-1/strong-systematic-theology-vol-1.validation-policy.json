@@ -1,0 +1,30 @@
+{
+  "contract": "ocd-strong-pg44035-validation-policy-v2",
+  "forbidden_import_prefixes": [
+    "build.parsers.gutenberg_systematics",
+    "strong_systematic_theology_reconstruction"
+  ],
+  "producer_forbidden_import_prefixes": [
+    "build.parsers.gutenberg_systematics",
+    "strong_systematic_theology_oracle"
+  ],
+  "required_checks": [
+    "strict-source-manifest-and-authority-binding",
+    "complete-physical-line-accounting",
+    "complete-volume-hierarchy-and-order",
+    "contents-correlated-section-hierarchy-and-order",
+    "tei-p5-schema-validation",
+    "independent-canonical-source-to-tei-comparison",
+    "deterministic-fresh-process-reconstruction",
+    "synthetic-membership-text-rights-and-accounting-mutations-rejected"
+  ],
+  "required_unresolved_ids": [
+    "strong-systematic-theology-vol-1-edition-identity",
+    "strong-systematic-theology-vol-1-textual-form",
+    "strong-systematic-theology-vol-1-rights",
+    "strong-systematic-theology-vol-1-source-envelope",
+    "strong-systematic-theology-vol-1-human-acceptance"
+  ],
+  "version": 2,
+  "work_id": "strong-systematic-theology-vol-1"
+}

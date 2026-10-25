@@ -1,0 +1,15 @@
+{
+  "scope": "Complete assigned Matthew then Mark cohort, including complete retained XML envelopes. This assignment is not independent proof of the bibliographic Vol. I boundary.",
+  "mapping": "Every body element retains ordered text/tail content and source attachment in the node ledger. A heading following prose starts an explicit source-heading-section TEI wrapper containing that heading and its following siblings until the next heading; the oracle checks this grouping against source sibling order. IDs are member-prefixed, local fragment and previous/next links follow those IDs. Source language markers map to xml:lang and scripture versions to ref subtype. Head metadata, original attributes, document declaration, DOCTYPE, comments and whitespace are preserved in byte-exact source accounting; selected DC titles are readable source observations. Styles and index insertion instructions are retained as source instructions; no missing generated index is invented. Source navigation to an absent toc anchor remains unresolved rather than inventing a target.",
+  "independence": "Oracle does not import producer traversal or mapping. Both use lxml with DTD/network/entity expansion disabled; Expat separately corroborates element and attribute inventory. Parallel mapping tables remain a shared policy assumption; visual semantics and disclosure review remain open.",
+  "claims": "Mechanical baseline only. No corrected-text, edition, rights, acceptance, release or publication claim.",
+  "patterns": [
+    "RP-01",
+    "RP-03",
+    "RP-04",
+    "RP-06",
+    "RP-13",
+    "RP-14",
+    "RP-15"
+  ]
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 from pathlib import Path
 
@@ -7,6 +8,10 @@ import pytest
 
 from build.tei.check_ledger import check_receipt
 from build.tei.project_hf import project_file
+
+
+def test_version_suffixed_checker_module_is_absent() -> None:
+    assert importlib.util.find_spec("build.tei.check_ledger_v2") is None
 
 
 def _fixture(path: Path) -> None:
@@ -57,6 +62,16 @@ def test_check_ledger_passes_projector_receipt(tmp_path: Path) -> None:
     receipt_path, _receipt = _project(tmp_path)
 
     assert check_receipt(receipt_path, repo_root=tmp_path) == []
+
+
+def test_check_ledger_rejects_legacy_v1_receipt(tmp_path: Path) -> None:
+    receipt_path, receipt = _project(tmp_path)
+    receipt["receipt_schema"] = "loss-receipt-v1"
+    _write(receipt_path, receipt)
+
+    assert check_receipt(receipt_path, repo_root=tmp_path) == [
+        "schema: 'loss-receipt-v2' was expected"
+    ]
 
 
 @pytest.mark.parametrize(

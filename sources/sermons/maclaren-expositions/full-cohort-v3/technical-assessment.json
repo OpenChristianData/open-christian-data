@@ -1,0 +1,140 @@
+{
+  "assessed_at": "2026-09-30T11:00:32.799307Z",
+  "candidate": {
+    "bytes": 56085548,
+    "path": "sources/sermons/maclaren-expositions/full-cohort-v3/content.tei.xml",
+    "sha256": "9fa413cf7e13ff5d31448c547d63a66ccfd16b8396f772aa76603613a61e9e08"
+  },
+  "candidate_package": {
+    "oracle_report_sha256": "c74b6bfd6177bee7544cb6f9da9b61c4104ff1ee8f61c3fec119a21ddfde2e32",
+    "path": "library/works/maclaren-expositions/integration/full-cohort-v3/acceptance-v1/inputs/package-manifest.json",
+    "sha256": "35523d865824c9b53db7d8dd5be85195d33294b2fe405b5a1b841a5a41185474",
+    "status": "pass",
+    "validation_path": "library/works/maclaren-expositions/integration/full-cohort-v3/acceptance-v1/inputs/validation.json",
+    "validation_sha256": "b31c8bedd5ec9b17991bc6eb78c5f476118ef9ab16f68c03aa1ed7a33844f377"
+  },
+  "claims_excluded": [
+    "human visual acceptance",
+    "certain print-edition lineage",
+    "rights clearance",
+    "public release selection",
+    "publication"
+  ],
+  "contract": "maclaren-expositions-technical-assessment-v3",
+  "disposition": "accepted-master-installed-publication-projection-structurally-blocked",
+  "guarded_install": {
+    "acceptance_sha256": "41a8a57d264b6bacbd7383fe2147b57a4560d3617b507bcaed8e08ced4978b01",
+    "candidate_body_unchanged": true,
+    "installation_verification_path": "library/works/maclaren-expositions/integration/full-cohort-v3/acceptance-v1/installation-verification.json",
+    "installation_verification_sha256": "6850582564d3d866d22423c2ce24fcda8a2b56b69d2715e594b2dd8a3e2bd907",
+    "master_sha256": "50a0967ed3b0918a32d151bb18541805d381419e17c4435218e0d0e69bf5ff7f",
+    "performed": true,
+    "stage_receipt_sha256": "ed9e8af2b4fbc53e6bfb8d2c5d31096362496c1cd73db9d8f49c59aa8bc9a116",
+    "status": "installed-and-validated"
+  },
+  "independent_oracle": {
+    "findings": [],
+    "path": "sources/sermons/maclaren-expositions/full-cohort-v3/validation.json",
+    "sha256": "b13ba13e07f65cd9930e173cf176b2e746bc46d8b7985f4a6c19ad382bd79000",
+    "status": "pass"
+  },
+  "projector_diagnostic": {
+    "actual_master": true,
+    "category": "sermons",
+    "initial_actual_master_evidence_path": "library/works/maclaren-expositions/integration/full-cohort-v3/acceptance-v1/actual-master-projection-attempt.json",
+    "initial_actual_master_evidence_sha256": "98d0952d850d45fbf2bfad3ea5ed04bff8c247b57b81b70dd2ce8e1898abb48f",
+    "initial_error": "PipelineError: unsupported-visible: TEI@xml:id",
+    "projection_view_evidence_path": "library/works/maclaren-expositions/integration/full-cohort-v3/acceptance-v1/actual-master-projection-view-attempt.json",
+    "projection_view_evidence_sha256": "04c7c68c07b2f6e6a516c28b6a216c9726545222b429b64d55f6e3c332f99c15",
+    "projection_view_sha256": "513723f98bbf5e7c648b3835362703362cdb6e384a1809868cecd9c8aae20425",
+    "original_root_xml_id": "maclaren-expositions-full-cohort-v3",
+    "root_id_reference_count": 0,
+    "only_mutation_is_exact_root_attribute_deletion": true,
+    "master_reconstructed_exactly": true,
+    "text_subtree_unchanged": true,
+    "text_subtree_c14n_sha256": "5aa78a64b05a3e78c3fbd2dcb957da63689454f56e5293ac26261f64a1db091e",
+    "view_projector_error": "PipelineError: unsupported-visible: child of sourceDesc",
+    "independent_verifier_errors": [
+      "unsupported-visible: child structure"
+    ],
+    "profile_diagnostics": {
+      "direct_body_child_count": 15,
+      "native_sermon_unit_count": 0,
+      "unknown_element_counts": {
+        "header:listBibl": 1,
+        "text:lb": 270911,
+        "text:milestone": 36845,
+        "text:seg": 302065
+      },
+      "unsupported_division_type_counts": {
+        "book-section": 43,
+        "contents": 26,
+        "exposition": 1386,
+        "gutenberg-license-tail": 15,
+        "part-end-and-separator": 7,
+        "printed-volume": 7,
+        "printed-volume-group": 1,
+        "source-member": 15,
+        "source-part": 18,
+        "source-title-and-wrapper": 26
+      }
+    },
+    "projector": "ocd_kernel.projection.categories.sermons.project_sermons_document",
+    "verifier": "ocd_kernel.projection.categories.sermons.verify_sermons_document",
+    "row_count": 0,
+    "receipt": null,
+    "status": "blocked",
+    "ready_for_publication": false,
+    "shared_code_changed": false,
+    "accepted_master_changed": false,
+    "reopening_condition": "Provide an explicitly reviewed source-to-sermon projection mapping for the faithful wrapper and line-carrier hierarchy, then pass the native producer and independent verifier against the accepted-master-bound view."
+  },
+  "reproduction": {
+    "candidate_byte_identical": true,
+    "map_byte_identical_after_newline_normalization": true,
+    "status": "pass"
+  },
+  "retained_member_set": {
+    "acquisition_id": "maclaren-expositions-pg-retained-member-set",
+    "acquisition_path": "library/works/maclaren-expositions/forms/maclaren-expositions-pg-retained-en/editions/maclaren-expositions-pg-fifteen-volume-cohort/acquisitions/maclaren-expositions-pg-retained-member-set.json",
+    "descriptor_path": "library/works/maclaren-expositions/forms/maclaren-expositions-pg-retained-en/editions/maclaren-expositions-pg-fifteen-volume-cohort/source-member-set.json",
+    "descriptor_sha256": "b5a6c30402e01c7520912b75870e63dac51af9d2f573f6158d64c3e020916207",
+    "source_lines": 339526,
+    "source_members": 15,
+    "source_parts": 26,
+    "status": "valid"
+  },
+  "source_structure_map": {
+    "book_section_heads": 43,
+    "exposition_heads": 1386,
+    "internal_subsections": 14,
+    "mapped_markers": 1444,
+    "nonexact_toc_title_cases_with_adjacent_epigraphs": 28,
+    "path": "sources/sermons/maclaren-expositions/full-cohort-v3/source-structure-map.json",
+    "sha256": "a7e40fe8f1eae31d5ceac9bbc9f14db3ad6f8d76df24bb8e20ff174cda4bd5bc",
+    "verse_column_labels": 1
+  },
+  "tests": {
+    "command": "py -3 -m pytest -p no:cacheprovider tests/test_maclaren_full_cohort_v3.py -v",
+    "exit_code": 0,
+    "passed": 6,
+    "seconds": 102.56,
+    "publication_projection_view": {
+      "command": "py -3 -m pytest -p no:cacheprovider tests/test_maclaren_full_cohort_v3.py -k publication_projection_view -vv",
+      "exit_code": 0,
+      "passed": 1,
+      "deselected": 6,
+      "seconds": 137.18
+    }
+  },
+  "visual_review": {
+    "cvw_display_gap": "The exact pair was admitted, but the full 56 MB TEI readable projection did not return within the capture deadline. No CVW frame is claimed; six exact source-line/TEI-line-carrier alternative frames were directly inspected.",
+    "findings": [],
+    "inspected_frames": 6,
+    "manifest_sha256": "16de7da26ac143a2c8b0dca8408378cbcd0d9a0ac889cdfd5341e8a955dbe341",
+    "review_path": "sources/sermons/maclaren-expositions/full-cohort-v3/visual-review/exact-alternative-20260930/independent-review.json",
+    "review_sha256": "6bfc854d89e4fcbfe8056f5d7ecc85cbab6f6109cf3e20000a6f2e7d86a2c540",
+    "status": "pass-bounded-exact-alternative"
+  },
+  "work_id": "maclaren-expositions"
+}

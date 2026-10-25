@@ -1,0 +1,70 @@
+{
+  "contract": "ocd-westminster-shorter-catechism-reconstruction-profile-v1",
+  "profile_id": "westminster-shorter-catechism-three-witnesses-v1",
+  "identity": {
+    "work": "Westminster Shorter Catechism",
+    "work_id": "westminster-shorter-catechism",
+    "language": "en",
+    "expression_status": "three retained English provider renderings; genealogy unresolved",
+    "edition_status": "unresolved; no retained authority selects or reconciles a reading",
+    "acceptance_status": "nonaccepted"
+  },
+  "source_scope": {
+    "witnesses": [
+      {
+        "witness_id": "creeds-json",
+        "path": "raw/Creeds.json/creeds/westminster_shorter_catechism.json",
+        "bytes": 32442,
+        "sha256": "0a569c527fb4332448b5b853ff0dd6c3d6b5dd6abb8c5a746d58d9172886ffc6",
+        "groups": 107
+      },
+      {
+        "witness_id": "theologai-json",
+        "path": "raw/TheologAI/data/historical-documents/westminster-shorter-catechism.json",
+        "bytes": 31139,
+        "sha256": "89547581ed26576d2ab595894d7b21ac12e78a66d96e251b419ed023856283de",
+        "groups": 107
+      },
+      {
+        "witness_id": "westminster-standard-html",
+        "path": "raw/westminster-standard-org/westminster-shorter-catechism.html",
+        "bytes": 98505,
+        "sha256": "8ffe7e7ae54c16066cce41456a8260d21e5dc3948568507ffbfc83658d10615a",
+        "groups": 107
+      }
+    ],
+    "outer_html_accountability": {
+      "profile_path": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.outer-html-profile.json",
+      "profile_bytes": 3053,
+      "profile_sha256": "5f189f831467abb6b5e0f0005eb28b8c618e4b0e065178c72ae423c00a59ae74",
+      "assigned_paragraphs": 214,
+      "outer_evidence_only_paragraphs": 26,
+      "elements": 1044,
+      "attributes": 1038,
+      "nonempty_text_carriers": 645,
+      "comments": 22,
+      "policy": "Bind the complete parsed carrier stream. Only the 107 question paragraphs and 107 following proof paragraphs support assigned work content; every other carrier remains exact outer evidence only."
+    },
+    "observation_counts": {
+      "metadata": 13,
+      "number_labels": 321,
+      "questions": 321,
+      "answers": 321,
+      "proof_groups": 107,
+      "total": 1083
+    },
+    "proof_reference_occurrences": 401,
+    "question_exact_agreements": 79,
+    "answer_exact_agreements": 22
+  },
+  "reading_policy": "Represent every retained witness reading independently and in source order. Do not select, normalize, conflate, or promote a provider rendering as an edition text.",
+  "metadata_policy": "Preserve the thirteen exact provider metadata values as attributed source claims. Do not turn provider-page authorship, dates, locations, or public-domain labels into newly adjudicated facts.",
+  "rights": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "creeds": "Creeds.json README supplies Unlicense evidence and does not name the WSC among its eight exceptions",
+    "theologai": "TheologAI ISC license covers software and does not establish historical-document redistribution rights",
+    "westminster_standard": "The cached page carries a 2016 copyright footer and no retained text or proof-apparatus license",
+    "worldwide_status": "unresolved; human rights review is required before acceptance or publication"
+  },
+  "producer_import_closure_sha256": "c598011c31b815782454cdd83a2e66f749f93062f6497bad0c206cff1fa3a3e3"
+}

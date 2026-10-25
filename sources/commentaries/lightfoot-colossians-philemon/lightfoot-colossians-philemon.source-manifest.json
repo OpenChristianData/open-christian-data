@@ -1,0 +1,113 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "gutenberg-50857-lightfoot-colossians-philemon-structured",
+  "ticket_id": "LIB-070",
+  "work_id": "lightfoot-colossians-philemon",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "source_members": [
+    {
+      "logical_name": "retained-lightfoot-text",
+      "path": "raw/gutenberg/commentary/lightfoot-colossians-philemon/pg50857.txt",
+      "role": "primary-source",
+      "bytes": 1511463,
+      "sha256": "a97cb49964906a2c158a0444cfdc3b0daf13261620c919a90f1333a98ac0b913",
+      "reason": "Complete retained Project Gutenberg witness at the external library root."
+    }
+  ],
+  "excluded_members": [
+    {
+      "logical_name": "legacy-json",
+      "path": "data/commentaries/lightfoot-colossians-philemon",
+      "reason": "Downstream diagnostic projection, not TEI authority."
+    },
+    {
+      "logical_name": "canonical-source-config",
+      "path": "sources/commentaries/lightfoot-colossians-philemon/config.json",
+      "reason": "Canonical metadata retained unchanged; this isolated successor config is execution-only."
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-lightfoot-text",
+      "path": "raw/gutenberg/commentary/lightfoot-colossians-philemon/pg50857.txt",
+      "role": "primary-source",
+      "bytes": 1511463,
+      "sha256": "a97cb49964906a2c158a0444cfdc3b0daf13261620c919a90f1333a98ac0b913"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8853,
+      "sha256": "dc924fbb3c7f4a682ec6ded7f39a958acf120154cab4c2166509de45fa395e71"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2096,
+      "sha256": "9d9a3eb47659114c1309907687713d901dd9da8681dbb9129bd98c132724edc6"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 10749,
+      "sha256": "c2bc5c12ad70134e4c502f00704ad332374169d335c0a4df796ada7c6adf426a"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/commentaries/lightfoot-colossians-philemon/README.source.md",
+      "role": "source-attribution",
+      "bytes": 2550,
+      "sha256": "a74f02f27212db99560528a05cfc3433b88fa109dc50de13bed412a52d699509"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "typography-producer",
+      "path": "build/tei/lightfoot_typography.py",
+      "role": "implementation-support",
+      "bytes": 24760,
+      "sha256": "f1e0dc3c8c40e00a00077f2187be03befd74aea63b92806f9208a0824bef51ee"
+    },
+    {
+      "name": "typography-oracle",
+      "path": "build/tei/lightfoot_typography_oracle.py",
+      "role": "implementation-support",
+      "bytes": 40921,
+      "sha256": "bf36e6d4b2752439fe08b8868b8e3946b5882b67474881eb4330efebf92143e9"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lightfoot-colossians-philemon-structured-source-to-tei",
+    "version": "3",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lightfoot_colossians_philemon_reconstruction.py",
+    "implementation_sha256": "0ff1672fa3a623b52cedfa8960661ad84707fa9b32bf86a365a99efccfc9412a"
+  },
+  "validator": {
+    "id": "ocd-lightfoot-colossians-philemon-source-to-tei-oracle",
+    "version": "3",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lightfoot_colossians_philemon_oracle.py",
+    "implementation_sha256": "89ae68a50ef937c547038b10ebf0a0fe8538bb8005f80b68f5df49451bb7fce7",
+    "import_closure_sha256": "2cd954db8ddd3a6b0ed15e77062c3bb42594d735874d49da3cff99345face2e3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

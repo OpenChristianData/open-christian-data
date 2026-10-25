@@ -1,0 +1,62 @@
+{
+  "contract": "ocd-npnf103-reconstruction-profile-v1",
+  "profile_id": "npnf103-assigned-div2-iv-i-through-v-ix-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/npnf1/npnf103.xml",
+    "bytes": 3842341,
+    "sha256": "410f240f8105bb6097316a54a867fa5a4ae02c0d3d03606aefc2df71f5bfc455"
+  },
+  "assigned_div2": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v", "iv.vi", "iv.vii", "v.i", "v.ii", "v.iii", "v.iv", "v.v", "v.vi", "v.vii", "v.viii", "v.ix"],
+  "outside_assigned_work_scope": {
+    "top_level_div1": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+    "index_div2": ["vi.i", "vi.ii", "vii.i", "vii.ii", "vii.iii"]
+  },
+  "assigned_feature_count": 12832,
+  "assigned_attribute_count": 35788,
+  "assigned_text_node_count": 8673,
+  "assigned_tail_node_count": 7053,
+  "assigned_character_count": 2420322,
+  "assigned_non_ascii_character_count": 10130,
+  "assigned_feature_counts": {
+    "br": 4,
+    "div2": 16,
+    "div3": 580,
+    "div4": 226,
+    "i": 1309,
+    "note": 2775,
+    "p": 4414,
+    "pb": 504,
+    "scripRef": 2297,
+    "span": 705,
+    "sup": 2
+  },
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "assigned_table_census": {"tables": 0, "rows": 0, "cells": 0},
+  "language_span_counts": {"DE": 2, "EL": 92},
+  "document_shell": {
+    "source_xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "source_standalone": false,
+    "source_doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "source_pre_root_comment_count": 2,
+    "source_processing_instruction_count": 0,
+    "source_post_root_node_count": 0,
+    "candidate_xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>",
+    "candidate_doctype": null,
+    "candidate_root_siblings": 0
+  },
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-projected",
+    "notes-page-breaks-scripture-references-language-spans-and-superscripts-preserved",
+    "exact-source-member-shell-front-wrapper-and-index-accounting",
+    "exact-document-prolog-doctype-root-sibling-and-namespace-policy",
+    "exact-retained-editor-translator-reviser-and-introduction-credit",
+    "conflicting-credit-forms-remain-localized-and-unresolved",
+    "all-sixteen-works-remain-nonaccepted-and-publication-not-ready"
+  ]
+}
+

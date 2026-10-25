@@ -1,0 +1,5 @@
+# Electronic source for marbod-letter-to-ingilgerio
+
+The retained text source is `raw/openmgh/bsb00000830/tei/bsb00000830.xml` (SHA-256 `bb97bf6037a31d6a6c37f0e967aa23e9df1933bdd688fe4aaa84e5e034ff67ac`). Its ZIP is acquisition packaging, not another text witness. This work selects native children 5 through 108 of the flat Marbod carrier, preserving the source's internal page breaks ['bsb00000830_00702', 'bsb00000830_00703']. The adjacent letter, following poem, shared collection heading, and I. marker remain outside this work. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/marbod-letter-to-ingilgerio/README.md` and bind both exact hashes through `public_notices`.

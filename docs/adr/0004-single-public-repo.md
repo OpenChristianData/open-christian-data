@@ -1,5 +1,7 @@
 # ADR-0004: Single public repo for code, schemas, dataset, and review machinery
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15, rewritten 2026-05-17)
 
 ## Context

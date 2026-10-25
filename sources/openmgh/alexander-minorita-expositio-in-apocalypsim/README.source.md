@@ -1,0 +1,5 @@
+# Electronic source for alexander-minorita-expositio-in-apocalypsim
+
+The retained text source is `raw/openmgh/bsb00000626/tei/bsb00000626.xml` (SHA-256 `f596d9710a838a09005292f2304d7658614a2e9432e8ed15635c8f9c538e0aa4`). Its ZIP is acquisition packaging, not another text witness. This work selects the sole complete `div type=work` in bsb00000626, from heading `bsb00000626_00061_1` through final line `bsb00000626_00570_28`, retaining all 24 native parts. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/alexander-minorita-expositio-in-apocalypsim/README.md` and bind both exact hashes through `public_notices`.

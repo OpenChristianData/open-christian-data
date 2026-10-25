@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "37c-315-watson-body-of-divinity-retained-thml-route",
+  "work_id": "watson-body-of-divinity",
+  "authorities": [
+    {"path": "raw/ccel/watson/divinity.xml", "name": "retained-source", "role": "primary-source", "bytes": 1327340, "sha256": "4d51224997805193f13058ccf5fa84a6652bc41570283956cbcbe1300e1f815a"},
+    {"path": "library/works/watson-body-of-divinity/work.json", "name": "work", "role": "work-identity-config", "bytes": 1280, "sha256": "29adcd379f5985c8dc57c2e295d09d7884f77e76097062e5501ac4a4c88deed3"},
+    {"path": "library/works/watson-body-of-divinity/forms/watson-body-of-divinity-route-source-form/editions/watson-body-of-divinity-retained-thml-route/acquisitions/watson-body-of-divinity-retained-source.json", "name": "acquisition", "role": "acquisition-selection-authority", "bytes": 2810, "sha256": "cd5c3c62efcd6d1674920fec9751a273fa22060bc828ca1d756b935bf31342ff"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.reconstruction-profile.json", "name": "profile", "role": "complete-source-feature-profile", "bytes": 13707, "sha256": "e9f12163e57eca270d9ce3899869e8cf0d604e8cd24e8a845b1e21382f521689"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.validation-policy.json", "name": "policy", "role": "independent-validation-policy", "bytes": 2194, "sha256": "27f04dede772b7644c4a4582f8aaf0a3e927e452a8b59b79255b3a8d02a8e938"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.source-accountability.json", "name": "source-accountability", "role": "source-completeness-accountability", "bytes": 12717, "sha256": "ef7849bbe4b80de8ad21e600443ee3c45dd25bdea7a0f04786e44f7d458c0da6"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.source-accountability.schema.json", "name": "source-accountability-schema", "role": "work-local-accountability-schema", "bytes": 6784, "sha256": "eec1bb328ab452c7895f0275e1cd4a235199bf78910be609a82b766e01f7fb93"},
+    {"path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "name": "tei-schema", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "name": "package-schema", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson_body_of_divinity_reconstruction.py", "name": "work-specific-producer", "role": "implementation", "bytes": 2791, "sha256": "6e5f3bc05b72ff320e93cecc29926971310fe78ddf8eeb4b7067d749fcb94b0e"},
+    {"path": "sources/structured-text/watson-body-of-divinity/watson_body_of_divinity_oracle.py", "name": "work-specific-oracle", "role": "implementation", "bytes": 2308, "sha256": "c21570bd523303a30724de1529f9c6ce133172c72ed82fb5118be34078a5f33c"},
+    {"path": "build/tei/selected_thml.py", "name": "selected-thml-base-converter", "role": "implementation-dependency", "bytes": 17353, "sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"},
+    {"path": "build/tei/selected_thml_oracle.py", "name": "selected-thml-base-oracle-helper", "role": "implementation-dependency", "bytes": 9621, "sha256": "983936eff2c1ebfe4c0a837dbeb807800bb78af8c2cb1bd797fc52af41047790"},
+    {"path": "ocd_kernel/tei/selected_thml_check.py", "name": "closure-1", "role": "implementation-dependency", "bytes": 30210, "sha256": "cca02607edb3659ad40ec3facc656ac3b1e6ef6bb4f25c25a74d8713b4774b3a"},
+    {"path": "ocd_kernel/library/acquisitions.py", "name": "closure-2", "role": "implementation-dependency", "bytes": 23828, "sha256": "7c292292ca41b0e24fb249ae5f6e676273f84427d9ecad1b883190bc26bc5beb"},
+    {"path": "ocd_kernel/library/identities.py", "name": "closure-3", "role": "implementation-dependency", "bytes": 18945, "sha256": "2297e93b3770a399b2412c210ff563f281efec257c175fcef4a998a9a5294637"},
+    {"path": "ocd_kernel/library/_common.py", "name": "closure-4", "role": "implementation-dependency", "bytes": 3970, "sha256": "8c2759072d630731578081d43c508ab88a52cc6ccf057d4e714df5d42205aa0d"},
+    {"path": "ocd_kernel/lib/storage_topology.py", "name": "closure-5", "role": "implementation-dependency", "bytes": 4223, "sha256": "13df273769506369f29e99fdf8fe25a1b16e0ee00a4b9888346ef6f9dcb1e7dd"},
+    {"path": "ocd_kernel/reconstruction/contract.py", "name": "closure-6", "role": "implementation-dependency", "bytes": 25905, "sha256": "a9bdd045183a870fe981b7fabd23111ecb43ccae592fbdb9ab049fce1ed7f74b"},
+    {"path": "ocd_kernel/reconstruction/verifier.py", "name": "closure-7", "role": "implementation-dependency", "bytes": 6014, "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"},
+    {"path": "ocd_kernel/tei/validate.py", "name": "closure-8", "role": "implementation-dependency", "bytes": 1385, "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"},
+    {"path": "schemas/v2/acquisition.schema.json", "name": "closure-9", "role": "implementation-dependency", "bytes": 4993, "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"},
+    {"path": "schemas/v2/work.schema.json", "name": "closure-10", "role": "implementation-dependency", "bytes": 6206, "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"}
+  ],
+  "converter": {
+    "id": "ocd-watson-body-of-divinity-selected-thml-route",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/structured-text/watson-body-of-divinity/watson_body_of_divinity_reconstruction.py",
+    "implementation_sha256": "6e5f3bc05b72ff320e93cecc29926971310fe78ddf8eeb4b7067d749fcb94b0e"
+  },
+  "validator": {
+    "id": "ocd-watson-body-of-divinity-selected-thml-independent-check",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "sources/structured-text/watson-body-of-divinity/watson_body_of_divinity_oracle.py",
+    "implementation_sha256": "c21570bd523303a30724de1529f9c6ce133172c72ed82fb5118be34078a5f33c",
+    "import_closure_sha256": "c7a6a2ff3bb4fc0860206a44d4be13914303208dff830a9d9c14779e5d566265"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "authorities": [
+    {
+      "bytes": 9384,
+      "name": "acquisition-receipt-json",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/acquisition-receipt.json",
+      "role": "acquisition-evidence",
+      "sha256": "ca6f1c034aa7e45e2e5cd7c782442a141bc17e2df7c19ced5f15647f0abdee0c"
+    },
+    {
+      "bytes": 1326,
+      "name": "dc-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/dc.xml",
+      "role": "provider-metadata",
+      "sha256": "4d52ec815615d5b00b6989bcca64db050353a73128c8f40c1d45e1e4ccdfbd7e"
+    },
+    {
+      "bytes": 4691,
+      "name": "marc-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/marc.xml",
+      "role": "bibliographic-metadata",
+      "sha256": "38980495f47baafd1a2a5f6f27ef8c6916ae0b368653ae2622450731ddbf4832"
+    },
+    {
+      "bytes": 5706,
+      "name": "member-inventory-tsv",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/member-inventory.tsv",
+      "role": "provider-inventory",
+      "sha256": "2bbfd71dc7e43754cf4a47bb11569e886e52d848bee4bc80bca5aa94c8f16f7a"
+    },
+    {
+      "bytes": 68078,
+      "name": "metadata-api-json",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/metadata-api.json",
+      "role": "source-support",
+      "sha256": "afd52201d530dd93f123f92912493d148fc6559ac69b5e6d6f42402d09ae77ca"
+    },
+    {
+      "bytes": 1750,
+      "name": "metadata-binary-mrc",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/metadata-binary.mrc",
+      "role": "provider-metadata",
+      "sha256": "bf151e44a8cc80961b7560805b7b838fd188e755d854ef23b374f2c8b8f23c22"
+    },
+    {
+      "bytes": 2874,
+      "name": "metadata-record-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/metadata-record.xml",
+      "role": "provider-metadata",
+      "sha256": "9af5721413022ad695f64e63ea605920694b2f1d4ee6ff84a87c4cc5011c55a0"
+    },
+    {
+      "bytes": 6144,
+      "name": "metadata-sqlite",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/metadata.sqlite",
+      "role": "provider-metadata",
+      "sha256": "82b85d2fe57850e54534a433ac38403ee768a5e9175a9bd3c68dfd725b156362"
+    },
+    {
+      "bytes": 1199,
+      "name": "metasource-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/metasource.xml",
+      "role": "catalog-source",
+      "sha256": "10530c5d753c771d3a7df28485112fd21ecf1a1a5ec1420d970148d273f3245c"
+    },
+    {
+      "bytes": 5156803,
+      "name": "ocr-abbyy-gz",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/ocr-abbyy.gz",
+      "role": "alternate-ocr-witness",
+      "sha256": "6647419e6c4bab9f6aa08072b6090d6fdba36a78e69e0f5664276147f6451d08"
+    },
+    {
+      "bytes": 359327,
+      "name": "ocr-djvu-txt",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/ocr-djvu.txt",
+      "role": "ocr-witness",
+      "sha256": "fe31911921ef3af664c6e6046333039802fd5fbd8439459ddf8cbf6d38ec3e25"
+    },
+    {
+      "bytes": 4522647,
+      "name": "ocr-djvu-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/ocr-djvu.xml",
+      "role": "ocr-witness",
+      "sha256": "ea8ab4ccfb23cabc798e1351b81dc7c6fc5d65d257c5d34691be49ecd51b780a"
+    },
+    {
+      "bytes": 179271680,
+      "name": "original-pages-tar",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/original-pages.tar",
+      "role": "primary-source",
+      "sha256": "ee4e6407dc5393259d2e6d6009415850a21e2844fe9a80bb9a7ace0230cc75e3"
+    },
+    {
+      "bytes": 47077,
+      "name": "page-numbers-json",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/page-numbers.json",
+      "role": "source-scan-map",
+      "sha256": "d83964f6c42975a22b405b912cad5c861b26868c4fd703cc4d48b67ddca61696"
+    },
+    {
+      "bytes": 16965737,
+      "name": "scan-pdf",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/scan.pdf",
+      "role": "source-presentation",
+      "sha256": "7fc099391f99183257297a29260cd7691550b78fff92369a1585743235f7c31f"
+    },
+    {
+      "bytes": 146949,
+      "name": "scandata-xml",
+      "path": "raw/internet-archive/beginners-grammar-greek-new-testament/beginnersgrammar00davi/scandata.xml",
+      "role": "source-scan-map",
+      "sha256": "79a360d889260a586a1f6d62d30d53a817e1fbae5823682eddef6700b895e7fd"
+    },
+    {
+      "bytes": 4288,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/davis-beginners-grammar-1923/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "c6dcee60015eff0a5486743c2c293d501e0a8e74a82695555ab36bc17fba0f49"
+    },
+    {
+      "bytes": 2103,
+      "name": "validation-policy",
+      "path": "sources/structured-text/davis-beginners-grammar-1923/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "1420d7389ab568e24a8d34ed2eb31396b0ccf08a7dc8607ca57703ebae1d6459"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-davis-l332-scan-indexed-ocr",
+    "implementation_path": "build/tei/davis_l332_ia.py",
+    "implementation_sha256": "df39150e45f66d596e6e427f1da0971873db8de27a1197a203535556104e45bd",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ia-beginnersgrammar00davi",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-davis-l332-independent-oracle",
+    "implementation_path": "build/tei/davis_l332_ia_oracle.py",
+    "implementation_sha256": "78c172f5f7685be31f1c31e914874d0151bef72ad7c5f87b8eb44dc3911424f5",
+    "import_closure_sha256": "9fd54cb0d53ae7fcc4d54ab7cebc860954402977b7d1279023615b8080590fd3",
+    "version": "1"
+  },
+  "work_id": "davis-beginners-grammar-greek-new-testament"
+}

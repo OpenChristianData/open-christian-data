@@ -1,0 +1,53 @@
+{
+  "contract": "ocd-anf01-irenaeus-reconstruction-profile-v1",
+  "profile_id": "anf01-div1-ix-five-against-heresies-books-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/anf/anf01.xml",
+    "bytes": 4511814,
+    "sha256": "8012ea0e35b497d2fbd783f9d4fd7b3a27d98c6dc66fd427b50d7312e6dd45af"
+  },
+  "parent_scope": {"tag": "div1", "id": "ix", "title": "IREN�US"},
+  "selected_book_ids": ["ix.ii", "ix.iii", "ix.iv", "ix.vi", "ix.vii"],
+  "excluded_irenaeus_div2_ids": ["ix.i", "ix.v", "ix.viii"],
+  "excluded_sibling_anf_div1_ids": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"],
+  "feature_count": 9159,
+  "attribute_count": 28874,
+  "selected_direct_text_bytes": 370356,
+  "selected_tail_text_bytes": 1018033,
+  "feature_counts": {
+    "br": 9,
+    "div2": 5,
+    "div3": 173,
+    "h2": 5,
+    "h3": 173,
+    "hr": 6,
+    "i": 845,
+    "index": 627,
+    "l": 21,
+    "note": 2138,
+    "p": 2890,
+    "pb": 252,
+    "q": 1,
+    "scripRef": 1564,
+    "span": 444,
+    "verse": 6
+  },
+  "selected_book_census": [
+    {"div2_id": "ix.ii", "features": 1680, "attributes": 4826, "direct_text_bytes": 69707, "tail_text_bytes": 179725, "source_subtree_sha256": "fa26f993ddbee2c68855daabd7b89709f37d4288b82b98e020a1028b6faad0e5"},
+    {"div2_id": "ix.iii", "features": 1546, "attributes": 4394, "direct_text_bytes": 113369, "tail_text_bytes": 197720, "source_subtree_sha256": "b67125cdf885577849f97a4a03d9e7b170e485cda05c1ab060352a63bdb71604"},
+    {"div2_id": "ix.iv", "features": 1885, "attributes": 6185, "direct_text_bytes": 54143, "tail_text_bytes": 201843, "source_subtree_sha256": "1b1c665f2406b1c866e2031961342d8642bccc9c88ebf0d4505dd2a1b0bf5069"},
+    {"div2_id": "ix.vi", "features": 2574, "attributes": 8560, "direct_text_bytes": 87018, "tail_text_bytes": 260905, "source_subtree_sha256": "076272fa966c7e9d571006aa63c8e1fdd4c1864eeab1f8149b776eeb19d4547c"},
+    {"div2_id": "ix.vii", "features": 1474, "attributes": 4909, "direct_text_bytes": 46119, "tail_text_bytes": 177840, "source_subtree_sha256": "c991340facbf85072a3804cafbde38af899bd011d9fd82b71ea81ea2a2379b22"}
+  ],
+  "requirements": [
+    "exact-five-book-order",
+    "exact-depth-first-element-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "all-book-and-chapter-titles-projected",
+    "byte-count-and-sha256-crosswalk-per-element-text-slot",
+    "all-anf-and-irenaeus-siblings-explicitly-excluded",
+    "nonaccepted-candidate-and-no-canonical-writes"
+  ]
+}

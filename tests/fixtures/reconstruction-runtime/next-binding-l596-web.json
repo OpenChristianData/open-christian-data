@@ -1,0 +1,10 @@
+[
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/l596-web-classic.source-manifest.json",
+    "original": "sources/structured-text/world-english-bible-classic/eng-web.source-manifest-v2.json",
+    "original_sha256": "4d20e4bef1cb9ec66ed31a7f3f3727f37c0dfe24518f51091f3759c7d9631233",
+    "preservation_test": "tests/test_l596_web_runtime_manifest.py::test_runtime_preserves_complete_historical_record",
+    "retained_package_sha256": "03e6f6e75970f075099d942bf0c4920d44022395d5d836f6542830a9766f9446",
+    "work_id": "world-english-bible-classic"
+  }
+]

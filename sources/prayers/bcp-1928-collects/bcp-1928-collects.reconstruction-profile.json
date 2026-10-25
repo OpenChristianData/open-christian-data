@@ -1,0 +1,29 @@
+{
+  "contract": "ocd-bcp-1928-reconstruction-profile-v1",
+  "profile_id": "bcp-1928-collects-retained-html-partial-v1",
+  "source_id": "bcp-1928-collects-retained-episcopalnet-html",
+  "title": "Book of Common Prayer (1928) -- Collects",
+  "source_url": "https://www.episcopalnet.org/1928bcp/propers/",
+  "source_bundle": {
+    "members": 100,
+    "bytes": 1042052,
+    "sha256": "92aa35e04b6b64c583e444d300b56ad98a8b56228fa8d9582763b8dc0f6f9c06"
+  },
+  "source_member_set_sha256": "1c89db5cb7cf5f0ce8bca82fc99c0b7ccbb0595b52e39d9d7afc0ca0d17dcee1",
+  "expected_records": 100,
+  "expected_pages_without_collect": ["Trinity23.html", "Trinity24.html"],
+  "unbound_manual_claims": ["trinity23", "trinity24"],
+  "parser": {
+    "implementation_path": "build/parsers/bcp1928.py",
+    "version": "v1.1.0",
+    "entrypoint": "extract_collects_from_html"
+  },
+  "scope": {
+    "status": "partial",
+    "retained_expression": "100 episcopalnet.org HTML propers pages",
+    "represented": "100 page-derived collects",
+    "unrepresented": "two manual claims without retained alternate witness bytes",
+    "candidate_status": "nonaccepted"
+  }
+}
+

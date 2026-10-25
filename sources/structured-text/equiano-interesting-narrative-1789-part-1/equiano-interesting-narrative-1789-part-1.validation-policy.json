@@ -1,0 +1,135 @@
+{
+  "contract": "ocd-equiano-k053415-001-validation-policy-v1",
+  "source_id": "ecco-tcp-k053415-001-pinned-ets",
+  "readme_sha256": "3f8ecd70c45bb70e3e169c4289d4fe2d177c83845965b04ff80198bd1d044cc4",
+  "element_mapping": {
+    "TEXT": "text with xml:lang=en",
+    "FRONT": "front",
+    "BODY": "body",
+    "DIV1": "div; TYPE becomes underscore-normalized type and N becomes n",
+    "P": "p",
+    "HEAD": "head",
+    "PB": "pb; N becomes n, REF becomes an official Michigan item facs URL sequence, and MS becomes source-MS-* rend",
+    "GAP": "gap; DESC becomes reason, RESP becomes a fragment resp, EXTENT becomes extent, and DISP becomes rend",
+    "HI": "hi with source-emphasis rend",
+    "Q": "q; REND becomes rend",
+    "NOTE": "note; foot becomes bottom, marg becomes margin, and N becomes n",
+    "LIST": "list",
+    "ITEM": "item within source TEXT",
+    "ARGUMENT": "argument",
+    "L": "l",
+    "FIGURE": "figure",
+    "BIBL": "bibl",
+    "OPENER": "opener",
+    "CLOSER": "closer",
+    "SALUTE": "salute",
+    "SIGNED": "signed",
+    "DATELINE": "dateline",
+    "DATE": "date",
+    "TRAILER": "trailer",
+    "TEMPHEAD/REVDESCR/CHANGE/RESPSTMT/NAME/RESP": "revisionDesc identity and revision evidence",
+    "EEBO/IDG/STC/BIBNO/VID": "sourceDesc bibliographic identity fields"
+  },
+  "accountability": {
+    "contract": "ocd-equiano-k053415-001-accountability-v1",
+    "projection": "source-ordered-ets-to-tei-p5-v1",
+    "source_path": "raw/clean-ready-acquisition-to-tei/master-2/15/equiano-interesting-narrative-1789-part-1/K053415.001.xml",
+    "source_text_scope": "/ETS/EEBO/TEXT",
+    "omitted_source_text_characters": 0,
+    "duplicated_source_text_characters": 0,
+    "unresolved_source_elements": 0,
+    "representation": "The complete source TEXT itertext stream is exactly preserved in candidate text order; all source text elements have explicit legal TEI mappings; source metadata is represented in teiHeader; no source reading is normalized or modernized."
+  },
+  "provenance": {
+    "contract": "ocd-equiano-k053415-001-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "public_item_id": "004837188.0001.001",
+      "tcp_id": "K053415.001",
+      "author": "Equiano, Olaudah, b. 1745.",
+      "title": "The interesting narrative of the life of Olaudah Equiano: or Gustavus Vassa, the African. Written by himself. [pt.1]",
+      "edition": "Second edition.",
+      "extent": "2v., plates ; 12⁰.",
+      "part": 1,
+      "part_extent_pages": 297,
+      "publication_place": "London",
+      "publisher": "printed and sold for the author, by T. Wilkins and listed booksellers",
+      "date": "1789",
+      "estc": "T61470",
+      "gale_document_number": "CW3301534748",
+      "image_set_id": "0324600501"
+    },
+    "source": {
+      "landing_url": "https://name.umdl.umich.edu/004837188.0001.001",
+      "landing_live_status": 403,
+      "landing_capture": "Wayback snapshot 2025-11-27 retained as archival, not live, identity context",
+      "iiif_manifest_url": "https://quod.lib.umich.edu/cgi/t/text/api/manifest/ecco:004837188.0001.001",
+      "repository_url": "https://github.com/Text-Creation-Partnership/ECCO-TCP",
+      "repository_commit": "4a3c025535ead1532d7ce4b80a6cfe8cedb5a1de",
+      "xml_repository_path": "ecco_all/ecco/XML/xml-200802/K053415.001.xml",
+      "xml_git_blob": "d3a909f46b3fd241fc95dd6b972f8a5b8af2d34f",
+      "header_git_blob": "35bdaed4a1f1fed2eb1cd1bd61cf3822eef1ef26",
+      "retrieved_utc": "2026-08-31T07:42:11.096441Z",
+      "bytes": 255331,
+      "sha256": "5c56b75866f4ad20acee1308c92c1fd8e87e89acd29f897ed402a21b6b62010f"
+    },
+    "rights": {
+      "repository_license": "CC0 1.0 Universal",
+      "license_git_blob": "670154e3538863b2d9891fd5483160fbdfc89164",
+      "legacy_header_permission_wording_retained": true,
+      "vendor_page_images": "excluded, not acquired, not redistributed, and not claimed under the text waiver",
+      "attribution_request": "TCP and Michigan source credit request retained in README.source.md",
+      "human_rights_review": "required"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "canonical_write": false,
+      "human_textual_acceptance": false,
+      "identity_acceptance": false,
+      "edition_acceptance": false,
+      "rights_acceptance": false,
+      "editorial_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "equiano-k053415-001-keying-gaps-and-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate the partially proofread TCP transcription and its 54 explicit illegible gaps against the 1789 print witness?",
+      "evidence": "The TCP header says the text was keyed from page images and partially proofread; this route preserves every retained reading and gap but performs no print collation."
+    },
+    {
+      "id": "equiano-k053415-001-live-item-page",
+      "status": "unresolved",
+      "question": "Will a later human identity review refresh the live Michigan item page after its HTTP 403 response is no longer blocking access?",
+      "evidence": "The live response headers are retained with ephemeral values redacted; the live IIIF manifest, official repository, pinned header, and dated archival snapshot support provisional identity."
+    },
+    {
+      "id": "equiano-k053415-001-rights-evidence-tension",
+      "status": "unresolved",
+      "question": "How will human rights review reconcile the pinned repository CC0 license with older distribution-permission wording in the retained 2008 header?",
+      "evidence": "Both records are retained; the candidate excludes vendor page images and makes no publication claim."
+    },
+    {
+      "id": "equiano-k053415-001-human-identity-rights-editorial-publication",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept the text, identity, edition, rights scope, editorial mapping, canonical status, and publication?",
+      "evidence": "Faithful transformation and technical validation provide no such acceptance or authorization."
+    }
+  ],
+  "required": [
+    "exact retained byte length and SHA-256",
+    "K053415.001, 004837188.0001.001, Equiano, second edition, part 1, ESTC T61470, Gale CW3301534748, image set 0324600501, London, and 1789 identity",
+    "complete exact source TEXT character stream and order preserved in candidate text",
+    "complete independently recomputed source element, attribute, text, and tail census",
+    "TEI P5 validity against the vendored tei_all.xsd",
+    "exact deterministic provenance, accountability, unresolved ledger, and README bytes",
+    "complete candidate manifest authority bindings and nonaccepted status",
+    "twelve source divisions, chapters I-VI, 297 pages, 54 gaps, 20 notes, 48 verse lines, quotations, lists, subscriber names, title page, dedication, errata, contents, diplomatic typography, and ending preserved",
+    "source attribute mapping matches element_mapping exactly",
+    "CC0 repository evidence remains distinct from legacy header wording and excluded vendor page images",
+    "dated archive provenance remains distinct from live Michigan and IIIF evidence",
+    "no silent omission, duplication, normalization, modernization, or invention"
+  ]
+}

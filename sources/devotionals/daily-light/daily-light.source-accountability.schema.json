@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "contract", "profile_id", "work_id", "source_id",
+    "member_count", "members", "member_bytes", "member_sha256", "member_roles",
+    "index_record_count", "index_sentinel_count", "index_sentinel_bytes", "index_sentinel_sha256",
+    "header_count", "header_bytes", "header_sha256",
+    "day_count", "day_span_bytes", "record_delimiter_count", "record_delimiter_bytes",
+    "record_delimiter_sha256", "terminal_delimiter_count", "terminal_tail_bytes",
+    "gap_count", "gap_bytes", "unexplained_gap_count",
+    "period_count", "source_element_count", "tag_counts",
+    "omitted_count", "duplicate_count", "unresolved_count",
+    "carriers", "entries", "source_element_observations"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-daily-light-source-accountability-v2"},
+    "profile_id": {"const": "daily-light-sword-rawld-v1"},
+    "work_id": {"const": "daily-light"},
+    "member_count": {"const": 3},
+    "member_bytes": {
+      "const": {
+        "modules/lexdict/rawld/devotionals/daily/daily.dat": 1034668,
+        "modules/lexdict/rawld/devotionals/daily/daily.idx": 2202,
+        "mods.d/daily.conf": 603
+      }
+    },
+    "member_sha256": {
+      "const": {
+        "modules/lexdict/rawld/devotionals/daily/daily.dat": "a7b7a9a4207836d152365e465ca3ba219de3df01d5516e2bfcf7ed6201f8e543",
+        "modules/lexdict/rawld/devotionals/daily/daily.idx": "76bdcf08e75da1bcb98b46fbc7a0b97183c055756cef9b4e4b7318e439083899",
+        "mods.d/daily.conf": "4c5afc29317b58ad7c110affbac23ffc534a9e04d1d4f86c05efd4cb584689fb"
+      }
+    },
+    "members": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {"type": "object", "required": ["name", "role", "bytes", "sha256"], "properties": {"name": {"const": "modules/lexdict/rawld/devotionals/daily/daily.dat"}, "role": {"const": "textual-witness"}, "bytes": {"const": 1034668}, "sha256": {"const": "a7b7a9a4207836d152365e465ca3ba219de3df01d5516e2bfcf7ed6201f8e543"}}},
+        {"type": "object", "required": ["name", "role", "bytes", "sha256"], "properties": {"name": {"const": "modules/lexdict/rawld/devotionals/daily/daily.idx"}, "role": {"const": "binary-order-index-authority"}, "bytes": {"const": 2202}, "sha256": {"const": "76bdcf08e75da1bcb98b46fbc7a0b97183c055756cef9b4e4b7318e439083899"}}},
+        {"type": "object", "required": ["name", "role", "bytes", "sha256"], "properties": {"name": {"const": "mods.d/daily.conf"}, "role": {"const": "module-metadata-and-rights-evidence"}, "bytes": {"const": 603}, "sha256": {"const": "4c5afc29317b58ad7c110affbac23ffc534a9e04d1d4f86c05efd4cb584689fb"}}}
+      ],
+      "items": false
+    },
+    "member_roles": {
+      "const": {
+        "modules/lexdict/rawld/devotionals/daily/daily.dat": "textual-witness",
+        "modules/lexdict/rawld/devotionals/daily/daily.idx": "binary-order-index-authority",
+        "mods.d/daily.conf": "module-metadata-and-rights-evidence"
+      }
+    },
+    "index_record_count": {"const": 367},
+    "index_sentinel_count": {"const": 1},
+    "index_sentinel_bytes": {"const": 6},
+    "index_sentinel_sha256": {"const": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"},
+    "header_count": {"const": 1},
+    "header_bytes": {"const": 1550},
+    "header_sha256": {"const": "c60281a7c2ceae138bb8d38d76d72108d0970c78b7cfb47706a51c728803e9b8"},
+    "day_count": {"const": 366},
+    "day_span_bytes": {"const": 1032386},
+    "record_delimiter_count": {"const": 366},
+    "record_delimiter_bytes": {"const": 732},
+    "record_delimiter_sha256": {"const": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"},
+    "terminal_delimiter_count": {"const": 1},
+    "terminal_tail_bytes": {"const": 2},
+    "gap_count": {"const": 367},
+    "gap_bytes": {"const": 2282},
+    "unexplained_gap_count": {"const": 0},
+    "period_count": {"const": 732},
+    "source_element_count": {"const": 22298},
+    "tag_counts": {"const": {"b": 1, "br": 20346, "center": 1, "i": 732, "scripRef": 1218}},
+    "omitted_count": {"const": 0},
+    "duplicate_count": {"const": 0},
+    "unresolved_count": {"const": 0},
+    "carriers": {
+      "type": "array",
+      "minItems": 735,
+      "maxItems": 735,
+      "items": {
+        "type": "object",
+        "required": ["id", "member", "kind", "offset", "bytes", "sha256", "disposition"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "member": {"enum": ["modules/lexdict/rawld/devotionals/daily/daily.dat", "modules/lexdict/rawld/devotionals/daily/daily.idx", "mods.d/daily.conf"]},
+          "kind": {"enum": ["header", "index-sentinel", "day-record", "record-delimiter", "module-metadata-and-rights-evidence"]},
+          "offset": {"type": "integer", "minimum": 0},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "disposition": {"enum": ["represented", "structural-support", "structural-separator", "support-evidence"]}
+        }
+      }
+    },
+    "entries": {"type": "array", "minItems": 366, "maxItems": 366},
+    "source_element_observations": {"type": "array", "minItems": 22298, "maxItems": 22298}
+  }
+}

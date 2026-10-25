@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["contract", "work_id", "source_id", "source_bytes", "source_sha256", "physical_line_count", "line_inventory_sha256", "line_inventory", "book_order", "paragraph_count", "omitted_count", "duplicate_count"],
+  "properties": {
+    "contract": {"const": "ocd-augustines-confessions-source-accountability-v1"},
+    "work_id": {"const": "augustines-confessions"},
+    "source_id": {"const": "augustine-confessions-project-gutenberg-pg3296"},
+    "source_bytes": {"const": 632167},
+    "source_sha256": {"const": "5a036498dc7c546a98b9e7a31952e030ca74db7dd111b30029354efe12bcd691"},
+    "physical_line_count": {"const": 9724},
+    "line_inventory_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "line_inventory": {"type": "array", "minItems": 9724, "maxItems": 9724, "items": {"type": "object", "required": ["line", "byte_start", "byte_end", "terminator", "record_sha256", "kind", "tei_id"], "properties": {"line": {"type": "integer", "minimum": 1}, "byte_start": {"type": "integer", "minimum": 0}, "byte_end": {"type": "integer", "minimum": 0}, "terminator": {"enum": ["LF", "CRLF", "CR", "none"]}, "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "kind": {"enum": ["blank-layout", "provider-header", "start-marker", "title-page", "book-heading", "book-text", "end-marker", "license"]}, "tei_id": {"type": ["string", "null"]}}, "additionalProperties": false}},
+    "book_order": {"const": ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"]},
+    "paragraph_count": {"type": "integer", "minimum": 1},
+    "omitted_count": {"const": 0},
+    "duplicate_count": {"const": 0}
+  },
+  "additionalProperties": false
+}

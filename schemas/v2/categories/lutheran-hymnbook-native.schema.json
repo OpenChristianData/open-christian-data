@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/lutheran-hymnbook-native.schema.json",
+  "title": "Accepted PG76498 hymnal source unit",
+  "description": "One source-labeled hymn or historical apparatus carrier, with native content and no inferred stanza or hymn identity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id", "textual_form_id", "edition_id", "record_id", "sequence",
+    "category", "language", "text", "representation_revision", "locator",
+    "provenance", "notes", "references", "source_unit_kind", "content_format", "structure"
+  ],
+  "properties": {
+    "work_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"},
+    "textual_form_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"},
+    "edition_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"},
+    "record_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"},
+    "sequence": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"},
+    "category": {"const": "hymns"},
+    "language": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"},
+    "text": {"type": "string"},
+    "representation_revision": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"},
+    "provenance": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"},
+    "notes": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"},
+    "references": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"},
+    "source_unit_kind": {"enum": ["source-labeled-hymn", "historical-apparatus"]},
+    "content_format": {"const": "ocd-native-content-v1"},
+    "structure": {
+      "type": "array", "minItems": 1, "maxItems": 1,
+      "items": {"$ref": "ocd://schemas/v2/native-content.schema.json"}
+    },
+    "locator": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "source_order", "source_number", "section_number"],
+          "properties": {
+            "kind": {"const": "source-labeled-hymn"},
+            "source_order": {"type": "integer", "minimum": 1},
+            "source_number": {"type": "integer", "minimum": 1, "maximum": 594},
+            "section_number": {"type": "integer", "minimum": 1, "maximum": 53}
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "source_order", "source_group", "section_number", "within_group"],
+          "properties": {
+            "kind": {"const": "historical-apparatus"},
+            "source_order": {"type": "integer", "minimum": 1},
+            "source_group": {"enum": ["front-matter", "source-section"]},
+            "section_number": {"type": ["integer", "null"], "minimum": 1, "maximum": 53},
+            "within_group": {"type": "integer", "minimum": 1}
+          }
+        }
+      ]
+    }
+  }
+}

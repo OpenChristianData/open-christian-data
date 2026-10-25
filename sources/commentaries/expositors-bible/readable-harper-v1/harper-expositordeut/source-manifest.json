@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib033-readable-harper-expositordeut-v1",
+  "work_id": "expositors-bible--andrew-harper",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/harper_expositordeut.xml",
+      "role": "primary-source",
+      "bytes": 1089654,
+      "sha256": "a40389d4afff8752354acbd1c10e687df6933f9f36e520c8b1422371b39a338d"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-harper-v1/harper-expositordeut/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 697,
+      "sha256": "5506041be03cc86e63bd98190e5b26aa2b0e8ee2e33ea549918ffefcb800e934"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-harper-v1/harper-expositordeut/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 941,
+      "sha256": "06fb23bf219fb56ffdf31d42c6596cf891033308d55fb940495807c432313414"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-harper-v1/harper-expositordeut/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 807,
+      "sha256": "903cd478dc281d4eba19dd69b8a09afa75fde69c75bbbf69ad868ada6eabb17f"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-harper-v1/harper-expositordeut/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1811,
+      "sha256": "c73c60e3107ce576772042ebaf5d636a311f0b0d2a922f02aab013bedb596c45"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib033-readable-harper-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib033_readable_harper.py",
+    "implementation_sha256": "98400c6ccc9d9421ff9fbcb3bc6062d37886448941e278ce2e28360b8170b1d4"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib033-readable-harper-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib033_readable_harper_oracle.py",
+    "implementation_sha256": "c8c42cd244218c0700640654e017d03e0e76b180cf418fea5549f5519c09946e",
+    "import_closure_sha256": "c8c42cd244218c0700640654e017d03e0e76b180cf418fea5549f5519c09946e"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,15 @@
+# Electronic source for pg77576-ignatius-virgin-mary
+
+The retained text witness is `raw/gutenberg/77576/html/pg77576-images.html` (SHA-256 `ca58049f2ee7c62c8c34dffb6badfdb910ab698748f8decc9d9b978e7972e507`). The acquired ZIP `raw/gutenberg/77576/pg77576-h.zip` is the containing Project Gutenberg package. Only the source-titled epistle at HTML body children `[1394,1397)` and its linked note `f2025` are represented by this work's accepted master.
+
+The retained volume identifies *The Writings of the Apostolic Fathers* (Ante-Nicene Christian Library, volume I, Edinburgh: T. & T. Clark, 1870) and credits Alexander Roberts, James Donaldson, and Frederick Crombie for translation of the volume without assigning this particular letter to one translator. Its appendix calls these additional Ignatian letters spurious. The electronic header credits David King and the Online Proofreading Team at PGDP and says the file was produced from images made available by the Internet Archive.
+
+The source's Project Gutenberg License sections 1.E.1–1.E.6 call for a prominent license notice, access to the full license, and access to the original electronic format when distributing an associated converted work. Any selected release must bind the human-visible notice at `data/structured-text/pg77576-ignatius-virgin-mary/README.md` through `public_notices` and verify the applicable license conditions. This prepared notice does not establish rights clearance or authorize publication.
+
+## Current item-specific rights disposition — October 9, 2026
+
+Target `pg77576-ignatius-virgin-mary--pg77576-ignatius-virgin-mary-pg77576-edition` matches the acceptance, acquisition and master bytes reviewed in `reports/_logs/first-publication-rights-inputs-20261008-v1/project-gutenberg-target-review-20261008.json` (review SHA-256 `cf2811c0bf4e2cc00bad6cefdd87fb09f6757153e33d7da6a5b1fb1fe185a4fd`). Current acceptance SHA-256: `978cd563f2048cd03ef657df1dad8004cdc8391707e822c4c2125947b99ab220`; master SHA-256: `ad7b9d02f056797d62f1bc2b7b79867b769b106168108ad7285a654491117665`; textual source SHA-256: `ca58049f2ee7c62c8c34dffb6badfdb910ab698748f8decc9d9b978e7972e507`.
+
+The supported route is **Public domain (United States and Australia); 1870 historical text, translation, and notes only**, limited to this source-titled constituent and its linked historical notes. This supersedes the preliminary unassessed-rights statement only for the selected 1870 literary text, translation and textual edition in these two territories. It does not clear new digital-transcription matter, images, modern additions, worldwide use or the whole eBook package. Preserve existing source/editor/translator credits and all scope/authenticity qualifications.
+
+Bind and carry the complete current human-visible notice at `data/structured-text/pg77576-ignatius-virgin-mary/README.md`, including its unaltered retained Gutenberg License, prominent notice, and original-format access link. Final projection/release checks and publication authorization remain separate.

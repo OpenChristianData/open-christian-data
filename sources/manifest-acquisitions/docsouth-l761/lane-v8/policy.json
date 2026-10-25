@@ -1,0 +1,53 @@
+{
+  "contract": "ocd-docsouth-l761-l762-mapping-policy-v1",
+  "mapping": "Pinned TEI Consortium P4-to-P5 migration applied to the complete single TEI.2 document; retain one TEI root and preserve all source sections and order. Legacy links become P5 ref; entity-backed figures become P5 graphic with original entity identity and provider URL. Invalid legacy page-identifier xml:lang values become ana references; blank page rend values are omitted; language identifiers become ident; TEI.2 header status/type and misplaced publication place move to valid P5 structures. No component splitting or source-text omissions are intended. All 23 retained JPEGs remain supporting authorities, independently hash-bound in source-manifest and source-accountability; the candidate package carries no binary members.",
+  "provenance": {
+    "acquisition_id": "isaac-lane-autobiography-docsouth-acquired",
+    "edition_id": "isaac-lane-autobiography-docsouth-electronic",
+    "human_acceptance": "not recorded",
+    "method": "Source-bound DocSouth TEI.2 to P5 single-root conversion with independent Expat oracle and retained-image accounting.",
+    "publication": "not authorized",
+    "source_member_sha256": "aa906b4d603ef6d091c7fe7ce5f2ee35f7da0b394c28c8393e9377993ec529c4",
+    "source_rights": "No Copyright - United StatesThe organization that has made the Item available believes that the Item is in the Public Domain under the laws of the United States, but a determination was not made as to its copyright status under the copyright laws of other countries. The Item may not be in the Public Domain under the laws of other countries. Please refer to the organization that has made the Item available for more information.",
+    "source_url": "https://docsouth.unc.edu/fpn/lane/lane.xml",
+    "textual_form_id": "isaac-lane-autobiography-docsouth-retained",
+    "work_id": "isaac-lane-autobiography"
+  },
+  "unresolved": [
+    {
+      "id": "print-collation",
+      "question": "The retained electronic transcription has not been independently collated against print scans.",
+      "status": "open"
+    },
+    {
+      "id": "visual-review",
+      "question": "Source/candidate visual comparison and page-image display remain open.",
+      "status": "open"
+    },
+    {
+      "id": "rights-clearance",
+      "question": "The provider's exact availability statement is retained; rights outside its stated scope and electronic encoding terms are not cleared.",
+      "status": "open"
+    },
+    {
+      "id": "acceptance-publication",
+      "question": "Human acceptance, accepted-master installation, and publication are not recorded.",
+      "status": "open"
+    },
+    {
+      "id": "unmarked-page-numbers",
+      "question": "DocSouth XML skips page milestone numbers [20, 28, 68, 76, 100, 106, 112, 116, 122, 126, 136, 146, 150, 154, 158, 162, 166, 170, 174, 178, 181, 182]; this is not evidence of absent text without the print scan.",
+      "status": "open"
+    },
+    {
+      "id": "lane-byline-conflict",
+      "question": "TEI header credits Isaac Lane while the source titlePage includes a Solomon G. Brown byline; both are retained without resolving attribution.",
+      "status": "open"
+    },
+    {
+      "id": "external-images",
+      "question": "23 referenced JPEG bytes are retained and hash-bound as supporting source authorities; candidate package v1 does not contain binary assets and visual display remains open.",
+      "status": "open"
+    }
+  ]
+}

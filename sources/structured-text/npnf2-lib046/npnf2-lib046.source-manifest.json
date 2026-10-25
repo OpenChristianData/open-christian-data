@@ -1,0 +1,112 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf2-lib046-basil-vii-viii-ix",
+  "scope": {
+    "kind": "complete-source-subtrees",
+    "source_member": "retained-npnf208",
+    "assigned_roots_in_source_order": [
+      ["npnf208", "vii", "basil-of-caesarea-on-the-holy-spirit"],
+      ["npnf208", "viii", "basil-of-caesarea-hexaemeron"],
+      ["npnf208", "ix", "basil-of-caesarea-letters"]
+    ],
+    "excluded_top_level_roots": ["i", "ii", "iii", "iv", "v", "vi", "x"]
+  },
+  "authorities": [
+    {
+      "name": "retained-npnf208",
+      "path": "raw/ccel/npnf2/npnf208.xml",
+      "role": "primary-source",
+      "bytes": 3303323,
+      "sha256": "95cf3dafefccec80e0949a03c7f1f605da293302d0dc7a8bd62a4e711a0c5532"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/npnf2-lib046/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1175,
+      "sha256": "dd862954f85dbae1b09e6d48ee1f3936f6c8c4363b01fcb0bf382c258bc0145f"
+    },
+    {
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "hexaemeron-config",
+      "path": "sources/structured-text/basil-of-caesarea-hexaemeron/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1839,
+      "sha256": "2982c1b122446232556999781a8ecc244c17e434b9bb93f240e934e362e05a4b"
+    },
+    {
+      "name": "letters-config",
+      "path": "sources/structured-text/basil-of-caesarea-letters/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1826,
+      "sha256": "58a128debfa9556bcd317e707cd4dbece8ae66c7f81ea27df973ec0ec4dc5756"
+    },
+    {
+      "name": "holy-spirit-config",
+      "path": "sources/structured-text/basil-of-caesarea-on-the-holy-spirit/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1851,
+      "sha256": "3a62c48aeb9abcc4e454bd01cd36303849312a61471343d225ce24f254bb342d"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/npnf2-lib046/npnf2-lib046.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1956,
+      "sha256": "3659bf7a198796da6f3151f064b4888e484a1a7dd87636a778931626eb35176f"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/npnf2-lib046/npnf2-lib046.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2996,
+      "sha256": "25b454c62a6bab02296e5c83f480fe9af103348813fadbcefa5bc0c5c2eeef56"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/npnf2-lib046/npnf2-lib046.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1523,
+      "sha256": "586ec456b66a27885bc966766a687c1637379cae7709ca75e489078ffcae0776"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-npnf2-lib046-assigned-works-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf2_lib046_reconstruction.py",
+    "implementation_sha256": "edbe0dddeb930bb0a6aee575bc17225e366859b247edc9d54bef0f22d49596ce"
+  },
+  "validator": {
+    "id": "ocd-npnf2-lib046-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf2_lib046_oracle.py",
+    "implementation_sha256": "edad7ad44c7c1c854c2de1a05dc560ca4ede3a5f0e16add08de633e7b6154dd6",
+    "import_closure_sha256": "db248696a8da7d73edd0b70d29e8c649b8eb38d08f072c0da0c2ef6e4a749dca"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -15,6 +15,14 @@ observed bug, and the correct value (verified against a primary source).
 
 ## Commentaries-Database (HistoricalChristianFaith)
 
+### Unresolved source-title and attribution research
+
+- **Pacian of Barcelona:** 26 Exodus/Leviticus/Numbers entries cite “Exposition of the Old and New Testament,” but the work is absent from Pacian's authenticated corpus and no primary text with section numbering was found. The current parser excludes these unsupported Pacian records until a corrected retained source establishes their author; it does not guess a title or author.
+- **Isidore of Seville:** nine Luke entries (`6:1`, `6:43`, `7:24`, `8:1`, `9:10`, `10:3`, `12:41`, `18:31`, `24:25`) are Catena Aurea quotations labeled Isidore of Pelusium, not Seville. The current parser reroutes exactly these nine records to Isidore of Pelusium. Acts 5:9, Exodus 9:9, and Mark 16:5 remain unverified and blank.
+- **Nerses of Lambron:** ten Revelation entries may derive from Robert W. Thomson's 2007 *Commentary on the Revelation of Saint John* (Peeters, ISBN 9789042918665), but the book is not digitally available and the attribution is disputed. Verify each quotation against the print edition before assigning a title.
+
+These findings were transferred from three zero-effect patch executables retired on 2026-08-15. Git history preserves their full research notes and exact entry lists.
+
 ### Verse-tag errors (wrong verse reference on TOML)
 
 | Author | Entry ID | Observed verse tag | Correct verse (primary source) | Found |
@@ -44,6 +52,7 @@ upstream splits this into two entries.
 |---|---|---|
 | remigius-of-rheims | `metadata.toml` carries `default_year=533` (Remigius of Rheims, 6th-century bishop) but virtually all commentary content is attributed to Remigius of Auxerre (841-908) in patristic scholarship. Likely a naming collision at ingest. OCD-side: all 196 entries rerouted to `remigius-of-auxerre` via `REROUTE_AUTHOR` in `church_fathers.py`; upstream directory name still wrong. | 2026-04-15 |
 | athanasius-of-alexandria | Entries `Ezra.1.1.unknown`, `Neh.1.1.unknown`, and `Song.1.1.unknown` contain content from the *Synopsis Scripturae Sacrae* (CPG 2249), a work universally attributed to Pseudo-Athanasius, not the historical Athanasius of Alexandria. The Ezra and Neh TOML quotes begin with bracketed labels "[Synopsis on Ezra]" and "[Synopsis on Nehemiah]"; the Song.1.1 quote is the same genre. The work is dated no earlier than the 6th century and contradicts Athanasius's authentic 39th Festal Letter. These entries should be in `pseudo-athanasius.json`, not `athanasius-of-alexandria.json`. Source: Roger Pearse blog 2018-09-18 citing CPG 2249. | 2026-04-23 |
+| athanasius-of-alexandria | `Matt.1.1.unknown` begins “Vigil. Tapsens.” and duplicates the same passage already present in Vigilius of Thapsus's retained `Matthew 1_1.toml` Catena block. The current parser excludes the misfiled duplicate and retains the source-bearing Vigilius record. | 2026-08-15 |
 | jerome | `Mark.1.11.unknown` (TOML: `Mark 1_11.toml`) -- the quote "Again, the Holy Ghost came down in the shape of a dove, because in the Canticles it is sung of the Church" (both paragraphs) is attributed to **PSEUDO-JEROME** in Aquinas's *Catena Aurea* on Mark Chapter 1, which is the known source for this database's Mark extracts. The Catena Aurea explicitly labels both the dove/Canticles paragraph and the "Morally also it may be interpreted...fleeting world" paragraph as PSEUDO-JEROME, not Jerome. Verified against: `https://raw.githubusercontent.com/HistoricalChristianFaith/Writings-Database/master/Thomas%20Aquinas/Catena%20Aurea/Commentary%20on%20Mark/Chapter%201.html` -- search for "Again, the Holy Ghost came down". | 2026-04-23 |
 | jerome | `Mark.15.32.unknown` (TOML: `Mark 15_32.toml`) -- the quote "The foal of Judah has been tied to the vine, and his clothes dyed in the blood of the grape, and the kids tear the vine, blaspheming Christ, and wagging their heads" is attributed to **PSEUDO-JEROME** in Aquinas's *Catena Aurea* on Mark Chapter 15, verse 32. Verified against: `https://raw.githubusercontent.com/HistoricalChristianFaith/Writings-Database/master/Thomas%20Aquinas/Catena%20Aurea/Commentary%20on%20Mark/Chapter%2015.html` -- search for "foal of Judah". Both entries (`Mark.1.11.unknown` and `Mark.15.32.unknown`) were filed under `jerome` but belong under `pseudo-jerome` or should be left unattributed. | 2026-04-23 |
 

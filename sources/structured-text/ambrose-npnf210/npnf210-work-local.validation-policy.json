@@ -1,0 +1,8 @@
+{
+  "contract": "ocd-npnf210-work-local-validation-policy-v1",
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "source_member": "raw/ccel/npnf2/npnf210.xml",
+  "source_roots": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v", "iv.vi", "iv.vii", "iv.viii", "v"],
+  "checks": ["exact-retained-member-hash", "canonical-work-edition-acquisition-locator", "independent-source-node-order-attributes-text-tail", "source-title-and-structural-relationship-conservation", "tei-p5-xsd", "nonaccepted-package-integrity"]
+}

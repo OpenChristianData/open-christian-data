@@ -1,0 +1,39 @@
+{
+  "contract": "ocd-lib041-oracle-import-closure-v1",
+  "first_party": [
+    {
+      "path": "build/tei/npnf113_lib041_oracle.py",
+      "sha256": "880ba8bc3ff9697092b82686d0831a6151eeab2df2f8f4ebe360134bc658b8bd"
+    },
+    {
+      "path": "ocd_kernel/__init__.py",
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    },
+    {
+      "path": "ocd_kernel/lib/__init__.py",
+      "sha256": "a91be12d175596226f03681f759973eb407c762eb081b61a3700a77c973c8704"
+    },
+    {
+      "path": "ocd_kernel/lib/path_io.py",
+      "sha256": "ace1648a7ae64713a4c3450a1cca8fa3b2f896f9cce68775083649c0930eeaa3"
+    },
+    {
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+    }
+  ],
+  "oracle_sha256": "880ba8bc3ff9697092b82686d0831a6151eeab2df2f8f4ebe360134bc658b8bd",
+  "runtime": "CPython",
+  "third_party": {
+    "jsonschema": "4.26.0",
+    "lxml": "6.0.2"
+  }
+}

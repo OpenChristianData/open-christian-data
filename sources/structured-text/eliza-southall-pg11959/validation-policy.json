@@ -1,0 +1,16 @@
+{
+  "contract": "ocd-eliza-southall-pg11959-validation-policy-v1",
+  "authority": "exact retained extracted PG11959 HTML bytes",
+  "source_scope": "one complete HTML body for one composite electronic work",
+  "checks": [
+    "exact acquired HTML, ZIP member, and unreferenced cover correspondence",
+    "513 top-level and 1362 descendant HTML body elements with tag, heading, identifier, style, and link census",
+    "independent preorder carrier and source-accountability comparison",
+    "complete body and each represented subtree text equality",
+    "HTML link targets, source styles, inline emphasis, hierarchy, and TEI P5 XSD",
+    "actual-master native prose projection and guarded stage checks"
+  ],
+  "omitted_body_elements": 0,
+  "human_acceptance": "separate",
+  "rights_and_publication": "separate"
+}

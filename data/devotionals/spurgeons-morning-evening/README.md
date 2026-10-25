@@ -1,0 +1,11 @@
+# Morning and Evening: Daily Readings: selected text, rights, and source credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/spurgeon/morneve.xml).
+
+The selected scope retains all historical devotional readings, dates, citations, links, order, and semantic classes. [Morning by Morning, New York 1865](https://archive.org/details/morningbymornin00spur) and [Evening by Evening, New York 1868](https://archive.org/details/eveningbyevenin00spur) evidence the historical text. [Logos's listing](https://www.logos.com/product/377/morning-and-evening-daily-readings) distinguishes a Passmore & Alabaster 1896 lineage from its 1995 digital product. The retained 2001 CCEL witness names Logos Research Systems and Steve Liguori as converter and records limited spelling changes. The reader-submitted homepage instruction and link, margins, and small-cap presentation declarations are excluded. Private DayOfYear labels are represented by public factual date labels. Complete source and inverse remain private; print equivalence and the converter's contact details are not asserted or published.
+
+Selected row license: `Public domain (United States): identified historical Charles Haddon Spurgeon devotional text; extracted underlying text sourced via CCEL.org; modern homepage instruction, files and formatting excluded`.
+
+The release distributes the selected underlying text, not CCEL's electronic file, stylesheet, cover art, staff description, or website. OCD's retained April 1, 2026 permission from CCEL distinguishes extraction of underlying public-domain text from rights reserved in CCEL files and formatting. Keep the credit **sourced via CCEL.org** with these records. CCEL's restrictions on selling its files or derivatives of its formatting remain applicable to those materials; this release does not grant rights in them. See [CCEL's policy](https://www.ccel.org/about/copyright.html).
+
+This October 13, 2026 disposition replaces the earlier private-preparation qualification for this exact selected text scope. Public-domain status here is qualified to the United States, not a CC0 dedication or a claim of worldwide clearance. The historical text, translation, electronic source, and excluded modern material remain distinct. The source witness is not claimed to be collated to an exact print exemplar.

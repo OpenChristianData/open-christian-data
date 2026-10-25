@@ -1,0 +1,135 @@
+{
+  "ticket": "LIB-053",
+  "observed_at": "2026-09-18T02:56:17Z",
+  "status": "technical-route-and-declared-cvw-sample-complete",
+  "work_id": "john-owen-worship",
+  "source": {
+    "path": "raw/ccel/owen/worship.xml",
+    "bytes": 841339,
+    "sha256": "88c1fee9f8907222dbef6bcc4fa9bed469b72d8c445bb9a605403af62829e1d3"
+  },
+  "authority": {
+    "owner_ticket": "plans/2026-08-26-whole-library-faithful-tei-completion/tickets/library/053-reconstruct-and-review-john-owen-works-cohort-4.md",
+    "status": "07-orchestration-tracker.md lines 580-587 reopen the frontier for separately authorized continuation; current user explicitly authorizes this bounded LIB-053 slice; LIB-003 and LIB-050 technically accepted",
+    "ownership": "Zeno ledger entry is this assignment, as clarified by user; no other LIB-053 writer identified"
+  },
+  "checks": {
+    "pytest": {
+      "command": "py -3 -m pytest -p no:cacheprovider tests/test_john_owen_lib053_reconstruction_contract.py -v",
+      "exit_code": 0,
+      "passed": 14,
+      "duration_seconds": 31.81
+    },
+    "mutation_cases": 10,
+    "independent_source_node_census": {
+      "method": "xml.etree.ElementTree.iterparse over the manifest-bound primary source",
+      "elements": 7506,
+      "comments": 2,
+      "processing_instructions": 0,
+      "matched_candidate_accounting": true
+    },
+    "source_nodes": 7508,
+    "elements": 7506,
+    "comments": 2,
+    "processing_instructions": 0,
+    "body_divisions": 5,
+    "page_breaks": 86,
+    "scripture_references": 1054,
+    "italic_questions": 53,
+    "h4_headings": 2,
+    "family_members": 32,
+    "included": 1,
+    "excluded": 31,
+    "fresh_process_package_byte_comparison": "pass",
+    "catalog_identity_helper": [
+      "john-owen-worship"
+    ],
+    "manifest_verification": "pass",
+    "ruff": "pass",
+    "format": "pass",
+    "original_LIB052_template_files_unchanged": true
+  },
+  "implementation_files": [
+    {
+      "path": "build/tei/john_owen_lib053_reconstruction.py",
+      "bytes": 32282,
+      "sha256": "8e2a6989d7476f2a3a099fbc7d57eadb4ca00298369bd95c520dd304e2f32674"
+    },
+    {
+      "path": "build/tei/john_owen_lib053_oracle.py",
+      "bytes": 54847,
+      "sha256": "2a95ccaa13cdb930fb9abe0b673f826f0fbc17548a8fc1295d9ac62e67439b4b"
+    },
+    {
+      "path": "tests/test_john_owen_lib053_reconstruction_contract.py",
+      "bytes": 8173,
+      "sha256": "b1b1c904b95735efb0084d55536a500a8affb9b292523e0d6c32447a7d283255"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.reconstruction-profile.json",
+      "bytes": 8327,
+      "sha256": "63383b772b02484d352e7c7fa89df1c179a11dbb4689efebd13f0a7d915146f0"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.source-accountability.schema.json",
+      "bytes": 2516,
+      "sha256": "bee1e5bfbdd6d266a97fcba851bd4eadbf0e6e024f4cc11ad6deec52b40e47b7"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.source-manifest.json",
+      "bytes": 3757,
+      "sha256": "f9ca966d274332413ff29dba853e034c76af1d347d1502767afceeb70f194e9f"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/john-owen-lib053.validation-policy.json",
+      "bytes": 410,
+      "sha256": "9a28f013ca60133dd5014c5f65e902ff24e5d37666ef42beaa3365a11c8ed46d"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/README.md",
+      "bytes": 902,
+      "sha256": "321c895f5c39af706c55872a882df4734a5bfd6711b0af4c1020f3cae9a185dc"
+    },
+    {
+      "path": "sources/structured-text/lib053-john-owen/work-bindings/john-owen-worship/config.json",
+      "bytes": 90,
+      "sha256": "e8d5ba0e2dda88b64e9b7f9165794d455c3b3e3861912f2e10f738fdbb1d0223"
+    }
+  ],
+  "candidate": {
+    "path": "D:/Library/Open Christian Data/candidate-reviews/37c-234-john-owen-worship-20260918-route-v4-paragraph-locations/package",
+    "package_sha256": "832ca6a6bace11a7e17484e38be27ec05771a86589eab028b579f1e8025254aa",
+    "tei_sha256": "fe8cdff4caf1e7aecf64abbab8f248d834556e46226446cd22645aa1bcd70194",
+    "source_manifest_sha256": "3e994bd292121744196a93be7143aad29cd3b4fb1cd390f588dc973c697551c0",
+    "status": "nonaccepted",
+    "validation": {
+      "result": "pass",
+      "findings": [],
+      "report_sha256": "e2a0807f018650ac31f86c27e12aa9e83b97af0b4d5e04ec457857d3119df202",
+      "sidecar_sha256": "993c4111b92f0073503231b0523f30fcadc7e2d3778b500c1c0a8798dea69428"
+    }
+  },
+  "cvw": {
+    "candidate_exact_pair": true,
+    "declared_loci": 12,
+    "reached_loci": 12,
+    "visually_inspected_loci": 12,
+    "fresh_index_loci": 8,
+    "unaffected_prior_loci_reused": 4,
+    "current_viewer_session_id": "041bc376882d4a87a4054679b4f95797",
+    "current_viewer_implementation_sha256": "975ce200aae627f370a3b637e499772db0544c9f33275bae045d67d551add27d",
+    "current_viewer_receipt_sha256": "F0EAC232026EE79831137FE019FBC7A6319430ADE64168F47D9DC4211BD9972E",
+    "index_capture_bundle": "D:/Library/Open Christian Data/candidate-reviews/37c-234-john-owen-worship-20260918-route-v4-paragraph-locations-cvw-index-paging-fix-8-locus",
+    "prior_four_locus_bundle": "D:/Library/Open Christian Data/candidate-reviews/37c-234-john-owen-worship-20260918-route-v4-paragraph-locations-cvw-12-locus",
+    "correspondence": "absent; panes unlinked; no alignment inferred",
+    "finding": "Native index anchors remain attached to visible headings after viewer repair; the current terminal anchor is #worship-node-007419 and shows printed page 530 in both panes.",
+    "whole_work_proofreading": "not_claimed"
+  },
+  "candidate_retention": "Durable v4 candidate retained and validated; it remains nonaccepted pending human review.",
+  "remaining": [
+    "Human acceptance of the textual and edition evidence",
+    "Rights clearance and release/publication decisions"
+  ],
+  "accepted": false,
+  "publication": "not_ready"
+}

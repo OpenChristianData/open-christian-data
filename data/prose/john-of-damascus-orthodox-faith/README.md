@@ -1,0 +1,9 @@
+# John of Damascus — Exposition of the Orthodox Faith
+
+Source: [Christian Classics Ethereal Library](https://www.ccel.org/ccel/schaff/npnf209.html), *Nicene and Post-Nicene Fathers*, Second Series, volume IX, Hilary of Poitiers and John of Damascus. Series editors: Philip Schaff and Henry Wace. John's retained title page credits translation to S. D. F. Salmond, Principal of the Free Church College, Aberdeen.
+
+This derivative contains the complete retained John edition: title page, Note, Prologue, and all four books of An Exact Exposition of the Orthodox Faith, with14/30/29/27chapters (100total), through the complete Amen closing. It preserves native divisions/headings, paragraphs, inline Greek and formatting, all notes at their original attachments, literal scripture references, and source page links. Hilary's independently titled work, shared volume title/context, and volume indexes remain outside John's readable text. OCD reused the independently checked prior reconstruction body, created a source-bound TEI master, and projected its native ordered content to JSONL and Arrow.
+
+The retained electronic header states Public Domain and gives printSourceInfo as Edinburgh: T&T Clark,1898. Earlier inherited metadata stated1899; this conflicting historical claim remains in the retained evidence, while current edition descriptions use the literal1898 header statement. No independent print-date adjudication or source collation is claimed.
+
+This private offline technical rehearsal does not establish visual review, human acceptance, print collation, independent rights clearance, global release selection or publication authorization. The electronic rights statement is preserved as source evidence. The recorded CCEL permission permits parsing ThML/XML for text but reserves CCEL's files and formatting. Do not sell CCEL files or derivatives of their formatting. This permission does not independently clear the electronic edition or its additions.

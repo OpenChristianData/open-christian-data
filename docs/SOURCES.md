@@ -1,5 +1,9 @@
 # Sources and Acknowledgments
 
+This page records the historical v0.2.0 source acknowledgments. For the current
+release, use its catalog and source notices; the terms below do not describe
+every text in later releases.
+
 We stand on the shoulders of all those who come before.
 
 Open Christian Data is possible because libraries, archives, publishers,
@@ -17,9 +21,12 @@ acknowledgments here do not replace record-level provenance.
 
 ### Hymnary.org
 
-The collection of 34,904 public-domain hymn texts was provided by
+The provider-designated public-domain hymn export was supplied by
 [Hymnary.org](https://hymnary.org/) at Calvin University for inclusion in Open
-Christian Data.
+Christian Data. The historical generated JSON contains 34,904 entries; the
+accepted retained CSV selected for v2 contains 34,895 records. These are
+different artifacts. The exact current scope, source anomalies, and qualified
+provider-rights basis are recorded in the source-specific README below.
 
 If you build something with the hymn collection, please:
 

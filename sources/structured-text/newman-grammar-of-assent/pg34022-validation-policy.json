@@ -1,0 +1,18 @@
+{
+  "contract": "ocd-newman-grammar-pg34022-validation-policy-v1",
+  "authority": "exact retained extracted PG34022 HTML, with ZIP and cover as supporting acquisition files",
+  "scope": "one complete 1874-witness book, with the Project Gutenberg header/footer and empty spacer rules explicitly excluded from historical book text",
+  "independent_checks": [
+    "source hash and complete eleven-child HTML body envelope",
+    "ZIP member bytes equal the extracted HTML and cover",
+    "whole selected book text and all heading order",
+    "all page labels, contents entries, note number/target attachments, foreign spans, and quotation order",
+    "TEI P5 XSD and source-specific Relax NG",
+    "candidate reproducibility from another process and current native prose projection"
+  ],
+  "shared_assumptions": ["Both producer and oracle parse the same retained HTML and use the pinned TEI schemas."],
+  "mutation_gates": ["source-byte substitution", "omitted note", "retargeted note", "changed heading order"],
+  "visual_review": "historical August source comparison is prior evidence; current exact-pair CVW review is unrecorded",
+  "human_acceptance": "separate",
+  "rights_and_publication": "separate"
+}

@@ -1,5 +1,7 @@
 # ADR-0001: Linear block sequence as universal data structure
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15); partially superseded by [ADR-0019](0019-ir-is-tei.md) 2026-07-01 — the IR / published shape is now TEI, not a flat block sequence. This ADR's principle (structure as annotation; never fabricate hierarchy the source lacks) still informs how the project uses TEI. Whether the OCR-fusion internal working schemas remain JSON is left open by ADR-0019.
 
 ## Context

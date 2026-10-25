@@ -1,0 +1,169 @@
+{
+  "contract": "ocd-lib089-westminster-html-profile-v1",
+  "ticket_id": "LIB-089",
+  "work_id": "form-of-church-government",
+  "oracle_id": "ocd-lib089-form-church-independent-comment-oracle",
+  "reconstruction_revision_date": "2026-09-18",
+  "identity": {
+    "catalog_id": "form-of-church-government",
+    "title": "Form of Presbyterial Church-Government",
+    "catalog_display_title": "The Form of Presbyterial Church-Government",
+    "source_page_title": "Form of Presbyterial Church-Government – The Westminster Standard",
+    "source_url": "https://thewestminsterstandard.org/form-of-presbyterial-church-government/",
+    "provider": "The Westminster Standard",
+    "observed_page_author": "TheWestminsterStandard",
+    "title_basis": "The TEI title candidate copies the retained page h1 exactly. The catalog display label is recorded separately and is not substituted for the source wording.",
+    "visible_historical_statement": "ASSEMBLY AT EDINBURGH, February 10, 1645, Sess. 16.",
+    "edition_status": "unresolved",
+    "textual_form_status": "unresolved",
+    "textual_form_note": "The retained bytes establish a provider HTML presentation, not a named historical edition, revision, or translator.",
+    "work_boundary_status": "unresolved",
+    "work_boundary_note": "The same page includes the final named heading and contents target The Directory for the Ordination of Ministers. It remains in this page's source scope; the retained evidence does not decide whether it is a constituent part or a distinct work."
+  },
+  "source_envelope": {
+    "retained_source_path": "raw/westminster-standard-org/form-of-church-government.html",
+    "format": "HTML",
+    "encoding": "UTF-8",
+    "strict_utf8_decode": true,
+    "doctype": "<!DOCTYPE html>",
+    "parsed_root": "html",
+    "bytes": 92499,
+    "sha256": "d5b31994e9ce43e7828ff65f3ac758e8974b0396d6ba03f991c785b8d92a3ac4",
+    "element_count": 546,
+    "comment_count": 24,
+    "processing_instruction_count": 0,
+    "document_heading_count": 23,
+    "selected_carrier_count": 3,
+    "selected_element_count": 293,
+    "selected_normalized_word_count": 5932,
+    "selected_text_sha256": "3fbfa6921d219c4a377b6677a674518b9cbf75ad859a4e31cd3c08dcf6d9e05d",
+    "outside_selected_carrier_element_count": 253,
+    "outside_selected_carrier_comment_count": 22,
+    "outside_carrier_disposition": "The exact HTML member retains the full page shell and support material. Its page h1 is represented by the source-derived TEI title; the remaining page head, navigation, scripts, styles, footer, and wrapper remain source evidence and are not body text."
+  },
+  "carrier_inventory": [
+    {
+      "index": 1,
+      "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[1]/div[2]/div/div",
+      "role": "contents-and-nineteen-section-links",
+      "disposition": "represented-contents"
+    },
+    {
+      "index": 2,
+      "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[1]/div",
+      "role": "assembly-prefatory-matter-and-accordion-heading",
+      "disposition": "represented-prefatory"
+    },
+    {
+      "index": 3,
+      "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[2]",
+      "role": "preface-through-final-ordination-directory-heading",
+      "disposition": "represented-body"
+    }
+  ],
+  "html_block_census": [
+    {
+      "index": 1,
+      "disposition": "represented-contents",
+      "subtree_sha256": "4e6e06f8a9bffb9120c1e12e3a513acd24a95594a3f710cfb1ea00346d75ed1a",
+      "normalized_text_sha256": "ffeef07790b04906554c6e5ebc86ac4f30246282c6eb53beafd7a5f74eb0dc65",
+      "word_count": 108,
+      "element_count": 50
+    },
+    {
+      "index": 2,
+      "disposition": "represented-prefatory",
+      "subtree_sha256": "7f18ad10847b630eb6b2e2de1cb105ac37a23c9d843c87084ffadf054ebb963b",
+      "normalized_text_sha256": "593d82a6f33d8d9d75bed4b8c49d39ba30b713f4ef9202cfc273720ab44969ff",
+      "word_count": 461,
+      "element_count": 20
+    },
+    {
+      "index": 3,
+      "disposition": "represented-body",
+      "subtree_sha256": "11220d32d5ed09bb0f40c0f3e077516d35c87c83a866043d1a42298d8f25ec8a",
+      "normalized_text_sha256": "5080f497bbcb76fff36ab62c4b08ecfef8266d65c9ad87cf626b7220ed1d8835",
+      "word_count": 5363,
+      "element_count": 223
+    }
+  ],
+  "comment_policy": {
+    "contract": "ocd-lib089-html-comment-disposition-v1",
+    "route_enforcement_status": "source-specific-producer-and-independent-oracle",
+    "selected_comment_count": 2,
+    "outside_selected_comment_count": 22,
+    "selected_comment_disposition": "preserve-as-tei-note",
+    "rule": "Preserve each selected source comment's exact text, parent, order, and tail as a typed TEI note in the corresponding readable TEI paragraph, and emit an independently checked source-accountability event. Do not treat the marker as prose, normalize it, or silently discard it.",
+    "selected_comments": [
+      {
+        "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div[1]/div/p/comment()",
+        "source_text": " .entry-content ",
+        "source_text_sha256": "a5a3fbf64b351fb4de4d1057c5bcda7b30a31214fe8b2a500a434fa2fb5fdb9f",
+        "parent_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div[1]/div/p",
+        "parent_tag": "p",
+        "parent_direct_text": null,
+        "parent_element_child_count": 0,
+        "comment_tail": null,
+        "comment_tail_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "disposition": "preserve-as-tei-note"
+      },
+      {
+        "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[2]/div/p[164]/comment()",
+        "source_text": " .entry-content ",
+        "source_text_sha256": "a5a3fbf64b351fb4de4d1057c5bcda7b30a31214fe8b2a500a434fa2fb5fdb9f",
+        "parent_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[2]/div/p[164]",
+        "parent_tag": "p",
+        "parent_direct_text": null,
+        "parent_element_child_count": 0,
+        "comment_tail": null,
+        "comment_tail_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "disposition": "preserve-as-tei-note"
+      }
+    ],
+    "outside_selected_comment_disposition": "The remaining 22 comments are outside all three selected carriers in the pinned document tree. They remain byte-preserved in the complete retained HTML and are page-shell/support markup, not source-body text."
+  },
+  "local_fragment_policy": "resolve-retained-targets",
+  "projection_policy": {
+    "legacy_json_authority": false,
+    "represented_dispositions": [
+      "represented-contents",
+      "represented-prefatory",
+      "represented-body"
+    ],
+    "excluded_dispositions": [],
+    "selected_carrier": "Independent source walk selects ordered wpb_text_column carriers and widens the two nested content regions to their containing toggle where present.",
+    "outside_carrier_disposition": "Represent the page h1 in the TEI header. Retain the rest of the page shell and its 22 out-of-carrier comments only in the exact source member. Preserve all three populated carriers, including the Contents table, Assembly prefatory matter, body headings, links, elements, attributes, direct text, and tails.",
+    "summary": "Preserve the exact source order and supported element/inline/link structure. Wrap HTML table-cell inline content in a transparent TEI paragraph. Resolve named local fragment links to retained TEI targets; preserve the bare href '#' literally. Preserve the two selected HTML comments as typed TEI notes with exact text in their source paragraphs and account for each independently; retain the other 22 page-shell comments in the exact HTML member."
+  },
+  "link_inventory": {
+    "selected_internal_href_count": 39,
+    "named_source_targets": 20,
+    "named_targets_are_unique": true,
+    "bare_fragment_href_count": 1,
+    "bare_fragment_disposition": "Preserve the literal href '#' and do not invent a fragment target."
+  },
+  "projection_limit": {
+    "source_bytes_are_authoritative": true,
+    "source_carrier_count": 3,
+    "represented_carrier_count": 3,
+    "excluded_empty_carrier_count": 0,
+    "unsupported_source_tags": [],
+    "parsed_replacement_characters_are_preserved_for_editorial_review": false,
+    "candidate_generated": true,
+    "candidate_status": "source-bound-nonaccepted"
+  },
+  "rights": {
+    "config_license_label": "Public Domain (legacy configuration claim; not independently established)",
+    "observed_page_author": "TheWestminsterStandard",
+    "observed_footer": "© 2026 The Westminster Standard",
+    "status": "unresolved",
+    "note": "The historical work's age and the legacy config label do not settle rights or attribution for this provider web transcription and its page wrapper."
+  },
+  "unresolved_questions": [
+    "Work, expression, and responsible-body identity beyond the retained page title.",
+    "Named edition, textual form, and witness relationship for the provider transcription.",
+    "Whether the final Directory for the Ordination of Ministers is a constituent part or a distinct work.",
+    "Rights and requested attribution for the provider transcription and page wrapper.",
+    "Human textual acceptance and publication authorization."
+  ]
+}

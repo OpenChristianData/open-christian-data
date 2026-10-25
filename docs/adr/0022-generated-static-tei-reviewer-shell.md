@@ -1,6 +1,6 @@
 # ADR-0022: Generated static shell for the TEI reviewer
 
-**Status:** Accepted (2026-07-06). Follows ADR-0020.
+**Status:** Historical. The OCD implementation was retired after OCR ownership moved to EzraOCR and CVW became the current OCD review workbench (2026-08-15).
 
 ## Context
 

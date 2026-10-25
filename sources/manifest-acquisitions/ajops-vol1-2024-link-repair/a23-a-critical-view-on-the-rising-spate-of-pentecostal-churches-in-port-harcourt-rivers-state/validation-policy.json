@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-ajops-validation-policy-v1",
+  "mutations": [
+    "remove one TEI paragraph",
+    "change source text",
+    "remove a source element marker",
+    "mutate a table row/figure marker when present"
+  ],
+  "oracle_dependencies": "Producer uses lxml. Oracle uses stdlib ElementTree for source census; lxml only for TEI/P5; PyMuPDF only for PDF page text evidence.",
+  "text": "Compare normalized full source text and source-order JATS element census using independent stdlib ElementTree; bind XML and publisher PDF by exact hash; validate TEI P5; compare per-page PDF text hashes and title; compare figure captions and graphic hrefs to source profile. Producer uses lxml; oracle source census does not. Tables and figures receive source-specific carrier tests before any pass claim."
+}

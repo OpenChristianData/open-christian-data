@@ -3,7 +3,7 @@
   "source": {
     "type": "standard_ebooks",
     "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
-    "git_head": "6290cb26fa2cac6ef2f9105c9176a97ee3f46b94",
+    "git_head": "7ec3a325a495cb791581d06f1c0fed14d2576ff0",
     "files": [
       {
         "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/book-1.xhtml",
@@ -99,7 +99,7 @@
       },
       {
         "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/endnotes.xhtml",
-        "sha256": "f49fab3eab872d370a4ea6542ddedf63070a7f676c6250501da314bb00396bf1"
+        "sha256": "a05c4b2bfd045cfcafa79638e1b23373cf37e8850ba5cfba687257ec77d30b6c"
       },
       {
         "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/halftitlepage.xhtml",
@@ -4232,9 +4232,41 @@
       "count": 95,
       "ids": []
     },
+    "typographic_emphasis": {
+      "count": 275,
+      "ids": []
+    },
+    "bold": {
+      "count": 15,
+      "ids": []
+    },
+    "lists": {
+      "count": 0,
+      "ids": []
+    },
+    "list_items": {
+      "count": 0,
+      "ids": []
+    },
     "verse_blocks": {
       "count": 62,
       "ids": []
+    },
+    "front_sections": {
+      "count": 4,
+      "ids": [
+        "halftitlepage",
+        "imprint",
+        "preface",
+        "titlepage"
+      ]
+    },
+    "back_sections": {
+      "count": 2,
+      "ids": [
+        "colophon",
+        "uncopyright"
+      ]
     }
   },
   "section_depths": {

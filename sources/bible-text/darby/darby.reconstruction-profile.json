@@ -1,0 +1,128 @@
+{
+  "contract": "ocd-darby-reconstruction-profile-v1",
+  "work_id": "darby",
+  "work_binding_role": "existing catalog route key only; not a new or resolved bibliographic identity",
+  "source_member": {
+    "path": "raw/bible_databases/formats/json/Darby.json",
+    "bytes": 8515465,
+    "sha256": "6e5c9816b945fa5adef7c1ba419f4ddbca5fff3f77263284697e928a0841f806"
+  },
+  "source_selector": {
+    "authority": "darby-source",
+    "json_pointer": "",
+    "selected_root_fields": ["/translation", "/books"],
+    "selection": "the complete single retained JSON document"
+  },
+  "scope": "Complete ordered envelope of this exact retained JSON member only; not a claim about a complete print edition, resolved edition identity, textual lineage, rights, or publication eligibility.",
+  "translation_field": {
+    "json_pointer": "/translation",
+    "value": "Darby: Darby Bible (1889)",
+    "field_state": "present_nonempty_string",
+    "interpretation": "Preserve as a source-supplied label only; the embedded year and wording do not independently establish edition, publication date, translator, or work boundary."
+  },
+  "expected": {
+    "source_members": 1,
+    "books": 66,
+    "chapters": 1189,
+    "verse_carriers": 31102,
+    "nonempty_text_values": 31099,
+    "empty_text_values": 3,
+    "missing_text_fields": 0,
+    "null_text_fields": 0,
+    "unknown_object_keys": 0,
+    "scalar_fields": 63460,
+    "ordered_arrays": 1256,
+    "leading_whitespace_text_values": 2427,
+    "trailing_ascii_space_text_values": 31099
+  },
+  "object_key_orders": [
+    {"shape": "root", "keys": ["translation", "books"], "occurrences": 1},
+    {"shape": "book", "keys": ["name", "chapters"], "occurrences": 66},
+    {"shape": "chapter", "keys": ["chapter", "verses"], "occurrences": 1189},
+    {"shape": "verse", "keys": ["verse", "text"], "occurrences": 31102}
+  ],
+  "field_states": {
+    "missing": 0,
+    "null": 0,
+    "empty_string": 3,
+    "zero_integer": 0,
+    "false_boolean": 0,
+    "empty_array": 0,
+    "nonempty_string": 31166,
+    "positive_integer": 32291
+  },
+  "empty_text_carriers": [
+    {
+      "reference": "Matthew 23:14",
+      "book_position": 40,
+      "chapter": 23,
+      "verse": 14,
+      "json_pointer": "/books/39/chapters/22/verses/13",
+      "carrier_state": "present",
+      "text_field_state": "present",
+      "text_value_state": "empty_string",
+      "text_value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "reference": "Acts 8:37",
+      "book_position": 44,
+      "chapter": 8,
+      "verse": 37,
+      "json_pointer": "/books/43/chapters/7/verses/36",
+      "carrier_state": "present",
+      "text_field_state": "present",
+      "text_value_state": "empty_string",
+      "text_value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "reference": "Acts 15:34",
+      "book_position": 44,
+      "chapter": 15,
+      "verse": 34,
+      "json_pointer": "/books/43/chapters/14/verses/33",
+      "carrier_state": "present",
+      "text_field_state": "present",
+      "text_value_state": "empty_string",
+      "text_value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_text_example": {
+    "reference": "Genesis 1:1",
+    "exact_value": "In the beginningGod created the heavens and the earth. ",
+    "handling": "Preserve exactly, including the joined wording and trailing U+0020; do not repair, trim, normalize, or borrow from downstream data."
+  },
+  "text_preservation": {
+    "encoding": "strict UTF-8 JSON",
+    "text_values": "Preserve each decoded Unicode scalar sequence exactly; do not trim, collapse whitespace, parse markup, repair wording, or normalize Unicode.",
+    "empty_text": "The three empty strings are present text fields on present verse objects. Keep their verse carriers in order with an empty value; do not infer or supply missing wording.",
+    "numbers": "Preserve the source integer labels and their array positions; reject booleans, non-integers, nonpositive values, and sequence drift."
+  },
+  "downstream_segmentation_diagnostic_only": {
+    "path": "data/bible-text/darby",
+    "observed_as_of_utc_date": "2026-09-18",
+    "observed_per_book_json_file_count": 66,
+    "observed_total_bytes": 8107066,
+    "observed_verse_rows": 31099,
+    "observed_files_claiming_completeness_full": 66,
+    "role": "diagnostic observation only; not a retained member, source selector, expected inventory, or reconstruction authority",
+    "known_delta": "The projection has three fewer rows than the retained source's present verse carriers because it omits the three explicit empty text values; its completeness labels do not override the retained source.",
+    "route_use": "The producer and oracle must not read, select, order, fill, or validate source content from this directory."
+  },
+  "identity_and_rights": {
+    "work_boundary": "unresolved",
+    "textual_form_and_translation_revision": "unresolved",
+    "edition_and_lineage": "unresolved; the retained translation label is not independent edition evidence",
+    "translator_attribution": "unverified and not adopted by this route",
+    "rights_and_attribution": "not assessed; no rights claim is made",
+    "human_acceptance": "not performed",
+    "release_or_publication_authorization": "not established by this route"
+  },
+  "tei_identity": {
+    "root_xml_id": "darby",
+    "generic_title": "Retained Bible translation text",
+    "book_id_pattern": "darby-book-{position:03d}",
+    "chapter_id_pattern": "darby-book-{position:03d}-chapter-{chapter:03d}",
+    "verse_id_pattern": "darby-book-{position:03d}-chapter-{chapter:03d}-verse-{verse:03d}"
+  },
+  "excluded": []
+}

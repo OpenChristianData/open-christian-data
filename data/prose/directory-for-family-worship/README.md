@@ -1,0 +1,9 @@
+# The Directory for Family Worship — source credit and U.S. text scope
+
+This offline record transcribes the 1647 General Assembly of the Church of Scotland's approving act and *Directions for Family Worship*, sections I–XIV, from [The Westminster Standard's electronic page](https://thewestminsterstandard.org/directory-for-family-worship/). Credit for the retained web transcription: The Westminster Standard. The row preserves its historical wording, spelling, punctuation, headings, and “A. Ker.” ending as presented by that source. No exact printed edition has been identified or collated.
+
+The [Assembly's historical acts](https://www.gutenberg.org/files/28957/28957-h/28957-h.html) and an [independent church-hosted transcription](https://www.stauntonopc.org/wp-content/uploads/2016/05/directory_for_family_worship.pdf) corroborate the 1647 act and the fourteen-section directions. The historical text is public domain in the United States under the [Copyright Office's term guidance](https://www.copyright.gov/circs/circ15a.pdf). This license label applies to that identified historical wording and apparatus in private U.S.-qualified preparation; it does not claim a license for independently creative modern contributions, if any are later identified.
+
+The selected record contains the approving act, directions, fourteen numbered sections, and their generic heading, paragraph, and container roles. The website navigation, site styling, scripts, copyright footers, site shell outside the selected carrier, and empty text carrier are excluded. Its footer claims are preserved with the source but are not treated as rights in the seventeenth-century wording. This is a source-specific transcription credit, not a claim that the website or its presentation is public domain.
+
+Technical verification and private offline availability do not authorize public deployment or establish rights outside this bounded U.S. historical-text scope.

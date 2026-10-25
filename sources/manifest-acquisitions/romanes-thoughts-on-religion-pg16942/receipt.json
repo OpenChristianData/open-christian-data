@@ -1,0 +1,68 @@
+{
+  "contract": "ocd-retained-source-acquisition-v1",
+  "work_id": "romanes-thoughts-on-religion",
+  "source_id": "romanes-thoughts-on-religion-pg16942-html",
+  "status": "retained-source-only",
+  "retrieved_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "title": "Thoughts on Religion",
+  "creator": "George John Romanes; edited by Charles Gore",
+  "edition": "Twelfth impression, London and Bombay: Longmans, Green, 1904",
+  "source_url": "https://www.gutenberg.org/ebooks/16942",
+  "download_url": "https://www.gutenberg.org/cache/epub/16942/pg16942-h.zip",
+  "rights_and_copying_conditions": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally.",
+  "retained_scope_note": "Complete as Gore’s posthumous editorial volume; not an author-finalized monograph or complete collected works.",
+  "original_archive": {
+    "path": "raw/gutenberg/16942/pg16942-h.zip",
+    "bytes": 181390,
+    "sha256": "43db5349f2f978189f029c5171b78f3ff3e18b3d348a88d69e3f60d26bcab11e",
+    "format": "ZIP"
+  },
+  "archive_inventory": {
+    "member_count": 2,
+    "total_uncompressed_bytes": 400165,
+    "canonical_inventory_sha256": "bacd29ca75f4702ca6d073d81f71426db08485795465e518e5f085ae062c6a2f",
+    "members": [
+      {
+        "name": "pg16942-images.html",
+        "bytes": 329245,
+        "sha256": "213b8b10ac400845ee7c9b86082b0ce090abcd8e0ae454264a732cbec424d9eb",
+        "kind": "file"
+      },
+      {
+        "name": "16942-cover.png",
+        "bytes": 70920,
+        "sha256": "5672733ab0590838ada49789dc092599c2c1c19bc4a30c913d904e121412b71a",
+        "kind": "file"
+      }
+    ]
+  },
+  "source_page_accessed_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "identity_basis": "Archived clean-ready research bundle plus the primary source page/repository metadata and the retained source title/header; see source-local README for edition-specific notes.",
+  "source_manifest_path": "sources/manifest-acquisitions/romanes-thoughts-on-religion-pg16942/source-manifest.json",
+  "acquisition_route": "Original ZIP retained byte-for-byte at the configured durable raw store; all ZIP members inventoried and hashed without modifying or flattening the package.",
+  "rights_evidence": {
+    "rights_statement_url": "https://www.gutenberg.org/ebooks/16942",
+    "copying_terms_url": "https://www.gutenberg.org/license",
+    "summary": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally."
+  },
+  "source_local_readme_path": "sources/manifest-acquisitions/romanes-thoughts-on-religion-pg16942/README.source.md",
+  "source_local_readme_sha256": "274544a2a145ad8d8205800c888b9715b7fa5dac449a88a76fbbfda7b77b38f8",
+  "identity_and_digital_correctness_evidence": [
+    {
+      "authority": "archived edition and acquisition research; CLEAN-READY row 13",
+      "path": "plans/_archive/2026-09-05-clean-ready-acquisition-to-tei/originals/research-evidence/open-christian-data-christian-apologetics-evidences-research.md",
+      "finding": "Complete as Charles Gore’s posthumous editorial volume; proofread text preserves that editorial frame."
+    },
+    {
+      "authority": "Project Gutenberg official ebook record",
+      "url": "https://www.gutenberg.org/ebooks/16942",
+      "finding": "record confirms ebook ID, item title, creator/editor/translator roles and U.S. rights status"
+    },
+    {
+      "authority": "retained original HTML archive",
+      "path": "raw/gutenberg/16942/pg16942-h.zip",
+      "finding": "complete downloaded HTML ZIP preserved; main HTML member contains source start/end markers and license notice; all members have independent length and SHA-256 inventory"
+    }
+  ],
+  "acquisition_method": "HTTPS retrieval of the exact upstream ZIP URL; package retained unchanged and inventoried locally."
+}

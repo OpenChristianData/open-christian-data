@@ -1,0 +1,11 @@
+# History of the Christian Church, volume 2: selected text, rights, and source credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/hcc2.html).
+
+The selected volume's historical author is Philip Schaff. The source describes Logos 1997 and Electronic Bible Society's 1998 comparison/correction against the 1910 Scribner edition; this is a source-history claim, not independent print collation. Historical title matter, any prefaces or appendices present, chapters, original notes and factual indexes stay in their accepted source order. The own header expressly declares Public Domain. CCEL's modern Tim Perrine description remains outside the selected body; whp is credited as transcriber and Wendy Huang for markup. The short electronic-source history is factual attribution and remains credited. No separately authored modern foreword, chapter or essay was identified in the selected body; this decision covers the identified historical text and factual credits, not a blanket declaration about every later emendation or the CCEL digital edition. No CSS declarations or image pixels are delivered.
+
+Selected row license: `Public domain (United States): historical Philip Schaff volume 2 text and historical apparatus; factual electronic-source credits retained; CCEL files and formatting excluded`.
+
+The release distributes the selected underlying text, not CCEL's electronic file, stylesheet, cover art, staff description, or website. OCD's retained April 1, 2026 permission from CCEL distinguishes extraction of underlying public-domain text from rights reserved in CCEL files and formatting. Keep the credit **sourced via CCEL.org** with these records. CCEL's restrictions on selling its files or derivatives of its formatting remain applicable to those materials; this release does not grant rights in them. See [CCEL's policy](https://www.ccel.org/about/copyright.html).
+
+This October 13, 2026 disposition replaces the earlier private-preparation qualification for this exact selected text scope. Public-domain status here is qualified to the United States, not a CC0 dedication or a claim of worldwide clearance. The historical text, translation, electronic source, and excluded modern material remain distinct. The source witness is not claimed to be collated to an exact print exemplar.

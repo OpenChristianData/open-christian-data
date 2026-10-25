@@ -1,5 +1,7 @@
 # Format state map — end-to-end fidelity orientation
 
+> **Historical migration checkpoints.** Status below belongs to the named runs. Use the [current text workflow](TEXT_CONTRIBUTIONS.md) and current work records before starting or claiming acceptance.
+
 **Status:** Living orientation doc (seeded 2026-06-18; rows filled as each format is walked)
 **Purpose:** Before correcting the corpus, know where *every* source format actually stands. One row per format family → its parsers → an end-to-end walk (raw → parser → output) → a fidelity status. This is the orientation that makes correction comprehensive and prioritized instead of bug-by-bug.
 
@@ -20,10 +22,10 @@ not yet walked.
 | # | Format family | Source format | Parsers (count) | Walked sample | Status |
 |---|---|---|---|---|---|
 | 1 | **CCEL ThML** | ThML XML (~209 configs) | 17 `ccel_*` production parsers | City of God; Athanasius; Owen; two Gregory of Nyssa works | **Recovered in TEI IR for five proof renderings** — full-family migration remains |
-| 2 | **Standard Ebooks** | XHTML (9) | `standard_ebooks` | City of God, *The Pilgrim's Progress*, *The Imitation of Christ* | **Broken in JSON; three bounded renderings recovered in TEI IR** — batch 05 extends the raw→TEI path; six remaining works are deferred |
+| 2 | **Standard Ebooks** | XHTML (9) | `standard_ebooks` | City of God, *The Pilgrim's Progress*, *The Imitation of Christ* | **Broken in JSON; Bunyan and Kempis have direct nonaccepted reconstruction successors** — their manifests plus `build/tools/reconstruct_candidate.py` are current candidate routes; committed IR remains compatibility evidence; six remaining works are deferred |
 | 3 | **Pre-structured JSON** | JSON | `creeds_json_catechism`, `creeds_json_confession`, `helloao_commentary`, `bible_text_translations` | `creeds_json_*` → Heidelberg | **Fixed** (batch 03, `f9e40d51`) — was: wrong `original_language`, dropped metadata |
 | 4 | **Headword reference** | ThML/OCR/JSON | `catholic_encyclopedia`, `bible_dictionaries`, `ia_hastings_dictionary`, `naves_topical` | `catholic_encyclopedia` → vol01; Hastings IA | **Fixed for Catholic Encyclopedia + Hastings See apparatus** — bible_dictionaries/naves still need their own walks/fixes |
-| 5 | **Gutenberg plain text** | plain text (~16) | `gutenberg_*` (anglican, catechisms, commentary, evangelical, maclaren, puritan, sermons, systematics, theology) | `gutenberg_theology` + `gutenberg_systematics` + `gutenberg_commentary`; Calvin Gutenberg volumes | **Fixed for JSON projection; Calvin recovered in bounded TEI IR** — inline emphasis markers and bare numeric `[N]` anchors remain recoverable; TEI preserves Calvin's true `<hi>`, note anchors/bodies, front matter, and work boundary |
+| 5 | **Gutenberg plain text** | plain text (~16) | `gutenberg_*` (anglican, catechisms, commentary, evangelical, maclaren, puritan, sermons, systematics, theology) | `gutenberg_theology` + `gutenberg_systematics` + `gutenberg_commentary`; Calvin Gutenberg volumes | **Fixed for JSON projection; Calvin has a direct nonaccepted reconstruction successor** — the manifest plus `build/tools/reconstruct_candidate.py` is the current candidate route; committed IR remains compatibility evidence |
 | 6 | **Internet Archive OCR** | DjVuTXT / OCR txt | `ia_fisher_marrow`, `ia_hastings_dictionary`, `ia_schaff_herzog`, plus general text parsers with IA routes | `ia_fisher_marrow`; dataset-side IA evidence | **Mixed** — Fisher has a bounded raw-to-TEI proof; general IA OCR remains work-by-work. NSH OCR-lane parsers and sidecar/rendering work live in EzraOCR |
 | 7 | **SWORD modules** | zCom / rawLD | `sword_commentary`, `sword_devotional` | Barnes/Calvin/Wesley + Daily Light | **Structure-faithful; SWORD projection limits remain** — Daily Light `scripRef`s now survive; Calvin still loses note/language/emphasis/table boundaries, so upstream OSIS/ThML is needed for any IR |
 | 8 | **Versified Bible** | JSON / DB | `bsb_bible_text`, `bible_text_translations` | BSB + KJV + 7 PD translations | **Faithful** — apparatus upstream-absent (not parser-dropped); BSB, KJV, ASV, YLT, Darby, Webster, KJVA, JPS, and DRC are built from scrollmapper-shaped JSON |
@@ -32,11 +34,13 @@ not yet walked.
 
 **Key orientation finding so far:** fidelity varies by *parser*, not just by format. Within one work (City of God) the CCEL edition is faithful and the Standard Ebooks edition is broken. The walk must be per-parser, and the same work can exist at two fidelity levels (a curation question, below).
 
-**Projection-ledger caveat (2026-07-16):** a ledger PASS is necessary but not sufficient. The
-BCP-1549 receipt passes while 287 of 332 `<label>` texts are absent from projected output because
-`check_ledger` does not require text evidence for every projected node. Ledger PASS statements below
-must be read together with each batch's independent census, carrier probes, visual smokes, and
-semantic spot-checks. No TEI projection was cut over or published in this campaign.
+**Projection-ledger history (2026-07-16; superseded by B03a-c and loss-receipt v2):** the former
+v1 checker allowed a BCP-1549 receipt to pass while 287 of 332 `<label>` texts were absent from the
+projected output because it did not require text evidence for every projected node. The current v2
+checker accounts for the supported text-bearing TEI profile. A projection-ledger PASS is still
+necessary but not sufficient evidence of raw-to-IR fidelity, so statements below must be read with
+each batch's independent census, carrier probes, visual smokes, and semantic spot-checks. No TEI
+projection was cut over or published in this campaign.
 
 ## Walked rows (detail)
 
@@ -77,19 +81,21 @@ semantic spot-checks. No TEI projection was cut over or published in this campai
   by the raw→TEI path; the published JSON regenerates as a TEI projection when the dataset flips to
   projected output.
 
-### 2b — Standard Ebooks · Batch 05 accepted renderings — **Recovered in TEI IR; not family-wide migration** (2026-07-15)
+### 2b — Standard Ebooks · Bunyan and Kempis — **Direct nonaccepted reconstruction successors; committed IR frozen** (updated 2026-08-25)
 
-- *The Pilgrim's Progress* (`ir/bunyan/pilgrims-progress.standard-ebooks.tei.xml`) preserves 10
-  content sections, 1,010 endnote links/bodies, semantic and typographic emphasis, lists, 56 body
-  verse/song/poem blocks, and front/back sections. The 39 verse/song/poem blocks inside endnotes
-  are also retained in the resolved note bodies.
-- *The Imitation of Christ* (`ir/kempis/imitation-of-christ.standard-ebooks.tei.xml`) preserves
-  130 content sections, 183 endnote links/bodies, bare `bridgehead` arguments, `hgroup` headings,
-  lists, emphasis, verse blocks, and front/back sections.
-- The converter now maps the observed long-tail vocabulary: additional section types, bare
-  bridgeheads, `hgroup`, `ol`/`ul`/`li`, `strong`, `q`, and `z3998:song`/`z3998:poem`. Practical
-  Mysticism, Heretics, Orthodoxy, The Everlasting Man, George MacDonald's *Unspoken Sermons*, and
-  *Paradise Lost* remain deferred for lower yield or distinct sermon/poetry handling.
+- *The Pilgrim's Progress* now reconstructs from its exact 26-member retained checkout through
+  `sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.source-manifest.json`.
+  It accounts for 31,735 observations and preserves 11 source sections, 1,010 endnotes, 95 verse
+  groups, lists, inline/language carriers, navigation, metadata, provenance, and rights limits.
+- *The Imitation of Christ* now reconstructs from its exact 142-member retained checkout through
+  `sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json`.
+  It accounts for 10,009 observations, including 3,358 evidence-only atoms, and preserves exact
+  hierarchy, carrier attachment, William Benham's roles, navigation, metadata, and rights limits.
+- `build/tools/reconstruct_candidate.py` writes each deterministic six-member package only to an
+  explicit destination. Both successors are XSD-valid and completely source-accounted, but remain
+  nonaccepted and require human review. The committed TEI/census/HF/viewer artifacts and shared
+  `build/tei/se_to_tei.py` remain frozen compatibility evidence; Paradise Lost still uses the
+  shared converter. Other Standard Ebooks works remain work-by-work decisions.
 
 ### 3 — Pre-structured JSON · `creeds_json_*` · Heidelberg / confessions — **Partial loss**
 - `original_language` hard-coded `"en"` though the source declares it (non-English for ~23 of ~41); `OriginStory` + 4 other metadata fields never read.
@@ -122,20 +128,19 @@ semantic spot-checks. No TEI projection was cut over or published in this campai
 - TEI candidacy: low-yield for clean works, higher for marked-up ones (IR gains `<hi rend="italic">`, explicit dangling-anchor `<ref>`s, `<front>`); weaker candidate than CCEL/SE.
 - Sibling status: all nine `gutenberg_*` parser families now route text projection through the shared decoder; systematics/commentary were the high-risk walk targets for this batch.
 
-### 5b — Gutenberg plain text · Calvin *Institutes* — **Bounded TEI recovery for marked-up volumes** (2026-07-15)
+### 5b — Gutenberg plain text · Calvin *Institutes* — **Direct nonaccepted reconstruction successor; committed IR frozen** (updated 2026-08-25)
 
-- Raw: `raw/gutenberg/pg45001.txt` and `raw/gutenberg/pg64392.txt`. The selected scope begins after
-  each first all-caps `BOOK` heading, preserves four logical books and 80 chapters, and excludes
-  Project Gutenberg wrapper text plus the Vol. II index after `END OF THE INSTITUTES.`.
-- The raw census records 539 direct underscore-emphasis pairs (the TEI census emits 573 emphasis
-  carriers), 3,505 numeric note anchors—2,016 parenthetical refs in Vol. I and 1,489 bracketed refs
-  in Vol. II—3,506 note bodies, and two front-matter blocks. The TEI artifact is
-  `ir/calvin/calvins-institutes.gutenberg.tei.xml`; the raw census is
-  `ir/census/calvins-institutes.gutenberg.census.json`.
-- `build/tei/gutenberg_to_tei.py` maps `_italic_` to `<hi rend="italic">`, Vol. I `(N)` and Vol. II
-  `[N]` markers to explicit note refs, and both volumes' `FOOTNOTES` blocks to per-volume `<back>`
-  note containers. `project_hf.py` produces the clean-text projection; its ledger check passes,
-  subject to the global ledger caveat above.
+- Raw authority is the exact `pg45001.txt` and `pg64392.txt` pair bound by
+  `sources/calvins-institutes/calvins-institutes.source-manifest.json`: 4,060,187 bytes and 69,897
+  CRLF records. The successor accounts for 69,139 represented and 758 evidence-only records.
+- It preserves four logical books across five physical book divisions, 80 chapters, 65
+  introductions/arguments, both indexes, the physical volume boundary, 578 emphasis carriers,
+  and both note systems including unreferenced note 1473. It does not inherit the old converter's
+  excluded-index floor.
+- `build/tools/reconstruct_candidate.py` writes the deterministic, XSD-valid six-member package
+  from the manifest to an explicit destination. The candidate remains nonaccepted and requires
+  human review. The committed TEI/census/HF/viewer artifacts and `build/tei/gutenberg_to_tei.py`
+  remain frozen compatibility evidence pending durable review binding and safe legacy retirement.
 - Confessions (`pg3296`) is an apparatus-free negative for this TEI wave; Luther's Large Catechism
   (`pg1722`) is too low-yield. Other Gutenberg witnesses remain work-by-work candidates, not a
   bulk migration target.
@@ -220,23 +225,26 @@ semantic spot-checks. No TEI projection was cut over or published in this campai
 - Duplicate-edition: no duplicate MTP edition found in current data. Other Spurgeon resources (`spurgeon-all-of-grace`, `spurgeon-lectures-to-my-students`, `spurgeons-morning-evening`) are different works.
 - Correction landed: batch 01 preserves direct ordered/unordered list-item text in source order, regenerates the chunked output, and records the unavoidable list-boundary projection loss in provenance. Batch 08 adds the bounded TEI proof artifacts under `ir/spurgeon/` and `ir/census/`; see `docs/BATCH08_EVIDENCE.md`.
 
-### 6 — Internet Archive OCR · `ia_fisher_marrow` · Marrow of Modern Divinity — **Raw OCR now carried in TEI; residual OCR limits remain** (updated 2026-07-16)
-- Raw: `raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt` (Google Books DjVuTXT, ABBYY). Parser: `build/parsers/ia_fisher_marrow.py`. Output: `data/structured-text/fisher-marrow-of-modern-divinity.json`.
+### 6 — Internet Archive OCR · `ia_fisher_marrow` · Marrow of Modern Divinity — **Generator checks passed; candidate remained nonaccepted at this checkpoint; legacy outputs remain frozen** (updated 2026-08-25)
+- Retained authority: `raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt` (Google Books DjVuTXT, ABBYY), SHA-256 `14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3`. The separate canonical dataset route remains `build/parsers/ia_fisher_marrow.py` -> `data/structured-text/fisher-marrow-of-modern-divinity.json`; it is not input to the current TEI candidate route.
 - **Scope:** `ia_abbyy`, `ia_schaff_herzog*`, `local_schaff_tesseract` feed the NSH OCR rebuild (separate subproject), which supersedes the raw-DjVuTXT path for Schaff-Herzog; NSH text enters the TEI IR through its own facsimile-bearing converter. This row covers the non-NSH uses only.
-- Structure: the legacy JSON parser projects 4 chapters and 34 sections, but a fresh raw census finds 47 `Sect`-prefixed lines: 41 structural boundaries and 6 synopsis lines. The bounded raw-to-TEI converter carries 2 parts, 4 chapters, 41 section divs, and all 8 standalone Part II commandment headings (`I`, `IF`, `HI`, `IV-`, `VI`, `VHI`, `IX`, `X`) exactly as observed. Commands III and V are not fabricated because no standalone recoverable headings exist.
-- Text grain: the TEI converter preserves the raw line text and OCR errors; it does not apply the legacy parser's de-hyphenation or speaker normalization. The raw scope has 0 Greek/Hebrew code points, no table carrier, no form-feed page breaks, 2,039 asterisks, and 44 section marks. Running headers and page-number lines are excluded as OCR wrapper noise, while inline markers remain inline because note boundaries are not recoverable.
-- Dialogue grain: the raw classifier promotes 455 high-confidence OCR speaker starts to 455 `<sp>`/`<speaker>` pairs. It leaves 123 ambiguous speaker-like starts as prose. Exact OCR labels and punctuation remain visible; no damaged label is silently repaired.
-- TEI artifacts: `build/tei/ia_fisher_marrow_to_tei.py`, `ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json`, and `ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml`. The TEI validates against the vendored RelaxNG schema. Projection: `ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl` plus its loss receipt; the independent ledger check passes.
-- Right shape: TEI is now the fidelity-preserving intermediate representation for this bounded raw witness; the existing dict-tree JSON remains a legacy downstream projection until publication cutover.
-- Corrections landed: the earlier cheap parser fixes remain in the JSON route, while this batch adds raw census, uncorrected TEI ingestion, explicit OCR-quality evidence, speaker carriers, and projection gating. Further OCR correction belongs to a separate OCR/IR decision, not this converter.
+- Current candidate generation: run `build/tools/reconstruct_candidate.py` with `sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json` and a maintainer-chosen empty destination outside the repository. The manifest binds the retained witness, `build/tei/fisher_marrow_reconstruction.py`, and the independent `build/tei/fisher_marrow_oracle.py`. The deterministic six-member candidate is XSD-valid and completely source-accounted, but remains explicitly `nonaccepted`, requires human review, and is not authorized for publication.
+- Structure: the accepted successor accounts for all 22,946 retained lines, restores the omitted 297-line Recommendations, separates Part II front matter, places the Appendix in back matter, and carries 2 parts, 4 chapters, 41 structural sections, 6 synopsis lines, and all 8 standalone Part II commandment headings (`I`, `IF`, `HI`, `IV-`, `VI`, `VHI`, `IX`, `X`) exactly as observed. Commands III and V are not fabricated because no standalone recoverable headings exist.
+- Text grain: the successor preserves raw text and OCR uncertainty rather than applying the legacy parser's de-hyphenation or speaker normalization. It independently binds all 170 page-marker candidates and the 16 substantive lines that resemble running headers. The raw scope has 0 Greek/Hebrew code points, no table carrier, no form-feed page breaks, 2,039 asterisks, and 44 section marks; note boundaries are not invented.
+- **Publication boundary (2026-09-13):** this raw-OCR-preserving proof is internal evidence only. The retained witness and its raw-OCR-derived outputs are not publishable until EzraOCR has corrected the text against the exact page images and returned identity/evidence-bound text through OCD's accepted-master and release checks. OCR-GOOD/RAW labels do not waive this gate.
+- Dialogue grain: the successor binds 455 source-derived speakers, including 24 section-boundary cases, and rejects nine paragraph-continuation lookalikes. Exact OCR labels, punctuation, section attachment, and speech bodies remain visible; count-preserving speaker or boundary swaps are rejected.
+- Identity and rights: the retained title page governs the candidate identity as London, Thomas Tegg and Son, 1837. Stale Edinburgh / J. and D. Collie / 1828 values in the canonical dataset route do not override that witness. Google attribution is surfaced, while textual acceptance and rights clearance remain human decisions.
+- Frozen compatibility evidence: `build/tei/ia_fisher_marrow_to_tei.py`, `ir/census/fisher-marrow-of-modern-divinity.ia-ocr.census.json`, `ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.tei.xml`, `ir/fisher/fisher-marrow-of-modern-divinity.ia-ocr.viewer-dialogue.png`, `ir/fisher/hf/fisher-marrow-of-modern-divinity.ia-ocr.jsonl`, and its loss receipt remain unchanged because current CVW, speaker, ledger, and canonical-evidence consumers still bind them. They are not outputs of the accepted successor and must not be treated as migrated.
+- Right shape: the manifest-plus-runner route now produces the fidelity-preserving TEI candidate for this retained witness. Durable review binding and any later TEI-to-Hugging-Face or canonical cutover are separate work; until then, the existing dict-tree JSON and committed TEI/census/HF/viewer artifacts remain compatibility evidence.
+- Corrections landed: the earlier parser fixes remain in the JSON route. The accepted successor adds complete line accounting, source-bound structure and dialogue, exact 1837 title-page evidence, explicit OCR uncertainty, deterministic XSD validation, and an independent oracle without accepting or publishing the candidate.
 - Reclassification: `ia_hastings_dictionary` belongs to family #4 by output shape (headword list, same hard-coded-`[]` apparatus class as catholic_encyclopedia). Its See/See-also apparatus fix landed in batch 02; Bible-reference extraction is still unimplemented.
-- **TEI position: ingest uncorrected OCR into the IR now for this family** — NSH-style multi-engine correction is justified only at encyclopedia scale; a single-scan 1828 dialogue gets its two cheap parser fixes, then IR ingestion with residual OCR error recorded on the census as an inherent-limit property. Gate the projection, not the IR ingestion.
+- **TEI position: reconstruct the retained OCR into a nonaccepted candidate, then review it** — NSH-style multi-engine correction is justified only at encyclopedia scale. The single 1837 witness is preserved without silent OCR correction, validated and completely accounted for outside canonical IR, and held for human review. Do not cut over the frozen projection or publish from candidate validation alone.
 
 ### 6b — Internet Archive OCR · `ia_abbyy` / `local_schaff_tesseract` / `ia_schaff_herzog` · NSH OCR family — **Superseded legacy path; OCR sidecar/rendering layer captured** (2026-07-06)
 - Raw (2026-07-09: all Schaff-Herzog raw material lives in the EzraOCR repo — SH is in use only by the OCR side at present): `../EzraOCR/raw/internet-archive/schaff-herzog/` (`*_djvu.txt` + `_abbyy.gz`), `-haucgoog/`, `-dli/`, and the page store + manifests (`schaff-herzog-pages/`). Nothing SH remains under local `raw/`. Parsers here: `build/parsers/ia_schaff_herzog.py` (the OCR-lane parsers `ia_abbyy.py` / `local_schaff_tesseract.py` live in EzraOCR `ezra/parsers/`). Outputs: legacy combined `data/reference/schaff-herzog-encyclopedia.json`; OCR renderings under `data/reference/schaff/encyclopedia/1908-1914/*/vol_NN.json`; page sidecars under `../EzraOCR/reports/s1-sidecars/`.
 - Counts verified by read-only `py -3 -` probe over raw, sidecar, and output trees: 9 NSH-main DjVuTXT files, 13 NSH-main ABBYY GZ files, 37 haucgoog ABBYY GZ files, 7 DLI ABBYY GZ files; 30,145 `ia-abbyy` sidecars and 535 `oss-tesseract` sidecars; renderings currently include `ia-abbyy-v1` for 13 volumes, `ia-abbyy-haucgoog-v1` for 12, `ia-abbyy-dli-v1` for 7, and `oss-tesseract-v1` for 1.
 - Structure grain: the legacy `ia_schaff_herzog.py` path emits 8,351 combined reference entries and is **not** the future Schaff-Herzog publication path. The NSH pipeline supersedes it: page sidecars preserve OCR text, word geometry, confidence, page identity, and engine provenance; volume renderings carry page text and page-level confidence for downstream WCT/reconciliation.
-- Apparatus grain: plain DjVuTXT has no dependable page geometry or apparatus carriers; ABBYY/Tesseract sidecars do carry word boxes and confidence, but not editorial footnote/bibliography semantics. The family prior is split: English prose OCR is often usable/OCR-GOOD after sampling, while Greek/Hebrew apparatus in 19th-century IA scans remains OCR-RAW and should not be treated as faithful text without the richer NSH-style OCR/reconciliation lane.
+- Apparatus grain: plain DjVuTXT has no dependable page geometry or apparatus carriers; ABBYY/Tesseract sidecars do carry word boxes and confidence, but not editorial footnote/bibliography semantics. The family prior is split: English prose OCR may be readable/OCR-GOOD after sampling, while Greek/Hebrew apparatus in 19th-century IA scans remains OCR-RAW. These are triage observations only; neither label proves digital correction or permits public release. All uncorrected OCR stays internal until EzraOCR correction against the exact witness and OCD accepted-text/release checks.
 - Right shape: sidecar/rendering JSON is the right shape for the OCR layer, not the final public reference-entry shape. The legacy combined `data/reference/schaff-herzog-encyclopedia.json` is schema-valid but frozen as a superseded route.
 - Duplicate-edition verdict: NSH IA OCR, CCEL ThML, and Logos NSHERK all represent the same 1908-1914 New Schaff-Herzog edition. They are alternate source/witness lanes, not publish-both editions.
 - Correction implied: no parser correction inside this walk. Future IA OCR acquisitions with dense Greek/Hebrew apparatus need an OCR-pipeline batch, not a straight DjVuTXT parser pass.

@@ -1,0 +1,35 @@
+{
+  "contract": "ocd-npnf2-reconstruction-profile-v1",
+  "profile_id": "gregory-nyssa-npnf205-two-work-v1",
+  "version": 1,
+  "source_member": {
+    "key": "npnf205",
+    "path": "raw/ccel/npnf2/npnf205.xml",
+    "bytes": 4225695,
+    "sha256": "43e87ed232457fd2d5862f72dd2d5d84fe1e8b69f4c3eec839bad04579327bf3"
+  },
+  "assigned_roots": [
+    ["npnf205", "viii.iv", "gregory-of-nyssa-on-the-holy-trinity"],
+    ["npnf205", "viii.v", "gregory-of-nyssa-not-three-gods"]
+  ],
+  "assigned_census": {
+    "elements": 217,
+    "attributes": 713,
+    "text_nodes": 154,
+    "tail_nodes": 160,
+    "characters": 53362,
+    "non_ascii_characters": 794,
+    "notes": 45,
+    "page_breaks": 11,
+    "scripture_refs": 23
+  },
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "exact-assigned-root-order-and-complete-subtrees",
+    "exact-elements-attributes-text-tails-comments-and-processing-instructions",
+    "complete-title-page-preface-prolegomena-sibling-and-index-accounting",
+    "exact-retained-metadata-rights-and-source-level-credit-evidence",
+    "two-works-nonaccepted-and-publication-not-ready"
+  ],
+  "scope_boundary": "Historical LIB-047 fifteen-work family proof may support shared route conventions; it supplies no new review or reconstruction credit for the thirteen unassigned roots in this two-work candidate."
+}

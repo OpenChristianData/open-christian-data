@@ -1,0 +1,101 @@
+{
+  "acquisition_id": "chrysostom-divine-and-sacred-liturgy-wikisource-complete-20261007",
+  "authorities": [
+    {
+      "bytes": 204300,
+      "name": "official-source-member",
+      "path": "raw/wikisource/chrysostom-divine-liturgy-1866/complete-export-20261007.xml",
+      "role": "source-revision-evidence",
+      "sha256": "0f42f0353fe967ac79f18c65425143fe3ca001b25489f368b0c7c33f97caa215"
+    },
+    {
+      "bytes": 252731,
+      "name": "rendered-text",
+      "path": "raw/wikisource/chrysostom-divine-liturgy-1866/complete-render-all-20261007.json",
+      "role": "primary-source",
+      "sha256": "b4c3b181472120236a78566ba341d551864648ccaa013132b93b39d5c7c94494"
+    },
+    {
+      "bytes": 26250,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/wikisource-chrysostom-l594/profile-complete.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "0f2223f5375c219e3e707aee2aba8d9a7441991c02cc7c7b3dee730aafa00379"
+    },
+    {
+      "bytes": 833,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/wikisource-chrysostom-l594/policy-complete.json",
+      "role": "independent-validation-policy",
+      "sha256": "0a7d2db5817851df8bccae59013486f4c2e5aacc21314eb7d7fddd87b4bbb6cf"
+    },
+    {
+      "bytes": 1187,
+      "name": "provenance",
+      "path": "sources/manifest-acquisitions/wikisource-chrysostom-l594/provenance-complete.json",
+      "role": "source-provenance",
+      "sha256": "a9ee6326709496f311639a8fc5f00c8bcf670a11e0fde3cffbf10e7b0fe38951"
+    },
+    {
+      "bytes": 2223,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/wikisource-chrysostom-l594/README.complete.source.md",
+      "role": "source-attribution-and-rights",
+      "sha256": "4751a7f2d182aaff041282894367b321ec0042e80e984705f9f78bb170bb9b69"
+    },
+    {
+      "bytes": 117186,
+      "name": "liturgy-diagram.png",
+      "path": "raw/wikisource/chrysostom-divine-liturgy-1866/liturgy-diagram.png",
+      "role": "source-image",
+      "sha256": "8283f0549bef9323b2b6f08f8655344e6dfe4622ac9de027aa24a349cd11b52e"
+    },
+    {
+      "bytes": 12279,
+      "name": "liturgy-seal.png",
+      "path": "raw/wikisource/chrysostom-divine-liturgy-1866/liturgy-seal.png",
+      "role": "source-image",
+      "sha256": "fc2d492e728b6cabd8cb80ebc58f62d8187c9ccea43642581a605776a6396765"
+    },
+    {
+      "bytes": 1108622,
+      "name": "p5-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-l594-complete-validated-wikisource",
+    "implementation_path": "build/tei/wikisource_l594_complete.py",
+    "implementation_sha256": "f4f192873115bea6c3ea961b4742d6760c0100748c53965cc8b7ba73c2c5488d",
+    "version": "1"
+  },
+  "edition_id": "chrysostom-divine-and-sacred-liturgy-wikisource-electronic",
+  "manifest_row": "L594",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": "Complete validated Wikisource transcription of the anonymous English 1866 Joseph Masters edition: all 118 scan positions, covering printed cover, half-title, title, colophon, Liturgy, Order as performed in the Great Church and in the Holy Mountain of Athos, diagram/key and seal; nine blank scan positions accounted, running heads excluded as navigation. Printed final printer imprint retained separately because noinclude excludes it from normal transclusion. This is the electronic witness, not a newly collated print edition.",
+  "source_id": "wikisource-chrysostom-complete-1866-20261007",
+  "textual_form_id": "chrysostom-divine-and-sacred-liturgy-wikisource-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-l594-complete-source-carrier-oracle",
+    "implementation_path": "build/tei/wikisource_l594_complete_oracle.py",
+    "implementation_sha256": "50e306646e1f175994d6f6df9ed7c1ca19a0edd827905f0250e9cc3672234c94",
+    "import_closure_sha256": "738b54504dea12141a82c3f4c0bd9e60153911834744e488031c78215ac572af",
+    "version": "1"
+  },
+  "work_id": "chrysostom-divine-and-sacred-liturgy"
+}

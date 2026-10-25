@@ -1,0 +1,22 @@
+{
+  "contract":"ocd-ccel-puritan-lib054-validation-policy-v1",
+  "policy_id":"lib054-ten-retained-ccel-xml-v1",
+  "version":1,
+  "candidate_status":"nonaccepted",
+  "publication_state":"not_ready",
+  "required_member_names":["manifest.json","content.tei.xml","source-accountability.json","provenance.json","unresolved.jsonl","README.source.md"],
+  "required_source_members":10,
+  "required_excluded_members":5,
+  "required_retained_family_members":15,
+  "required_work_count":10,
+  "required_feature_count":14065,
+  "required_source_bytes":5244468,
+  "required_qualified_attribute_count":0,
+  "required_comment_count":44,
+  "required_processing_instruction_count":6,
+  "required_processing_instruction_source_count":3,
+  "required_doctype_declaration_count":8,
+  "required_unassociated_manifest_baseline":{"blocked":1},
+  "forbidden_import_prefixes":["build.tei.ccel_puritan_lib054_reconstruction","build.parsers.ccel_puritan_works","build.lib.ccel_thml"],
+  "checks":["exact ten retained source authorities","complete fifteen-member family census","exact embedded source bytes","recursive XML element QName order-sensitive attribute text and tail evidence","exact document-order lexical evidence for 44 comments and 6 processing instructions","exact document-order lexical evidence for 8 DOCTYPE declarations","negative qualified-attribute invariant","strict closed JSON","TEI P5 XSD","CCEL attribution and localized rights gaps","nonaccepted and not publication ready","producer-independent import closure"]
+}

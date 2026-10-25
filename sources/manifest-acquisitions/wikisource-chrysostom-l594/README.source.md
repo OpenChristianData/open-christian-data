@@ -1,0 +1,5 @@
+# Source attribution and rights — L594
+
+This candidate reconstructs the retained Wikisource XML export at https://en.wikisource.org/wiki/Special:Export/Service_of_the_Divine_and_Sacred_Liturgy_of_our_Holy_Father_John_Chrysostom?templates=1. The exact one-member export SHA-256 is `f740057e14992b3a326051fc319b274a7b81dd4c35534b835b3fc2eec07a69d4`. The acquisition receipt records contributor text as dual-licensed CC BY-SA 4.0 and GFDL unless a page-specific license template says otherwise; it does not clear rights in the separate 1866 print edition. Attribution and ShareAlike obligations remain applicable to the retained transcription.
+
+The export has 81 page-revision records but only one `Page:` transcription (PDF page 7), plus the root page, an `Index:` page, and support templates/modules. The Index metadata describes 118 print scan positions. The print PDF, other Page: text, and two linked subpages are not included here. The candidate preserves these boundaries and does not supply missing text. Human acceptance, rights review, and publication authorization are not recorded.

@@ -1,0 +1,371 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/acceptance.schema.json",
+  "title": "OCD accepted TEI master evidence",
+  "description": "One bounded, evidence-backed acceptance handoff for an edition master. Human verification and publication remain separate decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract",
+    "acceptance_id",
+    "identity",
+    "scope",
+    "source",
+    "technical",
+    "review",
+    "representation_revision",
+    "decision",
+    "promotion"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "contract": {"const": "ocd-tei-acceptance-v1"},
+    "acceptance_id": {"$ref": "#/$defs/identifier"},
+    "identity": {"$ref": "#/$defs/identity"},
+    "scope": {"$ref": "#/$defs/scope"},
+    "source": {"$ref": "#/$defs/source"},
+    "technical": {"$ref": "#/$defs/technical"},
+    "review": {"$ref": "#/$defs/review"},
+    "representation_revision": {"$ref": "#/$defs/representation_revision"},
+    "decision": {"$ref": "#/$defs/decision"},
+    "promotion": {"$ref": "#/$defs/promotion"}
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "utc_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_id", "textual_form_id", "edition_id", "acquisition_id"],
+      "properties": {
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "textual_form_id": {"$ref": "#/$defs/identifier"},
+        "edition_id": {"$ref": "#/$defs/identifier"},
+        "acquisition_id": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "file_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "member_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "position"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "position": {"type": "integer", "minimum": 1}
+      }
+    },
+    "included_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "position", "bytes", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "position": {"type": "integer", "minimum": 1},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "scope": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "excluded_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "position", "reason"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "position": {"type": "integer", "minimum": 1},
+        "reason": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "declared", "expected_members", "included_members", "excluded_members"],
+      "properties": {
+        "kind": {"enum": ["work", "edition", "volume", "member", "selection"]},
+        "declared": {"$ref": "#/$defs/non_empty"},
+        "expected_members": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/member_reference"}
+        },
+        "included_members": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/included_member"}
+        },
+        "excluded_members": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/excluded_member"}
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_manifest",
+        "source_path",
+        "source_sha256",
+        "source_bytes",
+        "source_scope",
+        "accounting",
+        "missing_members",
+        "unknown_members"
+      ],
+      "properties": {
+        "source_manifest": {"$ref": "#/$defs/file_binding"},
+        "source_path": {"$ref": "#/$defs/relative_reference"},
+        "source_kind": {"const": "retained-member-set"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "source_bytes": {"type": "integer", "minimum": 0},
+        "source_scope": {"$ref": "#/$defs/non_empty"},
+        "accounting": {"$ref": "#/$defs/file_binding"},
+        "missing_members": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/relative_reference"},
+          "uniqueItems": true
+        },
+        "unknown_members": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/relative_reference"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256", "status", "command", "exit_code"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "status": {"enum": ["pass", "fail", "partial", "unperformed"]},
+        "command": {"$ref": "#/$defs/non_empty"},
+        "exit_code": {"type": "integer"}
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {"$ref": "#/$defs/non_empty"},
+        "path": {"$ref": "#/$defs/file_binding"}
+      }
+    },
+    "technical": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate",
+        "validation",
+        "accounting",
+        "fidelity",
+        "reproducibility",
+        "schema",
+        "closure",
+        "producer",
+        "checker",
+        "shared_assumptions",
+        "independent_corroboration"
+      ],
+      "properties": {
+        "candidate": {"$ref": "#/$defs/file_binding"},
+        "validation": {"$ref": "#/$defs/proof"},
+        "accounting": {"$ref": "#/$defs/proof"},
+        "fidelity": {"$ref": "#/$defs/proof"},
+        "reproducibility": {"$ref": "#/$defs/proof"},
+        "schema": {"$ref": "#/$defs/proof"},
+        "closure": {"$ref": "#/$defs/proof"},
+        "producer": {"$ref": "#/$defs/actor"},
+        "checker": {"$ref": "#/$defs/actor"},
+        "shared_assumptions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"},
+          "uniqueItems": true
+        },
+        "independent_corroboration": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "declared", "reached", "inspected", "unreviewed"],
+      "properties": {
+        "status": {"enum": ["complete", "partial", "unavailable"]},
+        "declared": {"$ref": "#/$defs/non_empty"},
+        "reached": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/non_empty"},
+          "uniqueItems": true
+        },
+        "inspected": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/non_empty"},
+          "uniqueItems": true
+        },
+        "unreviewed": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report", "reviewer", "reviewed_at", "coverage", "source_quality_uncertainty", "discrepancies", "unreviewed_residuals"],
+      "properties": {
+        "report": {"$ref": "#/$defs/file_binding"},
+        "reviewer": {"$ref": "#/$defs/non_empty"},
+        "reviewed_at": {"$ref": "#/$defs/utc_date_time"},
+        "coverage": {"$ref": "#/$defs/coverage"},
+        "source_quality_uncertainty": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        },
+        "discrepancies": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        },
+        "unreviewed_residuals": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        }
+      }
+    },
+    "representation_revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "date", "note"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "date": {"$ref": "#/$defs/date"},
+        "note": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "reason", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "reason": {"$ref": "#/$defs/non_empty"},
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/file_binding"}
+        }
+      }
+    },
+    "agent_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "actor", "assessed_at", "supported_scope", "unassessed_stronger_claims", "unresolved_claims"],
+      "properties": {
+        "status": {"enum": ["accepted", "partial", "blocked", "unassessed"]},
+        "actor": {"$ref": "#/$defs/non_empty"},
+        "assessed_at": {"$ref": "#/$defs/utc_date_time"},
+        "supported_scope": {"$ref": "#/$defs/non_empty"},
+        "unassessed_stronger_claims": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        },
+        "unresolved_claims": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/non_empty"}
+        }
+      }
+    },
+    "human_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {"status": {"const": "not-recorded"}}
+          },
+          "then": {},
+          "else": {
+            "required": ["actor", "decided_at", "scope", "note"]
+          }
+        }
+      ],
+      "properties": {
+        "status": {"enum": ["not-recorded", "accepted", "rejected", "blocked", "partial"]},
+        "actor": {"$ref": "#/$defs/non_empty"},
+        "decided_at": {"$ref": "#/$defs/utc_date_time"},
+        "scope": {"$ref": "#/$defs/non_empty"},
+        "note": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_local_disposition", "blockers", "agent_assessment", "human_decision"],
+      "properties": {
+        "source_local_disposition": {"$ref": "#/$defs/non_empty"},
+        "blockers": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/blocker"}
+        },
+        "agent_assessment": {"$ref": "#/$defs/agent_assessment"},
+        "human_decision": {"$ref": "#/$defs/human_decision"}
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "master", "state_path"],
+      "properties": {
+        "status": {"enum": ["pending", "promoted"]},
+        "master": {"$ref": "#/$defs/file_binding"},
+        "state_path": {"$ref": "#/$defs/relative_reference"},
+        "promoted_at": {"$ref": "#/$defs/utc_date_time"}
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Noah Davis — retained Project Gutenberg 20005 HTML
+
+The textual authority is the complete extracted HTML member `raw/gutenberg/20005/html/pg20005-images.html` from [Project Gutenberg eBook 20005](https://www.gutenberg.org/ebooks/20005). Its retained ZIP is the acquisition package. The archive contains the HTML, a referenced church image, and an unreferenced cover; each member is bound by size and SHA-256, and the extracted files match the ZIP bytes.
+
+The printed title page names *A Narrative of the Life of Rev. Noah Davis, A Colored Man*, says Davis wrote it himself, and includes an 1859 copyright notice. The contents list eight narrative chapters. The HTML then marks the end of the narrative and includes a sermon, reports, illustrations, and advertisements. Per the L640 manifest and Worklist instruction, this candidate preserves those items as components of the one retained book envelope in source order. The full HTML body, including Project Gutenberg header and license/footer, is retained in readable TEI; the HTML head is separately bound as metadata/support.
+
+The source file includes Project Gutenberg usage terms and an 1859 copyright notice. This technical candidate does not decide rights status or jurisdictional eligibility. Print collation, whole-work visual review, human acceptance, rights clearance, and publication authorization remain separate and pending. This package is a nonaccepted review candidate.

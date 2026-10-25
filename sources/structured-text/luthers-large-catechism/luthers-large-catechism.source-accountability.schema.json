@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/lib077-luthers-large-catechism-source-accountability-v1.json",
+  "title": "LIB-077 Luther's Large Catechism source accountability",
+  "type": "object",
+  "required": [
+    "contract",
+    "work_id",
+    "source_sha256",
+    "source_bytes",
+    "physical_lines",
+    "represented_lines",
+    "omitted_lines",
+    "duplicated_lines",
+    "member_census",
+    "excluded_members",
+    "crosswalk_sha256",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-lib077-source-accountability-v1"},
+    "work_id": {"const": "luthers-large-catechism"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_bytes": {"type": "integer", "minimum": 1},
+    "physical_lines": {"type": "integer", "minimum": 1},
+    "represented_lines": {"type": "integer", "minimum": 1},
+    "omitted_lines": {"const": 0},
+    "duplicated_lines": {"const": 0},
+    "member_census": {"type": "array", "minItems": 1},
+    "excluded_members": {"const": []},
+    "crosswalk_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "crosswalk": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}
+

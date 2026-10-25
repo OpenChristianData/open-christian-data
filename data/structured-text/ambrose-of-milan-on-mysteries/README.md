@@ -1,0 +1,15 @@
+# On the Mysteries: source credit and limits
+
+On the Mysteries is by Ambrose of Milan. This English electronic witness comes from [Christian Classics Ethereal Library (CCEL.org)](https://www.ccel.org/ccel/schaff/npnf210.xml), Nicene and Post-Nicene Fathers, Series 2, Volume 10: Ambrose: Select Works and Letters, edited by Philip Schaff and Henry Wace. No publication date is asserted from the retained title page.
+
+The volume credits H. De Romestin with assistance from E. De Romestin and H. T. F. Duckworth for its principal works. Individual-work translator allocation remains unresolved; these credits describe the volume.
+
+The retained electronic header labels the text Public Domain. The source acquisition separately records permission to parse CCEL's ThML/XML, a request to credit CCEL.org in publication, and a restriction against selling CCEL files or derivatives of CCEL formatting. The public-domain label is not a CC0 dedication or a determination that every source layer is cleared for every use. Rights for the work, translation, editorial apparatus, digital transcription, markup, and provider terms require separate consideration.
+
+This reconstruction has technical agent acceptance for the selected complete electronic work. Human acceptance, complete visual proofreading, print collation, legal rights clearance, and publication authorization remain unresolved. The offline package is a private technical rehearsal; it does not grant distribution approval. Notes and page markers remain in ordered structure; readable text omits them.
+
+## Historical-text disposition for private United States release
+
+The selected scope is the identified historical Ambrose translation and apparatus of Nicene and Post-Nicene Fathers, Second Series, volume X. The [original digitized volume](https://books.google.com/books/about/A_Select_Library_of_Nicene_and_Post_Nice.html?id=YnEXAAAAIAAJ) identifies Schaff and Wace, Christian Literature Company, 1896. This establishes the historical edition lineage; the undated Clark/Eerdmans imprint in the retained electronic title page is not assigned that print date, and no full print collation is claimed. The retained volume credits H. De Romestin, assisted by E. De Romestin and H. T. F. Duckworth; these volume credits do not allocate individual passages. The [United States copyright-duration guidance](https://www.copyright.gov/circs/circ15a.pdf) supports expiration of the identified 1896 published text and apparatus. This private selection covers those historical layers only. Modern electronic formatting, provider descriptions, images, and any modern creative additions are not granted public-domain status by this disposition.
+
+Credit CCEL.org as the electronic source. CCEL file and formatting rights and its restrictions on selling its files or formatting derivatives remain in force; source presentation declarations are outside this historical-text selection. No CC0, worldwide clearance, print-exemplar verification, or public publication is asserted. The exact accepted text and existing source quality qualifications remain unchanged.

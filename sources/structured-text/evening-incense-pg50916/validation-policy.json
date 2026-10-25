@@ -1,0 +1,16 @@
+{
+  "contract": "ocd-evening-incense-pg50916-validation-policy-v1",
+  "authority": "exact retained extracted PG50916 HTML bytes",
+  "source_scope": "one complete HTML body for one electronic work",
+  "checks": [
+    "exact acquired HTML, ZIP member, and retained cover correspondence",
+    "366 top-level and 1067 descendant HTML body elements with tag, evening, verse, page, identifier, and link census",
+    "independent preorder carrier and source-accountability comparison",
+    "complete body and each represented subtree text equality",
+    "HTML link targets, source classes, inline emphasis, hierarchy, and TEI P5 XSD",
+    "actual-master native prose projection and guarded stage checks"
+  ],
+  "omitted_body_elements": 0,
+  "human_acceptance": "separate",
+  "rights_and_publication": "separate"
+}

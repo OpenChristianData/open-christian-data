@@ -194,6 +194,41 @@
             "in-progress"
           ]
         },
+        "expression_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Stable identifier for the shared linguistic expression when multiple digital witnesses carry the same translation or edition family."
+        },
+        "digital_witness_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Stable identifier for the particular acquired digital witness represented by this resource."
+        },
+        "witness_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The witness's declared role in relation to other digital witnesses of the expression."
+        },
+        "related_witness_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other explicitly related digital witness identifiers."
+        },
+        "segmentation_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Source- and parser-specific basis for the published record boundaries; segmentation is not assumed to be source-neutral."
+        },
         "provenance": {
           "type": "object",
           "required": [
@@ -218,12 +253,44 @@
               "type": "string"
             },
             "download_date": {
-              "type": "string",
+              "type": [
+                "string",
+                "null"
+              ],
               "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
             },
             "source_hash": {
               "type": "string",
               "pattern": "^sha256:[0-9a-f]{64}$"
+            },
+            "source_hash_scope": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "What exact retained source object or deterministic source manifest the source_hash identifies."
+            },
+            "source_revision": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Version-control revision for a repository-backed source; distinct from content hashes."
+            },
+            "source_revision_type": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Identifier scheme for source_revision, such as git-commit-sha1."
+            },
+            "generated_content_hash": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^sha256:[0-9a-f]{64}$",
+              "description": "SHA-256 identity of the generated structured content, distinct from the acquired source identity."
             },
             "processing_method": {
               "type": "string",
@@ -267,7 +334,7 @@
                 "string",
                 "null"
               ],
-              "description": "Translator name and year (e.g. 'Philip Schaff (ed.), 1886')."
+              "description": "Translator name and year; editors belong in contributor metadata rather than this field."
             }
           }
         }

@@ -1,0 +1,19 @@
+# Against Eunomius: source and production credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/npnf205.html), Nicene and Post-Nicene Fathers, Second Series, volume V, Gregory of Nyssa: Dogmatic Treatises, Etc. The retained volume title pages credit William Moore and Henry Austin Wilson for translation with prolegomena, notes, and indices; Philip Schaff and Henry Wace for editorial supervision. Wace's signed editor's preface acknowledges Rev. J. H. Lupton's help and careful revision, and is dated Kings College, London, November 6, 1892. These are volume credits; no unsupported individual-work translator allocation is asserted.
+
+The electronic printSourceInfo states New York: Christian Literature Publishing Co., 1892. Shared title pages name T&T Clark, Edinburgh, and Wm. B. Eerdmans Publishing Company, Grand Rapids, Michigan. The canonical edition label remains 'CCEL ThML retained electronic witness'. These distinct retained bibliographic statements do not establish print equivalence; no metadata date correction is inferred.
+
+The electronic header identifies Logos Inc. as its source and states Public Domain. Retained CCEL permission explicitly permits parsing ThML/XML for text, reserves rights in CCEL files and formatting, and restricts selling CCEL files or derivatives of their formatting. Credit CCEL when publishing. These are provider statements and retained permission evidence, not independent jurisdictional rights clearance.
+
+Complete CCEL NPNF2-05 source subtree ThML.body/div1[@id='viii']/div2[@id='viii.i'] (Against Eunomius, two prefatory letters and Books I-XII); enclosing volume matter and sibling works are source-accounted outside this accepted work.
+
+Shared volume matter and sibling works remain retained outside this accepted scope. This private technical preparation does not establish human/visual review, print collation, final rights disposition, global selection, or public publication.
+
+## Current item disposition — October 9, 2026
+
+Item: Against Eunomius; electronic edition `gregory-of-nyssa-against-eunomius-retained-electronic-witness`.
+
+Row license: **Public domain (United States); identified historical text and apparatus only**. Territory assessed: United States only. Historical textual scope: New York: Christian Literature Publishing Co., 1892. This is not a CC0 dedication or worldwide clearance. No geographic access controls are configured; this decision supports the private offline rehearsal and does not authorize unrestricted global publication.
+
+This item-specific disposition supersedes the earlier preliminary statement that no row license was assigned or that this same historical-text route still awaited its term/projection assessment. It preserves all existing credits and restrictions. Sourced via CCEL.org. The retained project permission allows parsing underlying public-domain text; do not sell CCEL files or derivatives of their formatting. The assessed output reconstructs historical wording and apparatus in Open Christian Data structure; it excludes electronic source headers, CSS stylesheets, image pixels, modern staff descriptions and creative modern additions. Neutral semantic structure and opaque source class identifiers are not a license to reproduce CCEL stylesheets or reserved presentation. Existing source-local translator, editor, transcriber and markup credits remain in force; volume-level credits are not newly allocated to a child work. For a modern reprint/electronic base, this decision covers only the explicitly identified historical text and historical apparatus, not separate rights in modern additions or the source electronic files.

@@ -1,0 +1,92 @@
+{
+  "contract": "ocd-smiths-bible-dictionary-validation-policy-v1",
+  "policy_id": "smiths-bible-dictionary-jwbickel-jsonl-policy-v1",
+  "oracle_id": "ocd-lib021-bible-dictionaries-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "ticket_id": "LIB-021",
+  "work_id": "smiths-bible-dictionary",
+  "source_id": "jwbickel-bible-dictionaries-smiths-jsonl",
+  "profile_id": "smiths-bible-dictionary-jwbickel-jsonl-v1",
+  "candidate_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "required_counts": {
+    "records": 4560,
+    "definition_blocks": 5362,
+    "observations": 9922,
+    "unresolved_rows": 3
+  },
+  "required_source_order": [
+    "eastons.jsonl",
+    "hitchcocks.jsonl",
+    "smiths.jsonl",
+    "torreys.jsonl"
+  ],
+  "required_member": {
+    "source_id": "jwbickel-bible-dictionaries-smiths-jsonl",
+    "local_filename": "smiths.jsonl",
+    "hf_filename": "Smith's Bible Dictionary.jsonl",
+    "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Smith's Bible Dictionary.jsonl",
+    "download_date": "2026-03-30T08:32:35Z",
+    "raw_manifest_order": 3,
+    "ticket_id": "LIB-021",
+    "work_id": "smiths-bible-dictionary",
+    "bytes": 2919477,
+    "sha256": "ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d",
+    "records": 4560,
+    "definition_blocks": 5362,
+    "block_count_min": 1,
+    "block_count_max": 6,
+    "term_characters": 36340,
+    "definition_characters": 2718707,
+    "duplicate_terms": [],
+    "exact_keys": [
+      "definitions",
+      "term"
+    ],
+    "blank_lines": 0,
+    "line_ending": "LF",
+    "ends_with_newline": true,
+    "disposition": "include",
+    "reason": "Assigned LIB-021 work member; retain every non-empty JSONL record and every definitions block in source order."
+  },
+  "required_top_level_fields": [
+    "definitions",
+    "term"
+  ],
+  "required_unresolved_ids": [
+    "smiths-bible-dictionary-edition-identity",
+    "smiths-bible-dictionary-structured-source-rights",
+    "smiths-bible-dictionary-textual-reference-review"
+  ],
+  "tei_structure": {
+    "entry": "entry",
+    "headword": "form/orth",
+    "definition_blocks": "sense/def",
+    "reference_policy": "embedded citation-looking text remains literal source text"
+  },
+  "rights_statement": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "historic_work": "Repository source ledger describes the historic work as public domain by age; this candidate does not adjudicate that claim.",
+    "structured_dataset": "Unresolved; repository source ledger records no settled license for the modern JWBickel structured JSONL.",
+    "attribution": "Credit JWBickel/BibleDictionaries and link to the retained dataset URL.",
+    "worldwide_status": "human rights review required before acceptance or publication"
+  },
+  "forbidden_import_prefixes": [
+    "build.tei.bible_dictionaries_reconstruction",
+    "build.parsers.bible_dictionaries"
+  ],
+  "requirements": [
+    "independently read every retained JSONL record",
+    "bind every term and definitions item exactly once in source order",
+    "reject omission, duplication, reorder, text invention, attribute invention, metadata drift, source-order drift, evidence drift, stale hashes, and unresolved-row drift",
+    "validate TEI P5 and the exact six-member candidate package",
+    "keep the candidate nonaccepted and publication unauthorized"
+  ]
+}

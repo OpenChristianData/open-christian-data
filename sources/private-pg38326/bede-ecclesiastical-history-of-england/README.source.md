@@ -1,0 +1,5 @@
+# Bede PG38326 source and data attribution
+
+This existing accepted work uses the complete retained Project Gutenberg eBook38326 literary text: Bede's Ecclesiastical History of England, revised translation with introduction, life and notes by A. M. Sellar, with retained London: George Bell and Sons,1907 title-page imprint and electronic release December17,2011. Preserve the complete literary envelope, five books, Continuation, index and1081footnotes. The Continuation's later-hand attribution and uncertain early entries remain qualified as in source note1056.
+
+The provider's public-domain-in-USA statement and complete retained Project Gutenberg footer/license are source rights evidence, not independent clearance. Provider wrapper exclusion from the literary master does not exclude its rights statements from human-visible data attribution. Carry the own credit, territorial qualifications and retained full footer to `data/prose/bede-ecclesiastical-history-of-england/README.md`. No new reconstruction, independent print verification or public publication is implied.

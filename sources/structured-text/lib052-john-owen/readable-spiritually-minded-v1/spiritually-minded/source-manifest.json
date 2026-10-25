@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-owen-lib052-readable-spiritually-minded-v1",
+  "work_id": "john-owen-spiritually-minded",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/owen/spirituallyminded.xml",
+      "role": "primary-source",
+      "bytes": 856110,
+      "sha256": "8326a32dd6e41f9a7f491238a090b1f1231be23df2d6278b0402b87d3dbb19d9"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/lib052-john-owen/readable-spiritually-minded-v1/spiritually-minded/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1534,
+      "sha256": "6027b6770c6ec96c869de149dc10c1f2d923a2146038f1c8e98573e22f353325"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib052-john-owen/readable-spiritually-minded-v1/spiritually-minded/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2005,
+      "sha256": "8f7ebd785f6dfe8b626f05d966c6553f4107ebd90887b63321bd1cd52507193b"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib052-john-owen/readable-spiritually-minded-v1/spiritually-minded/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 952,
+      "sha256": "4b62b88ef0627d631f11ad09eb9bc11a65bd9bdc28ffb04bb60c26e39682a572"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib052-john-owen/readable-spiritually-minded-v1/spiritually-minded/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1910,
+      "sha256": "981fc5c7a040e90715476db201665581ce5aba05b7fd481e901ec0e3be59d3fc"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-owen-lib052-spiritually-minded-readable-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/owen_lib052_spiritually_minded_readable.py",
+    "implementation_sha256": "c7a7d6a7a70eddaf88c34294316c98cebb9cd929ce7b62855c023ce6c4e1fc0a"
+  },
+  "validator": {
+    "id": "ocd-owen-lib052-spiritually-minded-readable-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/owen_lib052_spiritually_minded_readable_oracle.py",
+    "implementation_sha256": "a71b334e1f0c5abe1627ed8a1ff7627b9a19380f8e431bccbe61879086d17a4d",
+    "import_closure_sha256": "a71b334e1f0c5abe1627ed8a1ff7627b9a19380f8e431bccbe61879086d17a4d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,7 @@
+# Sacred Hymns from the German: retained source and notice contract
+
+The accepted electronic witness is the complete retained Project Gutenberg eBook 39440 HTML of *Sacred Hymns from the German*, translated by Frances Elizabeth Cox. Its title page names London publisher William Pickering and dates the edition MDCCCXLI (1841). The dedication says these hymns were taken from the collection of Charles Christian Bunsen. Individual hymn attributions and German/English wording remain source-bound in the accepted master; this notice does not assign a single author to the collection.
+
+The retained electronic header credits production to Stephen Hutcheson, Barbara Tozier, Dave Morgan, and the Online Distributed Proofreading Team. It says the book was produced from scanned images of public-domain material from the Google Print project; that is a source statement, not an independent rights finding. The original ZIP and unreferenced cover remain retained support. The 123 accepted source-defined rows contain 50 internal bilingual hymn pairs, with original ordering and stanza structure; they are not a claim of 123 separate hymns.
+
+The complete retained Project Gutenberg footer and license, bibliographic credit, digital production credit, source-scope qualifications, and reuse warnings must be human-visible in `data/poetry/cox-sacred-hymns-from-the-german-1841/README.md` whenever this witness is selected for a private offline release. Human acceptance, physical-print collation, jurisdictional rights clearance, and public publication are separate decisions.

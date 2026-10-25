@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/westminster-shorter-catechism-source-accountability-v1",
+  "title": "Westminster Shorter Catechism source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "profile_id",
+    "observation_counts",
+    "proof_reference_count",
+    "question_exact_agreements",
+    "answer_exact_agreements",
+    "outer_html_census",
+    "crosswalk",
+    "proof_relationships"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-westminster-shorter-catechism-source-accountability-v1"},
+    "profile_id": {"const": "westminster-shorter-catechism-three-witnesses-v1"},
+    "observation_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "represented", "evidence_only", "omitted", "duplicate"],
+      "properties": {
+        "total": {"const": 1083},
+        "represented": {"const": 1083},
+        "evidence_only": {"const": 0},
+        "omitted": {"const": 0},
+        "duplicate": {"const": 0}
+      }
+    },
+    "proof_reference_count": {"const": 401},
+    "question_exact_agreements": {"const": 79},
+    "answer_exact_agreements": {"const": 22},
+    "outer_html_census": {
+      "const": {
+        "parser": "lxml.html.fromstring",
+        "paragraph_classes": {
+          "assigned_questions": 107,
+          "assigned_proof_groups": 107,
+          "outer_evidence_only": 26
+        },
+        "elements": {
+          "total": 1044,
+          "by_disposition": {
+            "assigned-content": 647,
+            "outer-evidence-only": 397
+          },
+          "by_tag": {
+            "a": 96,
+            "b": 215,
+            "body": 1,
+            "br": 109,
+            "div": 105,
+            "em": 108,
+            "form": 1,
+            "h1": 1,
+            "h2": 1,
+            "head": 1,
+            "header": 2,
+            "html": 1,
+            "i": 16,
+            "img": 3,
+            "input": 1,
+            "li": 20,
+            "link": 30,
+            "meta": 30,
+            "nav": 1,
+            "noscript": 1,
+            "p": 240,
+            "script": 35,
+            "span": 8,
+            "style": 11,
+            "title": 1,
+            "ul": 6
+          },
+          "stream_sha256": "582c300c6e8716f53ed25fd7c1906b3a3c2617b7f7519fa9a0b2ac98d4868b36"
+        },
+        "attributes": {
+          "total": 1038,
+          "by_disposition": {
+            "assigned-content": 215,
+            "outer-evidence-only": 823
+          },
+          "stream_sha256": "d8e0884a9b79123f83c7544d1edfa39683a7ed6761c670749462e1fc6f8f235e"
+        },
+        "nonempty_text_carriers": {
+          "total": 645,
+          "by_disposition": {
+            "assigned-content": 538,
+            "outer-evidence-only": 107
+          },
+          "stream_sha256": "7a08caf97793d36a0dfde3c40a5254108be912670c82e3d5d005a84ff93f81a8"
+        },
+        "comments": {
+          "total": 22,
+          "by_disposition": {
+            "outer-evidence-only": 22
+          },
+          "stream_sha256": "e30a2821b24c071c9daabe361198986cd57e84ceea46ed8b3f1334e556151b89"
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 1083,
+      "maxItems": 1083,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source", "kind", "source_location", "value", "status", "target"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "source": {"enum": ["creeds-json", "theologai-json", "westminster-standard-html"]},
+          "kind": {"enum": ["metadata", "number", "question", "answer", "proof-group"]},
+          "source_location": {"type": "string", "minLength": 1},
+          "value": {},
+          "status": {"const": "represented"},
+          "target": {"type": "string", "pattern": "^#"}
+        }
+      }
+    },
+    "proof_relationships": {
+      "type": "array",
+      "minItems": 401,
+      "maxItems": 401,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "question_number", "occurrence", "raw", "osis", "source", "proof_group", "target"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "question_number": {"type": "integer", "minimum": 1, "maximum": 107},
+          "occurrence": {"type": "integer", "minimum": 1},
+          "raw": {"type": "string", "minLength": 1},
+          "osis": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "source": {"const": "westminster-standard-html"},
+          "proof_group": {"type": "string", "pattern": "^#wsc-westminster-standard-html-q[0-9]+-proof-group$"},
+          "target": {"type": "string", "pattern": "^#wsc-westminster-standard-html-q[0-9]+-proof-[0-9]+$"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0",
+  "work_id": "ursinus-commentary-heidelberg-catechism-1852",
+  "targets": [
+    {
+      "target_id": "ia-commdrza00ursi-second-american-1852",
+      "target_type": "acquisition",
+      "stage": "acquired",
+      "updated_at": "2026-10-02T06:17:16Z",
+      "evidence": [
+        "library/works/ursinus-commentary-heidelberg-catechism-1852/forms/english-commentary/editions/commdrza00ursi-1852/acquisitions/ia-commdrza00ursi-second-american-1852.json",
+        "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/acquisition-receipt.json"
+      ]
+    },
+    {
+      "target_id": "commdrza00ursi-1852",
+      "target_type": "edition",
+      "stage": "review",
+      "updated_at": "2026-10-02T06:17:16Z",
+      "reason": "The retained-source nonaccepted candidate remains under review; source-image collation of OCR and diagram labels is unresolved.",
+      "evidence": [
+        "sources/ursinus-commentary-1852/ursinus-commentary-1852.source-manifest.json",
+        "plans/2026-09-23-acquisition-manifest-source-to-tei/evidence/URSINUS_L427_L468_CURRENT_MAIN_REBIND_20261002.json"
+      ]
+    }
+  ]
+}

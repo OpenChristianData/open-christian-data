@@ -1,5 +1,7 @@
 # ADR-0011: Floating OCR engine versions; record actual version per-rendering
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-05-15); amended 2026-05-16 (R59 — capture mechanism, rendering immutability + supersession, change-detection in Reviewer state)
 
 ## Context

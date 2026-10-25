@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:TEI xmlns:ns0="http://www.tei-c.org/ns/1.0" xml:id="tei003-lightfoot-source-only-header-probe">
+  <ns0:teiHeader>
+    <ns0:fileDesc>
+      <ns0:titleStmt>
+        <ns0:title>St. Paul's Epistles to the Colossians and Philemon</ns0:title>
+        <ns0:author>J. B. Lightfoot</ns0:author>
+      </ns0:titleStmt>
+      <ns0:publicationStmt>
+        <ns0:publisher>Open Christian Data TEI-003 provisional fixture</ns0:publisher>
+        <ns0:availability status="unknown">
+          <ns0:p>Source availability is retained as evidence; no rights or publication decision is made by this fixture.</ns0:p>
+        </ns0:availability>
+      </ns0:publicationStmt>
+      <ns0:sourceDesc>
+        <ns0:bibl>
+          <ns0:title>Project Gutenberg 50857 retained source</ns0:title>
+          <ns0:ptr target="ocd-source:raw/gutenberg/commentary/lightfoot-colossians-philemon/pg50857.txt"/>
+          <ns0:idno type="sha256">a97cb49964906a2c158a0444cfdc3b0daf13261620c919a90f1333a98ac0b913</ns0:idno>
+          <ns0:idno type="ocd-work-id">lightfoot-colossians-philemon</ns0:idno>
+          <ns0:idno type="ocd-textual-form-id">lightfoot-english</ns0:idno>
+          <ns0:idno type="ocd-edition-id">pg50857</ns0:idno>
+          <ns0:idno type="ocd-acquisition-id">pg50857-text</ns0:idno>
+          <ns0:note type="source-location">UTF-8 decoded retained source lines 75-94 inclusive; source-only header-placement probe.</ns0:note>
+          <ns0:note type="source-scope">This derivative has no original TEI representation to bind; it must not be promoted as a master.</ns0:note>
+        </ns0:bibl>
+      </ns0:sourceDesc>
+    </ns0:fileDesc>
+    <ns0:revisionDesc>
+      <ns0:change xml:id="tei003-lightfoot-header-probe-v1" when="2026-09-07">TEI-003 source-only header-placement probe; four real OCD authority IDs bound to retained source lines.</ns0:change>
+    </ns0:revisionDesc>
+  </ns0:teiHeader>
+  <ns0:text>
+    <ns0:front>
+        <ns0:div xml:id="tei003-lightfoot-lines-75-94" type="title-page">
+          <ns0:p xml:id="lightfoot-source-line-75" n="75">                        THE EPISTLES OF ST PAUL.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-76" n="76"/>
+          <ns0:p xml:id="lightfoot-source-line-77" n="77">                                  III.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-78" n="78"/>
+          <ns0:p xml:id="lightfoot-source-line-79" n="79">                       THE FIRST ROMAN CAPTIVITY.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-80" n="80"/>
+          <ns0:p xml:id="lightfoot-source-line-81" n="81">                                   2.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-82" n="82"/>
+          <ns0:p xml:id="lightfoot-source-line-83" n="83">                       EPISTLE TO THE COLOSSIANS.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-84" n="84"/>
+          <ns0:p xml:id="lightfoot-source-line-85" n="85">                                   3.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-86" n="86"/>
+          <ns0:p xml:id="lightfoot-source-line-87" n="87">                          EPISTLE TO PHILEMON.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-88" n="88"/>
+          <ns0:p xml:id="lightfoot-source-line-89" n="89">[Illustration]</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-90" n="90"/>
+          <ns0:p xml:id="lightfoot-source-line-91" n="91">                          =Cambridge:=</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-92" n="92">                      PRINTED BY C. J. CLAY, M.A.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-93" n="93">                        AT THE UNIVERSITY PRESS.</ns0:p>
+          <ns0:p xml:id="lightfoot-source-line-94" n="94"/>
+        </ns0:div>
+      </ns0:front>
+    <ns0:body>
+      <ns0:div xml:id="tei003-lightfoot-probe-context" type="section"><ns0:head>Source-only header placement probe</ns0:head><ns0:p>The selected source lines remain in the front matter above; this synthetic context is not source content.</ns0:p></ns0:div></ns0:body>
+  </ns0:text>
+</ns0:TEI>

@@ -1,0 +1,23 @@
+{
+  "contract": "watson-lords-prayer-validation-policy-v1",
+  "work_id": "watson-lords-prayer",
+  "profile": "watson-lords-prayer.reconstruction-profile.json",
+  "source_accountability": "watson-lords-prayer.source-accountability.json",
+  "source_accountability_schema": "watson-lords-prayer.source-accountability.schema.json",
+  "route_scope": "Source-bound work-local route only; no candidate delivery, CVW admission, integration, acceptance, rights, release, or publication.",
+  "required_checks": [
+    "Verify the exact retained member path, byte length, SHA-256, ThML root, and all ten ordered direct div1 carriers against the work-local selection.",
+    "Independently enumerate every selected element and compare source path, native id, source tag, and exact source attributes with the candidate source-accountability features.",
+    "Verify deterministic one-to-one TEI xml:id mapping, source preorder, element mapping, exact text and tail values, child order, comments, document shell, and TEI P5 schema validity.",
+    "Verify the complete source-envelope census, head metadata inventory, retained source claims, and unresolved question set.",
+    "Reject omission, duplication, reordering, source-accountability drift, metadata mutation, region mutation, and source-derived heading invention or loss.",
+    "Reproduce route output in a second clean process with byte-identical non-manifest members.",
+    "Verify supported metadata evidence for the catalog subject without mutating shared metadata or project state.",
+    "Derive a no-write WorkCatalog route and verify the governed catalog file is unchanged.",
+    "Open native exact source/TEI pairs in CVW for opening, middle, and ending carriers and retain visual inspection evidence."
+  ],
+  "source_attributes": "Full original attribute names and values remain in source-accountability.features even when represented through a TEI attribute or retained only in accounting.",
+  "identity_and_rights": "Header metadata remains source evidence. No unsupported work, part, form, edition, witness, print date, rights clearance, human acceptance, release, or publication claim may be added.",
+  "determinism": "The producer returns exactly the five non-manifest package members and must produce byte-identical in-memory members for unchanged authorities.",
+  "integration_boundary": "The shared reconstruction contract may consume the work-specific callable, but candidate delivery remains nonaccepted; WorkCatalog is derived with no write, and CVW evidence is observational only."
+}

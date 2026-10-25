@@ -1,0 +1,794 @@
+{
+  "fixture_id": "asv-genesis",
+  "edition": "American Standard Version",
+  "source_url": "ocd-source:raw/bible_databases/formats/json/ASV.json",
+  "source_path": "raw/bible_databases/formats/json/ASV.json",
+  "source_sha256": "0851e73ac46ae7ccaf1a8bb44beb359295df5eca04a578ea4d448eb7a641f9ae",
+  "retained_source_sha256": "0851e73ac46ae7ccaf1a8bb44beb359295df5eca04a578ea4d448eb7a641f9ae",
+  "source_selector": {
+    "book_index": 1,
+    "book_name": "Genesis",
+    "chapter_index": 1,
+    "chapter_number": 1
+  },
+  "translation": "ASV: American Standard Version (1901)",
+  "book_osis": "Gen",
+  "versification": "source-native:ASV.json",
+  "raw_envelope": {
+    "top_level_keys": [
+      "translation",
+      "books"
+    ],
+    "translation": "ASV: American Standard Version (1901)",
+    "book_count": 66,
+    "chapter_count": 1189,
+    "verse_count": 31102,
+    "book_census": [
+      {
+        "index": 1,
+        "name": "Genesis",
+        "chapter_count": 50,
+        "verse_count": 1533
+      },
+      {
+        "index": 2,
+        "name": "Exodus",
+        "chapter_count": 40,
+        "verse_count": 1213
+      },
+      {
+        "index": 3,
+        "name": "Leviticus",
+        "chapter_count": 27,
+        "verse_count": 859
+      },
+      {
+        "index": 4,
+        "name": "Numbers",
+        "chapter_count": 36,
+        "verse_count": 1288
+      },
+      {
+        "index": 5,
+        "name": "Deuteronomy",
+        "chapter_count": 34,
+        "verse_count": 959
+      },
+      {
+        "index": 6,
+        "name": "Joshua",
+        "chapter_count": 24,
+        "verse_count": 658
+      },
+      {
+        "index": 7,
+        "name": "Judges",
+        "chapter_count": 21,
+        "verse_count": 618
+      },
+      {
+        "index": 8,
+        "name": "Ruth",
+        "chapter_count": 4,
+        "verse_count": 85
+      },
+      {
+        "index": 9,
+        "name": "I Samuel",
+        "chapter_count": 31,
+        "verse_count": 810
+      },
+      {
+        "index": 10,
+        "name": "II Samuel",
+        "chapter_count": 24,
+        "verse_count": 695
+      },
+      {
+        "index": 11,
+        "name": "I Kings",
+        "chapter_count": 22,
+        "verse_count": 816
+      },
+      {
+        "index": 12,
+        "name": "II Kings",
+        "chapter_count": 25,
+        "verse_count": 719
+      },
+      {
+        "index": 13,
+        "name": "I Chronicles",
+        "chapter_count": 29,
+        "verse_count": 942
+      },
+      {
+        "index": 14,
+        "name": "II Chronicles",
+        "chapter_count": 36,
+        "verse_count": 822
+      },
+      {
+        "index": 15,
+        "name": "Ezra",
+        "chapter_count": 10,
+        "verse_count": 280
+      },
+      {
+        "index": 16,
+        "name": "Nehemiah",
+        "chapter_count": 13,
+        "verse_count": 406
+      },
+      {
+        "index": 17,
+        "name": "Esther",
+        "chapter_count": 10,
+        "verse_count": 167
+      },
+      {
+        "index": 18,
+        "name": "Job",
+        "chapter_count": 42,
+        "verse_count": 1070
+      },
+      {
+        "index": 19,
+        "name": "Psalms",
+        "chapter_count": 150,
+        "verse_count": 2461
+      },
+      {
+        "index": 20,
+        "name": "Proverbs",
+        "chapter_count": 31,
+        "verse_count": 915
+      },
+      {
+        "index": 21,
+        "name": "Ecclesiastes",
+        "chapter_count": 12,
+        "verse_count": 222
+      },
+      {
+        "index": 22,
+        "name": "Song of Solomon",
+        "chapter_count": 8,
+        "verse_count": 117
+      },
+      {
+        "index": 23,
+        "name": "Isaiah",
+        "chapter_count": 66,
+        "verse_count": 1292
+      },
+      {
+        "index": 24,
+        "name": "Jeremiah",
+        "chapter_count": 52,
+        "verse_count": 1364
+      },
+      {
+        "index": 25,
+        "name": "Lamentations",
+        "chapter_count": 5,
+        "verse_count": 154
+      },
+      {
+        "index": 26,
+        "name": "Ezekiel",
+        "chapter_count": 48,
+        "verse_count": 1273
+      },
+      {
+        "index": 27,
+        "name": "Daniel",
+        "chapter_count": 12,
+        "verse_count": 357
+      },
+      {
+        "index": 28,
+        "name": "Hosea",
+        "chapter_count": 14,
+        "verse_count": 197
+      },
+      {
+        "index": 29,
+        "name": "Joel",
+        "chapter_count": 3,
+        "verse_count": 73
+      },
+      {
+        "index": 30,
+        "name": "Amos",
+        "chapter_count": 9,
+        "verse_count": 146
+      },
+      {
+        "index": 31,
+        "name": "Obadiah",
+        "chapter_count": 1,
+        "verse_count": 21
+      },
+      {
+        "index": 32,
+        "name": "Jonah",
+        "chapter_count": 4,
+        "verse_count": 48
+      },
+      {
+        "index": 33,
+        "name": "Micah",
+        "chapter_count": 7,
+        "verse_count": 105
+      },
+      {
+        "index": 34,
+        "name": "Nahum",
+        "chapter_count": 3,
+        "verse_count": 47
+      },
+      {
+        "index": 35,
+        "name": "Habakkuk",
+        "chapter_count": 3,
+        "verse_count": 56
+      },
+      {
+        "index": 36,
+        "name": "Zephaniah",
+        "chapter_count": 3,
+        "verse_count": 53
+      },
+      {
+        "index": 37,
+        "name": "Haggai",
+        "chapter_count": 2,
+        "verse_count": 38
+      },
+      {
+        "index": 38,
+        "name": "Zechariah",
+        "chapter_count": 14,
+        "verse_count": 211
+      },
+      {
+        "index": 39,
+        "name": "Malachi",
+        "chapter_count": 4,
+        "verse_count": 55
+      },
+      {
+        "index": 40,
+        "name": "Matthew",
+        "chapter_count": 28,
+        "verse_count": 1071
+      },
+      {
+        "index": 41,
+        "name": "Mark",
+        "chapter_count": 16,
+        "verse_count": 678
+      },
+      {
+        "index": 42,
+        "name": "Luke",
+        "chapter_count": 24,
+        "verse_count": 1151
+      },
+      {
+        "index": 43,
+        "name": "John",
+        "chapter_count": 21,
+        "verse_count": 879
+      },
+      {
+        "index": 44,
+        "name": "Acts",
+        "chapter_count": 28,
+        "verse_count": 1007
+      },
+      {
+        "index": 45,
+        "name": "Romans",
+        "chapter_count": 16,
+        "verse_count": 433
+      },
+      {
+        "index": 46,
+        "name": "I Corinthians",
+        "chapter_count": 16,
+        "verse_count": 437
+      },
+      {
+        "index": 47,
+        "name": "II Corinthians",
+        "chapter_count": 13,
+        "verse_count": 257
+      },
+      {
+        "index": 48,
+        "name": "Galatians",
+        "chapter_count": 6,
+        "verse_count": 149
+      },
+      {
+        "index": 49,
+        "name": "Ephesians",
+        "chapter_count": 6,
+        "verse_count": 155
+      },
+      {
+        "index": 50,
+        "name": "Philippians",
+        "chapter_count": 4,
+        "verse_count": 104
+      },
+      {
+        "index": 51,
+        "name": "Colossians",
+        "chapter_count": 4,
+        "verse_count": 95
+      },
+      {
+        "index": 52,
+        "name": "I Thessalonians",
+        "chapter_count": 5,
+        "verse_count": 89
+      },
+      {
+        "index": 53,
+        "name": "II Thessalonians",
+        "chapter_count": 3,
+        "verse_count": 47
+      },
+      {
+        "index": 54,
+        "name": "I Timothy",
+        "chapter_count": 6,
+        "verse_count": 113
+      },
+      {
+        "index": 55,
+        "name": "II Timothy",
+        "chapter_count": 4,
+        "verse_count": 83
+      },
+      {
+        "index": 56,
+        "name": "Titus",
+        "chapter_count": 3,
+        "verse_count": 46
+      },
+      {
+        "index": 57,
+        "name": "Philemon",
+        "chapter_count": 1,
+        "verse_count": 25
+      },
+      {
+        "index": 58,
+        "name": "Hebrews",
+        "chapter_count": 13,
+        "verse_count": 303
+      },
+      {
+        "index": 59,
+        "name": "James",
+        "chapter_count": 5,
+        "verse_count": 108
+      },
+      {
+        "index": 60,
+        "name": "I Peter",
+        "chapter_count": 5,
+        "verse_count": 105
+      },
+      {
+        "index": 61,
+        "name": "II Peter",
+        "chapter_count": 3,
+        "verse_count": 61
+      },
+      {
+        "index": 62,
+        "name": "I John",
+        "chapter_count": 5,
+        "verse_count": 105
+      },
+      {
+        "index": 63,
+        "name": "II John",
+        "chapter_count": 1,
+        "verse_count": 13
+      },
+      {
+        "index": 64,
+        "name": "III John",
+        "chapter_count": 1,
+        "verse_count": 14
+      },
+      {
+        "index": 65,
+        "name": "Jude",
+        "chapter_count": 1,
+        "verse_count": 25
+      },
+      {
+        "index": 66,
+        "name": "Revelation of John",
+        "chapter_count": 22,
+        "verse_count": 404
+      }
+    ]
+  },
+  "selected_chapter_native_unit_count": 31,
+  "raw_outside_scope_count": 31071,
+  "selected_units": [
+    {
+      "label": "1",
+      "text": "In the beginning God created the heavens and the earth. "
+    },
+    {
+      "label": "2",
+      "text": "And the earth was waste and void; and darkness was upon the face of the deep: and the Spirit of God moved upon the face of the waters. "
+    },
+    {
+      "label": "3",
+      "text": "And God said, Let there be light: and there was light. "
+    }
+  ],
+  "native_units": [
+    {
+      "selector": "books[0].chapters[0].verses[0]",
+      "label": "1",
+      "selected": true,
+      "text_sha256": "d6e3956a232497c1cc6ff541c69837edbbcfc2b0433f22d08c248b42c27b0f88",
+      "text": "In the beginning God created the heavens and the earth. "
+    },
+    {
+      "selector": "books[0].chapters[0].verses[1]",
+      "label": "2",
+      "selected": true,
+      "text_sha256": "d50623eb9d7ba72d687e3c512474a8018732e6eac6d5cde9f1d16b806b393efe",
+      "text": "And the earth was waste and void; and darkness was upon the face of the deep: and the Spirit of God moved upon the face of the waters. "
+    },
+    {
+      "selector": "books[0].chapters[0].verses[2]",
+      "label": "3",
+      "selected": true,
+      "text_sha256": "56c95607ef92339de60357581868d80ece292ab20c0cb23e1c3cd851fe98e258",
+      "text": "And God said, Let there be light: and there was light. "
+    },
+    {
+      "selector": "books[0].chapters[0].verses[3]",
+      "label": "4",
+      "selected": false,
+      "text_sha256": "a30d7a45f6ed7d9bad45bf068b35e1ac96aa4dfc2b86be99b547da66d78bdc84"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[4]",
+      "label": "5",
+      "selected": false,
+      "text_sha256": "64c5cb798882f4700e2584b716a29b5f348a7747fe4175c3fb699a832b600204"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[5]",
+      "label": "6",
+      "selected": false,
+      "text_sha256": "492ac9f370517e953cfe1d33193a13b64d9f21a15fea746e8853651012201378"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[6]",
+      "label": "7",
+      "selected": false,
+      "text_sha256": "61b1aae402abefb3d32a8d4d79309fd5242a34492e8bbaf4ba785f2965b9e70a"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[7]",
+      "label": "8",
+      "selected": false,
+      "text_sha256": "cfdcaa37d17ac56958b38259e639286d1b43b8df42d513c50a2ab06ffed1bc7d"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[8]",
+      "label": "9",
+      "selected": false,
+      "text_sha256": "f6293a48dd02fcb92d5732f9ab6eaf28e4f5fa85a68bc924d6a845c914878f8c"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[9]",
+      "label": "10",
+      "selected": false,
+      "text_sha256": "27ab96f3239019c2fb9cc4ea71449fdbd4c482aa5938a8f2503b402b96b767a4"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[10]",
+      "label": "11",
+      "selected": false,
+      "text_sha256": "9db86106e30a87748a625bd1fd8516d5b57e7d08f237fb4c9f6d18526d0a4a89"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[11]",
+      "label": "12",
+      "selected": false,
+      "text_sha256": "3c7fa9497c3dbf7a3701cb12f96996ee2c0659f22586aa699295c56b9ccb3f6e"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[12]",
+      "label": "13",
+      "selected": false,
+      "text_sha256": "a6f7ff9b793d0cfa2e80e525eb846b5c187367e6fc9f03ce267d7c2a2838c007"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[13]",
+      "label": "14",
+      "selected": false,
+      "text_sha256": "022cde435903375203129726e11a212faa4d4b3b7e9729efcf6d912deeff4651"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[14]",
+      "label": "15",
+      "selected": false,
+      "text_sha256": "da1fe7657a972f67cec01fa932265c16e44dc1e685d304719e2782d4ec3c41cf"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[15]",
+      "label": "16",
+      "selected": false,
+      "text_sha256": "addd1129544c1fec7dc08a791d957802a5e75c703256409e195dd8ddef945290"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[16]",
+      "label": "17",
+      "selected": false,
+      "text_sha256": "70e388a5bff0afc0c116cb9c54014aad39988751b956f9125b3ea4bb75ce39aa"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[17]",
+      "label": "18",
+      "selected": false,
+      "text_sha256": "2b1c1770f016ff4464daae3be384e70473e1010a3384403228e584ec340a9aea"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[18]",
+      "label": "19",
+      "selected": false,
+      "text_sha256": "38f95d142c0dea68306c0ae76c3e939c91d1bef1482800beb9be171f5205f0b8"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[19]",
+      "label": "20",
+      "selected": false,
+      "text_sha256": "077fc1ea794bbc57e2d9c5d2cbb55e7a67a60120c6f3d45f1d1a07b51ec71066"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[20]",
+      "label": "21",
+      "selected": false,
+      "text_sha256": "f42727f7e427fe1bd8b46317fb96de9a79a61b96127c1f457a9d704064830c94"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[21]",
+      "label": "22",
+      "selected": false,
+      "text_sha256": "79878860d236299c493fc5e6696b9ed7acd2ddf9e13133d07b2d221e3bfffb05"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[22]",
+      "label": "23",
+      "selected": false,
+      "text_sha256": "9037273a8d6bc6d8d25bd397d95c0a52ebb8bbf1c6f9252e984d8dcff603341a"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[23]",
+      "label": "24",
+      "selected": false,
+      "text_sha256": "870bfef4bdbf38737491137a5bce857618daf6e9f1d4aa7d1618057a1af21427"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[24]",
+      "label": "25",
+      "selected": false,
+      "text_sha256": "21e4af9cbe6d5d143814e7b22067c44b92ca5c6825cc675b897b1325b59c63fc"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[25]",
+      "label": "26",
+      "selected": false,
+      "text_sha256": "ca52db1f1e78dbc79a9a709f8bbcc0fb8b1c3300c7e2fbd9392160a898e88ba1"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[26]",
+      "label": "27",
+      "selected": false,
+      "text_sha256": "989e68d34fec41375e737a980be1312332532f406b0a3141a6330cb19752d2bf"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[27]",
+      "label": "28",
+      "selected": false,
+      "text_sha256": "d2628ac7ddf80ba3ed15772ebba64431f8f395c955e84aa16a4e28f2e1c72066"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[28]",
+      "label": "29",
+      "selected": false,
+      "text_sha256": "6b446e478ebef5ce2d184cc8011b59b09f5ccce8843d4e591a1f566b13a9bb86"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[29]",
+      "label": "30",
+      "selected": false,
+      "text_sha256": "520ef833584f9d6468227827bfaa9710bd69e7e576b96dc16bfb12ad1aa5b2bb"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[30]",
+      "label": "31",
+      "selected": false,
+      "text_sha256": "6556361739a274a9cf296c0adee0d16e0c0dae4429bc849540f559b1c2c6fd41"
+    }
+  ],
+  "outside_scope": [
+    {
+      "selector": "books[0].chapters[0].verses[3]",
+      "label": "4",
+      "text_sha256": "a30d7a45f6ed7d9bad45bf068b35e1ac96aa4dfc2b86be99b547da66d78bdc84"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[4]",
+      "label": "5",
+      "text_sha256": "64c5cb798882f4700e2584b716a29b5f348a7747fe4175c3fb699a832b600204"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[5]",
+      "label": "6",
+      "text_sha256": "492ac9f370517e953cfe1d33193a13b64d9f21a15fea746e8853651012201378"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[6]",
+      "label": "7",
+      "text_sha256": "61b1aae402abefb3d32a8d4d79309fd5242a34492e8bbaf4ba785f2965b9e70a"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[7]",
+      "label": "8",
+      "text_sha256": "cfdcaa37d17ac56958b38259e639286d1b43b8df42d513c50a2ab06ffed1bc7d"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[8]",
+      "label": "9",
+      "text_sha256": "f6293a48dd02fcb92d5732f9ab6eaf28e4f5fa85a68bc924d6a845c914878f8c"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[9]",
+      "label": "10",
+      "text_sha256": "27ab96f3239019c2fb9cc4ea71449fdbd4c482aa5938a8f2503b402b96b767a4"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[10]",
+      "label": "11",
+      "text_sha256": "9db86106e30a87748a625bd1fd8516d5b57e7d08f237fb4c9f6d18526d0a4a89"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[11]",
+      "label": "12",
+      "text_sha256": "3c7fa9497c3dbf7a3701cb12f96996ee2c0659f22586aa699295c56b9ccb3f6e"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[12]",
+      "label": "13",
+      "text_sha256": "a6f7ff9b793d0cfa2e80e525eb846b5c187367e6fc9f03ce267d7c2a2838c007"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[13]",
+      "label": "14",
+      "text_sha256": "022cde435903375203129726e11a212faa4d4b3b7e9729efcf6d912deeff4651"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[14]",
+      "label": "15",
+      "text_sha256": "da1fe7657a972f67cec01fa932265c16e44dc1e685d304719e2782d4ec3c41cf"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[15]",
+      "label": "16",
+      "text_sha256": "addd1129544c1fec7dc08a791d957802a5e75c703256409e195dd8ddef945290"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[16]",
+      "label": "17",
+      "text_sha256": "70e388a5bff0afc0c116cb9c54014aad39988751b956f9125b3ea4bb75ce39aa"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[17]",
+      "label": "18",
+      "text_sha256": "2b1c1770f016ff4464daae3be384e70473e1010a3384403228e584ec340a9aea"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[18]",
+      "label": "19",
+      "text_sha256": "38f95d142c0dea68306c0ae76c3e939c91d1bef1482800beb9be171f5205f0b8"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[19]",
+      "label": "20",
+      "text_sha256": "077fc1ea794bbc57e2d9c5d2cbb55e7a67a60120c6f3d45f1d1a07b51ec71066"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[20]",
+      "label": "21",
+      "text_sha256": "f42727f7e427fe1bd8b46317fb96de9a79a61b96127c1f457a9d704064830c94"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[21]",
+      "label": "22",
+      "text_sha256": "79878860d236299c493fc5e6696b9ed7acd2ddf9e13133d07b2d221e3bfffb05"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[22]",
+      "label": "23",
+      "text_sha256": "9037273a8d6bc6d8d25bd397d95c0a52ebb8bbf1c6f9252e984d8dcff603341a"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[23]",
+      "label": "24",
+      "text_sha256": "870bfef4bdbf38737491137a5bce857618daf6e9f1d4aa7d1618057a1af21427"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[24]",
+      "label": "25",
+      "text_sha256": "21e4af9cbe6d5d143814e7b22067c44b92ca5c6825cc675b897b1325b59c63fc"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[25]",
+      "label": "26",
+      "text_sha256": "ca52db1f1e78dbc79a9a709f8bbcc0fb8b1c3300c7e2fbd9392160a898e88ba1"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[26]",
+      "label": "27",
+      "text_sha256": "989e68d34fec41375e737a980be1312332532f406b0a3141a6330cb19752d2bf"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[27]",
+      "label": "28",
+      "text_sha256": "d2628ac7ddf80ba3ed15772ebba64431f8f395c955e84aa16a4e28f2e1c72066"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[28]",
+      "label": "29",
+      "text_sha256": "6b446e478ebef5ce2d184cc8011b59b09f5ccce8843d4e591a1f566b13a9bb86"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[29]",
+      "label": "30",
+      "text_sha256": "520ef833584f9d6468227827bfaa9710bd69e7e576b96dc16bfb12ad1aa5b2bb"
+    },
+    {
+      "selector": "books[0].chapters[0].verses[30]",
+      "label": "31",
+      "text_sha256": "6556361739a274a9cf296c0adee0d16e0c0dae4429bc849540f559b1c2c6fd41"
+    }
+  ],
+  "outside_scope_count": 28,
+  "native_unit_count": 31,
+  "verses": [
+    {
+      "label": "1",
+      "text": "In the beginning God created the heavens and the earth. "
+    },
+    {
+      "label": "2",
+      "text": "And the earth was waste and void; and darkness was upon the face of the deep: and the Spirit of God moved upon the face of the waters. "
+    },
+    {
+      "label": "3",
+      "text": "And God said, Let there be light: and there was light. "
+    }
+  ],
+  "normalization": {
+    "text": "collapse runs of whitespace and trim outer whitespace for TEI/public rows",
+    "source_bytes": "retained verbatim in the source hash and selected-unit text"
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "contract": "ocd-cvw-visual-receipt-v1",
+  "evidence_revision": "v2",
+  "supersedes_rejected_receipt": {
+    "path": "receipt-v1.json",
+    "sha256": "sha256-hex",
+    "preserved": true
+  },
+  "superseded_planning_evidence": [
+    {
+      "path": "oversized-review-matrix.json",
+      "sha256": "sha256-hex",
+      "preserved": true,
+      "not_visual_completion_evidence": true
+    }
+  ],
+  "captured_at_utc": "YYYY-MM-DDTHH:MM:SS.sssZ",
+  "runtime": {
+    "origin": "http://127.0.0.1:PORT",
+    "viewport": {
+      "width": 0,
+      "height": 0
+    },
+    "preflight_transcript_sha256": "sha256-hex",
+    "probe_path": "repo-relative-probe-path",
+    "probe_sha256": "sha256-hex",
+    "startup_snapshot": {
+      "renderer_sha256": "sha256-hex",
+      "service_sha256": "sha256-hex",
+      "review_contract_sha256": "sha256-hex",
+      "launcher_sha256": "sha256-hex",
+      "built_frontend_asset_hashes": {},
+      "executable_identity": {},
+      "pid": 0,
+      "process_started_at_utc": "YYYY-MM-DDTHH:MM:SS.sssZ",
+      "protected_input_identities": {},
+      "implementation_import_closure_sha256": "sha256-hex",
+      "intended_import_root": "absolute-worktree-root",
+      "import_root_pinned_before_cvw_import": true,
+      "loaded_module_origin_check": "pass-or-fail",
+      "loaded_cvw_modules": [
+        {
+          "module": "cvw_app.module",
+          "resolved_path": "absolute-module-path",
+          "byte_length": 0,
+          "sha256": "sha256-hex"
+        }
+      ],
+      "namespace_packages": [
+        {
+          "package": "cvw_app",
+          "file": null,
+          "path_entries": ["absolute-namespace-package-path"],
+          "concrete_imported_modules": [
+            "cvw_app/launch_windows.py",
+            "cvw_app/review_service.py"
+          ]
+        }
+      ],
+      "snapshot_sha256": "sha256-hex"
+    }
+  },
+  "handoff": {
+    "visual_backend_status": "available-or-unavailable",
+    "visual_backend_error": null,
+    "live_server_url": "http://127.0.0.1:PORT/review",
+    "server_process_identity": "pid-and-command-receipt",
+    "server_session_identity": "session-or-launch-receipt",
+    "implementation_import_snapshot_sha256": "sha256-hex",
+    "implementation_import_snapshot_sealed_at_launch": true,
+    "implementation_import_identity_limitation": null,
+    "continuous_process_evidence": {},
+    "import_and_asset_at_launch_identity": {},
+    "new_code_behavior_probe": "probe-name-and-result",
+    "candidate_lexical_path": "absolute-lexical-path",
+    "candidate_physical_path": "absolute-resolved-path",
+    "candidate_readable_from_review_context": false,
+    "receipt_paths": [],
+    "browser_unavailable_continuation": {
+      "immutable_candidate_binding": {},
+      "api_traversal_receipt_sha256": "sha256-hex",
+      "immutable_process_and_import_bindings": {},
+      "legacy_import_identity_limitation": null,
+      "remaining_artifacts_segments_and_anchors": [],
+      "standalone_playwright_or_http_substitution_prohibited": true,
+      "browser_capable_visible_session": "task-or-thread-id",
+      "browser_availability_scope": "task-local",
+      "worker_discovery_result": "available-or-no-browser",
+      "master_discovery_attempted": false,
+      "master_discovery_result": "available-or-no-browser",
+      "broader_blocker_classification_allowed": false,
+      "acceptance_state_before_transfer": "nonaccepted",
+      "acceptance_state_after_transfer": "nonaccepted"
+    }
+  },
+  "identity_copies": [
+    {
+      "selected_source": {
+        "artifact_id": "source-artifact-id",
+        "path": "logical-source-path",
+        "sha256": "sha256-hex"
+      },
+      "payload": {},
+      "sha256": "sha256-hex"
+    }
+  ],
+  "presentation_transforms": [],
+  "per_selection_paging": [],
+  "disposition_statuses": {
+    "structural_review_status": "open-structural-review",
+    "textual_reading_status": "print-text-decided",
+    "human_acceptance_status": "nonaccepted"
+  },
+  "embedded_evidence_carriers": [
+    {
+      "tei_route": "exact-tei-route",
+      "canonical_base64": false,
+      "declared_media_type": "media/type",
+      "bound_media_type": "media/type",
+      "decoded_byte_count": 0,
+      "decoded_sha256": "sha256-hex",
+      "enclosing_manifest_or_header_identity": {},
+      "ordinary_reading_disclosure": {},
+      "literal_available_only_on_exact_tei_route": true,
+      "used_as_readable_tei_substitute": false
+    }
+  ],
+  "coverage": {
+    "mode": "partial",
+    "exact_candidate_scope": {},
+    "work_catalog_unit_scope": {
+      "status": "partial-or-complete",
+      "declared_members": [],
+      "completed_members": []
+    },
+    "artifact_and_selection_coverage": {},
+    "segment_traversal_coverage": {},
+    "close_proofreading_coverage": {},
+    "exhaustive_mechanical_accounting": {},
+    "risk_based_visual_sample": {
+      "selection_rule": "beginning-middle-end-structure-and-risk-anchors",
+      "loci": [],
+      "physical_frame_count": 0
+    },
+    "api_structure_inflated_into_per_unit_visual_claims": false,
+    "source_review_routes": [
+      {
+        "artifact_identity": {},
+        "observed_root_keys": [],
+        "parent_object_route": "exact-json-pointer",
+        "unit_number_field": "exact-field-name",
+        "question_field": "exact-field-name",
+        "answer_field": "exact-field-name",
+        "route_reopened_exact_parent_object": false
+      }
+    ],
+    "source_artifact_to_tei_edition_order": [],
+    "structural_sidecar_dispositions": [],
+    "structural_anchor_receipts": [
+      {
+        "artifact_identity": {},
+        "structural_unit_id_or_number": "unit-id-or-number",
+        "local_field_or_child": "field-or-child",
+        "exact_text_sha256": "sha256-hex",
+        "provider_specific_needle": "exact-provider-text"
+      }
+    ],
+    "segments_traversed": [],
+    "locations_close_compared": []
+  },
+  "compare_responses": [
+    {
+      "route_url": "http://127.0.0.1:PORT/compare?stable=query",
+      "response_sha256": "sha256-hex",
+      "embedded_panes": {
+        "source": {
+          "selected_artifact": {},
+          "segment": {},
+          "visible_content_bounds": {},
+          "warnings": []
+        },
+        "tei": {
+          "selected_artifact": {},
+          "segment": {},
+          "visible_content_bounds": {},
+          "warnings": []
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "absolute-or-receipt-relative-image-path",
+      "byte_length": 0,
+      "sha256": "sha256-hex",
+      "filename_extension": ".jpg",
+      "sniffed_media_type": "image/jpeg",
+      "decoded_format": "JPEG",
+      "extension_matches_media_type_or_was_transcoded": true,
+      "dimension_decoder": "trusted-image-library-and-version",
+      "decoded_width": 0,
+      "decoded_height": 0,
+      "dimension_validation": "pass-or-fail",
+      "captured_at_utc": "YYYY-MM-DDTHH:MM:SS.sssZ",
+      "route_url": "http://127.0.0.1:PORT/review?stable=query",
+      "route_path_query": "/review?stable=query",
+      "viewport": {
+        "width": 0,
+        "height": 0
+      },
+      "requested_css_viewport": {
+        "width": 0,
+        "height": 0
+      },
+      "encoded_dimensions_match_requested_viewport": false,
+      "post_capture_protected_input_identities": {},
+      "post_capture_implementation_import_snapshot_sha256": "sha256-hex",
+      "displayed_segment_ranges": [],
+      "terminal_statuses": [],
+      "visible_warnings": [],
+      "warning_classifications": [
+        {
+          "warning": "Recorded location is outside this segment range",
+          "route_contract_interpretation": "truthful-cross-segment-location",
+          "neighboring_content_substituted": false,
+          "replacement_inferred": false,
+          "frame_failed_by_warning_alone": false
+        }
+      ],
+      "visible_anchor_literals": [],
+      "selected_recorded_location": {},
+      "actual_segment_and_dom_focus": {},
+      "label_focus_mismatch_explanation": null,
+      "correspondence_inferred_from_layout": false,
+      "claimed_anchor_visibility_checks": [
+        {
+          "anchor": "exact-anchor",
+          "fully_visible": false,
+          "clipped": false,
+          "off_screen": false,
+          "independently_inspected": false
+        }
+      ]
+    }
+  ],
+  "browser_diagnostics": {
+    "high_level_logs_helper_available": false,
+    "cdp_domains_enabled": ["Network", "Runtime", "Log"],
+    "capture_interval_utc": {},
+    "route_status_receipts": [],
+    "runtime_exceptions": [],
+    "log_entries": [
+      {
+        "origin_classification": "cvw-or-browser-instrumentation-or-unknown",
+        "message": "exact-log-message"
+      }
+    ],
+    "console_clean_claim": false
+  },
+  "independent_repair_gate": {
+    "status": "pending-or-accepted-or-rejected",
+    "reviewer_identity": "independent-reviewer",
+    "receipt_sha256": "sha256-hex",
+    "file_hashes_verified": false,
+    "media_types_and_dimensions_verified": false,
+    "per_frame_metadata_verified": false,
+    "claimed_anchors_fully_visible": false
+  },
+  "acceptance_created_or_stored": false
+}

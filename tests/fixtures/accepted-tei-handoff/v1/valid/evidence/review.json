@@ -1,0 +1,19 @@
+{
+  "contract": "ocd-synthetic-review-v1",
+  "identity": {"work_id": "synthetic-work", "textual_form_id": "synthetic-form", "edition_id": "synthetic-edition", "acquisition_id": "synthetic-acquisition"},
+  "accepted_tei": {"path": "accepted.tei.xml", "bytes": 1248, "sha256": "b2b6b9bd64ee9cf530fcaa883fe5f3b4f270cfbaa7874338ce4daf3f5c9e49c0"},
+  "source": {"source_path": "source-member.xml", "source_sha256": "d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2", "source_bytes": 60, "source_scope": "div1[@id='unit']"},
+  "scope": {"kind": "member", "declared": "div1[@id='unit']"},
+  "reviewer": "agent:synthetic-review",
+  "reviewed_at": "2026-09-06T10:00:00Z",
+  "coverage": {
+    "status": "partial",
+    "declared": "div1[@id='unit']",
+    "reached": ["div1[@id='unit']"],
+    "inspected": ["div1[@id='unit']/p"],
+    "unreviewed": ["div1[@id='unit']/note"]
+  },
+  "source_quality_uncertainty": ["Synthetic source quality is unassessed outside the fixture member."],
+  "discrepancies": [],
+  "unreviewed_residuals": ["The synthetic note locus was not inspected."]
+}

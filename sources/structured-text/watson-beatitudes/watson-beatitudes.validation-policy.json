@@ -1,0 +1,20 @@
+{
+  "contract": "watson-beatitudes-validation-policy-v1",
+  "work_id": "watson-beatitudes",
+  "profile": "watson-beatitudes.reconstruction-profile.json",
+  "source_accountability": "watson-beatitudes.source-accountability.json",
+  "source_accountability_schema": "watson-beatitudes.source-accountability.schema.json",
+  "route_scope": "Source-bound work-local route only; no candidate generation, CVW admission, integration, acceptance, rights, release, or publication.",
+  "required_checks": [
+    "Verify the exact retained member path, byte length, SHA-256, ThML root, and all 25 ordered direct div1 carriers against the work-local selection.",
+    "Independently enumerate every selected element and compare source path, native id, source tag, and exact source attributes with source-accountability.features.",
+    "Verify deterministic one-to-one TEI xml:id mapping, source preorder, element mapping, exact text/tail values, child order, comments, and TEI P5 schema validity.",
+    "Verify each scripCom as an empty TEI milestone in source order with unit=scripCom, the original type, passage n, and OSIS corresp; verify ol as an ordered TEI list with its two source items in order.",
+    "Verify the complete document shell, direct-body comment accounting, source-envelope census, original source hash binding, and unresolved question set.",
+    "Reject omission, duplication, reordering, source-accountability drift, or mutation of either custom mapping."
+  ],
+  "source_attributes": "Full original attribute names and values remain in source-accountability.features even when represented through a TEI attribute or retained only in accounting.",
+  "identity_and_rights": "Header metadata remains source evidence. No unsupported work/part/form/edition/witness claim, print date, rights clearance, human acceptance, release, or publication claim may be added.",
+  "determinism": "The producer returns exactly the five non-manifest package members and must produce byte-identical in-memory members for unchanged authorities.",
+  "integration_boundary": "The shared reconstruction contract may consume the work-specific callable, but coordinator-owned candidate generation, package sealing, CVW, and integration are not part of this slice."
+}

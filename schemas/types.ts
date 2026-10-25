@@ -21,12 +21,13 @@ export type ProcessingMethod =
 export type Completeness = "full" | "partial" | "in-progress";
 
 export type ContributorRole =
-  | "author" | "translator" | "editor" | "transcriber"
+  | "author" | "translator" | "editor" | "series_editor" | "reviser" | "transcriber"
   | "compiler" | "contributor" | "narrator" | "annotator" | "digitizer";
 
 export interface Contributor {
   name: string;
   role?: ContributorRole;
+  note?: string;
   affiliation?: string;
   url?: string;
 }
@@ -36,9 +37,14 @@ export interface Provenance {
   source_format: string;
   source_edition: string;
   /** ISO 8601 date: YYYY-MM-DD */
-  download_date: string;
+  download_date: string | null;
   /** sha256:{64 hex chars} */
   source_hash: string;
+  source_hash_scope?: string | null;
+  source_revision?: string | null;
+  source_revision_type?: string | null;
+  /** sha256:{64 hex chars} */
+  generated_content_hash?: string | null;
   processing_method: ProcessingMethod;
   processing_script_version: string;
   /** ISO 8601 date: YYYY-MM-DD */
@@ -72,6 +78,11 @@ export interface ResourceMeta {
   verse_text_source: string;
   verse_reference_standard: "OSIS";
   completeness: Completeness;
+  expression_id?: string | null;
+  digital_witness_id?: string | null;
+  witness_role?: string | null;
+  related_witness_ids?: string[];
+  segmentation_basis?: string | null;
   provenance: Provenance;
   summary_metadata: SummaryMetadata | null;
 }

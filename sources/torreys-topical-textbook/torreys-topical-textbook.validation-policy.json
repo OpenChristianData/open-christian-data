@@ -1,0 +1,15 @@
+{
+  "contract": "ocd-torreys-topical-textbook-validation-policy-v1",
+  "policy_id": "torreys-topical-textbook-jwbickel-jsonl-policy-v1",
+  "oracle_id": "ocd-lib022-torreys-topical-textbook-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "publication_status": "not_ready",
+  "ticket_id": "LIB-022",
+  "work_id": "torreys-topical-textbook",
+  "source_id": "jwbickel-bible-dictionaries-torreys-jsonl",
+  "required_counts": {"records": 623, "definition_blocks": 23549, "observations": 24172, "unresolved_rows": 3},
+  "required_top_level_fields": ["definitions", "term"],
+  "tei_structure": {"entry": "entry", "headword": "form/orth", "definition_blocks": "sense/def", "reference_policy": "embedded citation-looking text remains literal source text"},
+  "requirements": ["independently reread the retained JSONL", "reject omission, duplication, reorder, invention, metadata drift, provenance drift, stale evidence, and unresolved-row drift", "validate TEI against the pinned ocd_kernel/tei/vendor/xsd/tei_all.xsd", "keep publication not ready"]
+}

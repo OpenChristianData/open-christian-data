@@ -1,0 +1,471 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/brenton-bible-tables.schema.json",
+  "title": "OCD Brenton accepted Bible public row",
+  "description": "One source-defined Brenton verse, source-table row, or single unnumbered source paragraph; accepted source order is explicit.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "category",
+    "language",
+    "text",
+    "representation_revision",
+    "locator",
+    "provenance",
+    "notes",
+    "references",
+    "versification"
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "category": {
+      "const": "bible"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "notes": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"
+    },
+    "references": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"
+    },
+    "versification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "versification",
+        "source_order"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "verse",
+            "source-table-row",
+            "source-paragraph"
+          ]
+        },
+        "book": {
+          "type": "string",
+          "minLength": 1
+        },
+        "book_osis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verse": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "verse_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "versification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reference": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+        },
+        "reference_origin": {
+          "const": "tei-verse-components"
+        },
+        "reference_status": {
+          "enum": [
+            "unsupported-verse-components",
+            "normalized-verse-components"
+          ]
+        },
+        "chapter_label": {
+          "const": "0"
+        },
+        "native_chapter_policy": {
+          "const": "source-native-zero-chapter-v1"
+        },
+        "witness": {
+          "type": "string",
+          "enum": [
+            "US",
+            "Cth"
+          ],
+          "description": "Exact named source witness within the accepted Open English Bible edition."
+        },
+        "source_member": {
+          "enum": [
+            "FRT",
+            "XXA",
+            "LAM"
+          ]
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_type": {
+          "const": "paragraph-break"
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "chapter": {
+              "minimum": 1
+            }
+          },
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "chapter_label"
+                ]
+              },
+              {
+                "required": [
+                  "native_chapter_policy"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "required": [
+            "chapter_label",
+            "native_chapter_policy",
+            "reference_status"
+          ],
+          "properties": {
+            "chapter": {
+              "const": 0
+            },
+            "versification": {
+              "const": "source-native:original-douay-rheims-v1.0"
+            },
+            "reference_status": {
+              "const": "unsupported-verse-components"
+            }
+          },
+          "not": {
+            "required": [
+              "reference"
+            ]
+          }
+        }
+      ]
+    },
+    "table_cells": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "column",
+          "text"
+        ],
+        "properties": {
+          "column": {
+            "enum": [
+              "label",
+              "1",
+              "2"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-bible-brenton-source-tables-v1",
+    "unit_type": "verse-or-exact-Brenton-source-unit",
+    "source_rule": "A verse carrier has an explicit book identity, chapter, verse label, and edition versification.",
+    "supported_carriers": [
+      "ab",
+      "p",
+      "seg",
+      "verse",
+      "div[@type='verse']"
+    ],
+    "unsupported_behavior": "Visible unsupported structure raises an unsupported-visible diagnostic; it is never silently flattened or renumbered.",
+    "source_zero_chapter": "Explicit bible_native_chapter_policy source-native-zero-chapter-v1 with closed source-native:original-douay-rheims-v1.0 permits only exact native chapter label0; no normalized reference is inferred."
+  },
+  "allOf": [
+    {
+      "then": {
+        "properties": {
+          "versification": {
+            "const": "source-native:original-douay-rheims-v1.0"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "locator": {
+            "properties": {
+              "chapter": {
+                "const": 0
+              }
+            },
+            "required": [
+              "chapter"
+            ]
+          }
+        },
+        "required": [
+          "locator"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "edition_id": {
+            "const": "oeb-2025-6-us-cth"
+          }
+        },
+        "required": [
+          "edition_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "locator": {
+            "required": [
+              "witness"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "locator": {
+            "not": {
+              "required": [
+                "witness"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "locator": {
+            "properties": {
+              "kind": {
+                "const": "verse"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "locator"
+        ]
+      },
+      "then": {
+        "properties": {
+          "locator": {
+            "required": [
+              "book",
+              "book_osis",
+              "chapter",
+              "verse"
+            ]
+          }
+        },
+        "not": {
+          "required": [
+            "table_cells"
+          ]
+        }
+      },
+      "else": {
+        "if": {
+          "properties": {
+            "locator": {
+              "properties": {
+                "kind": {
+                  "const": "source-table-row"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            }
+          },
+          "required": [
+            "locator"
+          ]
+        },
+        "then": {
+          "required": [
+            "table_cells"
+          ],
+          "properties": {
+            "locator": {
+              "required": [
+                "source_member",
+                "row"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "book"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "book_osis"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "chapter"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "verse"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "source_type"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "locator": {
+              "required": [
+                "source_member",
+                "chapter",
+                "source_type"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "book"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "book_osis"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "verse"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "row"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "not": {
+            "required": [
+              "table_cells"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "locator": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "source-table-row",
+                  "source-paragraph"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "locator"
+        ]
+      },
+      "then": {
+        "properties": {
+          "edition_id": {
+            "const": "brenton-septuagint-electronic"
+          }
+        }
+      }
+    }
+  ]
+}

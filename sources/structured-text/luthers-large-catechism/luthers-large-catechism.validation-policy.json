@@ -1,0 +1,15 @@
+{
+  "contract": "ocd-lib077-validation-policy-v1",
+  "policy_id": "lib077-luthers-large-catechism-independent-validation-v1",
+  "work_id": "luthers-large-catechism",
+  "rules": [
+    "The one retained Gutenberg member must match the manifest bytes, line count, BOM, CRLF framing, and SHA-256.",
+    "Every retained physical line must be represented exactly once in source order and bound to its source byte interval.",
+    "Header, Gutenberg markers, work content, and license/support lines must retain their source-native classifications.",
+    "Part and section headings must remain typed source-line carriers without silent editorial normalization.",
+    "The candidate must be TEI P5 schema-valid, nonaccepted, and bound to this manifest and profile.",
+    "The independent oracle must reject source drift, accountability mutation, TEI line mutation, metadata mutation, and unresolved-boundary mutation.",
+    "Technical validation does not establish human acceptance, rights clearance, accepted IR, CVW review, or publication authorization."
+  ]
+}
+

@@ -1,0 +1,29 @@
+{
+  "contract": "watson-complete-present-thml-policy-v1",
+  "policy_id": "37c-316-watson-divine-contentment-complete-present-thml-policy-v1",
+  "work_id": "watson-divine-contentment",
+  "checks": [
+    "Bind the exact retained source member by path, byte count, and SHA-256 and validate the work/acquisition source-selection relationship.",
+    "Independently enumerate every source element, every present top-level carrier, source order, direct text, tail text, attributes, and document shell.",
+    "Map every present body tag in the retained source; reject any unmapped tag, omission, duplication, reordering, or candidate feature drift.",
+    "Preserve all source attributes and shell metadata in source-accountability.json, while mapping supported semantics to valid TEI attributes.",
+    "Validate source-accountability JSON, candidate-package JSON, and TEI P5 XSD; reject stale member bindings.",
+    "Reject candidate mutations to content, topology, attributes, accountability, provenance, unresolved boundaries, or source-gap accounting.",
+    "Reconstruct from fresh processes and require byte-identical candidate members.",
+    "Use the exact retained source/candidate pair for WorkCatalog and native CVW review; visual review does not establish acceptance."
+  ],
+  "present_carrier_coverage": {
+    "expected_count": 17,
+    "expected_ids": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix"],
+    "candidate_scope": "complete present source envelope",
+    "source_gap": ["ix", "x"]
+  },
+  "candidate_boundary": {
+    "status": "nonaccepted",
+    "source_quality": "unassessed",
+    "human_acceptance": "separate decision",
+    "rights_clearance": "separate decision",
+    "accepted_ir": "not created",
+    "release_and_publication": "not authorized"
+  }
+}

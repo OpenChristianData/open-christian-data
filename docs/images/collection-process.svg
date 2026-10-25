@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="570" viewBox="0 0 1120 570" role="img" aria-labelledby="title desc">
+  <title id="title">From a source text to a collection you can use</title>
+  <desc id="desc">We make a faithful master copy of a source text. Agents use the Corpus Verification Workbench to compare the source and copy visually and make corrections. Dataset downloads are built from the master copies.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#98763c" stroke-width="1.5"/></marker>
+    <pattern id="paper" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".65" fill="#a18a63" opacity=".09"/></pattern>
+  </defs>
+  <rect width="1120" height="570" rx="20" fill="#faf7f0"/>
+  <rect width="1120" height="570" rx="20" fill="url(#paper)"/>
+  <g fill="#293c37" font-family="Georgia, 'Times New Roman', serif">
+    <text x="48" y="62" font-size="31">From a source text to a collection you can use</text>
+  </g>
+  <text x="48" y="96" fill="#62675e" font-family="Arial, sans-serif" font-size="18">One master copy. Downloads made from it. Corrections carried through.</text>
+  <g fill="#fffdf9" stroke="#d9d3c5" stroke-width="1.5">
+    <rect x="48" y="133" width="280" height="224" rx="14"/>
+    <rect x="420" y="133" width="280" height="224" rx="14"/>
+    <rect x="792" y="133" width="280" height="224" rx="14"/>
+  </g>
+  <g stroke="#98763c" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M345 245H400"/><path d="M717 245H772"/>
+  </g>
+  <g stroke="#425c50" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M81 186q26-13 52 0v53q-26-13-52 0zm52 0q26-13 52 0v53q-26-13-52 0z" fill="#f0eee3"/>
+    <path d="m91 195 30 0m-30 10h30m-30 10h25m27-20h30m-30 10h30m-30 10h25" stroke="#b1b3a1"/>
+    <path d="M458 169h57l17 17v61h-74z" fill="#f0eee3"/>
+    <path d="M515 169v17h17m-60 13h43m-43 11h43m-43 11h26" stroke="#879680"/>
+    <path d="m542 220 8 8 16-20" stroke="#98763c" stroke-width="3"/>
+    <rect x="832" y="175" width="66" height="51" rx="5" fill="#f0eee3"/>
+    <rect x="844" y="186" width="66" height="51" rx="5" fill="#fffdf9"/>
+    <path d="M855 198h43m-43 10h43m-43 10h28" stroke="#879680"/>
+  </g>
+  <g fill="#293c37" font-family="Georgia, 'Times New Roman', serif" font-size="27">
+    <text x="76" y="285">A source text</text>
+    <text x="448" y="285">A faithful copy</text>
+    <text x="820" y="285">Ready to use</text>
+  </g>
+  <g fill="#62675e" font-family="Arial, sans-serif" font-size="18">
+    <text x="76" y="316">A book, scan, or digital text</text>
+    <text x="448" y="316">The whole work in TEI XML</text>
+    <text x="820" y="316">Master files and dataset rows</text>
+  </g>
+  <g fill="none" stroke="#acb4a5" stroke-width="1.5">
+    <path d="M188 357v32q0 10 10 10h362v24"/>
+    <path d="M560 357v42"/>
+  </g>
+  <rect x="48" y="423" width="1024" height="105" rx="14" fill="#e9eee5"/>
+  <g stroke="#425c50" stroke-width="1.8" fill="none" stroke-linejoin="round">
+    <rect x="76" y="447" width="70" height="50" rx="4" fill="#fffdf9"/><path d="M111 447v50m-26-35h17m-17 9h17m18-9h17m-17 9h17"/>
+    <path d="m128 493 8 8 16-19" stroke="#98763c" stroke-width="2.5"/>
+  </g>
+  <text x="174" y="463" fill="#293c37" font-family="Georgia, 'Times New Roman', serif" font-size="26">Check the copy against its source</text>
+  <text x="174" y="495" fill="#425c50" font-family="Arial, sans-serif" font-size="18">Agents use CVW to compare the words and layout side by side, then make corrections.</text>
+</svg>

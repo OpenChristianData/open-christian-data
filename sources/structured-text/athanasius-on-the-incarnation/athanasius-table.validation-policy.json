@@ -1,0 +1,53 @@
+{
+  "contract": "ocd-npnf204-validation-policy-v1",
+  "policy_id": "npnf204-assigned-div1-vi-through-xxv-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_assigned_work_count": 20,
+  "required_feature_count": 26890,
+  "required_attribute_count": 57398,
+  "required_table_census": {"tables": 6, "rows": 180, "cells": 966},
+  "required_preserved_table_route": {"feature_count": 1241, "tables": 1, "rows": 55, "cells": 165},
+  "tei_header": {
+    "root_xml_id": "npnf204-lib045",
+    "body_xml_id": "npnf204-assigned-body",
+    "title": "NPNF2-04. Athanasius: Select Works and Letters — assigned works vi–xxv",
+    "author": "Athanasius of Alexandria and Eusebius of Caesarea",
+    "publisher": "Open Christian Data",
+    "availability_status": "restricted",
+    "source_url": "https://www.ccel.org/ccel/schaff/npnf204.xml",
+    "print_source": "NPNF Second Series, Volume IV: Athanasius: Select Works and Letters (retained title pages; no print collation)",
+    "rights_statement": "The local source configs label the underlying texts public domain. CCEL permits parsing its ThML; do not sell CCEL files or derivatives of CCEL formatting. Attribution is included in README.source.md. Human acceptance and publication remain absent."
+  },
+  "checks": [
+    "source-authority-hash-and-member-binding",
+    "exact-div1-scope-and-twenty-work-order",
+    "complete-feature-and-attribute-crosswalk",
+    "exact-hierarchy-text-tail-and-title-preservation",
+    "omission-duplication-reorder-and-invention-detection",
+    "all-six-table-structure-and-census",
+    "preserved-div1-vii-1241-and-1-55-165-contract",
+    "exact-xml-prolog-no-doctype-no-root-siblings-and-namespace-inventory",
+    "tei-p5-xsd",
+    "source-accountability-json-schema",
+    "complete-tei-root-and-header-structure",
+    "retained-metadata-rights-attribution-and-localized-credit",
+    "candidate-package-integrity-and-current-bindings",
+    "producer-independent-import-closure"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.athanasius_table_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

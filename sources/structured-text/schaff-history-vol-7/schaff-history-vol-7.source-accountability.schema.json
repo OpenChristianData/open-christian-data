@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/lib058-schaff-history-vol-7-source-accountability-v1.json",
+  "title": "LIB-058 Schaff History volume 7 source accountability",
+  "type": "object",
+  "required": ["contract", "work_id", "source_sha256", "source_bytes", "physical_lines", "represented_lines", "omitted_lines", "duplicated_lines", "member_census", "excluded_members", "source_structure", "crosswalk_sha256", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-lib058-source-accountability-v1"}, "work_id": {"const": "schaff-history-vol-7"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_bytes": {"type": "integer", "minimum": 1}, "physical_lines": {"type": "integer", "minimum": 1}, "represented_lines": {"type": "integer", "minimum": 1}, "omitted_lines": {"const": 0}, "duplicated_lines": {"const": 0}, "member_census": {"type": "array", "minItems": 1, "items": {"type": "object"}}, "excluded_members": {"const": []},
+    "source_structure": {"type": "object", "required": ["root", "head", "body", "body_top_level", "content_div2", "content_sections", "content_chapters", "content_div3", "index_div2", "tag_counts"], "properties": {"root": {"const": "ThML"}, "head": {"const": "ThML.head"}, "body": {"const": "ThML.body"}, "body_top_level": {"type": "array", "minItems": 3, "items": {"type": "object"}}, "content_div2": {"const": 9}, "content_sections": {"const": 0}, "content_chapters": {"const": 9}, "content_div3": {"const": 124}, "index_div2": {"const": 4}, "tag_counts": {"type": "object", "minProperties": 1}}, "additionalProperties": false},
+    "crosswalk_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "crosswalk": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}
+

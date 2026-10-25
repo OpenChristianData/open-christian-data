@@ -1,0 +1,190 @@
+{
+  "contract": "ocd-imitation-of-christ-reconstruction-profile-v1",
+  "profile_id": "imitation-of-christ-complete-retained-checkout-v1",
+  "version": 1,
+  "source_scope": {
+    "commit": "03503a97cf39c5b5eea3b7522335aaa337a4a633",
+    "tree": "035df211de2de3a544e4b61252bf9bc3dfbe73a9",
+    "member_count": 142,
+    "bytes": 5110829,
+    "member_set_sha256": "1e5a5f4eb690c01d8424bc8bdaeb9dfc7add41690339e7b67e767e5046f98021",
+    "config_bytes": 1197,
+    "config_sha256": "702c05e37ca46fed4c9337fe2f664f4b79ac7e813f4602e19ec748d0494a4134"
+  },
+  "feature_counts": {
+    "spine_members": 126,
+    "toc_links": 126,
+    "front_members": 5,
+    "body_members": 118,
+    "back_members": 3,
+    "landmarks": 2,
+    "sections": 131,
+    "top_level_sections": 126,
+    "nested_sections": 5,
+    "headings": 125,
+    "hgroups": 4,
+    "bridgeheads": 115,
+    "paragraphs": 922,
+    "note_references": 183,
+    "note_bodies": 183,
+    "note_backlinks": 183,
+    "visible_note_labels": 183,
+    "lists": 2,
+    "content_list_items": 4,
+    "note_list_items": 183,
+    "verse_groups": 3,
+    "verse_lines": [
+      2,
+      2,
+      3
+    ],
+    "image_members": 7,
+    "packaged_images": 3,
+    "image_alternatives": 3,
+    "svg_title_text_observations": 13,
+    "svg_description_observations": 1,
+    "continued_paragraphs": 3,
+    "eoc_abbreviations": 2,
+    "inline_carriers": {
+      "a": 383,
+      "abbr": 34,
+      "b": 5,
+      "strong": 1,
+      "i": 24,
+      "em": 5,
+      "span": 23,
+      "time": 8,
+      "br": 26,
+      "img": 3
+    },
+    "language_carriers": {
+      "en-GB": 122,
+      "en-US": 4,
+      "la": 20,
+      "it": 1,
+      "fr": 1
+    }
+  },
+  "nested_section_ids": [
+    "chapter-3-3-1",
+    "chapter-3-15-1",
+    "chapter-3-23-1",
+    "chapter-3-23-2",
+    "chapter-3-27-1"
+  ],
+  "semantic_digests": {
+    "sections": "e32f996816547536f8d9db7bd3e088ecc737daef62564ad42eb8cc56394fcc42",
+    "headings": "6234b6e4039378ba798bae4c29fb68c8f519538f6fd3516531ab6824078d0969",
+    "hgroups": "984ab80118bb8a8de02537805ca33f3d37c6d74d1687168582bb648ff5876f7b",
+    "bridgeheads": "0ac6b29785af6b3b45aefa7528057d969ea5dc902a18a0293fe198a29026a3e3",
+    "paragraphs": "6d1953aeeb956d366c01d475c3e6655f2df28dab0975e3e6c0a8575fd51bb711",
+    "notes": "0e7e3a1922fb3a06abf52c3ef23020fe31ad4f8ffc2260720fb41d775986915e",
+    "lists": "2846bd0318527ae99d8d5ff874b07857127b119b69ccd069cf178ff67e28b3b9",
+    "verse": "e3d6316753eb70ca164cd9b855719a7c4ee51ce8cbdecc57e87fd995a37e2592",
+    "inline": "8d2ee3f274878c99f46f0caeb50253c00c09b40f93cef4e2dc1e0b1ab295cf14",
+    "languages": "e86f5f65fdb757a6e5b0c6777350b2225c4607aa0a1fa3cdde361fde0af8d165",
+    "images": "882c2ad6e87056de58a4adcc8ef108acaab23d2717679ccfff957494ec29ac62",
+    "toc": "7d77c41c19ff960871e06c7198de18601bdf9160fd6ed7df1e4a8efd74eff655",
+    "landmarks": "8958aaf1f813d3423ca9bcc2377e8a202425f7d98656dcbfbc63854803058150"
+  },
+  "non_xml_dispositions": {
+    "LICENSE.md": "direct rights, jurisdiction-warning, and CC0 evidence",
+    "images/cover.jpg": "root rendered cover artwork evidence",
+    "images/cover.source.jpg": "root high-resolution cover source artwork evidence",
+    "src/epub/css/core.css": "core typography including continued-paragraph and abbreviation behavior",
+    "src/epub/css/local.css": "work-specific bridgehead, verse, dedication, and subchapter styling evidence",
+    "src/epub/css/se.css": "Standard Ebooks semantic styling evidence",
+    "src/mimetype": "EPUB package media-type evidence"
+  },
+  "css_semantics": {
+    "continued": {
+      "source": "src/epub/css/core.css",
+      "selector": "p.continued",
+      "effect": "text-indent: 0",
+      "occurrence_bindings": [
+        "urn:ocd-source-observation:dc91b8dbbf4586c14ea68648c82863dbfb38587823f29154951192cad234a862",
+        "urn:ocd-source-observation:3b93a32a920ab28cbb5cc974ff42fdcf142c89c71f69108453ae342fd0ddaeb3",
+        "urn:ocd-source-observation:8e70a3db09307debf36b426b9448046cce7f061f892a0e13ccab0e74ee00b35a"
+      ]
+    },
+    "eoc": {
+      "source": "src/epub/css/core.css",
+      "selector": "abbr",
+      "effect": "white-space: nowrap",
+      "class": "eoc",
+      "occurrence_bindings": [
+        "urn:ocd-source-observation:39cda58a3a51a305d3b2b753fedb1544bec12ded1d6f89817241ec0925f3f928",
+        "urn:ocd-source-observation:82633fab9ea8dc41869e9fb6ba71e5d93e918c00c4d1dc976012df1cb61a5213"
+      ]
+    }
+  },
+  "metadata": {
+    "title": "The Imitation of Christ",
+    "popular_attribution": "Thomas à Kempis",
+    "principal_responsibilities": [
+      [
+        "annotator, translator, writer of preface",
+        "William Benham"
+      ],
+      [
+        "annotator",
+        "H. C. Beeching"
+      ],
+      [
+        "artist",
+        "El Greco"
+      ]
+    ],
+    "contributors": [
+      "The League of Moveable Type",
+      "William Benham",
+      "H. C. Beeching",
+      "El Greco",
+      "Project Gutenberg",
+      "Weijia Cheng",
+      "Alex Cabal"
+    ],
+    "opf_sources": [
+      "https://www.gutenberg.org/ebooks/1653",
+      "https://archive.org/details/imitationchrist07thomgoog",
+      "https://archive.org/details/dli.bengal.10689.16231"
+    ],
+    "source_links": [
+      "https://github.com/standardebooks/thomas-a-kempis_the-imitation-of-christ_william-benham",
+      "https://standardebooks.org/ebooks/thomas-a-kempis/the-imitation-of-christ/william-benham",
+      "https://www.gutenberg.org/ebooks/1653",
+      "https://archive.org/details/imitationchrist07thomgoog",
+      "https://archive.org/details/dli.bengal.10689.16231"
+    ]
+  },
+  "metadata_conflicts": [
+    "The retained package and title surfaces popularly attribute the originally anonymous work to Thomas à Kempis, while the retained preface disputes that attribution and argues for John Gersen; attribution remains unresolved.",
+    "The local config gives 1427, the retained package says early 15th century, and the retained preface advances earlier manuscript evidence; the work date remains uncertain.",
+    "The retained dedication is dated 1874 while the retained colophon says William Benham translated the work in 1877; neither date is silently normalized.",
+    "The local config says the edition supersedes Project Gutenberg #26222, while the retained OPF and colophon identify Project Gutenberg #1653 as the transcription basis.",
+    "The local config names only William Benham, while the retained package names William Benham, H. C. Beeching, El Greco, Project Gutenberg, Weijia Cheng, Alex Cabal, and The League of Moveable Type in distinct roles.",
+    "The underlying text/artwork public-domain belief, other-jurisdiction warning, and CC0 dedication of Standard Ebooks contributions are separate rights claims."
+  ],
+  "rights": {
+    "underlying_text_and_artwork": "believed United States public domain",
+    "jurisdiction_warning": "may remain copyrighted in other countries; local-law review required",
+    "standard_ebooks_contributions": "CC0 1.0 Universal Public Domain Dedication",
+    "candidate": "nonaccepted; no human textual acceptance or publication authorization"
+  },
+  "unresolved_claims": {
+    "kempis-popular-attribution-disputed": "The retained witness popularly attributes the work to Thomas à Kempis while its preface presents a competing John Gersen attribution.",
+    "kempis-work-date-uncertain": "The retained config, OPF description, and preface preserve incompatible or uncertain dating evidence including 1427, early fifteenth century, and claims of earlier circulation.",
+    "kempis-benham-edition-date-conflict": "The retained dedication is dated 1874 and the retained colophon reports an 1877 Benham translation date.",
+    "kempis-project-gutenberg-basis-conflict": "The local config refers to Project Gutenberg #26222 while the retained package and colophon bind the transcription basis to #1653.",
+    "kempis-contributor-scope-conflict": "The local config contributor list is narrower than the retained OPF contributor and responsibility evidence.",
+    "kempis-rights-jurisdiction": "United States public-domain belief, other-jurisdiction uncertainty, and the CC0 contribution dedication remain separate claims requiring human review.",
+    "kempis-human-acceptance": "Deterministic generation and validation do not constitute human textual acceptance or publication readiness."
+  },
+  "producer_import_closure_sha256": "f54544257a042228576bb81c9c7ce72bde48b3ea6fe501f15c7421247c31c75f",
+  "disposition_contract": {
+    "id": "ocd-candidate-projection-disposition-v1",
+    "represented": "An XML observation is represented exactly when its source element binding occurs in content.tei.xml @corresp or in a provenance.json string value; every such candidate binding must name a retained source element.",
+    "evidence_only": "An XML observation is evidence-only exactly when its source element binding is absent from both candidate projection surfaces.",
+    "ordered_dispositions_sha256": "SHA-256 of UTF-8 canonical JSON plus LF for the 10,009 disposition labels in source-member and source-walk observation order."
+  }
+}

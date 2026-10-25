@@ -1,10 +1,10 @@
 # Fidelity contract
 
-**Status:** Living document, seeded 2026-07-02 with the City of God pilot class (two renderings).
-Further source classes are added as each format family is brought into the TEI IR — the class table
-is written when the family is walked, not speculatively. The 2026-07-16 campaign expanded the named
-proof set but performed no publish cutover. Unresolved fidelity and cutover work lives in
-`docs/DATASET_SUCCESSOR_QUEUE.md`.
+**Scope:** Source-family fidelity rules and their recorded proofs. The City of
+God pilot began this record on July 2, 2026; the dated results below describe
+those particular checks. New contributions use the [maintained workflow](TEXT_CONTRIBUTIONS.md)
+and its reconstruction contract, with evidence for their own exact source.
+Historical campaign queues do not assign current work.
 
 This is the oracle the fidelity gates check against. It rules, per source class and feature, what
 must survive and where. "The goal is not to preserve everything, but to make every intentional loss
@@ -19,16 +19,17 @@ rules:
    `normalized` (deliberate canonicalization, recorded here once) or `excluded` (recorded here
    once, with the reason). The census-vs-TEI gate enforces this mechanically: every censused
    feature ID must appear in the IR or be covered by a `normalized`/`excluded` ruling.
-2. **IR -> projection** may drop anything, and the intended contract is that every drop appears on
-   that projection's coverage ledger (`loss-receipt-v1`), per node ID. The present checker enforces
-   node accounting and verifies text only when a target carries character spans; it does not prove
-   that every node classified as projected contributed its text.
+2. **IR -> projection** may drop anything only when the projection records the disposition. The
+   current `loss-receipt-v2` contract independently recomputes expected TEI nodes, delivery targets,
+   text spans, and counts; unknown TEI elements fail closed. Historical v1 receipts did not prove
+   delivery and are not a current acceptance gate.
 
-> **Integrity warning (2026-07-16): a ledger PASS is necessary, not sufficient.** The BCP-1549
+> **Historical integrity incident (2026-07-16): a v1 ledger PASS was not sufficient.** The BCP-1549
 > ledger reports `dropped: 0`, `normalized: 0`, and 332 projected labels while 287 of those label
 > texts are absent from output. Earlier PASS results in this document remain valid accounting
 > results, and their independent census/carrier/viewer evidence still stands, but the ledger alone
-> cannot certify fidelity until the P1 successor fix lands. Nothing was cut over or published.
+> did not certify fidelity. The v2 projector, schema, receipts, and independent checker supersede
+> that executable contract. Nothing from the failed proof was cut over or published.
 
 So the per-feature categories are:
 
@@ -208,6 +209,13 @@ Incarnation*, and Owen, *Of the Mortification of Sin*. Viewer smoke loaded the O
 | OCR errors and inline marks | preserve | text | The converter does not silently repair OCR or invent note boundaries. |
 | Running headers and page-number lines | excluded | — | OCR wrapper noise, not work content. |
 
+**Publication boundary (2026-09-13):** these preservation rulings describe an
+internal raw-witness proof, not publishable text. Fisher's uncorrected OCR and
+OCR-derived outputs must be excluded from public releases until EzraOCR corrects
+the text against the exact page images and the resulting identity/evidence-bound
+text passes OCD's ordinary accepted-master and release checks. Preserving an
+OCR error here does not authorize publishing it.
+
 **Verified 2026-07-16:** the bounded Fisher TEI validates and its census agrees on 2 parts, 4
 chapters, 8 commandments, 41 structural sections, 6 synopsis lines, and 455 dialogue carriers. Its
 ledger passes subject to the integrity warning above. This does not migrate general IA OCR.
@@ -229,5 +237,7 @@ container and ordinal semantics.
 The HF training projection targets clean faithful text (maintainer decision, 2026-07-02 NSH
 alignment): structure headings and `<argument>` survive as text; notes, page breaks, `<ref>`
 annotations, emphasis markup, and front/back matter are intentionally dropped and should be
-accounted for per node ID. Until the P1 checker fix lands, a ledger PASS confirms accounting but not
-complete text delivery. Other projections rule per output; the same caveat applies.
+accounted for per node ID. B03a-c and loss-receipt v2 now require evidence for the supported
+text-bearing TEI profile, superseding the historical P1 false-accounting defect. A ledger PASS
+confirms projection accounting; independent census and source-to-IR checks still establish
+raw-to-IR fidelity. Other projections rule per output.

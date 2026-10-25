@@ -57,6 +57,11 @@ class WitnessRecord:
     provider: str
     local_path: str | None
     notes: str
+    expression_id: str | None = None
+    relationship_role: str | None = None
+    related_witness_ids: tuple[str, ...] = ()
+    source_revision_type: str | None = None
+    source_revision: str | None = None
 
 
 @dataclass(frozen=True)
@@ -133,6 +138,11 @@ def _record_from_object(item: Any, index: int) -> WitnessRecord:
         provider=_required_string(item, "provider", index),
         local_path=local_path,
         notes=_required_string(item, "notes", index),
+        expression_id=_optional_string(item, "expression_id", index),
+        relationship_role=_optional_string(item, "relationship_role", index),
+        related_witness_ids=_optional_string_tuple(item, "related_witness_ids", index),
+        source_revision_type=_optional_string(item, "source_revision_type", index),
+        source_revision=_optional_string(item, "source_revision", index),
     )
 
 
@@ -141,6 +151,20 @@ def _required_string(item: dict[str, Any], field: str, index: int) -> str:
     if not isinstance(value, str):
         raise ValueError(f"Witness record {index} field {field} must be a string.")
     return value
+
+
+def _optional_string(item: dict[str, Any], field: str, index: int) -> str | None:
+    value = item.get(field)
+    if value is not None and not isinstance(value, str):
+        raise ValueError(f"Witness record {index} field {field} must be a string or null.")
+    return value
+
+
+def _optional_string_tuple(item: dict[str, Any], field: str, index: int) -> tuple[str, ...]:
+    value = item.get(field, [])
+    if not isinstance(value, list) or any(not isinstance(member, str) for member in value):
+        raise ValueError(f"Witness record {index} field {field} must be an array of strings.")
+    return tuple(value)
 
 
 def _validate_unique_ids(records: list[WitnessRecord]) -> None:

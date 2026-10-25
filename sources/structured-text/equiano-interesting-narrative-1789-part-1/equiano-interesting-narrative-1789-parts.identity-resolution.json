@@ -1,0 +1,60 @@
+{
+  "contract": "ocd-equiano-ecco-tcp-identity-resolution-v1",
+  "resolved_before_acquisition_utc": "2026-08-31T07:38:41.3392824Z",
+  "abstract_work": "The Interesting Narrative of the Life of Olaudah Equiano: or Gustavus Vassa, the African. Written by Himself",
+  "author": "Equiano, Olaudah, b. 1745.",
+  "edition": {
+    "statement": "Second edition.",
+    "extent": "2v., plates ; 12⁰.",
+    "publication_place": "London",
+    "publisher": "printed and sold for the author, by T. Wilkins, sold also by Mr. Johnson; Mr. Buckland; Messrs Robson and Clark; Mr. Davis; Mr. Matthews [and 3 others in London] and the booksellers in Oxford and Cambridge",
+    "date": "[1789]",
+    "estc": "T61470",
+    "source_original": "British Library"
+  },
+  "relationship": "The two records are source-defined physical parts of one two-volume second edition. They are separate acquisition and candidate units, not separate abstract works and not a composite text.",
+  "parts": [
+    {
+      "part": 1,
+      "public_item_id": "004837188.0001.001",
+      "tcp_id": "K053415.001",
+      "gale_document_number": "CW3301534748",
+      "image_set_id": "0324600501",
+      "page_image_extent": 297,
+      "content_boundary": "frontispiece, title page, parliamentary dedication, subscriber list, errata, volume-I contents, and chapters I through VI",
+      "official_item_url": "https://name.umdl.umich.edu/004837188.0001.001",
+      "official_iiif_manifest_url": "https://quod.lib.umich.edu/cgi/t/text/api/manifest/ecco:004837188.0001.001",
+      "official_repository_path": "ecco_all/ecco/XML/xml-200802/K053415.001.xml",
+      "official_repository_blob": "d3a909f46b3fd241fc95dd6b972f8a5b8af2d34f"
+    },
+    {
+      "part": 2,
+      "public_item_id": "004837188.0001.002",
+      "tcp_id": "K053415.002",
+      "gale_document_number": "CW3301535045",
+      "image_set_id": "0324600502",
+      "page_image_extent": 269,
+      "content_boundary": "frontispiece, chapters VII through XII, including the source-defined Miscellaneous Verses within chapter X",
+      "official_item_url": "https://name.umdl.umich.edu/004837188.0001.002",
+      "official_iiif_manifest_url": "https://quod.lib.umich.edu/cgi/t/text/api/manifest/ecco:004837188.0001.002",
+      "official_repository_path": "ecco_all/ecco/XML/xml-200802/K053415.002.xml",
+      "official_repository_blob": "b855bc03d3eea7476d6392497eb05649643efb44"
+    }
+  ],
+  "official_repository": {
+    "url": "https://github.com/Text-Creation-Partnership/ECCO-TCP",
+    "commit": "4a3c025535ead1532d7ce4b80a6cfe8cedb5a1de",
+    "license": "CC0-1.0"
+  },
+  "authority": [
+    "research/2026-07-19-bibliographic-identity-inventory.md line 267",
+    "research/MANIFEST.md line 578",
+    "official ECCO-TCP header K053415.001.hdr at repository commit 4a3c025535ead1532d7ce4b80a6cfe8cedb5a1de",
+    "official ECCO-TCP header K053415.002.hdr at repository commit 4a3c025535ead1532d7ce4b80a6cfe8cedb5a1de",
+    "official University of Michigan item and IIIF records for both public item identifiers"
+  ],
+  "status": "resolved",
+  "guessed_identity": false,
+  "composite_identity": false,
+  "canonical_write": false
+}

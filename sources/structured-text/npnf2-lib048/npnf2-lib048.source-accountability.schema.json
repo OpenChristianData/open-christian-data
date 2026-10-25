@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.example/schemas/npnf2-lib048-source-accountability-v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "assigned_work_count", "source_member_count", "asset_count", "feature_count", "attribute_count", "omitted_feature_count", "duplicate_feature_count", "unresolved_feature_count", "assigned_census", "member_accounting", "top_level_division_accounting", "direct_div2_accounting", "work_bindings", "asset_bindings", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-npnf2-lib048-source-accountability-v2"},
+    "schema": {"const": "npnf2-lib048.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf2-lib048-fifteen-work-v2"},
+    "assigned_work_count": {"const": 15},
+    "source_member_count": {"const": 4},
+    "asset_count": {"const": 1},
+    "feature_count": {"const": 53294},
+    "attribute_count": {"const": 115741},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "assigned_census": {"type": "object"},
+    "member_accounting": {"type": "array", "minItems": 4, "maxItems": 4},
+    "top_level_division_accounting": {"type": "object"},
+    "direct_div2_accounting": {"type": "object"},
+    "work_bindings": {"type": "array", "minItems": 15, "maxItems": 15},
+    "asset_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "authority_name", "work_id", "source_root_id", "source_member", "source_xml_id", "source_selector", "source_parent_id", "source_page", "source_path", "source_url", "media_type", "alt", "bytes", "sha256", "tei_xml_id", "candidate_parent_xml_id", "historical_snapshot_bytes", "acquisition_receipt_path", "acquisition_receipt_sha256", "acquired_at"],
+        "properties": {
+          "asset_id": {"const": "lib048-asset-npnf212-iii.iii-p86.1"},
+          "authority_name": {"const": "gregory-pedigree-image"},
+          "work_id": {"const": "gregory-the-great-pastoral-rule-and-epistles"},
+          "source_root_id": {"const": "iii"},
+          "source_member": {"const": "npnf212"},
+          "source_xml_id": {"const": "iii.iii-p86.1"},
+          "source_selector": {"const": "ThML.body/div1[3]/div2[3]/p[82]/img[1]"},
+          "source_parent_id": {"const": "iii.iii-p86"},
+          "source_page": {"const": "https://ccel.org/ccel/schaff/npnf212/npnf212.iii.iii.html"},
+          "source_path": {"const": "raw/ccel/npnf2/npnf212/files/fig1.png"},
+          "source_url": {"const": "https://ccel.org/ccel/schaff/npnf212/files/fig1.png"},
+          "media_type": {"const": "image/png"},
+          "alt": {"const": "Pedigree of Kings of Gaul"},
+          "bytes": {"const": 44462},
+          "sha256": {"const": "a06e1fa626deadbfa78c1390ccd63408b7eea2a720c5b4542eda9e999cc616b5"},
+          "tei_xml_id": {"const": "lib048-npnf212-043142-iii.iii-p86.1"},
+          "candidate_parent_xml_id": {"const": "lib048-npnf212-043141-iii.iii-p86"},
+          "historical_snapshot_bytes": {"const": "unknown"},
+          "acquisition_receipt_path": {"const": "plans/2026-08-31-sample-first-library-verification/artifacts/2026-09-10-structural-audit/14-gregory-asset-acquisition.json"},
+          "acquisition_receipt_sha256": {"const": "4df83db9cf9c3e3f06066a36e62f75e3b110be89c7bef6a47fe6576723941adc"},
+          "acquired_at": {"const": "2026-09-10T11:25:44.179665+00:00"}
+        }
+      }
+    },
+    "crosswalk": {"type": "array", "minItems": 53294, "maxItems": 53294}
+  }
+}

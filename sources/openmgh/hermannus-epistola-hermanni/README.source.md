@@ -1,0 +1,5 @@
+# Electronic source for hermannus-epistola-hermanni
+
+The retained text source is `raw/openmgh/bsb00000623/tei/bsb00000623.xml` (SHA-256 `58d0cc06b721ca3f9374fdb96ab120eceedf968e442eea341e8c6c24883c7e13`). Its ZIP is acquisition packaging, not another text witness. This work selects the complete first `div type=part` after the shared Hermannus carrier title in bsb00000623. Its 41 native children retain 26 line markers, ten word nodes, four highlights, and the page break `_00077`. The shared title and following conversion opusculum remain outside this epistle. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/hermannus-epistola-hermanni/README.md` and bind both exact hashes through `public_notices`.

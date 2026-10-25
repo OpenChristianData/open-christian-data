@@ -1,0 +1,76 @@
+{
+  "contract": "ocd-calvins-institutes-pg64392-member-reconstruction-profile-v1",
+  "derived_inventory_digests": {
+    "anchors_sha256": "464d03302c8c170c572d1e6084ae3375ed58a9ea268d3dfc81ecaf6246bc7bed",
+    "argument_blocks_sha256": "1ea6643c2fd83edcb4c5898ee0f8dd52736c5681f4b0131a9e7c9d5307c654b0",
+    "attachments_sha256": "d3f4a239da2c58c71bb4f41574db84ce699f39898aca338ed8f6f68f8ca8f72c",
+    "chapter_body_blocks_sha256": "4564aaf76cf2449a064f22310c22ce97351dfbc3302c17cfe1ad036bbc382ea1",
+    "emphasis_sha256": "d3d45612391ba77273e4d537b13e14916aaf774bacc924bd662bf3a9532c2be0",
+    "front_blocks_sha256": "a2cbdbbf5985e6da9c9f10b668b294eadc40346306ba2a5e43986c517dbc65f4",
+    "notes_sha256": "4f8d157843583e9f05b9a0927f62d46dc1909563beb6db397942eac1357ad5f4",
+    "principal_index_blocks_sha256": "019d5d08fb4d4af9980d6023373035953304e798a7a47634cc80d0a2cc73403a",
+    "scripture_index_blocks_sha256": "667b1409ee78f52789f216c64b4f93de416363869264a8695d553852a7b3882d",
+    "structural_events_sha256": "a054d201418d6704e747feef492b8704e15c79497445125c5dcdc0fe176617b0"
+  },
+  "identity_conflicts": {
+    "author_forms": [
+      "Jean Calvin",
+      "John Calvin"
+    ],
+    "print_title_page": {
+      "edition": "Sixth American Edition, Revised and Corrected",
+      "place": "Philadelphia",
+      "publisher": "Presbyterian Board of Publication",
+      "volume": "II",
+      "year": "1813"
+    },
+    "scripture_index": {
+      "presented_by": "S. T. Livermore",
+      "recipient": "Presbyterian Board of Publication",
+      "institution": "University of Rochester",
+      "year": "1852"
+    },
+    "translator": "John Allen",
+    "volume_2_credits": "Richard Hulse, Heather Clark, David King, and the Online Distributed Proofreading Team; Internet Archive images",
+    "volume_2_release": "January 26, 2021",
+    "volume_2_update": "October 18, 2024"
+  },
+  "producer_import_closure_sha256": "ce1fd9886062f310fd21b6f1177c099862d1eb073277afd2a8864923df0ac9c4",
+  "profile_id": "calvins-institutes-pg64392-member-source-v1",
+  "required_counts": {
+    "argument_blocks": 29,
+    "chapter_body_blocks": 677,
+    "chapters": 32,
+    "emphasis_carriers": 337,
+    "front_blocks": 12,
+    "logical_books": 2,
+    "physical_book_headings": 2,
+    "principal_index_blocks": 203,
+    "principal_index_lines": 467,
+    "scripture_index_blocks": 838,
+    "scripture_index_lines": 4949,
+    "volume_2_anchors": 1489,
+    "volume_2_chapters": 32,
+    "volume_2_notes": 1490
+  },
+  "rights": {
+    "candidate": "nonaccepted; no publication authorization",
+    "project_gutenberg_license_and_trademark": "retained terms apply to Gutenberg-branded redistribution",
+    "source_claim": "underlying work stated by Project Gutenberg to lack United States copyright protection",
+    "worldwide_status": "unresolved; retained wrapper directs users to check local law"
+  },
+  "source_scope": {
+    "bytes": 2134850,
+    "derived_exact_line_inventory_sha256": "2886084602eceb597cabfa0d4a67837b4e4f5ec3bb3749bf36531caa6aeebde4",
+    "members": [
+      {
+        "bytes": 2134850,
+        "path": "raw/gutenberg/pg64392.txt",
+        "sha256": "3d79335bbb231773d1cbf849f4f7dd67e52f8773091416ba765da3ade0fefb31"
+      }
+    ],
+    "physical_lines": 38723,
+    "boundary": "Project Gutenberg volume II only: Book III chapter XIV onward, Book IV, notes, principal-matters index, Scripture Index, wrappers, and licenses."
+  },
+  "version": 1
+}

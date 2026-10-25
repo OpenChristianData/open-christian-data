@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/bcp-1549-source-accountability-v1.json",
+  "title": "BCP 1549 source accountability",
+  "type": "object",
+  "required": ["contract", "source_id", "source_members", "features", "tei"],
+  "properties": {
+    "contract": {"const": "ocd-bcp-1549-source-accountability-v1"},
+    "source_id": {"const": "bcp-1549-retained-justus-html"},
+    "source_members": {"type": "array", "minItems": 34},
+    "features": {"type": "object"},
+    "tei": {
+      "type": "object",
+      "required": ["bytes", "sha256"],
+      "properties": {
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

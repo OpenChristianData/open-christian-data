@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "work_id",
+    "source_id",
+    "source_bundle",
+    "source_members",
+    "record_count",
+    "records",
+    "pages_without_collect",
+    "manual_claims",
+    "tei",
+    "omitted_record_count",
+    "duplicated_record_count",
+    "carrier_ledger"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-bcp-1928-source-accountability-v1"
+    },
+    "schema": {
+      "const": "sources/prayers/bcp-1928-collects/bcp1928-current.source-accountability.schema.json"
+    },
+    "profile_id": {
+      "const": "bcp-1928-collects-retained-html-partial-v1"
+    },
+    "work_id": {
+      "const": "bcp-1928-collects"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_bundle": {
+      "$ref": "#/$defs/bundle"
+    },
+    "source_members": {
+      "type": "array",
+      "minItems": 100,
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/member"
+      }
+    },
+    "record_count": {
+      "const": 100
+    },
+    "records": {
+      "type": "array",
+      "minItems": 100,
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "pages_without_collect": {
+      "const": [
+        "Trinity23.html",
+        "Trinity24.html"
+      ]
+    },
+    "manual_claims": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/manual"
+      }
+    },
+    "tei": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bytes",
+        "sha256"
+      ],
+      "properties": {
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        }
+      }
+    },
+    "omitted_record_count": {
+      "const": 2
+    },
+    "duplicated_record_count": {
+      "const": 0
+    },
+    "carrier_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "members",
+        "features",
+        "unbound_manual_claims",
+        "routing_front"
+      ],
+      "properties": {
+        "status": {
+          "const": "partial-collect-selection"
+        },
+        "members": {
+          "type": "array",
+          "minItems": 100,
+          "maxItems": 100,
+          "items": {
+            "type": "object"
+          }
+        },
+        "features": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "unbound_manual_claims": {
+          "const": [
+            "trinity23",
+            "trinity24"
+          ]
+        },
+        "routing_front": {
+          "const": "empty native-document marker, no source content"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "members",
+        "bytes",
+        "sha256"
+      ],
+      "properties": {
+        "members": {
+          "const": 100
+        },
+        "bytes": {
+          "const": 1042052
+        },
+        "sha256": {
+          "const": "92aa35e04b6b64c583e444d300b56ad98a8b56228fa8d9582763b8dc0f6f9c06"
+        }
+      }
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "path",
+        "bytes",
+        "sha256",
+        "order"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^raw/bcp-1928/.+\\.html$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_path",
+        "source_page_order",
+        "title",
+        "text",
+        "text_sha256",
+        "word_count",
+        "tei_id",
+        "disposition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_path": {
+          "type": "string",
+          "pattern": "^raw/bcp-1928/.+\\.html$"
+        },
+        "source_page_order": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 10
+        },
+        "text_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tei_id": {
+          "type": "string",
+          "pattern": "^collect-.+"
+        },
+        "disposition": {
+          "const": "represented"
+        }
+      }
+    },
+    "manual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_page",
+        "alternate_witness",
+        "scan_pages",
+        "claim_text_sha256",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "trinity23",
+            "trinity24"
+          ]
+        },
+        "source_page": {
+          "type": "string"
+        },
+        "alternate_witness": {
+          "const": "archive.org/details/1928bookofcommon0000prot"
+        },
+        "scan_pages": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "integer"
+          }
+        },
+        "claim_text_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "const": "unbound-alternate-witness"
+        }
+      }
+    }
+  },
+  "$id": "https://openchristiandata.org/schemas/bcp1928-current-source-accountability-v2"
+}

@@ -1,0 +1,113 @@
+{
+  "contract": "ocd-davis-l332-profile-v1",
+  "edition": {
+    "author": "William Hersey Davis",
+    "date": "1923",
+    "provider_item": "https://archive.org/details/beginnersgrammar00davi",
+    "title": "Beginner's Grammar of the Greek New Testament"
+  },
+  "independence_note": "Converter uses stdlib XML, independent oracle uses lxml and separately inventories scandata, tar, PDF and OCR against actual TEI. Shared DjVuXML recognition cannot prove print-level wording. Heading recognition uses a source-text rule in both implementations; source-located visual anchors are required for semantic confidence.",
+  "known_limitations": [
+    "Uncorrected OCR has severe Greek recognition errors.",
+    "Eleven access pages have no OCR word tokens; image-only text remains untranscribed.",
+    "Paradigms are retained as alternate Abbyy OCR tables, but Greek cell readings and their attachment to DjVu paragraphs are not print-verified; vocabulary and index entries retain source line carriers.",
+    "The contents page-level hierarchy is preserved, but four-page entry and column alignment cannot be reliably recovered from DjVu OCR.",
+    "Full image-to-TEI collation and human acceptance remain open.",
+    "1923 U.S. print public-domain basis does not clear IA digitization or OCR rights."
+  ],
+  "mapping_policy": {
+    "exclusions": "Disposition original leaves 0, 281, 282 and 283 as outside the access PDF/OCR sequence; retain their JP2 identities and do not infer missing literary text.",
+    "groups": "Source-observed boundaries: preliminaries, four contents pages, Part I divider and lessons, Part II supplement, English index, vocabularies, and end material. The contents retains OCR paragraph carriers because OCR interleaves columns and combines/splits some rows; full entry hierarchy is unresolved.",
+    "pages": "Represent each access leaf with a scan-page div, pb facsimile target, source paragraph and line order, and its original JP2 member in accounting.",
+    "primary": "Original JP2 image tar is the print witness. Page labels and access selection come from scandata; the PDF is a presentation derivative. DjVuXML supplies uncorrected OCR text, not print authority.",
+    "support": "Bind all retained acquisition members; member-inventory.tsv explicitly dispositions the 28 provider files.",
+    "tables": "All 89 Abbyy Table blocks on 75 original leaves are represented as row/cell tables in explicitly labeled alternate OCR layout witnesses. This duplicates portions of the primary DjVu reading by design; it does not claim the two OCR texts agree or reproduce the printed Greek.",
+    "text": "Preserve each OCR WORD string in its source LINE order, including uncertain Greek. Keep empty paragraphs and lines; signal zero-word pages with a gap. Do not silently substitute Abbyy or PDF OCR."
+  },
+  "source_id": "ia-beginnersgrammar00davi",
+  "source_scope": {
+    "abbyy_original_leaf_pages": 284,
+    "abbyy_table_blocks": 89,
+    "abbyy_table_leaves": 75,
+    "access_pdf_pages": 280,
+    "contents": [
+      19,
+      22
+    ],
+    "djvuxml_objects": 280,
+    "end_material": [
+      276,
+      280
+    ],
+    "english_greek_vocabulary": [
+      271,
+      275
+    ],
+    "english_index": [
+      247,
+      258
+    ],
+    "excluded_original_leaves": [
+      {
+        "leaf": 0,
+        "type": "Delete"
+      },
+      {
+        "leaf": 281,
+        "type": "Delete"
+      },
+      {
+        "leaf": 282,
+        "type": "Color Card"
+      },
+      {
+        "leaf": 283,
+        "type": "Color Card"
+      }
+    ],
+    "front": [
+      1,
+      24
+    ],
+    "greek_english_vocabulary": [
+      261,
+      270
+    ],
+    "original_jp2_images": 284,
+    "part_i": [
+      25,
+      220
+    ],
+    "part_i_divider": [
+      23,
+      24
+    ],
+    "part_ii": [
+      221,
+      246
+    ],
+    "preliminaries": [
+      1,
+      18
+    ],
+    "provider_inventory_items": 28,
+    "vocabularies_divider": [
+      259,
+      260
+    ],
+    "zero_word_access_pages": [
+      1,
+      3,
+      4,
+      6,
+      10,
+      16,
+      24,
+      222,
+      258,
+      260,
+      279
+    ]
+  },
+  "work_id": "davis-beginners-grammar-greek-new-testament"
+}

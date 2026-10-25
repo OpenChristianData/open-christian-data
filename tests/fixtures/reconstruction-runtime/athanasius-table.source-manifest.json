@@ -1,0 +1,241 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf204-retained-xml",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/npnf2/npnf204.xml",
+      "role": "primary-source",
+      "bytes": 5809854,
+      "sha256": "bd625a0fa4f5ddd4b2fa13fcee753de8832ea4b316625e0e06454beb81cfa652"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1435,
+      "sha256": "6e772a455ea0b2918d4c7b4cecc3e870c935cd234372571fe06b680651d3f532"
+    },
+    {
+      "name": "athanasius-against-the-arians-config",
+      "path": "sources/structured-text/athanasius-against-the-arians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2373,
+      "sha256": "177522b648efe29f734b517ca44c1fef59818e64ff5ccea89e289d75dea968b4",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-against-the-heathen-config",
+      "path": "sources/structured-text/athanasius-against-the-heathen/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2376,
+      "sha256": "c5a5c6a73cec2df1846388be8e0387256ff6fb03795e6ad901d64f133454581a",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-apology-to-the-emperor-config",
+      "path": "sources/structured-text/athanasius-apology-to-the-emperor/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2385,
+      "sha256": "3b3a649588f724e294397555d3f76d067d566ee0916b1c888e5bc0f1bbfdc485",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-arian-history-config",
+      "path": "sources/structured-text/athanasius-arian-history/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2364,
+      "sha256": "a498eb0942dfa574b78244e3b430b4a5bcc759315b77a338bdff062d979c2ee5",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-circular-to-bishops-of-egypt-and-libya-config",
+      "path": "sources/structured-text/athanasius-circular-to-bishops-of-egypt-and-libya/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2433,
+      "sha256": "1f411adb1d4b3675ce94b32e9a4e0cfa3de8ac9ee330007bf1e6f651aaf20119",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-defence-against-the-arians-config",
+      "path": "sources/structured-text/athanasius-defence-against-the-arians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2397,
+      "sha256": "1e5441fb8296a6669bb4469149e17cf57667b2f9e5bfd5e055002598444a36a7",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-defence-of-dionysius-config",
+      "path": "sources/structured-text/athanasius-defence-of-dionysius/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2379,
+      "sha256": "b0fdb6f83b56f646bd04b18b265a8d5d46f6a42efd5e0ca329d6cb101b851610",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-defence-of-his-flight-config",
+      "path": "sources/structured-text/athanasius-defence-of-his-flight/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2382,
+      "sha256": "f62dad598fa4c49ca5cdc4ac4754fea6a92d8f39a57a9ee8782a5cd579e5159d",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-defence-of-the-nicene-definition-config",
+      "path": "sources/structured-text/athanasius-defence-of-the-nicene-definition/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2415,
+      "sha256": "ec52837ed40362e3852c59cf89c593d5f5ebcd5c6fb5fbc12a040f1774620abb",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-deposition-of-arius-config",
+      "path": "sources/structured-text/athanasius-deposition-of-arius/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2376,
+      "sha256": "f56fc2f264861b0239b35e2d5388d0f3c9d2de6620298ea8c2859857d74c5618",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-encyclical-letter-config",
+      "path": "sources/structured-text/athanasius-encyclical-letter/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2370,
+      "sha256": "70e3794e02e1ed30bf5405b2ee4ca6e9d96f9550b19d3748ad871e64e7474058",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-letters-and-chronicles-config",
+      "path": "sources/structured-text/athanasius-letters-and-chronicles/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2689,
+      "sha256": "d84970d417fe3f992bfa816ee416b42d72a726316412446cab32de4ab4cca134",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-life-of-antony-config",
+      "path": "sources/structured-text/athanasius-life-of-antony/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2614,
+      "sha256": "7871c4c7cf7477f4f196d2169ecc18353332aab2f470b6d3d367b1207726cc24",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-on-ariminum-and-seleucia-config",
+      "path": "sources/structured-text/athanasius-on-ariminum-and-seleucia/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2407,
+      "sha256": "b63b28371869773497a48c8431bbeb82a2e78b739d213cfc862f34805c5b6baf",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-on-luke-10-22-config",
+      "path": "sources/structured-text/athanasius-on-luke-10-22/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2358,
+      "sha256": "fdb09a49fbe99dbd0e71545be59687f523251ea645cad03cfca0a809f56e74d3",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-on-the-incarnation-config",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2332,
+      "sha256": "d45d6b0c84cd4ebda7b004c83cd889c312b687d4b559c767574250dbaaff8f3e",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-statement-of-faith-config",
+      "path": "sources/structured-text/athanasius-statement-of-faith/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2373,
+      "sha256": "69061b8a2eea337dd24cc43a6c16c28df9e7b04a904184254880af5fbbff4a4c",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-synodal-letter-to-africa-config",
+      "path": "sources/structured-text/athanasius-synodal-letter-to-africa/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2406,
+      "sha256": "12e35d6e369174460a71e6db19634f6419280718b3fa2cf2920c3345b293fca1",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "athanasius-synodal-letter-to-antioch-config",
+      "path": "sources/structured-text/athanasius-synodal-letter-to-antioch/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2408,
+      "sha256": "f970afb88e33283f188856dc508d65490af5feefb33634ed12cf36d0fd5a22d8",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "eusebius-letter-on-nicene-creed-config",
+      "path": "sources/structured-text/eusebius-letter-on-nicene-creed/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2389,
+      "sha256": "e77898d103198c9f0fc9c8d62955e4d476cb431308cf07c53d8186044a333ca4",
+      "byte_mode": "exact-bytes-v1"
+    },
+    {
+      "name": "ccel-permission",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/ccel-permission.md",
+      "role": "source-rights-evidence",
+      "bytes": 1604,
+      "sha256": "0bf59cb9f186a8414aa845bad7cf2fd632c480a35e8dbbb2e10ad80f5daf6595"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2729,
+      "sha256": "aba415a12e90289fccda5527489acd87db4fbea38a7395986a57d8aae0acc945"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2370,
+      "sha256": "3773cd4950d3f2c1156fc9b0090ab74fa161379b59e7af76c74b7c89af95f1d8"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 4837,
+      "sha256": "fd1758a75738b399eeb53d19265141d4dd2224bc019f52bda21df33ebad1e7f1"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-npnf204-assigned-works-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/athanasius_table_reconstruction.py",
+    "implementation_sha256": "cc080032fe1135477e71dc4f7c77ec30bdbb2518c1e96a459042399f896d0139"
+  },
+  "validator": {
+    "id": "ocd-npnf204-source-to-tei-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/athanasius_table_oracle.py",
+    "implementation_sha256": "d53f7e1d49f2fa7d0f204a7e6281ec07c80d40265ed093588c4c03f61f5ea21c",
+    "import_closure_sha256": "a8674706fd1894b0370675ad016ca510aaf6583feca238659bf9eb33f317fd57"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

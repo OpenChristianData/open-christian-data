@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://sources/manifest-acquisitions/ebible-englee-l229/accountability-v1",
+  "title": "Leeser Tanakh source accounting",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "source_manifest_sha256", "source_archive_sha256", "work_id", "work_boundary", "book_members", "book_ids", "books", "support_members", "book_count", "source_line_count", "chapter_count", "verse_count", "line_marker_counts", "line_mapping", "support_member_policy", "excluded"],
+  "properties": {
+    "contract": {"const": "ocd-englee-source-accountability-v1"},
+    "source_manifest_sha256": {"$ref": "#/$defs/digest"},
+    "source_archive_sha256": {"$ref": "#/$defs/digest"},
+    "work_id": {"const": "isaac-leeser-tanakh"},
+    "work_boundary": {"type": "object", "required": ["top_level_title", "source_evidence", "tei_documents", "book_members_are_works"], "properties": {"top_level_title": {"type": "string"}, "source_evidence": {"type": "string"}, "tei_documents": {"const": 1}, "book_members_are_works": {"const": false}}},
+    "book_members": {"type": "array", "minItems": 39, "maxItems": 39, "items": {"type": "string"}},
+    "book_ids": {"type": "array", "minItems": 39, "maxItems": 39, "items": {"type": "string"}},
+    "books": {"type": "array", "minItems": 39, "maxItems": 39, "items": {"$ref": "#/$defs/member"}},
+    "support_members": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/support"}},
+    "book_count": {"const": 39},
+    "source_line_count": {"const": 25239},
+    "chapter_count": {"const": 929},
+    "verse_count": {"const": 23145},
+    "line_marker_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+    "line_mapping": {"type": "string"},
+    "support_member_policy": {"type": "string"},
+    "excluded": {"type": "array", "maxItems": 0}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "member": {"type": "object", "additionalProperties": false, "required": ["path", "bytes", "sha256", "book_id", "source_lines", "chapters"], "properties": {"path": {"type": "string"}, "bytes": {"type": "integer", "minimum": 1}, "sha256": {"$ref": "#/$defs/digest"}, "book_id": {"type": "string"}, "source_lines": {"type": "integer", "minimum": 1}, "chapters": {"type": "integer", "minimum": 1}}},
+    "support": {"type": "object", "additionalProperties": false, "required": ["path", "bytes", "sha256", "role"], "properties": {"path": {"type": "string"}, "bytes": {"type": "integer", "minimum": 1}, "sha256": {"$ref": "#/$defs/digest"}, "role": {"type": "string", "const": "supporting-source"}}}
+  }
+}

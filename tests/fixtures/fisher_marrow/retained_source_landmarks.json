@@ -1,0 +1,160 @@
+{
+  "schema": "ocd-fisher-retained-source-landmarks-v1",
+  "purpose": "Portable evidence characterization only; this fixture neither reconstructs TEI nor decides witness identity, source scope, rights, acceptance, or publication.",
+  "source": {
+    "logical_path": "raw/internet-archive/fisher-marrow/marrowmoderndiv00bostgoog_djvu.txt",
+    "sha256": "14b46f1a400f8e2c8ec7612019a7769dac46daf31e10f7d6b68212351ff46dd3",
+    "byte_length": 1087403,
+    "encoding": "utf-8",
+    "line_separator": "LF",
+    "newline_count": 22945,
+    "logical_line_count": 22946
+  },
+  "identity_conflict": {
+    "status": "unresolved-maintainer-authority-required",
+    "retained_title_page_claim": "A NEW EDITION; LONDON; printed for Thomas Tegg and Son; 1837.",
+    "legacy_metadata_claim": "Edinburgh: J. and D. Collie, 1828; Thomas Boston annotated edition.",
+    "legacy_claim_locations": [
+      "sources/structured-text/fisher-marrow-of-modern-divinity/config.json",
+      "build/parsers/ia_fisher_marrow.py",
+      "build/tei/ia_fisher_marrow_to_tei.py",
+      "research/prompts/acquire-fisher-marrow-ia-census.md"
+    ],
+    "disposition": "Both observed claims are retained as evidence. This artifact does not select, normalize, or correct an edition identity."
+  },
+  "spans": {
+    "title_page": {
+      "start_line": 63,
+      "end_line": 94,
+      "line_count": 32,
+      "nonblank_line_count": 19,
+      "stripped_character_count": 384,
+      "raw_byte_length": 434,
+      "raw_span_sha256": "d6087eed4b0ebe96b4c968fea88b2384a129915f2270c2b9e990379cac61c631"
+    },
+    "recommendations": {
+      "start_line": 242,
+      "end_line": 538,
+      "line_count": 297,
+      "nonblank_line_count": 228,
+      "stripped_character_count": 14627,
+      "raw_byte_length": 15185,
+      "raw_span_sha256": "1e401d2e680dc517c5709995413ddda34258eb2971ded96dea0c466c851b8d59"
+    },
+    "part_two_title": {
+      "start_line": 16577,
+      "end_line": 16585,
+      "line_count": 9,
+      "nonblank_line_count": 5,
+      "stripped_character_count": 39,
+      "raw_byte_length": 52,
+      "raw_span_sha256": "24f3b0b5c182a3d99ba98be6a66c40cad41d7e082c1b3cd9a0a252c5ee50dee4"
+    },
+    "part_two_editorial_front_matter": {
+      "start_line": 16577,
+      "end_line": 16775,
+      "line_count": 199,
+      "nonblank_line_count": 156,
+      "stripped_character_count": 9836,
+      "raw_byte_length": 10205,
+      "raw_span_sha256": "5181262ee8db333414584418645e4a128b27142872ec99d74c8c9d6ce6c16102"
+    }
+  },
+  "title_imprint_lines": [
+    {"line": 87, "text": "A NBW EDITION. ", "raw_byte_length": 15, "raw_line_sha256": "eeff10105d51aecc399d3c19ec4bd079e2fecd03014dc383699949da6ca1ed85"},
+    {"line": 88, "text": "LONDON: ", "raw_byte_length": 8, "raw_line_sha256": "99fbe9de0e2b1838fcaab016715678920e6ca93b3d515fdff7c668ee64ca376c"},
+    {"line": 90, "text": "tINTED FOR THOMAS TE66 AND SON, 73, CHEAPSIDE; ", "raw_byte_length": 47, "raw_line_sha256": "8a0d1fe61b06af1b326b277b456ed593c023d589b7b10e5cdc9626bd373579f1"},
+    {"line": 91, "text": "R. GRIFFIN tt CO., GLASGOW; T. T. ft H. TEGG, DUBLIN; ", "raw_byte_length": 54, "raw_line_sha256": "54f86a74fa88ebda5a4cfb8564911d60b0321b6727716e9af85b881e16237bc1"},
+    {"line": 92, "text": "AND 3. WHETHAH, PHILADELPHIA ", "raw_byte_length": 29, "raw_line_sha256": "f46dbfa27f0b14d6203d32ca3362ca1484368391dab05d62375edf9e7b9dd620"},
+    {"line": 94, "text": "1837. ", "raw_byte_length": 6, "raw_line_sha256": "99db84e2329035d41f42c205d45f11b0965290746fdd77f56fab0e9d4a59df3d"}
+  ],
+  "front_heading_candidates": [
+    {"line": 242, "text": "RECOMMENDATIONS. ", "raw_byte_length": 17, "raw_line_sha256": "7998ee30090f0c2ca104c9063f3af7aa995555a1c6b1efada1484a01a15d0f2b", "role": "recommendations-boundary"},
+    {"line": 309, "text": "RECOMMENDATIONS. ", "raw_byte_length": 17, "raw_line_sha256": "7998ee30090f0c2ca104c9063f3af7aa995555a1c6b1efada1484a01a15d0f2b", "role": "recommendations-running-heading"},
+    {"line": 372, "text": "RECOMMENDATIONS, ", "raw_byte_length": 17, "raw_line_sha256": "189044654844c51e89be70eb1c3ce9dbf88cad09b54ec50d7a228ca3360f78e5", "role": "recommendations-running-heading"},
+    {"line": 446, "text": "RECOMMENDATIONS. ", "raw_byte_length": 17, "raw_line_sha256": "7998ee30090f0c2ca104c9063f3af7aa995555a1c6b1efada1484a01a15d0f2b", "role": "recommendations-running-heading"},
+    {"line": 539, "text": "X PREFACE. ", "raw_byte_length": 11, "raw_line_sha256": "27d3b96456d048d36ebc7c0b4c9a4524f6de8bf7825c078845c5ca73fa6614eb", "role": "preface-page-heading"},
+    {"line": 592, "text": "PREFACE. jii ", "raw_byte_length": 13, "raw_line_sha256": "60d608c291a326b39b6728018ac62fbd201eaca459a9a937cd31d5f08c2a0477", "role": "preface-page-heading"},
+    {"line": 636, "text": "PREFACE. ", "raw_byte_length": 9, "raw_line_sha256": "cad9e4514ac3a1302f33678c94b42fb432adbe033eee36a4e2e02287df66026d", "role": "preface-heading"},
+    {"line": 721, "text": "DEDICATION. ", "raw_byte_length": 12, "raw_line_sha256": "a7e4232e5ace84d0bc99bbbfb4ebb208df5f04addebd947e4eb80cdb9a3ff62d", "role": "dedication-heading"},
+    {"line": 829, "text": "TO THE READER. ", "raw_byte_length": 15, "raw_line_sha256": "39c038b92e16e8540e18dd21c9de509cfedf1f74b1cf8b66be909138b39b6d77", "role": "to-the-reader-heading"},
+    {"line": 889, "text": "TO THE READER. ", "raw_byte_length": 15, "raw_line_sha256": "39c038b92e16e8540e18dd21c9de509cfedf1f74b1cf8b66be909138b39b6d77", "role": "to-the-reader-running-heading"},
+    {"line": 958, "text": "TO THE READER, ", "raw_byte_length": 15, "raw_line_sha256": "7dfdebd1279a1f476c9b9047ebd8df375b1be42055ef3d05ba0613a6ffceb35d", "role": "to-the-reader-running-heading"},
+    {"line": 1015, "text": "TO THE READER. ", "raw_byte_length": 15, "raw_line_sha256": "39c038b92e16e8540e18dd21c9de509cfedf1f74b1cf8b66be909138b39b6d77", "role": "to-the-reader-running-heading"}
+  ],
+  "part_two_landmarks": [
+    {"line": 16577, "text": "THE ", "raw_byte_length": 4, "raw_line_sha256": "accddbc50bb1f73aa643203eddcb878bc8b2e8b3cfabbdc411a773e1df723e29", "role": "part-two-title-start"},
+    {"line": 16585, "text": "FART SECOND. ", "raw_byte_length": 13, "raw_line_sha256": "82f3645ace00c5dbcae692bfeb37021ab6992e29e335db971b96b612fb0f158f", "role": "part-two-title-label"},
+    {"line": 16591, "text": "TO ", "raw_byte_length": 3, "raw_line_sha256": "845dad2457f9a6512e30d4ba29ce14ed37d9958b3d1310bcc47bd996289e8545", "role": "part-two-dedication-start"},
+    {"line": 16679, "text": "THE AUTHOR TO THE WELL-AFFECTED READER. ", "raw_byte_length": 40, "raw_line_sha256": "553a1441d45e4a0582870993d4fecd151c63c3c39a17f4d13fd87efcdbf7d9ec", "role": "part-two-reader-address"},
+    {"line": 16776, "text": "PART SECOND, ", "raw_byte_length": 13, "raw_line_sha256": "14f6a45d3ebe511e23235704e91c7ac869473eb820342672eb5b639545282ff5", "role": "part-two-dialogue-boundary"}
+  ],
+  "appendix_boundary": {"line": 21186, "text": "APPENDIX. ", "raw_byte_length": 10, "raw_line_sha256": "084474b9512c02d99e3774b5f759218300eddce6bfc048c1d6d01d246223f88c", "role": "appendix-boundary"},
+  "page_marker_candidates": {
+    "scope_start_line": 1285,
+    "classification": "standalone decimal digits or standalone Roman numeral letters IVXLCDM, case-insensitive",
+    "count": 170,
+    "roman_letter_candidate_count": 23,
+    "candidate_line_numbers_sha256": "e2478a85557a1bda1e6286a81afdfe58b4f9860929ab93167cc54eb1831b0472",
+    "candidate_list_sha256": "e43d89174e96798b7d826db3e751287d516b118d691ec9c6545efc78705c15c0",
+    "lines": [
+      1315, 1459, 1536, 1595, 1671, 1796, 1864, 1933, 2189, 2246,
+      2380, 2590, 2711, 2780, 2984, 2996, 3051, 3287, 3403, 3537,
+      3673, 4027, 4210, 4269, 4342, 4475, 4650, 5094, 5150, 5452,
+      5569, 5622, 5684, 5805, 5809, 5870, 5994, 6057, 6115, 6179,
+      6187, 6302, 6426, 6668, 6680, 6740, 6871, 6941, 6999, 7451,
+      7593, 7743, 7808, 8163, 8471, 8597, 8768, 8842, 8912, 8970,
+      9043, 9176, 9434, 9493, 9622, 9740, 9812, 9868, 10065, 10202,
+      10335, 10344, 10404, 10483, 10626, 10954, 11024, 11158, 11419, 11476,
+      11543, 11668, 11973, 12107, 12111, 12183, 12244, 12314, 12442, 12630,
+      12767, 13095, 13151, 13399, 13474, 13534, 13907, 13991, 14056, 14174,
+      14288, 14601, 14657, 14727, 14782, 14980, 15044, 15163, 15234, 15290,
+      15359, 15415, 15527, 15596, 15651, 16003, 16242, 16306, 16360, 16430,
+      16478, 16551, 16573, 16642, 16726, 16903, 16958, 17154, 17317, 17386,
+      17441, 17507, 17559, 17681, 17754, 17875, 18121, 18235, 18289, 18517,
+      18690, 18823, 19118, 19178, 19297, 19465, 19890, 19948, 20129, 20243,
+      20462, 20572, 20684, 20803, 20859, 21047, 21297, 21426, 21555, 21686,
+      21753, 21818, 21822, 22015, 22079, 22151, 22214, 22285, 22476, 22680
+    ]
+  },
+  "known_substantive_false_running_headers": {
+    "count": 16,
+    "items": [
+      {"line": 1656, "text": "part of the law of works ; howbeit, as they are the matterof^ or stand in, ", "raw_byte_length": 75, "raw_line_sha256": "1f44140fea030d2e1360bafd532cf850506f55f8cb817a4caa046df8ca1aa3a7"},
+      {"line": 3155, "text": "chap. 7f art. 3> When that promiae or cqrenAnt^ in which the persons it ", "raw_byte_length": 72, "raw_line_sha256": "3cad3b7a9167a8bc0defd8d46690ba61cf8c77668e89530b68c02e72d9a6c309"},
+      {"line": 4579, "text": "chap. ixjv. 'A — 8. See pasje 4Sf note ", "raw_byte_length": 41, "raw_line_sha256": "70409523f3a3a75bbb6fe5adfc87b95f17af5635b19dcb351e32f169baa27760"},
+      {"line": 7146, "text": "part of the co^'etu^nt **f work& is, pnrticulEirly to move them to grow up ", "raw_byte_length": 75, "raw_line_sha256": "4d7af53cdfe9d9803bcb1e75e825ea497759eb1ac60517b91842a49de6815947"},
+      {"line": 7602, "text": "chap. 18, art. 1^3 ; but iin Hssurance which is in fajtli, in tiie direct acts ", "raw_byte_length": 79, "raw_line_sha256": "d12ae865ecd0d2972ecb4b84eacfa64efd54b2f21aac98de826bc9c50d55fc2a"},
+      {"line": 13507, "text": "part}) and powers of the hduI aod body. Which bcgua sanctitication and ", "raw_byte_length": 71, "raw_line_sha256": "bc7a43e0757c790fdfff9228a1debaa0e7f2600e38dfcbc8f66e29ea2c150d6b"},
+      {"line": 14521, "text": "chap. liii. and xv. Fn the inner main, by virtue of the same penaltyj ", "raw_byte_length": 70, "raw_line_sha256": "3a5db837cc81d8a280c9646120a10df7501be3e2c050622b01da56ffc691f99b"},
+      {"line": 15798, "text": "part of man*a life, and in many their whole life, is spent in ", "raw_byte_length": 62, "raw_line_sha256": "299ab4c845316908b7dec72d97301ab78d4ba8f8d92225c5ab6030c2dde5d4e3"},
+      {"line": 17422, "text": "part of this commandment, in tlicse words, \" Thou shalt not ", "raw_byte_length": 60, "raw_line_sha256": "61a51b1b8e191dc68f5d50255f5f898fe322bd0e67c4e82883e4fece0b579aae"},
+      {"line": 17645, "text": "part, included in these words, \" But thou shalt sanctiSy my ", "raw_byte_length": 60, "raw_line_sha256": "8360fb9f730e5a378880872797132beaa85bd8559dde5344e6be5a67416fe588"},
+      {"line": 17725, "text": "part, used after an holy and spiritual manner, and that is, ", "raw_byte_length": 60, "raw_line_sha256": "58a85633c9dd83c5fbfa096dfa4db9f779529f9fcd69f7ec9504cb7a52ba9f63"},
+      {"line": 18094, "text": "part, I can scarce clear myself from any of these. ", "raw_byte_length": 51, "raw_line_sha256": "b5c2412b57c8f2ea27ff97ab9aa062d3937a0c4e4ad2a593c0eb5518e6e42ee2"},
+      {"line": 18676, "text": "part it has been in a passion, and not with the spirit of meeknesp^ ", "raw_byte_length": 68, "raw_line_sha256": "07168e0d500d60266350cdf62a5675ab37ffcba2349ee3b91c18b5f0bd8d687c"},
+      {"line": 19162, "text": "part of this commandment, and tell us what the Lord therein ", "raw_byte_length": 60, "raw_line_sha256": "8d199769c304e0f0cc4425407973ef85f9077c4af36f81b25e7a07fa3c4950d1"},
+      {"line": 21145, "text": "part rect^ive and apply to themselves the terrible voice and ", "raw_byte_length": 61, "raw_line_sha256": "d43501469589384da2bdfa721f04d96344b0070bb65917c4a37a81a11edcd0bc"},
+      {"line": 21276, "text": "the condemnatory act, hut for \"The Marrow of Modern Divinity,\" the ", "raw_byte_length": 67, "raw_line_sha256": "08442dd7a0878b56fed344d2b74dc1db7dee5f19fc079d5a51d65eb7f12e1658"}
+    ]
+  },
+  "character_census": {
+    "asterisk": 2039,
+    "section_sign": 44,
+    "dagger": 0,
+    "double_dagger": 0
+  },
+  "representative_ocr_and_inline_mark_lines": [
+    {"line": 2503, "text": "CHAPTER TL ", "raw_byte_length": 11, "raw_line_sha256": "007ac20716abb49ff8d34b07860f586d295929507a96fd9dcdc48b7a487b9661", "evidence": "damaged-chapter-heading"},
+    {"line": 15573, "text": "CHAP. LV. ", "raw_byte_length": 10, "raw_line_sha256": "c07a09aa577bf05ce08f3a8d027424cf158d64eb2d159ec70f15a83dded14238", "evidence": "damaged-chapter-heading"},
+    {"line": 19090, "text": "COMMANDMENT VHI. ", "raw_byte_length": 17, "raw_line_sha256": "2a35ef8a1f580447108252fb453a1f913e9b8d8a425de7273fabfafbe39562b3", "evidence": "damaged-commandment-heading"},
+    {"line": 883, "text": "§ This sentence, taken frotn the English serrice-honk) is in the Prac- ", "raw_byte_length": 72, "raw_line_sha256": "c9f9133b63a647b5377e712663c86d829c456e72f2dad4dcb5c9ab2ee92f78a6", "evidence": "inline-section-sign"},
+    {"line": 16727, "text": "* ", "raw_byte_length": 2, "raw_line_sha256": "c21e63473fb7c90c032ad21a06cf13fe24b33fe04d80a4f0f6f64bdd6fe0e726", "evidence": "standalone-asterisk-near-part-two-front-matter"},
+    {"line": 2304, "text": "§ The covenaat of works could by no means be renc<iPeil by faUeu ", "raw_byte_length": 66, "raw_line_sha256": "5ebc4113b4606b1acb50989529c72988408251bd3f33875bc13040655988cf21", "evidence": "inline-section-sign"}
+  ],
+  "non_authority_notice": {
+    "current_tei": "Comparator only; known to omit or misattach retained source material.",
+    "current_census": "Comparator only; shares classifiers with the current producer and is not an independent oracle.",
+    "human_decision": "Candidate generation remains separate from maintainer acceptance."
+  }
+}

@@ -1,0 +1,5 @@
+# Severian source and release notice
+
+The accepted edition is the complete Greek TEI member from the pinned Patristic Text Archive (PTA) repository revision `ef861ab391ea35c5d85b41dd8d7ba2bf65530b21`. Its source header identifies the editor as Annette von Stockhausen, the Berlin-Brandenburgische Akademie der Wissenschaften as authority, PTA as distributor, and CC BY-SA 4.0 as the license. The edition and its retained source location are recorded in the work sidecars.
+
+The source and accepted master have different file hashes because the accepted TEI adds a source/work binding in `sourceDesc` and a revision entry in `revisionDesc`; the source-text body is retained. The OCD exporter projects the accepted TEI into the prose row schema, so the exported record is not the source TEI file. The downloader-visible attribution, license, and change notice is [`data/prose/severian-de-fide-et-lege-naturae/README.md`](../../../data/prose/severian-de-fide-et-lege-naturae/README.md); it must accompany any selected release item.

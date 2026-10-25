@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-owen-lib052-readable-temptation-v1",
+  "work_id": "john-owen-temptation",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/owen/temptation.xml",
+      "role": "primary-source",
+      "bytes": 243041,
+      "sha256": "6b5231f59965fe7b7d75db2f59919fd5e9aff429d48e65cabb528f393c14a0ab"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/lib052-john-owen/readable-temptation-v1/temptation/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1185,
+      "sha256": "24e316eadf72e79abfa2d7d9da6b4b128b30ddcb21c172b0319a669e73616ae0"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib052-john-owen/readable-temptation-v1/temptation/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1651,
+      "sha256": "e029bc1518e05a324f5c5d5e89978fd2028e46039ae29ffc8e483c18a3ffdfff"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib052-john-owen/readable-temptation-v1/temptation/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 840,
+      "sha256": "63f345e1dac58313d77a0d86abe4b3fde9a5e5c707801b0ce185c641b5b26859"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib052-john-owen/readable-temptation-v1/temptation/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1891,
+      "sha256": "c9a0c888efe6bd986ba4946890cf0a5d9d074ca2418edd5f5f8e2b65d40582cb"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-owen-lib052-temptation-readable-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/owen_lib052_temptation_readable.py",
+    "implementation_sha256": "4a4c13f1535bf26665c66a399deb9ab17250b89eadceac94c9bfe8399bc0475f"
+  },
+  "validator": {
+    "id": "ocd-owen-lib052-temptation-readable-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/owen_lib052_temptation_readable_oracle.py",
+    "implementation_sha256": "ba3867c663686b6c733e3cd1b9e9d0850d239184179df2e47e5b9f26c9d9407d",
+    "import_closure_sha256": "ba3867c663686b6c733e3cd1b9e9d0850d239184179df2e47e5b9f26c9d9407d"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-equiano-k053415-002-reconstruction-profile-v1",
+  "source_id": "ecco-tcp-k053415-002-pinned-ets",
+  "source_bytes": 232557,
+  "source_sha256": "f8898fcc3e788196168593f3c6bdd12e3ef9cbcba9328091917073ffa305c5ed",
+  "source_census": {"elements": 827, "attributes": 792, "text_nodes": 460, "tail_nodes": 781, "characters": 215100},
+  "source_text": {"scope": "/ETS/EEBO/TEXT", "characters": 214999, "sha256": "89e98b362a30972739ca1a4d88c5f14dd13c82ace195ae06106fcf7b6d9102af"},
+  "element_counts": {
+    "ABBR": 2, "ARGUMENT": 6, "BIBNO": 1, "BODY": 5, "CHANGE": 1,
+    "CLOSER": 10, "DATE": 6, "DATELINE": 7, "DIV1": 11, "DIV2": 1,
+    "EEBO": 1, "ETS": 1, "FIGURE": 1, "FRONT": 1, "GAP": 36,
+    "HEAD": 15, "HI": 33, "IDG": 1, "ITEM": 4, "L": 124,
+    "LETTER": 5, "LG": 28, "LIST": 1, "NAME": 1, "NOTE": 6,
+    "OPENER": 6, "P": 135, "PB": 269, "Q": 83, "RESP": 1,
+    "RESPSTMT": 1, "REVDESCR": 1, "SALUTE": 5, "SIGNED": 9,
+    "STC": 1, "TEMPHEAD": 1, "TEXT": 5, "TRAILER": 1, "VID": 1
+  },
+  "candidate_element_counts": {
+    "TEI": 1, "abbr": 2, "argument": 6, "author": 2, "bibl": 1,
+    "body": 10, "change": 2, "closer": 10, "date": 6, "dateline": 7,
+    "div": 17, "edition": 1, "encodingDesc": 1, "figure": 1, "fileDesc": 1,
+    "floatingText": 9, "front": 1, "gap": 36, "head": 15, "hi": 33,
+    "idno": 5, "item": 3, "l": 124, "langUsage": 1, "language": 1,
+    "lg": 28, "list": 1, "note": 6, "opener": 6, "p": 137, "pb": 269,
+    "profileDesc": 1, "projectDesc": 1, "pubPlace": 1, "publicationStmt": 1,
+    "q": 83, "revisionDesc": 1, "salute": 5, "signed": 9, "sourceDesc": 1,
+    "teiHeader": 1, "text": 1, "title": 2, "titleStmt": 1, "trailer": 1
+  },
+  "feature_census": {
+    "outer_division_types": ["frontispiece", "chapter", "chapter", "chapter", "chapter", "chapter", "chapter"],
+    "chapter_numbers": ["7", "8", "9", "10", "11", "12"],
+    "embedded_document_types": ["grant", "order", "petition", "petition"],
+    "letters": 5,
+    "poem_divisions": 1,
+    "poem_heading": "MISCELLANEOUS VERSES, OR, Reflections on the State of my Mind during my first Convictions, of the Necessity of believing the Truth, and experiencing the inestimable Benefits of Christianity.",
+    "page_milestones": 269,
+    "page_reference_sequence": "1..269",
+    "illegible_gaps": 36,
+    "gap_extents": {"1 letter": 7, "1 span": 3, "1 word": 12, "1+ letters": 10, "2 letters": 3, "3 letters": 1},
+    "notes": 6,
+    "note_places": {"foot": 6},
+    "verse_lines": 124,
+    "line_groups": 28,
+    "quotations": 83,
+    "source_hard_hyphen_characters": 795,
+    "source_em_dashes": 121,
+    "ending": "THE END."
+  }
+}

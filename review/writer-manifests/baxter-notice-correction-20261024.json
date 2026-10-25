@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "tool",
+  "writer_version": "plans/2026-10-02-v1-public-information-drafts/artifacts/baxter-notice-correction-20261024/apply.py@v1",
+  "writer_identity": "baxter_notice_correction",
+  "run_id": "baxter-notice-correction-20261024",
+  "started_at": "2026-10-23T23:05:44.801029+00:00",
+  "data_paths": [
+    "data/structured-text/baxter-call-to-unconverted/README.md",
+    "data/structured-text/baxter-reformed-pastor/README.md",
+    "data/structured-text/baxter-saints-rest/README.md"
+  ],
+  "checksums": {
+    "data/structured-text/baxter-call-to-unconverted/README.md": {
+      "before_sha256": "9aca857ec3b59aac19ae898e9f41f60f9548e5d07ea1b42f6198183a78a8f988",
+      "after_sha256": "daea45c9106b0a10e294fc7c793ee6f2c88fa8aceb5cb82819c9baf78e6610ce"
+    },
+    "data/structured-text/baxter-reformed-pastor/README.md": {
+      "before_sha256": "ba3ea8ef051a2add681df1060261d465ee043eee83c7da760432ba1f66a8c49b",
+      "after_sha256": "e1d0374bf65925f4c427b80ecd0b67e0553da2b154744544839a71d4647c2422"
+    },
+    "data/structured-text/baxter-saints-rest/README.md": {
+      "before_sha256": "70ed182fe8c4e9636e78a4281488bcce207dde82795d24e1bc923c0a7670419e",
+      "after_sha256": "d226212318b41417d7b1910370d72ce504d38e6027050fb3bf1b4e7038ebdfcf"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/baxter-call-to-unconverted/README.md": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    },
+    "data/structured-text/baxter-reformed-pastor/README.md": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    },
+    "data/structured-text/baxter-saints-rest/README.md": {
+      "entries_changed": 1,
+      "fields_changed": 1
+    }
+  },
+  "allowed_field_paths": [
+    ""
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

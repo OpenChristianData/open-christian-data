@@ -1,0 +1,22 @@
+{
+  "contract": "ocd-bcp-1928-validation-policy-v1",
+  "source_id": "bcp-1928-collects-retained-episcopalnet-html",
+  "rules": [
+    "Every retained HTML member is bound by path, byte count, and SHA-256 in the current source manifest.",
+    "The canonical member order is the maintained bcp1928.SOURCE_PAGES order and the bundle digest is recomputed from that order.",
+    "Every page-derived collect is represented exactly once in TEI and source-accountability.json.",
+    "Trinity 23 and Trinity 24 manual claims remain unresolved until exact alternate witness bytes are retained and bound.",
+    "The independent oracle must reject source drift, accountability mutation, TEI text mutation, and schema-invalid candidates.",
+    "Technical validation does not establish CVW visual review, human acceptance, rights clearance, durable admission, or publication authorization."
+  ],
+  "required_unresolved_ids": [
+    "trinity23",
+    "trinity24",
+    "candidate-human-acceptance",
+    "rights-clearance",
+    "cvw-visual-review",
+    "durable-admission",
+    "publication-authorization"
+  ]
+}
+

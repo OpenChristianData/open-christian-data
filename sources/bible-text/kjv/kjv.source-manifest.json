@@ -1,0 +1,175 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-239",
+  "work_id": "kjv",
+  "source_id": "ocd-37c239-kjv-retained-native-json-v1",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "kjv",
+    "retained_source_sha256": "f0b09dc49dfb97bb84f03aae1fbf026485048c3cab31a7a41017e2d86ac1d11c",
+    "claim_count": 66,
+    "claims": [
+      {"source_path": "bible-text/kjv/1-chronicles.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-corinthians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-john.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-kings.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-peter.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-samuel.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-thessalonians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/1-timothy.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-chronicles.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-corinthians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-john.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-kings.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-peter.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-samuel.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-thessalonians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/2-timothy.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/3-john.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/acts.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/amos.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/colossians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/daniel.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/deuteronomy.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/ecclesiastes.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/ephesians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/esther.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/exodus.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/ezekiel.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/ezra.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/galatians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/genesis.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/habakkuk.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/haggai.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/hebrews.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/hosea.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/isaiah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/james.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/jeremiah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/job.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/joel.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/john.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/jonah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/joshua.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/jude.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/judges.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/lamentations.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/leviticus.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/luke.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/malachi.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/mark.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/matthew.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/micah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/nahum.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/nehemiah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/numbers.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/obadiah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/philemon.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/philippians.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/proverbs.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/psalms.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/revelation.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/romans.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/ruth.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/song-of-solomon.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/titus.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/zechariah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"},
+      {"source_path": "bible-text/kjv/zephaniah.json", "legacy_source_sha256": "42f438d6210ee64a84382873272c28cb4a7d2ffd45bb19207a517dba3a2a86cb"}
+    ]
+  },
+  "scope": {
+    "kind": "complete-json-document",
+    "assigned_work": "kjv",
+    "source_member": "retained-kjv-json",
+    "top_level_keys_in_order": ["translation", "books"],
+    "book_count": 66,
+    "chapter_count": 1189,
+    "verse_row_count": 31102,
+    "excluded_top_level_fields": [],
+    "excluded_source_members": [],
+    "derived_segmentation": "The 66 files under data/bible-text/kjv/ are downstream per-book segmentation and are not retained source members or TEI authority."
+  },
+  "source_order": {
+    "primary_source_members": ["retained-kjv-json"],
+    "book_list_order": "retained JSON books list order",
+    "chapter_list_order": "retained JSON chapters list order",
+    "verse_list_order": "retained JSON verses list order"
+  },
+  "authorities": [
+    {
+      "name": "retained-kjv-json",
+      "path": "raw/bible_databases/formats/json/KJV.json",
+      "role": "primary-source",
+      "bytes": 8400187,
+      "sha256": "f0b09dc49dfb97bb84f03aae1fbf026485048c3cab31a7a41017e2d86ac1d11c"
+    },
+    {
+      "name": "work-config",
+      "path": "sources/bible-text/kjv/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 995,
+      "sha256": "6ea21132a9c67e7e1f5d105e52ad055b5001a142dfb22e5f657f7c6770104ba8"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/bible-text/kjv/kjv.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3556,
+      "sha256": "4887e75211932f9cc361a5221e784c5dfb8fa0862bb5d683ebb2bea2788f7c32"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/bible-text/kjv/kjv.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1405,
+      "sha256": "135f7796b23e6e517454601fc0df8fc0298a47d493cab1e427b4c954b234080e"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/bible-text/kjv/kjv.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 954,
+      "sha256": "3aef8b68fc74504bc793a5d52feeba12c89806325ce30ad7c5e0f105639c1326"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/bible-text/kjv/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 999,
+      "sha256": "603463a4bb06b7742bd0c7a5357592e73524816a7d834156e0692651108075c4"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-37c239-kjv-json-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/kjv_reconstruction.py",
+    "implementation_sha256": "e8b6b8b1cfca792d8d5c9cdad46017d33c2b8f3bdd6b752845afd01480f89473"
+  },
+  "validator": {
+    "id": "ocd-37c239-kjv-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/kjv_oracle.py",
+    "implementation_sha256": "163c93aaf0d191d6f40de76c534c6d8cf3fd41e88a341aef26c7d849ad971996",
+    "import_closure_sha256": "46318e503eb77a72fc05ac054c2365d412403ef8452e1fee1510c4b33b8fc8fc"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

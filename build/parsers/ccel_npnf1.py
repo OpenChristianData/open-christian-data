@@ -221,8 +221,13 @@ VOLUME_CONFIG = {
     "npnf102": {
         "url": "https://www.ccel.org/ccel/schaff/npnf102.xml",
         "raw_file": RAW_DIR / "npnf102.xml",
-        "source_edition": _NPNF1_SOURCE_EDITION,
-        "translator": "Philip Schaff (ed.), 1886",
+        "source_edition": (
+            "Nicene and Post-Nicene Fathers, First Series, Volume 2. "
+            "New York: Christian Literature Publishing Co., 1890. "
+            "Philip Schaff, series editor."
+        ),
+        "download_date": "2026-04-23",
+        "source_hash_scope": "retained-thml-file",
         "works": [
             {
                 "slug": "augustine-city-of-god",
@@ -233,9 +238,18 @@ VOLUME_CONFIG = {
                 "original_publication_year": 413,
                 "completeness": "full",
                 "contributors": [
-                    "Marcus Dods (translator, 1871)",
-                    "Philip Schaff (series editor)",
+                    {"name": "Marcus Dods", "role": "translator", "note": "1871 translation"},
+                    {"name": "Philip Schaff", "role": "series_editor"},
                 ],
+                "translator": "Marcus Dods (translator), 1871",
+                "expression_id": "augustine-city-of-god-dods-en",
+                "digital_witness_id": "city-of-god-ccel-npnf102",
+                "witness_role": "verification-collation-apparatus",
+                "related_witness_ids": ["city-of-god-standard-ebooks"],
+                "segmentation_basis": (
+                    "CCEL ThML divisions projected as books and chapters; "
+                    "notes and page breaks are excluded from this structured-text projection."
+                ),
                 **_AUGUSTINE,
             },
             {
@@ -250,6 +264,7 @@ VOLUME_CONFIG = {
                     "J.F. Shaw (translator, 1873)",
                     "Philip Schaff (series editor)",
                 ],
+                "translator": "J. F. Shaw (translator), 1873",
                 **_AUGUSTINE,
             },
         ],
@@ -1967,10 +1982,12 @@ def parse_volume_work(vol_id: str, work_cfg: dict, raw_bytes: bytes) -> dict:
             sections[0]["content_blocks"] = blocks[strip_n:]
             sections[0]["word_count"] = count_words(sections[0]["content_blocks"])
 
+    generated_bytes = json.dumps(sections, ensure_ascii=False, sort_keys=True).encode("utf-8")
     return {
         "work_id": work_cfg["slug"],
         "sections": sections,
         "_source_hash": source_hash,
+        "_generated_content_hash": "sha256:" + hashlib.sha256(generated_bytes).hexdigest(),
     }
 
 
@@ -1979,7 +1996,13 @@ def parse_volume_work(vol_id: str, work_cfg: dict, raw_bytes: bytes) -> dict:
 # ---------------------------------------------------------------------------
 
 
-def build_meta(vol_id: str, work_cfg: dict, source_hash: str) -> dict:
+def build_meta(
+    vol_id: str,
+    work_cfg: dict,
+    source_hash: str,
+    *,
+    generated_content_hash: str,
+) -> dict:
     cfg = VOLUME_CONFIG[vol_id]
     processing_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     raw_file = cfg["raw_file"]
@@ -2009,12 +2032,19 @@ def build_meta(vol_id: str, work_cfg: dict, source_hash: str) -> dict:
         "schema_type": "structured_text",
         "schema_version": SCHEMA_VERSION,
         "completeness": work_cfg.get("completeness", "full"),
+        "expression_id": work_cfg.get("expression_id"),
+        "digital_witness_id": work_cfg.get("digital_witness_id"),
+        "witness_role": work_cfg.get("witness_role"),
+        "related_witness_ids": work_cfg.get("related_witness_ids", []),
+        "segmentation_basis": work_cfg.get("segmentation_basis"),
         "provenance": {
             "source_url": cfg["url"],
             "source_format": "ThML XML",
             "source_edition": cfg["source_edition"],
             "download_date": download_date,
             "source_hash": source_hash,
+            "source_hash_scope": cfg.get("source_hash_scope", "retained-source-file"),
+            "generated_content_hash": generated_content_hash,
             "processing_method": "automated",
             "processing_script_version": (
                 f"build/parsers/ccel_npnf1.py@{SCRIPT_VERSION}"
@@ -2030,7 +2060,7 @@ def build_meta(vol_id: str, work_cfg: dict, source_hash: str) -> dict:
             ),
             "source_type": "ccel_thml",
             "source_file": str(raw_file.relative_to(REPO_ROOT)).replace("\\", "/"),
-            "translator": cfg.get("translator", "Philip Schaff (ed.), 1886"),
+            "translator": work_cfg.get("translator") or cfg.get("translator"),
         },
     }
 
@@ -2123,8 +2153,14 @@ def write_source_config(vol_id: str, work_cfg: dict, source_hash: str) -> None:
         "source_format": "ThML XML",
         "source_edition": cfg["source_edition"],
         "source_hash": source_hash,
+        "source_hash_scope": cfg.get("source_hash_scope", "retained-source-file"),
         "source_type": "ccel_thml",
-        "translator": cfg.get("translator", "Philip Schaff (ed.), 1886"),
+        "translator": work_cfg.get("translator") or cfg.get("translator"),
+        "expression_id": work_cfg.get("expression_id"),
+        "digital_witness_id": work_cfg.get("digital_witness_id"),
+        "witness_role": work_cfg.get("witness_role"),
+        "related_witness_ids": work_cfg.get("related_witness_ids", []),
+        "segmentation_basis": work_cfg.get("segmentation_basis"),
         "download_date": download_date,
         "output_file": f"data/structured-text/{work_cfg['slug']}.json",
         "clearance_date": "2026-04-01",
@@ -2305,7 +2341,12 @@ def main() -> None:
                         continue
 
                     try:
-                        meta = build_meta(vol_id, work_cfg, result["_source_hash"])
+                        meta = build_meta(
+                            vol_id,
+                            work_cfg,
+                            result["_source_hash"],
+                            generated_content_hash=result["_generated_content_hash"],
+                        )
                     except Exception as exc:
                         log(f"  ERROR (build_meta): {exc}")
                         errors += 1

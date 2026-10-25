@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "profile_id",
+    "work_id",
+    "source_id",
+    "member_census",
+    "excluded_member_count",
+    "source_bytes",
+    "source_sha256",
+    "encoding",
+    "newline",
+    "source_line_count",
+    "blank_line_count",
+    "source_line_sequence_sha256",
+    "represented_line_count",
+    "omitted_line_count",
+    "duplicate_line_count",
+    "invented_line_count",
+    "reordered_line_count",
+    "unresolved_count",
+    "native_tei_element_counts"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-lib068-donne-devotions-upon-emergent-occasions-source-accountability-v1"
+    },
+    "profile_id": {
+      "const": "lib068-donne-devotions-upon-emergent-occasions-retained-text-v2"
+    },
+    "work_id": {
+      "const": "donne-devotions-upon-emergent-occasions"
+    },
+    "source_id": {
+      "const": "gutenberg-pg23772-retained"
+    },
+    "member_census": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bytes",
+          "decision",
+          "path",
+          "reason",
+          "sha256"
+        ],
+        "properties": {
+          "bytes": {
+            "const": 427543
+          },
+          "decision": {
+            "const": "include"
+          },
+          "path": {
+            "const": "raw/gutenberg/pg23772.txt"
+          },
+          "reason": {
+            "const": "The sole frozen LIB-068 retained primary-source member for this work."
+          },
+          "sha256": {
+            "const": "f1f2b08f2dcfe9f6618bb8031a5d055b5d58e30f80a399ff866d5b205b1773b7"
+          }
+        }
+      }
+    },
+    "excluded_member_count": {
+      "const": 0
+    },
+    "source_bytes": {
+      "const": 427543
+    },
+    "source_sha256": {
+      "const": "f1f2b08f2dcfe9f6618bb8031a5d055b5d58e30f80a399ff866d5b205b1773b7"
+    },
+    "encoding": {
+      "const": "strict UTF-8"
+    },
+    "newline": {
+      "const": "CRLF with terminal CRLF"
+    },
+    "source_line_count": {
+      "const": 7647
+    },
+    "blank_line_count": {
+      "const": 1098
+    },
+    "source_line_sequence_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "represented_line_count": {
+      "const": 7647
+    },
+    "omitted_line_count": {
+      "const": 0
+    },
+    "duplicate_line_count": {
+      "const": 0
+    },
+    "invented_line_count": {
+      "const": 0
+    },
+    "reordered_line_count": {
+      "const": 0
+    },
+    "unresolved_count": {
+      "const": 7
+    },
+    "native_tei_element_counts": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  }
+}

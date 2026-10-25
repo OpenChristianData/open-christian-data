@@ -1,0 +1,74 @@
+{
+  "contract": "ocd-npnf104-lib038-reconstruction-profile-v1",
+  "version": 1,
+  "profile_id": "npnf104-lib038-ten-work-v1",
+  "source_member": {
+    "path": "raw/ccel/npnf1/npnf104.xml",
+    "bytes": 4362836,
+    "sha256": "978cdefc45de5bd5bce3aecb0f8e5bbd27129400f531c0c7b6dee88b17c677b9"
+  },
+  "assigned_roots": ["iv.iv", "iv.v", "iv.vi", "iv.vii", "iv.viii", "iv.ix", "iv.x", "v.iv", "v.v", "v.vi"],
+  "work_assignments": {
+    "iv.iv": "augustine-morals-catholic-church",
+    "iv.v": "augustine-morals-manichaeans",
+    "iv.vi": "augustine-on-two-souls",
+    "iv.vii": "augustine-against-fortunatus",
+    "iv.viii": "augustine-against-epistle-of-manichaeus",
+    "iv.ix": "augustine-reply-to-faustus",
+    "iv.x": "augustine-nature-of-good",
+    "v.iv": "augustine-on-baptism",
+    "v.v": "augustine-answer-to-petilian",
+    "v.vi": "augustine-correction-of-donatists"
+  },
+  "assigned_feature_count": 11999,
+  "assigned_attribute_count": 33468,
+  "assigned_text_node_count": 11261,
+  "assigned_tail_node_count": 11308,
+  "assigned_character_count": 2671577,
+  "assigned_non_ascii_character_count": 18778,
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "assigned_feature_counts": {
+    "br": 1,
+    "div2": 10,
+    "div3": 234,
+    "div4": 402,
+    "i": 626,
+    "note": 2522,
+    "p": 4505,
+    "pb": 540,
+    "scripRef": 1955,
+    "span": 1199,
+    "sup": 5
+  },
+  "outside_assigned_work_scope": {
+    "shell": ["XML declaration", "DOCTYPE", "ThML", "ThML.head", "ThML.body wrapper"],
+    "top_level_div1": ["i", "ii", "iii", "vi", "vii"],
+    "unassigned_div2_roots": ["iv.i", "iv.ii", "iv.iii", "v.i", "v.ii", "v.iii"],
+    "assigned_root_tails": ["iv.iv", "iv.v", "iv.vi", "iv.vii", "iv.viii", "iv.ix", "iv.x", "v.iv", "v.v", "v.vi"]
+  },
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-text-and-in-scope-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-and-source-headings-projected",
+    "notes-page-breaks-scripture-references-language-spans-and-formatting-preserved",
+    "exact-source-member-shell-head-front-and-unassigned-root-accounting",
+    "exact-prolog-terminal-root-and-namespace-policy",
+    "retained-metadata-rights-and-credit-claims-preserved-without-inference",
+    "ten-assigned-works-nonaccepted-and-publication-not-ready",
+    "assigned-source-comments-preserved-and-accounted"
+  ],
+  "source_css": {
+    "opaque_classes_remain_in_rend": true,
+    "semantic_rendition_rules": {
+      "italic": {"source_selectors": ["p.c39", "p.c59"], "tei_rend": "italic", "count": 44},
+      "small-caps": {"source_selector": "span.c11", "tei_rend": "small-caps", "count": 844},
+      "uppercase": {"source_selectors": ["span.c14", "span.c16", "span.c24", "span.c26", "span.c27"], "tei_rend": "uppercase", "count": 98}
+    },
+    "stylesheets": [
+      {"selector": "ThML.head/style[1]", "text_sha256": "66e04647d04ec4667aee881067ebfacbddd158b3447b0f7e423e26aa040cad02", "type": "text/css"},
+      {"selector": "ThML.head/style[2]", "text_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b", "type": "text/xcss"}
+    ]
+  }
+}

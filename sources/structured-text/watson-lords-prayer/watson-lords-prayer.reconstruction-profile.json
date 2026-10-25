@@ -1,0 +1,151 @@
+{
+  "contract": "selected-thml-profile-v1",
+  "profile_id": "watson-lords-prayer-retained-thml-route-v1",
+  "work_id": "watson-lords-prayer",
+  "acquisition_path": "library/works/watson-lords-prayer/forms/watson-lords-prayer-route-source-form/editions/watson-lords-prayer-retained-thml-route/acquisitions/watson-lords-prayer-retained-source.json",
+  "source_member": {
+    "path": "raw/ccel/watson/prayer.xml",
+    "bytes": 1376060,
+    "sha256": "9f14813ac77f4a44ce08b63ec6343ec8f59f006df7f80f11fcf87926730468ca"
+  },
+  "source_identity": {
+    "publisherID": "ccel",
+    "authorID": "watson",
+    "bookID": "prayer",
+    "workID": "prayer",
+    "bkgID": "lords_prayer_(watson)",
+    "DC.Title": "The Lord's Prayer",
+    "DC.Creator[Author,short-form]": "Thomas Watson",
+    "DC.Language[ISO639-3]": "eng",
+    "DC.Rights": "",
+    "printSourceInfo": "1692",
+    "title_page_statement": "First published as part of A Body of Practical Divinity, 1692"
+  },
+  "work_boundary": {
+    "disposition": "unresolved",
+    "basis": [
+      "The retained header supplies one DC.Title and one electronic workID, prayer, but neither alone establishes the complete intellectual-work boundary.",
+      "The direct body envelope contains ten ordered carriers: title page, contents, preface, six petition carriers, and indexes.",
+      "This route selects the full source-native envelope for accounting and defers semantic work, constituent-part, and support-material decisions."
+    ]
+  },
+  "carrier_dispositions": [
+    {"position": 0, "native_id": "i", "source_title": "Title Page", "selection_role": "body", "tei_region": "front", "disposition": "selected-route-envelope"},
+    {"position": 1, "native_id": "ii", "source_title": "Contents", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 2, "native_id": "iii", "source_title": "The Preface to the Lord's Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 3, "native_id": "iv", "source_title": "The First Petition in the Lord's Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 4, "native_id": "v", "source_title": "The Second Petition in the Lord’s Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 5, "native_id": "vi", "source_title": "The Third Petition in the Lord’s Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 6, "native_id": "vii", "source_title": "The Fourth Petition in the Lord's Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 7, "native_id": "viii", "source_title": "The Fifth Petition in the Lord's Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 8, "native_id": "ix", "source_title": "The Sixth Petition in the Lord's Prayer", "selection_role": "body", "tei_region": "body", "disposition": "selected-route-envelope"},
+    {"position": 9, "native_id": "x", "source_title": "Indexes", "selection_role": "back", "tei_region": "back", "disposition": "selected-route-envelope"}
+  ],
+  "source_body_sequence": [
+    {"position": 0, "kind": "div1", "native_id": "i", "source_title": "Title Page"},
+    {"position": 1, "kind": "div1", "native_id": "ii", "source_title": "Contents"},
+    {"position": 2, "kind": "div1", "native_id": "iii", "source_title": "The Preface to the Lord's Prayer"},
+    {"position": 3, "kind": "div1", "native_id": "iv", "source_title": "The First Petition in the Lord's Prayer"},
+    {"position": 4, "kind": "div1", "native_id": "v", "source_title": "The Second Petition in the Lord’s Prayer"},
+    {"position": 5, "kind": "div1", "native_id": "vi", "source_title": "The Third Petition in the Lord’s Prayer"},
+    {"position": 6, "kind": "div1", "native_id": "vii", "source_title": "The Fourth Petition in the Lord's Prayer"},
+    {"position": 7, "kind": "div1", "native_id": "viii", "source_title": "The Fifth Petition in the Lord's Prayer"},
+    {"position": 8, "kind": "div1", "native_id": "ix", "source_title": "The Sixth Petition in the Lord's Prayer"},
+    {"position": 9, "kind": "div1", "native_id": "x", "source_title": "Indexes"}
+  ],
+  "feature_census": {
+    "selected_element_count": 6723,
+    "selected_tag_counts": {
+      "a": 2456,
+      "div": 3,
+      "div1": 10,
+      "div2": 2,
+      "h1": 2,
+      "h2": 10,
+      "h3": 1,
+      "insertIndex": 2,
+      "li": 325,
+      "p": 1547,
+      "scripRef": 2024,
+      "span": 340,
+      "ul": 1
+    },
+    "selected_comment_count": 0,
+    "document_comment_count": 0,
+    "selected_text_utf8_bytes": 424027,
+    "selected_text_and_tail_utf8_bytes": 567075
+  },
+  "heading_policy": {
+    "source_heading_counts": {"h1": 2, "h2": 10, "h3": 1},
+    "tei_mapping": {
+      "h1": "TEI head; original ThML tag and exact text remain in source-accountability features",
+      "h2": "TEI head; original ThML tag and exact text remain in source-accountability features",
+      "h3": "TEI head with type=thml-h3; original ThML tag and exact text remain in source-accountability features"
+    },
+    "division_title_rule": {
+      "source_attribute": "div@title",
+      "disposition": "Retain as source navigation metadata in the complete source-feature ledger.",
+      "when_direct_heading_exists": "Map the direct source h1, h2, or h3 headings only; do not synthesize a TEI head when normalized source text matches.",
+      "when_no_direct_heading_exists": "Preserve div@title as a source-derived TEI head and keep the original attribute in accounting.",
+      "source_derived_synthetic_heads_expected": 7
+    }
+  },
+  "navigation_attribute_disposition": {
+    "source_attributes": ["id", "title", "prev", "next", "progress"],
+    "rule": "Every selected element retains its exact source attributes in source-accountability.features. Native IDs bind selection and links; navigation attributes remain source metadata rather than body prose."
+  },
+  "source_statements": [
+    {"source_path": "/ThML/ThML.head/generalInfo", "text_sha256": "255ab745e82283ce61729b74110ba3da60ab564c7c9b80dd2d309733a0ef13e5", "excerpt": "third volume of Watson's series", "interpretation": "Provider editorial description used only as structural context; it does not settle the work boundary."},
+    {"source_path": "/ThML/ThML.head/printSourceInfo", "text_sha256": "2740db06dfb5b0b667597f708e38bed538f45002a3cc379adb63905fa01edaa6", "excerpt": "1692", "interpretation": "Retained source statement; not an adopted edition date or print-exemplar identification."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC.Title", "text_sha256": "06d674e09dce4e5bc20b382f3fc28964358a83cce9910a876d2c35d1ad5953cf", "excerpt": "The Lord's Prayer", "interpretation": "Primary retained-source title observation and route label."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC.Creator[@sub=\"Author\"][@scheme=\"short-form\"]", "text_sha256": "cab245e8a8b4f7d59882e6ca0d32f9fbf0aa787be3baec8ca84a8434e5d18d1b", "excerpt": "Thomas Watson", "interpretation": "Primary retained-source author observation, corroborated by title-page text."},
+    {"source_path": "/ThML/ThML.head/electronicEdInfo/DC.Rights", "text_sha256": "", "excerpt": "empty source field", "interpretation": "The source rights field is empty; no project rights clearance is inferred."}
+  ],
+  "legacy_config_boundary": [
+    "Do not promote config.json original_publication_year into an edition or print-exemplar date.",
+    "Do not promote config.json source_edition, download_date, or permission note into verified edition, acquisition-date, or rights evidence.",
+    "The retained bytes, not the legacy JSON projection, are the source authority for this route slice."
+  ],
+  "candidate_questions": [
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-lords-prayer-work-boundary",
+      "scope": "work-identity",
+      "question": "Which title page, contents, preface, six petition carriers, and indexes belong to the cataloged work or to separate supporting material?",
+      "evidence_boundary": "The retained member exposes ten ordered direct div1 carriers; complete-envelope selection is not a semantic work decision.",
+      "technical_disposition": "Retain all carrier evidence in this route slice and defer semantic partitioning."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-lords-prayer-textual-form",
+      "scope": "textual-form",
+      "question": "What textual form or translation status does this retained English ThML witness represent?",
+      "evidence_boundary": "The retained DC.Language is an electronic-source statement and does not settle textual-form or translation identity.",
+      "technical_disposition": "Use only route-local language and form labels; leave textual-form identity unresolved."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-lords-prayer-edition-witness-lineage",
+      "scope": "edition-witness",
+      "question": "Which print exemplar, if any, underlies this electronic CCEL witness?",
+      "evidence_boundary": "The retained electronic identifiers and title-page statements do not establish a specific print exemplar or transcription lineage.",
+      "technical_disposition": "Assert no print date, edition identity, or witness lineage."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-lords-prayer-constituent-parts",
+      "scope": "part-identity",
+      "question": "How should the title page, contents, preface, six petitions, and indexes relate to the cataloged work?",
+      "evidence_boundary": "Their source order and carrier boundaries are observable; their work/part relationships are not decided by this route slice.",
+      "technical_disposition": "Preserve the complete carrier envelope and defer part relationships."
+    },
+    {
+      "contract": "ocd-selected-thml-question-v1",
+      "id": "watson-lords-prayer-rights-clearance",
+      "scope": "rights",
+      "question": "What independent rights evidence governs later acceptance or publication?",
+      "evidence_boundary": "The retained DC.Rights field is empty and the legacy configuration is not project rights authority.",
+      "technical_disposition": "No rights, release, or publication state is changed by this route slice."
+    }
+  ]
+}

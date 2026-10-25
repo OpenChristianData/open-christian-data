@@ -1,0 +1,2315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/library-record.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "const": "ocd-library-record-v1"
+    },
+    "selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "work_id": {
+          "type": "string"
+        },
+        "textual_form_id": {
+          "type": "string"
+        },
+        "edition_id": {
+          "type": "string"
+        }
+      },
+      "required": []
+    },
+    "resolution": {
+      "enum": [
+        "found",
+        "not_found",
+        "ambiguous",
+        "invalid_request",
+        null
+      ]
+    },
+    "collection": {
+      "enum": [
+        "complete_declared_scope",
+        "partial",
+        "unstable"
+      ]
+    },
+    "inspection_level": {
+      "const": "records-and-presence"
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "owner": {
+                  "type": "string"
+                },
+                "work": {
+                  "$ref": "ocd://schemas/v2/work.schema.json"
+                },
+                "selected_forms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "selected_editions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        },
+        "holdings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "editions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "textual_form_id": {
+                        "type": "string"
+                      },
+                      "edition_id": {
+                        "type": "string"
+                      },
+                      "state_owner": {
+                        "type": "string"
+                      },
+                      "recorded_targets": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "ocd://schemas/v2/state.schema.json#/properties/targets/items"
+                        }
+                      },
+                      "acquisitions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "owner": {
+                              "type": "string"
+                            },
+                            "record": {
+                              "$ref": "ocd://schemas/v2/acquisition.schema.json"
+                            },
+                            "retained": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "declared": {
+                                    "$ref": "ocd://schemas/v2/acquisition.schema.json#/properties/retained_files/items"
+                                  },
+                                  "observed_presence": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "path": {
+                                        "type": "string"
+                                      },
+                                      "health": {
+                                        "enum": [
+                                          "valid",
+                                          "stale",
+                                          "invalid",
+                                          "unavailable",
+                                          "not_assessed"
+                                        ]
+                                      },
+                                      "present": {
+                                        "anyOf": [
+                                          {
+                                            "type": "boolean"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      },
+                                      "bytes": {
+                                        "anyOf": [
+                                          {
+                                            "type": "integer",
+                                            "minimum": 0
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      },
+                                      "kind": {
+                                        "enum": [
+                                          "file",
+                                          "directory",
+                                          null
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "path",
+                                      "health",
+                                      "present",
+                                      "bytes",
+                                      "kind"
+                                    ]
+                                  },
+                                  "current_integrity": {
+                                    "const": "not_assessed"
+                                  }
+                                },
+                                "required": [
+                                  "declared",
+                                  "observed_presence",
+                                  "current_integrity"
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "owner",
+                            "record",
+                            "retained"
+                          ]
+                        }
+                      },
+                      "master_presence": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "health": {
+                            "enum": [
+                              "valid",
+                              "stale",
+                              "invalid",
+                              "unavailable",
+                              "not_assessed"
+                            ]
+                          },
+                          "present": {
+                            "anyOf": [
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "bytes": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "kind": {
+                            "enum": [
+                              "file",
+                              "directory",
+                              null
+                            ]
+                          }
+                        },
+                        "required": [
+                          "path",
+                          "health",
+                          "present",
+                          "bytes",
+                          "kind"
+                        ]
+                      },
+                      "historical_acceptance": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "owner": {
+                            "type": "string"
+                          },
+                          "record": {
+                            "anyOf": [
+                              {
+                                "$ref": "ocd://schemas/v2/acceptance.schema.json"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "current_byte_applicability": {
+                            "const": "not_assessed"
+                          }
+                        },
+                        "required": [
+                          "owner",
+                          "record",
+                          "current_byte_applicability"
+                        ]
+                      },
+                      "scoped_holdings": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "acquisition_id": {
+                              "type": "string"
+                            },
+                            "master_presence": {
+                              "$ref": "#/properties/sections/properties/holdings/properties/data/properties/editions/items/properties/master_presence"
+                            },
+                            "historical_acceptance": {
+                              "$ref": "#/properties/sections/properties/holdings/properties/data/properties/editions/items/properties/historical_acceptance"
+                            }
+                          },
+                          "required": [
+                            "acquisition_id",
+                            "master_presence",
+                            "historical_acceptance"
+                          ]
+                        }
+                      },
+                      "current_integrity": {
+                        "const": "not_assessed"
+                      }
+                    },
+                    "required": [
+                      "textual_form_id",
+                      "edition_id",
+                      "state_owner",
+                      "recorded_targets",
+                      "acquisitions",
+                      "master_presence",
+                      "historical_acceptance",
+                      "current_integrity"
+                    ]
+                  }
+                },
+                "state_owner": {
+                  "type": "string"
+                },
+                "state_recorded": {
+                  "type": "boolean"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        },
+        "research": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "leads": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "schema_version": {
+                        "enum": [
+                          "2.0",
+                          "2.1",
+                          "2.2"
+                        ]
+                      },
+                      "lead_id": {
+                        "type": "string"
+                      },
+                      "observed_claim": {
+                        "type": "string"
+                      },
+                      "evidence": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                          },
+                          "line_start": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "line_end": {
+                            "type": "integer",
+                            "minimum": 1
+                          }
+                        },
+                        "required": [
+                          "path",
+                          "sha256"
+                        ]
+                      },
+                      "acquisition_intent": {
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "unresolved",
+                          "closed",
+                          "promoted"
+                        ]
+                      },
+                      "context": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "columns": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "work_id": {
+                        "type": "string"
+                      },
+                      "resolution": {
+                        "type": "string"
+                      },
+                      "migration_id": {
+                        "type": "string"
+                      },
+                      "cataloging": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["path", "sha256", "fields", "evidence"],
+                        "properties": {
+                          "path": {"type": "string"},
+                          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                          "fields": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": ["title", "identifiers", "author", "work_scope", "original_language", "edition", "contributors", "publication", "source", "format_extent", "source_problems", "primary_evidence", "rights", "holdings", "open_questions", "next_action", "researcher"],
+                            "properties": {
+                              "title": {"type": "string"},
+                              "identifiers": {"type": "string"},
+                              "author": {"type": "string"},
+                              "work_scope": {"type": "string"},
+                              "original_language": {"type": "string"},
+                              "edition": {"type": "string"},
+                              "contributors": {"type": "string"},
+                              "publication": {"type": "string"},
+                              "source": {"type": "string"},
+                              "format_extent": {"type": "string"},
+                              "source_problems": {"type": "string"},
+                              "primary_evidence": {"type": "string"},
+                              "rights": {"type": "string"},
+                              "holdings": {"type": "string"},
+                              "open_questions": {"type": "string"},
+                              "next_action": {"type": "string"},
+                              "researcher": {"type": "string"}
+                            }
+                          },
+                          "evidence": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": ["lead_sha256", "sources"],
+                            "properties": {
+                              "lead_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                              "sources": {
+                                "type": "array", "minItems": 1,
+                                "items": {
+                                  "type": "object", "additionalProperties": false,
+                                  "required": ["path", "sha256", "line_start", "line_end"],
+                                  "properties": {
+                                    "path": {"type": "string"},
+                                    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                                    "line_start": {"type": "integer", "minimum": 1},
+                                    "line_end": {"type": "integer", "minimum": 1}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "schema_version",
+                      "lead_id",
+                      "observed_claim",
+                      "evidence",
+                      "acquisition_intent",
+                      "disposition",
+                      "context"
+                    ]
+                  }
+                },
+                "catalog_entries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "tfr_entry_id": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      },
+                      "catalog_author_heading": {
+                        "type": "string"
+                      },
+                      "catalog_author": {
+                        "type": "string"
+                      },
+                      "catalog_author_supplied": {
+                        "type": "boolean"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "reader_url": {
+                        "type": "string"
+                      },
+                      "source_title_line": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "source_metadata_lines": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "site_metadata_raw": {
+                        "type": "string"
+                      },
+                      "site_metadata_fields": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "tfr_entry_id",
+                      "collection",
+                      "catalog_author_heading",
+                      "catalog_author",
+                      "catalog_author_supplied",
+                      "title",
+                      "reader_url",
+                      "source_title_line",
+                      "source_metadata_lines",
+                      "site_metadata_raw",
+                      "site_metadata_fields"
+                    ]
+                  }
+                },
+                "relationships": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "ocd://schemas/v2/library-record-links.schema.json#/properties/relationships/items"
+                  }
+                },
+                "lead_population": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "catalog_population": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "production_observations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "line": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "observed_on": {
+                        "type": "string"
+                      },
+                      "claim": {
+                        "type": "string"
+                      },
+                      "basis": {
+                        "type": "string"
+                      },
+                      "translation": {
+                        "enum": [
+                          "source_claim_only"
+                        ]
+                      },
+                      "ocr": {
+                        "enum": [
+                          "not_assessed"
+                        ]
+                      },
+                      "later_processing": {
+                        "enum": [
+                          "unknown"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "owner",
+                      "line",
+                      "observed_on",
+                      "claim",
+                      "basis",
+                      "translation",
+                      "ocr",
+                      "later_processing"
+                    ]
+                  }
+                },
+                "claim_holds": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "lead_id": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "migration_owner": {
+                        "type": "string"
+                      },
+                      "current_candidate": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "path": {
+                                "type": "string"
+                              },
+                              "sha256": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]{64}$"
+                              },
+                              "line_start": {
+                                "type": "integer",
+                                "minimum": 1
+                              },
+                              "line_end": {
+                                "type": "integer",
+                                "minimum": 1
+                              }
+                            },
+                            "required": [
+                              "path",
+                              "sha256"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "lead_id",
+                      "status",
+                      "migration_owner",
+                      "current_candidate"
+                    ]
+                  }
+                },
+                "source_lead_connections": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "entry_id": {
+                        "type": "string"
+                      },
+                      "lead_id": {
+                        "type": "string"
+                      },
+                      "basis": {
+                        "type": "string"
+                      },
+                      "evidence": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                          },
+                          "line_start": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "line_end": {
+                            "type": "integer",
+                            "minimum": 1
+                          }
+                        },
+                        "required": [
+                          "path",
+                          "sha256"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "entry_id",
+                      "lead_id",
+                      "basis",
+                      "evidence"
+                    ]
+                  }
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "adopted_identity_owner": {
+                  "type": "string"
+                },
+                "detailed_edition_header": {
+                  "type": "string"
+                },
+                "source_observations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "projection_sha256": {
+                        "type": "string"
+                      },
+                      "subject": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "kind": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "id"
+                        ]
+                      },
+                      "record": {
+                        "$ref": "https://openchristiandata.org/schemas/v2/source-metadata.schema.json#/$defs/sidecar"
+                      },
+                      "authored_owner": {
+                        "type": "string"
+                      },
+                      "inspection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "owner",
+                      "projection_sha256",
+                      "subject",
+                      "record",
+                      "authored_owner",
+                      "inspection"
+                    ]
+                  }
+                },
+                "normalized": {
+                  "type": "object"
+                },
+                "rights": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        },
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "historical_intent": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "lead_id": {
+                        "type": "string"
+                      },
+                      "owner": {
+                        "type": "string"
+                      },
+                      "intent": {
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "type": "string"
+                      },
+                      "observed_claim": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "lead_id",
+                      "owner",
+                      "intent",
+                      "disposition",
+                      "observed_claim"
+                    ]
+                  }
+                },
+                "current_decisions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "target": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "work",
+                              "textual_form",
+                              "edition",
+                              "acquisition",
+                              "research_lead",
+                              "source_catalog_entry"
+                            ]
+                          },
+                          "namespace": {
+                            "enum": [
+                              "ocd",
+                              "research",
+                              "tfr"
+                            ]
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "work_id": {
+                            "type": "string"
+                          },
+                          "textual_form_id": {
+                            "type": "string"
+                          },
+                          "edition_id": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "namespace",
+                          "id"
+                        ],
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "work"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "textual_form"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "edition"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id",
+                                "textual_form_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "acquisition"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id",
+                                "textual_form_id",
+                                "edition_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "research_lead"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "research"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "source_catalog_entry"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "tfr"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "task": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "claim": {
+                        "type": "string"
+                      },
+                      "applicability": {
+                        "enum": [
+                          "current"
+                        ]
+                      },
+                      "evidence_sha256": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "owner",
+                      "target",
+                      "task",
+                      "status",
+                      "claim",
+                      "applicability",
+                      "evidence_sha256"
+                    ]
+                  }
+                },
+                "current_intent": {
+                  "enum": [
+                    "recorded",
+                    "not_recorded_in_supported_scope",
+                    "unknown"
+                  ]
+                },
+                "release_selection": {
+                  "enum": [
+                    "not_assessed",
+                    "recorded",
+                    "not_recorded_in_work_scope"
+                  ]
+                },
+                "release_record": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "owner": {
+                      "type": "string"
+                    },
+                    "record": {
+                      "$ref": "ocd://schemas/v2/release-selection.schema.json"
+                    },
+                    "current_readiness": {
+                      "enum": [
+                        "not_assessed"
+                      ]
+                    },
+                    "publication_authorization": {
+                      "enum": [
+                        "not_assessed"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "owner",
+                    "record",
+                    "current_readiness",
+                    "publication_authorization"
+                  ]
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        },
+        "coordination": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health": {
+              "enum": [
+                "valid",
+                "stale",
+                "invalid",
+                "unavailable",
+                "not_assessed"
+              ]
+            },
+            "inspection_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "tasks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "tracker": {
+                        "type": "string"
+                      },
+                      "task": {
+                        "type": "string"
+                      },
+                      "subject": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "work",
+                              "textual_form",
+                              "edition",
+                              "acquisition",
+                              "research_lead",
+                              "source_catalog_entry"
+                            ]
+                          },
+                          "namespace": {
+                            "enum": [
+                              "ocd",
+                              "research",
+                              "tfr"
+                            ]
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "work_id": {
+                            "type": "string"
+                          },
+                          "textual_form_id": {
+                            "type": "string"
+                          },
+                          "edition_id": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "namespace",
+                          "id"
+                        ],
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "work"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "textual_form"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "edition"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id",
+                                "textual_form_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "acquisition"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [
+                                "work_id",
+                                "textual_form_id",
+                                "edition_id"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "const": "ocd"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "research_lead"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "research"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "const": "source_catalog_entry"
+                                }
+                              }
+                            },
+                            "then": {
+                              "required": [],
+                              "properties": {
+                                "namespace": {
+                                  "const": "tfr"
+                                }
+                              },
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "edition_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "textual_form_id"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "work_id"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "owner": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "applicability": {
+                        "enum": [
+                          "current",
+                          "historical",
+                          "unknown"
+                        ]
+                      },
+                      "dependencies": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "reference": {
+                              "type": "string"
+                            },
+                            "health": {
+                              "enum": [
+                                "resolved",
+                                "unavailable",
+                                "invalid",
+                                "unknown"
+                              ]
+                            },
+                            "tracker": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "reference",
+                            "health"
+                          ]
+                        }
+                      },
+                      "dependency_coverage": {
+                        "enum": [
+                          "not_recorded",
+                          "assessed"
+                        ]
+                      },
+                      "evidence_sha256": {
+                        "type": "string"
+                      },
+                      "next_action": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "successors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "reference": {
+                              "type": "string"
+                            },
+                            "health": {
+                              "enum": [
+                                "resolved",
+                                "unavailable",
+                                "invalid",
+                                "unknown"
+                              ]
+                            },
+                            "tracker": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "reference",
+                            "health"
+                          ]
+                        }
+                      },
+                      "triage_label": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/$defs/triage_label"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "lifecycle": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/$defs/task_lifecycle"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "tracker",
+                      "task",
+                      "subject",
+                      "owner",
+                      "status",
+                      "applicability",
+                      "dependencies",
+                      "dependency_coverage",
+                      "evidence_sha256"
+                    ]
+                  }
+                },
+                "populations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "owner": {
+                        "type": "string"
+                      },
+                      "coverage": {
+                        "enum": [
+                          "complete_named_population",
+                          "incomplete",
+                          "unavailable"
+                        ]
+                      },
+                      "support": {
+                        "enum": [
+                          "supported",
+                          "partial",
+                          "unsupported"
+                        ]
+                      },
+                      "applicability": {
+                        "enum": [
+                          "current",
+                          "historical",
+                          "unknown"
+                        ]
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "owner",
+                      "coverage",
+                      "support",
+                      "applicability",
+                      "reason"
+                    ]
+                  }
+                },
+                "ownership": {
+                  "enum": [
+                    "conflicted",
+                    "recorded",
+                    "unknown"
+                  ]
+                },
+                "coverage": {
+                  "enum": [
+                    "incomplete",
+                    "complete_named_population",
+                    "complete_explicit_scope"
+                  ]
+                },
+                "availability_to_start": {
+                  "enum": [
+                    "not_assessed"
+                  ]
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "health",
+            "inspection_basis",
+            "data"
+          ]
+        }
+      },
+      "required": []
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "health": {
+            "enum": [
+              "valid",
+              "stale",
+              "invalid",
+              "unavailable",
+              "not_assessed"
+            ]
+          },
+          "sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "health",
+          "sha256",
+          "bytes"
+        ]
+      }
+    },
+    "discovery": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "health": {
+            "enum": [
+              "valid",
+              "stale",
+              "invalid",
+              "unavailable",
+              "not_assessed"
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "pattern",
+          "members",
+          "health"
+        ]
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "health": {
+            "enum": [
+              "valid",
+              "stale",
+              "invalid",
+              "unavailable",
+              "not_assessed"
+            ]
+          },
+          "present": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory",
+              null
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "health",
+          "present",
+          "bytes",
+          "kind"
+        ]
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "section": {
+            "enum": [
+              "identity",
+              "holdings",
+              "research",
+              "metadata",
+              "selection",
+              "coordination"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "error",
+              "warning"
+            ]
+          }
+        },
+        "required": [
+          "section",
+          "code",
+          "path",
+          "message",
+          "severity"
+        ]
+      }
+    },
+    "update_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "fact": {
+            "type": "string"
+          },
+          "owner_kind": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string"
+              },
+              "namespace": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "work_id": {
+                "type": "string"
+              },
+              "textual_form_id": {
+                "type": "string"
+              },
+              "edition_id": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "support": {
+            "enum": [
+              "supported",
+              "owning_workflow",
+              "unsupported"
+            ]
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "fact",
+          "owner_kind",
+          "operation",
+          "scope",
+          "support",
+          "prerequisites"
+        ]
+      }
+    },
+    "adapter_versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canonical": {
+          "type": "string"
+        },
+        "normalization": {
+          "type": "string"
+        },
+        "research": {
+          "const": "lead-2.1-tfr-v2"
+        },
+        "coordination": {
+          "const": "explicit-references-v3"
+        },
+        "metadata": {
+          "const": "projection-v1"
+        }
+      },
+      "required": [
+        "canonical",
+        "normalization",
+        "research",
+        "coordination",
+        "metadata"
+      ]
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "observed_at",
+        "attempts"
+      ]
+    },
+    "routing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "route_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "route_sha256"
+        ]
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "selector",
+    "resolution",
+    "collection",
+    "inspection_level",
+    "sections",
+    "inputs",
+    "discovery",
+    "observations",
+    "diagnostics",
+    "update_routes",
+    "adapter_versions",
+    "fingerprint",
+    "execution",
+    "routing"
+  ],
+  "title": "OCD request-scoped library record",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "resolution": {
+            "not": {
+              "const": "invalid_request"
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "selector": {
+            "required": [
+              "kind",
+              "namespace",
+              "id"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "work",
+                  "textual_form",
+                  "edition",
+                  "acquisition",
+                  "research_lead",
+                  "source_catalog_entry"
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "work"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "textual_form"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "edition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "acquisition"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "work_id",
+                    "textual_form_id",
+                    "edition_id"
+                  ],
+                  "properties": {
+                    "namespace": {
+                      "const": "ocd"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "research_lead"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "research"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "source_catalog_entry"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "namespace": {
+                      "const": "tfr"
+                    }
+                  },
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "work_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "textual_form_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "edition_id"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "triage_label": {
+      "type": "string",
+      "enum": [
+        "needs-triage",
+        "needs-info",
+        "ready-for-agent",
+        "ready-for-human",
+        "wontfix"
+      ]
+    },
+    "task_lifecycle": {
+      "type": "string",
+      "enum": [
+        "open",
+        "in-progress",
+        "blocked",
+        "complete",
+        "superseded",
+        "canceled"
+      ]
+    }
+  }
+}

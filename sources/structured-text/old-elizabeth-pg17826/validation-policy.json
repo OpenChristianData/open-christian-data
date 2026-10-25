@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-old-elizabeth-pg17826-current-validation-policy-v1",
+  "source_authority": "retained extracted HTML bytes",
+  "package_role": "ZIP correspondence check, one referenced JPEG, and unreferenced-cover support",
+  "scope": "one memoir electronic witness, complete HTML body and referenced image",
+  "checks": [
+    "exact extracted HTML, referenced JPEG, and ZIP member correspondence",
+    "56 top-level body elements and 186 descendant element census",
+    "preorder source-to-TEI identifier and parent mapping",
+    "full source and TEI subtree text equality",
+    "source attributes, links, emphasis, rules, preformatted blocks, and graphic data URI",
+    "candidate provenance closure and TEI P5 XSD"
+  ],
+  "excluded_body_elements": 0,
+  "human_acceptance": "separate",
+  "rights_and_publication": "separate"
+}

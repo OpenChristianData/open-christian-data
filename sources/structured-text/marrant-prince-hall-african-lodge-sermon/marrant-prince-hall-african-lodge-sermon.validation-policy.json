@@ -1,0 +1,97 @@
+{
+  "contract": "ocd-marrant-n17016-validation-policy-v1",
+  "source_id": "evans-tcp-n17016-pinned-tei-p5",
+  "readme_sha256": "201c722dd8957849cc337629ca5308dd8d07b7927ace0baf54afbdd2e976fadd",
+  "accountability": {
+    "contract": "ocd-marrant-n17016-accountability-v1",
+    "projection": "exact-source-bytes-v1",
+    "source_path": "raw/clean-ready-acquisition-to-tei/master-2/15/marrant-prince-hall-african-lodge-sermon/N17016.xml",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "representation": "content.tei.xml is byte-identical to the retained TEI P5 source; TCP identifiers, source-defined divisions, attributes, text, tails, whitespace, diplomatic long-s typography, page anchors, gaps, encoded characters, epigraphs, note, and Freemasonry/African Lodge context remain present"
+  },
+  "provenance": {
+    "contract": "ocd-marrant-n17016-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "tcp_id": "N17016",
+      "author": "Marrant, John, 1755-1791.",
+      "corporate_author": "Freemasons. African Lodge no. 459 (Boston, Mass.).",
+      "title": "A sermon preached on the 24th day of June 1789, being the festival of St. John the Baptist, at the request of the Right Worshipful the Grand Master Prince Hall, and the rest of the brethren of the African Lodge of the Honorable Society of Free and Accepted Masons in Boston. / By the Reverend Brother Marrant, Chaplain. ; [Two lines from Job]",
+      "publication_place": "Boston",
+      "publisher": "Printed and sold [by Thomas and John Fleet] at the Bible and Heart",
+      "date": "1789",
+      "evans": "21931",
+      "image_set": "21931"
+    },
+    "source": {
+      "landing_url": "https://name.umdl.umich.edu/N17016.0001.001",
+      "landing_capture": "Wayback snapshot 2024-08-19 because the live route returned a Cloudflare challenge on 2026-08-31",
+      "repository_url": "https://github.com/textcreationpartnership/N17016",
+      "download_url": "https://raw.githubusercontent.com/textcreationpartnership/N17016/54a217d90b86105b1a1b01b579e2053ce0d9b221/N17016.xml",
+      "commit": "54a217d90b86105b1a1b01b579e2053ce0d9b221",
+      "xml_git_blob": "8433a5aa407685f2bbeca05980c9818d13ca189e",
+      "retrieved_utc": "2026-08-31T03:32:14Z",
+      "bytes": 48484,
+      "sha256": "cec45792f758853c291b79aaba32f79bb12360e1247e9d3e0e9271fa3b577434"
+    },
+    "rights": {
+      "keyboarded_and_encoded_edition": "CC0 1.0 Universal",
+      "license_repository_commit": "c8ff5cf9a08a7b003032bf63f6b91cabec4254bb",
+      "vendor_page_images": "excluded, not redistributed, and not claimed under the text waiver",
+      "attribution_request": "TCP respectfully requests credit and attribution to the original source",
+      "human_rights_review": "required"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "canonical_write": false,
+      "human_textual_acceptance": false,
+      "identity_acceptance": false,
+      "edition_acceptance": false,
+      "rights_acceptance": false,
+      "editorial_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "marrant-n17016-keying-gaps-and-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate the sampled-proofread TCP transcription, including its nine explicit illegible gaps, against the 1789 print witness?",
+      "evidence": "TCP reports sampled proofreading; this route preserves every retained reading and gap but performs no print collation."
+    },
+    {
+      "id": "marrant-n17016-live-item-page",
+      "status": "unresolved",
+      "question": "Will a later human identity review refresh the live Michigan item page after its Cloudflare challenge is no longer blocking access?",
+      "evidence": "The live redirect and challenge headers are retained with ephemeral cookies redacted; the official TCP repository, TEI header, and dated 2024-08-19 archive snapshot support the provisional identity."
+    },
+    {
+      "id": "marrant-n17016-vendor-images-and-facsimile-links",
+      "status": "unresolved",
+      "question": "How should later review resolve the source's 24 unknown: facsimile targets without redistributing commercial Readex/Newsbank scans?",
+      "evidence": "The pinned XML preserves all 24 page milestones and their vendor identifiers; vendor scans are deliberately excluded."
+    },
+    {
+      "id": "marrant-n17016-human-identity-rights-editorial-publication",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept the text, identity, edition, rights scope, editorial treatment, canonical status, and publication?",
+      "evidence": "Exact-byte reconstruction and technical validation provide no such acceptance or authorization."
+    }
+  ],
+  "required": [
+    "exact retained byte length and SHA-256",
+    "N17016, John Marrant, Prince Hall, African Lodge, Evans 21931, Boston, Fleet, and 1789 identity in the retained TEI",
+    "candidate content.tei.xml byte-identical to retained N17016.xml",
+    "complete independently recomputed element, attribute, text, and tail census",
+    "TEI P5 validity against the vendored tei_all.xsd",
+    "exact deterministic provenance, accountability, unresolved ledger, and README bytes",
+    "complete candidate manifest authority bindings and nonaccepted status",
+    "title page, Job quotation, Romans 12:10 epigraph, title-page and sermon divisions, 24 page milestones, 94 encoded characters, nine gaps, 868 long-s characters, quotations, bottom note, and ending preserved",
+    "CC0 keyboarded-and-encoded-text scope distinct from excluded vendor page images",
+    "dated archive provenance distinct from live Michigan item-page evidence",
+    "TCP attribution request retained in README.source.md",
+    "no silent omission, duplication, normalization, modernization, or invention"
+  ]
+}

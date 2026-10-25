@@ -1,0 +1,86 @@
+{
+  "format": "json",
+  "source_path": "raw/Creeds.json/creeds/nicene_creed.json",
+  "source_sha256": "b5f49141ce15a08d82921eb4860e22d3f2a312faf16628e092382e75a1561469",
+  "selector": {
+    "json_path": "Data.Content",
+    "paragraphs": [
+      1,
+      2
+    ]
+  },
+  "scope": "The first two source paragraphs; later creed paragraphs are outside this bounded fixture.",
+  "native_unit_count": 5,
+  "selected_unit_ids": [
+    "paragraph-000001",
+    "paragraph-000002"
+  ],
+  "excluded_unit_ids": [
+    "paragraph-000003",
+    "paragraph-000004",
+    "paragraph-000005"
+  ],
+  "selected_unit_count": 2,
+  "excluded_unit_count": 3,
+  "native_units": [
+    {
+      "id": "paragraph-000001",
+      "source_ordinal": 1,
+      "number": null,
+      "content": "We believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible.",
+      "content_with_proofs": null,
+      "proofs": []
+    },
+    {
+      "id": "paragraph-000002",
+      "source_ordinal": 2,
+      "number": null,
+      "content": "And in one Lord Jesus Christ, the only-begotten Son of God, begotten of the Father before all worlds; God of God, Light of Light, very God of very God; begotten, not made, being of one substance with the Father, by whom all things were made.",
+      "content_with_proofs": null,
+      "proofs": []
+    },
+    {
+      "id": "paragraph-000003",
+      "source_ordinal": 3,
+      "number": null,
+      "content": "Who, for us men and for our salvation, came down from heaven, and was incarnate by the Holy Spirit of the virgin Mary, and was made man; and was crucified also for us under Pontius Pilate; He suffered and was buried; and the third day He rose again, according to the Scriptures; and ascended into heaven, and sits on the right hand of the Father; and He shall come again, with glory, to judge the quick and the dead; whose kingdom shall have no end.",
+      "content_with_proofs": null,
+      "proofs": []
+    },
+    {
+      "id": "paragraph-000004",
+      "source_ordinal": 4,
+      "number": null,
+      "content": "And we believe in the Holy Ghost, the Lord and Giver of Life; who proceeds from the Father and the Son; who with the Father and the Son together is worshipped and glorified; who spoke by the prophets.",
+      "content_with_proofs": null,
+      "proofs": []
+    },
+    {
+      "id": "paragraph-000005",
+      "source_ordinal": 5,
+      "number": null,
+      "content": "And we believe in one holy catholic and apostolic Church. We acknowledge one baptism for the remission of sins; and we look for the resurrection of the dead, and the life of the world to come. Amen.",
+      "content_with_proofs": null,
+      "proofs": []
+    }
+  ],
+  "selected_units": [
+    {
+      "id": "paragraph-000001",
+      "source_ordinal": 1,
+      "number": null,
+      "content": "We believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible.",
+      "content_with_proofs": null,
+      "proofs": []
+    },
+    {
+      "id": "paragraph-000002",
+      "source_ordinal": 2,
+      "number": null,
+      "content": "And in one Lord Jesus Christ, the only-begotten Son of God, begotten of the Father before all worlds; God of God, Light of Light, very God of very God; begotten, not made, being of one substance with the Father, by whom all things were made.",
+      "content_with_proofs": null,
+      "proofs": []
+    }
+  ],
+  "source_excerpt_sha256": "e4f4385062fd7d36af307ecb85f186cdc5af367f91bba2d00023f7c9e482d513"
+}

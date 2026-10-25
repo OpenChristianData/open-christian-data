@@ -1,0 +1,24 @@
+{
+  "authority": "exact retained electronic HTML and complete ZIP member set",
+  "checks": [
+    "literal HTMLParser token and attribute census independent of lxml conversion",
+    "all source/TEI nodes in order, exact text at every node, complete text and parent hierarchy",
+    "all table row/cell ownership and row/column spans",
+    "all section/part/note boundaries and source headings",
+    "all source attributes, emphasis/superscripts, anchors and internal targets",
+    "all ZIP members byte equality including map and logo",
+    "TEI P5 schema",
+    "fresh reconstruction reproducibility and intentional mutation rejection"
+  ],
+  "contract": "ocd-robertson-pg36264-validation-policy-v1",
+  "shared_assumptions": [
+    "Pinned electronic witness and TEI schema",
+    "lxml source parsing shared; literal token/attribute census independently corroborated"
+  ],
+  "stronger_claims_unassessed": [
+    "Harper print collation",
+    "Doran edition equivalence",
+    "worldwide rights clearance",
+    "human verification"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "2.1",
+  "subject_id": "bounds-power-through-prayer-historical-selected-text",
+  "work_id": "bounds-power-through-prayer",
+  "edition_id": "bounds-power-through-prayer-ccel-thml-electronic",
+  "scope": "selected-text",
+  "material": {
+    "path": "reports/_logs/huggingface-v1.0.0-20261013/rights-resolution-candidate.json",
+    "sha256": "c15dd75e8e96e7dee725b13f1698b1cd16b40acf7c1ff78457618c5a378c9fb1",
+    "pointer": "/decisions/0"
+  },
+  "components": [],
+  "note": "Existing October 13 historical-text decision; distinct from the full master and excluded modern material.",
+  "public_scope": {
+    "include": [
+      {
+        "kind": "source-label",
+        "values": [
+          "title statement"
+        ]
+      },
+      {
+        "kind": "division-number",
+        "values": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "exclude": [
+      {
+        "kind": "source-label",
+        "values": [
+          "two CCEL promotional paragraphs",
+          "CCEL staff description"
+        ]
+      }
+    ]
+  }
+}

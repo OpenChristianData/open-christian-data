@@ -1,0 +1,52 @@
+{
+  "contract": "ocd-npnf105-reconstruction-profile-v1",
+  "profile_id": "npnf105-assigned-div1-x-through-xxi-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/npnf1/npnf105.xml",
+    "sha256": "224f0e6a188ddfe691c1433c8db9a883755a9f030b71fede644d4af6c18ee63f"
+  },
+  "assigned_div1": ["x", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi"],
+  "outside_assigned_work_scope": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "xxii", "xxiii"],
+  "assigned_feature_count": 16648,
+  "assigned_feature_counts": {
+    "br": 2,
+    "div1": 12,
+    "div2": 362,
+    "div3": 762,
+    "i": 1265,
+    "note": 3511,
+    "p": 5920,
+    "pb": 503,
+    "scripRef": 2950,
+    "span": 1361
+  },
+  "assigned_technical_xml_comment_count": 4,
+  "language_span_counts": {"EL": 43, "FR": 1, "HE": 4},
+  "retained_credit_evidence": {
+    "title_page_role": "ii-p2",
+    "peter_holmes": "ii-p3",
+    "robert_ernest_wallis": "ii-p7",
+    "warfield_roles": ["ii-p9", "iii-p5"],
+    "benjamin_b_warfield": "ii-p10",
+    "work_specific_allocation": "ix-p14"
+  },
+  "retained_explicit_translator_allocations": {
+    "xviii": "Robert Ernest Wallis",
+    "xix": "Peter Holmes",
+    "xx": "Robert Ernest Wallis",
+    "xxi": "Robert Ernest Wallis"
+  },
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "division-title-projection",
+    "notes-page-breaks-scripture-references-and-language-spans-preserved",
+    "assigned-technical-comments-and-their-tails-preserved",
+    "edition-wide-div1-scope-accounted",
+    "exact-retained-title-page-contributor-roles",
+    "exact-retained-work-specific-translator-allocations",
+    "no-translator-inference-beyond-retained-evidence"
+  ]
+}

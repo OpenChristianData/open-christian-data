@@ -89,6 +89,21 @@ def test_shorter_catechism_keeps_html_as_secondary_witness() -> None:
     assert html_sources[0]["source_hash"].startswith("sha256:")
 
 
+def test_shorter_catechism_extracts_every_emphasized_proof_fragment() -> None:
+    document = parser.parse_wsc_witness_document(parser.WSC_HTML)
+    proofs = document.proofs_by_index
+    errors = document.parse_errors
+    missing = list(document.questions_without_proofs)
+
+    assert errors == {}
+    assert missing == []
+    assert sum(len(group) for group in proofs.values()) == 401
+    assert proofs[37][-1] == {
+        "raw": "Job 19:26-27",
+        "osis": ["Job.19.26-Job.19.27"],
+    }
+
+
 def _seed_temp_document_source(tmp_path: Path, slug: str) -> tuple[Path, Path, Path]:
     raw_dir = tmp_path / "raw" / "westminster-standard-org"
     sources_dir = tmp_path / "sources" / "doctrinal-documents"

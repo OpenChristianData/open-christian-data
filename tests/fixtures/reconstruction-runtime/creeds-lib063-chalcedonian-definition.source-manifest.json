@@ -1,0 +1,87 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "creeds-json-lib063-chalcedonian-definition-retained-json",
+  "work_id": "chalcedonian-definition",
+  "catalog_claim_lineage": {
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "work_id": "chalcedonian-definition",
+    "retained_source_sha256": "10d6f69284569ff9b7caa22171edfc5d7515777987a1bb08af7e2a8ce985973f",
+    "claim_count": 1,
+    "claims": [
+      {
+        "source_path": "doctrinal-documents/chalcedonian-definition.json",
+        "legacy_source_sha256": "4b08bff9b357ca6bbdf3a24277556e1806a63f3762f6fa8c0798e2d9cbe3fcda"
+      }
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/chalcedonian_definition.json",
+      "role": "primary-source",
+      "bytes": 1848,
+      "sha256": "10d6f69284569ff9b7caa22171edfc5d7515777987a1bb08af7e2a8ce985973f"
+    },
+    {
+      "name": "source-config",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/chalcedonian-definition/config.json",
+      "role": "source-identity-and-rights-config",
+      "bytes": 149,
+      "sha256": "4f81725e4b235a6711fc1a025a5ee66bc425f49db8fdf9ba544ca44010fef3f9"
+    },
+    {
+      "name": "rights-readme",
+      "path": "raw/Creeds.json/README.md",
+      "role": "rights-evidence",
+      "bytes": 8871,
+      "sha256": "caa2a135ceb89bdea2baf411bcb2897b03c34d24473de7c43ca373c9d9008bef"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/lib063.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 19930,
+      "sha256": "26a1d1495eb1111365ee21259640de7a32f70964af221475d7d653bbd8abef26"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/doctrinal-documents/lib063-creeds-json/lib063.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1461,
+      "sha256": "9ffcdda9e42afd91035ecab80cd6f92c3e5a92b06ee827c4d0d3981a3325bf15"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "converter": {
+    "id": "ocd-creeds-json-lib063-retained-member-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/creeds_json_lib063_reconstruction.py",
+    "implementation_sha256": "1ef1fbda7c10fcb5753fdeda3ab988a050aceb84695870f9baf8d9c6a13decf4"
+  },
+  "validator": {
+    "id": "ocd-creeds-json-lib063-retained-byte-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/creeds_json_lib063_oracle.py",
+    "implementation_sha256": "acbaf5fbb63e3f6e98c1b494d5fb99464b07eb926accd3725a335af0034db82d",
+    "import_closure_sha256": "3f5676c0d4ced42284ea1e04de23330eb4e76deada8771f6b56f837615f16a65"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

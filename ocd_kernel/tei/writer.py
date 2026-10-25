@@ -37,10 +37,12 @@ def stamp_header(
     *,
     title: str,
     author: str,
-    contributors: list[str],
+    contributors: list[str | dict[str, str]],
     source_url: str,
-    source_sha256: str,
+    source_sha256: str | None,
     print_source: str,
+    source_git_commit: str | None = None,
+    rights_statement: str | None = None,
 ) -> etree._Element:
     header = tei_el("teiHeader")
     file_desc = tei_el("fileDesc")
@@ -50,23 +52,45 @@ def stamp_header(
     title_stmt.append(tei_el("title", text=title))
     title_stmt.append(tei_el("author", text=author))
     for contributor in contributors:
+        if isinstance(contributor, dict):
+            name = contributor.get("name", "")
+            role = contributor.get("role", "contributor").replace("_", " ")
+        else:
+            name = contributor
+            role = "Contributor"
         resp_stmt = tei_el("respStmt")
-        resp_stmt.append(tei_el("resp", text="Contributor"))
-        resp_stmt.append(tei_el("name", text=contributor))
+        resp_stmt.append(tei_el("resp", text=role))
+        resp_stmt.append(tei_el("name", text=name))
         title_stmt.append(resp_stmt)
     file_desc.append(title_stmt)
 
     publication_stmt = tei_el("publicationStmt")
     publication_stmt.append(tei_el("publisher", text="Open Christian Data"))
-    availability = tei_el("availability", {"status": "free"})
-    availability.append(tei_el("p", text="Public domain source text prepared for Open Christian Data."))
+    rights = (rights_statement or "").strip()
+    if rights:
+        availability = tei_el("availability", {"status": "restricted"})
+        availability.append(tei_el("p", text=rights))
+    else:
+        availability = tei_el("availability", {"status": "unknown"})
+        availability.append(
+            tei_el(
+                "p",
+                text=(
+                    "Rights status unresolved; consult the bound source authority "
+                    "before use."
+                ),
+            )
+        )
     publication_stmt.append(availability)
     file_desc.append(publication_stmt)
 
     source_desc = tei_el("sourceDesc")
     bibl = tei_el("bibl")
     bibl.append(tei_el("ptr", {"target": source_url}))
-    bibl.append(tei_el("idno", {"type": "sha256"}, text=source_sha256.removeprefix("sha256:")))
+    if source_sha256:
+        bibl.append(tei_el("idno", {"type": "sha256"}, text=source_sha256.removeprefix("sha256:")))
+    if source_git_commit:
+        bibl.append(tei_el("idno", {"type": "git-commit-sha1"}, text=source_git_commit))
     bibl.append(tei_el("note", {"type": "print-source"}, text=print_source))
     source_desc.append(bibl)
     file_desc.append(source_desc)

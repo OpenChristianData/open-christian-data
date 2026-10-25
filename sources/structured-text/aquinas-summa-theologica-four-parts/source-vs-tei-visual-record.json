@@ -1,0 +1,61 @@
+{
+  "ticket": "09",
+  "slug": "aquinas-summa-theologica-four-parts",
+  "candidate": {
+    "path": "candidate.tei.xml",
+    "bytes": 18816329,
+    "sha256": "29b5a5542140557f91ae2b990e90cfb9022ffc32be074daa36b388a99fdda1d5"
+  },
+  "capture_method": {
+    "source": "Exact retained HTML member rendered locally in headless Chromium at 1280x900 and scrolled by the retained source id.",
+    "tei": "The unchanged candidate rendered through the repository CETEIcean verification viewer and scrolled by the corresponding TEI xml:id.",
+    "gate": "A pair is retained only when the normalized anchor DOM text is equal, CETEIcean upgraded the TEI elements, rendered paragraphs are nonzero, and dangling note references are zero.",
+    "tool": "build/tei/aquinas_summa_theologica_four_parts_visual.py"
+  },
+  "components": [
+    {
+      "project_gutenberg_id": 17611,
+      "contact_sheet": {"path":"visual/pg17611.four-check-contact-sheet.png","bytes":3027937,"sha256":"04a4f02ce6f2c7f66d016fc8d14ef16fb5c41bb9dd29067ca1b5b4c19749dd4c"},
+      "checks": [
+        {"region":"opening/title","source_id":"id00002","artifact":"visual/pg17611.opening.source-vs-tei.png","bytes":184414,"sha256":"f25e25d60b27408323dff4893ed30adc6d29eb2e32ac9562f0acabd44336c5fa","result":"pass"},
+        {"region":"representative middle transition, Question 60","source_id":"id04038","artifact":"visual/pg17611.middle-q60.source-vs-tei.png","bytes":222466,"sha256":"a0a8fcb27e355d8ff79ba8d4a9adefb8e9441d2877bce8bf54e93920a0d89e93","result":"pass"},
+        {"region":"terminal I Q119 Art.2","source_id":"id07860","artifact":"visual/pg17611.terminal-q119-a2.source-vs-tei.png","bytes":269695,"sha256":"76e598da144f36225799cf92d9acc3be806bc784ff59240b0df5d1d91e4b07f8","result":"pass-wrapper-excluded-and-accounted"},
+        {"region":"unusual implicit one-article Question 71","source_id":"id04760","artifact":"visual/pg17611.unusual-implicit-article-q71.source-vs-tei.png","bytes":230246,"sha256":"bf97a80c52cb9467939506dd34904e29e02d9a4a96f41b23000d377a7099aa09","result":"pass"}
+      ]
+    },
+    {
+      "project_gutenberg_id": 17897,
+      "contact_sheet": {"path":"visual/pg17897.four-check-contact-sheet.png","bytes":2938034,"sha256":"b5b8997911e570278ba63b928335e28249f8ce2800c9cce38f37d865b278315a"},
+      "checks": [
+        {"region":"opening/title","source_id":"id00002","artifact":"visual/pg17897.opening.source-vs-tei.png","bytes":196188,"sha256":"b1a6a89eba4cfe31628686819ae35126579398e076cefd0713430e05b8f82f76","result":"pass"},
+        {"region":"representative middle transition, Question 57","source_id":"id03809","artifact":"visual/pg17897.middle-q57.source-vs-tei.png","bytes":211537,"sha256":"2d9790234cccb10395033b264dcbd1f11ae33b78ad8dbfabc70e2d450ab10124","result":"pass"},
+        {"region":"terminal I-II Q114 Art.10","source_id":"id08135","artifact":"visual/pg17897.terminal-q114-a10.source-vs-tei.png","bytes":274182,"sha256":"ccdcc7bb1d3715bd6e170b26e53e57595ab0e4030d834772658add96fa42f35c","result":"pass-wrapper-excluded-and-accounted"},
+        {"region":"unusual Q38 descriptor says four while source has five inquiries/articles","source_id":"id02693","artifact":"visual/pg17897.unusual-q38-four-versus-five.source-vs-tei.png","bytes":222701,"sha256":"dd87600b4dd123a69af81317d04b0f12cece3d89784993da2c386d6501cd2c94","result":"pass-conflict-preserved"}
+      ]
+    },
+    {
+      "project_gutenberg_id": 18755,
+      "contact_sheet": {"path":"visual/pg18755.four-check-contact-sheet.png","bytes":3222544,"sha256":"e7e18dcbd17696a7046ac6fa13c07356bfbb70bcafbfdc78940958c1d7b93db9"},
+      "checks": [
+        {"region":"opening/title","source_id":"id00002","artifact":"visual/pg18755.opening.source-vs-tei.png","bytes":194056,"sha256":"d08c541d503a12858b631c41b054ad819f1a38ef19de3f49f55d3be94b3487fc","result":"pass"},
+        {"region":"representative middle transition, Question 95","source_id":"id06530","artifact":"visual/pg18755.middle-q95.source-vs-tei.png","bytes":219197,"sha256":"1766f142110614ed5e9013819b5311461777a5dad4326336131954b876e37ee9","result":"pass"},
+        {"region":"terminal II-II Q189 Art.10","source_id":"id12081","artifact":"visual/pg18755.terminal-q189-a10.source-vs-tei.png","bytes":278219,"sha256":"0bd8d0f16818ad9fe63b2d93121ba738e52655170bce5bed20235e72ef923a00","result":"pass-wrapper-excluded-and-accounted"},
+        {"region":"unusual bare SIXTH ARTICLE label","source_id":"id01741","artifact":"visual/pg18755.unusual-bare-sixth-article.source-vs-tei.png","bytes":262328,"sha256":"385e05d2c37b6cb40b5289f2d053b9d6f02155843814826e42bc3e726f2882e5","result":"pass-literal-label-preserved"}
+      ]
+    },
+    {
+      "project_gutenberg_id": 19950,
+      "contact_sheet": {"path":"visual/pg19950.four-check-contact-sheet.png","bytes":2835931,"sha256":"03c90ce5486d47fc2e4f9049fe2a84f3209f47c2b6e4c9aa78cf5b57a26fa58c"},
+      "checks": [
+        {"region":"opening/title","source_id":"id00002","artifact":"visual/pg19950.opening.source-vs-tei.png","bytes":187260,"sha256":"3ec26a4ea196d4dd69c4b25cdc11f6b2ae8f15a0deb662efae1194f360bbb200","result":"pass"},
+        {"region":"representative middle transition, Question 45","source_id":"id03234","artifact":"visual/pg19950.middle-q45.source-vs-tei.png","bytes":231251,"sha256":"69211546fee4f3cd0864e0b78b63874272d15a30bf1ab0d7c5e4394e5c52a6af","result":"pass"},
+        {"region":"terminal III Q90 Art.4","source_id":"id07408","artifact":"visual/pg19950.terminal-q90-a4.source-vs-tei.png","bytes":251386,"sha256":"771e9b5c3a21a00a50f83b2e036e8cbe9b917656bf7766083900d4f54a011fbb","result":"pass-wrapper-excluded-and-accounted"},
+        {"region":"unusual editorial insertion between Questions 26 and 27","source_id":"id01912","artifact":"visual/pg19950.unusual-editorial-insertion-q26-q27.source-vs-tei.png","bytes":198602,"sha256":"8014d0d26f0b20fce8d812e524ba1133a1d15f899cdb185e44b58eaab26808f7","result":"pass-three-column-flattening-explicitly-labeled"}
+      ]
+    }
+  ],
+  "visual_pairs": 16,
+  "contact_sheets_inspected": 4,
+  "verdict": "technical-source-versus-rendered-TEI-spot-verification-passed",
+  "human_textual_acceptance": "not-performed"
+}

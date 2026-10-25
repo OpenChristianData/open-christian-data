@@ -1,0 +1,114 @@
+{
+  "ticket": "PIPE-010",
+  "status": "nonaccepted source-bound offline fixture",
+  "source_path": "raw/hymnary-pd/oldest_pd_instances.csv.zip",
+  "source_member": "oldest_pd_instances.csv",
+  "source_sha256": "727bb1bee930547352b5fcdd3d9800f158ee156a168c866c2ee50b2472bac475",
+  "payload_sha256": "09ab6edd41a96c205e1d171e36173cc9c28c32aa6809156c6bd10eeeba24a18b",
+  "source_title": "Oldest Public Domain Hymn Instances",
+  "source_unit_count": 3,
+  "complete_prefix_count": 17915,
+  "malformed_line": 554003,
+  "malformed_error": "',' expected after '\"'",
+  "source_row_ordinals": [
+    1,
+    2,
+    3
+  ],
+  "unit_census": [
+    {
+      "ordinal": 1,
+      "id": "occ-at-bethlehem",
+      "text_id": "text-at-bethlehem-8de660daac30307b",
+      "title": "At Bethlehem",
+      "disposition": "selected-complete-row"
+    },
+    {
+      "ordinal": 2,
+      "id": "occ-babe-born",
+      "text_id": "text-a-babe-is-born-in-bethlehem-a9f2aa697a8993ff",
+      "title": "A Babe Is Born In Bethlehem",
+      "disposition": "selected-complete-row"
+    },
+    {
+      "ordinal": 3,
+      "id": "occ-krauth-babe",
+      "text_id": "text-a-babe-is-born-in-bethlehem-c6f1229cf97e0d77",
+      "title": "A Babe is born in Bethlehem",
+      "disposition": "selected-complete-row"
+    }
+  ],
+  "selected_units": [
+    {
+      "id": "occ-at-bethlehem",
+      "ordinal": 1,
+      "text_id": "text-at-bethlehem-8de660daac30307b",
+      "title": "At Bethlehem",
+      "has_refrain": true,
+      "stanza_count": 4
+    },
+    {
+      "id": "occ-babe-born",
+      "ordinal": 2,
+      "text_id": "text-a-babe-is-born-in-bethlehem-a9f2aa697a8993ff",
+      "title": "A Babe Is Born In Bethlehem",
+      "has_refrain": false,
+      "stanza_count": 9
+    },
+    {
+      "id": "occ-krauth-babe",
+      "ordinal": 3,
+      "text_id": "text-a-babe-is-born-in-bethlehem-c6f1229cf97e0d77",
+      "title": "A Babe is born in Bethlehem",
+      "has_refrain": false,
+      "stanza_count": 10
+    }
+  ],
+  "excluded_units": [
+    {
+      "source_path": "oldest_pd_instances.csv[row=4..17915]",
+      "count": 17912,
+      "reason": "complete source rows outside this bounded fixture selection",
+      "disposition": "outside-scope-unprojected"
+    },
+    {
+      "source_path": "oldest_pd_instances.csv[row>17915]",
+      "reason": "malformed source row after bounded complete prefix",
+      "disposition": "excluded-without-repair"
+    }
+  ],
+  "source_metadata_policy": {
+    "author": "Author name",
+    "author_birth": "Author birth when nonempty",
+    "author_death": "Author death when nonempty",
+    "year_written": "Year written when nonempty and not the source placeholder '; '",
+    "hymnal_setting": "Hymnal title and Hymnal publication year",
+    "tune": "not present in source CSV; omitted",
+    "rights": "not present in source CSV; omitted"
+  },
+  "text_identity_policy": "When the source row has no text identifier, derive text-<title-slug>-<first-16-sha256> from normalized source Title, Author name, and the normalized projected full text. This is a mechanical text-version key, not a canonical hymn identity; it keeps distinct translations separate while keeping occurrence identity independent.",
+  "files": {
+    "retained.xml": "ad7e243f837adbfcfd9e36b2026e2a78483ae53d18d90e46aba23960a30ff2b2",
+    "master.tei.xml": "ec1f8feb2d9c8870a63dbd451e0d33465231b3af3ac827865fd4c87f4230e1da"
+  },
+  "context": {
+    "identity": {
+      "work_id": "fixture-hymnary-oldest-pd",
+      "textual_form_id": "fixture-hymnary-hymn-text",
+      "edition_id": "fixture-hymnary-occurrences"
+    },
+    "language": "en",
+    "representation_revision": "fixture-v1",
+    "edition_title": "Oldest Public Domain Hymn Instances",
+    "source_url": "https://hymnary.org",
+    "source_sha256": "727bb1bee930547352b5fcdd3d9800f158ee156a168c866c2ee50b2472bac475",
+    "retained_sha256": "ad7e243f837adbfcfd9e36b2026e2a78483ae53d18d90e46aba23960a30ff2b2"
+  },
+  "limits": [
+    "The retained Hymnary archive is malformed after 17,915 complete rows; this fixture only selects complete rows and does not repair the source.",
+    "The source CSV has no tune or rights columns, so the projection omits both rather than inventing them.",
+    "The source CSV has no text identifier; text-version IDs are mechanical hashes of source title, author, and normalized projected full text, and remain distinct from occurrence IDs.",
+    "The first occurrence retains a source refrain body and later [Refrain] markers in ordered segments; the other two source rows contain no refrain marker or body.",
+    "The fixture is source evidence only; human acceptance, rights clearance, publication, and release remain open."
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "standard-ebooks-paradise-lost-retained-checkout",
+  "authorities": [
+    {
+      "name": "source-001",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/LICENSE.md",
+      "role": "primary-source",
+      "bytes": 561,
+      "sha256": "5a8124e75edecf71d684c6784131c98b0d944654c7b0c49519768790377f01fb"
+    },
+    {
+      "name": "source-002",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/images/cover.jpg",
+      "role": "primary-source",
+      "bytes": 552698,
+      "sha256": "cda6918a9226a2d2556de68423c6e487cec71525c79252eb296d7110b0e15ddd"
+    },
+    {
+      "name": "source-003",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/images/cover.source.jpg",
+      "role": "primary-source",
+      "bytes": 1582931,
+      "sha256": "2cd8f28abc3bd17ad0f7e902791ea543d9c9a93b0000cbf3eb66164332b0bf69"
+    },
+    {
+      "name": "source-004",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/images/cover.svg",
+      "role": "primary-source",
+      "bytes": 820,
+      "sha256": "9334e2b93105fe42550918c04dc0cf96b98a11d744eb9ffb72815b4a2c3604f3"
+    },
+    {
+      "name": "source-005",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/images/titlepage.svg",
+      "role": "primary-source",
+      "bytes": 573,
+      "sha256": "e683a4a1851b03d788a6cac96201f39b634ac6d81296fb0e5ae301e5a24e3e07"
+    },
+    {
+      "name": "source-006",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/production-notes.md",
+      "role": "primary-source",
+      "bytes": 131,
+      "sha256": "2097956a8085b892cfbb4e52fc6a60e86fec695900878997acc878c8b491d64e"
+    },
+    {
+      "name": "source-007",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/se-lint-ignore.xml",
+      "role": "primary-source",
+      "bytes": 231,
+      "sha256": "2fbb3609924234f0b953be1804e6039b73791e5531bf62e1f56e0ca26cdf6ebc"
+    },
+    {
+      "name": "source-008",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/META-INF/container.xml",
+      "role": "primary-source",
+      "bytes": 253,
+      "sha256": "fc2d87df510ce2ff7195c499799ef10670b99743cd6c0c44f99bfb14775647d6"
+    },
+    {
+      "name": "source-009",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/content.opf",
+      "role": "primary-source",
+      "bytes": 11253,
+      "sha256": "a0d751c786c524d0b04a95d160cbcbd01deff8a7c9e6c529d1752a8ebbdb12ae"
+    },
+    {
+      "name": "source-010",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/css/core.css",
+      "role": "primary-source",
+      "bytes": 2519,
+      "sha256": "15fdf5352d40250ff2937535744271d42d2cdee286c2381db49a5359c10048cb"
+    },
+    {
+      "name": "source-011",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/css/local.css",
+      "role": "primary-source",
+      "bytes": 590,
+      "sha256": "b61366f89e661c24f5cdc4450736ce0c5cfb75266d984c120352858bb95aae77"
+    },
+    {
+      "name": "source-012",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/css/se.css",
+      "role": "primary-source",
+      "bytes": 1803,
+      "sha256": "e8222cd6e7f7b2d02a6f911428050164205a56470fa047447616872e6627afc8"
+    },
+    {
+      "name": "source-013",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/images/cover.svg",
+      "role": "primary-source",
+      "bytes": 742163,
+      "sha256": "0e16407c575a1ce8a928483726c4942d29295fd2ff370182d01484809f8e2b62"
+    },
+    {
+      "name": "source-014",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/images/logo.svg",
+      "role": "primary-source",
+      "bytes": 20521,
+      "sha256": "5af4cd5d8656f7467cb9c40d949028ae4b160b3c077e2c1bf8d9940e335ef890"
+    },
+    {
+      "name": "source-015",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/images/titlepage.svg",
+      "role": "primary-source",
+      "bytes": 4915,
+      "sha256": "262aa52f86e4de6e09831fda2fe5ef955ed68fcdbbc7a2270c700ac9bb651f53"
+    },
+    {
+      "name": "source-016",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-1.xhtml",
+      "role": "primary-source",
+      "bytes": 61973,
+      "sha256": "e0f0a782b1c1d45e94da08ffe67fac09a23143afbcc5a80284cb66fc8564dec8"
+    },
+    {
+      "name": "source-017",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-10.xhtml",
+      "role": "primary-source",
+      "bytes": 85181,
+      "sha256": "0e5b2bec0a3a9ba5a6862960bbf6ac1c2eba59ded6ec7d86bf3416c3f959223b"
+    },
+    {
+      "name": "source-018",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-11.xhtml",
+      "role": "primary-source",
+      "bytes": 69188,
+      "sha256": "68f71690cb9f6234558cf3109a022205c765f999ff24d2f77bd93952097128b6"
+    },
+    {
+      "name": "source-019",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-12.xhtml",
+      "role": "primary-source",
+      "bytes": 49999,
+      "sha256": "c392272c1dae8fa2944560f288618368b3aaf28ee5a5ec2c7c747b4343953309"
+    },
+    {
+      "name": "source-020",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-2.xhtml",
+      "role": "primary-source",
+      "bytes": 80722,
+      "sha256": "d46533bce89fbb686dcf599779c3ae4c70f12913312a08e124a769eb5066e6cb"
+    },
+    {
+      "name": "source-021",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-3.xhtml",
+      "role": "primary-source",
+      "bytes": 58031,
+      "sha256": "5f53a2294dbdd0d9f7a8ccef1deecf8f7e407af0196157e8a2ef56ac017db284"
+    },
+    {
+      "name": "source-022",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-4.xhtml",
+      "role": "primary-source",
+      "bytes": 79144,
+      "sha256": "690c9e2551e96a0ef55fc5da5c92faeee0e251b1acebe25b1776ef5f104cb3f3"
+    },
+    {
+      "name": "source-023",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-5.xhtml",
+      "role": "primary-source",
+      "bytes": 69970,
+      "sha256": "85e3e39657502100b466508fce915f0d0084e0399e01494a8e43fb81b893a118"
+    },
+    {
+      "name": "source-024",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-6.xhtml",
+      "role": "primary-source",
+      "bytes": 70142,
+      "sha256": "0b554e5b1f2d5e970114d0e55c1c450ffc3e41cf817f254dad91883e2ce912a8"
+    },
+    {
+      "name": "source-025",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-7.xhtml",
+      "role": "primary-source",
+      "bytes": 49210,
+      "sha256": "49e803935848674fa2c647642144f19234f1e4cea5d0bca0f972c02e2febdb8e"
+    },
+    {
+      "name": "source-026",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-8.xhtml",
+      "role": "primary-source",
+      "bytes": 49870,
+      "sha256": "0783fc85d7806f979b8f143d0a4e33ac3f276a315a5c52c6a9aaa34065530fca"
+    },
+    {
+      "name": "source-027",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/book-9.xhtml",
+      "role": "primary-source",
+      "bytes": 90833,
+      "sha256": "09eeab0b67096b7c540f8e58e3f964955b27895abcc7d8d93a8c156eabdcf36c"
+    },
+    {
+      "name": "source-028",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/colophon.xhtml",
+      "role": "primary-source",
+      "bytes": 2568,
+      "sha256": "93084f0d1f425e75f8cce2c0db99055d4b2b546ecc479e2f82a9041ff0de1d54"
+    },
+    {
+      "name": "source-029",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/imprint.xhtml",
+      "role": "primary-source",
+      "bytes": 2191,
+      "sha256": "e4682f0217c10fef91375c5f9fa1851cdbd50e299a7f0635b54316c60bc25aff"
+    },
+    {
+      "name": "source-030",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/titlepage.xhtml",
+      "role": "primary-source",
+      "bytes": 777,
+      "sha256": "18320cde4b1a6f4bceeb8a731873154788b4a65568d3edefefabe1c8d30d59ed"
+    },
+    {
+      "name": "source-031",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/text/uncopyright.xhtml",
+      "role": "primary-source",
+      "bytes": 2938,
+      "sha256": "d07c76023355a3f86a1b24bf4c9f9ed61d10015446786bd4861d4c5c3a8abf10"
+    },
+    {
+      "name": "source-032",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/epub/toc.xhtml",
+      "role": "primary-source",
+      "bytes": 2324,
+      "sha256": "5cb13824a9ced6b0303b5d5955c0908f24bd04aa670bbd8d06301cdc991a93ab"
+    },
+    {
+      "name": "source-033",
+      "path": "raw/standard_ebooks/john-milton_paradise-lost/src/mimetype",
+      "role": "primary-source",
+      "bytes": 20,
+      "sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+    },
+    {
+      "name": "local-source-config",
+      "path": "sources/standard-ebooks/john-milton_paradise-lost/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1149,
+      "sha256": "d061329604cfe288e738689180adea2fb26b6266973e6792b5547dea3bc324db"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/standard-ebooks/john-milton_paradise-lost/paradise-lost.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 8296,
+      "sha256": "5aa2bdf22ac65b7950505c94b4b23261d14a18233d5a5e877e4b27abe901ab15"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/standard-ebooks/john-milton_paradise-lost/paradise-lost.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1863,
+      "sha256": "c053666a9f69d0a349c8c8d2cd2cd399cbb293cdc629bdf52ecf884c0d146204"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/standard-ebooks/john-milton_paradise-lost/paradise-lost.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 3172,
+      "sha256": "b2cffe2077084418c6195b6645d314bbc41e92231bc52913d5c7ec03e85020ff"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "minimal-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "minimal-reconstruction-contract",
+      "bytes": 26591,
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    }
+  ],
+  "converter": {
+    "id": "ocd-paradise-lost-retained-se-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/paradise_lost_reconstruction.py",
+    "implementation_sha256": "8482bb6eb6870e75e81651e2d543328781318f0e938b8207dff95837fc6ccaaf"
+  },
+  "validator": {
+    "id": "ocd-paradise-lost-independent-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/paradise_lost_oracle.py",
+    "implementation_sha256": "2e153c15767018bd63ca4dbffe2bddb89f5b21876ed8311ac37806eee8cee037",
+    "import_closure_sha256": "bac98879b85dd26b0fc0367ee55f72d89ed49b878f863d8f5ba6255da8111614"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,5 @@
+# Gregory of Nyssa: Letters source credit direction
+
+Complete retained CCEL NPNF2-05 direct ThML.body/div1 xiii, titled Letters.: collection title page xiii.i and all eighteen native addressed Letter divisions xiii.ii through xiii.xix, in original order. The collection introduction and Ogle translator note remain at their original attachment inside xiii.ii before Letter I. Constituent titles, notes, pages, references, and source-native wording are conserved. Shared volume title pages, preface, contents, other works, and index remain outside this complete titled collection. One collection TEI and one generic native prose collection row; eighteen letter boundaries remain nested structure, without new work identities.
+
+Carry CCEL source credit, Ogle exact first-fourteen translator scope, volume editor/translator credits, retained Public Domain statement and no-sale formatting restriction to `data/structured-text/gregory-of-nyssa-letters/README.md`. Human review, print equivalence, rights and publication remain separate.

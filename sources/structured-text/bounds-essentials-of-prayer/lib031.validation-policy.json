@@ -1,0 +1,15 @@
+{
+  "contract": "ocd-lib031-validation-policy-v1",
+  "policy_id": "lib031-ccel-thml-cohort-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["README.source.md","content.tei.xml","manifest.json","provenance.json","source-accountability.json","unresolved.jsonl"],
+  "required_work_count": 10,
+  "required_source_member_count": 10,
+  "required_omitted_feature_count": 0,
+  "required_duplicate_feature_count": 0,
+  "forbidden_oracle_imports": ["build.tei.lib031_reconstruction","build.tei.thml_to_tei","build.lib.ccel_thml","build.tei.ccel_work_config"],
+  "checks": ["retained-source-reference-and-external-byte-hash","complete-element-crosswalk","exact-body-projection","tei-p5-xsd","source-accountability-json-schema","candidate-integrity","producer-independent-import-closure","human-acceptance-separate-from-technical-validation"]
+}
+

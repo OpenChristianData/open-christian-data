@@ -1,5 +1,7 @@
 # T8-1 Claude Review Report
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 ## Executive Summary
 
 - Corrected a major source-selection error from the first pass: the IA fallback `martinlutheronth00luthuoft` is Edward Thomas Vaughan, not the requested Henry Cole translation.

@@ -1,0 +1,107 @@
+{
+  "contract": "ocd-bcp-1662-reconstruction-profile-v3",
+  "profile_id": "bcp-1662-complete-source-accountability-v1",
+  "version": 3,
+  "parser": {
+    "implementation_family": "CPython",
+    "module": "html.parser.HTMLParser",
+    "decode": "iso-8859-1",
+    "convert_charrefs": true,
+    "observation_fingerprint_sha256": "6d9e322d81b5518195a7842191d3b40e16859b4bb04c1f438fa914a65830c9f0",
+    "observation_identity": "logical member plus byte start plus member-local ordinal",
+    "observations": ["start-element", "attribute", "text", "comment"]
+  },
+  "source_scope": {
+    "status": "partial-expression-scope",
+    "present_members": 25,
+    "present_bytes": 733674,
+    "failed_acquisitions": 5,
+    "absent_claims": [
+      "a complete 1662 print edition",
+      "a single internally consistent later edition",
+      "complete rubrical apparatus",
+      "complete calendar and tables",
+      "authoritative provider identity"
+    ]
+  },
+  "source_bundle_sha256": "5369fab47e2b5f221f7bcfef844a866b44d650925fd833e5693a0da14c0346f6",
+  "inventory": {
+    "total": 17106,
+    "elements": 7152,
+    "attributes": 5086,
+    "text": 4868,
+    "comments": 4,
+    "images": 787,
+    "text_bearing_image_alternatives": 603,
+    "navigation_image_alternatives": 184
+  },
+  "navigation_image_source_marker": "/buttons/",
+  "calendar_members": ["xmas.html", "lent.html", "easter.html", "trinity.html", "saints.html"],
+  "calendar_structure": {"observance_groups": 90, "collect_markers": 85},
+  "block_policy": {
+    "start_elements": ["center", "h2", "h3", "hr"],
+    "close_before_start_elements": ["p"],
+    "close_after_end_elements": ["center", "h2", "h3"],
+    "alternative_marker_break_element": "br"
+  },
+  "heading_model": {
+    "model": "flat-source-anchored",
+    "elements": ["h2", "h3"],
+    "tei_type": "heading",
+    "justification": "The retained partial and malformed legacy HTML does not provide a consistently balanced section hierarchy. Every h2/h3 remains an ordered, source-anchored heading block; no ungrounded nesting is inferred."
+  },
+  "rubric": {"element": "font", "attribute": "color", "value": "red"},
+  "alternative_markers": ["or this", "or else this", "or else immediately"],
+  "speaker_model": {
+    "inline_roles": [
+      {"canonical": "Answer", "forms": ["Answer."]},
+      {"canonical": "Minister", "forms": ["Minister."]},
+      {"canonical": "Priest", "forms": ["Priest."]},
+      {"canonical": "People", "forms": ["People."]},
+      {"canonical": "Bishop", "forms": ["Bishop."]},
+      {"canonical": "Question", "forms": ["Question.", "QUESTION."]}
+    ],
+    "standalone_roles": [
+      {"canonical": "Answer", "block_forms": ["Answer."], "utterance": "immediately-following-block"},
+      {"canonical": "Minister", "block_forms": ["Minister."], "utterance": "immediately-following-block"},
+      {"canonical": "Priest", "block_forms": ["Priest."], "utterance": "immediately-following-block"},
+      {"canonical": "Question", "block_forms": ["Question.", "Question"], "utterance": "immediately-following-block"},
+      {"canonical": "Catechist", "block_forms": ["Catechist"], "utterance": "immediately-following-block"},
+      {"canonical": "Bishop", "block_forms": ["The Bishop.", "The Bishop"], "utterance": "immediately-following-block"},
+      {"canonical": "Bishop", "block_forms": ["The Bishop. Let us pray."], "label_form": "The Bishop.", "utterance": "same-block-after-label"},
+      {"canonical": "Archbishop", "block_forms": ["The Archbishop."], "utterance": "immediately-following-block"}
+    ],
+    "case_sensitive": true,
+    "preceding_boundaries": ["start", ".", ";", "?", "!", ","],
+    "inline_utterance_boundary": "the next independently recognized inline label in the same source block, otherwise the block end",
+    "standalone_block_policy": "the entire normalized source block must equal a declared block form; following-block roles govern the immediately following nonempty source block",
+    "source_anchor_policy": "label and nonempty utterance retain every represented observation ID; cross-block utterance paragraphs carry the governed source-block ID; split observations use source-continuation corresp",
+    "non_roles": [
+      {"form": "ALL", "classification": "drop-cap content", "reason": "occurs inside O ALL or ALL prose and is not a standalone source block"},
+      {"form": "terminal Minister.", "classification": "rubric content", "reason": "a sentence ending in Minister. is not a role unless the entire normalized block is the declared standalone form"},
+      {"forms": ["Aunswere", "Deacon", "Reader", "Clerk"], "classification": "not present as retained speaker-label forms"}
+    ]
+  },
+  "comment_policy": "evidence-only; never TEI body text",
+  "tei_projection": {
+    "model": "readable member, observance, collect, source-block, rubric, speaker, and alternative hierarchy with an independent complete observation crosswalk",
+    "represented_kinds": ["element", "attribute", "text"],
+    "evidence_only": ["comment", "navigation-image", "navigation-image-attribute"],
+    "roles": ["block", "rubric", "speaker", "observance-heading", "collect-marker", "alternative-marker", "image-alternative"]
+  },
+  "tei_header": {
+    "title": "The Book of Common Prayer, 1662: retained partial transcription",
+    "author": "Church of England",
+    "source_url": "https://www.eskimo.com/~lhowell/bcp1662/",
+    "availability_status": "restricted",
+    "rights_statement": "Provider identity, transcription rights, and publication authority remain unresolved. This nonaccepted candidate is for source-faithfulness review only."
+  },
+  "invariants": [
+    "all 17106 parser observations are present exactly once in source accountability",
+    "all meaningful text and all 603 text-bearing image alternatives appear exactly once in TEI",
+    "184 navigation images and four comments remain evidence-only",
+    "genuine alternatives are derived only from red-rubric ancestry plus the closed marker list",
+    "member order and observation order are source order",
+    "candidate remains nonaccepted and separate from human acceptance"
+  ]
+}

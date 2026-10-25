@@ -1,0 +1,151 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf-chrysostom-110-111-112-114-retained-xml",
+  "authorities": [
+    {
+      "name": "npnf110-retained-xml",
+      "path": "raw/ccel/npnf1/npnf110.xml",
+      "role": "primary-source",
+      "bytes": 3956654,
+      "sha256": "e110c98b1f444147bf7baf79e46e56ae6c6a1f0b2983e6fc52f2356fac7f858f"
+    },
+    {
+      "name": "npnf111-retained-xml",
+      "path": "raw/ccel/npnf1/npnf111.xml",
+      "role": "primary-source",
+      "bytes": 5349065,
+      "sha256": "46072a7fefb80b4b7ea68544b46c13fc1785bd29d99834fd2f867f8aa5e14f08"
+    },
+    {
+      "name": "npnf112-retained-xml",
+      "path": "raw/ccel/npnf1/npnf112.xml",
+      "role": "primary-source",
+      "bytes": 3253154,
+      "sha256": "b8b345e060625cdf495e888322d88e922f66e686863e818a978204c5f564a4dd"
+    },
+    {
+      "name": "npnf114-retained-xml",
+      "path": "raw/ccel/npnf1/npnf114.xml",
+      "role": "primary-source",
+      "bytes": 4728349,
+      "sha256": "b130406978fbceb7bcd0774b0e8b09905f35a020a2300c1baf02f314a2d5a70a"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/chrysostom-npnf110-111-112-114/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1852,
+      "sha256": "70ff2af34d711164636102bdc7d00e5cf64b21c7297e9462a1bd6e0ce547e34a"
+    },
+    {
+      "name": "matthew-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-matthew/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1864,
+      "sha256": "1862947f6ac7f374204ad15495b2e8b92768d76c456b2d2e967ba2f0dc1ef776"
+    },
+    {
+      "name": "acts-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-acts/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2239,
+      "sha256": "eec47405a0bf7d2b077425cb31f742d3eaad16658f25de15082271799f83f74d"
+    },
+    {
+      "name": "romans-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-romans/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2230,
+      "sha256": "140f6541c1e951d3f2091d70f220dda19207e00da27f47a4449ec31e62e43063"
+    },
+    {
+      "name": "first-corinthians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-1-corinthians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1712,
+      "sha256": "49345ae75c37dcde12c7e4f4cbbfd561735e7963239092749925e9327fa13256"
+    },
+    {
+      "name": "second-corinthians-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-2-corinthians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1713,
+      "sha256": "b86ec94fedaf1b805a46dd436fc6c5dec78bcf5a3f33150b50fc0290c0a4dc24"
+    },
+    {
+      "name": "john-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-john/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1673,
+      "sha256": "bcc06b290630be20429822c71de8c25d99bfb53b954fe68425399438f085b36e"
+    },
+    {
+      "name": "hebrews-config",
+      "path": "sources/structured-text/chrysostom-homilies-on-hebrews/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1681,
+      "sha256": "1e40e95676c2cab51c89988819c48c8a4b7b1696d16bd699ac712d7454a72a99"
+    },
+    {
+      "name": "ccel-permission-evidence",
+      "path": "sources/structured-text/athanasius-on-the-incarnation/ccel-permission.md",
+      "role": "source-rights-evidence",
+      "bytes": 1604,
+      "sha256": "0bf59cb9f186a8414aa845bad7cf2fd632c480a35e8dbbb2e10ad80f5daf6595"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/chrysostom-npnf110-111-112-114/npnf-chrysostom.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 2408,
+      "sha256": "5eaf24a9f6fd4c5cbff9f515bc5436728d2e634835bf7d7d34121d6ad0dfb12e"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/chrysostom-npnf110-111-112-114/npnf-chrysostom.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2602,
+      "sha256": "d851143ea8f618433c5fc5293f48ca26fdc70c7163fa123d3f20eebfa55be366"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/chrysostom-npnf110-111-112-114/npnf-chrysostom.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 4250,
+      "sha256": "8afd4b1f62892db4f6d06bafd3a2635d68cec82b2e5ca2dea788b98223aa1ebd"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-npnf-chrysostom-seven-work-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf_chrysostom_reconstruction.py",
+    "implementation_sha256": "c07f9bdcb581978a80f25b692ed08dd83cd4e054dbfd9d88ff0de2abdc3c8eee"
+  },
+  "validator": {
+    "id": "ocd-npnf-chrysostom-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf_chrysostom_oracle.py",
+    "implementation_sha256": "06ece9e657262ea439cb9492b7ce9a99c9dd175daefb53fb263774be11cd7033",
+    "import_closure_sha256": "884853628dc9cabffa9452862fd1dec07e9aa3bb40a882aeed6099704e840bed"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

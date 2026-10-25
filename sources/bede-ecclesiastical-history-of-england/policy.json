@@ -1,0 +1,19 @@
+{
+  "contract": "ocd-bede-gutenberg-policy-v1",
+  "work_id": "bede-ecclesiastical-history-of-england",
+  "candidate_status": "nonaccepted",
+  "provenance": {
+    "work_id": "bede-ecclesiastical-history-of-england",
+    "edition_id": "bede-ecclesiastical-history-of-england-gutenberg-electronic",
+    "acquisition_id": "bede-ecclesiastical-history-of-england-gutenberg-acquired",
+    "source_id": "bede-ecclesiastical-history-of-england-gutenberg-retained",
+    "source_path": "raw/gutenberg/38326/html/pg38326-images.html",
+    "source_sha256": "39e6c22c2f13902cf6d394b98a43f7e2dd83f02e878da620c879e22805719fbb",
+    "rights_status": "not-assessed; no publication clearance"
+  },
+  "unresolved": [
+    {"id": "bede-continuation-attribution", "kind": "attribution", "status": "open", "detail": "Footnote 1056 calls the Continuation later-hand and reports possible Bede authorship for some early entries. Preserve its source location; do not infer an independent work or author."},
+    {"id": "bede-edition-and-territorial-rights", "kind": "rights", "status": "open", "detail": "The electronic metadata has public-domain and public-domain-in-the-USA statements. Review the Sellar edition, electronic text, territories, and Gutenberg name/license terms before release."},
+    {"id": "bede-human-review-and-acceptance", "kind": "acceptance", "status": "open", "detail": "Mechanical source/TEI comparison does not establish human review or acceptance."}
+  ]
+}

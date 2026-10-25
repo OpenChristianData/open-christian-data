@@ -1,0 +1,85 @@
+{
+  "contract": "ocd-calvins-institutes-reconstruction-profile-v1",
+  "derived_inventory_digests": {
+    "anchors_sha256": "f8233f0e265c31088a0fc0e7127e0384d1370b96efb4b42f54aae22555ee380d",
+    "argument_blocks_sha256": "e946a42d3cd51f5d6b8c476e1d3f928e4b1fc26bc2088c494da0e0b94e1cf59b",
+    "attachments_sha256": "4228efd06eccb67a71ed6193b9d1ce4a0d1f7a3e8bf7ca0a016591940f711073",
+    "chapter_body_blocks_sha256": "bb458c891adda6d4b7942b1812d052ffa9edce0562a1e5a178b6b6256b315778",
+    "emphasis_sha256": "5f0acfd393810dafdba98b2e9db2ecd1ffafbe6203c7c1fab8072e04791e258c",
+    "front_blocks_sha256": "1a34922c87c5c554ba53e29ed783c4ed4e22e66609aff6bf34a07f5ecffcfaa5",
+    "notes_sha256": "ef40a6c4c43824777d862b3690917a4d1b7b8b75e8375cc1a2b33691e7ea14da",
+    "principal_index_blocks_sha256": "019d5d08fb4d4af9980d6023373035953304e798a7a47634cc80d0a2cc73403a",
+    "scripture_index_blocks_sha256": "667b1409ee78f52789f216c64b4f93de416363869264a8695d553852a7b3882d",
+    "structural_events_sha256": "36b6c5a062a0e4ed22fcd98814c843f1232e8305d307b1084131b161d6916b1d"
+  },
+  "identity_conflicts": {
+    "author_forms": [
+      "Jean Calvin",
+      "John Calvin"
+    ],
+    "print_title_page": {
+      "edition": "Sixth American Edition, Revised and Corrected",
+      "place": "Philadelphia",
+      "publisher": "Presbyterian Board of Publication",
+      "year": "1813"
+    },
+    "scripture_index": {
+      "presented_by": "S. T. Livermore",
+      "recipient": "Presbyterian Board of Publication",
+      "institution": "University of Rochester",
+      "year": "1852"
+    },
+    "translator": "John Allen",
+    "volume_1_release": "February 24, 2014",
+    "volume_1_update": "May 15, 2022",
+    "volume_2_credits": "Richard Hulse, Heather Clark, David King, and the Online Distributed Proofreading Team; Internet Archive images",
+    "volume_2_release": "January 26, 2021",
+    "volume_2_update": "October 18, 2024"
+  },
+  "producer_import_closure_sha256": "6e64120e1ef8be7ba3d7ae3393ee81c3a5255425b46d99bbec4c34f242aad4ab",
+  "profile_id": "calvins-institutes-complete-two-volume-source-v1",
+  "required_counts": {
+    "argument_blocks": 65,
+    "chapter_body_blocks": 1314,
+    "chapters": 80,
+    "emphasis_carriers": 578,
+    "front_blocks": 89,
+    "logical_books": 4,
+    "physical_book_headings": 5,
+    "principal_index_blocks": 203,
+    "principal_index_lines": 467,
+    "scripture_index_blocks": 838,
+    "scripture_index_lines": 4949,
+    "volume_1_anchors": 2016,
+    "volume_1_chapters": 48,
+    "volume_1_notes": 2016,
+    "volume_2_anchors": 1489,
+    "volume_2_chapters": 32,
+    "volume_2_notes": 1490
+  },
+  "rights": {
+    "candidate": "nonaccepted; no publication authorization",
+    "project_gutenberg_license_and_trademark": "retained terms apply to Gutenberg-branded redistribution",
+    "source_claim": "underlying works stated by Project Gutenberg to lack United States copyright protection",
+    "worldwide_status": "unresolved; retained wrappers direct users to check local law"
+  },
+  "source_scope": {
+    "bytes": 4060187,
+    "derived_exact_line_inventory_sha256": "b7da68f5d73a1a3df9d4305cba5038bf15b6a8496f504835027be515fc09259c",
+    "derived_member_set_sha256": "b5ab96f0e7bd2a34992802d1451fc9ca94a7bf19ec8d5008285b262877696d4f",
+    "members": [
+      {
+        "bytes": 1925337,
+        "path": "raw/gutenberg/pg45001.txt",
+        "sha256": "a989a8661fedc4e999ae4b5ba749a40e7e9e4d441e88f08ff97ce9d75623746c"
+      },
+      {
+        "bytes": 2134850,
+        "path": "raw/gutenberg/pg64392.txt",
+        "sha256": "3d79335bbb231773d1cbf849f4f7dd67e52f8773091416ba765da3ade0fefb31"
+      }
+    ],
+    "physical_lines": 69897
+  },
+  "version": 1
+}

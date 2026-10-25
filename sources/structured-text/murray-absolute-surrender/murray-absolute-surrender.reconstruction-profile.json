@@ -1,0 +1,214 @@
+{
+  "contract": "ocd-murray-absolute-surrender-profile-v1",
+  "profile_id": "murray-absolute-surrender-whole-thml-v1",
+  "work_id": "murray-absolute-surrender",
+  "source_id": "murray-absolute-surrender-retained-thml",
+  "source_scope": {
+    "member_count": 1,
+    "member_path": "raw/ccel/murray/surrender.xml",
+    "member_bytes": 217645,
+    "member_sha256": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d",
+    "selector": "/ThML[1]",
+    "body_selector": "/ThML[1]/ThML.body[1]",
+    "disposition": "complete-whole-retained-member"
+  },
+  "work_config": {
+    "path": "sources/structured-text/murray-absolute-surrender/config.json",
+    "work_id": "murray-absolute-surrender",
+    "title": "Absolute Surrender",
+    "author": "Andrew Murray",
+    "source_path": "raw/ccel/murray/surrender.xml",
+    "source_sha256": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d"
+  },
+  "source_carriers": {
+    "element_count": 954,
+    "attribute_count": 1167,
+    "unique_id_attribute_count": 614,
+    "duplicate_id_attribute_count": 0,
+    "body_element_count": 890,
+    "unknown_body_element_count": 0,
+    "entity_reference_count": 138,
+    "replacement_character_count": 0,
+    "element_counts": {
+      "DC": 1,
+      "DC.Contributor": 3,
+      "DC.Creator": 3,
+      "DC.Date": 1,
+      "DC.Format": 1,
+      "DC.Identifier": 1,
+      "DC.Language": 1,
+      "DC.Publisher": 1,
+      "DC.Rights": 1,
+      "DC.Subject": 4,
+      "DC.Title": 1,
+      "DC.Type": 1,
+      "ThML": 1,
+      "ThML.body": 1,
+      "ThML.head": 1,
+      "a": 69,
+      "authorID": 1,
+      "bkgID": 1,
+      "bookID": 1,
+      "br": 3,
+      "comments": 2,
+      "description": 1,
+      "div": 1,
+      "div1": 11,
+      "div2": 1,
+      "editorialComments": 1,
+      "electronicEdInfo": 1,
+      "generalInfo": 1,
+      "h1": 2,
+      "h2": 12,
+      "h3": 1,
+      "h4": 2,
+      "i": 170,
+      "insertIndex": 1,
+      "l": 12,
+      "meta": 1,
+      "p": 537,
+      "printSourceInfo": 1,
+      "property": 12,
+      "pubHistory": 1,
+      "published": 1,
+      "publisherID": 1,
+      "revisionHistory": 1,
+      "scripRef": 69,
+      "selector": 5,
+      "status": 1,
+      "style": 2,
+      "verse": 4,
+      "version": 1,
+      "workID": 1
+    },
+    "body_element_counts": {
+      "ThML.body": 1,
+      "a": 69,
+      "div": 1,
+      "div1": 11,
+      "div2": 1,
+      "h1": 2,
+      "h2": 12,
+      "h3": 1,
+      "h4": 2,
+      "i": 167,
+      "insertIndex": 1,
+      "l": 12,
+      "p": 537,
+      "scripRef": 69,
+      "verse": 4
+    }
+  },
+  "non_element_events": {
+    "comment_count": 2,
+    "processing_instruction_count": 0,
+    "doctype_declaration_count": 1,
+    "disposition": "exact-lexical-inventory-in-source-accountability"
+  },
+  "ordered_divisions": [
+    {"id": "i", "title": "Title Page", "type": "title-page"},
+    {"id": "ii", "title": "Absolute Surrender", "type": "address"},
+    {"id": "iii", "title": "The Fruit of the Spirit is Love", "type": "address"},
+    {"id": "iv", "title": "Separated unto the Holy Spirit", "type": "address"},
+    {"id": "v", "title": "Peter's Repentance", "type": "address"},
+    {"id": "vi", "title": "Impossible with Man, Possible with God", "type": "address"},
+    {"id": "vii", "title": "O Wretched Man that I am!", "type": "address"},
+    {"id": "viii", "title": "Having Begun in the Spirit", "type": "address"},
+    {"id": "ix", "title": "Kept by the Power of God", "type": "address"},
+    {"id": "x", "title": "Ye are the Branches", "type": "address"},
+    {"id": "xi", "title": "Indexes", "type": "indexes"}
+  ],
+  "body_mapping": {
+    "div1": "tei-div; source @title remains in SourceAccountability and is not emitted as readable text",
+    "div2": "tei-div; source @title remains in SourceAccountability and is not emitted as readable text",
+    "div": "tei-div",
+    "h1-h3": "tei-head-with-source-level",
+    "h4": "tei-ab-type-source-heading-subtype-ThML-h4",
+    "p": "tei-p",
+    "scripRef": "tei-ref-with-source-passage-and-osis-cRef",
+    "a": "tei-ref-with-source-href-target",
+    "i": "tei-hi-rend-italic",
+    "verse": "tei-lg-type-verse",
+    "l": "tei-l",
+    "br": "tei-lb",
+    "insertIndex": "tei-anchor-type-source-index-marker",
+    "unsupported": "fail-closed"
+  },
+  "human_correction_attestation": {
+    "classification": "human-correction-explicitly-attested-for-exact-retained-source",
+    "source_path": "raw/ccel/murray/surrender.xml",
+    "source_sha256": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d",
+    "evidence": [
+      {
+        "selector": "/ThML[1]/ThML.head[1]/DC.Subject[1]",
+        "claim": "The CCEL subject field includes Proofed."
+      },
+      {
+        "selector": "/ThML[1]/ThML.head[1]/DC.Contributor[@sub='Transcriber'][1]",
+        "claim": "The retained metadata names Claude King as transcriber."
+      },
+      {
+        "selector": "/ThML[1]/ThML.head[1]/electronicEdInfo[1]/editorialComments[1]",
+        "claim": "The retained metadata says the book was lightly edited to update language and add scripture references."
+      },
+      {
+        "selector": "/ThML[1]/ThML.body[1]/div1[@id='i'][1]/p[@id='i-p3'][1]",
+        "claim": "The title page names Claude King and September 1999 in its scanned-and-corrected statement."
+      }
+    ],
+    "limits": [
+      "This attests source-level human correction/proofing and does not establish complete accuracy.",
+      "No original print witness was collated during this technical reconstruction.",
+      "Human textual acceptance, rights clearance, and publication authorization remain separate."
+    ]
+  },
+  "unresolved": [
+    {
+      "id": "murray-absolute-surrender-edition-and-imprint",
+      "scope": "source edition and witness identity",
+      "status": "unresolved",
+      "question": "The source print statement says the edition is Chicago: Moody Press, while the legacy work config claims Marshall Brothers, London, 1895. Which physical/electronic edition and imprint does this retained transcription represent?",
+      "evidence": [
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.head/printSourceInfo/published",
+        "sources/structured-text/murray-absolute-surrender/config.json:source_edition",
+        "metadata/source-evidence/catalog/murray-absolute-surrender.json:edition"
+      ],
+      "next_action": "Review the exact print witness and preserve any confirmed edition distinction in the source-local metadata decision contract."
+    },
+    {
+      "id": "murray-absolute-surrender-work-boundary",
+      "scope": "catalog work and collection boundary",
+      "status": "unresolved",
+      "question": "The title page calls the book Absolute Surrender and Other Addresses; the current catalog label is Absolute Surrender. The retained file contains a title page, nine address divisions, and indexes. Is this whole collection the intended canonical work boundary?",
+      "evidence": [
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.body/div1[@id='i']",
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.body/div1[@id='ii' through @id='x']",
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.body/div1[@id='xi']",
+        "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md:331"
+      ],
+      "next_action": "Resolve only if source/title-page collation or the human catalog decision is authorized; technical candidate preserves the complete retained file."
+    },
+    {
+      "id": "murray-absolute-surrender-rights",
+      "scope": "work, source edition, electronic transcription, and CCEL formatting",
+      "status": "unresolved",
+      "question": "The source claims Public Domain and the existing data-directory notice records CCEL attribution/formatting terms. No rights clearance or publication decision is made in this task.",
+      "evidence": [
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.head/DC/DC.Rights",
+        "data/structured-text/README.md"
+      ],
+      "next_action": "Complete the separate rights review before any acceptance or publication use."
+    },
+    {
+      "id": "murray-absolute-surrender-proofing-scope",
+      "scope": "textual accuracy relative to print",
+      "status": "unresolved",
+      "question": "The exact source is explicitly proofed and corrected, but the extent of editorial change and remaining divergence from print is not measured here.",
+      "evidence": [
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.head/electronicEdInfo/editorialComments",
+        "raw/ccel/murray/surrender.xml:/ThML/ThML.body/div1[@id='i']/p[@id='i-p3']"
+      ],
+      "next_action": "Use the original print witness for any later collation or human acceptance review."
+    }
+  ]
+}

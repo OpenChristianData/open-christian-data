@@ -6,7 +6,21 @@
   "author_birth_year": 354,
   "author_death_year": 430,
   "contributors": [
-    "Philip Schaff (series editor)"
+    {
+      "name": "C. L. Cornish",
+      "role": "translator",
+      "note": "Retain the heading/contents credit conflict as bounded contributor evidence; do not select a translator until the printed discrepancy is resolved."
+    },
+    {
+      "name": "H. Brown",
+      "role": "translator",
+      "note": "Retain the heading/contents credit conflict as bounded contributor evidence; do not select a translator until the printed discrepancy is resolved."
+    },
+    {
+      "name": "Philip Schaff",
+      "role": "editor",
+      "note": "Retain volume-level editor context; no work-level translator selection is made."
+    }
   ],
   "original_publication_year": null,
   "language": "en",
@@ -25,7 +39,7 @@
   "source_edition": "Nicene and Post-Nicene Fathers, Series 1. Philip Schaff (ed.). New York: Christian Literature Publishing Co., 1886-1889.",
   "source_hash": "sha256:410f240f8105bb6097316a54a867fa5a4ae02c0d3d03606aefc2df71f5bfc455",
   "source_type": "ccel_thml",
-  "translator": "Philip Schaff (ed.), 1886",
+  "translator": null,
   "download_date": "2026-04-23",
   "output_file": "data/structured-text/augustine-on-the-creed.json",
   "clearance_date": "2026-04-01",

@@ -1,0 +1,480 @@
+[
+  {
+    "code_authorities": [
+      "candidate-cli",
+      "reconstruction-contract",
+      "destination-policy"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/darby.source-manifest.json",
+    "id": "darby",
+    "implementation_roles": [
+      "validator"
+    ],
+    "original": "sources/bible-text/darby/darby.source-manifest.json",
+    "original_sha256": "242fb81065e6609513aad4a87e00a8b310b64fe80cefe5e8b5f9eff87ddb17c3",
+    "validator_closure": {
+      "arguments": "policy-root",
+      "function": "_closure_digest",
+      "policy": "darby-policy"
+    }
+  },
+  {
+    "code_authorities": [
+      "candidate-cli",
+      "reconstruction-contract",
+      "destination-policy"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/jps.source-manifest.json",
+    "id": "jps",
+    "implementation_roles": [],
+    "original": "sources/bible-text/jps/jps.source-manifest.json",
+    "original_sha256": "f0f6ed4c287e3684694d6089df5df4e6cd0cbf3b2e6549f88e7d8d8f8de85ea0",
+    "validator_closure": {
+      "arguments": "none",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "candidate-cli",
+      "reconstruction-contract",
+      "destination-policy"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/kjva.source-manifest.json",
+    "id": "kjva",
+    "implementation_roles": [],
+    "original": "sources/bible-text/kjva/kjva.source-manifest.json",
+    "original_sha256": "8403b2b1009c5af8487da57c271942331f8dd4f6d8b8314cf5db186a4566be8e",
+    "validator_closure": {
+      "arguments": "policy-root",
+      "function": "_closure_digest",
+      "policy": "kjva-policy"
+    }
+  },
+  {
+    "code_authorities": [
+      "candidate-cli",
+      "reconstruction-contract",
+      "destination-policy"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/webster.source-manifest.json",
+    "id": "webster",
+    "implementation_roles": [
+      "validator"
+    ],
+    "original": "sources/bible-text/webster/webster.source-manifest.json",
+    "original_sha256": "55a768b6ebbee5ada129060ae9ba155334a495e3dce30222da9848995c478766",
+    "validator_closure": {
+      "arguments": "policy-root",
+      "function": "_closure_digest",
+      "policy": "webster-policy"
+    }
+  },
+  {
+    "code_authorities": [
+      "candidate-cli",
+      "reconstruction-contract",
+      "destination-policy"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/ylt.source-manifest.json",
+    "id": "ylt",
+    "implementation_roles": [
+      "validator"
+    ],
+    "original": "sources/bible-text/ylt/ylt.source-manifest.json",
+    "original_sha256": "ce8084a6a9ffcdcc6f8a17d5b12313e017de042ada30803fb8fbe7692492ba4d",
+    "validator_closure": {
+      "arguments": "policy-root",
+      "function": "_closure_digest",
+      "policy": "ylt-policy"
+    }
+  },
+  {
+    "code_authorities": [],
+    "fixture": "tests/fixtures/reconstruction-runtime/calvin-commentaries.source-manifest.json",
+    "id": "calvin-commentaries",
+    "implementation_roles": [
+      "converter",
+      "validator"
+    ],
+    "original": "sources/commentaries/calvin/calvin-commentaries.source-manifest.json",
+    "original_sha256": "dc1c39c5400ae2c396b995a6cf2ca42c982b564d9edfe23fbb265693563afba5",
+    "producer_closure": {
+      "arguments": "root-implementation",
+      "function": "_closure_digest",
+      "implementation_role": "converter"
+    },
+    "validator_closure": {
+      "arguments": "root-implementation",
+      "function": "_closure_digest",
+      "implementation_role": "validator"
+    }
+  },
+  {
+    "code_authorities": [
+      "contract"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/robertson-word-pictures-vol1.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "readme",
+        "fixture": "tests/fixtures/reconstruction-runtime/robertson-word-pictures-vol1.readme.md",
+        "git_commit": "de049d1da09144e8d0c6ac33ba6db3adfed0ba69",
+        "original_sha256": "3f806b6d24d489ac0a57934ad8a5fd3142fd3dc2e93357618d5f36405bd6fd49"
+      }
+    ],
+    "id": "robertson-word-pictures-vol1",
+    "implementation_roles": [],
+    "original": "sources/commentaries/robertson-word-pictures-vol1/source-manifest.json",
+    "original_sha256": "8eb5e9df89be8868ab20bd4128b7379b882f17af059769f90dca6eb761ace17d",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "closure"
+    }
+  },
+  {
+    "code_authorities": [
+      "parser-implementation"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/bcp-1928-collects.source-manifest.json",
+    "id": "bcp-1928-collects",
+    "implementation_roles": [],
+    "original": "sources/prayers/bcp-1928-collects/bcp-1928-collects.source-manifest.json",
+    "original_sha256": "139c88453f8ca1f8cc5be76fe9267eb5e6475fea5807053014082381db2558e3",
+    "validator_closure": {
+      "arguments": "none",
+      "function": "_import_closure_sha256"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-9",
+      "closure-6"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/augustine-on-christian-doctrine.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-on-christian-doctrine-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "82f0ee961194f1d334963572b72ee4210ffe6a8f9a2ad4a2b6a42c6ae363d92f"
+      }
+    ],
+    "id": "augustine-on-christian-doctrine",
+    "implementation_roles": [],
+    "original": "sources/structured-text/augustine-on-christian-doctrine/augustine-on-christian-doctrine.source-manifest.json",
+    "original_sha256": "263970f14d1eee1fdf1a746acd4da7dced012355a0773f27fa24d3e8b23116cd",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "runtime-reconstruction-contract"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/npnf113-lib041.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work-ticket-map",
+        "fixture": "tests/fixtures/reconstruction-runtime/npnf113-lib041.work-ticket-map.md",
+        "git_commit": "fbe94b7723be31b540c3c831b23c6909851c5cea",
+        "original_sha256": "34e1ce0c692ea72971a7615ba87e949be8c15d4bd1affb57353b39ccc8e9baf7"
+      },
+      {
+        "authority": "source-ticket-map",
+        "fixture": "tests/fixtures/reconstruction-runtime/npnf113-lib041.source-ticket-map.md",
+        "git_commit": "4410b59e5dc6c7f31355b18ef6d02ed10fbd1240",
+        "original_sha256": "eced464d3b241373ef751e7e1116722229304bf75ee3d785ccd02a958697a0e4"
+      }
+    ],
+    "id": "npnf113-lib041",
+    "implementation_roles": [],
+    "original": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041-successor-20260915.source-manifest.json",
+    "original_sha256": "901d1cfca985e3966f417337244a0d7b96b1d9c37273c72d3d88657462329e7e",
+    "support": [
+      {
+        "added_code_paths": [
+          "ocd_kernel/lib/__init__.py",
+          "ocd_kernel/lib/path_io.py",
+          "ocd_kernel/lib/storage_topology.py"
+        ],
+        "authority": "oracle-import-closure",
+        "fixture": "tests/fixtures/reconstruction-runtime/npnf113-lib041.oracle-import-closure.json",
+        "kind": "oracle-closure",
+        "original": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041.oracle-import-closure.json",
+        "original_sha256": "a0654c80a679298f97e26dce827021a8d1ec5326c7745df25174cd098b4fd02c"
+      }
+    ],
+    "validator_closure": {
+      "arguments": "closure-artifact",
+      "authority": "oracle-import-closure",
+      "function": null
+    }
+  },
+  {
+    "code_authorities": [
+      "law-serious-call-validator-dependency-03"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/law-serious-call.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "law-serious-call-data-attribution",
+        "fixture": "tests/fixtures/reconstruction-runtime/law-serious-call.law-serious-call-data-attribution.md",
+        "git_commit": "b661ce64b70138f6579910d14edd182a656cb9b5",
+        "original_sha256": "8feeeccb58e1bb0d29a95bdf58388898af7391ed7424801eb16c0529436df017"
+      }
+    ],
+    "id": "law-serious-call",
+    "implementation_roles": [],
+    "original": "sources/structured-text/law-serious-call/source-manifest.json",
+    "original_sha256": "9871fd284891960a8b8771c24fc4a4690d75a25613615adea89605c602142285",
+    "validator_closure": {
+      "arguments": "manifest",
+      "function": "_import_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-acquisitions",
+      "closure-identities",
+      "closure-library-common",
+      "closure-storage-topology",
+      "closure-work-schema",
+      "closure-reconstruction-contract"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/watson-beatitudes.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-beatitudes-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"
+      },
+      {
+        "authority": "closure-work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-beatitudes-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"
+      }
+    ],
+    "id": "watson-beatitudes",
+    "implementation_roles": [],
+    "original": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-manifest.json",
+    "original_sha256": "5011b99ad5ea195952659a88eb6b6d60823d8e5b34f44e4f670584c05b8bf85b",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-10",
+      "closure-6"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/watson-body-of-divinity.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-body-of-divinity-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "29adcd379f5985c8dc57c2e295d09d7884f77e76097062e5501ac4a4c88deed3"
+      }
+    ],
+    "id": "watson-body-of-divinity",
+    "implementation_roles": [],
+    "original": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.source-manifest.json",
+    "original_sha256": "56ee185cfc2e60b5dc4717e6360d25d7fe3187663fefc21d52b3497934d63def",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-identities",
+      "closure-common",
+      "closure-storage-topology",
+      "closure-contract",
+      "closure-work-schema"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/watson-divine-contentment.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-divine-contentment-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "1cc4be5dc9e2ceff455c121c58d111a22640820b1e78001dc42de8a04790333b"
+      }
+    ],
+    "id": "watson-divine-contentment",
+    "implementation_roles": [],
+    "original": "sources/structured-text/watson-divine-contentment/watson-divine-contentment.source-manifest.json",
+    "original_sha256": "056e2f07288f95c86831de301e2b7981824236d224143207dfac8402c458e415",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-10",
+      "closure-6"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/watson-lords-prayer.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-lords-prayer-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "54b952e4f4b29056eba5e64a898e5609b9873adf9561468a22fa3c6024150ff8"
+      }
+    ],
+    "id": "watson-lords-prayer",
+    "implementation_roles": [],
+    "original": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.source-manifest.json",
+    "original_sha256": "5346de14735d0575674845465f626e3817e23f4f2045cd292c6d696544af4aea",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-10",
+      "closure-6"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/watson-ten-commandments.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/watson-ten-commandments-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "8b5d47614a5b4c63c1d533ce1ead2f78c7009b63b92400f8fda94c1333f1637e"
+      }
+    ],
+    "id": "watson-ten-commandments",
+    "implementation_roles": [],
+    "original": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.source-manifest.json",
+    "original_sha256": "cabcc5faf2e63cb42277ed7577ca0f82194757f83b4d5c911b4e65f84e557f36",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-1",
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-6",
+      "closure-9"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/augustine-spirit-and-letter.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-spirit-and-letter-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "0b64ca359a6c3b5f8c43997b4413829d06c3b9ecf6c904d22cfd2e117aa25212"
+      }
+    ],
+    "id": "augustine-spirit-and-letter",
+    "implementation_roles": [],
+    "original": "sources/work-units-phase-a/augustine-spirit-and-letter/source-manifest.json",
+    "original_sha256": "7eb4c60bd44767679798598dc66d8214081868829e19d04144548d8266f8bcb1",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "closure_digest"
+    }
+  },
+  {
+    "code_authorities": [
+      "closure-1",
+      "closure-2",
+      "closure-3",
+      "closure-4",
+      "closure-5",
+      "closure-6",
+      "closure-9"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/john-owen-conscience.source-manifest.json",
+    "historical_support": [
+      {
+        "authority": "work",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/john-owen-conscience-original-bound-work.json",
+        "git_commit": "55bb917ba7d4b5f991900e189d87e33384cc8160",
+        "original_sha256": "75611e401123e48cd192a5ef25832a71f07edcdec618db6d617fa97145b24868"
+      }
+    ],
+    "id": "john-owen-conscience",
+    "implementation_roles": [],
+    "original": "sources/work-units-phase-a/john-owen-conscience/source-manifest.json",
+    "original_sha256": "d212bcd407d1c119a00d8ef23e30d6bc2fd1f355ce1150b8fb166ce536fdb885",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "closure_digest"
+    }
+  },
+  {
+    "code_authorities": [],
+    "fixture": "tests/fixtures/reconstruction-runtime/pilgrims-progress.source-manifest.json",
+    "id": "pilgrims-progress",
+    "implementation_roles": [
+      "converter",
+      "validator"
+    ],
+    "original": "sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.source-manifest.json",
+    "original_sha256": "c2b9a43ff85652e6be4270e10e4783f51412c6fcd40a06ddb16c930ea4ed57ba",
+    "support": [
+      {
+        "authority": "reconstruction-profile",
+        "calculation": {
+          "arguments": "root-implementation",
+          "function": "_closure",
+          "implementation_role": "converter"
+        },
+        "fixture": "tests/fixtures/reconstruction-runtime/pilgrims-progress.reconstruction-profile.json",
+        "kind": "producer-profile",
+        "original": "sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.reconstruction-profile.json",
+        "original_sha256": "1c6c0100aa8c98f3d260efefc9f6e288a718aff68821e655471e7e2f9706d86a"
+      }
+    ],
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure"
+    }
+  },
+  {
+    "code_authorities": [
+      "minimal-contract"
+    ],
+    "fixture": "tests/fixtures/reconstruction-runtime/paradise-lost.source-manifest.json",
+    "id": "paradise-lost",
+    "implementation_roles": [],
+    "original": "sources/standard-ebooks/john-milton_paradise-lost/paradise-lost.source-manifest.json",
+    "original_sha256": "37b868cd20382dfdcedddb5933bb2a606bd947d77b700cdf4e69a14fda63fd74",
+    "validator_closure": {
+      "arguments": "root",
+      "function": "_closure"
+    }
+  }
+]

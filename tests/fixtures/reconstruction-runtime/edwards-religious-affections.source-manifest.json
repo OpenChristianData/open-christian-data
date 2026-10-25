@@ -1,0 +1,118 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "edwards-religious-affections-lib055-retained-xml",
+  "ticket": "37c-142",
+  "owner_route": "LIB-055",
+  "work_id": "edwards-religious-affections",
+  "status": "entry-local-technical-candidate",
+  "identity": {
+    "work_id": "edwards-religious-affections",
+    "source_record_metadata": {
+      "title": "Religious Affections",
+      "creator": "Jonathan Edwards",
+      "language": "eng"
+    },
+    "textual_form": null,
+    "edition": null,
+    "parts": null,
+    "witness_claim": null,
+    "translator": null,
+    "original_publication_year": null
+  },
+  "scope": {
+    "selector": "ThML[1] (complete retained document envelope)",
+    "selected_source_path": "ThML[1]",
+    "member_count": 1,
+    "member_order": [
+      "raw/ccel/edwards/affections.xml"
+    ],
+    "top_level_div1_ids": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "vii",
+      "viii"
+    ],
+    "boundary": "Complete retained ThML root, including the full source header and document shell and all eight ordered ThML.body/div1 subtrees; no neighboring work or member is included."
+  },
+  "authorities": [
+    {
+      "name": "source-affections",
+      "role": "primary-source",
+      "path": "raw/ccel/edwards/affections.xml",
+      "bytes": 1183960,
+      "sha256": "2ffd4300ada5d0cc5b3929ed5b61ed0e1053042a065419ee35943facc79738ce"
+    },
+    {
+      "name": "work-identity",
+      "role": "work-config",
+      "path": "sources/structured-text/edwards-religious-affections/lib055/work-identity.json",
+      "bytes": 92,
+      "sha256": "a75289d143ebfe00dcd7cdfdcc644b438f31b7af7454a4defd551c22d30caabd"
+    },
+    {
+      "name": "feature-profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/structured-text/edwards-religious-affections/lib055/source-feature-profile.json",
+      "bytes": 2774,
+      "sha256": "c694515f6cd691d253001a630922aff8706175bd9aa4680266d89bb39ab41d4a"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/structured-text/edwards-religious-affections/lib055/validation-policy.json",
+      "bytes": 4982,
+      "sha256": "7692696fab88e48090920eed6acc5d6fde157836841f383119b9bda5c6c92bf6"
+    },
+    {
+      "name": "source-readme",
+      "role": "source-attribution-readme",
+      "path": "sources/structured-text/edwards-religious-affections/lib055/README.source.md",
+      "bytes": 1636,
+      "sha256": "db6be51ba10a4b706d178250987e84233d089af81fa71417af259b6bb170b635"
+    },
+    {
+      "name": "ccel-permission",
+      "role": "exact-source-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "edwards-religious-affections-lib055-source-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ccel_puritan_lib055_edwards_religious_affections_reconstruction.py",
+    "implementation_sha256": "19dd7df19be46c93849ab805fc254743535e788724015d2915b62124a72ec7e8"
+  },
+  "validator": {
+    "id": "edwards-religious-affections-independent-retained-byte-oracle",
+    "version": "1",
+    "callable": "validate",
+    "implementation_path": "build/tei/ccel_puritan_lib055_edwards_religious_affections_oracle.py",
+    "implementation_sha256": "6f2d7547ad44f88fbe02bb445c418ade56ef93e34e9a71f50ab7518a6f0b86e3",
+    "import_closure_sha256": "2db353a1765c075494ccd5bd047a4cdb9f001018f1733e74e37505e85555b6cb"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

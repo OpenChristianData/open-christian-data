@@ -1,0 +1,242 @@
+{
+  "acquisition_id": "ia-commdrza00ursi-second-american-1852",
+  "authorities": [
+    {
+      "bytes": 1771,
+      "name": "acquisition-member-set",
+      "path": "library/works/ursinus-commentary-heidelberg-catechism-1852/forms/english-commentary/editions/commdrza00ursi-1852/source-member-set.json",
+      "role": "acquisition-member-set-manifest",
+      "sha256": "e54676c5b12d0de3d3c9f698d11328ba44df818976cdcc15e90c8705b85032a1"
+    },
+    {
+      "bytes": 2849,
+      "name": "acquisition-selection",
+      "path": "library/works/ursinus-commentary-heidelberg-catechism-1852/forms/english-commentary/editions/commdrza00ursi-1852/acquisitions/ia-commdrza00ursi-second-american-1852.json",
+      "role": "acquisition-selection-authority",
+      "sha256": "89deee3043e781bfe1b9422cff0df73986157be346a1462c2ad376370ab9e19b"
+    },
+    {
+      "bytes": 4993,
+      "name": "acquisition-sidecar-schema",
+      "path": "schemas/v2/acquisition.schema.json",
+      "role": "library-sidecar-schema",
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 13085,
+      "name": "declared-package-converter",
+      "path": "build/tei/ursinus_heidelberg_1852_v6_reconstruction.py",
+      "role": "implementation-dependency",
+      "sha256": "16b79e0cde15d394df8e4afab9ad23b4d39db6d43823b213bca6e51db22311c4"
+    },
+    {
+      "bytes": 22889,
+      "name": "declared-package-oracle",
+      "path": "build/tei/ursinus_heidelberg_1852_v6_reconstruction_oracle.py",
+      "role": "implementation-dependency",
+      "sha256": "45de1669b9f9b80392db70babce78bd9c21a4ec83d95f2d07ea99d188a52a73f"
+    },
+    {
+      "bytes": 3964,
+      "name": "reconstruction-profile",
+      "path": "sources/ursinus-commentary-1852/ursinus-commentary-1852.reconstruction-profile-v2.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "b3e463fc5d9665bd5da3ead9b13fa864fba8a15bc2f632a69c4acee0f991df49"
+    },
+    {
+      "bytes": 44100,
+      "name": "route-builder",
+      "path": "build/tei/ursinus_heidelberg_1852_v5.py",
+      "role": "implementation-dependency",
+      "sha256": "50188a3a028f6f68a5588ad49cc44fdf6ba7a6b9c40d257012bff154a5a0f722"
+    },
+    {
+      "bytes": 4495,
+      "name": "source-accountability-schema",
+      "path": "sources/ursinus-commentary-1852/ursinus-commentary-1852.source-accountability-v2.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "49c4a7198bcffc0dd222751353550bd751e50d3eb2cf8baef5a50c00a4b6880d"
+    },
+    {
+      "bytes": 12697,
+      "name": "source-acquisition-receipt",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/acquisition-receipt.json",
+      "role": "retained-source-envelope-support",
+      "sha256": "ee903821197d0ccfe82bd854deac5e65e39794073d594d860ac27b6d1c2d589a"
+    },
+    {
+      "bytes": 2096,
+      "name": "source-attribution-readme",
+      "path": "sources/ursinus-commentary-1852/README.source.v2.md",
+      "role": "source-attribution-readme",
+      "sha256": "7f94d2bbb676ed82411c9fb5f002ed5f82083fa5c87b1ac7086b17006fee3d5a"
+    },
+    {
+      "bytes": 53185,
+      "name": "source-layout-oracle",
+      "path": "build/tei/ursinus_heidelberg_1852_v6_oracle.py",
+      "role": "implementation-dependency",
+      "sha256": "6a4a5c4394074649ad9c3b454b0b78ac797c1215564e14c43e539f4795851ad3"
+    },
+    {
+      "bytes": 2748556,
+      "name": "source-ocr-text",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/ocr.txt",
+      "role": "primary-source",
+      "sha256": "b992748facfcf8c7268783cc497e195bdd22849f52aa0a94d4ebadae5b3a86c5"
+    },
+    {
+      "bytes": 32994086,
+      "name": "source-ocr-xml",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/ocr.xml",
+      "role": "primary-source",
+      "sha256": "44d5f752ac2fd60e7864134eb818951c842329b8393565ae5f5cdb9449f78d98"
+    },
+    {
+      "bytes": 122836,
+      "name": "source-page-number-map",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/page-numbers.json",
+      "role": "primary-source",
+      "sha256": "cbb1c407e254dcbdb9a577014e4c38e18135a7a492d0b750ae1ac8def06140f6"
+    },
+    {
+      "bytes": 3886,
+      "name": "source-provider-member-inventory",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/member-inventory.tsv",
+      "role": "retained-source-envelope-support",
+      "sha256": "e8b2cbbb638db2ad2ecaf39ed449e9bcb1f91b0031be3c388c365b6cb45ddd9c"
+    },
+    {
+      "bytes": 132156,
+      "name": "source-provider-metadata",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/metadata.json",
+      "role": "retained-source-envelope-support",
+      "sha256": "b12ca6fcfc47a1c02a2a1207e71a83f0db96c5339999c44a3a7d5e94faed7edf"
+    },
+    {
+      "bytes": 73778909,
+      "name": "source-scan-pdf",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/scan.pdf",
+      "role": "primary-source",
+      "sha256": "c04a2ef0e88fa4970fd29386c086e528ff249f1d9e3d321fdd51cb3c14a31b52"
+    },
+    {
+      "bytes": 717497,
+      "name": "source-scandata",
+      "path": "raw/internet-archive/commentary-on-heidelberg-catechism/commdrza00ursi/scandata.xml",
+      "role": "primary-source",
+      "sha256": "b1ddaeaa58e9b90c120eb8dacc801c162736c938fe007ec1fe7792e41c634b09"
+    },
+    {
+      "bytes": 18452,
+      "name": "source-to-tei-skill",
+      "path": ".agents/skills/source-to-tei/SKILL.md",
+      "role": "source-to-tei-skill",
+      "sha256": "d01a549082b5c1029e678abdb05b684e84080bdf3592b4d8a7b1816b4331a325"
+    },
+    {
+      "bytes": 2599,
+      "name": "state-sidecar-schema",
+      "path": "schemas/v2/state.schema.json",
+      "role": "library-sidecar-schema",
+      "sha256": "8bf3052bede7b6416b50818fac4fb3d28831d01b622e12c519fbf8461a5c3ea2"
+    },
+    {
+      "bytes": 5037,
+      "name": "storage-topology",
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "role": "implementation-dependency",
+      "sha256": "d692553b16582c58d30dde59403626dc325f2fdd1fe55bc2880f4bcc0fe0a8c3"
+    },
+    {
+      "bytes": 1117721,
+      "name": "tei-p5-relaxng",
+      "path": "ocd_kernel/tei/vendor/relaxng/tei_all.rng",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "a4edf351a10fc634016aa64331f3f75daba26107331574bfee61633aa77531c4"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 3060,
+      "name": "validation-policy",
+      "path": "sources/ursinus-commentary-1852/ursinus-commentary-1852.validation-policy-v5.json",
+      "role": "independent-validation-policy",
+      "sha256": "e12a5109c9d0b0f1f1c5224bf49bb7c5365b0276100b421754625978a8796ac3"
+    },
+    {
+      "bytes": 1452,
+      "name": "work-identity",
+      "path": "library/works/ursinus-commentary-heidelberg-catechism-1852/work.json",
+      "role": "work-identity-config",
+      "sha256": "806fb6c0db974bbecc663a6f97e469aa0ddee13a8ffd830f3f0d9489e49f822d"
+    },
+    {
+      "bytes": 6206,
+      "name": "work-sidecar-schema",
+      "path": "schemas/v2/work.schema.json",
+      "role": "library-sidecar-schema",
+      "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"
+    },
+    {
+      "bytes": 1148,
+      "name": "work-state",
+      "path": "sources/ursinus-commentary-1852/ursinus-commentary-1852.work-state-at-reconstruction-20261002.json",
+      "role": "work-state-evidence",
+      "sha256": "bd5f23dc1502de15b1d62ab03391b8135f957b61d657b56c57e24dd66d65497e"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "convert",
+    "id": "ocd-ursinus-1852-retained-members-to-tei-v10",
+    "implementation_path": "build/tei/ursinus_heidelberg_1852_v6_reconstruction.py",
+    "implementation_sha256": "16b79e0cde15d394df8e4afab9ad23b4d39db6d43823b213bca6e51db22311c4",
+    "version": "10"
+  },
+  "edition_id": "commdrza00ursi-1852",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ia-commdrza00ursi-second-american-1852",
+  "source_selection": {
+    "authority": "source-ocr-xml",
+    "selection": "The complete 1852 IA commentary as one source-titled work, with all five acquired retained members as primary witnesses and the three remaining envelope files as bound support evidence."
+  },
+  "validator": {
+    "callable": "oracle",
+    "id": "ocd-ursinus-1852-independent-source-oracle-v10",
+    "implementation_path": "build/tei/ursinus_heidelberg_1852_v6_reconstruction_oracle.py",
+    "implementation_sha256": "45de1669b9f9b80392db70babce78bd9c21a4ec83d95f2d07ea99d188a52a73f",
+    "import_closure_sha256": "c5b08c3083d703011b72fb44437b9515fbd1135422fea6406fb79943fe001fc7",
+    "version": "10"
+  },
+  "work_id": "ursinus-commentary-heidelberg-catechism-1852"
+}

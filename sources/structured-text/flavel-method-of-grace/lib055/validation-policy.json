@@ -1,0 +1,94 @@
+{
+  "contract": "ocd-source-to-tei-validation-policy-v1",
+  "ticket": "37c-174",
+  "owner_route": "LIB-055",
+  "work_id": "flavel-method-of-grace",
+  "scope": {
+    "member_order": [
+      "raw/ccel/flavel/grace.xml"
+    ],
+    "selector": "ThML[1] (complete retained document envelope)",
+    "boundary": "Reconstruct the exact retained XML document, including its complete head and every ordered body child. This is a source-member boundary, not a claim that the member proves the complete intellectual work, edition, or parts.",
+    "exclusions": []
+  },
+  "mapping": {
+    "ThML": "Represent the root/head/body envelope in TEI and the source-accountability sidecar; do not load or fetch the external DTD.",
+    "ThML.head": "Transcribe source-record title, creator labels, publisher, Created date, identifier, language, subjects, and description into typed TEI header fields. Preserve the source-record date as Created, not as edition or original-publication date. Inventory every other header element, attribute, and empty field.",
+    "div1/div2/div": "Map in source order to TEI div; preserve id as xml:id and source title/class as n or type. Preserve observed prev/next navigation attributes exactly in the TEI when allowed by the bound schema and in the accountability ledger in all cases.",
+    "h1/h2/h3/h6": "Map a source heading to TEI head with its source level in type when it is the first element child of its source div1/div2. A later source heading maps at the same parent and position to TEI p with rend=source-heading-h1/source-heading-h2/source-heading-h3/source-heading-h6; this preserves its text, order, id, and heading-level marker without placing a second TEI head where the pinned schema disallows one.",
+    "p": "Map to TEI p; preserve source id, class rendition, mixed content, and exact text/tail order.",
+    "a": "Map to TEI ref; preserve the source class and href as type and target with no query, fragment, or ID remapping.",
+    "scripRef": "Map to TEI ref type=scripture; preserve source id, OSIS reference as target, and passage label as n. Keep parsed source-index attributes in accountability.",
+    "scripCom": "Map to TEI anchor type=scripture-commentary-marker; preserve source id, OSIS reference, passage label, and source type. Keep parsed source-index attributes in accountability.",
+    "insertIndex": "Map to TEI anchor type=index-insertion; preserve source id and source type as subtype.",
+    "comments": "Preserve body comments at their source positions in TEI and record every document/header/body comment in accountability.",
+    "processing_instructions_and_doctype": "Record exact location and values in accountability; do not copy the external DTD or stylesheet processing instructions into the TEI document.",
+    "style": "Do not reproduce CCEL CSS/XCSS formatting. Record element positions, attributes, text lengths, and hashes in accountability, with disposition source-formatting-not-reproduced.",
+    "unknown_elements": "Fail closed on any source element, attribute class, or mixed-content node outside this work-specific mapping."
+  },
+  "attribute_policy": {
+    "names_by_source_element": {
+      "DC.Creator": ["scheme", "sub"],
+      "DC.Date": ["sub"],
+      "DC.Format": ["scheme"],
+      "DC.Identifier": ["scheme"],
+      "DC.Language": ["scheme"],
+      "DC.Source": ["scheme"],
+      "DC.Subject": ["scheme"],
+      "a": ["class", "href"],
+      "div": ["class"],
+      "div1": ["id", "next", "prev", "title"],
+      "div2": ["id", "next", "prev", "title"],
+      "h1": ["id"],
+      "h2": ["id"],
+      "h3": ["id"],
+      "h6": ["id"],
+      "insertIndex": ["id", "type"],
+      "p": ["class", "id"],
+      "property": ["name", "value"],
+      "scripCom": ["id", "osisRef", "parsed", "passage", "type"],
+      "scripRef": ["id", "osisRef", "parsed", "passage"],
+      "selector": ["element"],
+      "style": ["type"]
+    },
+    "other_profiled_element_classes": "Every element class omitted from names_by_source_element has no attributes in the complete-source profile; any new class or attribute fails closed.",
+    "source_specific_variants": {
+      "p": "Every source p has exactly id or class; there are 3168 id-only and 130 class-only paragraphs.",
+      "scripCom": "Every source scripCom has id and type; OSIS reference, parsed, and passage attributes occur only where retained and are accounted exactly."
+    },
+    "nonprojected_attributes": "Every retained source attribute name and exact value is listed in source-accountability.json, including parsed scripture-index attributes."
+  },
+  "identity_policy": {
+    "catalog_work_id": "The LIB-055 assignment and source title support this route binding; they do not settle equivalence of the retained member to the full catalog-work boundary.",
+    "textual_form": "Unknown; retain observed language eng and do not infer a translation or revision.",
+    "edition": "Unknown; distinguish electronic-header Created date from title-page statements about first publication and reprints.",
+    "parts": "Unknown; report the exact source-native divisions without asserting an authoritative part or volume map.",
+    "witness": "Bind the retained XML bytes only; do not infer the print transcription witness or proofreading history.",
+    "translator": "Unknown; no translator is recorded in the inspected ThML header."
+  },
+  "rights_and_attribution": {
+    "authority": "docs/sources/ccel-permission.md",
+    "permitted_operation": "Parsing CCEL ThML/XML for text is explicitly permitted.",
+    "restriction": "Do not sell CCEL files or derivatives of their formatting.",
+    "attribution": "Include the phrase sourced via CCEL.org in the human-readable source README.",
+    "status": "This permission and attribution convention do not establish publication rights clearance."
+  },
+  "independent_check": {
+    "source": "The oracle independently reads the exact retained bytes and enumerates source nodes, attributes, text/tails, links, IDs, shell nodes, and body carriers. It must not import producer traversal, mapping, selection, or completeness helpers.",
+    "candidate": "Compare every readable TEI node and meaningful attribute to the independently enumerated source expectations; validate against the manifest-bound local TEI schema; verify the five candidate members and all bindings.",
+    "required_mutations": [
+      "omit or duplicate a top-level carrier",
+      "reorder top-level carriers",
+      "change a query-bearing internal-link fragment",
+      "alter a scripture reference or commentary marker",
+      "change a source heading or source-record metadata value",
+      "remove or reorder a body comment"
+    ],
+    "determinism": "Generate the exact package in two clean processes and compare member path sets and bytes."
+  },
+  "validation_schema": {
+    "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+    "package_path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json"
+  },
+  "review_boundary": "A passing candidate is nonaccepted. CVW visual comparison, human acceptance, rights clearance, promotion, release, and publication remain separate gates."
+}

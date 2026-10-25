@@ -1,0 +1,116 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "LIB-058",
+  "source_id": "schaff-history-vol-8-retained-ccel-thml-v1",
+  "work_id": "schaff-history-vol-8",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "scope": {
+    "kind": "one-retained-ccel-thml-member",
+    "title": "History of the Christian Church, Vol. 8: Modern Christianity -- The Swiss Reformation",
+    "source_url": "https://www.ccel.org/ccel/schaff/hcc8.xml",
+    "source_kind": "CCEL ThML XML",
+    "candidate_status": "nonaccepted",
+    "represented_lines": 44285,
+    "unrepresented_members": []
+  },
+  "source_bundle": {
+    "members": 1,
+    "bytes": 2618757,
+    "sha256": "95f835fe5d69bf1f1f94303cb4cc6a4487f4ae3b45e60c41f7a522db095d07ec"
+  },
+  "source_members": [
+    {
+      "name": "hcc8.xml",
+      "logical_name": "hcc8.xml",
+      "path": "raw/ccel/schaff/hcc8.xml",
+      "order": 1,
+      "bytes": 2618757,
+      "lines": 44285,
+      "sha256": "95f835fe5d69bf1f1f94303cb4cc6a4487f4ae3b45e60c41f7a522db095d07ec"
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-source",
+      "path": "raw/ccel/schaff/hcc8.xml",
+      "role": "primary-source",
+      "bytes": 2618757,
+      "sha256": "95f835fe5d69bf1f1f94303cb4cc6a4487f4ae3b45e60c41f7a522db095d07ec"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/schaff-history-vol-8/schaff-history-vol-8.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3242,
+      "sha256": "77f93e1f62e22e0730378c1f3f610179ea0abe8ffbb5e5ccdbfff15fcc090b49"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/schaff-history-vol-8/schaff-history-vol-8.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1073,
+      "sha256": "8bc5727c8b9da697906a9c9b23babbde5ee50eef7da738ac471f448950d90eb8"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/schaff-history-vol-8/schaff-history-vol-8.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1854,
+      "sha256": "20e967bfa98cbac2c2610019e33f6af175c8845b158b5a2c4ca56f3ceaa7d727"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "source-readme",
+      "path": "sources/structured-text/schaff-history-vol-8/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1040,
+      "sha256": "b537ff1ee438c30169d979f58526f58d8e789fc0fc891521f5a222eec1019684"
+    },
+    {
+      "name": "producer-implementation",
+      "path": "build/tei/schaff_history_vol8_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "bytes": 12712,
+      "sha256": "7757968a118b12f873a8e6633da1e3de444f8fcfefc7c00d515ba227fe0af7ef"
+    },
+    {
+      "name": "oracle-implementation",
+      "path": "build/tei/schaff_history_vol8_oracle.py",
+      "role": "supporting-validator-implementation",
+      "bytes": 12394,
+      "sha256": "429ca42cf2bda4d80f779f323d5cf0f14fbe5c4c2b564668c0b56c89a6dda828"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib058-schaff-history-vol8-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/schaff_history_vol8_reconstruction.py",
+    "implementation_sha256": "7757968a118b12f873a8e6633da1e3de444f8fcfefc7c00d515ba227fe0af7ef"
+  },
+  "validator": {
+    "id": "ocd-lib058-schaff-history-vol8-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/schaff_history_vol8_oracle.py",
+    "implementation_sha256": "429ca42cf2bda4d80f779f323d5cf0f14fbe5c4c2b564668c0b56c89a6dda828",
+    "import_closure_sha256": "003060a2771c87462e0fa2778b1bc0c7ab246b9b2f86dc1e5f99b480a7e2ab16"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

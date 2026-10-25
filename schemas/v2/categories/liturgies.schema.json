@@ -1,0 +1,921 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/liturgies.schema.json",
+  "title": "OCD liturgy public row",
+  "description": "Source-bound service steps or complete named offices with ordered native content.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id",
+    "textual_form_id",
+    "edition_id",
+    "record_id",
+    "sequence",
+    "category",
+    "language",
+    "text",
+    "representation_revision",
+    "locator",
+    "provenance",
+    "notes",
+    "references"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "service_id",
+        "service_title",
+        "step_id",
+        "step_kind",
+        "sequence_in_service"
+      ],
+      "not": {
+        "required": [
+          "row_profile"
+        ]
+      },
+      "allOf": [
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "member_id"
+                ]
+              },
+              {
+                "required": [
+                  "member_number"
+                ]
+              },
+              {
+                "required": [
+                  "member_title"
+                ]
+              },
+              {
+                "required": [
+                  "member_kind"
+                ]
+              },
+              {
+                "required": [
+                  "source_links"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "locator": {
+          "not": {
+            "properties": {
+              "kind": {
+                "const": "liturgy-member"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "response_model": {
+          "const": "ordered-source-speeches-without-explicit-links"
+        }
+      }
+    },
+    {
+      "required": [
+        "row_profile",
+        "office_id",
+        "office_number",
+        "office_title",
+        "response_model",
+        "content_format",
+        "structure"
+      ],
+      "not": {
+        "required": [
+          "service_id"
+        ]
+      },
+      "allOf": [
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "member_id"
+                ]
+              },
+              {
+                "required": [
+                  "member_number"
+                ]
+              },
+              {
+                "required": [
+                  "member_title"
+                ]
+              },
+              {
+                "required": [
+                  "member_kind"
+                ]
+              },
+              {
+                "required": [
+                  "source_links"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "row_profile": {
+          "const": "ocd-liturgies-n18328-offices-v1"
+        },
+        "response_model": {
+          "const": "ordered-source-speeches-without-explicit-links"
+        },
+        "locator": {
+          "not": {
+            "properties": {
+              "kind": {
+                "const": "liturgy-member"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "required": [
+        "row_profile",
+        "member_id",
+        "member_number",
+        "member_title",
+        "member_kind",
+        "response_model",
+        "content_format",
+        "structure",
+        "source_links"
+      ],
+      "properties": {
+        "row_profile": {
+          "const": "ocd-liturgies-bcp1662-retained-members-v1"
+        },
+        "response_model": {
+          "const": "literal-role-annotations-without-person-or-response-links"
+        },
+        "structure": {
+          "maxItems": 1
+        },
+        "locator": {
+          "properties": {
+            "kind": {
+              "const": "liturgy-member"
+            },
+            "member": {
+              "maximum": 25
+            },
+            "member_kind": {
+              "enum": [
+                "service",
+                "calendar-part"
+              ]
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "member_number": {
+          "maximum": 25
+        },
+        "member_kind": {
+          "enum": [
+            "service",
+            "calendar-part"
+          ]
+        }
+      },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "service_id"
+            ]
+          },
+          {
+            "required": [
+              "service_title"
+            ]
+          },
+          {
+            "required": [
+              "step_id"
+            ]
+          },
+          {
+            "required": [
+              "step_kind"
+            ]
+          },
+          {
+            "required": [
+              "sequence_in_service"
+            ]
+          },
+          {
+            "required": [
+              "speaker"
+            ]
+          },
+          {
+            "required": [
+              "response_to"
+            ]
+          },
+          {
+            "required": [
+              "rubric"
+            ]
+          },
+          {
+            "required": [
+              "branch"
+            ]
+          },
+          {
+            "required": [
+              "alternatives"
+            ]
+          },
+          {
+            "required": [
+              "office_id"
+            ]
+          },
+          {
+            "required": [
+              "office_number"
+            ]
+          },
+          {
+            "required": [
+              "office_title"
+            ]
+          },
+          {
+            "required": [
+              "front_matter"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "required": [
+        "row_profile",
+        "member_id",
+        "member_number",
+        "member_title",
+        "member_kind",
+        "response_model",
+        "content_format",
+        "structure",
+        "source_links"
+      ],
+      "properties": {
+        "row_profile": {
+          "enum": [
+            "ocd-liturgies-bcp1549-retained-members-v1",
+            "ocd-liturgies-bcp1559-retained-members-v1",
+            "ocd-liturgies-chrysostom-1866-retained-members-v1"
+          ]
+        },
+        "response_model": {
+          "const": "source-native-labels-without-response-inference"
+        },
+        "structure": {
+          "maxItems": 1
+        },
+        "locator": {
+          "properties": {
+            "kind": {
+              "const": "liturgy-member"
+            },
+            "member": {
+              "maximum": 34
+            },
+            "member_kind": {
+              "const": "source-member"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "member_number": {
+          "maximum": 34
+        },
+        "member_kind": {
+          "const": "source-member"
+        },
+        "source_links": {
+          "maxItems": 0
+        }
+      },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "service_id"
+            ]
+          },
+          {
+            "required": [
+              "service_title"
+            ]
+          },
+          {
+            "required": [
+              "step_id"
+            ]
+          },
+          {
+            "required": [
+              "step_kind"
+            ]
+          },
+          {
+            "required": [
+              "sequence_in_service"
+            ]
+          },
+          {
+            "required": [
+              "speaker"
+            ]
+          },
+          {
+            "required": [
+              "response_to"
+            ]
+          },
+          {
+            "required": [
+              "rubric"
+            ]
+          },
+          {
+            "required": [
+              "branch"
+            ]
+          },
+          {
+            "required": [
+              "alternatives"
+            ]
+          },
+          {
+            "required": [
+              "office_id"
+            ]
+          },
+          {
+            "required": [
+              "office_number"
+            ]
+          },
+          {
+            "required": [
+              "office_title"
+            ]
+          },
+          {
+            "required": [
+              "front_matter"
+            ]
+          }
+        ]
+      },
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "row_profile": {
+                  "const": "ocd-liturgies-bcp1549-retained-members-v1"
+                },
+                "work_id": {
+                  "const": "bcp-1549"
+                },
+                "textual_form_id": {
+                  "const": "bcp-1549-retained-electronic"
+                },
+                "edition_id": {
+                  "const": "bcp-1549-retained-electronic-witness"
+                },
+                "member_number": {
+                  "maximum": 34
+                },
+                "locator": {
+                  "properties": {
+                    "member": {
+                      "maximum": 34
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "row_profile": {
+                  "const": "ocd-liturgies-bcp1559-retained-members-v1"
+                },
+                "work_id": {
+                  "const": "bcp-1559"
+                },
+                "textual_form_id": {
+                  "const": "bcp-1559-retained-electronic"
+                },
+                "edition_id": {
+                  "const": "bcp-1559-retained-electronic-witness"
+                },
+                "member_number": {
+                  "maximum": 16
+                },
+                "locator": {
+                  "properties": {
+                    "member": {
+                      "maximum": 16
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "row_profile": {
+                  "const": "ocd-liturgies-chrysostom-1866-retained-members-v1"
+                },
+                "work_id": {
+                  "const": "chrysostom-divine-and-sacred-liturgy"
+                },
+                "textual_form_id": {
+                  "const": "chrysostom-divine-and-sacred-liturgy-wikisource-retained"
+                },
+                "edition_id": {
+                  "const": "chrysostom-divine-and-sacred-liturgy-wikisource-electronic"
+                },
+                "member_number": {
+                  "maximum": 2
+                },
+                "locator": {
+                  "properties": {
+                    "member": {
+                      "maximum": 2
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "work_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+    },
+    "textual_form_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+    },
+    "edition_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+    },
+    "record_id": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+    },
+    "sequence": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+    },
+    "category": {
+      "const": "liturgies"
+    },
+    "language": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+    },
+    "text": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+    },
+    "representation_revision": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+    },
+    "provenance": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+    },
+    "notes": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/notes"
+    },
+    "references": {
+      "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/references"
+    },
+    "service_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "service_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "step_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "step_kind": {
+      "enum": [
+        "speech",
+        "rubric",
+        "alternative",
+        "branch",
+        "instruction",
+        "text"
+      ]
+    },
+    "sequence_in_service": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "speaker": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_to": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "source_type"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "text"
+        ],
+        "properties": {
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "row_profile": {
+      "enum": [
+        "ocd-liturgies-n18328-offices-v1",
+        "ocd-liturgies-bcp1662-retained-members-v1",
+        "ocd-liturgies-bcp1549-retained-members-v1",
+        "ocd-liturgies-bcp1559-retained-members-v1",
+        "ocd-liturgies-chrysostom-1866-retained-members-v1"
+      ]
+    },
+    "office_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "office_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "office_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_model": {
+      "enum": [
+        "ordered-source-speeches-without-explicit-links",
+        "literal-role-annotations-without-person-or-response-links",
+        "source-native-labels-without-response-inference"
+      ]
+    },
+    "content_format": {
+      "const": "ocd-native-content-v1"
+    },
+    "structure": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "$ref": "ocd://schemas/v2/native-content.schema.json"
+      }
+    },
+    "front_matter": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "ocd://schemas/v2/native-content.schema.json"
+      }
+    },
+    "locator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "part_titles",
+            "divisions",
+            "service",
+            "step"
+          ],
+          "properties": {
+            "kind": {
+              "const": "liturgy-step"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "part_titles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "divisions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "order",
+                  "type",
+                  "titles"
+                ],
+                "properties": {
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "type": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "titles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "service": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "step": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "outer_division",
+            "office"
+          ],
+          "properties": {
+            "kind": {
+              "const": "liturgy-office"
+            },
+            "text_part": {
+              "const": "body"
+            },
+            "outer_division": {
+              "const": 1
+            },
+            "office": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "member",
+            "member_kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "liturgy-member"
+            },
+            "text_part": {
+              "const": "body"
+            },
+            "member": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 34
+            },
+            "member_kind": {
+              "enum": [
+                "service",
+                "calendar-part",
+                "source-member"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "member_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{20}$"
+    },
+    "member_number": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 34
+    },
+    "member_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "member_kind": {
+      "enum": [
+        "service",
+        "calendar-part",
+        "source-member"
+      ]
+    },
+    "source_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "path",
+          "targets"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "continuation",
+              "alternative"
+            ]
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "targets": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "token",
+                "path"
+              ],
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{20}$"
+                },
+                "path": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-liturgies-tei-profile-v1",
+    "unit_type": "service",
+    "tei_namespace": "http://www.tei-c.org/ns/1.0",
+    "allowed_elements": [
+      "TEI",
+      "teiHeader",
+      "fileDesc",
+      "titleStmt",
+      "title",
+      "publicationStmt",
+      "sourceDesc",
+      "source",
+      "ptr",
+      "idno",
+      "text",
+      "front",
+      "body",
+      "back",
+      "div",
+      "head",
+      "label",
+      "p",
+      "sp",
+      "speaker",
+      "stage",
+      "choice",
+      "seg",
+      "note",
+      "hi",
+      "foreign",
+      "ref",
+      "lb",
+      "pb"
+    ],
+    "step_kinds": [
+      "speech",
+      "rubric",
+      "alternative",
+      "branch",
+      "instruction",
+      "text"
+    ],
+    "branch_type": "branch",
+    "alternative_type": "alternative"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "ticket": "07",
+  "wave": 2,
+  "slug": "newman-grammar-of-assent",
+  "identity_status": "provisional-net-new-candidate-no-workcatalog-write",
+  "work": {
+    "title": "An Essay in Aid of a Grammar of Assent",
+    "author": "John Henry Newman",
+    "first_publication_year": 1870,
+    "retained_witness": "London: Burns, Oates & Co., 1874",
+    "project_gutenberg_id": 34022
+  },
+  "release_gate": {
+    "path": ".scratch/clean-ready-acquisition-to-tei/issues/00-GATE-RELEASE.md",
+    "sha256": "680c132d9c5ba74b51d62941258d9fd5723082c1961110366fa4aa161830db47",
+    "released_utc": "2026-08-31T01:57:55Z"
+  },
+  "acquisition": {
+    "method": "curl -L --fail from official Project Gutenberg HTTPS endpoints",
+    "landing_retrieved_utc": "2026-08-31T02:00:59Z",
+    "archive_retrieved_utc": "2026-08-31T02:01:00Z",
+    "rdf_retrieved_utc": "2026-08-31T02:01:02Z",
+    "raw_lane": "raw/clean-ready-acquisition-to-tei/master-1/07/newman-grammar-of-assent"
+  },
+  "retained_files": [
+    {
+      "path": "landing.headers.txt",
+      "bytes": 400,
+      "sha256": "3b33c4a71706112b1871d2622f323643595cfe24d70b7e403eb1acedea699043"
+    },
+    {
+      "path": "landing.html",
+      "bytes": 23242,
+      "sha256": "9d9aae732adc52f8f88c4cf8dd8d6d900fe5e7efee3803c71bc62b2a0d4b5476"
+    },
+    {
+      "path": "pg34022-h.zip",
+      "bytes": 559549,
+      "sha256": "27f6e1c54a0b5ac43b15b1ac26dabeff05a78aa27e2e2989f1633093200cedec"
+    },
+    {
+      "path": "pg34022-h.zip.headers.txt",
+      "bytes": 217,
+      "sha256": "ea9f97356df6c055f6bc73418fc06e06163ff548c2f756ecc158656d4d37d89a"
+    },
+    {
+      "path": "pg34022.rdf",
+      "bytes": 18042,
+      "sha256": "5022d3d25b3f9f160078c71d4ff70bde9816113074f6d7ed801ff29b30ad334e"
+    },
+    {
+      "path": "pg34022.rdf.headers.txt",
+      "bytes": 558,
+      "sha256": "63b1f0480a7b0858ceab457d1577e2b55934f8e2361bb7666e72bf675194eab7"
+    }
+  ],
+  "archive_members": [
+    {
+      "path": "pg34022-images.html",
+      "bytes": 997641,
+      "sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+    },
+    {
+      "path": "images/cover.jpg",
+      "bytes": 241293,
+      "sha256": "1e4c52a14131a78573156916ec5ba3954d52db27025f0acdaa23420ba05d8162"
+    }
+  ],
+  "source_evidence": {
+    "landing_title": "An Essay in Aid of a Grammar of Assent by John Henry Newman",
+    "release_date": "2010-10-01",
+    "landing_last_update": "2023-06-04",
+    "live_archive_last_modified": "2026-08-14T08:23:54Z",
+    "rights_statement": "Public domain in the USA.",
+    "credits": "Delphine Lettau, David King, and the Online Distributed Proofreading Team at www.pgdp.net",
+    "rdf_archive_extent": 559542,
+    "live_archive_extent": 559549,
+    "rdf_html_extent": 997635,
+    "live_html_extent": 997641,
+    "extent_resolution": "The live HTTPS Content-Length values and retained SHA-256 hashes identify this acquisition; RDF extents describe an older package revision."
+  },
+  "observed_source_census": {
+    "paragraphs": 794,
+    "printed_page_milestones": 491,
+    "note_references": 56,
+    "note_bodies": 56,
+    "parts": 2,
+    "chapters": 10,
+    "sections": 20,
+    "contents_items": 35,
+    "foreign_spans": 135,
+    "latin_spans": 102,
+    "greek_spans": 6,
+    "source_unclassified_foreign_spans": 27,
+    "emphasis_elements": 94,
+    "italic_style_spans": 312,
+    "smallcaps_spans": 4,
+    "superscript_spans": 56,
+    "inline_quotations": 829,
+    "block_quotations": 7,
+    "line_groups": 5,
+    "lines": 13,
+    "typographic_breaks": 13
+  },
+  "canonical_mutation": false,
+  "human_acceptance": "not-performed"
+}

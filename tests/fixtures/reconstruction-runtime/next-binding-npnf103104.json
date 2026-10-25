@@ -1,0 +1,56 @@
+[
+  {
+    "closure_inputs": [
+      "build/tei/npnf103_work_oracle.py",
+      "build/tei/npnf103_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf103",
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-faith-things-not-seen.npnf103.source-manifest.json",
+    "manifest_sha256": "6cc5305b78ad55b1cbc7cde66508b3c0ad3707c81f468b59c724f5a897ca690e",
+    "original": "sources/structured-text/augustine-npnf103-works-v2/augustine-faith-things-not-seen/source-manifest.json",
+    "original_sha256": "7b468cb54dd3139ea20428d9e2900b5ad1ceca063eefa08e66fbda7af8d4bd5d",
+    "preservation_test": "tests/test_npnf103104_runtime_manifests.py::test_complete_original_record_is_preserved",
+    "retained_package": "D:/Library/Open Christian Data/candidate-reviews/augustine-npnf103-works-v2-20260926/augustine-faith-things-not-seen/package",
+    "retained_sha256": "5c292684e8c4ddb2a4f1009be57f4628e6d57eff0acabe162ec668c394c699e5",
+    "retained_source_manifest_sha256": "8c4be8cee5be8cc5045a8166bdb78fa05cbcbb6f79aa0be1b8f183e18c041ed7",
+    "runtime_changes": {
+      "validator.import_closure_sha256": "c3e4e5e38ae4c376d5a92fa8ad0253e29575eb3ebf3f53a646544bb64bcd1f2c"
+    },
+    "runtime_closure_sha256": "c3e4e5e38ae4c376d5a92fa8ad0253e29575eb3ebf3f53a646544bb64bcd1f2c",
+    "work_id": "augustine-faith-things-not-seen",
+    "historical_work": {
+      "path": "library/works/augustine-faith-things-not-seen/work.json",
+      "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-faith-things-not-seen-original-bound-work.json",
+      "sha256": "6ddc6e1f53a3f3fbb3b6c536d9d5829e0fda8a4198fd70db13142609bb33cfa1",
+      "bytes": 1026
+    }
+  },
+  {
+    "closure_inputs": [
+      "build/tei/npnf104_work_oracle.py",
+      "build/tei/npnf104_lib038_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf104",
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-morals-catholic-church.npnf104.source-manifest.json",
+    "manifest_sha256": "c736fe9c7b5f71e6f2450cbe6ec3ae574cbfab3e87bb3cefea9173d097e8877b",
+    "original": "sources/structured-text/augustine-npnf104-works/augustine-morals-catholic-church/source-manifest.json",
+    "original_sha256": "b0748b17b56b7b2012e1c4c4bc4cf4fd4e7bc1afe1dcb6dc88eced3248da6f1d",
+    "preservation_test": "tests/test_npnf103104_runtime_manifests.py::test_complete_original_record_is_preserved",
+    "retained_package": "D:/Library/Open Christian Data/candidate-reviews/augustine-npnf104-works-20260927/augustine-morals-catholic-church/package",
+    "retained_sha256": "ebc9c04ad23a504d8e0ad15b38b572158b6b395991a6468d50283f8120893b34",
+    "retained_source_manifest_sha256": "346f5a246b1b31b362ce5f22a15e5d74f0bdf2b44c14b6fadcc29cadb4bf5544",
+    "runtime_changes": {
+      "validator.import_closure_sha256": "989d4b4cbd0911452955c387771d9f85fb31dc892b6c7e6c22e93bdd6e20252f"
+    },
+    "runtime_closure_sha256": "989d4b4cbd0911452955c387771d9f85fb31dc892b6c7e6c22e93bdd6e20252f",
+    "work_id": "augustine-morals-catholic-church",
+    "historical_work": {
+      "path": "library/works/augustine-morals-catholic-church/work.json",
+      "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-morals-catholic-church-original-bound-work.json",
+      "sha256": "f006e7c6647c678f901002dcfcf541dd9c151ea9a43daf2f50e036efdf41a277",
+      "bytes": 1005
+    }
+  }
+]

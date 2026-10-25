@@ -1,0 +1,37 @@
+{
+  "contract": "ocd-npnf211-lib049-validation-policy-v14",
+  "policy_id": "npnf211-lib049-three-work-v14",
+  "version": 14,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": [
+    "manifest.json", "content.tei.xml", "source-accountability.json",
+    "provenance.json", "unresolved.jsonl", "README.source.md"
+  ],
+  "required_assigned_work_count": 3,
+  "required_feature_count": 14950,
+  "required_attribute_count": 34639,
+  "required_character_count": 2832630,
+  "required_note_count": 2684,
+  "required_page_break_count": 587,
+  "required_scripture_reference_count": 1803,
+  "required_table_census": {"tables": 1, "rows": 6, "cells": 12},
+  "checks": [
+    "source-authority-hash-and-sole-member-binding",
+    "exact-three-root-scope-and-retained-order",
+    "complete-feature-attribute-text-tail-and-character-crosswalk",
+    "exact-metadata-rights-credit-and-member-accounting",
+    "omission-duplication-reorder-invention-and-surplus-detection",
+    "exact-prolog-terminal-root-and-namespace-inventory",
+    "tei-p5-xsd",
+    "source-accountability-json-schema",
+    "candidate-package-integrity-and-current-validation-bindings",
+    "ordinary-work-catalog-route-state"
+  ],
+  "forbidden_oracle_imports": [
+    "prototype-v14.producer_v14",
+    "build.tei.npnf_ambrose_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei"
+  ]
+}

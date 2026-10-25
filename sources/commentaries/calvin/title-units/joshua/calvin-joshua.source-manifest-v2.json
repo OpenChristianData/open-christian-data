@@ -1,0 +1,130 @@
+{
+  "authorities": [
+    {
+      "bytes": 1152629,
+      "name": "calcom07.xml",
+      "path": "raw/ccel/calvin-commentaries/calcom07.xml",
+      "role": "primary-source",
+      "sha256": "98657e5ee3b1564e7d16729a8fd4fc73b1f46439f02e750fdbe700488fc33879"
+    },
+    {
+      "bytes": 8839,
+      "name": "commentaries.xml",
+      "path": "raw/ccel/calvin-commentaries/commentaries.xml",
+      "role": "shared-context-source",
+      "sha256": "d5167554c4c40ac2ba320e9ec75afd2565001e0f5f84b0245832b7bfa183b08f"
+    },
+    {
+      "bytes": 355130,
+      "name": "calvin-title-selection-profile",
+      "path": "sources/commentaries/calvin/calvin-commentaries-title-selection-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "98ca44ed9ca890eaeea398ee4690ae0d8f145fcb60c4194421e448a13d5e4b38"
+    },
+    {
+      "bytes": 3555,
+      "name": "title-validation-policy",
+      "path": "sources/commentaries/calvin/calvin-joshua.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "c080232f1ea108ecec4d342d0f9f41db8a6039f74e4bd43757c10c51672e1a57"
+    },
+    {
+      "bytes": 3845,
+      "name": "title-accountability-schema",
+      "path": "sources/commentaries/calvin/title-units/joshua/calvin-joshua.source-accountability-v2.schema.json",
+      "role": "source-catalogue-title-accountability-schema",
+      "sha256": "9ed24101d2a7c5ad021500f04821fe1cdbcaf25d7b5389be0d56395aaefec838"
+    },
+    {
+      "bytes": 1199,
+      "name": "title-source-readme",
+      "path": "sources/commentaries/calvin/README.calvin-joshua.source.md",
+      "role": "source-attribution",
+      "sha256": "ff1c5e776be80b266764fb124fa305da62b4dca74665034349ac8390031507c0"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 24058,
+      "name": "collection-source-manifest",
+      "path": "sources/commentaries/calvin/calvin-commentaries.source-manifest.storage-topology-rebind-20261003.json",
+      "role": "collection-source-manifest",
+      "sha256": "714a8d4410a7533547042c766c745829312a09f2ebf08f1b024e6fc626ec05d6"
+    },
+    {
+      "bytes": 15077,
+      "name": "catalogue-title-independent-oracle",
+      "path": "build/tei/calvin_joshua_catalogue_oracle_v2.py",
+      "role": "independent-source-title-header-observer",
+      "sha256": "24643ab6d6c66edf18654a11fc275c167dfa0e2bea34aa8caa2f631cf110bf04"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-calvin-joshua-title-selection",
+    "implementation_path": "build/tei/calvin_joshua_reconstruction_v2.py",
+    "implementation_sha256": "f006db4892747ac38e3b29fbcb0df80fdfd68ac80ad9fb92cf0c2ff4c9b52502",
+    "version": "2"
+  },
+  "derived_from": {
+    "aggregate_tei_sha256": "2fb07bc8bfdd394c5921b4f62172e3f635e41604798987fa11e8b658cd5ea59e",
+    "candidate_package_manifest_sha256": "362d54b139f8581ba51dbbbfb6771365604f1a2c5d6794f98736f49bbaddab80",
+    "source_manifest_path": "sources/commentaries/calvin/calvin-commentaries.source-manifest.storage-topology-rebind-20261003.json",
+    "source_manifest_sha256": "714a8d4410a7533547042c766c745829312a09f2ebf08f1b024e6fc626ec05d6",
+    "validation_sidecar_sha256": "137ba9f5a291c6c5fef458c518759f6c247a0e2e0f81716d646fe322e3c71c42"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "owner": "LIB-010",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "276933c30c4c4b3af37e00af11fa347ec26a82b2ee1b94b6b4ba8a585f77103d",
+  "scope": {
+    "historical_container_identity_only": true,
+    "members": [
+      "calcom07.xml"
+    ],
+    "shared_context": [
+      "commentaries.xml"
+    ],
+    "title": "Commentary on Joshua"
+  },
+  "source_id": "calvin-commentaries-retained-ccel-thml",
+  "source_metadata_reconciliation": {
+    "independent_check": "build/tei/calvin_joshua_catalogue_oracle_v2.py checks source title, candidate header title and accountability binding; it separately checks the catalogue description selector.",
+    "previous_profile_field": "members[name=commentaries.xml].main_title",
+    "previous_profile_value": "Calvin's Commentaries\ufffdComplete",
+    "previous_shared_profile_path": "sources/commentaries/calvin/calvin-commentaries.reconstruction-profile.json",
+    "previous_shared_profile_sha256": "7b3eb93a7f7ac6093b8afc605ebb71727834adcf0a0d39a5393096da0f9a1208",
+    "repair": "The Joshua converter derives only the duplicated TEI catalogue-bibliography title from raw DC.Title Main; the shared aggregate profile and aggregate reconstruction are preserved unchanged.",
+    "source_authority_sha256": "d5167554c4c40ac2ba320e9ec75afd2565001e0f5f84b0245832b7bfa183b08f",
+    "source_member": "commentaries.xml",
+    "source_selector": "/ThML[1]/ThML.head[1]/electronicEdInfo[3]/DC[11]/DC.Title[1]",
+    "source_value": "Calvin's Commentaries\u2014Complete"
+  },
+  "ticket_id": "37c-092",
+  "title_profile_sha256": "98ca44ed9ca890eaeea398ee4690ae0d8f145fcb60c4194421e448a13d5e4b38",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-calvin-joshua-source-oracle",
+    "implementation_path": "build/tei/calvin_joshua_oracle_v2.py",
+    "implementation_sha256": "f0398d843a2ebdb7c18fbd5b7939e4126bdbdc474ba623c63ea06db7a91c8c0f",
+    "import_closure_sha256": "72681872d573b456cf098901027d31fa3f2b79b4d23bfedd5da6ec38b876732d",
+    "version": "2"
+  },
+  "work_id": "calvin-commentaries"
+}

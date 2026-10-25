@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-underhill-title-page">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Practical Mysticism title page</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Practical Mysticism title page</title>
+          <idno type="sha256">326c79d1c56dd3486833e7b419eb18ee58d373eeb85241180db2aff832c7b422</idno>
+          <ptr target="ocd-source:raw/standard_ebooks/evelyn-underhill_practical-mysticism/src/epub/text/titlepage.xhtml"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; canonical title-page type.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-underhill-title-page-selection">
+        <div type="title-page" xml:id="titlepage">
+          <head>Practical Mysticism</head>
+          <p>By <hi rend="bold">Evelyn Underhill</hi>.</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

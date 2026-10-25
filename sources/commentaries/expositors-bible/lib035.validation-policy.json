@@ -1,0 +1,64 @@
+{
+  "contract": "ocd-expositors-bible-lib035-validation-policy-v1",
+  "policy_id": "lib035-complete-current-claim-xml-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_source_members": 9,
+  "required_excluded_members": 38,
+  "required_retained_family_members": 47,
+  "required_work_ids": [
+    "expositors-bible--marcus-dods",
+    "expositors-bible--r-a-watson",
+    "expositors-bible--robert-f-horton",
+    "expositors-bible--samuel-h-kellogg",
+    "expositors-bible--thomas-charles-edwards"
+  ],
+  "required_feature_count": 34791,
+  "required_source_bytes": 7729301,
+  "required_namespace_attribute_collision_count": 13,
+  "required_unresolved_ids": [
+    "lib035-print-edition-collation-not-performed",
+    "lib035-rights-and-publication-review",
+    "lib035-retained-inventory-47-vs-legacy-48",
+    "lib035-author-label-variants"
+  ],
+  "forbidden_import_prefixes": [
+    "build.tei.expositors_bible_lib035_reconstruction",
+    "build.parsers.ccel_expositors_bible",
+    "build.lib.ccel_thml",
+    "ocd_kernel.bible_refs",
+    "ocd_kernel.lib.bible_refs"
+  ],
+  "checks": [
+    "source-authority-digests",
+    "exact-nine-member-lineage",
+    "complete-forty-seven-member-family-census",
+    "exact-retained-bytes-decoded-from-tei",
+    "independent-xml-element-order-hierarchy-attributes-and-text",
+    "five-frozen-work-identities",
+    "legacy-nine-claim-lineage",
+    "candidate-package-schema",
+    "source-accountability-schema",
+    "exact-candidate-source-id",
+    "exact-canonical-candidate-manifest",
+    "type-strict-canonical-json-members",
+    "closed-provenance-object",
+    "exact-unresolved-records-and-order",
+    "exact-candidate-readme",
+    "closed-tei-element-structure",
+    "recursive-exact-tei-qname-attributes-text-tail-and-order",
+    "namespace-qualified-source-attributes",
+    "tei-p5-xsd",
+    "rights-and-attribution",
+    "localized-unresolved-ledger",
+    "producer-independent-transitive-import-closure"
+  ]
+}

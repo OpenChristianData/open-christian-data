@@ -1,0 +1,5 @@
+# Electronic source for vita-sancti-ursmari
+
+The retained text source is `raw/openmgh/bsb00000753/tei/bsb00000753.xml` (SHA-256 `550c090dad42988c5a8c95adc3328a3b5ef93dcfeaa8f91354fe6a03995f9b27`). Its ZIP is acquisition packaging, not another text witness. This work selects complete source work division 11, native part 0 (zero-based), C14N SHA-256 `bbae9bd7ce6a9af0ded50e1439a2662267843eb6806419f809b1654c655f949d`. The other Vita part in this carrier is a separate cataloged work. All other divisions remain outside this work. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/vita-sancti-ursmari/README.md` and bind both exact hashes through `public_notices`.

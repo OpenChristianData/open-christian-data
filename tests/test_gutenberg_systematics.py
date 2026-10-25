@@ -15,6 +15,8 @@ Covers the key invariants for the T6-2 19th-century systematic theology parser:
 Added 2026-04-23 for T6-2.
 """
 
+import hashlib
+import json
 import sys
 from pathlib import Path
 
@@ -43,6 +45,104 @@ from build.parsers.gutenberg_systematics import (  # noqa: E402
     prepare_ia_lines,
     gather_paragraphs,
 )
+
+
+HODGE_Q7_FIXTURE = (
+    REPO_ROOT / "tests" / "fixtures" / "gutenberg_systematics" / "aa_hodge_q7_span.txt"
+)
+HODGE_CONFIG = (
+    REPO_ROOT / "sources" / "catechisms" / "aa-hodge-outlines" / "config.json"
+)
+HODGE_SOURCE_SHA256 = "a81808d5a9d2037d3c1d0706de960fb13c175d3581dd131c7d505493df51fee5"
+HODGE_SPAN_SHA256 = "6711666f19ca7c869c0e6601f40f5bb03ab02280976c2292c99fa9ee70e36034"
+HODGE_CONFIG_SHA256 = "d0e7575f9947c65edaf7435b5cd189a0dc458718a192d880a686991602489c75"
+
+
+def test_aa_hodge_q7_retained_source_fixture_is_exact_and_fully_accounted() -> None:
+    content = HODGE_Q7_FIXTURE.read_bytes()
+    assert len(content) == 1_630
+    assert hashlib.sha256(content).hexdigest() == HODGE_SPAN_SHA256
+
+    lines = content.decode("utf-8").splitlines()
+    assert len(lines) == 30
+    by_number = dict(zip(range(16_538, 16_568), lines, strict=True))
+
+    question_lines = {16_538, 16_539}
+    answer_lines = {
+        *range(16_541, 16_551),
+        *range(16_552, 16_558),
+        *range(16_564, 16_567),
+    }
+    note_lines = {16_559}
+    header_lines = {16_562}
+    blank_lines = {16_540, 16_551, 16_558, 16_560, 16_561, 16_563, 16_567}
+    represented_lines = question_lines | answer_lines | note_lines | header_lines
+
+    assert len(represented_lines) == 23
+    assert len(blank_lines) == 7
+    assert represented_lines | blank_lines == set(by_number)
+    assert represented_lines & blank_lines == set()
+    assert all(by_number[number] for number in represented_lines)
+    assert all(not by_number[number] for number in blank_lines)
+
+    assert by_number[16_538].startswith("7.  Shoio  that  this  Laio")
+    assert by_number[16_539].endswith("absolute  moral  perfection.* ")
+    assert not any(line.startswith("8.") for line in lines)
+    assert by_number[16_559] == "*  Dr.  C.  Hodge's  Unpublished  Lectures. "
+    assert by_number[16_539].rstrip().endswith("*")
+    assert by_number[16_559].startswith("*")
+    assert by_number[16_562] == (
+        "318        THE  NATURE    OF  SIN  AND    THE    SIN  OF  ADAM. "
+    )
+    assert by_number[16_562].lstrip().startswith("318")
+    assert 16_562 not in answer_lines
+    assert all(not by_number[number] for number in (16_560, 16_561, 16_563))
+
+    literal_ocr_readings = {
+        16_538: ("Shoio", "Laio", "tvant"),
+        16_542: ("thcd", "he", "Tlie"),
+        16_546: ("Avell",),
+        16_548: ("Avhole", "natm-e"),
+        16_554: ("Bince",),
+        16_555: ("tliey",),
+        16_566: ("langaiage",),
+    }
+    assert sum(len(values) for values in literal_ocr_readings.values()) == 12
+    for line_number, readings in literal_ocr_readings.items():
+        assert all(reading in by_number[line_number] for reading in readings)
+
+    config_bytes = HODGE_CONFIG.read_bytes()
+    assert hashlib.sha256(config_bytes).hexdigest() == HODGE_CONFIG_SHA256
+    config = json.loads(config_bytes)
+    assert config["source_hash"] == f"sha256:{HODGE_SOURCE_SHA256}"
+
+    # The exact digest plus exhaustive line partition is the preserved-evidence
+    # guarantee that no source line or literal OCR reading was corrected or omitted.
+    assert len(question_lines) + len(answer_lines) + len(note_lines) + len(header_lines) == 23
+
+
+def test_aa_hodge_q7_fixture_matches_retained_source_when_available() -> None:
+    config = json.loads(HODGE_CONFIG.read_bytes())
+    source_path = REPO_ROOT / Path(config["source_file"])
+    if not source_path.is_file():
+        pytest.skip(f"ignored retained source is unavailable: {config['source_file']}")
+
+    source = source_path.read_bytes()
+    assert hashlib.sha256(source).hexdigest() == HODGE_SOURCE_SHA256
+
+    lines = source.splitlines(keepends=True)
+    start_offset = sum(len(line) for line in lines[:16_537])
+    end_offset = sum(len(line) for line in lines[:16_567])
+    retained_span = b"".join(lines[16_537:16_567])
+
+    assert (start_offset, end_offset) == (889_055, 890_685)
+    assert retained_span == HODGE_Q7_FIXTURE.read_bytes()
+    assert " ".join(lines[16_537].decode("utf-8").split()).startswith(
+        "7. Shoio that this Laio"
+    )
+    assert " ".join(lines[16_567].decode("utf-8").split()).startswith(
+        "8. Prove that"
+    )
 
 
 # ---------------------------------------------------------------------------

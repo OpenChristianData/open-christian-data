@@ -1,0 +1,152 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "augustine-spirit-and-letter-selected-thml",
+  "work_id": "augustine-spirit-and-letter",
+  "authorities": [
+    {
+      "path": "raw/ccel/npnf1/npnf105.xml",
+      "name": "retained-source",
+      "role": "primary-source",
+      "bytes": 4501690,
+      "sha256": "224f0e6a188ddfe691c1433c8db9a883755a9f030b71fede644d4af6c18ee63f"
+    },
+    {
+      "path": "tests/fixtures/reconstruction-runtime/authorities/augustine-spirit-and-letter-original-bound-work.json",
+      "name": "work",
+      "role": "work-identity-config",
+      "bytes": 1433,
+      "sha256": "0b64ca359a6c3b5f8c43997b4413829d06c3b9ecf6c904d22cfd2e117aa25212"
+    },
+    {
+      "path": "library/works/augustine-spirit-and-letter/forms/augustine-spirit-and-letter-english/editions/augustine-spirit-and-letter-ccel/acquisitions/augustine-spirit-and-letter-retained.json",
+      "name": "acquisition",
+      "role": "acquisition-selection-authority",
+      "bytes": 2760,
+      "sha256": "7106c59c00fe342c1d8d9083a6b3ee0f0666984b86338d9a34aa3541b879aabc"
+    },
+    {
+      "path": "sources/work-units-phase-a/augustine-spirit-and-letter/profile.json",
+      "name": "profile",
+      "role": "complete-source-feature-profile",
+      "bytes": 327,
+      "sha256": "686127668afd8603eecb2219bec56ecb6134b2335b4d1d068d5025d9a6adaa15"
+    },
+    {
+      "path": "sources/work-units-phase-a/augustine-spirit-and-letter/policy.json",
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "bytes": 332,
+      "sha256": "ba63c85d3b25f901a0f270711c071cb374aab8d7128d2f2275d48fc1ac34f660"
+    },
+    {
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "path": "ocd_kernel/tei/selected_thml_check.py",
+      "name": "closure-0",
+      "role": "implementation-dependency",
+      "bytes": 30210,
+      "sha256": "cca02607edb3659ad40ec3facc656ac3b1e6ef6bb4f25c25a74d8713b4774b3a"
+    },
+    {
+      "path": "ocd_kernel/library/source_selection.py",
+      "name": "closure-1",
+      "role": "implementation-dependency",
+      "bytes": 12279,
+      "sha256": "e95968090550c80fb3f337043808a40ca3eb398cb4577a2b0234bf65710f5bf4"
+    },
+    {
+      "path": "ocd_kernel/library/acquisitions.py",
+      "name": "closure-2",
+      "role": "implementation-dependency",
+      "bytes": 29973,
+      "sha256": "6e2576e9c86f79ebe5c3d0b30a685ecd57e0c58f8d21ab7fea0e2d5093aa59a8"
+    },
+    {
+      "path": "ocd_kernel/library/identities.py",
+      "name": "closure-3",
+      "role": "implementation-dependency",
+      "bytes": 21850,
+      "sha256": "e4a0cb972707d575e254291993d900f90f7192c9755714aec39fba4b71ebb401"
+    },
+    {
+      "path": "ocd_kernel/library/_common.py",
+      "name": "closure-4",
+      "role": "implementation-dependency",
+      "bytes": 5045,
+      "sha256": "827b23e3c52cd77daa701389febb60b9cdc23b8ea6dd80a738fdd7d0018d64f0"
+    },
+    {
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "name": "closure-5",
+      "role": "implementation-dependency",
+      "bytes": 5154,
+      "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+    },
+    {
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "name": "closure-6",
+      "role": "implementation-dependency",
+      "bytes": 26591,
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    },
+    {
+      "path": "ocd_kernel/tei/validate.py",
+      "name": "closure-7",
+      "role": "implementation-dependency",
+      "bytes": 1385,
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"
+    },
+    {
+      "path": "schemas/v2/acquisition.schema.json",
+      "name": "closure-8",
+      "role": "implementation-dependency",
+      "bytes": 4993,
+      "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"
+    },
+    {
+      "path": "schemas/v2/work.schema.json",
+      "name": "closure-9",
+      "role": "implementation-dependency",
+      "bytes": 7788,
+      "sha256": "a30e4dc7f72209b2c26455d46a21e1f953f0ab382605c5bc4e15942edf3c9dbb"
+    },
+    {
+      "path": "ocd_kernel/tei/writer.py",
+      "name": "writer",
+      "role": "implementation-dependency",
+      "bytes": 4314,
+      "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"
+    }
+  ],
+  "converter": {
+    "id": "ocd-selected-thml-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/selected_thml.py",
+    "implementation_sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"
+  },
+  "validator": {
+    "id": "ocd-selected-thml-independent-check",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/selected_thml_oracle.py",
+    "implementation_sha256": "983936eff2c1ebfe4c0a837dbeb807800bb78af8c2cb1bd797fc52af41047790",
+    "import_closure_sha256": "11b694c2df8fbf944f4cd158d45f95777dac6a79b6c443d5dcedf5c61c0621e2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "contract": "ocd-expositors-lib036-readable-milligan-index-validation-policy-v2",
+  "member_id": "milligan-expositorrev",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "retained-source-hash",
+    "complete-root-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "comment-order-and-disposition",
+    "resolved-local-links",
+    "tei-p5",
+    "stock-native-projection-and-independent-verification",
+    "source-index-div-not-quotation"
+  ],
+  "oracle_import_closure": [
+    "build/tei/expositors_bible_lib036_readable_milligan_index_v2_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.expositors_bible_lib036_readable_milligan_index_v2"
+  ]
+}

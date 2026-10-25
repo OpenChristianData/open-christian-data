@@ -1,0 +1,52 @@
+{
+  "contract": "ocd-daily-light-sword-rawld-validation-policy-v1",
+  "policy_id": "daily-light-sword-rawld-policy-v1",
+  "oracle_id": "ocd-daily-light-sword-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "ticket_id": "LIB-006",
+  "work_id": "daily-light",
+  "required_counts": {
+    "index_records": 367,
+    "index_sentinels": 1,
+    "headers": 1,
+    "header_bytes": 1550,
+    "days": 366,
+    "day_span_bytes": 1032386,
+    "record_delimiters": 366,
+    "record_delimiter_bytes": 732,
+    "terminal_delimiters": 1,
+    "terminal_tail_bytes": 2,
+    "gaps": 367,
+    "gap_bytes": 2282,
+    "unexplained_gaps": 0,
+    "periods": 732,
+    "source_elements": 22298,
+    "tag_counts": {"b": 1, "br": 20346, "center": 1, "i": 732, "scripRef": 1218},
+    "omitted": 0,
+    "duplicate": 0,
+    "unresolved": 0
+  },
+  "required_members": [
+    "modules/lexdict/rawld/devotionals/daily/daily.dat",
+    "modules/lexdict/rawld/devotionals/daily/daily.idx",
+    "mods.d/daily.conf"
+  ],
+  "required_member_roles": {
+    "modules/lexdict/rawld/devotionals/daily/daily.dat": "textual-witness",
+    "modules/lexdict/rawld/devotionals/daily/daily.idx": "binary-order-index-authority",
+    "mods.d/daily.conf": "module-metadata-and-rights-evidence"
+  },
+  "required_unresolved_ids": ["daily-light-rights-review", "daily-light-human-acceptance"],
+  "forbidden_import_prefixes": ["build.parsers.sword_devotional"],
+  "requirements": [
+    "bind the complete retained extracted module and exact member order",
+    "bind the exact zero sentinel, all 366 index slots, and all 366 days with two ordered periods",
+    "fail closed on strict UTF-8 for the represented header, every date key, and every day payload",
+    "account for the represented 1,550-byte header and every exact CRLF delimiter, including the terminal tail",
+    "distinguish textual, binary-index, and module-metadata/rights member roles",
+    "represent each retained source markup element exactly once",
+    "reject source drift, omission, duplication, reordering, payload, binary-accounting, metadata, evidence, and unresolved-ledger mutations",
+    "keep the candidate nonaccepted and publication unauthorized"
+  ]
+}

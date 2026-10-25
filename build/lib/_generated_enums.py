@@ -29,7 +29,7 @@ Schema sha256s:
   - parser_anchor_remap.schema.json: c5665df0085e784c8454726a1d0b1203d2f2cf5fa984decc44fba2524c1f123b
   - prayer.schema.json: 503284df548056b312825ed2734b3d9a57a1eb1769a811809d9b70e7fca16521
   - scans_manifest.schema.json: 08a871dda353a1be2c76bfbb3c6c3739b900e502cfdbf1fe86438b133555b750
-  - structured_text.schema.json: 20057ee99fe7c07113568ca5aa533c6e498a25bdae601c707d21e7a7acd6c4e0
+  - structured_text.schema.json: ad1b3f14ae3f2e8bcd9f3bab61bf1dcc379709036e6cdda189d532014eff13d5
   - topical_reference.schema.json: 270531155ee25961170d2e4bfd0fc2dc373113606808e826594dab74c97123d2
   - verification_bundle.schema.json: 23542ad7fb1b8c641e1949aa6536c82ea6e5809c3fc098ee52a342e243f0d979
   - verification_event.schema.json: ef31bbbe085b5d72d5a18eebe8f951843434da720949efde31f0ae135fdd5b28

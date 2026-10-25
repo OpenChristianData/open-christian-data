@@ -1,0 +1,40 @@
+{
+  "contract": "ocd-lib040-reconstruction-profile-v1",
+  "profile_id": "lib040-npnf101-vi-vii-npnf106-v-vii-npnf107-iii-v-v1",
+  "version": 1,
+  "source_members": [
+    {"path": "raw/ccel/npnf1/npnf101.xml", "bytes": 4837387, "sha256": "5a251ba0e3ef934821f3998ba1e3ab52ea40dae02ced15fbd36bb111fd81afc0", "assigned_roots": ["vi", "vii"]},
+    {"path": "raw/ccel/npnf1/npnf106.xml", "bytes": 4680096, "sha256": "3710c6985a8dfc4e4ffafc461a7a8550db609b0506535453dac252f2aa55b604", "assigned_roots": ["v", "vi", "vii"]},
+    {"path": "raw/ccel/npnf1/npnf107.xml", "bytes": 3694413, "sha256": "75d52f4c31dde0959974256b3f5d84394b7b96fcd2883e78a3d32e0b66c5869a", "assigned_roots": ["iii", "iv", "v"]}
+  ],
+  "assigned_work_count": 8,
+  "assigned_feature_count": 45301,
+  "assigned_attribute_count": 120046,
+  "assigned_text_node_count": 38719,
+  "assigned_tail_node_count": 39094,
+  "assigned_character_count": 8559314,
+  "assigned_non_ascii_character_count": 52191,
+  "assigned_feature_counts": {"br": 63, "div": 1, "div1": 8, "div2": 274, "div3": 646, "i": 5610, "note": 9855, "p": 16437, "pb": 1626, "scripCom": 235, "scripRef": 7598, "span": 2943, "sup": 5},
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "document_shell": {
+    "candidate_xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>",
+    "candidate_doctype": null,
+    "candidate_root_siblings": 0,
+    "candidate_root_children": ["teiHeader", "text"],
+    "candidate_text_children": ["body"],
+    "npnf101": {"doctype": "", "pre_root_comment_count": 2, "pre_root_processing_instruction_count": 0, "post_root_node_count": 0},
+    "npnf106": {"doctype": "<!DOCTYPE ThML PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">", "pre_root_comment_count": 1, "pre_root_processing_instruction_count": 0, "post_root_node_count": 0},
+    "npnf107": {"doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">", "pre_root_comment_count": 2, "pre_root_processing_instruction_count": 0, "post_root_node_count": 0}
+  },
+  "requirements": [
+    "exact-depth-first-source-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-projected",
+    "exact-retained-member-shell-and-excluded-division-accounting",
+    "exact-candidate-declaration-root-header-text-body-and-non-element-topology",
+    "retained-source-derived-metadata-with-generated-administrative-scope-marked",
+    "all-eight-works-nonaccepted-and-publication-not-ready"
+  ]
+}

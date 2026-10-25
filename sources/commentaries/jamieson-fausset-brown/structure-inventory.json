@@ -1,0 +1,166 @@
+{
+  "contract": "ocd-source-structure-inventory-v1",
+  "version": 1,
+  "work_id": "jamieson-fausset-brown",
+  "source_id": "helloao-jamieson-fausset-brown-complete-retained-json",
+  "source_root": "raw/helloao_local/api/c/jamieson-fausset-brown",
+  "scope": {
+    "selection": "Five exact retained carriers from bounded source inspection",
+    "carrier_count": 5,
+    "rendered_carrier_count": 5,
+    "heading_span_count": 6,
+    "paragraph_policy": {
+      "contract": "ocd-source-paragraph-segmentation-v1",
+      "delimiter": "\n\n",
+      "mode": "split-every-exact-double-newline",
+      "carrier_total_count": 18300,
+      "carrier_count_with_delimiter": 17771,
+      "delimiter_count": 42598
+    },
+    "detector": {
+      "pattern": "(?:\\A|\\n\\n)(?P<head>[IVXLC]+\\.\\s+[A-Z][^\\n]{2,159}?)(?=\\n\\n|\\Z)",
+      "carrier_count": 5,
+      "heading_match_count": 6,
+      "claim": "Detector output selected explicit source spans; no global Roman-number heuristic is used by reconstruction."
+    },
+    "excluded_signals": [
+      {
+        "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/MAT/8.json",
+        "json_pointer": "/chapter/content/4/content/0",
+        "text": "Luk 9:61 : ",
+        "classification": "verse-reference-label",
+        "disposition": "retained in surrounding prose paragraph"
+      },
+      {
+        "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/MAT/8.json",
+        "json_pointer": "/chapter/content/4/content/0",
+        "text": "Luk 9:62 : ",
+        "classification": "verse-reference-label",
+        "disposition": "retained in surrounding prose paragraph"
+      },
+      {
+        "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/MAT/8.json",
+        "json_pointer": "/chapter/content/4/content/0",
+        "text": "\nNext: Matthew Chapter 9",
+        "classification": "navigation",
+        "disposition": "retained in surrounding source text, not promoted to heading"
+      }
+    ],
+    "out_of_scope": "Other retained carriers use exact source paragraph segmentation; potential heading, note, and label semantics remain unpromoted until a separately pinned source-family inventory establishes their role."
+  },
+  "entries": [
+    {
+      "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/LUK/15.json",
+      "json_pointer": "/chapter/content/1/content/0",
+      "carrier_kind": "commentary-occurrence",
+      "rendered_carrier": true,
+      "source_file_bytes": 23130,
+      "source_file_sha256": "f696b70d05ddb0ffc33bb00c10b1acc296011d179814fde8ef601c6be972a66e",
+      "carrier_utf8_bytes": 276,
+      "carrier_codepoint_length": 276,
+      "carrier_sha256": "0ee733d9c24eb1021e86b581df99d7e2929516b9c0ca75bba2ca5396d34e398d",
+      "headings": [
+        {
+          "start": 0,
+          "end": 31,
+          "text": "I. THE LOST SHEEP. (Luk 15:3-7)",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/LUK/15.json",
+      "json_pointer": "/chapter/content/5/content/0",
+      "carrier_kind": "commentary-occurrence",
+      "rendered_carrier": true,
+      "source_file_bytes": 23130,
+      "source_file_sha256": "f696b70d05ddb0ffc33bb00c10b1acc296011d179814fde8ef601c6be972a66e",
+      "carrier_utf8_bytes": 100,
+      "carrier_codepoint_length": 100,
+      "carrier_sha256": "d0837ac163347962247ed2ad2f3b7df959a5998782cb5cace256950b4440ce56",
+      "headings": [
+        {
+          "start": 0,
+          "end": 32,
+          "text": "II. THE LOST COIN. (Luk 15:8-10)",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/LUK/15.json",
+      "json_pointer": "/chapter/content/7/content/0",
+      "carrier_kind": "commentary-occurrence",
+      "rendered_carrier": true,
+      "source_file_bytes": 23130,
+      "source_file_sha256": "f696b70d05ddb0ffc33bb00c10b1acc296011d179814fde8ef601c6be972a66e",
+      "carrier_utf8_bytes": 830,
+      "carrier_codepoint_length": 830,
+      "carrier_sha256": "0769698d50ca0c92073313cd208939d6ffa009d8aaf097cc70db2cbb4edec6b7",
+      "headings": [
+        {
+          "start": 0,
+          "end": 38,
+          "text": "III. THE PRODIGAL SON. (Luke 15:11-32)",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/MAT/8.json",
+      "json_pointer": "/chapter/content/4/content/0",
+      "carrier_kind": "commentary-occurrence",
+      "rendered_carrier": true,
+      "source_file_bytes": 30333,
+      "source_file_sha256": "fd1c998dead123f13643f09d27e76178c68af1b9539aa5841a6afea61c8bb223",
+      "carrier_utf8_bytes": 8737,
+      "carrier_codepoint_length": 8737,
+      "carrier_sha256": "85712a6428be389f1a852a165d933ed9b10799ea5cbe3a684d1de0170a3b2221",
+      "headings": [
+        {
+          "start": 1708,
+          "end": 1768,
+          "text": "II. The Procrastinating or Entangled Disciple (Mat 8:21-22).",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        },
+        {
+          "start": 4787,
+          "end": 4841,
+          "text": "III. The Irresolute or Wavering Disciple (Luk 9:61-62)",
+          "boundary_before": "blank-line",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    },
+    {
+      "source_path": "raw/helloao_local/api/c/jamieson-fausset-brown/ZEC/7.json",
+      "json_pointer": "/chapter/introduction",
+      "carrier_kind": "chapter-introduction",
+      "rendered_carrier": true,
+      "source_file_bytes": 15534,
+      "source_file_sha256": "22b3492b334312baba1a083a8de670bd5998c34df59e388a575fded91615fd2c",
+      "carrier_utf8_bytes": 301,
+      "carrier_codepoint_length": 301,
+      "carrier_sha256": "631aab3de3e21b18744a1d8f04b5e9fb7767706ed56f07d40c6bb9f894f91890",
+      "headings": [
+        {
+          "start": 0,
+          "end": 114,
+          "text": "II. DIDACTIC PART, SEVENTH AND EIGHTH CHAPTERS. OBEDIENCE, RATHER THAN FASTING, ENJOINED: ITS REWARD. (Zac 7:1-14)",
+          "boundary_before": "start",
+          "boundary_after": "blank-line",
+          "classification": "source-supported-heading"
+        }
+      ]
+    }
+  ]
+}

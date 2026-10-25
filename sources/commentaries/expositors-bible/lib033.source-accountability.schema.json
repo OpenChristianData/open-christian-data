@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/commentaries/expositors-bible/lib033.source-accountability.schema.json",
+  "title": "LIB-033 complete retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_member_count",
+    "work_count",
+    "source_bytes",
+    "feature_count",
+    "omitted_feature_count",
+    "unresolved_feature_count",
+    "member_census",
+    "crosswalk",
+    "retained_source_bytes"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-expositors-bible-lib033-source-accountability-v2"},
+    "schema": {"const": "lib033.source-accountability.schema.json"},
+    "profile_id": {"const": "expositors-bible-lib033-complete-retained-xml-v2"},
+    "source_member_count": {"const": 12},
+    "work_count": {"const": 5},
+    "source_bytes": {"const": 12439067},
+    "feature_count": {"const": 67869},
+    "omitted_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "member_census": {
+      "type": "object",
+      "required": ["contract", "included", "excluded", "counts", "inventory_contradiction"],
+      "properties": {
+        "contract": {"const": "ocd-expositors-bible-lib033-member-census-v1"},
+        "included": {"type": "array", "minItems": 12, "maxItems": 12},
+        "excluded": {"type": "array", "minItems": 35, "maxItems": 35},
+        "counts": {
+          "const": {"included": 12, "excluded": 35, "retained_family_total": 47}
+        },
+        "inventory_contradiction": {"type": "string", "minLength": 1}
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 67869,
+      "maxItems": 67869,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "feature_id",
+          "source_selector",
+          "source_tag",
+          "source_attributes",
+          "source_direct_text",
+          "source_tail_text",
+          "source_direct_text_sha256",
+          "source_tail_text_sha256",
+          "source_parent_ordinal",
+          "source_child_ordinal",
+          "tei_xml_id",
+          "member_id",
+          "work_id",
+          "disposition",
+          "tei_selector"
+        ],
+        "properties": {
+          "feature_id": {"type": "string", "minLength": 1},
+          "source_selector": {"type": "string", "minLength": 1},
+          "source_tag": {"type": "string", "minLength": 1},
+          "source_attributes": {"type": "object"},
+          "source_direct_text": {"type": "string"},
+          "source_tail_text": {"type": "string"},
+          "source_direct_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_tail_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_parent_ordinal": {"type": ["integer", "null"], "minimum": 1},
+          "source_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "member_id": {"type": "string", "minLength": 1},
+          "work_id": {"type": "string", "minLength": 1},
+          "disposition": {"enum": ["represented", "evidence-only"]},
+          "tei_selector": {
+            "oneOf": [
+              {"type": "string", "pattern": "^#.+"},
+              {"type": "null"}
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"disposition": {"const": "represented"}}},
+            "then": {
+              "properties": {
+                "tei_selector": {"type": "string", "pattern": "^#.+"}
+              }
+            }
+          },
+          {
+            "if": {"properties": {"disposition": {"const": "evidence-only"}}},
+            "then": {"properties": {"tei_selector": {"type": "null"}}}
+          }
+        ]
+      }
+    },
+    "retained_source_bytes": {
+      "type": "object",
+      "minProperties": 12,
+      "maxProperties": 12,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bytes", "sha256", "base64"],
+        "properties": {
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "base64": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

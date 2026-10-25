@@ -1,0 +1,56 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "37c-314-watson-beatitudes-retained-thml-route",
+  "work_id": "watson-beatitudes",
+  "authorities": [
+    {"path": "raw/ccel/watson/beatitudes.xml", "name": "retained-source", "role": "primary-source", "bytes": 1120523, "sha256": "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837"},
+    {"path": "library/works/watson-beatitudes/work.json", "name": "work", "role": "work-identity-config", "bytes": 1944, "sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"},
+    {"path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json", "name": "acquisition", "role": "acquisition-selection-authority", "bytes": 3991, "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.reconstruction-profile.json", "name": "profile", "role": "complete-source-feature-profile", "bytes": 5771, "sha256": "25b26bc95facd440052f8568c1dbc615dd2d31b4365118fe63404caf2fdbceb2"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.validation-policy.json", "name": "policy", "role": "independent-validation-policy", "bytes": 2247, "sha256": "1be29785364723270dc1d36f5d6aca00865ade1f1fe41ccb4dc19644ce76a43f"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.json", "name": "source-accountability", "role": "source-completeness-accountability", "bytes": 4012, "sha256": "aea93b8305aa976fdcecbbce152ae119ae3cfcc104de1f526b52369513822dd8"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.schema.json", "name": "source-accountability-schema", "role": "work-local-accountability-schema", "bytes": 3317, "sha256": "c427084f7381355f6c9339e8201d102067403f8b30618cb43fd7f5e0115ca56d"},
+    {"path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "name": "tei-schema", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "name": "package-schema", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+    {"path": "sources/structured-text/watson-beatitudes/watson_beatitudes_reconstruction.py", "name": "work-specific-producer", "role": "implementation", "bytes": 4554, "sha256": "419f3532feef6174acfd8ff863c0f7044622d21dd6434890b797e8f14975b968"},
+    {"path": "sources/structured-text/watson-beatitudes/watson_beatitudes_oracle.py", "name": "work-specific-oracle", "role": "implementation", "bytes": 33619, "sha256": "6dc00660c57e008755d7029ffbb0990db25bd8702db517edfa6b52c12c5e60b8"},
+    {"path": "build/tei/selected_thml.py", "name": "shared-selected-thml-producer", "role": "implementation-dependency", "bytes": 17353, "sha256": "c2c9713203dca84490376fb492a74a0e2f64f402758575baaa9ea95d18949b94"},
+    {"path": "ocd_kernel/library/acquisitions.py", "name": "closure-acquisitions", "role": "implementation-dependency", "bytes": 24123, "sha256": "25eaf989875a6ee50371766cf84e09b7ca329415edb2ce0405b558dacf3cbe41"},
+    {"path": "ocd_kernel/library/identities.py", "name": "closure-identities", "role": "implementation-dependency", "bytes": 17861, "sha256": "b579eb6795f870502156fd478361f9e58f7fbf8a05f16438092752ca28bb2cfa"},
+    {"path": "ocd_kernel/library/_common.py", "name": "closure-library-common", "role": "implementation-dependency", "bytes": 4909, "sha256": "f25a86bb45274d8880eacd37162ececa54ff0ef6979a17cb78d3459e752fd98c"},
+    {"path": "ocd_kernel/library/source_selection.py", "name": "closure-source-selection", "role": "implementation-dependency", "bytes": 12218, "sha256": "bd2a537c43a2177c62174700cac410293e24d576883a6f7625afda1944c77133"},
+    {"path": "ocd_kernel/lib/storage_topology.py", "name": "closure-storage-topology", "role": "implementation-dependency", "bytes": 3942, "sha256": "f56814fad76e4b6e85a98f199a256cecdfbd1d27afbe60c303e3f78794666285"},
+    {"path": "ocd_kernel/tei/writer.py", "name": "closure-tei-writer", "role": "implementation-dependency", "bytes": 4314, "sha256": "0f4ea0885352053afbda419cc46bcb96800b4dd8fa8c0a44f89a75c49ebab473"},
+    {"path": "ocd_kernel/reconstruction/contract.py", "name": "closure-reconstruction-contract", "role": "implementation-dependency", "bytes": 25076, "sha256": "a3cdf8daa9d67725a22995584a2a99ba796fc4c7578058496f1f9d6bad401ac5"},
+    {"path": "ocd_kernel/reconstruction/verifier.py", "name": "closure-reconstruction-verifier", "role": "implementation-dependency", "bytes": 6014, "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"},
+    {"path": "ocd_kernel/tei/validate.py", "name": "closure-tei-validator", "role": "implementation-dependency", "bytes": 1385, "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22"},
+    {"path": "schemas/v2/work.schema.json", "name": "closure-work-schema", "role": "implementation-dependency", "bytes": 6206, "sha256": "d7da4df0d821775f57912b8ebe529fceb1437af8aa1cc33906d2bcfb35eeae2d"},
+    {"path": "schemas/v2/acquisition.schema.json", "name": "closure-acquisition-schema", "role": "implementation-dependency", "bytes": 4993, "sha256": "fc7f46a1532bb35919ed6775477e86f4258ee66e4f35cbc11cdd432b5669dc38"},
+    {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "name": "closure-package-schema", "role": "implementation-dependency", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},
+    {"path": "library/works/watson-beatitudes/work.json", "name": "closure-work", "role": "implementation-dependency", "bytes": 1944, "sha256": "751da848bf3d2a837ddf0a8cac3d61e1180555f253a6bcd6c0ac152821526003"},
+    {"path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json", "name": "closure-acquisition", "role": "implementation-dependency", "bytes": 3991, "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.reconstruction-profile.json", "name": "closure-profile", "role": "implementation-dependency", "bytes": 5771, "sha256": "25b26bc95facd440052f8568c1dbc615dd2d31b4365118fe63404caf2fdbceb2"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.validation-policy.json", "name": "closure-policy", "role": "implementation-dependency", "bytes": 2247, "sha256": "1be29785364723270dc1d36f5d6aca00865ade1f1fe41ccb4dc19644ce76a43f"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.json", "name": "closure-source-accountability", "role": "implementation-dependency", "bytes": 4012, "sha256": "aea93b8305aa976fdcecbbce152ae119ae3cfcc104de1f526b52369513822dd8"},
+    {"path": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-accountability.schema.json", "name": "closure-accountability-schema", "role": "implementation-dependency", "bytes": 3317, "sha256": "c427084f7381355f6c9339e8201d102067403f8b30618cb43fd7f5e0115ca56d"}
+  ],
+  "converter": {
+    "id": "ocd-watson-beatitudes-selected-thml-route",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "sources/structured-text/watson-beatitudes/watson_beatitudes_reconstruction.py",
+    "implementation_sha256": "419f3532feef6174acfd8ff863c0f7044622d21dd6434890b797e8f14975b968"
+  },
+  "validator": {
+    "id": "ocd-watson-beatitudes-independent-source-walk",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "sources/structured-text/watson-beatitudes/watson_beatitudes_oracle.py",
+    "implementation_sha256": "6dc00660c57e008755d7029ffbb0990db25bd8702db517edfa6b52c12c5e60b8",
+    "import_closure_sha256": "7e0c73ccee5ec538c02673c4f0db0f5b9acddea7a65c6adc6bb1af93d176c819"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

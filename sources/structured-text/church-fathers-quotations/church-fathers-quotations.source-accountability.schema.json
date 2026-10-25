@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/church-fathers-quotations/church-fathers-quotations.source-accountability.schema.json",
+  "title": "LIB-061 complete Commentaries-Database source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "commentary_file_count",
+    "commentary_record_count",
+    "contract",
+    "directory_count",
+    "field_occurrences",
+    "field_type_occurrences",
+    "member_count",
+    "members",
+    "metadata_object_count",
+    "regular_file_count",
+    "source_sha256",
+    "toml_file_count",
+    "toml_parse_errors"
+  ],
+  "properties": {
+    "contract": {"const": "lib061-source-accountability-v9"},
+    "source_sha256": {"const": "5a4ba3ef4bfd168cdaf4cd6bcc4e8cc655c90da97bfe5abf3e6fe9338d86fbe6"},
+    "member_count": {"const": 59021},
+    "regular_file_count": {"const": 58682},
+    "directory_count": {"const": 339},
+    "toml_file_count": {"const": 58675},
+    "metadata_object_count": {"const": 335},
+    "commentary_file_count": {"const": 58340},
+    "commentary_record_count": {"const": 70194},
+    "toml_parse_errors": {"const": 0},
+    "field_occurrences": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "field_type_occurrences": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {"type": "integer", "minimum": 0}
+      }
+    },
+    "members": {
+      "type": "array",
+      "minItems": 59021,
+      "maxItems": 59021,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["index", "path", "tar_type", "kind", "size", "content_sha256", "tei_disposition", "reason"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0, "maximum": 59020},
+          "path": {"type": "string", "minLength": 1},
+          "tar_type": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["regular-file", "directory"]},
+          "size": {"type": "integer", "minimum": 0},
+          "content_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "tei_disposition": {"enum": ["included", "included-rights", "excluded"]},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -34,10 +34,11 @@ and the [official dataset-card guide](https://github.com/huggingface/datasets/bl
 
 The shared project description is:
 
-> Open Christian Data (OCD) aims to be the single unified collection of all
-> public domain Christian text. It exists to bring this collection together
-> from across the internet and to structure it in a useful format for public
-> use.
+> OCD aims to be a single unified collection of publicly available Christian
+> resources. Our aim is to collate as many high quality Christian works and
+> resources as are available for distribution into a unified dataset for the
+> public good. Starting initially with a focus on works of historic significance
+> in the public domain.
 
 Keep that identity consistent, then write for the platform. GitHub focuses on
 the texts themselves, their sources, the developing TEI intermediate
@@ -109,8 +110,9 @@ rows are interchangeable measures of intellectual or literary coverage.
 State the collection's public promises in language readers care about:
 
 - **Unified:** scattered books and collections can be found and used together.
-- **Free to use:** the published dataset is released under CC0, while
-  source-specific rights and unresolved audit questions are stated plainly.
+- **Reuse terms:** state the terms of the exact release and link its item terms
+  and source notices. Public domain and CC0 are distinct; a mixed release has no
+  blanket CC0 dedication.
 - **Traceable provenance:** source, license, edition, contributors, and
   processing history travel with the text.
 - **Faithful to source texts:** correctness means accurate words and structure,
@@ -184,7 +186,7 @@ principal-source and acknowledgments document.
 
 Distinguish clearly between:
 
-- the **CC0 published dataset**;
+- the **exact item-level terms of the selected release**;
 - source-specific rights recorded in provenance;
 - the **CC BY-NC 4.0 code, schemas, and tooling**.
 
@@ -303,6 +305,9 @@ Before publishing a card or release note, confirm that:
 - [ ] Authors, works, editions, and sources appear before implementation details.
 - [ ] Counts use understandable, non-conflicting units.
 - [ ] Representative works or collections are named.
+- [ ] A complete work catalog and edition list ship with the release, are linked
+      from the card, and match every selected work and edition. Internal library
+      paths and verification details are excluded from those public files.
 - [ ] Intended uses and limitations are present.
 - [ ] Historical and representational imbalance is acknowledged.
 - [ ] Data and code licenses are distinguished.

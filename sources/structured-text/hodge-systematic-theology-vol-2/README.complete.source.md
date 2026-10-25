@@ -1,0 +1,5 @@
+# Hodge, Systematic Theology, Volume II: retained source
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/hodge/theology2.html). Charles Hodge is the author. The electronic header names Christian Classics Ethereal Library and creation on June 20, 2005. Tim Perrine is credited only for the CCEL Staff Writer description, not as the volume's editor, translator or transcriber. The retained title page states Wm. B. Eerdmans Publishing Co., Grand Rapids, Mich., 1940, with a separate 1871 Scribner copyright notice. The inherited 1872-1873 edition claim remains unverified.
+
+All five own-volume roots are represented, including the complete contents table and seven rendered indexes. The source header, styles and prolog are private support evidence. The source DC.Rights is empty. CCEL permission evidence permits parsing and requests credit, while reserving rights in its files and formatting. CCEL formatting rights are not cleared. Technical acceptance, human verification, print collation and publication remain separate. This private source-local credit is not a selected public-card notice.

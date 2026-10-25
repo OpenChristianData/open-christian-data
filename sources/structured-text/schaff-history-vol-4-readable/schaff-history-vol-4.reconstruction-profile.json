@@ -1,0 +1,91 @@
+{
+  "contract": "ocd-schaff-history-vol-4-reconstruction-profile-v1",
+  "profile_id": "schaff-history-vol-4-retained-thml-v1",
+  "ticket_id": "LIB-058",
+  "work_id": "schaff-history-vol-4",
+  "source_id": "ccel-schaff-hcc4-thml",
+  "primary_source": {
+    "path": "raw/ccel/schaff/hcc4.xml",
+    "bytes": 2351867,
+    "sha256": "7a4b158f20983c50fac6542e1904a24e611f52dba7f293fc4831e2d3030364d6"
+  },
+  "identity": {
+    "textual_form": "unresolved",
+    "print_edition": "unresolved",
+    "rights_status": "unresolved",
+    "retained_titles": [
+      "History of the Christian Church, Volume IV: Mediaeval Christianity. A.D. 590-1073",
+      "Christian Church Vol. IV"
+    ],
+    "retained_creators": [
+      "Schaff, Philip (1819-1893)",
+      "Philip Schaff"
+    ],
+    "rights_evidence": "The retained DC.Rights element is empty; rights and license remain unresolved.",
+    "legacy_config_used_as_authority": false
+  },
+  "owner_route": {
+    "owner_ticket": "LIB-058",
+    "stored_file_count_used_as_boundary": false,
+    "work_map": "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md",
+    "source_map": "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md"
+  },
+  "selection": {
+    "source_member": "raw/ccel/schaff/hcc4.xml",
+    "selector": "/ThML/ThML.body/*",
+    "selected_body_roots": [
+      {
+        "tag": "div1",
+        "id": "i",
+        "ordinal": 1,
+        "title": "Mediaeval Christianity"
+      },
+      {
+        "tag": "div1",
+        "id": "ii",
+        "ordinal": 2,
+        "title": "Indexes"
+      }
+    ],
+    "disposition": "Preserve the complete retained document, including the header, both body roots, all source text, attributes, parent relationships, sibling order and prolog comments. No body division is excluded."
+  },
+  "source_envelope": {
+    "root_children_in_order": [
+      "ThML.head",
+      "ThML.body"
+    ],
+    "external_dtd_loaded": false,
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "top_level_comments": [
+      {
+        "ordinal": 1,
+        "sha256": "b8eb991d9b8863a7cbda0bdbfbfa6f13c436fd847a96c44ee0b5eb6aea459113",
+        "characters": 169
+      },
+      {
+        "ordinal": 2,
+        "sha256": "b404201dd31cb6ceb3ae290c9bf6b0bc2cd87854a9c2a0ee8a3970d98fa16446",
+        "characters": 47
+      }
+    ],
+    "source_element_count": 15955
+  },
+  "division_counts": {
+    "div": 11,
+    "div1": 2,
+    "div2": 19,
+    "div3": 182,
+    "div4": 0,
+    "div5": 0,
+    "div6": 0
+  },
+  "heading_counts": {
+    "h1": 1,
+    "h2": 5,
+    "h3": 0,
+    "h4": 0,
+    "h5": 0,
+    "h6": 0
+  },
+  "recovery": "Reconstructed from retained hcc4.xml and the existing readable producer/oracle contract on 2026-09-21; not claimed byte-identical to the missing historical profile."
+}

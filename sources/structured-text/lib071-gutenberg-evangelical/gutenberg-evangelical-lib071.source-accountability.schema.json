@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/lib071-gutenberg-evangelical/gutenberg-evangelical-lib071.source-accountability.schema.json",
+  "title": "LIB-071 complete retained-text source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract","schema","profile_id","assigned_work_count","assigned_member_count","adjacent_member_count","source_members","adjacent_retained_member_accounting","works","total_line_count","omitted_line_count","duplicate_line_count","source_byte_reassembly","candidate_status","human_review_required","publication_ready"],
+  "properties": {
+    "contract": {"const": "ocd-lib071-source-accountability-v1"},
+    "schema": {"const": "gutenberg-evangelical-lib071.source-accountability.schema.json"},
+    "profile_id": {"const": "lib071-ten-retained-utf8-text-witnesses-v1"},
+    "assigned_work_count": {"const": 10},
+    "assigned_member_count": {"const": 10},
+    "adjacent_member_count": {"const": 49},
+    "source_members": {"type":"array","minItems":10,"maxItems":10,"items":{"type":"object"}},
+    "adjacent_retained_member_accounting": {"type":"array","minItems":49,"maxItems":49,"items":{"type":"object"}},
+    "works": {"type":"array","minItems":10,"maxItems":10,"items":{"type":"object"}},
+    "total_line_count": {"const": 79727},
+    "omitted_line_count": {"const": 0},
+    "duplicate_line_count": {"const": 0},
+    "source_byte_reassembly": {"const": "exact UTF-8 text plus recorded per-line terminator"},
+    "candidate_status": {"const": "nonaccepted"},
+    "human_review_required": {"const": true},
+    "publication_ready": {"const": false}
+  }
+}

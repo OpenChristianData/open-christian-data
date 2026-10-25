@@ -1,0 +1,228 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "crosswire-nave-sword-v3",
+  "ticket_id": "LIB-009",
+  "work_id": "naves-topical-bible",
+  "retained_file_census": [
+    {
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdt",
+      "bytes": 1425006,
+      "sha256": "e59669ea3a796a25eaf4dfc5c87127404663e14d2b51419be9660abcb9993007",
+      "role": "compressed-textual-payload-witness",
+      "disposition": "include"
+    },
+    {
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdx",
+      "bytes": 1424,
+      "sha256": "284176765677ca3bcd2ec81771b033fb361f48f47311412d9c269c48bd0e4ba8",
+      "role": "compressed-block-index-authority",
+      "disposition": "include"
+    },
+    {
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.dat",
+      "bytes": 103980,
+      "sha256": "3b33df92ba6040053d58e8abab070ef4cb098f8e54df69dfb7779dd1d7d1fbdf",
+      "role": "dictionary-key-and-pointer-authority",
+      "disposition": "include"
+    },
+    {
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.idx",
+      "bytes": 42576,
+      "sha256": "6190cc282cf14a2fca661d0db6a3344fc88bae400bfe68162ce629c9de276787",
+      "role": "dictionary-record-order-index-authority",
+      "disposition": "include"
+    },
+    {
+      "path": "raw/naves_topical/mods.d/nave.conf",
+      "bytes": 1911,
+      "sha256": "0a52fe9e016a8900434118be0cb021deed1dfb02b7d2b829bb0e094ff92049e9",
+      "role": "module-metadata-and-rights-support",
+      "disposition": "include-as-support-not-textual-witness"
+    },
+    {
+      "path": "raw/naves_topical/Nave.zip",
+      "bytes": 1300879,
+      "sha256": "52d9b7cde04c2abb5187ae804bcb97d93c7344a1358539f50ebc178ac0c945f0",
+      "role": "acquisition-container",
+      "disposition": "include-as-container-not-second-witness"
+    },
+    {
+      "path": "raw/naves_topical/_download_nave.py",
+      "bytes": 1744,
+      "sha256": "da5a1da16e07fb9d093f6d9660a2218675e48ef5b6c23a9626637570809d9b0e",
+      "role": "local-acquisition-procedure",
+      "disposition": "exclude-from-content"
+    },
+    {
+      "path": "raw/naves_topical/format_inspection.txt",
+      "bytes": 4797,
+      "sha256": "932d0d919bb5233db89cbc701dde4e097fcbcd4cf03b0584a85dc7b6edd054bd",
+      "role": "historical-diagnostic",
+      "disposition": "exclude-from-authority-and-content"
+    }
+  ],
+  "authorities": [
+    {
+      "name": "dict-zdt",
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdt",
+      "role": "primary-source",
+      "bytes": 1425006,
+      "sha256": "e59669ea3a796a25eaf4dfc5c87127404663e14d2b51419be9660abcb9993007"
+    },
+    {
+      "name": "dict-zdx",
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdx",
+      "role": "primary-source",
+      "bytes": 1424,
+      "sha256": "284176765677ca3bcd2ec81771b033fb361f48f47311412d9c269c48bd0e4ba8"
+    },
+    {
+      "name": "dict-dat",
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.dat",
+      "role": "primary-source",
+      "bytes": 103980,
+      "sha256": "3b33df92ba6040053d58e8abab070ef4cb098f8e54df69dfb7779dd1d7d1fbdf"
+    },
+    {
+      "name": "dict-idx",
+      "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.idx",
+      "role": "primary-source",
+      "bytes": 42576,
+      "sha256": "6190cc282cf14a2fca661d0db6a3344fc88bae400bfe68162ce629c9de276787"
+    },
+    {
+      "name": "nave-conf",
+      "path": "raw/naves_topical/mods.d/nave.conf",
+      "role": "source-support-metadata-rights",
+      "bytes": 1911,
+      "sha256": "0a52fe9e016a8900434118be0cb021deed1dfb02b7d2b829bb0e094ff92049e9"
+    },
+    {
+      "name": "nave-archive",
+      "path": "raw/naves_topical/Nave.zip",
+      "role": "acquisition-container",
+      "bytes": 1300879,
+      "sha256": "52d9b7cde04c2abb5187ae804bcb97d93c7344a1358539f50ebc178ac0c945f0"
+    },
+    {
+      "name": "acquisition-procedure",
+      "path": "raw/naves_topical/_download_nave.py",
+      "role": "acquisition-evidence",
+      "bytes": 1744,
+      "sha256": "da5a1da16e07fb9d093f6d9660a2218675e48ef5b6c23a9626637570809d9b0e"
+    },
+    {
+      "name": "format-inspection",
+      "path": "raw/naves_topical/format_inspection.txt",
+      "role": "diagnostic-evidence-not-conversion-authority",
+      "bytes": 4797,
+      "sha256": "932d0d919bb5233db89cbc701dde4e097fcbcd4cf03b0584a85dc7b6edd054bd"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/naves-topical-bible/README.md",
+      "role": "source-attribution",
+      "bytes": 2146,
+      "sha256": "1c968df843f272e4194a9916d48b6db671cfc417ceb5ada7940b783257a68e27"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/naves-topical-bible/naves-topical-bible.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 7206,
+      "sha256": "5878b4af9da93881160c0d8738c2e553c7a3a1346f922d42c5a1abcbc620eafe"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/naves-topical-bible/naves-topical-bible.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 2956,
+      "sha256": "06aca5f983956d34bea10294a66fe21fc7d18650666aa6be9f69b14198e8feab"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/naves-topical-bible/naves-topical-bible.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 12596,
+      "sha256": "02ae8908c345079e6f470ec9e761da9b40d564dc1f0a8f51f73be81525ed9295"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib009-naves-topical-bible-sword-zld-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/naves_topical_bible_reconstruction.py",
+    "implementation_sha256": "4afffc283587bd604255b0a81747e5320cfefebd13c60d624cccd1ef63ab9d4a"
+  },
+  "validator": {
+    "id": "ocd-lib009-naves-topical-bible-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/naves_topical_bible_oracle.py",
+    "implementation_sha256": "3b516ff001affd5f8d49d008ab12ba60d786a6835b66c4361967ba1dea70d8fc",
+    "import_closure_sha256": "bccd58432554f4124f9a447681d7201b0fba91a9b33b15eda5a1da4e82a5dc0b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "transformation_source_set": {
+    "contract": "ocd-source-member-set-v1",
+    "members": [
+      {
+        "name": "dict-dat",
+        "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.dat",
+        "bytes": 103980,
+        "sha256": "3b33df92ba6040053d58e8abab070ef4cb098f8e54df69dfb7779dd1d7d1fbdf"
+      },
+      {
+        "name": "dict-idx",
+        "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.idx",
+        "bytes": 42576,
+        "sha256": "6190cc282cf14a2fca661d0db6a3344fc88bae400bfe68162ce629c9de276787"
+      },
+      {
+        "name": "dict-zdt",
+        "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdt",
+        "bytes": 1425006,
+        "sha256": "e59669ea3a796a25eaf4dfc5c87127404663e14d2b51419be9660abcb9993007"
+      },
+      {
+        "name": "dict-zdx",
+        "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdx",
+        "bytes": 1424,
+        "sha256": "284176765677ca3bcd2ec81771b033fb361f48f47311412d9c269c48bd0e4ba8"
+      }
+    ],
+    "sha256": "8c5cf1cc42248214ba0d9e0fda51c99925b9a06760a71dd2a33a5750e09afc6d"
+  },
+  "producer_import_closure_sha256": "3a6d7fd736147cd8f0f5e97df6bf7c5875e80a73f577513be8e8fbd39a563f03"
+}

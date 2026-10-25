@@ -1,0 +1,105 @@
+{
+  "assigned_census": {
+    "attribute_counts": {
+      "class": 2411,
+      "href": 729,
+      "id": 5372,
+      "lang": 1148,
+      "n": 1315,
+      "next": 141,
+      "osisRef": 756,
+      "parsed": 756,
+      "passage": 757,
+      "prev": 141,
+      "progress": 141,
+      "style": 259,
+      "title": 141,
+      "version": 2
+    },
+    "attributes": 14069,
+    "characters": 1906390,
+    "direct_text_bytes": 923455,
+    "elements": 6940,
+    "non_ascii_characters": 11419,
+    "notes": 586,
+    "page_breaks": 729,
+    "scripture_refs": 757,
+    "tag_counts": {
+      "div": 12,
+      "div1": 2,
+      "div2": 23,
+      "div3": 116,
+      "h1": 2,
+      "h2": 28,
+      "h3": 25,
+      "hr": 2,
+      "i": 1566,
+      "l": 28,
+      "note": 586,
+      "p": 1838,
+      "pb": 729,
+      "scripRef": 757,
+      "span": 1219,
+      "verse": 7
+    },
+    "tail_text_bytes": 999676,
+    "tail_nodes": 6358,
+    "text_nodes": 5533
+  },
+  "assigned_root_counts": {
+    "iii": 2764,
+    "iv": 4176
+  },
+  "assigned_roots": [
+    ["hodge-vol-2", "iii", "hodge-systematic-theology-vol-2"],
+    ["hodge-vol-2", "iv", "hodge-systematic-theology-vol-2"]
+  ],
+  "contract": "ocd-37c204-reconstruction-profile-v1",
+  "profile_id": "hodge-systematic-theology-vol-2-ccel-content-roots-v1",
+  "requirements": [
+    "exact-retained-member-hash-and-byte-length",
+    "complete-five-root-envelope-and-two-content-root-order",
+    "complete-source-envelope-accounting-including-header-and-excluded-roots",
+    "exact-elements-attributes-text-tails-and-source-attribute-accounting",
+    "exact-retained-electronic-header-and-local-edition-claim-boundary",
+    "source-native-line-verse-note-page-break-scripture-and-inline-coverage",
+    "one-nonaccepted-work-with-two-source-root-bindings-and-publication-not-ready"
+  ],
+  "source_envelope": {
+    "assigned_top_level_div1_ids_in_source_order": ["iii", "iv"],
+    "excluded_top_level_div1_ids": ["i", "ii", "v"],
+    "excluded_root_element_counts": {"i": 19, "ii": 958, "v": 3986},
+    "root_titles": {
+      "i": "Title",
+      "ii": "Prefatory",
+      "iii": "Part II. Anthropology",
+      "iv": "Part III. Soteriology.",
+      "v": "Indexes"
+    },
+    "source_components": {
+      "excluded_projection_roots": 3,
+      "retained_header_and_document_scaffolding_elements_outside_div1_roots": 49,
+      "top_level_div1_count": 5,
+      "top_level_div1_element_count_total": 11903
+    },
+    "top_level_div1_count": 5,
+    "top_level_div1_ids_in_order": ["i", "ii", "iii", "iv", "v"]
+  },
+  "source_member": {
+    "bytes": 2601781,
+    "key": "hodge-vol-2",
+    "path": "raw/ccel/hodge/theology2.xml",
+    "sha256": "52a43581dcb7b75a6903c89c8e2496b8d754bdbcd6fa751ecaa4f065e933d942"
+  },
+  "source_metadata": {
+    "ccel_electronic_creation_date": "2005-06-20",
+    "ccel_electronic_publisher": "Grand Rapids, MI: Christian Classics Ethereal Library",
+    "ccel_electronic_title": "Systematic Theology - Volume II",
+    "copyright_notice": "Entered according to act of Congress, in the year 1871, by Charles Scribner and Company",
+    "retained_title_page_imprint": "Wm. B. Eerdmans Publishing Co., Grand Rapids, Mich., 1940",
+    "unresolved_existing_config_claim": "New York: Scribner, Armstrong, 1872-1873; not established by the retained source evidence and not adopted"
+  },
+  "scope_boundary": "This candidate represents only the complete source-native subtrees rooted at ThML.body/div1 ids iii and iv, in retained order. The Title, Prefatory, and Indexes roots i, ii, and v remain explicitly source-accounted outside the assigned work projection. The retained electronic header is also accounted for but is not projected as a work-content root. The source's 1940 title-page imprint, separate 1871 copyright notice, and CCEL 2005 electronic creation date are distinct facts; the existing 1872-1873 original-edition claim remains unresolved and is not adopted. This scope does not assert an independently collated print witness, rights clearance, human acceptance, or publication authorization.",
+  "version": 1,
+  "work_id": "hodge-systematic-theology-vol-2"
+}

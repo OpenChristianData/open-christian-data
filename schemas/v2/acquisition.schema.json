@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/acquisition.schema.json",
+  "title": "OCD exact acquisition evidence",
+  "description": "One exact provider/source instance and the retained files and hashes that witness it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "acquisition_id", "edition_id", "provider", "url", "retained_files"],
+  "dependentRequired": {
+    "source_kind": ["source_path", "source_bytes", "source_sha256", "source_scope"],
+    "source_path": ["source_bytes", "source_sha256", "source_scope"],
+    "source_bytes": ["source_path", "source_sha256", "source_scope"],
+    "source_sha256": ["source_path", "source_bytes", "source_scope"],
+    "source_scope": ["source_path", "source_bytes", "source_sha256"]
+  },
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "acquisition_id": {"$ref": "#/$defs/identifier"},
+    "edition_id": {"$ref": "#/$defs/identifier"},
+    "provider": {"$ref": "#/$defs/non_empty"},
+    "url": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9+.-]*://\\S+$"},
+    "accessed_at": {"$ref": "#/$defs/date"},
+    "route": {"enum": ["born-digital", "ocr"]},
+    "rights": {"$ref": "#/$defs/non_empty"},
+    "source_path": {"$ref": "#/$defs/relative_reference"},
+    "source_kind": {"const": "retained-member-set", "description": "Source path/hash bind an explicit ordered member-set manifest, not a single original source file."},
+    "source_bytes": {"type": "integer", "minimum": 0},
+    "source_sha256": {"$ref": "#/$defs/sha256"},
+    "source_scope": {"$ref": "#/$defs/non_empty"},
+    "retained_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/retained_file"}
+    },
+    "source_selection": {"$ref": "#/$defs/source_selection"},
+    "warnings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/non_empty"},
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$",
+      "not": {"enum": ["unknown", "Unknown", "UNKNOWN", "null", "none", "None", "N/A", "n/a"]}
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "retained_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256", "media_type"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relative_reference"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "scope": {"$ref": "#/$defs/non_empty"},
+        "media_type": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "selected_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "native_id",
+        "title",
+        "role"
+      ],
+      "properties": {
+        "native_id": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "role": {
+          "enum": [
+            "body",
+            "back"
+          ]
+        }
+      }
+    },
+    "selection_dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "native_id",
+        "text_sha256",
+        "purpose"
+      ],
+      "properties": {
+        "native_id": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "text_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "purpose": {
+          "const": "source-credit"
+        }
+      }
+    },
+    "source_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selection_id",
+        "work_id",
+        "member_path",
+        "units",
+        "dependencies"
+      ],
+      "properties": {
+        "selection_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "work_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "member_path": {
+          "$ref": "#/$defs/relative_reference"
+        },
+        "units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/selected_unit"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/selection_dependency"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "contract": "37c-205-validation-policy-v1",
+  "policy_id": "hodge-systematic-theology-vol-3-complete-document-v1",
+  "independence": "oracle parses retained bytes and traverses source and TEI independently; it imports no converter or legacy parser",
+  "required_checks": ["exact source hash and byte length", "complete ordered five-root envelope", "every source element, attribute, direct text, tail, child order represented", "TEI P5 schema", "fresh-process byte-identical package reproduction", "reject omitted source content and stale source binding"],
+  "rights_and_acceptance": "not decided by technical validation"
+}

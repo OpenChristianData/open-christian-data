@@ -1,0 +1,220 @@
+{
+  "schema_version": "ocd-tei-extension-records-provisional-0.3",
+  "status": "provisional",
+  "extensions": [
+    {
+      "extension_id": "ext-liturgy-rubric",
+      "status": "provisional",
+      "owner": "category:liturgy",
+      "meaning": "A source-defined liturgical direction retained in the legacy p[@rend='rubric'] representation; this provisional record does not establish the preferred future ab[@type='rubric'] form.",
+      "not_meaning": "A paragraph that is merely italic, colored, or otherwise styled without liturgical meaning, or evidence that the legacy p rendition is the preferred future representation.",
+      "representation": {
+        "path": "text/body//p[@rend='rubric']",
+        "required_attributes": {
+          "rend": "rubric"
+        },
+        "optional_attributes": [
+          "xml:id",
+          "corresp"
+        ],
+        "required_children": [],
+        "order": [],
+        "controlled_values": {}
+      },
+      "scope": [
+        "category:liturgy"
+      ],
+      "real_examples": [
+        {
+          "work": "bcp-1662-retained-partial-html",
+          "edition": "ir/bcp/book-of-common-prayer.bcp-1662.tei.xml",
+          "retained_source": {
+            "identity": "bcp-1662-retained-partial-html",
+            "path": "raw/bcp-full-text/bcp-1662/daily__morning.html",
+            "location": "HTML heading: The Order for Morning Prayer, Daily Throughout the Year",
+            "sha256": "7902d0a48ace50a15688d392e3092e92cbd40525e6fd3829d89ffe69d8c791f3"
+          },
+          "fixture": {
+            "id": "bcp1662-liturgy",
+            "path": "positive/bcp1662-liturgy.tei.xml",
+            "sha256": "bbdc829c33021e36d7e0045168de6cb44f842848af7690712b14e64e59f93858"
+          },
+          "observed_structure": "The selected service excerpt contains an ordered legacy p[@rend=\"rubric\"] direction alongside spoken/service structures; preferred ab[@type=\"rubric\"] mapping remains future work."
+        }
+      ],
+      "authority_refs": [
+        "tests/fixtures/tei-conformance/manifest.json",
+        "sources/structured-text/bcp-1662/bcp-1662.source-manifest.json",
+        "plans/2026-08-31-library-pipeline-redesign/artifacts/TEI-003/05-projector-readiness-preflight.md"
+      ],
+      "validation_rule_ids": [
+        "liturgy-rubric-rend"
+      ],
+      "projection": {
+        "hf-clean-text-v2": {
+          "disposition": "unsupported-visible",
+          "reason": "The generic clean-text projector does not preserve rubric semantics.",
+          "observed_enforcement": "The current renderer emits paragraph text and ignores rend; unsupported-visible is declared but not yet enforced.",
+          "projector_readiness": "Pending TEI-004 liturgy mapping and an explicit loss receipt."
+        }
+      },
+      "independent_checks": [
+        "compare rubric wording with the bound retained service member",
+        "preserve attachment and source order",
+        "reject treating styling alone as liturgical semantics",
+        "retain the legacy p rendition while deferring preferred ab rubric mapping"
+      ],
+      "decision": {
+        "status": "provisional",
+        "reference": "TEI-003 provisional extension review",
+        "version": "0.1"
+      }
+    },
+    {
+      "extension_id": "ext-sermon-primary-reference",
+      "status": "provisional",
+      "owner": "category:sermon",
+      "meaning": "The scripture passage primarily preached on, represented as a readable quotation with its printed and normalized citation.",
+      "not_meaning": "Every scripture reference mentioned or discussed in a sermon.",
+      "representation": {
+        "path": "text/body//quote[@type='primary-reference']",
+        "required_attributes": {
+          "type": "primary-reference"
+        },
+        "optional_attributes": [
+          "xml:id",
+          "xml:lang"
+        ],
+        "required_children": [
+          "descendant::ref[@type='scripture']"
+        ],
+        "order": [
+          "quote-before-scripture-reference"
+        ],
+        "controlled_values": {}
+      },
+      "scope": [
+        "category:sermon"
+      ],
+      "real_examples": [
+        {
+          "work": "spurgeon-mtp-complete-retained-html",
+          "edition": "ir/spurgeon/spurgeon-mtp.proof-wave.tei.xml",
+          "retained_source": {
+            "identity": "spurgeon-mtp-complete-retained-html",
+            "path": "raw/spurgeon_sermons/html/1.html",
+            "location": "HTML article class=sermon; sermon 1 primary passage",
+            "sha256": "39a99f4d95ebe439d6fb232dd9d3b226039848a97fa14792d6dbf8f5698f0699"
+          },
+          "fixture": {
+            "id": "spurgeon-primary-references",
+            "path": "positive/spurgeon-primary-references.tei.xml",
+            "sha256": "24a528b397be5262640ccdd17058b314edcf76b02c4c5127fa4db57c18ae88d9"
+          },
+          "observed_structure": "The proof-wave fixture retains a primary-reference quote with a nested scripture ref; a second sermon member provides a differing real example in the same bound fixture."
+        }
+      ],
+      "authority_refs": [
+        "tests/fixtures/tei-conformance/manifest.json",
+        "sources/spurgeon-mtp/spurgeon-mtp.source-manifest.json",
+        "plans/2026-08-31-library-pipeline-redesign/artifacts/TEI-003/05-projector-readiness-preflight.md"
+      ],
+      "validation_rule_ids": [
+        "sermon-primary-reference-type",
+        "sermon-primary-reference-scripture-ref",
+        "sermon-primary-reference-order"
+      ],
+      "projection": {
+        "hf-clean-text-v2": {
+          "disposition": "unsupported-visible",
+          "reason": "The generic clean-text projector does not retain the primary-versus-mentioned reference distinction.",
+          "observed_enforcement": "The current renderer emits quote and reference text while flattening the primary-reference role.",
+          "projector_readiness": "Pending TEI-004 sermon mapping and a visible unsupported result or semantic loss receipt."
+        }
+      },
+      "independent_checks": [
+        "preserve quoted wording and printed citation",
+        "preserve the nested scripture ref and supported cRef",
+        "reject promoting an ordinary sermon mention to primary-reference"
+      ],
+      "decision": {
+        "status": "provisional",
+        "reference": "TEI-003 provisional extension review",
+        "version": "0.1"
+      }
+    },
+    {
+      "extension_id": "ext-standard-ebooks-analytical-annotation",
+      "status": "provisional",
+      "owner": "source-family:standard-ebooks",
+      "meaning": "A source-edition analytical annotation using a declared Standard Ebooks or Z3998 vocabulary.",
+      "not_meaning": "A native OCD semantic token or an undocumented free-form ana value. The fixture-bound provisional record does not admit arbitrary ana values or a new external prefix.",
+      "representation": {
+        "path": "text//*[@ana]",
+        "required_attributes": {
+          "ana": "edition-carried token"
+        },
+        "optional_attributes": [],
+        "required_children": [],
+        "order": [],
+        "controlled_values": {
+          "@ana": [
+            "se:label",
+            "se:name.publication.book",
+            "se:name.publication.poem",
+            "z3998:ordinal z3998:roman",
+            "z3998:roman"
+          ]
+        }
+      },
+      "scope": [
+        "source-family:standard-ebooks"
+      ],
+      "real_examples": [
+        {
+          "work": "city-of-god.reconstruction-profile.json#standard_scope",
+          "edition": "ir/augustine/city-of-god.standard-ebooks.tei.xml",
+          "retained_source": {
+            "identity": "city-of-god.reconstruction-profile.json#standard_scope",
+            "path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith/src/epub/text/book-1.xhtml",
+            "location": "XHTML member book-1.xhtml; selected book-1 head, argument, and annotated paragraph",
+            "sha256": "73b94c7ba5e46395c30102ec2fa432e7034b01ce46fcd0c15f1bb9fd50e05254"
+          },
+          "fixture": {
+            "id": "augustine-standard-ebooks-annotations",
+            "path": "positive/augustine-standard-ebooks-annotations.tei.xml",
+            "sha256": "5ca5cf1251a821874456658b7c9fd222111f6dad7e3cb5f95996711bb37d4eb3"
+          },
+          "observed_structure": "The annotated excerpt retains se:* and z3998:* ana values on TEI elements, including annotation tokens on the selected book-1 material."
+        }
+      ],
+      "authority_refs": [
+        "tests/fixtures/tei-conformance/manifest.json",
+        "sources/city-of-god/city-of-god.reconstruction-profile.json",
+        "plans/2026-08-31-library-pipeline-redesign/artifacts/TEI-003/05-projector-readiness-preflight.md"
+      ],
+      "validation_rule_ids": [
+        "standard-ebooks-annotation-ana",
+        "se-annotation-source-bound-values"
+      ],
+      "projection": {
+        "hf-clean-text-v2": {
+          "disposition": "unsupported-visible",
+          "reason": "The current generic renderer does not preserve annotation-level semantics or emit an annotation loss receipt.",
+          "observed_enforcement": "The current renderer emits text and ignores ana values; the declared unsupported-visible behavior is not yet enforced.",
+          "projector_readiness": "Pending TEI-004 annotation mapping and annotation-level accounting."
+        }
+      },
+      "independent_checks": [
+        "preserve exact se:* and z3998:* annotation tokens",
+        "bind the external namespace evidence to the retained Standard Ebooks members",
+        "reject silent relabeling as native OCD vocabulary"
+      ],
+      "decision": {
+        "status": "provisional",
+        "reference": "TEI-003 provisional extension review",
+        "version": "0.1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Smith's Bible Dictionary</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Fixture-only extract for PIPE-014A review.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="retained-source">
+          <idno type="work_id">fixture-smiths-bible-dictionary</idno>
+          <idno type="textual_form_id">fixture-smiths-bible-dictionary-en</idno>
+          <idno type="edition_id">fixture-smiths-1863</idno>
+          <idno type="source_sha256">sha256:ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d</idno>
+          <idno type="retained_sha256">sha256:ac91b1c3c359690c2953bd94b9d3dcb34f012a69d734179e82be5f07866cbe0d</idno>
+          <ptr target="https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Smith's Bible Dictionary.jsonl" />
+          <note type="source-path">raw/bible_dictionaries/smiths.jsonl</note>
+          <note type="source-scope">Selected source terms A, Aaron; all other retained JSONL entries are outside this bounded fixture.</note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="dictionary-entry" n="1" xml:id="fixture-smiths-1863-line-000001">
+        <head type="headword">A</head>
+        <p n="1">
+          <ref type="cross-reference" target="Alpha">See [1]Alpha</ref>
+        </p>
+      </div>
+      <div type="dictionary-entry" n="3" xml:id="fixture-smiths-1863-line-000003">
+        <head type="headword">Aaron</head>
+        <p n="1">(a teacher, or lofty), the son of Amram and Jochebed, and the older brother of Moses and Miriam. (Numbers 26:59; 33:39) (B.C. 1573.) He was a Levite, and is first mentioned in (Exodus 4:14) He was appointed by Jehovah to be the interpreter, (Exodus 4:16) of his brother Moses, who was "slow of speech;" and accordingly he was not only the organ of communication with the Israelites and with Pharaoh, (Exodus 4:30; 7:2) but also the actual instrument of working most of the miracles of the Exodus. (Exodus 7:19) etc. On the way to Mount Sinai, during the battle with Amalek, Aaron with Hur stayed up the weary hands of Moses when they were lifted up for the victory of Israel. (Exodus 17:9) He is mentioned as dependent upon his brother and deriving all his authority from him. Left, on Moses' departure into Sinai, to guide the people, Aaron is tried for a moment on his own responsibility, and he fails from a weak inability to withstand the demand of the people for visible "gods to go before them," by making an image of Jehovah, in the well-known form of Egyptian idolatry (Apis or Mnevis). He repented of his sin, and Moses gained forgiveness for him. (9:20) Aaron was not consecrated by Moses to the new office of the high priesthood. (Exodus 29:9) From this time the history of Aaron is almost entirely that of the priesthood, and its chief feature is the great rebellion of Korah and the Levites. Leaning, as he seems to have done, wholly on Moses, it is not strange that he should have shared his sin at Meribah and its punishment. <ref type="cross-reference" target="Moses">See [3]Moses</ref>. (Numbers 20:10-12) Aaron's death seems to have followed very speedily. It took place on Mount Hor, after the transference of his robes and office to Eleazar. (Numbers 20:28) This mount is still called the "Mountain of Aaron." <ref type="cross-reference" target="Hor">See [4]Hor</ref>. The wife of Aaron was Elisheba, (Exodus 6:23) and the two sons who survived him, Eleazar and Ithamar. The high priesthood descended to the former, and to his descendants until the time of Eli, who, although of the house of Ithamar, received the high priesthood and transmitted it to his children; with them it continued till the accession of Solomon, who took it from Abiathar and restored it to Zadok (of the house of Eleazar). <ref type="cross-reference" target="Abiathar">See [5]Abiathar</ref>.</p>
+      </div>
+    </body>
+  </text>
+</TEI>

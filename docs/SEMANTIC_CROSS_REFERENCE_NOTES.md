@@ -1,5 +1,7 @@
 # Open Christian Data -- Semantic Cross-Reference and Specialist LLM Notes
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Date:** 2026-03-27  
 **Purpose:** Capture ML-first schema and architecture ideas for semantically cross-referencing the corpus and eventually training or grounding a specialist Christian LLM.
 

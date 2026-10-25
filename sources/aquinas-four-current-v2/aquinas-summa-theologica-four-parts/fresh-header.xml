@@ -1,0 +1,79 @@
+<teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Summa Theologica: Four Corrected English Components</title>
+        <author>Thomas Aquinas</author>
+        <respStmt>
+          <resp>translated by</resp>
+          <name>Fathers of the English Dominican Province</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Open Christian Data</publisher>
+        <date when="2026-08-31">2026</date>
+        <availability status="restricted">
+          <licence target="https://www.gutenberg.org/policy/license.html">Retained provider USA public-domain statements and Project Gutenberg redistribution/trademark terms are distinct evidence. Technical preparation, including this partial four-component scope, establishes neither independent rights clearance nor public publication authorization.</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl xml:id="source-pg17611">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part I (Prima Pars)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">17611</idno>
+          </bibl>
+          <bibl xml:id="source-pg17897">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part I-II (Pars Prima Secundae)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">17897</idno>
+          </bibl>
+          <bibl xml:id="source-pg18755">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part II-II (Secunda Secundae)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">18755</idno>
+          </bibl>
+          <bibl xml:id="source-pg19950">
+            <author>Thomas Aquinas</author>
+            <title>Summa Theologica, Part III (Tertia Pars)</title>
+            <respStmt>
+              <resp>translated by</resp>
+              <name>Fathers of the English Dominican Province</name>
+            </respStmt>
+            <publisher>Benziger Brothers</publisher>
+            <pubPlace>New York</pubPlace>
+            <idno type="Project-Gutenberg">19950</idno>
+          </bibl>
+        <bibl><note type="reconstruction-analysis">Generated reconstruction analysis from the historical source-specific mapper; not authored-source taxonomy. Original IDs and labels retained for body analysis links. <list xml:id="summa-analysis-categories"><item xml:id="objection">Source paragraph is an objection.</item><item xml:id="sed-contra">Source paragraph is the counter-statement.</item><item xml:id="respondeo">Source paragraph is the principal answer.</item><item xml:id="reply">Source paragraph is a reply to an objection.</item><item xml:id="inquiry">Source paragraph is a numbered question inquiry.</item><item xml:id="source-article-heading-mislabeled">Source marks an article start as a duplicate question heading.</item><item xml:id="electronic-editorial-insertion">Material is an electronic-edition insertion between source questions.</item><item xml:id="source-question-heading-omitted">Source omits the question-number heading; boundary is recovered from the retained sequence and article labels.</item><item xml:id="source-article-heading-omitted">Source omits a one-article heading; boundary is recovered from the retained question structure.</item><item xml:id="source-article-number-omitted">Source article label omits its number.</item><item xml:id="source-article-label-mismatch">Literal source article number conflicts with semantic position.</item><item xml:id="source-question-label-mismatch">Literal source question number conflicts with the current question.</item></list></note></bibl></sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>Every non-wrapper retained HTML content unit is projected exactly once and bound by source ID. Project Gutenberg header and license wrappers are retained separately and excluded from the candidate text. No print pagination or omitted formula is reconstructed.</p>
+        <p>The electronic edition documents added dedication, contents, prologues, question and article numbering; Latin-referenced and transcription corrections; absent print pagination and headers; omitted repetitive article formula; normalized Bible citation numerals; inline bracketed print footnotes; transliterated Greek; and altered emphasis and quotation conventions.</p>
+      </projectDesc>
+      </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="en">English</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-31">Created deterministic, nonaccepted ticket-09 TEI candidate.</change>
+    </revisionDesc>
+  </teiHeader>

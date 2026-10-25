@@ -1,0 +1,124 @@
+[
+  {
+    "closure_inputs": [
+      "build/tei/npnf105_work_oracle.py",
+      "build/tei/npnf105_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf105",
+    "implementation_EOL_proofs": [],
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-grace-and-free-will.npnf105.source-manifest.json",
+    "original": "sources/structured-text/augustine-npnf105-works/augustine-grace-and-free-will/source-manifest.json",
+    "original_sha256": "8851835137d858d2f1987359e050a6a0a0d257c7d452683001459a9c04386c8a",
+    "retained_package": "D:/Library/Open Christian Data/candidate-reviews/augustine-npnf105-works-20260927/augustine-grace-and-free-will/package",
+    "retained_sha256": "8f9d9ede3de57507630fd60b66dce3b3ceb95d7ad42eedaba864ff665637ff35",
+    "retained_source_manifest_sha256": "b38164f9f9b96f73d0e8c672ef114b9efc2a4060331ed3fcef6b156164575fd0",
+    "runtime_changes": {
+      "validator.import_closure_sha256": "0188c4cfc4a9ec9a25c7ddf1c70f878853e8b75e4dc2c1e3f06888f6d137eb99",
+      "authorities.6.sha256": "46c5b9099afc5fb3e5b4da00d37b01468e597286ea87c37ff7a198776ae03db5"
+    },
+    "runtime_closure_sha256": "0188c4cfc4a9ec9a25c7ddf1c70f878853e8b75e4dc2c1e3f06888f6d137eb99",
+    "work_id": "augustine-grace-and-free-will",
+    "historical_work": {
+      "path": "library/works/augustine-grace-and-free-will/work.json",
+      "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-grace-and-free-will-original-bound-work.json",
+      "sha256": "541513023724d223085806b866a2f6949ee9ab6b23adb12b10aaa3803e09ca85",
+      "bytes": 1061
+    }
+  },
+  {
+    "closure_inputs": [
+      "build/tei/npnf105_work_oracle.py",
+      "build/tei/npnf105_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf105",
+    "implementation_EOL_proofs": [],
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-proceedings-of-pelagius.npnf105.source-manifest.json",
+    "original": "sources/structured-text/augustine-npnf105-works/augustine-proceedings-of-pelagius/source-manifest.json",
+    "original_sha256": "742698ddb4cc96630f8007428934fa157be8326921cadbe31cfbb2c2f1617108",
+    "retained_package": "D:/Library/Open Christian Data/candidate-reviews/augustine-npnf105-works-20260927/augustine-proceedings-of-pelagius/package",
+    "retained_sha256": "d683496f259377f0e7f84c83f3d445f765c16c169f33bc4795a081b87f28a704",
+    "retained_source_manifest_sha256": "d634ad40c8500dabc4af1c30360f7416bd15ec6a4d8a781791e371081892263f",
+    "runtime_changes": {
+      "validator.import_closure_sha256": "0188c4cfc4a9ec9a25c7ddf1c70f878853e8b75e4dc2c1e3f06888f6d137eb99",
+      "authorities.6.sha256": "46c5b9099afc5fb3e5b4da00d37b01468e597286ea87c37ff7a198776ae03db5"
+    },
+    "runtime_closure_sha256": "0188c4cfc4a9ec9a25c7ddf1c70f878853e8b75e4dc2c1e3f06888f6d137eb99",
+    "work_id": "augustine-proceedings-of-pelagius",
+    "historical_work": {
+      "path": "library/works/augustine-proceedings-of-pelagius/work.json",
+      "fixture": "tests/fixtures/reconstruction-runtime/authorities/augustine-proceedings-of-pelagius-original-bound-work.json",
+      "sha256": "d007138472e49a6cde9486080d2f53ef78a503a9f4452f4e1dda29d7680294e7",
+      "bytes": 1089
+    }
+  },
+  {
+    "closure_inputs": [
+      "build/tei/npnf206_work_oracle.py",
+      "build/tei/npnf2_lib048_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf206",
+    "implementation_EOL_proofs": [
+      {
+        "original_bytes": 6054,
+        "original_sha256": "38f92a40f66f5b86acfa7b44307069e9d234441a4f7ef08aaf7363a2956b0e52",
+        "path": "build/tei/npnf206_work_reconstruction.py",
+        "runtime_bytes": 6053,
+        "runtime_sha256": "08e356037864662c2faabbbe5886cd71909a7cfd4fc67038ba30a0b162a1f727"
+      },
+      {
+        "original_bytes": 8490,
+        "original_sha256": "7d569f862011a19b1661b64d9eca3188f486dbd09b87739f6b53027fec69b1ab",
+        "path": "build/tei/npnf206_work_oracle.py",
+        "runtime_bytes": 8489,
+        "runtime_sha256": "56995c740fc4396b9e5d56926ffd1a80c6cce7ded5fb34929ea919ce20ac4916"
+      }
+    ],
+    "manifest": "tests/fixtures/reconstruction-runtime/jerome-life-of-paulus.npnf206.source-manifest.json",
+    "original": "sources/structured-text/jerome-npnf206-works/jerome-life-of-paulus/source-manifest.json",
+    "original_sha256": "f19a832e23b9da69fef00ec2d5705093a6f3a053dd952afc648ed3b27054c4bf",
+    "retained_package": "D:/Library/Open Christian Data/candidate-reviews/jerome-npnf206-treatises-20260927/jerome-life-of-paulus/package",
+    "retained_sha256": "0bb16713cecb57e177e6066ca904a59d453add883e9f34cdd12abb3a890a61a5",
+    "retained_source_manifest_sha256": "71f11d647cf03e6f4f89f70304fe69c98f797380d442a4b6c6f05bca27a6b0b6",
+    "runtime_changes": {
+      "converter.implementation_sha256": "08e356037864662c2faabbbe5886cd71909a7cfd4fc67038ba30a0b162a1f727",
+      "validator.implementation_sha256": "56995c740fc4396b9e5d56926ffd1a80c6cce7ded5fb34929ea919ce20ac4916",
+      "validator.import_closure_sha256": "5b4cd274a8976e5cbfd78558c263a6b3a7cc907553aa88e396fca1cb29857f0a"
+    },
+    "runtime_closure_sha256": "5b4cd274a8976e5cbfd78558c263a6b3a7cc907553aa88e396fca1cb29857f0a",
+    "work_id": "jerome-life-of-paulus",
+    "historical_work": {
+      "path": "library/works/jerome-life-of-paulus/work.json",
+      "fixture": "tests/fixtures/reconstruction-runtime/authorities/jerome-life-of-paulus-original-bound-work.json",
+      "sha256": "b8f101aa685b159e31f72244541ea9d7cda7e9812bde7e0dbab6e0e48e718ead",
+      "bytes": 1068
+    }
+  },
+  {
+    "aggregate_original_authority": {
+      "bytes": 7367,
+      "name": "aggregate-source-manifest",
+      "path": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041-successor-20260915.source-manifest.json",
+      "role": "verified-aggregate-evidence",
+      "sha256": "901d1cfca985e3966f417337244a0d7b96b1d9c37273c72d3d88657462329e7e"
+    },
+    "closure_inputs": [
+      "build/tei/npnf113_work_oracle.py",
+      "build/tei/npnf113_lib041_oracle.py",
+      "ocd_kernel/reconstruction/contract.py"
+    ],
+    "family": "npnf113",
+    "manifest": "tests/fixtures/reconstruction-runtime/chrysostom-commentary-on-galatians.npnf113.source-manifest.json",
+    "original": "sources/structured-text/chrysostom-npnf113-lib041/work-bindings/chrysostom-commentary-on-galatians/source-manifest.json",
+    "original_sha256": "fe7f2efc1a9336bd6b2d46ac28f2a906f4cd20f0a90f40d97c34fdfc22c5932f",
+    "runtime_aggregate": "tests/fixtures/reconstruction-runtime/npnf113-lib041.source-manifest.json",
+    "runtime_aggregate_sha256": "a8c64db096c6c59c8b71e8e978d8a3c3acc4903e73ad964d091f8508e5a1960b",
+    "runtime_changes": {
+      "validator.import_closure_sha256": "3529fa88d55db109002304c0745709fc2c186c6fea29575e97823338a6cbc189"
+    },
+    "runtime_closure_sha256": "3529fa88d55db109002304c0745709fc2c186c6fea29575e97823338a6cbc189",
+    "work_id": "chrysostom-commentary-on-galatians"
+  }
+]

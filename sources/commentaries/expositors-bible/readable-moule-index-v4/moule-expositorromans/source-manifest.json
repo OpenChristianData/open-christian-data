@@ -1,0 +1,75 @@
+{
+  "authorities": [
+    {
+      "bytes": 1059339,
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/moule_expositorromans.xml",
+      "role": "primary-source",
+      "sha256": "a6b919c200f4702fae4e3cb5f687676a503728233f5eb6c1a9468f835a533433"
+    },
+    {
+      "bytes": 706,
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-moule-index-v4/moule-expositorromans/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "3c8cbe642c12916b9e574ed33ce872aeef12eb30094dc5a9d3a4c8980a4f9c17"
+    },
+    {
+      "bytes": 1802,
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-moule-index-v4/moule-expositorromans/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "05b155a0da44cae5b2d70a699fc636b7c8e04cedf9cfc0e1993a01cb94913d1b"
+    },
+    {
+      "bytes": 937,
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-moule-index-v4/moule-expositorromans/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "dda3b925600eb904e90e7d89a4c9e990ac3ad275a7083eff1c83ed3b09147f88"
+    },
+    {
+      "bytes": 1694,
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-moule-index-v4/moule-expositorromans/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "62eaea51367a0ac6e34149194ee27f28de7cd85f44c7152da341ac7b32db8b6e"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-expositors-lib034-readable-moule-index-to-tei",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_moule_index_v4.py",
+    "implementation_sha256": "bf51a24e8ba59c89a3991235891188173c033010982377a19d7f2630bce2ebb9",
+    "version": "4"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ccel-expositors-lib034-readable-moule-index-moule-expositorromans-v4",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-expositors-lib034-readable-moule-index-independent-oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_moule_index_v4_oracle.py",
+    "implementation_sha256": "fa74a4d8ea5fe4596dd1c1b510f51168af5e44e2be97e9f968692e59a4bdef3b",
+    "import_closure_sha256": "fa74a4d8ea5fe4596dd1c1b510f51168af5e44e2be97e9f968692e59a4bdef3b",
+    "version": "4"
+  },
+  "work_id": "expositors-bible--h-c-g-moule"
+}

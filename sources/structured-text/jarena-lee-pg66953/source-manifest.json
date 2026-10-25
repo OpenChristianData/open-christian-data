@@ -1,0 +1,138 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "jarena-lee-pg66953-current-extracted-html",
+  "work_id": "jarena-lee-religious-experience-and-journal",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "scope": {
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "title": "Religious Experience and Journal of Mrs. Jarena Lee",
+    "source_url": "https://www.gutenberg.org/ebooks/66953",
+    "candidate_status": "nonaccepted",
+    "represented_body_elements": 823,
+    "flattened_structural_wrappers": 0,
+    "unrepresented_body_elements": 0,
+    "package_cover_role": "unreferenced support",
+    "body_image_occurrences": 3,
+    "body_image_support_members": 2
+  },
+  "source_bundle": {
+    "members": 1,
+    "bytes": 324650,
+    "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+  },
+  "source_members": [
+    {
+      "name": "pg66953-images.html",
+      "logical_name": "pg66953-images.html",
+      "path": "raw/gutenberg/66953/html/pg66953-images.html",
+      "order": 1,
+      "bytes": 324650,
+      "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+    }
+  ],
+  "authorities": [
+    {
+      "name": "retained-source",
+      "path": "raw/gutenberg/66953/html/pg66953-images.html",
+      "role": "primary-source",
+      "bytes": 324650,
+      "sha256": "b12a31c4f8d7b08e10b6a30527cf754d40c7bb798f086761d5e8b1e2c73f61a2"
+    },
+    {
+      "name": "retained-package",
+      "path": "raw/gutenberg/66953/pg66953-h.zip",
+      "role": "supporting-package",
+      "bytes": 299881,
+      "sha256": "378b882a4f2c88a3b5c64121bee030c99a7f27e50f24b4b56be5034f4e17245e"
+    },
+    {
+      "name": "retained-cover",
+      "path": "raw/gutenberg/66953/html/images/cover.jpg",
+      "role": "unreferenced-support",
+      "bytes": 119400,
+      "sha256": "9bd8876cb1e861f62f8d37b87ca9f5fa249b01a9c23bc1de450b4a221be3bfcd"
+    },
+    {
+      "name": "retained-frontispiece",
+      "path": "raw/gutenberg/66953/html/images/frontispiece.jpg",
+      "role": "referenced-body-image",
+      "bytes": 63540,
+      "sha256": "f2545fbdee8e4cd9e6898293e2cce68d382723e965ffa4617714c77b5d48c2ed"
+    },
+    {
+      "name": "retained-title-detail",
+      "path": "raw/gutenberg/66953/html/images/titlepage-detail.jpg",
+      "role": "referenced-body-image",
+      "bytes": 2695,
+      "sha256": "00d81211099790e854dfb69b6f2c9a1ebd6950fd7725d5a8d3d6372e085747f0"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/jarena-lee-pg66953/profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1260,
+      "sha256": "5c37e4cb11e22853551328f87f401854fa505f5c4b74a757ac0f0288ff7e6364"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/jarena-lee-pg66953/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 971,
+      "sha256": "976b8ed2ecb52a99da696aa3b8ecb231c88a33d1f6a77c3501a5e495fb73b1aa"
+    },
+    {
+      "name": "source-readme",
+      "path": "sources/structured-text/jarena-lee-pg66953/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 1475,
+      "sha256": "ce7f6a6bda7ae6a3a23b11e05ace7568d627ec29ab519e5f340e225f0ed10ef0"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "producer-implementation",
+      "path": "build/tei/jarena_lee_pg66953_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "bytes": 11179,
+      "sha256": "d0c6e69f2480633a7d0c6f6cda8affc24d3294d973db994d065708e213fb60a3"
+    },
+    {
+      "name": "oracle-implementation",
+      "path": "build/tei/jarena_lee_pg66953_oracle.py",
+      "role": "supporting-validator-implementation",
+      "bytes": 12488,
+      "sha256": "00721cc925e9408cfbf7a4ee2331463f573c3f819e9eefb47083c4ab74609ae3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-jarena-lee-pg66953-extracted-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/jarena_lee_pg66953_reconstruction.py",
+    "implementation_sha256": "d0c6e69f2480633a7d0c6f6cda8affc24d3294d973db994d065708e213fb60a3"
+  },
+  "validator": {
+    "id": "ocd-jarena-lee-pg66953-independent-html-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/jarena_lee_pg66953_oracle.py",
+    "implementation_sha256": "00721cc925e9408cfbf7a4ee2331463f573c3f819e9eefb47083c4ab74609ae3",
+    "import_closure_sha256": "63bb9ed95c882cc11951acaf3139441acc5ad54370bc172f22f54a4e05d340ab"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

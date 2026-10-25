@@ -1,0 +1,134 @@
+{
+  "authorities": [
+    {
+      "bytes": 87,
+      "name": "work-identity",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-greatest-thing/config.json",
+      "role": "work-identity",
+      "sha256": "733ea15d5d068bf9e2f6f8bc896c2eab81f02d6720d28a4d19576349290f0b6a"
+    },
+    {
+      "bytes":13196,
+      "name": "ticket-scope",
+      "path": "plans/2026-08-31-sample-first-library-verification/issues/37c-135-drummond-greatest-thing.md",
+      "role": "ticket-scope",
+      "sha256": "678560f22084ba1fd220e2ebe30ae559d674d9e221f792700e1f8652387fd754"
+    },
+    {
+      "bytes": 204970,
+      "name": "primary-source",
+      "path": "raw/gutenberg/pg16739.txt",
+      "role": "primary-source",
+      "sha256": "12f442db074bfd81db981dfb7c423120e830feb2019b2c0db253692e23624048"
+    },
+    {
+      "bytes": 1658,
+      "name": "source-local-readme",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-greatest-thing/37c-135.README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "4e593265c9186d2226f90c08dacc9a26829987454c45dba9e1c1c6305f54fbbb"
+    },
+    {
+      "bytes": 5409,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-greatest-thing/37c-135.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "fd0495469befddb4c3aa5cac17b687fcd0149956ea98f5de31390c8144be6fd7"
+    },
+    {
+      "bytes": 2355,
+      "name": "validation-policy",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-greatest-thing/37c-135.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "ee5c2ddc231aa450d60ad1147c87bacd9de23e70e2cd2fc1d8a65514b2ea615d"
+    },
+    {
+      "bytes": 5722,
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/lib071-gutenberg-evangelical/work-bindings/drummond-greatest-thing/37c-135.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "sha256": "715fc73ce7261457d58c075f4d463d6a4e19b383e62283419d4e099e8d1de52f"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2202,
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "bytes": 2359,
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 19425,
+      "name": "converter-implementation",
+      "path": "build/tei/drummond_greatest_thing_37c135_reconstruction.py",
+      "role": "source-converter-implementation",
+      "sha256": "201a3a7a76a98e91a730724057f0895aeae857870fbc992535033fe5fa33be7a"
+    },
+    {
+      "bytes": 65181,
+      "name": "base-converter-implementation",
+      "path": "build/tei/gutenberg_evangelical_lib071_selected_reconstruction.py",
+      "role": "base-converter-dependency",
+      "sha256": "2940b4339b118a7f77fc546c3e9fe884a5f0d9754d0525356de0ed1a2b2b899a"
+    },
+    {
+      "bytes": 35597,
+      "name": "oracle-implementation",
+      "path": "build/tei/drummond_greatest_thing_37c135_oracle.py",
+      "role": "independent-validator-implementation",
+      "sha256": "e6013cb9b8b3eeded97dcee0afcb4852cc7f6cf52d125555107268933bfae28b"
+    },
+    {
+      "bytes": 105647,
+      "name": "base-oracle-implementation",
+      "path": "build/tei/gutenberg_proofread_selected_oracle.py",
+      "role": "base-oracle-dependency",
+      "sha256": "b42e48bef11f21cabafacb153fd3adb187874bd82130b57b2e1a855283bbad2e"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-37c-135-drummond-source-underscore-to-tei",
+    "implementation_path": "build/tei/drummond_greatest_thing_37c135_reconstruction.py",
+    "implementation_sha256": "201a3a7a76a98e91a730724057f0895aeae857870fbc992535033fe5fa33be7a",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "retained_source_path": "raw/gutenberg/pg16739.txt",
+  "source_id": "gutenberg-37c-135-pg16739",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "ticket_id": "37c-135",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-37c-135-drummond-source-underscore-independent-oracle",
+    "implementation_path": "build/tei/drummond_greatest_thing_37c135_oracle.py",
+    "implementation_sha256": "e6013cb9b8b3eeded97dcee0afcb4852cc7f6cf52d125555107268933bfae28b",
+    "import_closure_sha256": "e39a1ea333a1f55a88f0997719b3b4e5d939c1c8080ade88be2542fc237f07ff",
+    "version": "1"
+  },
+  "work_id": "drummond-greatest-thing"
+}

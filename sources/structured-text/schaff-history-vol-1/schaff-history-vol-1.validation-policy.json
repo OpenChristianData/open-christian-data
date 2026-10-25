@@ -1,0 +1,161 @@
+{
+  "contract": "ocd-schaff-history-vol-1-validation-policy-v1",
+  "policy_id": "schaff-history-vol-1-independent-policy-v1",
+  "ticket_id": "LIB-058",
+  "work_id": "schaff-history-vol-1",
+  "source_sha256": "0a2a7cc56e2d00c791eeaacd5516a292a855426c3a8ceb8d5eeef6eeb49e3d09",
+  "profile_id": "schaff-history-vol-1-retained-thml-v1",
+  "require_exact_source_member": true,
+  "require_complete_document": true,
+  "require_complete_source_tree_mapping": true,
+  "require_source_order_and_parent_ordinals": true,
+  "require_text_and_tail_identity": true,
+  "require_original_attribute_inventory": true,
+  "require_zero_unaccounted_carriers": true,
+  "six_division_and_heading_envelope": {
+    "division_tags": [
+      "div1",
+      "div2",
+      "div3",
+      "div4",
+      "div5",
+      "div6"
+    ],
+    "heading_tags": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6"
+    ],
+    "include_bare_div_count": true,
+    "expected_divisions": {
+      "div": 16,
+      "div1": 2,
+      "div2": 25,
+      "div3": 102,
+      "div4": 0,
+      "div5": 0,
+      "div6": 0
+    },
+    "expected_headings": {
+      "h1": 1,
+      "h2": 8,
+      "h3": 0,
+      "h4": 1,
+      "h5": 0,
+      "h6": 1
+    },
+    "expected_body_div1_ids_in_order": [
+      "i",
+      "ii"
+    ],
+    "expected_chapter_count": 12,
+    "expected_index_division_count": 8,
+    "reject_division_or_heading_count_drift": true
+  },
+  "xml_safety": {
+    "load_dtd": false,
+    "resolve_entities": false,
+    "no_network": true,
+    "recover": false,
+    "reject_candidate_doctype_or_entity_declaration": true
+  },
+  "tei": {
+    "schema_authority": "tei-p5-xsd",
+    "schema_validator": "build.lib.tei_xsd.compiled_tei_schema",
+    "required_root": "{http://www.tei-c.org/ns/1.0}TEI",
+    "source_mapping": {
+      "container": "/TEI/standOff/list[@type='source-projection']",
+      "record_selector": "item",
+      "key_attribute": "n",
+      "content_reference_attribute": "corresp",
+      "content_reference_target": "mapped source element @xml:id",
+      "record_encoding": "strict JSON object text",
+      "record_fields": [
+        "source_key",
+        "source_element",
+        "source_attributes",
+        "source_parent_key",
+        "source_ordinal"
+      ]
+    },
+    "source_tag_projection": {
+      "div": "div",
+      "div1": "div",
+      "div2": "div",
+      "div3": "div",
+      "div4": "div",
+      "div5": "div",
+      "div6": "div",
+      "h1": "head",
+      "h2": "head",
+      "h3": "head",
+      "h4": "head",
+      "h5": "head",
+      "h6": "head",
+      "p": "p",
+      "note": "note",
+      "i": "hi",
+      "br": "lb",
+      "scripRef": "ref",
+      "a": "ref",
+      "span": "seg",
+      "verse": "lg",
+      "index": "index",
+      "l": "l",
+      "ul": "list",
+      "li": "item",
+      "insertIndex": "anchor",
+      "attr": "p",
+      "ThML.body": "body"
+    },
+    "heading_projection": {
+      "leading_direct_child_of_division": "head",
+      "other_positions": "ab",
+      "semantic_type": "source-hN",
+      "source_identity": "The original heading tag, attributes, parent, and ordinal remain exact in the source-projection standOff record."
+    },
+    "source_attribute_normalization": {
+      "division_subtype": "Whitespace runs become hyphens in TEI @subtype; the original source @type remains exact in the standOff source_attributes field."
+    },
+    "schema_order_wrappers": {
+      "source_parent_tags": [
+        "div",
+        "div1",
+        "div2",
+        "div3",
+        "div4",
+        "div5",
+        "div6"
+      ],
+      "trigger": "A non-division source child follows the first direct division child.",
+      "tei_element": "div",
+      "tei_type": "source-order-wrapper",
+      "content": "A maximal contiguous run of non-division source siblings, ending before the next source division.",
+      "source_relationship_evidence": "standOff source_parent_key and source_ordinal remain exact; wrappers add no source text."
+    },
+    "all_other_source_elements": "seg"
+  },
+  "rights_policy": "The retained DC.Rights element states Public Domain; preserve that statement as source evidence only. It does not establish a human rights decision, worldwide rights clearance, or publication authorization.",
+  "prohibited_authorities": [
+    "sources/structured-text/schaff-history-vol-1/config.json",
+    "data/",
+    "ir/"
+  ],
+  "forbidden_import_prefixes": [
+    "build.tei.schaff_history_vol_1_reconstruction"
+  ],
+  "oracle_import_closure_paths": [
+    "build/tei/schaff_history_vol_1_oracle.py",
+    "ocd_kernel/reconstruction/contract.py",
+    "ocd_kernel/reconstruction/verifier.py",
+    "build/lib/tei_xsd.py"
+  ],
+  "work_boundary": {
+    "primary_root": "/ThML/ThML.body/div1[@id='i']",
+    "integral_support_root": "/ThML/ThML.body/div1[@id='ii']",
+    "selector": "/ThML/ThML.body/*"
+  }
+}

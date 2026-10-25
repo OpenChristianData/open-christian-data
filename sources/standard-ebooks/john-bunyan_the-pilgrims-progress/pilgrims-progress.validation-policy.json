@@ -1,0 +1,11 @@
+{
+  "contract":"ocd-pilgrims-progress-validation-policy-v1",
+  "policy_id":"pilgrims-progress-complete-source-to-tei-v1",
+  "version":1,
+  "candidate_status":"nonaccepted",
+  "required_member_names":["manifest.json","content.tei.xml","source-accountability.json","provenance.json","unresolved.jsonl","README.source.md"],
+  "required_counts":{"source_members":26,"source_bytes":6028743,"xml_members":19,"non_xml_members":7,"xml_observations":31735,"represented_observations":30783,"evidence_only_observations":952,"elements":12091,"attributes":9241,"texts":10403,"sections":11,"note_pairs":1010,"lists":2,"list_items":1026,"verse_groups":95,"stanzas":171,"verse_lines":1045,"abbr_eoc_renditions":14,"toc_links":11,"landmarks":2,"image_borne_strings":18,"cite_occurrences":771,"distinct_cite_strings":156},
+  "required_unresolved_ids":["bunyan-edition-metadata-conflicts","bunyan-rights-jurisdiction","bunyan-note-provenance","bunyan-human-acceptance"],
+  "forbidden_import_prefixes":["build.tei.pilgrims_progress_reconstruction","build.tei.se_to_tei","build.tei.census","build.reconstruction","build.parsers.standard_ebooks","ocd_kernel.reconstruction.case_declaration","ocd_kernel.reconstruction.persistence","ocd_kernel.reconstruction.wave"],
+  "checks":["actual-clean-git-commit-tree-tracked-member-set","opf-spine-and-matter-order","complete-xml-observation-accounting","all-non-xml-members-dispositioned","exact-note-body-reference-backlink-label-attachments","list-structure","exact-poetry-group-stanza-line-indentation-placement","exact-inline-language-carrier-occurrence-attachments","exact-image-string-and-toc-landmark-location-value-order","exact-cite-occurrence-location-value-and-156-distinct-inventory","exact-retained-metadata-conflicts-and-rights-separated","tei-p5-xsd","fresh-process-six-member-determinism","recursive-producer-independent-import-closure-and-runtime-paths","candidate-separated-from-human-acceptance"]
+}

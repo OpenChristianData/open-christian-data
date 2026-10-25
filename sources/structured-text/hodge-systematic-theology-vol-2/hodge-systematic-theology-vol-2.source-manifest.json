@@ -1,0 +1,97 @@
+{
+  "authorities": [
+    {
+      "bytes": 2601781,
+      "name": "retained-hodge-vol-2",
+      "path": "raw/ccel/hodge/theology2.xml",
+      "role": "primary-source",
+      "sha256": "52a43581dcb7b75a6903c89c8e2496b8d754bdbcd6fa751ecaa4f065e933d942"
+    },
+    {
+      "bytes": 1275,
+      "name": "work-config",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-2/config.json",
+      "role": "source-identity-and-rights-config",
+      "sha256": "1a638a8d24c738d37af0e15ed53b287e27583647fdac50b85b642b3248038bf4"
+    },
+    {
+      "bytes": 275,
+      "name": "witness-inventory",
+      "path": "sources/hodge-systematic-theology-vol-2/witnesses.json",
+      "role": "witness-inventory-evidence",
+      "sha256": "49de4b32c5420f47fce88935ebd3f5cbd1844509938cb8f0f5d6175583ddb12a"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 4103,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-2/hodge-systematic-theology-vol-2.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "b2f09ea0682bd1cc568f263ac23a8405055b3eeb4c343d858b51041e1e6cadd5"
+    },
+    {
+      "bytes": 3436,
+      "name": "validation-policy",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-2/hodge-systematic-theology-vol-2.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "57aa70a5f8b35352dc1729db1d5bbbd9970f552593a25a0f963f2ee2c04dddda"
+    },
+    {
+      "bytes": 1780,
+      "name": "attribution-readme",
+      "path": "sources/structured-text/hodge-systematic-theology-vol-2/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "f5f0ad69f414deb8067f6835a5a4b02668e4434800e7897badd50275788cf4e2"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-37c204-hodge-systematic-theology-vol-2-to-tei",
+    "implementation_path": "build/tei/hodge_systematic_theology_vol_2_reconstruction.py",
+    "implementation_sha256": "9981424641c242fa96500f6d1b39b0d9a7d4af62003f6abcfb2900ed5461974b",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "assigned_roots_in_source_order": [
+      ["hodge-vol-2", "iii", "hodge-systematic-theology-vol-2"],
+      ["hodge-vol-2", "iv", "hodge-systematic-theology-vol-2"]
+    ],
+    "excluded_top_level_roots": ["i", "ii", "v"],
+    "kind": "complete-source-subtrees",
+    "source_member": "retained-hodge-vol-2"
+  },
+  "source_id": "ocd-37c204-hodge-systematic-theology-vol-2-ccel-theology2",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-37c204-hodge-systematic-theology-vol-2-oracle",
+    "implementation_path": "build/tei/hodge_systematic_theology_vol_2_oracle.py",
+    "implementation_sha256": "cd180df05ed62b8ccf60d6bcdde6d9d2161e057fd37791675d7dce845e159c28",
+    "import_closure_sha256": "0e3aa12196a968f9b8da1f065c9ac8534cb34b273057f2bed196030c8322abb7",
+    "version": "2"
+  }
+}

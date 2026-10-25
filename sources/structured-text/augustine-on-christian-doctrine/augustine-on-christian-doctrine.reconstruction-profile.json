@@ -1,0 +1,61 @@
+{
+  "contract": "selected-thml-profile-v1",
+  "profile_id": "37c-048-augustine-on-christian-doctrine-v2",
+  "heading_policy": "Original body children own visible headings. Preserve their separate paragraphs, order, text, styling, and page-break positions. Division title and shorttitle attributes are navigation metadata retained exactly in source-accountability attributes; never synthesize visible headings or labels, deduplicate text, or promote title paragraphs to heads.",
+  "source_member": {
+    "path": "raw/ccel/npnf1/npnf102.xml",
+    "bytes": 4137798,
+    "sha256": "b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a"
+  },
+  "selection_authority": "library/works/augustine-on-christian-doctrine/forms/augustine-on-christian-doctrine-english/editions/augustine-on-christian-doctrine-ccel-retained/acquisitions/augustine-on-christian-doctrine-retained.json",
+  "selected_unit": {
+    "element": "div1",
+    "native_id": "v",
+    "title": "On Christian Doctrine",
+    "direct_div2_ids": ["v.i", "v.ii", "v.iii", "v.iv", "v.v", "v.vi", "IV_1"],
+    "element_counts": {
+      "div1": 1,
+      "div2": 7,
+      "div3": 150,
+      "i": 202,
+      "note": 323,
+      "p": 760,
+      "pb": 83,
+      "scripRef": 257,
+      "span": 190,
+      "br": 1
+    },
+    "element_count": 1974,
+    "character_count": 389080
+  },
+  "complete_document_envelope": {
+    "root": "ThML",
+    "xml_version": "1.0",
+    "encoding": "UTF-8",
+    "doctype_public_id": "-//CCEL/DTD Theological Markup Language//EN",
+    "doctype_system_id": "http://www.ccel.org/dtd/ThML10.dtd",
+    "pre_root_comments": 2,
+    "processing_instructions": 0,
+    "head_children": ["generalInfo", "printSourceInfo", "electronicEdInfo", "style", "style"],
+    "body_carriers_in_order": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+    "outside_work_carriers": {
+      "i": "title page for the containing volume; outside this work",
+      "ii": "volume contents; outside this work",
+      "iii": "editor's preface; outside this work",
+      "iv": "sibling work, City of God; outside this work",
+      "vi": "volume subject index; outside this work",
+      "vii": "volume indexes; outside this work"
+    },
+    "head_policy": "Retain all non-style ThML.head content as source context in the candidate README; retain CSS-derived renditions in TEI. Source-stated 1890 printSourceInfo is preserved and does not resolve constituent-edition date.",
+    "shell_policy": "Bind exact whole-file bytes and record the XML declaration, doctype, pre-root comments, root text, and absence of post-root nodes; no external DTD or stylesheet is fetched."
+  },
+  "requirements": [
+    "one exact retained member and one source-native work selector",
+    "all seven ordered selected div2 units preserved as descendants of v",
+    "all selected source elements, text, tails, supported attributes, notes, page breaks, and scripture references independently compared",
+    "all seven top-level ThML.body carriers explicitly selected or excluded",
+    "complete source document identity pinned by byte count and SHA-256",
+    "schema validation and deterministic complete-package reproduction",
+    "candidate remains nonaccepted; bibliographic conflict, rights, acceptance, and publication remain unresolved"
+  ]
+}

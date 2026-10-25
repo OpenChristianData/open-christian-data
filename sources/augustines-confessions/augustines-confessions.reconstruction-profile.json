@@ -1,0 +1,42 @@
+{
+  "profile_id": "augustines-confessions-pg3296-source-profile-v1",
+  "work_id": "augustines-confessions",
+  "source_id": "augustine-confessions-project-gutenberg-pg3296",
+  "source_scope": {
+    "retained_member": "raw/TheologAI/data/historical-sources/project-gutenberg/pg3296/pg3296.txt",
+    "complete_file_includes": ["Project Gutenberg header", "work title page", "13 ordered books", "closing marker", "Project Gutenberg rights notice and full license"],
+    "expected_bytes": 632167,
+    "expected_sha256": "5a036498dc7c546a98b9e7a31952e030ca74db7dd111b30029354efe12bcd691",
+    "expected_physical_lines": 9724,
+    "ordered_books": ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"]
+  },
+  "source_observations": {
+    "provider": "Project Gutenberg",
+    "ebook_id": "3296",
+    "title": "The Confessions of St. Augustine",
+    "author_label": "Saint of Hippo Augustine",
+    "translator_label": "E. B. Pusey",
+    "release_date_label": "June 1, 2002",
+    "updated_date_label": "May 5, 2023",
+    "credit_label": "Robert S. Munday",
+    "rights_status": "Source notice asserts no-cost use in the United States and most other parts of the world, subject to the included Project Gutenberg license and a local-law check outside the United States. This is an observation, not rights clearance."
+  },
+  "mapping": {
+    "blank_lines": "Accounted as source layout separators; not emitted as text.",
+    "wrapped_lines": "Joined within blank-line-delimited paragraphs with one space; exact physical lines and byte ranges remain in source-accountability.json.",
+    "book_headings": "The 13 literal BOOK headings become ordered TEI book divisions and heads.",
+    "centered_terminal_doxology": {
+      "source_line": 9367,
+      "source_text": "GRATIAS TIBI DOMINE",
+      "leading_spaces": 25,
+      "tei_rend": "align-center",
+      "interpretation": "This standalone uppercase Book XIII doxology is centered by the retained source's leading spaces, not indented prose."
+    },
+    "provider_envelope": "Header, title page, start/end markers, and full post-text license remain represented in TEI front/back sections."
+  },
+  "unresolved": [
+    "The retained electronic file alone does not establish the print edition/imprint or a composition/first-publication date.",
+    "Source/provider rights statements have not received human legal review or publication clearance.",
+    "No human textual acceptance or release decision has been made."
+  ]
+}

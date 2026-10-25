@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-owen-lib052-temptation-readable-validation-policy-v1",
+  "member_id": "temptation",
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "checks": [
+    "retained-source-hash",
+    "complete-two-root-disposition",
+    "source-element-order-hierarchy-attributes-text-tail",
+    "unique-source-IDs-and-local-links",
+    "argument-citation-index-marker-carriers",
+    "tei-p5",
+    "stock-native-prose-projection-and-independent-verification"
+  ],
+  "oracle_import_closure": [
+    "build/tei/owen_lib052_temptation_readable_oracle.py"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.owen_lib052_temptation_readable"
+  ]
+}

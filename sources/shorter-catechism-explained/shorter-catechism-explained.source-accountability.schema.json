@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/shorter-catechism-explained-source-accountability-v1.json",
+  "title": "The Assembly's Shorter Catechism Explained source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "source_id", "work_id", "source_member", "profile", "crosswalk", "tei"],
+  "properties": {
+    "contract": {"const": "ocd-lib062-shorter-catechism-explained-source-accountability-v1"},
+    "source_id": {"const": "creeds-json-lib062-shorter-catechism-explained-retained-json"},
+    "work_id": {"const": "shorter-catechism-explained"},
+    "source_member": {"type": "object"},
+    "packet": {"type": "object"},
+    "profile": {"type": "object"},
+    "structural_policy": {"type": "object"},
+    "top_level_keys": {"type": "array", "items": {"type": "string"}},
+    "recursive_key_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "data_record_count": {"type": "integer", "const": 107},
+    "represented_leaf_count": {"type": "integer", "const": 11836},
+    "omitted_leaf_count": {"type": "integer", "const": 0},
+    "duplicate_leaf_count": {"type": "integer", "const": 0},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 11836,
+      "items": {
+        "type": "object",
+        "required": ["pointer", "value", "disposition", "tei_target"],
+        "properties": {
+          "pointer": {"type": "string"},
+          "value": {},
+          "disposition": {"const": "represented"},
+          "tei_target": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "tei": {"type": "object", "required": ["bytes", "sha256"]}
+    ,"route": {"type": "string"}
+    ,"ocr": {"const": "not-used"}
+  }
+}

@@ -1,0 +1,1101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/v2/source-metadata.schema.json",
+  "title": "Open Christian Data source metadata contracts",
+  "description": "Closed contracts for the frozen metadata worklist, authored decisions, generated per-subject sidecars, and their deterministic index.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/worklist"
+    },
+    {
+      "$ref": "#/$defs/decisions"
+    },
+    {
+      "$ref": "#/$defs/sidecar"
+    },
+    {
+      "$ref": "#/$defs/index"
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "text_encoding": {
+      "type": "string",
+      "enum": [
+        "utf-8",
+        "utf-8-sig",
+        "latin-1"
+      ]
+    },
+    "subject_kind": {
+      "type": "string",
+      "enum": [
+        "catalog",
+        "acquisition_lane"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/subject_kind"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!.*(?:^|/)(?:\\.|\\.\\.)(?:/|$))(?!.*\\\\).+$"
+        }
+      }
+    },
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "work",
+        "edition",
+        "textual_form",
+        "witnesses",
+        "parts"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member",
+        "entity",
+        "predicate",
+        "event_role"
+      ],
+      "properties": {
+        "member": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_role": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "semantic_kind": {
+      "type": "string",
+      "enum": [
+        "publication_event",
+        "contributor_role",
+        "original_language",
+        "work_kind"
+      ]
+    },
+    "semantic_predicate": {
+      "type": "string",
+      "enum": [
+        "publication_date",
+        "contributor",
+        "original_language",
+        "work_kind"
+      ]
+    },
+    "semantic_scope": {
+      "type": "string",
+      "enum": [
+        "work",
+        "edition",
+        "collection"
+      ]
+    },
+    "publication_event": {
+      "type": "string",
+      "enum": [
+        "first_publication",
+        "edition_publication",
+        "collection_publication",
+        "translation_publication",
+        "transcription",
+        "revision"
+      ]
+    },
+    "contributor_role": {
+      "type": "string",
+      "enum": [
+        "author",
+        "editor",
+        "translator",
+        "compiler",
+        "illustrator",
+        "commentator"
+      ]
+    },
+    "publication_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "predicate",
+        "event",
+        "scope"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/semantic_kind"
+        },
+        "predicate": {
+          "$ref": "#/$defs/semantic_predicate"
+        },
+        "event": {
+          "$ref": "#/$defs/publication_event"
+        },
+        "scope": {
+          "$ref": "#/$defs/semantic_scope"
+        }
+      },
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "publication_event"
+            },
+            "predicate": {
+              "const": "publication_date"
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "first_publication"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "work"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "edition_publication"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "edition"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "collection_publication"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "collection"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "translation_publication"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "edition"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "transcription"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "edition"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "revision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "const": "edition"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "contributor_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "predicate",
+        "role",
+        "scope"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/semantic_kind"
+        },
+        "predicate": {
+          "$ref": "#/$defs/semantic_predicate"
+        },
+        "role": {
+          "$ref": "#/$defs/contributor_role"
+        },
+        "scope": {
+          "$ref": "#/$defs/semantic_scope"
+        }
+      },
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "contributor_role"
+            },
+            "predicate": {
+              "const": "contributor"
+            }
+          }
+        }
+      ]
+    },
+    "claim_semantics": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/publication_semantics"
+        },
+        {
+          "$ref": "#/$defs/contributor_semantics"
+        },
+        {
+          "$ref": "#/$defs/original_language_semantics"
+        },
+        {
+          "$ref": "#/$defs/work_kind_semantics"
+        }
+      ]
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "value",
+        "expected"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "json_pointer",
+            "text",
+            "xml_id",
+            "whole_file",
+            "archive_listing"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected": {}
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "bytes",
+        "role",
+        "locator"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "member"
+            ]
+          },
+          "then": {
+            "required": [
+              "member_sha256",
+              "member_bytes"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)(?:\\.|\\.\\.)(?:/|$)).+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "derived",
+            "observation",
+            "prior_review"
+          ]
+        },
+        "member": {
+          "type": "string",
+          "minLength": 1
+        },
+        "member_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "member_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "encoding": {
+          "$ref": "#/$defs/text_encoding"
+        },
+        "locator": {
+          "$ref": "#/$defs/locator"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "bindings"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "observed_claim",
+            "unresolved",
+            "contradicted",
+            "not_applicable"
+          ]
+        },
+        "value": {},
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          }
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_needed": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "required",
+            "useful_optional",
+            "not_applicable"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "selector",
+        "expected_value",
+        "current_raw_sha256",
+        "value_check"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)(?:\\.|\\.\\.)(?:/|$)).+$"
+        },
+        "selector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_value": {},
+        "current_raw_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "value_check": {
+          "const": true
+        }
+      }
+    },
+    "adoption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "destination"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "adopted",
+            "already_correct",
+            "supported_unapplied",
+            "not_selected",
+            "not_applicable"
+          ]
+        },
+        "destination": {
+          "type": "string",
+          "enum": [
+            "v2",
+            "tei",
+            "source_config",
+            "acquisition",
+            "source_evidence_only",
+            "none"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "$ref": "#/$defs/target"
+        }
+      }
+    },
+    "inspection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "owner"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "inherited_unexamined",
+            "inspected",
+            "unavailable"
+          ]
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worklist_item_id",
+        "claim_id",
+        "scope",
+        "evidence",
+        "requirement",
+        "adoption",
+        "inspection"
+      ],
+      "properties": {
+        "worklist_item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "semantics": {
+          "$ref": "#/$defs/claim_semantics"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "requirement": {
+          "$ref": "#/$defs/requirement"
+        },
+        "adoption": {
+          "$ref": "#/$defs/adoption"
+        },
+        "inspection": {
+          "$ref": "#/$defs/inspection"
+        },
+        "competing_with": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "semantics"
+            ],
+            "properties": {
+              "semantics": {
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "const": "original_language"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]+)*$"
+                  }
+                },
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "classification": {
+                          "const": "supported"
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "value"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "semantics"
+            ],
+            "properties": {
+              "semantics": {
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "const": "work_kind"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "classification": {
+                          "const": "supported"
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "value"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "decision_dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "owner",
+        "fields"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "inspected",
+            "unavailable",
+            "inherited_unexamined"
+          ]
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        }
+      }
+    },
+    "worklist_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "field",
+        "source_packet",
+        "input_pointer",
+        "input_value",
+        "input_sha256",
+        "repair_required"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_packet": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)(?:\\.|\\.\\.)(?:/|$)).+$"
+        },
+        "input_pointer": {
+          "type": "string",
+          "pattern": "^/.*"
+        },
+        "input_value": {},
+        "input_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "requirement": {
+          "type": "string",
+          "enum": [
+            "required",
+            "useful_optional",
+            "not_applicable"
+          ]
+        },
+        "repair_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "worklist_dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "assessment_scope": {},
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/worklist_item"
+          }
+        }
+      }
+    },
+    "worklist_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "dimensions"
+      ],
+      "properties": {
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "work",
+            "edition",
+            "textual_form",
+            "witnesses",
+            "parts"
+          ],
+          "properties": {
+            "work": {
+              "$ref": "#/$defs/worklist_dimension"
+            },
+            "edition": {
+              "$ref": "#/$defs/worklist_dimension"
+            },
+            "textual_form": {
+              "$ref": "#/$defs/worklist_dimension"
+            },
+            "witnesses": {
+              "$ref": "#/$defs/worklist_dimension"
+            },
+            "parts": {
+              "$ref": "#/$defs/worklist_dimension"
+            }
+          }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "dimensions"
+      ],
+      "properties": {
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "work": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "edition": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "textual_form": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "witnesses": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "parts": {
+              "$ref": "#/$defs/decision_dimension"
+            }
+          }
+        }
+      }
+    },
+    "worklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "writer",
+        "batch_id",
+        "subjects"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "source-metadata-worklist-v1"
+        },
+        "writer": {
+          "const": "ocd-source-metadata-v1"
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subjects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/worklist_subject"
+          }
+        }
+      }
+    },
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "writer",
+        "batch_id",
+        "decisions"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "source-metadata-decisions-v1"
+        },
+        "writer": {
+          "const": "ocd-source-metadata-v1"
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decision"
+          }
+        }
+      }
+    },
+    "sidecar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "writer",
+        "batch_id",
+        "subject",
+        "dimensions"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "source-metadata-sidecar-v1"
+        },
+        "writer": {
+          "const": "ocd-source-metadata-v1"
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "work": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "edition": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "textual_form": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "witnesses": {
+              "$ref": "#/$defs/decision_dimension"
+            },
+            "parts": {
+              "$ref": "#/$defs/decision_dimension"
+            }
+          }
+        }
+      }
+    },
+    "index_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^metadata/source-evidence/(?:catalog|lanes)/.+\\.json$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "index": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "writer",
+        "batch_id",
+        "subjects",
+        "counts"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "source-metadata-index-v1"
+        },
+        "writer": {
+          "const": "ocd-source-metadata-v1"
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/index_entry"
+          }
+        },
+        "counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "original_language_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "predicate",
+        "role",
+        "scope"
+      ],
+      "properties": {
+        "kind": {
+          "const": "original_language"
+        },
+        "predicate": {
+          "const": "original_language"
+        },
+        "role": {
+          "const": "original_composition"
+        },
+        "scope": {
+          "const": "work"
+        }
+      }
+    },
+    "work_kind_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "predicate",
+        "role",
+        "scope"
+      ],
+      "properties": {
+        "kind": {
+          "const": "work_kind"
+        },
+        "predicate": {
+          "const": "work_kind"
+        },
+        "role": {
+          "const": "work_classification"
+        },
+        "scope": {
+          "const": "work"
+        }
+      }
+    }
+  }
+}

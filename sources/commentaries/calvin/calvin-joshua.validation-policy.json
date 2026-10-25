@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-calvin-series-validation-policy-v1",
+  "policy_id": "calvin-joshua-retained-ccel-policy-v1",
+  "rules": [
+    "bind the exact selected Joshua source member and the shared CCEL catalogue",
+    "verify the title profile digest, all nineteen nonoverlapping groups, and the exact forty-five-member partition",
+    "represent exactly the selected complete title body while retaining the catalogue as shared front matter",
+    "preserve original CCEL sibling hrefs as external links and account for all excluded sibling components by title group",
+    "independently compare source selectors, TEI element mappings, ordered text streams, and source-member wrapper identity",
+    "validate the title-scoped accountability record and TEI P5",
+    "technical validation does not establish acceptance, rights clearance, canonical admission, or publication"
+  ],
+  "provenance": {
+    "contract": "ocd-calvin-series-candidate-provenance-v1",
+    "status": "nonaccepted",
+    "ticket_id": "37c-092",
+    "title": "Commentary on Joshua",
+    "historical_container_id": "calvin-commentaries",
+    "source_id": "calvin-commentaries-retained-ccel-thml",
+    "primary_source_members": ["calcom07.xml"],
+    "shared_front_matter_members": ["commentaries.xml"],
+    "sibling_component_count": 44,
+    "series_count": 19,
+    "source_format": "CCEL ThML/XML",
+    "collection_derivation": {
+      "source_manifest_sha256": "714a8d4410a7533547042c766c745829312a09f2ebf08f1b024e6fc626ec05d6",
+      "candidate_manifest_sha256": "362d54b139f8581ba51dbbbfb6771365604f1a2c5d6794f98736f49bbaddab80",
+      "validation_sidecar_sha256": "137ba9f5a291c6c5fef458c518759f6c247a0e2e0f81716d646fe322e3c71c42",
+      "aggregate_tei_sha256": "2fb07bc8bfdd394c5921b4f62172e3f635e41604798987fa11e8b658cd5ea59e"
+    },
+    "candidate_boundary": {
+      "technical_validation_status": "candidate-pending-validation",
+      "human_acceptance_status": "unresolved",
+      "rights_status": "unresolved",
+      "publication_status": "not-authorized",
+      "canonical_identity_created": false,
+      "canonical_data_or_ir_written": false
+    }
+  },
+  "unresolved": [
+    {"id":"calvin-joshua-edition-lineage","status":"unresolved","kind":"edition-witness","detail":"Human review must assess the retained component's edition and witness lineage against the catalogue and metadata evidence."},
+    {"id":"calvin-joshua-translator-metadata","status":"unresolved","kind":"editorial-metadata","detail":"Component translator credits and source spelling variants remain source-bound evidence pending metadata review."},
+    {"id":"calvin-joshua-rights","status":"unresolved","kind":"rights","detail":"Source-reported Public Domain statements require human rights review before publication."},
+    {"id":"calvin-joshua-structure-review","status":"unresolved","kind":"editorial","detail":"Source-to-TEI mapping preserves the component's selectors and text; editorial meaning of all ThML presentation conventions remains open."},
+    {"id":"calvin-joshua-visual-review","status":"unresolved","kind":"visual-review","detail":"The bounded inherited seven-pane review does not establish exhaustive visual collation of all Joshua content."},
+    {"id":"calvin-joshua-textual-acceptance","status":"unresolved","kind":"acceptance","detail":"Technical validation and visual inspection are not human textual acceptance."},
+    {"id":"calvin-joshua-publication-review","status":"unresolved","kind":"publication","detail":"This candidate is not publication-ready or publication-authorized."}
+  ]
+}

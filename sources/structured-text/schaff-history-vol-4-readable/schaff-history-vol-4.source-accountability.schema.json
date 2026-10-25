@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/structured-text/schaff-history-vol-4-source-accountability-v1.schema.json",
+  "title": "Schaff History Volume IV complete retained-source accounting",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "ticket_id",
+    "work_id",
+    "source_id",
+    "source_bytes",
+    "source_sha256",
+    "selection",
+    "envelope",
+    "source_element_count",
+    "represented_element_count",
+    "omitted_element_count",
+    "duplicate_element_count",
+    "division_counts",
+    "heading_counts",
+    "division_carriers",
+    "heading_carriers",
+    "rights_status",
+    "legacy_config_used_as_authority",
+    "profile_id",
+    "source_manifest_sha256"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-schaff-history-vol-4-source-accountability-v1"
+    },
+    "ticket_id": {
+      "const": "LIB-058"
+    },
+    "work_id": {
+      "const": "schaff-history-vol-4"
+    },
+    "source_id": {
+      "const": "ccel-schaff-hcc4-thml"
+    },
+    "source_bytes": {
+      "const": 2351867
+    },
+    "source_sha256": {
+      "const": "7a4b158f20983c50fac6542e1904a24e611f52dba7f293fc4831e2d3030364d6"
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selector",
+        "member_count",
+        "included_body_div1_ids",
+        "excluded_body_division_ids"
+      ],
+      "properties": {
+        "selector": {
+          "const": "/ThML/ThML.body/*"
+        },
+        "member_count": {
+          "const": 1
+        },
+        "included_body_div1_ids": {
+          "const": [
+            "i",
+            "ii"
+          ]
+        },
+        "excluded_body_division_ids": {
+          "const": []
+        }
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xml_version",
+        "encoding",
+        "doctype",
+        "external_dtd_loaded",
+        "top_level_comments",
+        "active_processing_instructions",
+        "root_element",
+        "root_children_in_order",
+        "source_head_disposition",
+        "source_body_disposition"
+      ],
+      "properties": {
+        "xml_version": {
+          "const": "1.0"
+        },
+        "encoding": {
+          "const": "UTF-8"
+        },
+        "doctype": {
+          "type": "string"
+        },
+        "external_dtd_loaded": {
+          "const": false
+        },
+        "top_level_comments": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object"
+          }
+        },
+        "active_processing_instructions": {
+          "const": 0
+        },
+        "root_element": {
+          "const": "ThML"
+        },
+        "root_children_in_order": {
+          "const": [
+            "ThML.head",
+            "ThML.body"
+          ]
+        },
+        "source_head_disposition": {
+          "const": "represented_in_TEI_header"
+        },
+        "source_body_disposition": {
+          "const": "represented_in_TEI_text_body"
+        }
+      }
+    },
+    "source_element_count": {
+      "type": "integer",
+      "minimum": 1,
+      "const": 15955
+    },
+    "represented_element_count": {
+      "type": "integer",
+      "minimum": 1,
+      "const": 15955
+    },
+    "omitted_element_count": {
+      "const": 0
+    },
+    "duplicate_element_count": {
+      "const": 0
+    },
+    "division_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "div",
+        "div1",
+        "div2",
+        "div3",
+        "div4",
+        "div5",
+        "div6"
+      ],
+      "properties": {
+        "div": {
+          "const": 11
+        },
+        "div1": {
+          "const": 2
+        },
+        "div2": {
+          "const": 19
+        },
+        "div3": {
+          "const": 182
+        },
+        "div4": {
+          "const": 0
+        },
+        "div5": {
+          "const": 0
+        },
+        "div6": {
+          "const": 0
+        }
+      }
+    },
+    "heading_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "properties": {
+        "h1": {
+          "const": 1
+        },
+        "h2": {
+          "const": 5
+        },
+        "h3": {
+          "const": 0
+        },
+        "h4": {
+          "const": 0
+        },
+        "h5": {
+          "const": 0
+        },
+        "h6": {
+          "const": 0
+        }
+      }
+    },
+    "division_carriers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/carrier"
+      }
+    },
+    "heading_carriers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/carrier"
+      }
+    },
+    "rights_status": {
+      "const": "unresolved"
+    },
+    "legacy_config_used_as_authority": {
+      "const": false
+    },
+    "profile_id": {
+      "const": "schaff-history-vol-4-retained-thml-v1"
+    },
+    "source_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_key",
+        "tag",
+        "id",
+        "parent_key",
+        "ordinal",
+        "type",
+        "title"
+      ],
+      "properties": {
+        "source_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tag": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

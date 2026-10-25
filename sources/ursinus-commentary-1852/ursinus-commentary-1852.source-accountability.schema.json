@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://sources/ursinus-commentary-1852/source-accountability.schema.json",
+  "title": "Ursinus 1852 retained-source accountability",
+  "type": "object",
+  "required": [
+    "contract",
+    "work_id",
+    "edition_id",
+    "acquisition_id",
+    "one_work_one_tei",
+    "source_member_hashes",
+    "provider_retained_members",
+    "candidate_tei",
+    "leaves",
+    "contents_row_map",
+    "unresolved_fidelity_gaps"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-ursinus-source-accountability-v1"},
+    "work_id": {"const": "ursinus-commentary-heidelberg-catechism-1852"},
+    "edition_id": {"const": "commdrza00ursi-1852"},
+    "acquisition_id": {"const": "ia-commdrza00ursi-second-american-1852"},
+    "one_work_one_tei": {
+      "type": "object",
+      "required": ["source_attested_complete_work_count", "candidate_tei_count", "manifest_rows"],
+      "properties": {
+        "source_attested_complete_work_count": {"const": 1},
+        "candidate_tei_count": {"const": 1},
+        "manifest_rows": {"const": ["L427", "L468"]}
+      }
+    },
+    "source_member_hashes": {
+      "type": "object",
+      "minProperties": 8,
+      "maxProperties": 8,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "provider_retained_members": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "candidate_tei": {
+      "type": "object",
+      "required": ["member", "bytes", "sha256", "root_count", "text_count", "body_division_count"],
+      "properties": {
+        "member": {"const": "content.tei.xml"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "root_count": {"const": 1},
+        "text_count": {"const": 1},
+        "body_division_count": {"const": 1}
+      }
+    },
+    "leaves": {"type": "array", "minItems": 720, "maxItems": 720},
+    "contents_row_map": {"type": "array", "minItems": 436, "maxItems": 436},
+    "unresolved_fidelity_gaps": {"type": "array", "minItems": 2}
+  },
+  "additionalProperties": true
+}

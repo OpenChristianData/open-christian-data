@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/work.schema.json",
+  "title": "OCD stable library work identity",
+  "description": "Stable work, textual-form, and edition identities. Progress and source evidence live in separate sidecars.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "work_id",
+    "title",
+    "evidence",
+    "textual_forms"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "work_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "title": {
+      "$ref": "#/$defs/non_empty"
+    },
+    "creators": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/creator"
+      },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/evidence_reference"
+      },
+      "uniqueItems": true
+    },
+    "textual_forms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/textual_form"
+      }
+    },
+    "original_language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "source_metadata_subject"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/language"
+        },
+        "source_metadata_subject": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "minLength": 1
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "work_kind": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "source_metadata_subject"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_metadata_subject": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "minLength": 1
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "facets": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "authority",
+          "term_id",
+          "label",
+          "evidence",
+          "adoption"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "form",
+              "subject",
+              "publication-form"
+            ]
+          },
+          "authority": {
+            "$ref": "#/$defs/non_empty"
+          },
+          "term_id": {
+            "$ref": "#/$defs/non_empty"
+          },
+          "label": {
+            "$ref": "#/$defs/non_empty"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/evidence_reference"
+            }
+          },
+          "adoption": {
+            "enum": [
+              "source-observation",
+              "adopted"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {
+        "enum": [
+          "unknown",
+          "Unknown",
+          "UNKNOWN",
+          "null",
+          "none",
+          "None",
+          "N/A",
+          "n/a"
+        ]
+      }
+    },
+    "evidence_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "not": {
+        "enum": [
+          "unknown",
+          "Unknown",
+          "UNKNOWN",
+          "null",
+          "none",
+          "None",
+          "N/A",
+          "n/a"
+        ]
+      }
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]+)*$"
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "creator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "role": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_reference"
+          },
+          "uniqueItems": true
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "work",
+                "edition",
+                "component",
+                "series"
+              ]
+            },
+            "id": {
+              "$ref": "#/$defs/identifier"
+            }
+          }
+        }
+      }
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edition_id",
+        "title"
+      ],
+      "properties": {
+        "edition_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "language": {
+          "$ref": "#/$defs/language"
+        },
+        "category": {
+          "$ref": "#/$defs/category"
+        },
+        "acquisition_ids": {
+          "type": "array",
+          "description": "Optional exact acquisition ID list for this edition. When absent, discover sidecars; when present, every listed ID must exist and no extra sidecar is allowed.",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "uniqueItems": true
+        },
+        "containing_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "locator",
+            "evidence"
+          ],
+          "properties": {
+            "title": {
+              "$ref": "#/$defs/non_empty"
+            },
+            "locator": {
+              "$ref": "#/$defs/non_empty"
+            },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/evidence_reference"
+              }
+            }
+          }
+        }
+      }
+    },
+    "textual_form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "textual_form_id",
+        "editions"
+      ],
+      "properties": {
+        "textual_form_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "language": {
+          "$ref": "#/$defs/language"
+        },
+        "category": {
+          "$ref": "#/$defs/category"
+        },
+        "editions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edition"
+          }
+        }
+      }
+    }
+  }
+}

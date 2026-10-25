@@ -6,8 +6,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from ocd_kernel.lib.historical_lexicon import scan_historical_variants  # noqa: E402
-from build.lib.review_warnings import collect_review_warnings  # noqa: E402
-from build.tools.render_review_html import render_commentary_html  # noqa: E402
+from build.lib.warning_producers.historical_lexicon import run as run_historical_lexicon  # noqa: E402
 
 
 def _entry(text: str) -> dict:
@@ -89,18 +88,13 @@ def test_multiple_matches_in_one_text():
     assert [match.surface for match in matches] == ["Esaias", "shewed", "Chrysostome"]
 
 
-def test_review_warnings_include_lexicon_findings_as_info():
-    warnings = collect_review_warnings([_entry("Esaias shewed it.")])
-    lexicon_warnings = [warning for warning in warnings if warning.code == "historical_lexicon_variant"]
+def test_warning_producer_includes_lexicon_findings_as_info():
+    warnings = run_historical_lexicon(
+        _payload("Esaias shewed it."),
+        {"resource_type": "commentary"},
+        {},
+    )["warnings"]
+    lexicon_warnings = [warning for warning in warnings if warning["code"] == "archaic_variant"]
 
     assert len(lexicon_warnings) == 2
-    assert {warning.severity for warning in lexicon_warnings} == {"info"}
-
-
-def test_renderer_shows_lexicon_findings_through_warning_panel():
-    html = render_commentary_html(_payload("Jeremias shewed the connexion."))
-
-    assert "historical_lexicon_variant" in html
-    assert "Jeremias -&gt; Jeremiah" in html
-    assert "shewed -&gt; showed" in html
-    assert "connexion -&gt; connection" in html
+    assert {warning["severity"] for warning in lexicon_warnings} == {"info"}

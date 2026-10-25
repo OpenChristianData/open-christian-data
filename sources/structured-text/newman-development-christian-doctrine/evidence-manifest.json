@@ -1,0 +1,137 @@
+{
+  "candidate": {
+    "bytes": 1189321,
+    "path": "reports/clean-ready-acquisition-to-tei/master-1/07/newman-development-christian-doctrine/candidate.tei.xml",
+    "sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1"
+  },
+  "determinism": {
+    "different_working_directory": "F:/Open Christian Data/CodexScratch/pytest",
+    "first_accounting_sha256": "6aa8a13179f2f9f758df038b48f90dd926acf315f3ece79a015ca7454c904663",
+    "first_candidate_sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1",
+    "second_accounting_sha256": "6aa8a13179f2f9f758df038b48f90dd926acf315f3ece79a015ca7454c904663",
+    "second_candidate_sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1",
+    "verdict": "byte-identical candidate and accounting outputs"
+  },
+  "gate": {
+    "release_sha256": "6b4177b460e57943b4b34010043c641278e513b1444d6917bf545054f323ca80",
+    "released_ticket": "07 subset",
+    "released_work": "John Henry Newman, An Essay on the Development of Christian Doctrine, Project Gutenberg 35110",
+    "slug": "newman-development-christian-doctrine"
+  },
+  "report_artifacts": [
+    {
+      "bytes": 2540,
+      "path": "accounting.json",
+      "sha256": "6aa8a13179f2f9f758df038b48f90dd926acf315f3ece79a015ca7454c904663"
+    },
+    {
+      "bytes": 5627,
+      "path": "acquisition-receipt.json",
+      "sha256": "79677f1ae00534d1f18244df884a735a02eb044a026bc97d56846d24820f3581"
+    },
+    {
+      "bytes": 1189321,
+      "path": "candidate.tei.xml",
+      "sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1"
+    },
+    {
+      "bytes": 2540,
+      "path": "determinism/accounting.json",
+      "sha256": "6aa8a13179f2f9f758df038b48f90dd926acf315f3ece79a015ca7454c904663"
+    },
+    {
+      "bytes": 1189321,
+      "path": "determinism/candidate.tei.xml",
+      "sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1"
+    },
+    {
+      "bytes": 2422,
+      "path": "visual-checklist.json",
+      "sha256": "ff66a237f39031f33e955a48e3f1984171ce4df495a8e5942ecc32ec4d6a614f"
+    },
+    {
+      "bytes": 226245,
+      "path": "visual/candidate.ending.png",
+      "sha256": "f14232b5a8ebbdf19a298ef6c63f3d233878c5e4d0828ff083707b931f43bc84"
+    },
+    {
+      "bytes": 212972,
+      "path": "visual/candidate.greek.png",
+      "sha256": "cefd425e5d5f53d3a886eb61299aecaa70a03f07e6919c8490caf76ece47b377"
+    },
+    {
+      "bytes": 213956,
+      "path": "visual/candidate.middle.png",
+      "sha256": "f10af55b88ae1944c1b79e0464ee5b1445f4d2837ae1475ebca742a39c654580"
+    },
+    {
+      "bytes": 208560,
+      "path": "visual/candidate.opening.png",
+      "sha256": "2a049e9ad536a8947cfba2141811a7d419740cfe498fe6b8081c04eb0c2b46e3"
+    }
+  ],
+  "scope_audit": {
+    "canonical_data_or_ir_changes": 0,
+    "commits": 0,
+    "post_worktree_status": [
+      "build/tei/newman_development_christian_doctrine.py",
+      "sources/structured-text/newman-development-christian-doctrine/README.md",
+      "sources/structured-text/newman-development-christian-doctrine/acquisition-receipt.json",
+      "sources/structured-text/newman-development-christian-doctrine/config.json",
+      "sources/structured-text/newman-development-christian-doctrine/evidence-manifest.json",
+      "sources/structured-text/newman-development-christian-doctrine/visual-checklist.json",
+      "tests/test_newman_development_christian_doctrine.py"
+    ],
+    "pre_worktree_status": [],
+    "publishing_or_pushes": 0,
+    "shared_or_generic_file_changes": 0
+  },
+  "tests": {
+    "basetemp_policy": "unique strict child of F:/Open Christian Data/CodexScratch/pytest; removed after the run",
+    "command_scope": "tests/test_newman_development_christian_doctrine.py only; -p no:cacheprovider",
+    "result": "4 passed in 42.91s"
+  },
+  "validation_and_accounting": {
+    "greek_span_count": 26,
+    "note_body_count": 400,
+    "note_reference_count": 401,
+    "printed_page_anchor_count": 458,
+    "source_visible_text_sha256": "bbb3f7504b6851bbf0d86db09f2eed7f1a3ad96cf84340daf593ed47c383be20",
+    "tei_p5_relaxng_valid": true,
+    "tei_relaxng_sha256": "a4edf351a10fc634016aa64331f3f75daba26107331574bfee61633aa77531c4",
+    "tei_visible_text_sha256": "bbb3f7504b6851bbf0d86db09f2eed7f1a3ad96cf84340daf593ed47c383be20"
+  },
+  "worktree_artifacts": [
+    {
+      "bytes": 58728,
+      "path": "build/tei/newman_development_christian_doctrine.py",
+      "sha256": "e45f094c203dacdfbf4441af18e4663a5c62c3516fe38a1cc11a0bef51852b5a"
+    },
+    {
+      "bytes": 6424,
+      "path": "tests/test_newman_development_christian_doctrine.py",
+      "sha256": "997231965f1f18b934e010af8ea2b7425e7693f067d850e40452c0573b7a55a9"
+    },
+    {
+      "bytes": 1679,
+      "path": "sources/structured-text/newman-development-christian-doctrine/config.json",
+      "sha256": "77420ad4a1b2e2a4e218348115c612a11f8017baae7fae11aede3c59b2d10ec6"
+    },
+    {
+      "bytes": 3152,
+      "path": "sources/structured-text/newman-development-christian-doctrine/README.md",
+      "sha256": "f18f10a7753ed4d4c99fea258bdc5bf182de1f22f40d16567c88c8ff874e0eeb"
+    },
+    {
+      "bytes": 5627,
+      "path": "sources/structured-text/newman-development-christian-doctrine/acquisition-receipt.json",
+      "sha256": "79677f1ae00534d1f18244df884a735a02eb044a026bc97d56846d24820f3581"
+    },
+    {
+      "bytes": 2422,
+      "path": "sources/structured-text/newman-development-christian-doctrine/visual-checklist.json",
+      "sha256": "ff66a237f39031f33e955a48e3f1984171ce4df495a8e5942ecc32ec4d6a614f"
+    }
+  ],
+  "verdict": "technical pilot packet complete and ready for root ticket 41 independent review; no human acceptance or publication authorization"
+}

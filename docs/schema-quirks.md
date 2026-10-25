@@ -1,5 +1,7 @@
 # Schema quirks
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 ## catechism_qa has no enum on era / audience
 
 The `catechism_qa` schema has NO enum constraint on `era` or `audience` — those fields are free-form. Don't write validation code or downstream classifiers that assume a fixed value set for these fields.

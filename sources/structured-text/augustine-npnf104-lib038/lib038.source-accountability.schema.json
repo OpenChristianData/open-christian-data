@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/augustine-npnf104-lib038/lib038.source-accountability.schema.json",
+  "title": "NPNF1-04 LIB-038 complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}},
+    "census": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "elements": {"type": "integer"},
+        "attributes": {"type": "integer"},
+        "text_nodes": {"type": "integer"},
+        "tail_nodes_in_scope": {"type": "integer"},
+        "characters": {"type": "integer"},
+        "non_ascii_characters": {"type": "integer"},
+        "notes": {"type": "integer"},
+        "page_breaks": {"type": "integer"},
+        "scripture_references": {"type": "integer"},
+        "comments": {"type": "integer"},
+        "processing_instructions": {"type": "integer"}
+      },
+      "required": ["elements", "attributes", "text_nodes", "tail_nodes_in_scope", "characters", "non_ascii_characters", "notes", "page_breaks", "scripture_references", "comments", "processing_instructions"]
+    },
+    "attributeDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_attribute": {"type": "string"},
+        "source_value": {"type": "string"},
+        "destination": {"type": "string"},
+        "method": {"type": "string"}
+      },
+      "required": ["source_attribute", "source_value", "destination", "method"]
+    },
+    "crosswalkRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "feature_id": {"type": "string"},
+        "source_selector": {"type": "string"},
+        "source_tag": {"type": "string"},
+        "source_xml_id": {"type": ["string", "null"]},
+        "source_root_id": {"enum": ["iv.iv", "iv.v", "iv.vi", "iv.vii", "iv.viii", "iv.ix", "iv.x", "v.iv", "v.v", "v.vi"]},
+        "work_id": {"enum": ["augustine-morals-catholic-church", "augustine-morals-manichaeans", "augustine-on-two-souls", "augustine-against-fortunatus", "augustine-against-epistle-of-manichaeus", "augustine-reply-to-faustus", "augustine-nature-of-good", "augustine-on-baptism", "augustine-answer-to-petilian", "augustine-correction-of-donatists"]},
+        "attributes": {"$ref": "#/$defs/stringMap"},
+        "direct_text": {"type": "string"},
+        "tail_text": {"type": "string"},
+        "excluded_root_tail": {"type": "string"},
+        "direct_text_sha256": {"$ref": "#/$defs/sha256"},
+        "tail_text_sha256": {"$ref": "#/$defs/sha256"},
+        "tei_tag": {"type": "string"},
+        "tei_xml_id": {"type": "string"},
+        "tei_parent_id": {"type": "string"},
+        "tei_child_ordinal": {"type": "integer", "minimum": 1},
+        "tei_attributes": {"$ref": "#/$defs/stringMap"},
+        "attribute_dispositions": {"type": "array", "items": {"$ref": "#/$defs/attributeDisposition"}},
+        "disposition": {"const": "represented"},
+        "tei_selector": {"type": "string"},
+        "parent_feature_id": {"type": ["string", "null"]},
+        "source_title_head": {"type": ["string", "null"]}
+      },
+      "required": ["feature_id", "source_selector", "source_tag", "source_xml_id", "attributes", "direct_text", "tail_text", "excluded_root_tail", "direct_text_sha256", "tail_text_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_child_ordinal", "tei_attributes", "attribute_dispositions", "disposition", "tei_selector", "parent_feature_id", "source_title_head"]
+    },
+    "metadataValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {"text": {"type": "string"}, "attributes": {"$ref": "#/$defs/stringMap"}},
+      "required": ["text", "attributes"]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "published": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "titles": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "creators": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "publishers": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "dates": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "identifiers": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "languages": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}},
+        "rights": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}
+      },
+      "required": ["published", "titles", "creators", "publishers", "dates", "identifiers", "languages", "rights"]
+    },
+    "headInventoryRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1},
+        "selector": {"type": "string"},
+        "tag": {"type": "string"},
+        "attributes": {"$ref": "#/$defs/stringMap"},
+        "direct_text": {"type": "string"},
+        "tail_text": {"type": "string"}
+      },
+      "required": ["ordinal", "selector", "tag", "attributes", "direct_text", "tail_text"]
+    },
+    "documentAccounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "xml_declaration": {"const": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"},
+        "standalone": {"const": false},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "pre_root_comments": {"type": "array", "items": {"type": "string"}},
+        "pre_root_processing_instructions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "properties": {"target": {"type": "string"}, "text": {"type": "string"}}, "required": ["target", "text"]}},
+        "post_root_nodes": {"const": []},
+        "root_tag": {"const": "ThML"},
+        "root_attributes": {"const": {}},
+        "root_namespace_declarations": {"const": {}},
+        "head_inventory": {"type": "array", "items": {"$ref": "#/$defs/headInventoryRow"}},
+        "metadata": {"$ref": "#/$defs/metadata"}
+      },
+      "required": ["xml_declaration", "standalone", "doctype", "pre_root_comments", "pre_root_processing_instructions", "post_root_nodes", "root_tag", "root_attributes", "root_namespace_declarations", "head_inventory", "metadata"]
+    },
+    "commentAccountingRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_member": {"const": "raw/ccel/npnf1/npnf104.xml"},
+        "source_selector": {"type": "string"},
+        "parent_feature_id": {"type": "string"},
+        "text": {"type": "string"},
+        "tail_text": {"type": "string"},
+        "text_sha256": {"$ref": "#/$defs/sha256"},
+        "tail_text_sha256": {"$ref": "#/$defs/sha256"},
+        "disposition": {"const": "represented-as-xml-comment"}
+      },
+      "required": ["source_member", "source_selector", "parent_feature_id", "text", "tail_text", "text_sha256", "tail_text_sha256", "disposition"]
+    },
+    "topLevelDivisionRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 7},
+        "div1_id": {"enum": ["i", "ii", "iii", "iv", "v", "vi", "vii"]},
+        "title": {"type": "string"},
+        "disposition": {"enum": ["assigned-descendants-represented", "source-evidence-outside-work-projection"]},
+        "reason": {"type": "string", "minLength": 1},
+        "subtree_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "required": ["ordinal", "div1_id", "title", "disposition", "reason", "subtree_sha256"]
+    }
+  },
+  "properties": {
+    "contract": {"const": "ocd-npnf104-lib038-source-accountability-v1"},
+    "schema": {"const": "lib038.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf104-lib038-ten-work-v1"},
+    "source_scope": {"const": "complete retained ThML.body assigned div2 roots iv.iv through iv.x and v.iv through v.vi; each assigned root tail excluded as outside its work subtree"},
+    "source_member": {"const": {"path": "raw/ccel/npnf1/npnf104.xml", "bytes": 4362836, "sha256": "978cdefc45de5bd5bce3aecb0f8e5bbd27129400f531c0c7b6dee88b17c677b9", "disposition": "sole retained member included"}},
+    "document_accounting": {"$ref": "#/$defs/documentAccounting"},
+    "member_accounting": {"const": [{"path": "raw/ccel/npnf1/npnf104.xml", "disposition": "included; every retained document region explicitly included or excluded below"}]},
+    "source_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "complete_document": {"$ref": "#/$defs/census"},
+        "assigned_scope": {"$ref": "#/$defs/census"},
+        "excluded_shell_head_front_and_unassigned_roots": {"$ref": "#/$defs/census"}
+      },
+      "required": ["complete_document", "assigned_scope", "excluded_shell_head_front_and_unassigned_roots"]
+    },
+    "assigned_work_count": {"const": 10},
+    "feature_count": {"const": 11999},
+    "attribute_count": {"const": 33468},
+    "feature_counts": {"const": {"br": 1, "div2": 10, "div3": 234, "div4": 402, "i": 626, "note": 2522, "p": 4505, "pb": 540, "scripRef": 1955, "span": 1199, "sup": 5}},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "comment_accounting": {"type": "array", "minItems": 0, "maxItems": 0, "items": {"$ref": "#/$defs/commentAccountingRow"}},
+    "top_level_division_accounting": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/topLevelDivisionRow"}},
+    "crosswalk": {"type": "array", "minItems": 11999, "maxItems": 11999, "items": {"$ref": "#/$defs/crosswalkRow"}}
+  },
+  "required": ["contract", "schema", "profile_id", "source_scope", "source_member", "document_accounting", "member_accounting", "source_census", "assigned_work_count", "feature_count", "attribute_count", "feature_counts", "omitted_feature_count", "duplicate_feature_count", "unresolved_feature_count", "comment_accounting", "top_level_division_accounting", "crosswalk"]
+}

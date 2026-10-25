@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/npnf211-lib049/npnf211-lib049.source-accountability.schema.json",
+  "title": "NPNF211 LIB-049 complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "source_scope", "source_member", "document_accounting", "member_accounting", "source_census", "assigned_work_count", "feature_count", "attribute_count", "feature_counts", "omitted_feature_count", "duplicate_feature_count", "unresolved_feature_count", "table_census", "top_level_division_accounting", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-npnf211-lib049-source-accountability-v14"},
+    "schema": {"const": "npnf211-lib049.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf211-lib049-three-work-v14"},
+    "source_scope": {"const": "complete retained ThML.body direct div1 roots ii, iii, and iv; root tails excluded as outside each subtree"},
+    "source_member": {"const": {"path": "raw/ccel/npnf2/npnf211.xml", "bytes": 4045340, "sha256": "4ca2fa69fc584c8a697884454a3d95453b044e7548b48ff44a1d95605741a5b2", "disposition": "sole retained member included"}},
+    "document_accounting": {"$ref": "#/$defs/documentAccounting"},
+    "member_accounting": {"const": [{"path": "raw/ccel/npnf2/npnf211.xml", "disposition": "included; every retained document region explicitly included or excluded below"}]},
+    "source_census": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_document", "assigned_scope", "excluded_shell_head_front_and_indexes"],
+      "properties": {"complete_document": {"$ref": "#/$defs/census"}, "assigned_scope": {"$ref": "#/$defs/census"}, "excluded_shell_head_front_and_indexes": {"$ref": "#/$defs/census"}}
+    },
+    "assigned_work_count": {"const": 3},
+    "feature_count": {"const": 14950},
+    "attribute_count": {"const": 34639},
+    "feature_counts": {"const": {"div1":3,"div2":50,"div3":92,"div4":1061,"h1":8,"h2":26,"h3":69,"h4":1169,"h5":2,"h6":8,"hr":19,"i":777,"note":2684,"p":5129,"pb":587,"scripRef":1803,"span":1442,"sup":2,"table":1,"td":12,"tr":6}},
+    "omitted_feature_count": {"const": 0},
+    "duplicate_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "table_census": {"const": {"tables": 1, "rows": 6, "cells": 12}},
+    "top_level_division_accounting": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["ordinal", "div1_id", "title", "disposition", "reason", "subtree_sha256"],
+        "properties": {"ordinal": {"type": "integer", "minimum": 1, "maximum": 5}, "div1_id": {"enum": ["i", "ii", "iii", "iv", "v"]}, "title": {"type": "string"}, "disposition": {"enum": ["assigned-work-represented", "source-evidence-outside-work-projection"]}, "reason": {"type": "string", "minLength": 1}, "subtree_sha256": {"$ref": "#/$defs/sha256"}}
+      }
+    },
+    "crosswalk": {"type": "array", "minItems": 14950, "maxItems": 14950, "items": {"$ref": "#/$defs/crosswalkRow"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}},
+    "census": {
+      "type": "object", "additionalProperties": false,
+      "required": ["elements", "attributes", "text_nodes", "tail_nodes_in_scope", "characters", "non_ascii_characters", "notes", "page_breaks", "scripture_references", "comments", "processing_instructions"],
+      "properties": {"elements": {"type": "integer"}, "attributes": {"type": "integer"}, "text_nodes": {"type": "integer"}, "tail_nodes_in_scope": {"type": "integer"}, "characters": {"type": "integer"}, "non_ascii_characters": {"type": "integer"}, "notes": {"type": "integer"}, "page_breaks": {"type": "integer"}, "scripture_references": {"type": "integer"}, "comments": {"type": "integer"}, "processing_instructions": {"type": "integer"}}
+    },
+    "headInventoryRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordinal", "selector", "tag", "attributes", "direct_text", "tail_text"],
+      "properties": {"ordinal": {"type": "integer", "minimum": 1}, "selector": {"type": "string"}, "tag": {"type": "string"}, "attributes": {"$ref": "#/$defs/stringMap"}, "direct_text": {"type": "string"}, "tail_text": {"type": "string"}}
+    },
+    "metadataValue": {
+      "type": "object", "additionalProperties": false,
+      "required": ["text", "attributes"],
+      "properties": {"text": {"type": "string"}, "attributes": {"$ref": "#/$defs/stringMap"}}
+    },
+    "metadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["published", "titles", "creators", "publishers", "dates", "identifiers", "languages", "rights"],
+      "properties": {"published": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "titles": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "creators": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "publishers": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "dates": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "identifiers": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "languages": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}, "rights": {"type": "array", "items": {"$ref": "#/$defs/metadataValue"}}}
+    },
+    "documentAccounting": {
+      "type": "object", "additionalProperties": false,
+      "required": ["xml_declaration", "standalone", "doctype", "pre_root_comments", "pre_root_processing_instructions", "post_root_nodes", "root_tag", "root_attributes", "root_namespace_declarations", "head_inventory", "metadata"],
+      "properties": {
+        "xml_declaration": {"const": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"}, "standalone": {"const": false},
+        "doctype": {"const": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">"},
+        "pre_root_comments": {"type": "array", "items": {"type": "string"}},
+        "pre_root_processing_instructions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["target", "text"], "properties": {"target": {"type": "string"}, "text": {"type": "string"}}}},
+        "post_root_nodes": {"const": []}, "root_tag": {"const": "ThML"}, "root_attributes": {"const": {}}, "root_namespace_declarations": {"const": {}},
+        "head_inventory": {"type": "array", "items": {"$ref": "#/$defs/headInventoryRow"}}, "metadata": {"$ref": "#/$defs/metadata"}
+      }
+    },
+    "attributeDisposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_attribute", "source_value", "destination", "method"],
+      "properties": {"source_attribute": {"type": "string"}, "source_value": {"type": "string"}, "destination": {"type": "string"}, "method": {"type": "string"}}
+    },
+    "crosswalkRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["feature_id", "source_selector", "source_tag", "source_xml_id", "attributes", "direct_text", "tail_text", "excluded_root_tail", "direct_text_sha256", "tail_text_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_child_ordinal", "tei_attributes", "attribute_dispositions", "disposition", "tei_selector", "parent_feature_id", "source_title_head"],
+      "properties": {
+        "feature_id": {"type": "string"}, "source_selector": {"type": "string"}, "source_tag": {"type": "string"}, "source_xml_id": {"type": ["string", "null"]},
+        "attributes": {"$ref": "#/$defs/stringMap"}, "direct_text": {"type": "string"}, "tail_text": {"type": "string"}, "excluded_root_tail": {"type": "string"},
+        "direct_text_sha256": {"$ref": "#/$defs/sha256"}, "tail_text_sha256": {"$ref": "#/$defs/sha256"}, "tei_tag": {"type": "string"}, "tei_xml_id": {"type": "string"},
+        "tei_parent_id": {"type": "string"}, "tei_child_ordinal": {"type": "integer", "minimum": 1}, "tei_attributes": {"$ref": "#/$defs/stringMap"},
+        "attribute_dispositions": {"type": "array", "items": {"$ref": "#/$defs/attributeDisposition"}}, "disposition": {"const": "represented"}, "tei_selector": {"type": "string"},
+        "parent_feature_id": {"type": ["string", "null"]}, "source_title_head": {"type": ["string", "null"]},
+        "work_id": {"enum": ["sulpitius-severus-selected-works", "vincent-of-lerins-commonitory", "john-cassian-selected-works"]}, "source_root_id": {"enum": ["ii", "iii", "iv"]}
+      }
+    }
+  }
+}

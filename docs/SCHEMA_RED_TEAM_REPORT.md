@@ -1,5 +1,7 @@
 # Open Christian Data -- Schema Red Team Report
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Date:** 2026-03-27  
 **Scope reviewed:** `docs/SCHEMA_RED_TEAM_BRIEF.md`, `docs/SCHEMA_SPEC.md`, `schemas/types.ts`, `schemas/v1/commentary.schema.json`, `data/commentaries/matthew-henry/ezekiel.json`, `raw/Creeds.json`, `raw/Commentaries-Database`, `raw/bible_databases/formats/json/BSB.json`, and the source samples in `raw/samples/`.
 

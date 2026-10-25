@@ -1,0 +1,121 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "robertson-word-pictures-vol1-retained-thml",
+  "work_id": "robertson-word-pictures-vol1",
+  "ticket": "37c-266",
+  "owner_route": "LIB-057",
+  "scope": {
+    "member_order": [
+      "matthew",
+      "mark"
+    ],
+    "member_count": 2,
+    "selector": "Both complete retained ThML document envelopes",
+    "boundary": "Assigned Vol. I Matthew/Mark cohort; all header, shell, front matter, chapter and index carriers included. Bibliographic edition and volume identity remain unresolved."
+  },
+  "authorities": [
+    {
+      "name": "matthew",
+      "role": "primary-source",
+      "path": "raw/ccel/robertson-word-pictures/robertson_at_wp_matt.xml",
+      "bytes": 800470,
+      "sha256": "e5c904c810a4582c881e2c13486654c3e0b7eed569cb83d667a4cd1c136b62ae"
+    },
+    {
+      "name": "mark",
+      "role": "primary-source",
+      "path": "raw/ccel/robertson-word-pictures/robertson_at_wp_mark.xml",
+      "bytes": 554783,
+      "sha256": "d3666fb8e0e261776ce3b02bf072764af7c21ced0712c32161d5e6e58d9cfc52"
+    },
+    {
+      "name": "profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/commentaries/robertson-word-pictures-vol1/source-feature-profile.json",
+      "bytes": 15955,
+      "sha256": "e523e23dc14b82bc40583ea1347d40bb289f19bbfd53e3b72457d69049a868a3"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/commentaries/robertson-word-pictures-vol1/validation-policy.json",
+      "bytes": 1610,
+      "sha256": "5f5d2330704eb93d6603d4a6dd0caa8daf1129523960d896d6f089167908edbf"
+    },
+    {
+      "name": "readme",
+      "role": "source-attribution-readme",
+      "path": "sources/commentaries/robertson-word-pictures-vol1/README.source.md",
+      "bytes": 1568,
+      "sha256": "3f806b6d24d489ac0a57934ad8a5fd3142fd3dc2e93357618d5f36405bd6fd49"
+    },
+    {
+      "name": "unresolved",
+      "role": "unresolved-decisions",
+      "path": "sources/commentaries/robertson-word-pictures-vol1/unresolved.jsonl",
+      "bytes": 705,
+      "sha256": "21a2d851c8d6975babaf6f33a253b757e500ae87ad7dc3cdd0d165f4b3751bef"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "contract",
+      "role": "runtime",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "bytes": 25076,
+      "sha256": "a3cdf8daa9d67725a22995584a2a99ba796fc4c7578058496f1f9d6bad401ac5"
+    },
+    {
+      "name": "verifier",
+      "role": "runtime",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "name": "tei_all_teix.xsd",
+      "role": "schema-dependency",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "tei_all_xml.xsd",
+      "role": "schema-dependency",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    }
+  ],
+  "converter": {
+    "id": "robertson-vol1-retained-thml",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/robertson_word_pictures_vol1_reconstruction.py",
+    "implementation_sha256": "8f9b2909311e7f5f8fd25d01f3999593289fd1653e74a9d7bedbc5fa7d411b13"
+  },
+  "validator": {
+    "id": "robertson-vol1-independent-oracle",
+    "version": "1",
+    "callable": "validate",
+    "implementation_path": "build/tei/robertson_word_pictures_vol1_oracle.py",
+    "implementation_sha256": "f340c8c9ca2f754124e2a1c8a7d3b61e9774644b8a1a193aa2666cb4ceab58c0",
+    "import_closure_sha256": "49bffa79b5744232c89912b35a109ecbdfb8486f25c708014f004e53414dfc58"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

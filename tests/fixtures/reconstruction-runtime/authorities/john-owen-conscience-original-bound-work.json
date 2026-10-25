@@ -1,0 +1,42 @@
+{
+  "schema_version": "2.0",
+  "work_id": "john-owen-conscience",
+  "title": "Several Practical Cases of Conscience Resolved",
+  "creators": [
+    {
+      "name": "John Owen",
+      "role": "author",
+      "evidence": [
+        "raw/ccel/owen/conscience.xml"
+      ]
+    }
+  ],
+  "evidence": [
+    "raw/ccel/owen/conscience.xml#i",
+    "raw/ccel/owen/conscience.xml#ii"
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "john-owen-conscience-english",
+      "language": "en",
+      "editions": [
+        {
+          "edition_id": "john-owen-conscience-ccel",
+          "title": "Several Practical Cases of Conscience Resolved",
+          "language": "en",
+          "category": "prose",
+          "acquisition_ids": [
+            "john-owen-conscience-retained"
+          ],
+          "containing_source": {
+            "title": "Several Practical Cases of Conscience Resolved",
+            "locator": "raw/ccel/owen/conscience.xml",
+            "evidence": [
+              "raw/ccel/owen/conscience.xml#ThML.head"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

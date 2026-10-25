@@ -1,0 +1,89 @@
+{
+  "authorities": [
+    {
+      "bytes": 414431,
+      "name": "official-archive",
+      "path": "raw/openmgh/bsb00000753/bsb00000753.zip",
+      "role": "primary-source",
+      "sha256": "ff5203afca88460696e59645610cccd241d0cbe5651e5dde095a787238a33ad8"
+    },
+    {
+      "bytes": 1395469,
+      "name": "extracted-tei",
+      "path": "raw/openmgh/bsb00000753/tei/bsb00000753.xml",
+      "role": "source-extracted-text",
+      "sha256": "550c090dad42988c5a8c95adc3328a3b5ef93dcfeaa8f91354fe6a03995f9b27"
+    },
+    {
+      "bytes": 1415,
+      "name": "acquisition-receipt",
+      "path": "raw/openmgh/bsb00000753/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "sha256": "e27e77597ea0fb304a4485a7adeb9b2bc75e2d8e296bd3b6df22a1b98af39eed"
+    },
+    {
+      "bytes": 98,
+      "name": "member-inventory",
+      "path": "raw/openmgh/bsb00000753/member-inventory.tsv",
+      "role": "source-acquisition-evidence",
+      "sha256": "80a0349bace735231ab4c645426bd05096d19262f7fdbc42307eeb29825b13d4"
+    },
+    {
+      "bytes": 2466,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/openmgh-l590-workunits-v7/bsb00000753/012-00/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "8eb04acacb0e2398e57f8420b10720ac6e9edcaf7288c2a099e0b4ea9647e671"
+    },
+    {
+      "bytes": 1371,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/openmgh-l590-workunits-v7/bsb00000753/012-00/policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "a7a9479701a23c0f97d4bdd233c2a1f5a50092663f3f07a4e36fe6cbfa6e2405"
+    },
+    {
+      "bytes": 613,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/openmgh-l590-workunits-v7/bsb00000753/012-00/README.source.md",
+      "role": "source-description",
+      "sha256": "e5afd30c1b6386f84b38177314ba61cc49d10a337a98335d924492958b43070b"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-openmgh-l590-workunit",
+    "implementation_path": "build/tei/openmgh_l590_workunits.py",
+    "implementation_sha256": "176ae5a3f21bdb62657917fbabc9373766c61297bba0442333c071b38067deda",
+    "version": "3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "bsb00000753-work-012-00",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-openmgh-l590-workunit-oracle",
+    "implementation_path": "build/tei/openmgh_l590_workunit_oracle.py",
+    "implementation_sha256": "7ca36c443732ed5487e589dda19a30ecaf661d4071afe6306a2d8e5c6fe874fd",
+    "import_closure_sha256": "7ca36c443732ed5487e589dda19a30ecaf661d4071afe6306a2d8e5c6fe874fd",
+    "version": "4"
+  },
+  "work_id": "vita-sancti-hugberti"
+}

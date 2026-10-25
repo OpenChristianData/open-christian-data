@@ -1,6 +1,6 @@
 # ADR-0020: Withdraw the vanilla-JS mandate; reopen the reviewer-UI shell decision
 
-**Status:** Accepted (2026-07-04). Supersedes ADR-0012.
+**Status:** Historical. Superseded ADR-0012; the OCD implementation was retired after CVW became the current review workbench (2026-08-15).
 
 ## Context
 

@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 883489,
+  "member_inventory_sha256": "5ec464434799f2e8b14de35c72630c54889685a373ce4a8b7761846dc641f18d",
+  "member_name": "bsb00000754.xml",
+  "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (V) (MGH SS rer. Merov. 7)",
+  "source_id": "bsb00000754",
+  "work_linkage": {
+    "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+    "candidate_first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00165_1",
+    "candidate_last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00184_24",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "hymnus-sancti-gangulfi-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/hymnus-sancti-gangulfi/forms/hymnus-sancti-gangulfi-openmgh-retained/editions/hymnus-sancti-gangulfi-openmgh-electronic/acquisitions/hymnus-sancti-gangulfi-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "8306e38c396a3324939a1de9443c4e800a82e8d5ca0a9bbf5157cb3924c2d57e",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "hymnus-sancti-gangulfi-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00180_8",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00184_24",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "hymnus-sancti-gangulfi-openmgh-retained",
+        "work_id": "hymnus-sancti-gangulfi",
+        "work_sidecar_path": "library/works/hymnus-sancti-gangulfi/work.json",
+        "work_sidecar_sha256": "79e71f5b17442083f1c438a047d64e599d59d5af677a60ef50204a340261f71d"
+      },
+      {
+        "acquisition_id": "vita-sancti-gangulfi-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-gangulfi/forms/vita-sancti-gangulfi-openmgh-retained/editions/vita-sancti-gangulfi-openmgh-electronic/acquisitions/vita-sancti-gangulfi-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "974dc9f86490d303c7b54727574bba0d85032c6ed0e89161552f717b6e7a938c",
+        "archive_sha256": "f25422ac5fb447be60d9d6fcc99509a546144224ac68b370c220b89df0a715fe",
+        "edition_id": "vita-sancti-gangulfi-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00165_1",
+        "last_locator": "raw/openmgh/bsb00000754/tei/bsb00000754.xml#bsb00000754_00180_7",
+        "member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+        "textual_form_id": "vita-sancti-gangulfi-openmgh-retained",
+        "work_id": "vita-sancti-gangulfi",
+        "work_sidecar_path": "library/works/vita-sancti-gangulfi/work.json",
+        "work_sidecar_sha256": "175bd814a44d34aedb8da4be2b87028f4afe2c4cade8fa4ea58029fa36b14af4"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "hymnus-sancti-gangulfi",
+      "vita-sancti-gangulfi"
+    ],
+    "source_id": "bsb00000754",
+    "source_member_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+    "source_path": "raw/openmgh/bsb00000754/tei/bsb00000754.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 4,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Gangulfi",
+    "title": "Vita Gangulfi"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 7: Passiones vitaeque sanctorum aevi Merovingici (V)"
+  ]
+}

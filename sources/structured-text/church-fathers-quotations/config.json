@@ -1,0 +1,24 @@
+{
+  "resource_id": "church-fathers-quotations",
+  "work_id": "church-fathers-quotations",
+  "title": "Church Fathers verse-reference quotations",
+  "source_id": "church-fathers-quotations",
+  "source_format": "TOML member tree",
+  "source_file": "raw/Commentaries-Database",
+  "retained_source_envelope": "sources/structured-text/church-fathers-quotations/source-member-equality.json",
+  "retained_primary_member_set": "ocd-source-member-set-v1",
+  "source_archive": {
+    "logical_name": "Commentaries-Database.tar",
+    "bytes": 132531712,
+    "sha256": "5a4ba3ef4bfd168cdaf4cd6bcc4e8cc655c90da97bfe5abf3e6fe9338d86fbe6",
+    "member_count": 59021
+  },
+  "catalog_claim_lineage": {
+    "work_id": "church-fathers-quotations",
+    "claim_count": 325,
+    "association": "catalog_claim_lineage+exact_id",
+    "derived_output_only": true
+  },
+  "rights_member": "raw/Commentaries-Database/LICENSE",
+  "notes": "Bibliographic, authorship, edition, date, translator, and acceptance fields are intentionally omitted pending primary-source metadata review."
+}

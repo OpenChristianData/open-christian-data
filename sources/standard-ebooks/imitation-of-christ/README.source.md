@@ -1,0 +1,15 @@
+# The Imitation of Christ — retained Standard Ebooks source and rights
+
+This selected accepted edition is a faithful TEI reconstruction of the retained Standard Ebooks checkout, using 126 XHTML text members in exact OPF spine order. The other 16 checkout members are separately retained and hash-bound support, including the license, OPF, style sheets and images. The September 26 source rebind changed accepted authority metadata and the representation revision; its public readable text and structure were independently confirmed unchanged from the earlier selected rows. This does not claim independent print-edition collation.
+
+The retained source is https://github.com/standardebooks/thomas-a-kempis_the-imitation-of-christ_william-benham at revision `03503a97cf39c5b5eea3b7522335aaa337a4a633`. Source edition: https://standardebooks.org/ebooks/thomas-a-kempis/the-imitation-of-christ/william-benham . Its OPF and colophon identify Project Gutenberg #1653 as the transcription basis; the local config's #26222 claim is left unresolved.
+
+The source popularly attributes the originally anonymous work to Thomas à Kempis, while its retained preface argues for John Gersen. William Benham is the translator; the dedication says 1874 and the colophon says 1877, so the translation year is not silently resolved. The retained package also credits H. C. Beeching, El Greco, Project Gutenberg, Weijia Cheng, Alex Cabal, and The League of Moveable Type in distinct roles. The visible selected credit and full retained LICENSE.md text appear in `data/prose/imitation-of-christ/README.md` and in the private offline dataset card.
+
+The retained LICENSE.md says underlying text and artwork are believed public domain in the United States, warns that other jurisdictions may differ, and separately dedicates the contributors' work via CC0 1.0. The complete retained license appears in the data notice with its sole CRLF line ending normalized to LF; the source checkout also retains the Uncopyright XHTML. No image binaries are packaged in the structured-text release. Human textual review, local-law rights review, and public publication remain separate.
+
+## Current selected text notice — October 9, 2026
+
+For edition `imitation-of-christ-standard-ebooks`, carry the complete human-visible notice at `data/prose/imitation-of-christ/README.md` through its exact hash-bound public notice selection. Its release row license is **Public domain (United States); digital contributions CC0-1.0**.
+
+The retained source authority is `library/works/imitation-of-christ/forms/benham-english/editions/imitation-of-christ-standard-ebooks/acquisitions/imitation-of-christ-se-checkout.json` (SHA-256 `73b9831e43ffd3a1efb09d45fb625a8dbfb1cd4aacb1870d87a8cce60012e4d5`); the unchanged accepted master is SHA-256 `f7a695ea027720a8bff7c0d924c020ef41598ab066ec8760e5332a4cf5749233`. This current disposition supersedes only preliminary text-rights uncertainty for the stated scope; all earlier source accounting, credits, territorial restrictions, excluded assets, gaps and publication-authorization limits remain.

@@ -1,0 +1,33 @@
+{
+  "checks": [
+    "Verify all retained source/evidence members by exact length and SHA-256.",
+    "Reconcile 284 JP2 originals, 284 scandata leaves, four excluded leaves, and 280 PDF/OCR access pages.",
+    "Compare every TEI page, source paragraph, line, word count, order, source-derived group, page label, original-image relationship and PDF facsimile target to retained carriers.",
+    "Check preliminaries/contents/Part I divider, both part boundaries, back-matter boundaries, and two source-visible heading positions.",
+    "Compare all 89 Abbyy table blocks, including every row, cell, and OCR line, with separate alternate TEI table witnesses.",
+    "Confirm nonaccepted status, unresolved OCR and semantic gaps, TEI P5 validity, and candidate-package schema.",
+    "Reject source-relevant omissions, wording changes, page reassignment, false facsimile targets, and changed account records.",
+    "Reproduce candidate in a separate clean process and compare member bytes."
+  ],
+  "limitations": [
+    "Uncorrected OCR has severe Greek recognition errors.",
+    "Eleven access pages have no OCR word tokens; image-only text remains untranscribed.",
+    "Paradigms are retained as alternate Abbyy OCR tables, but Greek cell readings and their attachment to DjVu paragraphs are not print-verified; vocabulary and index entries retain source line carriers.",
+    "The contents page-level hierarchy is preserved, but four-page entry and column alignment cannot be reliably recovered from DjVu OCR.",
+    "Full image-to-TEI collation and human acceptance remain open.",
+    "1923 U.S. print public-domain basis does not clear IA digitization or OCR rights."
+  ],
+  "oracle_id": "ocd-davis-l332-independent-oracle",
+  "policy_id": "davis-l332-ia-validation-v1",
+  "provenance": {
+    "identity": {
+      "author": "William Hersey Davis",
+      "date": "1923",
+      "title": "Beginner's Grammar of the Greek New Testament"
+    },
+    "source": {
+      "bytes": 179271680,
+      "sha256": "ee4e6407dc5393259d2e6d6009415850a21e2844fe9a80bb9a7ace0230cc75e3"
+    }
+  }
+}

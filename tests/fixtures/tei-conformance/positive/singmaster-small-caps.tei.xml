@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-singmaster-small-caps">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>The Story of Lutheran Missions small-caps excerpt</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>The Story of Lutheran Missions small-caps excerpt</title>
+          <idno type="sha256">11d6827013ade4b36ed68c3f9f9d4f5d96086405013deb202651361d5a41871a</idno>
+          <ptr target="ocd-source:raw/clean-ready-acquisition-to-tei/master-5/35/singmaster-story-of-lutheran-missions/pg55819-images.html"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; CSS-backed small-caps evidence.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-singmaster-small-caps-selection">
+        <ab xml:id="slm-src-B0009" n="9"><hi rend="small-caps">Copyright</hi>, 1917</ab>
+      </div>
+    </body>
+  </text>
+</TEI>

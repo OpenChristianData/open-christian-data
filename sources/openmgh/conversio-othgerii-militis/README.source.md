@@ -1,0 +1,5 @@
+# Electronic source for conversio-othgerii-militis
+
+The retained text source is `raw/openmgh/bsb00000752/tei/bsb00000752.xml` (SHA-256 `620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a`). Its ZIP is acquisition packaging, not another text witness. This work selects the complete fourth `div type=part` within the Faronis carrier in bsb00000752. Its 182 native children retain 115 line markers, 56 word nodes, eight highlights, and three page breaks in source order. The three preceding Faronis parts remain outside this Othgerii work. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/conversio-othgerii-militis/README.md` and bind both exact hashes through `public_notices`.

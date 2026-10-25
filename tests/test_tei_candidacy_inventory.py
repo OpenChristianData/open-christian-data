@@ -102,6 +102,49 @@ def test_non_ccel_thml_config_is_unclassified(tmp_path: Path) -> None:
     assert "unclassified source config: sources/reference/unrelated-thml-family/config.json" in errors
 
 
+def test_reconstruction_identity_config_has_one_inventory_owner(tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    config_path = tmp_path / "sources" / "structured-text" / "ticket" / "work" / "config.json"
+    config_path.parent.mkdir(parents=True)
+    config_path.write_text(
+        json.dumps(
+            {
+                "contract": "ocd-reconstruction-work-identity-v1",
+                "work_id": "ticket-work",
+            }
+        ),
+        encoding="utf-8",
+    )
+    inventory_path = tmp_path / "inventory.json"
+    inventory_path.write_text(
+        json.dumps(
+            {
+                "entries": [
+                    _entry(
+                        "reconstruction-work-identity-bindings",
+                        config_rules=[
+                            {
+                                "path_glob": "sources/**/config.json",
+                                "field_in": {
+                                    "contract": [
+                                        "ocd-reconstruction-work-identity-v1"
+                                    ]
+                                },
+                            }
+                        ],
+                    )
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    errors, counts = inventory_tool.check_inventory(tmp_path, inventory_path)
+
+    assert errors == []
+    assert counts["configs"] == 1
+
+
 def test_overlapping_data_globs_fail_with_multiple_owners(tmp_path: Path) -> None:
     _seed_repo(tmp_path)
     parser_path = tmp_path / "build" / "parsers" / "example.py"

@@ -1,5 +1,7 @@
 # ADR-0016: Unify the shared lexicon over the NSH OCR pipeline; rename the OCR-layer vocabulary
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 Status: accepted (2026-06-19); rename map extended and the three pending terms resolved 2026-06-25 (the one change beyond naming is ADR-0018).
 
 ## Decision

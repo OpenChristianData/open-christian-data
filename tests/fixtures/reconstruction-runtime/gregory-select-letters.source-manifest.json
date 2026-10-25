@@ -1,0 +1,104 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf2-lib046-gregory-select-letters-iv",
+  "scope": {
+    "kind": "complete-source-subtree",
+    "source_member": "retained-npnf207",
+    "assigned_roots_in_source_order": [
+      [
+        "npnf207",
+        "iv",
+        "gregory-of-nazianzus-select-letters"
+      ]
+    ],
+    "excluded_top_level_roots": [
+      "i",
+      "ii",
+      "iii",
+      "v"
+    ],
+    "top_level_root_order": [
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v"
+    ],
+    "direct_assigned_div2_order": [
+      "iv.i",
+      "iv.ii",
+      "iv.iii",
+      "iv.iv"
+    ]
+  },
+  "authorities": [
+    {
+      "name": "retained-npnf207",
+      "path": "raw/ccel/npnf2/npnf207.xml",
+      "role": "primary-source",
+      "bytes": 4247548,
+      "sha256": "3ac73f4179c0b7d6e66e6fea04ae572e64c0e4a80e8fa38980b40366c8a13928"
+    },
+    {
+      "name": "entry-config",
+      "path": "sources/structured-text/gregory-of-nazianzus-select-letters/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1671,
+      "sha256": "bb1ac479d1338db086707d40b49ef53fdfbad82c0cf822472179d9515fa4843e"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/gregory-of-nazianzus-select-letters/gregory-select-letters.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1974,
+      "sha256": "ea92d1cd1890370d15e26024309d718b0221fdcfd5500f09936c0e037678f2ef"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/gregory-of-nazianzus-select-letters/gregory-select-letters.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1725,
+      "sha256": "f59f169b9ff4f46342e6d9f893fbbd855ef37c6deba403e35c7f9c9f94ff415f"
+    },
+    {
+      "name": "ccel-permission-evidence",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-npnf2-lib046-gregory-select-letters-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf2_lib046_gregory_select_letters_reconstruction.py",
+    "implementation_sha256": "1886f635885ca19e8327b09b92c4ea552f26998876077bf545b5a60e2d0850ad"
+  },
+  "validator": {
+    "id": "ocd-npnf2-lib046-gregory-select-letters-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf2_lib046_gregory_select_letters_oracle.py",
+    "implementation_sha256": "a58383b18c4c751eda55f64bfdac8501c3bb4cea8ae178fa70fead9b5888b7e7",
+    "import_closure_sha256": "4fb70c278b00a305da3f2b1aa80fb3d4799b9e76be6e4c6943c7451034447d0b"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

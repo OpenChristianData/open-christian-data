@@ -1,0 +1,43 @@
+{
+  "contract": "ocd-george-whitefield-validation-policy-v1",
+  "work_id": "george-whitefield-sermons",
+  "ticket_id": "LIB-060",
+  "source_envelope": {
+    "ccel_path": "raw/ccel/whitefield_sermons.xml",
+    "ccel_sha256": "cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec",
+    "gutenberg_path": "raw/gutenberg/sermons/whitefield/pg77041.txt",
+    "gutenberg_sha256": "b952725e8731399d4fd7fbe319aa9f57660d887f7cc6dd3937da91754e4ce08e"
+  },
+  "required_candidate_status": "nonaccepted",
+  "ccel_policy": {
+    "member_scope": "complete XML source document",
+    "direct_body_carriers": "all 62 div1 elements in exact source order",
+    "text_and_structure": "Preserve every element tag, ordered attributes, text node, tail, XML comment, and source processing-instruction target/data. Any unsupported node fails closed.",
+    "required_exact_ids": "The ordered source div1 id list in the reconstruction profile must match exactly.",
+    "required_supplementary_features": ["ThML.head subtree", "body comments", "processing instructions", "all carrier attributes", "all inline markup"]
+  },
+  "project_gutenberg_policy": {
+    "member_scope": "complete retained text file inventoried by physical line and byte range",
+    "selected_carriers": ["LVIII", "LIX"],
+    "other_source_sermons": "Each of the other 26 source-native sermon carriers must be listed with its exact line interval and an explicit not-selected disposition.",
+    "selection_limit": "Not-selected is a route disposition only; it does not establish that the carrier is outside the larger work or corpus.",
+    "preservation": "Keep each selected source-native label, physical line order, line text, and leading spaces. Do not assign a shared ordinal.",
+    "provider_envelope": "Inventory every physical line, including the BOM-bearing first line, title and contents matter, start/end markers, FINIS, and license text; nonselected wrapper lines are not sermon text in the TEI body."
+  },
+  "identity_and_rights": {
+    "collection_boundary": "unresolved",
+    "edition_relationship": "unresolved",
+    "part_relationship": "unresolved",
+    "global_numbering": "unresolved; source-native labels only",
+    "rights_review": "not performed",
+    "human_acceptance": "not accepted",
+    "publication": "not authorized"
+  },
+  "failure_conditions": [
+    "Any source hash, byte count, ordered carrier ID, source-native sermon label, line count, or declared selection changes.",
+    "Any source element, attribute, text, tail, comment, processing instruction, carrier, or physical line is missing, reordered, duplicated, invented, or silently normalized.",
+    "Any unknown source element or unsupported carrier lacks an explicit disposition.",
+    "Any TEI source carrier does not independently round-trip to its retained source event structure and content.",
+    "The candidate asserts a shared sermon ordinal, resolved collection/edition/part relationship, rights clearance, acceptance, release, or publication."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "contract": "ocd-lib054-edwards-fragment-validation-policy-v1",
+  "scope": "one exact extracted Edwards div1, its complete enclosing CCEL volume, and explicit collection-matter disposition",
+  "status": "nonaccepted",
+  "required_checks": [
+    "fragment-and-acquisition-byte-binding",
+    "enclosing-volume-byte-binding",
+    "unique-byte-identical-complete-top-level-div1",
+    "source-work-title-preface-notes-and-nested-body",
+    "volume-opening-and-index-sibling-ownership",
+    "volume-index-backlink-accounting",
+    "readable-source-first-body-crosswalk",
+    "tei-p5-xsd",
+    "independent-enclosing-volume-and-actual-tei-oracle",
+    "separate-rights-print-and-human-review"
+  ]
+}

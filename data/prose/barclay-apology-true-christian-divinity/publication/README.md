@@ -1,0 +1,11 @@
+# Robert Barclay: An Apology for the True Christian Divinity
+
+This one-work projection uses the complete retained Project Gutenberg eBook 56487 electronic witness of the eighth English edition: Birmingham, printed by John Baskerville, sold by the booksellers of London and Westminster, 1765. Robert Barclay is the author. The literal title says it was written in Latin and English and subsequently translated into other languages; those statements do not identify a translator of this retained English witness.
+
+Project Gutenberg credits electronic production to Emmanuel Ackerman and the Online Distributed Proofreading Team. It credits HathiTrust Digital Library, Google, and the University of Michigan Library as image providers. The electronic release date is February 2, 2018, distinct from the retained print date. See the [Project Gutenberg ebook record](https://www.gutenberg.org/ebooks/56487), [retained HTML source](https://www.gutenberg.org/files/56487/56487-h/56487-h.htm), [Distributed Proofreaders](https://www.pgdp.net/), and [Project Gutenberg License](https://www.gutenberg.org/policy/license.html).
+
+Project Gutenberg identifies the underlying work as public domain in the United States. The retained eBook remains subject to the Project Gutenberg License and trademark conditions; users outside the United States must check local law. This is the provider's statement, not independent rights clearance.
+
+The whole accepted electronic witness retains title matter, dedication, reader preface, theological theses, all fifteen propositions including the source's combined V–VI group, conclusion, both indexes, errata, and the complete transcriber's note. Footnotes, margin notes, tables, lists, page milestones, emphasis, and explicit correction choices remain structurally represented. The Gutenberg license envelope remains in the retained source and provenance outside the work's TEI text.
+
+Current actual-master projection and private offline checks reuse the existing technical acceptance without rewriting the source or master. Human acceptance, exhaustive human proofreading, full visual collation, physical-print collation, and independent rights clearance remain separate. This private offline release does not authorize publication.

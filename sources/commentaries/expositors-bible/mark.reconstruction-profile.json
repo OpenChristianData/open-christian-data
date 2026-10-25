@@ -1,0 +1,93 @@
+{
+  "contract": "ocd-mark-rich-tei-profile-v2",
+  "profile_id": "mark-rich-tei-v1",
+  "version": 2,
+  "language_scope": "English",
+  "source_carrier": "CCEL ThML XML",
+  "represented_scope": "all content-bearing material in the exact retained CCEL ThML witness",
+  "identity": {
+    "work_id": "expositors-bible-gospel-according-to-st-mark",
+    "work_label": "The Expositor's Bible: The Gospel According to St. Mark",
+    "expression_id": "expositors-bible-mark-english-1896",
+    "edition_id": "expositors-bible-mark-ccel-english-1896-rendering-v1",
+    "identifier_scope": "case-local noncanonical reconstruction identifiers; not promoted canonical IDs",
+    "language": "en",
+    "source_transcription": {
+      "title": "The Expositor's Bible: The Gospel According to St. Mark",
+      "author": "G. A. Chadwick",
+      "series_editor": "William Robertson Nicoll",
+      "print_source_as_stated": "London, Hodder & Stoughton, 1896",
+      "print_source_collated": false,
+      "electronic_rendering": "CCEL version 1.0"
+    }
+  },
+  "source_feature_inventory": {
+    "root": "ThML.body",
+    "stable_selector": "absolute child-position XPath plus source XML id when present",
+    "text_policy": "direct text and tail normalized only by XML entity parsing; no editorial rewriting",
+    "attribute_policy": "all source attributes are recorded and semantically projected or preserved in accountability evidence"
+  },
+  "feature_dispositions": {
+    "a": {"tei": "ref"},
+    "blockquote": {"tei": "quote"},
+    "br": {"tei": "lb"},
+    "div": {"tei": "div"},
+    "div1": {"tei": "div"},
+    "div2": {"tei": "div"},
+    "h1": {"tei": "ab", "type": "heading"},
+    "h2": {"tei": "ab", "type": "heading"},
+    "h3": {"tei": "ab", "type": "heading"},
+    "h4": {"tei": "ab", "type": "heading"},
+    "i": {"tei": "hi"},
+    "insertIndex": {"tei": "milestone"},
+    "l": {"tei": "l"},
+    "li": {"tei": "item"},
+    "note": {"tei": "note"},
+    "p": {"tei": "p"},
+    "scripCom": {"tei": "ab", "type": "scripture-commentary"},
+    "scripRef": {"tei": "ref"},
+    "span": {"tei": "seg"},
+    "ul": {"tei": "list"},
+    "verse": {"tei": "lg"}
+  },
+  "candidate_model": {
+    "member_names": [
+      "manifest.json",
+      "content.tei.xml",
+      "source-accountability.json",
+      "provenance.json",
+      "unresolved.jsonl",
+      "README.source.md"
+    ],
+    "external_digest_bound_authorities": [
+      "retained-thml",
+      "source-config",
+      "ccel-permission",
+      "reconstruction-profile",
+      "validation-policy",
+      "candidate-package-schema",
+      "source-accountability-schema",
+      "tei-p5-xsd"
+    ]
+  },
+  "invariants": [
+    "all content-bearing ThML.body elements are inventoried exactly once by a stable source XPath",
+    "all 2,405 inventoried elements have exactly one represented TEI target",
+    "the exact depth-first feature sequence, projected parent ID, and sibling ordinal authenticate source hierarchy and order",
+    "source direct text and tail text are preserved on the represented target",
+    "source title, navigation, scripture, style, class, note, and identifier attributes have explicit target evidence",
+    "all internal TEI pointers resolve through the deterministic source-id to TEI-id map; unresolved source pointers are typed exclusions",
+    "scripture commentary and reference linkage uses external OSIS URNs rather than dangling local analysis pointers",
+    "raw source, source config, permission, profile, policies, and schemas remain external digest-bound authorities",
+    "the six-member candidate contains no duplicated raw authority or empty semantic ledger",
+    "derived consumer projections are optional characterization-test inputs, never runtime authorities",
+    "the complete TEI including header validates against the bound TEI P5 XSD",
+    "the candidate remains nonaccepted and requires human acceptance",
+    "case-local IDs are not canonical identity decisions"
+  ],
+  "incumbent_profile_migration": {
+    "source_path": "config/reconstruction/profiles/aw07-mark-rich-tei-v1.json",
+    "source_sha256": "c7ea372438934f333c434a6820f7ef29e066968d12f7433394b903df10574663",
+    "basis": "Durable source-local successor retaining the incumbent feature mappings and fidelity semantics while correcting its obsolete fourteen-member package and embedded-authority wording. Runtime does not read the incumbent path."
+  }
+}

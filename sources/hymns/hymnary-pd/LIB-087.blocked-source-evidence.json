@@ -1,0 +1,70 @@
+{
+  "contract": "ocd-lib087-blocked-source-evidence-v1",
+  "ticket": "LIB-087",
+  "work_id": "hymnary-pd",
+  "status": "blocked",
+  "candidate_status": "nonaccepted",
+  "tei_candidate_created": false,
+  "publication_authorized": false,
+  "source": {
+    "path": "raw/hymnary-pd/oldest_pd_instances.csv.zip",
+    "source_url": "https://hymnary.org",
+    "archive_bytes": 13552991,
+    "archive_sha256": "727bb1bee930547352b5fcdd3d9800f158ee156a168c866c2ee50b2472bac475",
+    "retained_payload": "oldest_pd_instances.csv",
+    "payload_bytes": 36381819,
+    "payload_sha256": "09ab6edd41a96c205e1d171e36173cc9c28c32aa6809156c6bd10eeeba24a18b",
+    "received": "2026-04-22"
+  },
+  "archive": {
+    "integrity_testzip": null,
+    "member_count": 2,
+    "members": [
+      {
+        "name": "oldest_pd_instances.csv",
+        "compression": "deflate",
+        "compressed_bytes": 13552407,
+        "uncompressed_bytes": 36381819,
+        "crc32": "d876068e",
+        "timestamp": "2026-04-15T08:15:00"
+      },
+      {
+        "name": "__MACOSX/._oldest_pd_instances.csv",
+        "compression": "deflate",
+        "compressed_bytes": 152,
+        "uncompressed_bytes": 244,
+        "crc32": "3ca5ff3c",
+        "timestamp": "2026-04-15T08:15:00",
+        "included": false,
+        "reason": "AppleDouble filesystem metadata, not hymn content"
+      }
+    ]
+  },
+  "parse_attempt": {
+    "encoding": "UTF-8",
+    "nul_bytes": 0,
+    "replacement_characters": 0,
+    "mode": "streaming csv.reader strict=True",
+    "complete_rows_before_failure": 17915,
+    "failure": "_csv.Error: ',' expected after '\"'",
+    "failure_uncompressed_byte_offset": 18709285,
+    "failure_physical_line": 554012,
+    "offending_quote_uncompressed_byte_offset": 18709623,
+    "context": "The precious \"\"Hope of Glory,\\\"",
+    "permissive_recovery": false,
+    "permissive_recovery_reason": "Permissive parsing fragments the malformed record and cannot support faithful reconstruction."
+  },
+  "blocking_reason": "The retained primary CSV is malformed after 17,915 complete rows. A faithful complete candidate cannot be produced without silently repairing or discarding source bytes.",
+  "rights_identity": {
+    "source_identity": "The retained archive is the frozen Hymnary.org oldest-PD-instances export.",
+    "rights_status": "unresolved",
+    "attribution_requirement": "Link to https://hymnary.org and preserve the source provider's submission contact instruction from the existing source config.",
+    "publication": "not authorized"
+  },
+  "next_action": "Obtain and retain an authoritative corrected export, or obtain an explicitly authorized source-bound repair rule and treat the repaired bytes as a new source identity before reconstruction.",
+  "reopen_when": [
+    "A corrected or explicitly authorized repaired export is retained with a valid 64-character payload SHA-256.",
+    "Strict UTF-8 and CSV parsing reaches EOF without error.",
+    "A source-local LIB-087 manifest and accountability packet bind the exact archive and payload hashes and record the complete member census."
+  ]
+}

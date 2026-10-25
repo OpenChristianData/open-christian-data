@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://openchristiandata.org/paradise-lost.source-accountability.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["contract","schema","source_members","xml_member_count","non_xml_member_count","observation_count","file_count","element_count","attribute_count","text_count","tail_count","represented_count","evidence_only_count","ordered_dispositions_sha256","omitted_count","duplicate_count","observations","non_xml_dispositions","semantic_bindings"],
+  "properties":{
+    "contract":{"const":"ocd-paradise-lost-source-accountability-v1"},
+    "schema":{"const":"paradise-lost.source-accountability.schema.json"},
+    "source_members":{"type":"array","minItems":33,"maxItems":33},
+    "xml_member_count":{"const":25},
+    "non_xml_member_count":{"const":8},
+    "observation_count":{"const":55544},
+    "file_count":{"const":33},
+    "element_count":{"const":21736},
+    "attribute_count":{"const":718},
+    "text_count":{"const":11364},
+    "tail_count":{"const":21693},
+    "represented_count":{"const":10847},
+    "evidence_only_count":{"const":44697},
+    "ordered_dispositions_sha256":{"const":"0ea9aaa1eeb90b109570f56eb3933e63a78a5aa55d2b5d2a08a4821bbe7f6694"},
+    "omitted_count":{"const":0},
+    "duplicate_count":{"const":0},
+    "observations":{"type":"array","minItems":55544,"maxItems":55544,"items":{"type":"object","additionalProperties":false,"required":["source_address","source_member","source_kind","source_name","value","value_sha256","disposition","reason","target"],"properties":{"source_address":{"type":"string"},"source_member":{"type":"string"},"source_kind":{"enum":["file","element","attribute","text","tail"]},"source_name":{"type":"string"},"value":{"type":["string","null"]},"value_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"disposition":{"enum":["represented","evidence-only"]},"reason":{"type":"string"},"target":{"type":"string"}}}},
+    "non_xml_dispositions":{"type":"array","minItems":8,"maxItems":8},
+    "semantic_bindings":{"type":"object","additionalProperties":false,"required":["spine","sections","verse_groups","inline_occurrences","toc","image_strings","metadata_claims","rights_claims"],"properties":{"spine":{"type":"array","minItems":16,"maxItems":16},"sections":{"type":"array","minItems":40,"maxItems":40},"verse_groups":{"type":"array","minItems":13,"maxItems":13},"inline_occurrences":{"type":"array"},"toc":{"type":"array","minItems":17,"maxItems":17},"image_strings":{"type":"array","minItems":16,"maxItems":16},"metadata_claims":{"type":"object"},"rights_claims":{"type":"object","additionalProperties":false,"required":["candidate_status","source_member","source_path","retained_opf_text","underlying_scope","contributor_scope","worldwide_clearance"],"properties":{"candidate_status":{"const":"nonaccepted"},"source_member":{"const":"src/epub/content.opf"},"source_path":{"type":"string"},"retained_opf_text":{"type":"string"},"underlying_scope":{"const":"believed-US-public-domain-worldwide-uncertain"},"contributor_scope":{"const":"CC0-1.0-dedication"},"worldwide_clearance":{"const":false}}}}}
+  }
+}

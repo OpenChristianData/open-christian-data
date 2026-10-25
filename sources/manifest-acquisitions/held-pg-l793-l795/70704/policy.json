@@ -1,0 +1,45 @@
+{
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "archive-and-receipt-hash",
+    "member-inventory",
+    "complete-body-unit-partition",
+    "independent-source-text-and-order",
+    "headings-links-images-tables",
+    "tei-p5",
+    "package-integrity",
+    "candidate-mutations",
+    "clean-process-reproduction"
+  ],
+  "contract": "ocd-manifest-pg-l793-l795-validation-policy-v1",
+  "ebook_id": "70704",
+  "provenance": {
+    "archive_sha256": "85b29f4ed3dd32ed3c1d34d5499d66adc95040b66d9a4853bec3a898f8077ae6",
+    "contract": "ocd-manifest-pg-l793-l795-provenance-v1",
+    "ebook_id": "70704",
+    "html_sha256": "59b412ccea2830d8fed00014e1436bc843de5691a87431bc229282dea32da8ba",
+    "human_acceptance": "pending",
+    "print_collation": "not-performed",
+    "publication": "not-authorized",
+    "rights_clearance": "pending",
+    "scope": "1859 American Tract Society premium tract; Albert Barnes source contribution retained",
+    "status": "nonaccepted"
+  },
+  "unresolved": [
+    {
+      "detail": "Electronic witness has not been collated against a print exemplar.",
+      "id": "pg70704-print-collation",
+      "status": "unresolved"
+    },
+    {
+      "detail": "No human text or edition acceptance has been recorded.",
+      "id": "pg70704-human-acceptance",
+      "status": "unresolved"
+    },
+    {
+      "detail": "Project Gutenberg source license and item-level rights apply; jurisdictional clearance and publication remain pending.",
+      "id": "pg70704-rights",
+      "status": "unresolved"
+    }
+  ]
+}

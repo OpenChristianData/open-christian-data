@@ -1,0 +1,39 @@
+{
+  "contract": "ocd-37c087-validation-policy-v1",
+  "policy_id": "bsb-native-json-complete-v1",
+  "oracle_id": "ocd-37c087-bsb-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "required_counts": {
+    "top_level_fields": 2,
+    "books": 66,
+    "chapters": 1189,
+    "verses": 31102,
+    "nonempty_verses": 31086,
+    "empty_verses": 16,
+    "crosswalk_rows": 32359
+  },
+  "source_order": "top-level JSON key order, book list order, chapter list order, and verse list order are authoritative",
+  "meaningful_features": [
+    "translation marker",
+    "66 named book boundaries",
+    "chapter boundaries and ordinal numbers",
+    "verse boundaries and ordinal numbers",
+    "exact verse text including leading/trailing whitespace",
+    "sixteen source verse objects with empty text"
+  ],
+  "mutation_claims": [
+    "omit a book, chapter, or verse",
+    "duplicate or reorder a book, chapter, or verse",
+    "change verse text, including whitespace",
+    "change a book/chapter/verse identifier or boundary attribute",
+    "invent a TEI carrier or source-accountability row",
+    "drift source, profile, policy, or manifest bindings"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.bsb_reconstruction",
+    "build.parsers.bsb_bible_text",
+    "build.parsers.bible_text_translations"
+  ],
+  "determinism": "Two fresh candidate-tool processes must produce identical package member sets and bytes from the same current manifest and source."
+}

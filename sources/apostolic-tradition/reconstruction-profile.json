@@ -1,0 +1,209 @@
+{
+  "acquisition_id": "apostolic-tradition-gutenberg-acquired",
+  "body": {
+    "attribute_counts": {
+      "alt": 1,
+      "class": 2584,
+      "colspan": 19,
+      "height": 1,
+      "href": 1249,
+      "id": 731,
+      "lang": 3,
+      "src": 1,
+      "title": 18,
+      "width": 1
+    },
+    "body_image_references": [
+      {
+        "alt": "The Apostolic Tradition of Hippolytus",
+        "src": "images/cover.jpg"
+      }
+    ],
+    "class_counts": {
+      "ab": 26,
+      "agate": 1,
+      "box": 1,
+      "center": 6,
+      "cn": 2,
+      "container": 1,
+      "external": 1,
+      "fl": 11,
+      "fn": 458,
+      "fnblock": 1,
+      "fncont": 2,
+      "fndef": 229,
+      "g": 15,
+      "h2line1": 8,
+      "htm": 1,
+      "img": 1,
+      "index": 22,
+      "l": 264,
+      "ltab": 78,
+      "pb": 113,
+      "pbtr": 2,
+      "pg-boilerplate": 2,
+      "pgheader": 2,
+      "pginternal": 1244,
+      "pgref": 612,
+      "qq": 1,
+      "r": 338,
+      "reference": 1,
+      "revint": 12,
+      "sc": 18,
+      "scripRef": 3,
+      "secthead": 5,
+      "small": 78,
+      "smaller": 4,
+      "sn": 25,
+      "t0": 18,
+      "tb": 39,
+      "tbcenter": 2,
+      "toc": 1,
+      "verse": 10,
+      "xttl": 22
+    },
+    "dangling_local_fragment_count": 0,
+    "direct_child_count": 427,
+    "duplicate_source_id_count": 0,
+    "element_count_including_body": 3920,
+    "link_count": 1249,
+    "local_fragment_link_count": 1244,
+    "major_h2_boundaries": [
+      {
+        "body_child": 10,
+        "id": "ch1",
+        "text": "PREFATORY NOTE"
+      },
+      {
+        "body_child": 14,
+        "id": "toc",
+        "text": "CONTENTS"
+      },
+      {
+        "body_child": 34,
+        "id": "ch2",
+        "text": "INTRODUCTION"
+      },
+      {
+        "body_child": 35,
+        "id": "ch3",
+        "text": "I. CHURCH ORDERS"
+      },
+      {
+        "body_child": 88,
+        "id": "ch4",
+        "text": "II. HIPPOLYTUS"
+      },
+      {
+        "body_child": 134,
+        "id": "ch5",
+        "text": "THE APOSTOLIC TRADITION OF HIPPOLYTUS TRANSLATION"
+      },
+      {
+        "body_child": 137,
+        "id": "ch6",
+        "text": "NOTES"
+      },
+      {
+        "body_child": 388,
+        "id": null,
+        "text": "FOOTNOTES"
+      },
+      {
+        "body_child": 391,
+        "id": "ch7",
+        "text": "INDEXES"
+      },
+      {
+        "body_child": 424,
+        "id": null,
+        "text": "Transcriber’s Notes"
+      }
+    ],
+    "normalized_text_characters": 206774,
+    "normalized_text_sha256": "7e3972ea2f5539c61110326c49e778e8467d0e72546a3d700903687910ed2828",
+    "printed_page_marker_count": 42,
+    "tag_counts": {
+      "a": 1296,
+      "b": 1,
+      "blockquote": 8,
+      "body": 1,
+      "br": 41,
+      "dd": 195,
+      "div": 346,
+      "dl": 23,
+      "dt": 165,
+      "footer": 1,
+      "h1": 1,
+      "h2": 12,
+      "h3": 63,
+      "header": 1,
+      "i": 144,
+      "img": 1,
+      "li": 8,
+      "p": 461,
+      "span": 240,
+      "strong": 7,
+      "table": 3,
+      "tbody": 3,
+      "td": 682,
+      "tr": 215,
+      "ul": 2
+    },
+    "unique_source_ids": 731
+  },
+  "contract": "ocd-apostolic-tradition-profile-v1",
+  "edition_id": "apostolic-tradition-gutenberg-electronic",
+  "html_shell": {
+    "doctype": "html",
+    "head_dc_rights": "Public domain in the USA.",
+    "head_direct_children": 34,
+    "head_source_url": "https://www.gutenberg.org/files/61614/61614-h/61614-h.htm",
+    "head_style_elements": 2,
+    "head_title": "The Apostolic Tradition of Hippolytus, translated by Burton Scott Easton—a Project Gutenberg eBook",
+    "html_lang": "en",
+    "policy": "Outer document shell, exact head metadata, CSS, and head-only spine link are retained in the bound source; they are accounted support/presentation, not omitted literary body text."
+  },
+  "mapping": {
+    "attributes": "id, class, href, src, alt, lang, colspan, title, width and height each have explicit TEI mappings; no source body attribute is silently discarded.",
+    "element_names": "A single typed TEI ab carries the complete HTML body. Source paragraphs, headings, blockquotes, divs, headers, footers, and table wrappers map to typed ab carriers because HTML permits mixed block content that TEI divisions do not. Inline anchors, emphasis, spans, line breaks, images, lists, definition-list items, rows, cells, and page breaks use explicit TEI mappings. Source IDs and attributes are retained; unknown elements fail closed.",
+    "excluded_shell": "doctype, html/head shell, head metadata, CSS, and head-only media links remain byte-bound and are explicitly classified in this profile.",
+    "html_body": "All parsed body children are mapped in source order; body-level provider header/footer and start/end markers are included.",
+    "images": "The body cover maps to graphic and remains bound to its archive member; the head-only spine image remains source-bound support.",
+    "links_and_notes": "Anchors map to ref with exact targets and source classes; footnote anchors and their separate source definitions keep their ids and order.",
+    "lists_and_tables": "dl maps to a TEI list; each dt and its following run of dd elements are grouped in a generated TEI item, with dt as label and each dd as a typed ab. ul/ol map to list, li to item, and tr/td to row/cell. The HTML table wrapper maps to a typed ab and tbody maps to a TEI table so table rows remain valid TEI table content.",
+    "page_breaks": "div elements with class pb map to TEI pb; their printed page labels become @n and source ids remain xml:id.",
+    "text": "Parsed HTML CRLF line endings normalize to LF; source text, mixed-content order, child tails, and explicit br elements are preserved."
+  },
+  "source_archive": {
+    "bytes": 301757,
+    "members": [
+      {
+        "bytes": 339654,
+        "crc32": "a6050be7",
+        "path": "pg61614-images.html",
+        "sha256": "820d396c5f69ff601cf2264cb8ed352765c49809a69fda8f616b746e07b9cd05"
+      },
+      {
+        "bytes": 188705,
+        "crc32": "9a04bd31",
+        "path": "images/cover.jpg",
+        "sha256": "584347aae3f932699969dddfeb7f498e2754852377e6e5b8006ce864836c2263"
+      },
+      {
+        "bytes": 14675,
+        "crc32": "307ff395",
+        "path": "images/spine.jpg",
+        "sha256": "829583471aff8439e88aa42fc110549933e243eaf3e30cdeba1eebeec0bb73bc"
+      }
+    ],
+    "path": "raw/gutenberg/61614/pg61614-h.zip",
+    "sha256": "72a7ceef6b4145b08f1131a58a9ae2e5665b4e4c06f7fce01d56cd77879fabc7"
+  },
+  "source_html": {
+    "bytes": 339654,
+    "path": "raw/gutenberg/61614/html/pg61614-images.html",
+    "sha256": "820d396c5f69ff601cf2264cb8ed352765c49809a69fda8f616b746e07b9cd05"
+  },
+  "work_id": "apostolic-tradition"
+}

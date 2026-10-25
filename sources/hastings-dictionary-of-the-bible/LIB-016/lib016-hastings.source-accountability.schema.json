@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/lib016-hastings-source-accountability-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "aggregate_bytes", "aggregate_sha256", "member_count", "omitted_members", "duplicated_members", "invented_separator_bytes", "members"],
+  "properties": {
+    "contract": {"const": "ocd-lib016-hastings-source-accountability-v1"},
+    "profile_id": {"const": "lib016-hastings-five-member-whole-work-v1"},
+    "aggregate_bytes": {"const": 44374718},
+    "aggregate_sha256": {"const": "1cd0f245927973e5f84db7bad42c71aa1dfb259e5aad026a40dd5f0d6238f7a7"},
+    "member_count": {"const": 5},
+    "omitted_members": {"const": 0},
+    "duplicated_members": {"const": 0},
+    "invented_separator_bytes": {"const": 0},
+    "members": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["name", "order", "byte_start", "byte_end", "bytes", "sha256", "physical_lines", "terminal_lf", "latin_letters", "greek_classified_characters", "represented_bytes", "represented_lines", "status", "target"], "properties": {"name": {"type": "string"}, "order": {"type": "integer", "minimum": 1, "maximum": 5}, "byte_start": {"type": "integer", "minimum": 0}, "byte_end": {"type": "integer", "minimum": 1}, "bytes": {"type": "integer", "minimum": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "physical_lines": {"type": "integer", "minimum": 1}, "terminal_lf": {"const": true}, "latin_letters": {"type": "integer", "minimum": 0}, "greek_classified_characters": {"type": "integer", "minimum": 0}, "represented_bytes": {"type": "integer", "minimum": 1}, "represented_lines": {"type": "integer", "minimum": 1}, "status": {"const": "represented"}, "target": {"type": "string", "pattern": "^#lib016-member-[0-9]{2}-text$"}}}}
+  }
+}

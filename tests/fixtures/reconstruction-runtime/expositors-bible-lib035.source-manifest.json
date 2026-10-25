@@ -1,0 +1,173 @@
+{
+  "authorities": [
+    {
+      "bytes": 844512,
+      "name": "retained-dods-genesis",
+      "path": "raw/ccel/expositors-bible/dods_expositor1.xml",
+      "role": "primary-source",
+      "sha256": "dc9526775af27e6820b38f9cf23375b784bce0d457c670aeae930cc000456b65"
+    },
+    {
+      "bytes": 694716,
+      "name": "retained-dods-first-corinthians",
+      "path": "raw/ccel/expositors-bible/dods_expositor1cor.xml",
+      "role": "primary-source",
+      "sha256": "270a4491def4a4a89d74612c1e1caa0205d423d1c6ad620374a060c3d0bb3b3b"
+    },
+    {
+      "bytes": 677469,
+      "name": "retained-dods-john-1",
+      "path": "raw/ccel/expositors-bible/dods_expositorjohn1.xml",
+      "role": "primary-source",
+      "sha256": "a492b1d93e0fb5ca06ee88cf515fd7b35b61e432419b7f0e94f0cb84a1ad54d6"
+    },
+    {
+      "bytes": 811010,
+      "name": "retained-watson-judges-ruth",
+      "path": "raw/ccel/expositors-bible/watson_ra_expositor7.xml",
+      "role": "primary-source",
+      "sha256": "9d235aa2fd1d93d33c3a1bb8ea462c28c30ea01f711cc44c091d337dd792ad47"
+    },
+    {
+      "bytes": 853065,
+      "name": "retained-watson-job",
+      "path": "raw/ccel/expositors-bible/watson_ra_expositorjob.xml",
+      "role": "primary-source",
+      "sha256": "9e8fab9fe169699cad7ab72c0cc5cc77732c6b1045379b3693d351b804180bc0"
+    },
+    {
+      "bytes": 877572,
+      "name": "retained-watson-numbers",
+      "path": "raw/ccel/expositors-bible/watson_ra_expositornum.xml",
+      "role": "primary-source",
+      "sha256": "ea84347fe36b4380749c077dc41bf4a8431f0a7bf7157668579833bb72dc602f"
+    },
+    {
+      "bytes": 1144079,
+      "name": "retained-horton-proverbs",
+      "path": "raw/ccel/expositors-bible/horton_expositorprov.xml",
+      "role": "primary-source",
+      "sha256": "a7372596c60d053b539e957c01d29a54269da5c25b094cd7b373cb7e834e122d"
+    },
+    {
+      "bytes": 1241956,
+      "name": "retained-kellogg-leviticus",
+      "path": "raw/ccel/expositors-bible/kellogg_expositor3.xml",
+      "role": "primary-source",
+      "sha256": "bab7fb79a99d3e07a81ccd4bac77ad6d9274884378e179d71ce4db36ef315284"
+    },
+    {
+      "bytes": 584922,
+      "name": "retained-edwards-hebrews",
+      "path": "raw/ccel/expositors-bible/edwards_tc_expositorheb.xml",
+      "role": "primary-source",
+      "sha256": "6da565a2393cb74c75f98589650072f05e0f9780855b5472fe6954810f926fb3"
+    },
+    {
+      "bytes": 93,
+      "name": "identity-marcus-dods",
+      "path": "sources/commentaries/expositors-bible/lib035/expositors-bible--marcus-dods/config.json",
+      "role": "work-identity-binding",
+      "sha256": "794c05483a7556a218f4c4b4d0405778887ce813b22b2c3f4e69e74fae783fb8"
+    },
+    {
+      "bytes": 92,
+      "name": "identity-r-a-watson",
+      "path": "sources/commentaries/expositors-bible/lib035/expositors-bible--r-a-watson/config.json",
+      "role": "work-identity-binding",
+      "sha256": "89e272d68551bda8443c74999766374649e0048195833cd98b32cdc32e2d0593"
+    },
+    {
+      "bytes": 97,
+      "name": "identity-robert-f-horton",
+      "path": "sources/commentaries/expositors-bible/lib035/expositors-bible--robert-f-horton/config.json",
+      "role": "work-identity-binding",
+      "sha256": "807b36f8fdc037d3fee96b38eeb04138228aab3d4c488e785c267fe01a269cb3"
+    },
+    {
+      "bytes": 98,
+      "name": "identity-samuel-h-kellogg",
+      "path": "sources/commentaries/expositors-bible/lib035/expositors-bible--samuel-h-kellogg/config.json",
+      "role": "work-identity-binding",
+      "sha256": "6862c31d79e38c76c0982178121ef9b9085f463a033d2443626fed62cdb0911c"
+    },
+    {
+      "bytes": 104,
+      "name": "identity-thomas-charles-edwards",
+      "path": "sources/commentaries/expositors-bible/lib035/expositors-bible--thomas-charles-edwards/config.json",
+      "role": "work-identity-binding",
+      "sha256": "0d92c15a46dc81d116853dc5ea5cde1124c213140cf1ed3e51d7470ca5ed2660"
+    },
+    {
+      "bytes": 1629,
+      "name": "ccel-permission",
+      "path": "sources/commentaries/expositors-bible/ccel-permission.md",
+      "role": "exact-source-permission",
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "bytes": 637,
+      "name": "attribution-readme",
+      "path": "data/commentaries/expositors-bible/README.md",
+      "role": "required-attribution-deliverable",
+      "sha256": "4ebf9f368e211fe70ba7b531906f91886dcd0b634f13cee6c7eb046384cf8359"
+    },
+    {
+      "bytes": 70746,
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/lib035.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "3853db08494f46184368556bebdac41d1f65c17f51935da3d1d2d3f0b934b710"
+    },
+    {
+      "bytes": 2157,
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/lib035.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "64c233fb3e34365381a1f3d37f60b78d2e990ed18d2bcb7f9665f16a9136b648"
+    },
+    {
+      "bytes": 4056,
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/lib035.source-accountability.schema.json",
+      "role": "lib035-complete-source-accountability-schema",
+      "sha256": "0157d230e62b0bcf483f8caa881066cfee458bb84a6d334c1a46cda55d057f8f"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-expositors-bible-lib035-retained-xml-to-tei",
+    "implementation_path": "build/tei/expositors_bible_lib035_reconstruction.py",
+    "implementation_sha256": "8bef418725cee3a8ca8dcea90c9f8c239739b33dba98e55ca2cd6984310b95c3",
+    "version": "2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "ccel-expositors-bible-lib035-nine-current-member-retained-xml",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-expositors-bible-lib035-independent-retained-byte-oracle",
+    "implementation_path": "build/tei/expositors_bible_lib035_oracle.py",
+    "implementation_sha256": "706d091d8fdd5b2123f404199e9817f7e40df53c6512fc2b2270431349714de9",
+    "import_closure_sha256": "5165862143ced623080de18d6beb6ee257afe3a50299d51ace7fb2ba4978c2d4",
+    "version": "2"
+  },
+  "work_id": "expositors-bible-lib035-five-work-cohort"
+}

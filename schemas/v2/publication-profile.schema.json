@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/publication-profile.schema.json",
+  "title": "Private library publication profile",
+  "description": "Editorial cohort and holds only. New identities remain private pending a decision. Rights and acceptance resolve independently from current authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "audience", "decision_provenance", "works", "items"],
+  "properties": {
+    "contract": {"const": "ocd-publication-profile-v1"},
+    "profile_id": {"$ref": "#/$defs/identifier"},
+    "audience": {"const": "public-candidate"},
+    "decision_provenance": {"$ref": "#/$defs/text"},
+    "migration_source": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "works": {"type": "array", "items": {"$ref": "#/$defs/work"}},
+    "items": {"type": "array", "items": {"$ref": "#/$defs/item"}}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^(?!.*\\.$)[A-Za-z0-9][A-Za-z0-9._-]*$", "minLength": 1},
+    "text": {"type": "string", "pattern": "\\S", "minLength": 1},
+    "work": {
+      "type": "object", "additionalProperties": false, "required": ["work_id", "disposition"],
+      "properties": {
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "disposition": {"enum": ["cohort", "private"]},
+        "reason": {"$ref": "#/$defs/text"},
+        "hold_reason": {"$ref": "#/$defs/text"}
+      },
+      "allOf": [
+        {"if": {"properties": {"disposition": {"const": "private"}}}, "then": {"required": ["reason"], "not": {"required": ["hold_reason"]}}, "else": {"not": {"required": ["reason"]}}}
+      ]
+    },
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["item_id", "work_id", "textual_form_id", "edition_id", "disposition"],
+      "properties": {
+        "item_id": {"$ref": "#/$defs/identifier"},
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "textual_form_id": {"$ref": "#/$defs/identifier"},
+        "edition_id": {"$ref": "#/$defs/identifier"},
+        "disposition": {"enum": ["selected", "private"]},
+        "reason": {"$ref": "#/$defs/text"},
+        "category": {"const": "unassigned"}
+      },
+      "allOf": [
+        {"if": {"properties": {"disposition": {"const": "private"}}}, "then": {"required": ["reason"]}, "else": {"not": {"anyOf": [{"required": ["reason"]}, {"required": ["category"]}]}}}
+      ]
+    }
+  }
+}

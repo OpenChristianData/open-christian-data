@@ -1,0 +1,140 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "darby-retained-json",
+  "work_id": "darby",
+  "source_selection": {
+    "authority": "darby-source",
+    "json_pointer": "",
+    "selected_root_fields": [
+      "/translation",
+      "/books"
+    ],
+    "selection": "the complete single retained JSON document"
+  },
+  "authorities": [
+    {
+      "name": "darby-source",
+      "path": "raw/bible_databases/formats/json/Darby.json",
+      "role": "primary-source",
+      "bytes": 8515465,
+      "sha256": "6e5c9816b945fa5adef7c1ba419f4ddbca5fff3f77263284697e928a0841f806"
+    },
+    {
+      "name": "darby-profile",
+      "path": "sources/bible-text/darby/darby.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 5719,
+      "sha256": "a5cc30fd4f46316c42ab7af6ac06d4b21bf3f0f9939a8b02e1e65cb9e2a769db"
+    },
+    {
+      "name": "darby-policy",
+      "path": "sources/bible-text/darby/darby.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 10366,
+      "sha256": "7bc1d09b762eb837355670f1b63d9eb0c5524873853d6a789135d64e6b80a705"
+    },
+    {
+      "name": "darby-accountability-schema",
+      "path": "sources/bible-text/darby/darby.source-accountability.schema.json",
+      "role": "source-accountability-schema",
+      "bytes": 8754,
+      "sha256": "1fc8d113f5ed9d7cb26a5777ab3480a2166d05a3d132ea02e94287315a58cda8"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-xml-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "tei-teix-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-import",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "candidate-cli",
+      "path": "build/tools/reconstruct_candidate.py",
+      "role": "route-runtime-dependency",
+      "bytes": 9970,
+      "sha256": "51611d99341c0491448308fa00514beb4f97cab5a60a298168d8e66dad1ab6dd"
+    },
+    {
+      "name": "build-package-init",
+      "path": "build/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "role": "route-runtime-dependency",
+      "bytes": 25549,
+      "sha256": "1b5b6b1babaabb98d61e96741f75c1ed54aa4ca54e20bc34f8fe9739743565e7"
+    },
+    {
+      "name": "reconstruction-verifier",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "role": "route-runtime-dependency",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff"
+    },
+    {
+      "name": "destination-policy",
+      "path": "ocd_kernel/reconstruction/destination_policy.py",
+      "role": "route-runtime-dependency",
+      "bytes": 11952,
+      "sha256": "ee294573f23f61a2db7312411a6ec2434fb2dd86357dfa915b0447e20d8e23f9"
+    },
+    {
+      "name": "kernel-init",
+      "path": "ocd_kernel/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 50,
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811"
+    },
+    {
+      "name": "reconstruction-init",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "role": "route-runtime-dependency",
+      "bytes": 475,
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib023-darby-json-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/darby_reconstruction.py",
+    "implementation_sha256": "c67aa212672923e638183274ead069f155a8f16921de456bb5202170094836a6"
+  },
+  "validator": {
+    "id": "ocd-lib023-darby-independent-oracle",
+    "version": "1",
+    "callable": "oracle",
+    "implementation_path": "build/tei/darby_oracle.py",
+    "implementation_sha256": "b194809faf53e8b86b52eaf506cf479442212cba3cddcd7a65e6fd6e1f98f65d",
+    "import_closure_sha256": "c74082a8a0fb355030046d7b7781647a10166149d530e8245b42ef396792333f"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

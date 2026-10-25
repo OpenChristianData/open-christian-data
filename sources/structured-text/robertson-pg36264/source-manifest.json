@@ -1,0 +1,139 @@
+{
+  "authorities": [
+    {
+      "bytes": 1308053,
+      "name": "retained-source",
+      "path": "raw/gutenberg/36264/html/36264-h/36264-h.htm",
+      "role": "primary-source",
+      "sha256": "105aac29a024f9771c1f8fe4917e668eabe5d2abe39c1afcbd67e91960a20418"
+    },
+    {
+      "bytes": 808399,
+      "name": "retained-package",
+      "path": "raw/gutenberg/36264/pg36264-h.zip",
+      "role": "supporting-package",
+      "sha256": "2bb38cc9ec40aa09367dbc6fa34a05e204614f6ea1ca990f539d14045783da13"
+    },
+    {
+      "bytes": 474078,
+      "name": "retained-map",
+      "path": "raw/gutenberg/36264/html/36264-h/images/1.jpg",
+      "role": "referenced-media",
+      "sha256": "04cb7ed2e6f57280983717cfcad6fa6adabd85eed97d48da42fdbdb1d77d8913"
+    },
+    {
+      "bytes": 3645,
+      "name": "retained-logo",
+      "path": "raw/gutenberg/36264/html/36264-h/images/2.jpg",
+      "role": "referenced-media",
+      "sha256": "fa01d42e5ed2ffc59b9ba37da295951f261bdc4eaa8fa59b379738042c6d771c"
+    },
+    {
+      "bytes": 24579,
+      "name": "provider-catalog",
+      "path": "raw/gutenberg/36264/catalog.html",
+      "role": "bibliographic-rights-evidence",
+      "sha256": "e87ae14ae980261b9b7bc5487b93acf94a25115c149aecc09477fc05486475ef"
+    },
+    {
+      "bytes": 32478,
+      "name": "provider-license",
+      "path": "raw/gutenberg/36264/license.html",
+      "role": "rights-evidence",
+      "sha256": "8a5137aecb0911dc0700e4ff636834326f6eade4beb997229269658a5ccd82f7"
+    },
+    {
+      "bytes": 732,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/robertson-pg36264/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "e1d9fc1aae0ad9628bed77e84dcfcf1f5e3ad0b4ab6ba36d325d09d836ca194e"
+    },
+    {
+      "bytes": 1056,
+      "name": "validation-policy",
+      "path": "sources/structured-text/robertson-pg36264/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "9d6bc15fe12dc1fe46bfce2b0a33df719a563eeada491bbcf1b13a8d19445e7d"
+    },
+    {
+      "bytes": 2114,
+      "name": "source-readme",
+      "path": "sources/structured-text/robertson-pg36264/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "3bb78e8ab946dbbe645ec365bc18e919be556c9f527d55b8fba29143108715c8"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 7161,
+      "name": "producer-implementation",
+      "path": "build/tei/robertson_pg36264_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "a608767dbfa27ed6ef1ddc46c34a6da4512e56734fa6f8946abbde70e68292eb"
+    },
+    {
+      "bytes": 11660,
+      "name": "oracle-implementation",
+      "path": "build/tei/robertson_pg36264_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "4e02707461fc99796d76106b2ab4b73ab177e7430d5caccaed2cbab54def0baf"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-robertson-pg36264-html-to-tei",
+    "implementation_path": "build/tei/robertson_pg36264_reconstruction.py",
+    "implementation_sha256": "a608767dbfa27ed6ef1ddc46c34a6da4512e56734fa6f8946abbde70e68292eb",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-complete-retained-gutenberg-html-with-two-images",
+    "rights": "external-profile-hold",
+    "source_url": "https://www.gutenberg.org/ebooks/36264"
+  },
+  "source_bundle": {
+    "bytes": 1308053,
+    "members": 1,
+    "sha256": "105aac29a024f9771c1f8fe4917e668eabe5d2abe39c1afcbd67e91960a20418"
+  },
+  "source_id": "robertson-harper-1922-pg36264-complete-html",
+  "source_members": [
+    {
+      "bytes": 1308053,
+      "logical_name": "36264-h.htm",
+      "name": "36264-h.htm",
+      "order": 1,
+      "path": "raw/gutenberg/36264/html/36264-h/36264-h.htm",
+      "sha256": "105aac29a024f9771c1f8fe4917e668eabe5d2abe39c1afcbd67e91960a20418"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-robertson-pg36264-independent-html-oracle",
+    "implementation_path": "build/tei/robertson_pg36264_oracle.py",
+    "implementation_sha256": "4e02707461fc99796d76106b2ab4b73ab177e7430d5caccaed2cbab54def0baf",
+    "import_closure_sha256": "9322f63a7bfac5e38c77dcb18d0f9d5263cb749b99f3171ade480c8f8d6716dc",
+    "version": "1"
+  },
+  "work_id": "robertson-harmony-of-the-gospels"
+}

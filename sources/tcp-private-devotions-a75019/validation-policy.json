@@ -1,0 +1,77 @@
+{
+  "contract": "ocd-tcp-a75019-validation-policy-v1",
+  "source_id": "tcp-a75019-1660",
+  "readme_sha256": "f560973783700d326f754f490b12fab80bb995fa8170dcc4ec59a925d6519373",
+  "accountability": {
+    "contract": "ocd-tcp-a75019-accountability-v1",
+    "projection": "exact-source-bytes-v1",
+    "source_path": "raw/tcp/high-range/A75019/A75019.xml",
+    "omitted_elements": 0,
+    "duplicated_elements": 0,
+    "unresolved_elements": 0,
+    "source_xml_ids": 0,
+    "internal_fragment_refs": 0,
+    "page_milestones": 96,
+    "divisions": 115,
+    "representation": "content.tei.xml is byte-identical to the complete retained P5 member; receipt and inventory are bound support evidence, not literary body text"
+  },
+  "provenance": {
+    "contract": "ocd-tcp-a75019-provenance-v1",
+    "status": "nonaccepted",
+    "identity": {
+      "title": "Private devotions for several occasions, ordinary and extraordinary",
+      "author": "Allestree, Richard, 1619-1681.",
+      "source_attribution_note": "By Richard Allestree.--Wing (CD-ROM edition).",
+      "tcp_id": "A75019",
+      "print_date": "1660.",
+      "license_target": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "source": {
+      "path": "raw/tcp/high-range/A75019/A75019.xml",
+      "bytes": 178256,
+      "sha256": "800bae82b44a6c45ef3d49af85e1e0dd046ace2741055a078acc9be808d69aec",
+      "provider_page": "https://github.com/textcreationpartnership/A75019"
+    },
+    "rights": {
+      "keyboarded_and_encoded_text": "CC0 1.0 Universal as stated in the source header",
+      "page_images": "not retained or cleared",
+      "attribution_request": "TCP respectfully requests credit and attribution",
+      "human_rights_review": "pending"
+    },
+    "candidate": {
+      "accepted_ir": false,
+      "human_textual_acceptance": false,
+      "edition_acceptance": false,
+      "publication_authorized": false
+    }
+  },
+  "unresolved": [
+    {
+      "id": "tcp-a75019-print-collation",
+      "status": "unresolved",
+      "question": "Will a human collate this lightly encoded TCP transcription with the 1660 print witness?",
+      "evidence": "TCP header states sampled proofreading, possible remaining keying errors, and encoded gaps."
+    },
+    {
+      "id": "tcp-a75019-facsimile-rights",
+      "status": "unresolved",
+      "question": "Are external ProQuest facsimile images available and separately cleared for review or distribution?",
+      "evidence": "The retained XML contains tcp:136899 facsimile pointers, but no images are included."
+    },
+    {
+      "id": "tcp-a75019-human-acceptance",
+      "status": "unresolved",
+      "question": "Will maintainers separately accept this edition, rights scope, CVW comparison, and publication?",
+      "evidence": "Technical byte conservation and P5 validation do not confer acceptance or publication authority."
+    }
+  ],
+  "required": [
+    "exact retained source, receipt, and inventory bindings",
+    "TCP A75019, 1660, qualified Allestree and CC0 text-layer metadata",
+    "byte-identical complete TEI P5 with zero omitted or duplicated source units",
+    "source-derived ordered division, heading, page, facsimile and fragment-link profile",
+    "independent P5 XSD, census and source-link closure",
+    "deterministic package and byte-identical clean reproduction",
+    "separate nonaccepted review state and pending CVW, rights, human acceptance, publication"
+  ]
+}

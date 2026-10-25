@@ -1,0 +1,8 @@
+{
+  "contract": "ocd-retained-source-set-v1",
+  "storage": "durable retained raw root; resolve OCD_RETAINED_RAW_ROOT or the approved raw topology",
+  "census": {"included":1,"excluded":0,"basis":"the sole ticket-assigned CCEL ThML witness is present, byte-pinned, and suitable for complete ThML.body reconstruction"},
+  "members": [
+    {"work_id":"wesley-plain-account","logical_path":"ccel/wesley/perfection.xml","bytes":228042,"sha256":"2c6d835621077e8002c86a4a3cfd0613c604d56626110d3d77d5e43c50dfab9b","disposition":"include","reason":"ticket-assigned complete retained CCEL ThML witness"}
+  ]
+}

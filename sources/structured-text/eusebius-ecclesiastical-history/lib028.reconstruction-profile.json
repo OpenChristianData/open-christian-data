@@ -1,0 +1,33 @@
+{
+  "contract": "ocd-lib028-reconstruction-profile-v1",
+  "profile_id": "lib028-five-church-histories-v1",
+  "version": 1,
+  "assigned_roots": [
+    ["npnf201", "iii", "eusebius-ecclesiastical-history"],
+    ["npnf201", "iv", "eusebius-life-of-constantine"],
+    ["npnf202", "ii", "socrates-ecclesiastical-history"],
+    ["npnf202", "iii", "sozomen-ecclesiastical-history"],
+    ["npnf203", "iv", "theodoret-ecclesiastical-history"]
+  ],
+  "assigned_census": {
+    "elements": 53258,
+    "attributes": 101789,
+    "text_nodes": 39120,
+    "tail_nodes": 41598,
+    "characters": 7730052,
+    "non_ascii_characters": 72586,
+    "notes": 7548,
+    "page_breaks": 1368,
+    "scripture_refs": 2083
+  },
+  "producer_import_closure_sha256": "c126300f5175888697574f3e920bd98f90353c9a47678c035ccf91802ff43962",
+  "requirements": [
+    "exact-three-retained-member-hashes",
+    "exact-five-div1-selectors-and-complete-subtrees",
+    "exact-element-attribute-direct-text-tail-and-child-order",
+    "complete-comment-processing-instruction-doctype-namespace-and-document-shell-accounting",
+    "explicit-disposition-for-every-unprojected-source-attribute",
+    "complete-adjacent-family-member-and-top-level-division-accounting",
+    "five-works-nonaccepted-and-publication-not-ready"
+  ]
+}

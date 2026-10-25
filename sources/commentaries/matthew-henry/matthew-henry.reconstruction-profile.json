@@ -1,0 +1,100 @@
+{
+  "contract": "ocd-helloao-matthew-henry-profile-v1",
+  "profile_id": "helloao-matthew-henry-complete-retained-json-v1",
+  "version": 1,
+  "work_id": "matthew-henry-complete",
+  "source_root": "raw/helloao_local/api/c/matthew-henry",
+  "scope": {
+    "member_count": 1169,
+    "total_bytes": 41160630,
+    "metadata_members": [
+      "books.json",
+      "profiles.json"
+    ],
+    "book_count": 65,
+    "chapter_count": 1167,
+    "commentary_occurrence_count": 4124,
+    "book_introduction_count": 65,
+    "chapter_introduction_present_count": 1156,
+    "chapter_introduction_absent_count": 11,
+    "introduction_only_chapter_count": 9,
+    "introduction_only_chapters": [
+      "ISA/68.json",
+      "JOS/22.json",
+      "JOS/23.json",
+      "NUM/31.json",
+      "NUM/32.json",
+      "NUM/33.json",
+      "NUM/34.json",
+      "NUM/35.json",
+      "PSA/72.json"
+    ],
+    "json_object_instance_count": 8861,
+    "json_field_instance_count": 61093,
+    "string_codepoint_count": 40048587,
+    "non_ascii_codepoint_count": 996,
+    "missing_canonical_books": [
+      "SNG"
+    ],
+    "partial_canonical_books": {
+      "MAT": [19, 20, 21, 22, 23, 24, 25, 26, 27, 28],
+      "JON": [2, 3, 4]
+    },
+    "retained_path_gaps": {
+      "ISA": [67]
+    },
+    "nonmonotonic_chapters": [
+      "EZK/40.json"
+    ],
+    "duplicate_verse_occurrences": {
+      "EZK/40.json": [1]
+    }
+  },
+  "fidelity_policy": {
+    "book_order": "books.json order, unchanged",
+    "chapter_order": "retained numeric chapter-path order within books.json book order, unchanged",
+    "occurrence_order": "chapter.content array order, unchanged",
+    "occurrence_identity": "book, chapter, retained array ordinal; verse number is not a unique key",
+    "content": "each sole chapter.content[].content string is preserved byte-for-codepoint in one TEI paragraph",
+    "book_introductions": "all 65 retained book introduction strings are represented",
+    "chapter_introductions": "1156 retained strings are represented; 11 absent JSON properties remain absent",
+    "introduction_only_chapters": "all nine retained chapters with an introduction and empty content array remain present",
+    "all_fields": "all 8861 JSON objects and 61093 field instances are accounted for with exact key order; retained commentary and book objects plus every chapter envelope are preserved in source-accountability.json",
+    "forbidden": [
+      "sorting commentary occurrences by verse number",
+      "merging duplicate verse-number occurrences",
+      "inferring verse ranges",
+      "injecting Bible or BSB verse text",
+      "inventing Song of Solomon, Matthew 19-28, Jonah 2-4, or ISA/67.json",
+      "dropping or filling the nine retained introduction-only chapter targets",
+      "turning absent chapter introductions into null or empty values",
+      "silently applying config metadata in place of retained witness metadata"
+    ]
+  },
+  "identity_and_rights_policy": {
+    "retained_title": "Matthew Henry Bible Commentary",
+    "retained_language": "eng",
+    "retained_text_direction": "rtl",
+    "retained_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "config_license_drift": "cc0-1.0",
+    "edition": null,
+    "author_statement": null,
+    "original_publication_year": null,
+    "config_bibliographic_disposition": "diagnostic evidence only; not substituted for absent retained-witness edition, author, contributor, or publication metadata"
+  },
+  "candidate_model": {
+    "member_names": [
+      "manifest.json",
+      "content.tei.xml",
+      "source-accountability.json",
+      "provenance.json",
+      "unresolved.jsonl",
+      "README.source.md"
+    ],
+    "status": "nonaccepted",
+    "accepted_ir": "not_accepted",
+    "human_review": "required",
+    "unresolved_record_count": 4,
+    "publication": "not_ready"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/release-selection.schema.json",
+  "title": "OCD offline release selection",
+  "description": "Explicit accepted-master paths selected for one offline release. Optional work_coverage declares a complete private work-identity cohort, including excluded works. Category names remain open so unsupported future adapters can be accounted for as failed items.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "release_id", "items"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "release_id": {"$ref": "#/$defs/identifier"},
+    "work_coverage": {"$ref": "#/$defs/work_coverage"},
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/item"}
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!.*\\.$)[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "relative_posix_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=\\S)(?!/)(?![A-Za-z]:)(?!.*:)(?!.*\\\\)(?!.*//)(?!.*(?:^|/)[^/]*[. ](?:/|$))(?!.*(?:^|/)\\.(?:/|$))(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "work_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["included_work_ids", "excluded_works"],
+      "properties": {
+        "included_work_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/identifier"}
+        },
+        "excluded_works": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/excluded_work"}
+        }
+      }
+    },
+    "excluded_work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_id", "reason"],
+      "properties": {
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "reason": {"$ref": "#/$defs/non_empty"}
+      }
+    },
+    "public_notice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "source_sha256", "notice_path", "notice_sha256"],
+      "properties": {
+        "source_path": {"$ref": "#/$defs/relative_posix_path"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "notice_path": {"$ref": "#/$defs/relative_posix_path"},
+        "notice_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "category", "acceptance_path"],
+      "properties": {
+        "item_id": {"$ref": "#/$defs/identifier"},
+        "work_id": {"$ref": "#/$defs/identifier"},
+        "category": {"$ref": "#/$defs/non_empty"},
+        "acceptance_path": {"$ref": "#/$defs/relative_posix_path"},
+        "exclude_reason": {"$ref": "#/$defs/non_empty"},
+        "license": {"$ref": "#/$defs/non_empty"},
+        "public_notices": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/public_notice"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-lib016-hastings-validation-policy-v1",
+  "oracle_id": "ocd-lib016-hastings-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "publication_authorized": false,
+  "ocr_cleanup_performed": false,
+  "candidate_members": ["README.source.md", "content.tei.xml", "manifest.json", "provenance.json", "source-accountability.json", "unresolved.jsonl"],
+  "required_counts": {"members": 5, "source_bytes": 44374718, "represented_bytes": 44374718, "physical_lines": 902993, "represented_lines": 902993, "omitted_members": 0, "duplicated_members": 0, "invented_separator_bytes": 0},
+  "requirements": ["independently reread and hash all five retained members", "enforce lexicographic aggregate order without separators", "preserve exact UTF-8 text and literal LF boundaries", "preserve the Greek-only Extra Volume OCR defect", "validate direct TEI P5 XSD and pinned candidate/accountability schemas", "reject source, scope, order, text, metadata, provenance, unresolved, manifest, authority, and evidence drift", "keep human textual, edition, rights, acceptance, and publication decisions separate"]
+}

@@ -1,0 +1,99 @@
+{
+  "authorities": [
+    {
+      "bytes": 25074,
+      "name": "retained-json",
+      "path": "raw/Creeds.json/creeds/catechism_for_young_children.json",
+      "role": "primary-source",
+      "sha256": "955ef615a5de693aa49fcf9c941564b33c6b8449e1a801d6821058d104deb3a4"
+    },
+    {
+      "bytes": 2503,
+      "name": "source-packet",
+      "path": "sources/catechism-for-young-children/LIB-062.packet.json",
+      "role": "source-packet",
+      "sha256": "94613ccf64b22a3d872462f61df2f7fb129ea08e0ee75d69a2f11376d461d80e"
+    },
+    {
+      "bytes": 584,
+      "name": "rights-readme",
+      "path": "sources/catechism-for-young-children/LIB-062.README.md",
+      "role": "rights-evidence",
+      "sha256": "3da300d78c574317b6e06fc0dbceb02d6981dd5c1c95931f0990e491c5a8a84a"
+    },
+    {
+      "bytes": 14058,
+      "name": "retained-member-census",
+      "path": "sources/1695-baptist-catechism/LIB-062.retained-member-census.json",
+      "role": "retained-member-census",
+      "sha256": "31cd4df7e550871991968c3e9a8b62dbbab820e7b5ac03406df1c23216e3f04c"
+    },
+    {
+      "bytes": 1818,
+      "name": "reconstruction-profile",
+      "path": "sources/catechism-for-young-children/catechism-for-young-children.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "57ffe110b67e27a903f7f3a4b8df9ad76b9b8d0395ca63400f003a56ecdc3b18"
+    },
+    {
+      "bytes": 768,
+      "name": "validation-policy",
+      "path": "sources/catechism-for-young-children/catechism-for-young-children.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "d5ad49d11f030d7c98eaf80e248fb8264076c27834ac38f348567e70ae01f33c"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "catalog_claim_lineage": {
+    "claim_count": 1,
+    "claims": [
+      {
+        "legacy_source_sha256": "c453073a120fd24e73b08ac7ca69a96ec08b4f76f15fbc7c5ae1badeeed1399e",
+        "source_path": "catechisms/catechism-for-young-children.json"
+      }
+    ],
+    "contract": "ocd-catalog-claim-lineage-v1",
+    "retained_source_sha256": "955ef615a5de693aa49fcf9c941564b33c6b8449e1a801d6821058d104deb3a4",
+    "work_id": "catechism-for-young-children"
+  },
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "convert",
+    "id": "ocd-lib062-catechism-for-young-children-to-tei",
+    "implementation_path": "build/tei/lib062_catechism_for_young_children_reconstruction.py",
+    "implementation_sha256": "57b8cb43b146c809426f259b75f2ea5861da92a98b605792b8d746d5e51e25c8",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "lib062-catechism-for-young-children-retained-json",
+  "source_selection": {
+    "authority": "retained-json",
+    "json_pointer": "",
+    "selection": "the complete retained Creeds.json member; no adjacent witnesses are declared"
+  },
+  "validator": {
+    "callable": "oracle",
+    "id": "ocd-lib062-catechism-for-young-children-independent-oracle",
+    "implementation_path": "build/tei/lib062_catechism_for_young_children_oracle.py",
+    "implementation_sha256": "948f678463d4f2a056a6296128802ccfca7210c80c3b02a6d7c58a7718d6b189",
+    "import_closure_sha256": "35a3c329851488b11b17ef801ccd49faf13d1a55a6f08c15e28088a36823126d",
+    "version": "1"
+  },
+  "work_id": "catechism-for-young-children"
+}

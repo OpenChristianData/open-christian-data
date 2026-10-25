@@ -1,0 +1,1603 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "LIB-020",
+  "source_id": "bcp-1928-collects-retained-episcopalnet-html",
+  "work_id": "bcp-1928-collects",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "scope": {
+    "kind": "partial-retained-html-expression",
+    "edition": "Book of Common Prayer (1928, USA)",
+    "source_kind": "episcopalnet.org",
+    "source_root": "raw/bcp-1928",
+    "member_count": 100,
+    "excluded_members": [],
+    "unbound_manual_claims": [
+      "trinity23",
+      "trinity24"
+    ]
+  },
+  "source_bundle": {
+    "members": 100,
+    "bytes": 1042052,
+    "sha256": "92aa35e04b6b64c583e444d300b56ad98a8b56228fa8d9582763b8dc0f6f9c06"
+  },
+  "source_members": [
+    {
+      "name": "advent1.html",
+      "logical_name": "advent1.html",
+      "path": "raw/bcp-1928/advent1.html",
+      "bytes": 12931,
+      "sha256": "0944488c346f7f901acfd94b8c37e9d4ba820a0e49d3640287907fdc2a9bd292",
+      "order": 0
+    },
+    {
+      "name": "advent2.html",
+      "logical_name": "advent2.html",
+      "path": "raw/bcp-1928/advent2.html",
+      "bytes": 11142,
+      "sha256": "5621d14e2eb5f6eefe6340c13470291c53c96ea796a663ca63fb1e3bdf14498b",
+      "order": 1
+    },
+    {
+      "name": "advent3.html",
+      "logical_name": "advent3.html",
+      "path": "raw/bcp-1928/advent3.html",
+      "bytes": 10346,
+      "sha256": "ebd98ffee86d31ae7f0484d3880f926f3af7b8dda1ad2eaf00fa51d990f3569d",
+      "order": 2
+    },
+    {
+      "name": "advent4.html",
+      "logical_name": "advent4.html",
+      "path": "raw/bcp-1928/advent4.html",
+      "bytes": 10771,
+      "sha256": "e2bf9e930ade238da432ec36e07d12617cadbea74e33cfe1badcc543398371a7",
+      "order": 3
+    },
+    {
+      "name": "christmas.html",
+      "logical_name": "christmas.html",
+      "path": "raw/bcp-1928/christmas.html",
+      "bytes": 17085,
+      "sha256": "fd0d512551de55a0ba0b9542d92dbe911798b95616242cf38a4ccd47e2133538",
+      "order": 4
+    },
+    {
+      "name": "stephen.html",
+      "logical_name": "stephen.html",
+      "path": "raw/bcp-1928/stephen.html",
+      "bytes": 8684,
+      "sha256": "448fb599b825b15f4dd03cf67f1bb3f04df8c81bebbfad65624f886c55678898",
+      "order": 5
+    },
+    {
+      "name": "stjohn.html",
+      "logical_name": "stjohn.html",
+      "path": "raw/bcp-1928/stjohn.html",
+      "bytes": 9077,
+      "sha256": "3bdef621ceffd39d326d09540673541562736f56038e747cb08e02c7f9b175e2",
+      "order": 6
+    },
+    {
+      "name": "holyinnocents.html",
+      "logical_name": "holyinnocents.html",
+      "path": "raw/bcp-1928/holyinnocents.html",
+      "bytes": 10123,
+      "sha256": "a00c062745b4ced58f4bbd91c1d0cdf9d5fd62aa5229d2f6afa23ea7e3205b9e",
+      "order": 7
+    },
+    {
+      "name": "christmas1.html",
+      "logical_name": "christmas1.html",
+      "path": "raw/bcp-1928/christmas1.html",
+      "bytes": 11809,
+      "sha256": "13ff63cb0ed9ae2bff61fb057b0001381200bb3ef4a3b00c16e6f434b9707a5d",
+      "order": 8
+    },
+    {
+      "name": "circumcision.html",
+      "logical_name": "circumcision.html",
+      "path": "raw/bcp-1928/circumcision.html",
+      "bytes": 8252,
+      "sha256": "19def98ca0a41697b3c98151055184034d62bd66c7403c49b57685249a01c544",
+      "order": 9
+    },
+    {
+      "name": "christmas2.html",
+      "logical_name": "christmas2.html",
+      "path": "raw/bcp-1928/christmas2.html",
+      "bytes": 9898,
+      "sha256": "87a473545bef695d52205d1b9250a36c4bf1deb61190cc3f8378b2a3d576ea39",
+      "order": 10
+    },
+    {
+      "name": "epiphany.html",
+      "logical_name": "epiphany.html",
+      "path": "raw/bcp-1928/epiphany.html",
+      "bytes": 10956,
+      "sha256": "98cfa5f8f60473ea783772c567816456160420c906223cb452cca54f75832bec",
+      "order": 11
+    },
+    {
+      "name": "epiphany1.html",
+      "logical_name": "epiphany1.html",
+      "path": "raw/bcp-1928/epiphany1.html",
+      "bytes": 10159,
+      "sha256": "ab4c3466b3a96d232aecc5375897964ee61938a35e7315745fa355f2fea80d4f",
+      "order": 12
+    },
+    {
+      "name": "epiphany2.html",
+      "logical_name": "epiphany2.html",
+      "path": "raw/bcp-1928/epiphany2.html",
+      "bytes": 10378,
+      "sha256": "2bc1cb222f81cec961fe9f7b362da99a6e6062b462e9945a5f3db0537d01ed35",
+      "order": 13
+    },
+    {
+      "name": "epiphany3.html",
+      "logical_name": "epiphany3.html",
+      "path": "raw/bcp-1928/epiphany3.html",
+      "bytes": 10586,
+      "sha256": "a81c1ce8332279ad0dd239103afe3b28524edb18fdf9539a0d4a9cf1ac5ecf24",
+      "order": 14
+    },
+    {
+      "name": "epiphany4.html",
+      "logical_name": "epiphany4.html",
+      "path": "raw/bcp-1928/epiphany4.html",
+      "bytes": 11089,
+      "sha256": "276b94171daa807034af902074afcda556c1902fe439a19565fd6b7740656d56",
+      "order": 15
+    },
+    {
+      "name": "epiphany5.html",
+      "logical_name": "epiphany5.html",
+      "path": "raw/bcp-1928/epiphany5.html",
+      "bytes": 9465,
+      "sha256": "63a2bf86fd8cb9f2746a4aaf9d1cb10fdf2473a09a3ea73872c8ba1745ba5739",
+      "order": 16
+    },
+    {
+      "name": "epiphany6.html",
+      "logical_name": "epiphany6.html",
+      "path": "raw/bcp-1928/epiphany6.html",
+      "bytes": 10923,
+      "sha256": "613a018092ed33ce2c78e9b2568ec8924f716d959129026b7e2eac8aea44c5c3",
+      "order": 17
+    },
+    {
+      "name": "septuagesima.html",
+      "logical_name": "septuagesima.html",
+      "path": "raw/bcp-1928/septuagesima.html",
+      "bytes": 10470,
+      "sha256": "0460e705d13beac35fb68085ef8007476a9d0c64ab0ed944d9aff7a7f21515a0",
+      "order": 18
+    },
+    {
+      "name": "sexagesima.html",
+      "logical_name": "sexagesima.html",
+      "path": "raw/bcp-1928/sexagesima.html",
+      "bytes": 10316,
+      "sha256": "4e2cc2b82370e6f17541467e268fc7f9df819b3abe888f52c92f46de4b22b559",
+      "order": 19
+    },
+    {
+      "name": "quinquagesima.html",
+      "logical_name": "quinquagesima.html",
+      "path": "raw/bcp-1928/quinquagesima.html",
+      "bytes": 10461,
+      "sha256": "ca9352e4926a40c31c5c4b1c0881e5001bd7dfdc2d729f2a8e14b591900513ad",
+      "order": 20
+    },
+    {
+      "name": "ashwednesday.html",
+      "logical_name": "ashwednesday.html",
+      "path": "raw/bcp-1928/ashwednesday.html",
+      "bytes": 9856,
+      "sha256": "4bcdf1ff130b561fdc42966dcca5342e86b45a1e5fd67984972029599b937e74",
+      "order": 21
+    },
+    {
+      "name": "lent1.html",
+      "logical_name": "lent1.html",
+      "path": "raw/bcp-1928/lent1.html",
+      "bytes": 9886,
+      "sha256": "0a700d510090d1a50f3538822e294f85260f194caf35c592a329a566b0eb0d3f",
+      "order": 22
+    },
+    {
+      "name": "lent2.html",
+      "logical_name": "lent2.html",
+      "path": "raw/bcp-1928/lent2.html",
+      "bytes": 9702,
+      "sha256": "f8dcb966b58fad9983c9f4fa37b73f185f32c3594739a2cfcee86dbecb8225b8",
+      "order": 23
+    },
+    {
+      "name": "lent3.html",
+      "logical_name": "lent3.html",
+      "path": "raw/bcp-1928/lent3.html",
+      "bytes": 12092,
+      "sha256": "da5abb9e16888184c34fa57920826164e2e99836d6ce2b2931d05aefe87888cb",
+      "order": 24
+    },
+    {
+      "name": "lent4.html",
+      "logical_name": "lent4.html",
+      "path": "raw/bcp-1928/lent4.html",
+      "bytes": 11352,
+      "sha256": "b208aee05976ec2b98df94c81fae2cb0e6202692d4c2ad610f857f99dde57a9e",
+      "order": 25
+    },
+    {
+      "name": "passionsunday.html",
+      "logical_name": "passionsunday.html",
+      "path": "raw/bcp-1928/passionsunday.html",
+      "bytes": 10774,
+      "sha256": "a1bbadb3159cb9f9fd1440cb2fcb4a36560c96147533ce0e19728b922cc24e05",
+      "order": 26
+    },
+    {
+      "name": "palmsunday.html",
+      "logical_name": "palmsunday.html",
+      "path": "raw/bcp-1928/palmsunday.html",
+      "bytes": 22263,
+      "sha256": "21b65b9d2f4f46a8fd0ad5379d32ed23e85f9744d1e8b184f43c5f4787b241fa",
+      "order": 27
+    },
+    {
+      "name": "mondaybfreaster.html",
+      "logical_name": "mondaybfreaster.html",
+      "path": "raw/bcp-1928/mondaybfreaster.html",
+      "bytes": 20396,
+      "sha256": "67ca8b4da7d30257525234feb4c99ed7c92ec151660771b1daa9e4333807a099",
+      "order": 28
+    },
+    {
+      "name": "tuesdaybfreaster.html",
+      "logical_name": "tuesdaybfreaster.html",
+      "path": "raw/bcp-1928/tuesdaybfreaster.html",
+      "bytes": 13732,
+      "sha256": "5a46c1eba82f0a1292e66e3be64d84a9da513f02dd7acc3b91059a09c7690064",
+      "order": 29
+    },
+    {
+      "name": "wednesdaybfreaster.html",
+      "logical_name": "wednesdaybfreaster.html",
+      "path": "raw/bcp-1928/wednesdaybfreaster.html",
+      "bytes": 18014,
+      "sha256": "2732108bac0ce2ec289a7ab14fc270199fe2ebe8655ca4c5502ecb1c0c0608b3",
+      "order": 30
+    },
+    {
+      "name": "maundythursday.html",
+      "logical_name": "maundythursday.html",
+      "path": "raw/bcp-1928/maundythursday.html",
+      "bytes": 18607,
+      "sha256": "a83bc50f6d4df8491759f5bb841bb130689e1679b9044cb416171dbdbf251bd2",
+      "order": 31
+    },
+    {
+      "name": "goodfriday.html",
+      "logical_name": "goodfriday.html",
+      "path": "raw/bcp-1928/goodfriday.html",
+      "bytes": 17573,
+      "sha256": "0c714cfd23163ef0cc8173e7a3caa49018150a9749b8f96e01fcd9f95bf3a8c4",
+      "order": 32
+    },
+    {
+      "name": "eastereven.html",
+      "logical_name": "eastereven.html",
+      "path": "raw/bcp-1928/eastereven.html",
+      "bytes": 13377,
+      "sha256": "af9576f8b6d08f549e6c3571a6423dd2eca07fc0826ac3b1a4fc9ccccfb9a170",
+      "order": 33
+    },
+    {
+      "name": "Easter.html",
+      "logical_name": "Easter.html",
+      "path": "raw/bcp-1928/Easter.html",
+      "bytes": 18110,
+      "sha256": "7c0edcdc8e22e09ce66a0223ab87293144cf174f586ccb6a8fcc56be08a117ef",
+      "order": 34
+    },
+    {
+      "name": "Eastermonday.html",
+      "logical_name": "Eastermonday.html",
+      "path": "raw/bcp-1928/Eastermonday.html",
+      "bytes": 12015,
+      "sha256": "2152b226cea237fe42745bb66088c2e840b39bef1c16bcb7bd27c44940fc650b",
+      "order": 35
+    },
+    {
+      "name": "Eastertuesday.html",
+      "logical_name": "Eastertuesday.html",
+      "path": "raw/bcp-1928/Eastertuesday.html",
+      "bytes": 11465,
+      "sha256": "280c12e4ff9be36a9d26595703c8e3af8b2e787e750ff794fba5fce83aa95f2b",
+      "order": 36
+    },
+    {
+      "name": "Easter1.html",
+      "logical_name": "Easter1.html",
+      "path": "raw/bcp-1928/Easter1.html",
+      "bytes": 12533,
+      "sha256": "a0d3bc45e1a53e1cb659d7ca7b4cedd7fd2b8487a2817e4b148c0638c1373e52",
+      "order": 37
+    },
+    {
+      "name": "Easter2.html",
+      "logical_name": "Easter2.html",
+      "path": "raw/bcp-1928/Easter2.html",
+      "bytes": 11701,
+      "sha256": "ab3c9db62188273945a782a18ce527933b11786bd0a3f4c081467afb101391f5",
+      "order": 38
+    },
+    {
+      "name": "Easter3.html",
+      "logical_name": "Easter3.html",
+      "path": "raw/bcp-1928/Easter3.html",
+      "bytes": 11901,
+      "sha256": "fd5d3a82f39b093820152d7429247d919d11643b345beee9a56ecdcaa89cecf3",
+      "order": 39
+    },
+    {
+      "name": "Easter4.html",
+      "logical_name": "Easter4.html",
+      "path": "raw/bcp-1928/Easter4.html",
+      "bytes": 11444,
+      "sha256": "85ab31c076940730969116c80373639eaca21869572f0966297bcec548d9782e",
+      "order": 40
+    },
+    {
+      "name": "Easter5rogation.html",
+      "logical_name": "Easter5rogation.html",
+      "path": "raw/bcp-1928/Easter5rogation.html",
+      "bytes": 12673,
+      "sha256": "8f749cb0369af295430ca0bbe1b5234bc5ee210e36ee213c5a6267d86966dfe0",
+      "order": 41
+    },
+    {
+      "name": "Ascensionday.html",
+      "logical_name": "Ascensionday.html",
+      "path": "raw/bcp-1928/Ascensionday.html",
+      "bytes": 19270,
+      "sha256": "ef1fd30ef1dcdd465a497e7d363f1ba1e786fd0fb5326938ace927bedbfaf625",
+      "order": 42
+    },
+    {
+      "name": "Ascensionsundayafter.html",
+      "logical_name": "Ascensionsundayafter.html",
+      "path": "raw/bcp-1928/Ascensionsundayafter.html",
+      "bytes": 12949,
+      "sha256": "6486f2492954de8a0885d3f221db81a8427ed92665d8b57ddc3cb21555eb10e8",
+      "order": 43
+    },
+    {
+      "name": "whitsunday.html",
+      "logical_name": "whitsunday.html",
+      "path": "raw/bcp-1928/whitsunday.html",
+      "bytes": 19737,
+      "sha256": "0641422e554bc996c3949fdf65549f75476f67a085c3e81734683007916150aa",
+      "order": 44
+    },
+    {
+      "name": "whitsunmonday.html",
+      "logical_name": "whitsunmonday.html",
+      "path": "raw/bcp-1928/whitsunmonday.html",
+      "bytes": 6473,
+      "sha256": "ac75b2ee491426af0c58f6ebeac07134732ef214e2eda27a7f580859e7f82098",
+      "order": 45
+    },
+    {
+      "name": "whitsuntuesday.html",
+      "logical_name": "whitsuntuesday.html",
+      "path": "raw/bcp-1928/whitsuntuesday.html",
+      "bytes": 5376,
+      "sha256": "354894d0b69fdecd4233020efac54a0e8c78f0ce6fa7db84fbfaf897c957ec1c",
+      "order": 46
+    },
+    {
+      "name": "Trinity.html",
+      "logical_name": "Trinity.html",
+      "path": "raw/bcp-1928/Trinity.html",
+      "bytes": 12705,
+      "sha256": "5808fa90f5d46a2c77cc361e2a15b4ae261034f887f8963e7c4acd0b7ca1e59c",
+      "order": 47
+    },
+    {
+      "name": "Trinity1.html",
+      "logical_name": "Trinity1.html",
+      "path": "raw/bcp-1928/Trinity1.html",
+      "bytes": 12612,
+      "sha256": "d896a764b99cd9a65e34772b06852d8bc0bab5d7cfab567aee2645ec436ad473",
+      "order": 48
+    },
+    {
+      "name": "Trinity2.html",
+      "logical_name": "Trinity2.html",
+      "path": "raw/bcp-1928/Trinity2.html",
+      "bytes": 11836,
+      "sha256": "ea783477859ab522089188dcda3f1eddc686be9b1987ee22472b9086c09ca061",
+      "order": 49
+    },
+    {
+      "name": "Trinity3.html",
+      "logical_name": "Trinity3.html",
+      "path": "raw/bcp-1928/Trinity3.html",
+      "bytes": 10415,
+      "sha256": "fbed0ca867de8ec70a5c7169f7b37da3a6c17eaa87d20ac5fa4ac642eb7b6278",
+      "order": 50
+    },
+    {
+      "name": "Trinity4.html",
+      "logical_name": "Trinity4.html",
+      "path": "raw/bcp-1928/Trinity4.html",
+      "bytes": 11785,
+      "sha256": "92fd31ede4b537e8618064234b53d21ab1cb085ea78224ce79fdf18c254dfa25",
+      "order": 51
+    },
+    {
+      "name": "Trinity5.html",
+      "logical_name": "Trinity5.html",
+      "path": "raw/bcp-1928/Trinity5.html",
+      "bytes": 10895,
+      "sha256": "c6d518329a02a1b4611caf9ef3c0a330eaac1d9d1f3544cfcf70e5bfc0ca3710",
+      "order": 52
+    },
+    {
+      "name": "Trinity6.html",
+      "logical_name": "Trinity6.html",
+      "path": "raw/bcp-1928/Trinity6.html",
+      "bytes": 11069,
+      "sha256": "89b19e77549e73beb08825d87bfd0dbf3487cfe28ecbe9f446eff507d5463246",
+      "order": 53
+    },
+    {
+      "name": "Trinity7.html",
+      "logical_name": "Trinity7.html",
+      "path": "raw/bcp-1928/Trinity7.html",
+      "bytes": 11273,
+      "sha256": "ead4df3252a097f459b03662514ef820bd03746edf390954909662d4a95be71d",
+      "order": 54
+    },
+    {
+      "name": "Trinity8.html",
+      "logical_name": "Trinity8.html",
+      "path": "raw/bcp-1928/Trinity8.html",
+      "bytes": 10546,
+      "sha256": "48998eb0eb13116c0b7f8f774e20402445dbd0343e75ea8d992ba7831522b3f4",
+      "order": 55
+    },
+    {
+      "name": "Trinity9.html",
+      "logical_name": "Trinity9.html",
+      "path": "raw/bcp-1928/Trinity9.html",
+      "bytes": 14461,
+      "sha256": "e1eefb10be6d1b00faf8cb634d3e2a28a457f1408bd3b436a876d261ec358371",
+      "order": 56
+    },
+    {
+      "name": "Trinity10.html",
+      "logical_name": "Trinity10.html",
+      "path": "raw/bcp-1928/Trinity10.html",
+      "bytes": 10877,
+      "sha256": "9541b39836122310a6116ad2041e1fb85aea3dc5bb9a0945773a1000c86175b9",
+      "order": 57
+    },
+    {
+      "name": "Trinity11.html",
+      "logical_name": "Trinity11.html",
+      "path": "raw/bcp-1928/Trinity11.html",
+      "bytes": 11135,
+      "sha256": "b8a4ba2493bee9492ff8a2bf206636b462d10dc7e1038e0b80db82565cb8c9fc",
+      "order": 58
+    },
+    {
+      "name": "Trinity12.html",
+      "logical_name": "Trinity12.html",
+      "path": "raw/bcp-1928/Trinity12.html",
+      "bytes": 12063,
+      "sha256": "fa3cc6f65f37f0f972745b93ad2bbb69cb9903b57fe57fd5a201448940d34826",
+      "order": 59
+    },
+    {
+      "name": "Trinity13.html",
+      "logical_name": "Trinity13.html",
+      "path": "raw/bcp-1928/Trinity13.html",
+      "bytes": 10872,
+      "sha256": "549242bf4b0c9c6209260fb944816892e4c4b5de04cd2d4f48a578150ecc3b08",
+      "order": 60
+    },
+    {
+      "name": "Trinity14.html",
+      "logical_name": "Trinity14.html",
+      "path": "raw/bcp-1928/Trinity14.html",
+      "bytes": 11501,
+      "sha256": "04a0c797ac26f7f544e7fce620f1491f7059f62985a72a9e58878eef3d14cd6a",
+      "order": 61
+    },
+    {
+      "name": "Trinity15.html",
+      "logical_name": "Trinity15.html",
+      "path": "raw/bcp-1928/Trinity15.html",
+      "bytes": 11139,
+      "sha256": "a0b343ed1025069e1b2994df49fa849e3e2d64342423ad5656bd222d9b166ad2",
+      "order": 62
+    },
+    {
+      "name": "Trinity16.html",
+      "logical_name": "Trinity16.html",
+      "path": "raw/bcp-1928/Trinity16.html",
+      "bytes": 11497,
+      "sha256": "fbd41820fa8d26581f93d6c33f41121818bce38f8b139bfda4741690c3cc5609",
+      "order": 63
+    },
+    {
+      "name": "Trinity17.html",
+      "logical_name": "Trinity17.html",
+      "path": "raw/bcp-1928/Trinity17.html",
+      "bytes": 11135,
+      "sha256": "facf5d3f21a0d2876edc9ffb2ee9d5e1c930e57a0bd3ad892b62767507d066c9",
+      "order": 64
+    },
+    {
+      "name": "Trinity18.html",
+      "logical_name": "Trinity18.html",
+      "path": "raw/bcp-1928/Trinity18.html",
+      "bytes": 10474,
+      "sha256": "9c1405044b42856f198c0d0f25f2500f31162041477f457e4a43a23d7b58ffde",
+      "order": 65
+    },
+    {
+      "name": "Trinity19.html",
+      "logical_name": "Trinity19.html",
+      "path": "raw/bcp-1928/Trinity19.html",
+      "bytes": 12025,
+      "sha256": "5c078013163e166179bf4f1a3433bdae5fb672c76dcda2715923a9609c57b29c",
+      "order": 66
+    },
+    {
+      "name": "Trinity20.html",
+      "logical_name": "Trinity20.html",
+      "path": "raw/bcp-1928/Trinity20.html",
+      "bytes": 12091,
+      "sha256": "4715feb261f0f715b631f8bc87773ad3e6fcbb9206f92b23c1f63087650b8604",
+      "order": 67
+    },
+    {
+      "name": "Trinity21.html",
+      "logical_name": "Trinity21.html",
+      "path": "raw/bcp-1928/Trinity21.html",
+      "bytes": 10408,
+      "sha256": "68a958a51a043cf28ea7e47e06f32519300e7a98220e41e30c1c5b8dc0e5ddee",
+      "order": 68
+    },
+    {
+      "name": "Trinity22.html",
+      "logical_name": "Trinity22.html",
+      "path": "raw/bcp-1928/Trinity22.html",
+      "bytes": 11054,
+      "sha256": "86123ba745630ab3457f333e2d15f5a32e5f3a803f87c7823e7fbcfc6b181aeb",
+      "order": 69
+    },
+    {
+      "name": "Trinity23.html",
+      "logical_name": "Trinity23.html",
+      "path": "raw/bcp-1928/Trinity23.html",
+      "bytes": 7447,
+      "sha256": "0ec4a5e015106b7408f73af189c77c5cafb7125e094918ba113394ca4e07eee8",
+      "order": 70
+    },
+    {
+      "name": "Trinity24.html",
+      "logical_name": "Trinity24.html",
+      "path": "raw/bcp-1928/Trinity24.html",
+      "bytes": 7713,
+      "sha256": "0bf6aa9c6f2db73a755a34d661b8106c3569ee61c6020f7a2b8c6d206cea2efc",
+      "order": 71
+    },
+    {
+      "name": "nextbeforeadvent.html",
+      "logical_name": "nextbeforeadvent.html",
+      "path": "raw/bcp-1928/nextbeforeadvent.html",
+      "bytes": 11430,
+      "sha256": "4680398a430c9e96a690a5ef8c06df7115e70d6a0e4b1b6168cca3d20f25efb5",
+      "order": 72
+    },
+    {
+      "name": "standrew.html",
+      "logical_name": "standrew.html",
+      "path": "raw/bcp-1928/standrew.html",
+      "bytes": 5937,
+      "sha256": "56cff977788e6e45b8424aa436dfda9d13f5e083d01e92b2e66dac2430bcbbb9",
+      "order": 73
+    },
+    {
+      "name": "stthomas.html",
+      "logical_name": "stthomas.html",
+      "path": "raw/bcp-1928/stthomas.html",
+      "bytes": 5759,
+      "sha256": "9667fd5270f6eaf9abeb7929fba0ec756221ac6f685850faa00f0d8d430628ab",
+      "order": 74
+    },
+    {
+      "name": "conversion.html",
+      "logical_name": "conversion.html",
+      "path": "raw/bcp-1928/conversion.html",
+      "bytes": 10214,
+      "sha256": "9a1d713cd8721ca80e63bde1128230b5aaa87eb2a18ca8ff1cafa71041061f8e",
+      "order": 75
+    },
+    {
+      "name": "purification.html",
+      "logical_name": "purification.html",
+      "path": "raw/bcp-1928/purification.html",
+      "bytes": 7877,
+      "sha256": "f8db60b9f985b17e7b2d29803f7a1675a9f1b16862dabd618712b6e62c65c3bf",
+      "order": 76
+    },
+    {
+      "name": "stmatthias.html",
+      "logical_name": "stmatthias.html",
+      "path": "raw/bcp-1928/stmatthias.html",
+      "bytes": 6276,
+      "sha256": "df955026d421d267ff48a45950d2c572c1ad50b8be1082743d092c6e39d83e5c",
+      "order": 77
+    },
+    {
+      "name": "annunciation.html",
+      "logical_name": "annunciation.html",
+      "path": "raw/bcp-1928/annunciation.html",
+      "bytes": 5978,
+      "sha256": "bfef725bf2c2bf463a8b23e7b5a6652ee627ce603412ffe5d6946fb97757a498",
+      "order": 78
+    },
+    {
+      "name": "stmark.html",
+      "logical_name": "stmark.html",
+      "path": "raw/bcp-1928/stmark.html",
+      "bytes": 6416,
+      "sha256": "bcb4b780ec886f974a4dc19099c60636108833560fd55d456381ba68fb703fca",
+      "order": 79
+    },
+    {
+      "name": "stphilipstjames.html",
+      "logical_name": "stphilipstjames.html",
+      "path": "raw/bcp-1928/stphilipstjames.html",
+      "bytes": 6651,
+      "sha256": "52efefd41c908f4b0247e36c12761514e69e58759f7d7967b4e4eccfc2fe1e2a",
+      "order": 80
+    },
+    {
+      "name": "stbarnabas.html",
+      "logical_name": "stbarnabas.html",
+      "path": "raw/bcp-1928/stbarnabas.html",
+      "bytes": 5392,
+      "sha256": "6e30c01000c27c07cbc50386745026a281241a548a8098ec9866058dd28151c4",
+      "order": 81
+    },
+    {
+      "name": "stjohnbaptist.html",
+      "logical_name": "stjohnbaptist.html",
+      "path": "raw/bcp-1928/stjohnbaptist.html",
+      "bytes": 9516,
+      "sha256": "91ecfe79ea4cb9857880a7d679a7736f6806ebadf96f047f6c5d9926827a06c9",
+      "order": 82
+    },
+    {
+      "name": "stpeter.html",
+      "logical_name": "stpeter.html",
+      "path": "raw/bcp-1928/stpeter.html",
+      "bytes": 6429,
+      "sha256": "014c033cbef6fc15dc884e0485d592cc5666dd7e7f30ee34cdd16de6f67b5d83",
+      "order": 83
+    },
+    {
+      "name": "stjames.html",
+      "logical_name": "stjames.html",
+      "path": "raw/bcp-1928/stjames.html",
+      "bytes": 5751,
+      "sha256": "3deefcb5eb6529b5742b3d88b8ab5f43d1a8aaa8b31b8e3da9c202b66ca12d53",
+      "order": 84
+    },
+    {
+      "name": "transfiguration.html",
+      "logical_name": "transfiguration.html",
+      "path": "raw/bcp-1928/transfiguration.html",
+      "bytes": 5586,
+      "sha256": "850869df7502890fe9440caa6d6dedd2d48f4d790d9925c5489c5c261b79afbd",
+      "order": 85
+    },
+    {
+      "name": "stbartholomew.html",
+      "logical_name": "stbartholomew.html",
+      "path": "raw/bcp-1928/stbartholomew.html",
+      "bytes": 5205,
+      "sha256": "619b1f731544fd0e94d276c8f7915962fcfea6268932c8249dd57880e81dc0bc",
+      "order": 86
+    },
+    {
+      "name": "stmatthew.html",
+      "logical_name": "stmatthew.html",
+      "path": "raw/bcp-1928/stmatthew.html",
+      "bytes": 5309,
+      "sha256": "98425943bd5d54673483457ef2b43c361b6fa27f4cf81980928d3512a47eddf7",
+      "order": 87
+    },
+    {
+      "name": "stmichaelangels.html",
+      "logical_name": "stmichaelangels.html",
+      "path": "raw/bcp-1928/stmichaelangels.html",
+      "bytes": 6218,
+      "sha256": "5729dccdd84faf1698bee78705ef81e37e80157c336f54c66054d5665012d7cf",
+      "order": 88
+    },
+    {
+      "name": "stluke.html",
+      "logical_name": "stluke.html",
+      "path": "raw/bcp-1928/stluke.html",
+      "bytes": 5555,
+      "sha256": "5dd9e483fed35f36ba548f55158b2eea42d37e9707e5c96c80229030abada72c",
+      "order": 89
+    },
+    {
+      "name": "stsimonjude.html",
+      "logical_name": "stsimonjude.html",
+      "path": "raw/bcp-1928/stsimonjude.html",
+      "bytes": 5473,
+      "sha256": "1cd4de9297ab258994f1932ff26ba9f453266ef8572ae1eff67745df372fcfc0",
+      "order": 90
+    },
+    {
+      "name": "allsaints.html",
+      "logical_name": "allsaints.html",
+      "path": "raw/bcp-1928/allsaints.html",
+      "bytes": 10228,
+      "sha256": "061a724e84b514ff3ede2c1b367b38b4a92e441aa88d036b0cc9696005baf5be",
+      "order": 91
+    },
+    {
+      "name": "asaints.html",
+      "logical_name": "asaints.html",
+      "path": "raw/bcp-1928/asaints.html",
+      "bytes": 5759,
+      "sha256": "138159e22d5ec3c1cc0c6a5cffe167d0f7012c92959a70abd52b63e4af433600",
+      "order": 92
+    },
+    {
+      "name": "dedication.html",
+      "logical_name": "dedication.html",
+      "path": "raw/bcp-1928/dedication.html",
+      "bytes": 4684,
+      "sha256": "b049d5c273ee5dd3c5cacee4ae5010555d3ec9b2cb75132e757dd5a7bce94af2",
+      "order": 93
+    },
+    {
+      "name": "emberdays.html",
+      "logical_name": "emberdays.html",
+      "path": "raw/bcp-1928/emberdays.html",
+      "bytes": 5971,
+      "sha256": "50e878fd5b00607e1d22c7fede0b662d478f6ed6d421935c6477dbc83b6138e7",
+      "order": 94
+    },
+    {
+      "name": "rogationdays.html",
+      "logical_name": "rogationdays.html",
+      "path": "raw/bcp-1928/rogationdays.html",
+      "bytes": 5888,
+      "sha256": "359fc3e7a8a4f810ed7305034c7065fa0e944878bf16e6e920ac9817775db6d0",
+      "order": 95
+    },
+    {
+      "name": "independenceday.html",
+      "logical_name": "independenceday.html",
+      "path": "raw/bcp-1928/independenceday.html",
+      "bytes": 4829,
+      "sha256": "8ecc0b52a143a4f7563af083f1ceab577f536fb4f778a0cd289d05bfc3cb8c3e",
+      "order": 96
+    },
+    {
+      "name": "thanksgivingday.html",
+      "logical_name": "thanksgivingday.html",
+      "path": "raw/bcp-1928/thanksgivingday.html",
+      "bytes": 10032,
+      "sha256": "e6e9ac60302c44dcbb072f97c7424e52babf43819fb89fa0edd594dac031751e",
+      "order": 97
+    },
+    {
+      "name": "marriage.html",
+      "logical_name": "marriage.html",
+      "path": "raw/bcp-1928/marriage.html",
+      "bytes": 5256,
+      "sha256": "2cc80f46f8bc9537d6b7a54e727641ea47577ccc721de67526be63fc26aee38f",
+      "order": 98
+    },
+    {
+      "name": "ataburial.html",
+      "logical_name": "ataburial.html",
+      "path": "raw/bcp-1928/ataburial.html",
+      "bytes": 5213,
+      "sha256": "1182e1dc74c0496e6d4346a3bd4cb118729176efb1acc92708cbd915ddd08b93",
+      "order": 99
+    }
+  ],
+  "authorities": [
+    {
+      "name": "advent1.html",
+      "path": "raw/bcp-1928/advent1.html",
+      "role": "primary-source",
+      "bytes": 12931,
+      "sha256": "0944488c346f7f901acfd94b8c37e9d4ba820a0e49d3640287907fdc2a9bd292"
+    },
+    {
+      "name": "advent2.html",
+      "path": "raw/bcp-1928/advent2.html",
+      "role": "primary-source",
+      "bytes": 11142,
+      "sha256": "5621d14e2eb5f6eefe6340c13470291c53c96ea796a663ca63fb1e3bdf14498b"
+    },
+    {
+      "name": "advent3.html",
+      "path": "raw/bcp-1928/advent3.html",
+      "role": "primary-source",
+      "bytes": 10346,
+      "sha256": "ebd98ffee86d31ae7f0484d3880f926f3af7b8dda1ad2eaf00fa51d990f3569d"
+    },
+    {
+      "name": "advent4.html",
+      "path": "raw/bcp-1928/advent4.html",
+      "role": "primary-source",
+      "bytes": 10771,
+      "sha256": "e2bf9e930ade238da432ec36e07d12617cadbea74e33cfe1badcc543398371a7"
+    },
+    {
+      "name": "christmas.html",
+      "path": "raw/bcp-1928/christmas.html",
+      "role": "primary-source",
+      "bytes": 17085,
+      "sha256": "fd0d512551de55a0ba0b9542d92dbe911798b95616242cf38a4ccd47e2133538"
+    },
+    {
+      "name": "stephen.html",
+      "path": "raw/bcp-1928/stephen.html",
+      "role": "primary-source",
+      "bytes": 8684,
+      "sha256": "448fb599b825b15f4dd03cf67f1bb3f04df8c81bebbfad65624f886c55678898"
+    },
+    {
+      "name": "stjohn.html",
+      "path": "raw/bcp-1928/stjohn.html",
+      "role": "primary-source",
+      "bytes": 9077,
+      "sha256": "3bdef621ceffd39d326d09540673541562736f56038e747cb08e02c7f9b175e2"
+    },
+    {
+      "name": "holyinnocents.html",
+      "path": "raw/bcp-1928/holyinnocents.html",
+      "role": "primary-source",
+      "bytes": 10123,
+      "sha256": "a00c062745b4ced58f4bbd91c1d0cdf9d5fd62aa5229d2f6afa23ea7e3205b9e"
+    },
+    {
+      "name": "christmas1.html",
+      "path": "raw/bcp-1928/christmas1.html",
+      "role": "primary-source",
+      "bytes": 11809,
+      "sha256": "13ff63cb0ed9ae2bff61fb057b0001381200bb3ef4a3b00c16e6f434b9707a5d"
+    },
+    {
+      "name": "circumcision.html",
+      "path": "raw/bcp-1928/circumcision.html",
+      "role": "primary-source",
+      "bytes": 8252,
+      "sha256": "19def98ca0a41697b3c98151055184034d62bd66c7403c49b57685249a01c544"
+    },
+    {
+      "name": "christmas2.html",
+      "path": "raw/bcp-1928/christmas2.html",
+      "role": "primary-source",
+      "bytes": 9898,
+      "sha256": "87a473545bef695d52205d1b9250a36c4bf1deb61190cc3f8378b2a3d576ea39"
+    },
+    {
+      "name": "epiphany.html",
+      "path": "raw/bcp-1928/epiphany.html",
+      "role": "primary-source",
+      "bytes": 10956,
+      "sha256": "98cfa5f8f60473ea783772c567816456160420c906223cb452cca54f75832bec"
+    },
+    {
+      "name": "epiphany1.html",
+      "path": "raw/bcp-1928/epiphany1.html",
+      "role": "primary-source",
+      "bytes": 10159,
+      "sha256": "ab4c3466b3a96d232aecc5375897964ee61938a35e7315745fa355f2fea80d4f"
+    },
+    {
+      "name": "epiphany2.html",
+      "path": "raw/bcp-1928/epiphany2.html",
+      "role": "primary-source",
+      "bytes": 10378,
+      "sha256": "2bc1cb222f81cec961fe9f7b362da99a6e6062b462e9945a5f3db0537d01ed35"
+    },
+    {
+      "name": "epiphany3.html",
+      "path": "raw/bcp-1928/epiphany3.html",
+      "role": "primary-source",
+      "bytes": 10586,
+      "sha256": "a81c1ce8332279ad0dd239103afe3b28524edb18fdf9539a0d4a9cf1ac5ecf24"
+    },
+    {
+      "name": "epiphany4.html",
+      "path": "raw/bcp-1928/epiphany4.html",
+      "role": "primary-source",
+      "bytes": 11089,
+      "sha256": "276b94171daa807034af902074afcda556c1902fe439a19565fd6b7740656d56"
+    },
+    {
+      "name": "epiphany5.html",
+      "path": "raw/bcp-1928/epiphany5.html",
+      "role": "primary-source",
+      "bytes": 9465,
+      "sha256": "63a2bf86fd8cb9f2746a4aaf9d1cb10fdf2473a09a3ea73872c8ba1745ba5739"
+    },
+    {
+      "name": "epiphany6.html",
+      "path": "raw/bcp-1928/epiphany6.html",
+      "role": "primary-source",
+      "bytes": 10923,
+      "sha256": "613a018092ed33ce2c78e9b2568ec8924f716d959129026b7e2eac8aea44c5c3"
+    },
+    {
+      "name": "septuagesima.html",
+      "path": "raw/bcp-1928/septuagesima.html",
+      "role": "primary-source",
+      "bytes": 10470,
+      "sha256": "0460e705d13beac35fb68085ef8007476a9d0c64ab0ed944d9aff7a7f21515a0"
+    },
+    {
+      "name": "sexagesima.html",
+      "path": "raw/bcp-1928/sexagesima.html",
+      "role": "primary-source",
+      "bytes": 10316,
+      "sha256": "4e2cc2b82370e6f17541467e268fc7f9df819b3abe888f52c92f46de4b22b559"
+    },
+    {
+      "name": "quinquagesima.html",
+      "path": "raw/bcp-1928/quinquagesima.html",
+      "role": "primary-source",
+      "bytes": 10461,
+      "sha256": "ca9352e4926a40c31c5c4b1c0881e5001bd7dfdc2d729f2a8e14b591900513ad"
+    },
+    {
+      "name": "ashwednesday.html",
+      "path": "raw/bcp-1928/ashwednesday.html",
+      "role": "primary-source",
+      "bytes": 9856,
+      "sha256": "4bcdf1ff130b561fdc42966dcca5342e86b45a1e5fd67984972029599b937e74"
+    },
+    {
+      "name": "lent1.html",
+      "path": "raw/bcp-1928/lent1.html",
+      "role": "primary-source",
+      "bytes": 9886,
+      "sha256": "0a700d510090d1a50f3538822e294f85260f194caf35c592a329a566b0eb0d3f"
+    },
+    {
+      "name": "lent2.html",
+      "path": "raw/bcp-1928/lent2.html",
+      "role": "primary-source",
+      "bytes": 9702,
+      "sha256": "f8dcb966b58fad9983c9f4fa37b73f185f32c3594739a2cfcee86dbecb8225b8"
+    },
+    {
+      "name": "lent3.html",
+      "path": "raw/bcp-1928/lent3.html",
+      "role": "primary-source",
+      "bytes": 12092,
+      "sha256": "da5abb9e16888184c34fa57920826164e2e99836d6ce2b2931d05aefe87888cb"
+    },
+    {
+      "name": "lent4.html",
+      "path": "raw/bcp-1928/lent4.html",
+      "role": "primary-source",
+      "bytes": 11352,
+      "sha256": "b208aee05976ec2b98df94c81fae2cb0e6202692d4c2ad610f857f99dde57a9e"
+    },
+    {
+      "name": "passionsunday.html",
+      "path": "raw/bcp-1928/passionsunday.html",
+      "role": "primary-source",
+      "bytes": 10774,
+      "sha256": "a1bbadb3159cb9f9fd1440cb2fcb4a36560c96147533ce0e19728b922cc24e05"
+    },
+    {
+      "name": "palmsunday.html",
+      "path": "raw/bcp-1928/palmsunday.html",
+      "role": "primary-source",
+      "bytes": 22263,
+      "sha256": "21b65b9d2f4f46a8fd0ad5379d32ed23e85f9744d1e8b184f43c5f4787b241fa"
+    },
+    {
+      "name": "mondaybfreaster.html",
+      "path": "raw/bcp-1928/mondaybfreaster.html",
+      "role": "primary-source",
+      "bytes": 20396,
+      "sha256": "67ca8b4da7d30257525234feb4c99ed7c92ec151660771b1daa9e4333807a099"
+    },
+    {
+      "name": "tuesdaybfreaster.html",
+      "path": "raw/bcp-1928/tuesdaybfreaster.html",
+      "role": "primary-source",
+      "bytes": 13732,
+      "sha256": "5a46c1eba82f0a1292e66e3be64d84a9da513f02dd7acc3b91059a09c7690064"
+    },
+    {
+      "name": "wednesdaybfreaster.html",
+      "path": "raw/bcp-1928/wednesdaybfreaster.html",
+      "role": "primary-source",
+      "bytes": 18014,
+      "sha256": "2732108bac0ce2ec289a7ab14fc270199fe2ebe8655ca4c5502ecb1c0c0608b3"
+    },
+    {
+      "name": "maundythursday.html",
+      "path": "raw/bcp-1928/maundythursday.html",
+      "role": "primary-source",
+      "bytes": 18607,
+      "sha256": "a83bc50f6d4df8491759f5bb841bb130689e1679b9044cb416171dbdbf251bd2"
+    },
+    {
+      "name": "goodfriday.html",
+      "path": "raw/bcp-1928/goodfriday.html",
+      "role": "primary-source",
+      "bytes": 17573,
+      "sha256": "0c714cfd23163ef0cc8173e7a3caa49018150a9749b8f96e01fcd9f95bf3a8c4"
+    },
+    {
+      "name": "eastereven.html",
+      "path": "raw/bcp-1928/eastereven.html",
+      "role": "primary-source",
+      "bytes": 13377,
+      "sha256": "af9576f8b6d08f549e6c3571a6423dd2eca07fc0826ac3b1a4fc9ccccfb9a170"
+    },
+    {
+      "name": "Easter.html",
+      "path": "raw/bcp-1928/Easter.html",
+      "role": "primary-source",
+      "bytes": 18110,
+      "sha256": "7c0edcdc8e22e09ce66a0223ab87293144cf174f586ccb6a8fcc56be08a117ef"
+    },
+    {
+      "name": "Eastermonday.html",
+      "path": "raw/bcp-1928/Eastermonday.html",
+      "role": "primary-source",
+      "bytes": 12015,
+      "sha256": "2152b226cea237fe42745bb66088c2e840b39bef1c16bcb7bd27c44940fc650b"
+    },
+    {
+      "name": "Eastertuesday.html",
+      "path": "raw/bcp-1928/Eastertuesday.html",
+      "role": "primary-source",
+      "bytes": 11465,
+      "sha256": "280c12e4ff9be36a9d26595703c8e3af8b2e787e750ff794fba5fce83aa95f2b"
+    },
+    {
+      "name": "Easter1.html",
+      "path": "raw/bcp-1928/Easter1.html",
+      "role": "primary-source",
+      "bytes": 12533,
+      "sha256": "a0d3bc45e1a53e1cb659d7ca7b4cedd7fd2b8487a2817e4b148c0638c1373e52"
+    },
+    {
+      "name": "Easter2.html",
+      "path": "raw/bcp-1928/Easter2.html",
+      "role": "primary-source",
+      "bytes": 11701,
+      "sha256": "ab3c9db62188273945a782a18ce527933b11786bd0a3f4c081467afb101391f5"
+    },
+    {
+      "name": "Easter3.html",
+      "path": "raw/bcp-1928/Easter3.html",
+      "role": "primary-source",
+      "bytes": 11901,
+      "sha256": "fd5d3a82f39b093820152d7429247d919d11643b345beee9a56ecdcaa89cecf3"
+    },
+    {
+      "name": "Easter4.html",
+      "path": "raw/bcp-1928/Easter4.html",
+      "role": "primary-source",
+      "bytes": 11444,
+      "sha256": "85ab31c076940730969116c80373639eaca21869572f0966297bcec548d9782e"
+    },
+    {
+      "name": "Easter5rogation.html",
+      "path": "raw/bcp-1928/Easter5rogation.html",
+      "role": "primary-source",
+      "bytes": 12673,
+      "sha256": "8f749cb0369af295430ca0bbe1b5234bc5ee210e36ee213c5a6267d86966dfe0"
+    },
+    {
+      "name": "Ascensionday.html",
+      "path": "raw/bcp-1928/Ascensionday.html",
+      "role": "primary-source",
+      "bytes": 19270,
+      "sha256": "ef1fd30ef1dcdd465a497e7d363f1ba1e786fd0fb5326938ace927bedbfaf625"
+    },
+    {
+      "name": "Ascensionsundayafter.html",
+      "path": "raw/bcp-1928/Ascensionsundayafter.html",
+      "role": "primary-source",
+      "bytes": 12949,
+      "sha256": "6486f2492954de8a0885d3f221db81a8427ed92665d8b57ddc3cb21555eb10e8"
+    },
+    {
+      "name": "whitsunday.html",
+      "path": "raw/bcp-1928/whitsunday.html",
+      "role": "primary-source",
+      "bytes": 19737,
+      "sha256": "0641422e554bc996c3949fdf65549f75476f67a085c3e81734683007916150aa"
+    },
+    {
+      "name": "whitsunmonday.html",
+      "path": "raw/bcp-1928/whitsunmonday.html",
+      "role": "primary-source",
+      "bytes": 6473,
+      "sha256": "ac75b2ee491426af0c58f6ebeac07134732ef214e2eda27a7f580859e7f82098"
+    },
+    {
+      "name": "whitsuntuesday.html",
+      "path": "raw/bcp-1928/whitsuntuesday.html",
+      "role": "primary-source",
+      "bytes": 5376,
+      "sha256": "354894d0b69fdecd4233020efac54a0e8c78f0ce6fa7db84fbfaf897c957ec1c"
+    },
+    {
+      "name": "Trinity.html",
+      "path": "raw/bcp-1928/Trinity.html",
+      "role": "primary-source",
+      "bytes": 12705,
+      "sha256": "5808fa90f5d46a2c77cc361e2a15b4ae261034f887f8963e7c4acd0b7ca1e59c"
+    },
+    {
+      "name": "Trinity1.html",
+      "path": "raw/bcp-1928/Trinity1.html",
+      "role": "primary-source",
+      "bytes": 12612,
+      "sha256": "d896a764b99cd9a65e34772b06852d8bc0bab5d7cfab567aee2645ec436ad473"
+    },
+    {
+      "name": "Trinity2.html",
+      "path": "raw/bcp-1928/Trinity2.html",
+      "role": "primary-source",
+      "bytes": 11836,
+      "sha256": "ea783477859ab522089188dcda3f1eddc686be9b1987ee22472b9086c09ca061"
+    },
+    {
+      "name": "Trinity3.html",
+      "path": "raw/bcp-1928/Trinity3.html",
+      "role": "primary-source",
+      "bytes": 10415,
+      "sha256": "fbed0ca867de8ec70a5c7169f7b37da3a6c17eaa87d20ac5fa4ac642eb7b6278"
+    },
+    {
+      "name": "Trinity4.html",
+      "path": "raw/bcp-1928/Trinity4.html",
+      "role": "primary-source",
+      "bytes": 11785,
+      "sha256": "92fd31ede4b537e8618064234b53d21ab1cb085ea78224ce79fdf18c254dfa25"
+    },
+    {
+      "name": "Trinity5.html",
+      "path": "raw/bcp-1928/Trinity5.html",
+      "role": "primary-source",
+      "bytes": 10895,
+      "sha256": "c6d518329a02a1b4611caf9ef3c0a330eaac1d9d1f3544cfcf70e5bfc0ca3710"
+    },
+    {
+      "name": "Trinity6.html",
+      "path": "raw/bcp-1928/Trinity6.html",
+      "role": "primary-source",
+      "bytes": 11069,
+      "sha256": "89b19e77549e73beb08825d87bfd0dbf3487cfe28ecbe9f446eff507d5463246"
+    },
+    {
+      "name": "Trinity7.html",
+      "path": "raw/bcp-1928/Trinity7.html",
+      "role": "primary-source",
+      "bytes": 11273,
+      "sha256": "ead4df3252a097f459b03662514ef820bd03746edf390954909662d4a95be71d"
+    },
+    {
+      "name": "Trinity8.html",
+      "path": "raw/bcp-1928/Trinity8.html",
+      "role": "primary-source",
+      "bytes": 10546,
+      "sha256": "48998eb0eb13116c0b7f8f774e20402445dbd0343e75ea8d992ba7831522b3f4"
+    },
+    {
+      "name": "Trinity9.html",
+      "path": "raw/bcp-1928/Trinity9.html",
+      "role": "primary-source",
+      "bytes": 14461,
+      "sha256": "e1eefb10be6d1b00faf8cb634d3e2a28a457f1408bd3b436a876d261ec358371"
+    },
+    {
+      "name": "Trinity10.html",
+      "path": "raw/bcp-1928/Trinity10.html",
+      "role": "primary-source",
+      "bytes": 10877,
+      "sha256": "9541b39836122310a6116ad2041e1fb85aea3dc5bb9a0945773a1000c86175b9"
+    },
+    {
+      "name": "Trinity11.html",
+      "path": "raw/bcp-1928/Trinity11.html",
+      "role": "primary-source",
+      "bytes": 11135,
+      "sha256": "b8a4ba2493bee9492ff8a2bf206636b462d10dc7e1038e0b80db82565cb8c9fc"
+    },
+    {
+      "name": "Trinity12.html",
+      "path": "raw/bcp-1928/Trinity12.html",
+      "role": "primary-source",
+      "bytes": 12063,
+      "sha256": "fa3cc6f65f37f0f972745b93ad2bbb69cb9903b57fe57fd5a201448940d34826"
+    },
+    {
+      "name": "Trinity13.html",
+      "path": "raw/bcp-1928/Trinity13.html",
+      "role": "primary-source",
+      "bytes": 10872,
+      "sha256": "549242bf4b0c9c6209260fb944816892e4c4b5de04cd2d4f48a578150ecc3b08"
+    },
+    {
+      "name": "Trinity14.html",
+      "path": "raw/bcp-1928/Trinity14.html",
+      "role": "primary-source",
+      "bytes": 11501,
+      "sha256": "04a0c797ac26f7f544e7fce620f1491f7059f62985a72a9e58878eef3d14cd6a"
+    },
+    {
+      "name": "Trinity15.html",
+      "path": "raw/bcp-1928/Trinity15.html",
+      "role": "primary-source",
+      "bytes": 11139,
+      "sha256": "a0b343ed1025069e1b2994df49fa849e3e2d64342423ad5656bd222d9b166ad2"
+    },
+    {
+      "name": "Trinity16.html",
+      "path": "raw/bcp-1928/Trinity16.html",
+      "role": "primary-source",
+      "bytes": 11497,
+      "sha256": "fbd41820fa8d26581f93d6c33f41121818bce38f8b139bfda4741690c3cc5609"
+    },
+    {
+      "name": "Trinity17.html",
+      "path": "raw/bcp-1928/Trinity17.html",
+      "role": "primary-source",
+      "bytes": 11135,
+      "sha256": "facf5d3f21a0d2876edc9ffb2ee9d5e1c930e57a0bd3ad892b62767507d066c9"
+    },
+    {
+      "name": "Trinity18.html",
+      "path": "raw/bcp-1928/Trinity18.html",
+      "role": "primary-source",
+      "bytes": 10474,
+      "sha256": "9c1405044b42856f198c0d0f25f2500f31162041477f457e4a43a23d7b58ffde"
+    },
+    {
+      "name": "Trinity19.html",
+      "path": "raw/bcp-1928/Trinity19.html",
+      "role": "primary-source",
+      "bytes": 12025,
+      "sha256": "5c078013163e166179bf4f1a3433bdae5fb672c76dcda2715923a9609c57b29c"
+    },
+    {
+      "name": "Trinity20.html",
+      "path": "raw/bcp-1928/Trinity20.html",
+      "role": "primary-source",
+      "bytes": 12091,
+      "sha256": "4715feb261f0f715b631f8bc87773ad3e6fcbb9206f92b23c1f63087650b8604"
+    },
+    {
+      "name": "Trinity21.html",
+      "path": "raw/bcp-1928/Trinity21.html",
+      "role": "primary-source",
+      "bytes": 10408,
+      "sha256": "68a958a51a043cf28ea7e47e06f32519300e7a98220e41e30c1c5b8dc0e5ddee"
+    },
+    {
+      "name": "Trinity22.html",
+      "path": "raw/bcp-1928/Trinity22.html",
+      "role": "primary-source",
+      "bytes": 11054,
+      "sha256": "86123ba745630ab3457f333e2d15f5a32e5f3a803f87c7823e7fbcfc6b181aeb"
+    },
+    {
+      "name": "Trinity23.html",
+      "path": "raw/bcp-1928/Trinity23.html",
+      "role": "primary-source",
+      "bytes": 7447,
+      "sha256": "0ec4a5e015106b7408f73af189c77c5cafb7125e094918ba113394ca4e07eee8"
+    },
+    {
+      "name": "Trinity24.html",
+      "path": "raw/bcp-1928/Trinity24.html",
+      "role": "primary-source",
+      "bytes": 7713,
+      "sha256": "0bf6aa9c6f2db73a755a34d661b8106c3569ee61c6020f7a2b8c6d206cea2efc"
+    },
+    {
+      "name": "nextbeforeadvent.html",
+      "path": "raw/bcp-1928/nextbeforeadvent.html",
+      "role": "primary-source",
+      "bytes": 11430,
+      "sha256": "4680398a430c9e96a690a5ef8c06df7115e70d6a0e4b1b6168cca3d20f25efb5"
+    },
+    {
+      "name": "standrew.html",
+      "path": "raw/bcp-1928/standrew.html",
+      "role": "primary-source",
+      "bytes": 5937,
+      "sha256": "56cff977788e6e45b8424aa436dfda9d13f5e083d01e92b2e66dac2430bcbbb9"
+    },
+    {
+      "name": "stthomas.html",
+      "path": "raw/bcp-1928/stthomas.html",
+      "role": "primary-source",
+      "bytes": 5759,
+      "sha256": "9667fd5270f6eaf9abeb7929fba0ec756221ac6f685850faa00f0d8d430628ab"
+    },
+    {
+      "name": "conversion.html",
+      "path": "raw/bcp-1928/conversion.html",
+      "role": "primary-source",
+      "bytes": 10214,
+      "sha256": "9a1d713cd8721ca80e63bde1128230b5aaa87eb2a18ca8ff1cafa71041061f8e"
+    },
+    {
+      "name": "purification.html",
+      "path": "raw/bcp-1928/purification.html",
+      "role": "primary-source",
+      "bytes": 7877,
+      "sha256": "f8db60b9f985b17e7b2d29803f7a1675a9f1b16862dabd618712b6e62c65c3bf"
+    },
+    {
+      "name": "stmatthias.html",
+      "path": "raw/bcp-1928/stmatthias.html",
+      "role": "primary-source",
+      "bytes": 6276,
+      "sha256": "df955026d421d267ff48a45950d2c572c1ad50b8be1082743d092c6e39d83e5c"
+    },
+    {
+      "name": "annunciation.html",
+      "path": "raw/bcp-1928/annunciation.html",
+      "role": "primary-source",
+      "bytes": 5978,
+      "sha256": "bfef725bf2c2bf463a8b23e7b5a6652ee627ce603412ffe5d6946fb97757a498"
+    },
+    {
+      "name": "stmark.html",
+      "path": "raw/bcp-1928/stmark.html",
+      "role": "primary-source",
+      "bytes": 6416,
+      "sha256": "bcb4b780ec886f974a4dc19099c60636108833560fd55d456381ba68fb703fca"
+    },
+    {
+      "name": "stphilipstjames.html",
+      "path": "raw/bcp-1928/stphilipstjames.html",
+      "role": "primary-source",
+      "bytes": 6651,
+      "sha256": "52efefd41c908f4b0247e36c12761514e69e58759f7d7967b4e4eccfc2fe1e2a"
+    },
+    {
+      "name": "stbarnabas.html",
+      "path": "raw/bcp-1928/stbarnabas.html",
+      "role": "primary-source",
+      "bytes": 5392,
+      "sha256": "6e30c01000c27c07cbc50386745026a281241a548a8098ec9866058dd28151c4"
+    },
+    {
+      "name": "stjohnbaptist.html",
+      "path": "raw/bcp-1928/stjohnbaptist.html",
+      "role": "primary-source",
+      "bytes": 9516,
+      "sha256": "91ecfe79ea4cb9857880a7d679a7736f6806ebadf96f047f6c5d9926827a06c9"
+    },
+    {
+      "name": "stpeter.html",
+      "path": "raw/bcp-1928/stpeter.html",
+      "role": "primary-source",
+      "bytes": 6429,
+      "sha256": "014c033cbef6fc15dc884e0485d592cc5666dd7e7f30ee34cdd16de6f67b5d83"
+    },
+    {
+      "name": "stjames.html",
+      "path": "raw/bcp-1928/stjames.html",
+      "role": "primary-source",
+      "bytes": 5751,
+      "sha256": "3deefcb5eb6529b5742b3d88b8ab5f43d1a8aaa8b31b8e3da9c202b66ca12d53"
+    },
+    {
+      "name": "transfiguration.html",
+      "path": "raw/bcp-1928/transfiguration.html",
+      "role": "primary-source",
+      "bytes": 5586,
+      "sha256": "850869df7502890fe9440caa6d6dedd2d48f4d790d9925c5489c5c261b79afbd"
+    },
+    {
+      "name": "stbartholomew.html",
+      "path": "raw/bcp-1928/stbartholomew.html",
+      "role": "primary-source",
+      "bytes": 5205,
+      "sha256": "619b1f731544fd0e94d276c8f7915962fcfea6268932c8249dd57880e81dc0bc"
+    },
+    {
+      "name": "stmatthew.html",
+      "path": "raw/bcp-1928/stmatthew.html",
+      "role": "primary-source",
+      "bytes": 5309,
+      "sha256": "98425943bd5d54673483457ef2b43c361b6fa27f4cf81980928d3512a47eddf7"
+    },
+    {
+      "name": "stmichaelangels.html",
+      "path": "raw/bcp-1928/stmichaelangels.html",
+      "role": "primary-source",
+      "bytes": 6218,
+      "sha256": "5729dccdd84faf1698bee78705ef81e37e80157c336f54c66054d5665012d7cf"
+    },
+    {
+      "name": "stluke.html",
+      "path": "raw/bcp-1928/stluke.html",
+      "role": "primary-source",
+      "bytes": 5555,
+      "sha256": "5dd9e483fed35f36ba548f55158b2eea42d37e9707e5c96c80229030abada72c"
+    },
+    {
+      "name": "stsimonjude.html",
+      "path": "raw/bcp-1928/stsimonjude.html",
+      "role": "primary-source",
+      "bytes": 5473,
+      "sha256": "1cd4de9297ab258994f1932ff26ba9f453266ef8572ae1eff67745df372fcfc0"
+    },
+    {
+      "name": "allsaints.html",
+      "path": "raw/bcp-1928/allsaints.html",
+      "role": "primary-source",
+      "bytes": 10228,
+      "sha256": "061a724e84b514ff3ede2c1b367b38b4a92e441aa88d036b0cc9696005baf5be"
+    },
+    {
+      "name": "asaints.html",
+      "path": "raw/bcp-1928/asaints.html",
+      "role": "primary-source",
+      "bytes": 5759,
+      "sha256": "138159e22d5ec3c1cc0c6a5cffe167d0f7012c92959a70abd52b63e4af433600"
+    },
+    {
+      "name": "dedication.html",
+      "path": "raw/bcp-1928/dedication.html",
+      "role": "primary-source",
+      "bytes": 4684,
+      "sha256": "b049d5c273ee5dd3c5cacee4ae5010555d3ec9b2cb75132e757dd5a7bce94af2"
+    },
+    {
+      "name": "emberdays.html",
+      "path": "raw/bcp-1928/emberdays.html",
+      "role": "primary-source",
+      "bytes": 5971,
+      "sha256": "50e878fd5b00607e1d22c7fede0b662d478f6ed6d421935c6477dbc83b6138e7"
+    },
+    {
+      "name": "rogationdays.html",
+      "path": "raw/bcp-1928/rogationdays.html",
+      "role": "primary-source",
+      "bytes": 5888,
+      "sha256": "359fc3e7a8a4f810ed7305034c7065fa0e944878bf16e6e920ac9817775db6d0"
+    },
+    {
+      "name": "independenceday.html",
+      "path": "raw/bcp-1928/independenceday.html",
+      "role": "primary-source",
+      "bytes": 4829,
+      "sha256": "8ecc0b52a143a4f7563af083f1ceab577f536fb4f778a0cd289d05bfc3cb8c3e"
+    },
+    {
+      "name": "thanksgivingday.html",
+      "path": "raw/bcp-1928/thanksgivingday.html",
+      "role": "primary-source",
+      "bytes": 10032,
+      "sha256": "e6e9ac60302c44dcbb072f97c7424e52babf43819fb89fa0edd594dac031751e"
+    },
+    {
+      "name": "marriage.html",
+      "path": "raw/bcp-1928/marriage.html",
+      "role": "primary-source",
+      "bytes": 5256,
+      "sha256": "2cc80f46f8bc9537d6b7a54e727641ea47577ccc721de67526be63fc26aee38f"
+    },
+    {
+      "name": "ataburial.html",
+      "path": "raw/bcp-1928/ataburial.html",
+      "role": "primary-source",
+      "bytes": 5213,
+      "sha256": "1182e1dc74c0496e6d4346a3bd4cb118729176efb1acc92708cbd915ddd08b93"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/prayers/bcp-1928-collects/bcp-1928-collects.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+    "bytes": 1136,
+    "sha256": "8f1579ef7609ea0402089e717769baa6bdb38f2c3619ff82be954ec841110928"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/prayers/bcp-1928-collects/bcp-1928-collects.validation-policy.json",
+      "role": "independent-validation-policy",
+    "bytes": 1093,
+    "sha256": "c52d3e56c6907b18ac066c843fbcd3e2d187b459a587ac48082d67a1225a21fa"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/prayers/bcp-1928-collects/bcp-1928-collects.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+    "bytes": 3450,
+    "sha256": "67dc67e7820140f704cf09f2632fcfef3012777cf3bc5d1445776a4e1d173354"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "name": "parser-implementation",
+      "path": "build/parsers/bcp1928.py",
+      "role": "supporting-parser-implementation",
+      "bytes": 40017,
+      "sha256": "830bbd76a0648b5ee6ad8f9a6c04488eb00a69be0a56c4b99a632f2700879675"
+    },
+    {
+      "name": "bcp1928-producer",
+      "path": "build/tei/bcp_1928_reconstruction.py",
+      "role": "supporting-converter-implementation",
+    "bytes": 14058,
+    "sha256": "6053b44b29ef4a0736dff82e281a9819d2a6e930ac322189c835db4c2eceb1ea"
+    },
+    {
+      "name": "bcp1928-oracle",
+      "path": "build/tei/bcp_1928_oracle.py",
+      "role": "supporting-validator-implementation",
+    "bytes": 10332,
+    "sha256": "8f6f79de8af2970cdf52944b736efae19dc01bce5c2f64752c969fe761602b1b"
+    }
+  ],
+  "converter": {
+    "id": "ocd-bcp-1928-retained-html-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/bcp_1928_reconstruction.py",
+    "implementation_sha256": "6053b44b29ef4a0736dff82e281a9819d2a6e930ac322189c835db4c2eceb1ea"
+  },
+  "validator": {
+    "id": "ocd-bcp-1928-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/bcp_1928_oracle.py",
+    "implementation_sha256": "8f6f79de8af2970cdf52944b736efae19dc01bce5c2f64752c969fe761602b1b",
+    "import_closure_sha256": "3067ed755971e32a867ffa34b30d2ceb065fd030f74ad1b8c73d6de066f5c89f"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

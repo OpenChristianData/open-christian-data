@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/augustine-npnf105/npnf105.source-accountability.schema.json",
+  "title": "NPNF105 assigned-work complete source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "source_scope",
+    "source_member",
+    "assigned_work_count",
+    "feature_count",
+    "feature_counts",
+    "omitted_feature_count",
+    "unresolved_feature_count",
+    "division_accounting",
+    "comment_accounting",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-npnf105-source-accountability-v1"},
+    "schema": {"const": "npnf105.source-accountability.schema.json"},
+    "profile_id": {"const": "npnf105-assigned-div1-x-through-xxi-v1"},
+    "source_scope": {"const": "retained ThML.body div1 x through xxi"},
+    "source_member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": {"const": "raw/ccel/npnf1/npnf105.xml"},
+        "bytes": {"const": 4501690},
+        "sha256": {"const": "224f0e6a188ddfe691c1433c8db9a883755a9f030b71fede644d4af6c18ee63f"}
+      }
+    },
+    "assigned_work_count": {"const": 12},
+    "feature_count": {"const": 16648},
+    "feature_counts": {
+      "const": {"br": 2, "div1": 12, "div2": 362, "div3": 762, "i": 1265, "note": 3511, "p": 5920, "pb": 503, "scripRef": 2950, "span": 1361}
+    },
+    "omitted_feature_count": {"const": 0},
+    "unresolved_feature_count": {"const": 0},
+    "division_accounting": {"type": "array", "minItems": 23, "maxItems": 23},
+    "comment_accounting": {"type": "array", "minItems": 8, "maxItems": 8},
+    "crosswalk": {
+      "type": "array",
+      "minItems": 16648,
+      "maxItems": 16648,
+      "items": {
+        "type": "object",
+        "required": ["feature_id", "source_selector", "source_tag", "attributes", "direct_text", "tail_text", "direct_text_sha256", "tail_text_sha256", "tei_tag", "tei_xml_id", "tei_parent_id", "tei_attributes", "attribute_dispositions", "disposition", "tei_selector", "assertion", "parent_feature_id", "source_title_head"],
+        "properties": {
+          "feature_id": {"type": "string", "pattern": "^npnf105-feature-[0-9]{5}$"},
+          "source_selector": {"type": "string", "minLength": 1},
+          "source_tag": {"enum": ["div1", "div2", "div3", "p", "note", "pb", "scripRef", "i", "span", "br"]},
+          "source_xml_id": {"type": ["string", "null"]},
+          "attributes": {"type": "object"},
+          "direct_text": {"type": "string"},
+          "tail_text": {"type": "string"},
+          "direct_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tail_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "tei_tag": {"enum": ["div", "p", "note", "pb", "ref", "hi", "seg", "lb"]},
+          "tei_xml_id": {"type": "string", "minLength": 1},
+          "tei_parent_id": {"type": "string", "minLength": 1},
+          "tei_child_ordinal": {"type": "integer", "minimum": 1},
+          "tei_attributes": {"type": "object"},
+          "attribute_dispositions": {"type": "array"},
+          "disposition": {"const": "represented"},
+          "tei_selector": {"type": "string", "pattern": "^#"},
+          "assertion": {"type": "object"},
+          "parent_feature_id": {"type": ["string", "null"]},
+          "source_title_head": {"type": ["string", "null"]},
+          "work_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}

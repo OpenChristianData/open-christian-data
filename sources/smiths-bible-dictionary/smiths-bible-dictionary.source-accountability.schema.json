@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/smiths-bible-dictionary-source-accountability-v1",
+  "title": "Smith's Bible Dictionary source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "schema",
+    "profile_id",
+    "work_id",
+    "source_id",
+    "source_sha256",
+    "source_record_count",
+    "definition_block_count",
+    "observation_counts",
+    "crosswalk"
+  ],
+  "properties": {
+    "contract": {
+      "const": "ocd-smiths-bible-dictionary-source-accountability-v1"
+    },
+    "schema": {
+      "const": "sources/smiths-bible-dictionary/smiths-bible-dictionary.source-accountability.schema.json"
+    },
+    "profile_id": {
+      "const": "smiths-bible-dictionary-jwbickel-jsonl-v1"
+    },
+    "work_id": {
+      "const": "smiths-bible-dictionary"
+    },
+    "source_id": {
+      "const": "jwbickel-bible-dictionaries-smiths-jsonl"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_record_count": {
+      "const": 4560
+    },
+    "definition_block_count": {
+      "const": 5362
+    },
+    "observation_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "records",
+        "definition_blocks",
+        "total",
+        "represented",
+        "omitted",
+        "duplicate"
+      ],
+      "properties": {
+        "records": {
+          "const": 4560
+        },
+        "definition_blocks": {
+          "const": 5362
+        },
+        "total": {
+          "const": 9922
+        },
+        "represented": {
+          "const": 9922
+        },
+        "omitted": {
+          "const": 0
+        },
+        "duplicate": {
+          "const": 0
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 9922,
+      "maxItems": 9922,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "source_line",
+          "source_record_sha256",
+          "source_field",
+          "source_index",
+          "source_term",
+          "value",
+          "target",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "entry",
+              "definition"
+            ]
+          },
+          "source_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_record_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "source_field": {
+            "enum": [
+              "term",
+              "definitions"
+            ]
+          },
+          "source_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_term": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^#[A-Za-z_][A-Za-z0-9_.-]*$"
+          },
+          "status": {
+            "const": "represented"
+          }
+        }
+      }
+    }
+  }
+}

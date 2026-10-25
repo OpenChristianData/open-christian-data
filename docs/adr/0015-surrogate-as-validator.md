@@ -1,5 +1,7 @@
 # ADR-0015: Surrogate as validator, not gold as prerequisite
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](../TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Status:** Accepted (2026-06-05) — revised 2026-06-05 after adversarial review ([REVIEW_0014_0015_adversarial.md](REVIEW_0014_0015_adversarial.md)): stratified thresholds, a statistical acceptance rule, and a Schaff-Herzog transfer check were added.
 
 ## Context

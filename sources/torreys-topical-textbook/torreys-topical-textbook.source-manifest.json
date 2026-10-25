@@ -1,0 +1,28 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "jwbickel-bible-dictionaries-torreys-jsonl",
+  "ticket_id": "LIB-022",
+  "work_id": "torreys-topical-textbook",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "source_order": {"ticket_order": 4, "raw_manifest_order": 4, "raw_manifest_path": "raw/bible_dictionaries/manifest.json"},
+  "source_order_members": [
+    {"local_filename": "eastons.jsonl", "source_id": "jwbickel-bible-dictionaries-eastons-jsonl", "ticket_id": "LIB-021", "work_id": "eastons-bible-dictionary", "disposition": "exclude", "reason": "Retained member belongs to LIB-021."},
+    {"local_filename": "hitchcocks.jsonl", "source_id": "jwbickel-bible-dictionaries-hitchcocks-jsonl", "ticket_id": "LIB-021", "work_id": "hitchcocks-bible-names-dictionary", "disposition": "exclude", "reason": "Retained member belongs to LIB-021."},
+    {"local_filename": "smiths.jsonl", "source_id": "jwbickel-bible-dictionaries-smiths-jsonl", "ticket_id": "LIB-021", "work_id": "smiths-bible-dictionary", "disposition": "exclude", "reason": "Retained member belongs to LIB-021."},
+    {"local_filename": "torreys.jsonl", "source_id": "jwbickel-bible-dictionaries-torreys-jsonl", "ticket_id": "LIB-022", "work_id": "torreys-topical-textbook", "bytes": 1036596, "sha256": "8211c20290e951f60e21187e3bdaea639c8cf59343675b6518c6c17423906a1c", "records": 623, "definition_blocks": 23549, "disposition": "include", "reason": "Assigned LIB-022 member; every record and definition is represented in source order."}
+  ],
+  "retained_member_census": {"dataset_manifest_sha256": "3438b540e27f767ae4f0172a18ff466ed2d4ab5aed73a1b4af9755f92e52c37b", "retained": ["torreys.jsonl"], "excluded": ["eastons.jsonl", "hitchcocks.jsonl", "smiths.jsonl"]},
+  "authorities": [
+    {"name": "torreys-jsonl", "path": "raw/bible_dictionaries/torreys.jsonl", "role": "primary-source", "bytes": 1036596, "sha256": "8211c20290e951f60e21187e3bdaea639c8cf59343675b6518c6c17423906a1c"},
+    {"name": "bible-dictionaries-manifest", "path": "raw/bible_dictionaries/manifest.json", "role": "source-manifest", "bytes": 1712, "sha256": "3438b540e27f767ae4f0172a18ff466ed2d4ab5aed73a1b4af9755f92e52c37b"},
+    {"name": "source-attribution-readme", "path": "sources/torreys-topical-textbook/README.md", "role": "source-attribution", "bytes": 1277, "sha256": "c317e52052c99b48db8ffb0d343d631965221a937eb53cd3ee2939301f143fc3"},
+    {"name": "reconstruction-profile", "path": "sources/torreys-topical-textbook/torreys-topical-textbook.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 3166, "sha256": "a3102bd440925ff43bb37c7e9347d6abfbedfc12122a2c8d891abe1161fa74d5"},
+    {"name": "validation-policy", "path": "sources/torreys-topical-textbook/torreys-topical-textbook.validation-policy.json", "role": "independent-validation-policy", "bytes": 1079, "sha256": "5bb89ec16be09be0a30fb5a1de9b071606c978259a36acc893a97aa3a8468332"},
+    {"name": "source-accountability-schema", "path": "sources/torreys-topical-textbook/torreys-topical-textbook.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 1977, "sha256": "6d9aa062df931bcaa60738d94cdc54161c3eda9fc8906547b2d47815debc0717"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {"id": "ocd-lib022-torreys-topical-textbook-jsonl-to-tei", "version": "1", "callable": "_convert", "implementation_path": "build/tei/torreys_topical_textbook_reconstruction.py", "implementation_sha256": "ab12ec42dbe0319afad4cf8fdd0b669c28fc586275f47465fc0c35d6d70e806a"},
+  "validator": {"id": "ocd-lib022-torreys-topical-textbook-independent-oracle", "version": "1", "callable": "_oracle", "implementation_path": "build/tei/torreys_topical_textbook_oracle.py", "implementation_sha256": "e39cb6e3324a0298000104845bf6959493d12cdff56b3eb1d1f0c8f51bf1465c", "import_closure_sha256": "0e1b2b09d22d7a4426c0e3adb8c635539f71f9b5c1e45e8e0464a029a4dce456"},
+  "package_schema": {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+}

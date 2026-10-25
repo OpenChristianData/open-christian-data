@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Nicene Creed</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Fixture-only extract for PIPE-013B review.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="retained-source">
+          <idno type="work_id">fixture-nicene-creed</idno>
+          <idno type="textual_form_id">fixture-nicene-creed-en</idno>
+          <idno type="edition_id">fixture-nicene-381</idno>
+          <idno type="source_sha256">sha256:b5f49141ce15a08d82921eb4860e22d3f2a312faf16628e092382e75a1561469</idno>
+          <idno type="retained_sha256">sha256:b5f49141ce15a08d82921eb4860e22d3f2a312faf16628e092382e75a1561469</idno>
+          <ptr target="http://www.onthewing.org/user/Creed_Nicene.pdf" />
+          <note type="source-path">raw/Creeds.json/creeds/nicene_creed.json</note>
+          <note type="source-scope">The first two source paragraphs; later creed paragraphs are outside this bounded fixture.</note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="text" xml:id="fixture-nicene-381-text">
+        <div type="unit" xml:id="fixture-nicene-381-unit-1">
+          <p>We believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible.</p>
+        </div>
+        <div type="unit" xml:id="fixture-nicene-381-unit-2">
+          <p>And in one Lord Jesus Christ, the only-begotten Son of God, begotten of the Father before all worlds; God of God, Light of Light, very God of very God; begotten, not made, being of one substance with the Father, by whom all things were made.</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

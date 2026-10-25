@@ -1,0 +1,101 @@
+{
+  "contract": "ocd-barnes-member-set-candidate-handoff-v1",
+  "work_id": "barnes-nt-notes",
+  "ticket_id": "37c-066",
+  "status": "nonaccepted-candidate-only",
+  "installed_acquisition": {
+    "path": "library/works/barnes-nt-notes/forms/barnes-english/editions/crosswire-sword-v1.1/acquisitions/barnes-sword-v1.1.json",
+    "sha256": "9989b01a4b77d3bcac47c01db7d6e323923d9dbc2bc918d904658b39a8a200df"
+  },
+  "historical_acquisition_receipt": {
+    "path": "sources/barnes-nt-notes/barnes-nt-notes.acquisition-receipt.json",
+    "sha256": "ccdfd3c49f0889ca6fb5d827fdba6d6f896a002d8a85e07d1d0514796c2fc80b"
+  },
+  "historical_source_manifest": {
+    "path": "sources/barnes-nt-notes/barnes-nt-notes.source-manifest.json",
+    "sha256": "3eadd8d3da6eed7608c6164a6f2aae21b78b4b1dae4570cbc045fa00508fb3cb"
+  },
+  "candidate_source_manifest": {
+    "path": "sources/barnes-nt-notes/barnes-nt-notes.candidate-source-manifest-20260926.json",
+    "sha256": "b86ff5234dff59b0406adfedb2a5ef588538255719b43ec25f5963c6b3e9dcf6"
+  },
+  "primary_source_members": [
+    {
+      "bytes": 3120,
+      "name": "retained-block-index",
+      "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czs",
+      "role": "primary-source",
+      "sha256": "a39f80ec47d108a43fda634c1234fc03827f32eac1636d614c01b424dfcf6302"
+    },
+    {
+      "bytes": 82460,
+      "name": "retained-verse-index",
+      "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czv",
+      "role": "primary-source",
+      "sha256": "edd2d46416db52595af44811a49940527bba208bd6b73b7c30f480c21d63edae"
+    },
+    {
+      "bytes": 6018995,
+      "name": "retained-compressed-data",
+      "path": "raw/sword_modules/Barnes/modules/comments/zcom/barnes/nt.czz",
+      "role": "primary-source",
+      "sha256": "d26ada7eba82d4c0c24c18ad8d8a520c1dfd5761e2bdc8161c6888bc665ea40a"
+    }
+  ],
+  "source_member_set_manifest": {
+    "path": "library/works/barnes-nt-notes/forms/barnes-english/editions/crosswire-sword-v1.1/source-member-set.json",
+    "sha256": "4a62f1ef906ae95d216517bd7f2fc1b654828d64f9972dff5b13e8d10ca8856f"
+  },
+  "package_evidence": {
+    "bytes": 5812827,
+    "name": "retained-archive",
+    "path": "raw/sword_modules/Barnes.zip",
+    "role": "acquisition-container",
+    "sha256": "9e8edc0333875c214124371b3862df118ad3a76ade7753cb2faeed3484615baf"
+  },
+  "support_evidence": [
+    {
+      "bytes": 437,
+      "name": "retained-module-config",
+      "path": "raw/sword_modules/Barnes/mods.d/barnes.conf",
+      "role": "source-description",
+      "sha256": "6895f7186042c5624117973892bc22dc27fa31a21e9f4fbb217793e8b5df9a5f"
+    }
+  ],
+  "candidate": {
+    "root": "C:/Scratch/barnes-member-rebind-candidate-20260926-v1",
+    "manifest": {
+      "path": "C:/Scratch/barnes-member-rebind-candidate-20260926-v1/package/manifest.json",
+      "sha256": "822304c59b5fbc44720f637b8c7caaf9cce6a899bcc6c0040862db263f242c35"
+    },
+    "validation_sidecar": {
+      "path": "C:/Scratch/barnes-member-rebind-candidate-20260926-v1/validation.json",
+      "sha256": "863eba67ab5121f5cb0864ef9606ea92cb7013e769f5abdfede94048a8158846"
+    },
+    "validation_report_sha256": "59d5a6fae7f93b6bd4738b608e27529c1a540c19bb4de0d2b3bd66378c4f9238",
+    "validation_status": "pass",
+    "findings": [],
+    "tei": {
+      "path": "C:/Scratch/barnes-member-rebind-candidate-20260926-v1/package/content.tei.xml",
+      "sha256": "3f59fbeacc7f2020f3fbb7c5b220f6ff10f8f85e5732ee295527bdd527841dd1"
+    }
+  },
+  "comparison_to_historical_v6": {
+    "historical_manifest": {
+      "path": "D:/Library/Open Christian Data/candidate-reviews/37c-066-barnes-nt-notes-20260918-v6-byte-spans/package/manifest.json",
+      "sha256": "429590b1ba05a9033f1c63efb48c8a729a2b824b5d93d60c3262036abf704233"
+    },
+    "historical_tei": {
+      "path": "D:/Library/Open Christian Data/candidate-reviews/37c-066-barnes-nt-notes-20260918-v6-byte-spans/package/content.tei.xml",
+      "sha256": "31814b6a8fe5a3f47aaf19b1e8fe1ad7f8e8e5909d1e7b94bd2a610689af8f58"
+    },
+    "tei_body_sha256": "03761500c99bd218d833a6a6f5986a946c804a37edabb2893ddf0c6489960914",
+    "tei_body_byte_equal": true,
+    "slot_count_equal": 8246,
+    "source_accountability_byte_equal": true,
+    "source_accountability_sha256": "481df53109501780a887112cf2672c1687cba62b86f9e4b1720591afe6b3cc9e",
+    "unresolved_byte_equal": true,
+    "unresolved_sha256": "ae64f6582129355efda98210252c61d9ef4532248381a74b030f7fba3910c299"
+  },
+  "scope_note": "ZIP is the delivery package and is not the textual source. The three extracted SWORD parser files are the coordinated primary source member set. This candidate does not change canonical master, acceptance, rights clearance, or publication status."
+}

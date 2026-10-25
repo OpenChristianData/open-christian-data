@@ -1,0 +1,69 @@
+{
+  "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+  "contract": "ocd-openmgh-l590-workunit-profile-v3",
+  "declared_scope": "One source-declared titled work per TEI; BSB720 Carmina is divided only at the exact line separating its two source-titled sections. Print-page and source-image collation remain unverified.",
+  "member_bytes": 1910769,
+  "member_inventory_sha256": "b8e5206e379c7927b1675d337acab067fb202ed2524c2463996279c90f105d28",
+  "member_name": "bsb00000752.xml",
+  "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+  "receipt_edition": "Passiones vitaeque sanctorum aevi Merovingici (III) (MGH SS rer. Merov. 5)",
+  "source_id": "bsb00000752",
+  "work_linkage": {
+    "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+    "candidate_first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00591_4",
+    "candidate_last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00614_4",
+    "exact_candidate_count": 0,
+    "overlapping_matches": [
+      {
+        "acquisition_id": "epistula-ermentarii-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/epistula-ermentarii/forms/epistula-ermentarii-openmgh-retained/editions/epistula-ermentarii-openmgh-electronic/acquisitions/epistula-ermentarii-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "3267f8aede302407a2d4e8dd2386a0f54c95e3176300908bcf0669d612f245b4",
+        "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+        "edition_id": "epistula-ermentarii-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00612_16",
+        "last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00614_4",
+        "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+        "textual_form_id": "epistula-ermentarii-openmgh-retained",
+        "work_id": "epistula-ermentarii",
+        "work_sidecar_path": "library/works/epistula-ermentarii/work.json",
+        "work_sidecar_sha256": "189a51783ac86ed2e00bc2bec31b45fe0576c52cef3c627bea873332a195af80"
+      },
+      {
+        "acquisition_id": "vita-sancti-filiberti-openmgh-acquired",
+        "acquisition_sidecar_path": "library/works/vita-sancti-filiberti/forms/vita-sancti-filiberti-openmgh-retained/editions/vita-sancti-filiberti-openmgh-electronic/acquisitions/vita-sancti-filiberti-openmgh-acquired.json",
+        "acquisition_sidecar_sha256": "f7ad870edf169c97ce52a13230b723c90ebc9717e4e693f51d2384833ded556e",
+        "archive_sha256": "90aff0f77184f7bd7164adb8ce1cdf285766402fe727192256cb6fbbb65304d4",
+        "edition_id": "vita-sancti-filiberti-openmgh-electronic",
+        "first_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00591_4",
+        "last_locator": "raw/openmgh/bsb00000752/tei/bsb00000752.xml#bsb00000752_00612_15",
+        "member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+        "textual_form_id": "vita-sancti-filiberti-openmgh-retained",
+        "work_id": "vita-sancti-filiberti",
+        "work_sidecar_path": "library/works/vita-sancti-filiberti/work.json",
+        "work_sidecar_sha256": "6d5dbb7691101acbb2f2ed45c3f32a7e61655a9d4ef14c71fff234407a281ac4"
+      }
+    ],
+    "overlapping_sidecar_count": 2,
+    "overlapping_work_ids": [
+      "epistula-ermentarii",
+      "vita-sancti-filiberti"
+    ],
+    "source_id": "bsb00000752",
+    "source_member_sha256": "620b80ade431a814ebf41296cdf88476d9a39741cdba1925c0cd75fb9772c98a",
+    "source_path": "raw/openmgh/bsb00000752/tei/bsb00000752.xml",
+    "status": "overlap-only",
+    "work_id": null
+  },
+  "work_unit": {
+    "anchor_id": null,
+    "anchor_tag": null,
+    "ordinal": 17,
+    "part": 0,
+    "side": "whole",
+    "source_n": "Vita Filiberti abb. Gemeticensis et Heriensis",
+    "title": "Vita Filiberti abb. Gemeticensis et Heriensis"
+  },
+  "xml_titles": [
+    "MGH SS rer. Merov. 5: Passiones vitaeque sanctorum aevi Merovingici (III)"
+  ]
+}

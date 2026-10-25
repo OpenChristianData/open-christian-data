@@ -1,0 +1,32 @@
+{
+  "contract": "ocd-anf01-irenaeus-validation-policy-v1",
+  "policy_id": "anf01-div1-ix-five-against-heresies-books-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "required_selected_book_ids": ["ix.ii", "ix.iii", "ix.iv", "ix.vi", "ix.vii"],
+  "required_feature_count": 9159,
+  "required_attribute_count": 28874,
+  "required_direct_text_bytes": 370356,
+  "required_tail_text_bytes": 1018033,
+  "checks": [
+    "source-authority-size-hash-and-singleton-member-binding",
+    "exact-div1-ix-and-five-book-scope",
+    "complete-sibling-exclusion-accounting",
+    "complete-element-attribute-and-text-byte-crosswalk",
+    "exact-hierarchy-element-kind-attributes-direct-text-tail-and-title",
+    "omission-duplication-reorder-invention-and-text-detection",
+    "candidate-and-provenance-boundaries",
+    "candidate-package-and-source-accountability-json-schema",
+    "direct-tei-p5-xsd",
+    "metadata-rights-unresolved-and-evidence-drift",
+    "producer-independent-oracle-import-closure"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.irenaeus_against_heresies_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

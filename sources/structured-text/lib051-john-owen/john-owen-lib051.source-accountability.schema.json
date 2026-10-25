@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "assigned_work_count", "included_member_count", "adjacent_member_count", "total_node_count", "works", "adjacent_retained_member_accounting"],
+  "properties": {
+    "contract": {"const": "ocd-john-owen-lib051-source-accountability-v1"},
+    "profile_id": {"const": "john-owen-lib051-ten-retained-xml-v1"},
+    "assigned_work_count": {"const": 10},
+    "included_member_count": {"const": 10},
+    "adjacent_member_count": {"const": 22},
+    "total_node_count": {"type": "integer", "minimum": 1},
+    "works": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["work_id", "authority_name", "path", "bytes", "sha256", "node_count", "node_kind_counts", "attribute_count", "text_character_count", "tail_character_count", "metadata", "omitted_node_count", "duplicate_node_count", "invented_node_count"],
+        "properties": {
+          "work_id": {"type": "string"}, "authority_name": {"type": "string"}, "path": {"type": "string"},
+          "bytes": {"type": "integer", "minimum": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "node_count": {"type": "integer", "minimum": 1}, "attribute_count": {"type": "integer", "minimum": 0},
+          "text_character_count": {"type": "integer", "minimum": 0}, "tail_character_count": {"type": "integer", "minimum": 0},
+          "omitted_node_count": {"const": 0}, "duplicate_node_count": {"const": 0}, "invented_node_count": {"const": 0},
+          "metadata": {"type": "object"},
+          "node_kind_counts": {
+            "type": "object", "additionalProperties": false,
+            "required": ["element", "comment", "processing-instruction"],
+            "properties": {"element": {"type": "integer", "minimum": 1}, "comment": {"type": "integer", "minimum": 0}, "processing-instruction": {"type": "integer", "minimum": 0}}
+          }
+        }
+      }
+    },
+    "adjacent_retained_member_accounting": {
+      "type": "array", "minItems": 32, "maxItems": 32,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "bytes", "sha256", "disposition"],
+        "properties": {"path": {"type": "string"}, "bytes": {"type": "integer"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "disposition": {"type": "string"}}
+      }
+    }
+  }
+}
+
+

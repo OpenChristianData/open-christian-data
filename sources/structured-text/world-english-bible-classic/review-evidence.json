@@ -1,0 +1,118 @@
+{
+  "candidate": {
+    "candidate_sha256": "948e464320fc29a14696a421514fd17e8396affa9562e39e87fe75f14e1db22c",
+    "member_sha256": {
+      "README.source.md": "dc4959436a67571f7fb10998f1c8493e3758ce51390f4a5c65a773d12b1fdaf5",
+      "content.tei.xml": "9c279fcfcfb60732f24e67f855ffaff76b826baf2c28bcec971c30a2479ba43e",
+      "provenance.json": "546e418528436c2e0dc98fcf2a6e7a6e6fa13b30a7166d92f6243a275132bf6c",
+      "source-accountability.json": "12e498c2782d00a98e4f34fa20e7090182ea2246a7b65c02e73b069bfeeca391",
+      "unresolved.jsonl": "cbf153b9aca5f72002e49cc56a7867a4d902ad577c6abac9cada2ecf3514f033"
+    },
+    "oracle_implementation_sha256": "68d4d4309fa78b740eda127e4311f2684ce050359eaeac918618b1c8e578c71d",
+    "oracle_result_sha256": "2e2d579f96b14d0238ebe923a855e2472971503cdb77c1a2b85b35f9c4542551",
+    "path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260925\\web-eng-v2",
+    "validation_report_sha256": "67126ae0bba88170937108e061c35a585d58cf72c6d41c59104eced15a1e985b",
+    "validation_status": "pass"
+  },
+  "clean_process_reproduction": {
+    "candidate_sha256": "948e464320fc29a14696a421514fd17e8396affa9562e39e87fe75f14e1db22c",
+    "member_sha256": {
+      "README.source.md": "dc4959436a67571f7fb10998f1c8493e3758ce51390f4a5c65a773d12b1fdaf5",
+      "content.tei.xml": "9c279fcfcfb60732f24e67f855ffaff76b826baf2c28bcec971c30a2479ba43e",
+      "provenance.json": "546e418528436c2e0dc98fcf2a6e7a6e6fa13b30a7166d92f6243a275132bf6c",
+      "source-accountability.json": "12e498c2782d00a98e4f34fa20e7090182ea2246a7b65c02e73b069bfeeca391",
+      "unresolved.jsonl": "cbf153b9aca5f72002e49cc56a7867a4d902ad577c6abac9cada2ecf3514f033"
+    },
+    "oracle_implementation_sha256": "68d4d4309fa78b740eda127e4311f2684ce050359eaeac918618b1c8e578c71d",
+    "oracle_result_sha256": "2e2d579f96b14d0238ebe923a855e2472971503cdb77c1a2b85b35f9c4542551",
+    "path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260925\\web-eng-v2-reproduction",
+    "validation_report_sha256": "67126ae0bba88170937108e061c35a585d58cf72c6d41c59104eced15a1e985b",
+    "validation_status": "pass"
+  },
+  "contract": "ocd-ebible-eng-web-review-evidence-v1",
+  "execution": {
+    "clean_process": "separate py -3 CLI process; package and validation hashes identical",
+    "oracle_source_xml": "stdlib xml.etree.ElementTree for USFX; independently parsed USFM marker rows; lxml for TEI/P5 schema check",
+    "producer_xml": "lxml (serialize source lines into TEI)",
+    "pytest": "not run per parent instruction",
+    "python": "CPython 3.14.7"
+  },
+  "mutations": [
+    {
+      "candidate_sha256": "e2a32f440ee39d90c128dda9a189b604a41a25ccd784e0f985cc776874c7ea96",
+      "finding_samples": [
+        "readable carrier text mismatch:source-usfm:eng-web/02-GENeng-web.usfm#line=12",
+        "source accountability receipt mismatch"
+      ],
+      "id": "verse-text",
+      "oracle_status": "fail",
+      "path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260925\\web-eng-mutations-v1\\verse-text"
+    },
+    {
+      "candidate_sha256": "fa1db6839c018db92484d44295055c94ba253d2920d3e51274be790b208dc573",
+      "finding_samples": [
+        "TEI line-pointer count 74296 != source line count 74297",
+        "missing line:source-usfm:eng-web/20-PSAeng-web.usfm#line=6668",
+        "heading/speaker preservation mismatch d=138/139 sp=33/33",
+        "source-bound structure census mismatch PSA119-d=21/22 SNG-sp=33/33"
+      ],
+      "id": "psalm119-heading",
+      "oracle_status": "fail",
+      "path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260925\\web-eng-mutations-v1\\psalm119-heading"
+    },
+    {
+      "candidate_sha256": "481bae639099a03c1bf564ec23351bb6b238085eac56a166832af65c74b42245",
+      "finding_samples": [
+        "marker role mismatch:source-usfm:eng-web/23-SNGeng-web.usfm#line=11",
+        "source accountability receipt mismatch"
+      ],
+      "id": "song-speaker",
+      "oracle_status": "fail",
+      "path": "D:\\Library\\Open Christian Data\\candidate-reviews\\manifest-acquisition-20260925\\web-eng-mutations-v1\\song-speaker"
+    }
+  ],
+  "profile_alignment": {
+    "additional_equal_after_removing_whitespace": 7959,
+    "duplicate_keys_usfm": 0,
+    "duplicate_keys_usfx": 0,
+    "equal_after_whitespace_collapse": 30099,
+    "key_multiplicity_equal": true,
+    "substantive_differences": 0,
+    "verse_occurrences_usfm": 38058,
+    "verse_occurrences_usfx": 38058
+  },
+  "profile_sha256": "d7bccc26de517759f183250fc003a0c2e59a57ce7b624c720d7da581cb565c38",
+  "reproduction_equal_candidate_sha256": true,
+  "source_archives": {
+    "usfm": {
+      "extracted_line_count": 74297,
+      "literary_usfm_members": 83,
+      "sha256": "cc5d6cc5c4cef69efa1bd52aee1459211104c945bd685a5bcb247209fc30c792",
+      "support_members": 3,
+      "zip_members": 86
+    },
+    "usfx": {
+      "all_members_accounted": true,
+      "sha256": "4a06b3f09e2770a3b6f946151ed061840106eb1e866f9b3c579b01405d472d22",
+      "xml_member_sha256": "2b7592758982240ca7410f6b7b727dab2355f48529f462556528760fe6a326f3",
+      "zip_members": 8
+    }
+  },
+  "source_id": "ebible-eng-web-2020-stable",
+  "source_manifest_sha256": "742b7819ca2df4213ac061e578ff1896ba1b056d338f087ae90bf992e9024869",
+  "structural_xpaths": {
+    "all_description_headings": 139,
+    "all_speakers": 33,
+    "chapters": 1402,
+    "psalm119_description_headings": {
+      "count": 22,
+      "xpath": "//tei:div[@type=\"book\" and @n=\"PSA\"]/tei:div[@type=\"chapter\" and @n=\"119\"]//tei:ab[@type=\"usfm-d\"]"
+    },
+    "song_speaker_markers": {
+      "count": 33,
+      "xpath": "//tei:div[@type=\"book\" and @n=\"SNG\"]//tei:ab[@type=\"usfm-sp\"]"
+    },
+    "verses": 38058
+  },
+  "work_id": "world-english-bible-classic"
+}

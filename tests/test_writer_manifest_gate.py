@@ -7,6 +7,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -52,19 +54,47 @@ def _git(repo_root: Path, *args: str) -> None:
     )
 
 
-def test_no_data_edits_passes_through():
+@pytest.fixture
+def isolated_gate_repo(tmp_path: Path) -> Path:
+    """Provide a disposable index matching the executing gate authorizer."""
+    repo = tmp_path / "isolated-writer-gate-repo"
+    repo.mkdir()
+    _git(repo, "init")
+    _git(repo, "config", "core.autocrlf", "false")
+
+    schema_rel = Path(gate.WRITER_MANIFEST_SCHEMA_RELATIVE_PATH)
+    schema_path = repo / schema_rel
+    schema_path.parent.mkdir(parents=True, exist_ok=True)
+    schema_path.write_bytes(
+        (REPO_ROOT / "schemas" / "v1" / "writer_manifest.schema.json").read_bytes()
+    )
+
+    allowlist_rel = Path(gate.WRITER_IDENTITIES_RELATIVE_PATH)
+    allowlist_path = repo / allowlist_rel
+    allowlist_path.parent.mkdir(parents=True, exist_ok=True)
+    allowlist_path.write_bytes(gate.EXECUTING_WRITER_IDENTITIES_PATH.read_bytes())
+    _git(repo, "add", schema_rel.as_posix(), allowlist_rel.as_posix())
+    return repo
+
+
+def test_no_data_edits_passes_through(isolated_gate_repo: Path):
     rc, messages = gate.evaluate_gate(
         ["docs/README.md", "schemas/v1/foo.schema.json"],
         load_manifest=lambda p: None,
+        repo_root=isolated_gate_repo,
     )
     assert rc == 0
     assert messages == []
 
 
-def test_missing_staged_allowlist_blocks_before_non_writer_pass_through(monkeypatch):
+def test_missing_staged_allowlist_blocks_before_non_writer_pass_through(
+    isolated_gate_repo: Path, monkeypatch
+):
     monkeypatch.setattr(gate, "_staged_blob_bytes", lambda path, repo_root: None)
 
-    rc, messages = gate.evaluate_gate(["docs/README.md"])
+    rc, messages = gate.evaluate_gate(
+        ["docs/README.md"], repo_root=isolated_gate_repo
+    )
 
     assert rc == 1
     assert "writer-identity allowlist could not be loaded from the staged index" in "\n".join(
@@ -72,32 +102,41 @@ def test_missing_staged_allowlist_blocks_before_non_writer_pass_through(monkeypa
     )
 
 
-def test_unstaged_historical_manifests_are_not_scanned():
+def test_unstaged_historical_manifests_are_not_scanned(isolated_gate_repo: Path):
     loaded = []
 
     def fail_if_loaded(path):
         loaded.append(path)
         raise AssertionError(f"unstaged path was scanned: {path}")
 
-    rc, messages = gate.evaluate_gate(["docs/README.md"], load_manifest=fail_if_loaded)
+    rc, messages = gate.evaluate_gate(
+        ["docs/README.md"],
+        load_manifest=fail_if_loaded,
+        repo_root=isolated_gate_repo,
+    )
 
     assert rc == 0
     assert messages == []
     assert loaded == []
 
 
-def test_valid_staged_manifest_passes_without_a_staged_data_edit():
+def test_valid_staged_manifest_passes_without_a_staged_data_edit(
+    isolated_gate_repo: Path,
+):
     manifest_path = "review/writer-manifests/test-run.json"
     rc, messages = gate.evaluate_gate(
         [manifest_path],
         load_manifest=lambda path: _manifest(),
+        repo_root=isolated_gate_repo,
     )
 
     assert rc == 0
     assert messages == []
 
 
-def test_schema_invalid_staged_manifest_blocks_with_actionable_message():
+def test_schema_invalid_staged_manifest_blocks_with_actionable_message(
+    isolated_gate_repo: Path,
+):
     manifest_path = "review/writer-manifests/test-run.json"
     invalid = _manifest()
     del invalid["renames"]
@@ -105,6 +144,7 @@ def test_schema_invalid_staged_manifest_blocks_with_actionable_message():
     rc, messages = gate.evaluate_gate(
         [manifest_path],
         load_manifest=lambda path: invalid,
+        repo_root=isolated_gate_repo,
     )
 
     assert rc == 1
@@ -113,10 +153,13 @@ def test_schema_invalid_staged_manifest_blocks_with_actionable_message():
     assert "renames" in joined
 
 
-def test_schema_invalid_non_object_manifest_blocks_with_actionable_message():
+def test_schema_invalid_non_object_manifest_blocks_with_actionable_message(
+    isolated_gate_repo: Path,
+):
     rc, messages = gate.evaluate_gate(
         ["review/writer-manifests/test-run.json"],
         load_manifest=lambda path: [],
+        repo_root=isolated_gate_repo,
     )
 
     assert rc == 1
@@ -125,7 +168,9 @@ def test_schema_invalid_non_object_manifest_blocks_with_actionable_message():
     assert "<root>" in joined
 
 
-def test_json_null_staged_manifest_is_schema_invalid(monkeypatch):
+def test_json_null_staged_manifest_is_schema_invalid(
+    isolated_gate_repo: Path, monkeypatch
+):
     schema_text = (REPO_ROOT / "schemas" / "v1" / "writer_manifest.schema.json").read_text(
         encoding="utf-8"
     )
@@ -137,13 +182,18 @@ def test_json_null_staged_manifest_is_schema_invalid(monkeypatch):
 
     monkeypatch.setattr(gate, "_staged_blob", null_blob)
 
-    rc, messages = gate.evaluate_gate(["review/writer-manifests/test-run.json"])
+    rc, messages = gate.evaluate_gate(
+        ["review/writer-manifests/test-run.json"],
+        repo_root=isolated_gate_repo,
+    )
 
     assert rc == 1
     assert "fails validation against schemas/v1/writer_manifest.schema.json" in "\n".join(messages)
 
 
-def test_malformed_staged_manifest_blocks_with_actionable_message(monkeypatch):
+def test_malformed_staged_manifest_blocks_with_actionable_message(
+    isolated_gate_repo: Path, monkeypatch
+):
     schema_text = (REPO_ROOT / "schemas" / "v1" / "writer_manifest.schema.json").read_text(
         encoding="utf-8"
     )
@@ -155,7 +205,10 @@ def test_malformed_staged_manifest_blocks_with_actionable_message(monkeypatch):
 
     monkeypatch.setattr(gate, "_staged_blob", malformed_blob)
 
-    rc, messages = gate.evaluate_gate(["review/writer-manifests/test-run.json"])
+    rc, messages = gate.evaluate_gate(
+        ["review/writer-manifests/test-run.json"],
+        repo_root=isolated_gate_repo,
+    )
 
     assert rc == 1
     joined = "\n".join(messages)
@@ -272,21 +325,23 @@ def test_git_staged_path_discovery_failure_blocks(tmp_path, capsys):
     assert "BLOCKED: git staged-path discovery failed" in capsys.readouterr().err
 
 
-def test_non_json_data_paths_pass_through():
+def test_non_json_data_paths_pass_through(isolated_gate_repo: Path):
     # Markdown docs under data/ are human-written documentation, not parser output.
     # They must commit without a writer manifest.
     rc, messages = gate.evaluate_gate(
         ["data/sermons/MANIFEST.md", "data/README.md"],
         load_manifest=lambda p: None,
+        repo_root=isolated_gate_repo,
     )
     assert rc == 0
     assert messages == []
 
 
-def test_data_edit_with_no_manifest_blocks():
+def test_data_edit_with_no_manifest_blocks(isolated_gate_repo: Path):
     rc, messages = gate.evaluate_gate(
         ["data/reference/schaff-herzog-encyclopedia.json"],
         load_manifest=lambda p: None,
+        repo_root=isolated_gate_repo,
     )
     assert rc == 1
     joined = "\n".join(messages)
@@ -294,7 +349,9 @@ def test_data_edit_with_no_manifest_blocks():
     assert "schaff-herzog-encyclopedia" in joined
 
 
-def test_data_edit_with_manifest_carrying_unregistered_identity_blocks():
+def test_data_edit_with_manifest_carrying_unregistered_identity_blocks(
+    isolated_gate_repo: Path,
+):
     # Exercise the real production allowlist with an identity that is genuinely absent.
     rc, messages = gate.evaluate_gate(
         [
@@ -302,6 +359,7 @@ def test_data_edit_with_manifest_carrying_unregistered_identity_blocks():
             "review/writer-manifests/test-run.json",
         ],
         load_manifest=lambda p: _manifest(writer_identity="actually_unregistered_writer"),
+        repo_root=isolated_gate_repo,
     )
     assert rc == 1
     joined = "\n".join(messages)
@@ -309,7 +367,7 @@ def test_data_edit_with_manifest_carrying_unregistered_identity_blocks():
     assert "writer_identities.py" in joined
 
 
-def test_data_edit_uncovered_by_manifest_blocks():
+def test_data_edit_uncovered_by_manifest_blocks(isolated_gate_repo: Path):
     # Manifest exists and writer_identity is somehow registered, but the data
     # path isn't declared in the manifest's data_paths.
     rc, messages = gate.evaluate_gate(
@@ -318,19 +376,21 @@ def test_data_edit_uncovered_by_manifest_blocks():
             "review/writer-manifests/test-run.json",
         ],
         load_manifest=lambda p: _manifest(data_paths=["data/some/other.json"]),
+        repo_root=isolated_gate_repo,
     )
     assert rc == 1
     joined = "\n".join(messages)
     assert "not declared in any staged manifest" in joined
 
 
-def test_unreadable_manifest_blocks_with_clear_message():
+def test_unreadable_manifest_blocks_with_clear_message(isolated_gate_repo: Path):
     rc, messages = gate.evaluate_gate(
         [
             "data/reference/schaff-herzog-encyclopedia.json",
             "review/writer-manifests/test-run.json",
         ],
         load_manifest=lambda p: None,
+        repo_root=isolated_gate_repo,
     )
     assert rc == 1
     joined = "\n".join(messages)

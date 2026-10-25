@@ -1,0 +1,190 @@
+{
+  "contract": "edwards-brainerd-source-feature-profile-v1",
+  "work_id": "edwards-life-of-brainerd",
+  "source_member": {
+    "path": "raw/ccel/edwards/brainerd.xml",
+    "bytes": 1400423,
+    "sha256": "11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e",
+    "role": "primary-source"
+  },
+  "work_config": {
+    "path": "sources/structured-text/edwards-life-of-brainerd/config.json",
+    "sha256": "8cfb478526dbd4f854a170334f21e134dfc281fcbf4a3792ddd7fc9331568d30",
+    "source_file": "raw/ccel/edwards/brainerd.xml",
+    "source_hash": "sha256:11722441be48a4746a03c54a31b5c73e8905a64682e2681050fe74ef178f177e",
+    "source_url": "https://www.ccel.org/ccel/edwards/works2.xml",
+    "source_format": "ThML XML",
+    "source_edition": "CCEL ThML edition (sourced via CCEL.org). Extracted from works2 volume. Edwards' memoir of the missionary David Brainerd (1718-1747).",
+    "language": "en",
+    "translator": null,
+    "volume_xml": "works2",
+    "volume_div_id": "ix"
+  },
+  "scope": {
+    "selector": "ThML/ThML.body/div1[@id='ix']",
+    "selected_source_path": "ThML[1]/ThML.body[1]/div1[1]",
+    "selected_source_id": "ix",
+    "member_count": 1,
+    "member_order": [
+      "raw/ccel/edwards/brainerd.xml"
+    ],
+    "boundary": "Complete selected div1 subtree in source order, including headings, inline tags, notes, page breaks, and scripture references."
+  },
+  "envelope": {
+    "xml_declaration": "<?xml version='1.0' encoding='utf-8'?>\r\n",
+    "prefix_bytes": 40,
+    "prefix_sha256": "42a2184b93fe075fc1e09b62a784b1f056b5f6b7bf22e956302df9a6b5d355c8",
+    "root_tag": "ThML",
+    "root_attributes": {},
+    "root_children": [
+      "ThML.body"
+    ],
+    "body_tag": "ThML.body",
+    "body_attributes": {},
+    "body_children": [
+      {
+        "tag": "div1",
+        "id": "ix"
+      }
+    ],
+    "selected_source_path": "ThML[1]/ThML.body[1]/div1[1]",
+    "selected_source_id": "ix",
+    "selected_attributes": {
+      "id": "ix",
+      "n": "ix",
+      "next": "ix.i",
+      "prev": "viii.iii.iii",
+      "progress": "31.54%",
+      "shorttitle": "VIII. LIFE AND DIARY OF THE REV. DAVI",
+      "title": "VIII. LIFE AND DIARY OF THE REV. DAVI"
+    },
+    "selected_root_tail": {
+      "characters": 2,
+      "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070"
+    },
+    "suffix_bytes": 0,
+    "suffix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "doctype": false,
+    "comments": 0,
+    "processing_instructions": 0
+  },
+  "carrier_count": 8545,
+  "carrier_digest": "fe0881fd0714ab3971ca301dc33ae2f2820d93819ac9234de8c65891353a5236",
+  "tag_counts": {
+    "b": 1,
+    "div1": 1,
+    "div2": 12,
+    "div3": 34,
+    "h2": 10,
+    "h3": 16,
+    "h4": 54,
+    "h5": 8,
+    "h6": 17,
+    "i": 5965,
+    "note": 88,
+    "p": 1947,
+    "pb": 146,
+    "scripRef": 246
+  },
+  "structural_ids_in_source_order": [
+    "ix",
+    "ix.i",
+    "ix.i.i",
+    "ix.i.ii",
+    "ix.i.iii",
+    "ix.i.iv",
+    "ix.i.v",
+    "ix.i.vi",
+    "ix.i.vii",
+    "ix.i.viii",
+    "ix.ii",
+    "ix.iii",
+    "ix.iv",
+    "ix.iv.i",
+    "ix.iv.ii",
+    "ix.v",
+    "ix.v.i",
+    "ix.v.ii",
+    "ix.v.iii",
+    "ix.v.iv",
+    "ix.vi",
+    "ix.vi.i",
+    "ix.vi.ii",
+    "ix.vi.iii",
+    "ix.vi.iv",
+    "ix.vi.v",
+    "ix.vi.vi",
+    "ix.vi.vii",
+    "ix.vii",
+    "ix.viii",
+    "ix.ix",
+    "ix.ix.i",
+    "ix.ix.ii",
+    "ix.ix.iii",
+    "ix.ix.iv",
+    "ix.ix.v",
+    "ix.ix.vi",
+    "ix.ix.vii",
+    "ix.ix.viii",
+    "ix.ix.ix",
+    "ix.ix.x",
+    "ix.x",
+    "ix.x.i",
+    "ix.x.ii",
+    "ix.x.iii",
+    "ix.xi",
+    "ix.xii"
+  ],
+  "structural_markers_without_div_or_p_descendants": [
+    {
+      "source_id": "ix.ii",
+      "source_tag": "div2",
+      "child_tags": [
+        "pb",
+        "h2",
+        "h3"
+      ],
+      "child_ids": [
+        "ix.ii-Page_387",
+        "ix.ii-p0.1",
+        "ix.ii-p0.2"
+      ]
+    },
+    {
+      "source_id": "ix.viii",
+      "source_tag": "div2",
+      "child_tags": [
+        "h2",
+        "h6",
+        "h4",
+        "h3"
+      ],
+      "child_ids": [
+        "ix.viii-p0.1",
+        "ix.viii-p0.2",
+        "ix.viii-p0.3",
+        "ix.viii-p0.4"
+      ]
+    }
+  ],
+  "mixed_content": {
+    "definition": "A carrier has at least one element child and either non-empty direct text or at least one non-empty element tail.",
+    "parent_count": 1725,
+    "by_tag": {
+      "div1": 1,
+      "div2": 12,
+      "div3": 34,
+      "note": 88,
+      "p": 1589,
+      "scripRef": 1
+    }
+  },
+  "source_id_observations": {
+    "carrier_ids_non_null": 2579,
+    "carrier_ids_null": 5966,
+    "all_carrier_ids_present": false,
+    "unique_non_null_carrier_ids": true
+  },
+  "unsupported_source_elements": [],
+  "well_formed_source_envelope": true
+}

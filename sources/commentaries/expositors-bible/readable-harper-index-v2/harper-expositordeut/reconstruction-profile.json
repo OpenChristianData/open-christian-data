@@ -1,0 +1,29 @@
+{
+  "contract": "ocd-expositors-lib033-readable-harper-index-profile-v2",
+  "member_id": "harper-expositordeut",
+  "work_id": "expositors-bible--andrew-harper",
+  "source": {
+    "path": "raw/ccel/expositors-bible/harper_expositordeut.xml",
+    "bytes": 1089654,
+    "sha256": "a40389d4afff8752354acbd1c10e687df6933f9f36e520c8b1422371b39a338d"
+  },
+  "source_title": "The Expositor's Bible: The Book of Deuteronomy",
+  "source_author": "Andrew Harper",
+  "root_disposition": {
+    "front": [
+      "i",
+      "ii"
+    ],
+    "body": "all other direct ThML.body div1 roots in original order",
+    "back": [
+      "xxix"
+    ]
+  },
+  "element_count": 2919,
+  "comment_count": 14,
+  "scope": "complete one retained CCEL electronic edition with title, preface, 26 chapters, and indexes",
+  "comment_disposition": "nontextual CCEL auto-index comments retained exactly in accounting ledger",
+  "broken_local_links": [],
+  "human_acceptance": "absent",
+  "source_div_class_mapping": "Three source Index divs become TEI div type source-index. Twenty-eight poem and 37 stanza divs retain their prior TEI quote type source-div; no other source div class is accepted."
+}

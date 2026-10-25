@@ -1,0 +1,267 @@
+{
+  "contract": "ocd-ticket-scope-snapshot-v1",
+  "snapshot_id": "37c-322-scope-v1",
+  "snapshot_version": 1,
+  "ticket_id": "37c-322",
+  "work_id": "wilberforce-practical-view",
+  "title": "A Practical View of the Prevailing Religious System of Professed Christians",
+  "immutability": "This version is frozen by the exact byte hash recorded as the ticket-scope authority in the successor SourceManifest. Any requirement change requires a new snapshot version; do not rewrite this file.",
+  "successor_reason": "The existing SourceManifest v1 binds mutable ticket Markdown. This successor freezes the requirements below. Historical candidate, validation, and review receipts remain historical and must not be resealed as current evidence.",
+  "provenance": {
+    "source_issue": {
+      "path": "plans/2026-08-31-sample-first-library-verification/issues/37c-322-wilberforce-practical-view.md",
+      "bytes": 6645,
+      "sha256": "460228448acdf30cd50e3a62ccf8a4e41c2a32510b8cc5d5b19bde7232945a57",
+      "use": "Current complete issue bytes inspected as the basis for scope, acceptance requirements, identity boundaries, and report destination. Mutable status and result history were not copied."
+    },
+    "predecessor_source_manifest": {
+      "path": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322.source-manifest.json",
+      "bytes": 5330,
+      "sha256": "5ab578b3ebf454f0e1643aa4740575418c63328b97e6ab953b4766171da6b914",
+      "prior_ticket_scope_authority": {
+        "path": "plans/2026-08-31-sample-first-library-verification/issues/37c-322-wilberforce-practical-view.md",
+        "bytes": 6645,
+        "sha256": "460228448acdf30cd50e3a62ccf8a4e41c2a32510b8cc5d5b19bde7232945a57"
+      },
+      "disposition": "Preserve this manifest and all receipts that bind it; the v2 successor changes the scope authority to this immutable snapshot."
+    },
+    "reported_historical_issue_binding": {
+      "bytes": 8075,
+      "sha256": "32e8667676b84ac6340a01304ada19f6d771bed105b0d7975a21d996355e8d0e",
+      "exact_bytes_recovered": false,
+      "disposition": "Coordinator's read-only history scan found no matching Git object. This reported historical digest is provenance only; those bytes were not reconstructed or used to build this snapshot."
+    },
+    "common_execution_requirements": {
+      "path": "plans/2026-08-31-sample-first-library-verification/artifacts/2026-09-08-ticket37/execution-requirements.md",
+      "bytes": 4660,
+      "sha256": "b4c7c888af61c6d54433b1e9b09351292de644b838fdbf6a8436cbf7845b3d7c",
+      "use": "The seven numbered common acceptance requirements are copied below so this snapshot remains self-contained."
+    }
+  },
+  "requested_result": "Deliver a readable, independently verified TEI reconstruction for catalog entry wilberforce-practical-view, with supported metadata persisted through the managed sidecar authority, complete declared-source accounting, and recorded visual review. Resolve readiness work for this entry before claiming candidate admission or completed verification.",
+  "implementation_route": {
+    "source_family_owner": "LIB-072",
+    "owner_ticket": "plans/2026-08-26-whole-library-faithful-tei-completion/tickets/library/072-reconstruct-and-review-gutenberg-evangelical-works-cohort-2.md",
+    "coordination_boundary": "This ticket coordinates one entry through the existing LIB-072 implementation. It does not create a competing producer or require the entire family ticket to finish first."
+  },
+  "source_scope": {
+    "source_id": "gutenberg-37c-322-pg25709",
+    "work_id": "wilberforce-practical-view",
+    "source_path": "raw/gutenberg/pg25709.txt",
+    "source_bytes": 659285,
+    "source_sha256": "995ff74ac2c819b526d4874878507bb85e1141f7e5b35a388c44846a963d6c96",
+    "source_form": "Human-proofread Project Gutenberg plain text with Distributed Proofreaders attribution. The provider's individual corrections are not independently audited by this technical scope.",
+    "declared_members": [
+      {
+        "member_path": "raw/gutenberg/pg25709.txt",
+        "member_identity": "Project Gutenberg #25709",
+        "disposition": "Include the exact retained member in full as the one declared source witness."
+      }
+    ],
+    "accounting_envelope": {
+      "rows": 10820,
+      "nonempty_rows": 9796,
+      "empty_rows": 1024,
+      "row_definition": "Split the retained UTF-8 bytes on CR/LF boundaries, treating CRLF as one ending. A row is empty only when its row text has zero characters; the eight whitespace-only rows count as nonempty, matching the source producer's blank-row boundary rule.",
+      "source_blocks": 906,
+      "block_definition": "A block is a maximal run of nonempty source rows separated by zero-length rows.",
+      "underscore_markers": 1304,
+      "literal_underscores": 0,
+      "emphasis_delimiter_markers": 1304,
+      "balanced_emphasis_spans": 652,
+      "emphasis_boundary": "Classify ASCII alphanumeric-internal underscores as literal; pair remaining Gutenberg emphasis delimiters within one source block. Preserve each verified interior as readable TEI italics, split only at source-line boundaries, and preserve literal underscores."
+    },
+    "inclusion_and_exclusion": {
+      "included": "Account for every row in the exact retained member, including its front and back matter, ordered contents, headings, notes, license text, and other support text; represent or explicitly dispose of each source unit.",
+      "excluded": "No additional provider member, volume, external witness, or constituent-work boundary is inferred. The ticket does not claim those external witnesses were exhaustively enumerated."
+    }
+  },
+  "identity_and_authority_boundaries": [
+    "Work: use the retained provider title and title-page author evidence in raw/gutenberg/pg25709.txt. Do not assert a stronger canonical identity or merge.",
+    "Textual form: the retained provider record identifies English. No translator or revision statement is adopted; leave such assertions unknown.",
+    "Edition: preserve the literal Roman-numeral title-page imprint as an observation. Do not infer a first edition, publication year, publisher or place, or edition equivalence.",
+    "Parts: the technical envelope is the one retained PG#25709 file with all 10,820 rows accounted. Infer no separate constituent-work or additional-volume identity.",
+    "Witnesses: bind the exact retained PG#25709 bytes as one source witness. Do not claim exhaustive enumeration of other external or provider witnesses.",
+    "Rights and decisions: source-quality identification does not establish rights clearance, human acceptance, canonical admission, promotion, or publication authorization."
+  ],
+  "metadata_requirements": {
+    "authority": "Use the reviewed META-002/003 managed sidecar and authority contract, including the subject sidecar metadata/source-evidence/catalog/wilberforce-practical-view.json and its maintained index.",
+    "criteria": [
+      "Persist required and useful supported metadata decisions and genuine unknowns through the managed authority.",
+      "Link each selected field to its source evidence and scope; distinguish observed claims, supported facts, adoption state, and required or optional policy.",
+      "Record genuine unknowns and supported-but-unapplied facts with their reasons and owner.",
+      "Do not mint or merge a catalog identity. A central report alone does not satisfy the metadata sidecar requirement."
+    ],
+    "boundary": "Metadata optional to the work does not block this ticket's review. Sidecar/index hashes are current evidence bindings, not frozen requirements in this scope snapshot."
+  },
+  "technical_acceptance_requirements": [
+    {
+      "id": "bounded-readiness-and-envelope",
+      "requirement": "Resolve the entry's bounded readiness findings. Verify the declared one-member source envelope, ordered contents, exclusions, and explicit bibliographic unknowns without reducing the intended source envelope to available files."
+    },
+    {
+      "id": "source-bound-reconstruction-and-independent-proof",
+      "requirement": "Reconstruct the exact retained member through LIB-072. Bind complete source accounting, Distributed Proofreaders attribution, an independent source-to-TEI check, meaningful mutation rejection, schema validation, and deterministic reproduction in a second clean process to exact current source, implementation, policy, schema, and candidate identities."
+    },
+    {
+      "id": "exact-pair-visual-review",
+      "requirement": "Review the exact retained source beside its exact validated candidate through the supported CVW sample-first route. Meet the ticket's four-locus minimum and the common systematic coverage requirement below: declare source-located opening, middle, ending, meaningful-transition, ordinary-content, and source-risk loci before traversal; record reached segments separately from visually inspected loci; retain native evidence bound to actual source, candidate, validation, runtime, and route."
+    },
+    {
+      "id": "viewer-limitations",
+      "requirement": "Record the CVW inline-emphasis rendering limitation and out-of-range locator warning as presentation/navigation limitations. Inspect actual TEI before assigning a reconstruction defect. If CVW cannot display inline italics, use an exact alternative presentation for that feature when supported and keep the CVW limitation explicit; otherwise state the uncovered feature and next action."
+    },
+    {
+      "id": "friction-record",
+      "requirement": "Record the CVW emphasis-rendering limitation in the canonical source-to-TEI friction log under its existing authority. Do not infer an unsupported TEI correction from the reader-style limitation."
+    },
+    {
+      "id": "technical-handoff-and-separated-decisions",
+      "requirement": "Deliver a per-work technical result with actual scope, coverage, exact artifact identities, verification results, applied corrections, unresolved issues, and next owner/action. Keep provider-correction audit, rights, human acceptance, canonical admission, promotion, and publication as separate decisions."
+    }
+  ],
+  "common_execution_requirements": [
+    {
+      "id": "stage-1-source-and-envelope",
+      "text": "Recover current retained source and any existing reconstruction before rebuilding. Verify source/member hashes, declared work/form/edition/part/witness identity, and complete expected envelope. Account for included members, exclusions, absent/unknown members, ordering, front/back matter, notes, and support material. Preserve the distinction between retained scope and a stronger complete-print claim."
+    },
+    {
+      "id": "stage-2-metadata",
+      "text": "Persist required and useful optional metadata through the reviewed META-002/003 sidecar/authority contract. Link every selected field to its evidence and scope. Keep observed claims, supported facts, adoption state, and required/optional policy separate. Record genuine unknowns and supported-but-unapplied facts with their own reasons and owner. A central report alone does not meet the sidecar requirement. Metadata optional to the work does not block its review. Existing identities are not minted or merged by ticket generation."
+    },
+    {
+      "id": "stage-3-family-owner-and-successors",
+      "text": "Coordinate with the existing LIB source-family owner. Integrate recovered packages or repair the supported producer only for missing/changed scope. Preserve source wording and meaningful structure; source ambiguity and OCR correction belong to their own routes. Before metadata/config/manifest changes, identify current candidates, decisions and review tickets affected; preserve historical bytes and explicitly reconcile successor readiness."
+    },
+    {
+      "id": "stage-4-independent-check-and-challenge",
+      "text": "Independently read retained source and TEI, verify completeness, order, attachment and readable meaning, and state producer/checker shared assumptions. Challenge the actual preservation claims with meaningful mutations; require schema validation and deterministic regeneration in a second clean process. Bind all evidence to the exact current source, implementation, policy and candidate identities."
+    },
+    {
+      "id": "stage-5-cvw-visual-coverage",
+      "text": "Admit the exact pair through supported CVW and establish visible readiness. Declare systematic visual coverage before traversal: opening, middle, ending, meaningful transitions, ordinary content and source-specific risks. Long works use complete mechanical accounting plus explicit structured visual sampling. Reached or served segments are not automatically visually inspected. Capture exact source/TEI locations and native visual evidence under the current evidence profile."
+    },
+    {
+      "id": "stage-6-findings-and-corrections",
+      "text": "Classify findings as source ambiguity, reconstruction defect, display limitation or identity/rights question. Make only supported corrections through the owning route, run the smallest proving regression, regenerate and independently verify, then visually reinspect the affected locations. Record useful CVW friction and reusable source-to-TEI lessons in the existing campaign log."
+    },
+    {
+      "id": "stage-7-delivery-and-separated-authority",
+      "text": "Deliver the per-work report with actual coverage, hashes, all metadata sidecar/authority paths, verification results, applied corrections, unresolved issues and next owner/action. A genuine blocked disposition is not completed verification. Reviewed historical scopes remain credited only within their exact bindings. Human acceptance, accepted-master promotion, rights clearance and public publication are separate decisions."
+    }
+  ],
+  "deliverable": {
+    "report_path": "plans/2026-08-31-sample-first-library-verification/artifacts/2026-09-08-ticket37/reviews/37c-322.md",
+    "review_packet_boundary": "The report must distinguish source/candidate discrepancies, source ambiguity, viewer limitations, technical verification, agent visual observation, human acceptance, rights clearance, canonical admission, promotion, and publication.",
+    "historical_evidence_rule": "Every prior package, validation sidecar, receipt, and CVW observation keeps its original bytes and exact bindings. Reuse only where source, scope, candidate, and method identities still match; otherwise retain as historical and create successor evidence."
+  },
+  "issue_mapping": [
+    {
+      "issue_section": "What to build",
+      "snapshot_sections": [
+        "requested_result",
+        "source_scope",
+        "metadata_requirements",
+        "technical_acceptance_requirements",
+        "deliverable"
+      ],
+      "disposition": "Included; the one-work reconstruction, managed metadata, complete declared-source accounting, visual review, and readiness boundary are all represented."
+    },
+    {
+      "issue_section": "Blocked by",
+      "snapshot_sections": [
+        "source_scope",
+        "technical_acceptance_requirements"
+      ],
+      "disposition": "The current 'no blocker' state is mutable and omitted. The retained-source/work scope and all acceptance conditions are included."
+    },
+    {
+      "issue_section": "Status",
+      "snapshot_sections": [],
+      "disposition": "Omitted as mutable completion/result history. Its distinct human, rights, admission, promotion, and publication boundaries are retained under identity_and_authority_boundaries and technical_acceptance_requirements."
+    },
+    {
+      "issue_section": "Implementation owner",
+      "snapshot_sections": [
+        "implementation_route"
+      ],
+      "disposition": "Included as routing and ownership scope."
+    },
+    {
+      "issue_section": "First concrete action",
+      "snapshot_sections": [],
+      "disposition": "Omitted as mutable work-disposition history; the actual requested result and acceptance conditions are retained."
+    },
+    {
+      "issue_section": "Exact evidence and scope — Source quality",
+      "snapshot_sections": [
+        "source_scope.source_form"
+      ],
+      "disposition": "Included with the provider-correction audit limit and without a rights or human-acceptance inference."
+    },
+    {
+      "issue_section": "Exact evidence and scope — Catalog identity",
+      "snapshot_sections": [
+        "work_id",
+        "title",
+        "identity_and_authority_boundaries"
+      ],
+      "disposition": "Included; the existing work identifier is reused and no new v2 identity is minted."
+    },
+    {
+      "issue_section": "Exact evidence and scope — current readiness disposition",
+      "snapshot_sections": [
+        "technical_acceptance_requirements"
+      ],
+      "disposition": "The mutable disposition label is omitted; each underlying condition remains an explicit acceptance requirement."
+    },
+    {
+      "issue_section": "Exact evidence and scope — evidence row",
+      "snapshot_sections": [
+        "metadata_requirements",
+        "source_scope"
+      ],
+      "disposition": "The current evidence-row identity and selected-input result hash are evidence history, not new scope requirements. The managed metadata requirement and exact retained source are included."
+    },
+    {
+      "issue_section": "Exact evidence and scope — current source/route details",
+      "snapshot_sections": [
+        "source_scope",
+        "implementation_route",
+        "provenance"
+      ],
+      "disposition": "The required source identity, path, owner route, and provenance are included; current readiness results must be reverified before reuse."
+    },
+    {
+      "issue_section": "Identity and authority boundaries",
+      "snapshot_sections": [
+        "identity_and_authority_boundaries"
+      ],
+      "disposition": "All work, textual-form, edition, parts, witness, rights, and decision boundaries are included."
+    },
+    {
+      "issue_section": "Technical scope reconciliation",
+      "snapshot_sections": [
+        "source_scope",
+        "identity_and_authority_boundaries",
+        "metadata_requirements"
+      ],
+      "disposition": "Included; only the exact retained PG#25709 member and supported source observations are in scope, with uncertainties left unresolved."
+    },
+    {
+      "issue_section": "Complete execution and acceptance",
+      "snapshot_sections": [
+        "technical_acceptance_requirements",
+        "common_execution_requirements"
+      ],
+      "disposition": "All six ticket checks and all seven common execution requirements are included without carrying their mutable checked/unchecked result state or current sidecar hashes."
+    },
+    {
+      "issue_section": "Report home",
+      "snapshot_sections": [
+        "deliverable.report_path"
+      ],
+      "disposition": "Included as the per-work technical report home."
+    }
+  ]
+}

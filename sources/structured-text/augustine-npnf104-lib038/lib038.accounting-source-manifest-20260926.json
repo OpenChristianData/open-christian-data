@@ -1,0 +1,177 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf104-lib038-retained-xml",
+  "work_ids": [
+    "augustine-morals-catholic-church",
+    "augustine-morals-manichaeans",
+    "augustine-on-two-souls",
+    "augustine-against-fortunatus",
+    "augustine-against-epistle-of-manichaeus",
+    "augustine-reply-to-faustus",
+    "augustine-nature-of-good",
+    "augustine-on-baptism",
+    "augustine-answer-to-petilian",
+    "augustine-correction-of-donatists"
+  ],
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/npnf1/npnf104.xml",
+      "role": "primary-source",
+      "bytes": 4362836,
+      "sha256": "978cdefc45de5bd5bce3aecb0f8e5bbd27129400f531c0c7b6dee88b17c677b9"
+    },
+    {
+      "name": "source-attribution-readme",
+      "path": "sources/structured-text/augustine-npnf104-lib038/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 1561,
+      "sha256": "49e620079640fb42a8b530cdbc78adb164989eea4e44fee3aaaef70d23de15dc"
+    },
+    {
+      "name": "augustine-morals-catholic-church-config",
+      "path": "sources/structured-text/augustine-morals-catholic-church/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1739,
+      "sha256": "c535d0c481b9365e07cffc5913ca51b42c00b4efdba9480c6def7cf78282453b"
+    },
+    {
+      "name": "augustine-morals-manichaeans-config",
+      "path": "sources/structured-text/augustine-morals-manichaeans/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1727,
+      "sha256": "7a7cc74c9fd138a527dde2843b1ffc8b710d54bf052300d32b96d4e53397352a"
+    },
+    {
+      "name": "augustine-on-two-souls-config",
+      "path": "sources/structured-text/augustine-on-two-souls/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1442,
+      "sha256": "f0f19f32909d2f6e2efc2dd9c06d7dfeeeaedaed701eb4787bad201af876b5bf"
+    },
+    {
+      "name": "augustine-against-fortunatus-config",
+      "path": "sources/structured-text/augustine-against-fortunatus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1470,
+      "sha256": "6e1ab8cafccb73da631bce8a6818eae7bbe3730cfc692cb60804fe320d8e01cd"
+    },
+    {
+      "name": "augustine-against-epistle-of-manichaeus-config",
+      "path": "sources/structured-text/augustine-against-epistle-of-manichaeus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1769,
+      "sha256": "c21e94370916eae07d7eb2d0b900945a96a4285e92cbdcd676ea39fa939b4505"
+    },
+    {
+      "name": "augustine-reply-to-faustus-config",
+      "path": "sources/structured-text/augustine-reply-to-faustus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1722,
+      "sha256": "0f83dc28ec05182f424b966a801cb7e657679fbf6b43d25f81e2d6db05e8f8c0"
+    },
+    {
+      "name": "augustine-nature-of-good-config",
+      "path": "sources/structured-text/augustine-nature-of-good/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1463,
+      "sha256": "2adef2ed5bc39b09fa4ef947c246bd78dd05252d8f76c8c131433a62080b100d"
+    },
+    {
+      "name": "augustine-on-baptism-config",
+      "path": "sources/structured-text/augustine-on-baptism/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1690,
+      "sha256": "66bf2fbba218de6738607d389941bf8f9822d631e50ff091195bfd503641cc9b"
+    },
+    {
+      "name": "augustine-answer-to-petilian-config",
+      "path": "sources/structured-text/augustine-answer-to-petilian/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1720,
+      "sha256": "b02c42d6e73ce360b74623443bde89b9a068c19e80a584d76e4f9bab2b6db662"
+    },
+    {
+      "name": "augustine-correction-of-donatists-config",
+      "path": "sources/structured-text/augustine-correction-of-donatists/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1714,
+      "sha256": "566f7511e617a27c4b6f27e14046e7284e989dea7b3bfba94109e26e15dc4cd7"
+    },
+    {
+      "name": "ccel-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-rights-evidence",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/augustine-npnf104-lib038/lib038.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 3147,
+      "sha256": "7f2139e9d694605234339d1824d830dc51a1ddae3b598e3ab2859726b433f3a1"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/augustine-npnf104-lib038/lib038.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1360,
+      "sha256": "d7dd310bbf101e983fcee87753841d6c41e95d5703444ad42a771b37873637f2"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/augustine-npnf104-lib038/lib038.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 10321,
+      "sha256": "d78f0b2adf2350d660fceb7215a907e35dc8b65ca635f9016a7c5fc5779b46cf"
+    },
+    {
+      "name": "converter-first-party-import-closure",
+      "path": "sources/structured-text/augustine-npnf104-lib038/lib038.producer.import-closure.json",
+      "role": "converter-import-closure",
+      "bytes": 1119,
+      "sha256": "515a4055b2a58491aeb875bc19c9a4dfbe2f2c9e9cb28ff8734b982f13cff709"
+    },
+    {
+      "name": "validator-first-party-import-closure",
+      "path": "sources/structured-text/augustine-npnf104-lib038/lib038.validator.import-closure.json",
+      "role": "validator-import-closure",
+      "bytes": 592,
+      "sha256": "891b693cbc90c5f59f3ac5df56ba7b5096ecb355d7a4a88ef900fb881117bdf7"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-npnf104-lib038-assigned-augustine-to-tei",
+    "implementation_path": "build/tei/npnf104_lib038_reconstruction.py",
+    "implementation_sha256": "c0a6f2aac601efaf030163e3ce6c4571f252e2488e801948072b7045276f3034",
+    "version": "1"
+  },
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-npnf104-lib038-source-to-tei-oracle",
+    "implementation_path": "build/tei/npnf104_lib038_oracle.py",
+    "implementation_sha256": "5ef7122facd31ef08e5e04b1902d573c40e6d84891b080c9b7427dd3e5cce5c5",
+    "import_closure_sha256": "891b693cbc90c5f59f3ac5df56ba7b5096ecb355d7a4a88ef900fb881117bdf7",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

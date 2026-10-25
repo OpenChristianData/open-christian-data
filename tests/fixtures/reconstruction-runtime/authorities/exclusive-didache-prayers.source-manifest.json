@@ -1,0 +1,19 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "wikisource-didache-lake-retained",
+  "ticket_id": "LIB-066",
+  "work_id": "didache-prayers",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "authorities": [
+    {"name": "retained-json", "path": "raw/wikisource/didache.json", "role": "primary-source", "bytes": 23668, "sha256": "9ba0420fc2f1ef3d960335c100e31f8edbe7343b7fc5eab66dcce075744db764"},
+    {"name": "reconstruction-profile", "path": "sources/didache-prayers/didache-prayers.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 788, "sha256": "ff530f1071d200638a72face082abfa28626984fe06190b917729f45397beec6"},
+    {"name": "validation-policy", "path": "sources/didache-prayers/didache-prayers.validation-policy.json", "role": "independent-validation-policy", "bytes": 667, "sha256": "e4ea7a0df0014867da9c784ee82ecfab135259fa4827577d802a15b80cc1318a"},
+    {"name": "source-attribution-readme", "path": "sources/didache-prayers/README.source.md", "role": "source-attribution", "bytes": 854, "sha256": "d3cebd4e0c82033010fc477d1542e16c5469bb205520bb626d69e123dc797741"},
+    {"name": "source-accountability-schema", "path": "sources/didache-prayers/didache-prayers.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 1095, "sha256": "f075a1870310e4294d48dfe1af996bde3d6d5826b0ab3f742a5c4be70a503181"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {"id": "ocd-didache-prayers-wikisource-json-to-tei", "version": "1", "callable": "_convert", "implementation_path": "build/tei/didache_prayers_reconstruction.py", "implementation_sha256": "ce2d19d2ab50702fd6e48fd15dd0dd0590bab107b38e85751be3030caeaeb32d"},
+  "validator": {"id": "ocd-didache-prayers-independent-source-oracle", "version": "1", "callable": "_oracle", "implementation_path": "build/tei/didache_prayers_oracle.py", "implementation_sha256": "0366ec982053581a3eac8ba55a9bcaad1888f0e18d65dee16ce90adb25ed5e80", "import_closure_sha256": "82aeb544f3a70a727faa1da5f193ecc15bf201723b07c35163c125af9e351b1e"},
+  "package_schema": {"path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+}

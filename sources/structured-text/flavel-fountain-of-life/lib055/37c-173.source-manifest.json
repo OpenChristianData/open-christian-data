@@ -1,0 +1,115 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "flavel-fountain-of-life-lib055-retained-xml",
+  "ticket": "37c-173",
+  "owner_route": "LIB-055",
+  "work_id": "flavel-fountain-of-life",
+  "status": "entry-local-route-ready",
+  "identity": {
+    "work_id": "flavel-fountain-of-life",
+    "source_record_metadata": {
+      "title": "The Fountain of Life Opened Up",
+      "creator": "John Flavel",
+      "language": "eng"
+    },
+    "textual_form": null,
+    "edition": null,
+    "parts": null,
+    "witness_claim": null,
+    "translator": null,
+    "original_publication_year": null
+  },
+  "scope": {
+    "selector": "ThML[1] (complete retained document envelope)",
+    "selected_source_path": "ThML[1]",
+    "member_count": 1,
+    "member_order": ["raw/ccel/flavel/fountain.xml"],
+    "top_level_div1_ids": ["i", "ii", "iii", "iv", "v", "vi"],
+    "main_div1_id": "v",
+    "main_div1_direct_div2_ids": [
+      "v.i", "v.ii", "v.iii", "v.iv", "v.v", "v.vi", "v.vii", "v.viii", "v.ix", "v.x",
+      "v.xi", "v.xii", "v.xiii", "v.xiv", "v.xv", "v.xvi", "v.xvii", "v.xviii", "v.xix", "v.xx",
+      "v.xxi", "v.xxii", "v.xxiii", "v.xxiv", "v.xxv", "v.xxvi", "v.xxvii", "v.xxviii", "v.xxix", "v.xxx",
+      "v.xxxi", "v.xxxii", "v.xxxiii", "v.xxxiv", "v.xxxv", "v.xxxvi", "v.xxxvii", "v.xxxviii", "v.xxxix", "v.xl", "v.xli", "v.xlii"
+    ],
+    "index_div2_ids": ["vi.i", "vi.ii"],
+    "boundary": "Bind the complete retained XML member including source head, XML shell evidence, all six body divisions, and their descendants. This member boundary does not assert equivalence to the entire catalog work or a specific edition, part map, or print witness."
+  },
+  "authorities": [
+    {
+      "name": "source-member",
+      "role": "primary-source",
+      "path": "raw/ccel/flavel/fountain.xml",
+      "bytes": 1838431,
+      "sha256": "111721671b393a9652c1c45df97a51d13b515ba8e899aa9faa0178adaf8c4da1"
+    },
+    {
+      "name": "work-identity",
+      "role": "work-config",
+      "path": "sources/structured-text/flavel-fountain-of-life/lib055/work-identity.json",
+      "bytes": 3071,
+      "sha256": "cde0c34fa24511d3f076313304535b9b13a51525487df88d768b0efcae18aece"
+    },
+    {
+      "name": "feature-profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/structured-text/flavel-fountain-of-life/lib055/source-feature-profile.json",
+      "bytes": 6033,
+      "sha256": "3ba3d4f2157e2faf7b50b24c8892015d7ec800e0013306be6cf919ecdb02d2f7"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/structured-text/flavel-fountain-of-life/lib055/validation-policy.json",
+      "bytes": 5594,
+      "sha256": "bcef5b4dba5a922da485ac30c168bdbb718864a11b8dbb2450ea27739041a15b"
+    },
+    {
+      "name": "source-readme",
+      "role": "source-attribution-readme",
+      "path": "sources/structured-text/flavel-fountain-of-life/lib055/README.source.md",
+      "bytes": 1114,
+      "sha256": "b1bb3f4841d194ce3526d5b6ef5e4a5030fb1b70f3b48b0ca91fb72bb1c06285"
+    },
+    {
+      "name": "ccel-permission",
+      "role": "exact-source-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "flavel-fountain-of-life-lib055-source-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ccel_puritan_lib055_flavel_fountain_of_life_reconstruction.py",
+    "implementation_sha256": "3ba2e4ae7e5f060880f38f89ef05b6c945e4ec17fb796872c9837c5683316416"
+  },
+  "validator": {
+    "id": "flavel-fountain-of-life-lib055-independent-retained-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/ccel_puritan_lib055_flavel_fountain_of_life_oracle.py",
+    "implementation_sha256": "ca56e880755c69dba833562f242f28d426c3dd0b1e9d456432ebec6d2e606046",
+    "import_closure_sha256": "32feacab7f89fdc7706b8d2669d034dbdf3544160260d7def8b000cea9a878b8"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,3605 @@
+{
+  "ticket": "PIPE-009",
+  "cases": [
+    {
+      "name": "whitefield",
+      "status": "nonaccepted complete-native-sermon fixture",
+      "source_path": "raw/ccel/whitefield_sermons.xml",
+      "source_sha256": "cd839845e3e9198302f71bda313c72f5212eb1b7aa3409e6ae4318c13b9462ec",
+      "source_bytes": 2046222,
+      "source_selector": "//div1",
+      "collection_evidence": {
+        "xpath": "/ThML/ThML.body/div1[1]",
+        "disposition": "collection title from retained title page"
+      },
+      "source_unit_census": [
+        {
+          "ordinal": 1,
+          "id": "i",
+          "title": "Title Page",
+          "disposition": "collection-metadata-evidence"
+        },
+        {
+          "ordinal": 2,
+          "id": "ii",
+          "title": "Table of Contents",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 3,
+          "id": "iii",
+          "title": "01. The Seed of the Woman, and the Seed of the Serpent",
+          "disposition": "selected-complete-sermon"
+        },
+        {
+          "ordinal": 4,
+          "id": "iv",
+          "title": "02. Walking with God",
+          "disposition": "selected-complete-sermon"
+        },
+        {
+          "ordinal": 5,
+          "id": "v",
+          "title": "03. Abraham's Offering Up His Son Isaac",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 6,
+          "id": "vi",
+          "title": "04. The Great Duty of Family Religion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 7,
+          "id": "vii",
+          "title": "05. Christ the Best Husband: Or an Earnest Invitation to Young Women to Come and See Christ Preached to a Society of Young Women, in Fetter-Lane",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 8,
+          "id": "viii",
+          "title": "06. Britain's Mercies, and Britain's Duty Preached at Philadelphia, on Sunday, August 14, 1746 and Occasioned by the Suppression of the Late Unnatural Rebellion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 9,
+          "id": "ix",
+          "title": "07. Thankfulness for Mercies Received, a Necessary Duty",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 10,
+          "id": "x",
+          "title": "08. The Necessity and Benefits of Religious Society",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 11,
+          "id": "xi",
+          "title": "09. The Folly and Danger of Being Not Righteous Enough",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 12,
+          "id": "xii",
+          "title": "10. A Preservative Against Unsettled Notions, and Want of Principles, in Regard to Righteousness and Christian Perfection Being a More Particular Answer to Doctor Trapp's Four Sermons Upon the Same Text",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 13,
+          "id": "xiii",
+          "title": "11. The Benefits of an Early Piety",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 14,
+          "id": "xiv",
+          "title": "12. Christ the Believer's Husband",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 15,
+          "id": "xv",
+          "title": "13. The Potter and the Clay",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 16,
+          "id": "xvi",
+          "title": "14. The Lord Our Righteousness",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 17,
+          "id": "xvii",
+          "title": "15. The Righteousness of Christ, an Everlasting Righteousness",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 18,
+          "id": "xviii",
+          "title": "16. The Observation of the Birth of Christ, the Duty of All Christians; Or the True Way of Keeping Christmas",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 19,
+          "id": "xix",
+          "title": "17. The Temptation of Christ",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 20,
+          "id": "xx",
+          "title": "18. The Heinous Sin of Profane Cursing and Swearing",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 21,
+          "id": "xxi",
+          "title": "19. Christ the Support of the Tempted",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 22,
+          "id": "xxii",
+          "title": "20. Worldly Business No Plea for the Neglect of Religion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 23,
+          "id": "xxiii",
+          "title": "21. Christ the Only Rest for the Weary and Heavy-Laden",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 24,
+          "id": "xxiv",
+          "title": "22. The Folly and Danger of Parting with Christ for the Pleasures and Profits of Life",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 25,
+          "id": "xxv",
+          "title": "23. Marks of a True Conversion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 26,
+          "id": "xxvi",
+          "title": "24. What Think Ye of Christ?",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 27,
+          "id": "xxvii",
+          "title": "25. The Wise and Foolish Virgins",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 28,
+          "id": "xxviii",
+          "title": "26. “The Eternity of Hell-Torments”",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 29,
+          "id": "xxix",
+          "title": "27. Blind Bartimeus",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 30,
+          "id": "xxx",
+          "title": "28. Directions How to Hear Sermons",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 31,
+          "id": "xxxi",
+          "title": "29. The Extent and Reasonableness of Self-Denial",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 32,
+          "id": "xxxii",
+          "title": "30. Christ's Transfiguration",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 33,
+          "id": "xxxiii",
+          "title": "31. The Care of the Soul Urged as the One Thing Needful",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 34,
+          "id": "xxxiv",
+          "title": "32. A Penitent Heart, the Best New Year's Gift",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 35,
+          "id": "xxxv",
+          "title": "33. The Gospel Supper",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 36,
+          "id": "xxxvi",
+          "title": "34. The Pharisee and Publican",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 37,
+          "id": "xxxvii",
+          "title": "35. The Conversion of Zaccheus",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 38,
+          "id": "xxxviii",
+          "title": "36. The Marriage of Cana",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 39,
+          "id": "xxxix",
+          "title": "37. The Duty of Searching the Scriptures",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 40,
+          "id": "xl",
+          "title": "38. The Indwelling of the Spirit, the Common Privilege of All Believers",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 41,
+          "id": "xli",
+          "title": "39. The Resurrection of Lazarus",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 42,
+          "id": "xlii",
+          "title": "40. The Holy Spirit Convincing the World of Sin, Righteousness, and Judgment",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 43,
+          "id": "xliii",
+          "title": "41. Saul's Conversion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 44,
+          "id": "xliv",
+          "title": "42. Marks of Having Received the Holy Ghost",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 45,
+          "id": "xlv",
+          "title": "43. The Almost Christian",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 46,
+          "id": "xlvi",
+          "title": "44. Christ, the Believer's Wisdom, Righteousness, Sanctification and Redemption",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 47,
+          "id": "xlvii",
+          "title": "45. The Knowledge of Jesus Christ the Best Knowledge",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 48,
+          "id": "xlviii",
+          "title": "46. Of Justification by Christ",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 49,
+          "id": "xlix",
+          "title": "47. The Great Duty of Charity Recommended",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 50,
+          "id": "l",
+          "title": "48. Satan's Devices",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 51,
+          "id": "li",
+          "title": "49. On Regeneration",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 52,
+          "id": "lii",
+          "title": "50. Christians, Temples of the Living God",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 53,
+          "id": "liii",
+          "title": "51. Christ the Only Preservative Against a Reprobate Spirit",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 54,
+          "id": "liv",
+          "title": "52. The Heinous Sin of Drunkenness",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 55,
+          "id": "lv",
+          "title": "53. The Power of Christ's Resurrection",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 56,
+          "id": "lvi",
+          "title": "54. Intercession Every Christian's Duty",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 57,
+          "id": "lvii",
+          "title": "55. Persecution Every Christian's Lot",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 58,
+          "id": "lviii",
+          "title": "56. An Exhortation to the People of God Not to Be Discouraged in Their Way, by the Scoffs and Contempt of Wicked Men",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 59,
+          "id": "lix",
+          "title": "57. Preached Before the Governor, and Council, and the House of Assembly, in Georgia, on January 28, 1770",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 60,
+          "id": "lx",
+          "title": "58. The Method of Grace",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 61,
+          "id": "lxi",
+          "title": "59. The Good Shepherd: A Farewell Sermon",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 62,
+          "id": "lxii",
+          "title": "Indexes",
+          "disposition": "outside-declared-fixture"
+        }
+      ],
+      "selected_units": [
+        {
+          "id": "iii",
+          "source_ordinal": 3,
+          "paragraphs": 47,
+          "node_accounting": [
+            {
+              "xpath": "/ThML/ThML.body/div1[3]",
+              "tag": "div1",
+              "attributes": {
+                "id": "iii",
+                "n": "iii",
+                "next": "iv",
+                "prev": "ii",
+                "progress": "0.38%",
+                "shorttitle": "",
+                "title": "01. The Seed of the Woman, and the Seed of the Serpent"
+              },
+              "text_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "tail_sha256": "b98809417c0240085bf70f2a1127f0b622c1514651737e7e4ffac4b39e4da17e",
+              "disposition": "native-sermon-boundary"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/scripCom",
+              "tag": "scripCom",
+              "attributes": {
+                "id": "iii-p0.1",
+                "osisRef": "Bible:Gen.3.15",
+                "parsed": "|Gen|3|15|0|0",
+                "passage": "Gen. 3:15",
+                "type": "Sermon"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "explicit-primary-passage"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/h1",
+              "tag": "h1",
+              "attributes": {
+                "id": "iii-p0.2"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "16647954c146404e2b7418ad84f45ea5430a2b844ae367ccb8ad371b8b8465f5",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/h1/a",
+              "tag": "a",
+              "attributes": {
+                "id": "iii-p0.3",
+                "shape": "rect",
+                "{http://www.w3.org/XML/1998/namespace}link": "simple"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "314e6cdb4f194a8e5a82171754f64dc736dd24c3623984505c441e4ac6bf44ea",
+              "disposition": "redundant-empty-anchor"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[1]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p1",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[1]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p1.1",
+                "osisRef": "Bible:Gen.3.15",
+                "parsed": "|Gen|3|15|0|0",
+                "passage": "Ge 3:15"
+              },
+              "text_sha256": "e5200e6ef405e5de2299590e0f05ff5a10c383ecda71e23a51828d56d0a8691c",
+              "tail_sha256": "6a3ed10b910f4c00b6f4008915113339346bced6937660bb85afae004e1c6c1e",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[2]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p2",
+                "shownumber": "no"
+              },
+              "text_sha256": "029f3d825ceed910391a198052523f4074cac7e07c689ab86d2b7b5dd99bc4b0",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[3]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p3",
+                "shownumber": "no"
+              },
+              "text_sha256": "5352fe90de6a36dcdc4baa7f75af7c882cb6ffb35008ef5baa12cc93fc885172",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[4]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p4",
+                "shownumber": "no"
+              },
+              "text_sha256": "ae2b94baf6855e88b816374476001738924b27d00840d2ce0596fa3e98d6b8bc",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[5]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p5",
+                "shownumber": "no"
+              },
+              "text_sha256": "4f45db1039dfba2d0d4053e3dc1f6ef056c681deeaa407cf17a3eb9143cafc14",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[6]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p6",
+                "shownumber": "no"
+              },
+              "text_sha256": "0c588e6751fd6eaef61cf2c86055b9fc09f10785e1300ce3b7427002ed048bf6",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[7]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p7",
+                "shownumber": "no"
+              },
+              "text_sha256": "c2f037b1e8a0b6b48ff2169cb9c719d9dc35789d73c4000ae619245bbec3c79e",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[8]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p8",
+                "shownumber": "no"
+              },
+              "text_sha256": "939e038b1864f38596786ba1c79049d392dad36c351c0885be1a4cbd21f2e7fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[9]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p9",
+                "shownumber": "no"
+              },
+              "text_sha256": "508162c70979c24a324633c604534283ba0cfcfe7381f7d8816250dfd33458f6",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[10]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p10",
+                "shownumber": "no"
+              },
+              "text_sha256": "d15449b36117a92cfc76ea8d34e98e4f854a4499123baf447690d539b28e9174",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[11]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p11",
+                "shownumber": "no"
+              },
+              "text_sha256": "3560752c7463838ef7e91999abc17e383c45ff774c1ae2c65d28602068bfefd0",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[11]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p11.1",
+                "osisRef": "Bible:Gen.3.2",
+                "parsed": "|Gen|3|2|0|0",
+                "passage": "Ge 3:2"
+              },
+              "text_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+              "tail_sha256": "4ee084d7954591073332fc83248682179e8fbf102fde78c972e39f412ca7613e",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[11]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p11.2",
+                "osisRef": "Bible:Gen.3.3",
+                "parsed": "|Gen|3|3|0|0",
+                "passage": "Ge 3:3"
+              },
+              "text_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+              "tail_sha256": "d78dacfb6a25eeaf8a57da1e1b2c882102897f554f62d354087f6422d8d8cc5d",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[12]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p12",
+                "shownumber": "no"
+              },
+              "text_sha256": "78409975af7877dfc043537e7fc032be3f14ba2bedd636119a04de3110118644",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[13]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p13",
+                "shownumber": "no"
+              },
+              "text_sha256": "e338fbb2742ccbc2652a08744a34908ad15127616f8120088f6c6e4ecbdb6f11",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[13]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p13.1",
+                "osisRef": "Bible:Gen.3.4",
+                "parsed": "|Gen|3|4|0|0",
+                "passage": "Ge 3:4"
+              },
+              "text_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+              "tail_sha256": "66f3131da390be7bd2743c7fccf00b5ef711238a46dc7e3b45ec4217e0730ea8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[14]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p14",
+                "shownumber": "no"
+              },
+              "text_sha256": "b40e7670525cbf7b93bc596eb40b0b4485e79938e0bf89dd5c7932c0baf49c7f",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[15]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p15",
+                "shownumber": "no"
+              },
+              "text_sha256": "b3c7ff80237e796a0a0a2608a9698dc823e8123a0554aeadb038a1bd8bbcb7f7",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[15]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p15.1",
+                "osisRef": "Bible:Gen.3.5",
+                "parsed": "|Gen|3|5|0|0",
+                "passage": "Ge 3:5"
+              },
+              "text_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+              "tail_sha256": "e7a5f2d300c3fdf512f638edca59f7004bb32e2d572c574dc0c6f62fc8d23c68",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[16]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p16",
+                "shownumber": "no"
+              },
+              "text_sha256": "335dac26d743902dae3ea33f48719d4c4acace6a9e42ac8829f520d065949667",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[17]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p17",
+                "shownumber": "no"
+              },
+              "text_sha256": "414de59ff217c844806d7562b05049bb498c1e9966ec21d4853a502cd6871ff6",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[18]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p18",
+                "shownumber": "no"
+              },
+              "text_sha256": "f342f57c0b582c1b4d3a35702beb74d156d2dc5539206bb041a6113891b0acbd",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[18]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p18.1",
+                "osisRef": "Bible:Gen.3.6",
+                "parsed": "|Gen|3|6|0|0",
+                "passage": "Ge 3:6"
+              },
+              "text_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+              "tail_sha256": "69afa0664dbea4aceb905ff28d06b977e8f1914c242d9e33b17a180cedb97802",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[19]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p19",
+                "shownumber": "no"
+              },
+              "text_sha256": "90d5b6fbfd2e57087d615b32321c03e1e2412e57685fd64e3592560320a3a898",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[20]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p20",
+                "shownumber": "no"
+              },
+              "text_sha256": "0e03e47ee749cec02d5fe6a3b6d292ff7389690ccd9d210d20795fff56a0d208",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[21]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p21",
+                "shownumber": "no"
+              },
+              "text_sha256": "a83cd75a7f578a068db17e4b2af28c119d396ca48b877bf58129edf11a4684cf",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[21]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p21.1",
+                "osisRef": "Bible:Gen.3.7",
+                "parsed": "|Gen|3|7|0|0",
+                "passage": "Ge 3:7"
+              },
+              "text_sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+              "tail_sha256": "f352b68bc0bb293e72a1f52abe545c9bff15c0c6418300427014da376805f8b3",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[22]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p22",
+                "shownumber": "no"
+              },
+              "text_sha256": "4a4ee1e149af24f1022c176434fb1bd92d21cc63bfea884f3bd9597f137a1cc3",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[23]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p23",
+                "shownumber": "no"
+              },
+              "text_sha256": "b3c7ff80237e796a0a0a2608a9698dc823e8123a0554aeadb038a1bd8bbcb7f7",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[23]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p23.1",
+                "osisRef": "Bible:Gen.3.8",
+                "parsed": "|Gen|3|8|0|0",
+                "passage": "Ge 3:8"
+              },
+              "text_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+              "tail_sha256": "db031f9f60f812493e6f09ebd3867c3ca6cf9cf1a49cb68587d4494d2717c9ef",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[24]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p24",
+                "shownumber": "no"
+              },
+              "text_sha256": "3dfeb90187841f7c7aba3d2d18fb0b7f13df5c356a45696609e71ea6329fa955",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[25]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p25",
+                "shownumber": "no"
+              },
+              "text_sha256": "1f4020a7cc316a69cadfb95c18a8afcf2d67c0c2aebea1dd15e25a783d024b12",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[26]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p26",
+                "shownumber": "no"
+              },
+              "text_sha256": "3521eefd84aae02a438ab69424cfc4ed2fdce59cc051fb23eb63176f65bd88fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[26]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p26.1",
+                "osisRef": "Bible:Gen.3.9",
+                "parsed": "|Gen|3|9|0|0",
+                "passage": "Ge 3:9"
+              },
+              "text_sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7",
+              "tail_sha256": "f01d58b57dfd41da920e24d80d71a391c0cbc2de2b19d1fcf1e0441248df86e8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[27]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p27",
+                "shownumber": "no"
+              },
+              "text_sha256": "e9e1bac76cbfbd6340eb6315763a85d442e458e20752a271e5099bcb183546d2",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[28]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p28",
+                "shownumber": "no"
+              },
+              "text_sha256": "3521eefd84aae02a438ab69424cfc4ed2fdce59cc051fb23eb63176f65bd88fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[28]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p28.1",
+                "osisRef": "Bible:Gen.3.10",
+                "parsed": "|Gen|3|10|0|0",
+                "passage": "Ge 3:10"
+              },
+              "text_sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+              "tail_sha256": "8a97e051df6455e57c24024e796d7b31527a0c0e09a4d896f4a3b76626054c3e",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[28]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p28.2",
+                "osisRef": "Bible:Gen.3.11",
+                "parsed": "|Gen|3|11|0|0",
+                "passage": "Ge 3:11"
+              },
+              "text_sha256": "4fc82b26aecb47d2868c4efbe3581732a3e7cbcc6c2efb32062c08170a05eeb8",
+              "tail_sha256": "45372e0e6918592e021a3ed74e5abe79a61347a10c570b434043197abfff4fae",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[29]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p29",
+                "shownumber": "no"
+              },
+              "text_sha256": "d8fbfbc810ee8420dd4f694495cee5036659cf19ff41a02a4617b49b11c1d95a",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[30]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p30",
+                "shownumber": "no"
+              },
+              "text_sha256": "3521eefd84aae02a438ab69424cfc4ed2fdce59cc051fb23eb63176f65bd88fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[30]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p30.1",
+                "osisRef": "Bible:Gen.3.12",
+                "parsed": "|Gen|3|12|0|0",
+                "passage": "Ge 3:12"
+              },
+              "text_sha256": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918",
+              "tail_sha256": "147d414444e5cbdf12682ceff829338a4cf73f152ef8ff40158fba4fa48ae527",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[31]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p31",
+                "shownumber": "no"
+              },
+              "text_sha256": "25aba8592780db1a5e99a39adc31fcdc6aba534e373d5a546ee807af622b5170",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[31]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[31]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "cf2e5bff1ef03dcd20d1a0b18ef7d89fc80a3554434165753672f6f40fde1d25",
+              "tail_sha256": "00861c5a4330335133094155801d4200b5d5b25e74602e6d9e6123f0ca75a646",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[32]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p32",
+                "shownumber": "no"
+              },
+              "text_sha256": "3521eefd84aae02a438ab69424cfc4ed2fdce59cc051fb23eb63176f65bd88fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[32]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p32.1",
+                "osisRef": "Bible:Gen.3.13",
+                "parsed": "|Gen|3|13|0|0",
+                "passage": "Ge 3:13"
+              },
+              "text_sha256": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278",
+              "tail_sha256": "30f52f4d987c9b2d508c90e70a2aafacec05355df36d34f42eb074b6009ff4df",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[33]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p33",
+                "shownumber": "no"
+              },
+              "text_sha256": "6a687d0a6259f2d2d765de0ac0b2b4dbbf1dc07cbf1e67f90877e30c57bd75f8",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[34]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p34",
+                "shownumber": "no"
+              },
+              "text_sha256": "d21fde58db138a16f8640e74103a0e3023a4c20df964384c631e137ac98b0318",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[35]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p35",
+                "shownumber": "no"
+              },
+              "text_sha256": "3521eefd84aae02a438ab69424cfc4ed2fdce59cc051fb23eb63176f65bd88fe",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[35]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p35.1",
+                "osisRef": "Bible:Gen.3.14",
+                "parsed": "|Gen|3|14|0|0",
+                "passage": "Ge 3:14"
+              },
+              "text_sha256": "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61",
+              "tail_sha256": "c2f0b84af1c8019216bad8b628e9d9e6875e68bcbfcef9cf540af76843f099d4",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[35]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p35.2",
+                "osisRef": "Bible:Gen.3.15",
+                "parsed": "|Gen|3|15|0|0",
+                "passage": "Ge 3:15"
+              },
+              "text_sha256": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb",
+              "tail_sha256": "bd581dc4cc8c48f3a2892a44f786359eb392ce7b6bfbd6474db1cf43bc80c372",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p36",
+                "shownumber": "no"
+              },
+              "text_sha256": "143016905e0219991fc481ac8952a393d9e68d231ed09f06923fbbf1f2f5c1d3",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "5d5766cf2d78701614200418ee1450690d9af12c84d52545e4802f001ad53099",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9bb09914b117aaa92837348557e3deab4ccb38d7e94e0a29189091aad0a364f2",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "28391d3bc64ec15cbb090426b04aa6b7649c3cc85f11230bb0105e02d15e3624",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03",
+              "tail_sha256": "7fec72c812d10fc39c42a1d670b87d4469bfc3d4f3f9a327cce151d6fb2d5fb7",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[36]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p36.1",
+                "osisRef": "Bible:Gen.3.15",
+                "parsed": "|Gen|3|15|0|0",
+                "passage": "Ge 3:15"
+              },
+              "text_sha256": "7bbd377f2597123ff23b2ac362b950009b24123728d78c013e3e6f85771c3523",
+              "tail_sha256": "dcf128b51688ccb5cc5dbee337921ec8cc4a40de442a4783d36abf421ba86019",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[37]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p37",
+                "shownumber": "no"
+              },
+              "text_sha256": "6bed87a6c785b37fcdd2c99642b63e512881249de8da85b7ba122a23eb1e99fb",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[37]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "c7f57f541cb0ade348f88cf1f85604ae25376ca19ba9895780ba1dc48e976274",
+              "tail_sha256": "61f9caf44e06e18c76322a7210d6755ccd2db5c23f9c684544ab681c95e88747",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[38]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p38",
+                "shownumber": "no"
+              },
+              "text_sha256": "95aa39bb738d7024c7b64974ac85e6af455d65412db9afe2c66e46bf6d06deb7",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[39]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p39",
+                "shownumber": "no"
+              },
+              "text_sha256": "c786fe3d66753d9c092242b226dd9ec7ad0adfca19080d24bfa1e685811aa71f",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[40]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p40",
+                "shownumber": "no"
+              },
+              "text_sha256": "d56cd7f61af0ae7350c768f967dd717ea135cd35fb789466143dfa37e13523f5",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[41]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p41",
+                "shownumber": "no"
+              },
+              "text_sha256": "a4573f5acb366891ac79cf98ed48f8b05ac229b2bb365868aeebbc7e481be77f",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[42]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p42",
+                "shownumber": "no"
+              },
+              "text_sha256": "b8403ffa0de48c9d8c600d4042c85a1c78097c9ef301c59fb6ddd203b86a68de",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[42]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iii-p42.1",
+                "osisRef": "Bible:Gen.25.22",
+                "parsed": "|Gen|25|22|0|0",
+                "passage": "Ge 25:22"
+              },
+              "text_sha256": "27440d78ef4cc9902cc07441bfb8c7a7ea5676ef565a71b39bd7d488644f3d7d",
+              "tail_sha256": "81da92bf5edeaac0c9e47aa8d65f27827b739f60506a3aa736ac6b5c8f3e1a12",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[43]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p43",
+                "shownumber": "no"
+              },
+              "text_sha256": "227bda0437b0d16de8548b3f4edf0d0f15a5018191df3b423fec4df54be94ea2",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[44]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p44",
+                "shownumber": "no"
+              },
+              "text_sha256": "ded855bab4f58b8c654a1910844b33c5602b3f2af78d08bef68b7c97e41530dd",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[45]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p45",
+                "shownumber": "no"
+              },
+              "text_sha256": "664fd9de0a98dd5eece5ff015081fb48815f3686c929b12d3629a1851d9c46f3",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[46]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p46",
+                "shownumber": "no"
+              },
+              "text_sha256": "f7113fd98265bd699081386855f24975cd0adca01dbc200f7c6b9f2fd1ceb0db",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[3]/p[47]",
+              "tag": "p",
+              "attributes": {
+                "id": "iii-p47",
+                "shownumber": "no"
+              },
+              "text_sha256": "2f5aac9b3656fa1e02504e5643b6486abb6ba50fcf665b6f34408dda2d6bcab2",
+              "tail_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "disposition": "mapped"
+            }
+          ]
+        },
+        {
+          "id": "iv",
+          "source_ordinal": 4,
+          "paragraphs": 28,
+          "node_accounting": [
+            {
+              "xpath": "/ThML/ThML.body/div1[4]",
+              "tag": "div1",
+              "attributes": {
+                "id": "iv",
+                "n": "iv",
+                "next": "v",
+                "prev": "iii",
+                "progress": "2.55%",
+                "shorttitle": "",
+                "title": "02. Walking with God"
+              },
+              "text_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "tail_sha256": "b98809417c0240085bf70f2a1127f0b622c1514651737e7e4ffac4b39e4da17e",
+              "disposition": "native-sermon-boundary"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/scripCom",
+              "tag": "scripCom",
+              "attributes": {
+                "id": "iv-p0.1",
+                "osisRef": "Bible:Gen.5.24",
+                "parsed": "|Gen|5|24|0|0",
+                "passage": "Gen. 5:24",
+                "type": "Sermon"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "explicit-primary-passage"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/h1",
+              "tag": "h1",
+              "attributes": {
+                "id": "iv-p0.2"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "16647954c146404e2b7418ad84f45ea5430a2b844ae367ccb8ad371b8b8465f5",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/h1/a",
+              "tag": "a",
+              "attributes": {
+                "id": "iv-p0.3",
+                "shape": "rect",
+                "{http://www.w3.org/XML/1998/namespace}link": "simple"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "b487de511767d749e1b2b61b8b0ad6d0b5eb2ba43b11fda604a00922177d0de3",
+              "disposition": "redundant-empty-anchor"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[1]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p1",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[1]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p1.1",
+                "osisRef": "Bible:Gen.5.24",
+                "parsed": "|Gen|5|24|0|0",
+                "passage": "Ge 5:24"
+              },
+              "text_sha256": "e54ceea761cd73d9e4670ee6cddbcd349e2f62e6ba9132c2b786275ee65371b8",
+              "tail_sha256": "b070dab15debf935bdc7d460009b154f9a669fd4074239bcb95ccc561fbcdfe1",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[2]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p2",
+                "shownumber": "no"
+              },
+              "text_sha256": "7efeb21b427bb4c483f701542fda8056bd72f74190f0837b7a97e4e37f0b266f",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[2]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p2.1",
+                "osisRef": "Bible:Heb.11.5",
+                "parsed": "|Heb|11|5|0|0",
+                "passage": "Heb 11:5"
+              },
+              "text_sha256": "88123222dabad534dda9b4f54104563b84a6b24155d3fd949bdd39e6a822f6b2",
+              "tail_sha256": "255d1e388a632169b79be0eb7a65d2423316d1c569b14bc0143ef24799a8e918",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[2]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "37ff20583960759de8bb0200d21522ae79d687f6abe680e82b486bdfe490e98a",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[2]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "5d3d321750d18db9f9ca66e7b1ab099da838fb9de1b9d6b44d9ddb44f21cac00",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[2]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "c9ec5b65ecc996ca6278655b1a28e7092794fb7ae779176a234dff93c68fab0a",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[3]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p3",
+                "shownumber": "no"
+              },
+              "text_sha256": "955ef438988f6b08cf730145b8cc02d5b5d9f456cd607f905232eb09b5ac822c",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[4]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p4",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[4]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "a151ceb1711aad529a7704248f03333990022ebbfa07a7f04c004d70c167919f",
+              "tail_sha256": "d363dc34cb47b2e0aaff5f15bd99a336600d02af79176337a3a2e35135deddeb",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[4]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "2c158582949f34c9ef03daee0949fda374fcaa77dff2af611c96a027fbd30832",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[4]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[4]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[5]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p5",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[5]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "b8fc61c647d2d96437ffe3557607551710bdbddaa943238efde69e2bf05f8ec4",
+              "tail_sha256": "79e6b261a25160e5a52854f20cb62a2b2b60cf8aedd848b7b7974248b54ba9e1",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[5]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "7a6c4fac6c5cd7209ee2eecd9d6ad3673c55315117de1d8daa5aeb3f71bbd7c7",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[5]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[5]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "07fb775c0a7d3dcf8ff82377a3ad3b10ca5307601bfd2cc6b69ef9a20d55344c",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[6]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p6",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[6]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "d1f9dd22bffe6f649eaf046c0fe1ca82250659859ceb1c241754b636c3244ad7",
+              "tail_sha256": "134a8d27aecddcfb86c3ff9369cf51d49b96926ae27cf6b8a4a5d882add5eb5d",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[7]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p7",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[7]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "a151ceb1711aad529a7704248f03333990022ebbfa07a7f04c004d70c167919f",
+              "tail_sha256": "502267619f5f46548d1b1d75098d689eaa1c8f7e5cb067078560a7d4a1c1dcce",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[7]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "37ff20583960759de8bb0200d21522ae79d687f6abe680e82b486bdfe490e98a",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[7]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[7]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p8",
+                "shownumber": "no"
+              },
+              "text_sha256": "55bd2daa6c9529b1aa7a9da3487e209635ab7028cac4fe47f41ff4305c6aab11",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "a151ceb1711aad529a7704248f03333990022ebbfa07a7f04c004d70c167919f",
+              "tail_sha256": "0a07f659461970d8d8dcefe4fff96a1745599810dc7d47391e95c803b7b2072c",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "37ff20583960759de8bb0200d21522ae79d687f6abe680e82b486bdfe490e98a",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "529577243fcb2354cbfb5c0034a00fd7a0843d73a967d430f8579201b973ac14",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[8]/span",
+              "tag": "span",
+              "attributes": {
+                "class": "Greek",
+                "id": "iv-p8.1",
+                "lang": "el"
+              },
+              "text_sha256": "6c3f6611b305d2e5494e1ddaf17e731f3c59f295467a8784222ef152f2dcc6f5",
+              "tail_sha256": "d2020d02f2e43b4739c3c2ae4b17fd296b84696833787fcdba6b5da10d6b45cf",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[9]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p9",
+                "shownumber": "no"
+              },
+              "text_sha256": "7b78850b3bbaefaf2d6c47abbc96b1df25c58a5db2a6778d5dcb4f8df63090e1",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[9]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "b8fc61c647d2d96437ffe3557607551710bdbddaa943238efde69e2bf05f8ec4",
+              "tail_sha256": "c0393be015698268a609ac6665fd2ea424a682f700256cf859534cf5e9bdcd28",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[9]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p9.1",
+                "osisRef": "Bible:Amos.3.3",
+                "parsed": "|Amos|3|3|0|0",
+                "passage": "Am 3:3"
+              },
+              "text_sha256": "7df36a7e52ebf81a8a320023c64bc0106690a1e8cbb9a2a4eb790c9740bf07d6",
+              "tail_sha256": "6ed0623d98be5ae184d90b1ff70916dcb90feda3a73d9529c24acb1ab92bf232",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[10]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p10",
+                "shownumber": "no"
+              },
+              "text_sha256": "600c12e559a3dd2ae388733888067e7fa9eb79c272e170bbcebf8b81173fc928",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[10]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "d1f9dd22bffe6f649eaf046c0fe1ca82250659859ceb1c241754b636c3244ad7",
+              "tail_sha256": "f963006c1410f60d08c9ac179e2a3607d7d5858b6c90879fca6aa82e8adcaef9",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[10]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "37ff20583960759de8bb0200d21522ae79d687f6abe680e82b486bdfe490e98a",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[10]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[10]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "146d9d7946d1394fdabaf83241da78c2cecc795feebfe588747e956d1c131fc6",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p11",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "bf58bc63f87095de67c97cf87a60f786921029f511328a5630a5033bdf42df81",
+              "tail_sha256": "0a07f659461970d8d8dcefe4fff96a1745599810dc7d47391e95c803b7b2072c",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "37ff20583960759de8bb0200d21522ae79d687f6abe680e82b486bdfe490e98a",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c544d96b0c84c52ace0ae1c9ea1414c153ad9e8ec7dd0c5bd12e828fc74317b",
+              "tail_sha256": "6ba777adef85692f708e59e8f2159084d8b80187b040920f970b662ae687093a",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[11]/i[5]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "1dabd5131fa6e9e494fd7d94ee736c931a09cc5ececf5ff66e3368635041f1be",
+              "tail_sha256": "509c49307f4e0ee0e4623b2ed3c0e22a48c2aeabad286246eb200d87d5db89cf",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[12]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p12",
+                "shownumber": "no"
+              },
+              "text_sha256": "9bceb4688d70854d8e593aceb0a3b3aeffd3ba555196940c0cee457b33a7d5bc",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[13]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p13",
+                "shownumber": "no"
+              },
+              "text_sha256": "e4defc5858462fac687719da4beb11657bb3fecf9861e649a140ab40a78289db",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[14]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p14",
+                "shownumber": "no"
+              },
+              "text_sha256": "0420c176568cedb4e849808dffa8b81bf745dbc9ed795b9936291f5d4f3e4e6c",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[14]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "a151ceb1711aad529a7704248f03333990022ebbfa07a7f04c004d70c167919f",
+              "tail_sha256": "472d19286e461949df43fd009d0ddb46f83710dc87f06bac426bda3e9b93f197",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[14]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p14.1",
+                "osisRef": "Bible:2Pet.1.18",
+                "parsed": "|2Pet|1|18|0|0",
+                "passage": "2Pe 1:18"
+              },
+              "text_sha256": "d9301910b58fb5011c2ed9007c9efe28204de2d40693e86a64c9275278647a0d",
+              "tail_sha256": "9d9ae37cf158be31e70217d74bd86cd993d97b075c4a7f38f0f7b61890a62d14",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[15]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p15",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[15]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "b8fc61c647d2d96437ffe3557607551710bdbddaa943238efde69e2bf05f8ec4",
+              "tail_sha256": "adae83efe946d13168c20c23b1a47556a6a6c7d0ea60c848fb7f87bd602d8253",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[16]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p16",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[16]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "d1f9dd22bffe6f649eaf046c0fe1ca82250659859ceb1c241754b636c3244ad7",
+              "tail_sha256": "378839e8c21b58cefb40f28ebd0500a5f9575ce7a2d3e196ca6f13873bb68305",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[17]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p17",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[17]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "bf58bc63f87095de67c97cf87a60f786921029f511328a5630a5033bdf42df81",
+              "tail_sha256": "a01c07bbdaec99b8b6940ad0b266d246f5814926e9f84da82d57c47f8cc7b5d8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p18",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "8e64f6ca5fb2f616adb73da6fb1bebd4b5364880899c1e3fabeef077a3276166",
+              "tail_sha256": "29c7c894ee0fae669c860cb859cc69d70062804dfcc6f3bb4416d24282616dbd",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "87a738aed26af0059feea6fc988438f49ffbe5ef2060c5f2910c685e4971657a",
+              "tail_sha256": "5727b0a034d7ee6d309c33672b837b88b90b78e0887f05b4d208121a31821ea0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "3b8e2e9e625e186f1200eabee415b5d897dc99ab58c4020e0aa92021594108c3",
+              "tail_sha256": "0a63e3f63f232f0c18f3bfe678607aad0b9f7ac6c73e037f74c79c0b2ba103f8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "c5ef0b09c53a731c1a72c4640adc78318e64e24ee5e3d199e84f46d53be4e789",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[18]/i[5]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "dcae57a80aa1c9a5dc8b23110c5826f717090df58f62eb5f8cd51547ce984522",
+              "tail_sha256": "a54866924f40147b1561e4300b6ca16f6798e7f692473054a98eeacbaa8a558f",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[19]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p19",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[19]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "f104c21e399223df6c85b183bf82ac0050c30a02fa252c1f8d304172ea204a42",
+              "tail_sha256": "afb10b8c7506fd62d1b64f1fe2171918bfbb01ea2cd52f6dc7a09a41745465d2",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[20]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p20",
+                "shownumber": "no"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[20]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "d2c3cb474add385eacfcdfe45d85d431a478a637f90ccdf987cc82cb26cd7ead",
+              "tail_sha256": "e3ee915a8e8c7aa02d2fced443314522b20824abd2535d5959c41dc8ab8a09e4",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[20]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "448630d8383142a04d722e9e4763d2ebdca6eae61c270beb026485a004669ae2",
+              "tail_sha256": "e0faf27bddfab55afb851a11b10ecdec484b4e3172e8787e2e212700906a9720",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[21]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p21",
+                "shownumber": "no"
+              },
+              "text_sha256": "85e5dc375e41f30c3657323f6b6f660ce0065e202bb9ced412eff992c1c8b063",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[22]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p22",
+                "shownumber": "no"
+              },
+              "text_sha256": "0420c176568cedb4e849808dffa8b81bf745dbc9ed795b9936291f5d4f3e4e6c",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[22]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "a151ceb1711aad529a7704248f03333990022ebbfa07a7f04c004d70c167919f",
+              "tail_sha256": "70122748d77e3c9f22257971ef6189bb10b0b5bfeea712c6add3425fac9f9c6e",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[22]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p22.1",
+                "osisRef": "Bible:Esth.5.11",
+                "parsed": "|Esth|5|11|0|0",
+                "passage": "Es 5:11"
+              },
+              "text_sha256": "f9d4368abb1e076543e496662ad1f40ae33aabe717334d392fdc76d697895915",
+              "tail_sha256": "bd3d6182cd10757014b784c07c8b080cdc250b37f176567f87ad46006dcd9f4a",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[22]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p22.2",
+                "osisRef": "Bible:Esth.6.6",
+                "parsed": "|Esth|6|6|0|0",
+                "passage": "Es 6:6"
+              },
+              "text_sha256": "72bb1c484ae974a27122a81e76ddb89491019aac836aacc43321873e7304916b",
+              "tail_sha256": "3741a10b2eac5c2f4d02d510e821b7e3cf14b32580c68274f976264c82e50865",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[22]/scripRef[3]",
+              "tag": "scripRef",
+              "attributes": {
+                "id": "iv-p22.3",
+                "osisRef": "Bible:Esth.6.8",
+                "parsed": "|Esth|6|8|0|0",
+                "passage": "Es 6:8"
+              },
+              "text_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+              "tail_sha256": "d14a4b1dd4d887acb0e442fccab2630d63406e6e903a7408f77293a5cc94374c",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[23]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p23",
+                "shownumber": "no"
+              },
+              "text_sha256": "aaac47948412deb3af29695c2843206dc338094db4a6045f40a0ae212d9a25cd",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[23]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "b8fc61c647d2d96437ffe3557607551710bdbddaa943238efde69e2bf05f8ec4",
+              "tail_sha256": "3065f74704b3f71b93e9123ac92a5c5cfd2bdde7f4ab14d3e9071afab711f08f",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[24]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p24",
+                "shownumber": "no"
+              },
+              "text_sha256": "44e3648559f83c7c48e62cd9a0bddf67a56f47d10819e9f6ab3fdf46a6685104",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[25]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p25",
+                "shownumber": "no"
+              },
+              "text_sha256": "653280c1fd18c913fb80741e31d51da10828996d8d5cebab69be75b0244cb34e",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[26]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p26",
+                "shownumber": "no"
+              },
+              "text_sha256": "ffbaeb2af96469fdfc0f04e716a09b403faccce83c7946eb21a354ce6698b2c8",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[27]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p27",
+                "shownumber": "no"
+              },
+              "text_sha256": "a3802a5143739e6caf2513c3f33f20063edc8c74f85543b4f233870721fb4436",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[4]/p[28]",
+              "tag": "p",
+              "attributes": {
+                "id": "iv-p28",
+                "shownumber": "no"
+              },
+              "text_sha256": "589fc721b2f25cf37f1a2ca42234d1691b61f4845e0d240c9a2f0f2672b8b623",
+              "tail_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "disposition": "mapped"
+            }
+          ]
+        }
+      ],
+      "tei_file": "whitefield.tei.xml",
+      "retained_file": "whitefield.retained.xml",
+      "files": {
+        "whitefield.tei.xml": "c2cb393fe1b0cebc8f00478dcae68f05dd6d16bf491bb1de872dfa4bd3d7d4dd",
+        "whitefield.retained.xml": "1b450ec44b35092ac3f4f549a2bfb823e4a710929d7b8d725c7ec60d8e6c5b27"
+      },
+      "context": {
+        "identity": {
+          "work_id": "fixture-whitefield-sermons",
+          "textual_form_id": "fixture-whitefield-sermons",
+          "edition_id": "fixture-ccel-whitefield"
+        },
+        "language": "en",
+        "representation_revision": "fixture-v1",
+        "edition_title": "Selected Sermons of George Whitefield"
+      }
+    },
+    {
+      "name": "wesley",
+      "status": "nonaccepted complete-native-sermon fixture",
+      "source_path": "raw/ccel/wesley_sermons.xml",
+      "source_sha256": "70f4b1d44754ae01889c52aeeb6a1b6f92b9444d016cef35f4c0b40e33ea375a",
+      "source_bytes": 4340943,
+      "source_selector": "//div2",
+      "collection_evidence": {
+        "xpath": "/ThML/ThML.body/div1[1]",
+        "disposition": "collection title from retained title page"
+      },
+      "source_unit_census": [
+        {
+          "ordinal": 1,
+          "id": "v.i",
+          "title": "Salvation by Faith",
+          "disposition": "selected-complete-sermon"
+        },
+        {
+          "ordinal": 2,
+          "id": "v.ii",
+          "title": "The Almost Christian",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 3,
+          "id": "v.iii",
+          "title": "Awake, Thou That Sleepest",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 4,
+          "id": "v.iv",
+          "title": "Scriptural Christianity",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 5,
+          "id": "v.v",
+          "title": "Justification By Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 6,
+          "id": "v.vi",
+          "title": "The Righteousness of Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 7,
+          "id": "v.vii",
+          "title": "The Way to the Kingdom",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 8,
+          "id": "v.viii",
+          "title": "THE FIRST FRUITS OF THE SPIRIT",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 9,
+          "id": "v.ix",
+          "title": "The Spirit of Bondage and of Adoption.",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 10,
+          "id": "v.x",
+          "title": "Discourse I",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 11,
+          "id": "v.xi",
+          "title": "Discourse II",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 12,
+          "id": "v.xii",
+          "title": "The Witness of our own Spirit",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 13,
+          "id": "v.xiii",
+          "title": "On Sin in Believers",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 14,
+          "id": "v.xiv",
+          "title": "The Repentance of Believers",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 15,
+          "id": "v.xv",
+          "title": "[i.e., The Last Judgment — GL]",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 16,
+          "id": "v.xvi",
+          "title": "The Means of Grace",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 17,
+          "id": "v.xvii",
+          "title": "The Circumcision of the Heart",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 18,
+          "id": "v.xviii",
+          "title": "The Marks of the New Birth",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 19,
+          "id": "v.xix",
+          "title": "The Great Privilege of those that are Born of God",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 20,
+          "id": "v.xx",
+          "title": "The Lord our Righteousness",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 21,
+          "id": "v.xxi",
+          "title": "Discourse 1",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 22,
+          "id": "v.xxii",
+          "title": "Discourse 2",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 23,
+          "id": "v.xxiii",
+          "title": "Discourse 3",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 24,
+          "id": "v.xxiv",
+          "title": "Discourse 4",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 25,
+          "id": "v.xxv",
+          "title": "Discourse 5",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 26,
+          "id": "v.xxvi",
+          "title": "Discourse 6",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 27,
+          "id": "v.xxvii",
+          "title": "Discourse 7",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 28,
+          "id": "v.xxviii",
+          "title": "Discourse 8",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 29,
+          "id": "v.xxix",
+          "title": "Discourse 9",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 30,
+          "id": "v.xxx",
+          "title": "Discourse 10",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 31,
+          "id": "v.xxxi",
+          "title": "Discourse 11",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 32,
+          "id": "v.xxxii",
+          "title": "Discourse 12",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 33,
+          "id": "v.xxxiii",
+          "title": "Discourse 13",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 34,
+          "id": "v.xxxiv",
+          "title": "The Original, Nature, Property, and Use of the Law",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 35,
+          "id": "v.xxxv",
+          "title": "Discourse I",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 36,
+          "id": "v.xxxvi",
+          "title": "Discourse 2",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 37,
+          "id": "v.xxxvii",
+          "title": "The Nature of Enthusiasm",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 38,
+          "id": "v.xxxviii",
+          "title": "A Caution against Bigotry",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 39,
+          "id": "v.xxxix",
+          "title": "Catholic Spirit",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 40,
+          "id": "v.xl",
+          "title": "Christian Perfection",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 41,
+          "id": "v.xli",
+          "title": "Wandering Thoughts",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 42,
+          "id": "v.xlii",
+          "title": "Satan’s Devices",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 43,
+          "id": "v.xliii",
+          "title": "The Scripture Way of Salvation",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 44,
+          "id": "v.xliv",
+          "title": "Original Sin",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 45,
+          "id": "v.xlv",
+          "title": "The New Birth",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 46,
+          "id": "v.xlvi",
+          "title": "The Wilderness State",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 47,
+          "id": "v.xlvii",
+          "title": "Heaviness through Manifold Temptations",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 48,
+          "id": "v.xlviii",
+          "title": "Self-denial",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 49,
+          "id": "v.xlix",
+          "title": "The Cure of Evil-speaking",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 50,
+          "id": "v.l",
+          "title": "The Use of Money",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 51,
+          "id": "v.li",
+          "title": "The Good Steward",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 52,
+          "id": "v.lii",
+          "title": "Sermon 52",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 53,
+          "id": "v.liii",
+          "title": "Preached at the Chapel in Tottenham-Court Road and at the Tabernacle, near Moorfields, on Sunday, November 18, 1770.",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 54,
+          "id": "vi.i",
+          "title": "On Eternity",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 55,
+          "id": "vi.ii",
+          "title": "Advertisement",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 56,
+          "id": "vi.iii",
+          "title": "God’s Approbation of His Works",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 57,
+          "id": "vi.iv",
+          "title": "On the Fall of Man",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 58,
+          "id": "vi.v",
+          "title": "On Predestination",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 59,
+          "id": "vi.vi",
+          "title": "God’s Love to Fallen Man",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 60,
+          "id": "vi.vii",
+          "title": "The General Deliverance",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 61,
+          "id": "vi.viii",
+          "title": "The Mystery of Iniquity",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 62,
+          "id": "vi.ix",
+          "title": "The End of Christ’s Coming",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 63,
+          "id": "vi.x",
+          "title": "The General Spread of the Gospel",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 64,
+          "id": "vi.xi",
+          "title": "The New Creation",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 65,
+          "id": "vi.xii",
+          "title": "The Duty of Reproving our Neighbour",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 66,
+          "id": "vi.xiii",
+          "title": "The Signs of the Times",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 67,
+          "id": "vi.xiv",
+          "title": "On Divine Providence",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 68,
+          "id": "vi.xv",
+          "title": "The Wisdom of God’s Counsels",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 69,
+          "id": "vi.xvi",
+          "title": "The Imperfection of Human Knowledge",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 70,
+          "id": "vi.xvii",
+          "title": "The Case of Reason Impartially Considered",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 71,
+          "id": "vi.xviii",
+          "title": "Of Good Angels",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 72,
+          "id": "vi.xix",
+          "title": "Of Evil Angels",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 73,
+          "id": "vi.xx",
+          "title": "Of Hell",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 74,
+          "id": "vi.xxi",
+          "title": "Of the Church",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 75,
+          "id": "vi.xxii",
+          "title": "On Schism",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 76,
+          "id": "vi.xxiii",
+          "title": "On Perfection",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 77,
+          "id": "vi.xxiv",
+          "title": "Spiritual Worship",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 78,
+          "id": "vi.xxv",
+          "title": "Spiritual Idolatry",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 79,
+          "id": "vi.xxvi",
+          "title": "On Dissipation",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 80,
+          "id": "vi.xxvii",
+          "title": "On Friendship with the World",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 81,
+          "id": "vi.xxviii",
+          "title": "In What Sense we are to Leave the World",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 82,
+          "id": "vi.xxix",
+          "title": "On Temptation",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 83,
+          "id": "vi.xxx",
+          "title": "On Patience",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 84,
+          "id": "vi.xxxi",
+          "title": "The Important Question",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 85,
+          "id": "vi.xxxii",
+          "title": "On Working out our own Salvation",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 86,
+          "id": "vi.xxxiii",
+          "title": "A Call to Backsliders",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 87,
+          "id": "vi.xxxiv",
+          "title": "The Danger of Riches",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 88,
+          "id": "vi.xxxv",
+          "title": "On Dress",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 89,
+          "id": "vi.xxxvi",
+          "title": "The More Excellent Way",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 90,
+          "id": "vi.xxxvii",
+          "title": "An Israelite Indeed",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 91,
+          "id": "vi.xxxviii",
+          "title": "On Charity",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 92,
+          "id": "vi.xxxix",
+          "title": "On Zeal",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 93,
+          "id": "vi.xl",
+          "title": "On Redeeming the Time",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 94,
+          "id": "vi.xli",
+          "title": "On Family Religion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 95,
+          "id": "vi.xlii",
+          "title": "On the Education of Children",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 96,
+          "id": "vi.xliii",
+          "title": "On Obedience to Parents",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 97,
+          "id": "vi.xliv",
+          "title": "On Obedience to Pastors",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 98,
+          "id": "vi.xlv",
+          "title": "On Visiting the Sick",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 99,
+          "id": "vi.xlvi",
+          "title": "Preached before the Humane Society",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 100,
+          "id": "vi.xlvii",
+          "title": "On Pleasing all Men",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 101,
+          "id": "vi.xlviii",
+          "title": "The Duty of Constant Communion",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 102,
+          "id": "vi.xlix",
+          "title": "Of Former Times",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 103,
+          "id": "vi.l",
+          "title": "What is Man?",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 104,
+          "id": "vi.li",
+          "title": "On Attending the Church Service",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 105,
+          "id": "vi.lii",
+          "title": "“On Conscience”",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 106,
+          "id": "vi.liii",
+          "title": "On Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 107,
+          "id": "vi.liv",
+          "title": "On God’s Vineyard",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 108,
+          "id": "vi.lv",
+          "title": "On Riches",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 109,
+          "id": "vii.i",
+          "title": "What is Man?",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 110,
+          "id": "vii.ii",
+          "title": "On the Discoveries of Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 111,
+          "id": "vii.iii",
+          "title": "On the Omnipresence of God",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 112,
+          "id": "vii.iv",
+          "title": "The Rich Man and Lazarus",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 113,
+          "id": "vii.v",
+          "title": "The Difference Between Walking by Sight, and Walking by Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 114,
+          "id": "vii.vi",
+          "title": "The Unity of the Divine Being",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 115,
+          "id": "vii.vii",
+          "title": "The Ministerial Office",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 116,
+          "id": "vii.viii",
+          "title": "Causes of the Inefficacy of Christianity",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 117,
+          "id": "vii.ix",
+          "title": "On Knowing Christ after the Flesh",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 118,
+          "id": "vii.x",
+          "title": "On a Single Eye",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 119,
+          "id": "vii.xi",
+          "title": "On Worldly Folly",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 120,
+          "id": "vii.xii",
+          "title": "On the Wedding Garment",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 121,
+          "id": "vii.xiii",
+          "title": "Human Life a Dream",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 122,
+          "id": "vii.xiv",
+          "title": "On Faith",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 123,
+          "id": "vii.xv",
+          "title": "The Deceitfulness of the Human Heart",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 124,
+          "id": "vii.xvi",
+          "title": "The Heavenly Treasure in Earthen Vessels",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 125,
+          "id": "vii.xvii",
+          "title": "On Living Without God",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 126,
+          "id": "vii.xviii",
+          "title": "On the Danger of Increasing Riches",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 127,
+          "id": "viii.i",
+          "title": "The Trouble and Rest of Good Men",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 128,
+          "id": "viii.ii",
+          "title": "Free Grace",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 129,
+          "id": "viii.iii",
+          "title": "The Cause and Cure of Earthquakes",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 130,
+          "id": "viii.iv",
+          "title": "National Sins and Miseries",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 131,
+          "id": "viii.v",
+          "title": "The Late Work of God in North America",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 132,
+          "id": "viii.vi",
+          "title": "Preached on Monday, April 21, 1777",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 133,
+          "id": "viii.vii",
+          "title": "Preached on Occasion of the Death of the Rev. Mr. John Fletcher, Vicar of Madeley, Shropshire",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 134,
+          "id": "ix.i",
+          "title": "True Christianity Defended",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 135,
+          "id": "ix.ii",
+          "title": "On Mourning for the Dead",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 136,
+          "id": "ix.iii",
+          "title": "On Corrupting the Word Of God",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 137,
+          "id": "ix.iv",
+          "title": "On the Resurrection of the Dead",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 138,
+          "id": "ix.v",
+          "title": "On Grieving the Holy Spirit",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 139,
+          "id": "ix.vi",
+          "title": "On Love",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 140,
+          "id": "ix.vii",
+          "title": "On Public Diversions",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 141,
+          "id": "ix.viii",
+          "title": "On the Holy Spirit",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 142,
+          "id": "xi.i",
+          "title": "Index of Scripture References",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 143,
+          "id": "xi.ii",
+          "title": "Index of Scripture Commentary",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 144,
+          "id": "xi.iii",
+          "title": "Greek Words and Phrases",
+          "disposition": "outside-declared-fixture"
+        },
+        {
+          "ordinal": 145,
+          "id": "xi.iv",
+          "title": "Latin Words and Phrases",
+          "disposition": "outside-declared-fixture"
+        }
+      ],
+      "selected_units": [
+        {
+          "id": "v.i",
+          "source_ordinal": 1,
+          "paragraphs": 34,
+          "node_accounting": [
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]",
+              "tag": "div2",
+              "attributes": {
+                "type": "sermon",
+                "title": "Salvation by Faith",
+                "n": "i",
+                "shorttitle": "sermon i",
+                "progress": "0.89%",
+                "prev": "v",
+                "next": "v.ii",
+                "id": "v.i"
+              },
+              "text_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "native-sermon-boundary"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/scripCom",
+              "tag": "scripCom",
+              "attributes": {
+                "type": "Sermon",
+                "passage": "Eph. 2:8",
+                "id": "v.i-p0.1",
+                "parsed": "|Eph|2|8|0|0",
+                "osisRef": "Bible:Eph.2.8"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "66464163e6da94c9b7e35d9d0fe08edae1a7f2dfed5047e2016f05371c49141b",
+              "disposition": "explicit-primary-passage"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h2[1]",
+              "tag": "h2",
+              "attributes": {
+                "id": "v.i-p0.2"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h2[1]/a",
+              "tag": "a",
+              "attributes": {
+                "id": "v.i-p0.3"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "6249351d9d0d745a35a0790423e21695b36352188cc03e575645050034c3f3e0",
+              "disposition": "redundant-empty-anchor"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h2[2]",
+              "tag": "h2",
+              "attributes": {
+                "id": "v.i-p0.4"
+              },
+              "text_sha256": "62feb77eadd75148fbe88ff77b4a1a6cdabf49c926df4ff9b151c727b23b3fad",
+              "tail_sha256": "2c299b1541742c5ad993d8244e42c2cb9e0451ac09e73cfb134834b583d349fd",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h2[2]/note",
+              "tag": "note",
+              "attributes": {
+                "place": "foot",
+                "n": "5",
+                "id": "v.i-p0.5"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h2[2]/note/a",
+              "tag": "a",
+              "attributes": {
+                "id": "v.i-p0.6"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "19a066086a516b3c18c290106571888952f4651db4cbcbb7c41d04deb101bd98",
+              "disposition": "redundant-empty-anchor"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[1]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p1"
+              },
+              "text_sha256": "8ea25b7850eb89975be54829370be11450705b12b0e3b0561bac5b263a45dd96",
+              "tail_sha256": "66464163e6da94c9b7e35d9d0fe08edae1a7f2dfed5047e2016f05371c49141b",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h3",
+              "tag": "h3",
+              "attributes": {
+                "class": "s02",
+                "id": "v.i-p1.1"
+              },
+              "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "tail_sha256": "2c299b1541742c5ad993d8244e42c2cb9e0451ac09e73cfb134834b583d349fd",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/h3/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "Eph 2:8",
+                "id": "v.i-p1.2",
+                "parsed": "|Eph|2|8|0|0",
+                "osisRef": "Bible:Eph.2.8"
+              },
+              "text_sha256": "8b2680a406e8c9df0260b76b3c2be4e173e3f581739fb259368312ec12d06f5c",
+              "tail_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[2]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p2"
+              },
+              "text_sha256": "db8c0614e8a31095310d690b81c138dd35c094939831804dee85590e7a728b1c",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[3]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p3"
+              },
+              "text_sha256": "e48d025445dcb9c3e967b33982c17af7e4712abec2164657cc9fa910f49fc053",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[4]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p4"
+              },
+              "text_sha256": "ef35dbe3f0b215577ad66f1f43fd29fada3b0f268bd8da479d5e057f72d28cbf",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[5]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p5"
+              },
+              "text_sha256": "0dc83fd883f8166d4f4194f67473d36a3bdeec0b312a5e02e15c64818628e6f4",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[6]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p6"
+              },
+              "text_sha256": "6884bdee14c490fa063f1efa55c63818a56a9fefc12d98cbd08a2c15646fa30a",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[7]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p7"
+              },
+              "text_sha256": "31015d7227c31904dca0ebfef14a45ee0a8cf198b2be45e67d025a8c6dda9a43",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[8]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p8"
+              },
+              "text_sha256": "c857866426d07f512c5d15753b1fb684bb7a30c1ecd50bf038c4ef3135dce32f",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[9]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p9"
+              },
+              "text_sha256": "6884bdee14c490fa063f1efa55c63818a56a9fefc12d98cbd08a2c15646fa30a",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[10]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p10"
+              },
+              "text_sha256": "b7bfbb30a14d6b5c46c1ea175f0b51901263ad3341baa001689b1d31fdff9990",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[11]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p11"
+              },
+              "text_sha256": "19464c0f83f176f4c2c5b05b0e3e93ebf1d9ebd31126f49565f3ed5f655c2c9f",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[12]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p12"
+              },
+              "text_sha256": "56dab187fc8483c52ffb8800eb7d0400cec857132bdebed9245212b0ede8d4ef",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[12]/scripRef",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "Lu 4:34",
+                "id": "v.i-p12.1",
+                "parsed": "|Luke|4|34|0|0",
+                "osisRef": "Bible:Luke.4.34"
+              },
+              "text_sha256": "455478539b05cb778bce79a8f5c1a535589063ff95232a5a32fbb1c813c378e3",
+              "tail_sha256": "d7a9f422974a14ff199ca9100172b1adec070388b094d0bf5805f97a575b88b5",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[13]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p13"
+              },
+              "text_sha256": "6a071d74ee9490504156fcdb5ceacee79d3b9c0f0d3b92f1057677196fbb5802",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[14]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p14"
+              },
+              "text_sha256": "832be98e57f1a952f03bfc01c28594dfaaa7c24eb5036060ec27448f8fba4909",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[15]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p15"
+              },
+              "text_sha256": "717dac6c4cbe0f6320d34d1f87fab1e0b8e8240a25bb4d9b035d224f3b7dab7a",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[16]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p16"
+              },
+              "text_sha256": "2655f1eb87e33a0be3d4cdba2186b7a9677a1523e0b67768af3fbe0e3bf6e175",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[17]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p17"
+              },
+              "text_sha256": "2346102d89816ae7383f91a7129dd24c650ff5a64c65e4c966817c7fc622cb08",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[17]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "bf73bfb139beb067609cbff07c33f80246c66685cbdafcb201d44803f16c23b3",
+              "tail_sha256": "6af8789074c2c393a11497a5c834cefab0fac9d8c89c4358090db96da0c14c49",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[17]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "6f79cda0b21e70366e9b677e072d0522e908f4f3fc6c3e22ea1dc2fe2cab650b",
+              "tail_sha256": "41d90862c51803681f1a870fe7c97a5bc87c2ca85dae397e1e7d68a118457019",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[18]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p18"
+              },
+              "text_sha256": "e111451aa3d9bd982ef654294b6bfc2cafc5987e66484cb539650b06ee705220",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[18]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "f3d9725c0b3e57197a8d2f46c1575ce0cce24db18d2684b617580358487c28f9",
+              "tail_sha256": "35de590cff436b976061f45a72259ab196ea4d5d91fcc3e6f1b207c5772e5421",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[19]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p19"
+              },
+              "text_sha256": "8698d1ebaf6ba2b3bd950bfc29acd302495fc9c2b1c0ac373f9f218eec345047",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[20]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p20"
+              },
+              "text_sha256": "b2c7cab3a23e5a3b98f8cbe2c382a99d0698641eb0f911f79905d6818d9315ed",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[21]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p21"
+              },
+              "text_sha256": "b24a129f6fa4e36a2c534bd3c58c7107c996040e2091353b31a302f1e88fb662",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[21]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "1Jn 3:5",
+                "id": "v.i-p21.1",
+                "parsed": "|1John|3|5|0|0",
+                "osisRef": "Bible:1John.3.5"
+              },
+              "text_sha256": "0452a3adfd348f8d40b60208fd6fb8b0208bdacbfe3322c73f14cc90d3de5fb1",
+              "tail_sha256": "c6a1510ea579622d6dfbe522a10e28ce7c178607b3423d002e831ad3a0e5d728",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[21]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "1Jn 5:18",
+                "id": "v.i-p21.2",
+                "parsed": "|1John|5|18|0|0",
+                "osisRef": "Bible:1John.5.18"
+              },
+              "text_sha256": "3c970cdb148dacbe56ae36f1e6a434ae2e8d501ccd77dcfd224f88d700e39dd3",
+              "tail_sha256": "c4b2896a2081395e282313d6683f07c81e3339ef8b9d2b5a299ea5b626a0998f",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[22]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p22"
+              },
+              "text_sha256": "fc7e9f720dfb771048f0922ec39a5dc488caabde518eae94e0fdbd82bbc4656a",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p23"
+              },
+              "text_sha256": "1aa9a1e20d60b913dadfbf170fdb5e3919237e1fd1a7ac161593618f5957d579",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[1]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "9c4bb1e727db675d8fc06c8755e404fa580ab17abf847bcbca89c29f663d1012",
+              "tail_sha256": "00205e3b83500e1ead35e7c78e6d0fef8276e877a0630e3967139d486176f1a9",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[2]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "b2c718f5b69d990da0a238d1cb3fc41a2cfaeb8805a77b5876e525dd01eeddf8",
+              "tail_sha256": "b23d65029f3547787c6eb144854103eccfa7be39369b8a0ca4b949ec3bef9513",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[3]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "1b427045831a7678ac2307e5f0b785fb006f67b23e0783c12e441bc3f487687b",
+              "tail_sha256": "e93b89da076356316431bbbc376917db95b59505f882e941638e2a9dcaddc7bf",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[4]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "ebcf5627873de8b17366213fb67d1720a1c8eca6544a652ca6d8af32daa2d7b9",
+              "tail_sha256": "211a436e80b9deac0f564d7cd8ae9f75d349e5ab41dd3eabf755a0f76ec486af",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[5]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "0e0487f4f7012be32c15f4dfa052828d1841eb6c93597317ea58237c67224e24",
+              "tail_sha256": "0e337cc0cc13810c327d7c82a16e1342e2b8801072066a84061acbe66aa73c32",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[23]/i[6]",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "c9331652a12eb753f11d7a0cc33269850ec39ce8e7c96e7d4de97ea16f3aa116",
+              "tail_sha256": "40c5989671214ecf1323dfa35d0beb0793bbc8c8a963dc9d731f3b07373d3c01",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[24]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p24"
+              },
+              "text_sha256": "bbce8446328cc22d9cb6897f1e34c2cb1e91c80e64a13cc0befa5f9f2c96c7e0",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[25]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p25"
+              },
+              "text_sha256": "84b29f0e2eda9e2959de230397e0d883a5b5aada1c0c974ec4185a46b10155ed",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[26]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p26"
+              },
+              "text_sha256": "74e342fc7e0c26c2512f0acc5956d6d6abe6db872f07fc56b12868e667d05aa1",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[27]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p27"
+              },
+              "text_sha256": "cd056c83e0402e1ced52633341b5cc1241f739426893b05f0568f8f28b617cae",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[27]/scripRef[1]",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "Ro 3:27",
+                "id": "v.i-p27.1",
+                "parsed": "|Rom|3|27|0|0",
+                "osisRef": "Bible:Rom.3.27"
+              },
+              "text_sha256": "d06cd13aec6700813d5a7a1a95f87d0dcc4b2c80948216419bba0c47fc543267",
+              "tail_sha256": "c2c62569717ade8e1f3b17b730601c9d893f891ba370605d821b1a226635a509",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[27]/scripRef[2]",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "Ro 4:5",
+                "id": "v.i-p27.2",
+                "parsed": "|Rom|4|5|0|0",
+                "osisRef": "Bible:Rom.4.5"
+              },
+              "text_sha256": "4e9bb4401ed3c95854861617dd3e6c26b7ec784dfc5b897c446dd51e7d56bf0e",
+              "tail_sha256": "eea4beba9cf4e19f906489db51b3b4ff0a3c5fa14de41c1da094b38022ead79c",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[27]/scripRef[3]",
+              "tag": "scripRef",
+              "attributes": {
+                "passage": "Eph 2:4",
+                "id": "v.i-p27.3",
+                "parsed": "|Eph|2|4|0|0",
+                "osisRef": "Bible:Eph.2.4"
+              },
+              "text_sha256": "d16080dfb20abcb90311278099076f41811faf64678da67f82248c3dfa3bfb64",
+              "tail_sha256": "9c9b5bc99dc8553c52aaa17666c6c98f9eb6be566d74bb7af86e8825708f7f19",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[28]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p28"
+              },
+              "text_sha256": "c9d41b7ef0f1965adb4b7a0d2c46a82dbf89235061c74625f6f0f80967d005bd",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[29]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p29"
+              },
+              "text_sha256": "bf8a990099f1cb2431a918b57490f8f6bf8f1b4505d86aed7914216ba78cef87",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[30]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p30"
+              },
+              "text_sha256": "0a6a96247fd242d0bf32fcaece28b4caf97350c00cbfbb647ff60fbcdde73fc6",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[31]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p31"
+              },
+              "text_sha256": "09c0cefdcb1a7eba54ce11df16cf5dc93676b902734cd88a856d3c602a942dfb",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[32]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p32"
+              },
+              "text_sha256": "2d86717b0f8a3a7479a30777613adcc4c062054b17f5fbb0752df12095e34bc5",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[32]/i",
+              "tag": "i",
+              "attributes": {},
+              "text_sha256": "7ec497c6d009f54a21375fb044b7c5d5415c6d3d0e8537431d382a9757af6d95",
+              "tail_sha256": "0487e08920cb5901ed0310363025d077dd127c3357f15b083c4706116e834354",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[33]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p33"
+              },
+              "text_sha256": "a45a91b858c51ccb3f1284b24694fe37bc688200c7304526f9a182f3297a2cff",
+              "tail_sha256": "b413a29735227814c7360fbcb6e6c1ed954dd5c5b6ee83094de582f5887a83b0",
+              "disposition": "mapped"
+            },
+            {
+              "xpath": "/ThML/ThML.body/div1[5]/div2[1]/p[34]",
+              "tag": "p",
+              "attributes": {
+                "id": "v.i-p34"
+              },
+              "text_sha256": "fa30e7efbb28db7316e384c6ff3c072b77f8b37ac0de8f33878347bfb1322574",
+              "tail_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+              "disposition": "mapped"
+            }
+          ]
+        }
+      ],
+      "tei_file": "wesley.tei.xml",
+      "retained_file": "wesley.retained.xml",
+      "files": {
+        "wesley.tei.xml": "a08cb98f94fec3e5eeb16e11308a4c8b6f043bc4a7f483e03f30108e4ab98259",
+        "wesley.retained.xml": "b5a664e9c28152bca694f006fa579614b1b3c1f4f3b8b9c4356b0c171f56c5b9"
+      },
+      "context": {
+        "identity": {
+          "work_id": "fixture-wesley-sermons",
+          "textual_form_id": "fixture-wesley-sermons",
+          "edition_id": "fixture-ccel-wesley"
+        },
+        "language": "en",
+        "representation_revision": "fixture-v1",
+        "edition_title": "Sermons on Several Occasions"
+      }
+    }
+  ],
+  "limits": [
+    "Fixture-only identity context; no accepted master or rights claim.",
+    "Three complete native sermons in two retained collections, not a whole-collection claim.",
+    "No invented source subdivisions: original heading and paragraph ordering remains explicit.",
+    "Original inline scripture labels/targets and footnote attachments remain separate from the explicit primary passage.",
+    "The date/place/occasion labels are exact spans in the printed delivery footnote."
+  ]
+}

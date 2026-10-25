@@ -1,0 +1,30 @@
+{
+  "schema_version": "ocd-tei-profile-registry-package-provisional-0.3",
+  "package_id": "ocd-tei-profile-registry-provisional",
+  "status": "provisional",
+  "complete_file_set": true,
+  "authority_boundary": "The listed role-separated members together form one provisional registry package. The package is validation profile data, not a work catalog, source authority, acceptance ledger, rights decision, or publication control plane. In this profile, each hi element carries one controlled rendition token; combined formatting is represented by nested hi elements. subtype, style, and rendition attributes require a declared bound extension.",
+  "members": [
+    {
+      "role": "controlled-values",
+      "path": "controlled-values.json",
+      "sha256": "a9dfb7f6216af191161a6dd92717e9e054346b9d67a1c047eac8148be3147f31"
+    },
+    {
+      "role": "extensions",
+      "path": "extensions.json",
+      "sha256": "329c014b6c669c5640d0ea3d89b5eb69889ced80334ef5397c16d4a4ea8dbb47"
+    },
+    {
+      "role": "common-rules",
+      "path": "common-rules.sch",
+      "sha256": "6bd6aa023c6488ddb58a542b95eac3ae08ee96cf2dbe3d462b949fc0463d1d7c"
+    }
+  ],
+  "generation": {
+    "schematron_closed_values": "generated from the controlled-values member",
+    "documentation": "generated from both package members",
+    "freshness": "common-rules.sch must equal ocd_kernel.tei.profile.render_schematron(profile) with no selected extensions"
+  },
+  "adoption_requirement": "Robbie explicit approval plus later real-fixture conformance"
+}

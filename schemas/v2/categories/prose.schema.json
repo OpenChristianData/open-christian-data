@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/prose.schema.json",
+  "title": "OCD prose public row",
+  "description": "Closed paragraph rows or versioned whole native units preserving nested source content.",
+  "type": "object",
+  "oneOf": [
+    {
+      "allOf": [
+        {
+          "$ref": "ocd://schemas/v2/public-row.schema.json"
+        },
+        {
+          "properties": {
+            "category": {
+              "const": "prose"
+            },
+            "locator": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "paragraph"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_id",
+        "textual_form_id",
+        "edition_id",
+        "record_id",
+        "sequence",
+        "language",
+        "text",
+        "representation_revision",
+        "provenance",
+        "category",
+        "content_format",
+        "structure",
+        "locator"
+      ],
+      "properties": {
+        "work_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"
+        },
+        "textual_form_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"
+        },
+        "edition_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"
+        },
+        "record_id": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"
+        },
+        "sequence": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"
+        },
+        "language": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"
+        },
+        "text": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text"
+        },
+        "representation_revision": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"
+        },
+        "provenance": {
+          "$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"
+        },
+        "category": {
+          "const": "prose"
+        },
+        "content_format": {
+          "const": "ocd-native-content-v1"
+        },
+        "structure": {
+          "type": "array",
+          "oneOf": [
+            {
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "$ref": "ocd://schemas/v2/native-content.schema.json"
+              }
+            },
+            {
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "allOf": [
+                    {"$ref": "ocd://schemas/v2/native-content.schema.json"},
+                    {"properties": {"kind": {"const": "page-break"}}}
+                  ]
+                },
+                {
+                  "allOf": [
+                    {"$ref": "ocd://schemas/v2/native-content.schema.json"},
+                    {"properties": {"kind": {"const": "anchor"}}}
+                  ]
+                },
+                {
+                  "allOf": [
+                    {"$ref": "ocd://schemas/v2/native-content.schema.json"},
+                    {"properties": {"kind": {"const": "division"}}}
+                  ]
+                }
+              ],
+              "items": false
+            }
+          ]
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text_part",
+            "unit"
+          ],
+          "properties": {
+            "kind": {
+              "const": "native-unit"
+            },
+            "text_part": {
+              "enum": [
+                "front",
+                "body",
+                "back"
+              ]
+            },
+            "unit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "document": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Ordered TEI member position within a composed edition."
+            }
+          }
+        },
+        "source_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "raw",
+              "normalization_status",
+              "source_child_path"
+            ],
+            "properties": {
+              "raw": {
+                "type": "string"
+              },
+              "cRef": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "scripture": {
+                "$ref": "ocd://schemas/v2/public-row.schema.json#/$defs/explicit_scripture_target"
+              },
+              "normalization_attribute": {
+                "enum": [
+                  "cRef",
+                  "target"
+                ]
+              },
+              "normalization_status": {
+                "enum": [
+                  "explicit-target-syntax",
+                  "unsupported-explicit-target",
+                  "no-explicit-target"
+                ]
+              },
+              "source_child_path": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

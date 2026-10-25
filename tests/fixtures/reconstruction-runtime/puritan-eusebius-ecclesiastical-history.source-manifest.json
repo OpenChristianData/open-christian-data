@@ -1,0 +1,200 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-schaff-npnf2-lib028-three-retained-xml-members",
+  "authorities": [
+    {
+      "name": "retained-npnf201",
+      "path": "raw/ccel/schaff/npnf201.xml",
+      "role": "primary-source",
+      "bytes": 5624937,
+      "sha256": "da92679dcdd452c10dab212ee4168be1d37f89f758dae8301821a96d49a261c9"
+    },
+    {
+      "name": "retained-npnf202",
+      "path": "raw/ccel/schaff/npnf202.xml",
+      "role": "primary-source",
+      "bytes": 3292641,
+      "sha256": "0139e8dcea6d40c3b1a5e046f3d45bdf6d1b30c503461d7f29f60309b4f2015c"
+    },
+    {
+      "name": "retained-npnf203",
+      "path": "raw/ccel/schaff/npnf203.xml",
+      "role": "primary-source",
+      "bytes": 4264937,
+      "sha256": "f2683481bded09cf90369589dd40330e231c83e6dbd4cb1aec730c9b90f9ec3a"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 832,
+      "sha256": "f2717005d976477085f9c719422ba378998259baff59225128da8a18f6dbe7b0"
+    },
+    {
+      "name": "source-attribution",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028-source-attribution.md",
+      "role": "source-attribution-evidence",
+      "bytes": 432,
+      "sha256": "22b833624245d13f61439efc13d44c3789ef3836d5a60eda28d10cd46ca8c2cc"
+    },
+    {
+      "name": "retained-source-set",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028-retained-source-set.json",
+      "role": "retained-member-census",
+      "bytes": 959,
+      "sha256": "87b30377053f5156bbe50a9ada6d22189e4a060a60520fc8b3cc0bddbdf29f73"
+    },
+    {
+      "name": "source-local-provenance",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028-provenance.md",
+      "role": "source-provenance-evidence",
+      "bytes": 470,
+      "sha256": "826c1d37817f24e676260161a9da3afaa6feee31963b3f27ccda7f9aefc00138"
+    },
+    {
+      "name": "source-local-unresolved",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028-unresolved.jsonl",
+      "role": "unresolved-question-evidence",
+      "bytes": 673,
+      "sha256": "70b54f839be7cc9ce21b4f94864e694c15db33be43a1cc34afc6ee95c13f3e01"
+    },
+    {
+      "name": "ccel-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "role": "source-permission-evidence",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "eusebius-history-config",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1220,
+      "sha256": "65b702d85938bd888de4de440583dd540d71837a332d46d2e258a34225ee3796"
+    },
+    {
+      "name": "eusebius-history-binding",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028.work-binding.json",
+      "role": "exact-work-binding",
+      "bytes": 426,
+      "sha256": "f6957c7c15f0a1b186beb1c905082c186e52a30141165b390d842a64680ee90a"
+    },
+    {
+      "name": "eusebius-constantine-config",
+      "path": "sources/structured-text/eusebius-life-of-constantine/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1226,
+      "sha256": "327468d9e2284d7f97dbc9e36f3dd37118ad293087fba2bed2b008f11138144f"
+    },
+    {
+      "name": "eusebius-constantine-binding",
+      "path": "sources/structured-text/eusebius-life-of-constantine/lib028.work-binding.json",
+      "role": "exact-work-binding",
+      "bytes": 422,
+      "sha256": "66c35bbfff9c40707608224f5a0a7032079f653eaac92a0baef9c7e6be937965"
+    },
+    {
+      "name": "socrates-config",
+      "path": "sources/structured-text/socrates-ecclesiastical-history/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1244,
+      "sha256": "db0418e8018bff95b9983f5eb40b1815324a813b40fd5a6f124500ff5f541191"
+    },
+    {
+      "name": "socrates-binding",
+      "path": "sources/structured-text/socrates-ecclesiastical-history/lib028.work-binding.json",
+      "role": "exact-work-binding",
+      "bytes": 425,
+      "sha256": "0cb2a946047b0d1b10048b91b1ba4a7207bdc7d44d36f54234375977ccd9823a"
+    },
+    {
+      "name": "sozomen-config",
+      "path": "sources/structured-text/sozomen-ecclesiastical-history/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1212,
+      "sha256": "9a64b08882c54f2e717186067e4a17dea150d128aa18aa9fc7fc8a981e4d53be"
+    },
+    {
+      "name": "sozomen-binding",
+      "path": "sources/structured-text/sozomen-ecclesiastical-history/lib028.work-binding.json",
+      "role": "exact-work-binding",
+      "bytes": 425,
+      "sha256": "26f505563231f2d55b36341c6be349eba2885d6791bf8e938e6c2493daa23879"
+    },
+    {
+      "name": "theodoret-config",
+      "path": "sources/structured-text/theodoret-ecclesiastical-history/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1252,
+      "sha256": "7198b82aa8e0d25dd00b6c807ef5f334ba163c8d102f3e3274e26062459d60cb"
+    },
+    {
+      "name": "theodoret-binding",
+      "path": "sources/structured-text/theodoret-ecclesiastical-history/lib028.work-binding.json",
+      "role": "exact-work-binding",
+      "bytes": 426,
+      "sha256": "2261f920da9727a55a08bd06962d720e140466e681d50251440f272738fcc5c6"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1399,
+      "sha256": "583aa15ec72a0613c76d1dbd692037236185a111a32f71a990648ae5eb0ab8e5"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 3018,
+      "sha256": "bc4f02275a6ac2446214d08979b9d416b6cccf196cfa03f614b945e0de47502a"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/eusebius-ecclesiastical-history/lib028.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1432,
+      "sha256": "e02497155e3a72f64c7fb2137fe48a2dc4587d177a78c5fa6ea4a04bb8fbf9a9"
+    },
+    {
+      "name": "tei-p5-xsd-closure",
+      "path": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.producer-runtime.json",
+      "role": "tei-validation-schema-closure",
+      "bytes": 3034,
+      "sha256": "faa20d958e5789c194f42596e22ad909d15e48127bc4eb3733641027a3c29737"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib028-ccel-church-histories-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lib028_reconstruction.py",
+    "implementation_sha256": "938bb0bec71bc23e37700ca972b3543723ecc8ae145a68186a8e5fe12263245d"
+  },
+  "validator": {
+    "id": "ocd-lib028-ccel-church-histories-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lib028_oracle.py",
+    "implementation_sha256": "445578062170c9d0a0c3a08ccd2355f798972d00b491de80488375087a11c70f",
+    "import_closure_sha256": "e145e41982c05d7ab27fdd54da68c74b63bf62172a7ede2ad1a3ff9075275814"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "contract": "ocd-retained-source-acquisition-v1",
+  "work_id": "chesterton-catholic-church-conversion",
+  "source_id": "chesterton-catholic-church-conversion-pg76305-html",
+  "status": "retained-source-only",
+  "retrieved_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "title": "The Catholic Church and Conversion",
+  "creator": "G. K. Chesterton; Calvert Series edition by Hilaire Belloc",
+  "edition": "New York: Macmillan Company, 1927 reprint of 1926 issue; source title page gives 1927 and states publication November 1926, reprinted April and September 1927",
+  "source_url": "https://www.gutenberg.org/ebooks/76305",
+  "download_url": "https://www.gutenberg.org/cache/epub/76305/pg76305-h.zip",
+  "rights_and_copying_conditions": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally.",
+  "retained_scope_note": "Complete 1927 Macmillan manifestation; its first-publication metadata says 1926, while the retained title page identifies the 1927 reprints; preferred to the incomplete Wikisource transcription.",
+  "original_archive": {
+    "path": "raw/gutenberg/76305/pg76305-h.zip",
+    "bytes": 495181,
+    "sha256": "636311e5e91c0b29ff53c82df6e76857b0a8e94a0afbdadc09e823f552443e5a",
+    "format": "ZIP"
+  },
+  "archive_inventory": {
+    "member_count": 2,
+    "total_uncompressed_bytes": 610204,
+    "canonical_inventory_sha256": "a8990cc29787f8a573d7fda1633b236a28cbb6955b7d5aef1e2c58c9d02ab9d6",
+    "members": [
+      {
+        "name": "pg76305-images.html",
+        "bytes": 178769,
+        "sha256": "c79a9670a2780d8b684bfe15ff0043c466527ea54e5b700f82bcfe14108ca18d",
+        "kind": "file"
+      },
+      {
+        "name": "images/cover.jpg",
+        "bytes": 431435,
+        "sha256": "d9ad3e887425c53c9dcfbd1e74b6e29b9f000c3155897b2646b65a52d73cf56d",
+        "kind": "file"
+      }
+    ]
+  },
+  "source_page_accessed_at_utc": "2026-09-24T23:24:08.6474955Z",
+  "identity_basis": "Archived clean-ready research bundle plus the primary source page/repository metadata and the retained source title/header; see source-local README for edition-specific notes.",
+  "source_manifest_path": "sources/manifest-acquisitions/chesterton-catholic-church-conversion-pg76305/source-manifest.json",
+  "acquisition_route": "Original ZIP retained byte-for-byte at the configured durable raw store; all ZIP members inventoried and hashed without modifying or flattening the package.",
+  "rights_evidence": {
+    "rights_statement_url": "https://www.gutenberg.org/ebooks/76305",
+    "copying_terms_url": "https://www.gutenberg.org/license",
+    "summary": "The Gutenberg HTML contains the full Project Gutenberg license and required notice. Project Gutenberg states the work is public domain in the USA; US public-domain text may be copied and distributed. If the Project Gutenberg name remains associated with a redistribution, preserve the license and required prominent notice and follow its trademark terms; commercial redistribution has additional royalty/permission conditions. Copyright status outside the USA is not represented and must be checked locally."
+  },
+  "edition_metadata_observations": {
+    "gutenberg_catalog_original_publication": "New York: The Macmillan Company, 1926",
+    "transcribed_title_page_imprint": "THE MACMILLAN COMPANY, 1927",
+    "transcribed_title_page_publication_history": "Published November, 1926; reprinted April, 1927 and September, 1927",
+    "edition_interpretation": "The retained witness is the 1927 reprint manifestation. The 1926 catalog/original-publication statement is retained as a separate first-publication claim."
+  },
+  "source_local_readme_path": "sources/manifest-acquisitions/chesterton-catholic-church-conversion-pg76305/README.source.md",
+  "source_local_readme_sha256": "2825301c951f3b1c71195da2e44d13fc2bf4b47abe5d9f9290a04cfbd2d5eaf3",
+  "identity_and_digital_correctness_evidence": [
+    {
+      "authority": "archived edition and acquisition research; CLEAN-READY row 17",
+      "path": "plans/_archive/2026-09-05-clean-ready-acquisition-to-tei/originals/research-evidence/open-christian-data-christian-apologetics-evidences-research.md",
+      "finding": "Complete specified Macmillan 1927 reprint manifestation; the repository title page independently supports the issue and reprint dates."
+    },
+    {
+      "authority": "Project Gutenberg official ebook record",
+      "url": "https://www.gutenberg.org/ebooks/76305",
+      "finding": "record confirms ebook ID, item title, creator/editor/translator roles and U.S. rights status"
+    },
+    {
+      "authority": "retained original HTML archive",
+      "path": "raw/gutenberg/76305/pg76305-h.zip",
+      "finding": "complete downloaded HTML ZIP preserved; main HTML member contains source start/end markers and license notice; all members have independent length and SHA-256 inventory"
+    }
+  ],
+  "acquisition_method": "HTTPS retrieval of the exact upstream ZIP URL; package retained unchanged and inventoried locally."
+}

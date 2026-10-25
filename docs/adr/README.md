@@ -1,5 +1,7 @@
 # Architecture Decision Records
 
+The entries below retain their original decision status as design history. Current work follows the [library pipeline specification](../OCD_LIBRARY_PIPELINE_SPEC.md) and [text contribution workflow](../TEXT_CONTRIBUTIONS.md). Earlier one-public-repository, mandatory modernization and Latin-only export decisions do not govern the current pipeline.
+
 Hard-to-reverse, surprising-without-context, genuine-trade-off decisions for Open Christian Data.
 
 Each ADR captures one decision. Lightweight format: context, decision, consequences, alternatives considered.
@@ -19,7 +21,7 @@ Each ADR captures one decision. Lightweight format: context, decision, consequen
 | [0009](0009-transliterate-non-latin-scripts.md) | Transliterate non-Latin scripts in both HF configs; original-script bytes preserved per segment | Accepted | 2026-05-15 |
 | [0010](0010-biblical-language-iso-codes.md) | Biblical-language ISO codes (`grc`, `hbo`, `arc`) over modern defaults | Accepted | 2026-05-15 |
 | [0011](0011-floating-engine-versions.md) | Floating OCR engine versions; record actual version per-rendering | Accepted | 2026-05-15 |
-| [0012](0012-reviewer-ui-static-html-vanilla-js.md) | Reviewer UI is static HTML + vanilla JavaScript; no framework | Accepted; superseded by 0020 | 2026-05-15 |
+| [0012](0012-reviewer-ui-static-html-vanilla-js.md) | Reviewer UI is static HTML + vanilla JavaScript; no framework | Historical; superseded by 0020; implementation retired | 2026-05-15 |
 | [0013](0013-reconcile-scoring-and-n2-tie-breaker.md) | Reconcile scoring rubric, thresholds, edge combination, and N=2 tie-breaker | Accepted | 2026-05-16 |
 | [0014](0014-composed-readings.md) | Machine-composed readings past the attestation gate | Accepted | 2026-06-05 |
 | [0015](0015-surrogate-as-validator.md) | Surrogate as validator, not gold as prerequisite | Accepted | 2026-06-05 |
@@ -27,9 +29,9 @@ Each ADR captures one decision. Lightweight format: context, decision, consequen
 | [0017](0017-frontback-matter-into-ocr-pipeline.md) | Front/back matter enters the NSH OCR pipeline, tagged by edition section | Accepted | 2026-06-20 |
 | [0018](0018-llm-review-unattested-readings.md) | LLM Review may propose unattested readings via the L3 composed-reading path | Accepted | 2026-06-25 |
 | [0019](0019-ir-is-tei.md) | The intermediate representation (IR) is TEI (unconstrained P5; ODD deferred) | Accepted | 2026-07-01 |
-| [0020](0020-reopen-reviewer-ui-shell.md) | Withdraw the vanilla-JS mandate; reopen the reviewer-UI shell decision | Accepted | 2026-07-04 |
+| [0020](0020-reopen-reviewer-ui-shell.md) | Withdraw the vanilla-JS mandate; reopen the reviewer-UI shell decision | Historical; superseded; implementation retired | 2026-07-04 |
 | [0021](0021-ledger-import-semantics-machine-releases.md) | Ledger import semantics for machine-released corrections (`machine_release` event type) | Accepted | 2026-07-04 |
-| [0022](0022-generated-static-tei-reviewer-shell.md) | Generated static shell for the TEI reviewer | Accepted | 2026-07-06 |
+| [0022](0022-generated-static-tei-reviewer-shell.md) | Generated static shell for the TEI reviewer | Historical; implementation retired | 2026-07-06 |
 
 ## When to add a new ADR
 

@@ -1,0 +1,117 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ryle-expository-thoughts-matthew-lib055-retained-xml",
+  "ticket": "37c-268",
+  "owner_route": "LIB-055",
+  "work_id": "ryle-expository-thoughts-matthew",
+  "status": "entry-local-route-ready",
+  "identity": {
+    "work_id": "ryle-expository-thoughts-matthew",
+    "source_record_metadata": {
+      "title": "Expository Thoughts on Matthew",
+      "creator": ["J. C. Ryle", "Ryle, John C. (1816-1900)"],
+      "language": "eng"
+    },
+    "textual_form": null,
+    "edition": null,
+    "parts": null,
+    "witness_claim": null,
+    "translator": null,
+    "original_publication_year": null,
+    "unresolved": {
+      "work_boundary": "LIB-055 assigns this retained member to the existing catalog work ID. The source identifies Matthew and describes a seven-volume Gospel series, but this one member does not establish that it equals the complete catalog-work boundary or represent the other volumes.",
+      "textual_form_and_translator": "The source records English (eng) and J. C. Ryle. It names no translator and does not establish a specific translation, revision, or textual form.",
+      "edition_and_publication_history": "The retained print-source field says New York: Robert Carter, 1860; the electronic Created field says 2012-04-30. These do not establish a full edition claim or the legacy config's 1856 original-publication assertion.",
+      "parts": "This member contains its title page, Matthew 1-13, a nested Matthew 14:22-36 division, Matthew 15-28, and indexes. The source description refers to a seven-volume series, but no complete multi-volume inventory is bound here.",
+      "witness_claim": "Only the exact retained CCEL ThML member is bound. Its print transcription exemplar, digital lineage, proofreading history, and collation are unknown.",
+      "rights_clearance": "CCEL's retained permission record allows parsing ThML/XML for text and gives an attribution convention; the source DC.Rights Public Domain label and parse permission do not establish rights clearance or publication authorization."
+    }
+  },
+  "scope": {
+    "selector": "ThML[1] (complete retained document envelope)",
+    "selected_source_path": "ThML[1]",
+    "member_count": 1,
+    "member_order": ["raw/ccel/ryle/matthew.xml"],
+    "top_level_div1_ids": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxvi", "xxvii", "xxviii", "xxix"],
+    "top_level_div1_titles": ["Title Page", "Matthew 1", "Matthew 2", "Matthew 3", "Matthew 4", "Matthew 5", "Matthew 6", "Matthew 7", "Matthew 8", "Matthew 9", "Matthew 10", "Matthew 11", "Matthew 12", "Matthew 13", "Matthew 15", "Matthew 16", "Matthew 17", "Matthew 18", "Matthew 19", "Matthew 20", "Matthew 21", "Matthew 22", "Matthew 23", "Matthew 24", "Matthew 25", "Matthew 26", "Matthew 27", "Matthew 28", "Indexes"],
+    "commentary_div1_ids": ["ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii", "xix", "xx", "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxvi", "xxvii", "xxviii"],
+    "focus_selector": "div1[@id='xiv']/div2[@id='xiv.v']",
+    "focus_carrier": {
+      "source_parent_id": "xiv",
+      "source_parent_title": "Matthew 13",
+      "source_id": "xiv.v",
+      "source_title": "Matthew 14:22-36",
+      "commentary_osis_ref": "Bible:Matt.14.22-Matt.14.36"
+    },
+    "known_source_gap": {
+      "passage": "Matthew 14:1-21",
+      "top_level_matthew_14_root_present": false,
+      "source_native_carrier_present": false,
+      "disposition": "explicit-source-gap; no root or prose is invented; xiv.v remains beneath xiv"
+    },
+    "boundary": "Bind the complete retained XML member: raw declaration/DOCTYPE/prolog, complete ThML.head, complete ThML.body in source order, all nested divisions/comments/links/references/inline markup, and indexes. The exact Matthew 14:22-36 carrier stays parent-qualified beneath the Matthew 13 root; Matthew 14:1-21 remains an explicit source gap. This member boundary is not a completeness claim for the seven-volume series, print edition, or broader catalog work."
+  },
+  "authorities": [
+    {
+      "name": "source-member",
+      "role": "primary-source",
+      "path": "raw/ccel/ryle/matthew.xml",
+      "bytes": 763304,
+      "sha256": "47639fe6d02e31d674fb055b1558d912bdf2747c5e2f8fa342b5df3b2d827a24"
+    },
+    {
+      "name": "feature-profile",
+      "role": "complete-source-feature-profile",
+      "path": "sources/structured-text/ryle-expository-thoughts-matthew/lib055/source-feature-profile.json",
+      "bytes": 12097,
+      "sha256": "8718b7a74455834125cc9e25fcfb9a566e440596981595d27cf7ae072a0da94b"
+    },
+    {
+      "name": "policy",
+      "role": "independent-validation-policy",
+      "path": "sources/structured-text/ryle-expository-thoughts-matthew/lib055/validation-policy.json",
+      "bytes": 9324,
+      "sha256": "d0f881cfb3c54ca1d1be9626916ba51092008c9ee745f4129ac24be364544bce"
+    },
+    {
+      "name": "ccel-permission",
+      "role": "exact-source-permission",
+      "path": "docs/sources/ccel-permission.md",
+      "bytes": 1629,
+      "sha256": "e71d588f2309d0cb03f84310fe8149bbfa26309a4f1ef7a2df2b8645b14d93d1"
+    },
+    {
+      "name": "tei-schema",
+      "role": "tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "package-schema",
+      "role": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ryle-expository-thoughts-matthew-lib055-source-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/ryle_expository_thoughts_matthew_lib055_reconstruction.py",
+    "implementation_sha256": "311b67a0129c6b7cf4865ebcc527016bdbed3d51b76bc0e0cf76bb37e70fa02a"
+  },
+  "validator": {
+    "id": "ryle-expository-thoughts-matthew-lib055-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/ryle_expository_thoughts_matthew_lib055_oracle.py",
+    "implementation_sha256": "41d5bea74ccfc0184f411ac9368d367a17e03b2692c1b6044bd70ea1ee96ab65",
+    "import_closure_sha256": "796f3cda973060fcb61db24d4fa6f38cbcf3ca5f1267d4020b801289ede65c71"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

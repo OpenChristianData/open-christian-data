@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "profile_id", "work_id", "source_id", "member_census", "excluded_member_count", "source_bytes", "source_sha256", "encoding", "newline", "source_line_count", "blank_line_count", "source_line_sequence_sha256", "represented_line_count", "omitted_line_count", "duplicate_line_count", "invented_line_count", "reordered_line_count", "unresolved_count"],
+  "properties": {
+    "contract": {"const": "ocd-lib068-taylor-holy-dying-source-accountability-v1"},
+    "profile_id": {"const": "lib068-taylor-holy-dying-retained-text-v1"},
+    "work_id": {"const": "taylor-holy-dying"},
+    "source_id": {"const": "ccel-taylor-holy-dying-retained"},
+    "member_census": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["bytes", "decision", "path", "reason", "sha256"], "properties": {"bytes": {"const": 626969}, "decision": {"const": "include"}, "path": {"const": "raw/ccel/taylor-holy-dying.txt"}, "reason": {"const": "The sole frozen LIB-068 retained primary-source member for this work."}, "sha256": {"const": "a99a2da53737c99b48acd37c5506926620a0a66d5b74c1f2c0759bbe638679ad"}}}},
+    "excluded_member_count": {"const": 0}, "source_bytes": {"const": 626969}, "source_sha256": {"const": "a99a2da53737c99b48acd37c5506926620a0a66d5b74c1f2c0759bbe638679ad"}, "encoding": {"const": "strict UTF-8"}, "newline": {"const": "LF with terminal LF"}, "source_line_count": {"const": 10057}, "blank_line_count": {"const": 926}, "source_line_sequence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "represented_line_count": {"const": 10057}, "omitted_line_count": {"const": 0}, "duplicate_line_count": {"const": 0}, "invented_line_count": {"const": 0}, "reordered_line_count": {"const": 0}, "unresolved_count": {"const": 7}
+  }
+}

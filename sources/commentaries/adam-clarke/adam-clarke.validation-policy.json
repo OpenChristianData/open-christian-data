@@ -1,0 +1,54 @@
+{
+  "contract": "ocd-helloao-adam-clarke-validation-policy-v1",
+  "policy_id": "helloao-adam-clarke-complete-retained-json-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_counts": {
+    "source_members": 856,
+    "source_bytes": 28421263,
+    "books": 57,
+    "chapters": 854,
+    "commentary_occurrences": 13318,
+    "book_introductions": 57,
+    "chapter_introductions_present": 831,
+    "chapter_introductions_absent": 23
+  },
+  "required_unresolved_ids": [
+    "adam-clarke-rights-config-drift",
+    "adam-clarke-edition-and-alternate-witness-identity",
+    "adam-clarke-retained-text-direction-anomaly"
+  ],
+  "forbidden_import_prefixes": [
+    "build.parsers.helloao_commentary",
+    "build.tei.helloao_adam_clarke_reconstruction",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "checks": [
+    "all-856-source-member-path-byte-and-sha256-bindings",
+    "candidate-package-integrity",
+    "exact-57-book-and-854-chapter-order",
+    "exact-57-book-introductions",
+    "exact-831-present-and-23-absent-chapter-introductions",
+    "exact-13318-commentary-occurrence-order-number-and-text",
+    "preserve-eight-nonmonotonic-chapters",
+    "preserve-both-2SA-14-verse-27-occurrences",
+    "reject-inferred-ranges-and-Bible-text-injection",
+    "reject-false-66-book-completeness",
+    "retained-PDM-and-config-CC0-drift",
+    "retained-rtl-anomaly",
+    "separate-1836-scan-identity",
+    "retained-hath-and-separate-governed-canonical-has-correction",
+    "tei-p5-xsd",
+    "producer-independent-import-closure"
+  ]
+}

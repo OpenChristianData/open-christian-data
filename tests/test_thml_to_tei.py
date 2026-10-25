@@ -6,7 +6,12 @@ from pathlib import Path
 import pytest
 from lxml import etree
 
-from build.tei.thml_to_tei import ConversionError, convert_ccel_work_to_tei, convert_thml_to_tei
+from build.lib.ccel_thml import display_path, parse_thml
+from build.tei.thml_to_tei import (
+    ConversionError,
+    convert_ccel_work_to_tei,
+    convert_thml_to_tei,
+)
 from ocd_kernel.tei.validate import validate_file
 from ocd_kernel.tei.writer import TEI_NS
 
@@ -89,7 +94,10 @@ def config_path(tmp_path: Path) -> Path:
             {
                 "title": "The City of God",
                 "author": "Augustine of Hippo",
-                "contributors": ["Marcus Dods (translator, 1871)"],
+                "contributors": [
+                    {"name": "Marcus Dods", "role": "translator"},
+                    {"name": "Philip Schaff", "role": "series_editor"},
+                ],
                 "source_url": "https://www.ccel.org/ccel/schaff/npnf102.xml",
                 "source_hash": "sha256:abc123",
                 "source_edition": "Config edition fallback",
@@ -105,6 +113,23 @@ def thml_path(tmp_path: Path) -> Path:
     path = tmp_path / "sample.xml"
     path.write_text(THML_SAMPLE, encoding="utf-8")
     return path
+
+
+def test_shared_strict_thml_parser_preserves_path_and_error_contract(
+    thml_path: Path,
+    tmp_path: Path,
+) -> None:
+    root = parse_thml(thml_path)
+    assert etree.QName(root).localname == "ThML"
+    assert display_path(thml_path).endswith("sample.xml")
+
+    malformed = tmp_path / "malformed.xml"
+    malformed.write_bytes(b"<ThML><body></ThML>\n")
+    with pytest.raises(
+        ValueError,
+        match=r"^Could not parse ThML XML at .*malformed\.xml: ",
+    ):
+        parse_thml(malformed)
 
 
 def test_convert_thml_to_tei_maps_city_of_god_features(
@@ -139,6 +164,14 @@ def test_convert_thml_to_tei_maps_city_of_god_features(
     assert tree.xpath("//tei:foreign/@xml:lang", namespaces=NS) == ["fr", "grc"]
     assert tree.xpath("count(//tei:hi[@rend='superscript'])", namespaces=NS) == 1
     assert tree.xpath("count(//tei:lb)", namespaces=NS) == 1
+    assert tree.xpath("//tei:titleStmt/tei:respStmt/tei:resp/text()", namespaces=NS) == [
+        "translator",
+        "series editor",
+    ]
+    assert tree.xpath("//tei:titleStmt/tei:respStmt/tei:name/text()", namespaces=NS) == [
+        "Marcus Dods",
+        "Philip Schaff",
+    ]
 
 
 def test_convert_ccel_work_config_handles_npnf2_and_owen_shapes(tmp_path: Path) -> None:

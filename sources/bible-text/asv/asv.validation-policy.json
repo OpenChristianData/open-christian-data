@@ -1,0 +1,14 @@
+{
+  "contract": "ocd-asv-policy-v1",
+  "work_id": "asv",
+  "unknown_source_fields": "reject",
+  "duplicate_keys": "reject",
+  "text_normalization": "none",
+  "source_order": "preserve",
+  "parent_attachment": "exact",
+  "unexpected_tei_nodes_attributes_or_text": "reject",
+  "accounting": "all scalar fields and all ordered array relationships",
+  "schema": "TEI P5 vendored tei_all.xsd with bound imports",
+  "independence": "recursive JSON oracle and lxml actual-tree inspection; no producer imports or producer traversal helpers",
+  "mutations": ["omission", "duplication", "reordering", "wrong_parent", "invention", "trailing_whitespace_loss", "numbering", "book_title", "metadata", "unknown_source_field", "duplicate_source_key", "accounting_loss", "wrong_source", "stale_binding"]
+}

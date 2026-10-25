@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0",
+  "work_id": "watson-ten-commandments",
+  "title": "The Ten Commandments",
+  "evidence": [
+    "raw/ccel/watson/commandments.xml",
+    "raw/ccel/watson/commandments.xml#i",
+    "raw/ccel/watson/commandments.xml#iii",
+    "raw/ccel/watson/commandments.xml#iv",
+    "raw/ccel/watson/commandments.xml#v",
+    "raw/ccel/watson/commandments.xml#vi",
+    "raw/ccel/watson/commandments.xml#vii"
+  ],
+  "creators": [
+    {
+      "name": "Thomas Watson",
+      "role": "author",
+      "evidence": [
+        "raw/ccel/watson/commandments.xml#i"
+      ]
+    }
+  ],
+  "textual_forms": [
+    {
+      "textual_form_id": "watson-ten-commandments-english",
+      "language": "en",
+      "category": "prose",
+      "editions": [
+        {
+          "edition_id": "watson-ten-commandments-ccel-thml",
+          "title": "CCEL ThML electronic publication",
+          "language": "en",
+          "category": "prose",
+          "acquisition_ids": [
+            "watson-ten-commandments-ccel-retained"
+          ]
+        }
+      ]
+    }
+  ]
+}

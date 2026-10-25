@@ -1,0 +1,151 @@
+{
+  "authorities": [
+    {
+      "bytes": 38600,
+      "name": "retained-tei-p5",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/N15943.xml",
+      "role": "primary-source",
+      "sha256": "ebb9de5f026fd7f4d455c077785f01464ce3632ae38c310c2cbdd4689e63e875"
+    },
+    {
+      "bytes": 937,
+      "name": "source-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/N15943.xml.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "sha256": "edbba8e3ca274bcf1ab6de71eb6dc9f439d28ec0403c32881cfd1bc164da4f1a"
+    },
+    {
+      "bytes": 4963,
+      "name": "upstream-readme",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/README.upstream.md",
+      "role": "source-rights-and-version-evidence",
+      "sha256": "9da5f3cd58415b019c085ef500ed19f5e23fc5da6f07ebb43ed6a3944a82d426"
+    },
+    {
+      "bytes": 935,
+      "name": "upstream-readme-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/README.upstream.md.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "sha256": "71c1b50ad36c540e1873235d54f3a48c12dd4f12ec31f9af2c8a0c8e1559f59c"
+    },
+    {
+      "bytes": 7048,
+      "name": "upstream-cc0-license",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/LICENSE.CC0-1.0.txt",
+      "role": "source-rights-evidence",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "bytes": 368,
+      "name": "upstream-cc0-license-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/LICENSE.CC0-1.0.txt.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "sha256": "06b1bc0e567c720c5cf7594053db361ebd24e5af69d2154f35c1bc3139280e3f"
+    },
+    {
+      "bytes": 35132,
+      "name": "upstream-commit",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/upstream-commit.json",
+      "role": "source-version-evidence",
+      "sha256": "4f044d48186c939b41a6f66cf99b6b189fc0538b55d78310971c73cf0f2876c0"
+    },
+    {
+      "bytes": 1338,
+      "name": "upstream-commit-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/upstream-commit.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "sha256": "ad4e3284575ae51413cc4b5bd1c446bd33fad93c95fafab39c41a01c0249d6ad"
+    },
+    {
+      "bytes": 2009,
+      "name": "upstream-contents",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/upstream-contents.json",
+      "role": "source-member-inventory-evidence",
+      "sha256": "3a208b46ebe9e83a3771cfe4cbd91a7395402d35353d3e52b9c763c6f8e7f470"
+    },
+    {
+      "bytes": 1307,
+      "name": "upstream-contents-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/upstream-contents.json.http-headers.txt",
+      "role": "source-retrieval-evidence",
+      "sha256": "81dad59276157c25b11c789cc11bc8b24cd649bb395f480b3e03006068eb2b0a"
+    },
+    {
+      "bytes": 2346,
+      "name": "umich-live-http-headers",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/umich-item.live-http-headers.redacted.txt",
+      "role": "source-identity-live-response-evidence",
+      "sha256": "082e7e7b8029c896e935fdaa997c487055255fef99847264a59ce90c4f478ca2"
+    },
+    {
+      "bytes": 496,
+      "name": "umich-recovery-metadata",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/umich-item.recovery.json",
+      "role": "source-identity-recovery-provenance",
+      "sha256": "2fa628d2526fb2c3cafc1d7b0aed3124fd49a6bd71669a6881a90f1a0fe6c473"
+    },
+    {
+      "bytes": 150681,
+      "name": "umich-archived-item",
+      "path": "raw/clean-ready-acquisition-to-tei/master-2/15/hammon-address-to-the-negroes-of-new-york/umich-item.wayback-20250111083401.html",
+      "role": "source-identity-snapshot-evidence",
+      "sha256": "27afa4fb1c0e98ca5e71d5c290cdd73245e527036fb1f018e7f0ab7f7c0d3536"
+    },
+    {
+      "bytes": 1843,
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/hammon-address-to-the-negroes-of-new-york/README.md",
+      "role": "source-attribution-readme",
+      "sha256": "a6122ad6ac8c23654124679692ab06e0194bd3030690b7606500403ed54fddbf"
+    },
+    {
+      "bytes": 1399,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/hammon-address-to-the-negroes-of-new-york/hammon-address-to-the-negroes-of-new-york.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "160b8bcce21644dc385e85a41ec5399f422cddb88a2e198143675fa7703af860"
+    },
+    {
+      "bytes": 5465,
+      "name": "validation-policy",
+      "path": "sources/structured-text/hammon-address-to-the-negroes-of-new-york/hammon-address-to-the-negroes-of-new-york.validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "747d761a10094e216067e1bed1e0586ee804c15503cbc4b6f8e403ff7fd41b88"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-evans-tcp-n15943-exact-tei-p5",
+    "implementation_path": "build/tei/hammon_address_to_the_negroes_of_new_york_reconstruction.py",
+    "implementation_sha256": "4c9bec76c6086066070d39077a4ceb536e4b26515bd630748b9ff4b2400b2b07",
+    "version": "1"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "evans-tcp-n15943-pinned-tei-p5",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-evans-tcp-n15943-exact-source-oracle",
+    "implementation_path": "build/tei/hammon_address_to_the_negroes_of_new_york_oracle.py",
+    "implementation_sha256": "d9d6dc37fb86ab3adf6f1f3a02efe3f741e7345f076325617d49f59bb0ef782f",
+    "import_closure_sha256": "c73836f5568f796d4b4dda7f62230fcf09d322befd207612df6120a4a9e1346c",
+    "version": "2"
+  }
+}

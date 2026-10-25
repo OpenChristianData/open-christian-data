@@ -1,0 +1,31 @@
+{
+  "contract": "ocd-englee-reconstruction-profile-v1",
+  "work_id": "isaac-leeser-tanakh",
+  "source_id": "ebible-englee-leeser-1853-usfm",
+  "source_archive_path": "raw/ebible/englee/englee_usfm.zip",
+  "source_archive_sha256": "d5db94a37321ba613a2f8ac9b3039064a6560a0e115dc42221195afc9b7053de",
+  "work_boundary": {
+    "top_level_title": "Isaac Leeser Tanakh",
+    "source_evidence": "The retained copr.htm title page names Isaac Leeser Tanakh and identifies Isaac Leeser as translator. The 39 ordered USFM members run from Genesis through Malachi; per-book headings are nested books within the named Tanakh.",
+    "tei_documents": 1,
+    "book_members_are_works": false
+  },
+  "book_members": [
+    "02-GENenglee.usfm", "03-EXOenglee.usfm", "04-LEVenglee.usfm", "05-NUMenglee.usfm", "06-DEUenglee.usfm", "07-JOSenglee.usfm", "08-JDGenglee.usfm", "09-RUTenglee.usfm", "10-1SAenglee.usfm", "11-2SAenglee.usfm", "12-1KIenglee.usfm", "13-2KIenglee.usfm", "14-1CHenglee.usfm", "15-2CHenglee.usfm", "16-EZRenglee.usfm", "17-NEHenglee.usfm", "18-ESTenglee.usfm", "19-JOBenglee.usfm", "20-PSAenglee.usfm", "21-PROenglee.usfm", "22-ECCenglee.usfm", "23-SNGenglee.usfm", "24-ISAenglee.usfm", "25-JERenglee.usfm", "26-LAMenglee.usfm", "27-EZKenglee.usfm", "28-DANenglee.usfm", "29-HOSenglee.usfm", "30-JOLenglee.usfm", "31-AMOenglee.usfm", "32-OBAenglee.usfm", "33-JONenglee.usfm", "34-MICenglee.usfm", "35-NAMenglee.usfm", "36-HABenglee.usfm", "37-ZEPenglee.usfm", "38-HAGenglee.usfm", "39-ZECenglee.usfm", "40-MALenglee.usfm"
+  ],
+  "book_ids": ["GEN", "EXO", "LEV", "NUM", "DEU", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH", "EZR", "NEH", "EST", "JOB", "PSA", "PRO", "ECC", "SNG", "ISA", "JER", "LAM", "EZK", "DAN", "HOS", "JOL", "AMO", "OBA", "JON", "MIC", "NAM", "HAB", "ZEP", "HAG", "ZEC", "MAL"],
+  "support_members": ["copr.htm", "keys.asc", "dejavuserif.css"],
+  "expected": {
+    "archive_members": 42,
+    "book_members": 39,
+    "source_lines": 25239,
+    "chapters": 929,
+    "verses": 23145,
+    "line_markers": {"c": 929, "h": 39, "id": 39, "mt1": 39, "mt2": 2, "p": 929, "toc1": 39, "toc2": 39, "toc3": 39, "v": 23145},
+    "bom_members": 0,
+    "cr_members": 0,
+    "terminal_newline_members": 0
+  },
+  "support_member_policy": "copr.htm is source title and provider-statement evidence; keys.asc is a provider public key; dejavuserif.css is presentation support. Retain and hash-bind these members, but do not treat them as scripture body text.",
+  "text_policy": "Decode strict UTF-8 and preserve every physical USFM line's exact Unicode scalar sequence and order in one readable TEI source-line carrier. Do not trim, normalize, repair, or interpret inline text. Place all 39 books under the one Tanakh work; place lines after each chapter marker inside that nested chapter division."
+}

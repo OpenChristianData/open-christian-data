@@ -1,0 +1,163 @@
+[
+  {
+    "original": "sources/andrewes-private-devotions/lib067-andrewes.source-manifest.json",
+    "original_sha256": "a1c771a29fa9f997b4e169ab05cee6d7d4573ece5d6a7b6746d5893847573962",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-andrewes-private-devotions.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/devotionals/spurgeons-morning-evening/lib030.source-manifest.json",
+    "original_sha256": "60315100942c768003a96e73a2ccfc916eac4970a9443f9381453f76e9706f11",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-spurgeons-morning-evening.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/bounds-essentials-of-prayer/lib031.source-manifest.json",
+    "original_sha256": "e8ef00ddc8650db6120957253fce8ada2dae6bd7e5c0f6b896df484fd2247493",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-bounds-essentials-of-prayer.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/creeds-of-christendom-vol-1/lib029.source-manifest.json",
+    "original_sha256": "4ad2109649892f9e501d532e4dd23dadf5b0872e11c83881b23db03a5e633d4f",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-creeds-of-christendom-vol-1.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/ecumenical-councils-canons-and-decrees/ecumenical-councils.source-manifest.json",
+    "original_sha256": "5077136e411d75e3b89d9bf5efd6b7794008b3908482340e0dcac3cd92d5ba63",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-ecumenical-councils-canons-and-decrees.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/eusebius-ecclesiastical-history/lib028.source-manifest.json",
+    "original_sha256": "668c5c81f64162ddfc24948597b40e9dd723464cce9143290826a555640cb988",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "sources/structured-text/eusebius-ecclesiastical-history/lib028-tei-xsd-closure.json",
+        "original_sha256": "cb885e4bd5ea8fb9ba1c56b8d7c3bea443093d74665f73bfa10518f37cf5f430",
+        "fixture": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.producer-runtime.json",
+        "authority": "tei-p5-xsd-closure",
+        "kind": "producer-runtime"
+      },
+      {
+        "original": "sources/structured-text/eusebius-ecclesiastical-history/lib028.reconstruction-profile.json",
+        "original_sha256": "5bf862ade67025a4cbd621a47a87867909bac4fffb7547fb4969a27b4c33c9bb",
+        "fixture": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.reconstruction-profile.json",
+        "authority": "reconstruction-profile",
+        "kind": "producer-profile"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json",
+    "original_sha256": "5af7acb7e2c86a27280ee8485ebd5ff965eb40d8952b679d727a0ffd3462ea6b",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-fisher-marrow-of-modern-divinity.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/irenaeus-against-heresies/irenaeus-against-heresies.source-manifest.json",
+    "original_sha256": "8cd454f9a49bac237b9f6cc9bcdfe951f40a50d8e8906dcf4387ebb281c75520",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-irenaeus-against-heresies.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "sources/structured-text/irenaeus-against-heresies/README.source.md",
+        "original_sha256": "c57b269aacf1dbdf70401867cf2721d233174227d1e0be80a4400b926da9d20a",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/puritan-irenaeus-against-heresies.README.source.md",
+        "authority": "source-local-readme",
+        "kind": "historical",
+        "git_commit": "eaa5a04a715bbe45ce2f8642bc78f0d973ead12a"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/lib051-john-owen/john-owen-lib051.source-manifest.json",
+    "original_sha256": "cc77c42bfb3e0692aebc4fcdb9df95b3fec33958a726928b8e593d7570e47a35",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib051-john-owen.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/lib053-john-owen/john-owen-lib053.source-manifest.json",
+    "original_sha256": "3e994bd292121744196a93be7143aad29cd3b4fb1cd390f588dc973c697551c0",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib053-john-owen.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  },
+  {
+    "original": "sources/structured-text/lib054-ccel-puritan/lib054.source-manifest.json",
+    "original_sha256": "de40a9ee4086ef7786bde1a9eee77dc7d22693c6132f0bf5c85ab3a33be8ecaa",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib054-ccel-puritan.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "data/structured-text/README.md",
+        "original_sha256": "8feeeccb58e1bb0d29a95bdf58388898af7391ed7424801eb16c0529436df017",
+        "fixture": "tests/fixtures/reconstruction-runtime/law-serious-call.law-serious-call-data-attribution.md",
+        "authority": "data-attribution-readme",
+        "kind": "historical"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.source-manifest.json",
+    "original_sha256": "a185331987e3041d0432fff09ccf74e59e8bcd3af3fa52a307c3e220cff865e3",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-luther-commentary-on-galatians.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.reconstruction-profile.json",
+        "original_sha256": "546bb14481cfb584557ca0e52f8f95beb3cc6c55d797a7a34eb9c716b74f9b24",
+        "fixture": "tests/fixtures/reconstruction-runtime/puritan-luther-commentary-on-galatians.reconstruction-profile.json",
+        "authority": "reconstruction-profile",
+        "kind": "producer-profile"
+      },
+      {
+        "original": "sources/structured-text/luther-commentary-on-galatians/README.source.md",
+        "original_sha256": "fd9eb7d6fb2686f84afe6658ff04f51417b16c15bb6ac40611dde21185aa320b",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/puritan-luther-commentary-on-galatians.README.source.md",
+        "authority": "attribution-readme",
+        "kind": "historical",
+        "git_commit": "de049d1da09144e8d0c6ac33ba6db3adfed0ba69"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.source-manifest.json",
+    "original_sha256": "fbd920ae8ad337218e0015fe12f330938c54e5c346271b9e0502f2f4b90832de",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-murray-absolute-surrender.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "data/structured-text/README.md",
+        "original_sha256": "8feeeccb58e1bb0d29a95bdf58388898af7391ed7424801eb16c0529436df017",
+        "fixture": "tests/fixtures/reconstruction-runtime/law-serious-call.law-serious-call-data-attribution.md",
+        "authority": "data-attribution-readme",
+        "kind": "historical"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/ryle-holiness/ryle-holiness.source-manifest.json",
+    "original_sha256": "84ce6df2e69da5045cc57fa3a9f27789f632e25333a1e3631670b5611a93e4de",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-ryle-holiness.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures",
+    "supports": [
+      {
+        "original": "sources/structured-text/ryle-holiness/README.source.md",
+        "original_sha256": "7c71f8ed7a90ff55dfebf256a178fbb2f1cb73cc6ea82009644c6a2b34cc6f5e",
+        "fixture": "tests/fixtures/reconstruction-runtime/authorities/puritan-ryle-holiness.README.source.md",
+        "authority": "source-local-readme",
+        "kind": "historical",
+        "git_commit": "90ebd95ebaeadec1bac113f2f2cd40a9cc4d8e77"
+      }
+    ]
+  },
+  {
+    "original": "sources/structured-text/wesley-plain-account/lib032.source-manifest.json",
+    "original_sha256": "28ddd11395d4da7cb89ec7f069be652e0f51d76e5f7bd9709ccf921629c6d8e8",
+    "manifest": "tests/fixtures/reconstruction-runtime/puritan-wesley-plain-account.source-manifest.json",
+    "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
+  }
+]

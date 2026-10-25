@@ -1,0 +1,31 @@
+{
+  "profile_id": "lib067-andrewes-retained-ccel-text-v1",
+  "identity": {
+    "work_title": "The Devotions of Bishop Andrewes (Preces Privatae)",
+    "source_title": "The Devotions of Bishop Andrewes. Vol. I",
+    "creator_statement": "Andrewes, Lancelot (1555-1626)",
+    "retained_first_publication_statement": "First published 1840.",
+    "retained_publication_statement": "Published by S.P.C.K. 1920."
+  },
+  "rights": {
+    "retained_statement": "No explicit license or rights statement occurs in the retained text.",
+    "status": "Human rights review required before publication."
+  },
+  "scope": "The complete sole retained LIB-067 CCEL plain-text member, including CCEL metadata, front matter, devotional text, source-generated link apparatus, blank lines, and terminal LF.",
+  "member_census": [
+    {
+      "path": "raw/ccel/andrewes-private-devotions.txt",
+      "decision": "include",
+      "reason": "The sole frozen LIB-067 retained primary-source member."
+    }
+  ],
+  "excluded_members": [],
+  "feature_floor": [
+    "exact source member identity",
+    "exact LF-delimited line count and order",
+    "exact source line text including indentation and blank lines",
+    "source-header metadata",
+    "CCEL source-generated link apparatus",
+    "nonaccepted candidate and unresolved human decisions"
+  ]
+}

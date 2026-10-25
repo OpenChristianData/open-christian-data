@@ -1,0 +1,54 @@
+{
+  "contract": "ocd-lib089-validation-policy-v1",
+  "work_id": "form-of-church-government",
+  "source_sha256": "d5b31994e9ce43e7828ff65f3ac758e8974b0396d6ba03f991c785b8d92a3ac4",
+  "coverage": "The complete retained HTML envelope is byte-bound. All three populated source-native carriers, all 23 document headings, the Contents table, prefatory toggle, main body, inline elements, links, and source comments within the carriers are in scope. The remaining page shell stays retained as source support.",
+  "independence": "The oracle uses separate DOM traversal and mapping code from the producer. Both currently share lxml HTML parsing and the exact same retained source bytes; the complete-document heading census and ticket-local tests independently corroborate carrier paths and comment locations. Do not treat parser agreement as independent evidence.",
+  "ordered_document_headings": [
+    "Form of Presbyterial Church-Government",
+    "Contents:",
+    "ASSEMBLY AT EDINBURGH, February 10, 1645, Sess. 16.",
+    "",
+    "THE PREFACE.",
+    "Of the Church.",
+    "Of the Officers of the Church.",
+    "Pastors.",
+    "Other Church-Governors.",
+    "Deacons.",
+    "Of Particular Congregations.",
+    "Of the Officers of a particular Congregation.",
+    "Of the Ordinances in a particular Congregation.",
+    "Of Church-Government, and the several sorts of Assemblies for the same.",
+    "Of the power in common of all these Assemblies.",
+    "Of Congregational Assemblies, that is, the Meeting of the ruling Officers of a particular Congregation, for the Government thereof.",
+    "Of Classical Assemblies.",
+    "Of Synodical Assemblies.",
+    "Of Ordination of Ministers.",
+    "Touching the Doctrine of Ordination.",
+    "Touching the Power of Ordination.",
+    "Concerning the Doctrinal Part of Ordination of Ministers.",
+    "The Directory for the Ordination of Ministers."
+  ],
+  "ordered_carrier_paths": [
+    "/html/body/div[4]/div[2]/div/div/div/div[2]/div[1]/div[2]/div/div",
+    "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[1]/div",
+    "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[2]"
+  ],
+  "comment_disposition": {
+    "source_comment_count": 24,
+    "selected_carrier_comment_count": 2,
+    "required_candidate_mapping":    "preserve-as-tei-note",
+    "required_source_accountability": "Record each source XPath, exact comment text and digest, parent position, child order, and tail; reject omission, duplication, movement, text/tail changes, and invented comments.",
+    "current_route_status": "source-specific producer and independent oracle preserve and check the two selected comments."
+  },
+  "local_fragment_policy": {
+    "source_href_count": 39,
+    "named_targets": 20,
+    "resolve_named_targets": true,
+    "bare_fragment_href": {
+      "count": 1,
+      "source_xpath": "/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div[1]/div/h3/a",
+      "disposition": "Preserve the literal '#' href; it names no fragment target."
+    }
+  }
+}

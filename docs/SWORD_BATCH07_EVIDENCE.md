@@ -1,5 +1,7 @@
 # Batch 07 SWORD upstream evidence
 
+> **Historical record.** The design, status and commands below describe their recorded checkpoint. For current text work, use the [contribution workflow](TEXT_CONTRIBUTIONS.md) and its governing contracts.
+
 **Date:** 2026-07-16  
 **Decision:** all three inventory entries remain `do-not-migrate`.  
 **Scope:** provenance and TEI routing only. No TEI was built from a SWORD binary.

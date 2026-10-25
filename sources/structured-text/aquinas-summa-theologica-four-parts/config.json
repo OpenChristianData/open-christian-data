@@ -1,0 +1,41 @@
+{
+  "resource_id": "aquinas-summa-theologica-four-parts",
+  "title": "Summa Theologica",
+  "author": "Thomas Aquinas",
+  "author_id": "thomas-aquinas",
+  "language": "en",
+  "original_language": "la",
+  "tradition": [
+    "catholic"
+  ],
+  "era": "medieval",
+  "license": "public-domain",
+  "schema_type": "structured_text",
+  "work_kind": "systematic-theology",
+  "translator": "Fathers of the English Dominican Province",
+  "source_url": "https://www.gutenberg.org/ebooks/17611",
+  "source_urls": [
+    "https://www.gutenberg.org/ebooks/17611",
+    "https://www.gutenberg.org/ebooks/17897",
+    "https://www.gutenberg.org/ebooks/18755",
+    "https://www.gutenberg.org/ebooks/19950"
+  ],
+  "source_format": "Four official Project Gutenberg HTML ZIP packages",
+  "source_edition": "Complete American Edition; Benziger Brothers, New York",
+  "source_hash": "sha256:3b12abbc39fe1435d04917ad4e3c864f7973ab9826d1370cbc7f0f7f591aff9e",
+  "source_type": "project_gutenberg_html_four_component",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-1/09/aquinas-summa-theologica-four-parts",
+  "source_members": [
+    "pg17611-images.html",
+    "17611-cover.png",
+    "pg17897-images.html",
+    "17897-cover.png",
+    "pg18755-images.html",
+    "18755-cover.png",
+    "pg19950-images.html",
+    "19950-cover.png"
+  ],
+  "processing_script": "build/tei/aquinas_summa_theologica_four_parts.py",
+  "output_file": "reports/clean-ready-acquisition-to-tei/master-1/09/aquinas-summa-theologica-four-parts/candidate.tei.xml",
+  "notes": "One provisional source-upgrade candidate with four ordered and explicitly bounded Project Gutenberg components. The archive/member listing digest is the source_hash. No Supplement, fifth component, canonical identity write, import, acceptance, or publication is claimed."
+}

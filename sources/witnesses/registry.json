@@ -1,3 +1,44 @@
 {
-  "witnesses": []
+  "witnesses": [
+    {
+      "witness_id": "city-of-god-standard-ebooks",
+      "related_resource_id": "city-of-god",
+      "related_work_title": "The City of God",
+      "author": "Augustine of Hippo",
+      "witness_title": "Standard Ebooks edition of the Dods, Wilson, and Smith translation",
+      "source_url": "https://github.com/standardebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
+      "source_type": "epub",
+      "rights_status": "public-domain-derivative",
+      "edition_note": "Standard Ebooks digital edition based on the Dods-family English translation; acquired from official upstream master at Git commit 7ec3a325a495cb791581d06f1c0fed14d2576ff0 on 2026-07-21.",
+      "provider": "Standard Ebooks",
+      "local_path": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
+      "notes": "Preferred reading and transformation input. Related CCEL witness remains independently useful for verification, collation, Schaff apparatus, scripture-reference markup, and print-page evidence. The retained checkout exactly matched official upstream master when verified on 2026-07-21.",
+      "expression_id": "augustine-city-of-god-dods-en",
+      "relationship_role": "preferred-reading-transformation",
+      "related_witness_ids": [
+        "city-of-god-ccel-npnf102"
+      ],
+      "source_revision_type": "git-commit-sha1",
+      "source_revision": "7ec3a325a495cb791581d06f1c0fed14d2576ff0"
+    },
+    {
+      "witness_id": "city-of-god-ccel-npnf102",
+      "related_resource_id": "city-of-god",
+      "related_work_title": "The City of God",
+      "author": "Augustine of Hippo",
+      "witness_title": "CCEL NPNF1-02 ThML witness of the Dods translation",
+      "source_url": "https://www.ccel.org/ccel/schaff/npnf102.xml",
+      "source_type": "transcription",
+      "rights_status": "public-domain-source",
+      "edition_note": "Nicene and Post-Nicene Fathers, First Series, Volume 2. New York: Christian Literature Publishing Co., 1890. Philip Schaff, series editor.",
+      "provider": "Christian Classics Ethereal Library",
+      "local_path": "raw/ccel/npnf1/npnf102.xml",
+      "notes": "Verification, collation, and apparatus witness. It carries the same Dods-family English expression as the preferred Standard Ebooks input but preserves distinct Schaff notes, scripture-reference markup, print-page anchors, segmentation, and textual variants.",
+      "expression_id": "augustine-city-of-god-dods-en",
+      "relationship_role": "verification-collation-apparatus",
+      "related_witness_ids": [
+        "city-of-god-standard-ebooks"
+      ]
+    }
+  ]
 }

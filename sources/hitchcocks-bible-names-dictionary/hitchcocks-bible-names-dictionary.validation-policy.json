@@ -1,0 +1,109 @@
+{
+  "contract": "ocd-hitchcocks-bible-names-dictionary-validation-policy-v1",
+  "policy_id": "hitchcocks-bible-names-dictionary-jwbickel-jsonl-policy-v1",
+  "oracle_id": "ocd-lib021-bible-dictionaries-independent-oracle",
+  "oracle_version": "1",
+  "candidate_status": "nonaccepted",
+  "ticket_id": "LIB-021",
+  "work_id": "hitchcocks-bible-names-dictionary",
+  "source_id": "jwbickel-bible-dictionaries-hitchcocks-jsonl",
+  "profile_id": "hitchcocks-bible-names-dictionary-jwbickel-jsonl-v1",
+  "candidate_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "required_counts": {
+    "records": 2622,
+    "definition_blocks": 2622,
+    "observations": 5244,
+    "unresolved_rows": 3
+  },
+  "required_source_order": [
+    "eastons.jsonl",
+    "hitchcocks.jsonl",
+    "smiths.jsonl",
+    "torreys.jsonl"
+  ],
+  "required_member": {
+    "source_id": "jwbickel-bible-dictionaries-hitchcocks-jsonl",
+    "local_filename": "hitchcocks.jsonl",
+    "hf_filename": "Hitchcock's Bible Names Dictionary.jsonl",
+    "source_url": "https://huggingface.co/datasets/JWBickel/BibleDictionaries/resolve/main/Hitchcock's Bible Names Dictionary.jsonl",
+    "download_date": "2026-03-30T08:32:31Z",
+    "raw_manifest_order": 2,
+    "ticket_id": "LIB-021",
+    "work_id": "hitchcocks-bible-names-dictionary",
+    "bytes": 164940,
+    "sha256": "e25b127cfc9c6f6f14eb9aa059ea0b3ed7ceaf97e2fd88c192d74387c3e904a5",
+    "records": 2622,
+    "definition_blocks": 2622,
+    "block_count_min": 1,
+    "block_count_max": 1,
+    "term_characters": 17563,
+    "definition_characters": 58229,
+    "duplicate_terms": [
+      {
+        "term": "Abel",
+        "occurrences": 2
+      },
+      {
+        "term": "Eli",
+        "occurrences": 2
+      },
+      {
+        "term": "Noah",
+        "occurrences": 2
+      },
+      {
+        "term": "Rahab",
+        "occurrences": 2
+      }
+    ],
+    "exact_keys": [
+      "definitions",
+      "term"
+    ],
+    "blank_lines": 0,
+    "line_ending": "LF",
+    "ends_with_newline": true,
+    "disposition": "include",
+    "reason": "Assigned LIB-021 work member; retain every non-empty JSONL record and every definitions block in source order."
+  },
+  "required_top_level_fields": [
+    "definitions",
+    "term"
+  ],
+  "required_unresolved_ids": [
+    "hitchcocks-bible-names-dictionary-edition-identity",
+    "hitchcocks-bible-names-dictionary-structured-source-rights",
+    "hitchcocks-bible-names-dictionary-textual-reference-review"
+  ],
+  "tei_structure": {
+    "entry": "entry",
+    "headword": "form/orth",
+    "definition_blocks": "sense/def",
+    "reference_policy": "embedded citation-looking text remains literal source text"
+  },
+  "rights_statement": {
+    "candidate": "nonaccepted; publication is not authorized",
+    "historic_work": "Repository source ledger describes the historic work as public domain by age; this candidate does not adjudicate that claim.",
+    "structured_dataset": "Unresolved; repository source ledger records no settled license for the modern JWBickel structured JSONL.",
+    "attribution": "Credit JWBickel/BibleDictionaries and link to the retained dataset URL.",
+    "worldwide_status": "human rights review required before acceptance or publication"
+  },
+  "forbidden_import_prefixes": [
+    "build.tei.bible_dictionaries_reconstruction",
+    "build.parsers.bible_dictionaries"
+  ],
+  "requirements": [
+    "independently read every retained JSONL record",
+    "bind every term and definitions item exactly once in source order",
+    "reject omission, duplication, reorder, text invention, attribute invention, metadata drift, source-order drift, evidence drift, stale hashes, and unresolved-row drift",
+    "validate TEI P5 and the exact six-member candidate package",
+    "keep the candidate nonaccepted and publication unauthorized"
+  ]
+}

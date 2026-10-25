@@ -1,0 +1,124 @@
+[
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-grace-and-free-will.npnf105.source-manifest.json",
+    "original": "sources/structured-text/augustine-npnf105-works/augustine-grace-and-free-will/source-manifest.json",
+    "original_sha256": "8851835137d858d2f1987359e050a6a0a0d257c7d452683001459a9c04386c8a",
+    "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-proceedings-of-pelagius.npnf105.source-manifest.json",
+    "original": "sources/structured-text/augustine-npnf105-works/augustine-proceedings-of-pelagius/source-manifest.json",
+    "original_sha256": "742698ddb4cc96630f8007428934fa157be8326921cadbe31cfbb2c2f1617108",
+    "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/jerome-life-of-paulus.npnf206.source-manifest.json",
+    "original": "sources/structured-text/jerome-npnf206-works/jerome-life-of-paulus/source-manifest.json",
+    "original_sha256": "f19a832e23b9da69fef00ec2d5705093a6f3a053dd952afc648ed3b27054c4bf",
+    "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/chrysostom-commentary-on-galatians.npnf113.source-manifest.json",
+    "original": "sources/structured-text/chrysostom-npnf113-lib041/work-bindings/chrysostom-commentary-on-galatians/source-manifest.json",
+    "original_sha256": "fe7f2efc1a9336bd6b2d46ac28f2a906f4cd20f0a90f40d97c34fdfc22c5932f",
+    "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/lib021-eastons-bible-dictionary.source-manifest.json",
+    "original": "sources/eastons-bible-dictionary/eastons-bible-dictionary.source-manifest.json",
+    "original_sha256": "bf4115996057fbd62ae37321c8d97effea8a4e8a7c8c8c2e495ed3b5dfd210ad",
+    "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/lib021-hitchcocks-bible-names-dictionary.source-manifest.json",
+    "original": "sources/hitchcocks-bible-names-dictionary/hitchcocks-bible-names-dictionary.source-manifest.json",
+    "original_sha256": "f74999deef0bd2df1285fe57e65bddd7eabe4ae23c56e1882119f2854fc1a7f0",
+    "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/lib021-smiths-bible-dictionary.source-manifest.json",
+    "original": "sources/smiths-bible-dictionary/smiths-bible-dictionary.source-manifest.json",
+    "original_sha256": "0824c442458f58cd5048f527af1f950b6f9c0b11f3cb01689c4e49d7716c47c1",
+    "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/strong-vol1.source-manifest.json",
+    "manifest_sha256": "59fa20d735f0784c19213bc34e63650d7f62cc86f956c64470731ca6ce59f928",
+    "original": "sources/structured-text/strong-systematic-theology-vol-1/strong-systematic-theology-vol-1.source-manifest.json",
+    "original_sha256": "1ddc4949c28010e98f4a936e2285c04d92f372aa0c6cf5720ed593aeb2367654",
+    "preservation_test": "tests/test_strong_vol1_pg44035_native_stage.py::test_runtime_copy_preserves_complete_original_strong_records"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/lutheran-pg76498-canonical-v1.source-manifest.json",
+    "manifest_sha256": "d26d94e74bc837da6994a444472150e3f63ac214d266258057b87fe531ae865f",
+    "original": "sources/lutheran-hymnbook-pg76498/source-manifest.canonical-v1.json",
+    "original_sha256": "f158583ddc418700b2b05f32667691c0f78cf0e543c23f788f1aa487eedb64bc",
+    "preservation_test": "tests/test_lutheran_hymnbook_pg76498_canonical.py::test_runtime_manifest_preserves_original_record_except_two_EOL_bindings_and_closure"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-runtime.source-manifest.json",
+    "manifest_sha256": "96c1aa665ca4d06a2917e39242c94ab56f355ec06e80338de32294a3bafc80b0",
+    "original": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-original.source-manifest.json",
+    "original_sha256": "114d3a96a777e3a83176e6042dfaa30a52c66dfb01c5c6daccae9f57dabb6ef3",
+    "preservation_test": "tests/test_prepare_watson_body_of_divinity_acceptance.py::test_exact_route_stage_passes_both_gates"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-dying-lib068.source-manifest.json",
+    "manifest_sha256": "02d35974f3b278c9ee0cc2bb82797ac4f53aa07a7a4190c1bed952b859ecdb46",
+    "original": "sources/structured-text/taylor-holy-dying/LIB-068.source-manifest.json",
+    "original_sha256": "b364633b740c7d5092c3d552bec2ad44b881e8798eb17412603ed4d952776f47",
+    "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-living-lib068.source-manifest.json",
+    "manifest_sha256": "1bab416f3468807b03c241c1846cd1a76ed7340a000a7a93f6724b9430f87d09",
+    "original": "sources/structured-text/taylor-holy-living/LIB-068.source-manifest.json",
+    "original_sha256": "75be967e53be8af88c9b5088bbf172431e2f471d40fc48dc94977662613f57dd",
+    "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/old-elizabeth-pg17826-current-installer.source-manifest.json",
+    "original": "sources/structured-text/old-elizabeth-pg17826/source-manifest.json",
+    "original_sha256": "45f909a047c3a6e311c21457aeaa6a43cfa12d82f04bfa2e9c81c783b19f7436",
+    "preservation_test": "tests/test_old_elizabeth_pg17826_install.py::test_runtime_manifest_preserves_complete_original_record"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/jarena-lee-pg66953-current-installer.source-manifest.json",
+    "original": "sources/structured-text/jarena-lee-pg66953/source-manifest.json",
+    "original_sha256": "51c098ec50d67efb7e51aa218b15796ccbad58752bebafb81abb78c19557b6b9",
+    "preservation_test": "tests/test_jarena_lee_pg66953_install.py::test_runtime_manifest_preserves_complete_original_record"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.source-manifest.json",
+    "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.source-manifest.json",
+    "original_sha256": "a8c8b177d62e97421aca934953f9c7f7f4a1949d8156429da2f6fc14db9a6a7b",
+    "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.source-manifest.json",
+    "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.source-manifest.json",
+    "original_sha256": "d07b98ed01ce9ed3a2437c006b39049e6a402ae58848f70df6e6679aba553a5c",
+    "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/before-most-holy-pg76888-current-installer.source-manifest.json",
+    "manifest_sha256": "362778c303fcefee8bacd495ede3f759a051b804cb3c7a22f01adf700ad5301a",
+    "original": "sources/structured-text/before-most-holy-pg76888/source-manifest.json",
+    "original_sha256": "77b897b5caeb3917227fcc0b6616407079e4d063e83350840798f4015dd5693c",
+    "preservation_test": "tests/test_before_most_holy_pg76888_install.py::test_runtime_source_preserves_complete_historical_record"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/eliza-southall-pg11959-current-installer.source-manifest.json",
+    "manifest_sha256": "ecdaadd5d536a060105bc2cde9fe232009a81d0c8ac0f39e728ff981ad4b4786",
+    "original": "sources/structured-text/eliza-southall-pg11959/source-manifest.json",
+    "original_sha256": "6fd712b9426c6188afd6e3bcf40bc891c09c438904be0943c486febffc7afc77",
+    "preservation_test": "tests/test_eliza_southall_pg11959_install.py::test_runtime_source_preserves_complete_historical_record"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/evening-incense-pg50916-current-installer.source-manifest.json",
+    "manifest_sha256": "28679337418088230b1a5c200e9c4a8b97b14520e241845f273b18283ef119ef",
+    "original": "sources/structured-text/evening-incense-pg50916/source-manifest.json",
+    "original_sha256": "b699022be0a7d1303fbf5314fbc79696ea41192adbdbcd5090c6ebeb358f3468",
+    "preservation_test": "tests/test_evening_incense_pg50916_install.py::test_runtime_source_preserves_complete_historical_record"
+  }
+]

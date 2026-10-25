@@ -5,7 +5,23 @@
   "author_id": "basil-of-caesarea",
   "author_birth_year": 330,
   "author_death_year": 379,
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Blomfield Jackson",
+      "role": "translator",
+      "note": "Exact printed volume-scoped translator credit; constituent allocation and dates remain unresolved."
+    },
+    {
+      "name": "Philip Schaff",
+      "role": "series_editor",
+      "note": "Exact printed volume-scoped series_editor credit; constituent allocation and dates remain unresolved."
+    },
+    {
+      "name": "Henry Wace",
+      "role": "series_editor",
+      "note": "Exact printed volume-scoped series_editor credit; constituent allocation and dates remain unresolved."
+    }
+  ],
   "original_publication_year": 1895,
   "language": "en",
   "original_language": "grc",
@@ -24,7 +40,7 @@
   "source_hash": "sha256:95cf3dafefccec80e0949a03c7f1f605da293302d0dc7a8bd62a4e711a0c5532",
   "source_type": "ccel_thml",
   "source_file": "raw/ccel/npnf2/npnf208.xml",
-  "translator": "Blomfield Jackson (translator), 1895; Philip Schaff and Henry Wace (series editors)",
+  "translator": null,
   "download_date": "2026-05-05",
   "output_file": "data/structured-text/basil-of-caesarea-letters.json",
   "clearance_date": "2026-04-01",

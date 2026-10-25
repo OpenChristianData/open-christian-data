@@ -1,0 +1,101 @@
+{
+  "contract": "ocd-city-of-god-reconstruction-profile-v1",
+  "standard_scope": {
+    "root": "raw/standard_ebooks/augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
+    "commit": "7ec3a325a495cb791581d06f1c0fed14d2576ff0",
+    "tree": "b00e12e44b7ae93cd87b42ec03ba70308945014e",
+    "member_count": 46,
+    "bytes": 10910503,
+    "member_set_sha256": "085692b88a923cc5a00152cb448e0663ac9a7d56c88cbab0f172fdfc23bf1244",
+    "observation_contract": "xml-location-value-v1",
+    "observation_count": 58815
+  },
+  "ccel_scope": {
+    "path": "raw/ccel/npnf1/npnf102.xml",
+    "bytes": 4137798,
+    "sha256": "b8ca21dfa7d553681651f85197064b0fe52ae6c17e5e17252df9301536a4ae2a",
+    "whole_volume_observation_count": 88276,
+    "city_div1_id": "iv",
+    "schaff_preface_div1_id": "iii",
+    "outside_city_disposition": "outside-city-evidence-only"
+  },
+  "print_scope": {
+    "manifest": "sources/city-of-god/print-acquisitions.json",
+    "manifest_sha256": "dc2912c1cc9a275573163228e32d55935e428bc8d77c6f8d4010bd1a6a9d4455",
+    "member_count": 15,
+    "bytes": 237821801,
+    "observation_contract": "contiguous-byte-chunks-v1",
+    "chunk_size": 65536
+  },
+  "editions": {
+    "dods-1871": {
+      "title": "Standard Ebooks Dods-lineage electronic witness of The City of God",
+      "contributors": [
+        {"name": "Marcus Dods", "role": "translator, annotator, and prefacer"},
+        {"name": "George Wilson", "role": "translator"},
+        {"name": "J. J. Smith", "role": "translator"}
+      ],
+      "source_description": [
+        "Dods translation lineage represented by the retained Standard Ebooks source, controlled against T. & T. Clark, Edinburgh, 1871 physical volumes I and II.",
+        "The conceptual part boundary is Books I-X versus XI-XXII; the physical-volume boundary is Books I-XIII versus XIV-XXII. They are not conflated."
+      ]
+    },
+    "npnf-1887": {
+      "title": "CCEL NPNF1-02 electronic witness of The City of God",
+      "contributors": [
+        {"name": "Marcus Dods", "role": "translator, annotator, and prefacer"},
+        {"name": "George Wilson", "role": "translator"},
+        {"name": "J. J. Smith", "role": "translator"},
+        {"name": "Philip Schaff", "role": "NPNF series editor and prefacer"}
+      ],
+      "source_description": [
+        "NPNF First Series volume II, Christian Literature Company, Buffalo, 1887, represented from the retained CCEL transcription and controlled against the retained 1887 scan.",
+        "CCEL also claims a New York 1890 print source and carries undated Eerdmans and T. & T. Clark title matter; those carrier-genealogy claims remain unresolved."
+      ]
+    }
+  },
+  "availability": [
+    "The underlying historical texts and scans are treated as public-domain source evidence in the United States; legal status can differ by jurisdiction and no worldwide clearance is asserted.",
+    "Standard Ebooks contributor and editorial work is offered under CC0; that dedication does not alter rights in underlying works or third-party source carriers.",
+    "CCEL marks this transcription Public Domain and the local acquisition record states permission to parse; this candidate does not convert those source statements into publication authorization."
+  ],
+  "print_decisions": [
+    {"id":"city-book-3-chapter-6-reading","location":"book 3 chapter 6","dods":"a crime this latter","npnf":"it is a crime","anchors":["1871-v1 PDF 115 printed 95","1887 PDF 67 printed 45"]},
+    {"id":"city-book-10-chapter-2-duplication","location":"book 10 chapter 2","dods":"derive their blessed life, and the light of truth, from the same source as ourselves","npnf":"derive their blessed life, and the light of truth, from the same source as ourselves","retained_electronic_reading":"CCEL duplicates their blessed life, and the light of truth","disposition":"print comparison only; preserve the duplicated CCEL electronic wording in TEI","anchors":["1871-v1 PDF 405 printed 385","1887 PDF 203 printed 181"]},
+    {"id":"city-book-17-chapter-16-psalm-order","location":"book 17 chapter 16","dods":"Thy sharp arrows are most powerful. The people shall fall under Thee: in the heart of the King's enemies.","npnf":"Thy sharp arrows are most powerful: in the heart of the king's enemies. The people shall fall under Thee.","anchors":["1871-v2 PDF 211 printed 201","1887 PDF 375 printed 353"]},
+    {"id":"city-book-17-chapter-16-sion","location":"book 17 chapter 16","dods":"Sion","npnf":"Sion","retained_electronic_reading":"Standard Ebooks reads Zion","disposition":"print comparison only; preserve Zion in the Standard Ebooks electronic witness TEI","anchors":["1871-v2 PDF 214 printed 204","1887 PDF 376 printed 354"]},
+    {"id":"city-book-21-chapter-1-reading","location":"book 21 chapter 1","dods":["resurrection of damnation","everlasting punishment"],"npnf":["resurrection of judgment","eternal punishment"],"anchors":["1871-v2 PDF 423 printed 413","1871-v2 PDF 424 printed 414","1887 PDF 474 printed 451"]}
+  ],
+  "crop_evidence": {"count":14,"disposition":"frozen external facsimile-review evidence only; retained print member and page anchors are successor authority; crop pixels are not runtime inputs or silently imported as text","records":[
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v1-editor-preface.png","bytes":785621,"sha256":"72b8b77dc3d485b548f59cd643ab3acd8b0c9c3168b06ae7cec668eb8605595a"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v1-p095-iii-6.png","bytes":972386,"sha256":"e6508aa6fb21898a9e00847b05c585afa366b4f2918350038efa5faca8a298b9"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v1-p385-x-2.png","bytes":969766,"sha256":"73ffdaddc691b2bb78da4a69cb71cbd4a66990526063b46c16ac3c4244db9031"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v2-p201-xvii-16.png","bytes":380218,"sha256":"700b38a5a872763f68d41bb4a0cfce8e3fa154567ee5580f644b43e992d9f9b9"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v2-p204-xvii-16-sion.png","bytes":370165,"sha256":"c6d101fe258392068e06cdd3eac54df1c80eac4b15e2ab177f8560fd4973b976"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v2-p413-xxi-1.png","bytes":330266,"sha256":"d32f01478256b6640799b63289b20ef9415ccacac17911144326510090139dfd"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1871-v2-p414-xxi-1.png","bytes":364549,"sha256":"9e4cc4e1ddec94dde44da98dd5d1d48bb14bda269574d37997eb94fcc8646dc6"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-editor-preface.png","bytes":468071,"sha256":"30adde637e70ecbb015f1aa2b0afad7ec57c339c4475b46041b791d04b4d7c24"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-p045-iii-6.png","bytes":778364,"sha256":"12a517b6724096a0cf01480337dc63c50bbae22264321d398522edc77a87c7e7"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-p181-x-2.png","bytes":790541,"sha256":"512ef999aa2b1b163e4390d4de128c7f73cdae0a207fe442283000c03e7ecb56"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-p353-xvii-16.png","bytes":789081,"sha256":"08860471c5a265188c5dbbb4ccad6ffdd678be1062800594913cd64c57b11020"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-p354-xvii-16-sion.png","bytes":794507,"sha256":"c2893b95c5636ae84e8e63db8128cd7fbfadbd5991ae6f0d20c5f81329ee8a99"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-p451-xxi-1.png","bytes":504411,"sha256":"01ef7c11aa123daa7115b921765cc9255389492cdfce43b6213c102c95848f96"},
+    {"path":"reports/_reconstruction/review/city-of-god/facsimiles/1887-translator-preface.png","bytes":595410,"sha256":"a2d0fd9804b8c80076c3604439ae65c68297d1618bf7447cbe1b2c4ceecd5fc2"}
+  ]},
+  "semantic_defects": [
+    {"id":"provider-front-matter","disposition":"Standard Ebooks titlepage, imprint, colophon, and uncopyright matter are provider evidence, not 1871 edition content"},
+    {"id":"schaff-preface","disposition":"Schaff's series preface belongs only to the NPNF witness and must not leak into Dods 1871"},
+    {"id":"ccel-x-2-duplication","disposition":"retain duplicated CCEL source wording in the electronic-witness TEI; coherent print reading remains comparison evidence"},
+    {"id":"book-x-semantic-slices","count":2,"disposition":"frozen legacy diagnostic evidence, never source authority"},
+    {"id":"ineligible-generations","count":6,"disposition":"frozen negative evidence, never source authority"},
+    {"id":"progressive-review","verified_targets":525,"total_targets":7846,"disposition":"partial facsimile review only"}
+  ],
+  "unresolved": [
+    {"id":"work-date","status":"unresolved","claim":"The work was composed over 413-426; source configs select different endpoint dates."},
+    {"id":"ccel-print-basis-1890","status":"contradicted-unresolved","claim":"CCEL printSourceInfo says New York 1890; do not create a 1890 edition identity."},
+    {"id":"ccel-eerdmans-reprint-year","status":"unresolved","claim":"The transcribed Eerdmans/T. & T. Clark title matter is undated."},
+    {"id":"rights-jurisdiction","status":"unresolved","claim":"No worldwide public-domain or publication-clearance determination is made."},
+    {"id":"acceptance","status":"unresolved","claim":"Both packages require current independent source-led checks and exact sidecar binding before acceptance or canonical handoff; human review is separate."}
+  ],
+  "readme": "# City of God source packet — {EDITION}\n\nThis is a deterministic, six-member, explicitly nonaccepted reconstruction candidate. It is not canonical and is not authorized for publication.\n\nThe package binds a clean 46-member Standard Ebooks checkout (58,815 observations), the complete CCEL npnf102 acquisition (88,276 observations, including explicit outside-City evidence-only disposition), and all 15 retained print members through a contiguous 65,536-byte chunk inventory. It preserves 22 books, 661 ordinary chapters, four book prefaces, 665 aligned units, edition-specific physical-volume and conceptual-part identities, notes, pages, inline and language carriers, continued and repeated-text evidence, 1,533 lexical and 2,390 orthographic review variants, five print comparison loci, 14 crop-evidence records, and known semantic defects.\n\nDods 1871 and NPNF 1887 remain separate witnesses. The TEI retains the electronic-source Zion and CCEL X.2 duplicated wording; print comparisons do not replace those readings. The work-date range 413-426, CCEL's 1890 printSourceInfo, and undated Eerdmans/T. & T. Clark title matter remain unresolved. The underlying historical material is treated as United States public-domain source evidence; jurisdiction can differ. Standard Ebooks contributor work is CC0, which does not alter underlying rights. CCEL labels its transcription Public Domain and the local record permits parsing. None of these statements is worldwide clearance or publication authorization.\n"
+}

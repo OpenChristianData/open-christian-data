@@ -1,0 +1,155 @@
+{
+  "acquisition_id": "sojourner-truth-narrative-1875-docsouth-acquired",
+  "authorities": [
+    {
+      "bytes": 586105,
+      "name": "official-source-member",
+      "path": "raw/docsouth/l768-truth75/truth75.xml",
+      "role": "primary-source",
+      "sha256": "09aa516b61c47a0f076670b72689bfb4d4f171256b6993a15edb515997b16dba"
+    },
+    {
+      "bytes": 5977,
+      "name": "acquisition-receipt",
+      "path": "raw/docsouth/l768-truth75/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "sha256": "8931b452767f5d1d0690ab36035192205564b8821296aa2fbdd5fc5ab23e0476"
+    },
+    {
+      "bytes": 779,
+      "name": "member-inventory",
+      "path": "raw/docsouth/l768-truth75/member-inventory.tsv",
+      "role": "source-acquisition-evidence",
+      "sha256": "7efacdc7ae9914ddcc44256b2f49d79d2a459f28ae9ebb1d6c7b4816d85da369"
+    },
+    {
+      "bytes": 26568,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/docsouth-l768-truth75/profile.v3.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "4e4a492595becdfbd02b95235d0dbf4708f4d80cbfc6c08aff435d0448f32145"
+    },
+    {
+      "bytes": 6335,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/docsouth-l768-truth75/policy.v3.json",
+      "role": "independent-validation-policy",
+      "sha256": "aa585cf1a55dd028971b169edd3acf249e329873fa5b8018cbb6ca9cb162a5fd"
+    },
+    {
+      "bytes": 989,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/docsouth-l768-truth75/README.source.v2.md",
+      "role": "source-attribution-and-rights",
+      "sha256": "cd209a09f820cf6a9179c7583b7d1e8de88c9eaf205d017b7e7268995854724a"
+    },
+    {
+      "bytes": 19315,
+      "name": "p4-to-p5-stylesheet",
+      "path": "build/tei/vendor/tei-p4top5-2007.xsl",
+      "role": "tei-migration-stylesheet",
+      "sha256": "3210cdbe31a4c9b4da527b0c926003f2e714ee595f526b648d30cfc8177eaa38"
+    },
+    {
+      "bytes": 1108622,
+      "name": "p5-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 17859,
+      "name": "shared-docsouth-migration-parser",
+      "path": "build/tei/docsouth_l761_l762.py",
+      "role": "source-to-p5-migration-helper",
+      "sha256": "41a8c2efda21c7fde78eacc253044a71234858bfeab08507365f06e7684fccd4"
+    },
+    {
+      "bytes": 34762,
+      "name": "retained-image-truth75cv",
+      "path": "raw/docsouth/l768-truth75/truth75cv.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "e948109279c566222c909ff10060029327f3341f6a1bcf5409ffccd099d0aec6"
+    },
+    {
+      "bytes": 20557,
+      "name": "retained-image-truth75hp",
+      "path": "raw/docsouth/l768-truth75/truth75hp.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "96d90c291c2e5fe812e746a29754e1580e8cb2637f748d6e73ae28bc3ceb0aac"
+    },
+    {
+      "bytes": 34944,
+      "name": "retained-image-truth75fp",
+      "path": "raw/docsouth/l768-truth75/truth75fp.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "9da06d6b8a49765d0b271a62092eab00f2ee4db022028747465ece953cc8cb99"
+    },
+    {
+      "bytes": 23474,
+      "name": "retained-image-truth75tp",
+      "path": "raw/docsouth/l768-truth75/truth75tp.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "73f8fabdb1b2eb334178824978af271f9430abfdc3c7b2b5121b71fac3ac13e6"
+    },
+    {
+      "bytes": 24505,
+      "name": "retained-image-truth75vs",
+      "path": "raw/docsouth/l768-truth75/truth75vs.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "7d0ea743f8eafed00ed361a419c602aa1a9c2678db8b035fe2bcd1663a53a7b9"
+    },
+    {
+      "bytes": 30263,
+      "name": "retained-image-truth313",
+      "path": "raw/docsouth/l768-truth75/truth313.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "37058899e40191dbac22e2ba0ed4b447ce9a1e87843c30399cc342b2f1f42b23"
+    },
+    {
+      "bytes": 27844,
+      "name": "retained-image-truth314",
+      "path": "raw/docsouth/l768-truth75/truth314.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "fbd3f6e98e54c8b736b36cba548c25903de1fce2856c74bfaf4addab228d7763"
+    },
+    {
+      "bytes": 29659,
+      "name": "retained-image-truth315",
+      "path": "raw/docsouth/l768-truth75/truth315.jpg",
+      "role": "exact-retained-source-figure",
+      "sha256": "47b49ba76ca4519f2fd6598d00a718381d5233460975887d7938524e17c738df"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-docsouth-l768-truth75-tei2-to-p5-retained-images",
+    "implementation_path": "build/tei/docsouth_truth75_v2.py",
+    "implementation_sha256": "17097672739b24907c3af9f18e86eaf0602ba200182d885368b0a2f20a57094b",
+    "version": "2"
+  },
+  "edition_id": "sojourner-truth-narrative-1875-docsouth-electronic",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "docsouth-truth75-l768",
+  "textual_form_id": "sojourner-truth-narrative-1875-docsouth-retained",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-docsouth-l768-truth75-independent-expat-oracle-retained-images",
+    "implementation_path": "build/tei/docsouth_truth75_v2_oracle.py",
+    "implementation_sha256": "558e39bcadbbf681344f1c317295ab28c131813b02126ad5b827887be3935c04",
+    "import_closure_sha256": "075a9724d55e16c04afdc825497c58e5faa5a821b3ba6d05fe6065b0783eab1c",
+    "version": "3"
+  },
+  "work_id": "sojourner-truth-narrative-1875"
+}

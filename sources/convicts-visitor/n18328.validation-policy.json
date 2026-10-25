@@ -1,0 +1,22 @@
+{
+  "contract": "ocd-convicts-n18328-complete-xml-policy-v1",
+  "mapping": "Keep the complete retained N18328 TEI text, including front matter and the single titled body work, byte-identical after the TEI header. Add only the bound work, form, edition, acquisition, and revision header evidence. The offices remain internal divisions. No page image or print equivalence is inferred.",
+  "provenance": {
+    "work_id": "convicts-visitor",
+    "textual_form_id": "convicts-visitor-tcp-retained",
+    "edition_id": "convicts-visitor-tcp-electronic",
+    "acquisition_id": "convicts-visitor-tcp-acquired",
+    "source_id": "tcp-N18328",
+    "source_path": "raw/tcp/high-range/N18328/N18328.xml",
+    "source_sha256": "2f5d266ebf91471784de4a7f95cd47ac3fd806b908a1589d97f47c10a1069871",
+    "selection": "/TEI/text",
+    "source_credit": "library/works/convicts-visitor/SOURCE_CREDIT.md",
+    "human_verification": "not recorded",
+    "publication": "not authorized"
+  },
+  "unresolved": [
+    {"id": "print-collation", "status": "open", "question": "The electronic transcription has not been collated against a print exemplar or page images."},
+    {"id": "human-review", "status": "open", "question": "No human visual verification or acceptance has been recorded."},
+    {"id": "rights-publication", "status": "open", "question": "The source credit is present; broader rights clearance and publication remain separate decisions."}
+  ]
+}

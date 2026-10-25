@@ -1,0 +1,30 @@
+{
+  "contract": "ocd-npnf104-lib038-validation-policy-v1",
+  "version": 1,
+  "policy_id": "npnf104-lib038-ten-work-v1",
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_assigned_work_count": 10,
+  "required_feature_count": 11999,
+  "required_attribute_count": 33468,
+  "required_character_count": 2671577,
+  "required_comment_count": 0,
+  "required_note_count": 2522,
+  "required_page_break_count": 540,
+  "required_scripture_reference_count": 1955,
+  "required_member_names": ["manifest.json", "content.tei.xml", "source-accountability.json", "provenance.json", "unresolved.jsonl", "README.source.md"],
+  "checks": [
+    "source-authority-hash-and-sole-member-binding",
+    "exact-ten-root-scope-and-retained-order",
+    "complete-feature-attribute-text-tail-and-character-crosswalk",
+    "exact-metadata-rights-credit-and-member-accounting",
+    "omission-duplication-reorder-invention-and-surplus-detection",
+    "exact-prolog-terminal-root-and-namespace-inventory",
+    "tei-p5-xsd",
+    "source-accountability-json-schema",
+    "candidate-package-integrity-and-current-validation-bindings",
+    "ordinary-work-catalog-route-state",
+    "assigned-source-comment-preservation-and-accounting"
+  ],
+  "forbidden_oracle_imports": ["build.tei.npnf104_lib038_reconstruction", "build.lib.ccel_thml", "build.tei.thml_to_tei"]
+}

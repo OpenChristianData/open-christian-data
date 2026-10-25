@@ -1,0 +1,5 @@
+# Source attribution and rights — L763 Jamison
+
+This nonaccepted candidate reconstructs the retained DocSouth TEI.2 member at https://docsouth.unc.edu/neh/jamison/jamison.xml. The retained XML is identified by SHA-256 ca7623a00c24cdd790c848227ea46b85decc6ce13b2d16bfc43d026d6160ddca. The acquisition receipt states the provider's US public-domain belief and limits that statement; no broader rights clearance is implied. Retain DocSouth attribution and source encoding statements.
+
+The complete source envelope is preserved as one TEI P5 document, including all 193 source page markers. Each of the seven source figure references is bound to its exact separately retained JPEG by the current acquisition receipt, logical raw path, original DocSouth URL, media type, byte count, and SHA-256. The TEI graphic URLs remain the source URLs. Numeric page-marker gaps describe the retained marker sequence; no absent page text or leaf identity is inferred. Human acceptance, rights clearance, and publication authorization remain unrecorded.

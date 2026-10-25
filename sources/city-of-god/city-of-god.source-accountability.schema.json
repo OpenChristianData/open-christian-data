@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://openchristiandata.example/schemas/city-of-god-source-accountability-v1",
+  "type":"object",
+  "required":["contract","edition","standard_observation_count","ccel_observation_count","observations_sha256","observations","print_inventory","semantic_units","variants","print_decisions","crop_evidence","semantic_defects","omitted_count"],
+  "properties":{
+    "contract":{"const":"ocd-city-of-god-source-accountability-v1"},
+    "edition":{"enum":["dods-1871","npnf-1887"]},
+    "standard_observation_count":{"const":58815},
+    "ccel_observation_count":{"const":88276},
+    "observations_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "observations":{"type":"array","minItems":147091},
+    "print_inventory":{"type":"object"},
+    "semantic_units":{"type":"object"},
+    "variants":{"type":"object"},
+    "print_decisions":{"type":"array","minItems":5,"maxItems":5},
+    "crop_evidence":{"type":"object"},
+    "semantic_defects":{"type":"array"},
+    "omitted_count":{"const":0}
+  },
+  "additionalProperties":false
+}

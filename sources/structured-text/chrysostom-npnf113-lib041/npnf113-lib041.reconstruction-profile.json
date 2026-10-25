@@ -1,0 +1,65 @@
+{
+  "contract": "ocd-lib041-npnf113-reconstruction-profile-v1",
+  "profile_id": "lib041-npnf113-ten-work-v21",
+  "version": 1,
+  "source_member": {
+    "name": "npnf113",
+    "path": "raw/ccel/npnf1/npnf113.xml",
+    "bytes": 4441248,
+    "sha256": "d62c7c82b262c738739090ffaf5473aa5a76dbadf62ebee0dccac8c4a7db4762"
+  },
+  "assigned": [
+    ["iii.iii", "chrysostom-commentary-on-galatians"],
+    ["iii.iv", "chrysostom-homilies-on-ephesians"],
+    ["iv.iii", "chrysostom-homilies-on-philippians"],
+    ["iv.iv", "chrysostom-homilies-on-colossians"],
+    ["iv.v", "chrysostom-homilies-on-1-thessalonians"],
+    ["iv.vi", "chrysostom-homilies-on-2-thessalonians"],
+    ["v.iii", "chrysostom-homilies-on-1-timothy"],
+    ["v.iv", "chrysostom-homilies-on-2-timothy"],
+    ["v.v", "chrysostom-homilies-on-titus"],
+    ["v.vi", "chrysostom-homilies-on-philemon"]
+  ],
+  "expected": {
+    "retained_elements": 11528,
+    "retained_attributes": 32716,
+    "retained_text_nodes": 8037,
+    "retained_tail_nodes": 9268,
+    "retained_characters_including_root_tails": 2820015,
+    "excluded_root_tail_characters": 14,
+    "projected_characters": 2820001,
+    "non_ascii_characters_including_root_tails": 31247,
+    "assigned_comments": 0,
+    "assigned_processing_instructions": 0,
+    "tag_counts": {
+      "div2": 10,
+      "div3": 114,
+      "i": 378,
+      "note": 1572,
+      "p": 4975,
+      "pb": 536,
+      "scripCom": 119,
+      "scripRef": 3139,
+      "span": 685
+    }
+  },
+  "document": {
+    "doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "pre_root_comment_count": 2,
+    "embedded_comment_count": 4,
+    "top_divisions": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+    "shared_apparatus_divisions": ["iii.i", "iii.ii", "iv.i", "iv.ii", "v.i", "v.ii"]
+  },
+  "work_titles": {
+    "chrysostom-commentary-on-galatians": "Commentary on the Epistle to the Galatians",
+    "chrysostom-homilies-on-1-thessalonians": "Homilies on the First Epistle to the Thessalonians",
+    "chrysostom-homilies-on-1-timothy": "Homilies on the First Epistle to Timothy",
+    "chrysostom-homilies-on-2-thessalonians": "Homilies on the Second Epistle to the Thessalonians",
+    "chrysostom-homilies-on-2-timothy": "Homilies on the Second Epistle to Timothy",
+    "chrysostom-homilies-on-colossians": "Homilies on the Epistle to the Colossians",
+    "chrysostom-homilies-on-ephesians": "Homilies on the Epistle to the Ephesians",
+    "chrysostom-homilies-on-philemon": "Homilies on the Epistle to Philemon",
+    "chrysostom-homilies-on-philippians": "Homilies on the Epistle to the Philippians",
+    "chrysostom-homilies-on-titus": "Homilies on the Epistle to Titus"
+  }
+}

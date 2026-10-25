@@ -1,0 +1,5 @@
+# Electronic source for rupert-de-victoria-verbi-dei
+
+The retained text source is `raw/openmgh/bsb00000622/tei/bsb00000622.xml` (SHA-256 `94770b7657fb9da5bac46e6254aa9e8fb2c4b5eb136d7828f2e391c5ae76dc7e`). Its ZIP is acquisition packaging, not another text witness. This work selects the sole complete `div type=work` in bsb00000622: the title, prologue, and thirteen books through `EXPLICIT LIBER XIII.` It retains 13,967 line markers, 6,934 word nodes, 5,933 highlights, and all 426 page breaks from `_00062` through `_00487`. No print witness was collated.
+
+The source header asks distributors of the electronic file or derivatives to name Monumenta Germaniae Historica (MGH) and the Bavarian State Library, Munich (BSB). Its CC BY 4.0 statement concerns added annotations; it describes the underlying text as believed public domain. This note does not independently establish rights. For any public data release, install the human-visible notice at `data/structured-text/rupert-de-victoria-verbi-dei/README.md` and bind both exact hashes through `public_notices`.

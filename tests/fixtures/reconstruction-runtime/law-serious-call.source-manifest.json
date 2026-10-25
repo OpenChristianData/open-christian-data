@@ -1,0 +1,193 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "ticket_id": "37c-241",
+  "owner_ticket_id": "LIB-055",
+  "source_id": "law-serious-call-retained-thml",
+  "work_id": "law-serious-call",
+  "source_envelope": {
+    "contract": "ocd-source-member-equality-v1",
+    "path": "raw/ccel/law/serious_call.xml",
+    "bytes": 807207,
+    "sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd",
+    "member_count": 1,
+    "selector": "/ThML[1]",
+    "disposition": "complete-whole-retained-member"
+  },
+  "expression_scope": {
+    "scope": "one work represented by one complete retained CCEL ThML witness",
+    "member_count": 1,
+    "selector": "/ThML[1]",
+    "visual_review": "pending",
+    "human_acceptance": "not-decided",
+    "rights_clearance": "not-decided",
+    "publication": "not-authorized"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "authorities": [
+    {
+      "name": "law-serious-call-retained-source",
+      "path": "raw/ccel/law/serious_call.xml",
+      "bytes": 807207,
+      "sha256": "edc2bf6021f36bb7e42e1feb819c37492f920595e05ed31e22d52e7caa12c2bd",
+      "role": "primary-source"
+    },
+    {
+      "name": "law-serious-call-source-profile",
+      "path": "sources/structured-text/law-serious-call/source-profile.json",
+      "bytes": 26429,
+      "sha256": "3156bf11b7f7fb1a5b94efac5fad5cb0f6dba67ab55d7c220d5c9d9b1ad29bf1",
+      "role": "complete-source-feature-profile"
+    },
+    {
+      "name": "law-serious-call-independent-validation-policy",
+      "path": "sources/structured-text/law-serious-call/independent-validation-policy.json",
+      "bytes": 5386,
+      "sha256": "e0b8ddc49183cb64655cff74532e7e736eba6ef061ebb7a85f6255c523fa0e80",
+      "role": "independent-validation-policy"
+    },
+    {
+      "name": "law-serious-call-accountability-schema",
+      "path": "sources/structured-text/law-serious-call/source-accountability-v1.schema.json",
+      "bytes": 8364,
+      "sha256": "330d4a27511501eba2158ad25ac6d70563ba7e39221542b3f5d9131481692d34",
+      "role": "source-accountability-schema"
+    },
+    {
+      "name": "law-serious-call-source-readme",
+      "path": "sources/structured-text/law-serious-call/README.source.md",
+      "bytes": 1206,
+      "sha256": "3a728f28c3d26523af6c53074b1c31b01fb3beaf7e91d0c35fc05be65ce9ca4d",
+      "role": "source-and-rights-disclosure"
+    },
+    {
+      "name": "law-serious-call-source-config",
+      "path": "sources/structured-text/law-serious-call/config.json",
+      "bytes": 1166,
+      "sha256": "de8b755462375869851450e8ab729c47ba266c9ff8b4efe11ff6c845f34b74f8",
+      "role": "source-config"
+    },
+    {
+      "name": "law-serious-call-metadata-sidecar",
+      "path": "metadata/source-evidence/catalog/law-serious-call.json",
+      "bytes": 50269,
+      "sha256": "ad1c29f90b6da4995324ca76da415de9582b3fa6462b128ed4b2364ba3d96c90",
+      "role": "metadata-evidence"
+    },
+    {
+      "name": "law-serious-call-data-attribution",
+      "path": "tests/fixtures/reconstruction-runtime/law-serious-call.law-serious-call-data-attribution.md",
+      "bytes": 590,
+      "sha256": "8feeeccb58e1bb0d29a95bdf58388898af7391ed7424801eb16c0529436df017",
+      "role": "rights-attribution-deliverable"
+    },
+    {
+      "name": "law-serious-call-candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3",
+      "role": "candidate-package-schema"
+    },
+    {
+      "name": "law-serious-call-tei-validation-schema",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f",
+      "role": "tei-validation-schema"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-01",
+      "path": "ocd_kernel/__init__.py",
+      "bytes": 50,
+      "sha256": "c1aa856c13fdd1e8bad66ed13656851c7369efddae324f297bbd6d0dd8a0b811",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-02",
+      "path": "ocd_kernel/reconstruction/__init__.py",
+      "bytes": 475,
+      "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-03",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "bytes": 26591,
+      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-04",
+      "path": "ocd_kernel/reconstruction/verifier.py",
+      "bytes": 6014,
+      "sha256": "5c6f9b0612c13f41273b39f4cd51909c40fdef73b87d35703881a0a77d56f0ff",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-05",
+      "path": "ocd_kernel/tei/__init__.py",
+      "bytes": 448,
+      "sha256": "878ce3b8eeed69cea407861245d02ef1c106ecf5f3ab4ef560cecfd10153b9fb",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-06",
+      "path": "ocd_kernel/tei/normalization.py",
+      "bytes": 892,
+      "sha256": "74965e99af44b7b2b23f9601befcbe98dcdfc70ebfa7f4a6df80ad651960ba94",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-07",
+      "path": "ocd_kernel/tei/projection_profile.py",
+      "bytes": 6891,
+      "sha256": "b015674ef7a1456168327ec0cf460a22382cef35adfab6b2d4030bffeb28542b",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-08",
+      "path": "ocd_kernel/tei/validate.py",
+      "bytes": 1385,
+      "sha256": "1952c8488fe86df53134a2527780eed7d80257ab2ede3efb1457526ba50d9c22",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-09",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-validator-dependency-10",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba",
+      "role": "validator-dependency"
+    },
+    {
+      "name": "law-serious-call-mutation-challenge",
+      "path": "build/tei/law_serious_call_mutation_check.py",
+      "bytes": 17728,
+      "sha256": "f37ac8f417cef134cbdf90ee13531157993dc652d1d1bfa2dd0fc5bf955faae5",
+      "role": "mutation-challenge"
+    }
+  ],
+  "converter": {
+    "id": "ocd-law-serious-call-retained-thml-to-tei",
+    "version": "1",
+    "callable": "convert",
+    "implementation_path": "build/tei/law_serious_call_reconstruction.py",
+    "implementation_sha256": "8f60b5d5902d4b78377e1a7aa4c7b74f6fc3d7a27913bf726677b60737f8cfad"
+  },
+  "validator": {
+    "id": "ocd-law-serious-call-independent-stdlib-xml-oracle",
+    "version": "1",
+    "callable": "validate",
+    "implementation_path": "build/tei/law_serious_call_oracle.py",
+    "implementation_sha256": "0cae3c821b07d3eb394098898339a4062f3d673511f52ba5f9e4039f2b8deb0e",
+    "import_closure_sha256": "0f2e58da2147470d6585c04be38fb8451746113b0860e1dbd97fb84a73cb4098"
+  }
+}

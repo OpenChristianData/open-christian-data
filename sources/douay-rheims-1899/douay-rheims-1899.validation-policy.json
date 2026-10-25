@@ -1,0 +1,42 @@
+{
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "exact-retained-authority-byte-bindings",
+    "independent-usfm-and-scrollmapper-reparse",
+    "exact-book-chapter-verse-address-order-and-reading-projection",
+    "exact-599-selection-application",
+    "exact-3025-unresolved-difference-inventory",
+    "four-open-structural-cases-remain-explicit-and-unsubstituted",
+    "1414-facsimile-surfaces-with-valid-pdf-and-ocr-correspondence",
+    "full-recursive-tei-qname-attribute-text-tail-order-and-nesting",
+    "tei-p5-xsd",
+    "source-accountability-schema",
+    "fresh-process-six-member-determinism",
+    "recursive-repository-import-closure-and-runtime-paths",
+    "candidate-separated-from-human-acceptance-and-publication"
+  ],
+  "contract": "ocd-douay-rheims-1899-validation-policy-v1",
+  "forbidden_import_prefixes": [
+    "build.tei.douay_rheims_reconstruction",
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.case_declaration",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "policy_id": "douay-rheims-american-1899-complete-source-to-tei-v1",
+  "producer_forbidden_import_prefixes": [
+    "build.reconstruction",
+    "ocd_kernel.reconstruction.case_declaration",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "required_member_names": [
+    "README.source.md",
+    "content.tei.xml",
+    "manifest.json",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ],
+  "version": 1
+}

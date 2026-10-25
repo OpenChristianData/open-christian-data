@@ -1,0 +1,29 @@
+{
+  "contract": "ocd-source-structure-inventory-v1",
+  "version": 1,
+  "work_id": "john-gill",
+  "source_id": "helloao-john-gill-complete-retained-json",
+  "source_root": "raw/helloao_local/api/c/john-gill",
+  "scope": {
+    "selection": "No explicit heading spans accepted; exact source paragraph boundaries are retained throughout the rendered witness",
+    "carrier_count": 0,
+    "rendered_carrier_count": 0,
+    "heading_span_count": 0,
+    "paragraph_policy": {
+      "contract": "ocd-source-paragraph-segmentation-v1",
+      "delimiter": "\n\n",
+      "mode": "split-every-exact-double-newline",
+      "carrier_total_count": 29552,
+      "carrier_count_with_delimiter": 29389,
+      "delimiter_count": 85387
+    },
+    "detector": {
+      "pattern": "(?:\\A|\\n\\n)(?P<head>[IVXLC]+\\.\\s+[A-Z][^\\n]{2,159}?)(?=\\n\\n|\\Z)",
+      "carrier_count": 0,
+      "heading_match_count": 0,
+      "claim": "No explicit heading is promoted by this bounded inventory; paragraph segmentation does not infer heading semantics."
+    },
+    "out_of_scope": "Potential notes, headings, and labels remain prose paragraphs until a separately reviewed exact source inventory classifies their semantic role."
+  },
+  "entries": []
+}

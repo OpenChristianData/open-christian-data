@@ -1,0 +1,11 @@
+# Chrysostom, Homilies on Second Corinthians: source and data credit
+
+Sourced via [CCEL.org](https://www.ccel.org/ccel/schaff/npnf112.html), Nicene and Post-Nicene Fathers, First Series, volume XII, edited by Philip Schaff. The shared title page names the Oxford Translation revised with additional notes by Talbot W. Chambers. The shared Preface explicitly attributes the Second Epistle translation to the Rev. J. Ashworth of Brasenose College, and states that Chambers occasionally amended both Epistles' translations; his notes appear in square brackets with his initial. Cornish and Medley are credited there specifically for the First Epistle and are not assigned to this work.
+
+The electronic printSourceInfo states Edinburgh: T&T Clark, 1889. The series title page names T&T Clark, Edinburgh, and Wm. B. Eerdmans Publishing Company, Grand Rapids, Michigan. The shared Preface describes the original London volumes dated 1844 and 1848, gives S. Clement, 1848 for the Second Epistle note, and Chambers signs New York, June, 1889. These distinct source claims are retained; no print-edition equivalence or metadata date correction is inferred.
+
+The electronic header states Public Domain and careful proofreading. Retained CCEL permission permits parsing ThML/XML for text, reserves rights in CCEL files and formatting, and restricts selling CCEL files or derivatives of their formatting. Credit CCEL when publishing. These are provider statements, not independent rights clearance.
+
+Complete retained CCEL NPNF1-12 ThML.body/div1[@id='v'], including own opening title matter in v.i, all 30 homilies, all 703 attached notes, 150 page markers and 751 scripture references. Shared volume title pages and Preface iii, including the Second Epistle-specific translation/revision credits, remain separately source-accounted context with relevant metadata in header/notices; First Corinthians iv and shared indexes remain retained outside this master. One complete titled Second Corinthians collection, one TEI; no homily child work IDs or corrected source readings.
+
+Source readings, including uncertain or apparent typographical errors, remain unchanged. Human textual/visual acceptance, print comparison, final rights disposition and publication remain separate. Carry this visible credit to `data/prose/chrysostom-homilies-on-2-corinthians/README.md`.

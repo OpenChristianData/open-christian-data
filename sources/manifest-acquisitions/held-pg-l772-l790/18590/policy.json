@@ -1,0 +1,45 @@
+{
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "archive-and-receipt-hash",
+    "member-inventory",
+    "complete-body-unit-partition",
+    "independent-source-text-and-order",
+    "headings-links-images-tables",
+    "tei-p5",
+    "package-integrity",
+    "candidate-mutations",
+    "clean-process-reproduction"
+  ],
+  "contract": "ocd-manifest-pg-l772-l790-validation-policy-v1",
+  "ebook_id": "18590",
+  "provenance": {
+    "archive_sha256": "8b663097982c52d82370c96ce44d9ffa804963a4fde9802f2d4dd2ef2ac63325",
+    "contract": "ocd-manifest-pg-l772-l790-provenance-v1",
+    "ebook_id": "18590",
+    "html_sha256": "62421bc56b576afeecfca98f51032863753ba8fd545bebccced556963e5ac1bf",
+    "human_acceptance": "pending",
+    "print_collation": "not-performed",
+    "publication": "not-authorized",
+    "rights_clearance": "pending",
+    "scope": "1886 Henry Frowde edition; explicitly condensed English translation, not complete Variae",
+    "status": "nonaccepted"
+  },
+  "unresolved": [
+    {
+      "detail": "Electronic witness has not been collated against a print exemplar.",
+      "id": "pg18590-print-collation",
+      "status": "unresolved"
+    },
+    {
+      "detail": "No human text or edition acceptance has been recorded.",
+      "id": "pg18590-human-acceptance",
+      "status": "unresolved"
+    },
+    {
+      "detail": "Project Gutenberg source license and item-level rights apply; jurisdictional clearance and publication remain pending.",
+      "id": "pg18590-rights",
+      "status": "unresolved"
+    }
+  ]
+}

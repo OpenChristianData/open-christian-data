@@ -1,0 +1,76 @@
+{
+  "contract": "ocd-naves-topical-bible-reconstruction-profile-v1",
+  "profile_id": "naves-topical-bible-crosswire-sword-v3",
+  "ticket_id": "LIB-009",
+  "work_id": "naves-topical-bible",
+  "source_id": "crosswire-nave-sword-v3",
+  "identity": {
+    "assigned_title": "Nave's Topical Bible",
+    "module_id": "Nave",
+    "module_version": "3.0",
+    "module_version_date": "2021-02-28",
+    "identity_status": "unresolved human identity and edition decision"
+  },
+  "source_scope": {
+    "transformation_source_set": {
+      "contract": "ocd-source-member-set-v1",
+      "sha256": "8c5cf1cc42248214ba0d9e0fda51c99925b9a06760a71dd2a33a5750e09afc6d",
+      "members": [
+        {"name": "dict-dat", "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.dat", "bytes": 103980, "sha256": "3b33df92ba6040053d58e8abab070ef4cb098f8e54df69dfb7779dd1d7d1fbdf"},
+        {"name": "dict-idx", "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.idx", "bytes": 42576, "sha256": "6190cc282cf14a2fca661d0db6a3344fc88bae400bfe68162ce629c9de276787"},
+        {"name": "dict-zdt", "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdt", "bytes": 1425006, "sha256": "e59669ea3a796a25eaf4dfc5c87127404663e14d2b51419be9660abcb9993007"},
+        {"name": "dict-zdx", "path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdx", "bytes": 1424, "sha256": "284176765677ca3bcd2ec81771b033fb361f48f47311412d9c269c48bd0e4ba8"}
+      ]
+    },
+    "archive": {
+      "path": "raw/naves_topical/Nave.zip",
+      "bytes": 1300879,
+      "sha256": "52d9b7cde04c2abb5187ae804bcb97d93c7344a1358539f50ebc178ac0c945f0",
+      "disposition": "include-as-acquisition-container",
+      "reason": "The retained acquisition script identifies this URL and extracts these exact five members; archive member bytes equal the extracted files. It is not a second witness."
+    },
+    "members": [
+      {"path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdt", "bytes": 1425006, "sha256": "e59669ea3a796a25eaf4dfc5c87127404663e14d2b51419be9660abcb9993007", "role": "compressed-textual-payload-witness", "disposition": "include"},
+      {"path": "raw/naves_topical/modules/lexdict/zld/nave/dict.zdx", "bytes": 1424, "sha256": "284176765677ca3bcd2ec81771b033fb361f48f47311412d9c269c48bd0e4ba8", "role": "compressed-block-index-authority", "disposition": "include"},
+      {"path": "raw/naves_topical/modules/lexdict/zld/nave/dict.dat", "bytes": 103980, "sha256": "3b33df92ba6040053d58e8abab070ef4cb098f8e54df69dfb7779dd1d7d1fbdf", "role": "dictionary-key-and-pointer-authority", "disposition": "include"},
+      {"path": "raw/naves_topical/modules/lexdict/zld/nave/dict.idx", "bytes": 42576, "sha256": "6190cc282cf14a2fca661d0db6a3344fc88bae400bfe68162ce629c9de276787", "role": "dictionary-record-order-index-authority", "disposition": "include"},
+      {"path": "raw/naves_topical/mods.d/nave.conf", "bytes": 1911, "sha256": "0a52fe9e016a8900434118be0cb021deed1dfb02b7d2b829bb0e094ff92049e9", "role": "module-metadata-and-rights-support", "disposition": "include-as-support-not-textual-witness"}
+    ],
+    "local_noncohort_files": [
+      {"path": "raw/naves_topical/_download_nave.py", "bytes": 1744, "sha256": "da5a1da16e07fb9d093f6d9660a2218675e48ef5b6c23a9626637570809d9b0e", "disposition": "exclude-from-content", "reason": "Local acquisition procedure; evidence for archive origin only."},
+      {"path": "raw/naves_topical/format_inspection.txt", "bytes": 4797, "sha256": "932d0d919bb5233db89cbc701dde4e097fcbcd4cf03b0584a85dc7b6edd054bd", "disposition": "exclude-from-content", "reason": "Historical diagnostic output; not source authority and not used by producer or oracle."}
+    ]
+  },
+  "binary_format": {
+    "endianness": "little",
+    "dictionary_index_record": "dict.idx: uint32 dat_offset, uint32 record_size; records separated by CRLF in dict.dat",
+    "dictionary_record": "UTF-8 key, CRLF, uint32 block_number, uint32 entry_in_block",
+    "compressed_index_record": "dict.zdx: uint32 zdt_offset, uint32 compressed_size; blocks separated by CRLF in dict.zdt",
+    "compressed_block": "uint32 entry_count followed by entry_count pairs of uint32 payload_offset and uint32 payload_size; payload bytes begin at 4 + entry_count*8",
+    "counts": {"dictionary_entries": 5322, "unique_dictionary_keys": 5320, "compressed_blocks": 178, "uncompressed_bytes": 4615804, "payload_bytes": 4572516, "payload_body_bytes": 4567194, "terminal_nul_count": 5322, "terminal_nul_bytes": 5322, "zlib_stream_bytes": 1242378, "allocation_padding_count": 178, "allocation_padding_bytes": 182272, "dict_idx_record_bytes": 42576, "dictionary_key_bytes": 40116, "dict_pointer_bytes": 42576, "key_pointer_delimiter_bytes": 10644, "dict_outer_separator_bytes": 10644, "zdx_record_bytes": 1424, "zdt_separator_bytes": 356, "block_count_field_bytes": 712, "descriptor_table_bytes": 42576},
+    "ordered_digests": {
+      "dictionary_keys_sha256": "802b3f43132923b38a7a38b709d3a0a4cca4f8a9c791fa56958068c86c96bf6a",
+      "payload_sha256s_sha256": "118aabcfd5daebba8d6c27661f6806e0ab8293b492c98a74a4880510c76c5580",
+      "index_pointer_sequence_sha256": "468b1733e3902c61d22abb67409b819d662aeb87ea8874ea5cbfcd2e8368de88",
+      "compressed_block_census_sha256": "c6e7dee58b7a6031a5017e74bdc58505fe6ac4f22777a4127be9c57db7dafad1"
+    },
+    "source_markup_counts": {"entryFree": 5322, "def": 5322, "lb": 17018, "ref_osisRef": 77935, "ref_target": 4368, "list": 2346, "item": 12361}
+  },
+  "representation": {
+    "order": "dict.idx dictionary-key order",
+    "payload": "one TEI entryFree per addressed payload, retaining source subtree order, text, tail text, n attributes, lists, line breaks, and reference display text",
+    "attribute_crosswalk": "source ref/@osisRef becomes TEI P5 ref/@target plus type=osisRef; source ref/@target remains target",
+    "dictionary_key_crosswalk": "every external dictionary key is represented literally in readable TEI form/orth and every binary pointer is recorded against the same ordinal TEI xml:id",
+    "terminal_nul_disposition": "each addressed payload must contain exactly one final NUL byte; it is retained in source hashes and explicitly disposed as a required binary format terminator outside readable TEI",
+    "allocation_padding_disposition": "each indexed compressed allocation contains one complete zlib stream followed by exactly 1024 zero bytes, retained and explicitly disposed as verified allocation padding"
+  },
+  "supplied_claim_discrepancy": {
+    "member": "mods.d/nave.conf",
+    "supplied_sha256": "0a52fe9e016a8900434118be0cb021deed1dfb02b7d2b829bb0e094ff92049d",
+    "observed_sha256": "0a52fe9e016a8900434118be0cb021deed1dfb02b7d2b829bb0e094ff92049e9",
+    "status": "explicit-unresolved-claim-correction"
+  },
+  "metadata_policy": "Use only the assigned work identity and exact module metadata; do not infer a print edition, silently repair source wording, or promote module claims to human acceptance.",
+  "rights_policy": "Retain the module Public Domain statement and provider/source attribution while leaving human rights and publication decisions unresolved.",
+  "candidate_boundary": {"status": "nonaccepted", "publication": "not_ready", "canonical_writes": false}
+}

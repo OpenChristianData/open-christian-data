@@ -1,0 +1,11 @@
+{
+  "contract": "ocd-ajops-validation-policy-v1",
+  "mutations": [
+    "delete one TEI body paragraph",
+    "change one heading/title",
+    "delete one source note/footnote",
+    "drop one table row or figure marker"
+  ],
+  "oracle_dependencies": "Producer uses lxml. Oracle source census uses stdlib ElementTree; lxml is used only to parse TEI and validate P5; PyMuPDF independently checks the PDF page envelope.",
+  "text": "Compare all retained JATS text in source order using an independent stdlib XML parser; check per-element structural counts for article, front/body/back, sections, paragraphs, figures/graphics, tables, notes, references and lists; compare figure assets and captions against the profile; validate complete TEI against bound P5 XSD; independently bind every PDF page text hash and title; document source/producer parser dependency differences."
+}

@@ -1,0 +1,34 @@
+{
+  "contract": "ocd-lib072-validation-policy-v1",
+  "policy_id": "lib072-five-works-six-retained-members-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "publication_state": "not_ready",
+  "required_member_names": ["manifest.json","content.tei.xml","source-accountability.json","provenance.json","unresolved.jsonl","README.source.md"],
+  "required_work_count": 1,
+  "required_source_member_counts_by_work": {
+    "spurgeon-all-of-grace": 1,
+    "spurgeon-lectures-to-my-students": 2,
+    "torrey-how-to-pray": 1,
+    "torrey-what-the-bible-teaches": 1,
+    "wilberforce-practical-view": 1
+  },
+  "required_adjacent_member_count": 49,
+  "checks": [
+    "six exact retained source members and five frozen map claims",
+    "complete adjacent retained-member census",
+    "independent physical-line read and byte reassembly",
+    "omission duplication reorder invention metadata and source-id detection",
+    "TEI P5 XSD and source-accountability JSON schema",
+    "source-local Project Gutenberg license and Internet Archive credit notice",
+    "localized edition rights and human-review uncertainty",
+    "candidate package integrity and current authority bindings",
+    "complete closed TEI provenance accountability unresolved and README equality",
+    "producer-independent complete first-party import closure"
+  ],
+  "forbidden_oracle_imports": [
+    "build.tei.gutenberg_evangelical_lib072_reconstruction",
+    "build.parsers.gutenberg_evangelical",
+    "build.lib.pg_inline_markup"
+  ]
+}

@@ -1,0 +1,5 @@
+# Source credit: *Womens speaking justified*
+
+This electronic text reproduces the complete retained Text Creation Partnership (TCP) TEI XML witness A41072, *Womens speaking justified, proved and allowed of by the Scriptures*, attributed in its source header to Margaret Askew Fell. TCP keyboarded and encoded the text from the Early English Books Online edition. The retained source is `raw/tcp/high-range/A41072/A41072.xml`; its acquisition receipt is `raw/tcp/high-range/A41072/acquisition-receipt.json`. The TCP source is available at <https://raw.githubusercontent.com/textcreationpartnership/A41072/master/A41072.xml>.
+
+The TCP header describes this Phase I keyboarded and encoded text as available under Creative Commons CC0 1.0 Universal, and asks that due credit and attribution be given to its original source. This credit applies to the electronic text. It does not claim rights to page images, assert collation with a print exemplar, or authorize publication of a canonical edition. This acquired witness is the A41072 text described by its header, not the larger *A touch-stone* of which the printing says it is part 2.

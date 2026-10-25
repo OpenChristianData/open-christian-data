@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title>PIPE-024 synthetic accepted TEI</title></titleStmt>
+      <publicationStmt><p>Conformance fixture only.</p></publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <ptr target="https://example.invalid/synthetic-source.xml"/>
+          <idno type="work_id">synthetic-work</idno>
+          <idno type="textual_form_id">synthetic-form</idno>
+          <idno type="edition_id">synthetic-edition</idno>
+          <idno type="acquisition_id">synthetic-acquisition</idno>
+          <idno type="source_sha256">d8b5b200f52f9b5b14e9021e957862a7a156a8b5b000d976c38d726c5a88b4d2</idno>
+          <idno type="source_bytes">60</idno>
+          <idno type="representation_revision">handoff-v1</idno>
+          <note type="source-location">source-member.xml</note>
+          <note type="source-scope">div1[@id='unit']</note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change xml:id="handoff-v1" when="2026-09-06">Synthetic accepted handoff fixture.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text><body><div xml:id="unit"><p>Short synthetic source text.</p></div></body></text>
+</TEI>

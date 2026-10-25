@@ -1,0 +1,21 @@
+{
+  "contract": "selected-thml-check-v1",
+  "policy_id": "37c-048-augustine-on-christian-doctrine-v2",
+  "heading_policy": "Derive each ordered child sequence directly from retained XML. Reject invented or duplicate headings, deleted or moved title paragraphs, reversed or concatenated title content, and changed title/shorttitle accountability attributes across all 158 division boundaries. Preserve Book I's separate title paragraphs and the final chapter's source order.",
+  "required": [
+    "exact-source-member-hash-and-schema-valid-acquisition",
+    "source-native-v-title-and-complete-selected-subtree",
+    "independent-source-to-readable-tei-element-text-tail-attribute-and-order-comparison",
+    "complete-top-level-source-carrier-disposition",
+    "source-document-shell-and-header-accounting-from-profile",
+    "tei-p5-schema",
+    "candidate-package-integrity",
+    "mutation-rejection",
+    "fresh-process-byte-identical-package-reproduction"
+  ],
+  "shared_assumptions": ["XML parsing", "acquisition schema", "existing TEI vocabulary", "candidate package contract", "Parallel source-to-TEI tag and attribute mapping assumptions; corroborated by source-derived boundary assertions and targeted mutations without producer mapping helpers"],
+  "unresolved": [
+    "constituent edition date: retained printSourceInfo says 1890; other ticket-level date claims are not reconciled here",
+    "human acceptance, rights clearance, accepted IR, release, and publication authorization are not established"
+  ]
+}

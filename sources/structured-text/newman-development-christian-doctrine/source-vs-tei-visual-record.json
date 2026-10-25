@@ -1,0 +1,69 @@
+{
+  "work": {
+    "slug": "newman-development-christian-doctrine",
+    "title": "An Essay on the Development of Christian Doctrine",
+    "project_gutenberg_id": 35110
+  },
+  "retained_source": {
+    "archive": "pg35110-h.zip",
+    "archive_sha256": "8335ab4ef21bc0c17169eb8562d3271f49595ce851948476a32ce9ae8d7c22f6",
+    "html_member": "pg35110-images.html",
+    "html_member_sha256": "9713808e5dc56b6d0ffff66e4ea470b21760ee1aadca7ff8aad9da807e8822d4"
+  },
+  "tei_candidate": {
+    "artifact": "candidate.tei.xml",
+    "sha256": "32b4148832271481ca63a96d9c427740cc93442a2ed4eaa09f776085843bf8a1"
+  },
+  "capture_methods": {
+    "source": "The exact retained pg35110-images.html ZIP member was served locally and captured with Playwright at 1280 by 1800 pixels.",
+    "tei": "The retained TEI candidate was rendered with the repository CETEIcean viewer screenshot tool."
+  },
+  "comparisons": [
+    {
+      "region": "opening-title-and-preliminaries",
+      "source_artifact": "visual/source/source.opening.png",
+      "source_bytes": 122001,
+      "source_sha256": "fc4d6c82717bfc5fe9917b400c0eeb9635e7682c1a603cd455bf33e17e5bf25e",
+      "tei_artifact": "visual/candidate.opening.png",
+      "tei_bytes": 208560,
+      "tei_sha256": "2a049e9ad536a8947cfba2141811a7d419740cfe498fe6b8081c04eb0c2b46e3",
+      "observation": "The source and TEI renderings preserve the source Transcriber's Notes, title, author, sixth-edition statement, and dedication. The Project Gutenberg wrapper visible on the source side is deliberately outside the reconstructed book text.",
+      "result": "pass"
+    },
+    {
+      "region": "part-ii-transition-and-chapter-vii",
+      "source_artifact": "visual/source/source.middle.png",
+      "source_bytes": 226675,
+      "source_sha256": "ce2b85715cad6904b7130c5023c165b7ca43eea1cebf407d95878bdeffd46bbc",
+      "tei_artifact": "visual/candidate.middle.png",
+      "tei_bytes": 213956,
+      "tei_sha256": "f10af55b88ae1944c1b79e0464ee5b1445f4d2837ae1475ebca742a39c654580",
+      "observation": "Both renderings show the preceding notes followed by Part II, Chapter VII, the chapter subtitle, numbered section and subsection structure, and the page transition around pages 323 through 325.",
+      "result": "pass"
+    },
+    {
+      "region": "ending-final-note-and-corrections",
+      "source_artifact": "visual/source/source.ending.png",
+      "source_bytes": 182435,
+      "source_sha256": "8096da80549db86d147c7e976b95e2c196bc3d7aef4006ca0cbd373828f4c033",
+      "tei_artifact": "visual/candidate.ending.png",
+      "tei_bytes": 226245,
+      "tei_sha256": "f14232b5a8ebbdf19a298ef6c63f3d233878c5e4d0828ff083707b931f43bc84",
+      "observation": "Both renderings retain the closing text, THE END, the final numbered note, and the terminal Transcriber's Notes and correction list.",
+      "result": "pass"
+    },
+    {
+      "region": "greek-and-neighboring-notes",
+      "source_artifact": "visual/source/source.greek.png",
+      "source_bytes": 260912,
+      "source_sha256": "08bce437abf9c8d7852f35531b504f3dcb8594b1997942eaba4b20edd44a974c",
+      "tei_artifact": "visual/candidate.greek.png",
+      "tei_bytes": 212972,
+      "tei_sha256": "cefd425e5d5f53d3a886eb61299aecaa70a03f07e6919c8490caf76ece47b377",
+      "observation": "The Greek phrase, surrounding italic emphasis, page breaks, note reference, and neighboring notes are visibly present on both sides.",
+      "result": "pass"
+    }
+  ],
+  "verdict": "technical-source-versus-tei-spot-comparison-passed",
+  "human_acceptance": "not-performed"
+}

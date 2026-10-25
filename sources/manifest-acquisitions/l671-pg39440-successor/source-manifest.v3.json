@@ -1,0 +1,94 @@
+{
+  "authorities": [
+    {
+      "bytes": 158925,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/39440/pg39440-h.zip",
+      "role": "primary-source",
+      "sha256": "c2af4c0f742112041db3de542710ff15982efef569a786f93074403891e633ba"
+    },
+    {
+      "bytes": 341770,
+      "name": "extracted-html",
+      "path": "raw/gutenberg/39440/html/pg39440-images.html",
+      "role": "source-extraction",
+      "sha256": "638f615c16fddc08b8bb4f803816b67ae73e0827c9a975816fe64560af540305"
+    },
+    {
+      "bytes": 1347,
+      "name": "acquisition-receipt",
+      "path": "raw/gutenberg/39440/acquisition-receipt.json",
+      "role": "source-acquisition-receipt",
+      "sha256": "7c693c0a981f4577efef24b435784c92e87de297e75c12ecbc9b756312bcb0bf"
+    },
+    {
+      "bytes": 2690954,
+      "name": "profile",
+      "path": "sources/manifest-acquisitions/l671-pg39440-successor/profile.v2.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "e871b1624194a2d244a6a5a2dc6026f21d595e35651a899d62ecd40ec4821d34"
+    },
+    {
+      "bytes": 3123,
+      "name": "policy",
+      "path": "sources/manifest-acquisitions/l671-pg39440-successor/policy.v2.json",
+      "role": "independent-validation-policy",
+      "sha256": "c464d25438ec391b36255b2254469e78d49eca7a25d1cca20617c4b6e5516458"
+    },
+    {
+      "bytes": 458,
+      "name": "readme",
+      "path": "sources/manifest-acquisitions/l671-pg39440-successor/README.source.md",
+      "role": "source-attribution-evidence",
+      "sha256": "b2e11a4c420803193a467eb1b116711d8717424e90595fb00dbd053203e0cbc9"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-l671-l674-readable-hymn-source-tei",
+    "implementation_path": "build/tei/l671_l674_semantic.py",
+    "implementation_sha256": "5d60d3c353cf290b25c4139e2082aab02a7109430788aa352c9328fab32c920f",
+    "version": "1"
+  },
+  "edition_id": "cox-sacred-hymns-1841-pg39440",
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "source_id": "cox-german-hymns-pg39440-html",
+  "source_members": [
+    {
+      "bytes": 158925,
+      "name": "retained-archive",
+      "path": "raw/gutenberg/39440/pg39440-h.zip",
+      "role": "primary-source",
+      "sha256": "c2af4c0f742112041db3de542710ff15982efef569a786f93074403891e633ba"
+    }
+  ],
+  "ticket_id": "L671",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-l671-l674-readable-hymn-source-oracle",
+    "implementation_path": "build/tei/l671_l674_semantic_oracle.py",
+    "implementation_sha256": "d185d2fa3dc1ad0d4e96648fb0c13f9736ae5e0f802fa11e183d31617e15e4b9",
+    "import_closure_sha256": "f9badb199dbaca252f3c4ac85cd1945f4b8730879cca52e5e8327991cff8caee",
+    "version": "1"
+  },
+  "work_id": "cox-sacred-hymns-from-the-german-1841"
+}

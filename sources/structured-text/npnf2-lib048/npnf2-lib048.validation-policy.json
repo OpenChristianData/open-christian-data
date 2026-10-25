@@ -1,0 +1,88 @@
+{
+  "contract": "ocd-npnf2-lib048-validation-policy-v2",
+  "policy_id": "npnf2-lib048-fifteen-work-v2",
+  "version": 2,
+  "tei_topology": {
+    "root_attributes": {"xml:id": "npnf2-lib048-candidate"},
+    "body_attributes": {"xml:id": "npnf2-lib048-assigned-body"},
+    "header_c14n_sha256": "5e587bad1ff4c9ff554b35f7a6c5298cdb1ad5557ebf4e64aa137f6c9b1f67e5"
+  },
+  "projection": {
+    "tag_map": {"div1": "div", "div2": "div", "div3": "div", "div4": "div", "p": "p", "note": "note", "i": "hi", "span": "seg", "pb": "pb", "scripRef": "ref", "sup": "hi", "hr": "milestone", "img": "figure"},
+    "language_span_tag": "foreign",
+    "xml_id_template": "lib048-{source_key}-{ordinal:06d}-{source_id}",
+    "inline_wrapper_id_template": "lib048-inline-wrapper-{ordinal:06d}",
+    "direct_div_inline_tags": ["ref", "seg", "foreign", "hi"],
+    "attribute_rules": {
+      "id": {"source_tags": ["div1", "div2", "div3", "div4", "p", "note", "i", "span", "pb", "scripRef", "sup", "hr", "img"]},
+      "n": {"source_tags": ["div1", "div2", "div3", "div4", "note", "pb"], "tei_attribute": "n", "disposition": "@n"},
+      "type": {"source_tags": ["div1", "div2", "div3", "div4"], "tei_attribute": "type", "except_work_root": true, "disposition": "@type"},
+      "class": {"source_tags": ["p", "span"], "tei_attribute": "rend", "disposition": "@rend"},
+      "style": {"source_tags": ["p", "hr"], "tei_attribute": "rend", "disposition": "@rend"},
+      "place": {"source_tags": ["note"], "tei_attribute": "place", "disposition": "@place"},
+      "href": {"source_tags": ["pb"], "tei_attribute": "facs", "disposition": "@facs"},
+      "passage": {"source_tags": ["scripRef"], "tei_attribute": "cRef", "disposition": "@cRef"},
+      "osisRef": {"source_tags": ["scripRef"], "tei_attribute": "target", "disposition": "@target"},
+      "lang": {"source_tags": ["span"], "tei_attribute": "xml:lang", "value_map": {"EL": "grc", "HE": "he", "LA": "la"}, "disposition": "@xml:lang", "method": "declared-language-code-map"},
+      "dir": {"source_tags": ["span"], "tei_attribute": "rend", "append_prefix": " direction:", "disposition": "@rend"},
+      "title": {"source_tags": ["div1", "div2", "div3", "div4"], "disposition": "child::head[1]"},
+      "src": {"source_tags": ["img"], "disposition": "child::graphic/@url", "method": "retained-source-asset-url"},
+      "alt": {"source_tags": ["img"], "disposition": "child::figDesc", "method": "retained-source-image-alt"}
+    },
+    "derived_attributes": {
+      "division_type_template": "source-{source_tag}",
+      "by_source_tag": [
+        {"source_tag": "i", "attributes": {"rend": "italic"}},
+        {"source_tag": "sup", "attributes": {"rend": "superscript"}},
+        {"source_tag": "scripRef", "attributes": {"type": "scripture"}},
+        {"source_tag": "hr", "attributes": {"unit": "horizontal-rule"}},
+        {"source_tag": "img", "attributes": {"type": "source-img"}}
+      ],
+      "plain_span_attributes": {"type": "source-span"}
+    },
+    "reference_classification": {
+      "census_semantics": "scripture_refs counts retained source scripRef tags; it is a historical source-tag count and does not assert biblical semantics for every tag.",
+      "default": "scripture",
+      "neutral_non_scripture_exceptions": [
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.XIV-p4.1", "passage": "Ep. lxxvii. 9"},
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.XXXIX-p75.1", "passage": "Ep. cxxxiii. 3"},
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.XLVIII-p18.1", "passage": "Ep. cxxiii. 9"},
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.XLVIII-p141.1", "passage": "Ep. 93"},
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.XLVIII-p171.1", "passage": "Ep. i. 6, 67, 68"},
+        {"source_member": "npnf206", "source_root_id": "v", "source_xml_id": "v.CVIII-p44.1", "passage": "Ep. xv. 2"},
+        {"source_member": "npnf206", "source_root_id": "vi.i", "source_xml_id": "vi.i-p4.1", "passage": "Ep. x."},
+        {"source_member": "npnf206", "source_root_id": "vi.iv", "source_xml_id": "vi.iv-p197.1", "passage": "Ep. 71"},
+        {"source_member": "npnf206", "source_root_id": "vi.vi", "source_xml_id": "vi.vi.I-p109.1", "passage": "Ep. xxii."},
+        {"source_member": "npnf206", "source_root_id": "vi.ix", "source_xml_id": "vi.ix.III-p146.1", "passage": "Ep. 64"},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.iv-p18.1", "passage": "Ep. 154"},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.x-p28.1", "passage": "Ep. 12"},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.x-p39.1", "passage": "Ep. lv."},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.xxviii-p59.2", "passage": "Ep. xxviii. 4"},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.cxviii-p9.1", "passage": "Ep. clxv."},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.cxviii-p12.1", "passage": "Ep. xxii."},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.iv.cxviii-p13.1", "passage": "Ep. xxi."},
+        {"source_member": "npnf212", "source_root_id": "ii", "source_xml_id": "ii.v.xix-p20.1", "passage": "Ep. xxviii."},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.iii-p31.4", "passage": "Ep. 30"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.iii-p46.1", "passage": "Ep. 30"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.i.ix-p5.1", "passage": "Ep. 35"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.i.xix-p6.1", "passage": "Ep. 7"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.i.xxi-p5.1", "passage": "Ep. 7"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.i.xxix-p3.1", "passage": "Ep. 39"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.ii.iv-p5.1", "passage": "Ep. 6"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.ii.x-p10.1", "passage": "Ep. 38"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.ii.xxiv-p19.1", "passage": "Ep. 20"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.v.viii-p9.3", "passage": "Ep. 103"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.v.xiii-p5.1", "passage": "Ep. 23"},
+        {"source_member": "npnf212", "source_root_id": "iii", "source_xml_id": "iii.v.vi.vii-p7.1", "passage": "Ep. 53"},
+        {"source_member": "npnf213", "source_root_id": "ii", "source_xml_id": "ii.ix.v-p5.1", "passage": "Ep. ix."}
+      ]
+    }
+  },
+  "forbidden_oracle_imports": [
+    "build.tei.npnf2_lib048_reconstruction",
+    "build.tei.npnf_ambrose_reconstruction",
+    "build.lib.ccel_thml",
+    "build.tei.thml_to_tei",
+    "build.tei.ccel_work_config"
+  ]
+}

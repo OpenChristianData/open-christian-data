@@ -363,36 +363,11 @@ def test_ccel_census_id_sets_survive_in_tei_text() -> None:
 
 
 @pytest.mark.slow
+@pytest.mark.requires_local_artifacts
 def test_standard_ebooks_census_id_sets_survive_in_tei_text() -> None:
     census = _read_json_or_skip(SE_CENSUS)
     text = _parse_tei_text_or_skip(SE_TEI)
-    known_features = {
-        "sections",
-        "noterefs",
-        "endnotes",
-        "bridgeheads",
-        "emphasis",
-        "verse_blocks",
-    }
-
-    _assert_no_unknown_features(census, known_features)
-    for feature in census["features"]:
-        if feature == "sections":
-            _assert_subset(feature, _feature_ids(census, feature), _xml_ids(text.xpath(".//tei:div", namespaces=NS)))
-        elif feature == "endnotes":
-            _assert_subset(feature, _feature_ids(census, feature), _xml_ids(text.xpath(".//tei:note", namespaces=NS)))
-        elif feature == "noterefs":
-            _assert_subset(feature, _feature_ids(census, feature), _corresp_ids(text.xpath(".//tei:note/@corresp", namespaces=NS)))
-        elif feature == "bridgeheads":
-            _assert_count(feature, _feature_count(census, feature), len(text.xpath(".//tei:argument", namespaces=NS)))
-        elif feature == "verse_blocks":
-            _assert_count(feature, _feature_count(census, feature), len(text.xpath(".//tei:quote/tei:lg", namespaces=NS)))
-        elif feature == "emphasis":
-            endnote_emphasis = _raw_endnote_body_emphasis_count(SE_ENDNOTES)
-            expected = _feature_count(census, feature) + endnote_emphasis
-            _assert_count(feature, expected, len(text.xpath(".//tei:emph", namespaces=NS)))
-        else:
-            raise AssertionError(f"Unrecognized census feature with no gate check: {feature}")
+    _assert_standard_ebooks_batch05_census_survives(census, text)
 
 
 @pytest.mark.slow

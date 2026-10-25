@@ -1,0 +1,82 @@
+{
+  "work": {
+    "slug": "newman-grammar-of-assent",
+    "title": "An Essay in Aid of a Grammar of Assent",
+    "project_gutenberg_id": 34022,
+    "retained_witness": "London: Burns, Oates & Co., 1874"
+  },
+  "retained_source": {
+    "archive": "pg34022-h.zip",
+    "archive_sha256": "27f6e1c54a0b5ac43b15b1ac26dabeff05a78aa27e2e2989f1633093200cedec",
+    "html_member": "pg34022-images.html",
+    "html_member_sha256": "798d867ac82ef0df1f2496cceaf06aea6fef8160f1c947dc95e4f7b2ae6def08"
+  },
+  "tei_candidate": {
+    "artifact": "candidate.tei.xml",
+    "bytes": 910178,
+    "sha256": "9f15e77cb3bb539ebd9da11624244b2168299c5ce0ac917b2d257a95c88932e6"
+  },
+  "capture_methods": {
+    "source": "The exact retained pg34022-images.html ZIP member was extracted to a bounded external runtime directory and captured with headless Playwright at 1280 by 1800 pixels using source structural anchors.",
+    "tei": "The unchanged retained TEI candidate was rendered with build/tools/tei_viewer_screenshot.py and the repository CETEIcean verification viewer."
+  },
+  "tei_render_probe": {
+    "paragraphs": 849,
+    "note_references": 56,
+    "end_notes": 56,
+    "dangling_references": 0,
+    "ceteicean_upgraded": true
+  },
+  "comparisons": [
+    {
+      "region": "opening-title-edition-contents-and-dedication",
+      "source_anchor": "h1",
+      "source_artifact": "visual/source/source.opening.png",
+      "source_bytes": 110376,
+      "source_sha256": "444b4b5b8151d74c1f08ca947ac389c8da174f3d4200e8983e4a9e10c524fd71",
+      "tei_artifact": "visual/candidate.opening.png",
+      "tei_bytes": 201102,
+      "tei_sha256": "fd97f33728fdf65cae0d9d7eb2e00f182536a791cc7245cb59c36c140f2210f9",
+      "observation": "Both sides visibly retain the title, Newman attribution, Latin epigraph, London publisher, 1874 date, contents, dedication, and opening part/chapter. The Project Gutenberg redistribution wrapper visible on the source side is deliberately excluded. TEI preserves the source title line breaks as lb elements, title paragraphs as p elements, and contents as a list; the shared verification viewer is structural rather than a facsimile and does not apply block CSS to every one of those custom elements.",
+      "result": "pass"
+    },
+    {
+      "region": "part-ii-chapter-vi-transition",
+      "source_anchor": "toc30",
+      "source_artifact": "visual/source/source.middle.png",
+      "source_bytes": 229541,
+      "source_sha256": "c03c36dba0c5d190e056ca58d1803f0e7f91cbfb27d5f9ade570bf89088c9b73",
+      "tei_artifact": "visual/candidate.middle.png",
+      "tei_bytes": 236243,
+      "tei_sha256": "df1edc7b2ace8aae12217a9aeaa5d6b9649873c62f31e4817f0113c00a46ce73",
+      "observation": "Both sides show the preceding pages 152 and 153 followed by page 157, Part II, Chapter VI, its opening paragraph, page 158, page 159, and section 1 Simple Assent in the same order.",
+      "result": "pass"
+    },
+    {
+      "region": "ending-and-terminal-note",
+      "source_anchor": "toc66",
+      "source_artifact": "visual/source/source.ending.png",
+      "source_bytes": 206922,
+      "source_sha256": "bbe277962e9677dcef3cb5592f144e634b241a04aeeb6af53b9084929e5f9db6",
+      "tei_artifact": "visual/candidate.ending.png",
+      "tei_bytes": 228326,
+      "tei_sha256": "1998fd0c85e86a97050ad0809b79fef095ce42e71ec23d41caf534dd9b441148",
+      "observation": "Both sides retain the closing Christianity argument on pages 488 through 491, the final biblical quotation, page 492, the terminal Note, its Chillingworth discussion, its structured references, and page 493.",
+      "result": "pass"
+    },
+    {
+      "region": "greek-labeled-term-and-latin-typography",
+      "source_anchor": "third span.tei-foreign[lang=el]",
+      "source_artifact": "visual/source/source.language.png",
+      "source_bytes": 267816,
+      "source_sha256": "e0c403b0997d36f30d8f8ccc1a0230a0183501f590820ca39eb42b35d1adf57a",
+      "tei_artifact": "visual/candidate.language.png",
+      "tei_bytes": 253505,
+      "tei_sha256": "71ae1a77202824bf6ae76434aa7ca9b3873ae97efaf4b01ea330972cb9d3f0bf",
+      "observation": "Both sides show pages 355 through 358 and retain the source's italic Greek-labeled transliteration phronesis, including repeated occurrences, alongside the surrounding italic and Latin typography.",
+      "result": "pass"
+    }
+  ],
+  "verdict": "technical-source-versus-tei-spot-comparison-passed",
+  "human_acceptance": "not-performed"
+}

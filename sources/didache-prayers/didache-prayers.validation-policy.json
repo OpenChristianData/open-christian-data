@@ -1,0 +1,7 @@
+{
+  "policy_id": "didache-prayers-retained-wikisource-policy-v1",
+  "oracle_id": "ocd-didache-prayers-independent-source-oracle",
+  "schema": "didache-prayers.source-accountability.schema.json",
+  "rules": ["exact retained JSON bytes and SHA-256", "16 chapters, 30 rows, 100 verse markers, 10 inline footnotes", "exact chapter/row/verse order and visible text", "exact side labels and note bodies", "no omission, duplication, reorder, invention, metadata, provenance, or evidence drift", "unsupported MediaWiki constructs must remain accounted for"],
+  "human_review": ["translation and bounded identity", "rights and license accountability", "textual acceptance"]
+}

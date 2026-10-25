@@ -1,0 +1,15 @@
+# Source and rights preparation — The Epistle of Polycarp
+
+The accepted electronic text is Polycarp’s *Epistle to the Philippians*, reconstructed from the retained extracted HTML for [Project Gutenberg eBook 77576](https://www.gutenberg.org/ebooks/77576), *The Writings of the Apostolic Fathers* (T. & T. Clark, Edinburgh, 1870). The acquired ZIP is the package container. This constituent retains its introductory notice, 14 chapter headings, 80 linked source footnotes, and 12 source page markers. It is distinct from Ignatius’s epistle to Polycarp and the separate martyrdom account.
+
+The volume title page names Alexander Roberts and James Donaldson as editors and lists Roberts, Donaldson, and Frederick Crombie as volume translators. Its preface says the editors translated the volume except the *Similitudes of Hermas*, translated by Crombie. Roberts and Donaldson are the supported collective translator attribution for Polycarp’s epistle; the source does not identify which editor translated it. The electronic edition credits David King and the Online Proofreading Team at PGDP and identifies Internet Archive images as source scans.
+
+The human-visible data notice is `data/structured-text/pg77576-polycarp-epistle/README.md`. It carries the complete retained Project Gutenberg License, original-format link, and qualified source and rights statements. The Gutenberg catalog reports United States public-domain status; jurisdiction-specific rights for the translation and electronic transcription, human verification, print collation, and public publication remain separate.
+
+## Current item-specific rights disposition — October 9, 2026
+
+Target `pg77576-polycarp-epistle--pg77576-polycarp-epistle-pg77576-edition` matches the acceptance, acquisition and master bytes reviewed in `reports/_logs/first-publication-rights-inputs-20261008-v1/project-gutenberg-target-review-20261008.json` (review SHA-256 `cf2811c0bf4e2cc00bad6cefdd87fb09f6757153e33d7da6a5b1fb1fe185a4fd`). Current acceptance SHA-256: `a47baef2a74fa9a10aa06cfe55f59b01533e5491019dd697d5da0933a9d4e6ea`; master SHA-256: `875cd829772fc9aefa603599d1bf12e97a10849d3eb3961cc25d89caa6cf778b`; textual source SHA-256: `ca58049f2ee7c62c8c34dffb6badfdb910ab698748f8decc9d9b978e7972e507`.
+
+The supported route is **Public domain (United States and Australia); 1870 historical text, translation, and notes only**, limited to this source-titled constituent and its linked historical notes. This supersedes the preliminary unassessed-rights statement only for the selected 1870 literary text, translation and textual edition in these two territories. It does not clear new digital-transcription matter, images, modern additions, worldwide use or the whole eBook package. Preserve existing source/editor/translator credits and all scope/authenticity qualifications.
+
+Bind and carry the complete current human-visible notice at `data/structured-text/pg77576-polycarp-epistle/README.md`, including its unaltered retained Gutenberg License, prominent notice, and original-format access link. Final projection/release checks and publication authorization remain separate.

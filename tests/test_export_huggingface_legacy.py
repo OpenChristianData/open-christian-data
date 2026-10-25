@@ -2,6 +2,8 @@ import importlib
 import json
 from pathlib import Path
 
+from build.scripts.export_huggingface import extract_meta_fields
+
 
 def _write_resource(path: Path, *, resource_id: str, title: str, schema_type: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -23,6 +25,47 @@ def _write_resource(path: Path, *, resource_id: str, title: str, schema_type: st
         + "\n",
         encoding="utf-8",
     )
+
+
+def test_publication_metadata_exposes_witness_relationship_and_identity_boundaries() -> None:
+    fields = extract_meta_fields(
+        {
+            "id": "city-of-god",
+            "title": "The City of God",
+            "author": "Augustine of Hippo",
+            "schema_type": "structured_text",
+            "license": "public-domain",
+            "expression_id": "augustine-city-of-god-dods-en",
+            "digital_witness_id": "city-of-god-standard-ebooks",
+            "witness_role": "preferred-reading-transformation",
+            "related_witness_ids": ["city-of-god-ccel-npnf102"],
+            "segmentation_basis": "Publisher XHTML files flattened to parser sections.",
+            "provenance": {
+                "source_url": "https://example.test/source",
+                "source_edition": "Standard Ebooks edition",
+                "download_date": None,
+                "processing_date": "2026-07-20",
+                "source_hash": "sha256:" + "a" * 64,
+                "source_hash_scope": "selected-xhtml-source-manifest-v1",
+                "source_revision": "6290cb26fa2cac6ef2f9105c9176a97ee3f46b94",
+                "source_revision_type": "git-commit-sha1",
+                "generated_content_hash": "sha256:" + "b" * 64,
+            },
+        }
+    )
+
+    assert fields["_expression_id"] == "augustine-city-of-god-dods-en"
+    assert fields["_digital_witness_id"] == "city-of-god-standard-ebooks"
+    assert fields["_witness_role"] == "preferred-reading-transformation"
+    assert fields["_related_witness_ids"] == ["city-of-god-ccel-npnf102"]
+    assert fields["_segmentation_basis"].startswith("Publisher XHTML")
+    assert fields["_source_revision_type"] == "git-commit-sha1"
+    assert fields["_source_revision"].startswith("6290cb26")
+    assert fields["_source_hash"].startswith("sha256:")
+    assert fields["_source_hash_scope"] == "selected-xhtml-source-manifest-v1"
+    assert fields["_generated_content_hash"].startswith("sha256:")
+    assert fields["_acquired_on"] is None
+    assert fields["_processed_on"] == "2026-07-20"
 
 
 def test_legacy_huggingface_export_skips_nsh_artifacts_and_writes_card(

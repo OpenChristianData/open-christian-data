@@ -1,0 +1,11 @@
+# The Beatitudes: source credit and use notice
+
+Sourced via CCEL.org from the retained electronic text of **The Beatitudes: An Exposition of Matthew 5:1-12**. **Thomas Watson** is named as author in the source title page, signed reader address, and Dublin Core. The electronic metadata names the **Institute of Practical Bible Education** as its source. **Kathleen O�Bannon, CCEL Staff** is credited at the end of the source description; that literal retained spelling contains a replacement character. This is a description credit, not evidence that she transcribed, edited, or translated the main text.
+
+The source's print-source published field says **1660**. Its electronic creation field says **2000-07-04**. These are distinct source observations, not independent identification or collation of the transcribed print exemplar. The electronic publisher, version, and series fields are blank. No print publisher, translator, transcriber, or additional edition identity is supplied here.
+
+The complete retained envelope contains the title page; “To the Reader”; 21 numbered exposition chapters; “An appendix to the beatitudes”; and indexes, in source order. All 25 divisions remain together. Existing acceptance binds this technical electronic envelope while leaving bibliographic work, constituent-part, textual-form, edition, and witness identity adoption qualified. Source wording, uncertainty, notes, references and meaningful structure remain in the accepted reconstruction. Public readable text omits notes and page markers, which remain in structured content. Existing partial agent visual review does not establish exhaustive proofreading or print equivalence.
+
+The provider rights field says **Public Domain**. That is source metadata, not independent rights clearance for every jurisdiction, edition or formatting layer. The maintained CCEL permission record reports that parsing ThML/XML for text is permitted; CCEL's copyright applies to its files and formatting rather than the underlying public-domain texts. **Do not sell CCEL files or derivatives of their formatting.** Retain “sourced via CCEL.org” in any dataset README or card containing this text.
+
+Technical acceptance and private offline verification do not establish human textual acceptance, physical print equivalence, independent rights clearance, or authorization for public publication.

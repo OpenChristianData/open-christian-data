@@ -1,0 +1,8 @@
+{
+  "contract": "ocd-37c-300-policy-v1",
+  "ticket_id": "37c-300",
+  "work_id": "sum-of-saving-knowledge",
+  "source_sha256": "6aa4907f6994d61ce3afeeea9b063cabf667b087185bc1cf7f7fd71fc19fee83",
+  "independence": "The checker traverses retained HTML independently of the producer and compares every represented element, attribute, direct text, tail, child order, heading and column boundary against candidate TEI. Both use lxml and the pinned source bytes; this shared parser assumption is explicit.",
+  "coverage": "All six populated work-text columns; four navigation and three empty spacer columns checked against their declared exclusions; exact retained source bytes bound by SHA-256."
+}

@@ -1,0 +1,9 @@
+# The First Book of Samuel — retained source and public notice direction
+
+This title-specific work uses the retained CCEL electronic XML witness for W. G. Blaikie's *The First Book of Samuel*, in *The Expositor's Bible*, edited by William Robertson Nicoll. The source title page says Toronto, Willard Tract Depository and Bible Depot, 1888. Electronic metadata spells the publisher “Williard”; that literal source wording is retained. The older Blaikie author container, Blaikie's *The Second Book of Samuel*, and Blaikie's *The Book of Joshua* are separate identities and outside this work's release.
+
+The single retained member is `raw/ccel/expositors-bible/blaikie_expositor8.xml`. The accepted title-specific master and source-accounting package are in `library/works/blaikie-first-book-of-samuel/`; the original acquisition and accepted master remain unchanged. The retained source labels itself “Public Domain.” That label is a source statement, not independent rights clearance for the electronic file or formatting.
+
+The retained CCEL permission record says: “Confirmed 2026-04-01 by Quincy (CCEL): parsing ThML/XML files for text is explicitly permitted. CCEL's copyright applies to their files and formatting only — not the underlying PD texts. Restriction: do not sell CCEL files or derivatives of their formatting. Attribution appreciated (mention CCEL in publication) but not legally required.” It identifies the full policy as https://ccel.org/about/copyright.html and directs the attribution “sourced via CCEL.org.” This work's dataset attribution and rights qualification must be visible at `data/commentaries/blaikie-first-book-of-samuel/README.md`.
+
+The accepted scope is the complete retained First Samuel electronic work: title page, chapters I–XXXVI, and indexes. It is not a claim of print collation, independent human textual acceptance, rights clearance, or authorization to publish publicly.

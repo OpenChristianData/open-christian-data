@@ -1,0 +1,29 @@
+{
+  "status": "source-boundary-preflight-not-accepted",
+  "checked_at": "2026-10-01T02:56:30.671269+00:00",
+  "work_id": "hymnus-sancti-gangulfi",
+  "source_path": "raw/openmgh/bsb00000754/tei/bsb00000754.xml",
+  "source_sha256": "3349fbef5e7e957e964433d097e94a4a35d84addcbd6a314a88819e6a53039ff",
+  "carrier_children": 192,
+  "proposed_selection": {
+    "start_child_zero_based": 0,
+    "end_child_zero_based_inclusive": 25,
+    "children": 26,
+    "opening_id": "bsb00000754_00180_8",
+    "title_id": "bsb00000754_00180_9",
+    "last_id": "bsb00000754_00180_29",
+    "last_text": "Aeterno moderans secula tempore. Amen.",
+    "next_excluded_id": "bsb00000754_00180_30",
+    "next_excluded_text": "INCIPIT VITA SEU ACTUS EIUSDEM VENERABILLIMI GENGULFI,"
+  },
+  "source_feature_counts": {
+    "line_markers": 22,
+    "column_markers": 2,
+    "column_anchors": 2
+  },
+  "claim_limits": [
+    "Source-only preflight, not candidate reconstruction, acceptance, installation, visual/print review, rights clearance or public release",
+    "Owner must independently verify the entire work boundary, all mixed text/attributes and referenced column anchors",
+    "Current containing-source locator ending00184_24 extends into independently titled neighboring Vita; do not use that locator as work endpoint"
+  ]
+}

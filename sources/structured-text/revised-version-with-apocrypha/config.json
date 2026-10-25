@@ -1,0 +1,65 @@
+{
+  "resource_id": "revised-version-with-apocrypha",
+  "title": "Revised Version with Apocrypha",
+  "language": "en",
+  "license": "public-domain",
+  "source_url": "https://ebible.org/find/show.php?id=eng-rv",
+  "source_download_url": "https://ebible.org/Scriptures/eng-rv_usfm.zip",
+  "source_format": "eBible USFM source package, with USFX comparison carrier and retained print witnesses",
+  "source_file": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/archive/eng-rv_usfm.zip",
+  "source_root": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/source/usfm",
+  "comparison_source_file": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/archive/eng-rv_usfx.zip",
+  "comparison_source_root": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/source/usfx",
+  "retrieved_at_utc": "2026-08-31T02:11:17Z",
+  "source_updated_at_utc": "2026-08-08T06:33:50Z",
+  "source_edition": "Complete 1895 Revised Version with Apocrypha, eBible ENGRV5 / eng-rv structured edition",
+  "contributors": [
+    "British Old Testament Revision Company",
+    "British New Testament Revision Company"
+  ],
+  "authority": {
+    "archive_bytes": 3161579,
+    "archive_sha256": "87d12b8a37103925c672c4d5d1d20ec239725dc793e68ebdd792b5f9e863fde8",
+    "member_count": 83,
+    "member_inventory_sha256": "c59c9317b65666ea1eecb87f0484156954dd961f42700b48e5add62b675e43f2",
+    "book_file_count": 80
+  },
+  "comparison_carrier": {
+    "archive_bytes": 3187868,
+    "archive_sha256": "74e0b8b082f9bbe1460c6a39af1af1a12c646a3e550ba776fc7b297a2293b761",
+    "member_count": 8,
+    "member_inventory_sha256": "a1af8718222832c8ec91043873b5ba491765ab1ef99699f5f64a3e12b10863dc"
+  },
+  "witnesses": [
+    {
+      "role": "1895 whole-Bible edition witness",
+      "path": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/witness/RevisedVersionHolyBible1895.pdf",
+      "bytes": 96903926,
+      "pages": 1118,
+      "sha256": "e8b74adf9b62a005ab57946b5d2baead49b94d4536e73708d9e06026070f03ff"
+    },
+    {
+      "role": "1913 whole-Bible revised-marginal-references witness",
+      "path": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/witness/RevisedVersionHolyBible1913.pdf",
+      "bytes": 103744163,
+      "pages": 1435,
+      "sha256": "625a780bb4f72364ce09051e68f9e8a7e989f9ba5b67c99e012a18d81d11abd8"
+    },
+    {
+      "role": "Tobit replacement scan for whole-Bible scan drop-outs",
+      "path": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/witness/TOB_RV.pdf",
+      "bytes": 21931805,
+      "pages": 4,
+      "sha256": "502e4027259824ab913294ae1c26260f774653d6b2bc27e68ad0ab3a8b7785f0"
+    },
+    {
+      "role": "Greek Esther replacement scan for whole-Bible scan drop-outs",
+      "path": "raw/clean-ready-acquisition-to-tei/master-3/21/revised-version-with-apocrypha/witness/ESG_RV.pdf",
+      "bytes": 10917674,
+      "pages": 2,
+      "sha256": "871cb4a063d3b54de636f07b4a64b4a2f392e20a88526c5fc4cb04534eba5ac5"
+    }
+  ],
+  "candidate_status": "nonaccepted",
+  "notes": "Provisional net-new edition/expression candidate. The 80 USFM book files contain 39 Old Testament books, 14 file-level Apocrypha books, and 27 New Testament books. Baruch chapter 6 is source-labeled THE EPISTLE OF JEREMY and is accounted as the fifteenth Apocrypha/Deuterocanon unit without inventing a separate source member. Print-only title matter, order tables, and prefaces remain witness evidence rather than fabricated electronic text."
+}

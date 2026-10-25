@@ -1,0 +1,50 @@
+{
+  "contract": "ocd-bcp-1662-validation-policy-v1",
+  "policy_id": "bcp-1662-source-to-tei-v1",
+  "version": 1,
+  "candidate_status": "nonaccepted",
+  "required_member_names": [
+    "manifest.json",
+    "content.tei.xml",
+    "source-accountability.json",
+    "provenance.json",
+    "unresolved.jsonl",
+    "README.source.md"
+  ],
+  "required_inventory": {"total": 17106, "elements": 7152, "attributes": 5086, "text": 4868},
+  "required_image_alternatives": {"text_bearing": 603, "navigation": 184},
+  "required_comment_count": 4,
+  "required_member_count": 25,
+  "required_source_bytes": 733674,
+  "required_unresolved_ids": [
+    "bcp-expression-scope",
+    "bcp-failed-acquisitions",
+    "bcp-provider-identity",
+    "bcp-rights-and-publication",
+    "bcp-alternative-grouping"
+  ],
+  "forbidden_import_prefixes": [
+    "build.reconstruction",
+    "build.parsers.bcp",
+    "ocd_kernel.reconstruction.case_declaration",
+    "ocd_kernel.reconstruction.persistence",
+    "ocd_kernel.reconstruction.verifier_process",
+    "ocd_kernel.reconstruction.wave"
+  ],
+  "forbidden_repo_path_fragments": ["__editable__", "site-packages"],
+  "checks": [
+    "exact-source-authority-digests",
+    "complete-17106-observation-crosswalk",
+    "source-member-and-byte-order",
+    "zero-omission-duplication-invention-and-reordering",
+    "603-source-text-image-alternatives",
+    "184-navigation-images-evidence-only",
+    "four-comments-evidence-only",
+    "source-anchored-rubrics-speakers-blocks-and-alternatives",
+    "partial-expression-and-failed-acquisition-evidence",
+    "rights-provider-conflict-and-nonacceptance",
+    "complete-source-derived-tei-shape-and-text",
+    "tei-p5-xsd",
+    "producer-independent-transitive-import-closure"
+  ]
+}

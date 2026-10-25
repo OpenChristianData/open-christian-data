@@ -1,0 +1,7 @@
+# Eliza Southall memoir — retained Project Gutenberg 11959 HTML
+
+The text authority is the exact extracted `raw/gutenberg/11959/html/pg11959-images.html` from [Project Gutenberg ebook 11959](https://www.gutenberg.org/ebooks/11959). The retained ZIP is its acquisition package. The extracted `11959-cover.png` matches the ZIP member but is not referenced by the retained HTML body, so it is support rather than body content.
+
+The retained title page prints a single *Brief Memoir with Portions of the Diary, Letters, and Other Remains, of Eliza Southall*, dated 1869. Its introductory text, signed William Southall, Jr., says an earlier privately circulated English edition appeared in 1855 and later additions were made for wider circulation. The Gutenberg header credits Eliza Allen Southall as author and William Southall as editor. The introduction, memoir narrative, diary, letters, and other remains are source-titled parts of this one book; the editor's words are not attributed to Eliza. The candidate binds only the retained electronic witness and does not assert equivalence to the 1855 copy or a collated 1869 print exemplar.
+
+The candidate preserves the full decoded HTML body as readable TEI, including the Project Gutenberg provider header and footer/license. The HTML head provides metadata evidence. Jurisdictional rights, human textual acceptance, and publication authorization remain separate decisions.

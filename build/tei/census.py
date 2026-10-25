@@ -12,22 +12,11 @@ from typing import Any
 from lxml import etree
 
 from build.lib.ccel_thml import preprocess_thml
-from build.tei.bcp_source import feature_payload, load_bcp_edition
 from build.tei.ccel_work_config import (
     ccel_division_rule,
     ccel_scope_label,
     load_ccel_work_config,
     select_ccel_scope,
-)
-from build.tei.gutenberg_to_tei import (
-    INLINE_RE,
-    _footnotes,
-    _footnote_ranges,
-    _is_vol1_source,
-    _load_source,
-    _paragraphs,
-    _paired_parenthetical_anchor_count,
-    _source_groups,
 )
 
 CENSUS_SCHEMA_ID = "tei-census-v1"
@@ -355,6 +344,17 @@ def census_se_work(work_dir: str | Path) -> dict[str, Any]:
 
 def census_gutenberg_calvin(vol1_path: str | Path, vol2_path: str | Path) -> dict[str, Any]:
     """Census the selected Calvin Gutenberg rendering before TEI conversion."""
+    from build.tei.gutenberg_to_tei import (
+        INLINE_RE,
+        _footnotes,
+        _footnote_ranges,
+        _is_vol1_source,
+        _load_source,
+        _paragraphs,
+        _paired_parenthetical_anchor_count,
+        _source_groups,
+    )
+
     sources = (_load_source(Path(vol1_path), 1), _load_source(Path(vol2_path), 2))
     book_ids_by_roman: dict[str, str] = {}
     chapters: list[str] = []
@@ -468,6 +468,8 @@ def census_gutenberg_calvin(vol1_path: str | Path, vol2_path: str | Path) -> dic
 
 
 def census_bcp_liturgy(edition_slug: str, raw_root: str | Path | None = None) -> dict[str, Any]:
+    from build.tei.bcp_source import feature_payload, load_bcp_edition
+
     root = Path(raw_root) if raw_root is not None else Path.cwd() / "raw"
     edition = load_bcp_edition(edition_slug, root)
     features = {

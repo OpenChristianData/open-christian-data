@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["contract", "schema", "profile_id", "work_id", "source_id", "source_sha256", "source_record_count", "definition_block_count", "observation_counts", "crosswalk"],
+  "properties": {
+    "contract": {"const": "ocd-torreys-topical-textbook-source-accountability-v1"},
+    "schema": {"const": "sources/torreys-topical-textbook/torreys-topical-textbook.source-accountability.schema.json"},
+    "profile_id": {"const": "torreys-topical-textbook-jwbickel-jsonl-v1"}, "work_id": {"const": "torreys-topical-textbook"}, "source_id": {"const": "jwbickel-bible-dictionaries-torreys-jsonl"},
+    "source_sha256": {"const": "8211c20290e951f60e21187e3bdaea639c8cf59343675b6518c6c17423906a1c"}, "source_record_count": {"const": 623}, "definition_block_count": {"const": 23549},
+    "observation_counts": {"type": "object", "additionalProperties": false, "required": ["records", "definition_blocks", "total", "represented", "omitted", "duplicate"], "properties": {"records": {"const": 623}, "definition_blocks": {"const": 23549}, "total": {"const": 24172}, "represented": {"const": 24172}, "omitted": {"const": 0}, "duplicate": {"const": 0}}},
+    "crosswalk": {"type": "array", "minItems": 24172, "maxItems": 24172, "items": {"type": "object", "additionalProperties": false, "required": ["id", "kind", "source_line", "source_record_sha256", "source_field", "source_index", "source_term", "value", "target", "status"], "properties": {"id": {"type": "string"}, "kind": {"enum": ["entry", "definition"]}, "source_line": {"type": "integer", "minimum": 1}, "source_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_field": {"enum": ["term", "definitions"]}, "source_index": {"type": "integer", "minimum": 0}, "source_term": {"type": "string"}, "value": {"type": "string"}, "target": {"type": "string"}, "status": {"const": "represented"}}}}
+  }
+}

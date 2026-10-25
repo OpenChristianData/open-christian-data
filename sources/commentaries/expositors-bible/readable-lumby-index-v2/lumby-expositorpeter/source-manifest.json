@@ -1,0 +1,75 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-expositors-lib034-readable-lumby-index-lumby-expositorpeter-v2",
+  "work_id": "expositors-bible--j-rawson-lumby",
+  "authorities": [
+    {
+      "name": "retained-thml",
+      "path": "raw/ccel/expositors-bible/lumby_expositorpeter.xml",
+      "role": "primary-source",
+      "bytes": 678452,
+      "sha256": "a41460490dcf5aaf4b46b987dc82f097c557c5cbc8f9e9c9ff848c7563309abc"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/commentaries/expositors-bible/readable-lumby-index-v2/lumby-expositorpeter/README.source.md",
+      "role": "source-attribution-readme",
+      "bytes": 713,
+      "sha256": "40b951def917661e109d5fe053da8332fe439402a9f589b3f6b467610dee5227"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/commentaries/expositors-bible/readable-lumby-index-v2/lumby-expositorpeter/reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1257,
+      "sha256": "08fb768762a7d48439181d9367411a99db0f4c3cb85b91e79476b509d5a69c3f"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/commentaries/expositors-bible/readable-lumby-index-v2/lumby-expositorpeter/validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 919,
+      "sha256": "933d381a73c58c2ca33ebd685a14054aa0a51f626e2b3230b320c1fe510a1fcf"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/commentaries/expositors-bible/readable-lumby-index-v2/lumby-expositorpeter/source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 1810,
+      "sha256": "f53ad1725083689200af8425cbb1ee43f073c335b61c77209bff3f183d14580c"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-expositors-lib034-readable-lumby-index-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_lumby_index_v2.py",
+    "implementation_sha256": "6e556a828d4301c9f1f28959ba506d70167b2c121f6f82d87d8a2044edb6e288"
+  },
+  "validator": {
+    "id": "ocd-expositors-lib034-readable-lumby-index-independent-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/expositors_bible_lib034_readable_lumby_index_v2_oracle.py",
+    "implementation_sha256": "35aaeb2838d6b88761c1e718d2b01ec5e35d4ee96907647974718bb005f4d5a3",
+    "import_closure_sha256": "35aaeb2838d6b88761c1e718d2b01ec5e35d4ee96907647974718bb005f4d5a3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

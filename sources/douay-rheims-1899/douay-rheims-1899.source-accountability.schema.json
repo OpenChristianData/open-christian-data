@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "candidate_status": {"const": "nonaccepted"},
+    "contract": {"const": "ocd-douay-rheims-1899-source-accountability-v1"},
+    "counts": {
+      "additionalProperties": {"minimum": 0, "type": "integer"},
+      "properties": {
+        "books": {"const": 73}, "chapters": {"const": 1334}, "verses": {"const": 35811},
+        "facsimile_pages": {"const": 1414}, "ebible_annotations": {"const": 644946},
+        "ebible_poetry_markers": {"const": 2528}, "scrollmapper_slots": {"const": 37255},
+        "scrollmapper_empty_slots": {"const": 1450}, "scrollmapper_empty_book_shells": {"const": 5},
+        "print_selections": {"const": 599}, "ebible_selections": {"const": 307},
+        "scrollmapper_selections": {"const": 288}, "print_derived_selections": {"const": 4},
+        "unresolved_differences": {"const": 3025}, "structural_cases": {"const": 4}
+      },
+      "required": ["books", "chapters", "verses", "facsimile_pages", "ebible_annotations", "ebible_poetry_markers", "scrollmapper_slots", "scrollmapper_empty_slots", "scrollmapper_empty_book_shells", "print_selections", "ebible_selections", "scrollmapper_selections", "print_derived_selections", "unresolved_differences", "structural_cases"],
+      "type": "object"
+    },
+    "digests": {"additionalProperties": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "minProperties": 4, "type": "object"},
+    "duplicate_verse_count": {"const": 0},
+    "human_review_required": {"const": true},
+    "omitted_verse_count": {"const": 0},
+    "print_apparatus_status": {"const": "incomplete"},
+    "publication_ready": {"const": false},
+    "schema": {"const": "douay-rheims-1899.source-accountability.schema.json"},
+    "source_members": {"items": {"type": "object"}, "minItems": 7, "type": "array"},
+    "source_only_features": {"type": "object"}
+  },
+  "required": ["contract", "schema", "source_members", "counts", "digests", "omitted_verse_count", "duplicate_verse_count", "candidate_status", "human_review_required", "publication_ready", "print_apparatus_status", "source_only_features"],
+  "title": "Douay-Rheims 1899 retained-source accountability",
+  "type": "object"
+}

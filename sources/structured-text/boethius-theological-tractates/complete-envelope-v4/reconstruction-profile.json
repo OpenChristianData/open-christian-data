@@ -1,0 +1,43 @@
+{
+  "contract": "ocd-boethius-complete-envelope-profile-v1",
+  "profile_id": "boethius-tracts-complete-five-root-ccel-witness-v4",
+  "source_member": {
+    "path": "raw/ccel/boethius/tracts.xml",
+    "bytes": 162005,
+    "sha256": "406487abffb39f63934771ce3b4d23b69ce4488d6bc1ccc6a6cad5b4b1e01de8"
+  },
+  "root_ids_in_order": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v"
+  ],
+  "root_disposition": {
+    "front": [
+      "i",
+      "ii",
+      "iii"
+    ],
+    "body": [
+      "iv"
+    ],
+    "back": [
+      "v"
+    ]
+  },
+  "body_tractate_ids": [
+    "iv.i",
+    "iv.ii",
+    "iv.iii",
+    "iv.iv",
+    "iv.v"
+  ],
+  "element_count": 1119,
+  "comment_count": 10,
+  "internal_link_count": 136,
+  "comment_disposition": "exact nontextual auto-index comments and whitespace tails retained in source accountability, not emitted as TEI reading text",
+  "unclear_disposition": "nine source unclear readings represented as TEI seg type=source-unclear with exact source text and ID",
+  "scope": "complete retained ThML.body, including source paratext and generated indexes",
+  "human_acceptance": "absent"
+}

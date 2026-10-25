@@ -1,0 +1,38 @@
+{
+  "comment_count": 18,
+  "comment_disposition": "nontextual CCEL auto-index comments retained exactly in accounting ledger",
+  "contract": "ocd-expositors-lib034-readable-skinner-index-profile-v4",
+  "element_count": 3752,
+  "human_acceptance": "absent",
+  "member_id": "skinner-expositorezek",
+  "root_disposition": {
+    "back": [
+      "viii"
+    ],
+    "body": "all other direct ThML.body div1 roots in original order",
+    "front": [
+      "i",
+      "ii"
+    ]
+  },
+  "scope": "complete one retained CCEL electronic edition with title, chapters, and indexes",
+  "source": {
+    "bytes": 1100154,
+    "path": "raw/ccel/expositors-bible/skinner_expositorezek.xml",
+    "sha256": "6ecab5f91bd497b0953143228d7f1b70c5b4768e8142c56268ef8e9a1294368f"
+  },
+  "source_author": "John Skinner",
+  "source_div_class_mapping": "Four source Index divs become TEI div type source-index. The source Hebrew wrapper around the second Index becomes TEI div type source-hebrew, preserving source hierarchy, all direct text and tails, attributes in the accountability ledger, and surrounding comments. No other source div class is present or accepted.",
+  "source_root_ids_in_order": [
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "v",
+    "vi",
+    "vii",
+    "viii"
+  ],
+  "source_title": "The Expositor's Bible: The Book of Ezekiel",
+  "work_id": "expositors-bible--john-skinner"
+}

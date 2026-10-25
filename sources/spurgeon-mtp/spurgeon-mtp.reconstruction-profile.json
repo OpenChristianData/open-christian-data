@@ -1,0 +1,227 @@
+{
+  "contract": "ocd-spurgeon-mtp-reconstruction-profile-v1",
+  "profile_id": "spurgeon-mtp-complete-retained-corpus-v1",
+  "version": 1,
+  "inventory": {
+    "path": "tests/fixtures/spurgeon_mtp/retained-member-inventory-v1.tsv",
+    "bytes": 378913,
+    "sha256": "1e11bebdad45995675c1a03e5aef18792a2c7fcac3e4fc64e4e1fb6edc3a09fe",
+    "member_count": 3551,
+    "total_bytes": 143873038,
+    "primary_html_count": 3547,
+    "supplemental_html_count": 3,
+    "evidence_only_count": 1
+  },
+  "work_identity": {
+    "work_id": "spurgeon-mtp",
+    "title": "Metropolitan Tabernacle Pulpit",
+    "author": "C. H. Spurgeon",
+    "language": "en",
+    "metadata_authority": "Retained HTML title and sermon-content subtrees; existing JSON is not authority."
+  },
+  "work_identity_config": {
+    "path": "sources/sermons/spurgeon-mtp/config.json",
+    "bytes": 1855,
+    "sha256": "9908ce5a0477b9929038db470c52148d31bbc2667a522954dffd135623465ffa",
+    "candidate_authority": false,
+    "legacy_json_boundary": "Legacy canonical JSON is an aid outside this campaign, not candidate authority, and remains untouched under the protected-path rule."
+  },
+  "source_selection": {
+    "primary": {
+      "path_pattern": "raw/spurgeon_sermons/html/{number}.html",
+      "selector": "one article element whose class token is sermon",
+      "sermon_numbers": "numeric filename order"
+    },
+    "supplemental": [
+      {
+        "number": 708,
+        "path": "raw/spurgeon_sermons/missing/708.html",
+        "selector": "h1.name + div.published-info + p.intro + div.node-body",
+        "excluded_page_regions": "site navigation, share toolbar, recommendations, footer, scripts, and non-textual chrome"
+      },
+      {
+        "number": 1698,
+        "path": "raw/spurgeon_sermons/missing/1698.html",
+        "selector": "the sermon-bearing table cell from its second center child through the horizontal rule immediately before the site footer",
+        "excluded_page_regions": "site navigation, decorative title images, site footer, scripts, and non-textual chrome"
+      },
+      {
+        "number": 3032,
+        "path": "raw/spurgeon_sermons/missing/3032.html",
+        "selector": "h1.name + div.published-info + p.intro + div.node-body",
+        "excluded_page_regions": "site navigation, share toolbar, recommendations, footer, scripts, and non-textual chrome"
+      }
+    ],
+    "excluded_elements": {
+      "img": "Non-textual carrier image; its source element has no text content. Surrounding text and tail remain in order.",
+      "script": "Executable site behavior, not sermon text.",
+      "style": "Site presentation, not sermon text."
+    }
+  },
+  "slot_accounting": {
+    "declared_range": [1, 3563],
+    "resolved_textual_witness_count": 3550,
+    "unresolved_sermon_numbers": [8, 40, 42, 62, 67, 82, 142, 155, 269, 270, 298, 332, 390],
+    "supplemental_resolutions": [708, 1698, 3032],
+    "claims_complete_slot_resolution": false
+  },
+  "attribution_evidence": {
+    "primary_html_count": 3547,
+    "retained_wording": [
+      {
+        "name": "Emmett O'Donnell",
+        "wording": "transcribed from manuscripts edited by Emmett O'Donnell",
+        "supported_responsibility": "manuscript editor"
+      },
+      {
+        "name": "Benry Yip",
+        "wording": "Designed by Benry Yip",
+        "supported_responsibility": "designer"
+      }
+    ],
+    "unresolved_responsibilities": [
+      "The retained primary wording does not identify the transcriber.",
+      "The retained primary wording does not identify the digitizer."
+    ]
+  },
+  "structure_policy": {
+    "preserve_source_order": true,
+    "preserve_source_wording": true,
+    "preserve_text_and_tails": true,
+    "required_html_carriers": ["article", "h1", "h2", "p", "blockquote", "ol", "ul", "li", "span", "br", "em", "strong", "code", "i", "b", "small", "a", "center", "div", "font", "hr"],
+    "tei_mapping": {
+      "article": "div",
+      "h1": "head",
+      "h2": "head",
+      "p": "p",
+      "blockquote": "quote",
+      "ol": "list",
+      "ul": "list",
+      "li": "item",
+      "span": "ref-or-seg",
+      "br": "lb",
+      "em": "hi",
+      "strong": "hi",
+      "code": "seg",
+      "i": "hi",
+      "b": "hi",
+      "small": "hi",
+      "a": "ref",
+      "center": "div",
+      "div": "div",
+      "font": "seg",
+      "hr": "milestone"
+    },
+    "attribute_mapping": {
+      "a.href": "ref.target",
+      "font.size": "seg.rend",
+      "ol.type": "list.rend",
+      "ul.type": "list.rend"
+    },
+    "tei_attribute_policy": {
+      "a": {"type": "source-link", "source_attribute_map": {"href": "target"}},
+      "b": {"rend": "bold"},
+      "center": {"type": "source-center"},
+      "code": {"type": "source-code"},
+      "div": {"type": "source-div"},
+      "em": {"rend": "italic"},
+      "font": {"type": "source-font", "source_attribute_map": {"size": "rend"}},
+      "hr": {"unit": "source-horizontal-rule"},
+      "i": {"rend": "italic"},
+      "ol": {"type": "ordered", "source_attribute_map": {"type": "rend"}},
+      "small": {"rend": "small"},
+      "span.other": {"type": "source-span"},
+      "span.reference": {"type": "scripture"},
+      "strong": {"rend": "bold"},
+      "table": {"type": "source-table"},
+      "td": {"type": "source-td"},
+      "tr": {"type": "source-tr"},
+      "ul": {"type": "bulleted", "source_attribute_map": {"type": "rend"}}
+    },
+    "generated_tei_attribute_policy": {
+      "source-container-segment": {"element": "div", "type": "source-container-segment"},
+      "source-flow": {"element": "ab", "type": "source-flow"}
+    },
+    "sermon_attribute_policy": {
+      "type": "sermon",
+      "n": "source-sermon-number",
+      "subtype": "source-selection",
+      "xml:id": "spurgeon-mtp-{number:04d}"
+    },
+    "tei_schema": "TEI P5 tei_all.xsd",
+    "candidate_status": "nonaccepted",
+    "publication_status": "not-ready"
+  },
+  "tei_header_policy": {
+    "title": "Metropolitan Tabernacle Pulpit — complete retained HTML corpus candidate",
+    "author": "C. H. Spurgeon",
+    "contributors": [
+      {"resp": "manuscript editor", "name": "Emmett O'Donnell"},
+      {"resp": "designer", "name": "Benry Yip"}
+    ],
+    "publisher": "Open Christian Data",
+    "availability_status": "restricted",
+    "source_url": "https://thekingdomcollective.com/spurgeon/",
+    "source_sha256_type": "sha256",
+    "print_source": "3,547 retained Kingdom Collective sermon pages plus three explicitly identified supplemental retained sermon pages."
+  },
+  "attribution": [
+    {
+      "name": "Emmett O'Donnell",
+      "role": "manuscript editor",
+      "source_wording": "transcribed from manuscripts edited by Emmett O'Donnell",
+      "affiliation": "SpurgeonGems (spurgeongems.org)",
+      "url": "http://www.spurgeongems.org/"
+    },
+    {
+      "name": "Benry Yip",
+      "role": "designer",
+      "source_wording": "Designed by Benry Yip",
+      "affiliation": "The Kingdom Collective",
+      "url": "https://thekingdomcollective.com/spurgeon/"
+    }
+  ],
+  "rights": {
+    "underlying_spurgeon_text": "public-domain",
+    "transcription_digitization_formatting_rights": "unresolved",
+    "supplemental_witness_terms": {
+      "edition": "Modernized Edition of Spurgeon’s Sermons",
+      "copyright": "Copyright © 2010, Larry and Marion Pierce, Winterbourne, Ontario, Canada",
+      "rights_owners": ["Larry Pierce", "Marion Pierce"],
+      "scope": {
+        "sermon_numbers": [708, 3032],
+        "retained_paths": [
+          "raw/spurgeon_sermons/missing/708.html",
+          "raw/spurgeon_sermons/missing/3032.html"
+        ]
+      },
+      "terms": {
+        "electronic_reproduction": "The modernized edition of the material published in these sermons may not be reproduced or distributed by any electronic means without express written permission of the copyright owner.",
+        "hard_copy_license": "A limited license is hereby granted for the non-commercial printing and distribution of the material in hard copy form, provided this is done without charge to the recipient and the copyright information remains intact. Any charge or cost for distribution of the material is expressly forbidden under the terms of this limited license and automatically voids such permission.",
+        "derivative_works": "You may not prepare, manufacture, copy, use, promote, distribute, or sell a derivative work of the copyrighted work without the express written permission of the copyright owner."
+      },
+      "exact_source_text": "Modernized Edition of Spurgeon’s Sermons. Copyright © 2010, Larry and Marion Pierce, Winterbourne, Ontario, Canada. Used by Answers in Genesis by permission of the copyright owner. The modernized edition of the material published in these sermons may not be reproduced or distributed by any electronic means without express written permission of the copyright owner. A limited license is hereby granted for the non-commercial printing and distribution of the material in hard copy form, provided this is done without charge to the recipient and the copyright information remains intact. Any charge or cost for distribution of the material is expressly forbidden under the terms of this limited license and automatically voids such permission. You may not prepare, manufacture, copy, use, promote, distribute, or sell a derivative work of the copyrighted work without the express written permission of the copyright owner.",
+      "retained_evidence": [
+        {
+          "sermon_number": 708,
+          "retained_path": "raw/spurgeon_sermons/missing/708.html",
+          "selector": "div#ipaNodeOutro.outro > h2[Terms of Use] + p",
+          "source_text": "Modernized Edition of Spurgeon’s Sermons. Copyright © 2010, Larry and Marion Pierce, Winterbourne, Ontario, Canada. Used by Answers in Genesis by permission of the copyright owner. The modernized edition of the material published in these sermons may not be reproduced or distributed by any electronic means without express written permission of the copyright owner. A limited license is hereby granted for the non-commercial printing and distribution of the material in hard copy form, provided this is done without charge to the recipient and the copyright information remains intact. Any charge or cost for distribution of the material is expressly forbidden under the terms of this limited license and automatically voids such permission. You may not prepare, manufacture, copy, use, promote, distribute, or sell a derivative work of the copyrighted work without the express written permission of the copyright owner.",
+          "source_text_sha256": "b469c2ac5ac0c15a689ec8db94a1f31a02b318a0422be80f8be02dd42c49bd41"
+        },
+        {
+          "sermon_number": 3032,
+          "retained_path": "raw/spurgeon_sermons/missing/3032.html",
+          "selector": "div#ipaNodeOutro.outro > h2[Terms of Use] + p",
+          "source_text": "Modernized Edition of Spurgeon’s Sermons. Copyright © 2010, Larry and Marion Pierce, Winterbourne, Ontario, Canada. Used by Answers in Genesis by permission of the copyright owner. The modernized edition of the material published in these sermons may not be reproduced or distributed by any electronic means without express written permission of the copyright owner. A limited license is hereby granted for the non-commercial printing and distribution of the material in hard copy form, provided this is done without charge to the recipient and the copyright information remains intact. Any charge or cost for distribution of the material is expressly forbidden under the terms of this limited license and automatically voids such permission. You may not prepare, manufacture, copy, use, promote, distribute, or sell a derivative work of the copyrighted work without the express written permission of the copyright owner.",
+          "source_text_sha256": "b469c2ac5ac0c15a689ec8db94a1f31a02b318a0422be80f8be02dd42c49bd41"
+        }
+      ],
+      "blocker_owner": "project-maintainer",
+      "next_action": "Obtain express written permission from Larry and Marion Pierce for electronic reproduction and any derivative use of the Modernized Edition before publication of witnesses 708 or 3032.",
+      "reopening_condition": "Written permission or other dispositive rights evidence is bound to the exact retained witnesses and candidate identity."
+    },
+    "publication_authorized": false,
+    "publication_status": "not-ready"
+  }
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 from types import SimpleNamespace
 
@@ -14,6 +15,10 @@ OUTPUT_SCHEMA = {
     "properties": {"warnings": {"type": "array"}},
     "required": ["warnings"],
 }
+
+
+def test_legacy_review_warning_shim_is_absent() -> None:
+    assert importlib.util.find_spec("build.lib.review_warnings") is None
 
 
 def _producer(**overrides):

@@ -1,0 +1,119 @@
+{
+  "ticket": "07",
+  "wave": 3,
+  "slug": "teresa-life-of-st-teresa-of-jesus",
+  "identity_status": "provisional-net-new-candidate-no-workcatalog-write",
+  "work": {
+    "title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+    "author": "Teresa of Avila",
+    "translator": "David Lewis",
+    "retained_witness": "Third Edition Enlarged, London and New York, 1904",
+    "project_gutenberg_id": 8120
+  },
+  "release_gate": {
+    "path": ".scratch/clean-ready-acquisition-to-tei/issues/00-GATE-RELEASE.md",
+    "wave_3_sha256": "0b7c23c99123434fd6ae8faa2c9cfff42666a6c8666510b37e7d6878afc0cad2",
+    "released_utc": "2026-08-31T02:42:00Z"
+  },
+  "acquisition": {
+    "method": "curl -L --fail from official Project Gutenberg HTTPS endpoints",
+    "landing_retrieved_utc": "2026-08-31T02:36:52Z",
+    "archive_retrieved_utc": "2026-08-31T02:36:53Z",
+    "rdf_retrieved_utc": "2026-08-31T02:36:55Z",
+    "raw_lane": "raw/clean-ready-acquisition-to-tei/master-1/07/teresa-life-of-st-teresa-of-jesus"
+  },
+  "retained_files": [
+    {
+      "path": "landing.headers.txt",
+      "bytes": 400,
+      "sha256": "7f9a8e706bfea361ab64230dec573d1ae509d980e75b11d6c486071e0eeebdbd"
+    },
+    {
+      "path": "landing.html",
+      "bytes": 24185,
+      "sha256": "fd7876cd5eced2fb90d0a22b2d763129e77088836cab7fd0e8a65a8540fc4e0f"
+    },
+    {
+      "path": "pg8120-h.zip",
+      "bytes": 518525,
+      "sha256": "92b3442c0b2c04c206152c41b698bd464899ac078c2660afa83c2c751b17d274"
+    },
+    {
+      "path": "pg8120-h.zip.headers.txt",
+      "bytes": 217,
+      "sha256": "8a5e7f9d78a00a1238f6a712f9564580433158850b0c7c48622393400a927881"
+    },
+    {
+      "path": "pg8120.rdf",
+      "bytes": 21570,
+      "sha256": "a57d6a97b67df5a32ed9023f501a5e02654421950b217d4f0f80a0f8399c922f"
+    },
+    {
+      "path": "pg8120.rdf.headers.txt",
+      "bytes": 554,
+      "sha256": "c440cfc2e379eb39c865b919fc242a6a4ffb5a32235755e95ab219b813751aac"
+    }
+  ],
+  "archive_members": [
+    {
+      "path": "pg8120-images.html",
+      "bytes": 1301386,
+      "sha256": "9aeeb297ddcd83e801b9782fd7c376af845491e3fd2a941a85530b0214ad3e74"
+    },
+    {
+      "path": "8120-cover.png",
+      "bytes": 87300,
+      "sha256": "bf20cc07794aa2d1f6b350758dd7d7c7135a4759754f7058276d10be88ae04b6"
+    }
+  ],
+  "source_evidence": {
+    "landing_title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+    "release_date": "2005-05-01",
+    "landing_last_update": "2014-03-27",
+    "live_archive_last_modified": "2026-08-04T08:35:14Z",
+    "rights_statement": "Public domain in the USA.",
+    "credits": "Produced by Elizabeth T. Knuth",
+    "rdf_archive_extent": 518526,
+    "live_archive_extent": 518525,
+    "rdf_html_extent": 1301386,
+    "live_html_extent": 1301386,
+    "extent_resolution": "The live HTTPS Content-Length and retained SHA-256 identify this acquisition; the RDF archive extent differs by one byte from the current package."
+  },
+  "observed_source_census": {
+    "paragraphs": 2403,
+    "typographic_breaks": 112,
+    "note_references": 730,
+    "note_bodies": 730,
+    "internal_links": 2166,
+    "life_chapters": 40,
+    "relations": 11,
+    "language_marks": 300,
+    "spanish_marks": 95,
+    "latin_marks": 191,
+    "french_marks": 13,
+    "hebrew_marks": 1,
+    "abbreviations": 529,
+    "citations": 337,
+    "small_elements": 772,
+    "italic_or_emphasis_elements": 50,
+    "larger_elements": 59,
+    "block_quotations": 3,
+    "tables": 1,
+    "description_lists": 1,
+    "description_items": 20,
+    "line_breaks": 24,
+    "printed_page_milestones": 0
+  },
+  "electronic_source_limitations": {
+    "page_images": "cover image only; no page-image facsimile",
+    "print_page_milestones": "none encoded; none invented",
+    "transcriber_interventions": [
+      "Corrigenda corrections applied",
+      "section number added for L 3.9",
+      "two Scriptural quotation typographical errors corrected",
+      "footnotes gathered at chapter ends"
+    ]
+  },
+  "canonical_mutation": false,
+  "human_acceptance": "not-performed"
+}

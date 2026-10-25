@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/sources/structured-text/augustine-npnf101-106-107-lib040/lib040.source-accountability.schema.json",
+  "title": "LIB-040 eight-work complete retained-source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assigned_work_count", "contract", "crosswalk", "direct_div2_accounting", "duplicate_feature_count", "feature_count", "member_accounting", "omitted_feature_count", "profile_id", "schema", "scope_reconciliation", "source_id_accounting", "source_member_count", "source_scope", "top_level_division_accounting", "unresolved_feature_count", "work_bindings"],
+  "properties": {
+    "assigned_work_count": {"const": 8},
+    "contract": {"const": "ocd-lib040-source-accountability-v1"},
+    "crosswalk": {"type": "array", "minItems": 45301, "maxItems": 45301, "items": {"type": "object", "required": ["feature_id", "kind", "parent_feature_id", "source_member", "source_selector", "disposition"], "properties": {"feature_id": {"type": "string", "pattern": "^lib040-feature-[0-9]{5}$"}, "kind": {"enum": ["element", "comment"]}, "parent_feature_id": {"type": ["string", "null"]}, "source_member": {"enum": ["npnf101", "npnf106", "npnf107"]}, "source_selector": {"type": "string", "minLength": 1}, "disposition": {"enum": ["represented", "represented-as-xml-comment"]}}}},
+    "direct_div2_accounting": {"type": "object", "required": ["npnf101", "npnf106", "npnf107"], "additionalProperties": false, "properties": {"npnf101": {"type": "array"}, "npnf106": {"type": "array"}, "npnf107": {"type": "array"}}},
+    "duplicate_feature_count": {"const": 0},
+    "feature_count": {"const": 45301},
+    "member_accounting": {"type": "array", "minItems": 3, "maxItems": 3},
+    "omitted_feature_count": {"const": 0},
+    "profile_id": {"const": "lib040-npnf101-vi-vii-npnf106-v-vii-npnf107-iii-v-v1"},
+    "schema": {"const": "lib040.source-accountability.schema.json"},
+    "scope_reconciliation": {"type": "object", "required": ["assigned_scope", "document_shell", "excluded_division"], "additionalProperties": false, "properties": {"assigned_scope": {"type": "object"}, "document_shell": {"type": "object"}, "excluded_division": {"type": "object"}}},
+    "source_id_accounting": {"type": "object"},
+    "source_member_count": {"const": 3},
+    "source_scope": {"const": "eight complete retained ThML.body div1 roots across npnf101, npnf106, and npnf107"},
+    "top_level_division_accounting": {"type": "object", "required": ["npnf101", "npnf106", "npnf107"], "additionalProperties": false, "properties": {"npnf101": {"type": "array"}, "npnf106": {"type": "array"}, "npnf107": {"type": "array"}}},
+    "unresolved_feature_count": {"const": 0},
+    "work_bindings": {"type": "array", "minItems": 8, "maxItems": 8}
+  }
+}

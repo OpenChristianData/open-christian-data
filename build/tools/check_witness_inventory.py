@@ -1,19 +1,9 @@
-"""Phase 0 validator: ensure every resource in data/ has a valid sources/<resource>/witnesses.json file.
+"""Historical witness-inventory utility; not a current-library admission gate.
 
-For each resource currently in ``data/`` (grouped by ``meta.id``):
-
-  * ``sources/<meta.id>/witnesses.json`` must exist.
-  * The file must validate against ``schemas/v1/witness_inventory.schema.json``.
-  * Every witness's ``related_resource_id`` must match the resource it lives under.
-  * Every witness must have ``verified`` set; when ``verified: true``,
-    ``checksum_sha256`` and ``captured_at_utc`` must be non-null.
-
-Output: one line per resource showing PASS / MISSING / FAIL plus a per-witness
-breakdown for FAIL entries. Exits non-zero when any resource fails.
-
-URL reachability is reported as a follow-up check that runs only when
-``--check-urls`` is passed; it is opt-in because Phase 0 done gate is bounded
-and network calls are not appropriate for CI by default.
+Requires explicit --legacy-data, --repo-root and --schema arguments. The old
+witness_inventory schema is no longer shipped. Supply the historical schema
+from the archive being inspected; rendering catalogs and current acquisitions
+have different identities and are not interchangeable with this format.
 """
 
 from __future__ import annotations
@@ -31,10 +21,6 @@ import jsonschema
 _BOOTSTRAP_ROOT = Path(__file__).resolve().parents[2]
 if str(_BOOTSTRAP_ROOT) not in sys.path:
     sys.path.insert(0, str(_BOOTSTRAP_ROOT))
-from build.lib.paths import REPO_ROOT  # noqa: E402
-
-
-SCHEMA_PATH = REPO_ROOT / "schemas" / "v1" / "witness_inventory.schema.json"
 
 
 def _enumerate_resources(data_root: Path) -> dict[str, list[Path]]:
@@ -109,12 +95,12 @@ def _url_reachable(url: str, *, timeout: float = 10.0) -> bool:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Validate Phase 0 witness inventories.")
+    parser = argparse.ArgumentParser(description="Validate historical witness inventories only; not current library admission.")
     parser.add_argument(
         "--repo-root",
         type=Path,
-        default=REPO_ROOT,
-        help="Repository root (defaults to the OCD repo containing this script).",
+        required=True,
+        help="Explicit historical repository root.",
     )
     parser.add_argument(
         "--check-urls",
@@ -126,9 +112,13 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Allow resources without a witnesses.json (treat MISSING as warning, not failure). Use only during phase-0 ramp-up.",
     )
+    parser.add_argument("--legacy-data", action="store_true", required=True,
+                        help="Explicitly operate on historical data/ inventories.")
+    parser.add_argument("--schema", type=Path, required=True,
+                        help="Historical witness_inventory schema; no current schema fallback.")
     args = parser.parse_args(argv)
 
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    schema = json.loads(args.schema.read_text(encoding="utf-8"))
     data_root = args.repo_root / "data"
     sources_root = args.repo_root / "sources"
 
@@ -161,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  FAIL:    {fail_count}")
     if miss_lines:
         print("")
-        print("Missing inventories (run scaffold_witness_inventory.py to create empty stubs):")
+        print("Missing historical inventories (empty stubs do not establish witness evidence):")
         for line in miss_lines:
             print(line)
     if fail_lines:

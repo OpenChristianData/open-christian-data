@@ -1,0 +1,100 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "tcp-A23804",
+  "work_id": "whole-duty-of-prayer",
+  "textual_form_id": "whole-duty-of-prayer-tcp-retained",
+  "edition_id": "whole-duty-of-prayer-tcp-electronic",
+  "acquisition_id": "whole-duty-of-prayer-tcp-acquired",
+  "manifest_row": "L788",
+  "authorities": [
+    {
+      "name": "retained-tei-p5",
+      "path": "raw/tcp/high-range/A23804/A23804.xml",
+      "role": "primary-source",
+      "bytes": 242909,
+      "sha256": "4ce798180f8b9ef8c9b9cd9200b50a9c324ab858c7aad07d1e7d22931ee2a5f1"
+    },
+    {
+      "name": "acquisition-receipt",
+      "path": "raw/tcp/high-range/A23804/acquisition-receipt.json",
+      "role": "source-acquisition-evidence",
+      "bytes": 1898,
+      "sha256": "f9d0a7d1d4ec677ec2230b180e95b6bbefe059672f6a9d63447efdbacae5295d"
+    },
+    {
+      "name": "source-member-inventory",
+      "path": "raw/tcp/high-range/A23804/member-inventory.tsv",
+      "role": "source-member-inventory",
+      "bytes": 101,
+      "sha256": "08ff23088e4420e7c1defb923ac679e3e45e7430acd6b86995bcee0ca6342b7c"
+    },
+    {
+      "name": "canonical-work-sidecar",
+      "path": "library/works/whole-duty-of-prayer/work.json",
+      "role": "canonical-work-identity",
+      "bytes": 637,
+      "sha256": "9e31cb504756ec1cab7adbeb8c25b063935432d19a8646ad2560b787b6d86103"
+    },
+    {
+      "name": "canonical-acquisition-sidecar",
+      "path": "library/works/whole-duty-of-prayer/forms/whole-duty-of-prayer-tcp-retained/editions/whole-duty-of-prayer-tcp-electronic/acquisitions/whole-duty-of-prayer-tcp-acquired.json",
+      "role": "canonical-acquisition-linkage",
+      "bytes": 2032,
+      "sha256": "0998c2c232b5e498cf0d852869354fa381477791256de791a62bafdbdb15659c"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "library/works/whole-duty-of-prayer/SOURCE_CREDIT.md",
+      "role": "source-attribution-readme",
+      "bytes": 1912,
+      "sha256": "b4c1ecf9d22be3574f6b430cd0ad5e456087b2e5bf614098aee12f4e859aedef"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/whole-duty-of-prayer/whole-duty-of-prayer.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 13127,
+      "sha256": "73dc31eff40cea6d6e8cc911251efd7becb5be61e12ab6fd2b36af50c7236fbb"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/whole-duty-of-prayer/whole-duty-of-prayer.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 5794,
+      "sha256": "0da1b512ccf20298c4b518af6b3d8c5e0b3b6044ebd1fd4a1b0e8ed80fd87918"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-tcp-a23804-exact-tei-p5",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/whole_duty_prayer_a23804_reconstruction.py",
+    "implementation_sha256": "e41b675124ee6c55f62f97d9f418c53ac317dc5dba353f084fc9d7ebc1307849"
+  },
+  "validator": {
+    "id": "ocd-tcp-a23804-independent-source-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/whole_duty_prayer_a23804_oracle.py",
+    "implementation_sha256": "c6a4066d4fd05838a4b5abd51b32fc69cf88460cf13dd037345cb49244b0ee3b",
+    "import_closure_sha256": "a3a4ae7b462734ea9a09a47aeafc469b7dcc557fd93f4d7d6f226f737d9a819f"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

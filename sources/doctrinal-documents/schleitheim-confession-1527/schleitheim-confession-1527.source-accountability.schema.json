@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "profile_id", "work_id", "source_id", "source_bytes", "source_sha256", "source_segments", "preface", "article_count", "paragraph_count", "article_word_count", "closing_imprint", "work_word_count", "articles", "omitted_count", "duplicate_count", "unresolved_count"],
+  "properties": {
+    "contract": {"const": "ocd-schleitheim-confession-source-accountability-v1"},
+    "profile_id": {"const": "schleitheim-confession-retained-html-v1"},
+    "work_id": {"const": "schleitheim-confession-1527"},
+    "source_bytes": {"const": 21064},
+    "source_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "source_segments": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "bytes", "sha256", "disposition"],
+        "properties": {
+          "id": {"enum": ["page-prefix", "work-preface", "articles-and-closing-imprint", "post-terminal-wrapper", "page-suffix"]},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "disposition": {"enum": ["represented", "accounted-source-context", "excluded-site-container", "excluded-site-chrome"]}
+        }
+      }
+    },
+    "preface": {
+      "type": "object",
+      "required": ["title", "imprint_lines", "adoption_lines", "introduction", "contents", "disposition"],
+      "properties": {
+        "contents": {"type": "array", "minItems": 7, "maxItems": 7},
+        "disposition": {"const": "represented"}
+      }
+    },
+    "article_count": {"const": 7},
+    "article_word_count": {"const": 2341},
+    "closing_imprint": {
+      "type": "object",
+      "required": ["lines", "word_count", "disposition"],
+      "properties": {
+        "lines": {"type": "array", "minItems": 3, "maxItems": 3},
+        "word_count": {"const": 11},
+        "disposition": {"const": "represented"}
+      }
+    },
+    "work_word_count": {"const": 2352},
+    "omitted_count": {"const": 0},
+    "duplicate_count": {"const": 0},
+    "unresolved_count": {"const": 3}
+  }
+}

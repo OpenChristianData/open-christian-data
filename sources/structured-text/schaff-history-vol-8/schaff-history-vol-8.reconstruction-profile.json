@@ -1,0 +1,33 @@
+{
+  "contract": "ocd-lib058-reconstruction-profile-v1",
+  "profile_id": "lib058-schaff-history-vol-8-retained-ccel-thml-v1",
+  "work_id": "schaff-history-vol-8",
+  "title": "History of the Christian Church, Vol. 8: Modern Christianity -- The Swiss Reformation",
+  "creator": "Philip Schaff",
+  "contributor_statement": "Christian Classics Ethereal Library (electronic witness); retained header identifies Philip Schaff, Electronic Bible Society source, and CCEL publisher statements.",
+  "source_url": "https://www.ccel.org/ccel/schaff/hcc8.xml",
+  "source_sha256": "95f835fe5d69bf1f1f94303cb4cc6a4487f4ae3b45e60c41f7a522db095d07ec",
+  "source_bytes": 2618757,
+  "physical_lines": 44285,
+  "source_member": {"path": "raw/ccel/schaff/hcc8.xml", "bytes": 2618757, "sha256": "95f835fe5d69bf1f1f94303cb4cc6a4487f4ae3b45e60c41f7a522db095d07ec"},
+  "source_envelope": {"encoding": "UTF-8", "line_framing": "LF; final line has no line ending", "root": "ThML", "head": "ThML.head", "body": "ThML.body", "body_top_level_ids": ["i", "ii", "iii", "iv", "v", "vi"]},
+  "source_structure": {
+    "root": "ThML", "head": "ThML.head", "body": "ThML.body",
+    "body_top_level": [{"id": "i", "type": null, "source_line": 291, "elements": 86}, {"id": "ii", "type": null, "source_line": 438, "elements": 68}, {"id": "iii", "type": null, "source_line": 699, "elements": 16}, {"id": "iv", "type": null, "source_line": 758, "elements": 12124}, {"id": "v", "type": null, "source_line": 41757, "elements": 111}, {"id": "vi", "type": null, "source_line": 42254, "elements": 2040}],
+    "content_div2": 19, "content_sections": 0, "content_chapters": 19, "content_div3": 176, "index_div2": 5,
+    "tag_counts": {
+      "DC": 1, "DC.Contributor": 2, "DC.Creator": 2, "DC.Date": 1, "DC.Description": 1, "DC.Format": 1,
+      "DC.Identifier": 1, "DC.Language": 1, "DC.Publisher": 1, "DC.Rights": 1, "DC.Source": 1, "DC.Subject": 4,
+      "DC.Title": 2, "DC.Type": 1, "ThML": 1, "ThML.body": 1, "ThML.head": 1, "a": 1202, "attr": 4,
+      "authorID": 1, "bkgID": 1, "bookID": 1, "br": 1093, "comments": 1, "description": 1, "div": 19,
+      "div1": 6, "div2": 24, "div3": 176, "editorialComments": 1, "electronicEdInfo": 1, "firstPublished": 1,
+      "generalInfo": 1, "h1": 1, "h2": 5, "i": 2190, "insertIndex": 5, "l": 244, "li": 660, "note": 1315,
+      "p": 6140, "printSourceInfo": 1, "property": 73, "pubHistory": 1, "published": 1, "publisherID": 1,
+      "revisionHistory": 1, "scripRef": 449, "selector": 38, "series": 1, "span": 874, "status": 1,
+      "style": 2, "ul": 4, "unclear": 2, "verse": 40, "version": 1, "workID": 1
+    }
+  },
+  "structure_policy": {"line_carrier": "tei:ab-or-head", "line_container": "one tei:div per physical source line", "source_topology": "retained in profile and independently recomputed from the XML tree", "text_rule": "verbatim UTF-8 source line after removing only LF transport framing", "uncertain_structure": "retain line carrier and mark candidate boundary unresolved"},
+  "scope": {"status": "complete-retained-source-expression", "candidate_status": "nonaccepted", "represented": "all 44,285 retained physical lines and the complete parsed ThML source topology", "unrepresented": "none", "human_review": "required"}
+}
+

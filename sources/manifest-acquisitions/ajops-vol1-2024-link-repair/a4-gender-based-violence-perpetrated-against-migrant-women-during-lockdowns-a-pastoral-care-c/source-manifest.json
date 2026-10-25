@@ -1,0 +1,89 @@
+{
+  "authorities": [
+    {
+      "bytes": 65704,
+      "name": "publisher-xml",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/publisher-xml.xml",
+      "role": "primary-source",
+      "sha256": "a869d4d747c61214d6845e2663421f462b8710f6940dfa8835abcd36b446b2da"
+    },
+    {
+      "bytes": 579284,
+      "name": "publisher-pdf",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/publisher-pdf.pdf",
+      "role": "comparison-witness",
+      "sha256": "f49face5fb5dfaee7b655cc40b117aacd3d36e9514f07045d2b30397a5859b13"
+    },
+    {
+      "bytes": 2105,
+      "name": "acquisition-receipt",
+      "path": "raw/clean-ready-acquisition-to-tei/manifest-ajops-volumes-1-3-20260925/v1-2024/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/receipt.json",
+      "role": "acquisition-receipt",
+      "sha256": "9ab2961f0d94201a2063e9f2a81ced7672bd5a4c835c8c048ca3be2a8c50e20e"
+    },
+    {
+      "bytes": 3825,
+      "name": "feature-profile",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "61a5476c464adb24081ea4d56acf5c0ef4c31e6607e87f9faa35ba405c6b8ae5"
+    },
+    {
+      "bytes": 801,
+      "name": "independent-validation-policy",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "be4d7905c71e4229e47f0ef758ba7d052478ee4479caceac95a40c7914fdd642"
+    },
+    {
+      "bytes": 682,
+      "name": "source-readme",
+      "path": "sources/manifest-acquisitions/ajops-vol1-2024-link-repair/a4-gender-based-violence-perpetrated-against-migrant-women-during-lockdowns-a-pastoral-care-c/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "af61aa65da14d5e68c9c83fcd4c0d07914e7d4c98f37bdd7a407ae1a7636411f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-ajops-jats-article-to-tei",
+    "implementation_path": "build/tei/ajops_jats_to_tei_v3.py",
+    "implementation_sha256": "b32de1d9bcbd9ab3ce98177380b0b8ef8fedce688977c6d6f00eec114ad24302",
+    "version": "3"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "producer_import_closure_sha256": "307257c240c8949424fb443ba48b4eb6505d73f4fcca2e5cb37956c50be593b7",
+  "source_id": "ajops-v1-2024-a4-retained-publisher-jats-and-pdf",
+  "source_selection": {
+    "authority": "publisher-xml",
+    "scope_cutoff": "2026-07-22",
+    "selection": "Complete publisher JATS article XML; exact publisher PDF retained as comparison witness; no alternate edition."
+  },
+  "ticket_id": "MANIFEST-ACQUISITION-20260925",
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-ajops-jats-article-independent-source-census-oracle",
+    "implementation_path": "build/tei/ajops_jats_oracle_v3.py",
+    "implementation_sha256": "581e41b2100719b2bfd8cb83c29dfa9bf2842710f4ae622e846ed96fb725d7c1",
+    "import_closure_sha256": "5b2ea8723671df39dba08e6fdb0c743bedda8e67c7b50da4b086a77a85ebc330",
+    "version": "3"
+  },
+  "work_id": "ajops-v1-2024-a4"
+}

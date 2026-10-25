@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "writer": "parser",
+  "writer_version": "build/parsers/ccel_npnf1.py@v1.0.0",
+  "writer_identity": "ccel_npnf1_parser",
+  "run_id": "city-of-god-ccel-reconstruction-20260720",
+  "started_at": "2026-07-20T14:00:48.8258879Z",
+  "data_paths": [
+    "data/structured-text/augustine-city-of-god.json"
+  ],
+  "checksums": {
+    "data/structured-text/augustine-city-of-god.json": {
+      "before_sha256": "ca97ca248d2ad0c439a20ab2b14802ef03e11e1e95e048a561cd1f04365571be",
+      "after_sha256": "e2b8475b27b40bf2f8db882748500c6e7bdf70f23050ad4465af0d3bf0fd86a7"
+    }
+  },
+  "expected_delta_counts": {
+    "data/structured-text/augustine-city-of-god.json": {
+      "entries_changed": 16,
+      "fields_changed": 16
+    }
+  },
+  "allowed_field_paths": [
+    "/meta",
+    "/data"
+  ],
+  "partial_completion_policy": "all_or_nothing",
+  "renames": []
+}

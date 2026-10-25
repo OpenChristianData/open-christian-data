@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="tei003-bcp1662-liturgy">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Book of Common Prayer 1662 service and collect excerpt</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Provisional TEI-003 source-bound excerpt; not an accepted master.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Book of Common Prayer 1662 service and collect excerpt</title>
+          <idno type="sha256">7902d0a48ace50a15688d392e3092e92cbd40525e6fd3829d89ffe69d8c791f3</idno>
+          <ptr target="ocd-source:raw/bcp-full-text/bcp-1662/daily__morning.html"/>
+        </bibl>
+        <bibl>
+          <title>Book of Common Prayer 1662 service and collect excerpt</title>
+          <idno type="sha256">502c0c6fa6a218070c789221d2b183fd20ffbbd2ea36ec5de59495fd5b1f83bd</idno>
+          <ptr target="ocd-source:raw/bcp1662/xmas.html"/>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2026-09-07">TEI-003 provisional source-bound excerpt; wrapper only.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="section" xml:id="tei003-bcp1662-liturgy-selection"><label xml:id="bcp-bcp-1662-daily-morning-label-1">The Order for Morning Prayer, Daily Throughout the Year.</label>
+        <p xml:id="bcp-bcp-1662-daily-morning-block-2" rend="rubric">At the beginning of Morning Prayer the Minister shall read with a loud voice some one or more of these Sentences of the Scriptures that follow. And then he shall say that which is written after the said Sentences.</p>
+        <sp xml:id="bcp-bcp-1662-daily-morning-sp-5-answer">
+          <speaker>Answer</speaker>
+          <p>And our mouth shall show forth thy praise.</p>
+        </sp>
+        <div xml:id="bcp-bcp-1662-advent1-collect" type="collect">
+        <label xml:id="bcp-bcp-1662-advent1-collect-label">The First Sunday of Advent</label>
+        <p>ALMIGHTY God, give us grace that we may cast away the works of darkness, and put upon us the armour of light, now in the time of this mortal life in which thy Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the quick and the dead, we may rise to the life immortal; through him who liveth and reigneth with thee and the Holy Ghost, one God, now and for ever. Amen.</p>
+      </div>
+      </div>
+    </body>
+  </text>
+</TEI>

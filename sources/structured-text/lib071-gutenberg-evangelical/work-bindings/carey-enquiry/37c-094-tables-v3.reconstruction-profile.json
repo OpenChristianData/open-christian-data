@@ -1,0 +1,1046 @@
+{
+  "adjacent_retained_member_paths": [],
+  "contract": "ocd-selected-source-profile-v2",
+  "heading_map_contract": "ocd-source-located-heading-map-v1",
+  "heading_policy": "exact-source-located-lines-with-declared-parent-and-title-attachments",
+  "primary_source_authority_name": "primary-source",
+  "profile_id": "selected-proofread-37c-094-tables-v3",
+  "source_correction_attestation": "The ticket-bound retained Project Gutenberg member was positively identified as human-proofread and carries Distributed Proofreaders attribution. This technical reconstruction does not independently audit the provider's individual corrections.",
+  "source_id": "gutenberg-37c-094-pg11449",
+  "source_scope": "one-work-one-retained-project-gutenberg-member",
+  "table_map_contract": "ocd-carey-source-table-map-v1",
+  "ticket_id": "37c-094",
+  "unresolved": [
+    {
+      "description": "The exact retained member is bound; edition, part, and constituent-work boundaries have not been independently resolved.",
+      "id": "work-edition-part-boundaries",
+      "status": "unresolved"
+    },
+    {
+      "description": "Only exact source-located heading lines, declared parent relations, and mapped title-line runs are encoded. Other contents entries, capitalization, title-page labels, and discourse hierarchy remain unresolved.",
+      "id": "heading-hierarchy",
+      "status": "unresolved"
+    },
+    {
+      "description": "The selected text is identified as human-proofread, but this technical conversion does not audit the provider's individual corrections.",
+      "id": "correction-audit",
+      "status": "unresolved"
+    },
+    {
+      "description": "Rights clearance, human acceptance, and publication authorization remain separate review decisions and have not been made.",
+      "id": "rights-acceptance-publication",
+      "status": "unresolved"
+    },
+    {
+      "description": "An exact-pair CVW review must inspect the retained source beside this candidate and record visually inspected locations.",
+      "id": "visual-pair-review",
+      "status": "required"
+    },
+    {
+      "description": "All four geographical tables now have explicit source-row, source-cell, column, continuation, group, blank-line, qualifier, and note mappings; their exact-bound visual placement still requires fresh CVW review.",
+      "id": "table-row-cell-visual-review",
+      "status": "required"
+    }
+  ],
+  "works": [
+    {
+      "heading_map": [
+        {
+          "attached_title_lines": [],
+          "level": 1,
+          "line_number": 69,
+          "parent_line": null,
+          "source_text": "                             INTRODUCTION"
+        },
+        {
+          "attached_title_lines": [],
+          "level": 1,
+          "line_number": 142,
+          "parent_line": null,
+          "source_text": "                           AN ENQUIRY, &c."
+        },
+        {
+          "attached_title_lines": [
+            {
+              "line_number": 150,
+              "source_text": "         _An Enquiry whether the Commission given by our Lord"
+            },
+            {
+              "line_number": 151,
+              "source_text": "            to his Disciples be not still binding on us._"
+            }
+          ],
+          "level": 2,
+          "line_number": 147,
+          "parent_line": 142,
+          "source_text": "                               SECT. I."
+        },
+        {
+          "attached_title_lines": [
+            {
+              "line_number": 296,
+              "source_text": "        _Containing a short Review of former Undertakings for"
+            },
+            {
+              "line_number": 297,
+              "source_text": "                   the Conversion of the Heathen._"
+            }
+          ],
+          "level": 2,
+          "line_number": 293,
+          "parent_line": 142,
+          "source_text": "                              SECT. II."
+        },
+        {
+          "attached_title_lines": [
+            {
+              "line_number": 803,
+              "source_text": "       _Containing a Survey of the present State of the World._"
+            }
+          ],
+          "level": 2,
+          "line_number": 800,
+          "parent_line": 142,
+          "source_text": "                              SECT. III."
+        },
+        {
+          "attached_title_lines": [],
+          "level": 3,
+          "line_number": 817,
+          "parent_line": 800,
+          "source_text": "                             _EUROPE._"
+        },
+        {
+          "attached_title_lines": [],
+          "level": 3,
+          "line_number": 933,
+          "parent_line": 800,
+          "source_text": "                               _ASIA._"
+        },
+        {
+          "attached_title_lines": [],
+          "level": 3,
+          "line_number": 1037,
+          "parent_line": 800,
+          "source_text": "                             _AFRICA._"
+        },
+        {
+          "attached_title_lines": [],
+          "level": 3,
+          "line_number": 1083,
+          "parent_line": 800,
+          "source_text": "                            _AMERICA._"
+        },
+        {
+          "attached_title_lines": [
+            {
+              "line_number": 1284,
+              "source_text": "        _The Practicability of something being done, more than"
+            },
+            {
+              "line_number": 1285,
+              "source_text": "          what is done, for the Conversion of the Heathen._"
+            }
+          ],
+          "level": 2,
+          "line_number": 1281,
+          "parent_line": 142,
+          "source_text": "                              SECT. IV."
+        },
+        {
+          "attached_title_lines": [
+            {
+              "line_number": 1493,
+              "source_text": "       _An Enquiry into the Duty of Christians in general, and"
+            },
+            {
+              "line_number": 1494,
+              "source_text": "     what Means ought to be used, in order to promote this Work._"
+            }
+          ],
+          "level": 2,
+          "line_number": 1490,
+          "parent_line": 142,
+          "source_text": "                              SECT.  V."
+        },
+        {
+          "attached_title_lines": [],
+          "level": 1,
+          "line_number": 1715,
+          "parent_line": null,
+          "source_text": "                                FINIS."
+        },
+        {
+          "attached_title_lines": [],
+          "level": 1,
+          "line_number": 1751,
+          "parent_line": null,
+          "source_text": "START: FULL LICENSE"
+        }
+      ],
+      "source_bytes": 117568,
+      "source_form": "human-proofread Project Gutenberg plain text",
+      "source_path": "raw/gutenberg/pg11449.txt",
+      "source_sha256": "6dc07e5606be5a0032d6583fa5b663a81ed0971a5d9d1f267cfc14959aa602c0",
+      "source_tables": [
+        {
+          "base_fields": [
+            {
+              "cols": 1,
+              "role": "country"
+            },
+            {
+              "cols": 1,
+              "role": "length"
+            },
+            {
+              "cols": 1,
+              "role": "breadth"
+            },
+            {
+              "cols": 1,
+              "role": "population"
+            },
+            {
+              "cols": 1,
+              "role": "religion"
+            }
+          ],
+          "blank_lines": [
+            822,
+            928
+          ],
+          "cell_overrides": {},
+          "column_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "column_heading_boundaries": [
+            21,
+            28,
+            36,
+            55
+          ],
+          "column_roles": [
+            "country",
+            "length",
+            "breadth",
+            "population",
+            "religion"
+          ],
+          "continuations": {
+            "824": 823,
+            "826": 825,
+            "828": 827,
+            "831": 830,
+            "832": 830,
+            "833": 830,
+            "834": 830,
+            "842": 841,
+            "855": 854,
+            "862": 861,
+            "867": 866,
+            "882": 881,
+            "884": 883,
+            "892": 891,
+            "895": 894,
+            "903": 902,
+            "906": 905,
+            "914": 913,
+            "925": 924
+          },
+          "end_line": 930,
+          "groups": [],
+          "header_rows": {
+            "columns": 820,
+            "title": 819,
+            "units": 821
+          },
+          "heading_line": 817,
+          "notes": [
+            {
+              "attach_to": 861,
+              "end_line": 930,
+              "marker": "[4]",
+              "marker_line": 861,
+              "role": "footnote",
+              "start_line": 929
+            }
+          ],
+          "qualifier_lines": [
+            854,
+            890,
+            892,
+            893,
+            894,
+            896,
+            897,
+            898,
+            900,
+            901,
+            904,
+            905,
+            907,
+            908,
+            909,
+            910,
+            911,
+            912,
+            913,
+            915,
+            916,
+            917,
+            918,
+            919,
+            920,
+            921,
+            922,
+            924
+          ],
+          "start_line": 819,
+          "subcolumns": null,
+          "table_id": "europe",
+          "uncertain_layout_lines": [],
+          "unit_heading_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "wide_country_lines": []
+        },
+        {
+          "base_fields": [
+            {
+              "cols": 1,
+              "role": "country"
+            },
+            {
+              "cols": 1,
+              "role": "length"
+            },
+            {
+              "cols": 1,
+              "role": "breadth"
+            },
+            {
+              "cols": 1,
+              "role": "population"
+            },
+            {
+              "cols": 1,
+              "role": "religion"
+            }
+          ],
+          "blank_lines": [
+            938,
+            983,
+            987,
+            990,
+            998,
+            1001,
+            1004,
+            1014,
+            1016,
+            1033
+          ],
+          "cell_overrides": {
+            "1023": [
+              {
+                "cols": 1,
+                "end": 18,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 2,
+                "end": 37,
+                "role": "extent-qualifier",
+                "source_roles": [
+                  "length",
+                  "breadth"
+                ],
+                "start": 18,
+                "start_column": 2
+              },
+              {
+                "cols": 1,
+                "end": 49,
+                "role": "population",
+                "source_roles": [
+                  "population"
+                ],
+                "start": 37,
+                "start_column": 4
+              },
+              {
+                "cols": 1,
+                "end": 55,
+                "role": "religion",
+                "source_roles": [
+                  "religion"
+                ],
+                "start": 49,
+                "start_column": 5
+              }
+            ],
+            "952": [
+              {
+                "cols": 1,
+                "end": 21,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 4,
+                "end": 55,
+                "role": "unresolved-layout",
+                "source_roles": [
+                  "length",
+                  "breadth",
+                  "population",
+                  "religion"
+                ],
+                "start": 21,
+                "start_column": 2
+              }
+            ],
+            "972": [
+              {
+                "cols": 1,
+                "end": 20,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 2,
+                "end": 40,
+                "role": "extent-qualifier",
+                "source_roles": [
+                  "length",
+                  "breadth"
+                ],
+                "start": 20,
+                "start_column": 2
+              },
+              {
+                "cols": 1,
+                "end": 49,
+                "role": "population",
+                "source_roles": [
+                  "population"
+                ],
+                "start": 40,
+                "start_column": 4
+              },
+              {
+                "cols": 1,
+                "end": 60,
+                "role": "religion",
+                "source_roles": [
+                  "religion"
+                ],
+                "start": 49,
+                "start_column": 5
+              }
+            ]
+          },
+          "column_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "column_heading_boundaries": [
+            21,
+            28,
+            36,
+            55
+          ],
+          "column_roles": [
+            "country",
+            "length",
+            "breadth",
+            "population",
+            "religion"
+          ],
+          "continuations": {
+            "1000": 999,
+            "1003": 1002,
+            "1018": 1017,
+            "940": 939,
+            "941": 939,
+            "942": 939,
+            "943": 939,
+            "946": 945,
+            "949": 948,
+            "955": 954,
+            "967": 966,
+            "971": 970,
+            "976": 975,
+            "985": 984,
+            "989": 988,
+            "995": 994
+          },
+          "end_line": 1034,
+          "groups": [
+            {
+              "heading_line": 991,
+              "member_ranges": [
+                [
+                  992,
+                  997
+                ]
+              ]
+            },
+            {
+              "heading_line": 1002,
+              "member_ranges": [
+                [
+                  1005,
+                  1009
+                ]
+              ]
+            },
+            {
+              "heading_line": 1009,
+              "member_ranges": [
+                [
+                  1010,
+                  1013
+                ]
+              ],
+              "row_role": "data-group-heading"
+            }
+          ],
+          "header_rows": {
+            "columns": 936,
+            "title": 935,
+            "units": 937
+          },
+          "heading_line": 933,
+          "notes": [
+            {
+              "attach_to": "table",
+              "end_line": 986,
+              "role": "table-note",
+              "start_line": 984
+            },
+            {
+              "attach_to": "table",
+              "end_line": 989,
+              "role": "table-note",
+              "start_line": 988
+            },
+            {
+              "attach_to": 991,
+              "end_line": 1000,
+              "role": "table-note",
+              "start_line": 999
+            },
+            {
+              "attach_to": "table",
+              "end_line": 1015,
+              "role": "table-note",
+              "start_line": 1015
+            },
+            {
+              "attach_to": 1019,
+              "end_line": 1034,
+              "marker": "[5]",
+              "marker_line": 1019,
+              "role": "footnote",
+              "start_line": 1034
+            }
+          ],
+          "qualifier_lines": [
+            952,
+            972,
+            1023,
+            1026,
+            1027,
+            1028,
+            1029
+          ],
+          "start_line": 935,
+          "subcolumns": null,
+          "table_id": "asia",
+          "uncertain_layout_lines": [
+            952
+          ],
+          "unit_heading_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "wide_country_lines": [
+            1032
+          ]
+        },
+        {
+          "base_fields": [
+            {
+              "cols": 1,
+              "role": "country"
+            },
+            {
+              "cols": 1,
+              "role": "length"
+            },
+            {
+              "cols": 1,
+              "role": "breadth"
+            },
+            {
+              "cols": 1,
+              "role": "population"
+            },
+            {
+              "cols": 1,
+              "role": "religion"
+            }
+          ],
+          "blank_lines": [
+            1042
+          ],
+          "cell_overrides": {},
+          "column_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "column_heading_boundaries": [
+            21,
+            28,
+            36,
+            55
+          ],
+          "column_roles": [
+            "country",
+            "length",
+            "breadth",
+            "population",
+            "religion"
+          ],
+          "continuations": {
+            "1046": 1045,
+            "1048": 1047,
+            "1064": 1063,
+            "1069": 1068
+          },
+          "end_line": 1080,
+          "groups": [],
+          "header_rows": {
+            "columns": 1040,
+            "title": 1039,
+            "units": 1041
+          },
+          "heading_line": 1037,
+          "notes": [],
+          "qualifier_lines": [
+            1068,
+            1073,
+            1074,
+            1075,
+            1076,
+            1077,
+            1078,
+            1079
+          ],
+          "start_line": 1039,
+          "subcolumns": null,
+          "table_id": "africa",
+          "uncertain_layout_lines": [],
+          "unit_heading_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "wide_country_lines": []
+        },
+        {
+          "base_fields": [
+            {
+              "cols": 1,
+              "role": "country"
+            },
+            {
+              "cols": 1,
+              "role": "length"
+            },
+            {
+              "cols": 1,
+              "role": "breadth"
+            },
+            {
+              "cols": 2,
+              "role": "population"
+            },
+            {
+              "cols": 1,
+              "role": "religion"
+            }
+          ],
+          "blank_lines": [
+            1088,
+            1122,
+            1124,
+            1137,
+            1141,
+            1150,
+            1153
+          ],
+          "cell_overrides": {
+            "1176": [
+              {
+                "cols": 1,
+                "end": 26,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 1,
+                "end": 32,
+                "role": "length",
+                "source_roles": [
+                  "length"
+                ],
+                "start": 26,
+                "start_column": 2
+              },
+              {
+                "cols": 1,
+                "end": 35,
+                "role": "breadth",
+                "source_roles": [
+                  "breadth"
+                ],
+                "start": 32,
+                "start_column": 3
+              },
+              {
+                "cols": 1,
+                "end": 43,
+                "role": "white_population",
+                "source_roles": [
+                  "white_population"
+                ],
+                "start": 35,
+                "start_column": 4
+              },
+              {
+                "cols": 1,
+                "end": 51,
+                "role": "negro_population",
+                "source_roles": [
+                  "negro_population"
+                ],
+                "start": 43,
+                "start_column": 5
+              },
+              {
+                "cols": 1,
+                "end": 58,
+                "role": "religion",
+                "source_roles": [
+                  "religion"
+                ],
+                "start": 51,
+                "start_column": 6
+              }
+            ],
+            "1179": [
+              {
+                "cols": 1,
+                "end": 25,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 1,
+                "end": 32,
+                "role": "length",
+                "source_roles": [
+                  "length"
+                ],
+                "start": 25,
+                "start_column": 2
+              },
+              {
+                "cols": 1,
+                "end": 35,
+                "role": "breadth",
+                "source_roles": [
+                  "breadth"
+                ],
+                "start": 32,
+                "start_column": 3
+              },
+              {
+                "cols": 1,
+                "end": 43,
+                "role": "white_population",
+                "source_roles": [
+                  "white_population"
+                ],
+                "start": 35,
+                "start_column": 4
+              },
+              {
+                "cols": 1,
+                "end": 51,
+                "role": "negro_population",
+                "source_roles": [
+                  "negro_population"
+                ],
+                "start": 43,
+                "start_column": 5
+              },
+              {
+                "cols": 1,
+                "end": 59,
+                "role": "religion",
+                "source_roles": [
+                  "religion"
+                ],
+                "start": 51,
+                "start_column": 6
+              }
+            ],
+            "1182": [
+              {
+                "cols": 1,
+                "end": 23,
+                "role": "country",
+                "source_roles": [
+                  "country"
+                ],
+                "start": 0,
+                "start_column": 1
+              },
+              {
+                "cols": 2,
+                "end": 37,
+                "role": "extent-qualifier",
+                "source_roles": [
+                  "length",
+                  "breadth"
+                ],
+                "start": 23,
+                "start_column": 2
+              },
+              {
+                "cols": 1,
+                "end": 44,
+                "role": "white_population",
+                "source_roles": [
+                  "white_population"
+                ],
+                "start": 37,
+                "start_column": 4
+              },
+              {
+                "cols": 1,
+                "end": 51,
+                "role": "negro_population",
+                "source_roles": [
+                  "negro_population"
+                ],
+                "start": 44,
+                "start_column": 5
+              },
+              {
+                "cols": 1,
+                "end": 70,
+                "role": "religion",
+                "source_roles": [
+                  "religion"
+                ],
+                "start": 51,
+                "start_column": 6
+              }
+            ]
+          },
+          "column_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "column_heading_boundaries": [
+            21,
+            28,
+            36,
+            55
+          ],
+          "column_roles": [
+            "country",
+            "length",
+            "breadth",
+            "white_population",
+            "negro_population",
+            "religion"
+          ],
+          "continuations": {
+            "1094": 1093,
+            "1101": 1100,
+            "1103": 1102,
+            "1104": 1102,
+            "1105": 1102,
+            "1106": 1102,
+            "1107": 1102,
+            "1109": 1108,
+            "1110": 1108,
+            "1111": 1108,
+            "1112": 1108,
+            "1113": 1108,
+            "1114": 1108,
+            "1116": 1115,
+            "1126": 1125,
+            "1132": 1131,
+            "1139": 1138,
+            "1140": 1138,
+            "1145": 1144,
+            "1147": 1146,
+            "1152": 1151,
+            "1162": 1161,
+            "1167": 1166,
+            "1169": 1168,
+            "1178": 1177,
+            "1181": 1180
+          },
+          "end_line": 1182,
+          "groups": [
+            {
+              "heading_line": 1127,
+              "member_ranges": [
+                [
+                  1128,
+                  1133
+                ]
+              ]
+            },
+            {
+              "heading_line": 1134,
+              "member_ranges": [
+                [
+                  1135,
+                  1136
+                ]
+              ]
+            },
+            {
+              "heading_line": 1142,
+              "member_ranges": [
+                [
+                  1143,
+                  1149
+                ]
+              ]
+            },
+            {
+              "heading_line": 1154,
+              "member_ranges": [
+                [
+                  1155,
+                  1182
+                ]
+              ]
+            }
+          ],
+          "header_rows": {
+            "columns": 1086,
+            "title": 1085,
+            "units": 1087
+          },
+          "heading_line": 1083,
+          "notes": [
+            {
+              "attach_to": 1134,
+              "end_line": 1140,
+              "role": "table-note",
+              "start_line": 1138
+            },
+            {
+              "attach_to": "table",
+              "end_line": 1152,
+              "role": "table-note",
+              "start_line": 1151
+            }
+          ],
+          "qualifier_lines": [
+            1115,
+            1182
+          ],
+          "start_line": 1085,
+          "subcolumns": {
+            "body_boundaries": [
+              21,
+              28,
+              36,
+              43,
+              51
+            ],
+            "boundaries": [
+              21,
+              28,
+              35,
+              43,
+              51
+            ],
+            "column_roles": [
+              "country",
+              "length",
+              "breadth",
+              "white_population",
+              "negro_population",
+              "religion"
+            ],
+            "line_number": 1170
+          },
+          "table_id": "america",
+          "uncertain_layout_lines": [],
+          "unit_heading_boundaries": [
+            21,
+            28,
+            36,
+            49
+          ],
+          "wide_country_lines": [
+            1123
+          ]
+        }
+      ],
+      "source_url": "https://www.gutenberg.org/ebooks/11449",
+      "ticket_id": "37c-094",
+      "title": "An Enquiry into the Obligations of Christians to Use Means for the Conversion of the Heathens",
+      "witness_description": "Exact retained Project Gutenberg text member PG11449; treated as one source witness while edition, part, and constituent-work boundaries remain unresolved.",
+      "work_id": "carey-enquiry"
+    }
+  ]
+}

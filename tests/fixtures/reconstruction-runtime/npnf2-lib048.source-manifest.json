@@ -1,0 +1,217 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf2-lib048-four-retained-xml-members",
+  "authorities": [
+    {
+      "name": "retained-npnf206",
+      "path": "raw/ccel/npnf2/npnf206.xml",
+      "role": "primary-source",
+      "bytes": 4444300,
+      "sha256": "6bf37affb240f5a775995ab2353c00569b34990130c98649a358f30f37f41f8d"
+    },
+    {
+      "name": "retained-npnf209",
+      "path": "raw/ccel/npnf2/npnf209.xml",
+      "role": "primary-source",
+      "bytes": 3088610,
+      "sha256": "b07e2fac0851444a42d2bbd11d39eb7384c518f6fd79e64b7f7bdc404e8a3cc7"
+    },
+    {
+      "name": "retained-npnf212",
+      "path": "raw/ccel/npnf2/npnf212.xml",
+      "role": "primary-source",
+      "bytes": 3461929,
+      "sha256": "f701b4ce5196bc5890e50adabce4900cd07b803f3221115a7cce526ae0a95570"
+    },
+    {
+      "name": "gregory-pedigree-image",
+      "path": "raw/ccel/npnf2/npnf212/files/fig1.png",
+      "role": "primary-source",
+      "bytes": 44462,
+      "sha256": "a06e1fa626deadbfa78c1390ccd63408b7eea2a720c5b4542eda9e999cc616b5",
+      "work_ids": [
+        "gregory-the-great-pastoral-rule-and-epistles"
+      ]
+    },
+    {
+      "name": "retained-npnf213",
+      "path": "raw/ccel/npnf2/npnf213.xml",
+      "role": "primary-source",
+      "bytes": 2246124,
+      "sha256": "323ecfb6470854de378fdf47375b2e15b108e72559bbe3167da9c37500bbf2ae"
+    },
+    {
+      "name": "source-local-attribution-readme",
+      "path": "sources/structured-text/npnf2-lib048/README.md",
+      "role": "source-attribution-readme",
+      "bytes": 2224,
+      "sha256": "b9899f8935d5235617854c3e76c5330a1ec2c4c32161e1ca14b83aa3ce4d166d"
+    },
+    {
+      "name": "gregory-pedigree-acquisition",
+      "path": "sources/structured-text/npnf2-lib048/gregory-pedigree-acquisition.json",
+      "role": "source-acquisition-receipt",
+      "bytes": 615,
+      "sha256": "4df83db9cf9c3e3f06066a36e62f75e3b110be89c7bef6a47fe6576723941adc"
+    },
+    {
+      "name": "gregory-pastoral-config",
+      "path": "sources/structured-text/gregory-the-great-pastoral-rule-and-epistles/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1773,
+      "sha256": "02cf98b1210754ba68f4be5331a4e0b7f641f2a0b78e0d3e93e6f9119bf2f77b"
+    },
+    {
+      "name": "gregory-selected-config",
+      "path": "sources/structured-text/gregory-the-great-selected-epistles/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1745,
+      "sha256": "2c489cdce517697339ee14dc812c6fe675cafab1d6259e692a61a3253d31adf9"
+    },
+    {
+      "name": "hilary-config",
+      "path": "sources/structured-text/hilary-of-poitiers-select-works/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2486,
+      "sha256": "7c42ffccd5f6fd3dea71323cebca5ff3720880b1efe71a9e639da02b7e31a5b5"
+    },
+    {
+      "name": "jerome-jovinianus-config",
+      "path": "sources/structured-text/jerome-against-jovinianus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2613,
+      "sha256": "33fd5c04fe833fb48a1f3e79a70c895c22801250d4546de43e289e255f802053"
+    },
+    {
+      "name": "jerome-pelagians-config",
+      "path": "sources/structured-text/jerome-against-pelagians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2614,
+      "sha256": "a3b329801ddb711ae8e44b11e68a40f7b8f2e30fea99e90de6a47c1e3a3098a4"
+    },
+    {
+      "name": "jerome-vigilantius-config",
+      "path": "sources/structured-text/jerome-against-vigilantius/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2616,
+      "sha256": "79a37ea78cbefd7850d6ff477c4e15799c8a4829a8deb3345f19964f0784a96d"
+    },
+    {
+      "name": "jerome-luciferians-config",
+      "path": "sources/structured-text/jerome-dialogue-against-luciferians/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2651,
+      "sha256": "89b05c51c2ce0edf55c98938ca7bbd2e28829f4f9d2cd634e7fa89be256627ae"
+    },
+    {
+      "name": "jerome-letters-config",
+      "path": "sources/structured-text/jerome-letters/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2588,
+      "sha256": "1ea6adb4d1271226e2bcc49fbdc8efee86d934f8cae283731bc5b49914f92edd"
+    },
+    {
+      "name": "jerome-hilarion-config",
+      "path": "sources/structured-text/jerome-life-of-hilarion/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2624,
+      "sha256": "046ad13aa74511ef9e0e890afac9d05e3b89690891c6ca34a006e2e03f24489c"
+    },
+    {
+      "name": "jerome-malchus-config",
+      "path": "sources/structured-text/jerome-life-of-malchus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2636,
+      "sha256": "6759c52754e368c1eeb0c053a23f49644c6395353efefbe881ba4542645b3f07"
+    },
+    {
+      "name": "jerome-paulus-config",
+      "path": "sources/structured-text/jerome-life-of-paulus/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2632,
+      "sha256": "7c49cfd91b361a94c5ea93cbbbbf9eef000af51b385462afc6f7b601f2294ae8"
+    },
+    {
+      "name": "jerome-perpetual-virginity-config",
+      "path": "sources/structured-text/jerome-perpetual-virginity-of-mary/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2652,
+      "sha256": "547989a605a8cd699a43a5510cb8dc23d1fa1b16000a410b3e2e9cec27a302a0"
+    },
+    {
+      "name": "jerome-pammachius-config",
+      "path": "sources/structured-text/jerome-to-pammachius-against-john-of-jerusalem/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2676,
+      "sha256": "a6baae2dcb340201f1bd88397a40869e4355029160b33f2a91e4a7dee8482d12"
+    },
+    {
+      "name": "john-damascus-config",
+      "path": "sources/structured-text/john-of-damascus-orthodox-faith/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 2036,
+      "sha256": "085d224ac9cdfbb8f98ae3455cd27fb3a2e93806c721f19604d3c52fbcfdc4e1"
+    },
+    {
+      "name": "leo-config",
+      "path": "sources/structured-text/leo-the-great-letters-and-sermons/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1731,
+      "sha256": "5a61bf41fd11198398b45969680ccb5eb0a7e68635268b4bb665a543586528a6"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/npnf2-lib048/npnf2-lib048.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1805,
+      "sha256": "5b9ddc9022184c4527c29fa17ab41f19e0c06a94b774ae71648c77aafa891ca2"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/npnf2-lib048/npnf2-lib048.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 7259,
+      "sha256": "973b95c2e87b4c8fa3fc7be752a270175e81226513b2e503dd3c11147ea89018"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/npnf2-lib048/npnf2-lib048.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 3711,
+      "sha256": "d7f0026f7c3e8a3389488d94c13786de89bb26f4ddbdf68ae5792c858ca85853"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-npnf2-lib048-assigned-works-to-tei",
+    "version": "2",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf2_lib048_reconstruction.py",
+    "implementation_sha256": "d79c6f2bb3dffff36275a257062816055487cfa0de793336e827d30d5f19e147"
+  },
+  "validator": {
+    "id": "ocd-npnf2-lib048-source-to-tei-oracle",
+    "version": "2",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf2_lib048_oracle.py",
+    "implementation_sha256": "fa3ce516512215b68c74a6ffd615d0cb2e5af88532149cfb3aec81a8b533b06d",
+    "import_closure_sha256": "18fbaa5ff57cb102c61ead8f6191d49b114198ddc61531ba67ce1959bb3bd7d2"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

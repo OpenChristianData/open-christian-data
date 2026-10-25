@@ -1,0 +1,49 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-npnf103-retained-xml",
+  "authorities": [
+    {"name": "retained-thml", "path": "raw/ccel/npnf1/npnf103.xml", "role": "primary-source", "bytes": 3842341, "sha256": "410f240f8105bb6097316a54a867fa5a4ae02c0d3d03606aefc2df71f5bfc455"},
+    {"name": "source-local-attribution-readme", "path": "sources/structured-text/augustine-npnf103/README.md", "role": "source-attribution-readme", "bytes": 1778, "sha256": "042bebeda752cdc3115bea0953ea8819e3b0fc6f8f006d8ca971ad983b1549db"},
+    {"name": "augustine-on-the-trinity-config", "path": "sources/structured-text/augustine-on-the-trinity/config.json", "role": "local-metadata-claim-evidence", "bytes": 1677, "sha256": "57497d3005149380a0465b419c9577e12687d7a444996a51186e2e9b7291fc49"},
+    {"name": "augustine-enchiridion-config", "path": "sources/structured-text/augustine-enchiridion/config.json", "role": "local-metadata-claim-evidence", "bytes": 1412, "sha256": "c17ff82b800be01ec47de3188534016313fc2a2a1326f11c0e1695de44e4a641"},
+    {"name": "augustine-catechising-uninstructed-config", "path": "sources/structured-text/augustine-catechising-uninstructed/config.json", "role": "local-metadata-claim-evidence", "bytes": 1467, "sha256": "1f576da47ada2cad1a5a485e8b519f5de246d4937aa85cf19e0c5df999764ca9"},
+    {"name": "augustine-faith-and-creed-config", "path": "sources/structured-text/augustine-faith-and-creed/config.json", "role": "local-metadata-claim-evidence", "bytes": 1444, "sha256": "5e71e1918e7bf5ad54bd8e1ba8e68828f3ec31232644def2a68f63c0bc72d4b2"},
+    {"name": "augustine-faith-things-not-seen-config", "path": "sources/structured-text/augustine-faith-things-not-seen/config.json", "role": "local-metadata-claim-evidence", "bytes": 1456, "sha256": "dec10d1d8caa1aa44473628e25aca50a25eb501b59e95c52de3832f778d47458"},
+    {"name": "augustine-profit-of-believing-config", "path": "sources/structured-text/augustine-profit-of-believing/config.json", "role": "local-metadata-claim-evidence", "bytes": 1442, "sha256": "ac2cba499c39780e0ebc6c7d562fc1fe1d07bce6535316a5658a613d4f171e65"},
+    {"name": "augustine-on-the-creed-config", "path": "sources/structured-text/augustine-on-the-creed/config.json", "role": "local-metadata-claim-evidence", "bytes": 1889, "sha256": "fc618c04687130c4edc2665589d2c8ed30a4ae07d01474d439ed9a824394d1c1"},
+    {"name": "augustine-on-continence-config", "path": "sources/structured-text/augustine-on-continence/config.json", "role": "local-metadata-claim-evidence", "bytes": 1418, "sha256": "dd115953c999e69acf0a13b7c1c67aaa74b0aab4721bf4877bedce10e564766a"},
+    {"name": "augustine-good-of-marriage-config", "path": "sources/structured-text/augustine-good-of-marriage/config.json", "role": "local-metadata-claim-evidence", "bytes": 1433, "sha256": "c491f6f945f9569a50767de4cd4f6c7e4e44aa8cbd1072792d279d85a246ceb0"},
+    {"name": "augustine-holy-virginity-config", "path": "sources/structured-text/augustine-holy-virginity/config.json", "role": "local-metadata-claim-evidence", "bytes": 1873, "sha256": "c2356ff493d1ca59defe48445c7c147d8b8d71ab9c008a5cf45e761bf98f3a05"},
+    {"name": "augustine-good-of-widowhood-config", "path": "sources/structured-text/augustine-good-of-widowhood/config.json", "role": "local-metadata-claim-evidence", "bytes": 1436, "sha256": "015be59048acdd60c0339c5a502714b535e0291fabe8961f866f3b306db6d3fc"},
+    {"name": "augustine-on-lying-config", "path": "sources/structured-text/augustine-on-lying/config.json", "role": "local-metadata-claim-evidence", "bytes": 1398, "sha256": "280bf18fee38d198bd7793d5b29383299cc1099c5daf1b599ff5d779db447e23"},
+    {"name": "augustine-against-lying-config", "path": "sources/structured-text/augustine-against-lying/config.json", "role": "local-metadata-claim-evidence", "bytes": 1413, "sha256": "653eb5d5a81cd08233a0fada18392713b57aa6bd01d08b5b3598db0e44cdab98"},
+    {"name": "augustine-work-of-monks-config", "path": "sources/structured-text/augustine-work-of-monks/config.json", "role": "local-metadata-claim-evidence", "bytes": 1420, "sha256": "01cdfced0203b4a51af99105a63cacd0df10b30923a2f80860f447388ec26da7"},
+    {"name": "augustine-on-patience-config", "path": "sources/structured-text/augustine-on-patience/config.json", "role": "local-metadata-claim-evidence", "bytes": 1408, "sha256": "4f6329f75ceaa3b8a680f36270f5baa0248a1d212819fb737c180b7d4bb485ac"},
+    {"name": "augustine-care-for-dead-config", "path": "sources/structured-text/augustine-care-for-dead/config.json", "role": "local-metadata-claim-evidence", "bytes": 1431, "sha256": "5b7bebecd70c99bcb23f058afa69f8adc2b8a5bc153304e894396529fdb7a49e"},
+    {"name": "ccel-permission", "path": "sources/structured-text/athanasius-on-the-incarnation/ccel-permission.md", "role": "source-rights-evidence", "bytes": 1604, "sha256": "0bf59cb9f186a8414aa845bad7cf2fd632c480a35e8dbbb2e10ad80f5daf6595"},
+    {"name": "reconstruction-profile", "path": "sources/structured-text/augustine-npnf103/augustine-npnf103.reconstruction-profile.json", "role": "complete-source-feature-profile", "bytes": 2402, "sha256": "76e816156aecdf1499a56ca63290038921da613460275ab30ed08e18708bc114"},
+    {"name": "validation-policy", "path": "sources/structured-text/augustine-npnf103/augustine-npnf103.validation-policy.json", "role": "independent-validation-policy", "bytes": 2723, "sha256": "9b059b933b21f0fc4d7fd7771e570a42c4449b45c7c6a379ceb8b9c4f0f07689"},
+    {"name": "source-accountability-schema", "path": "sources/structured-text/augustine-npnf103/augustine-npnf103.source-accountability.schema.json", "role": "complete-source-accountability-schema", "bytes": 5470, "sha256": "ff563c50c707cee4dde99b117616d26e1e683b2b77417040e9c37bbbc1d5ef1f"},
+    {"name": "tei-p5-xsd", "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd", "role": "tei-validation-schema", "bytes": 1108622, "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},
+    {"name": "candidate-package-schema", "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json", "role": "candidate-package-schema", "bytes": 2173, "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"}
+  ],
+  "converter": {
+    "id": "ocd-npnf103-assigned-works-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/npnf103_reconstruction.py",
+    "implementation_sha256": "800e2d3d8cdc331c24bc63c68ed92fdf00677ceb335ee418f3c27428870c228c"
+  },
+  "validator": {
+    "id": "ocd-npnf103-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/npnf103_oracle.py",
+    "implementation_sha256": "fb403da3adbcb28ec2da88211e7bb5691586003f379c2185ba125b6e6f03b19b",
+    "import_closure_sha256": "873867ddd689c521a54b724129124017a8afc3074eed6dbbcb88bb92776ee8e9"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "contract": "ocd-pilgrims-progress-reconstruction-profile-v1",
+  "profile_id": "pilgrims-progress-complete-retained-checkout-v1",
+  "version": 1,
+  "source_scope": {
+    "commit": "37b799fba3e61db5306584a8064b45282af08c19",
+    "tree": "74cb0e78da9cb29c38b0463d03036471358799e6",
+    "member_count": 26,
+    "bytes": 6028743,
+    "members": [
+      {
+        "path": "LICENSE.md",
+        "bytes": 561,
+        "sha256": "5a8124e75edecf71d684c6784131c98b0d944654c7b0c49519768790377f01fb"
+      },
+      {
+        "path": "images/cover.jpg",
+        "bytes": 928051,
+        "sha256": "6ba940766398238e7e2c4f15578dea33c7fad5c07f53b2fec93b8e0e9ff5927a"
+      },
+      {
+        "path": "images/cover.source.jpg",
+        "bytes": 2516299,
+        "sha256": "6572c5142d5597afc33a17426376014b6db32b5c19e05886796e2176facbc33f"
+      },
+      {
+        "path": "images/cover.svg",
+        "bytes": 888,
+        "sha256": "8e93fe7f4c0c2680377e6f7f7eb786d9d0530a2ba9fc864ce5006b7f1da32e4f"
+      },
+      {
+        "path": "images/titlepage.svg",
+        "bytes": 640,
+        "sha256": "462b36c71a9f293f704727e4d5391c440628cec41a4097224182eec573098af0"
+      },
+      {
+        "path": "src/META-INF/container.xml",
+        "bytes": 253,
+        "sha256": "fc2d87df510ce2ff7195c499799ef10670b99743cd6c0c44f99bfb14775647d6"
+      },
+      {
+        "path": "src/epub/content.opf",
+        "bytes": 12059,
+        "sha256": "7221995d90f98b0545d85fe75313a6c329b25f4b65f7f03106ab190f47665680"
+      },
+      {
+        "path": "src/epub/css/core.css",
+        "bytes": 2519,
+        "sha256": "15fdf5352d40250ff2937535744271d42d2cdee286c2381db49a5359c10048cb"
+      },
+      {
+        "path": "src/epub/css/local.css",
+        "bytes": 1744,
+        "sha256": "c9ab805fd5bb90a1821d9aa546bc89dc652fb03599c6ed780d412a19e19f34f5"
+      },
+      {
+        "path": "src/epub/css/se.css",
+        "bytes": 1803,
+        "sha256": "e8222cd6e7f7b2d02a6f911428050164205a56470fa047447616872e6627afc8"
+      },
+      {
+        "path": "src/epub/images/cover.svg",
+        "bytes": 1245174,
+        "sha256": "6407757ca6378559c1474d7b2764c08bce10b1e818fbf1c793d6219ec6b8df9b"
+      },
+      {
+        "path": "src/epub/images/logo.svg",
+        "bytes": 20521,
+        "sha256": "5af4cd5d8656f7467cb9c40d949028ae4b160b3c077e2c1bf8d9940e335ef890"
+      },
+      {
+        "path": "src/epub/images/titlepage.svg",
+        "bytes": 7445,
+        "sha256": "4b8458d38be22ccffc092d6420acd5b74344dbee60b81456735a9a36745d95a3"
+      },
+      {
+        "path": "src/epub/text/colophon.xhtml",
+        "bytes": 2842,
+        "sha256": "54313a6009a8c5f89f75e31b5d3bcb6c643a14998150f5e2d5af75f95bfa9e42"
+      },
+      {
+        "path": "src/epub/text/endnotes.xhtml",
+        "bytes": 523953,
+        "sha256": "9d047e89f259604a4c994f62b64450462756d659ee7113c7dfc733c39d029988"
+      },
+      {
+        "path": "src/epub/text/foreword.xhtml",
+        "bytes": 6037,
+        "sha256": "2b8ed3e21a60e3d93196037cbe44c00d9878574fd4e2463944e16c38dae9af6b"
+      },
+      {
+        "path": "src/epub/text/halftitlepage.xhtml",
+        "bytes": 637,
+        "sha256": "a81f6429dc5ba8d0eeec81bf0dab7c541b7ed02d78dadb93f0a0951b60179cf6"
+      },
+      {
+        "path": "src/epub/text/imprint.xhtml",
+        "bytes": 2282,
+        "sha256": "acf48ab293ccf109ca57c0442bbda0ad54a7818e577469d3f2fdf7e3c5fc70dc"
+      },
+      {
+        "path": "src/epub/text/part-1.xhtml",
+        "bytes": 374998,
+        "sha256": "e739b408373a4b11c45f190f9029464a1fc9afccdb7407688f7a6110a4c494d7"
+      },
+      {
+        "path": "src/epub/text/part-2.xhtml",
+        "bytes": 335513,
+        "sha256": "0d0c59022790296c4dc6172907916dd35aec2fd44048c39eca924d5dace7b4b6"
+      },
+      {
+        "path": "src/epub/text/preface-1.xhtml",
+        "bytes": 18614,
+        "sha256": "1dc4719951f29b2a70478e0340bb6e97a4efe76953cfa67fa29c5e37256e113c"
+      },
+      {
+        "path": "src/epub/text/preface-2.xhtml",
+        "bytes": 20375,
+        "sha256": "ed53264caa62e3edeaaf059c3d8385c493d6d3339248d7c478a9df9f2d404f12"
+      },
+      {
+        "path": "src/epub/text/titlepage.xhtml",
+        "bytes": 788,
+        "sha256": "154f58b5cb4605774680c388570441e705ed224247366e40733c12e2066d08a3"
+      },
+      {
+        "path": "src/epub/text/uncopyright.xhtml",
+        "bytes": 2938,
+        "sha256": "d07c76023355a3f86a1b24bf4c9f9ed61d10015446786bd4861d4c5c3a8abf10"
+      },
+      {
+        "path": "src/epub/toc.xhtml",
+        "bytes": 1789,
+        "sha256": "fee56a920493a2b7e3fcc1fc2c205090620e899ce86baad6818ae0c7b5f99e48"
+      },
+      {
+        "path": "src/mimetype",
+        "bytes": 20,
+        "sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+      }
+    ]
+  },
+  "spine": [
+    "text/titlepage.xhtml",
+    "text/imprint.xhtml",
+    "text/foreword.xhtml",
+    "text/halftitlepage.xhtml",
+    "text/preface-1.xhtml",
+    "text/part-1.xhtml",
+    "text/preface-2.xhtml",
+    "text/part-2.xhtml",
+    "text/endnotes.xhtml",
+    "text/colophon.xhtml",
+    "text/uncopyright.xhtml"
+  ],
+  "sections": [
+    {
+      "member": "src/epub/text/titlepage.xhtml",
+      "matter": "front",
+      "id": "titlepage",
+      "heading_sha256": "73d8571c6274a5be1b082dc0d94d1a6e91ecb1c6d89d8337b471315b559deaa3"
+    },
+    {
+      "member": "src/epub/text/imprint.xhtml",
+      "matter": "front",
+      "id": "imprint",
+      "heading_sha256": "0bf490091b5d30ab215e349383ddcf3356744126afbf186e76c0b268faa6ecfc"
+    },
+    {
+      "member": "src/epub/text/foreword.xhtml",
+      "matter": "front",
+      "id": "foreword",
+      "heading_sha256": "8eb5692f245dab5296afb3641c1b6b97384ae35f6e972a35d23be2e230c25d9c"
+    },
+    {
+      "member": "src/epub/text/halftitlepage.xhtml",
+      "matter": "front",
+      "id": "halftitlepage",
+      "heading_sha256": "73d8571c6274a5be1b082dc0d94d1a6e91ecb1c6d89d8337b471315b559deaa3"
+    },
+    {
+      "member": "src/epub/text/preface-1.xhtml",
+      "matter": "front",
+      "id": "preface-1",
+      "heading_sha256": "9d4b69c8bade43ae440cd7fd1b9e589b92fa6505772a22fbdffd1c4b93cc5a8f"
+    },
+    {
+      "member": "src/epub/text/part-1.xhtml",
+      "matter": "body",
+      "id": "part-1",
+      "heading_sha256": "5a28155f6399e8724a36fb558218ff1e50e6a077b016fc8fdffc3355ec47726d"
+    },
+    {
+      "member": "src/epub/text/preface-2.xhtml",
+      "matter": "front",
+      "id": "preface-2",
+      "heading_sha256": "df096150753170c271594859fc820b4b14e6dd9342c96114085cc32bed516fa6"
+    },
+    {
+      "member": "src/epub/text/part-2.xhtml",
+      "matter": "body",
+      "id": "part-2",
+      "heading_sha256": "cc99fe2db3235d8490ac9f99cb3cc11abbeb6982e65d7273506cdbdcd3b41249"
+    },
+    {
+      "member": "src/epub/text/endnotes.xhtml",
+      "matter": "back",
+      "id": "endnotes",
+      "heading_sha256": "e021134e9113dc644b24b91718c4c39277f756f9e2cd68681ad7093906f43ba5"
+    },
+    {
+      "member": "src/epub/text/colophon.xhtml",
+      "matter": "back",
+      "id": "colophon",
+      "heading_sha256": "94eff011f0b008489c93d26e74105628cca01d06602f6f98c275d1290835eb08"
+    },
+    {
+      "member": "src/epub/text/uncopyright.xhtml",
+      "matter": "back",
+      "id": "uncopyright",
+      "heading_sha256": "22b392e5204fa7a7883e944f33f283f98ecb1b73bec640081d3a03e002afa8ac"
+    }
+  ],
+  "feature_inventory": {
+    "note_references": 1010,
+    "note_bodies": 1010,
+    "note_backlinks": 1010,
+    "visible_note_labels": 1010,
+    "lists": 2,
+    "list_items": 1026,
+    "attributed_notes": 653,
+    "unattributed_notes": 357,
+    "cites": 771,
+    "distinct_cite_strings": 156,
+    "ordered_cite_strings_sha256": "3e513537add025175f1d1c8687800798fd4db8c518cf7d2f0094fa7d2abfbf1b",
+    "verse_groups": 95,
+    "poems": 10,
+    "verses": 65,
+    "songs": 20,
+    "stanzas": 171,
+    "verse_lines": 1045,
+    "indentation_spans": 21,
+    "abbr_eoc_renditions": 14,
+    "body_verse_groups": 45,
+    "front_verse_groups": 10,
+    "back_verse_groups": 1,
+    "note_verse_groups": 39,
+    "language_spans": 3,
+    "image_borne_strings": 18,
+    "image_alternatives": 3,
+    "inline_carriers": {
+      "a": 2036,
+      "abbr": 1457,
+      "b": 1077,
+      "i": 193,
+      "em": 104,
+      "cite": 771,
+      "span": 1051,
+      "time": 40,
+      "br": 896,
+      "img": 3
+    }
+  },
+  "observation_accounting": {
+    "total": 31735,
+    "represented": 30783,
+    "evidence_only": 952,
+    "ordered_dispositions_sha256": "707617f01555273f5613f21f76eef80790aee12e5b691b998183e8917060e381"
+  },
+  "non_xml_dispositions": {
+    "LICENSE.md": "rights and source-license evidence",
+    "images/cover.jpg": "root build-source cover artwork evidence",
+    "images/cover.source.jpg": "root high-resolution cover source artwork evidence",
+    "src/epub/css/core.css": "typographic and structural styling evidence",
+    "src/epub/css/local.css": "work-specific indentation and verse styling evidence",
+    "src/epub/css/se.css": "Standard Ebooks styling evidence",
+    "src/mimetype": "EPUB package media-type evidence"
+  },
+  "metadata": {
+    "title": "The Pilgrim’s Progress",
+    "author": "John Bunyan",
+    "editor": "George Offor",
+    "source_url": "https://github.com/standardebooks/john-bunyan_the-pilgrims-progress"
+  },
+  "metadata_conflicts": [
+    "config versus OPF edition basis",
+    "config en versus OPF en-GB",
+    "config empty contributors versus named OPF contributors",
+    "config original 1678 date versus OPF 2020 digital date",
+    "short versus extended retained titles",
+    "two OPF source witnesses",
+    "rights categories require separation"
+  ],
+  "rights": {
+    "underlying_text_and_artwork": "believed United States public domain; other jurisdictions unresolved",
+    "standard_ebooks_contributions": "CC0 1.0 dedication",
+    "candidate": "nonaccepted and not publication authorization"
+  },
+  "producer_import_closure_sha256": "04b367fde4d6e7272d562362ce23dbb58aba483ad7366b5bd1d7f89dc96f1627"
+}

@@ -1,0 +1,88 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "ccel-lib029-retained-thml-source-set",
+  "authorities": [
+    {
+      "name": "creeds-of-christendom-vol-1-source",
+      "path": "raw/ccel/schaff/creeds1.xml",
+      "role": "primary-source",
+      "bytes": 4590874,
+      "sha256": "450960af42f600534f15429546e0a00696a9fbfc4ea32df55545ef5a02c491e7"
+    },
+    {
+      "name": "work-identity-config",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/config.json",
+      "role": "work-identity-config",
+      "bytes": 924,
+      "sha256": "4185327e51c5e41ffa10589954831bdcd2c1b3499b4acd57160b8a27abfcfea3"
+    },
+    {
+      "name": "retained-source-set",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/lib029-retained-source-set.json",
+      "role": "source-member-census",
+      "bytes": 345,
+      "sha256": "d4497769c7509a41a74c0bff8f3c14d112ab7912b0856b890e13746649da969f"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/lib029.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1669,
+      "sha256": "de488feec2bd8848a2a455fc89a05552bb0b3d561bc100786ea213770c0f6b5d"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/lib029.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 947,
+      "sha256": "16b02592c77ae1ddf1386d6559d7d90d4a447b647b4c1252e2a4d15ec9687648"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/lib029.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 5337,
+      "sha256": "5332be25f74f3e5079c0a78cafc3dfd06e88a13959fa1e5bf60970cf295a4b57"
+    },
+    {
+      "name": "source-attribution",
+      "path": "sources/structured-text/creeds-of-christendom-vol-1/lib029-source-attribution.md",
+      "role": "source-attribution-readme",
+      "bytes": 520,
+      "sha256": "27850891c42b2874f4caa403135ab318259710e00ddceb74a838c98cc5399330"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-lib029-ccel-thml-cohort-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/lib029_reconstruction.py",
+    "implementation_sha256": "7567bcd46b9acaec848666996d11233cb843f1c8b1737628c99e63faac492ca4"
+  },
+  "validator": {
+    "id": "ocd-lib029-source-to-tei-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/lib029_oracle.py",
+    "implementation_sha256": "15bcaa4ce52d5e976af4469ac4669b609515221d7d8fcb682e2a8e11f1d64b72",
+    "import_closure_sha256": "be7491cf4257a439d94078415a4570f0eb41c2cb3552ff8a8d54805955f4cf70"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

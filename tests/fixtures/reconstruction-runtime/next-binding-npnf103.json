@@ -1,0 +1,8 @@
+[
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/augustine-npnf103.source-manifest.json",
+    "original": "sources/structured-text/augustine-npnf103/augustine-npnf103.source-manifest.json",
+    "original_sha256": "190306bcbf87e6b71863aef9dc50a6bbbdf1d73e3fb55954c5a8838ac9278a2c",
+    "preservation_test": "tests/test_npnf103_runtime_manifest.py::test_complete_original_source_record_preserved"
+  }
+]

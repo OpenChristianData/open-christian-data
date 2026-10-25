@@ -1,0 +1,67 @@
+{
+  "contract": "ocd-npnf210-ambrose-reconstruction-profile-v1",
+  "profile_id": "npnf210-ambrose-nine-work-v1",
+  "version": 1,
+  "source_member": {
+    "path": "raw/ccel/npnf2/npnf210.xml",
+    "bytes": 3837030,
+    "sha256": "c6f1a9d66653852d8b743c84a613c72c521dfb1b05602f0a2eff400c17665ee8"
+  },
+  "assigned_roots": ["iv.i", "iv.ii", "iv.iii", "iv.iv", "iv.v", "iv.vi", "iv.vii", "iv.viii", "v"],
+  "outside_assigned_work_scope": {
+    "top_level_div1": ["i", "ii", "iii", "iv", "vi"],
+    "front_div2": ["iii.i", "iii.ii", "iii.iii", "iii.iv", "iii.v", "iii.vi"],
+    "letters_children_represented_inside_div1_v": ["v.i", "v.ii", "v.iii", "v.iv", "v.v", "v.vi", "v.vii", "v.viii", "v.ix", "v.x", "v.xi", "v.xii", "v.xiii", "v.xiv", "v.xv"],
+    "index_div2": ["vi.i", "vi.ii", "vi.iii"]
+  },
+  "assigned_feature_count": 17122,
+  "assigned_attribute_count": 44159,
+  "assigned_text_node_count": 12757,
+  "assigned_tail_node_count": 12555,
+  "assigned_character_count": 2206439,
+  "assigned_non_ascii_character_count": 14144,
+  "assigned_feature_counts": {
+    "div1": 1,
+    "div2": 23,
+    "div3": 51,
+    "div4": 296,
+    "h1": 2,
+    "h2": 14,
+    "h3": 69,
+    "h4": 296,
+    "hr": 18,
+    "i": 902,
+    "note": 3782,
+    "p": 7251,
+    "pb": 463,
+    "scripRef": 3307,
+    "span": 646,
+    "sup": 1
+  },
+  "assigned_comment_count": 0,
+  "assigned_processing_instruction_count": 0,
+  "assigned_table_census": {"tables": 0, "rows": 0, "cells": 0},
+  "document_shell": {
+    "source_xml_declaration": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+    "source_standalone": false,
+    "source_doctype": "<!DOCTYPE ThML PUBLIC \"-//CCEL/DTD Theological Markup Language//EN\" \"http://www.ccel.org/dtd/ThML10.dtd\">",
+    "source_pre_root_comment_count": 2,
+    "source_processing_instruction_count": 0,
+    "source_post_root_node_count": 0,
+    "candidate_xml_declaration": "<?xml version='1.0' encoding='UTF-8'?>",
+    "candidate_doctype": null,
+    "candidate_root_siblings": 0
+  },
+  "requirements": [
+    "exact-depth-first-order",
+    "exact-direct-and-tail-text",
+    "all-source-attributes-accounted",
+    "all-division-titles-and-source-headings-projected",
+    "notes-page-breaks-scripture-references-language-spans-superscript-and-horizontal-rules-preserved",
+    "exact-source-member-shell-front-wrapper-and-index-accounting",
+    "exact-document-prolog-doctype-root-sibling-and-namespace-policy",
+    "exact-retained-series-editor-and-volume-level-translation-credit",
+    "work-specific-translator-allocation-remains-localized-and-unresolved",
+    "all-nine-works-remain-nonaccepted-and-publication-not-ready"
+  ]
+}

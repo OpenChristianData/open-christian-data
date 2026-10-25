@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ocd://schemas/v2/categories/doctrinal-documents.schema.json",
+  "title": "OCD doctrinal document row",
+  "description": "A closed row for source-attested doctrinal units, articles, clauses, proofs, and revisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_id", "textual_form_id", "edition_id", "record_id", "sequence", "category",
+    "language", "representation_revision", "text", "document_id", "document_kind",
+    "unit_type", "number", "title", "content", "content_blocks", "content_with_proofs", "proofs",
+    "revision_history", "parent_path", "locator", "provenance"
+  ],
+  "dependentRequired": {"structure": ["content_format"], "content_format": ["structure"]},
+  "properties": {
+    "work_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/work_id"},
+    "textual_form_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/textual_form_id"},
+    "edition_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/edition_id"},
+    "record_id": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/record_id"},
+    "sequence": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/sequence"},
+    "category": {"const": "doctrinal_documents"},
+    "language": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/language"},
+    "representation_revision": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/representation_revision"},
+    "text": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/text", "minLength": 1},
+    "document_id": {"type": "string", "minLength": 1},
+    "document_kind": {"enum": ["canon", "confession", "covenant", "creed", "declaration", "directory", "statement", "constitution"]},
+    "unit_type": {"enum": ["chapter", "section", "article", "clause", "canon", "rejection", "text", "proposition", "unit"]},
+    "number": {"type": ["string", "null"]},
+    "title": {"type": ["string", "null"]},
+    "content": {"type": ["string", "null"]},
+    "content_format": {"const": "ocd-native-content-v1"},
+    "structure": {"$ref": "ocd://schemas/v2/native-content.schema.json"},
+    "content_blocks": {"type": "array", "items": {"type": "string"}},
+    "content_with_proofs": {"type": ["string", "null"]},
+    "proofs": {"type": "array", "items": {"$ref": "#/$defs/proof"}},
+    "revision_history": {"type": "array", "items": {"$ref": "#/$defs/revision"}},
+    "parent_path": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "locator": {"$ref": "#/$defs/locator"},
+    "provenance": {"$ref": "ocd://schemas/v2/public-row.schema.json#/properties/provenance"}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false, "required": ["raw", "osis"],
+      "properties": {"raw": {"type": "string", "minLength": 1}, "osis": {"type": "array", "description": "Source-supplied machine references; empty when the raw proof has no machine mapping.", "items": {"type": "string", "minLength": 1}}}
+    },
+    "proof": {
+      "type": "object", "additionalProperties": false, "required": ["id", "references"],
+      "properties": {"id": {"type": "integer", "minimum": 1}, "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}, "minItems": 1}}
+    },
+    "revision": {
+      "type": "object", "additionalProperties": false, "required": ["year", "body", "description"],
+      "properties": {"year": {"type": "integer", "minimum": 1}, "body": {"type": ["string", "null"]}, "description": {"type": "string"}}
+    },
+    "division": {
+      "type": "object", "additionalProperties": false, "required": ["order", "type", "number", "titles"],
+      "properties": {"order": {"type": "integer", "minimum": 1}, "type": {"type": ["string", "null"], "minLength": 1}, "number": {"type": ["string", "null"]}, "titles": {"type": "array", "items": {"type": "string"}}}
+    },
+    "locator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "text_part", "part_titles", "divisions", "unit", "unit_path", "source_order"],
+      "properties": {
+        "kind": {"const": "unit"}, "text_part": {"enum": ["front", "body", "back"]},
+        "part_titles": {"type": "array", "items": {"type": "string"}},
+        "divisions": {"type": "array", "items": {"$ref": "#/$defs/division"}},
+        "unit": {"type": "string", "minLength": 1},
+        "unit_path": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "source_order": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "x-ocd-profile": {
+    "version": "ocd-doctrinal-documents-bounded-v3",
+    "public_category": "doctrinal_documents",
+    "private_receipt_anchors": ["xml_id", "tei_path", "source_order"],
+    "unsupported_behavior": "Visible unsupported structure is rejected and accounted for; it is never silently flattened."
+  }
+}

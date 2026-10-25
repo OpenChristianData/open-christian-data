@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openchristiandata.org/schemas/reconstruction/murray-absolute-surrender-source-accountability-v1.schema.json",
+  "title": "Murray Absolute Surrender complete ThML source accountability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "work_id",
+    "source_id",
+    "profile_id",
+    "member_census",
+    "counts",
+    "crosswalk",
+    "non_element_events",
+    "unmapped_features",
+    "duplicate_features"
+  ],
+  "properties": {
+    "contract": {"const": "ocd-murray-absolute-surrender-source-accountability-v1"},
+    "work_id": {"const": "murray-absolute-surrender"},
+    "source_id": {"const": "murray-absolute-surrender-retained-thml"},
+    "profile_id": {"const": "murray-absolute-surrender-whole-thml-v1"},
+    "member_census": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "bytes", "sha256", "scope", "disposition"],
+        "properties": {
+          "path": {"const": "raw/ccel/murray/surrender.xml"},
+          "bytes": {"const": 217645},
+          "sha256": {"const": "3b8a474258f452b6d43ce14735c2594da52cd583a0271e8a650969aad97aff7d"},
+          "scope": {"const": "whole ThML document including complete header and body"},
+          "disposition": {"const": "included"}
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_elements",
+        "body_elements",
+        "source_attributes",
+        "unique_id_attributes",
+        "comment_events",
+        "processing_instruction_events",
+        "doctype_events",
+        "unmapped_features",
+        "duplicate_features",
+        "dispositions"
+      ],
+      "properties": {
+        "source_elements": {"const": 954},
+        "body_elements": {"const": 890},
+        "source_attributes": {"const": 1167},
+        "unique_id_attributes": {"const": 614},
+        "comment_events": {"const": 2},
+        "processing_instruction_events": {"const": 0},
+        "doctype_events": {"const": 1},
+        "unmapped_features": {"const": 0},
+        "duplicate_features": {"const": 0},
+        "dispositions": {
+          "type": "object",
+          "minProperties": 3,
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "crosswalk": {
+      "type": "array",
+      "minItems": 954,
+      "maxItems": 954,
+      "items": {"$ref": "#/$defs/feature"}
+    },
+    "non_element_events": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_event_ordinal", "kind", "lexical", "sha256", "disposition"],
+        "properties": {
+          "source_event_ordinal": {"type": "integer", "minimum": 1},
+          "kind": {"enum": ["comment", "doctype", "pi"]},
+          "lexical": {"type": "string"},
+          "sha256": {"$ref": "#/$defs/sha256"},
+          "disposition": {"const": "non-element-event-byte-bound-only"}
+        }
+      }
+    },
+    "unmapped_features": {"type": "array", "maxItems": 0},
+    "duplicate_features": {"type": "array", "maxItems": 0}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "feature_id",
+        "source_ordinal",
+        "source_selector",
+        "source_qname",
+        "source_attributes",
+        "source_direct_text",
+        "source_tail_text",
+        "source_parent_ordinal",
+        "source_child_ordinal",
+        "disposition",
+        "target_xml_id"
+      ],
+      "properties": {
+        "feature_id": {"type": "string", "pattern": "^murray-absolute-surrender-feature-[0-9]{5}$"},
+        "source_ordinal": {"type": "integer", "minimum": 1, "maximum": 954},
+        "source_selector": {"type": "string", "minLength": 1},
+        "source_qname": {"type": "string", "minLength": 1},
+        "source_attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["qname", "value"],
+            "properties": {"qname": {"type": "string"}, "value": {"type": "string"}}
+          }
+        },
+        "source_direct_text": {"type": "string"},
+        "source_tail_text": {"type": "string"},
+        "source_parent_ordinal": {"type": ["integer", "null"], "minimum": 1, "maximum": 954},
+        "source_child_ordinal": {"type": "integer", "minimum": 1, "maximum": 954},
+        "disposition": {
+          "enum": [
+            "represented-by-tei-root",
+            "represented-by-tei-text",
+            "represented-in-tei-body",
+            "represented-in-tei-header",
+            "source-header-accountability-only",
+            "presentation-metadata-accountability-only"
+          ]
+        },
+        "target_xml_id": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

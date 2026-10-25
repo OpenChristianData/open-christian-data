@@ -1,0 +1,333 @@
+{
+  "ticket": "08",
+  "wave": 4,
+  "slug": "calvins-institutes-beveridge-1846",
+  "sealed_utc": "2026-08-31T04:32:24Z",
+  "release": {
+    "work": "John Calvin, The Institutes of the Christian Religion, Henry Beveridge translation; OLL cites Edinburgh: Calvin Translation Society, 1846, two volumes in one",
+    "gate_sha256": "7fcb72a127169c0829b3192df32f6f0a84ca5b19295709ecdd3fc8a072120f25",
+    "workcatalog_read_only_sha256": "e5cbf6b111da1e62a785e9c0d37b5732bcd3d38b19e6e4e1e80bfdfe153ec6be",
+    "held": [
+      "tickets 09-13"
+    ]
+  },
+  "candidate": {
+    "bytes": 5092627,
+    "sha256": "ef21df8892d125cb6e7a42851c31b7738a879b253e9c3a82217d8d744c2b6106",
+    "relaxng_valid": true,
+    "epub_visible_text_sha256": "afb4bb26b464247917d9f1e27d9529ec2302b2e14f17ffacfc14b73d292f80b1",
+    "facsimile_index_extraction_sha256": "62819d2013691517f096272677a56b4b3551aa1a2f7d33dd9fc6ded889dfd0d4"
+  },
+  "validation": {
+    "focused_pytest": "5 passed in 28.89s",
+    "different_cwd_candidate_byte_equal": true,
+    "different_cwd_accounting_byte_equal": true,
+    "visual_pairs": 4,
+    "viewer_dangling_references": 0,
+    "human_acceptance": "not-performed"
+  },
+  "raw_artifacts": [
+    {
+      "path": "0038_Bk.pdf",
+      "bytes": 104898478,
+      "sha256": "bfb1cde92d58eadabb068eb7b11ee0bfd13bcb4c5b0a6c8993f4ce5712c1cc4c"
+    },
+    {
+      "path": "0038_Bk.pdf.headers.txt",
+      "bytes": 422,
+      "sha256": "d96a2ae10e1a3e2ddeb32d07f80ddbcb3569732eab6de0f367ac3374c88a8627"
+    },
+    {
+      "path": "Calvin_0038_EBk_v6.0.pdf",
+      "bytes": 4209367,
+      "sha256": "8015510ce3c79ddf086ce3bd5f117c2cc0244410d98f7a87dbc05c9e725d6e75"
+    },
+    {
+      "path": "Calvin_0038_EBk_v6.0.pdf.headers.txt",
+      "bytes": 576,
+      "sha256": "a7b5816591ff8a0083ed0ac9672fd1df73bdf8f7d473ea941749f5b9c2ff9de0"
+    },
+    {
+      "path": "calvin-the-institutes-of-the-christian-religion.epub",
+      "bytes": 1594912,
+      "sha256": "4a7bfc603c2e9f460c4b48a12389f3ec9b0ef00f8864416d0fcd87168813d0d1"
+    },
+    {
+      "path": "calvin-the-institutes-of-the-christian-religion.epub.headers.txt",
+      "bytes": 558,
+      "sha256": "81596c7c50b1f6fc264e942b792bd7fad219a75d74ac913b83728d08d502d6bd"
+    },
+    {
+      "path": "epub-members/1-liberty_fund.html",
+      "bytes": 3586,
+      "sha256": "6193013d20c3a6b4eeb66da5e77a469763b957bdeb9658b5ee982bbd94921abb"
+    },
+    {
+      "path": "epub-members/2-online_library_of_liberty.html",
+      "bytes": 2438,
+      "sha256": "6ba5fb8bdb9cc7ed8dd65952b531c2382fbb09cced374355e4e577ab8ad9ee52"
+    },
+    {
+      "path": "epub-members/3-copyright.html",
+      "bytes": 4319,
+      "sha256": "fa4b4190b1662d077142edaed214601a8a52a8d6a17fd69063f91274b244eeaa"
+    },
+    {
+      "path": "epub-members/Amagi300.jpg",
+      "bytes": 21774,
+      "sha256": "91f64824990edf4e7b69a1d4270c06cf500e4eb92b9f1a45091f53ed93daad69"
+    },
+    {
+      "path": "epub-members/Calvin_0038.html",
+      "bytes": 4973706,
+      "sha256": "43409edd7da6a1db1478f5c8b3740d3d747b01b5daea47ef1d143a217ada72cb"
+    },
+    {
+      "path": "epub-members/content.opf",
+      "bytes": 2083,
+      "sha256": "f0df65f714d8d43b87923c0429cb8d59e1c37e5c1b5141576d9c3bb7011f0bed"
+    },
+    {
+      "path": "epub-members/copyright64.jpg",
+      "bytes": 1457,
+      "sha256": "baf94c71ec1e4c18bb298d4373bcb579c24ed034d2c9f49b52e14094dd74983c"
+    },
+    {
+      "path": "epub-members/cover.html",
+      "bytes": 703,
+      "sha256": "cac598eceab620f6504e591515be1e4257fe658b0ed8938c7c6b8ec03490ee22"
+    },
+    {
+      "path": "epub-members/epub.css",
+      "bytes": 15840,
+      "sha256": "d7c00fe4015c6267f96fb14ad23490486f4c552248c64c190a7f5d35110d198e"
+    },
+    {
+      "path": "epub-members/META-INF/container.xml",
+      "bytes": 246,
+      "sha256": "3687fe1a72ba47c92e941a57fbd90b3cebb232fd84cfba2f448d3ea852eba712"
+    },
+    {
+      "path": "epub-members/mimetype",
+      "bytes": 20,
+      "sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+    },
+    {
+      "path": "epub-members/OLL-Banner600.png",
+      "bytes": 46503,
+      "sha256": "07d1dc413e6307ef9fddeb57895b7f7b7bd67c8d7f58615b118599b583541e39"
+    },
+    {
+      "path": "epub-members/toc.html",
+      "bytes": 29207,
+      "sha256": "07d6e3924ec2a3198d3a4f0ed8fe3bbb7d5dcdae2c6f4492d7c815ed64778ab2"
+    },
+    {
+      "path": "epub-members/toc.ncx",
+      "bytes": 48336,
+      "sha256": "a94e4a72033af6ec8a2f64be4bd7581e5894e78837477af8fabab52398217c8a"
+    },
+    {
+      "path": "facsimile-general-index-p691-704.pypdf-6.10.0.json",
+      "bytes": 98865,
+      "sha256": "03099add1e81f17f7a834570d48651ed57d3e9c1a5a991581d6adeb934a35fe3"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.headers.txt",
+      "bytes": 2792,
+      "sha256": "e51d0935c04f8b1d89c9ae8a0a7ab7c238f5a2c3ea248fdacc3c3c256bc1a10e"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.html",
+      "bytes": 24067,
+      "sha256": "6b1c2ae3b73b012ffdce769b97f2297629a500ab18ce4b00cc9176ae63cf1ad8"
+    },
+    {
+      "path": "oll-title-wayback-20260226203439.http-body.gz",
+      "bytes": 5454,
+      "sha256": "2b756faf4977306ae4cde90e6bf2b9cd75b2b5e30a5da023d290814c8e01a98f"
+    }
+  ],
+  "report_artifacts": [
+    {
+      "path": "accounting.json",
+      "bytes": 3577,
+      "sha256": "66b7f3b705c2eee402d55ea67e3109818750cfb54cd7a08bfda5f96799b3b33d"
+    },
+    {
+      "path": "acquisition-receipt.json",
+      "bytes": 5823,
+      "sha256": "b84e2e8eebb708151490ab26f361fc9201b6c0f40b0acbc316d7c29128447ab5"
+    },
+    {
+      "path": "candidate.tei.xml",
+      "bytes": 5092627,
+      "sha256": "ef21df8892d125cb6e7a42851c31b7738a879b253e9c3a82217d8d744c2b6106"
+    },
+    {
+      "path": "determinism.json",
+      "bytes": 756,
+      "sha256": "dd2c27edd8a8565a6311da7cf366942d4ab262559a816bd25a95aaaa8d7b6740"
+    },
+    {
+      "path": "determinism/accounting.json",
+      "bytes": 3577,
+      "sha256": "66b7f3b705c2eee402d55ea67e3109818750cfb54cd7a08bfda5f96799b3b33d"
+    },
+    {
+      "path": "determinism/candidate.tei.xml",
+      "bytes": 5092627,
+      "sha256": "ef21df8892d125cb6e7a42851c31b7738a879b253e9c3a82217d8d744c2b6106"
+    },
+    {
+      "path": "focused-pytest.log",
+      "bytes": 101,
+      "sha256": "c4699f714aad8bee6f84eec8f7837e50ef392b4ce7b2a5bd050de3a72fa665cd"
+    },
+    {
+      "path": "protected-diff-audit.json",
+      "bytes": 2041,
+      "sha256": "9ed9a69f6defc410a203ff3cfc5e34ece7144bc3f542720ac077d4f6a73da1e3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5107,
+      "sha256": "998d5f2ebb8e7580cc8d4812f6c25904e8487bd78d4efab121af7b58785a9d50"
+    },
+    {
+      "path": "source-render/epub-opening.png",
+      "bytes": 280148,
+      "sha256": "ca4cbec3e24dfd005dc5145eb1b4cd92441f09cee2b01cf0f50b6326bc1990fa"
+    },
+    {
+      "path": "source-render/facsimile-p0001.png",
+      "bytes": 44977,
+      "sha256": "71781d159e1ce00348fb040d27220c7811c9f5956989f760953f478b3a622eb3"
+    },
+    {
+      "path": "source-render/facsimile-p0002.png",
+      "bytes": 61845,
+      "sha256": "8d8c00c1fd5745aa7023352e8fda0b0152f506b088f857acc1a70dc1ef64635d"
+    },
+    {
+      "path": "source-render/facsimile-p0020.png",
+      "bytes": 105303,
+      "sha256": "14cf09db6c9071ebd8502b00421d3d451378e62addadb0527c7af73e8d012187"
+    },
+    {
+      "path": "source-render/facsimile-p0021.png",
+      "bytes": 111919,
+      "sha256": "50437f291261bb0a9a3b6ff88ecad7c3e42799461fbca9bc2feaecb36aaffab9"
+    },
+    {
+      "path": "source-render/facsimile-p1298.png",
+      "bytes": 151662,
+      "sha256": "1ab7881584ff425eec8d270df7fa08f5cbfd3859e9294b3795d31b148f2ddf60"
+    },
+    {
+      "path": "source-render/facsimile-p1300.png",
+      "bytes": 194927,
+      "sha256": "a72aa5ed76b4533a2eb41d05c5e0de29dc8e65a5f8467a7f352ecf7b6a356636"
+    },
+    {
+      "path": "source-render/facsimile-p1304.png",
+      "bytes": 182938,
+      "sha256": "b929e3a8a0a7ddcebff655b8354e9b8f674404b2549112956c5c4de0153c48f7"
+    },
+    {
+      "path": "source-render/facsimile-p1311.png",
+      "bytes": 81856,
+      "sha256": "2b7fe5493b6876630d2ef60c532c19269d504bac21ae1652c39d1d8cd997d04b"
+    },
+    {
+      "path": "source-vs-tei-visual-record.json",
+      "bytes": 5069,
+      "sha256": "d042d039164bd05c34d4f8c4f10a63d5f35767a9458914eb90b8bea64db7ba0b"
+    },
+    {
+      "path": "validation-report.json",
+      "bytes": 1441,
+      "sha256": "cc36a2a1e82162007f35a92ca995b6eab65dd0af072dd1285539aba5344c3b15"
+    },
+    {
+      "path": "visual/candidate.index-middle.png",
+      "bytes": 276748,
+      "sha256": "a07e75e00353ffceb3f254ea24ed9ae7b1bec9fbe2c99966cb4a59bbf2fb29aa"
+    },
+    {
+      "path": "visual/candidate.index-opening.png",
+      "bytes": 264650,
+      "sha256": "7b70eae0af9ee74f77494f9e6a80d4001f9f52ebf2d6596cfe8605faa731290c"
+    },
+    {
+      "path": "visual/candidate.index-terminal.png",
+      "bytes": 260486,
+      "sha256": "a677e86ddaba820b82e80ff24f3d6fa5ce05d3f49ba50ca180eaa831d4269379"
+    },
+    {
+      "path": "visual/candidate.opening.png",
+      "bytes": 161106,
+      "sha256": "7e6874765d817f7718c5166a3e05dbcd04d2d0d3a80e8843d2efaf0b4211a4c7"
+    },
+    {
+      "path": "visual/source/source.index-middle.png",
+      "bytes": 182938,
+      "sha256": "b929e3a8a0a7ddcebff655b8354e9b8f674404b2549112956c5c4de0153c48f7"
+    },
+    {
+      "path": "visual/source/source.index-opening.png",
+      "bytes": 151662,
+      "sha256": "1ab7881584ff425eec8d270df7fa08f5cbfd3859e9294b3795d31b148f2ddf60"
+    },
+    {
+      "path": "visual/source/source.index-terminal.png",
+      "bytes": 81856,
+      "sha256": "2b7fe5493b6876630d2ef60c532c19269d504bac21ae1652c39d1d8cd997d04b"
+    },
+    {
+      "path": "visual/source/source.opening.png",
+      "bytes": 280148,
+      "sha256": "ca4cbec3e24dfd005dc5145eb1b4cd92441f09cee2b01cf0f50b6326bc1990fa"
+    }
+  ],
+  "worktree_artifacts": [
+    {
+      "path": "build/tei/calvins_institutes_beveridge_1846.py",
+      "bytes": 33079,
+      "sha256": "604ed3a119c282ea57632c764a9fcefc5a6074a2ec5741d4dc9a13f84c9b4e9b"
+    },
+    {
+      "path": "tests/test_calvins_institutes_beveridge_1846.py",
+      "bytes": 5692,
+      "sha256": "5f0c1d9561454051748d54df7e0b1d7952ac74a5dafa39b122d6b525c6dbe575"
+    },
+    {
+      "path": "sources/structured-text/calvins-institutes-beveridge-1846/config.json",
+      "bytes": 1987,
+      "sha256": "868af2b80f177188933694a5e06a8aa61ec243adbc898afdea231e498e034043"
+    },
+    {
+      "path": "sources/structured-text/calvins-institutes-beveridge-1846/README.md",
+      "bytes": 5107,
+      "sha256": "998d5f2ebb8e7580cc8d4812f6c25904e8487bd78d4efab121af7b58785a9d50"
+    },
+    {
+      "path": "sources/structured-text/calvins-institutes-beveridge-1846/acquisition-receipt.json",
+      "bytes": 5823,
+      "sha256": "b84e2e8eebb708151490ab26f361fc9201b6c0f40b0acbc316d7c29128447ab5"
+    },
+    {
+      "path": "sources/structured-text/calvins-institutes-beveridge-1846/source-vs-tei-visual-record.json",
+      "bytes": 5069,
+      "sha256": "d042d039164bd05c34d4f8c4f10a63d5f35767a9458914eb90b8bea64db7ba0b"
+    }
+  ],
+  "manifest_self": "excluded from this JSON to avoid a self-hash cycle; both manifest copies and this packet are hashed by seal-manifest.sha256.tsv",
+  "caveats": [
+    "The EPUB and eBook PDF omit the facsimile General Index at printed pp.691-704.",
+    "The General Index layer is uncorrected page-bounded embedded searchable-text extraction marked cert=low, not exact human transcription.",
+    "The facsimile title visibly names Calvin and Beveridge but does not itself print the OLL 1846 citation.",
+    "The viewer renders 660 note references and 660 typed endnote divisions, but its generic probe counts tei-note elements only and therefore reports end_notes=0.",
+    "No canonical import, acceptance, publication, commit, push, or ticket-09 release was performed."
+  ]
+}

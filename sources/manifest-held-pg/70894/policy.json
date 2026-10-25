@@ -1,0 +1,46 @@
+{
+  "candidate_status": "nonaccepted",
+  "checks": [
+    "archive-and-receipt-hash",
+    "member-inventory",
+    "complete-body-unit-partition",
+    "source-text-and-order",
+    "heading-and-link-attachment",
+    "image-reference-targets",
+    "table-and-inline-structure",
+    "tei-p5",
+    "package-integrity",
+    "candidate-mutations",
+    "clean-process-reproduction"
+  ],
+  "contract": "ocd-manifest-held-pg-validation-policy-v1",
+  "ebook_id": "70894",
+  "provenance": {
+    "archive_sha256": "58ee8d207a1f2a4588ecbefb198a60a278befccb4d5a45ed7693493e30378e43",
+    "contract": "ocd-manifest-held-pg-provenance-v1",
+    "ebook_id": "70894",
+    "html_sha256": "55596cd5e1cbe966bb3e4ea43e861a5a6267b116a92f809b6e7a6918cb653d0d",
+    "human_acceptance": "pending",
+    "print_collation": "not-performed",
+    "publication": "not-authorized",
+    "rights_clearance": "pending",
+    "status": "nonaccepted"
+  },
+  "unresolved": [
+    {
+      "detail": "Electronic text has not been collated against a print exemplar.",
+      "id": "pg70894-print-collation",
+      "status": "unresolved"
+    },
+    {
+      "detail": "No human text or edition acceptance has been recorded.",
+      "id": "pg70894-human-acceptance",
+      "status": "unresolved"
+    },
+    {
+      "detail": "United States Project Gutenberg basis is retained; jurisdictional rights clearance and publication authorization are separate.",
+      "id": "pg70894-rights",
+      "status": "unresolved"
+    }
+  ]
+}
