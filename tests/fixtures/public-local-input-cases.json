@@ -3636,6 +3636,14 @@
         "test_acceptance_rejects_changed_source_and_master",
         "test_exact_stage_public_acceptance_and_projection"
       ]
+    },
+    "tests/test_docsouth_illustrated_public_notices.py": {
+      "external_path": "D:/Library/Open Christian Data/candidate-reviews/docsouth-illustrated-public-notices-20260928-v1",
+      "declared_in": "build/tools/prepare_docsouth_illustrated_public_notices.py",
+      "tests": [
+        "test_all_22_notices_bind_exact_source_rights_credits_and_file_hashes",
+        "test_source_notice_and_future_data_readme_pass_release_binder"
+      ]
     }
   },
   "private_cases": {
@@ -3763,7 +3771,6 @@
     "tests/test_docsouth_figure_pilot.py::test_source_declared_images_are_exact_retained_members[g-w-offley-narrative-life-labors]": "raw/docsouth/l766-offley/offley.xml",
     "tests/test_docsouth_figure_pilot.py::test_source_declared_images_are_exact_retained_members[richard-allen-life-experience-gospel-labours]": "raw/docsouth/l760-allen/allen.xml",
     "tests/test_docsouth_figure_pilot.py::test_source_declared_images_are_exact_retained_members[samuel-ringgold-ward-autobiography-fugitive-negro]": "raw/docsouth/l765-wards/ward.xml",
-    "tests/test_docsouth_illustrated_public_notices.py::test_all_22_notices_bind_exact_source_rights_credits_and_file_hashes": "plans/2026-09-22-source-preflight/docsouth-tei2-exact-source-shapes-20260927.json",
     "tests/test_docsouth_tei2_illustrated_back_pair.py::test_current_generation_is_rejected_by_original_preflight": "plans/2026-09-22-source-preflight/docsouth-tei2-illustrated-back-pair-freeze-20260927.json",
     "tests/test_docsouth_tei2_illustrated_back_pair.py::test_original_frozen_guard_rejects_wrong_root": "plans/2026-09-22-source-preflight/docsouth-tei2-illustrated-back-pair-freeze-20260927.json",
     "tests/test_docsouth_tei2_illustrated_gaines.py::test_current_generation_is_rejected_by_original_preflight": "plans/2026-09-22-source-preflight/docsouth-tei2-illustrated-gaines-freeze-20260927.json",

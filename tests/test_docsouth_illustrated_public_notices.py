@@ -96,9 +96,10 @@ def test_all_22_notices_bind_exact_source_rights_credits_and_file_hashes(tmp_pat
     assert rights_labels["william-h-heard-from-slavery-to-bishopric"] == "Copyright Not Evaluated."
 
 
-@pytest.mark.parametrize("work_id", [item["work_id"] for item in _index()["items"]])
-def test_source_notice_and_future_data_readme_pass_release_binder(tmp_path: Path, work_id: str) -> None:
-    item = next(item for item in _index()["items"] if item["work_id"] == work_id)
+@pytest.mark.parametrize("item_index", range(22))
+def test_source_notice_and_future_data_readme_pass_release_binder(tmp_path: Path, item_index: int) -> None:
+    item = _index()["items"][item_index]
+    work_id = item["work_id"]
     for relative, content in (
         (item["source_path"], _frozen_source_note(
             _io_path(notices.ROOT / item["source_path"]).read_bytes(), item["source_sha256"]
