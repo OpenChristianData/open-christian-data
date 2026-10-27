@@ -21,6 +21,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -268,9 +269,7 @@ def test_candidate_passes_independent_oracle_and_direct_schemas(
         == 0
     )
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
-    assert etree.XMLSchema(
-        etree.parse(str(manifest.authority_path("tei-p5-xsd")))
-    ).validate(tei)
+    assert compiled_tei_schema(manifest.authority_path("tei-p5-xsd")).validate(tei)
     assert (
         len(
             tei.xpath(

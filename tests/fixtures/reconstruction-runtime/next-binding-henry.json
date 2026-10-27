@@ -17,7 +17,10 @@
     "manifest": "tests/fixtures/reconstruction-runtime/calvins-institutes.source-manifest.json",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record",
     "runtime_profile": "tests/fixtures/reconstruction-runtime/calvins-institutes.reconstruction-profile.json",
-    "original_profile_sha256": "ac71201fd56e0599fa3ca71ac73f1c01dc23512800b78566386d2a58dc40d805"
+    "original_profile_sha256": "ac71201fd56e0599fa3ca71ac73f1c01dc23512800b78566386d2a58dc40d805",
+    "implementation_roles": [
+      "validator"
+    ]
   },
   {
     "original": "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.source-manifest.json",
@@ -141,6 +144,15 @@
     "original": "sources/structured-text/gregory-of-nyssa-against-eunomius/gregory-of-nyssa-against-eunomius.source-manifest.json",
     "original_sha256": "58aa2013d26efb322fd4a6743780d2d2eb59a4897e57c1710260045c368680a9",
     "manifest": "tests/fixtures/reconstruction-runtime/gregory-of-nyssa-against-eunomius.source-manifest.json",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
+    "original": "sources/catechisms/aa-hodge-outlines/aa-hodge-outlines.source-manifest.json",
+    "original_sha256": "d4303df97c3c72ffc74ab389e68d52b53ddffaf865f92f68fde5457f43060d5b",
+    "manifest": "tests/fixtures/reconstruction-runtime/aa-hodge-outlines.source-manifest.json",
+    "implementation_roles": [
+      "validator"
+    ],
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   }
 ]

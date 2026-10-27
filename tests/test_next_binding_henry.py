@@ -23,6 +23,10 @@ def test_runtime_copy_preserves_complete_historical_record(case):
     raw = (ROOT / case["original"]).read_bytes()
     assert sha256(raw).hexdigest() == case["original_sha256"]
     expected = json.loads(raw)
+    for role in case.get("implementation_roles", []):
+        assert role == "validator"
+        binding = expected[role]
+        binding["implementation_sha256"] = sha256((ROOT / binding["implementation_path"]).read_bytes()).hexdigest()
     for support in case.get("supports", []):
         assert support["kind"] == "historical"
         authority = next(row for row in expected["authorities"] if row["name"] == support["authority"])

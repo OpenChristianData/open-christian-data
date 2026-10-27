@@ -17,6 +17,7 @@ import build.tei.paradise_lost_oracle as oracle_module
 from build.tei.paradise_lost_oracle import _closure, _oracle
 from build.tei.paradise_lost_reconstruction import _convert
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -305,7 +306,7 @@ def test_oracle_rejects_resealed_xsd_valid_additive_tei_inventions(
         selected = etree.SubElement(body, f"{namespace}div", type="selected-reading")
         paragraph = etree.SubElement(selected, f"{namespace}p")
         paragraph.text = "Definitive normalized reading."
-    xsd = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     assert xsd.validate(etree.ElementTree(tei))
     content = etree.tostring(
         tei, encoding="UTF-8", xml_declaration=True, pretty_print=False

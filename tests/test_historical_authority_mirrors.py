@@ -20,3 +20,16 @@ def test_exact_original_preimage_and_only_authorized_eol_recovery():
 def test_unexplained_content_or_size_never_becomes_original_authority(changed, size):
     with pytest.raises(ValueError, match="complete original SHA"):
         retained_preimage(changed, sha256(b"same").hexdigest(), size, allow_eol=True)
+
+
+def test_davis_current_mirror_preserves_original_and_binds_reviewed_code(tmp_path, monkeypatch):
+    from pathlib import Path
+    from tests import historical_authority_mirrors as mirrors
+
+    repository = Path(__file__).resolve().parents[1]
+    original = repository / mirrors.CASES["davis"]["manifest"]
+    before = original.read_bytes()
+    monkeypatch.setattr(mirrors, "resolve_repo_path", lambda _root, _path: tmp_path / "library" / "raw")
+    _root, manifest = mirrors.prepare_historical_mirror(repository, tmp_path / "mirror", "davis")
+    assert original.read_bytes() == before
+    assert (manifest.parent / "original-source-manifest.json").read_bytes() == before

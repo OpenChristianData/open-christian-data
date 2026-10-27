@@ -9,6 +9,7 @@ import sys
 
 from lxml import etree
 import pytest
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,7 +70,7 @@ def test_newman_tables_have_actual_source_columns_and_no_fake_cells(built):
     root, scope, blocks, work_id, lines, _ = built
     if work_id != blocks.NEWMAN:
         pytest.skip("Newman-only table assertions")
-    xsd = etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    xsd = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert xsd.validate(root), str(xsd.error_log)
     for table in scope.xpath('.//t:table[@type="calendar"]', namespaces=NS):
         for row in table.findall("t:row", NS):

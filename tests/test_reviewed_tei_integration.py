@@ -4,6 +4,7 @@ import pytest
 
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.tei.reviewed_integration import bind_reviewed_header
+from build.lib.tei_xsd import compiled_tei_schema
 
 ORIGINAL = b'<TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><sourceDesc><bibl/></sourceDesc></fileDesc></teiHeader><text><body><p>Exact  text\r\n&amp; spacing.</p></body></text></TEI>'
 
@@ -44,7 +45,7 @@ def test_prose_source_description_binding_is_p5_valid_and_reversible(prefixed, e
         original = re.sub(rb"<(\/?)([A-Za-z]+)", rb"<\1t:\2", original).replace(b"xmlns=", b"xmlns:t=")
     bound = derive(original, expected_sha256=hashlib.sha256(original).hexdigest())
     schema_path = Path(__file__).resolve().parents[1] / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"
-    schema = etree.XMLSchema(etree.parse(str(schema_path)))
+    schema = compiled_tei_schema(schema_path)
     assert schema.validate(etree.fromstring(bound)), str(schema.error_log)
     binding = b'<p xmlns="http://www.tei-c.org/ns/1.0"><bibl'
     start = bound.index(binding)

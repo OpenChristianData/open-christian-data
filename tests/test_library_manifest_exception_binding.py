@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools.library_exclusive_manifest_binding import bind_exclusive_manifest
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.library.identities import load_work
@@ -35,7 +37,7 @@ def historical_root(tmp_path_factory):
         if relative.parts[0] == "raw":
             return
         source = original if row["work_id"] == "john-wesley-sermons" and relative.as_posix() == row["source_manifest"]["path"] else ROOT / historical_catalogs.get(relative.as_posix(), relative)
-        raw = source.read_bytes()
+        raw = historical_bound_bytes(source, ref["sha256"])
         assert sha256(raw).hexdigest() == ref["sha256"]
         target = root / relative
         target.parent.mkdir(parents=True, exist_ok=True)

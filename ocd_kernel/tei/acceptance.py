@@ -69,10 +69,10 @@ DIVINE_CONTENTMENT_IDENTITY = (
 DIVINE_CONTENTMENT_SOURCE = "raw/ccel/watson/contentment.xml"
 DIVINE_CONTENTMENT_SOURCE_SHA = "767ed95de4c4c990480670084e8dd1ac16b6c61d50b864e8b0202e528a076d7b"
 DIVINE_CONTENTMENT_SELECTION_ID = "watson-divine-contentment-complete-present-thml-v1"
-DIVINE_CONTENTMENT_MANIFEST = 'sources/structured-text/watson-divine-contentment/runtime-proof-20261025-main.source-manifest.json'
-DIVINE_CONTENTMENT_MANIFEST_SHA = '11f0a1bf1f70305074809eba612235db1bf35af17e4327f435355f2baec460fe'
-DIVINE_CONTENTMENT_PACKAGE_SHA = 'aed04716e850d3a9e7dd5d9fa902ce90f5f1bca94d698e418448da141248990d'
-DIVINE_CONTENTMENT_VALIDATION_SHA = '01427cf98c296b19558bf89f8904ac76df868ba7190c640c50cc09e7c6b22ee4'
+DIVINE_CONTENTMENT_MANIFEST = 'sources/structured-text/watson-divine-contentment/runtime-proof-20261027-performance.source-manifest.json'
+DIVINE_CONTENTMENT_MANIFEST_SHA = 'bc96a1346d1eb1e251d0fdfff5c6819f2ad0dae6991644543c13bffbed88b13b'
+DIVINE_CONTENTMENT_PACKAGE_SHA = 'd364f1757ca2ae1483dea96655a4a503a4eaa5dd5bb394f94ab604be5b1e05d9'
+DIVINE_CONTENTMENT_VALIDATION_SHA = '8312588b70e419ed7676df13dfc0751ecdcfcc48c7222aefc7e72b63a0c2af25'
 DIVINE_CONTENTMENT_HISTORICAL_CVW_SHA = "be0e14ef0c8bf29caa5f7c6aa2446552ae03a21c258f8a4d2ae7df1f7097b3fb"
 DIVINE_CONTENTMENT_HISTORICAL_MANIFEST = (
     "sources/structured-text/watson-divine-contentment/"
@@ -85,7 +85,7 @@ DIVINE_CONTENTMENT_HISTORICAL_ACCEPTANCE_SHA = "622e6da3701484de32b833ee7e63d8f6
 DIVINE_CONTENTMENT_INSTALLED_MASTER_SHA = "c72641deb76db40c5fb95e2152b04df683ac714dbaee73f90cb9c62c31805e8f"
 DIVINE_CONTENTMENT_ORACLE_ID = "ocd-watson-independent-present-thml-oracle"
 DIVINE_CONTENTMENT_ORACLE_SHA = "2899b332e826626fb732fe2ac7b5aca265913c166195f9efcdb5c2713c6ecd36"
-DIVINE_CONTENTMENT_EVIDENCE = 'library/works/watson-divine-contentment/integration/runtime-proof-20261025-main/current-candidate/package'
+DIVINE_CONTENTMENT_EVIDENCE = 'library/works/watson-divine-contentment/integration/runtime-proof-20261027-performance/current-candidate/package'
 DIVINE_CONTENTMENT_HISTORICAL_EVIDENCE = (
     "library/works/watson-divine-contentment/integration/"
     "ccel-thml-agent-handoff/inputs/package"
@@ -108,9 +108,9 @@ BEATITUDES_ACCEPTANCE_IDENTITY = (
 BEATITUDES_ACCEPTANCE_SOURCE = "raw/ccel/watson/beatitudes.xml"
 BEATITUDES_ACCEPTANCE_SOURCE_SHA = "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837"
 BEATITUDES_ACCEPTANCE_SELECTION_ID = "watson-beatitudes-all-direct-div1-route-envelope-v1"
-BEATITUDES_ACCEPTANCE_MANIFEST = 'sources/structured-text/watson-beatitudes/runtime-proof-20261025-main.source-manifest.json'
-BEATITUDES_ACCEPTANCE_MANIFEST_SHA = '64a5ada40506f676e496c6f1431c36886495f1db5e11700ab0bb24b8be5696b9'
-BEATITUDES_ACCEPTANCE_PACKAGE_SHA = 'bc59ce1a0133e31497aa9ba297b31ceee976bfc0230f68910f8ff009f8fb40b4'
+BEATITUDES_ACCEPTANCE_MANIFEST = 'sources/structured-text/watson-beatitudes/runtime-proof-20261027-performance.source-manifest.json'
+BEATITUDES_ACCEPTANCE_MANIFEST_SHA = '5f9fcd54ca7ab9efe63b18a7d0d4c4f7d1f9bd62308630a86954f2ad650c2b45'
+BEATITUDES_ACCEPTANCE_PACKAGE_SHA = '776d3dc78ad717be010ec17be2b7597b79ed1f3791a8b41e73140838eda91326'
 BEATITUDES_HISTORICAL_MANIFEST = (
     "library/works/watson-beatitudes/integration/"
     "ccel-thml-agent-handoff/inputs/source-manifest.json"
@@ -122,7 +122,7 @@ BEATITUDES_HISTORICAL_ACCEPTANCE_SHA = "d62a61fa4abae97be5654f414f11e411d967bdf1
 BEATITUDES_INSTALLED_MASTER_SHA = "07b0070649c6a6b8e6ebbfd300834299dc2d64cc3684e2198fc42dadb82b0aef"
 BEATITUDES_ACCEPTANCE_ORACLE_ID = "ocd-watson-beatitudes-independent-source-walk"
 BEATITUDES_ACCEPTANCE_ORACLE_SHA = "6dc00660c57e008755d7029ffbb0990db25bd8702db517edfa6b52c12c5e60b8"
-BEATITUDES_ACCEPTANCE_EVIDENCE = 'library/works/watson-beatitudes/integration/runtime-proof-20261025-main/current-candidate/package'
+BEATITUDES_ACCEPTANCE_EVIDENCE = 'library/works/watson-beatitudes/integration/runtime-proof-20261027-performance/current-candidate/package'
 BEATITUDES_HISTORICAL_EVIDENCE = (
     "library/works/watson-beatitudes/integration/"
     "ccel-thml-agent-handoff/inputs/package"
@@ -136,7 +136,7 @@ BEATITUDES_HISTORICAL_ACCEPTANCE = (
     "ccel-thml-closure-rebind-v2/inputs/historical-acceptance.json"
 )
 
-RUNTIME_SUPPLEMENTS = {'watson-beatitudes': '239d1ca8d42aff08a549162a3ae8955084aa185bd2eae565f9b78f60e1b80361', 'watson-divine-contentment': '3b452021bb7341e5d25c5f2c916ee9d425accd8c186b97254817f32ef55609b1'}
+RUNTIME_SUPPLEMENTS = {'watson-beatitudes': 'd5ee0e404b867115a7b8abf70980473ea553f539c9d2307d181188a06b8c6fc7', 'watson-divine-contentment': '0f92d0b518732b77697f674387cc8652179ce9335aecb0dd09ffcf3a91ac3a28'}
 
 
 @dataclass(frozen=True)
@@ -846,7 +846,7 @@ def _check_divine_contentment_for_acceptance(
         raise PipelineError("Divine Contentment independent oracle rejected the package") from exc
     current_validation_path = _fixture_path(
         root,
-        "library/works/watson-divine-contentment/integration/runtime-proof-20261025-main/current-candidate/validation.json",
+        f"{Path(DIVINE_CONTENTMENT_EVIDENCE).parent.as_posix()}/validation.json",
         field="current Divine Contentment validation",
     )
     current_validation = _object_file(current_validation_path, field="current Divine Contentment validation")
@@ -1037,7 +1037,7 @@ def _check_selected_thml_for_acceptance(
 def _check_runtime_supplement(record: Mapping[str, Any], root: Path, work_id: str) -> None:
     """Bind current oracle evidence to the unchanged historical acceptance."""
     path = _fixture_path(
-        root, f"sources/structured-text/{work_id}/runtime-supplement-20261025-main.json",
+        root, f"sources/structured-text/{work_id}/runtime-supplement-20261027-performance.json",
         field="Watson runtime supplement",
     )
     if sha256_file(path) != RUNTIME_SUPPLEMENTS[work_id]:

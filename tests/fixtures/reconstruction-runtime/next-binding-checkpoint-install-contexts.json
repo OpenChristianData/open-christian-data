@@ -43,35 +43,35 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/strong-vol1.source-manifest.json",
-    "manifest_sha256": "59fa20d735f0784c19213bc34e63650d7f62cc86f956c64470731ca6ce59f928",
+    "manifest_sha256": "ca7e8ce8ce0e6c9dba99b57923f6a2b5285cce4ab468cca0a6290606e90a5e70",
     "original": "sources/structured-text/strong-systematic-theology-vol-1/strong-systematic-theology-vol-1.source-manifest.json",
     "original_sha256": "1ddc4949c28010e98f4a936e2285c04d92f372aa0c6cf5720ed593aeb2367654",
     "preservation_test": "tests/test_strong_vol1_pg44035_native_stage.py::test_runtime_copy_preserves_complete_original_strong_records"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lutheran-pg76498-canonical-v1.source-manifest.json",
-    "manifest_sha256": "d26d94e74bc837da6994a444472150e3f63ac214d266258057b87fe531ae865f",
+    "manifest_sha256": "0cdd6c0067954754f50c029d7509f4db80b65ec1202862196a6a27d2fdcddccb",
     "original": "sources/lutheran-hymnbook-pg76498/source-manifest.canonical-v1.json",
     "original_sha256": "f158583ddc418700b2b05f32667691c0f78cf0e543c23f788f1aa487eedb64bc",
     "preservation_test": "tests/test_lutheran_hymnbook_pg76498_canonical.py::test_runtime_manifest_preserves_original_record_except_two_EOL_bindings_and_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-runtime.source-manifest.json",
-    "manifest_sha256": "96c1aa665ca4d06a2917e39242c94ab56f355ec06e80338de32294a3bafc80b0",
+    "manifest_sha256": "585371ab8642842908f0d99c07500b74713eb064a35b8c144471aa951745e656",
     "original": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-original.source-manifest.json",
     "original_sha256": "114d3a96a777e3a83176e6042dfaa30a52c66dfb01c5c6daccae9f57dabb6ef3",
     "preservation_test": "tests/test_prepare_watson_body_of_divinity_acceptance.py::test_exact_route_stage_passes_both_gates"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-dying-lib068.source-manifest.json",
-    "manifest_sha256": "02d35974f3b278c9ee0cc2bb82797ac4f53aa07a7a4190c1bed952b859ecdb46",
+    "manifest_sha256": "b2c830d0c476c374890f49c9d8e9380692b3333fd35f6bccf5225805824b3034",
     "original": "sources/structured-text/taylor-holy-dying/LIB-068.source-manifest.json",
     "original_sha256": "b364633b740c7d5092c3d552bec2ad44b881e8798eb17412603ed4d952776f47",
     "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-living-lib068.source-manifest.json",
-    "manifest_sha256": "1bab416f3468807b03c241c1846cd1a76ed7340a000a7a93f6724b9430f87d09",
+    "manifest_sha256": "0b7998a557acc890a7439e27191582aac6ad45c681a57a6d812a7f9fb512e72d",
     "original": "sources/structured-text/taylor-holy-living/LIB-068.source-manifest.json",
     "original_sha256": "75be967e53be8af88c9b5088bbf172431e2f471d40fc48dc94977662613f57dd",
     "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
@@ -102,21 +102,21 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/before-most-holy-pg76888-current-installer.source-manifest.json",
-    "manifest_sha256": "362778c303fcefee8bacd495ede3f759a051b804cb3c7a22f01adf700ad5301a",
+    "manifest_sha256": "56861794c60a78ebb8bf56f96434e171df519a0c70f17588bbb82dbc1be245e5",
     "original": "sources/structured-text/before-most-holy-pg76888/source-manifest.json",
     "original_sha256": "77b897b5caeb3917227fcc0b6616407079e4d063e83350840798f4015dd5693c",
     "preservation_test": "tests/test_before_most_holy_pg76888_install.py::test_runtime_source_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/eliza-southall-pg11959-current-installer.source-manifest.json",
-    "manifest_sha256": "ecdaadd5d536a060105bc2cde9fe232009a81d0c8ac0f39e728ff981ad4b4786",
+    "manifest_sha256": "e5680023b58e10b0d52365a46f086100269526973995557ef6e8360533acd8cd",
     "original": "sources/structured-text/eliza-southall-pg11959/source-manifest.json",
     "original_sha256": "6fd712b9426c6188afd6e3bcf40bc891c09c438904be0943c486febffc7afc77",
     "preservation_test": "tests/test_eliza_southall_pg11959_install.py::test_runtime_source_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/evening-incense-pg50916-current-installer.source-manifest.json",
-    "manifest_sha256": "28679337418088230b1a5c200e9c4a8b97b14520e241845f273b18283ef119ef",
+    "manifest_sha256": "ba8cfef9880785f7cb873485ebda04a7c63ac9d00b86fdee5c04c390ffe69a48",
     "original": "sources/structured-text/evening-incense-pg50916/source-manifest.json",
     "original_sha256": "b699022be0a7d1303fbf5314fbc79696ea41192adbdbcd5090c6ebeb358f3468",
     "preservation_test": "tests/test_evening_incense_pg50916_install.py::test_runtime_source_preserves_complete_historical_record"

@@ -62,18 +62,53 @@ def test_watson_unchanged_oracle_rejects_resealed_content(work_id, tmp_path, mon
             shutil.rmtree(package)
 
 
-def test_joshua_current_runtime_rejects_dependency_and_supplement_mutations(monkeypatch):
+def test_joshua_current_runtime_rejects_dependency_and_supplement_mutations(monkeypatch, tmp_path):
     from ocd_kernel.projection.categories import calvin_joshua_source_native as route
 
     profile = next((ROOT / "library/works/calvin-commentary-on-joshua").glob("forms/*/editions/*/projection/*/profile.json"))
-    metadata = {"root": ROOT}
+    historical = ROOT / route.CURRENT_RUNTIME_SUPPLEMENT
+    raw = historical.read_bytes()
+    assert sha256(raw).hexdigest() == route.CURRENT_RUNTIME_SUPPLEMENT_SHA
+    with pytest.raises(PipelineError, match="dependency changed: ocd_kernel/lib/storage_topology.py"):
+        route._current_runtime({"root": ROOT}, profile)
+    retained = json.loads(raw)
+    current = deepcopy(retained)
+    storage = "ocd_kernel/lib/storage_topology.py"
+    runtime_paths = (storage, "ocd_kernel/tei/acceptance.py")
+    for logical in runtime_paths:
+        current["runtime_and_schema_sha256"][logical] = route._sha(ROOT / logical)
+    restored = deepcopy(current)
+    for logical in runtime_paths:
+        restored["runtime_and_schema_sha256"][logical] = retained["runtime_and_schema_sha256"][logical]
+    assert restored == retained
+    for logical, expected in retained["preserved_sha256"].items():
+        assert route._sha(ROOT / logical) == expected
+    runtime_bytes = {}
+    for logical, expected in current["runtime_and_schema_sha256"].items():
+        content = (ROOT / logical).read_bytes()
+        if logical == "schemas/v2/categories/commentary.schema.json" and sha256(content).hexdigest() != expected:
+            # The frozen proof binds this schema's CRLF bytes, not new schema content.
+            content = content.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+            assert json.loads(content) == json.loads((ROOT / logical).read_bytes())
+        assert sha256(content).hexdigest() == expected, logical
+        runtime_bytes[logical] = content
+    for logical in {*current["preserved_sha256"], *current["runtime_and_schema_sha256"], profile.relative_to(ROOT).as_posix()}:
+        destination = tmp_path / logical
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(runtime_bytes[logical] if logical in runtime_bytes else (ROOT / logical).read_bytes())
+    supplement_path = tmp_path / route.CURRENT_RUNTIME_SUPPLEMENT
+    supplement_path.parent.mkdir(parents=True, exist_ok=True)
+    supplement_path.write_bytes((json.dumps(current, sort_keys=True, separators=(",", ":")) + "\n").encode())
+    monkeypatch.setattr(route, "CURRENT_RUNTIME_SUPPLEMENT_SHA", route._sha(supplement_path))
+    profile = tmp_path / profile.relative_to(ROOT)
+    metadata = {"root": tmp_path}
     assert set(route._current_runtime(metadata, profile)) == route.DEPENDENCIES
     original = route._sha
-    dependency = (ROOT / "ocd_kernel/lib/storage_topology.py").resolve()
+    dependency = (tmp_path / storage).resolve()
     monkeypatch.setattr(route, "_sha", lambda path: "0" * 64 if path == dependency else original(path))
     with pytest.raises(PipelineError, match="dependency changed: ocd_kernel/lib/storage_topology.py"):
         route._current_runtime(metadata, profile)
-    supplement = (ROOT / route.CURRENT_RUNTIME_SUPPLEMENT).resolve()
+    supplement = supplement_path.resolve()
     monkeypatch.setattr(route, "_sha", lambda path: "0" * 64 if path == supplement else original(path))
     with pytest.raises(PipelineError, match="current runtime supplement differs"):
         route._current_runtime(metadata, profile)

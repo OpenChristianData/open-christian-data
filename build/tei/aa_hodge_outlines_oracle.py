@@ -13,6 +13,8 @@ from typing import Mapping
 from jsonschema import Draft202012Validator
 from lxml import etree
 
+from build.lib.tei_xsd import compiled_tei_schema
+
 
 ORACLE_ID = "ocd-aa-hodge-outlines-independent-oracle"
 ORACLE_VERSION = "1"
@@ -22,6 +24,12 @@ SOURCE_LINES = 37_553
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
 NS = {"tei": TEI_NS}
+_FIRST_PARTY_IMPORT_PATHS = (
+    "build/__init__.py",
+    "build/lib/__init__.py",
+    "build/lib/tei_xsd.py",
+    "build/tei/aa_hodge_outlines_oracle.py",
+)
 QUESTION_RE = re.compile(rb"^[\t ]*([0-9]+)\.[\t ]+")
 CHAPTER_RE = re.compile(rb"^[\t ]*CHAPTER[\t ]+", re.IGNORECASE)
 _EXPECTED_AUTHORITY_NAMES = (
@@ -460,7 +468,7 @@ def _validate_tei(
     )
     root = etree.fromstring(content, parser)
     _, xsd_path = _authority(source_manifest, "tei-p5-xsd")
-    etree.XMLSchema(etree.parse(str(xsd_path))).assertValid(etree.ElementTree(root))
+    compiled_tei_schema(xsd_path).assertValid(etree.ElementTree(root))
     if content != _expected_tei_bytes(lines):
         raise ValueError("TEI serialized bytes drift")
     if root.tag != f"{{{TEI_NS}}}TEI" or root.attrib != {
@@ -729,6 +737,14 @@ def _validate_json_members(
         raise ValueError("candidate README drift")
 
 
+def _import_closure_sha256(repository_root: Path) -> str:
+    root = Path(repository_root).resolve(strict=True)
+    return _sha(_canonical([
+        {"path": logical, "sha256": _sha((root / logical).read_bytes())}
+        for logical in _FIRST_PARTY_IMPORT_PATHS
+    ]))
+
+
 def _oracle(source_manifest: object, candidate: object) -> dict[str, object]:
     getattr(source_manifest, "verify")()
     _verify_authorities(source_manifest)
@@ -738,17 +754,18 @@ def _oracle(source_manifest: object, candidate: object) -> dict[str, object]:
     _validate_tei(source_manifest, candidate, lines)
     _validate_json_members(source_manifest, candidate, lines)
     implementation_sha256 = _sha(Path(__file__).read_bytes())
+    import_closure_sha256 = _import_closure_sha256(getattr(source_manifest, "repository_root"))
     validator = getattr(source_manifest, "record")["validator"]
     if validator.get("implementation_sha256") != implementation_sha256:
         raise ValueError("oracle implementation drift")
-    if validator.get("import_closure_sha256") != implementation_sha256:
+    if validator.get("import_closure_sha256") != import_closure_sha256:
         raise ValueError("oracle import closure drift")
     result: dict[str, object] = {
         "status": "pass",
         "oracle_id": ORACLE_ID,
         "oracle_version": ORACLE_VERSION,
         "implementation_sha256": implementation_sha256,
-        "import_closure_sha256": implementation_sha256,
+        "import_closure_sha256": import_closure_sha256,
         "runtime": f"{platform.python_implementation()} {platform.python_version()} ({Path(sys.executable).resolve(strict=True)})",
         "source_manifest_sha256": getattr(source_manifest, "sha256"),
         "candidate_sha256": getattr(candidate, "sha256"),

@@ -28,7 +28,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/luthers_large_catechism_oracle.source-manifest.json")
-RUNTIME_SHA = '5ebe24664f17bfdf21b5caeaf5bf59fd468f7a1262003bdbb13febcd5707ff26'
+RUNTIME_SHA = 'be99446a73cc31244889899e66b1d5f62f58da7effae7385924f976441d33b78'
 
 
 def _fixture(root: Path) -> Path:

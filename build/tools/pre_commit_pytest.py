@@ -28,6 +28,18 @@ ADDITIONAL_SELECTION_ENV = "OCD_PRECOMMIT_ADDITIONAL_SELECTION"
 # Check pinned historical inputs before expensive full-book reconstructions.
 AUTHORITY_TEST_FILE_PRIORITY = (
     "tests/test_reconstruction_closure_corpus.py",
+    "tests/test_reconstruction_contract.py",
+    "tests/test_bcp_1662_source_receipt.py",
+    "tests/test_historical_authority_mirrors.py",
+    "tests/test_runtime_manifest_binding_boundaries.py",
+    "tests/test_owned_runtime_closure_baselines.py",
+    "tests/test_newline_runtime_manifests.py",
+    "tests/test_missing_baseline_runtime_manifests.py",
+    "tests/test_next_puritan_runtime_bindings.py",
+    "tests/test_runtime_candidate_baselines.py",
+    "tests/test_native_v2_install_runtime_manifests.py",
+    "tests/test_release_source_runtime_supplements.py",
+    "tests/test_executable_checkout_bytes.py",
     "tests/test_four_source_accounting_sidecars.py",
     "tests/test_library_config_free_multi_binding.py",
     "tests/test_library_exclusive_manifest_binding.py",
@@ -43,6 +55,12 @@ SLOW_TEST_FILE_PRIORITY = (
     "tests/test_john_owen_lib050_reconstruction_contract.py",
     "tests/test_maclaren_native.py",
     "tests/test_augustine_psalms_native.py",
+)
+# Owen starts the shared audit; these files can wait until other work is assigned.
+CATALOG_WAITING_TEST_FILES = (
+    "tests/test_count_dataset_records.py",
+    "tests/test_douay_rheims_reconstruction_contract.py",
+    "tests/test_calvins_institutes_pg64392_member_contract.py",
 )
 
 
@@ -80,6 +98,7 @@ def _pytest_command(test_files, *, basetemp, xdist_available=None):
         "-p",
         "no:cacheprovider",
         "-q",
+        "-x",
         "--basetemp",
         basetemp,
     ]
@@ -112,7 +131,10 @@ def _pytest_command(test_files, *, basetemp, xdist_available=None):
         if any(path in priority for path in test_files_on_disk):
             test_files = sorted(
                 test_files,
-                key=lambda target: priority.get(target.split("::", 1)[0], len(priority)),
+                key=lambda target: priority.get(
+                    target.split("::", 1)[0],
+                    len(priority) + (target.split("::", 1)[0] in CATALOG_WAITING_TEST_FILES),
+                ),
             )
             cmd.append("--no-loadscope-reorder")
     if len(test_files_on_disk) > MAX_TESTS_WARN:
@@ -2683,6 +2705,39 @@ def _pytest_environment():
     return {key: value for key, value in os.environ.items() if key.upper() not in routing}
 
 
+
+def _pytest_directory_roots(test_files):
+    """Use directory discovery only when every selected file follows this repo's config."""
+    if (len(test_files) <= MAX_TESTS_WARN or len(set(test_files)) != len(test_files)
+            or any("[" in target or target.count("::") > 1 for target in test_files)):
+        return None
+    complete = {target for target in test_files if "::" not in target}
+    if any("::" in target and target.split("::", 1)[0] in complete for target in test_files):
+        return None
+    root = Path(REPO_ROOT)
+    config = root / "pyproject.toml"
+    if not config.is_file() or any((root / name).exists() for name in ("pytest.ini", ".pytest.ini", "pytest.toml", ".pytest.toml", "tox.ini", "setup.cfg")):
+        return None
+    try:
+        import tomllib
+    except ImportError:
+        return None
+    settings = tomllib.loads(config.read_text(encoding="utf-8")).get("tool", {}).get("pytest", {}).get("ini_options", {})
+    directories = settings.get("testpaths", [])
+    patterns = settings.get("python_files", ["test_*.py", "*_test.py"])
+    if not isinstance(directories, list) or not isinstance(patterns, list):
+        return None
+    from fnmatch import fnmatchcase
+    selected_roots = set()
+    for target in test_files:
+        path = Path(target.split("::", 1)[0])
+        matches = [directory for directory in directories if path.is_relative_to(Path(directory))]
+        if not matches or not (root / path).is_file() or not any(fnmatchcase(path.name, pattern) for pattern in patterns):
+            return None
+        selected_roots.add(matches[0])
+    return sorted(selected_roots)
+
+
 def _run_pytest(test_files):
     """Run the selected pytest targets and return their authoritative exit code."""
     temp_parent = _pytest_temp_parent()
@@ -2691,7 +2746,20 @@ def _run_pytest(test_files):
         prefix="t-", dir=temp_parent
     ) as basetemp, ExitStack() as response_files:
         cmd = _pytest_command(test_files, basetemp=basetemp)
-        if len(subprocess.list2cmdline(cmd)) > 30_000:
+        environment = _pytest_environment()
+        directories = _pytest_directory_roots(test_files)
+        if directories:
+            argument_root = response_files.enter_context(
+                tempfile.TemporaryDirectory(prefix="a-", dir=temp_parent)
+            )
+            selection = Path(argument_root) / "selected-files.json"
+            selection.write_text(json.dumps({"root": str(Path(REPO_ROOT).resolve()),
+                                            "files": cmd[-len(test_files):]}) + "\n", encoding="utf-8")
+            cmd = cmd[:-len(test_files)] + ["-p", "build.tools.pytest_file_selection",
+                                           "--ocd-selected-files", str(selection), *directories]
+            code_root = str(Path(__file__).resolve().parents[2])
+            environment["PYTHONPATH"] = code_root + (os.pathsep + environment["PYTHONPATH"] if environment.get("PYTHONPATH") else "")
+        elif len(subprocess.list2cmdline(cmd)) > 30_000:
             # Keep arguments outside basetemp, which pytest clears before worker setup.
             argument_root = response_files.enter_context(
                 tempfile.TemporaryDirectory(prefix="a-", dir=temp_parent)
@@ -2703,7 +2771,7 @@ def _run_pytest(test_files):
             cmd = cmd[:-len(test_files)] + ["@" + str(arguments)]
         try:
             priority = subprocess.BELOW_NORMAL_PRIORITY_CLASS if sys.platform == "win32" else 0
-            result = subprocess.run(cmd, cwd=REPO_ROOT, env=_pytest_environment(), check=True,
+            result = subprocess.run(cmd, cwd=REPO_ROOT, env=environment, check=True,
                                     creationflags=priority)
             return result.returncode
         except subprocess.CalledProcessError as e:

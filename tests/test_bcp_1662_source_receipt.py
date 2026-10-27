@@ -31,6 +31,8 @@ ORIGINAL_MANIFEST_SHA256 = "193a4f01c92ae15a4d0bdad646d5ee5fdb33faf314b4163a0132
 CURRENT_CONVERTER_SHA256 = "8a5689509dbb745ee0b25ddbb82b1b862b0770f6380b3a45916a1ada722a1c91"
 CURRENT_VALIDATOR_SHA256 = "bbab7667b024733054b05ffeb358a14a0f6d1d8bbd392ee9bbdac76feeb8e7f1"
 CURRENT_VALIDATOR_CLOSURE_SHA256 = "dfe7a6006d815db1362ee947fb3bb89de4f5f4604d16c1e181def238fcf8ebaa"
+RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/bcp-1662.source-manifest.json")
+RUNTIME_VALIDATOR_CLOSURE_SHA256 = "ef0413d685c36964481be76e5db2b9e6ae3c3957a888967aae4c9861a4503970"
 
 
 def test_v2_manifest_preserves_retained_authorities_and_only_updates_current_runtime() -> None:
@@ -56,14 +58,20 @@ def test_v2_manifest_is_covered_by_explicit_current_route_auditors() -> None:
     from build.tools import check_source_manifest_materialization as materialization
     from ocd_kernel.reconstruction import closure_verification
 
-    path = ROOT / SOURCE_MANIFEST
+    # Keep the published v2 record frozen while auditing the current runtime copy.
+    path = ROOT / RUNTIME_MANIFEST
     record = json.loads(path.read_bytes())
+    expected = json.loads((ROOT / SOURCE_MANIFEST).read_bytes())
+    expected["validator"]["import_closure_sha256"] = RUNTIME_VALIDATOR_CLOSURE_SHA256
+    assert record == expected
     bindings, errors = materialization._manifest_bindings(path, record, repository_root=ROOT)
     assert errors == []
     assert len(bindings) == len(record["authorities"]) + 3
     assert all(materialization._validate_binding(binding) == [] for binding in bindings)
-    check = closure_verification.check_validator_manifest_closure(ROOT, SOURCE_MANIFEST)
-    assert check.matches and check.live_sha256 == CURRENT_VALIDATOR_CLOSURE_SHA256
+    check = closure_verification.check_validator_manifest_closure(ROOT, RUNTIME_MANIFEST)
+    assert check.matches and check.live_sha256 == RUNTIME_VALIDATOR_CLOSURE_SHA256
+    retained = closure_verification.check_validator_manifest_closure(ROOT, SOURCE_MANIFEST)
+    assert not retained.matches and retained.live_sha256 == RUNTIME_VALIDATOR_CLOSURE_SHA256
     inventory = json.loads((ROOT / "tests/fixtures/reconstruction-runtime/retained-manifest-inventory.json").read_bytes())
     assert inventory[ORIGINAL_MANIFEST.as_posix()] == ORIGINAL_MANIFEST_SHA256
     assert SOURCE_MANIFEST.as_posix() not in inventory

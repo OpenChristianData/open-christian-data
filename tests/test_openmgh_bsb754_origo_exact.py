@@ -11,6 +11,8 @@ from zipfile import ZipFile
 from lxml import etree
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tei.openmgh_exact_work_div import check_candidate
 from build.tools import install_openmgh_exact_work_div_batch as installer
 from build.tools.install_openmgh_exact_work_div_batch import preflight
@@ -94,7 +96,7 @@ def historical_context(tmp_path_factory: pytest.TempPathFactory) -> tuple[Path, 
     dependencies = [original["manifest"]]
     dependencies += [manifest[key] for key in ("source", "package", "acquisition_receipt", "source_inventory")]
     for binding in dependencies:
-        payload = _io_path(ROOT / binding["path"]).read_bytes()
+        payload = historical_bound_bytes(_io_path(ROOT / binding["path"]), binding["sha256"])
         assert sha256(payload).hexdigest() == binding["sha256"]
         target = _io_path(root / binding["path"])
         target.parent.mkdir(parents=True, exist_ok=True)

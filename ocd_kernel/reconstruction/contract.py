@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from ocd_kernel.lib.path_io import io_path, resolve_path, io_iterdir
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import inspect
@@ -234,6 +234,9 @@ class SourceManifest:
     repository_root: Path
     sha256: str
     _record: Mapping[str, object]
+    _authority_index: tuple[object, Mapping[str, Mapping[str, object]]] | None = field(
+        default=None, init=False, repr=False, compare=False
+    )
 
     @classmethod
     def load(cls, path: str | Path, *, repository_root: str | Path) -> "SourceManifest":
@@ -249,6 +252,11 @@ class SourceManifest:
             raise ValueError("source manifest contract mismatch")
         instance = cls(manifest_path, root, _sha(content), _freeze(record))
         instance.verify()
+        # Index verified immutable metadata; physical paths remain fresh on every use.
+        object.__setattr__(instance, "_authority_index", (
+            instance._record,
+            MappingProxyType({item["name"]: item for item in instance._record["authorities"]}),
+        ))
         return instance
 
     @property
@@ -259,6 +267,12 @@ class SourceManifest:
         authorities = self._record.get("authorities")
         if not isinstance(authorities, tuple):
             raise ValueError("source manifest authorities are invalid")
+        index = getattr(self, "_authority_index", None)
+        if index is not None and index[0] is self._record and type(name) is str:
+            authority = index[1].get(name)
+            if authority is None:
+                raise ValueError(f"source manifest has no {name!r} authority")
+            return _contained(self.repository_root, authority.get("path"), name)
         for authority in authorities:
             if isinstance(authority, Mapping) and authority.get("name") == name:
                 return _contained(self.repository_root, authority.get("path"), name)
@@ -519,100 +533,101 @@ def validate(
 ) -> ValidationReport:
     """Run a producer-independent oracle and bind its attestation."""
 
-    source_manifest.verify()
-    candidate.verify_integrity()
-    _verify_candidate_source_binding(source_manifest, candidate)
-    expected_bindings = _validation_authority_bindings(source_manifest)
-    validator = source_manifest.record["validator"]
-    assert isinstance(validator, Mapping)
-    oracle_path = _callable_source_path(oracle, "validator")
-    expected_path = _contained(
-        source_manifest.repository_root,
-        validator.get("implementation_path"),
-        "validator implementation",
-    )
-    if (
-        getattr(oracle, "oracle_id", None) != validator.get("id")
-        or getattr(oracle, "oracle_version", None) != validator.get("version")
-        or getattr(oracle, "__name__", None) != validator.get("callable")
-        or not io_path(oracle_path).samefile(io_path(expected_path))
-        or _sha(io_path(oracle_path).read_bytes()) != validator.get("implementation_sha256")
-    ):
-        raise ValueError("validator callable provenance mismatch")
-    result = dict(oracle(source_manifest, candidate))
-    required = {
-        "status",
-        "oracle_id",
-        "oracle_version",
-        "implementation_sha256",
-        "import_closure_sha256",
-        "runtime",
-        "source_manifest_sha256",
-        "candidate_sha256",
-        "profile_sha256",
-        "package_schema_sha256",
-        "source_sha256",
-        "xsd_sha256",
-        "policy_sha256",
-        "result_sha256",
-        "findings",
-    }
-    if set(result) != required:
-        raise ValueError("oracle attestation shape mismatch")
-    if result["status"] != "pass":
-        raise ValueError("candidate validation failed")
-    if result["source_manifest_sha256"] != source_manifest.sha256:
-        raise ValueError("oracle source-manifest binding mismatch")
-    if result["candidate_sha256"] != candidate.sha256:
-        raise ValueError("oracle candidate binding mismatch")
-    if (
-        result["oracle_id"] != validator.get("id")
-        or result["oracle_version"] != validator.get("version")
-    ):
-        raise ValueError("oracle identity or version binding mismatch")
-    if result["implementation_sha256"] != validator.get("implementation_sha256"):
-        raise ValueError("oracle implementation binding mismatch")
-    if result["import_closure_sha256"] != validator.get("import_closure_sha256"):
-        raise ValueError("oracle import-closure binding mismatch")
-    if result["runtime"] != _runtime_binding():
-        raise ValueError("oracle runtime binding mismatch")
-    for name, expected in expected_bindings.items():
-        if result[name] != expected:
-            raise ValueError(f"oracle {name} authority binding mismatch")
-    result_digest_record = {key: value for key, value in result.items() if key != "result_sha256"}
-    if result["result_sha256"] != _sha(_canonical(result_digest_record)):
-        raise ValueError("oracle result binding mismatch")
-    findings = result["findings"]
-    if not isinstance(findings, list) or any(not isinstance(item, str) for item in findings):
-        raise ValueError("oracle findings are invalid")
-    for name in (
-        "implementation_sha256",
-        "import_closure_sha256",
-        "profile_sha256",
-        "package_schema_sha256",
-        "source_sha256",
-        "xsd_sha256",
-        "policy_sha256",
-        "result_sha256",
-    ):
-        if not _is_digest(result[name]):
-            raise ValueError(f"oracle {name} is invalid")
-    report_record = {
-        "contract": "ocd-validation-report-v1",
-        "status": "pass",
-        "candidate_sha256": candidate.sha256,
-        "source_manifest_sha256": source_manifest.sha256,
-        "attestation": result,
-        "findings": findings,
-    }
-    return ValidationReport(
-        "pass",
-        candidate.sha256,
-        source_manifest.sha256,
-        _freeze(result),
-        tuple(findings),
-        _sha(_canonical(report_record)),
-    )
+    with storage_read_phase():
+        source_manifest.verify()
+        candidate.verify_integrity()
+        _verify_candidate_source_binding(source_manifest, candidate)
+        expected_bindings = _validation_authority_bindings(source_manifest)
+        validator = source_manifest.record["validator"]
+        assert isinstance(validator, Mapping)
+        oracle_path = _callable_source_path(oracle, "validator")
+        expected_path = _contained(
+            source_manifest.repository_root,
+            validator.get("implementation_path"),
+            "validator implementation",
+        )
+        if (
+            getattr(oracle, "oracle_id", None) != validator.get("id")
+            or getattr(oracle, "oracle_version", None) != validator.get("version")
+            or getattr(oracle, "__name__", None) != validator.get("callable")
+            or not io_path(oracle_path).samefile(io_path(expected_path))
+            or _sha(io_path(oracle_path).read_bytes()) != validator.get("implementation_sha256")
+        ):
+            raise ValueError("validator callable provenance mismatch")
+        result = dict(oracle(source_manifest, candidate))
+        required = {
+            "status",
+            "oracle_id",
+            "oracle_version",
+            "implementation_sha256",
+            "import_closure_sha256",
+            "runtime",
+            "source_manifest_sha256",
+            "candidate_sha256",
+            "profile_sha256",
+            "package_schema_sha256",
+            "source_sha256",
+            "xsd_sha256",
+            "policy_sha256",
+            "result_sha256",
+            "findings",
+        }
+        if set(result) != required:
+            raise ValueError("oracle attestation shape mismatch")
+        if result["status"] != "pass":
+            raise ValueError("candidate validation failed")
+        if result["source_manifest_sha256"] != source_manifest.sha256:
+            raise ValueError("oracle source-manifest binding mismatch")
+        if result["candidate_sha256"] != candidate.sha256:
+            raise ValueError("oracle candidate binding mismatch")
+        if (
+            result["oracle_id"] != validator.get("id")
+            or result["oracle_version"] != validator.get("version")
+        ):
+            raise ValueError("oracle identity or version binding mismatch")
+        if result["implementation_sha256"] != validator.get("implementation_sha256"):
+            raise ValueError("oracle implementation binding mismatch")
+        if result["import_closure_sha256"] != validator.get("import_closure_sha256"):
+            raise ValueError("oracle import-closure binding mismatch")
+        if result["runtime"] != _runtime_binding():
+            raise ValueError("oracle runtime binding mismatch")
+        for name, expected in expected_bindings.items():
+            if result[name] != expected:
+                raise ValueError(f"oracle {name} authority binding mismatch")
+        result_digest_record = {key: value for key, value in result.items() if key != "result_sha256"}
+        if result["result_sha256"] != _sha(_canonical(result_digest_record)):
+            raise ValueError("oracle result binding mismatch")
+        findings = result["findings"]
+        if not isinstance(findings, list) or any(not isinstance(item, str) for item in findings):
+            raise ValueError("oracle findings are invalid")
+        for name in (
+            "implementation_sha256",
+            "import_closure_sha256",
+            "profile_sha256",
+            "package_schema_sha256",
+            "source_sha256",
+            "xsd_sha256",
+            "policy_sha256",
+            "result_sha256",
+        ):
+            if not _is_digest(result[name]):
+                raise ValueError(f"oracle {name} is invalid")
+        report_record = {
+            "contract": "ocd-validation-report-v1",
+            "status": "pass",
+            "candidate_sha256": candidate.sha256,
+            "source_manifest_sha256": source_manifest.sha256,
+            "attestation": result,
+            "findings": findings,
+        }
+        return ValidationReport(
+            "pass",
+            candidate.sha256,
+            source_manifest.sha256,
+            _freeze(result),
+            tuple(findings),
+            _sha(_canonical(report_record)),
+        )
 
 
 def prepare_review(

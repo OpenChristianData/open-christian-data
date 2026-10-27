@@ -1,0 +1,103 @@
+{
+  "contract": "ocd-watson-runtime-supplement-v1",
+  "work_id": "watson-beatitudes",
+  "claim": "Current unchanged oracle validates byte-identical substantive candidate members; existing accepted master and acceptance remain unchanged.",
+  "acceptance": {
+    "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acceptance.json",
+    "bytes": 7272,
+    "sha256": "88a0148d497dfc4423bfe15f40af6a85332be767abf6901af10542b91acbea4c"
+  },
+  "bindings": [
+    {
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/master.tei.xml",
+      "bytes": 1138506,
+      "sha256": "07b0070649c6a6b8e6ebbfd300834299dc2d64cc3684e2198fc42dadb82b0aef"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261012.source-manifest.json",
+      "bytes": 9647,
+      "sha256": "cb1ad45d3d0fb8b75d1c29cef1998ee34bf002dda2ab8562a046e9262e81be75"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261021.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "6dd270d4ffe937d7943f65c6b6960fb0080724f55d0449cf1d7b62e8e587989c"
+    },
+    {
+      "path": "library/works/watson-beatitudes/forms/watson-beatitudes-route-source-form/editions/watson-beatitudes-retained-thml-route/acquisitions/watson-beatitudes-retained-source.json",
+      "bytes": 3991,
+      "sha256": "839eb297426c1ff07ea81502572d663829a77f01f392ee749c0779a46a44403c"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-supplement-20261021.json",
+      "bytes": 4840,
+      "sha256": "31dbf2a9594059c86dd9fb3bec56b23e13192f98905c43bcc1687cca6d40e919"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261025.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "9c5c27e1aeac868d809001c9ff06e14bfeecb2f510652c0dde5e7d435a6b4e1c"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-supplement-20261025.json",
+      "bytes": 3431,
+      "sha256": "83447a2363f45f7559c6f11393d9a1cbd4be9c7bfbda948eb7e52f47d7f4e2bb"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261025-main.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "64a5ada40506f676e496c6f1431c36886495f1db5e11700ab0bb24b8be5696b9"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-supplement-20261025-main.json",
+      "bytes": 4263,
+      "sha256": "239d1ca8d42aff08a549162a3ae8955084aa185bd2eae565f9b78f60e1b80361"
+    },
+    {
+      "path": "sources/structured-text/watson-beatitudes/runtime-proof-20261027-performance.source-manifest.json",
+      "bytes": 9411,
+      "sha256": "5f9fcd54ca7ab9efe63b18a7d0d4c4f7d1f9bd62308630a86954f2ad650c2b45"
+    }
+  ],
+  "authority_changes": [
+    {
+      "name": "closure-storage-topology",
+      "path": "ocd_kernel/lib/storage_topology.py",
+      "before": {
+        "bytes": 5154,
+        "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+      },
+      "after": {
+        "bytes": 5406,
+        "sha256": "3d347f58f6ba91a54a5d2cf3388f64859964c6d9bce0c7e048dfbdef9229b81e"
+      }
+    },
+    {
+      "name": "closure-reconstruction-contract",
+      "path": "ocd_kernel/reconstruction/contract.py",
+      "before": {
+        "bytes": 26591,
+        "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+      },
+      "after": {
+        "bytes": 27816,
+        "sha256": "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
+      }
+    }
+  ],
+  "previous_package_sha256": "bc59ce1a0133e31497aa9ba297b31ceee976bfc0230f68910f8ff009f8fb40b4",
+  "current_package_sha256": "776d3dc78ad717be010ec17be2b7597b79ed1f3791a8b41e73140838eda91326",
+  "validation": {
+    "path": "library/works/watson-beatitudes/integration/runtime-proof-20261027-performance/current-candidate/validation.json",
+    "bytes": 1515,
+    "sha256": "056248b8c2297fc704aa7cff776da65b8e4de221a41386ff6ca41c6abaa0d3ba"
+  },
+  "source_sha256": "d85ea8ded5de4feff3b2a9156bece9c471ffec3045eb8dc300b2784f5753f837",
+  "unchanged_members": [
+    "README.source.md",
+    "content.tei.xml",
+    "provenance.json",
+    "source-accountability.json",
+    "unresolved.jsonl"
+  ]
+}

@@ -16,6 +16,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -164,7 +165,7 @@ def test_candidate_passes_independent_oracle_and_preserves_structure(manifest: S
     assert accountability["footnote_count"] == 10
     assert accountability["omitted_count"] == accountability["duplicate_count"] == 0
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
-    assert etree.XMLSchema(etree.parse(str(manifest.authority_path("tei-p5-xsd")))).validate(tei)
+    assert compiled_tei_schema(manifest.authority_path("tei-p5-xsd")).validate(tei)
     assert len(tei.xpath("/t:TEI/t:text/t:body/t:div[@type='chapter']", namespaces=TEI)) == 16
     assert len(tei.xpath("//t:div[@type='row']", namespaces=TEI)) == 30
     assert len(tei.xpath("//t:ab[@type='verse']", namespaces=TEI)) == 100

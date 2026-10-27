@@ -96,7 +96,7 @@
       "name": "oracle-import-closure",
       "path": "tests/fixtures/reconstruction-runtime/npnf113-lib041.oracle-import-closure.json",
       "role": "validator-import-closure",
-      "sha256": "7344925afdc39046e277756707a9d859e1b888cae9d6cb4245d8412432c2fef4"
+      "sha256": "d503be83c8b9a1aef2387f9864335a2235cb4515ffaa100b80731bb1f6fb0cb7"
     },
     {
       "bytes": 50,
@@ -113,11 +113,11 @@
       "sha256": "e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca"
     },
     {
-      "bytes": 26591,
+      "bytes": 27816,
       "name": "runtime-reconstruction-contract",
       "path": "ocd_kernel/reconstruction/contract.py",
       "role": "runtime-dependency",
-      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+      "sha256": "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
     },
     {
       "bytes": 1573,
@@ -209,7 +209,7 @@
     "id": "ocd-lib041-npnf113-source-to-tei-oracle",
     "implementation_path": "build/tei/npnf113_lib041_oracle.py",
     "implementation_sha256": "880ba8bc3ff9697092b82686d0831a6151eeab2df2f8f4ebe360134bc658b8bd",
-    "import_closure_sha256": "7344925afdc39046e277756707a9d859e1b888cae9d6cb4245d8412432c2fef4",
+    "import_closure_sha256": "d503be83c8b9a1aef2387f9864335a2235cb4515ffaa100b80731bb1f6fb0cb7",
     "version": "21"
   }
 }

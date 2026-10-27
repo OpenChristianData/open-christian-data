@@ -129,3 +129,46 @@ def test_manifest_containment_resolves_each_member_once_strictly(tmp_path, monke
     source.unlink()
     with pytest.raises(OSError):
         contract._contained(tmp_path, "source.txt", "source")
+
+
+def test_reverse_read_phase_reuses_only_base_roots_and_rechecks_each_member(tmp_path, monkeypatch):
+    from collections import Counter
+    from ocd_kernel.lib import storage_topology
+
+    repo, library = tmp_path / "repo", tmp_path / "library"
+    repo.mkdir()
+    raw = library / "raw"
+    raw.mkdir(parents=True)
+    _configure_library(repo, library)
+    members = [raw / f"source-{index}.txt" for index in range(16)]
+    for member in members:
+        member.write_text("source", encoding="utf-8")
+    calls = Counter()
+    resolve = storage_topology._resolve
+    library_root = storage_topology._library_root
+
+    def observed(path, **kwargs):
+        calls[Path(path)] += 1
+        return resolve(path, **kwargs)
+
+    def configured(root):
+        calls["config"] += 1
+        return library_root(root)
+
+    monkeypatch.setattr(storage_topology, "_resolve", observed)
+    monkeypatch.setattr(storage_topology, "_library_root", configured)
+    with storage_topology.storage_read_phase():
+        for member in members:
+            assert repository_relative_path(repo, member) == f"raw/{member.name}"
+    assert calls["config"] == 1, calls
+    assert calls[repo] == 1, calls
+    assert all(calls[member] >= 2 for member in members), calls
+
+    # A later phase must observe a changed route rather than reuse an old root.
+    other = tmp_path / "other-library"
+    (other / "raw").mkdir(parents=True)
+    _configure_library(repo, other)
+    with storage_topology.storage_read_phase():
+        with pytest.raises(StorageTopologyError, match="outside configured storage"):
+            repository_relative_path(repo, members[0])
+    assert calls["config"] == 2

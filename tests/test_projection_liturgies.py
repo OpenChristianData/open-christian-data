@@ -19,6 +19,7 @@ from ocd_kernel.projection.categories.liturgies import (
     project_liturgies_document as project,
     verify_liturgies_document as verify,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -350,7 +351,7 @@ def test_fixture_builder_is_reproducible_and_manifest_hashes_are_bound(tmp_path:
 
 
 def test_fixture_is_valid_tei_p5_and_schema_is_closed() -> None:
-    E.XMLSchema(E.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))).assertValid(E.parse(str(PATH)))
+    compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd").assertValid(E.parse(str(PATH)))
     schema = json.loads((ROOT / "schemas/v2/categories/liturgies.schema.json").read_text(encoding="utf-8"))
     assert schema["additionalProperties"] is False
     assert "allOf" not in schema

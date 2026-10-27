@@ -15,7 +15,7 @@ import pytest
 from build.tei.npnf_ambrose_work_local_oracle import _oracle
 from build.tools.stage_npnf210_work_local import ASSIGNED, EVIDENCE, ROOT, SOURCE_SHA256
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest
-from tests.runtime_candidate_baselines import current_runtime_baseline
+from tests.runtime_candidate_baselines import current_runtime_baseline, historical_bound_bytes
 
 
 TEI_NS = "http://www.tei-c.org/ns/1.0"
@@ -27,7 +27,8 @@ ORIGINAL_EVIDENCE_SHA256 = "0c3a469215209eee9893f1a4d0c1e54590a0515524b0ff89bbb7
 
 @pytest.fixture(scope="module", autouse=True)
 def current_nine_work_baselines(tmp_path_factory):
-    raw = ORIGINAL_EVIDENCE.read_bytes()
+    observed_original = ORIGINAL_EVIDENCE.read_bytes()
+    raw = historical_bound_bytes(ORIGINAL_EVIDENCE, ORIGINAL_EVIDENCE_SHA256)
     assert _sha(raw) == ORIGINAL_EVIDENCE_SHA256
     original = json.loads(raw)
     current = deepcopy(original)
@@ -51,7 +52,7 @@ def current_nine_work_baselines(tmp_path_factory):
     with pytest.MonkeyPatch.context() as patch:
         patch.setitem(globals(), "EVIDENCE", receipt)
         yield
-    assert _sha(ORIGINAL_EVIDENCE.read_bytes()) == ORIGINAL_EVIDENCE_SHA256
+    assert ORIGINAL_EVIDENCE.read_bytes() == observed_original
 
 
 def _sha(content: bytes) -> str:

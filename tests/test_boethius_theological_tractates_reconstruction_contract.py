@@ -23,6 +23,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -199,7 +200,7 @@ def test_exact_candidate_passes_independent_oracle_and_direct_schemas(
     accountability = json.loads(candidate.member_bytes("source-accountability.json"))
     schema = json.loads(source.authority_path("source-accountability-schema").read_bytes())
     Draft202012Validator(schema).validate(accountability)
-    compiled = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    compiled = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
     assert compiled.validate(etree.ElementTree(tei)), compiled.error_log
 

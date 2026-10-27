@@ -55,7 +55,7 @@ HISTORICAL_STAGE = installer.STAGE
 HISTORICAL_SOURCE_STAGE = installer.SOURCE_STAGE
 HISTORICAL_RECEIPT_SHA = installer.RECEIPT_SHA256
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/didache_prayers_oracle.source-manifest.json")
-RUNTIME_SHA = "e03ec4bc9450727a3af1bb5164700d1de82acf0ab8f31ea86972e01823a2c5cb"
+RUNTIME_SHA = "09b195546e7eb3780a59c7c56dd996cf5e1442c78bce4a4e4ec6137a96e99af3"
 FROZEN_BEFORE = {'library/works/didache-prayers/forms/didache-prayers-retained-electronic/editions/didache-prayers-retained-electronic-witness/acquisitions/didache-prayers-retained-source.json': 'tests/fixtures/reconstruction-runtime/authorities/didache-full-before.acquisition.json', 'library/works/didache-prayers/state.json': 'tests/fixtures/reconstruction-runtime/authorities/didache-full-before.state.json', 'library/works/didache-prayers/work.json': 'tests/fixtures/reconstruction-runtime/authorities/didache-full-before.work.json'}
 
 

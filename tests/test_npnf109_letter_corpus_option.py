@@ -13,6 +13,7 @@ from build.tei.npnf109_work_oracle import _check_node
 from ocd_kernel.projection.categories.native_documents import project_document, verify_document
 from ocd_kernel.reconstruction import SourceManifest
 from ocd_kernel.tei.acceptance import _tei_facts
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,7 +101,7 @@ def test_two_letter_tei_corpus_is_independently_checkable_and_keeps_senders(tmp_
 
     path = tmp_path / "two-letter-diagnostic.tei.xml"
     path.write_bytes(etree.tostring(corpus, encoding="UTF-8", xml_declaration=True))
-    xsd = etree.XMLSchema(etree.parse(str(manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(etree.parse(str(path))), str(xsd.error_log.last_error)
     for member in list(corpus)[1:]:
         assert xsd.validate(etree.ElementTree(deepcopy(member))), str(xsd.error_log.last_error)

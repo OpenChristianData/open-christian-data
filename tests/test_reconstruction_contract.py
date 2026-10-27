@@ -539,3 +539,84 @@ def test_contained_authority_uses_configured_durable_raw_without_junction(tmp_pa
         contract_module._contained(root, str(witness), "witness")
     with pytest.raises((ValueError, FileNotFoundError)):
         contract_module._contained(root, "raw/sources/missing.txt", "witness")
+
+
+def test_verified_authority_lookup_does_linear_metadata_work(tmp_path, monkeypatch):
+    comparisons = 0
+
+    class CountingName(str):
+        __hash__ = str.__hash__
+
+        def __eq__(self, other):
+            nonlocal comparisons
+            comparisons += 1
+            return str.__eq__(self, other)
+
+    original_reader = contract_module._strict_json
+
+    def counted_reader(content, label):
+        record = original_reader(content, label)
+        if label == "source manifest":
+            for authority in record["authorities"]:
+                authority["name"] = CountingName(authority["name"])
+        return record
+
+    monkeypatch.setattr(contract_module, "_strict_json", counted_reader)
+    count = 256
+    source, _, _ = _fixture(tmp_path, source_contents=(b"source",) * count)
+    comparisons = 0
+    for index in range(count):
+        assert source.authority_path(f"source-part-{index}") == source.repository_root / f"source-{index}.bin"
+    assert comparisons <= count * 2
+
+
+def test_authority_index_preserves_fresh_storage_checks_and_record_replacement(tmp_path, monkeypatch):
+    from ocd_kernel.lib.storage_topology import StorageTopologyError
+
+    source, _, _ = _fixture(tmp_path)
+    resolver = contract_module.resolve_repo_path
+    calls = []
+
+    def checked(root, logical, **kwargs):
+        calls.append(logical)
+        if len(calls) > 1:
+            raise StorageTopologyError("changed route")
+        return resolver(root, logical, **kwargs)
+
+    monkeypatch.setattr(contract_module, "resolve_repo_path", checked)
+    assert source.authority_path("source-part-0") == source.repository_root / "source-0.bin"
+    with pytest.raises(ValueError, match="changed route"):
+        source.authority_path("source-part-0")
+    assert calls == ["source-0.bin", "source-0.bin"]
+    monkeypatch.setattr(contract_module, "resolve_repo_path", resolver)
+    replacement = dict(source.record)
+    replacement["authorities"] = [{"name": "replacement", "path": "source-0.bin"}]
+    object.__setattr__(source, "_record", contract_module._freeze(replacement))
+    assert source.authority_path("replacement") == source.repository_root / "source-0.bin"
+    with pytest.raises(ValueError, match="has no 'source-part-0' authority"):
+        source.authority_path("source-part-0")
+
+
+def test_validation_root_reuse_ends_on_success_and_failure(tmp_path, monkeypatch):
+    from ocd_kernel.lib import storage_topology
+
+    source, converter, oracle = _fixture(tmp_path)
+    candidate = reconstruction.reconstruct(source, tmp_path / "candidate", converter)
+    original = storage_topology._library_root
+    reads = []
+
+    def counted(root):
+        reads.append(root)
+        return original(root)
+
+    monkeypatch.setattr(storage_topology, "_library_root", counted)
+    for _ in range(2):
+        reads.clear()
+        assert reconstruction.validate(source, candidate, oracle).status == "pass"
+        # Authority verification owns a nested read phase; the remaining validation owns one.
+        assert reads == [source.repository_root, source.repository_root]
+        assert storage_topology._read_roots.get() is None
+    (source.repository_root / "source-0.bin").write_bytes(b"changed")
+    with pytest.raises(ValueError, match="authority bytes drifted"):
+        reconstruction.validate(source, candidate, oracle)
+    assert storage_topology._read_roots.get() is None

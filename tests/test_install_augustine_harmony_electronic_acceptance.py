@@ -7,6 +7,8 @@ import shutil
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools import install_augustine_harmony_electronic_acceptance as installer
 from build.tools.install_augustine_harmony_electronic_acceptance import (
     FIXTURE_MARKER, RECEIPT, STAGE, WORK, install, preflight,
@@ -21,7 +23,7 @@ ORIGINAL_NATIVE_PINS = {
     "CURRENT_NATIVE_DOCUMENTS_SHA256": "1b854764070c46257e16d0ced0e02392f69a9c6a9ed729e2c70d2043f3c4aa87",
     "CURRENT_NATIVE_CONTENT_SHA256": "97c44a3b873d9c52307953015ef1e9edf276e616caaf55e36b16a7b8f6e58e00",
 }
-CURRENT_RUNTIME_FILES = {'ocd_kernel/projection/categories/lib040_harmony.py': {'sha256': '8ef92e59591de649072014cb16468b7d1ce507c0d253bf91456cb758a161cd4e', 'bytes': 10748}, 'ocd_kernel/projection/categories/prose.py': {'sha256': 'e39117916a64f903bd2b5efc569096308c29c99f429f28386f0ada378aba49aa', 'bytes': 57580}, 'ocd_kernel/projection/categories/native_documents.py': {'sha256': '229f3f1e9be106c061c8f7a699820f263fc615798c61212ef8756a009261a59a', 'bytes': 174564}, 'ocd_kernel/projection/native_content.py': {'sha256': '0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77', 'bytes': 52716}, 'build/tools/stage_augustine_harmony_electronic_acceptance.py': {'sha256': 'ca20326d2947d96d8b329d60672aaf5b04806da7bb8204560784e3dd403d86ce', 'bytes': 16542}}
+CURRENT_RUNTIME_FILES = {'ocd_kernel/projection/categories/lib040_harmony.py': {'sha256': '8ef92e59591de649072014cb16468b7d1ce507c0d253bf91456cb758a161cd4e', 'bytes': 10748}, 'ocd_kernel/projection/categories/prose.py': {'sha256': 'e39117916a64f903bd2b5efc569096308c29c99f429f28386f0ada378aba49aa', 'bytes': 57580}, 'ocd_kernel/projection/categories/native_documents.py': {'sha256': '229f3f1e9be106c061c8f7a699820f263fc615798c61212ef8756a009261a59a', 'bytes': 174564}, 'ocd_kernel/projection/native_content.py': {'sha256': '0cf26976895508516f84bff8c6436acf35b5d0593632971cf5eb5a788165ff77', 'bytes': 52716}, 'build/tools/stage_augustine_harmony_electronic_acceptance.py': {'sha256': '8f0e92f396ddd867d82c391503877541ee7bba0074caf75ac3c197bdb9dcc0b8', 'bytes': 16330}}
 
 
 @pytest.fixture
@@ -29,9 +31,18 @@ def harmony_runtime(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict:
     original_raw = io_path(RECEIPT).read_bytes()
     assert sha256(original_raw).hexdigest() == ORIGINAL_RECEIPT_SHA256
     original = json.loads(original_raw)
+    runtime_root = tmp_path / "runtime"
     for logical, pin in CURRENT_RUNTIME_FILES.items():
         payload = io_path(INPUT_ROOT / logical).read_bytes()
         assert sha256(payload).hexdigest() == pin["sha256"] and len(payload) == pin["bytes"]
+        target = io_path(runtime_root / logical)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(payload)
+    handoff = original["work_local_handoff"]
+    target = io_path(runtime_root / handoff)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(historical_bound_bytes(io_path(INPUT_ROOT / handoff), original["work_local_handoff_sha256"]))
+    monkeypatch.setattr(installer, "ROOT", runtime_root)
     current = json.loads(original_raw)
     for logical in current["projection_code_sha256"]:
         current["projection_code_sha256"][logical] = CURRENT_RUNTIME_FILES[logical]["sha256"]
@@ -47,7 +58,7 @@ def harmony_runtime(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict:
         monkeypatch.setattr(installer, constant, CURRENT_RUNTIME_FILES[logical]["sha256"])
     assert installer.CURRENT_PROJECTION_RECEIPT_SHA256 == "307ef32a88e1d88426e09b4b73fc08233740078845dbadd2fba18e638533abaa"
     monkeypatch.setattr(installer, "CURRENT_PROJECTION_RECEIPT_SHA256",
-                        "d412e1e523d73cd1d1feaa70cb80bff2fc3f6ce891a4bd7347490a65d65ca648")
+                        "4e9425ac9547b33760b7217af13d4eb6aaf7686ebcf02dcd095f68a4cb4eab02")
     path = tmp_path / "harmony-current-runtime-receipt.json"
     payload = (json.dumps(current, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode()
     path.write_bytes(payload)
@@ -96,7 +107,7 @@ def harmony_root(tmp_path: Path, harmony_runtime: dict) -> Path:
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(payload)
     handoff = receipt["work_local_handoff"]
-    payload = io_path(INPUT_ROOT / handoff).read_bytes()
+    payload = historical_bound_bytes(io_path(INPUT_ROOT / handoff), receipt["work_local_handoff_sha256"])
     assert sha256(payload).hexdigest() == receipt["work_local_handoff_sha256"]
     destination = io_path(root / handoff)
     destination.parent.mkdir(parents=True, exist_ok=True)

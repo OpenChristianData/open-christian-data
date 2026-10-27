@@ -59,9 +59,10 @@ def test_original_stage_rejects_managed_current_root(work_id):
     receipt_raw = (ORIGINAL_STAGE_ROOT / work_id / "stage-receipt.json").read_bytes()
     receipt = json.loads(receipt_raw)
     assert sha256(receipt_raw).hexdigest() == ORIGINAL_PINS[work_id]
-    assert sha256((CURRENT_ROOT / metadata).read_bytes()).hexdigest() != receipt["dependencies"][metadata]
+    managed_root = Path(receipt["canonical_root"]).resolve(strict=True)
+    assert sha256((managed_root / metadata).read_bytes()).hexdigest() != receipt["dependencies"][metadata]
     with pytest.MonkeyPatch.context() as patch:
-        patch.setattr(route, "ROOT", CURRENT_ROOT)
+        patch.setattr(route, "ROOT", managed_root)
         patch.setattr(route, "STAGE_ROOT", ORIGINAL_STAGE_ROOT)
         patch.setattr(route, "RECEIPT_SHA", ORIGINAL_PINS)
         with pytest.raises(PipelineError, match=re.escape("NPNF207 source or evidence changed: " + metadata) + "$"):

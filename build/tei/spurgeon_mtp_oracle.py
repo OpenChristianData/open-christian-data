@@ -18,6 +18,7 @@ from xml.parsers import expat
 from jsonschema import Draft202012Validator
 from lxml import etree, html
 
+from build.lib.tei_xsd import compiled_tei_schema
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest
 
 
@@ -29,6 +30,9 @@ _XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 _MISSING = (8, 40, 42, 62, 67, 82, 142, 155, 269, 270, 298, 332, 390)
 _SUPPLEMENTAL_RIGHTS_NUMBERS = (708, 3032)
 _FIRST_PARTY_IMPORT_PATHS = (
+    "build/__init__.py",
+    "build/lib/__init__.py",
+    "build/lib/tei_xsd.py",
     "build/tei/spurgeon_mtp_oracle.py",
     "ocd_kernel/__init__.py",
     "ocd_kernel/lib/__init__.py",
@@ -1337,7 +1341,7 @@ def _import_closure(root: Path) -> str:
 
 
 def _validate_tei_schema(path: Path, schema_path: Path) -> None:
-    schema = etree.XMLSchema(etree.parse(str(schema_path)))
+    schema = compiled_tei_schema(schema_path)
     try:
         iterator = etree.iterparse(
             str(path), events=("end",), schema=schema, huge_tree=True
@@ -1351,7 +1355,7 @@ def _validate_tei_schema(path: Path, schema_path: Path) -> None:
 def _validate_tei_schema_document(
     document: etree._ElementTree, schema_path: Path
 ) -> None:
-    schema = etree.XMLSchema(etree.parse(str(schema_path)))
+    schema = compiled_tei_schema(schema_path)
     if not schema.validate(document):
         raise ValueError(
             f"Spurgeon TEI P5 validation failed: {schema.error_log.last_error}"

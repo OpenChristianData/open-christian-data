@@ -20,6 +20,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,9 +99,7 @@ def _assert_tei_p5_valid_document(content: bytes) -> None:
             remove_comments=False,
         ),
     ).getroottree()
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(document), schema.error_log.last_error
 
 

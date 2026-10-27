@@ -9,6 +9,7 @@ from lxml import etree as E
 import pytest
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.projection.categories.devotionals import project_devotionals_document as project, verify_devotionals_document as verify
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE_ORACLE=ROOT/'plans/2026-08-31-library-pipeline-redesign/artifacts/PIPE-008/verify_original_source.py'
@@ -54,7 +55,7 @@ def test_five_real_units_preserve_source_date_readings_and_paragraphs():
 
 
 def test_fixture_is_valid_tei_p5():
-    E.XMLSchema(E.parse(str(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd'))).assertValid(E.parse(str(PATH)))
+    compiled_tei_schema(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd').assertValid(E.parse(str(PATH)))
 
 
 @pytest.mark.requires_local_artifacts

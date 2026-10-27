@@ -28,7 +28,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/before-most-holy-pg76888-current-installer.source-manifest.json")
-RUNTIME_SHA = '362778c303fcefee8bacd495ede3f759a051b804cb3c7a22f01adf700ad5301a'
+RUNTIME_SHA = '56861794c60a78ebb8bf56f96434e171df519a0c70f17588bbb82dbc1be245e5'
 
 
 def _fixture(root: Path) -> Path:

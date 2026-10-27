@@ -23,7 +23,7 @@ from ocd_kernel.reconstruction import (
 ROOT = Path(__file__).resolve().parents[1]
 ORIGINAL_MANIFEST = ROOT / "sources/openmgh-exclusive/anulus-et-baculus-verses/source-manifest.json"
 MANIFEST = ROOT / "tests/fixtures/reconstruction-runtime/openmgh-exclusive-anulus-et-baculus.current.source-manifest.json"
-RUNTIME_SHA = "814055d5a862e7f0cc15a2abdd7c1e6e570f98d091e8a1db83cd5e43c9d2a1f7"
+RUNTIME_SHA = "284dd2007fa42e1ade7411437933b2100f0c142507379ae14f88ab32cd1dcee6"
 TEI = "http://www.tei-c.org/ns/1.0"
 
 

@@ -20,6 +20,7 @@ from build.tei.equiano_interesting_narrative_1789_part_1_reconstruction import (
     _transform_source,
 )
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,9 +89,7 @@ def test_source_bound_transform_is_valid_tei_and_keeps_part_one_structure() -> N
         candidate_bytes,
         etree.XMLParser(resolve_entities=False, no_network=True, huge_tree=True),
     )
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(candidate), str(schema.error_log)
 
     source = etree.fromstring(

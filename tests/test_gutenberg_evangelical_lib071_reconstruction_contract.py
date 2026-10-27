@@ -24,6 +24,7 @@ from build.tools.count_dataset_records import (
     collect_work_catalog,
 )
 from tests.runtime_candidate_baselines import current_runtime_catalog
+from tests.historical_authority_mirrors import bound_callable
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
 
@@ -79,6 +80,48 @@ def _reseal(path: Path, member_name: str) -> CandidatePackage:
     member.update(bytes=len(content), sha256=_sha(content))
     manifest_path.write_bytes(_canonical(manifest))
     return CandidatePackage.load(path)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def retained_input_view(tmp_path_factory: pytest.TempPathFactory):
+    # Reproduce this historical 49-file census without depending on later acquisitions.
+    original_root = ROOT
+    source = SourceManifest.load(MANIFEST, repository_root=original_root)
+    profile = json.loads(source.authority_path("reconstruction-profile").read_bytes())
+    policy = json.loads(source.authority_path("validation-policy").read_bytes())
+    root = tmp_path_factory.mktemp("lib071-inputs")
+    paths = {item["path"] for item in source.record["authorities"]}
+    paths.update(profile["adjacent_retained_member_paths"])
+    paths.update(path.relative_to(original_root).as_posix() for path in _closure_paths(original_root, policy))
+    paths.update(path.relative_to(original_root).as_posix()
+                 for path in (original_root / "ocd_kernel/tei/vendor/xsd").glob("*.xsd"))
+    paths.update(source.record[role]["implementation_path"] for role in ("converter", "validator"))
+    paths.add(source.record["package_schema"]["path"])
+    manifest_relative = MANIFEST.relative_to(original_root)
+    paths.add(manifest_relative.as_posix())
+    paths.update(f"data/structured-text/{work_id}.json" for work_id in WORK_IDS)
+    paths.update((
+        "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md",
+        "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md",
+    ))
+    for logical in sorted(paths):
+        relative = Path(logical)
+        assert not relative.is_absolute() and ".." not in relative.parts, logical
+        target = root / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(original_root / relative, target)
+    producer = bound_callable(root, source.record["converter"], "converter")
+    oracle = bound_callable(root, source.record["validator"], "validator")
+    with pytest.MonkeyPatch.context() as patch:
+        for name, value in {
+            "ROOT": root, "MANIFEST": root / manifest_relative,
+            "SOURCE_DIR": root / SOURCE_DIR.relative_to(original_root),
+            "_convert": producer, "_oracle": oracle,
+            "_closure_digest": oracle.__globals__["_closure_digest"],
+            "_closure_paths": oracle.__globals__["_closure_paths"],
+        }.items():
+            patch.setattr(sys.modules[__name__], name, value)
+        yield root
 
 
 @pytest.fixture(scope="module")
@@ -401,3 +444,16 @@ def test_two_fresh_processes_from_different_cwds_are_byte_identical(tmp_path: Pa
     assert results[0] == results[1]
     for name in CandidatePackage.load(tmp_path / "candidate-1").member_names:
         assert (tmp_path / "candidate-1" / name).read_bytes() == (tmp_path / "candidate-2" / name).read_bytes()
+
+
+def test_unexpected_retained_neighbor_still_blocks_reconstruction(retained_input_view, tmp_path):
+    source = SourceManifest.load(MANIFEST, repository_root=ROOT)
+    unexpected = ROOT / "raw/ia/unexpected-test-neighbor.txt"
+    assert ROOT == retained_input_view and unexpected.resolve().is_relative_to(retained_input_view.resolve())
+    assert not unexpected.exists()
+    unexpected.write_bytes(b"unexpected retained input\n")
+    try:
+        with pytest.raises(ValueError, match="LIB-071 adjacent retained-member inventory drifted"):
+            reconstruct(source, tmp_path / "candidate", _convert)
+    finally:
+        unexpected.unlink()

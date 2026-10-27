@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools.library_config_free_multi_binding import bind_config_free_multi
 from build.tools.prepare_library_sidecar_batch import prepare
 from ocd_kernel.library._common import PipelineError
@@ -52,7 +54,7 @@ def historical_root(tmp_path_factory):
         if logical.parts[0] == "raw":
             return  # Actual retained source bytes use the declared storage topology.
         source = ROOT / HISTORICAL_FILES.get(relative, relative)
-        raw = source.read_bytes()
+        raw = historical_bound_bytes(source, expected)
         assert sha256(raw).hexdigest() == expected, relative
         destination = root / logical
         destination.parent.mkdir(parents=True, exist_ok=True)

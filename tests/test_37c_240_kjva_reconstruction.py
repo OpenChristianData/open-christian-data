@@ -16,6 +16,7 @@ from ocd_kernel.reconstruction.contract import (
     SourceManifest,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -418,9 +419,7 @@ def test_supported_cli_generates_complete_source_ordered_schema_valid_tei(candid
     assert "[but]" in tei_verse("I John", 2, 23)
     assert tei_verse("Psalms", 119, 176).endswith(" ")
 
-    schema = etree.XMLSchema(
-        etree.parse(str(REPOSITORY_ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(REPOSITORY_ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     schema.assertValid(tree)
 
 

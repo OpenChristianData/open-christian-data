@@ -11,6 +11,19 @@ import pytest
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest
 
 
+
+def historical_bound_bytes(path, expected_sha256):
+    """Recover a frozen text's exact newline variant, selected by its original hash."""
+    raw = path.read_bytes()
+    if sha256(raw).hexdigest() == expected_sha256:
+        return raw
+    lf = raw.replace(b"\r\n", b"\n")
+    for candidate in (lf, lf.replace(b"\n", b"\r\n")):
+        if sha256(candidate).hexdigest() == expected_sha256:
+            return candidate
+    raise AssertionError(f"historical byte binding differs: {path}")
+
+
 def _assert_runtime_member(name, current, retained, *, original_sha256, runtime_sha256):
     """Conserve bytes, or the full accounting record except its explicit source identity."""
     if current == retained:

@@ -46,16 +46,22 @@ def test_original_stage_rejects_managed_current_context():
     receipt = json.loads(ORIGINAL_RECEIPT.read_bytes())
     assert sha256(ORIGINAL_RECEIPT.read_bytes()).hexdigest() == ORIGINAL_PIN
     assert sha256((CURRENT_ROOT / metadata).read_bytes()).hexdigest() != receipt["dependencies"][metadata]
-    with pytest.MonkeyPatch.context() as patch:
-        patch.setattr(route, "ROOT", CURRENT_ROOT)
-        patch.setattr(route, "STAGE", ORIGINAL_STAGE)
-        patch.setattr(route, "RECEIPT", ORIGINAL_RECEIPT)
-        patch.setattr(route, "RECEIPT_SHA", ORIGINAL_PIN)
-        with pytest.raises(PipelineError, match=(
-            r"^Gregory Select Letters source or evidence changed: "
-            r"metadata/source-evidence/catalog/gregory-of-nazianzus-select-letters\.json$"
-        )):
-            route.preflight()
+    receipt_root = Path(receipt["canonical_root"]).resolve(strict=True)
+    assert (CURRENT_ROOT / metadata).read_bytes() == (receipt_root / metadata).read_bytes()
+    for context_root in dict.fromkeys((CURRENT_ROOT.resolve(), receipt_root)):
+        with pytest.MonkeyPatch.context() as patch:
+            patch.setattr(route, "ROOT", context_root)
+            patch.setattr(route, "STAGE", ORIGINAL_STAGE)
+            patch.setattr(route, "RECEIPT", ORIGINAL_RECEIPT)
+            patch.setattr(route, "RECEIPT_SHA", ORIGINAL_PIN)
+            error = (
+                r"^Gregory Select Letters source or evidence changed: "
+                r"metadata/source-evidence/catalog/gregory-of-nazianzus-select-letters\.json$"
+                if context_root == receipt_root else
+                r"^Gregory Select Letters stage contract or roots differ$"
+            )
+            with pytest.raises(PipelineError, match=error):
+                route.preflight()
 
 
 def _fixture(tmp_path: Path) -> Path:

@@ -21,6 +21,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 pytestmark = [
@@ -404,7 +405,7 @@ def test_candidate_is_p5_valid_and_every_crosswalk_field_is_independently_verifi
 ) -> None:
     _runtime, source, candidate, _runtime_convert, runtime_oracle = verified_candidate
     tree = etree.parse(str(candidate.path / "content.tei.xml"))
-    schema = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    schema = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     schema.assertValid(tree)
     assert validate(source, candidate, runtime_oracle).status == "pass"
     accountability = json.loads(candidate.member_bytes("source-accountability.json"))

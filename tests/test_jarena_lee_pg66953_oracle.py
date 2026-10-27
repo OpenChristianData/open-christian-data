@@ -17,7 +17,7 @@ from build.tools.stage_jarena_lee_pg66953_acceptance import CANDIDATE, MANIFEST,
 
 TEI = "http://www.tei-c.org/ns/1.0"
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/jarena-lee-pg66953-current-installer.source-manifest.json")
-RUNTIME_SHA = 'd93bd4b73120b533c2d2184227e73221cf291d002786190ba41428a23ad918a2'
+RUNTIME_SHA = '1927a29a1ee4edee1cfa6922234a141f23b18d249a486ef8736672bc56e36e56'
 RETAINED_SHA = "dbe35ba8a3e632126b25bb7420b807f9cf48ec80c8adf52570bc744aaf2f78d3"
 
 

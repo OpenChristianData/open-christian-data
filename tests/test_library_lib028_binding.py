@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools.library_lib028_binding import bind_lib028_member
 from ocd_kernel.library._common import PipelineError
 
@@ -42,7 +44,7 @@ def historical_root(tmp_path_factory):
             source = ROOT / relative
             if relative.as_posix().startswith("metadata/source-evidence/catalog/"):
                 source = ROOT / "tests/fixtures/reconstruction-runtime/authorities" / f"lib028-{relative.stem}-original-catalog.json"
-            raw = source.read_bytes()
+            raw = historical_bound_bytes(source, ref["sha256"])
             assert sha256(raw).hexdigest() == ref["sha256"], relative
             target = root / relative
             target.parent.mkdir(parents=True, exist_ok=True)

@@ -15,6 +15,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -362,7 +363,7 @@ def test_binary_accounting_and_tei_shape_are_exact(daily_manifest, daily_candida
     assert accountability["carriers"][-2]["offset"] == 1_034_666
     assert accountability["carriers"][-2]["terminal"] is True
     tei = etree.fromstring(daily_candidate.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(daily_manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(daily_manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), xsd.error_log
     assert tei.get(XML_ID) == "daily-light-candidate"
     days = tei.xpath("/t:TEI/t:text/t:body/t:div[@type='day']", namespaces=TEI)

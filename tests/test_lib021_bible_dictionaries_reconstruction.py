@@ -17,13 +17,14 @@ import pytest
 from lxml import etree
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_RELATIVE = Path("tests/fixtures/reconstruction-runtime")
-RUNTIME_PRODUCER_CLOSURE = 'df8438add88ab718af87068655b145ff3303c59001efb58935b1d2c34bd4e459'
-RUNTIME_VALIDATOR_CLOSURE = '62836bdf7eeb85a5a1703b9e4706fbcb23deee426024115640aacbb1c37f8aa4'
-RUNTIME_CLOSURE_MEMBERS = {'build/tei/bible_dictionaries_reconstruction.py': 'a5d02075c89fe2be01c7d88132ab6cd9a79ce824be539573137b13dd2d43307f', 'build/tei/bible_dictionaries_oracle.py': '2b83251ecb0a26f8cc62170b27fe7698c715cc79277f2e8da65af8bc65a35036', 'ocd_kernel/reconstruction/contract.py': '2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af', 'ocd_kernel/reconstruction/__init__.py': 'e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca'}
+RUNTIME_PRODUCER_CLOSURE = 'be675f465fa4d7c8287f3f9d1d9f8da776733c6d168c69ca448998bd2a10f34b'
+RUNTIME_VALIDATOR_CLOSURE = '70aa28d47ea6d9d4ccd995e9910497c7805fce15e386b2e09d0297c13eeb0310'
+RUNTIME_CLOSURE_MEMBERS = {'build/tei/bible_dictionaries_reconstruction.py': 'a5d02075c89fe2be01c7d88132ab6cd9a79ce824be539573137b13dd2d43307f', 'build/tei/bible_dictionaries_oracle.py': '2b83251ecb0a26f8cc62170b27fe7698c715cc79277f2e8da65af8bc65a35036', 'ocd_kernel/reconstruction/contract.py': '14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a', 'ocd_kernel/reconstruction/__init__.py': 'e6ed13f040ada1d57354a3b8bfe7ce384be867031e017a72f027fe2d145848ca'}
 RUNTIME_ORIGINAL_PINS = {
     "eastons-bible-dictionary": {
         "manifest_sha256": "bf4115996057fbd62ae37321c8d97effea8a4e8a7c8c8c2e495ed3b5dfd210ad",
@@ -253,7 +254,7 @@ def _expect_mutation_rejected(
 
 
 def _assert_schema_valid_tei(path: Path) -> None:
-    schema = etree.XMLSchema(etree.parse(str(TEI_XSD)))
+    schema = compiled_tei_schema(TEI_XSD)
     document = etree.parse(str(path))
     assert schema.validate(document), str(schema.error_log)
 

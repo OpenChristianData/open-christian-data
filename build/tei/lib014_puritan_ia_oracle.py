@@ -154,7 +154,7 @@ def _canonical(value: object) -> bytes:
 
 _SHARED_CONTRACT_PATH = "ocd_kernel/reconstruction/contract.py"
 _SHARED_CONTRACT_SHA256 = (
-    "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+    "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
 )
 _DYNAMIC_IMPORT_CALLS = {
     "__import__",

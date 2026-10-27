@@ -25,6 +25,7 @@ from ocd_kernel.reconstruction import (
     validate,
 )
 from ocd_kernel.reconstruction.decision import load_verified_review
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -468,9 +469,7 @@ def test_keil_delitzsch_oracle_rejects_schema_valid_invented_header_metadata(
     else:
         revision_desc = etree.SubElement(header, f"{{{TEI_NS}}}revisionDesc")
         etree.SubElement(revision_desc, f"{{{TEI_NS}}}change").text = "Invented change"
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):
@@ -491,9 +490,7 @@ def test_keil_delitzsch_oracle_rejects_schema_valid_nested_body_invention(
     assert paragraph is not None
     note = etree.SubElement(paragraph, f"{{{TEI_NS}}}note", {"type": "editorial"})
     note.text = "Invented body note"
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):
@@ -532,9 +529,7 @@ def test_keil_delitzsch_oracle_rejects_unaccounted_schema_valid_body_nodes(
         etree.SubElement(
             occurrence, f"{{{TEI_NS}}}p"
         ).text = "Invented sibling paragraph"
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):
@@ -592,9 +587,7 @@ def test_keil_delitzsch_oracle_rejects_unexpected_namespace_declarations(
         parent = body.getparent()
         assert parent is not None
         parent.replace(body, replacement)
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):
@@ -618,9 +611,7 @@ def test_keil_delitzsch_oracle_rejects_explicit_reserved_xml_namespace_declarati
     assert content.count(root_start) == 1
     tei_path.write_bytes(content.replace(root_start, replacement, 1))
     root = etree.fromstring(tei_path.read_bytes())
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _reseal(target, "content.tei.xml")
     with pytest.raises(ValueError):
@@ -655,9 +646,7 @@ def test_keil_delitzsch_oracle_rejects_document_level_siblings(
         root.addprevious(node)
     else:
         root.addnext(node)
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei_document(target, root)
     with pytest.raises(ValueError):
@@ -730,9 +719,7 @@ def test_keil_delitzsch_oracle_rejects_noncanonical_lexical_document_shell(
         BytesIO(mutated_bytes),
         etree.XMLParser(resolve_entities=False, no_network=True, huge_tree=True),
     )
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(parsed.getroot()), schema.error_log
     tei_path.write_bytes(mutated_bytes)
     mutated = _reseal(target, "content.tei.xml")
@@ -840,9 +827,7 @@ def test_keil_delitzsch_oracle_rejects_existing_header_metadata_drift(
         witness = header.find(f".//{{{TEI_NS}}}note[@type='source-witness']")
         assert witness is not None
         witness.text = "Invented witness"
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(root), schema.error_log
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):
@@ -860,9 +845,7 @@ def test_keil_delitzsch_schema_rejects_an_extra_header_title(
     title_stmt = root.find(f".//{{{TEI_NS}}}titleStmt")
     assert title_stmt is not None
     etree.SubElement(title_stmt, f"{{{TEI_NS}}}title").text = "Invented Alternate Title"
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert not schema.validate(root)
     mutated = _write_tei(target, root)
     with pytest.raises(ValueError):

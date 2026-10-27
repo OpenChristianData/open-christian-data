@@ -21,6 +21,7 @@ from build.tei.npnf105_reconstruction import (
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest
 from ocd_kernel.reconstruction.decision import load_verified_review
 from ocd_kernel.lib.storage_topology import resolve_repo_path
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 pytestmark = [
@@ -116,7 +117,7 @@ def p5_schema():
     original = {path: path.read_bytes() for path in paths}
     assert len(original[schema_path]) == authority["bytes"]
     assert hashlib.sha256(original[schema_path]).hexdigest() == authority["sha256"]
-    schema = etree.XMLSchema(etree.parse(str(schema_path)))
+    schema = compiled_tei_schema(schema_path)
     yield schema
     assert {path: path.read_bytes() for path in paths} == original
 

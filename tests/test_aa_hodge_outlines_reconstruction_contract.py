@@ -13,6 +13,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction.contract import CandidatePackage, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +22,8 @@ WITNESS = Path(
 )
 SOURCE_SHA256 = "a81808d5a9d2037d3c1d0706de960fb13c175d3581dd131c7d505493df51fee5"
 SOURCE_DIR = ROOT / "sources/catechisms/aa-hodge-outlines"
-MANIFEST = SOURCE_DIR / "aa-hodge-outlines.source-manifest.json"
+ORIGINAL_MANIFEST = SOURCE_DIR / "aa-hodge-outlines.source-manifest.json"
+MANIFEST = ROOT / "tests/fixtures/reconstruction-runtime/aa-hodge-outlines.source-manifest.json"
 NS = {"tei": "http://www.tei-c.org/ns/1.0"}
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 GOVERNED_LF_PATHS = (
@@ -62,6 +64,9 @@ def _assert_effective_checkout_eol(relative: str, expected: str) -> None:
 
 
 def test_manifest_bound_text_materializes_portably() -> None:
+    assert hashlib.sha256(ORIGINAL_MANIFEST.read_bytes()).hexdigest() == (
+        "d4303df97c3c72ffc74ab389e68d52b53ddffaf865f92f68fde5457f43060d5b"
+    )
     manifest = json.loads(MANIFEST.read_bytes())
     authority_bindings = {
         item["path"]: (item["bytes"], item["sha256"])
@@ -212,9 +217,7 @@ def test_complete_candidate_is_schema_valid_lossless_and_nonaccepted(
     assert accountability["crosswalk"][-1]["byte_end"] == 1_976_207
 
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    xsd = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     xsd.assertValid(etree.ElementTree(tei))
     lines = tei.xpath("./tei:text/tei:body/tei:div/tei:ab", namespaces=NS)
     assert len(lines) == 37_553

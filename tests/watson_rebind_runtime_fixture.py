@@ -9,7 +9,7 @@ from build.tei.watson_divine_contentment_oracle import CLOSURE, closure_digest
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = "tests/fixtures/reconstruction-runtime/watson-divine-contentment.source-manifest.json"
-RUNTIME_SHA = "ed5b1716c0812def826d0a95f52cafeb9eeba048e31c636fcc0aa6a1c6a656f2"
+RUNTIME_SHA = "05ed01b85896a563ca0aaadc740f600d74486e0d21ecb7cb0b836fde22225132"
 
 
 def current_contentment_closure_context(route, destination, monkeypatch):

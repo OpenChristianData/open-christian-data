@@ -13,6 +13,7 @@ from lxml import etree
 
 import ocd_kernel.reconstruction.contract as contract_module
 from ocd_kernel.reconstruction.contract import SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -135,7 +136,7 @@ def test_lightfoot_accounts_for_every_source_line_and_delimiter(lightfoot_candid
 
 def test_lightfoot_tei_validates_against_p5(lightfoot_candidate) -> None:
     source, candidate, _ = lightfoot_candidate
-    schema = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    schema = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     schema.assertValid(etree.fromstring(candidate.member_bytes("content.tei.xml")))
 
 

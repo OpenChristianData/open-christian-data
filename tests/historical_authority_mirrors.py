@@ -47,7 +47,7 @@ CASES = {
     },
 }
 DAVIS_VALIDATOR_SHA = "19e88135eb291d98e1b466dacd178eaab04e5ceb68f4328aa3c97b90cb4079f7"
-DAVIS_CLOSURE_SHA = "c45218d8e2442fbd5662d23bfcd0eaebcde2486779b18e4d7489901a12bf8c24"
+DAVIS_CLOSURE_SHA = "7ff86caba5c6bdcafb2191a17f862c85438ae8a7e9030b62157140f507edff88"
 
 
 def _canonical(record: object) -> bytes:

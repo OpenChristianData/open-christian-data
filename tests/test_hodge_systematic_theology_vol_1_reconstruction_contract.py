@@ -31,6 +31,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -105,9 +106,7 @@ def test_exact_source_binding_envelope_and_independent_accounting() -> None:
 def test_candidate_is_p5_valid_and_independently_verified(verified_candidate) -> None:
     source, candidate, report = verified_candidate
     tree = etree.parse(str(candidate.path / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     schema.assertValid(tree)
     assert report.status == "pass"
     assert validate(source, candidate, _oracle).status == "pass"

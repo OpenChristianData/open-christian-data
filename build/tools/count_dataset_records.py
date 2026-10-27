@@ -8,6 +8,7 @@ import json
 import logging
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -690,11 +691,18 @@ def _attach_retained_witness_gaps(
 
     member_digests: dict[Path, str] = {}
 
-    def member_digest(path: Path) -> str:
-        # Read shared members once in this audit; each declaration still checks containment.
-        if path not in member_digests:
-            member_digests[path] = _sha256_retained_member(path)
-        return member_digests[path]
+    def retained_members(files: list[Path], label: str) -> list[tuple[str, str]]:
+        # Check each declaration before reading; share hashes only within this audit.
+        logical = [_logical_retained_path(repository_root, path, label) for path in files]
+        missing = list(dict.fromkeys(path for path in files if path not in member_digests))
+        if len(missing) > 128:
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                for start in range(0, len(missing), 128):
+                    batch = missing[start:start + 128]
+                    member_digests.update(zip(batch, pool.map(_sha256_retained_member, batch), strict=True))
+        else:
+            member_digests.update((path, _sha256_retained_member(path)) for path in missing)
+        return [(name, member_digests[path]) for name, path in zip(logical, files, strict=True)]
 
     by_id = {str(work["work_id"]): work for work in works}
     git_witnesses = _raw_git_witnesses(repository_root)
@@ -734,15 +742,7 @@ def _attach_retained_witness_gaps(
                 matching_work_ids = work_ids & by_id.keys()
                 if not matching_work_ids:
                     continue
-                members = [
-                    (
-                        _logical_retained_path(
-                            repository_root, path, "retained config member"
-                        ),
-                        member_digest(path),
-                    )
-                    for path in files
-                ]
+                members = retained_members(files, "retained config member")
                 for work_id in matching_work_ids:
                     parser_hashes = _work_source_hashes(by_id[work_id])
                     missing = [
@@ -793,15 +793,7 @@ def _attach_retained_witness_gaps(
                 }
                 continue
             parser_hashes = _work_source_hashes(by_id[work_id])
-            members = [
-                (
-                    _logical_retained_path(
-                        repository_root, path, "retained registry member"
-                    ),
-                    member_digest(path),
-                )
-                for path in files
-            ]
+            members = retained_members(files, "retained registry member")
             missing = [path for path, digest in members if digest not in parser_hashes]
             descriptions[(work_id, logical_path)] = {
                 "evidence": witness_registry_path.relative_to(

@@ -7,7 +7,6 @@ import importlib.util
 import json
 from functools import lru_cache
 from pathlib import Path
-import sys
 
 import pytest
 
@@ -23,9 +22,15 @@ if not AUDIT_PATH.is_file():
 AUDIT = json.loads(AUDIT_PATH.read_text(encoding="utf-8"))
 EXECUTION_ROOT = Path(AUDIT["execution_root"])
 
-# The original routes were built and checked in this execution checkout. Put
-# that exact checkout first so this test invokes the bound oracle and contracts.
-sys.path.insert(0, str(EXECUTION_ROOT))
+# Keep historical-route imports scoped to their tests, not collection of other suites.
+@pytest.fixture(autouse=True)
+def bound_execution_imports():
+    try:
+        with pytest.MonkeyPatch.context() as patch:
+            patch.syspath_prepend(str(EXECUTION_ROOT))
+            yield
+    finally:
+        importlib.invalidate_caches()
 
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest  # noqa: E402
 from ocd_kernel.tei.validate import compiled_schema  # noqa: E402

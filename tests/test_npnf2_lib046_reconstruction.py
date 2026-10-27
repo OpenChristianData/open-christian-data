@@ -22,6 +22,7 @@ from build.tei.npnf2_lib046_reconstruction import (
     _convert,
 )
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,9 +112,7 @@ def test_exact_source_and_three_root_order() -> None:
 def test_candidate_is_p5_valid_and_independently_verified(verified_candidate) -> None:
     source, candidate, validation_path = verified_candidate
     tree = etree.parse(str(candidate.path / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     schema.assertValid(tree)
     assert validate(source, candidate, _oracle).status == "pass"
     accountability = json.loads(candidate.member_bytes("source-accountability.json"))

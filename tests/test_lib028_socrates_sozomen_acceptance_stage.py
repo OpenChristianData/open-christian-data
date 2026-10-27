@@ -51,12 +51,20 @@ def test_original_stage_rejects_managed_current_context(work_id):
     receipt = json.loads(receipt_raw)
     assert sha256(receipt_raw).hexdigest() == ORIGINAL_RECEIPT_PINS[work_id]
     assert sha256((CURRENT_ROOT / metadata).read_bytes()).hexdigest() != receipt["dependencies"][metadata]
-    with pytest.MonkeyPatch.context() as patch:
-        patch.setattr(route, "ROOT", CURRENT_ROOT)
-        patch.setattr(route, "STAGE_ROOT", ORIGINAL_STAGE_ROOT)
-        patch.setattr(route, "RECEIPT_SHA", ORIGINAL_RECEIPT_PINS)
-        with pytest.raises(PipelineError, match=re.escape("LIB028 source or evidence changed: " + metadata) + "$"):
-            route.preflight(work_id)
+    receipt_root = Path(receipt["canonical_root"]).resolve(strict=True)
+    assert (CURRENT_ROOT / metadata).read_bytes() == (receipt_root / metadata).read_bytes()
+    for context_root in dict.fromkeys((CURRENT_ROOT.resolve(), receipt_root)):
+        with pytest.MonkeyPatch.context() as patch:
+            patch.setattr(route, "ROOT", context_root)
+            patch.setattr(route, "STAGE_ROOT", ORIGINAL_STAGE_ROOT)
+            patch.setattr(route, "RECEIPT_SHA", ORIGINAL_RECEIPT_PINS)
+            error = (
+                "LIB028 source or evidence changed: " + metadata
+                if context_root == receipt_root else
+                f"LIB028 {work_id} stage contract differs"
+            )
+            with pytest.raises(PipelineError, match="^" + re.escape(error) + "$"):
+                route.preflight(work_id)
 
 
 def _fixture(tmp_path: Path, work_id: str) -> Path:

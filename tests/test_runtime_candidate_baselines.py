@@ -36,3 +36,18 @@ def test_unbound_runtime_refresh_is_rejected(name, old, current):
 
 def test_unchanged_non_json_member_keeps_exact_bytes():
     _assert_runtime_member("content.tei.xml", b"<TEI/>", b"<TEI/>", original_sha256=OLD, runtime_sha256=CURRENT)
+
+
+@pytest.mark.parametrize("supplied,retained", ((b"one\ntwo\n", b"one\r\ntwo\r\n"),
+                                              (b"one\r\ntwo\r\n", b"one\ntwo\n"),
+                                              (b"one\ntwo\n", b"one\ntwo\n")))
+def test_historical_bytes_select_only_the_exact_pinned_newline_variant(tmp_path, supplied, retained):
+    from hashlib import sha256
+    from tests.runtime_candidate_baselines import historical_bound_bytes
+    path = tmp_path / "metadata.json"
+    path.write_bytes(supplied)
+    assert historical_bound_bytes(path, sha256(retained).hexdigest()) == retained
+    assert path.read_bytes() == supplied
+    path.write_bytes(supplied.replace(b"one", b"invented"))
+    with pytest.raises(AssertionError, match="historical byte binding differs"):
+        historical_bound_bytes(path, sha256(retained).hexdigest())

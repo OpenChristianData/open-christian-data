@@ -13,6 +13,7 @@ from build.tei.jps_oracle import check_content, oracle
 from ocd_kernel.reconstruction.contract import (
     CandidatePackage, SourceManifest, reconstruct as reconstruct_package, validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -89,7 +90,7 @@ def _tei_bytes(tree):
 def test_actual_jps_teI_tree_is_valid_against_the_bound_tei_schema(jps_representation):
     _, tree, _ = jps_representation
     schema_path = REPOSITORY_ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"
-    schema = etree.XMLSchema(etree.parse(str(schema_path)))
+    schema = compiled_tei_schema(schema_path)
 
     schema.assertValid(tree)
 

@@ -20,6 +20,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,7 +105,7 @@ def test_volume_two_candidate_is_independently_validated_and_nonaccepted(
     tree = etree.ElementTree(
         etree.fromstring(candidate.member_bytes("content.tei.xml"))
     )
-    schema = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    schema = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     schema.assertValid(tree)
 
     assert candidate.manifest["status"] == "nonaccepted"

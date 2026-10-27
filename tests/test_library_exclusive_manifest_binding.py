@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools.library_exclusive_manifest_binding import bind_exclusive_manifest
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.library.identities import load_work
@@ -39,7 +41,7 @@ def historical_root(tmp_path_factory):
         assert not logical.is_absolute() and ".." not in logical.parts
         if logical.parts[0] in {"raw", "reports", "exports"}:
             return
-        raw = (ROOT / HISTORICAL_FILES.get(relative, relative)).read_bytes()
+        raw = historical_bound_bytes(ROOT / HISTORICAL_FILES.get(relative, relative), ref["sha256"])
         assert sha256(raw).hexdigest() == ref["sha256"], relative
         target = root / logical
         target.parent.mkdir(parents=True, exist_ok=True)

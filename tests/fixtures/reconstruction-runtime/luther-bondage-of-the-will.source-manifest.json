@@ -19,7 +19,7 @@
       "name": "reconstruction-profile",
       "path": "tests/fixtures/reconstruction-runtime/luther-bondage-of-the-will.reconstruction-profile.json",
       "role": "complete-source-feature-profile",
-      "sha256": "c31070a61179c00dba585137d2fdfb87624a57dcb5de6799efd13cb27f1d9174"
+      "sha256": "c99bacb4d1b92390e284ed51f57f08ded3a5343878da9badfc328017106205ac"
     },
     {
       "bytes": 1110,
@@ -62,14 +62,14 @@
     "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
     "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
   },
-  "producer_import_closure_sha256": "a6f3a2b2f6a7980a74fd992dc46d49e7888fce088eaf21f5bab059ad14cec61a",
+  "producer_import_closure_sha256": "19af91e8dfb0c490f5cc99a61345dac961e6e617df38feb7c7bb666ce6fcdae9",
   "source_id": "luther-bondage-of-the-will-covenanter-retained",
   "validator": {
     "callable": "_oracle",
     "id": "ocd-luther-bondage-covenanter-independent-oracle",
     "implementation_path": "build/tei/luther_bondage_covenanter_oracle.py",
     "implementation_sha256": "6c24dc2cf919e79a2ff66c99fc67b1e05fb5e5969e44a7c99326e26bd9ea64bf",
-    "import_closure_sha256": "fccbee4520fed4899607adf391356d991579d668fe0f7363cff61560b092b5d1",
+    "import_closure_sha256": "0598444fff80b662525458f108d169ca05a0686f0251e35fda57342da402a649",
     "version": "1"
   }
 }

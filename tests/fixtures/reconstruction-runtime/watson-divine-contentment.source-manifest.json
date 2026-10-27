@@ -77,15 +77,15 @@
       "path": "ocd_kernel/lib/storage_topology.py",
       "name": "closure-storage-topology",
       "role": "implementation-dependency",
-      "bytes": 5154,
-      "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+      "bytes": 5406,
+      "sha256": "3d347f58f6ba91a54a5d2cf3388f64859964c6d9bce0c7e048dfbdef9229b81e"
     },
     {
       "path": "ocd_kernel/reconstruction/contract.py",
       "name": "closure-contract",
       "role": "implementation-dependency",
-      "bytes": 26591,
-      "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+      "bytes": 27816,
+      "sha256": "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
     },
     {
       "path": "ocd_kernel/reconstruction/verifier.py",
@@ -129,7 +129,7 @@
     "callable": "_oracle",
     "implementation_path": "build/tei/watson_divine_contentment_oracle.py",
     "implementation_sha256": "2899b332e826626fb732fe2ac7b5aca265913c166195f9efcdb5c2713c6ecd36",
-    "import_closure_sha256": "5c08d6dc3ef55e3f600173789503e275f5ec13069200b3325f3cd5f617aa648e"
+    "import_closure_sha256": "5332222e1a8064c45010c7ada8367becb31938f8e64d8c5f0ef6406a061b6acb"
   },
   "package_schema": {
     "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",

@@ -21,6 +21,7 @@ from build.tei.imitation_of_christ_oracle import (
 )
 from build.tei.imitation_of_christ_reconstruction import _convert, _producer_closure
 from ocd_kernel.reconstruction.contract import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -237,7 +238,7 @@ def test_tei_is_xsd_valid_and_preserves_exact_occurrence_carriers(
     kempis_candidate: CandidatePackage,
 ) -> None:
     tei = etree.fromstring(kempis_candidate.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(kempis_manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(kempis_manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), xsd.error_log
     assert len(tei.xpath("/t:TEI/t:text/t:body/t:div", namespaces=TEI)) == 126
     assert len(tei.xpath("//t:div[@xml:id]", namespaces=TEI)) == 131
@@ -655,7 +656,7 @@ def test_xsd_valid_coordinated_header_and_readme_inventions_fail_exact_surfaces(
     mutate(path)
     changed = CandidatePackage.load(path)
     tei = etree.fromstring(changed.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(kempis_manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(kempis_manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), xsd.error_log
     with pytest.raises(ValueError, match="complete allowed TEI header|complete package-only README"):
         validate(kempis_manifest, changed, _oracle)
@@ -673,7 +674,7 @@ def test_css_relocations_are_xsd_valid_and_reach_semantic_attachment_check(
     mutate(path)
     changed = CandidatePackage.load(path)
     tei = etree.fromstring(changed.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(kempis_manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(kempis_manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), xsd.error_log
     with pytest.raises(ValueError, match="continued/eoc semantics"):
         validate(kempis_manifest, changed, _oracle)

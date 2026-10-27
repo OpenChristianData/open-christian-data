@@ -27,7 +27,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/jarena-lee-pg66953-current-installer.source-manifest.json")
-RUNTIME_SHA = 'd93bd4b73120b533c2d2184227e73221cf291d002786190ba41428a23ad918a2'
+RUNTIME_SHA = '1927a29a1ee4edee1cfa6922234a141f23b18d249a486ef8736672bc56e36e56'
 
 
 def _fixture(root: Path) -> Path:

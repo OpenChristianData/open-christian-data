@@ -5,6 +5,8 @@ from pathlib import Path
 from hashlib import sha256
 import json
 import pytest
+
+from tests.runtime_candidate_baselines import historical_bound_bytes
 from ocd_kernel.library._common import PipelineError
 
 from build.tools.install_whitefield_two_witness_sidecars import RECEIPT_REL, preflight
@@ -61,7 +63,8 @@ def _historical_packet_root(destination: Path) -> Path:
                               "metadata/source-evidence/catalog/george-whitefield-sermons.json": retained / "source-evidence.json"}
     for relative in {PACKET_REL, RECEIPT_REL, *packet["authorities"],
                      *(packet["witnesses"][label]["source"]["path"] for label in ("ccel", "gutenberg"))}:
-        raw = historical_authorities.get(relative, _io_path(ROOT / relative)).read_bytes()
+        source = historical_authorities.get(relative, _io_path(ROOT / relative))
+        raw = historical_bound_bytes(source, packet["authorities"][relative]) if relative in packet["authorities"] else source.read_bytes()
         if relative in packet["authorities"]:
             assert sha256(raw).hexdigest() == packet["authorities"][relative]
         target = _io_path(destination / relative)

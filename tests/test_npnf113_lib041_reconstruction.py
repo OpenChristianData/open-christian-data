@@ -19,6 +19,7 @@ import pytest
 from build.tei.npnf113_lib041_oracle import _oracle
 from build.tei.npnf113_lib041_reconstruction import _convert
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -248,9 +249,7 @@ def test_candidate_is_p5_valid_and_binds_all_ten_roots(
     assert candidate.manifest["source_id"] == source.record["source_id"]
     assert candidate.manifest["source_manifest"]["sha256"] == source.sha256
     tree = _parsed(candidate)
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(tree), schema.error_log
     roots = tree.xpath(
         "/tei:TEI/tei:text/tei:body/tei:div",

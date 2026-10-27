@@ -14,6 +14,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,7 +85,7 @@ def test_candidate_accounts_whole_source_and_ordered_books(manifest: SourceManif
     assert len(accountability["line_inventory"]) == 9724
     assert accountability["omitted_count"] == accountability["duplicate_count"] == 0
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), str(xsd.error_log)
     assert len(tei.xpath("//t:div[@type='book']", namespaces=TEI)) == 13
     assert tei.xpath("//t:div[@subtype='project-gutenberg-license']/t:p", namespaces=TEI)

@@ -53,6 +53,12 @@ def current_installed_acceptance(route, destination, patch):
         if target.exists() and expected_sha is None:
             return target.read_bytes()
         raw = _io_path(resolve_repo_path(ROOT, relative.as_posix())).read_bytes()
+        if relative.as_posix() == "ocd_kernel/lib/storage_topology.py" and expected_sha == "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7":
+            raw = (ROOT / "tests/fixtures/reconstruction-runtime/authorities/pre-performance-storage-topology.py.bin").read_bytes()
+            assert sha256(raw).hexdigest() == expected_sha
+        if relative.as_posix() == "ocd_kernel/reconstruction/contract.py" and expected_sha == "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af":
+            raw = (ROOT / "tests/fixtures/reconstruction-runtime/authorities/pre-authority-index-contract.py.bin").read_bytes()
+            assert sha256(raw).hexdigest() == expected_sha
         if relative.as_posix() == "ocd_kernel/library/acquisitions.py" and expected_sha == "281ae80f19c1b0021d7e05b20dcd3f5eef4a6e29c1bea58f62cd094bbd60d08d":
             raw = (ROOT / "tests/fixtures/reconstruction-runtime/authorities/watson-installed-acquisitions.py.bin").read_bytes()
             assert sha256(raw).hexdigest() == expected_sha
@@ -75,7 +81,7 @@ def current_installed_acceptance(route, destination, patch):
     # Public acceptance and every schema-bound technical/review/source file stay exact.
     accepted_path = route.EDITION / "acceptance.json"
     original_acceptance_raw = (ROOT / accepted_path).read_bytes()
-    supplement_path = Path("sources/structured-text") / work_id / "runtime-supplement-20261025-main.json"
+    supplement_path = Path("sources/structured-text") / work_id / "runtime-supplement-20261027-performance.json"
     pinned_supplement = put(supplement_path, public.RUNTIME_SUPPLEMENTS[work_id])
     assert sha256(pinned_supplement).hexdigest() == public.RUNTIME_SUPPLEMENTS[work_id]
     supplement = json.loads(pinned_supplement)
@@ -94,7 +100,7 @@ def current_installed_acceptance(route, destination, patch):
             for child in value:
                 bound_references(child)
     bound_references(accepted)
-    supplement_path = Path("sources/structured-text") / work_id / "runtime-supplement-20261025-main.json"
+    supplement_path = Path("sources/structured-text") / work_id / "runtime-supplement-20261027-performance.json"
     supplement_raw = put(supplement_path, public.RUNTIME_SUPPLEMENTS[work_id])
     supplement = json.loads(supplement_raw)
     assert supplement["work_id"] == work_id

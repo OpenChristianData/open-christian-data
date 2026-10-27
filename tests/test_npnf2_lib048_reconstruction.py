@@ -47,6 +47,7 @@ from ocd_kernel.reconstruction import (
 
 
 from ocd_kernel.tei.writer import tei_el
+from build.lib.tei_xsd import compiled_tei_schema
 
 pytestmark = [
     pytest.mark.slow,
@@ -226,9 +227,7 @@ def test_rebound_image_authority_must_match_source_work_and_path(tmp_path, mutat
 def test_candidate_is_exact_p5_and_independently_verified(verified_candidate) -> None:
     source, candidate, validation_path = verified_candidate
     tree = etree.parse(str(candidate.path / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     schema.assertValid(tree)
     assert validate(source, candidate, _oracle).status == "pass"
     accountability = json.loads(candidate.member_bytes("source-accountability.json"))
@@ -431,9 +430,7 @@ def test_oracle_rejects_fully_resealed_p5_valid_invented_notes_stmt(
         etree.tostring(tree, encoding="UTF-8", xml_declaration=True, pretty_print=False)
     )
     mutated = _reseal(target, "content.tei.xml")
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(etree.parse(str(target / "content.tei.xml")))
     with pytest.raises(
         ValueError, match="header metadata, rights, credit, or topology drift"
@@ -458,9 +455,7 @@ def test_oracle_rejects_fully_resealed_p5_valid_comment_invention(
         etree.tostring(tree, encoding="UTF-8", xml_declaration=True, pretty_print=False)
     )
     mutated = _reseal(target, "content.tei.xml")
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(etree.parse(str(target / "content.tei.xml")))
     with pytest.raises(ValueError, match="root child invention|work count drift"):
         _oracle(source, mutated)

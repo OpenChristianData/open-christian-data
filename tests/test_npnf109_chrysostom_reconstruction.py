@@ -21,6 +21,7 @@ from build.tools import verify_whole_library_ticket_maps as map_verifier
 from tests.runtime_candidate_baselines import current_runtime_catalog
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -267,7 +268,7 @@ def test_candidate_schema_and_independent_oracle_pass(verified_candidate) -> Non
     assert candidate.manifest["source_id"] == "LIB-042"
     assert candidate.manifest["source_manifest"]["sha256"] == source.sha256
     tree = _parsed(candidate)
-    schema = etree.XMLSchema(etree.parse(str(TEI_XSD)))
+    schema = compiled_tei_schema(TEI_XSD)
     assert schema.validate(tree), schema.error_log
     ns = {"tei": TEI_NS}
     roots = tree.xpath("/tei:TEI/tei:text/tei:body/tei:div", namespaces=ns)

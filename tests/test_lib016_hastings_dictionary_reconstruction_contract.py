@@ -12,6 +12,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction.contract import CandidatePackage, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -283,9 +284,7 @@ def test_complete_candidate_is_lossless_schema_valid_and_independently_accepted(
     root = etree.fromstring(
         candidate.member_bytes("content.tei.xml"), etree.XMLParser(huge_tree=True)
     )
-    etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    ).assertValid(etree.ElementTree(root))
+    compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd").assertValid(etree.ElementTree(root))
     abs_ = root.xpath(
         "./tei:text/tei:group/tei:text/tei:body/tei:div/tei:ab", namespaces=NS
     )

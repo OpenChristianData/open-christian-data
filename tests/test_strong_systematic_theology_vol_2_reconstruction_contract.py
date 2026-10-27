@@ -37,6 +37,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -176,9 +177,7 @@ def test_candidate_is_p5_valid_and_accounted(verified_candidate) -> None:
         json.loads(candidate.member_bytes("manifest.json"))
     )
     tei = etree.fromstring(candidate.member_bytes("content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(source.authority_path("tei-p5-xsd")))
-    )
+    schema = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     schema.assertValid(etree.ElementTree(tei))
 
     rows = _records(SOURCE_PATH.read_bytes())

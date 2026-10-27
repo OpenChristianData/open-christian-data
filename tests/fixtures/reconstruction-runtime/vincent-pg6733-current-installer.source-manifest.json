@@ -1,1 +1,114 @@
-{"authorities":[{"bytes":110471,"name":"retained-source","path":"raw/gutenberg/6733/html/pg6733-images.html","role":"primary-source","sha256":"54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"},{"bytes":130534,"name":"retained-package","path":"raw/gutenberg/6733/pg6733-h.zip","role":"supporting-package","sha256":"ca5d4c3f46479f79113bcd2d57b0952c4e3a9cef63a6ad45f76679f6fdd60733"},{"bytes":882,"name":"reconstruction-profile","path":"sources/structured-text/vincent-pg6733/profile.json","role":"complete-source-feature-profile","sha256":"a06dbcbc11428d6da56872c5c2ff32e681f16920e06d1adfa3e4babed0cd4948"},{"bytes":738,"name":"validation-policy","path":"sources/structured-text/vincent-pg6733/validation-policy.json","role":"independent-validation-policy","sha256":"020749d357b754191c0a9d4b98239fe69c4904481f14bf133122cfacf5cead9c"},{"bytes":1108622,"name":"tei-p5-xsd","path":"ocd_kernel/tei/vendor/xsd/tei_all.xsd","role":"tei-validation-schema","sha256":"2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"},{"bytes":2173,"name":"candidate-package-schema","path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","role":"candidate-package-schema","sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},{"bytes":1041,"name":"source-readme","path":"sources/structured-text/vincent-pg6733/README.source.md","role":"source-attribution-readme","sha256":"79a34012f6733d7c230cfd0590db05e09f5b079881b5c6eed4133edabab83ec9"},{"bytes":8671,"name":"producer-implementation","path":"build/tei/vincent_pg6733_reconstruction.py","role":"supporting-converter-implementation","sha256":"24f537f843d0af01af4b62cbb7c70548f774b4c8adccb7e99f46e8dce93c7e80"},{"bytes":8859,"name":"oracle-implementation","path":"build/tei/vincent_pg6733_oracle.py","role":"supporting-validator-implementation","sha256":"e1791f27b02207d8c607ef855b8537bd4b30f91921757a1bc1fad42e96f8f529"}],"contract":"ocd-source-manifest-v1","converter":{"callable":"_convert","id":"ocd-vincent-pg6733-extracted-html-to-tei","implementation_path":"build/tei/vincent_pg6733_reconstruction.py","implementation_sha256":"24f537f843d0af01af4b62cbb7c70548f774b4c8adccb7e99f46e8dce93c7e80","version":"1"},"external_library_root":"D:/Library/Open Christian Data","package_schema":{"path":"ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json","sha256":"3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"},"scope":{"candidate_status":"nonaccepted","kind":"one-complete-retained-gutenberg-html-member","package_cover_role":"unreferenced support","represented_body_elements":202,"source_url":"https://www.gutenberg.org/ebooks/6733","title":"Memoir of Father Vincent de Paul; religious of La Trappe","unrepresented_body_elements":0},"source_bundle":{"bytes":110471,"members":1,"sha256":"54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"},"source_id":"vincent-pg6733-current-extracted-html","source_members":[{"bytes":110471,"logical_name":"pg6733-images.html","name":"pg6733-images.html","order":1,"path":"raw/gutenberg/6733/html/pg6733-images.html","sha256":"54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"}],"validator":{"callable":"_oracle","id":"ocd-vincent-pg6733-independent-extracted-html-oracle","implementation_path":"build/tei/vincent_pg6733_oracle.py","implementation_sha256":"e1791f27b02207d8c607ef855b8537bd4b30f91921757a1bc1fad42e96f8f529","import_closure_sha256":"9a87ca4c3ee7938b662ff142b9835aa128be48786e29d06706099d7a1e6a988f","version":"1"},"work_id":"memoir-of-father-vincent-de-paul"}
+{
+  "authorities": [
+    {
+      "bytes": 110471,
+      "name": "retained-source",
+      "path": "raw/gutenberg/6733/html/pg6733-images.html",
+      "role": "primary-source",
+      "sha256": "54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"
+    },
+    {
+      "bytes": 130534,
+      "name": "retained-package",
+      "path": "raw/gutenberg/6733/pg6733-h.zip",
+      "role": "supporting-package",
+      "sha256": "ca5d4c3f46479f79113bcd2d57b0952c4e3a9cef63a6ad45f76679f6fdd60733"
+    },
+    {
+      "bytes": 882,
+      "name": "reconstruction-profile",
+      "path": "sources/structured-text/vincent-pg6733/profile.json",
+      "role": "complete-source-feature-profile",
+      "sha256": "a06dbcbc11428d6da56872c5c2ff32e681f16920e06d1adfa3e4babed0cd4948"
+    },
+    {
+      "bytes": 738,
+      "name": "validation-policy",
+      "path": "sources/structured-text/vincent-pg6733/validation-policy.json",
+      "role": "independent-validation-policy",
+      "sha256": "020749d357b754191c0a9d4b98239fe69c4904481f14bf133122cfacf5cead9c"
+    },
+    {
+      "bytes": 1108622,
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "bytes": 2173,
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    },
+    {
+      "bytes": 1041,
+      "name": "source-readme",
+      "path": "sources/structured-text/vincent-pg6733/README.source.md",
+      "role": "source-attribution-readme",
+      "sha256": "79a34012f6733d7c230cfd0590db05e09f5b079881b5c6eed4133edabab83ec9"
+    },
+    {
+      "bytes": 8671,
+      "name": "producer-implementation",
+      "path": "build/tei/vincent_pg6733_reconstruction.py",
+      "role": "supporting-converter-implementation",
+      "sha256": "24f537f843d0af01af4b62cbb7c70548f774b4c8adccb7e99f46e8dce93c7e80"
+    },
+    {
+      "bytes": 8859,
+      "name": "oracle-implementation",
+      "path": "build/tei/vincent_pg6733_oracle.py",
+      "role": "supporting-validator-implementation",
+      "sha256": "e1791f27b02207d8c607ef855b8537bd4b30f91921757a1bc1fad42e96f8f529"
+    }
+  ],
+  "contract": "ocd-source-manifest-v1",
+  "converter": {
+    "callable": "_convert",
+    "id": "ocd-vincent-pg6733-extracted-html-to-tei",
+    "implementation_path": "build/tei/vincent_pg6733_reconstruction.py",
+    "implementation_sha256": "24f537f843d0af01af4b62cbb7c70548f774b4c8adccb7e99f46e8dce93c7e80",
+    "version": "1"
+  },
+  "external_library_root": "D:/Library/Open Christian Data",
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  },
+  "scope": {
+    "candidate_status": "nonaccepted",
+    "kind": "one-complete-retained-gutenberg-html-member",
+    "package_cover_role": "unreferenced support",
+    "represented_body_elements": 202,
+    "source_url": "https://www.gutenberg.org/ebooks/6733",
+    "title": "Memoir of Father Vincent de Paul; religious of La Trappe",
+    "unrepresented_body_elements": 0
+  },
+  "source_bundle": {
+    "bytes": 110471,
+    "members": 1,
+    "sha256": "54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"
+  },
+  "source_id": "vincent-pg6733-current-extracted-html",
+  "source_members": [
+    {
+      "bytes": 110471,
+      "logical_name": "pg6733-images.html",
+      "name": "pg6733-images.html",
+      "order": 1,
+      "path": "raw/gutenberg/6733/html/pg6733-images.html",
+      "sha256": "54f0c7c9e51130b6b5e22e1dfbb755122f88159d1e15e759abb8f0554b6d846b"
+    }
+  ],
+  "validator": {
+    "callable": "_oracle",
+    "id": "ocd-vincent-pg6733-independent-extracted-html-oracle",
+    "implementation_path": "build/tei/vincent_pg6733_oracle.py",
+    "implementation_sha256": "e1791f27b02207d8c607ef855b8537bd4b30f91921757a1bc1fad42e96f8f529",
+    "import_closure_sha256": "f5db72650aeab99b6ad826c7dbdcdf9ff18e46cde184cca904ca0679f32fadaf",
+    "version": "1"
+  },
+  "work_id": "memoir-of-father-vincent-de-paul"
+}

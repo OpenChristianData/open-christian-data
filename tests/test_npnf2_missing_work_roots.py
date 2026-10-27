@@ -11,6 +11,7 @@ from build.tei.npnf2_missing_work_roots import WORK_ROOTS, load_work_root, selec
 from build.tei.npnf2_missing_work_reconstruction import build_work, _convert
 from build.tei.npnf2_missing_work_oracle import _oracle
 from ocd_kernel.reconstruction import SourceManifest, CandidatePackage, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,7 +58,7 @@ def test_unregistered_work_is_not_silently_routed_to_sibling():
 def test_readable_selected_work_is_schema_valid_and_preserves_carriers(work_id):
     content, accounting = build_work(ROOT, work_id)
     target = etree.fromstring(content)
-    schema = etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(target), str(schema.error_log)
     _, source = load_work_root(ROOT, work_id)
     ns = {"t": "http://www.tei-c.org/ns/1.0"}

@@ -8,6 +8,8 @@ import shutil
 
 import pytest
 
+from tests.runtime_candidate_baselines import historical_bound_bytes
+
 from build.tools import install_lib040_augustine_child as installer
 from build.tools.install_lib040_augustine_child import (
     FIXTURE_MARKER, RECEIPT_SHA256, ROOT, _receipt, install, preflight,
@@ -23,8 +25,8 @@ BEFORE_FIXTURES = Path(__file__).resolve().parent / "fixtures/reconstruction-run
 
 # Independently checked current receipts for the exact retained stage generations.
 # Historical receipt bytes and all row/source/master/acceptance claims stay pinned.
-CURRENT_PROJECTION_RECEIPT_SHA256 = {'augustine-soliloquies': 'bb90ad32e9bffc66006bc3e66919ccd3c5d7cb818ce6a816482ae461d2308c76', 'augustine-sermon-on-the-mount': '0c76043aceccc5b5d62fbc3b67736b6442108f9d8fe4e32417f5237b900e8734', 'augustine-tractates-on-john': '3ec1b9ee45bad3795fc0c0e34a3629b436a5bb3115b52c6f64c32469af34ca73', 'augustine-letters-part-1': '6a2c8701067941ad85f3e7ade1754284332f0c1b574256f9594501fdb52bcf1d', 'augustine-sermons-selected-lessons': 'dde24d39b95b359772d731620f668b1035bfde58af0de34015ab3f38dfdfb368', 'augustine-homilies-on-first-john': 'b3ff58680cecbe324cdf1da36383fcaf3edc043bf50679700af3e24e27b25e27'}
-CURRENT_PROJECTION_AUTHORITY_SHA256 = {'schemas/v2/categories/prose.schema.json': 'df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8', 'schemas/v2/categories/commentary.schema.json': '0fef3ce3ae76e59f80560b50e4b0b6cbd07197845208194d0eb068aaa16b616a', 'schemas/v2/categories/sermons.schema.json': 'bd59b9e1a9cac78ef7128d130952775facb0cba4bef8eeafebc77f7edb0d22f0', 'schemas/v2/public-row.schema.json': '29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc', 'schemas/v2/native-content.schema.json': 'adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab', 'build/bible_data/osis_book_codes.json': 'fc9ae1685535e787ba0d8101629818ce5582e7310b228595190f918611c1f03b'}
+CURRENT_PROJECTION_RECEIPT_SHA256 = {'augustine-soliloquies': 'fd362ac7e1dad879bb60bb910a314c1d5c938d63455468c62a1cbc91f330725f', 'augustine-sermon-on-the-mount': '09f3008a9954c2b53e15f5ada42664333b0ceabab9c122d99851b512cef907c3', 'augustine-tractates-on-john': '5c1442a57e9c05cc99baf87c3545bbb8b160e4066a13e4f3679d76bc80bf60a9', 'augustine-letters-part-1': 'cf14db1076f6b99cbc5cc154338a43a4621ea6a296de0c652d99a1127bf53a77', 'augustine-sermons-selected-lessons': 'd010bb8d36a0e8a9b857b8be0fc9c5bc15c902e4b1c435589f652b6f9e6528e5', 'augustine-homilies-on-first-john': 'f2031e0b6ccec9bada3883269146d6ee25d1fca16b95d71ec5c666750402d447'}
+CURRENT_PROJECTION_AUTHORITY_SHA256 = {'schemas/v2/categories/prose.schema.json': 'df6e471ab4d3dce7db962958fc3981ee2014e0633829800f561060f4ad682ea8', 'schemas/v2/categories/commentary.schema.json': '155fa42bac99ea2706b138ddc3924b5dc181a117ef761c5aafc3693ab51bf5e9', 'schemas/v2/categories/sermons.schema.json': '58f49783df9a62d2c16ccdd8f596d4789c13329463567fe60d8eb73d4453b456', 'schemas/v2/public-row.schema.json': '29451b7ba42c1a7e47cc9ea249d7eef9ce802883d52d4ff8c639370e3dcc85dc', 'schemas/v2/native-content.schema.json': 'adee3a40da9f908948e5589b8816a022ee2a96458cb7c9e013bdbf606e0011ab', 'build/bible_data/osis_book_codes.json': 'e3122edadacf8b0a30d93073dce412fc93488ba3d5d76a6d2cbd793cf5bab8fd'}
 
 
 @pytest.fixture(autouse=True)
@@ -100,8 +102,9 @@ def _fixture_root(tmp_path: Path, work_id: str) -> Path:
         target.parent.mkdir(parents=True, exist_ok=True)
         origin = (BEFORE_FIXTURES / f"lib040-child-install-preimage-{work_id}.{relative}"
                   if relative in {"state.json", "work.json"} else ROOT / work / relative)
-        assert sha256(io_path(origin).read_bytes()).hexdigest() == receipt["before"][relative]
-        shutil.copy2(io_path(origin), target)
+        payload = historical_bound_bytes(io_path(origin), receipt["before"][relative])
+        assert sha256(payload).hexdigest() == receipt["before"][relative]
+        target.write_bytes(payload)
     assert _files(root / work) == receipt["before"]
     return root
 

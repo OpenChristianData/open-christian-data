@@ -4,6 +4,7 @@ import pytest
 from lxml import etree
 
 from build.tei.newadvent_reconstruction import project_page
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 NS = {"t": "http://www.tei-c.org/ns/1.0"}
@@ -53,7 +54,7 @@ def test_block_emphasis_p5_accounting_and_native_rendering():
 def validate(projected):
     root = etree.fromstring(b'<TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><titleStmt><title>Test</title></titleStmt><publicationStmt><p>Test only</p></publicationStmt><sourceDesc><p>Synthetic source</p></sourceDesc></fileDesc></teiHeader><text><body/></text></TEI>')
     root.find(f"{TEI}text/{TEI}body").append(projected)
-    schema = etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     schema.assertValid(root)
 
 

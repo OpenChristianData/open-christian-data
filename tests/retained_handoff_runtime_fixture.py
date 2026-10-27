@@ -22,17 +22,17 @@ CASES = {
     "law-serious-call": {
         "runtime": "tests/fixtures/reconstruction-runtime/law-serious-call.source-manifest.json",
         "original_sha256": "9871fd284891960a8b8771c24fc4a4690d75a25613615adea89605c602142285",
-        "runtime_sha256": "263a4b1a047dcc27fcdc5b7f29c5941c86dc437ec15c8428c325621f8bee3c1e",
+        "runtime_sha256": "898fc74ab9ab911fb0f404aeca05efab238434983e81afc65a868eacf33eed97",
     },
     "john-owen-conscience": {
         "runtime": "tests/fixtures/reconstruction-runtime/john-owen-conscience.source-manifest.json",
         "original_sha256": "d212bcd407d1c119a00d8ef23e30d6bc2fd1f355ce1150b8fb166ce536fdb885",
-        "runtime_sha256": "c614b5416ce46e5f6e3ac6ac406801d45f8a8f52bee5264732e3a0276c37d07b",
+        "runtime_sha256": "620abe276058e3921da06bff50f21404bccd40c13e902e7a31a768b701134482",
     },
     "augustine-on-christian-doctrine": {
         "runtime": "tests/fixtures/reconstruction-runtime/augustine-on-christian-doctrine.source-manifest.json",
         "original_sha256": "263970f14d1eee1fdf1a746acd4da7dced012355a0773f27fa24d3e8b23116cd",
-        "runtime_sha256": "5b258fdb245fd5b75545b2f70bc6f2a390436aa084ada963932696e3fea149b6",
+        "runtime_sha256": "87e2a0a965fa32d54542bca7dd2243e3d801d9d8c1d4f42b70b268fb4f2df994",
     },
 }
 

@@ -21,6 +21,7 @@ from ocd_kernel.reconstruction import (
     validate,
 )
 from ocd_kernel.reconstruction.decision import load_verified_review
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 pytestmark = [
@@ -214,7 +215,7 @@ def _write_tree(path: Path, tree: etree._ElementTree) -> None:
 
 
 def _assert_p5_valid(source: SourceManifest, tree: etree._ElementTree) -> None:
-    schema = etree.XMLSchema(etree.parse(str(source.authority_path("tei-p5-xsd"))))
+    schema = compiled_tei_schema(source.authority_path("tei-p5-xsd"))
     assert schema.validate(tree), schema.error_log.last_error
 
 

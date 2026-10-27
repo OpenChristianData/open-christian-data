@@ -72,16 +72,16 @@
     "version": "1",
     "callable": "_convert",
     "implementation_path": "build/tei/lib014_puritan_ia_reconstruction.py",
-    "implementation_sha256": "6f49b744b809ab237265f212d4d4d1560aeaa716d0824742c68163aa472f5a46"
+    "implementation_sha256": "ca19267fe3f4f4499344c6dc1f8f672cb81d3856db5070f2f8a7313844296b64"
   },
-  "producer_import_closure_sha256": "37a5b436ba123bfa5c562e0717a6e74287dafe41a0ffba16e440c72177e58ca2",
+  "producer_import_closure_sha256": "9f81de573c44962c763ff0af3e8d8b8ffdcc8f83bacbd9963bb86e9c90a824aa",
   "validator": {
     "id": "ocd-lib014-puritan-ia-independent-oracle",
     "version": "1",
     "callable": "_oracle",
     "implementation_path": "build/tei/lib014_puritan_ia_oracle.py",
-    "implementation_sha256": "3510871f1e599fcde7b7959ae22679330fb6d78dd5a342049fe82d842d5908f4",
-    "import_closure_sha256": "b4dec727e448b53630316ae43e54c9d9917d0ef6f356cce0feb5ac6fd2a166e6"
+    "implementation_sha256": "7ba9b1d4cdbbc775c66acda9a549f49c0d7645dc63d15c36013775467ec9b8fd",
+    "import_closure_sha256": "a1f30f639e60dc02fc56dae2c79b39c3969a95d2fcfecaacb65fafb20d0fd2dc"
   },
   "package_schema": {
     "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",

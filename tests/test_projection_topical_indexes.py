@@ -10,6 +10,7 @@ import pytest
 
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.projection.categories.topical_indexes import project_topical_indexes_document as project, verify_topical_indexes_document as verify
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 F = ROOT / 'tests/fixtures/library-pipeline/categories/topical-indexes'
@@ -86,7 +87,7 @@ def test_original_sources_and_complete_censuses_match_independent_decoders():
 
 @pytest.mark.parametrize('case', CASES, ids=lambda c: c['name'])
 def test_topical_tei_passes_bundled_p5(case):
-    E.XMLSchema(E.parse(str(ROOT / 'ocd_kernel/tei/vendor/xsd/tei_all.xsd'))).assertValid(E.parse(str(F / case['tei_file'])))
+    compiled_tei_schema(ROOT / 'ocd_kernel/tei/vendor/xsd/tei_all.xsd').assertValid(E.parse(str(F / case['tei_file'])))
 
 
 @pytest.mark.parametrize('case', CASES, ids=lambda c: c['name'])

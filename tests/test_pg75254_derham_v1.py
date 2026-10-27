@@ -9,6 +9,7 @@ from lxml import etree
 from ocd_kernel.reconstruction.contract import SourceManifest
 from build.tei import pg75254_derham_v1 as producer
 from build.tei import pg75254_derham_v1_oracle as oracle
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 TEI = "http://www.tei-c.org/ns/1.0"
@@ -64,7 +65,7 @@ def test_pg75254_complete_source_mapping_and_meaningful_mutations():
     assert len(tei.xpath("//tei:figure[@type='source-html-figure']", namespaces={"tei": TEI})) == 42
     assert len(tei.xpath("//tei:figure/tei:figDesc", namespaces={"tei": TEI})) == 1
     assert len(tei.xpath("//tei:milestone[@unit='source-image-reference']", namespaces={"tei": TEI})) == 57
-    schema = etree.XMLSchema(etree.parse(str(manifest.authority_path("tei-validation-schema"))))
+    schema = compiled_tei_schema(manifest.authority_path("tei-validation-schema"))
     assert schema.validate(tei), str(schema.error_log.last_error)
 
     prose = mutated_xml(baseline, "p", lambda node: setattr(node, "text", (node.text or "") + " [mutated]"))

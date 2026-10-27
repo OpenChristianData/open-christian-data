@@ -19,6 +19,7 @@ from build.tei.marrant_prince_hall_african_lodge_sermon_reconstruction import (
     _convert,
 )
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -240,7 +241,7 @@ def test_candidate_is_tei_p5_valid_and_keeps_source_structure(verified_candidate
         candidate.member_bytes("content.tei.xml"),
         etree.XMLParser(resolve_entities=False, no_network=True, huge_tree=True),
     )
-    schema = etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(tree), str(schema.error_log)
     assert tree.xpath("//tei:div/@type", namespaces=TEI) == ["title_page", "sermon"]
     assert len(tree.xpath("//tei:pb", namespaces=TEI)) == 24

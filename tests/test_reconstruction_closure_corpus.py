@@ -140,6 +140,10 @@ def test_previously_live_canonical_validator_subset_remains_live():
 
     rows = json.loads((RUNTIME / "canonical-live-validator-bindings.json").read_bytes())
     successors = json.loads((RUNTIME / "canonical-live-runtime-successors.json").read_bytes())
+    runtime_roles = {
+        row["original"]: row.get("implementation_roles", [])
+        for row in json.loads((RUNTIME / "next-binding-henry.json").read_bytes())
+    }
     assert set(successors) <= set(rows)
     assert rows
     for logical, digest in rows.items():
@@ -149,6 +153,11 @@ def test_previously_live_canonical_validator_subset_remains_live():
             assert current.startswith("tests/fixtures/reconstruction-runtime/canonical-live/")
             assert ".." not in Path(current).parts
             expected = json.loads((ROOT / logical).read_bytes())
+            for role in runtime_roles.get(logical, []):
+                assert role == "validator"
+                expected[role]["implementation_sha256"] = sha256(
+                    (ROOT / expected[role]["implementation_path"]).read_bytes()
+                ).hexdigest()
             live, _ = closure_verification._call_validator_closure(
                 ROOT, expected["validator"]["implementation_path"], expected,
                 manifest_path=ROOT / current,

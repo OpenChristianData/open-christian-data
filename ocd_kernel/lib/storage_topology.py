@@ -91,14 +91,21 @@ def resolve_repo_path(repo_root: Path, relative_path: str, *, strict: bool = Fal
 def repository_relative_path(repo_root: Path, path: Path) -> str:
     """Return the logical repository path for a contained physical path."""
 
-    root = _resolve(repo_root)
+    roots = _read_roots.get()
+    key = Path(repo_root).absolute()
+    if roots is not None and key in roots:
+        root, library_root, _ = roots[key]
+    else:
+        root = _resolve(repo_root)
+        library_root = _library_root(root)
+        if roots is not None:
+            roots[key] = (root, library_root, {})
     lexical_root = _ordinary_path(Path(os.path.abspath(repo_root)))
     source_path = _ordinary_path(Path(path if path.is_absolute() else repo_root / path))
     lexical_path = _ordinary_path(Path(os.path.abspath(source_path)))
     try:
         relative_path = lexical_path.relative_to(lexical_root).as_posix()
     except ValueError:
-        library_root = _library_root(root)
         if library_root is None:
             raise StorageTopologyError(f"path is outside configured storage: {path}")
         physical_path = _resolve(source_path)
@@ -106,7 +113,7 @@ def repository_relative_path(repo_root: Path, path: Path) -> str:
             relative_path = physical_path.relative_to(library_root).as_posix()
         except ValueError as exc:
             raise StorageTopologyError(f"path is outside configured storage: {path}") from exc
-    resolved = resolve_repo_path(root, relative_path)
+    resolved = resolve_repo_path(repo_root, relative_path)
     if resolved != _resolve(source_path):
         raise StorageTopologyError(f"path does not match configured storage route: {path}")
     return relative_path

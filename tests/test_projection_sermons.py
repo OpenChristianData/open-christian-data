@@ -12,6 +12,7 @@ import pytest
 
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.projection.categories.sermons import project_sermons_document as project,verify_sermons_document as verify
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE_ORACLE=ROOT/'plans/2026-08-31-library-pipeline-redesign/artifacts/PIPE-009/verify_original_source.py'
@@ -99,7 +100,7 @@ def test_complete_sermons_match_retained_source_not_only_tei(case):
 
 @pytest.mark.parametrize('case',CASES,ids=lambda c:c['name'])
 def test_sermon_tei_is_valid_p5(case):
-    E.XMLSchema(E.parse(str(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd'))).assertValid(E.parse(str(F/case['tei_file'])))
+    compiled_tei_schema(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd').assertValid(E.parse(str(F/case['tei_file'])))
 
 
 @pytest.mark.requires_local_artifacts

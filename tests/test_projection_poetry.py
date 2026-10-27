@@ -22,6 +22,7 @@ from ocd_kernel.projection.categories.poetry import (
     project_poetry_document as project,
     verify_poetry_document as verify,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -157,7 +158,7 @@ def test_fixture_builder_is_reproducible_in_two_processes(tmp_path: Path) -> Non
 
 def test_tei_xsd_and_closed_json_schema() -> None:
     tree = E.parse(str(PATH))
-    E.XMLSchema(E.parse(str(TEI_XSD))).assertValid(tree)
+    compiled_tei_schema(TEI_XSD).assertValid(tree)
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     common = json.loads(COMMON.read_text(encoding="utf-8"))
     registry = Registry().with_resource(common["$id"], Resource.from_contents(common, default_specification=DRAFT202012))
@@ -288,7 +289,7 @@ def test_complete_short_owen_poem_keeps_language_emphasis_and_all_lines(tmp_path
     assert len(tree.xpath('//t:foreign[@xml:lang="la"]', namespaces=namespaces)) == 16
     assert [normalize(''.join(n.itertext())) for n in tree.xpath('//t:hi[@rend="small-caps"]', namespaces=namespaces)] == [normalize(''.join(n.itertext())) for n in section.xpath('./verse//span[@class="sc"]')]
     assert verify(path, out['rows'], out['receipt'], **context) == []
-    E.XMLSchema(E.parse(str(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd'))).assertValid(tree)
+    compiled_tei_schema(ROOT/'ocd_kernel/tei/vendor/xsd/tei_all.xsd').assertValid(tree)
     builder=ROOT/'plans/2026-08-31-library-pipeline-redesign/artifacts/PIPE-012/build_owen_fixture.py'
     target=tmp_path/'owen-rebuild';subprocess.run([sys.executable,str(builder),'--output-dir',str(target)],check=True)
     for name in ['owen.manifest.json','owen.tei.xml','owen.retained.xml']:

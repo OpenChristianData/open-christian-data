@@ -27,7 +27,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/vincent-pg6733-current-installer.source-manifest.json")
-RUNTIME_SHA = "88d4ec401e0be2c1742fd846a58806db291a9058219ba489c332436ff48c80cc"
+RUNTIME_SHA = "d12223b13bd4237dcf4c6ad52d4a89f3afd635aa3d4cd772a2426adbe492f7ad"
 FROZEN_BEFORE = {'forms/memoir-of-father-vincent-de-paul-gutenberg-retained/editions/memoir-of-father-vincent-de-paul-gutenberg-electronic/acquisitions/memoir-of-father-vincent-de-paul-gutenberg-acquired.json': 'tests/fixtures/reconstruction-runtime/authorities/vincent-pg6733-before.acquisition.json', 'state.json': 'tests/fixtures/reconstruction-runtime/authorities/vincent-pg6733-before.state.json', 'work.json': 'tests/fixtures/reconstruction-runtime/authorities/vincent-pg6733-before.work.json'}
 
 

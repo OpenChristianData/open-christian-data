@@ -11,6 +11,7 @@ import pytest
 
 from ocd_kernel.library._common import PipelineError
 from ocd_kernel.projection.categories.prayers import project_prayers_document as project, verify_prayers_document as verify
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 F = ROOT / 'tests/fixtures/library-pipeline/categories/prayers'
@@ -162,7 +163,7 @@ def test_original_html_context_fragments_and_every_byte_are_accounted_for():
 
 @pytest.mark.parametrize('case', CASES, ids=lambda c: c['name'])
 def test_prayer_tei_passes_bundled_p5(case):
-    E.XMLSchema(E.parse(str(ROOT / 'ocd_kernel/tei/vendor/xsd/tei_all.xsd'))).assertValid(E.parse(str(F / case['tei_file'])))
+    compiled_tei_schema(ROOT / 'ocd_kernel/tei/vendor/xsd/tei_all.xsd').assertValid(E.parse(str(F / case['tei_file'])))
 
 
 @pytest.mark.parametrize('case', CASES, ids=lambda c: c['name'])

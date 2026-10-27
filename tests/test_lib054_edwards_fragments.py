@@ -55,7 +55,7 @@ RUNTIME_CASES = {
         "retained_candidate_sha256": "c434faf86057b24202198859e0694934133084b8fd406960de96e7aec2ae8dcb"
     }
 }
-CURRENT_CLOSURE = '7992f1e8b05321e6253a3f8ba3eadb293a514c3152b4aefd33017f5a3a22a9d7'
+CURRENT_CLOSURE = '3f960358eb2c75626f8a0cf239392e2839a96abc2d7141d5180eb1c2b98306d3'
 
 
 def _manifest(work_id: str) -> SourceManifest:

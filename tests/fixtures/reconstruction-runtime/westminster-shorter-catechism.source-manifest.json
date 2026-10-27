@@ -1,7 +1,7 @@
 {
   "contract": "ocd-source-manifest-v1",
   "source_id": "westminster-shorter-catechism-three-retained-witnesses",
-  "producer_import_closure_sha256": "ae2b04e8087386be7fd120c4610726ca1681a060eb48fdde2d0971a0c762d57b",
+  "producer_import_closure_sha256": "76c329b956a64015d73aa88d0d89161f8956c9a7569bb64bc473d511b135de19",
   "authorities": [
     {
       "name": "creeds-wsc",
@@ -57,7 +57,7 @@
       "path": "tests/fixtures/reconstruction-runtime/westminster-shorter-catechism.reconstruction-profile.json",
       "role": "complete-source-feature-profile",
       "bytes": 3425,
-      "sha256": "3ae822020a1b0777a811d85088245aac27939f0aea1463b7262454840c8908f8"
+      "sha256": "7b7199ea29e4c3a059c1862feea9e0650413ed0d1fe9100750a3c0120f4e6f5c"
     },
     {
       "name": "source-accountability-schema",
@@ -108,7 +108,7 @@
     "callable": "_oracle",
     "implementation_path": "build/tei/westminster_shorter_catechism_oracle.py",
     "implementation_sha256": "f9431ca8df1b1abb621defcf314d9416033eaef5430bef03d1b77f1d81d48ac4",
-    "import_closure_sha256": "318f8845dcc78fb690d63500f6dc2ee007043f8bdad863af75ffaba981d696b7"
+    "import_closure_sha256": "3d5223053c83233db5228e94331daa54c0b1d24b1c240dda45cd38b541e26db4"
   },
   "package_schema": {
     "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",

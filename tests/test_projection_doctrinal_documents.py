@@ -23,6 +23,7 @@ from ocd_kernel.projection.categories.doctrinal_documents import (
     project_doctrinal_document,
     verify_doctrinal_document,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -543,7 +544,7 @@ def test_independent_checker_rejects_nested_inline_structure_with_forged_master(
 @pytest.mark.parametrize("name", CASES)
 def test_fixture_is_valid_full_tei_p5(name: str) -> None:
     document = etree.parse(str(FIXTURES / CASES[name]["tei_file"]))
-    schema = etree.XMLSchema(etree.parse(str(XSD)))
+    schema = compiled_tei_schema(XSD)
     assert schema.validate(document), schema.error_log.last_error
 
 

@@ -1,0 +1,103 @@
+{
+  "contract": "ocd-source-manifest-v1",
+  "source_id": "aa-hodge-outlines-whole-work-v1",
+  "authorities": [
+    {
+      "name": "retained-djvutxt",
+      "path": "raw/gutenberg/outlinesoftheolo1879hodg_djvu.txt",
+      "durable_path": "D:/Library/Open Christian Data/raw/gutenberg/outlinesoftheolo1879hodg_djvu.txt",
+      "role": "primary-source",
+      "bytes": 1976207,
+      "sha256": "a81808d5a9d2037d3c1d0706de960fb13c175d3581dd131c7d505493df51fee5"
+    },
+    {
+      "name": "local-source-config",
+      "path": "sources/catechisms/aa-hodge-outlines/config.json",
+      "role": "local-metadata-claim-evidence",
+      "bytes": 1324,
+      "sha256": "d0e7575f9947c65edaf7435b5cd189a0dc458718a192d880a686991602489c75"
+    },
+    {
+      "name": "q7-diagnostic-fixture",
+      "path": "tests/fixtures/gutenberg_systematics/aa_hodge_q7_span.txt",
+      "role": "bounded-diagnostic-evidence-not-whole-work-acceptance",
+      "bytes": 1630,
+      "sha256": "6711666f19ca7c869c0e6601f40f5bb03ab02280976c2292c99fa9ee70e36034"
+    },
+    {
+      "name": "source-readme",
+      "path": "sources/catechisms/aa-hodge-outlines/README.source.md",
+      "role": "local-source-readme",
+      "bytes": 1201,
+      "sha256": "156879fcd495f87ade60f37fec99b3a74f23116be00fcfa96aec556fcfafd599"
+    },
+    {
+      "name": "reconstruction-profile",
+      "path": "sources/catechisms/aa-hodge-outlines/aa-hodge-outlines.reconstruction-profile.json",
+      "role": "complete-source-feature-profile",
+      "bytes": 1936,
+      "sha256": "703605c51852a544fcda606024bda7f7375bd969110ae902b3b150cfc59a5c53"
+    },
+    {
+      "name": "source-accountability-schema",
+      "path": "sources/catechisms/aa-hodge-outlines/aa-hodge-outlines.source-accountability.schema.json",
+      "role": "complete-source-accountability-schema",
+      "bytes": 2242,
+      "sha256": "3fcd40fc463e9f4575484d9e889d8692f8f5b5a2804ed97c5f9e5a9e564f7df8"
+    },
+    {
+      "name": "validation-policy",
+      "path": "sources/catechisms/aa-hodge-outlines/aa-hodge-outlines.validation-policy.json",
+      "role": "independent-validation-policy",
+      "bytes": 1383,
+      "sha256": "d9bfdc69b3ec6d95298d91ba794aa11407846f20defd67f481f0d48498c68b55"
+    },
+    {
+      "name": "tei-p5-xsd",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all.xsd",
+      "role": "tei-validation-schema",
+      "bytes": 1108622,
+      "sha256": "2d886fb9354567ab91d8a52286ef66276c6a932228ccbec04d7c4c9b6aa5a05f"
+    },
+    {
+      "name": "tei-p5-xsd-teix",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_teix.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2202,
+      "sha256": "51ab8c0071f2abc375090829acadf7cb57c707fe17a993cdb2213e84932a6fac"
+    },
+    {
+      "name": "tei-p5-xsd-xml",
+      "path": "ocd_kernel/tei/vendor/xsd/tei_all_xml.xsd",
+      "role": "tei-validation-schema-dependency",
+      "bytes": 2359,
+      "sha256": "4f3a8348802f3bc968cbdd2a9d54a38a0549e5e4e7bc8d4338404f85f89568ba"
+    },
+    {
+      "name": "candidate-package-schema",
+      "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+      "role": "candidate-package-schema",
+      "bytes": 2173,
+      "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+    }
+  ],
+  "converter": {
+    "id": "ocd-aa-hodge-outlines-lossless-ocr-to-tei",
+    "version": "1",
+    "callable": "_convert",
+    "implementation_path": "build/tei/aa_hodge_outlines_reconstruction.py",
+    "implementation_sha256": "7618d9d5353ef8fa60aba14cdfac2b907475927ec0ab6351e66624f1e9d92cc3"
+  },
+  "validator": {
+    "id": "ocd-aa-hodge-outlines-independent-oracle",
+    "version": "1",
+    "callable": "_oracle",
+    "implementation_path": "build/tei/aa_hodge_outlines_oracle.py",
+    "implementation_sha256": "f98e3bb9382022403a8d4f3c31be8d7ae9aa600247673a3d015a3a370eb2a418",
+    "import_closure_sha256": "fd2acf17566439d1a70eb95acdcca2bd35b918cb4e53ebc06309563730588a24"
+  },
+  "package_schema": {
+    "path": "ocd_kernel/reconstruction/schemas/candidate-package-v1.schema.json",
+    "sha256": "3aea71ac3407e3ac9b82a6ba89e13430251de685f8efd2399e1bd5176f41a4e3"
+  }
+}

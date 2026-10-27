@@ -4,6 +4,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 from ocd_kernel.tei.install_accepted import _files, _io_path
+from tests.runtime_candidate_baselines import historical_bound_bytes
 
 
 def _json(value: object) -> bytes:
@@ -15,7 +16,7 @@ def historical_exact_work_root(root: Path, destination: Path, manifest_path: Pat
     freeze_raw = _io_path(freeze_path).read_bytes()
     assert sha256(freeze_raw).hexdigest() == expected_freeze_sha256
     frozen = json.loads(freeze_raw)
-    manifest_raw = _io_path(manifest_path).read_bytes()
+    manifest_raw = historical_bound_bytes(_io_path(manifest_path), frozen["manifest"]["sha256"])
     assert manifest_path.relative_to(root).as_posix() == frozen["manifest"]["path"]
     assert sha256(manifest_raw).hexdigest() == frozen["manifest"]["sha256"]
     manifest = json.loads(manifest_raw)

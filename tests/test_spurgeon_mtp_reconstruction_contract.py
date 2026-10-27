@@ -29,6 +29,7 @@ from ocd_kernel.reconstruction.verifier import (
     verify_mechanical_facts,
 )
 from ocd_kernel.tei.writer import tei_el
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +47,9 @@ CANDIDATE = Path(
 _candidate_gate_failure_reported = False
 MISSING = [8, 40, 42, 62, 67, 82, 142, 155, 269, 270, 298, 332, 390]
 EXPECTED_ORACLE_FIRST_PARTY_IMPORTS = (
+    "build/__init__.py",
+    "build/lib/__init__.py",
+    "build/lib/tei_xsd.py",
     "build/tei/spurgeon_mtp_oracle.py",
     "ocd_kernel/__init__.py",
     "ocd_kernel/lib/__init__.py",
@@ -706,9 +710,7 @@ def _resealed_content_mutation(tmp_path: Path, mutation: str) -> CandidatePackag
         etree.SubElement(body, tei_el("div").tag, {"type": "source-container-segment"})
     else:
         raise AssertionError(f"Unknown test mutation {mutation}")
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(document), schema.error_log.last_error
     if mutation not in raw_mutations:
         document.write(str(content_path), encoding="UTF-8", xml_declaration=True)

@@ -17,7 +17,7 @@ from build.tools.stage_eliza_southall_pg11959_acceptance import CANDIDATE, MANIF
 
 TEI = "http://www.tei-c.org/ns/1.0"
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/eliza-southall-pg11959-current-installer.source-manifest.json")
-RUNTIME_SHA = 'ecdaadd5d536a060105bc2cde9fe232009a81d0c8ac0f39e728ff981ad4b4786'
+RUNTIME_SHA = 'e5680023b58e10b0d52365a46f086100269526973995557ef6e8360533acd8cd'
 RETAINED_SHA = "b02792d55170a43ff43ba31a018ba60034aa42d3a1212c24f864d576e285b65b"
 
 

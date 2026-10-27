@@ -10,6 +10,7 @@ import pytest
 
 from build.tei import maclaren_pg7925_constituent_oracle_v1 as oracle
 from build.tei import maclaren_pg7925_constituent_v1 as producer
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATE = ROOT / "sources/sermons/maclaren-expositions/pg7925-psalms-constituent-v1/content.tei.xml"
@@ -34,7 +35,7 @@ def test_full_source_and_printed_structure(bound: tuple[list[str], bytes]) -> No
     assert result["expositions"] == [38, 43]
     assert result["toc_entries"] == [38, 43]
     assert result["last_first_volume_exposition_heading_line"] == 10703
-    schema = etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(_tree(content)), schema.error_log
 
 

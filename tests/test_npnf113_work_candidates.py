@@ -84,7 +84,7 @@ BOUND_WORK_SHA = "f9f360df47ddeb1bbffb6eb5ae67a821d1e9e3bab80498c2dea7ca6b515cdc
 def exact_bound_work(tmp_path, monkeypatch):
     """Replay only the exact metadata bytes required by the original source binding."""
     manifest_raw = (ROOT / "tests/fixtures/reconstruction-runtime/chrysostom-commentary-on-galatians.npnf113.source-manifest.json").read_bytes()
-    assert sha256(manifest_raw).hexdigest() == "c34f41ba172831ce400860ae12c786509eada4ed2360b154733ebe68d3ab23bd"
+    assert sha256(manifest_raw).hexdigest() == "7a52da719f108c3e00489cf05e07302ed444a918d62be658be39f44d706218d8"
     manifest_record = json.loads(manifest_raw)
     row = next(item for item in manifest_record["authorities"] if item["name"] == "work-binding")
     binding_raw = (ROOT / row["path"]).read_bytes()

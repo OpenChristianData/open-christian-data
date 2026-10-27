@@ -34,6 +34,9 @@ _RIGHTS = {
 }
 _TEI = "http://www.tei-c.org/ns/1.0"
 _XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
+# Nested text sections overlap; select each descendant once before checking ancestry.
+_TEXT_IDENTIFIED_NODES = etree.XPath("//*[@xml:id][ancestor::tei:text]", namespaces={"tei": _TEI})
+_TEXT_LINE_IDS = etree.XPath("//tei:lb[ancestor::tei:text]/@xml:id", namespaces={"tei": _TEI})
 _BOOK = re.compile(r"^BOOK\s+([IVX]+)\.(?:\s|$)", re.I)
 _CHAPTER = re.compile(r"^CHAPTER\s+([IVXLCDM]+)\.(?:\s|$)", re.I)
 _FOOTNOTE = re.compile(r"^Footnote\s+(\d+):$", re.I)
@@ -506,12 +509,12 @@ def _verify_tei(
     if [(node.get(_XML_ID), node.get("n")) for node in volume_texts] != [("calvin-volume-1", "1"), ("calvin-volume-2", "2")]:
         raise ValueError("Calvin exact physical-volume wrapper identity mutation")
     expected_lines = [line_id for volume_blocks in blocks for block in volume_blocks for line_id in block["line_ids"]]
-    observed_lines = [str(value) for value in tei.xpath("//tei:text//tei:lb/@xml:id", namespaces=ns)]
+    observed_lines = [str(value) for value in _TEXT_LINE_IDS(tei)]
     if observed_lines != expected_lines:
         raise ValueError("Calvin TEI physical-line omission, duplication, or reorder")
     block_nodes = {
         str(node.get(_XML_ID)): node
-        for node in tei.xpath("//tei:text//*[@xml:id]", namespaces=ns)
+        for node in _TEXT_IDENTIFIED_NODES(tei)
         if str(node.get(_XML_ID)).startswith("calvin-v") and "-block-" in str(node.get(_XML_ID))
     }
     expected_refs = []

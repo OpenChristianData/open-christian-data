@@ -1,7 +1,7 @@
 [
   {
     "manifest": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.source-manifest.json",
-    "manifest_sha256": "8b6f6a68360e9af7f830f8086c442c3a1cb56dcbe7ac09e4c6648db6124103f0",
+    "manifest_sha256": "9fc091419750e6464763377a6ef3d1de457d1dc42c95944e317fb646895194cf",
     "name": "charnock_vol2_native_v2",
     "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.source-manifest.json",
     "original_profile": {
@@ -33,22 +33,22 @@
       },
       {
         "path": "ocd_kernel/lib/storage_topology.py",
-        "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+        "sha256": "3d347f58f6ba91a54a5d2cf3388f64859964c6d9bce0c7e048dfbdef9229b81e"
       },
       {
         "path": "ocd_kernel/reconstruction/contract.py",
-        "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+        "sha256": "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
       }
     ],
-    "producer_closure_sha256": "168e277b5696778d25cda853fe1e160c2e9f7e817508b0a4615f09f4a730ca69",
+    "producer_closure_sha256": "29342062ad499beaf8c4b47a71107066e1325fbab197ec98fc00e7fd56240869",
     "profile": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.reconstruction-profile.json",
-    "profile_sha256": "d886ef5b25cbc1f4a7cb67dcf0e767c362da80651f7d5e81ece25ad4cf7d176a",
+    "profile_sha256": "d51dd09ec4be102633a7bf96cc322d3f871864bab06accb618dc57b702006f23",
     "validator_closure_sha256": "44e7d044f7857e953c91fd0fce40a8fdecc17f39dab2c90995e4ebe1539c2ce2",
     "work_id": "charnock-existence-attributes-vol-2"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.source-manifest.json",
-    "manifest_sha256": "4274f758087986949fc9acefb4cabb354f7260d21127c3d3c35d144af44f7f6d",
+    "manifest_sha256": "ce374a4885803175fdb2ffbbae2f9368eda551ec6ac19def50b28674afd7347b",
     "name": "luther_galatians_native_v2",
     "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.source-manifest.json",
     "original_profile": {
@@ -80,16 +80,16 @@
       },
       {
         "path": "ocd_kernel/lib/storage_topology.py",
-        "sha256": "6c21c93b0b3614627e908ad0cda4669a5321cff61cfca6c60daa3ab670afb2a7"
+        "sha256": "3d347f58f6ba91a54a5d2cf3388f64859964c6d9bce0c7e048dfbdef9229b81e"
       },
       {
         "path": "ocd_kernel/reconstruction/contract.py",
-        "sha256": "2caac35bbbfcff7036c343c0408bbb87e6a1dbdbce818001fb26a153202201af"
+        "sha256": "14cb0977b1fc5ff28667edceb24596d69d3034856a6996398644fcf106550d4a"
       }
     ],
-    "producer_closure_sha256": "4fd030543dce89e679ab7c1e38adfb6635b318bfc506f10f445ffd86952faede",
+    "producer_closure_sha256": "0d1385b64361731f8e974a4ae050a75d9796f2f19c780df5ed03f9699687ec0b",
     "profile": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.reconstruction-profile.json",
-    "profile_sha256": "9443a678d8631fa85d0e2bd382dfeea76ff4a93fdaf22bb0fb91f8f17cc89e50",
+    "profile_sha256": "df5dd44bc7484d36ee42d6f325fa65d3de5b47bde00ff0ae75a951234e27effc",
     "validator_closure_sha256": "2ef757209e00e7742c84025f55bc52500fe3c4242dc7eadecfab99792fa96cd0",
     "work_id": "luther-commentary-on-galatians"
   }

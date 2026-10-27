@@ -16,6 +16,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction.contract import CandidatePackage, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,7 +90,7 @@ def test_candidate_is_lossless_dual_schema_valid_nonaccepted_and_oracle_accepted
     candidate = build_candidate(manifest, tmp_path / "candidate")
     accountability = json.loads(candidate.member_bytes("source-accountability.json"))
     Draft202012Validator(json.loads((SOURCE_ROOT / "source-accountability.schema.json").read_bytes())).validate(accountability)
-    etree.XMLSchema(etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))).assertValid(etree.ElementTree(etree.fromstring(candidate.member_bytes("content.tei.xml"))))
+    compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd").assertValid(etree.ElementTree(etree.fromstring(candidate.member_bytes("content.tei.xml"))))
     assert candidate.manifest["status"] == "nonaccepted"
     assert accountability["source_bytes"] == byte_count
     assert accountability["source_sha256"] == digest

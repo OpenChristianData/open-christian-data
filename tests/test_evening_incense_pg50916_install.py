@@ -28,7 +28,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/evening-incense-pg50916-current-installer.source-manifest.json")
-RUNTIME_SHA = '28679337418088230b1a5c200e9c4a8b97b14520e241845f273b18283ef119ef'
+RUNTIME_SHA = 'ba8cfef9880785f7cb873485ebda04a7c63ac9d00b86fdee5c04c390ffe69a48'
 
 
 def _fixture(root: Path) -> Path:

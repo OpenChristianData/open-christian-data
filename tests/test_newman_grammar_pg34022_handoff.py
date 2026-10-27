@@ -32,7 +32,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/newman-pg34022-current-installer.source-manifest.json")
-RUNTIME_SHA = "af39bbd5facc3d26b9ebb6ca9f6adbb3ca5046c4495a07a48203abd829e3a941"
+RUNTIME_SHA = "017eee9087a63f2a26160b5250b545bd939df6019f5e1ffb74107449bee41f36"
 
 
 def _fixture(root: Path) -> Path:

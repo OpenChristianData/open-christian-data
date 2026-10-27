@@ -395,6 +395,7 @@ def test_run_pytest_uses_file_level_workers_for_large_test_sets(monkeypatch):
         "-p",
         "no:cacheprovider",
         "-q",
+        "-x",
         "--basetemp",
         "C:/tmp/ocd-precommit-test",
         "-n",
@@ -420,6 +421,7 @@ def test_run_pytest_keeps_small_test_sets_serial(monkeypatch):
         "-p",
         "no:cacheprovider",
         "-q",
+        "-x",
         "--basetemp",
         "C:/tmp/ocd-precommit-test",
         "tests/test_example.py",
@@ -483,6 +485,7 @@ def test_run_pytest_falls_back_to_serial_when_xdist_is_missing(monkeypatch):
         "-p",
         "no:cacheprovider",
         "-q",
+        "-x",
         "--basetemp",
         "C:/tmp/ocd-precommit-test",
         "tests/test_example.py",
@@ -1186,6 +1189,23 @@ def test_long_corpus_files_start_early_without_changing_coverage(monkeypatch):
     assert "-m" not in command[3:]
 
 
+def test_shared_catalog_waiters_do_not_block_workers_with_other_work_available(monkeypatch):
+    monkeypatch.setattr(pre_commit_pytest.os.path, "getsize", lambda _: 60_000)
+    monkeypatch.setattr(pre_commit_pytest.os, "cpu_count", lambda: 8)
+    targets = [
+        "tests/test_count_dataset_records.py",
+        "tests/test_other.py::test_first",
+        "tests/test_john_owen_lib050_reconstruction_contract.py",
+        "tests/test_douay_rheims_reconstruction_contract.py::test_route",
+        "tests/test_calvins_institutes_pg64392_member_contract.py",
+        "tests/test_another.py",
+    ]
+    command = pre_commit_pytest._pytest_command(targets, basetemp="temporary", xdist_available=True)
+    assert command[-len(targets):] == [targets[i] for i in (2, 1, 5, 0, 3, 4)]
+    assert sorted(command[-len(targets):]) == sorted(targets)
+    assert "-m" not in command[3:]
+
+
 @pytest.mark.parametrize("platform,expected", [("win32", 0x4000), ("linux", 0)])
 def test_pytest_child_yields_windows_cpu_to_interactive_work(tmp_path, monkeypatch, platform, expected):
     calls = []
@@ -1209,3 +1229,44 @@ def test_public_input_inventory_changes_require_its_declaration_proofs(tmp_path)
     assert pre_commit_pytest.select_tests(["tests/fixtures/public-local-input-cases.json"], tmp_path) == {
         "tests": ["tests/test_public_release_inputs.py"], "unmapped": [],
     }
+
+
+def test_failed_gate_stops_early_and_passing_gate_runs_every_case(tmp_path):
+    case = tmp_path / "test_failfast_probe.py"
+    sentinel = tmp_path / "second-ran"
+
+    def write_case(first_passes):
+        case.write_text(
+            "from pathlib import Path\n"
+            "def test_first():\n"
+            f"    assert {first_passes!r}\n"
+            "def test_second():\n"
+            f"    Path({str(sentinel)!r}).write_text('checked')\n",
+            encoding="utf-8",
+        )
+
+    write_case(False)
+    command = pre_commit_pytest._pytest_command(
+        [str(case)], basetemp=str(tmp_path / "failed-base"), xdist_available=False,
+    )
+    failed = subprocess.run(command, cwd=tmp_path, capture_output=True, text=True, check=False)
+    assert failed.returncode == 1, failed.stdout + failed.stderr
+    assert not sentinel.exists()
+    write_case(True)
+    command = pre_commit_pytest._pytest_command(
+        [str(case)], basetemp=str(tmp_path / "passed-base"), xdist_available=False,
+    )
+    passed = subprocess.run(command, cwd=tmp_path, capture_output=True, text=True, check=False)
+    assert passed.returncode == 0, passed.stdout + passed.stderr
+    assert "2 passed" in passed.stdout
+    assert sentinel.read_text() == "checked"
+
+
+def test_runtime_byte_guards_precede_full_book_reconstruction(monkeypatch):
+    monkeypatch.setattr(pre_commit_pytest.os.path, "getsize", lambda _: 60_000)
+    monkeypatch.setattr(pre_commit_pytest.os, "cpu_count", lambda: 8)
+    targets = ["tests/test_spurgeon_mtp_reconstruction_contract.py",
+               "tests/test_executable_checkout_bytes.py",
+               "tests/test_runtime_manifest_binding_boundaries.py"]
+    command = pre_commit_pytest._pytest_command(targets, basetemp="temporary", xdist_available=True)
+    assert command[-3:] == [targets[2], targets[1], targets[0]]

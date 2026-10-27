@@ -93,6 +93,52 @@ def verified_candidate(
     return source, candidate, validation
 
 
+# Start the shared catalogue audit before the independent mutation matrix.
+def test_ticket_maps_catalog_and_ten_exact_identity_routes(
+    verified_candidate: tuple[SourceManifest, CandidatePackage, object],
+    tmp_path: Path,
+    live_work_catalog,
+    reuse_live_retained_witness_audit,
+) -> None:
+    source, candidate, validation = verified_candidate
+    work_map = (ROOT / "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md").read_text(encoding="utf-8")
+    source_map = (ROOT / "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md").read_text(encoding="utf-8")
+    for work_id, digest in zip(WORK_IDS, SOURCE_HASHES, strict=True):
+        assert sum(line.startswith(f"| `{work_id}` |") for line in work_map.splitlines()) == 1
+        assert f"| `{work_id}` | `sha256:{digest}` | LIB-050 | current-claim |" in source_map
+    assert _manifest_config_ids(source.record, ROOT) == set(WORK_IDS)
+    assert _manifest_primary_hashes(source.record) == set(SOURCE_HASHES)
+    baseline = live_work_catalog
+    baseline_unassociated = baseline.summary["reconstruction_state_counts"]["unassociated_manifests"]
+    record = {
+        "contract": "ocd-validation-report-v1",
+        "status": validation.status,
+        "candidate_sha256": validation.candidate_sha256,
+        "source_manifest_sha256": validation.source_manifest_sha256,
+        "attestation": dict(validation.attestation),
+        "findings": list(validation.findings),
+        "report_sha256": validation.sha256,
+    }
+    validation_path = tmp_path / "validation.json"
+    validation_path.write_bytes(_canonical(record))
+    evidence = {(source.record["source_id"], work_id): (candidate.path, validation_path) for work_id in WORK_IDS}
+    catalog = collect_work_catalog(ROOT / "data", reconstruction_evidence=evidence)
+    assert catalog.summary["work_units"] == 402
+    assert catalog.summary["reconstruction_state_counts"]["unassociated_manifests"] == baseline_unassociated
+    by_id = {work["work_id"]: work for work in catalog.works}
+    for work_id in WORK_IDS:
+        state = by_id[work_id]["reconstruction_state"]
+        routes = [item for item in state["routes"] if item["source_id"] == source.record["source_id"]]
+        assert len(routes) == 1
+        route = routes[0]
+        assert route["association"] == "source_hash+exact_id"
+        assert route["scope"] == "work"
+        assert route["candidate_verification"] == route["validation_verification"] == "verified"
+        assert state["human_review"] == "required"
+        assert state["accepted_ir"] == "not_accepted"
+        assert state["publication"] == "not_ready"
+
+
 def test_exact_ten_sources_complete_family_and_six_file_package(
     verified_candidate: tuple[SourceManifest, CandidatePackage, object],
 ) -> None:
@@ -331,49 +377,6 @@ def test_manifest_extra_member_stale_binding_and_bound_authorities_fail_closed(
     assert authorities["reconstruction-profile"]["sha256"] != authorities["validation-policy"]["sha256"]
 
 
-def test_ticket_maps_catalog_and_ten_exact_identity_routes(
-    verified_candidate: tuple[SourceManifest, CandidatePackage, object],
-    tmp_path: Path,
-    live_work_catalog,
-    reuse_live_retained_witness_audit,
-) -> None:
-    source, candidate, validation = verified_candidate
-    work_map = (ROOT / "plans/2026-08-26-whole-library-faithful-tei-completion/02-work-ticket-map.md").read_text(encoding="utf-8")
-    source_map = (ROOT / "plans/2026-08-26-whole-library-faithful-tei-completion/05-source-ticket-map.md").read_text(encoding="utf-8")
-    for work_id, digest in zip(WORK_IDS, SOURCE_HASHES, strict=True):
-        assert sum(line.startswith(f"| `{work_id}` |") for line in work_map.splitlines()) == 1
-        assert f"| `{work_id}` | `sha256:{digest}` | LIB-050 | current-claim |" in source_map
-    assert _manifest_config_ids(source.record, ROOT) == set(WORK_IDS)
-    assert _manifest_primary_hashes(source.record) == set(SOURCE_HASHES)
-    baseline = live_work_catalog
-    baseline_unassociated = baseline.summary["reconstruction_state_counts"]["unassociated_manifests"]
-    record = {
-        "contract": "ocd-validation-report-v1",
-        "status": validation.status,
-        "candidate_sha256": validation.candidate_sha256,
-        "source_manifest_sha256": validation.source_manifest_sha256,
-        "attestation": dict(validation.attestation),
-        "findings": list(validation.findings),
-        "report_sha256": validation.sha256,
-    }
-    validation_path = tmp_path / "validation.json"
-    validation_path.write_bytes(_canonical(record))
-    evidence = {(source.record["source_id"], work_id): (candidate.path, validation_path) for work_id in WORK_IDS}
-    catalog = collect_work_catalog(ROOT / "data", reconstruction_evidence=evidence)
-    assert catalog.summary["work_units"] == 402
-    assert catalog.summary["reconstruction_state_counts"]["unassociated_manifests"] == baseline_unassociated
-    by_id = {work["work_id"]: work for work in catalog.works}
-    for work_id in WORK_IDS:
-        state = by_id[work_id]["reconstruction_state"]
-        routes = [item for item in state["routes"] if item["source_id"] == source.record["source_id"]]
-        assert len(routes) == 1
-        route = routes[0]
-        assert route["association"] == "source_hash+exact_id"
-        assert route["scope"] == "work"
-        assert route["candidate_verification"] == route["validation_verification"] == "verified"
-        assert state["human_review"] == "required"
-        assert state["accepted_ir"] == "not_accepted"
-        assert state["publication"] == "not_ready"
 
 
 def test_fresh_process_different_cwd_hashseed_package_bytes_are_exact(tmp_path: Path) -> None:

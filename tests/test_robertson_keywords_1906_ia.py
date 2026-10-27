@@ -13,6 +13,7 @@ from build.tei import robertson_keywords_1906_ia_oracle as oracle
 from build.tei.robertson_keywords_1906_ia_oracle import _source_set, check as _check
 from ocd_kernel.reconstruction.contract import SourceManifest
 from ocd_kernel.reconstruction import contract
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 TEI = "http://www.tei-c.org/ns/1.0"
@@ -253,8 +254,7 @@ def test_empty_source_line_is_preserved(pair):
 
 def test_generated_tei_matches_bound_p5_schema(pair):
     content, _ = pair
-    schema = etree.XMLSchema(etree.parse(str(
-        ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(etree.ElementTree(parse(content))), schema.error_log.last_error
 
 

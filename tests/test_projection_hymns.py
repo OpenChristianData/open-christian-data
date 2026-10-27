@@ -19,6 +19,7 @@ from ocd_kernel.projection.categories.hymns import (
     project_hymns_document as project,
     verify_hymns_document as verify,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "tests/fixtures/library-pipeline/categories/hymns"
@@ -168,7 +169,7 @@ def test_selected_rows_bind_the_retained_witness_to_the_real_hymnary_payload():
 
 
 def test_fixture_is_valid_tei_p5_and_schema_is_closed():
-    E.XMLSchema(E.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))).assertValid(E.parse(str(PATH)))
+    compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd").assertValid(E.parse(str(PATH)))
     schema = json.loads((ROOT / "schemas/v2/categories/hymns.schema.json").read_text(encoding="utf-8"))
     assert schema["additionalProperties"] is False
     assert schema["properties"]["work_id"]["$ref"].endswith("#/properties/work_id")

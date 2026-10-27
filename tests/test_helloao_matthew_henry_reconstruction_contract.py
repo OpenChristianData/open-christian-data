@@ -22,6 +22,7 @@ from ocd_kernel.reconstruction import (
     reconstruct,
     validate,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -716,9 +717,7 @@ def test_matthew_henry_oracle_rejects_document_prolog_drift(
         str(xml_path),
         etree.XMLParser(resolve_entities=False, no_network=True, remove_comments=False),
     )
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(parsed), schema.error_log.last_error
     mutated = _reseal(target, "content.tei.xml")
     message = _validation_rejection_message(matthew_henry_source, mutated)
@@ -774,9 +773,7 @@ def test_matthew_henry_oracle_rejects_unexpected_namespace_declarations(
             parent.replace(body, replacement)
         mutated = _write_tei(target, root)
     parsed = etree.parse(str(target / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(parsed), schema.error_log.last_error
     message = _validation_rejection_message(matthew_henry_source, mutated)
     assert "namespace declarations drifted" in message
@@ -869,9 +866,7 @@ def test_matthew_henry_oracle_rejects_complete_header_tree_drift(
         publisher.tail = " "
     mutated = _write_tei(target, root)
     parsed = etree.parse(str(target / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(parsed), schema.error_log.last_error
     expected_error = (
         "TEI exact document bytes drifted"
@@ -920,9 +915,7 @@ def test_matthew_henry_oracle_rejects_complete_recursive_body_drift(
         ).text = "Invented optional element"
     mutated = _write_tei(target, root)
     parsed = etree.parse(str(target / "content.tei.xml"))
-    schema = etree.XMLSchema(
-        etree.parse(str(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd"))
-    )
+    schema = compiled_tei_schema(ROOT / "ocd_kernel/tei/vendor/xsd/tei_all.xsd")
     assert schema.validate(parsed), schema.error_log.last_error
     message = _validation_rejection_message(matthew_henry_source, mutated)
     assert "TEI body tree drifted" in message

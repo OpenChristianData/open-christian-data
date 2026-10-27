@@ -2660,8 +2660,9 @@ def test_live_catalog_attaches_current_reconstruction_routes_without_claiming_ac
     }
 
     assert catalog.summary["work_units"] == 402
+    from concurrent.futures import ThreadPoolExecutor
+
     manifest_records = {}
-    manifest_status = {}
     for manifest_path in sorted(
         path
         for path in (repo_root / "sources").rglob("*.json")
@@ -2670,12 +2671,32 @@ def test_live_catalog_attaches_current_reconstruction_routes_without_claiming_ac
     ):
         relative_path = manifest_path.relative_to(repo_root).as_posix()
         manifest_records[relative_path] = json.loads(manifest_path.read_bytes())
+
+    def verify_manifest(relative_path):
         try:
-            SourceManifest.load(manifest_path, repository_root=repo_root)
+            SourceManifest.load(repo_root / relative_path, repository_root=repo_root)
         except (OSError, ValueError):
-            manifest_status[relative_path] = "blocked"
-        else:
-            manifest_status[relative_path] = "verified"
+            return "blocked"
+        return "verified"
+
+    large = set()
+    for relative_path, record in manifest_records.items():
+        authorities = record.get("authorities", ()) if isinstance(record, dict) else ()
+        if not isinstance(authorities, (list, tuple)):
+            authorities = ()
+        declared_bytes = sum(
+            item["bytes"] for item in authorities
+            if isinstance(item, dict) and isinstance(item.get("bytes"), int)
+        )
+        if len(authorities) > 128 or declared_bytes > 64 * 1024 * 1024:
+            large.add(relative_path)
+    # Large manifests use their own four-thread verifier or hold large source files.
+    checked = {path: verify_manifest(path) for path in manifest_records if path in large}
+    small = [path for path in manifest_records if path not in large]
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        checked.update(zip(small, pool.map(verify_manifest, small), strict=True))
+    manifest_status = {path: checked[path] for path in manifest_records}
+    assert set(manifest_status) == set(manifest_records)
 
     live_routes = [
         (work, route)
@@ -3332,3 +3353,65 @@ def test_shared_retained_members_stream_once_and_compare_every_work(tmp_path, mo
             module._attach_retained_witness_gaps(works(), tmp_path)
         assert boundary_calls == [source, source]
         assert reads == [source, source, source]
+
+
+def test_large_retained_audit_bounds_concurrency_and_checks_all_bytes(tmp_path, monkeypatch):
+    from collections import Counter
+    from threading import Lock
+    from time import sleep
+    from build.tools import count_dataset_records as module
+
+    source = tmp_path / 'raw/fixture'
+    source.mkdir(parents=True)
+    members = [source / f'{index:03}.txt' for index in range(129)]
+    for member in members:
+        member.write_text(member.name, encoding='utf-8')
+    config = tmp_path / 'sources/fixture/config.json'
+    config.parent.mkdir(parents=True)
+    config.write_text(json.dumps({'resource_id': 'fixture', 'source_dir': 'raw/fixture'}))
+    lock = Lock()
+    active = peak = 0
+    checked = set()
+    hashes = Counter()
+    original_boundary = module._logical_retained_path
+    original_hash = module._sha256_retained_member
+
+    def boundary(root, path, label):
+        result = original_boundary(root, path, label)
+        checked.add(path)
+        return result
+
+    def digest(path):
+        nonlocal active, peak
+        assert path in checked
+        with lock:
+            active += 1
+            peak = max(peak, active)
+            hashes[path] += 1
+        try:
+            sleep(0.002)
+            return original_hash(path)
+        finally:
+            with lock:
+                active -= 1
+
+    monkeypatch.setattr(module, '_logical_retained_path', boundary)
+    monkeypatch.setattr(module, '_sha256_retained_member', digest)
+    works = [{'work_id': 'fixture', 'metadata_fields': {}}]
+    module._attach_retained_witness_gaps(works, tmp_path)
+    assert hashes == Counter({path: 1 for path in members})
+    assert 1 < peak <= 4
+    gap = works[0]['retained_witness_gaps'][0]
+    assert gap['verification'] == 'verified'
+    assert gap['member_count'] == gap['missing_from_parser_provenance'] == 129
+
+    def unreadable(path):
+        if path == members[64]:
+            raise OSError("retained source unreadable")
+        return original_hash(path)
+
+    monkeypatch.setattr(module, '_sha256_retained_member', unreadable)
+    fresh = [{'work_id': 'fixture', 'metadata_fields': {}}]
+    with pytest.raises(OSError, match='retained source unreadable'):
+        module._attach_retained_witness_gaps(fresh, tmp_path)
+    assert 'retained_witness_gaps' not in fresh[0]

@@ -20,6 +20,7 @@ from ocd_kernel.projection.categories.bible import (
     verify_accepted_bible,
     verify_bible_document as verify,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -184,7 +185,7 @@ def test_fixture_excerpts_are_dynamically_bound_to_retained_raw_witnesses():
 
 
 def test_fixture_tei_validates_against_bundled_tei_p5_schema():
-    schema = E.XMLSchema(E.parse(str(ROOT / "ocd_kernel" / "tei" / "vendor" / "xsd" / "tei_all.xsd")))
+    schema = compiled_tei_schema(ROOT / "ocd_kernel" / "tei" / "vendor" / "xsd" / "tei_all.xsd")
     for case in CASES:
         schema.assertValid(E.parse(str(FIXTURE / case["tei_file"])))
 

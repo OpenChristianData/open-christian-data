@@ -1,14 +1,21 @@
 [
   {
+    "manifest": "tests/fixtures/reconstruction-runtime/aa-hodge-outlines.source-manifest.json",
+    "manifest_sha256": "32ae887fe5f2f8932a5f998295a09f19ea0fb37b5ca0a3a5e0a72ea419b64f35",
+    "original": "sources/catechisms/aa-hodge-outlines/aa-hodge-outlines.source-manifest.json",
+    "original_sha256": "d4303df97c3c72ffc74ab389e68d52b53ddffaf865f92f68fde5457f43060d5b",
+    "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
+  },
+  {
     "manifest": "tests/fixtures/reconstruction-runtime/adam-clarke.source-manifest.json",
-    "manifest_sha256": "96817385a90fcf1ddcf267bdcef86e12ed153ba9f1fc0fb2a21692f38250054a",
+    "manifest_sha256": "4b8260fe89468ac94d4508675994137a53be95d863b94bd538b2c98b7a86db9a",
     "original": "sources/commentaries/adam-clarke/adam-clarke.source-manifest.json",
     "original_sha256": "3d19421ee017b2801169352fc8f4fe1412492ab67b5041ab67828481d3412a3c",
     "preservation_test": "tests/test_helloao_adam_clarke_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_dependencies"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/anne_a22076_first_oracle_v1.source-manifest.json",
-    "manifest_sha256": "a2fb0ec3110b5ea1786e4fdc5298770d666bd55b4936822e90f1757965a75ec3",
+    "manifest_sha256": "732373383b7d32f8c2b5e6b5aa4b9fc55ac9f88b40251d53d4b33e6c97a9caa8",
     "original": "sources/manifest-acquisitions/tcp-l816-clean-ready/A22076/reconstruction-source-manifest-first-work-v1.json",
     "original_sha256": "48c293d9f718a3f2fd38ffe9988ba507e218b67b6d91579dc5105f9832cf7e74",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
@@ -22,77 +29,77 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/asv.source-manifest.json",
-    "manifest_sha256": "99b67a8c9e3ea075ab873db6ff4cde971c439f74a8a75d8c56eacfef2ac2dd64",
+    "manifest_sha256": "bd40dd06eaddd9ac692b9c2aac7e0a336c2ac99bc64e78a5ff5afee2d602f449",
     "original": "sources/bible-text/asv/asv.source-manifest.json",
     "original_sha256": "eaa7251d12cf0d4873685682164c145c9773c07b61a1603b9daf1a21d1620d5f",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/athanasius-table.source-manifest.json",
-    "manifest_sha256": "196167a6d1013c2a26faaba42a93f4bbccec75c99c15159e0ec9b5bc867016fc",
+    "manifest_sha256": "b7a50960c0d7faf9cb2dcabc4f7f24e025c8f3839d57c5f8e8f7fafc4c5cf3df",
     "original": "sources/structured-text/athanasius-on-the-incarnation/athanasius-table.source-manifest.json",
     "original_sha256": "9f65b4c6fb61c59750e8d1b06d0a590f78915764bd8bf355edc1459dfea8c5cf",
     "preservation_test": "tests/test_athanasius_table_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-faith-things-not-seen.npnf103.source-manifest.json",
-    "manifest_sha256": "6cc5305b78ad55b1cbc7cde66508b3c0ad3707c81f468b59c724f5a897ca690e",
+    "manifest_sha256": "13e982565e246174e89ebb84052f04f9919f6c3a4e7acc054fb03eff509716b9",
     "original": "sources/structured-text/augustine-npnf103-works-v2/augustine-faith-things-not-seen/source-manifest.json",
     "original_sha256": "7b468cb54dd3139ea20428d9e2900b5ad1ceca063eefa08e66fbda7af8d4bd5d",
     "preservation_test": "tests/test_npnf103104_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-grace-and-free-will.npnf105.source-manifest.json",
-    "manifest_sha256": "403da5657053557ce74114da0734d3890f843da9c40f9896bfa5e22e2fd348a6",
+    "manifest_sha256": "b78191cac91e52fd3c4a6466167ee250ccdb02cde5c1b41aaedebc67754be33f",
     "original": "sources/structured-text/augustine-npnf105-works/augustine-grace-and-free-will/source-manifest.json",
     "original_sha256": "8851835137d858d2f1987359e050a6a0a0d257c7d452683001459a9c04386c8a",
     "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-morals-catholic-church.npnf104.source-manifest.json",
-    "manifest_sha256": "c736fe9c7b5f71e6f2450cbe6ec3ae574cbfab3e87bb3cefea9173d097e8877b",
+    "manifest_sha256": "2bb662e8278cf2934ab90917a21693e411dd26f73ed9d177e1cb836dc83b3d77",
     "original": "sources/structured-text/augustine-npnf104-works/augustine-morals-catholic-church/source-manifest.json",
     "original_sha256": "b0748b17b56b7b2012e1c4c4bc4cf4fd4e7bc1afe1dcb6dc88eced3248da6f1d",
     "preservation_test": "tests/test_npnf103104_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-npnf103.source-manifest.json",
-    "manifest_sha256": "6b083dbcf8278017dbe17fc2d62f790a032b66e337af75c602b95d0b870ded83",
+    "manifest_sha256": "0f64ff2ada4d2a865f6e31fdeeadc4bc76ac79c765b006f43a493a6e129aada2",
     "original": "sources/structured-text/augustine-npnf103/augustine-npnf103.source-manifest.json",
     "original_sha256": "190306bcbf87e6b71863aef9dc50a6bbbdf1d73e3fb55954c5a8838ac9278a2c",
     "preservation_test": "tests/test_npnf103_runtime_manifest.py::test_complete_original_source_record_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-on-christian-doctrine.source-manifest.json",
-    "manifest_sha256": "5b258fdb245fd5b75545b2f70bc6f2a390436aa084ada963932696e3fea149b6",
+    "manifest_sha256": "87e2a0a965fa32d54542bca7dd2243e3d801d9d8c1d4f42b70b268fb4f2df994",
     "original": "sources/structured-text/augustine-on-christian-doctrine/augustine-on-christian-doctrine.source-manifest.json",
     "original_sha256": "263970f14d1eee1fdf1a746acd4da7dced012355a0773f27fa24d3e8b23116cd",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-proceedings-of-pelagius.npnf105.source-manifest.json",
-    "manifest_sha256": "df3f2da9259aea4df56dd5861de075163133cb8b714c1a12ba13225d9ad5ed6f",
+    "manifest_sha256": "0e7c12e69b92038e5b9248a26059ad00edb204e183d412767946fbaf023304f3",
     "original": "sources/structured-text/augustine-npnf105-works/augustine-proceedings-of-pelagius/source-manifest.json",
     "original_sha256": "742698ddb4cc96630f8007428934fa157be8326921cadbe31cfbb2c2f1617108",
     "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustine-spirit-and-letter.source-manifest.json",
-    "manifest_sha256": "700ad7f34ac52234ba9989bc69545347a39d3d2c9edffedb38cb19e71d108a00",
+    "manifest_sha256": "eaffc1ead10122595ab554a218331c7c4e0a5f421dffd71b787c1d3e7c54a159",
     "original": "sources/work-units-phase-a/augustine-spirit-and-letter/source-manifest.json",
     "original_sha256": "7eb4c60bd44767679798598dc66d8214081868829e19d04144548d8266f8bcb1",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/augustines-confessions.source-manifest.json",
-    "manifest_sha256": "0c081b3b8ffec5d0b6d823edbb3172863ca8c77ef367b6036cfef22922c9f36c",
+    "manifest_sha256": "92e4ff97e87c7ddbb36f593ee06d0b610d711f7bbf242cdcfd84c28ec4701e28",
     "original": "sources/augustines-confessions/augustines-confessions.source-manifest.json",
     "original_sha256": "1beb2d1e3791fe08f465b23154e53be5fd39da1f264fb2ac8701bc32be28b6f8",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-runtime.source-manifest.json",
-    "manifest_sha256": "96c1aa665ca4d06a2917e39242c94ab56f355ec06e80338de32294a3bafc80b0",
+    "manifest_sha256": "585371ab8642842908f0d99c07500b74713eb064a35b8c144471aa951745e656",
     "original": "tests/fixtures/reconstruction-runtime/authorities/watson-body-acceptance-original.source-manifest.json",
     "original_sha256": "114d3a96a777e3a83176e6042dfaa30a52c66dfb01c5c6daccae9f57dabb6ef3",
     "preservation_test": "tests/test_prepare_watson_body_of_divinity_acceptance.py::test_exact_route_stage_passes_both_gates"
@@ -106,56 +113,56 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/baxter_christian_directory_oracle.source-manifest.json",
-    "manifest_sha256": "520dcbdd37c147e9614469b6410de97a2a7c561eb4679e77b1a74bd6eeec1ca0",
+    "manifest_sha256": "1336ada79ab1811758e771ec9e4225ce29c6a7ab7b6d8eb7dc0229299ed49142",
     "original": "sources/structured-text/baxter-christian-directory/baxter-christian-directory.source-manifest.json",
     "original_sha256": "2c97e6cba2a7299920231ae6d9f04281aac7ae84ce05b65cbac04658ef4962b6",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bay-psalm-book-1640.source-manifest.json",
-    "manifest_sha256": "22c93c55598dffad56227723da3146f898cfc18d356a1d65b91b5d12591dfb55",
+    "manifest_sha256": "8d9e34c10617d5be05b61af4a19e0d977d5ec9b3a332f22f7356135df4bdbea2",
     "original": "sources/structured-text/bay-psalm-book-1640/bay-psalm-book-1640.source-manifest.json",
     "original_sha256": "b95d74621ebd6c0fc97dd8e41b083f48fc034f1e6fcea687323444a9df241e99",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp-1549.source-manifest.json",
-    "manifest_sha256": "249910f9303775c2b23dba7b9544071af1790d9b75403aa3792cb81eb85c9486",
+    "manifest_sha256": "c34d9783111ccb8291e5bd0fc5eb7607e979d176a0aa0a1658fc6649bcf891f0",
     "original": "sources/structured-text/bcp-1549/bcp-1549.source-manifest.json",
     "original_sha256": "2acdac15094af67eb042cd4844263044fbd261cc4415078031070f649b9b2193",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp-1559.source-manifest.json",
-    "manifest_sha256": "cb2e5e0c5cdcf13dc9f98d012c859e0832182725cf742bcf89e71bf8f8f73159",
+    "manifest_sha256": "f9a88d0e6fa768924578874442750625cb0232c4c4c3ff670066242352f1cda7",
     "original": "sources/structured-text/bcp-1559/bcp-1559.source-manifest.json",
     "original_sha256": "2f7c1702f816374bbe41a786d91aa848948c08e7493e43862c5fd72be44f6ecd",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp-1662.source-manifest.json",
-    "manifest_sha256": "3eb3a3415729d17bcfde2fc78a4e33725351db08c562d40e1b1fde4b05f6f2f8",
+    "manifest_sha256": "3e83bf4aaf90c4c251b911396bba673bce4f73c89c9b4419ebda541066cb4263",
     "original": "sources/structured-text/bcp-1662/bcp-1662.source-manifest.json",
     "original_sha256": "193a4f01c92ae15a4d0bdad646d5ee5fdb33faf314b4163a0132722bdf6c9e03",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp-1928-collects.source-manifest.json",
-    "manifest_sha256": "75d971467b2bed966a875897436e3f631a37bd2ab95081e26b337fa2edfe26e5",
+    "manifest_sha256": "cd00d21502d7538415bf91410b64d8fc35fe617cfe493c291f1353d6775e2319",
     "original": "sources/prayers/bcp-1928-collects/bcp-1928-collects.source-manifest.json",
     "original_sha256": "139c88453f8ca1f8cc5be76fe9267eb5e6475fea5807053014082381db2558e3",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp1549-native-current.source-manifest.json",
-    "manifest_sha256": "a13f570ce889e6355b47d1a410bc0374c125efc49731e64396596bb992ff85a0",
+    "manifest_sha256": "bbbe86b24832a49ab5f8feb4e2c3d65221ed4cf02ae8fa14e888135afa7c0862",
     "original": "sources/liturgies-bcp1549-current/bcp-1549/source-manifest.json",
     "original_sha256": "bbf675c34416229324c232847100f123153b9dfa90d2467c25ded0b382f2ab49",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bcp1662-native-current.source-manifest.json",
-    "manifest_sha256": "d0266b1b223112b789d870a022dd1fa809435eaada2e6c0a979f1eb6af861f7a",
+    "manifest_sha256": "1c4c874204ae2a995a659d4cc65a09a4409d3f6c920419d5d81c1960ccc54b45",
     "original": "sources/liturgies-bcp1662-current/bcp-1662/source-manifest.json",
     "original_sha256": "bb4852ed1659c2c88bd2019951dba2b71713b15b6563047ec86e38e27c911fc3",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
@@ -169,553 +176,553 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/before-most-holy-pg76888-current-installer.source-manifest.json",
-    "manifest_sha256": "362778c303fcefee8bacd495ede3f759a051b804cb3c7a22f01adf700ad5301a",
+    "manifest_sha256": "56861794c60a78ebb8bf56f96434e171df519a0c70f17588bbb82dbc1be245e5",
     "original": "sources/structured-text/before-most-holy-pg76888/source-manifest.json",
     "original_sha256": "77b897b5caeb3917227fcc0b6616407079e4d063e83350840798f4015dd5693c",
     "preservation_test": "tests/test_before_most_holy_pg76888_install.py::test_runtime_source_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/bsb.source-manifest.json",
-    "manifest_sha256": "c1b92ddc537a891f16a4ac553630de92e9b4ce2a5f6491097fcd29754f8adc82",
+    "manifest_sha256": "a51a3f7df11bcfc65a66219840bbf8f68252c9f9d5cfabc005babf501b3d75c5",
     "original": "sources/bible-text/bsb/bsb.source-manifest.json",
     "original_sha256": "47d0f166ea6b27feb272b0579dd691e17929f41dab95dd8ab51329a731a87d96",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/calvin-commentaries.source-manifest.json",
-    "manifest_sha256": "048e75e99e01f81cb2ccd2853aa87105ca69984a861993d927ec2b4a3d44a466",
+    "manifest_sha256": "268c1140dff16c4694f752fa0dc31253b58691a6048a9c07595d6bc8a877722d",
     "original": "sources/commentaries/calvin/calvin-commentaries.source-manifest.json",
     "original_sha256": "dc1c39c5400ae2c396b995a6cf2ca42c982b564d9edfe23fbb265693563afba5",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/calvins-institutes-pg64392-member.source-manifest.json",
-    "manifest_sha256": "25dea31d4e143390e253f39a5fcd800aef686e990ab6cf8acb933f1bd11c03cc",
+    "manifest_sha256": "f1554837f4a0f165169301a657ba30cb3c42abd4b0643ce8ccaaae8c3a70672f",
     "original": "sources/calvins-institutes/pg64392-member/calvins-institutes-pg64392-member.source-manifest.json",
     "original_sha256": "c18cc0a8212222f48a48ffdf91a2de40ffffe57dc67f08399acbe5e0a91a24b2",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/calvins-institutes.source-manifest.json",
-    "manifest_sha256": "c99e493e2d2439eb806ceb59bef894c4f64d245e494ab4d4a7b17819ec354e7a",
+    "manifest_sha256": "cc718b2068154120ca1d30b1151f87db2e3b773c9b053ce9a2f2cbba89be9915",
     "original": "sources/calvins-institutes/calvins-institutes.source-manifest.json",
     "original_sha256": "04cbf0234232060d62389efddc8062b89fde5bca86d32cc9a81fffdb974c9c62",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/catechism-for-young-children.source-manifest.json",
-    "manifest_sha256": "5c8b4068353576ed1e6ec5f8c01908f598bd6ef777e6986acdd1d8e0b838719d",
+    "manifest_sha256": "fa21a37895984772ff2322cb5067cdaac43ab0903b80560d861ad525d6d330df",
     "original": "sources/catechism-for-young-children/catechism-for-young-children.source-manifest.json",
     "original_sha256": "ad08f14824b1169cc999e8078219df25ef38db855ea8a2179f69742d06b4b5ed",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/ccel_puritan_lib055_flavel_fountain_of_life_oracle.source-manifest.json",
-    "manifest_sha256": "1d0c0839d5480b246ead666ccb2809498a8617c72c0fe4a0be7dbc9a4d02dae0",
+    "manifest_sha256": "b0340fe6b69952889c3bd1661273c6e13f3e64d9477b993036e3a0410af6e8bf",
     "original": "sources/structured-text/flavel-fountain-of-life/lib055/37c-173.source-manifest.json",
     "original_sha256": "719e308582e3060bc5130b2518267d5b33d8cde45d68ca23f88d28fbd84522a0",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/ccel_puritan_lib055_flavel_method_of_grace_oracle.source-manifest.json",
-    "manifest_sha256": "09168af580d2cbc201b7098e682b825f98b0eafa656b5b018e3d2901c6ba77a4",
+    "manifest_sha256": "d2a719c1db96ac5c0b50a35f5f5c5ca1199bf7a357b050ac8ac6833bf597a136",
     "original": "sources/structured-text/flavel-method-of-grace/lib055/37c-174.source-manifest.json",
     "original_sha256": "79e1911c347e3c91b4571c6bd1670f8106b90d5d566bf91e01c412478816d4bf",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/ccel_puritan_lib055_rutherford_letters_oracle.source-manifest.json",
-    "manifest_sha256": "b88f1a9013aeee497ad4fe208fc8f9d86982c8d7dbbed6ab35428333f6b243e7",
+    "manifest_sha256": "b2000696fccae5dca107cf19b28941049999ec53760ad53183e5eaab893885cf",
     "original": "sources/structured-text/rutherford-letters/lib055/37c-267.source-manifest.json",
     "original_sha256": "16c143303874289317cf4c6090a9458000c829cd1223cea2c3170d2728178e55",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-1.source-manifest.json",
-    "manifest_sha256": "68293f369111ed774937b294c311559083b08773afa4c6fdb05bd640e3450d6f",
+    "manifest_sha256": "08195f40312b5b6de7c896e8d7abc9851e40790c4e5a5246f5415b4d4501fef0",
     "original": "sources/structured-text/charnock-existence-attributes-vol-1/charnock-existence-attributes-vol-1.source-manifest.json",
     "original_sha256": "8e4c483953a7344251cc8fdcbfcaa967439b37b883e26d9b7b8fc0e0f7be08fa",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/charnock-existence-attributes-vol-2.source-manifest.json",
-    "manifest_sha256": "7d0c44ca2502ef5dfd0c2637ebebad88fe29f2b04e9a6caf1da25f80238daa5f",
+    "manifest_sha256": "b9600d9df4859e6d771d4076f1b20ca58cd8934252eedce5269d7ee8c902735d",
     "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.source-manifest.json",
     "original_sha256": "808810589b3f6fc1dd21f1df69340a224364b990c43a1942ef3b91df6524e6da",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/charnock-vol2-native-v2.current-installer.source-manifest.json",
-    "manifest_sha256": "8b6f6a68360e9af7f830f8086c442c3a1cb56dcbe7ac09e4c6648db6124103f0",
+    "manifest_sha256": "9fc091419750e6464763377a6ef3d1de457d1dc42c95944e317fb646895194cf",
     "original": "sources/structured-text/charnock-existence-attributes-vol-2/charnock-existence-attributes-vol-2.native-v2.source-manifest.json",
     "original_sha256": "a8c8b177d62e97421aca934953f9c7f7f4a1949d8156429da2f6fc14db9a6a7b",
     "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/chrysostom-commentary-on-galatians.npnf113.source-manifest.json",
-    "manifest_sha256": "c34f41ba172831ce400860ae12c786509eada4ed2360b154733ebe68d3ab23bd",
+    "manifest_sha256": "7a52da719f108c3e00489cf05e07302ed444a918d62be658be39f44d706218d8",
     "original": "sources/structured-text/chrysostom-npnf113-lib041/work-bindings/chrysostom-commentary-on-galatians/source-manifest.json",
     "original_sha256": "fe7f2efc1a9336bd6b2d46ac28f2a906f4cd20f0a90f40d97c34fdfc22c5932f",
     "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/city-of-god-dods-1871.source-manifest.json",
-    "manifest_sha256": "f8835856adce14da851fa5d05e6943d5f09d0f1eb36cc0e228266a310e6caf27",
+    "manifest_sha256": "33446a4f394c3b42d6137788435a4e648fdc94df77e4c29ebab0292693ea11d7",
     "original": "sources/city-of-god/city-of-god-dods-1871.source-manifest.json",
     "original_sha256": "f6cc6b3a483107097f3ac0c7e6a997c8b851092b5188544011cc5dd16aef226b",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/city-of-god-npnf-1887.source-manifest.json",
-    "manifest_sha256": "400e64574fb406e32341316498629615c54a3e65680aae2589d5a24acdc7b444",
+    "manifest_sha256": "2bf87a8c3c756593e91bbcec5b8ec663b80e44b6ef5d6e0689d57607f9689a47",
     "original": "sources/city-of-god/city-of-god-npnf-1887.source-manifest.json",
     "original_sha256": "ea62ea61c655a84b01a55341d43865ba5c080dc794b23092a62122fe40875e9a",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/convicts-visitor-n18328.source-manifest.json",
-    "manifest_sha256": "2874b184920e4922e75baf9dc6160b39238395ffdaec89ff9f9bcef206071525",
+    "manifest_sha256": "1b40676e6a684e71b1e1357ec6a2605d08e8d9bb9480f73de35ddcbbb338ea77",
     "original": "sources/convicts-visitor/n18328.source-manifest.json",
     "original_sha256": "3f49322b0baed8d40c40f33d66e739624faae845e416c5e38c384332c32d9e7e",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-abstract-of-principles.source-manifest.json",
-    "manifest_sha256": "65baf44595a8a11dbf23643ab6a71788083029b382d659ab87d2e58577176b95",
+    "manifest_sha256": "deda1f3d82dfcc846223cf3cd4ad6bd455b7f550cac8ae2daf4a5c24a9556d6a",
     "original": "sources/doctrinal-documents/lib063-creeds-json/abstract-of-principles/abstract-of-principles.source-manifest.json",
     "original_sha256": "bdd0ace6eb892e8837cb34466b8d7bdafe1e9bc4fc4435b0ec8d568bf23dbbb7",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-apostles-creed.source-manifest.json",
-    "manifest_sha256": "c3508fa564bdbf1d4cd237ee35557841b9e495c17f8e767f2468f56ec8e9186d",
+    "manifest_sha256": "9cc5549449efdb94c2b5102b4556d381e199f9d275d0ed8a964992eac3d9dfd2",
     "original": "sources/doctrinal-documents/lib063-creeds-json/apostles-creed/apostles-creed.source-manifest.json",
     "original_sha256": "2169e91f3371270f3f7d56d101fd55e413f454c261e3d34ed133d956131b6da4",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-athanasian-creed.source-manifest.json",
-    "manifest_sha256": "a2ba912f342633de19f0b9163c8adb903d961a7c1b14ca498268c3b92fec8364",
+    "manifest_sha256": "ccadae080b8cf1988c529aea009faa8519dbcb33981afbdda5e4824769aa33f6",
     "original": "sources/doctrinal-documents/lib063-creeds-json/athanasian-creed/athanasian-creed.source-manifest.json",
     "original_sha256": "396ed24fce4deb3c7694e7f66b8e0f80031ba1740b702552ccc90df71697a1a0",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-belgic-confession-of-faith.source-manifest.json",
-    "manifest_sha256": "e9399c4d2837c78bdd1ba8b7e63577445f510a60d2983f2c689388a75e67e41a",
+    "manifest_sha256": "e98c60a5d9aeaa1fa5c51a89b591051072c134cd131c692f6e38e0ea6848a12d",
     "original": "sources/doctrinal-documents/lib063-creeds-json/belgic-confession-of-faith/belgic-confession-of-faith.source-manifest.json",
     "original_sha256": "5979af57c51066e06b86ecfd7ddd13799df8cf0008a333f79872c7106edb92f6",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-canons-of-dort.source-manifest.json",
-    "manifest_sha256": "74cf6bbab1a5d2abe750e9623de012b85e4727e6d5a5b4010b9923ee163ce427",
+    "manifest_sha256": "01d6639a715b6ca8229be802233a5bb6dab716f6f4045277aaf098fcc6f3d295",
     "original": "sources/doctrinal-documents/lib063-creeds-json/canons-of-dort/canons-of-dort.source-manifest.json",
     "original_sha256": "ed7c886b637e07e83910366daae133a989a75acecd045fd2330f86829f4c7298",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-chalcedonian-definition.source-manifest.json",
-    "manifest_sha256": "797f9ca6796b91f729d57484cccee250f56b74778b66116defc6d9c957acd777",
+    "manifest_sha256": "e016dfa3226d9669c5896be384c88c9e71704672b75a88761a350756e159cd45",
     "original": "sources/doctrinal-documents/lib063-creeds-json/chalcedonian-definition/chalcedonian-definition.source-manifest.json",
     "original_sha256": "35225f86172b074332d38d7a2767d004203dcac8b70a8912b76441aa68582740",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-consensus-tigurinus.source-manifest.json",
-    "manifest_sha256": "b93dae5ff652fe4688332a385044de59b33bfaac1c1055eb57f10cd27dcc2c9b",
+    "manifest_sha256": "3da5820261a21d23b30a15402e8a839658f4cbbafe25b09a807b464b04287a5e",
     "original": "sources/doctrinal-documents/lib063-creeds-json/consensus-tigurinus/consensus-tigurinus.source-manifest.json",
     "original_sha256": "e1777e26cf68ea90803f50729b2cd7acdd74d07b87cca850e0633afbdabc20db",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-council-of-orange.source-manifest.json",
-    "manifest_sha256": "171404c1153991bc9aa2231a6e23ab2d70bedfe52c8f8fade04801d3e256ba9f",
+    "manifest_sha256": "478a3fc6294cabe024934506fc1bdd9f826580e7fa8ce25bf65301c21622c042",
     "original": "sources/doctrinal-documents/lib063-creeds-json/council-of-orange/council-of-orange.source-manifest.json",
     "original_sha256": "2113ec391fe48f8d99595448e8e05b407a5b3d615ffe2b610f79b8ba55e8a53d",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-first-confession-of-basel.source-manifest.json",
-    "manifest_sha256": "1e1059d6a213761bedaf3fe1c1cf6ca5d82c7babb01237843907ca68b9ce9f29",
+    "manifest_sha256": "248b84fb3603e72b9d286fd833b5e9308d6b13f4099beff48c606df7ef23b2d1",
     "original": "sources/doctrinal-documents/lib063-creeds-json/first-confession-of-basel/first-confession-of-basel.source-manifest.json",
     "original_sha256": "34806827d37faa3762b2715a900f874a71c1eeaf71a62b07ec5e9562fac40041",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib063-first-helvetic-confession.source-manifest.json",
-    "manifest_sha256": "ac6c854fc397fab9f30cd3c5da475b9772b1f456fe98d4b348bc019c82591253",
+    "manifest_sha256": "76764637faf71e327f5696b877c99c31fcaef25b90c64de4a553222f21bfaef5",
     "original": "sources/doctrinal-documents/lib063-creeds-json/first-helvetic-confession/first-helvetic-confession.source-manifest.json",
     "original_sha256": "7de2dcceb49521c0daeb42309ada2e4e9858112060fcc0e694fa938ba5ea514f",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-french-confession-of-faith.source-manifest.json",
-    "manifest_sha256": "ac30413064b20212148350c84b0d697da11029ba211c6b7599be6930ebcb73cf",
+    "manifest_sha256": "4c78d58efb96f0de7be8f14bb67e9641292de982c938fcab88225e6258df7d8e",
     "original": "sources/doctrinal-documents/lib064-creeds-json/french-confession-of-faith/french-confession-of-faith.source-manifest.json",
     "original_sha256": "c939c18ed7d5a53b184c342e1df474bda3d24a99a53608ce530e173572613378",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-gregorys-declaration-of-faith.source-manifest.json",
-    "manifest_sha256": "e44237b8aab00ee83b42c91bdd8cff332cd82bebab9ad47aa9581596496fda99",
+    "manifest_sha256": "f0c1a3d1e186e7aa46cc8bed164f0f2341f5d08659ff04f925998b5d375ffc07",
     "original": "sources/doctrinal-documents/lib064-creeds-json/gregorys-declaration-of-faith/gregorys-declaration-of-faith.source-manifest.json",
     "original_sha256": "0ba39a4068fa60c5302dba8413247de8b310291397f3d5cc04fa530ab6b70c27",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-helvetic-consensus.source-manifest.json",
-    "manifest_sha256": "f746d6793b67406c55dd18e811c51406a87665700472e90ca620f3caa1569412",
+    "manifest_sha256": "e0bccc855cb1da861f20f393903df649c5bb776dca41d22b34ffa4085e49ee14",
     "original": "sources/doctrinal-documents/lib064-creeds-json/helvetic-consensus/helvetic-consensus.source-manifest.json",
     "original_sha256": "eb8085de5149abe1ba0aa80651347b1940985ba958e169b0805da9006ed9e43e",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-ignatius-creed.source-manifest.json",
-    "manifest_sha256": "07ebf2ff594077d723c5dbb772aea06fdb90e6cc7d943853b06d9fece5354577",
+    "manifest_sha256": "176b5aff9afdae0a291e2e90eaa5a6c303d75c387b0a552187b0facfbd4fe84b",
     "original": "sources/doctrinal-documents/lib064-creeds-json/ignatius-creed/ignatius-creed.source-manifest.json",
     "original_sha256": "05218115ad9b1fbf7787f283e87c9a09b8c21a592043fb52b9a80c60fa3b5b79",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-irenaeus-rule-of-faith.source-manifest.json",
-    "manifest_sha256": "41f4ff2640bc271a3bb8455eadc76d118a403a2fc99921f96eca27f8b06469db",
+    "manifest_sha256": "beca9631c4c16a35a6b4f76604cebb0b605caffac9305869933c808160372ce2",
     "original": "sources/doctrinal-documents/lib064-creeds-json/irenaeus-rule-of-faith/irenaeus-rule-of-faith.source-manifest.json",
     "original_sha256": "a5aa6231a21b09e01edf1c4a26c3303fffb5e55a1309250dd234e04a6767499c",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-london-baptist-confession-1689.source-manifest.json",
-    "manifest_sha256": "629dbe6c2deff41faefcf5a8ee7d536f0366c57a9e85603f4078dc16f188c9ee",
+    "manifest_sha256": "53e257cbceb9866885d94fd38948138dd397207b075c236323fd8466d6f9b4e4",
     "original": "sources/doctrinal-documents/lib064-creeds-json/london-baptist-confession-1689/london-baptist-confession-1689.source-manifest.json",
     "original_sha256": "b64df598b273aa5538120fefa11df0e637655e221df65f43aaa2e22d7e980845",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-nicene-creed.source-manifest.json",
-    "manifest_sha256": "c2727548d8e4cc26a290002baa646fcf29fc1dc22d660d57a6a02cbcf9be7bfe",
+    "manifest_sha256": "9341ebe27991b5f277965d67b916171ba6b202458c2c21d384c2a6323ce62b72",
     "original": "sources/doctrinal-documents/lib064-creeds-json/nicene-creed/nicene-creed.source-manifest.json",
     "original_sha256": "5c400df3eba905673678e805735f8704564228c99c4b1bb85ba0ea0c56685996",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-savoy-declaration.source-manifest.json",
-    "manifest_sha256": "40c1549e2529562c3437d46dddae7fdb305bc381ecbcbf9e1d3ca09e7dc10567",
+    "manifest_sha256": "dd4b5e78122888baf682ea60e99dd6ed4b117a92d813f5582f6dd4f8dde8d132",
     "original": "sources/doctrinal-documents/lib064-creeds-json/savoy-declaration/savoy-declaration.source-manifest.json",
     "original_sha256": "9079a47f3aba25de105b21596e628c159b1caa821733009e501670ac324c9379",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-scots-confession.source-manifest.json",
-    "manifest_sha256": "2ec35c49b773a175bba4f73658583c27f9fea2e64466d4bb2d0a4a0fa69efdaf",
+    "manifest_sha256": "18b46f80c05ebcbcc26f2af934e0a9c57d9a7158d6874d0f73a8f8c7c282f950",
     "original": "sources/doctrinal-documents/lib064-creeds-json/scots-confession/scots-confession.source-manifest.json",
     "original_sha256": "12a7e647be5f93e82747e7a4342fa7fa3aafe61157cced01e382d3a58a4dce34",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib064-second-helvetic-confession.source-manifest.json",
-    "manifest_sha256": "6267ca040d4c08b420d579c09c8d22efb05fa7e24958517942bcbf411e546981",
+    "manifest_sha256": "f0ac9936ff3cf6a1bd853fdd789eafb5367e00ca8c9b8b9d667448e0dfbd9f8f",
     "original": "sources/doctrinal-documents/lib064-creeds-json/second-helvetic-confession/second-helvetic-confession.source-manifest.json",
     "original_sha256": "7c30740d05a49a8a32f02338cfaede962fdbcf2c49941927e8383c37dbd34572",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-ten-theses-of-berne.source-manifest.json",
-    "manifest_sha256": "2c1be8c1a9266c04ecc4f0fa4ba34a1a15e4723b627f7d6925fc512897476691",
+    "manifest_sha256": "97ecb08363f980cb6a62257bde0c899b601663dc046e94014a0ecec2acea592e",
     "original": "sources/doctrinal-documents/lib065-creeds-json/ten-theses-of-berne/ten-theses-of-berne.source-manifest.json",
     "original_sha256": "a74857fd20a01c828d7b925e1b9d272cfd440a55fa9f4b8d8b16aa0c2aa8b81d",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-tertullians-rule-of-faith.source-manifest.json",
-    "manifest_sha256": "2594a6a37ee2327cc0afac52d92c9468c4a2a4062643345613aabd00dfeacd11",
+    "manifest_sha256": "5e5c68bbd8eb955ecf99827f33f0df338341ee3e4f492d09506c9dfe847e3a1c",
     "original": "sources/doctrinal-documents/lib065-creeds-json/tertullians-rule-of-faith/tertullians-rule-of-faith.source-manifest.json",
     "original_sha256": "b9bd645f72576374d990d959081db68e7ea774d1b06a00efdedf2b024c01570b",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-tetrapolitan-confession.source-manifest.json",
-    "manifest_sha256": "d4cf0dcd522cfc9f5a0b577dec39f5001901dc5f7811e8a9f959f61d48c3b155",
+    "manifest_sha256": "5c28cb2ab82d47dae7db014ca1929fcb498ee1f0e18001b6aacdd03b94bead43",
     "original": "sources/doctrinal-documents/lib065-creeds-json/tetrapolitan-confession/tetrapolitan-confession.source-manifest.json",
     "original_sha256": "27f39a1bf38ad05c4267823708b4f402858b285b35fa7afaa1b1bf5b51fdf6e1",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-waldensian-confession.source-manifest.json",
-    "manifest_sha256": "8c6659878bd4d4dc8a2e191e2ea43d9e1fb9eaf50c0a7cab21d7e286beb6fb85",
+    "manifest_sha256": "871a56eb20641d34d2d9f74c803eb971992e740198694f6002fed8227f05d0a7",
     "original": "sources/doctrinal-documents/lib065-creeds-json/waldensian-confession/waldensian-confession.source-manifest.json",
     "original_sha256": "9aafcec0c9e95ef06e5de7617e9f48daaa2eeb6509eac8ae4a38c6025f0a254c",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-westminster-confession-of-faith.source-manifest.json",
-    "manifest_sha256": "077d69d6685fc3afb74393b151947576eae30b42870b7c4a93b17d5d8831b27c",
+    "manifest_sha256": "90a7621c45c0e2fa95d0fdfe2ae189505416bbf82068abdf56e549546734098c",
     "original": "sources/doctrinal-documents/lib065-creeds-json/westminster-confession-of-faith/westminster-confession-of-faith.source-manifest.json",
     "original_sha256": "02168e8db8233942af2dd619cd9cc525ff732581bc761b245d60e1a167cc6a0e",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-zwinglis-67-articles.source-manifest.json",
-    "manifest_sha256": "4ac2e0df48d75058b9cfd6f10e3ee591953a907f471b197c1f4802aedf79d9fa",
+    "manifest_sha256": "5508f46e0771b4f60bce235348ed5563d1710961784d35a6111117f1564de500",
     "original": "sources/doctrinal-documents/lib065-creeds-json/zwinglis-67-articles/zwinglis-67-articles.source-manifest.json",
     "original_sha256": "54d97cfaa23b7b59bf5bdb329f3c8a1bef30e8b88a65739f9ca86fc5f5dc9ae1",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/creeds-lib065-zwinglis-fidei-ratio.source-manifest.json",
-    "manifest_sha256": "d2bd00d7d054e9ac21b4514406a4470570ec599475f06a1e9bd1a36ce3ace1e6",
+    "manifest_sha256": "8ff6b1f69f0d4f6eb3ea493e4d3bb2463f8f381aab7ed082b6fab8eaf5b36079",
     "original": "sources/doctrinal-documents/lib065-creeds-json/zwinglis-fidei-ratio/zwinglis-fidei-ratio.source-manifest.json",
     "original_sha256": "f470fc0e4c8a5720f85e61d3231308d23c38d210790d10e03e5d2c32c6f70e8e",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/cyril-of-jerusalem-catechetical-lectures.source-manifest.json",
-    "manifest_sha256": "db11b5b6c62470bdf64d57b7cc2cc3ac57276e85791159abd3f0742849be3093",
+    "manifest_sha256": "27b82c76c054e77d6bbfc4d0ac7b0f9864f21e6ecc96f4ae83a5c985083a88af",
     "original": "sources/structured-text/cyril-of-jerusalem-catechetical-lectures/cyril-of-jerusalem-catechetical-lectures.source-manifest.json",
     "original_sha256": "eb18037fde4a81b9b8ebccc7ca0e720df58ea15260a4f78f62462e9520472c6c",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/darby.source-manifest.json",
-    "manifest_sha256": "7d0be4aaa4f70efe9cbc5cf95d9e09b36c67caf5e845e1945601d05fb322947a",
+    "manifest_sha256": "8a29e7c55064473baacd9493a7b585baf1f0e1811d4978ccc2980cf144f2c8eb",
     "original": "sources/bible-text/darby/darby.source-manifest.json",
     "original_sha256": "242fb81065e6609513aad4a87e00a8b310b64fe80cefe5e8b5f9eff87ddb17c3",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/didache_prayers_oracle.source-manifest.json",
-    "manifest_sha256": "e03ec4bc9450727a3af1bb5164700d1de82acf0ab8f31ea86972e01823a2c5cb",
+    "manifest_sha256": "09b195546e7eb3780a59c7c56dd996cf5e1442c78bce4a4e4ec6137a96e99af3",
     "original": "sources/didache-prayers/didache-prayers.source-manifest.json",
     "original_sha256": "96e4bda718121653789f2227c5547f747f9b3a33f9cea7f8410816cd7f06d349",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/donne-lib068.source-manifest.json",
-    "manifest_sha256": "dffebd679517922de97ac74b1d154d280bcf30b5c043c56be57757abb64375b5",
+    "manifest_sha256": "34ceaa459f678ce3a9d5e2238b0cb67ff6a1ffe0b689f7c8d5d228baf6533185",
     "original": "sources/structured-text/donne-devotions-upon-emergent-occasions/LIB-068.source-manifest.json",
     "original_sha256": "99dded2c8e17b37b2c8ce0f0eb19ca4bc87fe1a152deda4605030f3e32b0bbce",
     "preservation_test": "tests/test_lib068_source_letters_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/douay-rheims-1899.source-manifest.json",
-    "manifest_sha256": "2f663ef6b8e4c2762a2e39119feda2d68c7820cbd400325d981bdc69d1f7c988",
+    "manifest_sha256": "6f50923726aae5855ef2a9c9122e8d092a83c3779f93b2c3d0d89b39e9aaf2c3",
     "original": "sources/douay-rheims-1899/douay-rheims-1899.source-manifest.json",
     "original_sha256": "c08e9d0d880585cf3c0c6c8dbca6646186f48bd33aaa26cfbc2a5953471df706",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/edwards-distinguishing-marks-fragment.source-manifest.json",
-    "manifest_sha256": "534814e3e6a4fae19658ba3d635720152157c208bf87ac1d4c7eb395d2241696",
+    "manifest_sha256": "2395cc67badc1d210d1bc9ca4face0c9e6743948afed99ab30fe31064e2e866b",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-distinguishing-marks/lib054-edwards-fragment.source-manifest.json",
     "original_sha256": "6ff4502d3efecbef3081ad7d42854506e5247ddca1ddb31308b35098fe0cf150",
     "preservation_test": "tests/test_lib054_edwards_fragments.py::test_runtime_manifest_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/edwards-history-of-redemption-fragment.source-manifest.json",
-    "manifest_sha256": "67e99df6dc7abeefa0fdcb6379bdb9f2c7205f1a15a2040aef7fef845719e059",
+    "manifest_sha256": "be3845edbe525ef3e45f1900e95146138250b0fa57021c53a28a478a5bcab941",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-history-of-redemption/lib054-edwards-fragment.source-manifest.json",
     "original_sha256": "5d31a9cad607b8902abf73de96ab028dff12206e55b26a1610bc1ae534e461f0",
     "preservation_test": "tests/test_lib054_edwards_fragments.py::test_runtime_manifest_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/edwards-religious-affections.source-manifest.json",
-    "manifest_sha256": "bccf2999a48718b06a598230fbf82c848e3418f737d9154db51e4c0388be4fb3",
+    "manifest_sha256": "61537a06f63bb39657e9f9696a632c062d79b8f1cd8e44fdb3afdb5ad4fe67db",
     "original": "sources/structured-text/edwards-religious-affections/lib055/37c-142.source-manifest.json",
     "original_sha256": "5f4656c60660df46d3a146f61d0e994f6fdbb0155da4f100b39de3a7ec549a6f",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/eliza-southall-pg11959-current-installer.source-manifest.json",
-    "manifest_sha256": "ecdaadd5d536a060105bc2cde9fe232009a81d0c8ac0f39e728ff981ad4b4786",
+    "manifest_sha256": "e5680023b58e10b0d52365a46f086100269526973995557ef6e8360533acd8cd",
     "original": "sources/structured-text/eliza-southall-pg11959/source-manifest.json",
     "original_sha256": "6fd712b9426c6188afd6e3bcf40bc891c09c438904be0943c486febffc7afc77",
     "preservation_test": "tests/test_eliza_southall_pg11959_install.py::test_runtime_source_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/equiano-interesting-narrative-1789-part-1.source-manifest.json",
-    "manifest_sha256": "8b508ffbd7c61b30a8d5894f6812bb0ec7949e2a4cb8abed25e1dfb3144a1a44",
+    "manifest_sha256": "217e85c16280448f3f4bee2e6b78902d4522f40ff4c1fe8c6933dc9f9955aa18",
     "original": "sources/structured-text/equiano-interesting-narrative-1789-part-1/equiano-interesting-narrative-1789-part-1.source-manifest.json",
     "original_sha256": "ccec585b08e745fef7349e15c7ee275ddc945252c97240b92ef3202daf50cdbc",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/equiano-interesting-narrative-1789-part-2.source-manifest.json",
-    "manifest_sha256": "369d7495332d89434705bc8cfeb23618692a5de513eecb60cd7ef96cab07127f",
+    "manifest_sha256": "d97594023ba84a174531d0fabed6b4a777798ba34a39ef88cdd9f4bdf0eb71ff",
     "original": "sources/structured-text/equiano-interesting-narrative-1789-part-2/equiano-interesting-narrative-1789-part-2.source-manifest.json",
     "original_sha256": "25b4f6e97366f5e9bd5dc675b3984af33bea7fd9d6b230b2c2d7d23891f17aca",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/evening-incense-pg50916-current-installer.source-manifest.json",
-    "manifest_sha256": "28679337418088230b1a5c200e9c4a8b97b14520e241845f273b18283ef119ef",
+    "manifest_sha256": "ba8cfef9880785f7cb873485ebda04a7c63ac9d00b86fdee5c04c390ffe69a48",
     "original": "sources/structured-text/evening-incense-pg50916/source-manifest.json",
     "original_sha256": "b699022be0a7d1303fbf5314fbc79696ea41192adbdbcd5090c6ebeb358f3468",
     "preservation_test": "tests/test_evening_incense_pg50916_install.py::test_runtime_source_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/expositors-bible-lib033.source-manifest.json",
-    "manifest_sha256": "961bba64b625c1230dd2cee14fc77f5f72edd6ef96111e623990f2f28ddc6b6f",
+    "manifest_sha256": "4158359a6c9b6f834ba352513c781f9335f2d856437669c3a80fccae21237dc2",
     "original": "sources/commentaries/expositors-bible/lib033.source-manifest.json",
     "original_sha256": "3858b10f415452dd5a2ac64a89d586b92a23e67727b83de3b506cf899868b2d1",
     "preservation_test": "tests/test_newline_runtime_manifests.py::test_runtime_fixture_changes_only_line_endings_and_current_validator_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/expositors-bible-lib034.source-manifest.json",
-    "manifest_sha256": "fc9399b835b064a7502adba302d56051cff3c95d4bed8098360d94779862f7e9",
+    "manifest_sha256": "82ac2dfc4d18daf7fa1af5cb2faf399de6a0bb31fb438079fc37ff487ec4cb80",
     "original": "sources/commentaries/expositors-bible/lib034.source-manifest.json",
     "original_sha256": "090ebb5b39bb78bdd3395760f57bb3db460fe43a795a98307c36b654c5270c0b",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/expositors-bible-lib035.source-manifest.json",
-    "manifest_sha256": "aff05ddca822dd84cf9132e50d9ffd92e8b90829064a199e448a8ee4fea7c764",
+    "manifest_sha256": "e7b5033445971e7f45d0709ff5ac774d72ab9c43b96da307a3cbd12ff71a80c0",
     "original": "sources/commentaries/expositors-bible/lib035.source-manifest.json",
     "original_sha256": "0febdfc83e8301ce343b9246755d2a5ad1bb26b4bf2b1ba2c8a3de5030478003",
     "preservation_test": "tests/test_newline_runtime_manifests.py::test_runtime_fixture_changes_only_line_endings_and_current_validator_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/expositors-bible-lib036.source-manifest.json",
-    "manifest_sha256": "2a3ceb8c16364374a3efa5a98e0a959d99d7752e1d9a1a26d04883c1825d4af9",
+    "manifest_sha256": "4adc3a6631a5133ccede25e6d36040c7d06d4cf5270ee2fa0c04edd515a2fc22",
     "original": "sources/commentaries/expositors-bible/lib036.source-manifest.json",
     "original_sha256": "a5638d012a274145921cf416a4b8df1bc2ea64f3ecc28d0d5f858cff7cfc47d0",
     "preservation_test": "tests/test_newline_runtime_manifests.py::test_runtime_fixture_changes_only_line_endings_and_current_validator_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/george_whitefield_sermons_oracle.source-manifest.json",
-    "manifest_sha256": "744b06ae9df7cd0e365cbad45bdc020359eb96aac566e456100b9e38d30be48b",
+    "manifest_sha256": "6a6b55ec99ebdc6e5bf92655927763ec546b5263e8c54130df60019efed320a8",
     "original": "sources/sermons/george-whitefield-sermons/george-whitefield-sermons.source-manifest.json",
     "original_sha256": "380064c2794201b2684c3163d8ef8e2300883f826cb07dca640b04cda891ed46",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/gregory-of-nazianzus-select-orations.source-manifest.json",
-    "manifest_sha256": "225151247802fbbfb893c1c742516203f69cb8ef2b3da86a516cda04c44233b0",
+    "manifest_sha256": "37077fbf7ee0bf060914d38d1a9848f23e3fdb36f4336f9969ab6cb29c35e48e",
     "original": "sources/structured-text/gregory-of-nazianzus-select-orations/gregory-of-nazianzus-select-orations.source-manifest.json",
     "original_sha256": "9ee0745367b4b5160e2527b9b45e9ee1664f13d8f9904bb586cb7edf1694e0e2",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/gregory-of-nyssa-against-eunomius.source-manifest.json",
-    "manifest_sha256": "13ef56fd92a30232b3902eec753a349a18617c8b1df89152cc5d400c9d985ddf",
+    "manifest_sha256": "ff694b82881ecd3f639be9c8564487a9f89b0bdfd9cf89fdf24b0531224014de",
     "original": "sources/structured-text/gregory-of-nyssa-against-eunomius/gregory-of-nyssa-against-eunomius.source-manifest.json",
     "original_sha256": "58aa2013d26efb322fd4a6743780d2d2eb59a4897e57c1710260045c368680a9",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/gregory-select-letters.source-manifest.json",
-    "manifest_sha256": "ada6dd496240fbcf78fdc88be5fc011e76f83493708bc590ad9f9db14a251551",
+    "manifest_sha256": "642bd1f425030c5c70e540d698d3b3834525666352f34366d2127610bdf7ba6a",
     "original": "sources/structured-text/gregory-of-nazianzus-select-letters/gregory-select-letters.source-manifest.json",
     "original_sha256": "580a785f5842ba47e8eed12b0b847a017250b063733f94ad55f5af0aaa790b7a",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/gutenberg-evangelical-lib071.source-manifest.json",
-    "manifest_sha256": "3c0aaaa6a674186dea036d902ecd7ce98ceedaec1ea99d89b1008adb090fb4ae",
+    "manifest_sha256": "9d2c6208465ee0a07061dd5a58bddd16be0b91697a8f3df5fb4de0288344990f",
     "original": "sources/structured-text/lib071-gutenberg-evangelical/gutenberg-evangelical-lib071.source-manifest.json",
     "original_sha256": "132ffcf308f4f7c22d236feec0c8b4aa099120ee86108351818a811e32542a76",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/hammon-address-to-the-negroes-of-new-york.source-manifest.json",
-    "manifest_sha256": "b22d1e81422e094cdec4fcee9bdbfe7776a0ac4fdbef7a22bf6871e221644037",
+    "manifest_sha256": "4e38a34c08ee9f295d8c8e0d169cb5fdc8bf2ee85d902c58e408fb1dcb8f0463",
     "original": "sources/structured-text/hammon-address-to-the-negroes-of-new-york/hammon-address-to-the-negroes-of-new-york.source-manifest.json",
     "original_sha256": "c4efbc35338f3693fbc13267e38aead0917e8a9159820f518ce779e39f110c0f",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/hodge-systematic-theology-vol-1.source-manifest.json",
-    "manifest_sha256": "84621ebe1d627cbfb0e71b26ac561fa01067af1832d41c548be4a80dd85c68b2",
+    "manifest_sha256": "8b7db6c0f2129a8367705b226c96a7221874fb345e2eab5cf0eed4e382c44149",
     "original": "sources/structured-text/hodge-systematic-theology-vol-1/hodge-systematic-theology-vol-1.source-manifest.json",
     "original_sha256": "d487a25cf3ad4b4bee6705ada0a8840c3fa9993b496c12653a91565c68cc4e83",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/hodge-systematic-theology-vol-2.source-manifest.json",
-    "manifest_sha256": "b7961ed0e959921f24c11d8f2740fc2af7d518fc0b9bef27f5bc5228ee46b675",
+    "manifest_sha256": "1526d6a38505870137b77a8a589e4a886d8399674248e079ce9b056e3c506861",
     "original": "sources/structured-text/hodge-systematic-theology-vol-2/hodge-systematic-theology-vol-2.source-manifest.json",
     "original_sha256": "e73cdb3b46c4a793b948282a4e845bca4c1bf2af16a998d981e5fc9bc211c63e",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/imitation-of-christ.source-manifest.json",
-    "manifest_sha256": "349bc3df61aef08253506bbe2986ccb2ba1d32039d10afb84311acd5b8744b42",
+    "manifest_sha256": "d992af9cfea9c9dea457eab63e801a4908b6b43a1ea109b09d3ba419b2b53690",
     "original": "sources/standard-ebooks/thomas-a-kempis_the-imitation-of-christ_william-benham/imitation-of-christ.source-manifest.json",
     "original_sha256": "a667dffbc5880dc1dc8996bb62d39e915bc8c7f5073b4219162f88ae03fe7c14",
     "preservation_test": "tests/test_imitation_of_christ_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_shared_runtime_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/jamieson-fausset-brown.source-manifest.json",
-    "manifest_sha256": "41535af2e598b0889a4ce035421617cd7a74e5238007933d003efb59c26e2716",
+    "manifest_sha256": "5872452ab4c08a69b38b0c7750112bf601a1db3a590cf51117b4b68eb36ce58e",
     "original": "sources/commentaries/jamieson-fausset-brown/jamieson-fausset-brown.source-manifest.json",
     "original_sha256": "8bc0871f208c5037cb34e598045581f182bbf00cf1f90206fac7a5f497b91bce",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/jarena-lee-pg66953-current-installer.source-manifest.json",
-    "manifest_sha256": "d93bd4b73120b533c2d2184227e73221cf291d002786190ba41428a23ad918a2",
+    "manifest_sha256": "1927a29a1ee4edee1cfa6922234a141f23b18d249a486ef8736672bc56e36e56",
     "original": "sources/structured-text/jarena-lee-pg66953/source-manifest.json",
     "original_sha256": "51c098ec50d67efb7e51aa218b15796ccbad58752bebafb81abb78c19557b6b9",
     "preservation_test": "tests/test_jarena_lee_pg66953_install.py::test_runtime_manifest_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/jerome-life-of-paulus.npnf206.source-manifest.json",
-    "manifest_sha256": "25346825d224519934e873cce94141f7d8fa48526d8b751ca34760ef8748e5bc",
+    "manifest_sha256": "f3313d53af2f872410748ae01a4f5995e7af0c03f0a5e31715f58736c102b1f2",
     "original": "sources/structured-text/jerome-npnf206-works/jerome-life-of-paulus/source-manifest.json",
     "original_sha256": "f19a832e23b9da69fef00ec2d5705093a6f3a053dd952afc648ed3b27054c4bf",
     "preservation_test": "tests/test_npnf_work_late_runtime_manifests.py::test_complete_original_record_is_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/john-gill.source-manifest.json",
-    "manifest_sha256": "4717d5cf4ef193136929c3c2703f033dc3466d1dfd105f3c90c3b3d3078b112a",
+    "manifest_sha256": "36e20921ed0683a8c8aeb8fd887806da2e43095f25287eaa198ea0e66fc5996b",
     "original": "sources/commentaries/john-gill/john-gill.source-manifest.json",
     "original_sha256": "f13b1513d01cd31ae0e97d3caef5fdccbab2e3fae3cb3c6a97a849a0d878f076",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/john-owen-conscience.source-manifest.json",
-    "manifest_sha256": "c614b5416ce46e5f6e3ac6ac406801d45f8a8f52bee5264732e3a0276c37d07b",
+    "manifest_sha256": "620abe276058e3921da06bff50f21404bccd40c13e902e7a31a768b701134482",
     "original": "sources/work-units-phase-a/john-owen-conscience/source-manifest.json",
     "original_sha256": "d212bcd407d1c119a00d8ef23e30d6bc2fd1f355ce1150b8fb166ce536fdb885",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/john-owen-lib052.source-manifest.json",
-    "manifest_sha256": "ad81bc625c47ac22aef735ad566aa7dc31b02cea65e1a4aa8a65c6ce73666e72",
+    "manifest_sha256": "59379b75ccf3786bd5a1d44f70d7925bc58bb34a8a9493969411aae0e7b3895a",
     "original": "sources/structured-text/lib052-john-owen/john-owen-lib052.source-manifest.json",
     "original_sha256": "ccd09869a9f1c04d01b21c43c3393393156bca2239ef2207e8bc2209585b1a15",
     "preservation_test": "tests/test_john_owen_lib052_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/john_wesley_sermons_oracle.source-manifest.json",
-    "manifest_sha256": "26ebeb02dfe2fd30e8b3dbe4a6d22fe6e3c234ff49f22c506b17278839c4c7b3",
+    "manifest_sha256": "71127375ab80bcdd8f11bb136be00f60c48efdaaf1ea6f59a8846fd6196e6b15",
     "original": "sources/sermons/john-wesley-sermons/john-wesley-sermons.source-manifest.json",
     "original_sha256": "211d2e00446d99da08071148b5b5f28b7677037dbd45e4d3b06954c217111814",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/jps.source-manifest.json",
-    "manifest_sha256": "52038d8d299d7e455a41d6bb0a290bb30604aedbee4c7513b4440817d55f5557",
+    "manifest_sha256": "a313eb62a4dc0492a858853d07c378d9d0a3b8a525e21983e016ae1b21df8dcd",
     "original": "sources/bible-text/jps/jps.source-manifest.json",
     "original_sha256": "f0f6ed4c287e3684694d6089df5df4e6cd0cbf3b2e6549f88e7d8d8f8de85ea0",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/keil-delitzsch.source-manifest.json",
-    "manifest_sha256": "9a87758298f38d6428f3158767525aa379ae256320659299960abc62f3569991",
+    "manifest_sha256": "b669984f7820d2f94694de3ded5709c115ca60ec84f56f507ecb2145381738ec",
     "original": "sources/commentaries/keil-delitzsch/keil-delitzsch.source-manifest.json",
     "original_sha256": "f64fa4be7be388d830f0d87555dd7398b2721c4d3d2436d466a51c281ad5c4c1",
     "preservation_test": "tests/test_helloao_keil_delitzsch_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/kjv.source-manifest.json",
-    "manifest_sha256": "2aafacb28193b7e97c758727a9fc7569d3cbddaa9f616a2e9db13e1b61726c8a",
+    "manifest_sha256": "7dd10844e49d63ddf49be75aaf51978504260f5530c076419a370ce305613a67",
     "original": "sources/bible-text/kjv/kjv.source-manifest.json",
     "original_sha256": "2fdba1f9332e45082206517c3838f00d0500321d9fcaed21af57b28c471df03f",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/kjva.source-manifest.json",
-    "manifest_sha256": "1c90741aea2b3cee12e03a3be44c8472be377e2f7a528c6e567dfde1785944c7",
+    "manifest_sha256": "c56f5484bd07085539bb295b96b0f8c3b947c9027b8f54e922d1621077c3f2ee",
     "original": "sources/bible-text/kjva/kjva.source-manifest.json",
     "original_sha256": "8403b2b1009c5af8487da57c271942331f8dd4f6d8b8314cf5db186a4566be8e",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
@@ -729,301 +736,301 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/l671_l674_semantic_oracle.source-manifest.json",
-    "manifest_sha256": "ba4043649ddc82d32294a738c383690a9f341823ede6dc85237e7ca96a1a930f",
+    "manifest_sha256": "a34ecf59e7b0de0f3b201626662736942b0ebe3dd06a9afa76988d982ad8c76b",
     "original": "sources/manifest-acquisitions/l671-pg39440-successor/source-manifest.v3.json",
     "original_sha256": "62852e6fffbebd2f601c3fef9a6ce2271c7a4d80709b0a5ae374269fb0767f11",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/l741_evangelische_gezangen_1806_oracle.source-manifest.json",
-    "manifest_sha256": "5d7b60a099cb867cb0960cc41094193d562b3ed4dd50c5d775d2c7e98fb70d80",
+    "manifest_sha256": "c09a609bc0b6b3a90b95a671bb5f88148b2ce70bededdf5758ee87594b12d7e7",
     "original": "sources/manifest-acquisitions/l741-evangelische-gezangen-1806/source-manifest.json",
     "original_sha256": "c3de75ccf809acb168849b4a7f839ebf7a793c478907167609a2f245584549d4",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/law-serious-call.source-manifest.json",
-    "manifest_sha256": "263a4b1a047dcc27fcdc5b7f29c5941c86dc437ec15c8428c325621f8bee3c1e",
+    "manifest_sha256": "898fc74ab9ab911fb0f404aeca05efab238434983e81afc65a868eacf33eed97",
     "original": "sources/structured-text/law-serious-call/source-manifest.json",
     "original_sha256": "9871fd284891960a8b8771c24fc4a4690d75a25613615adea89605c602142285",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib014-brooks-precious-remedies.source-manifest.json",
-    "manifest_sha256": "6776bf7ac08e1239004667b5021fb0c7f3b435f1e6dc5743aaa580c4eea2d9e9",
+    "manifest_sha256": "f1d75d558b3f6d833c32345572c511cf3ba894bb47b704e9d0db04e57833b57e",
     "original": "sources/brooks-precious-remedies/LIB-014.source-manifest.json",
     "original_sha256": "50674e8b7041f5bd27c8f623a5a0100bc25bef0533e20fd7e3961401a14a711a",
     "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib014-burroughs-rare-jewel-contentment.source-manifest.json",
-    "manifest_sha256": "6f881dde711029d7fa432acfc2106e0a73a4ff66ad2bec5735d87bb586447503",
+    "manifest_sha256": "05cf65c63eaaa2e8e2fbbc565472e8d337a0ae84d2e6f74327e5ff1ce16a7db3",
     "original": "sources/burroughs-rare-jewel-contentment/LIB-014.source-manifest.json",
     "original_sha256": "eeb2fe5b7c82eb30a26e99ddbe08e2dd401ba1eed7156c3da17648975760d0f1",
     "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib014-gurnall-complete-armour.source-manifest.json",
-    "manifest_sha256": "98cde6676026dfd21a4f1749edc6cb1834690fd5cd0059d0d7e94ca681f8fa9f",
+    "manifest_sha256": "dd089dfdaddf77c91444c65f1955af8f109c4825a54fa4e44bbd5241db307c8c",
     "original": "sources/gurnall-complete-armour/LIB-014.source-manifest.json",
     "original_sha256": "9ff4e8ec7d51367d31c8d3c6eacf354f999532819ea8bbdd7be3622a001ceb98",
     "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib014-sibbes-bruised-reed.source-manifest.json",
-    "manifest_sha256": "aeb8a22e0e986791bba5b7e766af777b496494f1b82fffe163dfe19435023070",
+    "manifest_sha256": "5cb13b327aa32871e882dcec93dde0851ce75ebaeff2187383e061913efe6ea8",
     "original": "sources/sibbes-bruised-reed/LIB-014.source-manifest.json",
     "original_sha256": "8ad3a3db9e17ae25d1ef9f03463106fa7d3ac34df8bf72454fed90aee080af2f",
     "preservation_test": "tests/test_lib014_puritan_ia_reconstruction_contract.py::test_runtime_fixtures_preserve_retained_records_and_only_update_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib021-eastons-bible-dictionary.source-manifest.json",
-    "manifest_sha256": "ea5760bffb44cd5dab603bc0eb63c75963ca148ebee5fdaae472c31b6841dfe0",
+    "manifest_sha256": "715e99dae0a857a340861e1d9c6e6f99642f7c27729f4a0ab72bdd1f6247f243",
     "original": "sources/eastons-bible-dictionary/eastons-bible-dictionary.source-manifest.json",
     "original_sha256": "bf4115996057fbd62ae37321c8d97effea8a4e8a7c8c8c2e495ed3b5dfd210ad",
     "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib021-hitchcocks-bible-names-dictionary.source-manifest.json",
-    "manifest_sha256": "0afd194783a1c089cb81d88d18bd16e23a81c5b9dcee2d31a3187adbce28e82d",
+    "manifest_sha256": "4c9cf634658e1f40c8107f2fb411b0f825db848cdc53d8dacbd3fef2f039584b",
     "original": "sources/hitchcocks-bible-names-dictionary/hitchcocks-bible-names-dictionary.source-manifest.json",
     "original_sha256": "f74999deef0bd2df1285fe57e65bddd7eabe4ae23c56e1882119f2854fc1a7f0",
     "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib021-smiths-bible-dictionary.source-manifest.json",
-    "manifest_sha256": "8761fa00f94ffa2cdbb1555def766fd96440d5bed32bde313dd19b367f0e56c0",
+    "manifest_sha256": "da3fd7780245e3112fddfa360135af284a96a57c87e15098e8643369c0ca4f5e",
     "original": "sources/smiths-bible-dictionary/smiths-bible-dictionary.source-manifest.json",
     "original_sha256": "0824c442458f58cd5048f527af1f950b6f9c0b11f3cb01689c4e49d7716c47c1",
     "preservation_test": "tests/test_lib021_bible_dictionaries_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib029-complete-volume.source-manifest.json",
-    "manifest_sha256": "a9a6ceaa2d5b1eded6a2be459e5d2a539f48556f72b4e4ffcf20d2eabf9af4d3",
+    "manifest_sha256": "532a6e34e7704ebd1b85598f01e00e989cc10701cd41f8d6571eecb8eb605439",
     "original": "sources/structured-text/creeds-of-christendom-vol-1/complete-volume-v8/source-manifest.json",
     "original_sha256": "a37d345cc666ae981455be216f00bcb4459cc6d2686e0b9a343b1c14ae4bc202",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-essentials-of-prayer.source-manifest.json",
-    "manifest_sha256": "267fa8f71efd92afa59d0b2005dee499e30ee5ca16ba01c8990f9af300f7f975",
+    "manifest_sha256": "b586291b8840fb99ad4a2926a273ed1d44999204e62676279025deb68e775461",
     "original": "sources/structured-text/bounds-essentials-of-prayer/lib031-work.source-manifest.json",
     "original_sha256": "9617c4ccd4f4bbedf7eac5be1970a51a18b9392d21165348e8272716b12ffa9c",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-necessity-of-prayer.source-manifest.json",
-    "manifest_sha256": "8388c583ef198e12e5cadedbe1d1349db84676ebf4606ada041535b81c58ea57",
+    "manifest_sha256": "430dd8a0d705d73c1fb68b64094a66b8682721b122d62e75f7ca14df948f751f",
     "original": "sources/structured-text/bounds-necessity-of-prayer/lib031-work.source-manifest.json",
     "original_sha256": "c4e485fac19d2670bdb258816a474391613f417e0d06aaa79a6634504125cafd",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-power-through-prayer.source-manifest.json",
-    "manifest_sha256": "65a5278044b17c34483a643aa4d93153fa5b26746c71137522406b33c62528ad",
+    "manifest_sha256": "19296255b5ba95386225ccf62d7272c5b1c6bad9e5b0ebab09cceecac46eb6af",
     "original": "sources/structured-text/bounds-power-through-prayer/lib031-work.source-manifest.json",
     "original_sha256": "90b577ddcdd7763cf2e5e526af075ea2b868315438c9aeda703b4b25c5ce2c14",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-prayer-and-praying-men.source-manifest.json",
-    "manifest_sha256": "812147e89d2bf16255cc495fb99c83bf85a9725232159b238d4c6b67d998f55f",
+    "manifest_sha256": "59151bcfbd12504277450529a809fa016f8f2400700b7355737f64c26c3f5f07",
     "original": "sources/structured-text/bounds-prayer-and-praying-men/lib031-work.source-manifest.json",
     "original_sha256": "96e2e22b6d3845e0a9859fba88983b72624049fb82a3f39e0658a8b94b564928",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-purpose-in-prayer.source-manifest.json",
-    "manifest_sha256": "8ed0fe9dbc09bbcf699ef072d8a9327c1dc06c3c6803a7527264c6fc2c66676e",
+    "manifest_sha256": "848c63d211ee9976d696b68def0ea4fdea12535767e33089a11f55ecfac52987",
     "original": "sources/structured-text/bounds-purpose-in-prayer/lib031-work.source-manifest.json",
     "original_sha256": "cf402c89948743bbc413c10218dcb4b6d007f73a38e8f5405a531493bb0e6c23",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-reality-of-prayer.source-manifest.json",
-    "manifest_sha256": "f80e28fef45f7fa684947fa077af20935abc692914aabe62fd6774d7b6e43b6f",
+    "manifest_sha256": "fcef8f6ecae0f035e5f58a5f5e2046d70558a458b8d957b7e33ce120040ea516",
     "original": "sources/structured-text/bounds-reality-of-prayer/lib031-work.source-manifest.json",
     "original_sha256": "79b3d8fd416b4b574e430a5936be02d25553493fcc26320bb053b2fcf3c85766",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-bounds-weapon-of-prayer.source-manifest.json",
-    "manifest_sha256": "18d1e8ec054adba21da54a0afc8d8adfe82870bebba286775124f12ed5094537",
+    "manifest_sha256": "bceef3763153d8fc91dd20d88c83be427fc8ee2c766f2d511700ccc406f46305",
     "original": "sources/structured-text/bounds-weapon-of-prayer/lib031-work.source-manifest.json",
     "original_sha256": "a6e91e1c16a3bb07e4ec911edabe45c4f7589313e7f4ed1959723e33cb4e2614",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-finney-lectures-on-revivals.source-manifest.json",
-    "manifest_sha256": "c54ec7086ece903431dc98cdd261876439a633f60bc3f2c161b50d0894b123fd",
+    "manifest_sha256": "c99f1a9948203d9177a77fd52c347f202a7b154acd9a86854b7dd5b317ac1e61",
     "original": "sources/structured-text/finney-lectures-on-revivals/lib031-work.source-manifest.json",
     "original_sha256": "4ad46cc62a98a93ac8ef9bb36289dc1bfb9d1c8977411c737ec8cb61e29f8b82",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-finney-systematic-theology.source-manifest.json",
-    "manifest_sha256": "2d0d470eb8d09064a720a5cadccd1db315a1c4733fc4cd31c8ea66317667054c",
+    "manifest_sha256": "3bc3d2e5cafdd5203cf13f6d7195b538105f893acb782b556cd78783616220a0",
     "original": "sources/structured-text/finney-systematic-theology/lib031-work.source-manifest.json",
     "original_sha256": "479a0b362c9c0795e452910a4c792e74391dc3d06f0e1cc9686a4433c8faaa26",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib031-work-pascal-pensees.source-manifest.json",
-    "manifest_sha256": "d90f29115a8dc6e846565a88e167b1909ef1a15ff39b7dfe5e1c67df8d2801ff",
+    "manifest_sha256": "7208f9db23f6a1aa2afb24b4f6f3541818bad1848d161eb2bffeb14d3479fc7b",
     "original": "sources/structured-text/pascal-pensees/lib031-work.source-manifest.json",
     "original_sha256": "2ef61e801717bb279b4df215b3e3cb2847ae9a13e495a3d893e979d720396276",
     "preservation_test": "tests/test_lib031_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-baxter-call-to-unconverted.source-manifest.json",
-    "manifest_sha256": "6c09d77e20373161e91c3febf16a9201c2ebe93e4b3e8f0b012cb8177ab49927",
+    "manifest_sha256": "70357890c3aed14ad00d2f98350e4f93061bf5e669c4bc96d0a5d0ed9a378ec5",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/baxter-call-to-unconverted/lib054-work.source-manifest.json",
     "original_sha256": "73288438c321153b4a81ed3bd7f20d29f657037e16ebd9d697047e097b1ddc8e",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-baxter-reformed-pastor.source-manifest.json",
-    "manifest_sha256": "74bd3edb30a64211cd21fe4bf9ff5d04d8be543fb66aee678cd4f60811e0fe60",
+    "manifest_sha256": "24258036e39b0107307431367c58e9cfbce69f40e36c645de495c81c0189197f",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/baxter-reformed-pastor/lib054-work.source-manifest.json",
     "original_sha256": "606861420eab709af8265fe2739820db16af3905cd2ef320af5cad83d3795233",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-baxter-saints-rest.source-manifest.json",
-    "manifest_sha256": "d553c3e5a008a447be6800f806784034560cba13db667828ed9a28f0c29d9291",
+    "manifest_sha256": "59a4d0a6ead40f20329b10e11a11dd5c0f85d04a528fe1609df1e08c943ee55a",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/baxter-saints-rest/lib054-work.source-manifest.json",
     "original_sha256": "795eb1b1c7d4cb61ab36127e8b0fdf94cd503f9ec0fd2d451e967201a817d5e0",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-boston-crook-in-the-lot.source-manifest.json",
-    "manifest_sha256": "1615d92af8635e336d9845e5de1b8192548f16824a65961669c49ef271e23c65",
+    "manifest_sha256": "d7ac351be1a05afc0f2aa4fa0fe12a15d2de4fbf802f00814e852921e51a5d9b",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/boston-crook-in-the-lot/lib054-work.source-manifest.json",
     "original_sha256": "b23cf39d5e65523a30486e226b13ff3042001f377b18e6d2a17b817592c3b927",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-bunyan-grace-abounding.source-manifest.json",
-    "manifest_sha256": "d4fb9341b3a4e6288680e13a544c7cea14daba1751cf8f81119ebf565b2ec8c9",
+    "manifest_sha256": "cc78020237fc809b9b37ae2559f29d23bcac489d868cb03e024963f451ca1987",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/bunyan-grace-abounding/lib054-work.source-manifest.json",
     "original_sha256": "7458dad0c8c3a2bfd6c7a4c538f7349ce99748a734590926d7bf8dee68ea0f49",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-bunyan-holy-war.source-manifest.json",
-    "manifest_sha256": "97d7d512ea49addbb0d0e2cbb9735a84f286406108758e950817f26d18fb4abe",
+    "manifest_sha256": "ab998d01b75b4fe6f3492698cdfee3844578af0290a0398a3abbf8a1758df8c0",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/bunyan-holy-war/lib054-work.source-manifest.json",
     "original_sha256": "01c986920cfa1688f4b6295b99e045aa41ec80a979846cab744581de98be89cc",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-butler-analogy-of-religion.source-manifest.json",
-    "manifest_sha256": "4fb1f0759235accfdb258d1de190ff16c7246bba90f64dbdb4dd95be4618d67c",
+    "manifest_sha256": "0303b8a38d29c778182a3216b98cd43dea6b837547bd7ad941306e63353fc5c7",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/butler-analogy-of-religion/lib054-work.source-manifest.json",
     "original_sha256": "373b58b2ca4840868f951e5c74d15feea4e6dd59e21d72ab2d4cfb61f99a0046",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-edwards-distinguishing-marks.source-manifest.json",
-    "manifest_sha256": "f15e9e721caae13f485e535d739f05652cf5c009599685d196a66f3fade6729e",
+    "manifest_sha256": "719a54b50f508522e1752551e40d95c3c62c6ef1dcd9088cb608b0400a91f467",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-distinguishing-marks/lib054-work.source-manifest.json",
     "original_sha256": "997add77c90cffc7944ac2032e2456ab6aa095fadc3fd49570d65829e74bb544",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-edwards-freedom-of-the-will.source-manifest.json",
-    "manifest_sha256": "2e96b822fa8b50e7a4e4699ca757bf0cbacadc10bb9ad444e016f25a8bd12d3c",
+    "manifest_sha256": "92323f70587623014ebb8c8488121ad6ceeb51015d08f62ab26201cbbbfdf4ca",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-freedom-of-the-will/lib054-work.source-manifest.json",
     "original_sha256": "b0e1385809347f8bd8527ba06378a2b2912e65ac2aca931f3c2c3fa5b2785fda",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib054-work-edwards-history-of-redemption.source-manifest.json",
-    "manifest_sha256": "6cfc7f7c3e6f7d90389e04b7c8efc59f6d9dce8d33b509fb5bccd62f5875db4a",
+    "manifest_sha256": "773e6bd8956322a09dcf70d07360683bf9a0a72d526d4c40adc21ae78d0b51f2",
     "original": "sources/structured-text/lib054-ccel-puritan/work-bindings/edwards-history-of-redemption/lib054-work.source-manifest.json",
     "original_sha256": "3b09678583d42e3beac259c12ef00afd876e7668836edae23d3b519bbdeba0e1",
     "preservation_test": "tests/test_lib054_work_local_runtime_manifests.py::test_runtime_copy_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib089-directory-for-family-worship.source-manifest.json",
-    "manifest_sha256": "c1a850ede2eca07ac3477255be0074fca77d3f315ff5ff387cf81d83dbc81c0d",
+    "manifest_sha256": "057708be43f3be82102e3afa220dbe19d91dc013bf5a93753376df09bf62eed2",
     "original": "sources/doctrinal-documents/directory-for-family-worship/directory-for-family-worship.source-manifest.json",
     "original_sha256": "558e0d6d68d54ced1dea9b2462f8bf1946cd6c937698f3fb17e6fba4811abc1b",
     "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib089-directory-for-publick-worship.source-manifest.json",
-    "manifest_sha256": "7c959dfc9392948397c8d491ac06859e88ed4d91028c792b5d35b2580e3586b6",
+    "manifest_sha256": "f626ff254802671ae1e2a16bc58dd4fca7c126fe88f308b58aad688d6ca9e7ec",
     "original": "sources/doctrinal-documents/directory-for-publick-worship/directory-for-publick-worship.source-manifest.json",
     "original_sha256": "415dfe2c793512f6cd4014d77e72464b07a6deb0eee71e0fb2f504f6d9ef3d24",
     "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib089-solemn-league-and-covenant.source-manifest.json",
-    "manifest_sha256": "00368cbd7fca6bd6b17d5b75e49872a29dca689f4773ea8a96516c7345995559",
+    "manifest_sha256": "b3fd1e49d68da19011f9ee0e21e8e78d5b96acd15d0eae3fc93f7d48d4a97b2c",
     "original": "sources/doctrinal-documents/solemn-league-and-covenant/solemn-league-and-covenant.source-manifest.json",
     "original_sha256": "54595805211178d1ea87e88dca489f331fb349103aaca4c1ee096ad7eb8b72b1",
     "preservation_test": "tests/test_lib089_westminster_standards_reconstruction.py::test_runtime_fixture_preserves_complete_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lib089_form_church_comments_oracle.source-manifest.json",
-    "manifest_sha256": "cd20677220491a27d47028d99956677a4793eb704c34e1fd2de5379fbdc88be3",
+    "manifest_sha256": "f51699a5b15cc54c09b550a240738bed608cbe970fbd5766c181f82640ad38dc",
     "original": "sources/doctrinal-documents/form-of-church-government/form-of-church-government.source-manifest.json",
     "original_sha256": "19626b824e3d323275bb889e9011251ed2f1bc6813d4936590b28d9fc7185db5",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lightfoot-colossians-philemon.source-manifest.json",
-    "manifest_sha256": "97d3bbb1c5d27b4195066118dc867784d2c0144f863741b94d86f6717a5c7c8a",
+    "manifest_sha256": "4d3bdf472158aa4d3e3cf1d62ca69b8b173be635a2494867dee720fd0f6bad07",
     "original": "sources/commentaries/lightfoot-colossians-philemon/lightfoot-colossians-philemon.source-manifest.json",
     "original_sha256": "37ef8e113127091d755572287b5bfc41465bc89bc71806fc1cb2eb79880d0649",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/luther-bondage-of-the-will.source-manifest.json",
-    "manifest_sha256": "ea249ceaf7aaeebfc94be912bbcdd4cdd054b0f6739c8425bad14375d16541e3",
+    "manifest_sha256": "56b0257089cf7ccbc8f23fb086654768bc2b4bdaeb8b3d417aae68b096052aa7",
     "original": "sources/structured-text/luther-bondage-of-the-will/luther-bondage-of-the-will.source-manifest.json",
     "original_sha256": "42a53a7b637804c4a218f3853988f89f4b261c0aa1c569af7c4fed3d3f8aeb50",
     "preservation_test": "tests/test_luther_bondage_covenanter_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_shared_runtime_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/luther-galatians-native-v2.current-installer.source-manifest.json",
-    "manifest_sha256": "4274f758087986949fc9acefb4cabb354f7260d21127c3d3c35d144af44f7f6d",
+    "manifest_sha256": "ce374a4885803175fdb2ffbbae2f9368eda551ec6ac19def50b28674afd7347b",
     "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.native-v2.source-manifest.json",
     "original_sha256": "d07b98ed01ce9ed3a2437c006b39049e6a402ae58848f70df6e6679aba553a5c",
     "preservation_test": "tests/test_native_v2_install_runtime_manifests.py::test_complete_original_source_and_profile_records_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/lutheran-pg76498-canonical-v1.source-manifest.json",
-    "manifest_sha256": "d26d94e74bc837da6994a444472150e3f63ac214d266258057b87fe531ae865f",
+    "manifest_sha256": "0cdd6c0067954754f50c029d7509f4db80b65ec1202862196a6a27d2fdcddccb",
     "original": "sources/lutheran-hymnbook-pg76498/source-manifest.canonical-v1.json",
     "original_sha256": "f158583ddc418700b2b05f32667691c0f78cf0e543c23f788f1aa487eedb64bc",
     "preservation_test": "tests/test_lutheran_hymnbook_pg76498_canonical.py::test_runtime_manifest_preserves_original_record_except_two_EOL_bindings_and_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/luthers_large_catechism_oracle.source-manifest.json",
-    "manifest_sha256": "5ebe24664f17bfdf21b5caeaf5bf59fd468f7a1262003bdbb13febcd5707ff26",
+    "manifest_sha256": "be99446a73cc31244889899e66b1d5f62f58da7effae7385924f976441d33b78",
     "original": "sources/structured-text/luthers-large-catechism/luthers-large-catechism.source-manifest.json",
     "original_sha256": "3d3c9ae5c688b7cd3566f10d0e36a15054b394d31dcdefb7821dd4cf4cee0e3a",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/mark.source-manifest.json",
-    "manifest_sha256": "43f8579ab162d4ace8ff698595e2c5d6c51a3bfab5036470d574d6d41432305d",
+    "manifest_sha256": "870f75d7014b002426f18ccd4f2b2146f5dbe38bf5f621ea10944c3e6975631c",
     "original": "sources/commentaries/expositors-bible/mark.source-manifest.json",
     "original_sha256": "900a098d54afe17ebbdd133ccf62631587f5f319da8619ad630d60e2eec63a7f",
     "preservation_test": "tests/test_next_binding_henry.py::test_runtime_copy_preserves_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/marrant-prince-hall-african-lodge-sermon.source-manifest.json",
-    "manifest_sha256": "2c48924dd5d70820a3ec8f55162438ec3ad1b32af0c7f6b05de51c81658c53f1",
+    "manifest_sha256": "16510a964814de954357cc73d610137f57f1b90e4ab9f961a7d9c023052b9016",
     "original": "sources/structured-text/marrant-prince-hall-african-lodge-sermon/marrant-prince-hall-african-lodge-sermon.source-manifest.json",
     "original_sha256": "3e10d23b795aeb3258c9e045830040922423559e4121372c017ff82eb92f7603",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/matthew-henry.source-manifest.json",
-    "manifest_sha256": "5c3f82f74d519bb40b3c617fbde1e231d9f571ddf4c384e232fd53a874db29e4",
+    "manifest_sha256": "7bef2708d3c5e28a8d2d0c7ae9ffc09b07e062dbe0eb8b2ce0e4c8a10f2f2ef3",
     "original": "sources/commentaries/matthew-henry/matthew-henry.source-manifest.json",
     "original_sha256": "7a84ba161a902cf66e03b245486f1a4fd08eb13f87137bac92d4d36283fc8f64",
     "preservation_test": "tests/test_helloao_matthew_henry_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_storage_closure"
@@ -1037,588 +1044,588 @@
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/naves_topical_bible_oracle.source-manifest.json",
-    "manifest_sha256": "063bda56d38eda66299d5eca4c06590982d615b55925be0fcec0a253685c81f7",
+    "manifest_sha256": "38bf5a36cc9889f9027d00f534015e3d220380c1058f7d7b8b0e44ed1824a12b",
     "original": "sources/naves-topical-bible/naves-topical-bible.source-manifest.json",
     "original_sha256": "43911eb995615881a2468f8cbbdab1852c60df123a6ad1acff515ebe4bd0e278",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/newman-lib068.source-manifest.json",
-    "manifest_sha256": "08a0f163da1242865e8a1a1f31bb32b44b96cd1a72765ac5cb914ab69e5771b9",
+    "manifest_sha256": "5b1d5654769c808acd72a58bed794b2e9afa5e8cc96deff8c15d7d381e7bf5a1",
     "original": "sources/structured-text/newman-apologia-pro-vita-sua/LIB-068.source-manifest.json",
     "original_sha256": "96f40195fb09c8767a445ed862e670c6658819f69683f40e5f46c45f022d75ae",
     "preservation_test": "tests/test_lib068_source_letters_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf-ambrose.source-manifest.json",
-    "manifest_sha256": "9b85b3dd177f6bbd155fea1649be6a5ed185ebc865936105da43e5e1627581f9",
+    "manifest_sha256": "64143b5ee6fe3cb49d8f38f03a5d4aa4d6bfffc8c58242960608705c02ed9a22",
     "original": "sources/structured-text/ambrose-npnf210/npnf-ambrose.source-manifest.json",
     "original_sha256": "aa813a1d02f13b7a706c08010bf5d779728998d2dec7fe4568159c8c792ade09",
     "preservation_test": "tests/test_npnf_ambrose_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_storage_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf-chrysostom.source-manifest.json",
-    "manifest_sha256": "680b9360cd99f76ee8755636ee81363b57bc9cd4db379c9f59501d5515c8cce0",
+    "manifest_sha256": "191b2a2b19b29e841e7c8b5a1f54339cf2eb43f51a6247aac6ccd2813626f92b",
     "original": "sources/structured-text/chrysostom-npnf110-111-112-114/npnf-chrysostom.source-manifest.json",
     "original_sha256": "403731b5318e88b11487e47fbfb994627204c6d469223a95f2a9006be120aa82",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf103.source-manifest.json",
-    "manifest_sha256": "ab6168675760f4b4a34aff00ca9559a084e8efe61980ec512cabacbf6f96e01f",
+    "manifest_sha256": "bb5502c3c3294909b0ab75cbd0a9bdb58a672dd219961356f30aa630bf30cffc",
     "original": "sources/structured-text/augustine-npnf103/augustine-npnf103.source-manifest.json",
     "original_sha256": "190306bcbf87e6b71863aef9dc50a6bbbdf1d73e3fb55954c5a8838ac9278a2c",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf104-lib038.source-manifest.json",
-    "manifest_sha256": "9f54251d2bb73de1dc1292874104dd57f94b48512f32f7d474cf2d19d1980b24",
+    "manifest_sha256": "55d04ebaf8e75d84842e3bc3d1b55a7eacb49a7474ae2955fa1eb2ff20c47dd5",
     "original": "sources/structured-text/augustine-npnf104-lib038/lib038.source-manifest.json",
     "original_sha256": "ed840ce819c1062cd4ffee4de310c1f359b973105402a817a060275525dcd1e5",
     "preservation_test": "tests/test_lib038_runtime_manifests.py::test_runtime_fixture_preserves_original_authorities_and_only_updates_live_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf105.source-manifest.json",
-    "manifest_sha256": "dd32671d0a0b6c09deb94bd3f29359d07c191546c38f4701a0463a198fde9dbf",
+    "manifest_sha256": "a41a9534a6dac9039d6a44d87d3cc416bf6cc95c9cc50fa985cee4cad2b2980f",
     "original": "sources/structured-text/augustine-npnf105/npnf105.source-manifest.json",
     "original_sha256": "fc1824fc52a968aff16cdfe42246a1f69fa3d3e2cd659d82aefbbf98dfd50d12",
     "preservation_test": "tests/test_npnf105_reconstruction.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf108-lib038.source-manifest.json",
-    "manifest_sha256": "492bb22efc03f9ee310e1ff7829642a326ef412384374b13ebddf7490933f9a8",
+    "manifest_sha256": "a5ae5082ac6b5fb5fc81360b86019ae19c1284ced6b4c738a7c2c1883a38df55",
     "original": "sources/structured-text/augustine-expositions-on-psalms/lib038.source-manifest.json",
     "original_sha256": "41cc46dcf5908307df2ab1014b0593e3b3ed8a7207f1dadac0084c406bc3900a",
     "preservation_test": "tests/test_lib038_runtime_manifests.py::test_runtime_fixture_preserves_original_authorities_and_only_updates_live_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf109-chrysostom.source-manifest.json",
-    "manifest_sha256": "b03ed204f2d3a26c3a43bd43e6bba73157456f3758b9a6690a16d8f6ecbad113",
+    "manifest_sha256": "999e05176e84adb2d0430a8c54e671754d0ed3c6121ff643d20028ede945916f",
     "original": "sources/structured-text/chrysostom-npnf109-16/npnf109-chrysostom.source-manifest.json",
     "original_sha256": "f63acfb1b89a47e37ed0a8356d5c5034571134fa83db60766aeb9a65ad9eaed1",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf113-lib041.source-manifest.json",
-    "manifest_sha256": "a8c64db096c6c59c8b71e8e978d8a3c3acc4903e73ad964d091f8508e5a1960b",
+    "manifest_sha256": "275bbcd9e6544fdbe5088515f1c8aae16a2b5d612f4e68c2de73452602531545",
     "original": "sources/structured-text/chrysostom-npnf113-lib041/npnf113-lib041-successor-20260915.source-manifest.json",
     "original_sha256": "901d1cfca985e3966f417337244a0d7b96b1d9c37273c72d3d88657462329e7e",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf2-lib046.source-manifest.json",
-    "manifest_sha256": "6895f92b33f94273c4b4658622ee691211c7f41296db095eef8d56d75df04f87",
+    "manifest_sha256": "3bb438193cf159ee017f5d1f7eb06a758b31842af6d206ae2fc968c9df9ba08e",
     "original": "sources/structured-text/npnf2-lib046/npnf2-lib046.source-manifest.json",
     "original_sha256": "320abd372f6efb27ed184850c41be5bac5ec7eeb06f20e749c0831e518031d62",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf2-lib047.source-manifest.json",
-    "manifest_sha256": "32aaa95756929bcb3fca2792912233974eac60d2871ac8e11fa25565839a18c4",
+    "manifest_sha256": "7995b9721c1780de0f46796a3d48ea772ed28c52223a1eaec1e1c4488ae81473",
     "original": "sources/structured-text/gregory-nyssa-npnf205/gregory-nyssa-npnf205.source-manifest.json",
     "original_sha256": "85bde16b136d1f05b082db9b87933d4f095d91f1dd656c8771a89786b65df94a",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf2-lib048.source-manifest.json",
-    "manifest_sha256": "68e7c12b6a725225d20c937340f534fe15ed94b66a72f793d7b23a0767024dca",
+    "manifest_sha256": "e26884f6b1109c494d7cb783d3cd0dc48608e7ada3e2dcf44b1608d6903979d8",
     "original": "sources/structured-text/npnf2-lib048/npnf2-lib048.source-manifest.json",
     "original_sha256": "17427466cd6a462d9a2276513eff932aa6e54e0677e152b764af40c75de432e4",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-title-ambrose-of-milan-exposition-of-christian-faith.source-manifest.json",
-    "manifest_sha256": "2547c8aa4fb7398c8fc7c2ffe0773ba50a48023fba4ead6e0a16109f9b6bf814",
+    "manifest_sha256": "e37d8edae1d855961d9c9162b4758610ba8d3c7a3154319b73c3d95b69ccb0e1",
     "original": "sources/structured-text/ambrose-of-milan-exposition-of-christian-faith/npnf210-duties-faith-title-v3.source-manifest.json",
     "original_sha256": "e782fe3b38612833e4046d3be0421d4ef70ace9f2a59556a235eb7e68d2f3e1d",
     "preservation_test": "tests/test_npnf210_title_runtime_manifests.py::test_complete_record_preserved_with_exact_historical_work_authority"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-title-ambrose-of-milan-on-duties-of-clergy.source-manifest.json",
-    "manifest_sha256": "3d9dcd8d4c6caa7c01462bb8628ac77acef8a03cb8b8938d49d5686b11a60d97",
+    "manifest_sha256": "336ff4d8e6912d546daba13c2359356c6673c6dde22718d0df72680f9cada045",
     "original": "sources/structured-text/ambrose-of-milan-on-duties-of-clergy/npnf210-duties-faith-title-v3.source-manifest.json",
     "original_sha256": "763e5e4281b1a0f1b2efd805b84434a4dee8ff4de21c8ae85da177462af0d54e",
     "preservation_test": "tests/test_npnf210_title_runtime_manifests.py::test_complete_record_preserved_with_exact_historical_work_authority"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-concerning-repentance.source-manifest.json",
-    "manifest_sha256": "a65c9673008caea4ba3cc371ee48e4e75ffd0018194247e84baba77d6622dd6f",
+    "manifest_sha256": "ce2e9f081bc2d3935ef07070bfcc5955d268eb479f00ddb59d96acb84f84f0c4",
     "original": "sources/structured-text/ambrose-of-milan-concerning-repentance/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "40ae961caa770e2b030f1a9d01437dbdd8741344e7ddf657eb19d39fda516de9",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-concerning-virgins.source-manifest.json",
-    "manifest_sha256": "623ddf7bd1eaa194bf42c22b4519088e729b6e2dc841f5fe5787300883282e79",
+    "manifest_sha256": "8757fb76dd70ef0941ad8de468aed4190a8a774bb1ed01903c2e6c8a0e7632d1",
     "original": "sources/structured-text/ambrose-of-milan-concerning-virgins/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "4d31399993e66412384ec75c119edb4b4890000bc6901a0897ee24ffcd269c39",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-concerning-widows.source-manifest.json",
-    "manifest_sha256": "5b575e5a9eb0e8f648ccd20dea09da2a088f130b5dff612228dbe0ea83c25836",
+    "manifest_sha256": "c29bd9455f6dd66dd209a5e4956c64f4dcab1df63c51e0902f8ce01f657a1f9f",
     "original": "sources/structured-text/ambrose-of-milan-concerning-widows/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "6e87db9b0848d8f29a8da6b4bfbf0d75f750367ac0e5948a28cdb588501234ed",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-exposition-of-christian-faith.source-manifest.json",
-    "manifest_sha256": "d011e7f85eb35b8b2679c62ab4031dce504024d327dc079e6d40189d147c0065",
+    "manifest_sha256": "acc374ea9eecb718306f17976199ccc2b191f3a377cffbfdd462662a321e10e0",
     "original": "sources/structured-text/ambrose-of-milan-exposition-of-christian-faith/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "518155acb9dc6e05b54a04e5c231891ed365d9ba205534d57471811f9c9d410d",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-letters.source-manifest.json",
-    "manifest_sha256": "af3d95b73fef726de90e5d69d97dabb7e0152052a013540b439e82ffe864c1e5",
+    "manifest_sha256": "33c59c6f7ce6dfbb2165c8a677a47489a3069ead79eaeefc30b9dd92de52a96e",
     "original": "sources/structured-text/ambrose-of-milan-letters/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "36d22d09b761f643747f1e222de430ef244bf23e2ea65ef07cea91fd97601991",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-on-duties-of-clergy.source-manifest.json",
-    "manifest_sha256": "44709e9685be725fc0f56762eebb3e4cb4a5ce77e9ea06a0241573415642fb21",
+    "manifest_sha256": "32dfb4a2a3586c02affe7608e817f137de2cc5afe66bd16854f2c9bc2aa042b3",
     "original": "sources/structured-text/ambrose-of-milan-on-duties-of-clergy/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "0357b49068372debf12fb8e64348e1f15ef7cd9defdf19b08741f8c86477f0eb",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-on-holy-spirit.source-manifest.json",
-    "manifest_sha256": "169f149c4f65a98d74511af49d5e4574700d4efc205b811592818032accca7f4",
+    "manifest_sha256": "a24c36994e86f3f844612993521f5c1224b363c16287c07af3e9fb94e36a4ce7",
     "original": "sources/structured-text/ambrose-of-milan-on-holy-spirit/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "8df1c4d1d7ebffe2ae3392f4245e92d69173c0f88d5db157c4d48a5f19775228",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-on-mysteries.source-manifest.json",
-    "manifest_sha256": "1217d2351443792fa143431449e3b02cdae1aec203b3a70966832a349fc28689",
+    "manifest_sha256": "a9dcdb6127d2904ef657b90d14502046abc9ebd1e7a17493f32e2b5bd6515ad1",
     "original": "sources/structured-text/ambrose-of-milan-on-mysteries/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "c75d387cb5fc0204a7fd4be4711aed1425c3550f5258a15f23c5588cddd7d4eb",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf210-work-ambrose-of-milan-on-satyrus.source-manifest.json",
-    "manifest_sha256": "b7d56d4ad698b86a0e5cd10ea8a58658501c6a2b6f303da49d1029fa6c6d5748",
+    "manifest_sha256": "036886f3057fe0cc8d1430f2acaceff109f4830db0678a6ae413978a24ca8174",
     "original": "sources/structured-text/ambrose-of-milan-on-satyrus/npnf210-work-heading-repair-v2.source-manifest.json",
     "original_sha256": "282acac8bca317661c372b6b539cc4673b6ec8ffadb8e001905ce2cbc5740c1a",
     "preservation_test": "tests/test_npnf210_work_runtime_manifests.py::test_complete_original_record_and_authority_bytes_preserved"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf_ambrose_repentance_note_v3_oracle.source-manifest.json",
-    "manifest_sha256": "36be1634f9f2dda26b20ee175d4c98b2033483edb3d42306e3d852778147ce53",
+    "manifest_sha256": "f937f678747b1e9212d8877ebce2eae4dcd20613597bf6671a403572a7f8da77",
     "original": "sources/structured-text/ambrose-of-milan-concerning-repentance/npnf210-repentance-note-v3.source-manifest.json",
     "original_sha256": "c7e77faaba0575c96084cce6c3f7c2274c50326b759c8618848881bae770b592",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf_ambrose_satyrus_title_v3_oracle.source-manifest.json",
-    "manifest_sha256": "c3b9db61606c59a095dab66a0c2f8b2e5bf6db9394eb9e5d0b8dc90b5b9f85f0",
+    "manifest_sha256": "d0470c54e1b84cd35894afc75c6de5902c7d3b3dda6ee3f9e2dda2831c2c3534",
     "original": "sources/structured-text/ambrose-of-milan-on-satyrus/npnf210-satyrus-title-v3.source-manifest.json",
     "original_sha256": "591789aa6de554beafc94feda153afebf2475eb2585c4ee4b237bc587e6eb7bc",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/npnf_ambrose_widows_title_v3_oracle.source-manifest.json",
-    "manifest_sha256": "7da3fab4fa0096681bdf1cb867c123a8921eefcf9477a45141c9f0ea11581e22",
+    "manifest_sha256": "140208501f9b5b3a1ff889c25845770c851bd31be21ad504bfc82ca3071c5aef",
     "original": "sources/structured-text/ambrose-of-milan-concerning-widows/npnf210-widows-title-v3.source-manifest.json",
     "original_sha256": "f771a3c5b720d331c887e356d82693ce798ff31cd6d10747156f68994ee74242",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/occom-moses-paul-execution-sermon.source-manifest.json",
-    "manifest_sha256": "04b823479ab37b74b42743c1ad7003c18ead426791e6642dca93067c2b381335",
+    "manifest_sha256": "49622c50862a00d7b742f5de06ce23d53222cd61b4791bb5d40e5c9df9523ee6",
     "original": "sources/structured-text/occom-moses-paul-execution-sermon/occom-moses-paul-execution-sermon.source-manifest.json",
     "original_sha256": "28163bb944c794aa6f91896086004883a25620368588f0bce03644088c093640",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/old-elizabeth-pg17826-current-installer.source-manifest.json",
-    "manifest_sha256": "f0b05456760f1388b1ca9fdedecbef8d64131f8277a5b0ce3c1c7b56de20a2a9",
+    "manifest_sha256": "600634f64521b137cc419bd07570e6bba065e213a4be14e59bd5bcad60f095a7",
     "original": "sources/structured-text/old-elizabeth-pg17826/source-manifest.json",
     "original_sha256": "45f909a047c3a6e311c21457aeaa6a43cfa12d82f04bfa2e9c81c783b19f7436",
     "preservation_test": "tests/test_old_elizabeth_pg17826_install.py::test_runtime_manifest_preserves_complete_original_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/paradise-lost.source-manifest.json",
-    "manifest_sha256": "a5ae2135a0b082cd03ddc4d19b6cda65f24b7e2c7924adfd911c314ae33cbaae",
+    "manifest_sha256": "412078c84a1dfddda953a0f7fc768fbd4003998f9b728be1b22fa4d8dc5633d7",
     "original": "sources/standard-ebooks/john-milton_paradise-lost/paradise-lost.source-manifest.json",
     "original_sha256": "37b868cd20382dfdcedddb5933bb2a606bd947d77b700cdf4e69a14fda63fd74",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/peter_jones_1860_oracle_v2.source-manifest.json",
-    "manifest_sha256": "1ae58fbc95fb93ca9c73316a266e4c431a1de538e9d033e96508eb3ab3232642",
+    "manifest_sha256": "954ba16dbe0b620cc79b6872a34a2f6c91fec0cd8bee86d05121fa522172f34c",
     "original": "sources/manifest-acquisitions/peter-jones-life-and-journals-1860/reconstruction-source-manifest-v2.json",
     "original_sha256": "5aad66adcc8772f6e6f5a369c0cf79ec2741b0f500d20cb3e2d0d8696cae13ad",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/pilgrims-progress.source-manifest.json",
-    "manifest_sha256": "5a9085711707f707777c9d4928d0eab4ba90bcee332c9538a3596378f30de85d",
+    "manifest_sha256": "23206d238e926ddee78b7f049127e21e7143d402804f35d271b74e203662e1df",
     "original": "sources/standard-ebooks/john-bunyan_the-pilgrims-progress/pilgrims-progress.source-manifest.json",
     "original_sha256": "c2b9a43ff85652e6be4270e10e4783f51412c6fcd40a06ddb16c930ea4ed57ba",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/prayers-baths-for-cure.source-manifest.json",
-    "manifest_sha256": "1e80ccdf1853ed9058881514a6d8d77b8244a77836b1f8925648256e6a568af5",
+    "manifest_sha256": "9c68e5e005a28287a9fb1c16f38f64312be0543c4e296a004259eb82f3932558",
     "original": "sources/structured-text/prayers-baths-for-cure/prayers-baths-for-cure.source-manifest.json",
     "original_sha256": "8ea320b182948f18f2f5acaeb014d827d2ee7aa8c2ec5cedf2fa522cd21a1cc9",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-andrewes-private-devotions.source-manifest.json",
-    "manifest_sha256": "94fba7bce10f4bb6ffd9c63c88d4bb68c719051d6df0a4e977ad46be95c28cc5",
+    "manifest_sha256": "aaf67a6970ef2a145b0642f7754554acf1d539c3f1b5c8edad8e1ce56fe0fa87",
     "original": "sources/andrewes-private-devotions/lib067-andrewes.source-manifest.json",
     "original_sha256": "a1c771a29fa9f997b4e169ab05cee6d7d4573ece5d6a7b6746d5893847573962",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-bounds-essentials-of-prayer.source-manifest.json",
-    "manifest_sha256": "64b246bfb0bb03ff018bdddc37f661ae17df3b23a99fb36d21e32d8c14847711",
+    "manifest_sha256": "499d74ae23a50bddd5d41eb4319370f4d94a503bfd3e793a4fbf1c738083151f",
     "original": "sources/structured-text/bounds-essentials-of-prayer/lib031.source-manifest.json",
     "original_sha256": "e8ef00ddc8650db6120957253fce8ada2dae6bd7e5c0f6b896df484fd2247493",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-creeds-of-christendom-vol-1.source-manifest.json",
-    "manifest_sha256": "cc8acdc7fa50a74e1a48e855cd146161c2f23d929bf23d5397efae92a709f817",
+    "manifest_sha256": "f033771133f5ddc9a69a2b593b772d790ce1f46175bbb323f5c4e39be109b3b1",
     "original": "sources/structured-text/creeds-of-christendom-vol-1/lib029.source-manifest.json",
     "original_sha256": "4ad2109649892f9e501d532e4dd23dadf5b0872e11c83881b23db03a5e633d4f",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-ecumenical-councils-canons-and-decrees.source-manifest.json",
-    "manifest_sha256": "4bc236d715ca6662c79361a3f60d22d5282afb534836cdfcbf592dc1eb98e0d5",
+    "manifest_sha256": "5d1269938178770aed02037db4d9bd05f1f3b2fefffc54454f05fb04bb0f1a45",
     "original": "sources/structured-text/ecumenical-councils-canons-and-decrees/ecumenical-councils.source-manifest.json",
     "original_sha256": "5077136e411d75e3b89d9bf5efd6b7794008b3908482340e0dcac3cd92d5ba63",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-eusebius-ecclesiastical-history.source-manifest.json",
-    "manifest_sha256": "23b2622f3333fcd29030bd53fd9c5f8b72a09747f9971dce5d9fbda61ebb4fed",
+    "manifest_sha256": "75524f35d95addcc9134604721ae903e5ab19a5ec4541a06b7dae20126d46856",
     "original": "sources/structured-text/eusebius-ecclesiastical-history/lib028.source-manifest.json",
     "original_sha256": "668c5c81f64162ddfc24948597b40e9dd723464cce9143290826a555640cb988",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-fisher-marrow-of-modern-divinity.source-manifest.json",
-    "manifest_sha256": "c67acc27bf54c2c1c69c76185a9c6efe23abe7f134471d4e63e4355a7150400b",
+    "manifest_sha256": "4cbe447ea8535741bf488654f1b76a07254387679036b4c618ba782b1edb87dd",
     "original": "sources/structured-text/fisher-marrow-of-modern-divinity/fisher-marrow.source-manifest.json",
     "original_sha256": "5af7acb7e2c86a27280ee8485ebd5ff965eb40d8952b679d727a0ffd3462ea6b",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-irenaeus-against-heresies.source-manifest.json",
-    "manifest_sha256": "6f77ba85b8a12a73d87740b7b9586b67eef3d1871f94d975d88ee9922f0fe058",
+    "manifest_sha256": "e2958978e829c6d0d5effc8624d704f4d82ea0d8e122175d4559e52add259dc2",
     "original": "sources/structured-text/irenaeus-against-heresies/irenaeus-against-heresies.source-manifest.json",
     "original_sha256": "8cd454f9a49bac237b9f6cc9bcdfe951f40a50d8e8906dcf4387ebb281c75520",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib051-john-owen.source-manifest.json",
-    "manifest_sha256": "0f1c2e3266b2ca29eb72749770de3f89542e05b9cbe1246039ddddbefae71119",
+    "manifest_sha256": "63204d07db4449c247c14467113cbac3556ae41cfec11326394c1ce6b29a9970",
     "original": "sources/structured-text/lib051-john-owen/john-owen-lib051.source-manifest.json",
     "original_sha256": "cc77c42bfb3e0692aebc4fcdb9df95b3fec33958a726928b8e593d7570e47a35",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib053-john-owen.source-manifest.json",
-    "manifest_sha256": "bba399b89ca471cde5827d222b09aac0f05b970d747a8f3c01ed4fd254e00439",
+    "manifest_sha256": "57ff8ae62fbc83eeec75cc026e5249d8cd0c6ca5d58535ab89cf59340fc94154",
     "original": "sources/structured-text/lib053-john-owen/john-owen-lib053.source-manifest.json",
     "original_sha256": "3e994bd292121744196a93be7143aad29cd3b4fb1cd390f588dc973c697551c0",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-lib054-ccel-puritan.source-manifest.json",
-    "manifest_sha256": "4e0a3e9687795430b98602d2ac1b11f230f123ae45b06b9d53f38a3405440251",
+    "manifest_sha256": "239c3e4338ae4dbc54e53c10887377af03c21753bf8d5465e4aecee86568f894",
     "original": "sources/structured-text/lib054-ccel-puritan/lib054.source-manifest.json",
     "original_sha256": "de40a9ee4086ef7786bde1a9eee77dc7d22693c6132f0bf5c85ab3a33be8ecaa",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-luther-commentary-on-galatians.source-manifest.json",
-    "manifest_sha256": "3fb9fd7bc233d8d02ed6f1d34a2ba457f49a6cf1e574e009846f98af09073247",
+    "manifest_sha256": "4b0c4feae278397eebeba91c8f5ba40fcea68b85ba4f7e6ca98ea872a775201f",
     "original": "sources/structured-text/luther-commentary-on-galatians/luther-commentary-on-galatians.source-manifest.json",
     "original_sha256": "a185331987e3041d0432fff09ccf74e59e8bcd3af3fa52a307c3e220cff865e3",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-murray-absolute-surrender.source-manifest.json",
-    "manifest_sha256": "e175fbaef14a21731eaea045c9fd478aef7551d49c32bbffe218d21a91364455",
+    "manifest_sha256": "55eb88ea7ec7976eaa87e211525bad5571f58bedd0c45537d18d928499b8c422",
     "original": "sources/structured-text/murray-absolute-surrender/murray-absolute-surrender.source-manifest.json",
     "original_sha256": "fbd920ae8ad337218e0015fe12f330938c54e5c346271b9e0502f2f4b90832de",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-ryle-holiness.source-manifest.json",
-    "manifest_sha256": "9b6c639852b2f9f4e7142c1d2edd646237cd831cfc766055b19ebc643420258d",
+    "manifest_sha256": "caf279fbe031e879e96a6050d65cbeb97396ac7c685d9e3c2130281bbb2bd96a",
     "original": "sources/structured-text/ryle-holiness/ryle-holiness.source-manifest.json",
     "original_sha256": "84ce6df2e69da5045cc57fa3a9f27789f632e25333a1e3631670b5611a93e4de",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-spurgeons-morning-evening.source-manifest.json",
-    "manifest_sha256": "146df603d5442aa72219fd4a25c7693ee03659a892ebc62551ee6bda295bcd6f",
+    "manifest_sha256": "2321f03c9ae41562588e5ded7a828b9677d34309876e1b9131dab3dc8f03ec24",
     "original": "sources/devotionals/spurgeons-morning-evening/lib030.source-manifest.json",
     "original_sha256": "60315100942c768003a96e73a2ccfc916eac4970a9443f9381453f76e9706f11",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/puritan-wesley-plain-account.source-manifest.json",
-    "manifest_sha256": "d873662192cfad65058f225241d1c8a23dba2c75866daadd319d931916606b60",
+    "manifest_sha256": "f8cd50a73794d9e2b9573a062d6e08bf31db3df078132eed4875d2b3e5242476",
     "original": "sources/structured-text/wesley-plain-account/lib032.source-manifest.json",
     "original_sha256": "28ddd11395d4da7cb89ec7f069be652e0f51d76e5f7bd9709ccf921629c6d8e8",
     "preservation_test": "tests/test_next_puritan_runtime_bindings.py::test_runtime_copy_preserves_complete_retained_record_except_declared_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/robertson-word-pictures-vol1.source-manifest.json",
-    "manifest_sha256": "f34feda98e32e4bfcac15e5c8486281609454ed2f4e06918fbb7eba5e29e98ee",
+    "manifest_sha256": "4cfc2b9758d7546aec09ac5c37b29e05ee1e67206879035e9b57c03410d069b6",
     "original": "sources/commentaries/robertson-word-pictures-vol1/source-manifest.json",
     "original_sha256": "8eb5e9df89be8868ab20bd4128b7379b882f17af059769f90dca6eb761ace17d",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/ryle_expository_thoughts_matthew_lib055_oracle.source-manifest.json",
-    "manifest_sha256": "11ab8ea2662e53d381057497463d89b73a87c3b7137c1853cdec6324a814cf8c",
+    "manifest_sha256": "a3072952f215314d926702a5f3b614d35d553d36093e33e8daf9890997b02d11",
     "original": "sources/structured-text/ryle-expository-thoughts-matthew/lib055/37c-268.source-manifest.json",
     "original_sha256": "482914b7095e0ea4e9305fbaa0b52281145388edca5611e8ec1ffde95a11f59f",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol2_oracle.source-manifest.json",
-    "manifest_sha256": "f0fa427775a1030e9a52492a36ee2c5736883e4cc575874b56066410609d76c0",
+    "manifest_sha256": "9c9efedbbdc7a662c45fe89fc453c1bd8a8dc3dd086406a4157cd2e6d5a76510",
     "original": "sources/structured-text/schaff-history-vol-2/schaff-history-vol-2.source-manifest.json",
     "original_sha256": "5b04fc608e26ac08929f53db0036045b3a0bedfe06df036e16b4a6a0ce4a7484",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol3_oracle.source-manifest.json",
-    "manifest_sha256": "5dbf9f934aa17bd06a3f292df05ed208f660a93d82d02459df9007c98bca2f56",
+    "manifest_sha256": "28a86f8d9df5ccf7cce36882e661972988354194a042805f2cc670decc9d73fc",
     "original": "sources/structured-text/schaff-history-vol-3/schaff-history-vol-3.source-manifest.json",
     "original_sha256": "7d8ce37b28ae36b4f8ed9c9dfdaa6df6e058181c7488ce294b4f0dfff64b23d9",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol4_oracle.source-manifest.json",
-    "manifest_sha256": "4397a1c7886e47ec0645ae2f45d3e96dd5bc1d81a6897bd97d95f7b1d20f9b20",
+    "manifest_sha256": "3279a336485e4d6867ef251b2435c677726a2e4ae6df349757a78ab6bbecbdb8",
     "original": "sources/structured-text/schaff-history-vol-4/schaff-history-vol-4.source-manifest.json",
     "original_sha256": "dd3f35946823d0198b45867db9d3322dac5d60e6b4e96f2005ddc526d4d1d483",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol5_oracle.source-manifest.json",
-    "manifest_sha256": "18d42dee2320b818401dca96d4acd85760f928ac3c881649961aab9058428049",
+    "manifest_sha256": "dacc15267f4748906ef04f421072abdbc16164f9ce6adf1d8d7a52135b4c4200",
     "original": "sources/structured-text/schaff-history-vol-5/schaff-history-vol-5.source-manifest.json",
     "original_sha256": "eb1131e31ade6677d6c41ae44f53d6eab7576c5cfd8fc59b3f3ad7b85946ff5a",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol6_oracle.source-manifest.json",
-    "manifest_sha256": "bfec0a3fa072e8e388a7f58fc268f7397a070a71fcd86b645df295bc9b7e13e9",
+    "manifest_sha256": "8970f097f7069086d15baf47815b2bd59d181bd347dff74a7f3470da15a9d803",
     "original": "sources/structured-text/schaff-history-vol-6/schaff-history-vol-6.source-manifest.json",
     "original_sha256": "3d4c60687fcca15df47c17acefc47ea2a9c1a8f5bf21dc6ee0b6698c547315d8",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol7_oracle.source-manifest.json",
-    "manifest_sha256": "92d3c66e475776139c913488d65300a1bcccdde63c48708bc7c8857116aff3a5",
+    "manifest_sha256": "b66fa5594196b2c0afd0128544bed8dc5c9a9a54669c5509eab9d28862fe9c68",
     "original": "sources/structured-text/schaff-history-vol-7/schaff-history-vol-7.source-manifest.json",
     "original_sha256": "d33ffc6301b33c6fd1a792853ded3766cbc413865c6d9a04eef4251eba1a8bc2",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol8_oracle.source-manifest.json",
-    "manifest_sha256": "b3a299685cf73b23406f681572fdd4262a2e4f1a464d27cac348b28ebcf171ca",
+    "manifest_sha256": "c4b3d3ffa3fe9138ef07395bdeca8fdf928b14075738addc2eff7a719a40c3aa",
     "original": "sources/structured-text/schaff-history-vol-8/schaff-history-vol-8.source-manifest.json",
     "original_sha256": "1722db7eeb7d763d1fc9f4683365b9ba7ff55ab8f1baab4f579ed4c723b384d6",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol_1_oracle.source-manifest.json",
-    "manifest_sha256": "b48404e60474de4f0bc6c776935a26eb8acc2401bfaf0811b5404c27ab9670f6",
+    "manifest_sha256": "61e4024c333145435d2920f047497bc5d743553482c38987a8bce8b93f2c22f7",
     "original": "sources/structured-text/schaff-history-vol-1/schaff-history-vol-1.source-manifest.json",
     "original_sha256": "6e3b3723a81ac7e9404934a268371e570c0df1f885d4deca87bdd1a4df256738",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schaff_history_vol_4_oracle.source-manifest.json",
-    "manifest_sha256": "43e4b3c1204945ea6b9f7e7bdd4db45a3697947e0f361accb8536229d839eca3",
+    "manifest_sha256": "ef88a8dd6cd0736b66deb106fc846ba6c669368c1a8b2db5b9128b2db03ab0f2",
     "original": "sources/structured-text/schaff-history-vol-4-readable/schaff-history-vol-4.source-manifest.json",
     "original_sha256": "59d41e1bd361e5a50b9d38862278ebe957b3130f68b8e552832cbda1d8ceebb5",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/schleitheim-confession-1527.source-manifest.json",
-    "manifest_sha256": "9004ffaae1b90796db2ea1420ed97cb7546e5c07e4de3974952fbe1dbbb8184b",
+    "manifest_sha256": "5f6530836ba389e66225bd8c8680d8496217b4a94baf8fdbbc9bb8ee86735956",
     "original": "sources/doctrinal-documents/schleitheim-confession-1527/schleitheim-confession-1527.source-manifest.json",
     "original_sha256": "2e95da91ae92efe40346a2b2cf29862d5074f4bd47363b0be1992bd6b85000f9",
     "preservation_test": "tests/test_missing_baseline_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record_except_declared_runtime_bindings"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/se-george-macdonald-unspoken-sermons.source-manifest.json",
-    "manifest_sha256": "964cabe61728335963d61bf1677d46ab1735f580188a419f49b82e4a79e36f7f",
+    "manifest_sha256": "ab643a671523050a900e901c0ffffce4e6f26785cf959045327ce49fb113b271",
     "original": "sources/standard-ebooks/george-macdonald_unspoken-sermons/george-macdonald-unspoken-sermons.source-manifest.json",
     "original_sha256": "100218d485d87e14a01cd57948203734cdfcc03f9ba72932ec55075f0030274e",
     "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/se-heretics.source-manifest.json",
-    "manifest_sha256": "1f1807874e83657d4f3fb3970199713d71e42ad3037b079a9fc08536e4f993d9",
+    "manifest_sha256": "07b484eb222ec1827da31c418484bb9d54eaf029cde8bea350baa8fa3e8c56ea",
     "original": "sources/standard-ebooks/g-k-chesterton_heretics/heretics.source-manifest.json",
     "original_sha256": "2f77d059adad2dffff9c494c5ba3f710e346d893e87e64092a7f5eaae3ccdd6a",
     "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/se-orthodoxy.source-manifest.json",
-    "manifest_sha256": "69f725c13c1e5ecfb9422f6fd3fd0b1a2722980a8e8f81cec51fcf7afa649345",
+    "manifest_sha256": "6eddd414446a156d967873bbd3c9abbabed28d2db5948ed3e609a6162a5d331b",
     "original": "sources/standard-ebooks/g-k-chesterton_orthodoxy/orthodoxy.source-manifest.json",
     "original_sha256": "17792505207b050087dd56904f0d9ece42379737ad07080e18f5822daf909200",
     "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/se-the-everlasting-man.source-manifest.json",
-    "manifest_sha256": "34575070437265bd4ed835315eafefb4294135a7ee4c330941e5e2ac25a9e881",
+    "manifest_sha256": "9e8a2a44facf392cd99bf54df12c78e8e4f83c6c982ab4d4a66ad3463e92707f",
     "original": "sources/standard-ebooks/g-k-chesterton_the-everlasting-man/the-everlasting-man.source-manifest.json",
     "original_sha256": "c3b25d1af7fc600ae07c5b3efea71efbbb3cacafe2bcdba950332bfe2472a8a2",
     "preservation_test": "tests/test_se_four_runtime_manifests.py::test_runtime_copy_preserves_complete_frozen_source_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/shorter-catechism-explained.source-manifest.json",
-    "manifest_sha256": "05af990709d6c65b970e54ef57939650677bded9ca24fd11a9c95edd4b2ea5ca",
+    "manifest_sha256": "f593801977e285bb3b6fcb12dbf8d13dc6f239822cdcd76a36229ad7488e4c7f",
     "original": "sources/shorter-catechism-explained/shorter-catechism-explained.source-manifest.json",
     "original_sha256": "1fe8c2d86047cf6bf4f32a44ad09a7df2c2298b7db544debd3adae266016b8df",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-all-of-grace-lib072.source-manifest.json",
-    "manifest_sha256": "f0a32a9428b2106642933915afe71c6f0bdd2958e245e959d87227298112df5c",
+    "manifest_sha256": "3d22fa468289625774659779354842cda228b1e6619c0cadd1405b314010c031",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/spurgeon-all-of-grace/spurgeon-all-of-grace.source-manifest.json",
     "original_sha256": "9d220aa4bffb6d4d9e7e89ab444e2c3a20ec9065fae72db3c846fe6da87a6e91",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-lectures-to-my-students-lib072.source-manifest.json",
-    "manifest_sha256": "3d9956b2a7e17f040a133ba64e5be05abbd2bab70b98234808bd3917786c60a5",
+    "manifest_sha256": "e4d2611900533145edfacb9f9de89c3c3f5c241338356120aae2eca21c9376ce",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/spurgeon-lectures-to-my-students/spurgeon-lectures-to-my-students.source-manifest.json",
     "original_sha256": "93db1e33fc981ddee3600585651c14b2f9b28d1a8f033631e302b5d9a14c61e1",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/spurgeon-mtp.source-manifest.json",
-    "manifest_sha256": "7e653d310c45cbc8d3e9c7df58719430a030e2baef32f7bcf9be12d06dfae9cc",
+    "manifest_sha256": "26c9ef4f56471ff664031d5a7932c5d06b864b69e0747ab15a7b697a15d84883",
     "original": "sources/spurgeon-mtp/spurgeon-mtp.source-manifest.json",
     "original_sha256": "12ccaf17790f0916048a679c3bb985efa5221f9c424ae9c3ec10101eda1c8e7a",
     "preservation_test": "tests/test_spurgeon_mtp_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_changed_dependencies"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/strong-vol1.source-manifest.json",
-    "manifest_sha256": "59fa20d735f0784c19213bc34e63650d7f62cc86f956c64470731ca6ce59f928",
+    "manifest_sha256": "ca7e8ce8ce0e6c9dba99b57923f6a2b5285cce4ab468cca0a6290606e90a5e70",
     "original": "sources/structured-text/strong-systematic-theology-vol-1/strong-systematic-theology-vol-1.source-manifest.json",
     "original_sha256": "1ddc4949c28010e98f4a936e2285c04d92f372aa0c6cf5720ed593aeb2367654",
     "preservation_test": "tests/test_strong_vol1_pg44035_native_stage.py::test_runtime_copy_preserves_complete_original_strong_records"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/strong-vol2.source-manifest.json",
-    "manifest_sha256": "5ded1f37d9d081aa333b6833172145abcf3eb509f70b94f7c7c43fcc6ebbe866",
+    "manifest_sha256": "343a17b1d09942251858d1450dad11628ab123343a3a87312e162bf9d47ef0c8",
     "original": "sources/strong-systematic-theology-vol-2/strong-systematic-theology-vol-2.source-manifest.l374-v2.json",
     "original_sha256": "bc1ef4f02f95798c753d0ee582a8f3103e1769f0a7409bf62708fcd5a2873970",
     "preservation_test": "tests/test_strong_systematic_theology_vol_2_reconstruction_contract.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_shared_runtime_closures"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/sum_saving_knowledge_oracle.source-manifest.json",
-    "manifest_sha256": "b7bd86e72616d510b18d29559a35084bc6ec719895785af78f77960906100c7d",
+    "manifest_sha256": "d267c03c6789d8ebf8e8d9b3fa1a6a3b2efb4c8c158f17d184687fd37929a209",
     "original": "sources/doctrinal-documents/sum-of-saving-knowledge/sum-of-saving-knowledge.source-manifest.json",
     "original_sha256": "bc818a0329502dabe3f93b8512470e38ba592ec715799d450f8655a35414cc80",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-dying-lib068.source-manifest.json",
-    "manifest_sha256": "02d35974f3b278c9ee0cc2bb82797ac4f53aa07a7a4190c1bed952b859ecdb46",
+    "manifest_sha256": "b2c830d0c476c374890f49c9d8e9380692b3333fd35f6bccf5225805824b3034",
     "original": "sources/structured-text/taylor-holy-dying/LIB-068.source-manifest.json",
     "original_sha256": "b364633b740c7d5092c3d552bec2ad44b881e8798eb17412603ed4d952776f47",
     "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/taylor-holy-living-lib068.source-manifest.json",
-    "manifest_sha256": "1bab416f3468807b03c241c1846cd1a76ed7340a000a7a93f6724b9430f87d09",
+    "manifest_sha256": "0b7998a557acc890a7439e27191582aac6ad45c681a57a6d812a7f9fb512e72d",
     "original": "sources/structured-text/taylor-holy-living/LIB-068.source-manifest.json",
     "original_sha256": "75be967e53be8af88c9b5088bbf172431e2f471d40fc48dc94977662613f57dd",
     "preservation_test": "tests/test_lib068_source_local_reconstruction.py::test_runtime_fixture_preserves_complete_original_record_except_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/torrey-how-to-pray-lib072.source-manifest.json",
-    "manifest_sha256": "fe9aa0598490a14378a12b50af51f7f040f3600bdb13cd2c43f6ef2ade99f8da",
+    "manifest_sha256": "ba0fe72fb5dfc29d9ec5d64b80b8746ff4c4fcaa40c8a253cdfafc892f8d331e",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/torrey-how-to-pray/torrey-how-to-pray.source-manifest.json",
     "original_sha256": "f4c48937c356bc94ecba42d8d7f36d69cd88981ca193af2a8b6f0ae3274c5ff7",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/torrey-what-the-bible-teaches-lib072.source-manifest.json",
-    "manifest_sha256": "b548a33cd3eea967a146ecc8932635668d4d53a24f94d666588ead20a850b768",
+    "manifest_sha256": "300782ba60375dd30bd6f0c34eae569563f88e807c0e348a4f7604be788fbe27",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/torrey-what-the-bible-teaches/torrey-what-the-bible-teaches.source-manifest.json",
     "original_sha256": "27477fe8f33cd7f7c6c9f910d0265178bd9013aba3f8b45f1f934ab4b915655f",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/torreys_topical_textbook_oracle.source-manifest.json",
-    "manifest_sha256": "c5237398f912e306e42eb1e104f8cbb451f47da6e06858a22ae4a4e27e7f341c",
+    "manifest_sha256": "738b37274529fa70beaaf87c0e215565aa5e1d424e8458d12849490a959e730e",
     "original": "sources/torreys-topical-textbook/torreys-topical-textbook.source-manifest.json",
     "original_sha256": "7155d7192da290d9df80a2174b7070621ce83ca7fa15cde1a6b9ad1959782563",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/watson-beatitudes.source-manifest.json",
-    "manifest_sha256": "dcba5666347cd0615e87d20f686b4c625f2bb27a5b0905b1c48bbf40804255b7",
+    "manifest_sha256": "373d8efed79ac95ca363f0677bb72470041739c48a2bef8dbdee0372005a9f41",
     "original": "sources/structured-text/watson-beatitudes/watson-beatitudes.source-manifest.json",
     "original_sha256": "5011b99ad5ea195952659a88eb6b6d60823d8e5b34f44e4f670584c05b8bf85b",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/watson-body-of-divinity.source-manifest.json",
-    "manifest_sha256": "b7b5efdb6cbc9ad06a1cbc7cc106dc4ea27cf4108cd4195048ae37a272b3fc75",
+    "manifest_sha256": "c264eaf03efdb906c27d73b23bde4f6afe8551eb843317be987adeeadbf16588",
     "original": "sources/structured-text/watson-body-of-divinity/watson-body-of-divinity.source-manifest.json",
     "original_sha256": "56ee185cfc2e60b5dc4717e6360d25d7fe3187663fefc21d52b3497934d63def",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/watson-divine-contentment.source-manifest.json",
-    "manifest_sha256": "ed5b1716c0812def826d0a95f52cafeb9eeba048e31c636fcc0aa6a1c6a656f2",
+    "manifest_sha256": "05ed01b85896a563ca0aaadc740f600d74486e0d21ecb7cb0b836fde22225132",
     "original": "sources/structured-text/watson-divine-contentment/watson-divine-contentment.source-manifest.json",
     "original_sha256": "056e2f07288f95c86831de301e2b7981824236d224143207dfac8402c458e415",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/watson-lords-prayer.source-manifest.json",
-    "manifest_sha256": "e4748e3b23711ad4d781b0cfae877d18299774a60cae4f31f6e9bc971695ca13",
+    "manifest_sha256": "1aa8824f6123f3a386760a0fab8904b4bf10f7b45ed89e6d487d0791927f6111",
     "original": "sources/structured-text/watson-lords-prayer/watson-lords-prayer.source-manifest.json",
     "original_sha256": "5346de14735d0575674845465f626e3817e23f4f2045cd292c6d696544af4aea",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/watson-ten-commandments.source-manifest.json",
-    "manifest_sha256": "27b7b1566f87ee1bc89717b41af7d67f861c4f949baf042f56f90d111e63f5fb",
+    "manifest_sha256": "0a51c8ac5f2366b797605f586b1ae83143375308864a8d6c2828dc87421567b4",
     "original": "sources/structured-text/watson-ten-commandments/watson-ten-commandments.source-manifest.json",
     "original_sha256": "cabcc5faf2e63cb42277ed7577ca0f82194757f83b4d5c911b4e65f84e557f36",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/webster.source-manifest.json",
-    "manifest_sha256": "deb0a33aeb5a4cef58720534d5c8dfb697d56141df2d567367d687fcdc935c0a",
+    "manifest_sha256": "afd32bb28f277ee2b94d8aa378e030bdf9fe9601ac9839bb79ed107ee07b5058",
     "original": "sources/bible-text/webster/webster.source-manifest.json",
     "original_sha256": "55a768b6ebbee5ada129060ae9ba155334a495e3dce30222da9848995c478766",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/westminster-larger-catechism.source-manifest.json",
-    "manifest_sha256": "199613d179d66bafcd432448fb57b0aaadf537ea1f5111aef84544dbc7f5302d",
+    "manifest_sha256": "7226b9a79173e968999f57a95928ea2f8b3e92d4775eb9d8ea08024be540d6ec",
     "original": "sources/westminster-larger-catechism/westminster-larger-catechism.source-manifest.json",
     "original_sha256": "cd06899effb7f981d73882d89708ec837f3c1f46d0a156ca04bedfcab7fa54f3",
     "preservation_test": "tests/test_source_manifest_route_validation.py::test_runtime_fixture_preserves_retained_authorities_and_only_updates_closure"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/westminster-shorter-catechism.source-manifest.json",
-    "manifest_sha256": "dee6865696f04731838557ea8032d84b15bb4c403d002a40c3a39bbabf4be997",
+    "manifest_sha256": "8f77987c182b00ff5cdb8a7e27ae8edaacb6e626c9bb4c9936e58402cd5cb30a",
     "original": "sources/catechisms/westminster-shorter-catechism/westminster-shorter-catechism.source-manifest.json",
     "original_sha256": "4d102bed9eb7be4fec5ea08493fdf382597a6164cea3d0bf18fdaf82c26614a9",
     "preservation_test": "tests/test_westminster_shorter_catechism_reconstruction_contract.py::test_runtime_fixture_preserves_retained_inputs_and_only_updates_shared_runtime_closures"
@@ -1628,34 +1635,48 @@
     "original_sha256": "02ca0f37157f49f29a9d80e8b4e9d84f3e268d06293e077d3d833d14ab5192d3",
     "manifest": "tests/fixtures/reconstruction-runtime/wikisource-l594-complete.source-manifest.json",
     "preservation_test": "tests/test_wikisource_l594_complete.py::test_runtime_manifest_preserves_the_complete_source_record",
-    "manifest_sha256": "b652862a7f4377a3e3f69611a8bc4958de4ecfde4542f5c7659d9fd320d90d57"
+    "manifest_sha256": "b5bf6f8bb321dabd4b4cda7fcd988b777a05e73ba809b5375edb29e49a3ac1f8"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/wilberforce-practical-view-37c322.source-manifest.json",
-    "manifest_sha256": "d5b7c690b01304450566e1110b87924723f49f736a191bfd924b4eb1c4281ffe",
+    "manifest_sha256": "ceb648fda1463d3bb832d9c4b4d7510456af0479e75d94bfca408c7ce5fb1b08",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/37c-322-v3-scope-v1-source-manifest.json",
     "original_sha256": "e98e408516e2115688ad6f663394eb0b77db95e432691d9081cfcd9830e61490",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/wilberforce-practical-view-lib072.source-manifest.json",
-    "manifest_sha256": "b6e6d68ffa313d008f97ce563d41f51432f5ee67ef72d2fdeeeb164bcd86a7d9",
+    "manifest_sha256": "074f132d6e88ef57eafbe8e62e8aa05361a7fc4f1bd706a2b913b9f279cff367",
     "original": "sources/structured-text/lib072-gutenberg-evangelical/work-bindings/wilberforce-practical-view/wilberforce-practical-view.source-manifest.json",
     "original_sha256": "2cc05b41b531cda6d254aa8bfcb56e3f7b347e89e4ccaeecee6c91ce960bb8f2",
     "preservation_test": "tests/test_asv_lib072_runtime_manifests.py::test_runtime_fixture_preserves_complete_frozen_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/woolman_37311_oracle.source-manifest.json",
-    "manifest_sha256": "80a9f55b71ceec973cd5ac799a4d3f53fba69ae24d02df3219d99752666acd64",
+    "manifest_sha256": "1eccd5f4114f88f634633fccb002f2bd88598c05af22781eef3d878d540fefee",
     "original": "sources/manifest-acquisitions/gutenberg-pg37311-woolman-v5/source-manifest.json",
     "original_sha256": "a9709e198dbdcb3cf2273dff4dd6d8f2a1c50f75d436778f5b406372c99aa357",
     "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   },
   {
     "manifest": "tests/fixtures/reconstruction-runtime/ylt.source-manifest.json",
-    "manifest_sha256": "6ed9d06d809ce3056fa0dd023726a5e99e0a14787945d83daa02fddf056f2eb4",
+    "manifest_sha256": "a0afa580847c1e155ff2d38d5de653308c7f6a8d2b60a392706fd95ea9b7c824",
     "original": "sources/bible-text/ylt/ylt.source-manifest.json",
     "original_sha256": "ce8084a6a9ffcdcc6f8a17d5b12313e017de042ada30803fb8fbe7692492ba4d",
     "preservation_test": "tests/test_runtime_manifest_binding_boundaries.py::test_runtime_manifest_preserves_frozen_source_scope_and_only_updates_declared_runtime"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/newman-pg34022-current-installer.source-manifest.json",
+    "manifest_sha256": "017eee9087a63f2a26160b5250b545bd939df6019f5e1ffb74107449bee41f36",
+    "original": "sources/structured-text/newman-grammar-of-assent/pg34022.source-manifest.json",
+    "original_sha256": "f92b7085c5d38cc13091d4e83dbf75ee72fc963d64d5f00cee4ab977760fe30e",
+    "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
+  },
+  {
+    "manifest": "tests/fixtures/reconstruction-runtime/vincent-pg6733-current-installer.source-manifest.json",
+    "manifest_sha256": "d12223b13bd4237dcf4c6ad52d4a89f3afd635aa3d4cd772a2426adbe492f7ad",
+    "original": "sources/structured-text/vincent-pg6733/source-manifest.json",
+    "original_sha256": "798e1d69693616565edcf82780459137b298224b546275db96679935489441df",
+    "preservation_test": "tests/test_owned_runtime_closure_baselines.py::test_runtime_copy_preserves_the_complete_historical_record"
   }
 ]

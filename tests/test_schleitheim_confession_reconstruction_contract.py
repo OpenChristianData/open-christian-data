@@ -16,6 +16,7 @@ from lxml import etree
 import pytest
 
 from ocd_kernel.reconstruction import CandidatePackage, SourceManifest, reconstruct, validate
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -236,7 +237,7 @@ def test_source_accountability_and_tei_shape_are_exact(
     assert [item["paragraph_count"] for item in accountability["articles"]] == [1, 1, 2, 5, 3, 7, 5]
 
     tei = etree.fromstring(schleitheim_candidate.member_bytes("content.tei.xml"))
-    xsd = etree.XMLSchema(etree.parse(str(schleitheim_manifest.authority_path("tei-p5-xsd"))))
+    xsd = compiled_tei_schema(schleitheim_manifest.authority_path("tei-p5-xsd"))
     assert xsd.validate(tei), xsd.error_log
     assert tei.get(XML_ID) == "schleitheim-confession-1527-candidate"
     articles = tei.xpath("/t:TEI/t:text/t:body/t:div[@type='article']", namespaces=TEI)

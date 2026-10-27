@@ -28,7 +28,7 @@ HISTORICAL_STAGE = STAGE
 HISTORICAL_RECEIPT_SHA = RECEIPT_SHA
 ORIGINAL_MANIFEST = installer.MANIFEST
 RUNTIME_MANIFEST = Path("tests/fixtures/reconstruction-runtime/eliza-southall-pg11959-current-installer.source-manifest.json")
-RUNTIME_SHA = 'ecdaadd5d536a060105bc2cde9fe232009a81d0c8ac0f39e728ff981ad4b4786'
+RUNTIME_SHA = 'e5680023b58e10b0d52365a46f086100269526973995557ef6e8360533acd8cd'
 
 
 def _fixture(root: Path) -> Path:

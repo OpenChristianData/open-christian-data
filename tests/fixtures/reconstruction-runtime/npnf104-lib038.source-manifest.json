@@ -61,14 +61,14 @@
       "path": "tests/fixtures/reconstruction-runtime/npnf104-lib038.converter.import-closure.json",
       "role": "converter-import-closure",
       "bytes": 1119,
-      "sha256": "a2a6e45d7371c5cfabb9bb1a737e9dcf6fe3cb1cec1bd7e892083a3986422158"
+      "sha256": "7d0fe3f3e88f38f4624a1790fc12515af369f8a467f67c3bdc81e0dd8f6541b0"
     },
     {
       "name": "validator-first-party-import-closure",
       "path": "tests/fixtures/reconstruction-runtime/npnf104-lib038.validator.import-closure.json",
       "role": "validator-import-closure",
       "bytes": 592,
-      "sha256": "2b140bb36b08b8af5ef97e00772a8393a8cda4d36aa148f5c1dee24d939159bf"
+      "sha256": "4e989a61d4d554c3eec7e6714cda2890ac934a2c114e87d4f878bc9216ff81c3"
     },
     {
       "name": "tei-p5-xsd",
@@ -97,7 +97,7 @@
     "id": "ocd-npnf104-lib038-source-to-tei-oracle",
     "implementation_path": "build/tei/npnf104_lib038_oracle.py",
     "implementation_sha256": "5ef7122facd31ef08e5e04b1902d573c40e6d84891b080c9b7427dd3e5cce5c5",
-    "import_closure_sha256": "2b140bb36b08b8af5ef97e00772a8393a8cda4d36aa148f5c1dee24d939159bf",
+    "import_closure_sha256": "4e989a61d4d554c3eec7e6714cda2890ac934a2c114e87d4f878bc9216ff81c3",
     "version": "1"
   },
   "package_schema": {

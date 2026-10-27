@@ -24,6 +24,7 @@ from ocd_kernel.projection.categories.catechisms import (
     project_catechism_document,
     verify_catechism,
 )
+from build.lib.tei_xsd import compiled_tei_schema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -377,7 +378,7 @@ def test_unsupported_or_unbound_source_fails_both_routes(change: str, tmp_path: 
 @pytest.mark.parametrize("name", CASES)
 def test_fixture_is_valid_tei_p5(name: str) -> None:
     document = etree.parse(str(FIXTURES / CASES[name]["tei_file"]))
-    schema = etree.XMLSchema(etree.parse(str(XSD)))
+    schema = compiled_tei_schema(XSD)
     assert schema.validate(document), schema.error_log.last_error
 
 
